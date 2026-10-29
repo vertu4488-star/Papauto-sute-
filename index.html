@@ -47,7 +47,7 @@
   </a>
   <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
   <nav class="main-nav" aria-label="Главная навигация">
-    <a href="#directions">Направления</a><a href="#catalog">Каталог</a><a href="/delivery.html">Доставка по России</a><a href="#calculator">Калькулятор</a><a href="#japan-auction-stats">Поиск авто из Японии</a><a href="#process">Как работаем</a><a href="#faq">Вопросы</a>
+    <a href="#directions">Направления</a><a href="#catalog">Каталог</a><a href="/delivery.html">Доставка по России</a><a href="#calculator">Калькулятор</a><a href="#auction-statistics">Статистика цен</a><a href="#process">Как работаем</a><a href="#faq">Вопросы</a>
   </nav>
   <a class="header-cta" href="#request">Обсудить подбор <span>↗</span></a>
 </header>
@@ -103,25 +103,17 @@
     </div>
   </section>
 
-  <section class="section wrap auction-stats-section" id="japan-auction-stats">
-    <div class="auction-stats-card">
-      <div class="auction-stats-copy">
-        <div class="eyebrow">ЯПОНИЯ · ПОИСК ЧЕРЕЗ PAPAUTO</div>
-        <h2>Ищем автомобиль под ваш запрос,<br><em>не отправляя вас на чужие сайты.</em></h2>
-        <p>Оставьте параметры автомобиля на PAPAUTO: марку, модель, год, бюджет, пробег и требования к состоянию. Запрос будет обработан на нашей стороне. Чтобы показывать здесь актуальные японские аукционные лоты и результаты торгов, необходимо подключение к разрешённому API или выгрузке поставщика данных.</p>
-        <div class="auction-stats-actions">
-          <a class="button button-primary" href="#assistant">Отправить запрос на поиск ↗</a>
-          <a class="button button-secondary" href="#calculator">Рассчитать бюджет</a>
-        </div>
-        <p class="fine-print">Пока прямой канал получения данных аукциона не подключён, сайт не показывает вымышленные лоты и не выдаёт исторические сведения за актуальные предложения.</p>
-      </div>
-      <div class="auction-stats-steps" aria-label="Как выполняется подбор">
-        <div><span>01</span><b>Опишите автомобиль</b><p>Марка, модель, год, пробег и общий бюджет.</p></div>
-        <div><span>02</span><b>Проверим данные</b><p>Состояние, аукционный лист и идентификаторы — когда поставщик предоставляет подтверждения.</p></div>
-        <div><span>03</span><b>Рассчитаем под ключ</b><p>Цена, доставка, таможенные платежи и доставка до вашего города.</p></div>
-      </div>
-    </div>
-  </section>
+  <section class="section wrap auction-stats-section" id="auction-statistics">
+<div class="section-title-row"><div><div class="eyebrow">ИСТОРИЯ ЦЕН · ЯПОНИЯ / КОРЕЯ / КИТАЙ</div><h2>Статистика автомобилей<br><em>без перехода на чужие сайты.</em></h2></div><p>Ищите модель, сравнивайте диапазоны цен и проверяйте тип источника. Завершённые торги и обычные объявления показываем отдельно.</p></div>
+<div class="auction-search-panel"><form id="auctionStatsForm" class="auction-search-form">
+<label>Страна<select id="auctionCountry"><option value="japan">Япония</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select></label>
+<label>Марка<input id="auctionMake" name="make" maxlength="80" placeholder="Toyota, Honda, BYD"></label>
+<label>Модель<input id="auctionModel" name="model" maxlength="80" placeholder="Prius, RAV4, Model 3"></label>
+<div class="form-grid"><label>Год от<input id="auctionYearFrom" type="number" min="1990" max="2030" value="2018"></label><label>Год до<input id="auctionYearTo" type="number" min="1990" max="2030" value="2025"></label></div>
+<label id="auctionGradeWrap">Аукционная оценка<select id="auctionGrade"><option value="">Любая оценка</option><option>5</option><option>4.5</option><option>4</option><option>3.5</option><option>3</option><option>R</option><option>RA</option></select></label>
+<button class="button button-primary" id="auctionStatsSubmit" type="submit">Найти статистику ↗</button><p class="fine-print">Не подставляем вымышленные результаты. Если источник не предоставляет архив завершённых торгов, это будет указано прямо.</p>
+</form><div class="auction-stats-results" id="auctionStatsResults" aria-live="polite"><div class="auction-empty-state"><span class="auction-empty-icon">⌕</span><h3>Выберите страну и модель</h3><p>Здесь появятся найденные данные, диапазон цен и пояснение об источнике.</p></div></div></div>
+</section>
 
   <section class="section calculator-section" id="calculator">
     <div class="wrap">
