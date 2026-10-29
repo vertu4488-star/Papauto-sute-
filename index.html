@@ -47,7 +47,7 @@
   </a>
   <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
   <nav class="main-nav" aria-label="Главная навигация">
-    <a href="#directions">Направления</a><a href="#catalog">Каталог</a><a href="/delivery.html">Доставка по России</a><a href="#calculator">Калькулятор</a><a href="#japan-auction-stats">Аукционы Японии</a><a href="#process">Как работаем</a><a href="#faq">Вопросы</a>
+    <a href="#directions">Направления</a><a href="#catalog">Каталог</a><a href="/delivery.html">Доставка по России</a><a href="#calculator">Калькулятор</a><a href="#japan-auction-stats">Поиск авто из Японии</a><a href="#process">Как работаем</a><a href="#faq">Вопросы</a>
   </nav>
   <a class="header-cta" href="#request">Обсудить подбор <span>↗</span></a>
 </header>
@@ -106,19 +106,19 @@
   <section class="section wrap auction-stats-section" id="japan-auction-stats">
     <div class="auction-stats-card">
       <div class="auction-stats-copy">
-        <div class="eyebrow">ЯПОНИЯ · ИСТОЧНИК АУКЦИОННЫХ ДАННЫХ</div>
-        <h2>Проверьте результаты торгов,<br><em>прежде чем выбирать автомобиль.</em></h2>
-        <p>Для первичной оценки японского рынка используйте аукционную площадку SMSRV / ВЕРОССА. Сверяйте марку, модель, год, объём двигателя, пробег, оценку и результат торгов. Цена на аукционе — это только один из пунктов будущей сметы.</p>
+        <div class="eyebrow">ЯПОНИЯ · ПОИСК ЧЕРЕЗ PAPAUTO</div>
+        <h2>Ищем автомобиль под ваш запрос,<br><em>не отправляя вас на чужие сайты.</em></h2>
+        <p>Оставьте параметры автомобиля на PAPAUTO: марку, модель, год, бюджет, пробег и требования к состоянию. Запрос будет обработан на нашей стороне. Чтобы показывать здесь актуальные японские аукционные лоты и результаты торгов, необходимо подключение к разрешённому API или выгрузке поставщика данных.</p>
         <div class="auction-stats-actions">
-          <a class="button button-primary" href="https://auc.smsrv.ru/" target="_blank" rel="noopener noreferrer">Открыть японские аукционы ↗</a>
-          <a class="button button-secondary" href="https://smsrv.ru/" target="_blank" rel="noopener noreferrer">О поставщике данных</a>
+          <a class="button button-primary" href="#assistant">Отправить запрос на поиск ↗</a>
+          <a class="button button-secondary" href="#calculator">Рассчитать бюджет</a>
         </div>
-        <p class="fine-print">Внешний источник: SMSRV / ВЕРОССА. Переход ведёт на сайт поставщика. Мы не выдаём его статистику за собственную базу PAPAUTO и не считаем прошлые продажи подтверждением наличия актуального лота.</p>
+        <p class="fine-print">Пока прямой канал получения данных аукциона не подключён, сайт не показывает вымышленные лоты и не выдаёт исторические сведения за актуальные предложения.</p>
       </div>
-      <div class="auction-stats-steps" aria-label="Что проверять в статистике">
-        <div><span>01</span><b>Сопоставьте параметры</b><p>Год, кузов, двигатель и комплектацию.</p></div>
-        <div><span>02</span><b>Оцените состояние</b><p>Пробег, аукционная оценка и замечания в листе.</p></div>
-        <div><span>03</span><b>Посчитайте под ключ</b><p>Добавьте логистику, таможню, сборы и доставку по России.</p></div>
+      <div class="auction-stats-steps" aria-label="Как выполняется подбор">
+        <div><span>01</span><b>Опишите автомобиль</b><p>Марка, модель, год, пробег и общий бюджет.</p></div>
+        <div><span>02</span><b>Проверим данные</b><p>Состояние, аукционный лист и идентификаторы — когда поставщик предоставляет подтверждения.</p></div>
+        <div><span>03</span><b>Рассчитаем под ключ</b><p>Цена, доставка, таможенные платежи и доставка до вашего города.</p></div>
       </div>
     </div>
   </section>
@@ -145,7 +145,7 @@
               <select id="carrierClass"><option value="110000">Малолитражка — 110 000 ₽</option><option value="120000" selected>Седан / хэтчбек — 120 000 ₽</option><option value="125000">Универсал — 125 000 ₽</option><option value="130000">Кроссовер — 130 000 ₽</option><option value="140000">Внедорожник / минивэн — 140 000 ₽</option></select>
             </label>
             <button class="button button-secondary button-wide" type="button" id="fillCarrierTariff">Подставить в смету</button>
-            <p class="fine-print">Ориентир по опубликованному тарифу СТС Автовоз, не подтверждённая бронь. <a href="https://ctcavtovoz.ru/" target="_blank" rel="noopener noreferrer">Проверить актуальную цену у перевозчика ↗</a></p>
+            <p class="fine-print">Тариф автовоза — ориентировочный. Перед оплатой подтвердите актуальную стоимость перевозки.</p>
           </div>
           <div class="tks-panel">
             <h3>Автоматический расчёт таможни TKS.RU</h3>
@@ -199,10 +199,10 @@
     </div>
     <div class="showcase-grid auction-example-grid">
       <article class="showcase-card auction-example-card">
-        <a class="showcase-image" href="https://tokidoki.su/stat/toyota/vitz/7510733809126748176/" target="_blank" rel="noopener noreferrer" aria-label="Открыть источник аукционного лота Toyota Vitz">
+        <div class="showcase-image" aria-label="Открыть источник аукционного лота Toyota Vitz">
           <img src="https://japan.storage.yandexcloud.net/2026/09/20/bf5ee5f5-fea9-524d-a934-0dcfa537453b/32734389.avif" alt="Toyota Vitz 2017, фото из страницы аукционного лота в источнике" loading="lazy">
           <span class="showcase-badge">АРХИВНЫЙ ЛОТ · JP</span>
-        </a>
+        </div>
         <div class="showcase-body">
           <div class="showcase-meta"><span>TOYOTA · БЕНЗИН</span><span>2017</span></div>
           <h3>Toyota Vitz GR Sport</h3>
@@ -212,15 +212,15 @@
             <div><span>Расчёт источника до Владивостока</span><b>1 731 288 ₽</b></div>
           </div>
           <p class="auction-example-note">Сумма из опубликованного расчёта источника; она может отличаться от текущей из-за курса, ставок и условий оформления. Доставка до Новосибирска не включена в указанную сумму.</p>
-          <a class="showcase-link" href="https://tokidoki.su/stat/toyota/vitz/7510733809126748176/" target="_blank" rel="noopener noreferrer">Посмотреть лот и исходный расчёт <b>↗</b></a>
+
           <a class="button button-primary auction-request" href="#assistant" data-car-request="Toyota Vitz GR Sport 2017, лот 10272, цена в Японии 2 050 000 JPY. Нужен актуальный расчёт под ключ до моего города.">Рассчитать похожий автомобиль ↗</a>
         </div>
       </article>
       <article class="showcase-card auction-example-card">
-        <a class="showcase-image" href="https://tokidoki.su/stat/toyota/vitz/7512905440330789156/" target="_blank" rel="noopener noreferrer" aria-label="Открыть источник аукционного лота Toyota Vitz Hybrid">
+        <div class="showcase-image" aria-label="Открыть источник аукционного лота Toyota Vitz Hybrid">
           <img src="https://japan.storage.yandexcloud.net/2026/09/23/4c86f77e-9f06-5bbf-b9f8-9f942686cd85/33253218.avif" alt="Toyota Vitz Hybrid GR Sport 2017, фото со страницы аукционного лота" loading="lazy">
           <span class="showcase-badge">АРХИВНЫЙ ЛОТ · JP</span>
-        </a>
+        </div>
         <div class="showcase-body">
           <div class="showcase-meta"><span>TOYOTA · ГИБРИД</span><span>2017</span></div>
           <h3>Toyota Vitz Hybrid GR Sport</h3>
@@ -230,15 +230,15 @@
             <div><span>Расчёт источника до Владивостока</span><b>1 451 619 ₽</b></div>
           </div>
           <p class="auction-example-note">В опубликованном расчёте указаны отдельные расходы на фрахт, пошлину, оформление и комиссию. Значения приведены как исторический ориентир, не как сегодняшняя оферта.</p>
-          <a class="showcase-link" href="https://tokidoki.su/stat/toyota/vitz/7512905440330789156/" target="_blank" rel="noopener noreferrer">Посмотреть лот и исходный расчёт <b>↗</b></a>
+
           <a class="button button-primary auction-request" href="#assistant" data-car-request="Toyota Vitz Hybrid GR Sport 2017, лот 2463, цена в Японии 858 000 JPY. Нужен актуальный расчёт под ключ до моего города.">Рассчитать похожий автомобиль ↗</a>
         </div>
       </article>
       <article class="showcase-card auction-example-card">
-        <a class="showcase-image" href="https://tokidoki.su/auc/toyota/aqua/" target="_blank" rel="noopener noreferrer" aria-label="Открыть источник статистики аукционов Toyota Aqua">
+        <div class="showcase-image" aria-label="Открыть источник статистики аукционов Toyota Aqua">
           <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85" alt="Иллюстративное фото автомобиля; не фотография указанного аукционного лота Toyota Aqua" loading="lazy">
           <span class="showcase-badge">СТАТИСТИКА · JP</span>
-        </a>
+        </div>
         <div class="showcase-body">
           <div class="showcase-meta"><span>TOYOTA · ГИБРИД</span><span>2021</span></div>
           <h3>Toyota Aqua</h3>
@@ -247,8 +247,8 @@
             <div><span>Средняя цена похожих в источнике</span><b>499 000 ¥</b></div>
             <div><span>Расчёт источника до Владивостока</span><b>1 062 542 ₽</b></div>
           </div>
-          <p class="auction-example-note">Это ориентир из статистической страницы, а не подтверждение, что указанная машина была продана за эту сумму. Фото иллюстративное; характеристики и расчёт открываются по ссылке источника.</p>
-          <a class="showcase-link" href="https://tokidoki.su/auc/toyota/aqua/" target="_blank" rel="noopener noreferrer">Посмотреть статистику Toyota Aqua <b>↗</b></a>
+          <p class="auction-example-note">Иллюстративное описание сегмента, не подтверждение продажи или наличия конкретного автомобиля. Актуальные параметры нужно запросить отдельно.</p>
+
           <a class="button button-primary auction-request" href="#assistant" data-car-request="Toyota Aqua, ориентир из статистики торгов: 2021 год, 174 000 км, средняя цена похожих 499 000 JPY. Нужен подбор актуального лота и расчёт под ключ до моего города.">Найти актуальный лот ↗</a>
         </div>
       </article>
@@ -282,9 +282,9 @@
   <section class="section wrap" id="logisticsBenchmarks">
     <div class="section-title-row"><div><div class="eyebrow">ПРОВЕРЯЕМЫЕ ОРИЕНТИРЫ</div><h2>Логистика по пунктам.<br><em>Без скрытых допущений.</em></h2></div><p>Ниже — опубликованные примеры тарифов, а не персональное коммерческое предложение. Цена зависит от автомобиля, порта, рейса, страховки и условий перевозчика. Перед оплатой нужно запросить актуальную письменную смету.</p></div>
     <div class="benchmark-grid">
-      <article class="benchmark-card"><span class="benchmark-tag">ЯПОНИЯ · ВНУТРЕННЯЯ ЛОГИСТИКА</span><strong>65 000 ¥</strong><p>Пример доставки по Японии до порта для машин в зоне обслуживания.</p><a href="https://vdklogistic.ru/costs" target="_blank" rel="noopener noreferrer">Источник: VDK Logistic ↗</a></article>
-      <article class="benchmark-card"><span class="benchmark-tag">ЯПОНИЯ → ВЛАДИВОСТОК</span><strong>$350</strong><p>Опубликованный пример морского фрахта Йокогама — Владивосток. Не включает автоматически все сопутствующие расходы.</p><a href="https://vdklogistic.ru/costs" target="_blank" rel="noopener noreferrer">Источник: VDK Logistic ↗</a></article>
-      <article class="benchmark-card"><span class="benchmark-tag">ВЛАДИВОСТОК → НОВОСИБИРСК</span><strong>110 000–140 000 ₽</strong><p>Ориентир СТС Автовоз по классу машины: малолитражка, седан, универсал, кроссовер или внедорожник/минивэн. Указанные тарифы требуют подтверждения перевозчиком.</p><a href="https://ctcavtovoz.ru/" target="_blank" rel="noopener noreferrer">Источник: СТС Автовоз ↗</a></article>
+      <article class="benchmark-card"><span class="benchmark-tag">ЯПОНИЯ · ВНУТРЕННЯЯ ЛОГИСТИКА</span><strong>65 000 ¥</strong><p>Пример доставки по Японии до порта для машин в зоне обслуживания.</p></article>
+      <article class="benchmark-card"><span class="benchmark-tag">ЯПОНИЯ → ВЛАДИВОСТОК</span><strong>$350</strong><p>Опубликованный пример морского фрахта Йокогама — Владивосток. Не включает автоматически все сопутствующие расходы.</p></article>
+      <article class="benchmark-card"><span class="benchmark-tag">ВЛАДИВОСТОК → НОВОСИБИРСК</span><strong>110 000–140 000 ₽</strong><p>Ориентир СТС Автовоз по классу машины: малолитражка, седан, универсал, кроссовер или внедорожник/минивэн. Указанные тарифы требуют подтверждения перевозчиком.</p></article>
     </div>
     <p class="benchmark-footnote">Обновлено 29.10.2026 по опубликованным страницам перевозчиков. Валютные суммы не пересчитаны в рубли, чтобы не выдавать приблизительный курс за фактическую сумму платежа. Ставки могут измениться.</p>
   </section>
@@ -395,7 +395,7 @@
 <footer class="site-footer">
   <a class="brand footer-brand" href="/"><span class="brand-mark">P</span><span class="brand-name">PAPAUTO<span class="brand-dot">.</span><small>АВТОМОБИЛИ ПОД ЗАКАЗ</small></span></a>
   <div class="footer-links"><a href="/japan.html">Авто из Японии</a><a href="/korea.html">Авто из Кореи</a><a href="/china.html">Авто из Китая</a><a href="/delivery.html">Доставка по России</a><a href="/privacy.html">Политика конфиденциальности</a></div>
-  <div class="social-block"><strong>Мы в соцсетях</strong><div class="social-links" data-social-links aria-label="Официальные каналы PAPAUTO"></div><a class="telegram-channel-link integration-link" data-integration="telegramChannelUrl" href="#" hidden>Telegram-канал PAPAUTO ↗</a></div>
+  
   <p class="footer-note">Предварительные расчёты носят информационный характер и не являются публичной офертой. Данные о стоимости и возможности ввоза уточняются перед сделкой.</p>
   <div class="footer-bottom"><span>© <span id="year"></span> PAPAUTO</span><span>Доставка по регионам России</span></div>
 </footer>
