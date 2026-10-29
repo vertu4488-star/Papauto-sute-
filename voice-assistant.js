@@ -1,0 +1,79 @@
+(()=>{"use strict";
+const $=id=>document.getElementById(id);
+const box=$("voiceCarAssistant"),input=$("voiceCarText"),listen=$("voiceCarListen"),apply=$("voiceCarApply"),status=$("voiceCarStatus");
+if(!box||!input||!listen||!apply||!status)return;
+const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+let recognition=null,listening=false;
+const sayStatus=(s)=>{status.textContent=s};
+const countryMap=[
+ {key:"japan",calc:"Япония",terms:["япони","япон","аукцион","uss"]},
+ {key:"south-korea",calc:"Южная Корея",terms:["коре","корей","энкар","encar"]},
+ {key:"china",calc:"Китай",terms:["китай","кита"]},
+];
+const makes=[
+ ["Toyota",["toyota","тойота","тойоты","тойоту"]],["Honda",["honda","хонда"]],["Nissan",["nissan","ниссан"]],["Mazda",["mazda","мазда"]],["Subaru",["subaru","субару"]],["Suzuki",["suzuki","сузуки"]],["Mitsubishi",["mitsubishi","митсубиси"]],["Lexus",["lexus","лексус"]],["Daihatsu",["daihatsu","дайхатсу"]],["Isuzu",["isuzu","исузу"]],["Hyundai",["hyundai","хендай","хундай"]],["Kia",["kia","киа"]],["Genesis",["genesis","дженезис"]],["BMW",["bmw","бмв"]],["Mercedes-Benz",["mercedes","мерседес"]],["Volkswagen",["volkswagen","фольксваген"]],["Audi",["audi","ауди"]],["BYD",["byd","бид"]],["Geely",["geely","джили","джили"]],["Chery",["chery","чери"]],["Haval",["haval","хавал"]],["Zeekr",["zeekr","зикр","зикер"]],["Li Auto",["li auto","ли авто","лисян"]],["Tesla",["tesla","тесла"]],["Renault",["renault","рено"]],["Ford",["ford","форд"]],["Chevrolet",["chevrolet","шевроле"]],["Volvo",["volvo","вольво"]]
+];
+const models=[
+ ["RAV4",["rav4","рав4","рав 4"]],["Prius",["prius","приус"]],["Aqua",["aqua","аква"]],["Corolla",["corolla","королла"]],["Camry",["camry","камри"]],["Harrier",["harrier","харриер"]],["Yaris",["yaris","ярис","витц","vitz"]],["Fit",["fit","фит"]],["Freed",["freed","фрид"]],["Vezel",["vezel","везел"]],["Noah",["noah","ноах"]],["Voxy",["voxy","вокси"]],["C-HR",["c-hr","chr","с-хр"]],["Land Cruiser",["land cruiser","ленд крузер","ланд крузер"]],["Prado",["prado","прадо"]],["Highlander",["highlander","хайлендер"]],["Crown",["crown","краун"]],["Note",["note","ноут"]],["Serena",["serena","серена"]],["X-Trail",["x-trail","икстрейл","х-трейл"]],["Leaf",["leaf","лиф"]],["CX-5",["cx-5","cx5","сх5"]],["Forester",["forester","форестер"]],["Outback",["outback","аутбек"]],["Impreza",["impreza","импреза"]],["Sportage",["sportage","спортейдж"]],["Tucson",["tucson","туссан"]],["Santa Fe",["santa fe","санта фе"]],["Sonata",["sonata","соната"]],["K5",["k5","к5"]],["Carnival",["carnival","карнивал"]],["Elantra",["elantra","элантра"]],["Staria",["staria","стария"]],["Model 3",["model 3","модель 3"]],["Model Y",["model y","модель y"]],["Tiguan",["tiguan","тигуан"]],["Touareg",["touareg","туарег"]],["X5",["x5","икс5"]],["3 Series",["3 series","3 серия"]],["RX",["rx","рх"]],["NX",["nx","нх"]],["L7",["l7","л7"]],["L9",["l9","л9"]],["Song Plus",["song plus","сонг плюс"]],["Monjaro",["monjaro","монджаро"]],["Coolray",["coolray","кулрей"]]
+];
+function escapeRx(s){return s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}
+function hasTerm(t,term){return new RegExp("(^|[^a-zа-я0-9])"+escapeRx(term.toLowerCase())+"([^a-zа-я0-9]|$)","i").test(t)}
+function findMapped(list,t){for(const [value,aliases] of list){if(aliases.some(a=>hasTerm(t,a)))return value}return ""}
+function wordsNumber(t){
+ const numbers={ноль:0,один:1,одна:1,одно:1,два:2,две:2,три:3,четыре:4,пять:5,шесть:6,семь:7,восемь:8,девять:9,десять:10,одиннадцать:11,двенадцать:12,тринадцать:13,четырнадцать:14,пятнадцать:15,двадцать:20,тридцать:30,сорок:40,пятьдесят:50,сто:100,полтора:1.5};
+ let m=t.match(/(\d[\d\s.,]*)\s*(млн|миллион(?:а|ов)?|тыс(?:яч|ячи)?|тысяч|руб(?:лей)?|₽)/i);
+ if(m){let n=Number(m[1].replace(/\s/g,"").replace(",", "."));if(Number.isFinite(n)){if(/млн|миллион/i.test(m[2]))return Math.round(n*1000000);if(/тыс/i.test(m[2]))return Math.round(n*1000);return Math.round(n)}}
+ m=t.match(/(полтора|один|одна|одно|два|две|три|четыре|пять|шесть|семь|восемь|девять|десять|одиннадцать|двенадцать|пятнадцать|двадцать)\s+(?:миллион(?:а|ов)?|млн)/i);
+ if(m)return Math.round((numbers[m[1]]||0)*1000000);
+ m=t.match(/(полтора|один|одна|одно|два|две|три|четыре|пять|шесть|семь|восемь|девять|десять|двадцать)\s+(?:тыс(?:яч)?|тысяч)/i);
+ if(m)return Math.round((numbers[m[1]]||0)*1000);
+ m=t.match(/(?:до|бюджет|стоимость|цена)\s*(?:в пределах\s*)?(\d[\d\s]{3,})/i);
+ if(m){const n=Number(m[1].replace(/\s/g,""));if(n>10000)return n}
+ return null;
+}
+function parse(text){
+ const t=text.toLowerCase().replace(/ё/g,"е").replace(/\s+/g," ").trim();
+ const result={raw:text};
+ const country=countryMap.find(c=>c.terms.some(term=>t.includes(term)));
+ if(country){result.country=country.key;result.calcCountry=country.calc}
+ const make=findMapped(makes,t);if(make)result.make=make;
+ const model=findMapped(models,t);if(model)result.model=model;
+ const years=[...t.matchAll(/\b(19\d{2}|20\d{2})\b/g)].map(m=>Number(m[1])).filter(y=>y>=1990&&y<=2027);
+ if(years.length){result.yearFrom=Math.min(...years);result.yearTo=Math.max(...years)}
+ const budget=wordsNumber(t);if(budget!==null&&budget>=50000&&budget<=200000000)result.budget=budget;
+ let m=t.match(/(?:пробег(?:ом)?|до пробега|пробег до)\s*(?:до\s*)?(\d[\d\s.,]*)\s*(?:тыс(?:яч)?\s*)?км?/i);
+ if(m){let n=Number(m[1].replace(/[\s,]/g,""));if(/тыс/i.test(m[0]))n*=1000;if(n>0&&n<=2000000)result.mileage=Math.round(n)}
+ m=t.match(/(\d(?:[.,]\d)?)\s*(?:литр(?:а|ов)?|л\b)/i);if(m){const n=Number(m[1].replace(",","."));if(n>0&&n<=10)result.volume=Math.round(n*1000)}
+ else {m=t.match(/(\d{3,4})\s*(?:см3|см³|куб(?:ов)?)/i);if(m)result.volume=Math.min(20000,Number(m[1]))}
+ const bodies=[["кроссовер",["кроссовер","паркетник","suv"]],["седан",["седан"]],["хэтчбек",["хэтчбек","хэтч"]],["универсал",["универсал"]],["минивэн",["минивэн","минивен"]],["внедорожник",["внедорожник","джип"]],["купе",["купе"]]];
+ const body=bodies.find(x=>x[1].some(a=>t.includes(a)));if(body)result.body=body[0];
+ m=t.match(/(?:оценк(?:а|у)|аукционн(?:ая|ую) оценк(?:а|у)|grade)\s*(?:до|не ниже|не менее)?\s*(\d(?:\.\d)?)/i);if(m)result.grade=m[1];
+ m=t.match(/(?:лот|номер лота)\s*#?\s*([a-z0-9-]{3,})/i);if(m)result.lot=m[1];
+ return result;
+}
+function applyParsed(p,autoSearch){
+ const set=(id,v)=>{const e=$(id);if(e&&v!==undefined&&v!==null&&v!==""){e.value=String(v);e.dispatchEvent(new Event("input",{bubbles:true}));e.dispatchEvent(new Event("change",{bubbles:true}))}};
+ set("vehicleCountry",p.country);set("vehicleMake",p.make);set("vehicleModel",p.model);set("vehicleYearFrom",p.yearFrom);set("vehicleYearTo",p.yearTo);set("vehicleMaxPrice",p.budget);set("vehicleMileageMax",p.mileage);set("vehicleVolumeMin",p.volume);set("vehicleVolumeMax",p.volume);set("vehicleBody",p.body);set("vehicleGrade",p.grade);set("vehicleLot",p.lot);set("calcCountry",p.calcCountry);
+ const details=[];
+ if(p.country)details.push("страна: "+({"japan":"Япония","south-korea":"Южная Корея","china":"Китай"}[p.country]));
+ if(p.make)details.push("марка: "+p.make);if(p.model)details.push("модель: "+p.model);
+ if(p.yearFrom||p.yearTo)details.push("год: "+(p.yearFrom||"любой")+"–"+(p.yearTo||p.yearFrom));
+ if(p.budget)details.push("бюджет до "+new Intl.NumberFormat("ru-RU").format(p.budget)+" ₽");
+ if(p.mileage)details.push("пробег до "+new Intl.NumberFormat("ru-RU").format(p.mileage)+" км");
+ if(p.volume)details.push("двигатель "+(p.volume/1000).toLocaleString("ru-RU")+" л");
+ if(p.body)details.push("кузов: "+p.body);
+ if(!details.length){sayStatus("Не удалось распознать параметры. Скажите, например: «Найди Toyota Prius из Японии до двух миллионов рублей, с 2019 по 2023 год».");return}
+ sayStatus("Распознано: "+details.join("; ")+". Параметры внесены в форму поиска и направление калькулятора.");
+ if(autoSearch){const form=$("vehicleSearchForm");if(form){setTimeout(()=>{sayStatus("Запускаю поиск по распознанным параметрам…");form.requestSubmit()},350)}}
+}
+apply.addEventListener("click",()=>applyParsed(parse(input.value),false));
+if(!SpeechRecognition){listen.disabled=true;listen.textContent="Голосовой ввод не поддерживается";sayStatus("Этот браузер не поддерживает распознавание речи. Введите запрос текстом и нажмите «Заполнить параметры»; для голосового ввода попробуйте Chrome.");}
+else{
+ recognition=new SpeechRecognition();recognition.lang="ru-RU";recognition.continuous=false;recognition.interimResults=true;recognition.maxAlternatives=1;
+ recognition.onstart=()=>{listening=true;listen.textContent="Слушаю…";sayStatus("Говорите запрос. Например: «Найди Honda Fit из Японии до полутора миллионов, с 2019 по 2022 год».")};
+ recognition.onresult=e=>{let finalText="",interim="";for(let i=e.resultIndex;i<e.results.length;i++){const s=e.results[i][0].transcript;if(e.results[i].isFinal)finalText+=s;else interim+=s}input.value=(finalText||interim).trim();if(finalText)applyParsed(parse(finalText),true)};
+ recognition.onerror=e=>sayStatus(e.error==="not-allowed"?"Нет доступа к микрофону. Разрешите доступ в настройках браузера.":"Не удалось распознать речь ("+e.error+"). Попробуйте ещё раз или введите запрос текстом.");
+ recognition.onend=()=>{listening=false;listen.textContent="🎙 Говорить";};
+ listen.addEventListener("click",()=>{if(listening){recognition.stop();return}try{recognition.start()}catch{sayStatus("Распознавание уже запущено. Договорите запрос.")}});
+}
+})();
