@@ -123,6 +123,121 @@ async def calculate_customs(req: CustomsRequest):
     except httpx.RequestError:
         raise HTTPException(status_code=502, detail="Не удалось связаться с TKS.RU. Попробуйте позже.")
 
+class VehicleAssistantInput(BaseModel):
+    message: str = Field(min_length=2, max_length=2000)
+    known: dict = Field(default_factory=dict)
+
+@app.post("/api/assistant/vehicle")
+async def vehicle_assistant(req: VehicleAssistantInput):
+    """Extract vehicle-import parameters from natural language and calculate customs when sufficient data is known."""
+    gemini_key = os.getenv("GEMINI_API_KEY", "").strip()
+    if not gemini_key:
+        raise HTTPException(status_code=503, detail="ИИ-помощник пока не подключён: в настройках Render нужен GEMINI_API_KEY.")
+    system_instruction = (
+        "Ты — помощник PAPAUTO по предварительному расчёту ввоза автомобилей в Россию. "
+        "Извлекай только сообщённые пользователем данные и значения, которые можно надёжно вывести из них. "
+        "Не придумывай цену, объём, мощность, валюту, тип двигателя или статус импортёра. "
+        "Если пользователь назвал год выпуска, оцени категорию возраста только как предварительную: "
+        "3 если меньше 3 лет, 35 если от 3 до 5 лет, 57 если от 5 до 7 лет, 7 если старше 7 лет; "
+        "если возрастная категория неясна, спроси год/дату производства. "
+        "Поля: cost (число в валюте покупки), currency (392 JPY, 410 KRW, 156 CNY, 840 USD, 643 RUB), "
+        "volume (см3), power (л.с.), engine_type (petrol, diesel, petrol_electric, diesel_electric, electric, no_engine), "
+        "age (3,35,57,7), face (nat физлицо для личного ввоза, jur юрлицо/коммерческий ввоз). "
+        "Если для электромобиля объём ДВС отсутствует, volume=0; power всё равно нужна. "
+        "Ответь строго JSON-объектом с полями reply (краткий русский текст), "
+        "fields (объект с полями cost,currency,volume,power,engine_type,age,face; неизвестные значения null), "
+        "missing (массив названий недостающих обязательных полей по-русски), ready (boolean). "
+        "ready=true только если все семь параметров достоверно заполнены. "
+        "Не рассчитывай таможню сам и не выдавай предположительные цифры за официальный расчёт."
+    )
+    prompt = {
+        "instruction": system_instruction,
+        "known_fields": req.known,
+        "user_message": req.message,
+        "required_fields": ["cost", "currency", "volume", "power", "engine_type", "age", "face"]
+    }
+    try:
+        async with httpx.AsyncClient(timeout=25.0) as client:
+            response = await client.post(
+                "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                params={"key": gemini_key},
+                json={
+                    "contents": [{"role": "user", "parts": [{"text": __import__("json").dumps(prompt, ensure_ascii=False)}]}],
+                    "generationConfig": {"responseMimeType": "application/json", "temperature": 0.1}
+                }
+            )
+        if response.status_code != 200:
+            raise HTTPException(status_code=502, detail="ИИ не смог обработать запрос. Проверьте ключ Gemini API и доступность модели.")
+        payload = response.json()
+        candidates = payload.get("candidates") or []
+        parts = (candidates[0].get("content") or {}).get("parts") or [] if candidates else []
+        raw = next((part.get("text", "") for part in parts if part.get("text")), "")
+        if not raw:
+            raise HTTPException(status_code=502, detail="ИИ вернул пустой ответ. Попробуйте сформулировать запрос иначе.")
+        import json
+        parsed = json.loads(raw)
+        fields = parsed.get("fields") or {}
+        allowed = {"cost", "currency", "volume", "power", "engine_type", "age", "face"}
+        fields = {k: fields.get(k) for k in allowed}
+        # Existing user-entered values take precedence over uncertain AI extraction.
+        for key, value in (req.known or {}).items():
+            if key in allowed and value not in (None, ""):
+                fields[key] = value
+        missing_keys = [k for k in allowed if fields.get(k) in (None, "")]
+        if missing_keys:
+            parsed["ready"] = False
+            parsed["missing"] = parsed.get("missing") or missing_keys
+            return {"ok": True, "reply": parsed.get("reply") or "Уточните недостающие характеристики автомобиля.", "fields": fields, "ready": False}
+        try:
+            fields["cost"] = int(float(fields["cost"]))
+            fields["volume"] = int(float(fields["volume"]))
+            fields["power"] = int(float(fields["power"]))
+            fields["currency"] = str(fields["currency"])
+            fields["age"] = str(fields["age"])
+            fields["face"] = str(fields["face"])
+            fields["engine_type"] = str(fields["engine_type"])
+            calc_req = CustomsRequest(**fields)
+        except (ValueError, TypeError, Exception) as exc:
+            raise HTTPException(status_code=422, detail="Проверьте цену и характеристики автомобиля: " + str(exc)[:180])
+        tks_key = os.getenv("TKS_AUTO_API_KEY", "").strip()
+        if not tks_key or len(tks_key) != 32 or any(ch not in "abcdefghijklmnopqrstuvwxyz0123456789" for ch in tks_key):
+            return {
+                "ok": True, "reply": "Характеристики собраны. Для получения суммы таможенных платежей нужно активировать лицензионный ключ TKS.RU на сервере.",
+                "fields": fields, "ready": True, "calculation": None,
+                "calculation_status": "tks_key_missing"
+            }
+        params = {
+            "cost": calc_req.cost, "volume": calc_req.volume, "currency": calc_req.currency,
+            "power": calc_req.power, "power_edizm": "ls", "engine_type": calc_req.engine_type,
+            "age": calc_req.age, "face": calc_req.face, "ts_type": "00_8703",
+            "sequential": str(calc_req.sequential).lower(), "chassis": "shs",
+            "country": "noru", "forwarder": "false", "caravan": "false", "offroad": "false",
+            "buscap": "lt120", "mdvs_gt_m30ed": "true",
+        }
+        async with httpx.AsyncClient(timeout=20.0) as client:
+            tks_response = await client.get(f"https://api1.tks.ru/auto.json/json/{tks_key}/", params=params)
+        if tks_response.status_code != 200:
+            raise HTTPException(status_code=502, detail="Данные собраны, но TKS.RU не выполнил расчёт. Проверьте лицензию.")
+        calculation = tks_response.json()
+        if isinstance(calculation, dict) and (calculation.get("error") or calculation.get("ok") is False):
+            raise HTTPException(status_code=502, detail="Данные собраны, но TKS.RU отклонил расчёт. Проверьте лицензию и параметры.")
+        return {
+            "ok": True,
+            "reply": "Характеристики распознаны. Получен предварительный расчёт TKS.RU; проверьте поля и итоговые статьи перед принятием решения.",
+            "fields": fields,
+            "ready": True,
+            "calculation": calculation,
+            "source": "TKS.RU",
+            "disclaimer": "Предварительный расчёт. Окончательные платежи определяются при таможенном оформлении."
+        }
+    except HTTPException:
+        raise
+    except httpx.RequestError:
+        raise HTTPException(status_code=502, detail="Не удалось связаться с ИИ или сервисом расчёта. Попробуйте позже.")
+    except (ValueError, KeyError, IndexError, TypeError):
+        raise HTTPException(status_code=502, detail="Не удалось разобрать ответ ИИ. Попробуйте указать параметры автомобиля точнее.")
+
+
 @app.get("/api/vehicles")
 async def search_vehicles(country: str = "japan", make: str = "", model: str = "",
                           year_from: int = 1990, year_to: int = 2027,
