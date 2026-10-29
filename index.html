@@ -271,7 +271,7 @@
 
   <section class="section wrap" id="assistant">
     <div class="assistant-panel">
-      <div class="assistant-copy"><div class="eyebrow">PAPAUTO SELECT</div><h2>Опишите машину<br><em>своими словами.</em></h2><p>Например: «Семейный кроссовер до 2,5 млн ₽, не старше 2021 года, с полным приводом». Помощник подготовит структурированный запрос для менеджера.</p><div class="assistant-disclaimer">Сейчас это форма подготовки запроса, не подключённый ИИ и не поиск реальных объявлений.</div></div>
+      <div class="assistant-copy"><div class="eyebrow">PAPAUTO SELECT</div><h2>Опишите машину<br><em>своими словами.</em></h2><p>Например: «Семейный кроссовер до 2,5 млн ₽, не старше 2021 года, с полным приводом». Помощник подготовит структурированный запрос для менеджера.</p><div class="assistant-disclaimer">ИИ поможет сравнить подходящие модели и сформировать вопросы для проверки. Он не выдаёт рекомендации за актуальные лоты и не придумывает цены.</div></div>
       <form class="assistant-form" id="assistantForm">
         <p class="form-intro">Укажите основные параметры — менеджеру будет проще подобрать варианты и рассчитать стоимость до вашего города. Поля со звёздочкой обязательны.</p>
         <label for="country">Откуда рассматриваете автомобиль? *</label>
@@ -289,6 +289,7 @@
           <label for="budget">Бюджет до, ₽ <input id="budget" type="number" min="1" max="2000000000" step="50000" placeholder="Например, 2500000"></label>
           <label for="maxMileage">Пробег до, км <input id="maxMileage" type="number" min="0" max="2000000" step="5000" placeholder="Например, 80000"></label>
         </div>
+        <div class="ai-select-tools"><button class="button button-secondary" type="button" id="runAiSelect">Подобрать модели с ИИ ✦</button><p id="aiSelectStatus" class="result-note" aria-live="polite">Получите предварительный список моделей до отправки заявки.</p><div id="aiSelectResults" class="ai-select-results" hidden></div></div>
         <label for="carPrompt">Дополнительные пожелания *</label>
         <textarea id="carPrompt" rows="3" required maxlength="3000" placeholder="Тип кузова, двигатель, коробка, привод, комплектация, важные опции…"></textarea>
         <div class="form-grid">
