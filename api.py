@@ -2,6 +2,7 @@ import os
 import logging
 import html
 import asyncio
+import xml.etree.ElementTree as ET
 from urllib.parse import quote
 from datetime import datetime, timezone
 from typing import Optional
@@ -104,6 +105,48 @@ class Lead(BaseModel):
 @app.get("/")
 async def root():
     return {"service": "PAPAUTO Lead API", "status": "ok"}
+
+@app.get("/api/exchange-rates")
+async def exchange_rates():
+    """Return official CBR rates for KRW and USD, expressed in RUB."""
+    url = "https://www.cbr.ru/scripts/XML_daily.asp"
+    try:
+        async with httpx.AsyncClient(timeout=8.0, follow_redirects=True) as client:
+            response = await client.get(url, headers={"Accept": "application/xml"})
+            response.raise_for_status()
+        root = ET.fromstring(response.content)
+        rates = {}
+        for item in root.findall("Valute"):
+            code = item.findtext("CharCode")
+            nominal_text = item.findtext("Nominal", "1")
+            value_text = item.findtext("Value", "0").replace(",", ".")
+            if code in {"KRW", "USD"}:
+                nominal = float(nominal_text)
+                value = float(value_text)
+                if nominal > 0 and value > 0:
+                    rates[code] = value / nominal
+        if "KRW" not in rates or "USD" not in rates:
+            raise ValueError("CBR response is missing KRW or USD")
+        return {
+            "source": "Банк России",
+            "date": root.attrib.get("Date", ""),
+            "rub_per_1000_krw": round(rates["KRW"] * 1000, 6),
+            "rub_per_usd": round(rates["USD"], 6),
+            "usd_per_1000_krw": round(rates["KRW"] * 1000 / rates["USD"], 6),
+            "fallback": False,
+        }
+    except (httpx.HTTPError, ET.ParseError, ValueError, TypeError) as exc:
+        logger.warning("Could not fetch CBR exchange rates: %s", exc)
+        # Last-resort official CBR rates for 29.10.2026; visibly marked as fallback.
+        return {
+            "source": "Банк России (последний сохранённый ориентир)",
+            "date": "29.10.2026",
+            "rub_per_1000_krw": 61.0635,
+            "rub_per_usd": 80.8664,
+            "usd_per_1000_krw": round(61.0635 / 80.8664, 6),
+            "fallback": True,
+        }
+
 
 @app.get("/health")
 async def health():
