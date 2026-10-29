@@ -1,1 +1,1 @@
-window.PAPAUTO_CONFIG={apiBaseUrl:"https://papauto-leads.onrender.com",telegramBotUrl:"https://t.me/PAPAUTORU",telegramChannelUrl:"https://t.me/PAPAUTO1",vkUrl:"",instagramUrl:"",youtubeUrl:""};
+window.PAPAUTO_CONFIG={apiBaseUrl:"https://papauto-leads.onrender.com",telegramBotUrl:"",telegramChannelUrl:"",vkUrl:"",instagramUrl:"",youtubeUrl:""};
