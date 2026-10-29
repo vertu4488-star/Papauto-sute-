@@ -60,7 +60,35 @@ def _fix_mojibake(value):
     return value
 
 
-async def _xapi_photo_urls(client, listing_id, api_key):
+async def _canonical_korea_listing_url(source, listing_id, candidate):
+    """Only expose source URLs that match the marketplace; build canonical Encar URLs."""
+    from urllib.parse import urlparse
+    source = str(source or "encar").lower()
+    if source == "encar":
+        if listing_id is not None and str(listing_id).isdigit():
+            return f"https://fem.encar.com/cars/detail/{listing_id}"
+        candidate = candidate if isinstance(candidate, str) else ""
+        parsed = urlparse(candidate)
+        if parsed.scheme == "https" and parsed.hostname in {"fem.encar.com", "www.encar.com", "encar.com"}:
+            return candidate
+        return None
+    if not isinstance(candidate, str):
+        return None
+    parsed = urlparse(candidate)
+    if parsed.scheme != "https" or not parsed.hostname:
+        return None
+    host = parsed.hostname.lower()
+    allowed = {
+        "kbchachacha": {"kbchachacha.com", "www.kbchachacha.com"},
+        "kcar": {"kcar.com", "www.kcar.com"},
+    }
+    domains = allowed.get(source)
+    if domains and host in domains:
+        return candidate
+    return None
+
+
+def _xapi_photo_urls(client, listing_id, api_key):
     """Load photo URLs from the documented detail endpoint for Encar listings."""
     if listing_id is None:
         return []
@@ -439,7 +467,7 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                     "price": (f"{int(price):,} ₩ — цена в Корее, без доставки и оформления в РФ".replace(",", " ") if isinstance(price, (int, float)) else _fix_mojibake(item.get("price"))),
                     "price_krw": price,
                     "currency": "KRW",
-                    "listing_url": item.get("encar_url") or item.get("listing_url") or item.get("url"),
+                    "listing_url": _canonical_korea_listing_url(source, listing_id, item.get("encar_url") or item.get("listing_url") or item.get("url")),
                     "source_name": {"encar": "Encar", "kbchachacha": "KB ChaChaCha", "kcar": "K Car"}.get(source, _fix_mojibake(source)),
                     "body": _fix_mojibake(item.get("body_style") or item.get("body") or ""),
                     "grade": _fix_mojibake(item.get("grade") or ""),
