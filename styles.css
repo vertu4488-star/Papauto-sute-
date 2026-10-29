@@ -59,3 +59,19 @@
 .auction-example-grid{align-items:stretch}.auction-example-card{display:flex;flex-direction:column}.auction-example-card .showcase-image{display:block;flex:0 0 auto}.auction-example-card .showcase-image img{object-position:center}.auction-example-card .showcase-body{display:flex;flex-direction:column;flex:1}.auction-price-lines{border-top:1px solid var(--line);margin:15px 0 10px}.auction-price-lines>div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:10px;color:#aab8c4}.auction-price-lines b{color:var(--accent);text-align:right;white-space:nowrap;font-size:11px}.auction-example-note{font-size:10px!important;line-height:1.65!important;color:#8293a2!important;min-height:0!important;margin:0 0 14px!important}.auction-example-card .showcase-link{margin-top:auto;margin-bottom:15px}.auction-request{width:100%;font-size:11px;padding:12px 14px}.auction-example-card .showcase-image img{background:#182634}
 
 .vehicle-ai-box{margin:18px 0 20px;padding:18px;border:1px solid #c9f36a55;border-radius:16px;background:linear-gradient(145deg,#17232e,#0d141c)}.vehicle-ai-heading{display:flex;align-items:center;gap:12px;margin-bottom:14px}.vehicle-ai-mark{display:grid;place-items:center;width:42px;height:42px;flex:0 0 42px;border-radius:13px;background:#c9f36a;color:#111820;font:900 14px system-ui,sans-serif;letter-spacing:-.04em}.vehicle-ai-heading strong,.vehicle-ai-heading small{display:block}.vehicle-ai-heading strong{font:700 15px system-ui,sans-serif;color:#f4f7fa}.vehicle-ai-heading small{margin-top:4px;font-size:11px;line-height:1.5;color:#aab7c4}.vehicle-ai-label{display:block;margin:0 0 9px;font-size:11px;line-height:1.6;color:#b9c7d3}.vehicle-ai-box textarea{display:block;width:100%;min-height:82px;resize:vertical;padding:13px;border:1px solid #344453;border-radius:10px;background:#080d12;color:#f4f7fa;font:inherit;font-size:13px;line-height:1.6}.vehicle-ai-box textarea:focus{outline:2px solid #c9f36a66;outline-offset:1px}.vehicle-ai-box .button{margin-top:12px}.vehicle-ai-box .result-note{margin-bottom:0}.vehicle-ai-box button:disabled{opacity:.65;cursor:wait}@media(max-width:640px){.vehicle-ai-box{padding:14px}.vehicle-ai-heading strong{font-size:14px}}
+
+
+/* PAPAUTO Select AI shortlist */
+.ai-select-tools{margin:1rem 0;padding:1rem;border:1px solid var(--line,rgba(255,255,255,.14));border-radius:16px;background:rgba(255,255,255,.025)}
+.ai-select-tools>p{margin:.65rem 0 0}
+.ai-select-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:.8rem;margin-top:1rem}
+.ai-select-summary,.ai-select-questions,.ai-select-disclaimer{grid-column:1/-1;margin:.25rem 0}
+.ai-select-card{display:flex;flex-direction:column;align-items:flex-start;gap:.65rem;padding:1rem;border:1px solid var(--line,rgba(255,255,255,.14));border-radius:14px;background:rgba(255,255,255,.035)}
+.ai-select-card h3{margin:0;font-size:1.05rem}
+.ai-select-card p{margin:0;line-height:1.55}
+.ai-select-card small{font-size:.78rem;line-height:1.45;opacity:.75}
+.ai-select-card .button{margin-top:auto}
+.ai-select-checks{font-size:.9rem;opacity:.85}
+.ai-select-disclaimer{font-size:.82rem;opacity:.75;line-height:1.5}
+#runAiSelect:disabled{opacity:.65;cursor:wait}
+@media(max-width:600px){.ai-select-tools{padding:.8rem}.ai-select-results{grid-template-columns:1fr}}
