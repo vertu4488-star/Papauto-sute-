@@ -270,6 +270,13 @@
 
   <section class="section wrap" id="catalog">
     <div class="section-title-row"><div><div class="eyebrow">ПОИСК АВТОМОБИЛЕЙ</div><h2>Подбор по параметрам.<br><em>От аукциона до вашего региона.</em></h2></div><p>Фильтры по стране, марке, модели, году, пробегу, объёму двигателя, кузову, оценке и номеру лота. Выше показаны примеры аукционных записей и расчётов из открытых источников. Фильтр для поиска актуальных лотов заработает после подключения поставщика данных.</p></div>
+    <div class="voice-car-assistant" id="voiceCarAssistant" aria-labelledby="voiceCarTitle">
+      <div class="voice-car-head"><span class="voice-car-icon" aria-hidden="true">🎙</span><div><h3 id="voiceCarTitle">Голосовой помощник PAPAUTO</h3><p>Скажите, какой автомобиль ищете. Помощник заполнит фильтры и запустит поиск.</p></div></div>
+      <label for="voiceCarText">Ваш запрос</label>
+      <textarea id="voiceCarText" rows="2" maxlength="1000" placeholder="Например: Найди Toyota Prius из Японии до двух миллионов рублей, с 2019 по 2023 год"></textarea>
+      <div class="voice-car-actions"><button class="button button-primary" type="button" id="voiceCarListen">🎙 Говорить</button><button class="button button-secondary" type="button" id="voiceCarApply">Заполнить параметры</button></div>
+      <p class="result-note" id="voiceCarStatus" aria-live="polite">Голосовое распознавание работает в поддерживаемых браузерах и требует разрешения на микрофон. После распознавания поиск запускается автоматически.</p>
+    </div>
     <form class="calc-form" id="vehicleSearchForm">
       <div class="form-grid">
         <label>Страна / рынок<select id="vehicleCountry"><option value="japan">Япония · аукционы</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select></label>
