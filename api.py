@@ -564,17 +564,20 @@ class _USSMonthlyTableParser(HTMLParser):
             self.in_table = False
 
 
-def _uss_monthly_snapshot(page: str):
+def _uss_monthly_history(page: str):
+    """Extract the published monthly USS aggregate series from its public HTML table."""
     parser = _USSMonthlyTableParser()
     parser.feed(page)
     month_names = {"Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec.", "Jan.", "Feb.", "Mar.",
                    "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", "1月", "2月", "3月"}
-    def number(value, percent=False):
+
+    def number(value):
         cleaned = value.replace(",", "").replace("千円", "").replace("台", "").replace("%", "").strip()
         try:
             return float(cleaned) if cleaned and cleaned not in {"-", "—"} else None
         except ValueError:
             return None
+
     for table in parser.tables:
         rows = []
         for cells in table:
@@ -582,7 +585,7 @@ def _uss_monthly_snapshot(page: str):
                 continue
             offered = number(cells[3])
             sold = number(cells[6])
-            rate = number(cells[9], percent=True)
+            rate = number(cells[9])
             average_thousand_yen = number(cells[11])
             if offered is not None and sold is not None and rate is not None and average_thousand_yen is not None:
                 rows.append({
@@ -594,8 +597,13 @@ def _uss_monthly_snapshot(page: str):
                     "average_sold_price_jpy": int(average_thousand_yen * 1000),
                 })
         if rows:
-            return rows[-1]
-    return None
+            return rows
+    return []
+
+
+def _uss_monthly_snapshot(page: str):
+    rows = _uss_monthly_history(page)
+    return rows[-1] if rows else None
 
 
 @app.get("/api/market-overview")
@@ -606,14 +614,15 @@ async def market_overview():
         async with httpx.AsyncClient(timeout=12.0, follow_redirects=True) as client:
             response = await client.get(source_url, headers={"User-Agent": "PAPAUTO market statistics contact: website"})
             response.raise_for_status()
-        snapshot = _uss_monthly_snapshot(response.text)
+        history = _uss_monthly_history(response.text)
+        snapshot = history[-1] if history else None
         if not snapshot:
             logger.warning("USS monthly page was fetched but its table format was not recognized")
             return {"ok": True, "available": False, "source": "USS Monthly Data", "source_url": source_url,
                     "message": "Официальная страница доступна, но формат таблицы изменился. Обновим разбор данных."}
         return {"ok": True, "available": True, "source": "USS Monthly Data", "source_url": source_url,
                 "data_month": snapshot["month"], "retrieved_at": datetime.now(timezone.utc).isoformat(),
-                "metrics": snapshot,
+                "metrics": snapshot, "history": history[-6:],
                 "disclaimer": "Открытая агрегированная статистика USS по всему рынку. Это не цена конкретной модели и не архив отдельных проданных лотов."}
     except (httpx.HTTPError, ValueError) as exc:
         logger.warning("USS monthly data unavailable: %s", exc)
