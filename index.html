@@ -105,6 +105,7 @@
 
   <section class="section wrap auction-stats-section" id="auction-statistics">
 <div class="section-title-row"><div><div class="eyebrow">ИСТОРИЯ ЦЕН · ЯПОНИЯ / КОРЕЯ / КИТАЙ</div><h2>Статистика автомобилей<br><em>без перехода на чужие сайты.</em></h2></div><p>Ищите модель, сравнивайте диапазоны цен и проверяйте тип источника. Завершённые торги и обычные объявления показываем отдельно.</p></div>
+<div class="uss-overview" id="auctionMarketOverview" aria-live="polite"><div class="uss-overview-head"><div><span class="eyebrow">ОТКРЫТЫЕ ДАННЫЕ · ЯПОНИЯ</span><h3>Последняя сводка аукционов USS</h3></div><span class="uss-live-label">Загрузка официальных данных…</span></div><p class="uss-overview-note">Здесь показывается общий рынок USS, а не цена конкретной модели. Источник открыт и не требует API-ключа.</p></div>
 <div class="auction-search-panel"><form id="auctionStatsForm" class="auction-search-form">
 <label>Страна<select id="auctionCountry"><option value="japan">Япония</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select></label>
 <label>Марка<input id="auctionMake" name="make" maxlength="80" placeholder="Toyota, Honda, BYD"></label>
@@ -113,6 +114,25 @@
 <label id="auctionGradeWrap">Аукционная оценка<select id="auctionGrade"><option value="">Любая оценка</option><option>5</option><option>4.5</option><option>4</option><option>3.5</option><option>3</option><option>R</option><option>RA</option></select></label>
 <button class="button button-primary" id="auctionStatsSubmit" type="submit">Найти статистику ↗</button><p class="fine-print">Не подставляем вымышленные результаты. Если источник не предоставляет архив завершённых торгов, это будет указано прямо.</p>
 </form><div class="auction-stats-results" id="auctionStatsResults" aria-live="polite"><div class="auction-empty-state"><span class="auction-empty-icon">⌕</span><h3>Выберите страну и модель</h3><p>Здесь появятся найденные данные, диапазон цен и пояснение об источнике.</p></div></div></div>
+</section>
+
+<section class="section wrap market-sources-section" id="market-sources">
+  <div class="section-title-row"><div><div class="eyebrow">ИСТОЧНИКИ И МЕТОДИКА</div><h2>Берём полезное<br><em>и проверяем происхождение данных.</em></h2></div><p>На PAPAUTO используем собственные фильтры, карточки, диапазоны цен и калькулятор. Данные конкурентов не копируем вслепую: подключаем первичные источники и подписываем, что именно измеряется.</p></div>
+  <div class="market-source-grid">
+    <article class="market-source-card"><span class="market-source-country">ЯПОНИЯ · ОТКРЫТЫЕ ДАННЫЕ</span><h3>USS Monthly Data</h3><p>Официальная ежемесячная сводка: число торгов, выставленных и проданных автомобилей, доля продаж и средняя цена продажи по рынку.</p><div class="source-status">Подключаем напрямую · без API-ключа</div><a href="https://www.ussnet.co.jp/en/ir/library/monthly/index.html" target="_blank" rel="noopener noreferrer">Проверить первоисточник ↗</a></article>
+    <article class="market-source-card"><span class="market-source-country">ЯПОНИЯ · МОДЕЛЬНАЯ СТАТИСТИКА</span><h3>Аукционы USS / TAA / JU</h3><p>Фильтры по марке, модели, году, оценке и периоду; цена закрытого лота, пробег и дата торгов — только если получен разрешённый архив реальных продаж.</p><div class="source-status source-status-pending">Архив закрытых лотов требует доступа экспортёра</div><a href="https://tsunamiauto.ru/auction/statistics" target="_blank" rel="noopener noreferrer">Пример структуры статистики ↗</a></article>
+    <article class="market-source-card"><span class="market-source-country">ЮЖНАЯ КОРЕЯ</span><h3>Encar · KB ChaChaCha · K Car</h3><p>Карточки машин, фото, год, пробег и цены объявлений. Это текущие цены предложения, не подтверждённые цены продажи. Фильтры и медианный диапазон показываем только по полученным записям.</p><div class="source-status">XAPI Korea: нужен ключ; бесплатная квота ограничена</div><a href="https://xapikorea.com/terms" target="_blank" rel="noopener noreferrer">Условия источника ↗</a></article>
+    <article class="market-source-card"><span class="market-source-country">КИТАЙ</span><h3>Autohome · Che168 · Guazi · Dongchedi</h3><p>Источники для карточек, фото, комплектаций и цен предложений. Без разрешённого бесплатного потока на сайте не выдаём эти объявления за полную статистику или состоявшиеся продажи.</p><div class="source-status source-status-pending">Регулярная агрегация обычно требует API или отдельного разрешения</div><a href="https://union.api-centr.ru/" target="_blank" rel="noopener noreferrer">Посмотреть агрегатор источников ↗</a></article>
+  </div>
+  <details class="competitor-methods"><summary>Что взяли из опыта российских сервисов</summary><div class="competitor-methods-grid">
+    <p><b>А.М. Гамма</b> — детальные фильтры по кузову, объёму, пробегу, оценке и дате торгов.</p>
+    <p><b>OnlyJPCars</b> — единая логика каталога для Японии, Кореи и Китая с явным указанием площадок происхождения.</p>
+    <p><b>KIMON AUTOTRADE</b> — карточки автомобилей, фотографии, год, пробег и предварительная стоимость.</p>
+    <p><b>MSA Auto</b> — широкий каталог и подбор из нескольких каналов: аукционы, дилеры и поставщики.</p>
+    <p><b>AutoLog24</b> — фильтрация примеров привезённых автомобилей по бюджету, марке и типу кузова; цены примеров не считаются статистикой продаж.</p>
+    <p><b>SilaCar</b> — идея ежедневной статистики по нескольким японским аукционным площадкам; реальные данные требуют проверки источника.</p>
+    <p><b>TsunamiAuto</b> — раздельное отображение закрытых торгов и общего отчёта USS; именно это разделение используем в PAPAUTO.</p>
+  </div><p class="competitor-methods-note">Сайты конкурентов использованы для сравнения пользовательских функций и понимания заявленных источников, а не как разрешение копировать их закрытые базы.</p></details>
 </section>
 
   <section class="section calculator-section" id="calculator">
