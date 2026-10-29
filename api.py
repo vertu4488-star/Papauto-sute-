@@ -51,6 +51,7 @@ async def health():
         "telegram_configured": bool(os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID")),
         "ai_configured": bool(os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_AI_API_KEY") or os.getenv("GOOGLE_API_KEY")),
         "tks_configured": bool(os.getenv("TKS_AUTO_API_KEY") or os.getenv("TKS_API_KEY")),
+        "auction_provider_configured": bool(os.getenv("AUCTIONS_API_URL") and os.getenv("AUCTIONS_API_KEY")),
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
