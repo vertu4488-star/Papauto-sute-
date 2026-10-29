@@ -130,6 +130,13 @@
           <div class="tks-panel">
             <h3>Автоматический расчёт таможни TKS.RU</h3>
             <p>Укажите характеристики автомобиля и стоимость в валюте покупки. Для расчёта необходим активный лицензионный ключ TKS.RU.</p>
+            <div class="vehicle-ai-box" id="vehicleAiBox">
+              <div class="vehicle-ai-heading"><span class="vehicle-ai-mark">AI</span><div><strong>ИИ-помощник по расчёту</strong><small>Опишите автомобиль — помощник соберёт параметры и запросит расчёт TKS.RU</small></div></div>
+              <label class="vehicle-ai-label" for="vehicleAiMessage">Например: «Toyota Prius 2019, гибрид 1.8, 122 л.с., цена 1 200 000 иен, везу как физлицо»</label>
+              <textarea id="vehicleAiMessage" rows="3" maxlength="2000" placeholder="Марка, модель, год, двигатель, цена и валюта покупки…"></textarea>
+              <button class="button button-primary button-wide" id="vehicleAiSend" type="button">Разобрать данные и рассчитать ↗</button>
+              <p id="vehicleAiStatus" class="result-note" aria-live="polite">ИИ уточнит недостающие данные. Лицензионные ключи хранятся только на сервере.</p>
+            </div>
             <div class="form-grid">
               <label>Цена в валюте покупки <input id="tksCost" type="number" min="1" step="100" placeholder="Например, 1500000" required></label>
               <label>Валюта
