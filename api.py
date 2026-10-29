@@ -1,6 +1,8 @@
 import os
 import logging
 import html
+import asyncio
+from urllib.parse import quote
 from datetime import datetime, timezone
 from typing import Optional
 
@@ -26,6 +28,61 @@ app.add_middleware(
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Content-Type"],
 )
+
+@app.middleware("http")
+async def ensure_json_utf8(request, call_next):
+    response = await call_next(request)
+    if response.headers.get("content-type", "").startswith("application/json"):
+        response.headers["content-type"] = "application/json; charset=utf-8"
+    return response
+
+
+def _fix_mojibake(value):
+    """Repair common UTF-8 text that was mistakenly decoded as Windows-1251."""
+    if not isinstance(value, str):
+        return value
+    markers = ("Рќ", "Р°", "Рµ", "Рѕ", "Рё", "РІ", "Рї", "Р»", "РЅ", "С‚", "СЏ", "в‚", "Рє")
+    if not any(marker in value for marker in markers):
+        return value
+    original_score = sum(value.count(marker) for marker in markers)
+    for encoding in ("cp1251", "cp1252"):
+        try:
+            candidate = value.encode(encoding).decode("utf-8")
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            continue
+        candidate_score = sum(candidate.count(marker) for marker in markers)
+        if candidate_score < original_score:
+            value = candidate
+            original_score = candidate_score
+            if original_score == 0:
+                break
+    return value
+
+
+async def _xapi_photo_urls(client, listing_id, api_key):
+    """Load photo URLs from the documented detail endpoint for Encar listings."""
+    if listing_id is None:
+        return []
+    safe_id = quote(str(listing_id), safe="")
+    try:
+        response = await client.get(
+            f"https://api.xapikorea.com/v1/cars/{safe_id}",
+            params={"lang": "en"},
+            headers={"X-API-Key": api_key, "Accept": "application/json"},
+        )
+        if response.status_code != 200:
+            return []
+        payload = response.json()
+        if not isinstance(payload, dict):
+            return []
+        photos = payload.get("photos")
+        if isinstance(photos, list):
+            return [p for p in photos if isinstance(p, str) and p.startswith("https://")]
+        single = payload.get("thumbnail") or payload.get("thumbnail_url")
+        return [single] if isinstance(single, str) and single.startswith("https://") else []
+    except (httpx.RequestError, ValueError, TypeError):
+        return []
+
 
 class Lead(BaseModel):
     name: str = Field(default="", max_length=100)
@@ -312,24 +369,46 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                 year = item.get("year") or item.get("model_year")
                 listing_id = item.get("id")
                 source = str(item.get("source") or "encar")
+                photos = item.get("photos") if isinstance(item.get("photos"), list) else []
+                if not photos:
+                    thumbnail = item.get("thumbnail") or item.get("thumbnail_url") or item.get("image_url") or item.get("image")
+                    if isinstance(thumbnail, str) and thumbnail.startswith("https://"):
+                        photos = [thumbnail]
                 results.append({
                     "id": listing_id,
                     "source": source,
-                    "make": item.get("manufacturer") or item.get("make") or "",
-                    "model": item.get("model") or "",
+                    "make": _fix_mojibake(item.get("manufacturer") or item.get("make") or ""),
+                    "model": _fix_mojibake(item.get("model") or ""),
                     "year": year,
                     "mileage": mileage,
-                    "price": (f"{int(price):,} ₩ — цена в Корее, без доставки и оформления в РФ".replace(",", " ") if isinstance(price, (int, float)) else None),
+                    "price": (f"{int(price):,} ₩ — цена в Корее, без доставки и оформления в РФ".replace(",", " ") if isinstance(price, (int, float)) else _fix_mojibake(item.get("price"))),
                     "price_krw": price,
                     "currency": "KRW",
                     "listing_url": item.get("encar_url") or item.get("listing_url") or item.get("url"),
-                    "source_name": {"encar": "Encar", "kbchachacha": "KB ChaChaCha", "kcar": "K Car"}.get(source, source),
-                    "body": item.get("body_style") or item.get("body") or "",
-                    "grade": item.get("grade") or "",
-                    "photos": item.get("photos") if isinstance(item.get("photos"), list) else [],
+                    "source_name": {"encar": "Encar", "kbchachacha": "KB ChaChaCha", "kcar": "K Car"}.get(source, _fix_mojibake(source)),
+                    "body": _fix_mojibake(item.get("body_style") or item.get("body") or ""),
+                    "grade": _fix_mojibake(item.get("grade") or ""),
+                    "photos": photos,
+                    "thumbnail": photos[0] if photos else None,
                     "data_source": "XAPI Korea",
-                    "availability_note": "Наличие и цену нужно повторно подтвердить у исходной площадки.",
+                    "availability_note": _fix_mojibake("Наличие и цену нужно повторно подтвердить у исходной площадки."),
                 })
+            # Search results may omit full galleries. Fetch details only for a small
+            # set of Encar listings that have no thumbnail, keeping API usage bounded.
+            need_details = [
+                item for item in results
+                if item.get("source") == "encar" and item.get("id") and not item.get("photos")
+            ][:8]
+            if need_details:
+                async with httpx.AsyncClient(timeout=12.0) as photo_client:
+                    galleries = await asyncio.gather(*[
+                        _xapi_photo_urls(photo_client, item["id"], api_key)
+                        for item in need_details
+                    ])
+                for item, gallery in zip(need_details, galleries):
+                    if gallery:
+                        item["photos"] = gallery
+                        item["thumbnail"] = gallery[0]
             return {
                 "ok": True,
                 "source": "XAPI Korea",
