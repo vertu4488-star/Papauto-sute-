@@ -15,3 +15,20 @@
 .benchmark-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.benchmark-card{border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#152330,#101720);padding:22px;min-width:0}.benchmark-tag{font-size:9px;letter-spacing:.13em;color:#a5b6c4;display:block;min-height:28px}.benchmark-card strong{display:block;font:800 clamp(25px,3vw,36px)/1.2 Manrope,sans-serif;color:var(--accent);margin:15px 0}.benchmark-card p{font-size:12px;line-height:1.75;color:#a5b2bf;min-height:85px}.benchmark-card a{font-size:11px;color:#d7e3ed;text-decoration:underline;text-decoration-color:#c9f36a66;text-underline-offset:4px}.benchmark-footnote{font-size:10px;line-height:1.7;color:#7f8e9b;margin-top:15px}@media(max-width:680px){.benchmark-grid{grid-template-columns:1fr}.benchmark-card p{min-height:0}}
 
 .carrier-prefill{margin-top:15px;padding:15px;border:1px dashed #ffffff24;border-radius:13px;background:#ffffff03}.carrier-prefill label{display:flex;flex-direction:column;gap:8px;color:#c8d2db;font-size:11px;font-weight:600}.carrier-prefill select{width:100%;border:1px solid #ffffff1b;border-radius:11px;background:#111b25;color:#f4f7fa;padding:12px 13px}.carrier-prefill .button{margin-top:12px}.carrier-prefill .fine-print{margin-bottom:0}.carrier-prefill a{color:#dce8f1;text-decoration:underline;text-decoration-color:#c9f36a66;text-underline-offset:3px}
+
+
+/* Auction catalogue UX refresh */
+#catalog .section-title-row{align-items:end}
+#catalog .calc-form{max-width:1040px;padding:clamp(18px,3vw,30px);border-color:#c9f36a35;background:linear-gradient(145deg,#141f2a,#0e151d)}
+#catalog .form-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#catalog .calc-form label{display:flex;flex-direction:column;gap:8px}
+#catalog .calc-form input,#catalog .calc-form select{width:100%;min-width:0}
+#catalog .calc-form>button{margin-top:20px;min-width:220px}
+#catalog .result-note{max-width:760px;line-height:1.7}
+.vehicle-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-height:none;overflow:visible;background:transparent;border:0;padding:0;margin-top:20px}
+.vehicle-result-card{min-width:0;border:1px solid var(--line);border-radius:15px;background:#111b25;padding:18px}
+.vehicle-result-card h3{font:700 17px Manrope,sans-serif;margin:0 0 10px;color:#f4f7fa}
+.vehicle-result-card .vehicle-result-meta{font-size:11px;line-height:1.7;color:#aab8c5;margin:0 0 14px}
+.vehicle-result-card strong{display:block;color:var(--accent);font:800 22px Manrope,sans-serif;margin-bottom:12px;overflow-wrap:anywhere}
+.vehicle-result-card>p:last-child{font-size:11px;line-height:1.7;color:#8293a2;margin-bottom:0}
+@media(max-width:680px){#catalog .form-grid{grid-template-columns:1fr}.vehicle-results{grid-template-columns:1fr}#catalog .calc-form>button{width:100%}}
