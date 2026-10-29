@@ -1,4 +1,5 @@
 import os
+import logging
 import html
 from datetime import datetime, timezone
 from typing import Optional
@@ -7,6 +8,9 @@ import httpx
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, field_validator
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger("papauto.api")
 
 app = FastAPI(title="PAPAUTO Lead API", version="1.0.0")
 
@@ -338,8 +342,9 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
             }
         except HTTPException:
             raise
-        except httpx.RequestError:
-            raise HTTPException(status_code=502, detail="Не удалось связаться с XAPI Korea. Попробуйте позже.")
+        except httpx.RequestError as exc:
+            logger.error("XAPI Korea connection failure: %s: %s", type(exc).__name__, str(exc))
+            raise HTTPException(status_code=502, detail="Не удалось связаться с XAPI Korea. Проверьте логи сервера для определения сетевой ошибки и попробуйте позже.")
 
     # Japan and China are intentionally not routed to a Korean provider.
     raise HTTPException(
