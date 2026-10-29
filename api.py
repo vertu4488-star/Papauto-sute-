@@ -515,6 +515,70 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
     )
 
 
+
+@app.get("/api/auction-statistics")
+async def auction_statistics(country: str = "japan", make: str = "", model: str = "",
+                             year_from: int = 1990, year_to: int = 2030,
+                             grade: str = "", limit: int = 20):
+    """Show source data; Korean results are current asking-price listings, not sold-auction records."""
+    if country not in {"japan", "south-korea", "china"}:
+        raise HTTPException(status_code=400, detail="Неизвестное направление поиска.")
+    if year_from < 1990 or year_to > 2030 or year_from > year_to:
+        raise HTTPException(status_code=400, detail="Проверьте диапазон годов выпуска.")
+    limit = min(max(limit, 1), 30)
+    make, model, grade = make.strip()[:80], model.strip()[:80], grade.strip()[:12]
+    if country == "south-korea":
+        api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
+        if not api_key:
+            raise HTTPException(status_code=503, detail="Поиск по Южной Корее пока не активирован: в Render нужен XAPIKOREA_API_KEY.")
+        params = {"brand": make or None, "model": model or None, "year_from": year_from, "year_to": year_to, "limit": limit, "page": 1, "lang": "en", "source": "all"}
+        params = {k: v for k, v in params.items() if v is not None and v != ""}
+        try:
+            async with httpx.AsyncClient(timeout=25.0) as client:
+                response = await client.get("https://api.xapikorea.com/v1/search", params=params, headers={"X-API-Key": api_key, "Accept": "application/json"})
+            if response.status_code == 401:
+                raise HTTPException(status_code=503, detail="XAPI Korea отклонил ключ. Проверьте XAPIKOREA_API_KEY в Render.")
+            if response.status_code == 429:
+                raise HTTPException(status_code=429, detail="Достигнут лимит XAPI Korea. Повторите поиск позже.")
+            if response.status_code != 200:
+                raise HTTPException(status_code=502, detail=f"XAPI Korea вернул ошибку HTTP {response.status_code}.")
+            payload = response.json()
+            if not isinstance(payload, dict) or not isinstance(payload.get("results"), list):
+                raise HTTPException(status_code=502, detail="Источник вернул неизвестный формат данных.")
+        except HTTPException:
+            raise
+        except (httpx.RequestError, ValueError):
+            raise HTTPException(status_code=502, detail="Не удалось получить данные из XAPI Korea.")
+        records, prices = [], []
+        for item in payload["results"][:limit]:
+            if not isinstance(item, dict):
+                continue
+            price, year, mileage = item.get("price_krw"), item.get("year") or item.get("model_year"), item.get("mileage_km")
+            if isinstance(price, (int, float)) and price > 0:
+                prices.append(float(price))
+            records.append({"make": _fix_mojibake(item.get("manufacturer") or item.get("make") or make),
+                "model": _fix_mojibake(item.get("model") or model), "year": str(year)[:4] if year is not None else "",
+                "mileage_km": mileage if isinstance(mileage, (int, float)) else None,
+                "price": price if isinstance(price, (int, float)) else None, "currency": "KRW",
+                "source": _fix_mojibake(item.get("source") or "XAPI Korea")})
+        prices.sort()
+        median = None
+        if prices:
+            mid = len(prices) // 2
+            median = prices[mid] if len(prices) % 2 else (prices[mid - 1] + prices[mid]) / 2
+        return {"ok": True, "country": country, "data_type": "current_listings", "source": "XAPI Korea",
+            "count": len(records), "min_price": min(prices) if prices else None, "median_price": median,
+            "max_price": max(prices) if prices else None, "currency": "KRW", "records": records,
+            "disclaimer": "Это цены активных объявлений на корейском рынке, а не подтверждённые цены завершённых аукционов. Доставка, таможня и оформление в РФ не включены."}
+    if country == "japan":
+        detail = "Для поиска по моделям и агрегированной статистики завершённых торгов Японии нужен разрешённый доступ к историческому источнику аукционных данных. Доступный JP Sheet API ищет историю по номеру кузова, а не по марке и модели."
+        source = "Исторический японский аукционный источник ещё не подключён"
+    else:
+        detail = "Для статистики завершённых торгов Китая нужен источник, который явно предоставляет результаты состоявшихся аукционов. Каталоги объявлений нельзя выдавать за цены продажи."
+        source = "Исторический китайский аукционный источник ещё не подключён"
+    return {"ok": True, "country": country, "data_type": "unavailable", "source": source, "count": 0,
+        "records": [], "message": detail, "disclaimer": "Показываем только данные, происхождение которых можно объяснить и проверить."}
+
 @app.get("/api/logistics/benchmarks")
 async def logistics_benchmarks():
     """Public reference prices; indicative only, not live quotes or a carrier booking."""
