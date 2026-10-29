@@ -146,6 +146,23 @@
     </div>
   </section>
 
+  <section class="section wrap" id="catalog">
+    <div class="section-title-row"><div><div class="eyebrow">ПОИСК АВТОМОБИЛЕЙ</div><h2>Реальные предложения.<br><em>Расчёт до Новосибирска.</em></h2></div><p>После подключения поставщика аукционных данных здесь будут отображаться найденные автомобили и доступные сведения об истории торгов. Непроверенные лоты не показываем как реальные.</p></div>
+    <form class="calc-form" id="vehicleSearchForm">
+      <div class="form-grid">
+        <label>Страна<select id="vehicleCountry"><option value="japan">Япония</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select></label>
+        <label>Марка<input id="vehicleMake" placeholder="Toyota, Honda, Hyundai…"></label>
+        <label>Модель<input id="vehicleModel" placeholder="RAV4, Prius…"></label>
+        <label>Год от<input id="vehicleYearFrom" type="number" min="1990" max="2027" value="2019"></label>
+        <label>Год до<input id="vehicleYearTo" type="number" min="1990" max="2027" value="2024"></label>
+        <label>Бюджет автомобиля, ₽<input id="vehicleMaxPrice" type="number" min="0" placeholder="Необязательно"></label>
+      </div>
+      <button class="button button-primary" id="vehicleSearchButton" type="submit">Найти автомобили</button>
+      <p class="result-note" id="vehicleSearchStatus" aria-live="polite">Каталог активируется после подключения API поставщика аукционных данных.</p>
+      <div id="vehicleSearchResults" class="vehicle-results" hidden></div>
+    </form>
+  </section>
+
   <section class="section wrap" id="assistant">
     <div class="assistant-panel">
       <div class="assistant-copy"><div class="eyebrow">PAPAUTO SELECT</div><h2>Опишите машину<br><em>своими словами.</em></h2><p>Например: «Семейный кроссовер до 2,5 млн ₽, не старше 2021 года, с полным приводом». Помощник подготовит структурированный запрос для менеджера.</p><div class="assistant-disclaimer">Сейчас это форма подготовки запроса, не подключённый ИИ и не поиск реальных объявлений.</div></div>
