@@ -157,15 +157,21 @@
     <div class="section-title-row"><div><div class="eyebrow">ПОИСК АВТОМОБИЛЕЙ</div><h2>Реальные предложения.<br><em>Расчёт до Новосибирска.</em></h2></div><p>После подключения поставщика аукционных данных здесь будут отображаться найденные автомобили и доступные сведения об истории торгов. Непроверенные лоты не показываем как реальные.</p></div>
     <form class="calc-form" id="vehicleSearchForm">
       <div class="form-grid">
-        <label>Страна<select id="vehicleCountry"><option value="japan">Япония</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select></label>
-        <label>Марка<input id="vehicleMake" placeholder="Toyota, Honda, Hyundai…"></label>
-        <label>Модель<input id="vehicleModel" placeholder="RAV4, Prius…"></label>
+        <label>Страна / рынок<select id="vehicleCountry"><option value="japan">Япония · аукционы</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select></label>
+        <label>Марка<input id="vehicleMake" placeholder="Toyota, Honda, Hyundai…" maxlength="80"></label>
+        <label>Модель<input id="vehicleModel" placeholder="RAV4, Prius…" maxlength="80"></label>
         <label>Год от<input id="vehicleYearFrom" type="number" min="1990" max="2027" value="2019"></label>
         <label>Год до<input id="vehicleYearTo" type="number" min="1990" max="2027" value="2024"></label>
-        <label>Бюджет автомобиля, ₽<input id="vehicleMaxPrice" type="number" min="0" placeholder="Необязательно"></label>
+        <label>Бюджет до, ₽<input id="vehicleMaxPrice" type="number" min="0" placeholder="Необязательно"></label>
+        <label>Пробег до, км<input id="vehicleMileageMax" type="number" min="0" max="2000000" placeholder="Любой"></label>
+        <label>Объём двигателя от, см³<input id="vehicleVolumeMin" type="number" min="0" max="20000" placeholder="Любой"></label>
+        <label>Объём двигателя до, см³<input id="vehicleVolumeMax" type="number" min="0" max="20000" placeholder="Любой"></label>
+        <label>Тип кузова<input id="vehicleBody" placeholder="Кроссовер, седан…" maxlength="60"></label>
+        <label>Аукционная оценка<input id="vehicleGrade" placeholder="Например, 4 или 4.5" maxlength="10"></label>
+        <label>Номер лота<input id="vehicleLot" placeholder="Если известен" maxlength="40"></label>
       </div>
       <button class="button button-primary" id="vehicleSearchButton" type="submit">Найти автомобили</button>
-      <p class="result-note" id="vehicleSearchStatus" aria-live="polite">Каталог активируется после подключения API поставщика аукционных данных.</p>
+      <p class="result-note" id="vehicleSearchStatus" aria-live="polite">Фильтры готовы. Реальные предложения появятся после подключения API поставщика аукционных данных; вымышленные лоты не показываем.</p>
       <div id="vehicleSearchResults" class="vehicle-results" hidden></div>
     </form>
   </section>
