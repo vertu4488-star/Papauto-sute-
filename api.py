@@ -318,7 +318,7 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                     "price": (f"{int(price):,} ₩ — цена в Корее, без доставки и оформления в РФ".replace(",", " ") if isinstance(price, (int, float)) else None),
                     "price_krw": price,
                     "currency": "KRW",
-                    "listing_url": item.get("listing_url") or item.get("url"),
+                    "listing_url": item.get("encar_url") or item.get("listing_url") or item.get("url"),
                     "source_name": {"encar": "Encar", "kbchachacha": "KB ChaChaCha", "kcar": "K Car"}.get(source, source),
                     "body": item.get("body_style") or item.get("body") or "",
                     "grade": item.get("grade") or "",
