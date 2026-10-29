@@ -151,7 +151,7 @@
             <h3>Автоматический расчёт таможни TKS.RU</h3>
             <p>Укажите характеристики автомобиля и стоимость в валюте покупки. Для расчёта необходим активный лицензионный ключ TKS.RU.</p>
             <div class="vehicle-ai-box" id="vehicleAiBox">
-              <div class="vehicle-ai-heading"><span class="vehicle-ai-mark">AI</span><div><strong>ИИ-помощник по расчёту</strong><small>Опишите автомобиль — помощник соберёт параметры и запросит расчёт TKS.RU</small></div></div>
+              <div class="vehicle-ai-heading"><span class="vehicle-ai-mark">AI</span><div><strong>Помощник по расчёту</strong><small>Опишите автомобиль — помощник соберёт параметры и запросит расчёт TKS.RU</small></div></div>
               <label class="vehicle-ai-label" for="vehicleAiMessage">Например: «Toyota Prius 2019, гибрид 1.8, 122 л.с., цена 1 200 000 иен, везу как физлицо»</label>
               <textarea id="vehicleAiMessage" rows="3" maxlength="2000" placeholder="Марка, модель, год, двигатель, цена и валюта покупки…"></textarea>
               <button class="button button-primary button-wide" id="vehicleAiSend" type="button">Разобрать данные и рассчитать ↗</button>
@@ -291,7 +291,7 @@
 
   <section class="section wrap" id="assistant">
     <div class="assistant-panel">
-      <div class="assistant-copy"><div class="eyebrow">PAPAUTO SELECT</div><h2>Опишите машину<br><em>своими словами.</em></h2><p>Например: «Семейный кроссовер до 2,5 млн ₽, не старше 2021 года, с полным приводом». ИИ предложит подходящие модели из справочного списка, объяснит различия и добавит выбранный вариант в заявку. Актуальные лоты и цены подтверждаются отдельно.</p><div class="assistant-disclaimer">ИИ поможет сравнить подходящие модели и сформировать вопросы для проверки. Он не выдаёт рекомендации за актуальные лоты и не придумывает цены.</div></div>
+      <div class="assistant-copy"><div class="eyebrow">PAPAUTO SELECT</div><h2>Опишите машину<br><em>своими словами.</em></h2><p>Например: «Семейный кроссовер до 2,5 млн ₽, не старше 2021 года, с полным приводом». Мы предложим подходящие модели из справочного списка, объяснит различия и добавит выбранный вариант в заявку. Актуальные лоты и цены подтверждаются отдельно.</p><div class="assistant-disclaimer">Подбор поможет сравнить подходящие модели и сформировать вопросы для проверки. Он не выдаёт рекомендации за актуальные лоты и не придумывает цены.</div></div>
       <form class="assistant-form" id="assistantForm">
         <p class="form-intro">Укажите основные параметры — менеджеру будет проще подобрать варианты и рассчитать стоимость до вашего города. Поля со звёздочкой обязательны.</p>
         <label for="country">Откуда рассматриваете автомобиль? *</label>
@@ -309,7 +309,7 @@
           <label for="budget">Бюджет до, ₽ <input id="budget" type="number" min="1" max="2000000000" step="50000" placeholder="Например, 2500000"></label>
           <label for="maxMileage">Пробег до, км <input id="maxMileage" type="number" min="0" max="2000000" step="5000" placeholder="Например, 80000"></label>
         </div>
-        <div class="ai-select-tools"><button class="button button-secondary" type="button" id="runAiSelect">Подобрать модели с ИИ ✦</button><p id="aiSelectStatus" class="result-note" aria-live="polite">Получите предварительный список моделей до отправки заявки.</p><div id="aiSelectResults" class="ai-select-results" hidden></div></div>
+        <div class="ai-select-tools"><button class="button button-secondary" type="button" id="runAiSelect">Подобрать модели ✦</button><p id="aiSelectStatus" class="result-note" aria-live="polite">Получите предварительный список моделей до отправки заявки.</p><div id="aiSelectResults" class="ai-select-results" hidden></div></div>
         <label for="carPrompt">Дополнительные пожелания *</label>
         <textarea id="carPrompt" rows="3" required maxlength="3000" placeholder="Тип кузова, двигатель, коробка, привод, комплектация, важные опции…"></textarea>
         <div class="form-grid">
