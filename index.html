@@ -279,19 +279,29 @@
     </form>
   </section>
 
-  <section class="section wrap currency-section" id="won-converter">
+  <section class="section wrap currency-section" id="currency-converter">
     <div class="section-title-row">
-      <div><div class="eyebrow">ВАЛЮТНЫЙ КОНВЕРТЕР</div><h2>Сколько стоит авто<br><em>в рублях и долларах?</em></h2></div>
-      <p>Введите цену в корейских вонах — конвертер пересчитает сумму в рубли и доллары США по курсу Банка России. Это ориентир для сравнения цены в Корее, не итоговая стоимость автомобиля в России.</p>
+      <div><div class="eyebrow">ВАЛЮТНЫЙ КОНВЕРТЕР</div><h2>Сравните цену автомобиля<br><em>в рублях и долларах</em></h2></div>
+      <p>Выберите страну покупки — конвертер автоматически предложит нужную валюту и пересчитает стоимость по официальным курсам Банка России.</p>
     </div>
     <div class="currency-card">
-      <label for="wonAmount">Цена в корейских вонах (₩)<input id="wonAmount" type="number" min="0" step="10000" value="21400000" inputmode="decimal"></label>
-      <div class="currency-results" aria-live="polite">
-        <div class="currency-result"><span>В российских рублях</span><strong id="wonRubResult">Загрузка курса…</strong></div>
-        <div class="currency-result"><span>В долларах США</span><strong id="wonUsdResult">Загрузка курса…</strong></div>
+      <label for="currencyCountry">Страна покупки
+        <select id="currencyCountry">
+          <option value="south-korea" selected>Южная Корея · воны (₩)</option>
+          <option value="japan">Япония · иены (¥)</option>
+          <option value="china">Китай · юани (元)</option>
+        </select>
+      </label>
+      <label for="currencyAmount" id="currencyAmountLabel">Цена в корейских вонах (₩)
+        <input id="currencyAmount" type="number" min="0" step="10000" value="21400000" inputmode="decimal">
+      </label>
+      <div class="currency-results" id="currencyResults" aria-live="polite">
+        <div class="currency-result"><span>В российских рублях</span><strong id="currencyRubResult">Загрузка курса…</strong></div>
+        <div class="currency-result"><span>В долларах США</span><strong id="currencyUsdResult">Загрузка курса…</strong></div>
+        <div class="currency-result" id="currencyLocalResultWrap" hidden><span id="currencyLocalResultLabel">В юанях</span><strong id="currencyLocalResult">—</strong></div>
       </div>
-      <p class="currency-rate-note" id="wonRateNote" aria-live="polite">Загружаем актуальные курсы…</p>
-      <p class="currency-disclaimer">Расчёт справочный. Банковский курс, комиссии, доставка, таможня, оформление и доставка по России оплачиваются отдельно.</p>
+      <p class="currency-rate-note" id="currencyRateNote" aria-live="polite">Загружаем актуальные курсы…</p>
+      <p class="currency-disclaimer">Расчёт справочный: курс банка и комиссии могут отличаться. Доставка, таможня, оформление и доставка по России не включены в цену автомобиля.</p>
     </div>
   </section>
 
