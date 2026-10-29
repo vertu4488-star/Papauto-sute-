@@ -379,7 +379,7 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                     "source": source,
                     "make": _fix_mojibake(item.get("manufacturer") or item.get("make") or ""),
                     "model": _fix_mojibake(item.get("model") or ""),
-                    "year": year,
+                    "year": (str(year)[:4] if year is not None and str(year).isdigit() and len(str(year)) >= 4 else year),
                     "mileage": mileage,
                     "price": (f"{int(price):,} ₩ — цена в Корее, без доставки и оформления в РФ".replace(",", " ") if isinstance(price, (int, float)) else _fix_mojibake(item.get("price"))),
                     "price_krw": price,
