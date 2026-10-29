@@ -49,6 +49,8 @@ async def health():
     return {
         "status": "ok",
         "telegram_configured": bool(os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID")),
+        "ai_configured": bool(os.getenv("GEMINI_API_KEY")),
+        "tks_configured": bool(os.getenv("TKS_AUTO_API_KEY")),
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
