@@ -108,6 +108,13 @@
             <label>Услуги компании, ₽ <input id="fee" inputmode="numeric" type="number" min="0" step="1000" placeholder="Согласуется отдельно"></label>
             <label>Другие расходы, ₽ <input id="otherCosts" inputmode="numeric" type="number" min="0" step="1000" placeholder="При наличии"></label>
           </div>
+          <div class="carrier-prefill">
+            <label for="carrierClass">Быстро подставить ориентир автовоза Владивосток — Новосибирск
+              <select id="carrierClass"><option value="110000">Малолитражка — 110 000 ₽</option><option value="120000" selected>Седан / хэтчбек — 120 000 ₽</option><option value="125000">Универсал — 125 000 ₽</option><option value="130000">Кроссовер — 130 000 ₽</option><option value="140000">Внедорожник / минивэн — 140 000 ₽</option></select>
+            </label>
+            <button class="button button-secondary button-wide" type="button" id="fillCarrierTariff">Подставить в смету</button>
+            <p class="fine-print">Ориентир по опубликованному тарифу СТС Автовоз, не подтверждённая бронь. <a href="https://ctcavtovoz.ru/" target="_blank" rel="noopener noreferrer">Проверить актуальную цену у перевозчика ↗</a></p>
+          </div>
           <div class="tks-panel">
             <h3>Автоматический расчёт таможни TKS.RU</h3>
             <p>Укажите характеристики автомобиля и стоимость в валюте покупки. Для расчёта необходим активный лицензионный ключ TKS.RU.</p>
