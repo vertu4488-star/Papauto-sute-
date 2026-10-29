@@ -1,5 +1,5 @@
 import os
-import re
+import html
 from datetime import datetime, timezone
 from typing import Optional
 
@@ -63,12 +63,12 @@ async def create_lead(lead: Lead):
     text = (
         "🚘 <b>Новая заявка PAPAUTO</b>\n"
         f"<b>Время:</b> {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\n"
-        f"<b>Имя:</b> {lead.name or 'не указано'}\n"
-        f"<b>Контакт:</b> {lead.contact}\n"
-        f"<b>Направление:</b> {lead.country}\n"
+        f"<b>Имя:</b> {html.escape(lead.name or 'не указано')}\n"
+        f"<b>Контакт:</b> {html.escape(lead.contact)}\n"
+        f"<b>Направление:</b> {html.escape(lead.country)}\n"
         f"<b>Бюджет:</b> {f'{lead.budget:,}'.replace(',', ' ' ) + ' ₽' if lead.budget is not None else 'не указан'}\n"
-        f"<b>Город:</b> {lead.city}\n"
-        f"<b>Запрос:</b> {lead.request}"
+        f"<b>Город:</b> {html.escape(lead.city)}\n"
+        f"<b>Запрос:</b> {html.escape(lead.request)}"
     )
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     try:
