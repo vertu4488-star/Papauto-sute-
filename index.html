@@ -126,18 +126,36 @@
     <div class="assistant-panel">
       <div class="assistant-copy"><div class="eyebrow">PAPAUTO SELECT</div><h2>Опишите машину<br><em>своими словами.</em></h2><p>Например: «Семейный кроссовер до 2,5 млн ₽, не старше 2021 года, с полным приводом». Помощник подготовит структурированный запрос для менеджера.</p><div class="assistant-disclaimer">Сейчас это форма подготовки запроса, не подключённый ИИ и не поиск реальных объявлений.</div></div>
       <form class="assistant-form" id="assistantForm">
-        <label for="carPrompt">Какой автомобиль ищете?</label>
-        <textarea id="carPrompt" rows="4" required placeholder="Марка или класс, бюджет, год, пробег, привод, комплектация…"></textarea>
+        <p class="form-intro">Укажите основные параметры — менеджеру будет проще подобрать варианты и рассчитать стоимость до Новосибирска. Поля со звёздочкой обязательны.</p>
+        <label for="country">Откуда рассматриваете автомобиль? *</label>
+        <select id="country" name="country" required>
+          <option value="Не определился">Пока не определился</option>
+          <option value="Япония">Япония</option>
+          <option value="Южная Корея">Южная Корея</option>
+          <option value="Китай">Китай</option>
+        </select>
         <div class="form-grid">
-          <label>Бюджет, ₽ <input id="budget" type="number" min="0" step="50000" placeholder="До какой суммы"></label>
-          <label>Город получения <input id="city" value="Новосибирск" maxlength="80"></label>
+          <label for="carMake">Марка <input id="carMake" maxlength="80" placeholder="Например, Toyota"></label>
+          <label for="carModel">Модель <input id="carModel" maxlength="80" placeholder="Например, RAV4"></label>
+          <label for="yearFrom">Год выпуска от <input id="yearFrom" type="number" min="1990" max="2027" step="1" placeholder="2020"></label>
+          <label for="yearTo">Год выпуска до <input id="yearTo" type="number" min="1990" max="2027" step="1" placeholder="2024"></label>
+          <label for="budget">Бюджет до, ₽ <input id="budget" type="number" min="1" max="2000000000" step="50000" placeholder="Например, 2500000"></label>
+          <label for="maxMileage">Пробег до, км <input id="maxMileage" type="number" min="0" max="2000000" step="5000" placeholder="Например, 80000"></label>
         </div>
-        <label>Имя <input id="leadName" maxlength="100" placeholder="Как к вам обращаться (необязательно)"></label>\n        <label>Как с вами связаться <input id="contact" maxlength="120" required placeholder="Телефон или Telegram для ответа"></label>
+        <label for="carPrompt">Дополнительные пожелания *</label>
+        <textarea id="carPrompt" rows="3" required maxlength="3000" placeholder="Тип кузова, двигатель, коробка, привод, комплектация, важные опции…"></textarea>
+        <div class="form-grid">
+          <label for="city">Город получения * <input id="city" value="Новосибирск" maxlength="80" required></label>
+          <label for="leadName">Имя <input id="leadName" maxlength="100" autocomplete="name" placeholder="Как к вам обращаться"></label>
+        </div>
+        <label for="contact">Телефон или Telegram для ответа * <input id="contact" maxlength="120" autocomplete="tel" required placeholder="+7… или @username"></label>
         <button class="button button-primary" type="submit">Подготовить заявку <span>↗</span></button>
         <div class="request-output" id="requestOutput" hidden>
-          <p>Проверьте данные и отправьте заявку менеджеру. Контакт нужен, чтобы мы могли ответить.</p>
-          <textarea id="requestText" rows="7" readonly aria-label="Текст заявки"></textarea>
-          <label class="consent-line"><input id="leadConsent" type="checkbox" required> Согласен(на) на обработку данных для ответа на заявку.</label>\n          <button class="button button-primary" type="button" id="sendRequest">Отправить менеджеру <span>↗</span></button>\n          <button class="button button-secondary" type="button" id="copyRequest">Скопировать заявку</button>
+          <p>Проверьте сформированную заявку. Для отправки менеджеру подтвердите согласие на обработку данных.</p>
+          <textarea id="requestText" rows="9" readonly aria-label="Текст заявки"></textarea>
+          <label class="consent-line"><input id="leadConsent" type="checkbox" required> Согласен(на) на обработку данных для ответа на заявку. <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a></label>
+          <button class="button button-primary" type="button" id="sendRequest">Отправить менеджеру <span>↗</span></button>
+          <button class="button button-secondary" type="button" id="copyRequest">Скопировать заявку</button>
           <span class="copy-status" id="copyStatus" aria-live="polite"></span>
         </div>
       </form>
