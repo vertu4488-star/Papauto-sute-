@@ -248,37 +248,104 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                           volume_min: Optional[int] = None, volume_max: Optional[int] = None,
                           body: str = "", grade: str = "", lot_number: str = "",
                           limit: int = 20):
-    api_url = os.getenv("AUCTIONS_API_URL", "").strip()
-    api_key = os.getenv("AUCTIONS_API_KEY", "").strip()
-    if not api_url or not api_key:
-        raise HTTPException(status_code=503, detail="Каталог реальных автомобилей не активирован: требуется API поставщика аукционных данных и его ключ.")
+    """Search live Korean listings through XAPI Korea. Japan/China remain disabled until a provider is configured."""
     if country not in {"japan", "south-korea", "china"}:
         raise HTTPException(status_code=400, detail="Неизвестное направление поиска.")
-    if year_from < 1990 or year_to > 2027 or year_from > year_to:
+    if year_from < 1990 or year_to > 2030 or year_from > year_to:
         raise HTTPException(status_code=400, detail="Проверьте диапазон годов выпуска.")
     if max_price < 0 or (mileage_max is not None and mileage_max < 0) or (volume_min is not None and volume_min < 0) or (volume_max is not None and volume_max < 0):
         raise HTTPException(status_code=400, detail="Бюджет, пробег и объём не могут быть отрицательными.")
     if volume_min is not None and volume_max is not None and volume_min > volume_max:
         raise HTTPException(status_code=400, detail="Минимальный объём двигателя не может быть больше максимального.")
-    params = {"country": country, "make": make.strip()[:80], "model": model.strip()[:80], "year_from": year_from,
-              "year_to": year_to, "max_price": max_price or None, "mileage_max": mileage_max,
-              "volume_min": volume_min, "volume_max": volume_max, "body": body.strip()[:60],
-              "grade": grade.strip()[:10], "lot_number": lot_number.strip()[:40],
-              "limit": min(max(limit, 1), 50)}
-    params = {key: value for key, value in params.items() if value is not None and value != ""}
-    try:
-        async with httpx.AsyncClient(timeout=20.0) as client:
-            response = await client.get(api_url, params=params,
-                headers={"Authorization": f"Bearer {api_key}", "Accept": "application/json"})
-        if response.status_code != 200:
-            raise HTTPException(status_code=502, detail="Поставщик аукционных данных не выполнил поиск.")
+    limit = min(max(limit, 1), 50)
+
+    if country == "south-korea":
+        api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
+        if not api_key:
+            raise HTTPException(
+                status_code=503,
+                detail="Поиск автомобилей из Южной Кореи пока не активирован. Создайте бесплатный ключ XAPI Korea и добавьте его в Render как XAPIKOREA_API_KEY."
+            )
+        params = {
+            "brand": make.strip()[:80] or None,
+            "model": model.strip()[:80] or None,
+            "year_from": year_from,
+            "year_to": year_to,
+            "mileage_max": mileage_max,
+            "limit": limit,
+            "page": 1,
+            "lang": "en",
+            "source": "all",
+        }
+        # The site's budget is a Russian-ruble target, while this provider's price filter
+        # is KRW/EUR. Never compare those currencies without a verified FX conversion.
+        params = {key: value for key, value in params.items() if value is not None and value != ""}
         try:
-            data = response.json()
-        except ValueError:
-            raise HTTPException(status_code=502, detail="Поставщик аукционных данных вернул неизвестный формат.")
-        return {"ok": True, "source": "configured_auction_provider", "results": data}
-    except httpx.RequestError:
-        raise HTTPException(status_code=502, detail="Не удалось связаться с поставщиком аукционных данных.")
+            async with httpx.AsyncClient(timeout=25.0) as client:
+                response = await client.get(
+                    "https://api.xapikorea.com/v1/search",
+                    params=params,
+                    headers={"X-API-Key": api_key, "Accept": "application/json"},
+                )
+            if response.status_code == 401:
+                raise HTTPException(status_code=503, detail="XAPI Korea отклонил ключ. Проверьте XAPIKOREA_API_KEY в Render.")
+            if response.status_code == 429:
+                raise HTTPException(status_code=429, detail="Достигнут лимит запросов XAPI Korea. Подождите и повторите поиск.")
+            if response.status_code != 200:
+                raise HTTPException(status_code=502, detail=f"XAPI Korea вернул ошибку поиска (HTTP {response.status_code}).")
+            try:
+                payload = response.json()
+            except ValueError:
+                raise HTTPException(status_code=502, detail="XAPI Korea вернул ответ в неизвестном формате.")
+            if not isinstance(payload, dict) or not isinstance(payload.get("results"), list):
+                raise HTTPException(status_code=502, detail="Формат ответа XAPI Korea не соответствует документации.")
+            results = []
+            for item in payload["results"][:limit]:
+                if not isinstance(item, dict):
+                    continue
+                price = item.get("price_krw")
+                mileage = item.get("mileage_km")
+                year = item.get("year") or item.get("model_year")
+                listing_id = item.get("id")
+                source = str(item.get("source") or "encar")
+                results.append({
+                    "id": listing_id,
+                    "source": source,
+                    "make": item.get("manufacturer") or item.get("make") or "",
+                    "model": item.get("model") or "",
+                    "year": year,
+                    "mileage": mileage,
+                    "price": (f"{int(price):,} ₩ — цена в Корее, без доставки и оформления в РФ".replace(",", " ") if isinstance(price, (int, float)) else None),
+                    "price_krw": price,
+                    "currency": "KRW",
+                    "listing_url": item.get("listing_url") or item.get("url"),
+                    "source_name": {"encar": "Encar", "kbchachacha": "KB ChaChaCha", "kcar": "K Car"}.get(source, source),
+                    "body": item.get("body_style") or item.get("body") or "",
+                    "grade": item.get("grade") or "",
+                    "photos": item.get("photos") if isinstance(item.get("photos"), list) else [],
+                    "data_source": "XAPI Korea",
+                    "availability_note": "Наличие и цену нужно повторно подтвердить у исходной площадки.",
+                })
+            return {
+                "ok": True,
+                "source": "XAPI Korea",
+                "country": "south-korea",
+                "total_count": payload.get("total_count", len(results)),
+                "partial": bool(payload.get("partial", False)),
+                "source_errors": payload.get("source_errors", []),
+                "results": results,
+                "disclaimer": "Цены показаны в корейских вонах и не включают доставку, таможню, оформление и доставку по России.",
+            }
+        except HTTPException:
+            raise
+        except httpx.RequestError:
+            raise HTTPException(status_code=502, detail="Не удалось связаться с XAPI Korea. Попробуйте позже.")
+
+    # Japan and China are intentionally not routed to a Korean provider.
+    raise HTTPException(
+        status_code=503,
+        detail="Для этого направления пока не подключён подтверждённый источник актуальных объявлений. Выберите Южную Корею или отправьте заявку на индивидуальный подбор."
+    )
 
 
 @app.get("/api/logistics/benchmarks")
