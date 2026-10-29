@@ -32,3 +32,26 @@
 .vehicle-result-card strong{display:block;color:var(--accent);font:800 22px Manrope,sans-serif;margin-bottom:12px;overflow-wrap:anywhere}
 .vehicle-result-card>p:last-child{font-size:11px;line-height:1.7;color:#8293a2;margin-bottom:0}
 @media(max-width:680px){#catalog .form-grid{grid-template-columns:1fr}.vehicle-results{grid-template-columns:1fr}#catalog .calc-form>button{width:100%}}
+
+
+/* Showcase of illustrative vehicle categories */
+.showcase-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.showcase-card{overflow:hidden;border:1px solid var(--line);border-radius:22px;background:linear-gradient(160deg,#152330,#0e151d);transition:transform .22s,border-color .22s}
+.showcase-card:hover{transform:translateY(-5px);border-color:#c9f36a70}
+.showcase-image{height:220px;position:relative;overflow:hidden;background:#182634}
+.showcase-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0b1118a8,transparent 52%)}
+.showcase-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}
+.showcase-card:hover .showcase-image img{transform:scale(1.045)}
+.showcase-badge{position:absolute;z-index:1;left:15px;bottom:14px;padding:7px 10px;border:1px solid #ffffff35;border-radius:999px;background:#0b1118c9;color:#f4f7fa;font-size:9px;font-weight:700;letter-spacing:.09em}
+.showcase-body{padding:20px}
+.showcase-meta{display:flex;justify-content:space-between;gap:10px;color:#9eafbd;font-size:9px;letter-spacing:.12em}
+.showcase-meta span:last-child{color:var(--accent)}
+.showcase-body h3{font:700 22px Manrope,sans-serif;margin:14px 0 6px;letter-spacing:-.03em}
+.showcase-body>p{margin:0;color:#aab8c4;font-size:12px;line-height:1.7}
+.showcase-tags{display:flex;flex-wrap:wrap;gap:7px;margin:17px 0 19px}
+.showcase-tags span{padding:6px 9px;border:1px solid #ffffff16;border-radius:999px;color:#b9c5cf;font-size:9px}
+.showcase-link{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:15px;font-size:11px;font-weight:700}
+.showcase-link b{color:var(--accent);font-size:16px}
+.showcase-disclaimer{font-size:10px;line-height:1.7;color:#7f8f9d;margin:17px 0 0}
+@media(max-width:900px){.showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.showcase-card:last-child{grid-column:1/-1}.showcase-card:last-child .showcase-image{height:260px}}
+@media(max-width:600px){.showcase-grid{grid-template-columns:1fr}.showcase-card:last-child{grid-column:auto}.showcase-image{height:210px}.showcase-card:last-child .showcase-image{height:210px}.showcase-body{padding:17px}}
