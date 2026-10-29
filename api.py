@@ -60,7 +60,7 @@ def _fix_mojibake(value):
     return value
 
 
-async def _canonical_korea_listing_url(source, listing_id, candidate):
+def _canonical_korea_listing_url(source, listing_id, candidate):
     """Only expose source URLs that match the marketplace; build canonical Encar URLs."""
     from urllib.parse import urlparse
     source = str(source or "encar").lower()
@@ -88,7 +88,7 @@ async def _canonical_korea_listing_url(source, listing_id, candidate):
     return None
 
 
-def _xapi_photo_urls(client, listing_id, api_key):
+async def _xapi_photo_urls(client, listing_id, api_key):
     """Load photo URLs from the documented detail endpoint for Encar listings."""
     if listing_id is None:
         return []
