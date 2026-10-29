@@ -159,7 +159,7 @@ async def vehicle_assistant(req: VehicleAssistantInput):
     try:
         async with httpx.AsyncClient(timeout=25.0) as client:
             response = await client.post(
-                "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
                 params={"key": gemini_key},
                 json={
                     "contents": [{"role": "user", "parts": [{"text": __import__("json").dumps(prompt, ensure_ascii=False)}]}],
