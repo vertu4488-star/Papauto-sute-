@@ -52,6 +52,27 @@ if(auctionStatsForm){
  const out=$("auctionStatsResults"),submit=$("auctionStatsSubmit"),country=$("auctionCountry"),gradeWrap=$("auctionGradeWrap");
  const fmt=(v,c)=>Number.isFinite(Number(v))?new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(Number(v))+" "+(c==="KRW"?"₩":c==="JPY"?"¥":"元"):"—";
  const el=(tag,cls,txt)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=txt;return n};
+
+ const overview=$("auctionMarketOverview");
+ if(overview){
+  const loadOverview=async()=>{
+   const api=String(cfg.apiBaseUrl||"").replace(/\/$/,"");
+   if(!api){overview.textContent="Официальная сводка USS пока недоступна: сервер данных не настроен.";return}
+   try{
+    const response=await fetch(api+"/api/market-overview",{headers:{Accept:"application/json"}});
+    const data=await response.json();
+    if(!response.ok||!data.available||!data.metrics)throw new Error(data.message||"Официальная сводка временно недоступна.");
+    const m=data.metrics,grid=el("div","uss-metric-grid");
+    const moneyYen=new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(m.average_sold_price_jpy)+" ¥";
+    [[ "Выставлено",new Intl.NumberFormat("ru-RU").format(m.offered) ],["Продано",new Intl.NumberFormat("ru-RU").format(m.sold)],["Доля продаж",String(m.contract_rate_percent).replace(".",",")+"%"],["Средняя цена продажи",moneyYen]].forEach(([label,value])=>{const card=el("div","uss-metric");card.append(el("small","",label),el("strong","",value));grid.append(card)});
+    overview.replaceChildren();
+    const head=el("div","uss-overview-head"),copy=el("div",""),eyebrow=el("span","eyebrow","ОТКРЫТЫЕ ДАННЫЕ · ЯПОНИЯ"),title=el("h3","","Последняя сводка аукционов USS"),pill=el("span","uss-live-label","Источник отвечает");
+    copy.append(eyebrow,title);head.append(copy,pill);overview.append(head,grid);
+    overview.append(el("p","uss-overview-note","Последний опубликованный месяц: "+m.month+". Получено "+new Date(data.retrieved_at).toLocaleString("ru-RU")+". Это общая статистика USS, а не цена конкретной модели."));
+    const link=el("a","uss-source-link","Открыть первоисточник ↗");link.href=data.source_url;link.target="_blank";link.rel="noopener noreferrer";overview.append(link);
+   }catch(err){overview.replaceChildren(el("div","uss-overview-head", "Официальная сводка USS временно недоступна"),el("p","uss-overview-note",err.message||"Повторите позже. Значения не подменяются примерными цифрами."))}
+  };loadOverview();
+ }
  const renderRecord=(r,c)=>{const card=el("article","auction-stat-record");card.append(el("h4","",[r.make,r.model,r.year].filter(Boolean).join(" ")));const bits=[];if(r.mileage_km!=null)bits.push("Пробег: "+new Intl.NumberFormat("ru-RU").format(r.mileage_km)+" км");bits.push("Цена в источнике: "+fmt(r.price,c));card.append(el("p","",bits.join(" · ")));card.append(el("small","auction-record-source","Источник: "+(r.source||"источник данных")));return card};
  const updateMode=()=>{gradeWrap.hidden=country.value!=="japan"};country.addEventListener("change",updateMode);updateMode();
  auctionStatsForm.addEventListener("submit",async e=>{
