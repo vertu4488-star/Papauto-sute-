@@ -108,6 +108,30 @@
             <label>Услуги компании, ₽ <input id="fee" inputmode="numeric" type="number" min="0" step="1000" placeholder="Согласуется отдельно"></label>
             <label>Другие расходы, ₽ <input id="otherCosts" inputmode="numeric" type="number" min="0" step="1000" placeholder="При наличии"></label>
           </div>
+          <div class="tks-panel">
+            <h3>Автоматический расчёт таможни TKS.RU</h3>
+            <p>Укажите характеристики автомобиля и стоимость в валюте покупки. Для расчёта необходим активный лицензионный ключ TKS.RU.</p>
+            <div class="form-grid">
+              <label>Цена в валюте покупки <input id="tksCost" type="number" min="1" step="100" placeholder="Например, 1500000" required></label>
+              <label>Валюта
+                <select id="tksCurrency"><option value="392">Японская иена (JPY)</option><option value="410">Южнокорейская вона (KRW)</option><option value="156">Китайский юань (CNY)</option><option value="840">Доллар США (USD)</option><option value="643">Российский рубль (RUB)</option></select>
+              </label>
+              <label>Объём двигателя, см³ <input id="tksVolume" type="number" min="0" max="20000" placeholder="Например, 2000" required></label>
+              <label>Мощность, л.с. <input id="tksPower" type="number" min="0" max="5000" placeholder="Например, 150" required></label>
+              <label>Тип двигателя
+                <select id="tksEngine"><option value="petrol">Бензин</option><option value="diesel">Дизель</option><option value="petrol_electric">Бензиновый гибрид</option><option value="diesel_electric">Дизельный гибрид</option><option value="electric">Электромобиль</option><option value="no_engine">Без двигателя</option></select>
+              </label>
+              <label>Возраст автомобиля
+                <select id="tksAge"><option value="3">Меньше 3 лет</option><option value="35">От 3 до 5 лет</option><option value="57">От 5 до 7 лет</option><option value="7">Старше 7 лет</option></select>
+              </label>
+              <label>Кто ввозит
+                <select id="tksFace"><option value="nat">Физическое лицо</option><option value="jur">Юридическое лицо</option></select>
+              </label>
+            </div>
+            <button class="button button-secondary button-wide" id="runTks" type="button">Рассчитать таможенные платежи</button>
+            <p class="result-note" id="tksStatus" aria-live="polite">Расчёт станет доступен после добавления лицензионного ключа TKS.RU в настройки серверного API.</p>
+            <pre id="tksResult" class="tks-result" hidden></pre>
+          </div>
           <button class="button button-primary" type="submit">Рассчитать смету</button>
           <p class="fine-print">Ставки и сборы зависят от характеристик автомобиля и действующих правил. Для юридически значимого расчёта нужны данные конкретной машины.</p>
         </form>
