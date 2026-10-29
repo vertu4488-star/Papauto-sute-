@@ -126,7 +126,10 @@ async def calculate_customs(req: CustomsRequest):
 @app.get("/api/vehicles")
 async def search_vehicles(country: str = "japan", make: str = "", model: str = "",
                           year_from: int = 1990, year_to: int = 2027,
-                          max_price: int = 0, limit: int = 20):
+                          max_price: int = 0, mileage_max: Optional[int] = None,
+                          volume_min: Optional[int] = None, volume_max: Optional[int] = None,
+                          body: str = "", grade: str = "", lot_number: str = "",
+                          limit: int = 20):
     api_url = os.getenv("AUCTIONS_API_URL", "").strip()
     api_key = os.getenv("AUCTIONS_API_KEY", "").strip()
     if not api_url or not api_key:
@@ -135,10 +138,16 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
         raise HTTPException(status_code=400, detail="Неизвестное направление поиска.")
     if year_from < 1990 or year_to > 2027 or year_from > year_to:
         raise HTTPException(status_code=400, detail="Проверьте диапазон годов выпуска.")
-    if max_price < 0:
-        raise HTTPException(status_code=400, detail="Бюджет не может быть отрицательным.")
+    if max_price < 0 or (mileage_max is not None and mileage_max < 0) or (volume_min is not None and volume_min < 0) or (volume_max is not None and volume_max < 0):
+        raise HTTPException(status_code=400, detail="Бюджет, пробег и объём не могут быть отрицательными.")
+    if volume_min is not None and volume_max is not None and volume_min > volume_max:
+        raise HTTPException(status_code=400, detail="Минимальный объём двигателя не может быть больше максимального.")
     params = {"country": country, "make": make.strip()[:80], "model": model.strip()[:80], "year_from": year_from,
-              "year_to": year_to, "max_price": max_price or None, "limit": min(max(limit, 1), 50)}
+              "year_to": year_to, "max_price": max_price or None, "mileage_max": mileage_max,
+              "volume_min": volume_min, "volume_max": volume_max, "body": body.strip()[:60],
+              "grade": grade.strip()[:10], "lot_number": lot_number.strip()[:40],
+              "limit": min(max(limit, 1), 50)}
+    params = {key: value for key, value in params.items() if value is not None and value != ""}
     try:
         async with httpx.AsyncClient(timeout=20.0) as client:
             response = await client.get(api_url, params=params,
