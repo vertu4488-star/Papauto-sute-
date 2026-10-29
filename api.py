@@ -96,14 +96,16 @@ class CustomsRequest(BaseModel):
 async def calculate_customs(req: CustomsRequest):
     key = os.getenv("TKS_AUTO_API_KEY", "").strip()
     if not key:
-        raise HTTPException(status_code=503, detail="Расчёт TKS.RU пока не активирован: в Render нужно добавить лицензионный ключ TKS_AUTO_API_KEY.")
+        raise HTTPException(status_code=503, detail="Расчёт TKS.RU пока не активирован: необходим действующий лицензионный ключ TKS_AUTO_API_KEY. Ключ оформляется у TKS.RU.")
+    if len(key) != 32 or any(ch not in "abcdefghijklmnopqrstuvwxyz0123456789" for ch in key):
+        raise HTTPException(status_code=503, detail="Ключ TKS_AUTO_API_KEY имеет неверный формат. Ожидается 32 символа a-z и 0-9.")
     params = {
         "cost": req.cost, "volume": req.volume, "currency": req.currency,
         "power": req.power, "power_edizm": "ls", "engine_type": req.engine_type,
         "age": req.age, "face": req.face, "ts_type": "00_8703",
-        "sequential": str(req.sequential).lower(), "chassis": "nshs",
-        "forwarder": "false", "caravan": "false", "offroad": "false",
-        "mdvs_gt_m30ed": "false",
+        "sequential": str(req.sequential).lower(), "chassis": "shs",
+        "country": "noru", "forwarder": "false", "caravan": "false", "offroad": "false",
+        "buscap": "lt120", "mdvs_gt_m30ed": "true",
     }
     endpoint = f"https://api1.tks.ru/auto.json/json/{key}/"
     try:
@@ -133,7 +135,9 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
         raise HTTPException(status_code=400, detail="Неизвестное направление поиска.")
     if year_from < 1990 or year_to > 2027 or year_from > year_to:
         raise HTTPException(status_code=400, detail="Проверьте диапазон годов выпуска.")
-    params = {"country": country, "make": make, "model": model, "year_from": year_from,
+    if max_price < 0:
+        raise HTTPException(status_code=400, detail="Бюджет не может быть отрицательным.")
+    params = {"country": country, "make": make.strip()[:80], "model": model.strip()[:80], "year_from": year_from,
               "year_to": year_to, "max_price": max_price or None, "limit": min(max(limit, 1), 50)}
     try:
         async with httpx.AsyncClient(timeout=20.0) as client:
@@ -148,3 +152,27 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
         return {"ok": True, "source": "configured_auction_provider", "results": data}
     except httpx.RequestError:
         raise HTTPException(status_code=502, detail="Не удалось связаться с поставщиком аукционных данных.")
+
+
+@app.get("/api/logistics/benchmarks")
+async def logistics_benchmarks():
+    """Public reference prices; indicative only, not live quotes or a carrier booking."""
+    return {
+        "as_of": "2026-10-29",
+        "currency_note": "Foreign-currency figures are shown in their original currency and are not converted to RUB.",
+        "japan": [
+            {"item": "Внутренняя доставка по Японии до порта (пример тарифа)", "amount": 65000, "currency": "JPY", "source": "VDK Logistic", "url": "https://vdklogistic.ru/costs"},
+            {"item": "Морской фрахт Йокогама — Владивосток (пример тарифа)", "amount": 350, "currency": "USD", "source": "VDK Logistic", "url": "https://vdklogistic.ru/costs"}
+        ],
+        "vladivostok_novosibirsk": [
+            {"vehicle_class": "kei", "amount_rub": 110000},
+            {"vehicle_class": "sedan_hatchback", "amount_rub": 120000},
+            {"vehicle_class": "wagon", "amount_rub": 125000},
+            {"vehicle_class": "crossover", "amount_rub": 130000},
+            {"vehicle_class": "suv_minivan", "amount_rub": 140000}
+        ],
+        "carrier": "STS Autovoz",
+        "carrier_url": "https://ctcavtovoz.ru/",
+        "carrier_note": "Публичные ориентиры, проверенные 29.10.2026; цена зависит от машины, пункта сдачи/получения, страховки и текущего рейса. Перед договором требуется индивидуальное подтверждение.",
+        "disclaimer": "Это справочные тарифы, а не гарантированная текущая цена и не оферта."
+    }
