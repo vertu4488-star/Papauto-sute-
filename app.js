@@ -1,15 +1,31 @@
 (()=>{"use strict";const $=id=>document.getElementById(id),cfg=window.PAPAUTO_CONFIG||{},url=v=>{try{const u=new URL(v);return u.protocol==="https:"?u.href:""}catch{return""}};
-const wonAmount=$("wonAmount"),wonRubResult=$("wonRubResult"),wonUsdResult=$("wonUsdResult"),wonRateNote=$("wonRateNote");
-if(wonAmount&&wonRubResult&&wonUsdResult&&wonRateNote){
-  let wonRates=null;
-  const fmtCurrency=(value,currency)=>new Intl.NumberFormat("ru-RU",{style:"currency",currency,maximumFractionDigits:0}).format(value);
-  const renderWonConversion=()=>{
-    const amount=Number(wonAmount.value);
-    if(!Number.isFinite(amount)||amount<0||!wonRates){wonRubResult.textContent="—";wonUsdResult.textContent="—";return}
-    wonRubResult.textContent=fmtCurrency(amount*wonRates.rub_per_1000_krw/1000,"RUB");
-    wonUsdResult.textContent=fmtCurrency(amount*wonRates.usd_per_1000_krw/1000,"USD");
+const currencyCountry=$("currencyCountry"),currencyAmount=$("currencyAmount"),currencyAmountLabel=$("currencyAmountLabel"),currencyRubResult=$("currencyRubResult"),currencyUsdResult=$("currencyUsdResult"),currencyLocalResult=$("currencyLocalResult"),currencyLocalResultWrap=$("currencyLocalResultWrap"),currencyLocalResultLabel=$("currencyLocalResultLabel"),currencyRateNote=$("currencyRateNote");
+if(currencyCountry&&currencyAmount&&currencyRubResult&&currencyUsdResult&&currencyRateNote){
+  let currencyRates=null;
+  const currencyModes={
+    "south-korea":{name:"корейских вонах",symbol:"₩",step:"10000",initial:"21400000",perLocal:"rub_per_1000_krw",localScale:1000,usdPer:"usd_per_1000_krw",usdScale:1000,localDisplay:null},
+    "japan":{name:"японских иенах",symbol:"¥",step:"10000",initial:"1500000",perLocal:"rub_per_jpy",localScale:1,usdPer:"usd_per_jpy",usdScale:1,localDisplay:null},
+    "china":{name:"китайских юанях",symbol:"元",step:"1000",initial:"100000",perLocal:"rub_per_cny",localScale:1,usdPer:"usd_per_cny",usdScale:1,localDisplay:"CNY"}
   };
-  wonAmount.addEventListener("input",renderWonConversion);
+  const fmtMoney=(value,currency)=>new Intl.NumberFormat("ru-RU",{style:"currency",currency,maximumFractionDigits:currency==="USD"?2:0}).format(value);
+  const mode=()=>currencyModes[currencyCountry.value]||currencyModes["south-korea"];
+  const renderCurrency=()=>{
+    const m=mode(),amount=Number(currencyAmount.value);
+    if(!currencyRates||!Number.isFinite(amount)||amount<0){currencyRubResult.textContent="—";currencyUsdResult.textContent="—";return}
+    currencyRubResult.textContent=fmtMoney(amount*Number(currencyRates[m.perLocal])/m.localScale,"RUB");
+    currencyUsdResult.textContent=fmtMoney(amount*Number(currencyRates[m.usdPer])/m.usdScale,"USD");
+    if(m.localDisplay){currencyLocalResultWrap.hidden=false;currencyLocalResultLabel.textContent="В китайских юанях";currencyLocalResult.textContent=fmtMoney(amount,"CNY")}
+    else currencyLocalResultWrap.hidden=true;
+  };
+  const updateCurrencyMode=(resetAmount)=>{
+    const m=mode();
+    currencyAmountLabel.childNodes[0].textContent="Цена в "+m.name+" ("+m.symbol+")";
+    currencyAmount.step=m.step;
+    if(resetAmount)currencyAmount.value=m.initial;
+    renderCurrency();
+  };
+  currencyCountry.addEventListener("change",()=>updateCurrencyMode(true));
+  currencyAmount.addEventListener("input",renderCurrency);
   (async()=>{
     try{
       const api=String(cfg.apiBaseUrl||"").replace(/\/$/,"");
@@ -17,15 +33,16 @@ if(wonAmount&&wonRubResult&&wonUsdResult&&wonRateNote){
       const response=await fetch(api+"/api/exchange-rates",{headers:{Accept:"application/json"}});
       if(!response.ok)throw new Error("Курс временно недоступен");
       const rates=await response.json();
-      if(!Number.isFinite(Number(rates.rub_per_1000_krw))||!Number.isFinite(Number(rates.usd_per_1000_krw)))throw new Error("Некорректный курс");
-      wonRates=rates;
-      const rateDate=rates.date?(" на "+rates.date):"";
-      wonRateNote.textContent="Источник: "+(rates.source||"Банк России")+rateDate+". За 1 000 ₩: "+fmtCurrency(Number(rates.rub_per_1000_krw),"RUB")+" · "+fmtCurrency(Number(rates.usd_per_1000_krw),"USD")+(rates.fallback?" (последний сохранённый курс, обновление источника временно недоступно)":"");
-      renderWonConversion();
+      const needed=["rub_per_1000_krw","rub_per_jpy","rub_per_cny","rub_per_usd","usd_per_1000_krw","usd_per_jpy","usd_per_cny"];
+      if(!needed.every(k=>Number.isFinite(Number(rates[k]))&&Number(rates[k])>0))throw new Error("Некорректный курс");
+      currencyRates=rates;
+      const date=rates.date?(" на "+rates.date):"";
+      currencyRateNote.textContent="Источник: "+(rates.source||"Банк России")+date+". Курсы справочные, не курс продажи банка."+(rates.fallback?" Используется последний сохранённый ориентир, так как источник временно недоступен.":"");
+      updateCurrencyMode(false);
     }catch(error){
-      wonRubResult.textContent="Курс недоступен";
-      wonUsdResult.textContent="Курс недоступен";
-      wonRateNote.textContent="Не удалось загрузить курс Банка России. Обновите страницу позже; конвертер не использует выдуманный текущий курс.";
+      currencyRubResult.textContent="Курс недоступен";
+      currencyUsdResult.textContent="Курс недоступен";
+      currencyRateNote.textContent="Не удалось загрузить курс Банка России. Обновите страницу позже; конвертер не использует выдуманный текущий курс.";
     }
   })();
 }
