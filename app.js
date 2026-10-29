@@ -70,6 +70,24 @@ if(auctionStatsForm){
     copy.append(eyebrow,title);head.append(copy,pill);overview.append(head,grid);
     overview.append(el("p","uss-overview-note","Последний опубликованный месяц: "+m.month+". Получено "+new Date(data.retrieved_at).toLocaleString("ru-RU")+". Это общая статистика USS, а не цена конкретной модели."));
     const link=el("a","uss-source-link","Открыть первоисточник ↗");link.href=data.source_url;link.target="_blank";link.rel="noopener noreferrer";overview.append(link);
+    const history=Array.isArray(data.history)?data.history:[];
+    if(history.length){
+     const section=el("div","uss-history"),historyTitle=el("h4","","Динамика по месяцам");
+     section.append(historyTitle);
+     const maxPrice=Math.max(1,...history.map(item=>Number(item.average_sold_price_jpy)||0));
+     history.forEach(item=>{
+      const row=el("div","uss-history-row"),month=el("span","uss-history-month",item.month);
+      const track=el("div","uss-history-track"),bar=el("div","uss-history-bar");
+      bar.style.width=Math.max(3,Math.round((Number(item.average_sold_price_jpy)||0)/maxPrice*100))+"%";
+      track.append(bar);
+      const price=new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(item.average_sold_price_jpy||0)+" ¥";
+      const sold=new Intl.NumberFormat("ru-RU").format(item.sold||0);
+      const meta=el("small","uss-history-meta",price+" · продано "+sold+" · доля продаж "+String(item.contract_rate_percent).replace(".",",")+"%");
+      row.append(month,track,meta);section.append(row);
+     });
+     section.append(el("p","uss-overview-note","Средняя цена рассчитана по всем проданным автомобилям USS за месяц. Это не прогноз и не цена конкретной модели."));
+     overview.append(section);
+    }
    }catch(err){overview.replaceChildren(el("div","uss-overview-head", "Официальная сводка USS временно недоступна"),el("p","uss-overview-note",err.message||"Повторите позже. Значения не подменяются примерными цифрами."))}
   };loadOverview();
  }
