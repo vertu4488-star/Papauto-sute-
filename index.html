@@ -132,12 +132,12 @@
           <label>Бюджет, ₽ <input id="budget" type="number" min="0" step="50000" placeholder="До какой суммы"></label>
           <label>Город получения <input id="city" value="Новосибирск" maxlength="80"></label>
         </div>
-        <label>Как с вами связаться <input id="contact" maxlength="120" placeholder="Телефон или Telegram — необязательно"></label>
+        <label>Имя <input id="leadName" maxlength="100" placeholder="Как к вам обращаться (необязательно)"></label>\n        <label>Как с вами связаться <input id="contact" maxlength="120" required placeholder="Телефон или Telegram для ответа"></label>
         <button class="button button-primary" type="submit">Подготовить заявку <span>↗</span></button>
         <div class="request-output" id="requestOutput" hidden>
-          <p>Текст заявки готов. Скопируйте его и передайте менеджеру — автоматическая отправка пока не подключена.</p>
+          <p>Проверьте данные и отправьте заявку менеджеру. Контакт нужен, чтобы мы могли ответить.</p>
           <textarea id="requestText" rows="7" readonly aria-label="Текст заявки"></textarea>
-          <button class="button button-secondary" type="button" id="copyRequest">Скопировать заявку</button>
+          <label class="consent-line"><input id="leadConsent" type="checkbox" required checked> Согласен(на) на обработку данных для ответа на заявку.</label>\n          <button class="button button-primary" type="button" id="sendRequest">Отправить менеджеру <span>↗</span></button>\n          <button class="button button-secondary" type="button" id="copyRequest">Скопировать заявку</button>
           <span class="copy-status" id="copyStatus" aria-live="polite"></span>
         </div>
       </form>
@@ -167,7 +167,7 @@
       <details><summary>Можно ли узнать стоимость под ключ заранее?</summary><p>Можно подготовить предварительную смету по конкретной машине. Некоторые платежи зависят от характеристик автомобиля, статуса покупателя и действующих правил, поэтому их нужно перепроверять перед сделкой.</p></details>
       <details><summary>Есть ли на сайте каталог реальных автомобилей?</summary><p>На текущем этапе каталог реальных предложений ещё не подключён. Мы не публикуем вымышленные объявления и цены как настоящие. Каталог появится после подключения проверяемого источника данных.</p></details>
       <details><summary>Можно ли заказать автомобиль из любой из трёх стран?</summary><p>Мы рассматриваем Японию, Южную Корею и Китай. Доступность зависит от модели, экспортных условий, логистики и возможности оформления в России.</p></details>
-      <details><summary>Заявка уже приходит менеджеру автоматически?</summary><p>Пока нет. Форма на этой версии сайта формирует текст заявки для копирования. Для автоматической отправки потребуется подключить серверную обработку и согласованный канал связи.</p></details>
+      <details><summary>Заявка уже приходит менеджеру автоматически?</summary><p>Заявка отправляется через сервер после подключения канала уведомлений. Если отправка временно недоступна, можно скопировать текст заявки и связаться с менеджером напрямую.</p></details>
     </div>
   </section>
 
