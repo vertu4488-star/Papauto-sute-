@@ -49,8 +49,8 @@ async def health():
     return {
         "status": "ok",
         "telegram_configured": bool(os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID")),
-        "ai_configured": bool(os.getenv("GEMINI_API_KEY")),
-        "tks_configured": bool(os.getenv("TKS_AUTO_API_KEY")),
+        "ai_configured": bool(os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_AI_API_KEY") or os.getenv("GOOGLE_API_KEY")),
+        "tks_configured": bool(os.getenv("TKS_AUTO_API_KEY") or os.getenv("TKS_API_KEY")),
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
@@ -96,7 +96,7 @@ class CustomsRequest(BaseModel):
 
 @app.post("/api/customs/calculate")
 async def calculate_customs(req: CustomsRequest):
-    key = os.getenv("TKS_AUTO_API_KEY", "").strip()
+    key = (os.getenv("TKS_AUTO_API_KEY") or os.getenv("TKS_API_KEY") or "").strip()
     if not key:
         raise HTTPException(status_code=503, detail="Расчёт TKS.RU пока не активирован: необходим действующий лицензионный ключ TKS_AUTO_API_KEY. Ключ оформляется у TKS.RU.")
     if len(key) != 32 or any(ch not in "abcdefghijklmnopqrstuvwxyz0123456789" for ch in key):
@@ -132,7 +132,7 @@ class VehicleAssistantInput(BaseModel):
 @app.post("/api/assistant/vehicle")
 async def vehicle_assistant(req: VehicleAssistantInput):
     """Extract vehicle-import parameters from natural language and calculate customs when sufficient data is known."""
-    gemini_key = os.getenv("GEMINI_API_KEY", "").strip()
+    gemini_key = (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_AI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
     if not gemini_key:
         raise HTTPException(status_code=503, detail="ИИ-помощник пока не подключён: в настройках Render нужен GEMINI_API_KEY.")
     system_instruction = (
@@ -201,7 +201,7 @@ async def vehicle_assistant(req: VehicleAssistantInput):
             calc_req = CustomsRequest(**fields)
         except (ValueError, TypeError, Exception) as exc:
             raise HTTPException(status_code=422, detail="Проверьте цену и характеристики автомобиля: " + str(exc)[:180])
-        tks_key = os.getenv("TKS_AUTO_API_KEY", "").strip()
+        tks_key = (os.getenv("TKS_AUTO_API_KEY") or os.getenv("TKS_API_KEY") or "").strip()
         if not tks_key or len(tks_key) != 32 or any(ch not in "abcdefghijklmnopqrstuvwxyz0123456789" for ch in tks_key):
             return {
                 "ok": True, "reply": "Характеристики собраны. Для получения суммы таможенных платежей нужно активировать лицензионный ключ TKS.RU на сервере.",
