@@ -3,8 +3,8 @@ const currencyCountry=$("currencyCountry"),currencyAmount=$("currencyAmount"),cu
 if(currencyCountry&&currencyAmount&&currencyRubResult&&currencyUsdResult&&currencyRateNote){
   let currencyRates=null;
   const currencyModes={
-    "south-korea":{name:"корейских вонах",symbol:"₩",step:"10000",initial:"21400000",perLocal:"rub_per_1000_krw",localScale:1000,usdPer:"usd_per_1000_krw",usdScale:1000,localDisplay:null},
-    "japan":{name:"японских иенах",symbol:"¥",step:"10000",initial:"1500000",perLocal:"rub_per_jpy",localScale:1,usdPer:"usd_per_jpy",usdScale:1,localDisplay:null},
+    "south-korea":{name:"корейских вонах",symbol:"₩",step:"10000",initial:"21400000",perLocal:"rub_per_1000_krw",localScale:1000,usdPer:"usd_per_1000_krw",usdScale:1000,localDisplay:"KRW"},
+    "japan":{name:"японских иенах",symbol:"¥",step:"10000",initial:"1500000",perLocal:"rub_per_jpy",localScale:1,usdPer:"usd_per_jpy",usdScale:1,localDisplay:"JPY"},
     "china":{name:"китайских юанях",symbol:"元",step:"1000",initial:"100000",perLocal:"rub_per_cny",localScale:1,usdPer:"usd_per_cny",usdScale:1,localDisplay:"CNY"}
   };
   const fmtMoney=(value,currency)=>new Intl.NumberFormat("ru-RU",{style:"currency",currency,maximumFractionDigits:currency==="USD"?2:0}).format(value);
@@ -14,8 +14,7 @@ if(currencyCountry&&currencyAmount&&currencyRubResult&&currencyUsdResult&&curren
     if(!currencyRates||!Number.isFinite(amount)||amount<0){currencyRubResult.textContent="—";currencyUsdResult.textContent="—";return}
     currencyRubResult.textContent=fmtMoney(amount*Number(currencyRates[m.perLocal])/m.localScale,"RUB");
     currencyUsdResult.textContent=fmtMoney(amount*Number(currencyRates[m.usdPer])/m.usdScale,"USD");
-    if(m.localDisplay){currencyLocalResultWrap.hidden=false;currencyLocalResultLabel.textContent="В китайских юанях";currencyLocalResult.textContent=fmtMoney(amount,"CNY")}
-    else currencyLocalResultWrap.hidden=true;
+    currencyLocalResultWrap.hidden=false;currencyLocalResultLabel.textContent="В "+(currencyCountry.value==="japan"?"японских иенах":currencyCountry.value==="china"?"китайских юанях":"корейских вонах");currencyLocalResult.textContent=fmtMoney(amount,m.localDisplay);
   };
   const updateCurrencyMode=(resetAmount)=>{
     const m=mode();
