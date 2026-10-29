@@ -3,6 +3,7 @@ import logging
 import html
 import asyncio
 import xml.etree.ElementTree as ET
+from html.parser import HTMLParser
 from urllib.parse import quote
 from datetime import datetime, timezone
 from typing import Optional
@@ -514,6 +515,110 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
         detail="Для этого направления пока не подключён подтверждённый источник актуальных объявлений. Выберите Южную Корею или отправьте заявку на индивидуальный подбор."
     )
 
+
+
+
+class _USSMonthlyTableParser(HTMLParser):
+    """Extract table rows from USS's publicly published monthly auction report."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.tables = []
+        self.in_table = False
+        self.in_row = False
+        self.in_cell = False
+        self.current_table = []
+        self.current_row = []
+        self.current_cell = []
+
+    def handle_starttag(self, tag, attrs):
+        tag = tag.lower()
+        if tag == "table" and not self.in_table:
+            self.in_table = True
+            self.current_table = []
+        elif self.in_table and tag == "tr":
+            self.in_row = True
+            self.current_row = []
+        elif self.in_table and self.in_row and tag in {"td", "th"}:
+            self.in_cell = True
+            self.current_cell = []
+
+    def handle_data(self, data):
+        if self.in_table and self.in_row and self.in_cell:
+            self.current_cell.append(data)
+
+    def handle_endtag(self, tag):
+        tag = tag.lower()
+        if self.in_table and self.in_row and self.in_cell and tag in {"td", "th"}:
+            self.current_row.append(" ".join(" ".join(self.current_cell).split()))
+            self.current_cell = []
+            self.in_cell = False
+        elif self.in_table and tag == "tr":
+            if self.current_row:
+                self.current_table.append(self.current_row)
+            self.current_row = []
+            self.in_row = False
+        elif tag == "table" and self.in_table:
+            if self.current_table:
+                self.tables.append(self.current_table)
+            self.current_table = []
+            self.in_table = False
+
+
+def _uss_monthly_snapshot(page: str):
+    parser = _USSMonthlyTableParser()
+    parser.feed(page)
+    month_names = {"Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec.", "Jan.", "Feb.", "Mar.",
+                   "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", "1月", "2月", "3月"}
+    def number(value, percent=False):
+        cleaned = value.replace(",", "").replace("千円", "").replace("台", "").replace("%", "").strip()
+        try:
+            return float(cleaned) if cleaned and cleaned not in {"-", "—"} else None
+        except ValueError:
+            return None
+    for table in parser.tables:
+        rows = []
+        for cells in table:
+            if len(cells) < 14 or cells[0].strip() not in month_names:
+                continue
+            offered = number(cells[3])
+            sold = number(cells[6])
+            rate = number(cells[9], percent=True)
+            average_thousand_yen = number(cells[11])
+            if offered is not None and sold is not None and rate is not None and average_thousand_yen is not None:
+                rows.append({
+                    "month": cells[0].strip(),
+                    "auctions": number(cells[1]),
+                    "offered": int(offered),
+                    "sold": int(sold),
+                    "contract_rate_percent": round(rate, 1),
+                    "average_sold_price_jpy": int(average_thousand_yen * 1000),
+                })
+        if rows:
+            return rows[-1]
+    return None
+
+
+@app.get("/api/market-overview")
+async def market_overview():
+    """Fetch open, aggregate Japanese auction statistics directly from USS; no API key."""
+    source_url = "https://www.ussnet.co.jp/en/ir/library/monthly/index.html"
+    try:
+        async with httpx.AsyncClient(timeout=12.0, follow_redirects=True) as client:
+            response = await client.get(source_url, headers={"User-Agent": "PAPAUTO market statistics contact: website"})
+            response.raise_for_status()
+        snapshot = _uss_monthly_snapshot(response.text)
+        if not snapshot:
+            logger.warning("USS monthly page was fetched but its table format was not recognized")
+            return {"ok": True, "available": False, "source": "USS Monthly Data", "source_url": source_url,
+                    "message": "Официальная страница доступна, но формат таблицы изменился. Обновим разбор данных."}
+        return {"ok": True, "available": True, "source": "USS Monthly Data", "source_url": source_url,
+                "data_month": snapshot["month"], "retrieved_at": datetime.now(timezone.utc).isoformat(),
+                "metrics": snapshot,
+                "disclaimer": "Открытая агрегированная статистика USS по всему рынку. Это не цена конкретной модели и не архив отдельных проданных лотов."}
+    except (httpx.HTTPError, ValueError) as exc:
+        logger.warning("USS monthly data unavailable: %s", exc)
+        return {"ok": True, "available": False, "source": "USS Monthly Data", "source_url": source_url,
+                "message": "Не удалось обновить открытую статистику USS. Повторите позже; значения не подменяются выдуманными цифрами."}
 
 
 @app.get("/api/auction-statistics")
