@@ -69,5 +69,7 @@ jobs:
               data = json.load(f)
           assert data.get("data_type") == "source_hub", data
           assert len(data.get("sources", [])) >= 5, data
-          print("China source hub OK:", len(data["sources"]), "sources")
+          assert data.get("sample_stats") is None, data
+          assert data.get("records") == [], data
+          print("China source hub OK:", len(data["sources"]), "sources; no Japan sample leaked")
           PY
