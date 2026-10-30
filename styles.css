@@ -212,3 +212,8 @@ html{scroll-padding-top:100px;background:var(--bg)}body{background:#f3f5f7;color
 .auction-source-kind{font-size:.68rem;opacity:.65;text-transform:uppercase;letter-spacing:.04em}
 .auction-source-result a{margin-top:auto;padding-top:.35rem;font-size:.85rem;text-decoration:underline;text-underline-offset:3px;color:var(--accent,#a9bdcc)}
 @media(max-width:620px){.auction-source-results{grid-template-columns:1fr}}
+
+.china-market-overview{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:.8rem;align-items:stretch;margin:0 0 1.4rem;padding:clamp(1rem,2.5vw,1.45rem);border:1px solid rgba(169,189,204,.25);border-radius:18px;background:linear-gradient(135deg,rgba(169,189,204,.055),rgba(255,255,255,.015))}
+.china-market-copy h3{font-size:clamp(1rem,2vw,1.35rem);margin:.35rem 0 .5rem}.china-market-copy p{font-size:.8rem;line-height:1.6;color:var(--muted,#aab8c4);margin:0 0 .6rem}.china-market-copy a{font-size:.78rem;text-decoration:underline;text-underline-offset:3px;color:var(--accent,#a9bdcc)}
+.china-market-metric{display:flex;flex-direction:column;justify-content:center;gap:.45rem;padding:1rem;border:1px solid rgba(255,255,255,.09);border-radius:12px;background:rgba(0,0,0,.12);min-width:0}.china-market-metric small{font-size:.72rem;color:var(--muted,#aab8c4)}.china-market-metric strong{font-size:clamp(1rem,2vw,1.5rem);overflow-wrap:anywhere}
+@media(max-width:620px){.china-market-overview{grid-template-columns:1fr 1fr}.china-market-copy{grid-column:1/-1}}
