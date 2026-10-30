@@ -818,7 +818,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         sources = [
             {"name": "天天拍车 / TTPAI — модельная статистика", "url": "https://www.ttpai.cn/shanghai/price/tesila-model3",
              "access": "Публичные модельные страницы", "data_kind": "Исторические цены / средние по возрасту / последние сделки",
-             "note": "Публичные страницы показывают средние цены по возрасту автомобиля (3/5/7 лет), историю модели и последние завершённые сделки с датами, пробегом и городом. Это статистика сделок платформы, не полный экспорт аукционных лотов; фото и аукционные листы не заявлены.",
+             "note": "Публичные страницы показывают средние цены по возрасту автомобиля (3/5/7 лет), историю модели и последние завершённые сделки с датами, пробегом и городом. Это статистика сделок платформы, не полный экспорт аукционных лотов. В отдельных карточках проданных машин доступны фотографии; аукционные листы не заявлены.",
              "priority": 1},
             {"name": "Guazi Export", "url": "https://ru.guazi.com/",
              "access": "Ограниченный бесплатный доступ после регистрации заявлен", "data_kind": "Недавно проданные / отчёты осмотра",
@@ -867,7 +867,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         ]
         message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") найден открытый слой TTPAI: модельные средние цены по возрасту и последние сделки; также есть публичные судебные результаты. Но бесплатный массовый поток обычных дилерских аукционных лотов с полными фото и аукционными листами пока не подтверждён."
     return {"ok": True, "country": country, "data_type": "source_hub", "source": "PAPAUTO source registry",
-        "count": len(sample_records), "records": sample_records, "sources": sources, "sample_stats": sample_stats,
+        "source_hub_version": "2026-10-30-r4", "count": len(sample_records), "records": sample_records, "sources": sources, "sample_stats": sample_stats,
         "unsold_records": unsold_records, "china_judicial_sample": china_judicial_sample, "china_market_sample": china_market_sample, "message": message,
         "disclaimer": "Публичный пример не равен полному массиву торгов. Фотографии и аукционные листы показываем только из источников, где это разрешено; платные отчёты не копируем. Цены объявлений, стартовые ставки, судебные продажи и завершённые дилерские аукционы не смешиваются."}
 
