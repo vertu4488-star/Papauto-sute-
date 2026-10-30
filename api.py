@@ -887,7 +887,23 @@ async def voice_transcribe(request: Request):
             {"text": prompt},
             {"inline_data": {"mime_type": "audio/wav", "data": base64.b64encode(audio).decode("ascii")}}
         ]}],
-        "generationConfig": {"temperature": 0.0, "maxOutputTokens": 512}
+        "generationConfig": {
+            "audioTranscriptionConfig": {
+                "languageCodes": ["ru-RU"],
+                "customVocabulary": [
+                    "PAPAUTO", "Toyota", "RAV4", "RAV 4", "Prius", "Aqua", "Corolla", "Camry",
+                    "Harrier", "Yaris", "Vitz", "Honda", "Fit", "Freed", "Vezel", "Stepwgn",
+                    "Nissan", "Note", "Serena", "X-Trail", "Mazda", "CX-5", "Subaru",
+                    "Forester", "Outback", "Suzuki", "Mitsubishi", "Lexus", "RX", "NX",
+                    "Hyundai", "Kia", "Genesis", "BMW", "Mercedes-Benz", "Volkswagen",
+                    "Audi", "BYD", "Geely", "Chery", "Haval", "Zeekr", "Li Auto",
+                    "Encar", "USS", "TAA", "JU", "CAA", "аукцион", "аукционный лист",
+                    "оценка", "пробег", "гибрид", "электромобиль", "правый руль",
+                    "полный привод", "растаможка", "утильсбор", "Новосибирск"
+                ],
+                "mode": "SMART"
+            }
+        }
     }
     try:
         # Gemini audio processing can take longer than ordinary text requests.
@@ -899,7 +915,7 @@ async def voice_transcribe(request: Request):
             try:
                 async with httpx.AsyncClient(timeout=timeout) as client:
                     response = await client.post(
-                        "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
+                        "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-transcribe:generateContent",
                         headers={"x-goog-api-key": gemini_key},
                         json=payload
                     )
