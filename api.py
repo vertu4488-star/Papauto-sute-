@@ -807,7 +807,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
              "url": "https://www.ttpai.cn/shanghai/price/tesila-modely"},
             {"name": "Volkswagen Polo · Shanghai", "age_3_avg_cny": 58800, "age_5_avg_cny": 45300, "age_7_avg_cny": 34700,
              "recent_sales": "2026-09-22 · 2016 model · 18 000 km; 2026-09-14 · 2012 model · 56 000 km; 2026-09-10 · 2019 model · 55 000 km",
-             "url": "https://m.ttpai.cn/shanghai/dazhong-polo-m5a3?pageType=null", "photo_example_url": "https://www.ttpai.cn/shanghai/98306494", "photo_example_note": "Публичная карточка проданного Polo за сентябрь 2026 года: 8 фотографий, 1,8万 км; точная цена в открытом фрагменте не раскрыта."}
+             "url": "https://m.ttpai.cn/shanghai/dazhong-polo-m5a3?pageType=null", "photo_example_url": "https://www.ttpai.cn/shanghai/98306494", "photo_example_note": "Публичная карточка проданного Polo за сентябрь 2026 года: 8 фотографий, 18 000 км; точная цена в открытом фрагменте не раскрыта."}
         ]
         china_judicial_sample = [
             {"name": "BMW 2.0T", "year": "2021", "auction": "Gongpai / Jining District Court", "date": "2026-06-27", "final_price_cny": 63030.32, "note": "Оценка 100 947 CNY; пробег в публичной карточке не указан.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=52859"},
