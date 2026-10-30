@@ -865,7 +865,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
              "note": "Официальные данные по рынку подержанных автомобилей в Китае; не содержит открытой базы отдельных аукционных лотов.",
              "priority": 3}
         ]
-        message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") найденные открытые источники пока не дают подтверждённого бесплатного потока обычных дилерских аукционных продаж. Ниже — источники для проверки; судебные и аварийные торги отмечены отдельно."
+        message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") найден открытый слой TTPAI: модельные средние цены по возрасту и последние сделки; также есть публичные судебные результаты. Но бесплатный массовый поток обычных дилерских аукционных лотов с полными фото и аукционными листами пока не подтверждён."
     return {"ok": True, "country": country, "data_type": "source_hub", "source": "PAPAUTO source registry",
         "count": len(sample_records), "records": sample_records, "sources": sources, "sample_stats": sample_stats,
         "unsold_records": unsold_records, "china_judicial_sample": china_judicial_sample, "china_market_sample": china_market_sample, "message": message,
