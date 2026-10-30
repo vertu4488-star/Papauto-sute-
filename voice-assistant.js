@@ -124,11 +124,25 @@ const micIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" wid
 let recording=false,stream=null,audioContext=null,source=null,processor=null,pcmChunks=[],latestLevelDb=-Infinity,maxLevelDb=-Infinity;
 const resetMic=()=>{recording=false;listen.setAttribute("aria-pressed","false");listen.classList.remove("is-listening");listen.innerHTML=micIcon;if(levelBox)levelBox.hidden=true;if(levelFill)levelFill.style.width="0%";};
 function encodeWav(chunks,sampleRate){
- const length=chunks.reduce((n,c)=>n+c.length,0),buffer=new ArrayBuffer(44+length*2),view=new DataView(buffer);
+ const length=chunks.reduce((n,c)=>n+c.length,0);
+ // iOS Safari can deliver a very quiet PCM stream even when the microphone
+ // meter shows activity. Apply bounded RMS normalization before 16-bit WAV
+ // encoding; cap gain to avoid turning background noise into excessive volume.
+ let sumSquares=0,peak=0;
+ for(const chunk of chunks)for(let i=0;i<chunk.length;i++){
+  const sample=chunk[i];sumSquares+=sample*sample;peak=Math.max(peak,Math.abs(sample));
+ }
+ const rms=Math.sqrt(sumSquares/Math.max(1,length));
+ const gain=rms>0.0005?Math.min(12,0.12/rms):1;
+ const buffer=new ArrayBuffer(44+length*2),view=new DataView(buffer);
  const write=(offset,str)=>{for(let i=0;i<str.length;i++)view.setUint8(offset+i,str.charCodeAt(i))};
  write(0,"RIFF");view.setUint32(4,36+length*2,true);write(8,"WAVE");write(12,"fmt ");view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,1,true);view.setUint32(24,sampleRate,true);view.setUint32(28,sampleRate*2,true);view.setUint16(32,2,true);view.setUint16(34,16,true);write(36,"data");view.setUint32(40,length*2,true);
  let offset=44;
- for(const chunk of chunks)for(let i=0;i<chunk.length;i++){const sample=Math.max(-1,Math.min(1,chunk[i]));view.setInt16(offset,sample<0?sample*0x8000:sample*0x7fff,true);offset+=2}
+ for(const chunk of chunks)for(let i=0;i<chunk.length;i++){
+  const amplified=chunk[i]*gain;
+  const sample=Math.max(-0.98,Math.min(0.98,amplified));
+  view.setInt16(offset,sample<0?sample*0x8000:sample*0x7fff,true);offset+=2;
+ }
  return new Blob([buffer],{type:"audio/wav"});
 }
 async function stopRecording(){
