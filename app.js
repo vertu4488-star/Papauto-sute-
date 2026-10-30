@@ -104,7 +104,7 @@ if(auctionStatsForm){
    const response=await fetch(api+"/api/auction-statistics?"+params.toString(),{headers:{Accept:"application/json"}});let data={};try{data=await response.json()}catch{}
    if(!response.ok)throw new Error(data.detail||"Не удалось загрузить статистику.");out.replaceChildren();
    if(data.data_type==="china_model_live"){
-    out.append(el("span","auction-status-pill","Китай · свежие данные TTPAI"),el("h3","",data.model||"Статистика модели"));
+    out.append(el("span","auction-status-pill","Китай · свежие данные TTPAI"),el("h3","",data.model||"Статистика модели"),el("p","auction-sample-note","Город источника: "+(data.city||"указан в первоисточнике")+(data.transaction_count?" · записей в истории: "+data.transaction_count:"")));
     const metrics=el("div","auction-sample-metrics"),money=n=>n==null?"—":new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(Number(n))+" CNY";
     [["Средняя цена · 3 года",data.averages?.age_3_avg_cny],["Средняя цена · 5 лет",data.averages?.age_5_avg_cny],["Средняя цена · 7 лет",data.averages?.age_7_avg_cny]].forEach(([label,value])=>{const box=el("div","auction-sample-metric");box.append(el("small","",label),el("strong","",money(value)));metrics.append(box)});out.append(metrics);
     if(Array.isArray(data.recent_sales)&&data.recent_sales.length){const panel=el("section","auction-sample-panel");panel.append(el("h4","","Последние опубликованные сделки"));data.recent_sales.forEach(item=>panel.append(el("p","",item.date+" · "+item.description)));out.append(panel)}
