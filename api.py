@@ -586,7 +586,8 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
             "limit": limit,
             "page": 1,
             "lang": "en",
-            "source": "all",
+            "source": "encar",
+            "sale_type": "normal",
         }
         # The site's budget is a Russian-ruble target, while this provider's price filter
         # is KRW/EUR. Never compare those currencies without a verified FX conversion.
@@ -599,8 +600,10 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                     headers={"X-API-Key": api_key, "Accept": "application/json"},
                 )
             if response.status_code == 401:
-                raise HTTPException(status_code=503, detail="XAPI Korea отклонил ключ. Проверьте XAPIKOREA_API_KEY в Render.")
+                logger.error("XAPI Korea authentication failed (401); key is present in Render but was rejected by provider")
+                raise HTTPException(status_code=503, detail="XAPI Korea отклонил ключ (HTTP 401). Сам ключ не меняли; проверьте его статус в кабинете провайдера.")
             if response.status_code == 429:
+                logger.warning("XAPI Korea rate limit reached (429)")
                 raise HTTPException(status_code=429, detail="Достигнут лимит запросов XAPI Korea. Подождите и повторите поиск.")
             if response.status_code != 200:
                 raise HTTPException(status_code=502, detail=f"XAPI Korea вернул ошибку поиска (HTTP {response.status_code}).")
@@ -609,7 +612,9 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
             except ValueError:
                 raise HTTPException(status_code=502, detail="XAPI Korea вернул ответ в неизвестном формате.")
             if not isinstance(payload, dict) or not isinstance(payload.get("results"), list):
+                logger.error("XAPI Korea returned an unexpected search response shape")
                 raise HTTPException(status_code=502, detail="Формат ответа XAPI Korea не соответствует документации.")
+            logger.info("XAPI Korea search succeeded: results=%s total_count=%s", len(payload["results"]), payload.get("total_count"))
             results = []
             for item in payload["results"][:limit]:
                 if not isinstance(item, dict):
@@ -843,20 +848,24 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
         if not api_key:
             raise HTTPException(status_code=503, detail="Поиск по Южной Корее пока не активирован: в Render нужен XAPIKOREA_API_KEY.")
-        params = {"brand": make or None, "model": model or None, "year_from": year_from, "year_to": year_to, "limit": limit, "page": 1, "lang": "en", "source": "all"}
+        params = {"brand": make or None, "model": model or None, "year_from": year_from, "year_to": year_to, "limit": limit, "page": 1, "lang": "en", "source": "encar", "sale_type": "normal"}
         params = {k: v for k, v in params.items() if v is not None and v != ""}
         try:
             async with httpx.AsyncClient(timeout=25.0) as client:
                 response = await client.get("https://api.xapikorea.com/v1/search", params=params, headers={"X-API-Key": api_key, "Accept": "application/json"})
             if response.status_code == 401:
-                raise HTTPException(status_code=503, detail="XAPI Korea отклонил ключ. Проверьте XAPIKOREA_API_KEY в Render.")
+                logger.error("XAPI Korea statistics request rejected (401); key is present in Render but was rejected by provider")
+                raise HTTPException(status_code=503, detail="XAPI Korea отклонил ключ (HTTP 401). Сам ключ не меняли; проверьте его статус в кабинете провайдера.")
             if response.status_code == 429:
+                logger.warning("XAPI Korea statistics rate limit reached (429)")
                 raise HTTPException(status_code=429, detail="Достигнут лимит XAPI Korea. Повторите поиск позже.")
             if response.status_code != 200:
                 raise HTTPException(status_code=502, detail=f"XAPI Korea вернул ошибку HTTP {response.status_code}.")
             payload = response.json()
             if not isinstance(payload, dict) or not isinstance(payload.get("results"), list):
+                logger.error("XAPI Korea statistics returned an unexpected response shape")
                 raise HTTPException(status_code=502, detail="Источник вернул неизвестный формат данных.")
+            logger.info("XAPI Korea statistics request succeeded: results=%s total_count=%s", len(payload["results"]), payload.get("total_count"))
         except HTTPException:
             raise
         except (httpx.RequestError, ValueError):
