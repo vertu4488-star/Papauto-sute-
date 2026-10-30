@@ -962,9 +962,60 @@ async def voice_transcribe(request: Request):
         parts = (candidates[0].get("content") or {}).get("parts") or [] if candidates else []
         transcript = " ".join(part.get("text", "") for part in parts if part.get("text")).strip()
         transcript = transcript.strip().strip('"«»').strip()
+
+        # Gemini 3.5 Transcribe has been observed returning HTTP 200 with no
+        # transcript for valid audio. Fall back to the stable multimodal Flash
+        # model, which can transcribe audio from the same inline WAV payload.
         if not transcript:
-            logger.warning("Gemini voice transcription returned an empty transcript")
-            raise HTTPException(status_code=422, detail="Не удалось разобрать речь. Попробуйте сказать запрос ещё раз.")
+            logger.warning(
+                "Dedicated Gemini transcription returned no text; trying gemini-3.6-flash fallback"
+            )
+            fallback_payload = {
+                "contents": [{
+                    "role": "user",
+                    "parts": [
+                        {"text": (
+                            "Прослушай приложенную аудиозапись и дословно расшифруй речь "
+                            "на русском языке. Верни только распознанный текст, без пояснений. "
+                            "Сохраняй названия марок и моделей автомобилей. Если речи нет, "
+                            "верни пустую строку."
+                        )},
+                        {"inline_data": {
+                            "mime_type": "audio/wav",
+                            "data": base64.b64encode(audio).decode("ascii")
+                        }}
+                    ]
+                }],
+                "generationConfig": {"temperature": 0.1, "maxOutputTokens": 512}
+            }
+            async with httpx.AsyncClient(timeout=timeout) as client:
+                fallback_response = await client.post(
+                    "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent",
+                    headers={"x-goog-api-key": gemini_key},
+                    json=fallback_payload
+                )
+            if fallback_response.status_code == 200:
+                fallback_data = fallback_response.json()
+                fallback_candidates = fallback_data.get("candidates") or []
+                fallback_parts = (
+                    (fallback_candidates[0].get("content") or {}).get("parts") or []
+                    if fallback_candidates else []
+                )
+                transcript = " ".join(
+                    part.get("text", "") for part in fallback_parts if part.get("text")
+                ).strip().strip('"«»').strip()
+            else:
+                logger.error(
+                    "Gemini Flash transcription fallback failed: http=%s",
+                    fallback_response.status_code
+                )
+
+        if not transcript:
+            logger.warning("Both Gemini transcription paths returned an empty transcript")
+            raise HTTPException(
+                status_code=422,
+                detail="Не удалось разобрать запись. Проверьте, что во время записи слышна речь, и попробуйте ещё раз."
+            )
         logger.info("Gemini voice transcription succeeded: transcript_chars=%s", len(transcript))
         return {"ok": True, "text": transcript}
     except HTTPException:
