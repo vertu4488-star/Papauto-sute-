@@ -15,6 +15,7 @@
   <meta property="og:url" content="https://papauto.ru/">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/mobile.css">
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -86,6 +87,13 @@
       <div class="floating-note"><span class="note-icon">✳</span><span><b>Умный подбор</b><small>Марка · бюджет · год · задачи</small></span><span class="note-arrow">↗</span></div>
     </div>
   </section>
+
+  <nav class="mobile-dashboard" aria-label="Быстрые действия">
+    <a href="#assistant"><strong>Подобрать автомобиль</strong><span>Подбор по бюджету и параметрам ↗</span></a>
+    <a href="#calculator"><strong>Калькулятор</strong><span>Стоимость автомобиля под ключ ↗</span></a>
+    <a href="#auction-statistics"><strong>Аукционная статистика</strong><span>Цены, модели и параметры ↗</span></a>
+    <a href="#catalog"><strong>Каталог и поиск</strong><span>Примеры автомобилей ↗</span></a>
+  </nav>
 
   <section class="proof-strip wrap" aria-label="Наш подход">
     <div><b>3 направления</b><span>Китай · Корея · Япония</span></div>
@@ -478,6 +486,12 @@
   <p class="footer-note">Предварительные расчёты носят информационный характер и не являются публичной офертой. Данные о стоимости и возможности ввоза уточняются перед сделкой.</p>
   <div class="footer-bottom"><span>© <span id="year"></span> PAPAUTO</span><span>Доставка по регионам России</span></div>
 </footer>
+<nav class="mobile-bottom-nav" aria-label="Быстрая навигация">
+  <a class="primary" href="#assistant"><span>⌕</span>Подбор</a>
+  <a href="#calculator"><span>▤</span>Расчёт</a>
+  <a href="#auction-statistics"><span>◷</span>Статистика</a>
+  <a href="#catalog"><span>▦</span>Каталог</a>
+</nav>
 <script src="/site-config.js"></script>
 <script src="/app.js" defer></script>
 <script src="/voice-assistant.js" defer></script>
