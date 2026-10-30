@@ -105,6 +105,30 @@ if(auctionStatsForm){
    if(!response.ok)throw new Error(data.detail||"Не удалось загрузить статистику.");out.replaceChildren();
    if(data.data_type==="source_hub"){
     out.append(el("span","auction-status-pill","Проверяемые источники · без выдуманных цен"),el("h3","","Источники для "+[$("auctionMake").value.trim(),$("auctionModel").value.trim()].filter(Boolean).join(" ")),el("p","",data.message||"Выберите источник и проверьте реальные записи."));
+    if(data.sample_stats&&Array.isArray(data.records)&&data.records.length){
+     const sample=el("section","auction-sample-panel");
+     sample.append(el("div","eyebrow","ПУБЛИЧНЫЙ ПРИМЕР · ЯПОНИЯ · TOYOTA RAV4"),el("h3","","Выборка завершённых торгов за 24–29 октября 2026"));
+     const stats=data.sample_stats;
+     const metrics=el("div","auction-sample-metrics");
+     const metric=(label,value)=>{const box=el("div","auction-sample-metric");box.append(el("small","",label),el("strong","",value));metrics.append(box)};
+     const money=n=>new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(Number(n||0))+" ¥";
+     metric("Продано в выборке",String(stats.sample_count));
+     metric("Средняя цена",money(stats.average_final_price_jpy));
+     metric("Медиана",money(stats.median_final_price_jpy));
+     metric("Минимум — максимум",money(stats.min_final_price_jpy)+" — "+money(stats.max_final_price_jpy));
+     sample.append(metrics);
+     const table=document.createElement("table");table.className="auction-sample-table";
+     const thead=document.createElement("thead"),headRow=document.createElement("tr");
+     ["Модель / комплектация","Год","Пробег","Площадка","Дата","Финальная цена"].forEach(label=>{const th=document.createElement("th");th.textContent=label;headRow.append(th)});
+     thead.append(headRow);table.append(thead);
+     const tbody=document.createElement("tbody");
+     data.records.forEach(record=>{const tr=document.createElement("tr");const cells=[record.name||"Toyota RAV4",record.year||"—",record.mileage_km?new Intl.NumberFormat("ru-RU").format(record.mileage_km)+" км":"—",record.auction||"—",record.date||"—",money(record.final_price_jpy)];cells.forEach((value,index)=>{const td=document.createElement("td");if(index===0&&record.url){const a=document.createElement("a");a.href=record.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=String(value);td.append(a)}else{td.textContent=String(value)}tr.append(td)});tbody.append(tr)});
+     table.append(tbody);sample.append(table);
+     if(Array.isArray(data.unsold_records)&&data.unsold_records.length){const u=data.unsold_records[0];sample.append(el("p","auction-sample-unsold","Отдельно: "+(u.name||"RAV4")+" — не продан; последняя ставка "+money(u.last_bid_jpy)+". Эта запись не включена в среднее и медиану."))}
+     sample.append(el("p","auction-sample-note",stats.note||"Выборка неполная и не представляет весь рынок. Дополнительные фото и полные аукционные листы доступны у первоисточника по его правилам."));
+     const sourceLink=document.createElement("a");sourceLink.href=stats.source_url||"https://banzai24.com/en?source=archive";sourceLink.target="_blank";sourceLink.rel="noopener noreferrer";sourceLink.textContent="Открыть архив Banzai24 ↗";sample.append(sourceLink);
+     out.append(sample);
+    }
     const grid=el("div","auction-source-results");
     (Array.isArray(data.sources)?data.sources:[]).forEach(source=>{
      const card=el("article","auction-source-result");
