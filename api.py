@@ -10,6 +10,7 @@ from datetime import datetime, timezone
 from typing import Optional
 
 import httpx
+from china_stats import fetch_ttpai_model_stats
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, field_validator
@@ -801,6 +802,10 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
     limit = min(max(limit, 1), 30)
     make, model, grade = make.strip()[:80], model.strip()[:80], grade.strip()[:12]
     model_search_links = _japan_model_search_links(make, model, year_from, year_to) if country == "japan" else []
+    if country == "china":
+        live_china = await fetch_ttpai_model_stats(make, model)
+        if live_china and live_china.get("ok"):
+            return live_china
     if country == "south-korea":
         api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
         if not api_key:
