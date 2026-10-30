@@ -217,3 +217,16 @@ html{scroll-padding-top:100px;background:var(--bg)}body{background:#f3f5f7;color
 .china-market-copy h3{font-size:clamp(1rem,2vw,1.35rem);margin:.35rem 0 .5rem}.china-market-copy p{font-size:.8rem;line-height:1.6;color:var(--muted,#aab8c4);margin:0 0 .6rem}.china-market-copy a{font-size:.78rem;text-decoration:underline;text-underline-offset:3px;color:var(--accent,#a9bdcc)}
 .china-market-metric{display:flex;flex-direction:column;justify-content:center;gap:.45rem;padding:1rem;border:1px solid rgba(255,255,255,.09);border-radius:12px;background:rgba(0,0,0,.12);min-width:0}.china-market-metric small{font-size:.72rem;color:var(--muted,#aab8c4)}.china-market-metric strong{font-size:clamp(1rem,2vw,1.5rem);overflow-wrap:anywhere}
 @media(max-width:620px){.china-market-overview{grid-template-columns:1fr 1fr}.china-market-copy{grid-column:1/-1}}
+
+.auction-sample-panel{margin:1rem 0 1.25rem;padding:1.1rem;border:1px solid rgba(169,189,204,.28);border-radius:16px;background:linear-gradient(145deg,rgba(169,189,204,.07),rgba(255,255,255,.015))}
+.auction-sample-panel h3{font-size:1.12rem;margin:.4rem 0 .8rem}
+.auction-sample-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem;margin:.8rem 0 1rem}
+.auction-sample-metric{padding:.7rem;border-radius:10px;background:rgba(0,0,0,.16);border:1px solid rgba(255,255,255,.08);min-width:0}
+.auction-sample-metric small{display:block;font-size:.68rem;color:var(--muted,#aab8c4)}
+.auction-sample-metric strong{display:block;font-size:clamp(.9rem,1.6vw,1.15rem);margin-top:.35rem;overflow-wrap:anywhere}
+.auction-sample-table{width:100%;border-collapse:collapse;font-size:.75rem;display:block;overflow-x:auto;white-space:nowrap}
+.auction-sample-table th,.auction-sample-table td{padding:.6rem .55rem;text-align:left;border-bottom:1px solid rgba(255,255,255,.09)}
+.auction-sample-table th{font-size:.65rem;color:var(--muted,#aab8c4);font-weight:600}
+.auction-sample-table a{color:var(--accent,#a9bdcc);text-decoration:underline;text-underline-offset:2px}
+.auction-sample-unsold,.auction-sample-note{font-size:.73rem;line-height:1.6;color:var(--muted,#aab8c4);margin:.75rem 0}
+@media(max-width:620px){.auction-sample-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.auction-sample-panel{padding:.8rem}}
