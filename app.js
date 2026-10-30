@@ -132,7 +132,7 @@ if(auctionStatsForm){
     if(Array.isArray(data.china_market_sample)&&data.china_market_sample.length){
      const panel=el("section","auction-sample-panel");
      panel.append(el("div","eyebrow","КИТАЙ · TTPAI · ИСТОРИЧЕСКИЕ СДЕЛКИ"),el("h3","","Публичные средние цены по возрасту автомобиля"));
-     panel.append(el("p","auction-sample-note","Это средние цены сделок на платформе TTPAI, а не финальные цены отдельных аукционных лотов. Данные по возрастным группам показаны как ориентир внутреннего китайского рынка."));
+     panel.append(el("p","auction-sample-note","Это средние цены сделок на платформе TTPAI, а не финальные цены отдельных аукционных лотов. Показанные модели — публичные примеры источника, а не результаты по выбранной вами модели."));
      const grid=el("div","auction-source-results");
      data.china_market_sample.forEach(item=>{
       const card=el("article","auction-source-result");card.append(el("span","auction-source-access","TTPAI · публичная статистика"),el("h4","",item.name||"Модель"));
@@ -146,7 +146,7 @@ if(auctionStatsForm){
     if(Array.isArray(data.china_judicial_sample)&&data.china_judicial_sample.length){
      const panel=el("section","auction-sample-panel");
      panel.append(el("div","eyebrow","КИТАЙ · ПУБЛИЧНЫЕ СУДЕБНЫЕ ТОРГИ"),el("h3","","Примеры завершённых продаж автомобилей на Gongpai"));
-     panel.append(el("p","auction-sample-note","Это судебная реализация имущества, а не обычный дилерский аукцион. Такие цены нельзя смешивать с рыночной статистикой подержанных автомобилей."));
+     panel.append(el("p","auction-sample-note","Это примеры публичных судебных продаж, не результаты по выбранной вами модели. Судебная реализация имущества — не обычный дилерский аукцион; такие цены нельзя смешивать с рыночной статистикой подержанных автомобилей."));
      const table=document.createElement("table");table.className="auction-sample-table";
      const thead=document.createElement("thead"),headRow=document.createElement("tr");
      ["Автомобиль","Год","Суд / площадка","Дата","Цена продажи"].forEach(label=>{const th=document.createElement("th");th.textContent=label;headRow.append(th)});
