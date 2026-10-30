@@ -216,30 +216,59 @@ async def health():
 async def create_lead(lead: Lead):
     if not lead.consent:
         raise HTTPException(status_code=400, detail="Необходимо согласие на обработку данных.")
-    token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
-    chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
-    if not token or not chat_id:
-        raise HTTPException(status_code=503, detail="Приём заявок временно не настроен. Напишите менеджеру в Telegram.")
-    text = (
-        "🚘 <b>Новая заявка PAPAUTO</b>\n"
-        f"<b>Время:</b> {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\n"
-        f"<b>Имя:</b> {html.escape(lead.name or 'не указано')}\n"
-        f"<b>Контакт:</b> {html.escape(lead.contact)}\n"
-        f"<b>Направление:</b> {html.escape(lead.country)}\n"
-        f"<b>Бюджет:</b> {f'{lead.budget:,}'.replace(',', ' ' ) + ' ₽' if lead.budget is not None else 'не указан'}\n"
-        f"<b>Город:</b> {html.escape(lead.city)}\n"
-        f"<b>Запрос:</b> {html.escape(lead.request)}"
-    )
-    url = f"https://api.telegram.org/bot{token}/sendMessage"
+    supabase_url = (os.getenv("SUPABASE_URL") or "").strip().rstrip("/")
+    supabase_key = (os.getenv("SUPABASE_PUBLISHABLE_KEY") or "").strip()
+    if not supabase_url or not supabase_key:
+        raise HTTPException(status_code=503, detail="Хранилище заявок временно не настроено.")
+    record = {
+        "name": lead.name,
+        "contact": lead.contact,
+        "country": lead.country,
+        "budget": lead.budget,
+        "city": lead.city,
+        "request": lead.request,
+        "consent": True
+    }
     try:
         async with httpx.AsyncClient(timeout=12.0) as client:
-            response = await client.post(url, json={"chat_id": chat_id, "text": text, "parse_mode": "HTML", "disable_web_page_preview": True})
-        data = response.json()
-        if response.status_code != 200 or not data.get("ok"):
-            raise HTTPException(status_code=502, detail="Не удалось передать заявку менеджеру. Попробуйте позже.")
+            stored = await client.post(
+                f"{supabase_url}/rest/v1/leads",
+                headers={"apikey": supabase_key, "Authorization": f"Bearer {supabase_key}", "Content-Type": "application/json", "Prefer": "return=minimal"},
+                json=record
+            )
+        if stored.status_code not in (200, 201, 204):
+            logger.error("Supabase lead insert failed: status=%s body=%s", stored.status_code, stored.text[:500])
+            raise HTTPException(status_code=502, detail="Не удалось сохранить заявку. Попробуйте позже.")
     except httpx.RequestError:
-        raise HTTPException(status_code=502, detail="Не удалось связаться с сервисом уведомлений. Попробуйте позже.")
-    return {"ok": True, "message": "Заявка отправлена менеджеру."}
+        raise HTTPException(status_code=502, detail="Не удалось связаться с базой заявок. Попробуйте позже.")
+
+    token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
+    chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
+    notified = False
+    if token and chat_id:
+        message = (
+            "🚘 <b>Новая заявка PAPAUTO</b>\\n"
+            f"<b>Время:</b> {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\\n"
+            f"<b>Имя:</b> {html.escape(lead.name or 'не указано')}\\n"
+            f"<b>Контакт:</b> {html.escape(lead.contact)}\\n"
+            f"<b>Направление:</b> {html.escape(lead.country)}\\n"
+            f"<b>Бюджет:</b> {f'{lead.budget:,}'.replace(',', ' ' ) + ' ₽' if lead.budget is not None else 'не указан'}\\n"
+            f"<b>Город:</b> {html.escape(lead.city)}\\n"
+            f"<b>Запрос:</b> {html.escape(lead.request)}"
+        )
+        try:
+            async with httpx.AsyncClient(timeout=12.0) as client:
+                response = await client.post(
+                    f"https://api.telegram.org/bot{token}/sendMessage",
+                    json={"chat_id": chat_id, "text": message, "parse_mode": "HTML", "disable_web_page_preview": True}
+                )
+            data = response.json()
+            notified = response.status_code == 200 and bool(data.get("ok"))
+            if not notified:
+                logger.error("Telegram lead notification failed: status=%s", response.status_code)
+        except (httpx.RequestError, ValueError):
+            logger.exception("Telegram lead notification request failed")
+    return {"ok": True, "stored": True, "notified": notified, "message": "Заявка сохранена. Менеджер свяжется с вами."}
 
 
 class CustomsRequest(BaseModel):
