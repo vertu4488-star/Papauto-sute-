@@ -2,10 +2,13 @@
 
 These are marketplace transactions by city, not wholesale auction-lot results.
 """
+import logging
 import re
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 import httpx
+
+logger = logging.getLogger(__name__)
 
 
 class _VisibleText(HTMLParser):
@@ -117,6 +120,7 @@ async def fetch_ttpai_model_stats(make, model):
         count_match = re.search(r"已找到\s*(\d+)\s*条历史成交", page_text)
         transaction_count = int(count_match.group(1)) if count_match else None
         if not any(value is not None for value in averages.values()) and not recent_sales and transaction_count is None:
+            logger.warning("TTPAI page parsed but no supported metrics found: model=%s city=%s", display_name, city)
             return {
                 "ok": False,
                 "source": "TTPAI",
@@ -124,6 +128,10 @@ async def fetch_ttpai_model_stats(make, model):
                 "message": "Страница TTPAI открылась, но распознаваемые показатели сделок не найдены.",
             }
 
+        logger.info(
+            "TTPAI statistics parsed: model=%s city=%s averages=%s recent_sales=%s transaction_count=%s",
+            display_name, city, averages, len(recent_sales), transaction_count,
+        )
         return {
             "ok": True,
             "country": "china",
@@ -143,7 +151,8 @@ async def fetch_ttpai_model_stats(make, model):
                 "Доставка, экспорт, таможня и оформление в РФ не включены."
             ),
         }
-    except (httpx.HTTPError, ValueError, TypeError):
+    except (httpx.HTTPError, ValueError, TypeError) as exc:
+        logger.warning("TTPAI request or parsing failed: model=%s city=%s error=%s", display_name, city, type(exc).__name__)
         return {
             "ok": False,
             "source": "TTPAI",
