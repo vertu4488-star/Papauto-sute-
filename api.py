@@ -395,26 +395,28 @@ async def vehicle_assistant(req: VehicleAssistantInput):
 
 
 def _japan_model_search_links(make: str, model: str, year_from: int, year_to: int):
-    """Build safe, user-initiated searches on public Japanese auction/statistics sites.
-    We link to sources rather than scraping or republishing data without permission.
-    """
+    """Build user-initiated model searches on public Japanese auction/statistics sites."""
     make_value = (make or "").strip()
     model_value = (model or "").strip()
-    search_value = " ".join(value for value in (make_value, model_value) if value).strip()
-    if make_value and model_value:
-        banzai_path = f"/en/{quote(make_value.upper(), safe='')}/{quote(model_value.upper(), safe='')}"
-    elif make_value:
-        banzai_path = f"/en/{quote(make_value.upper(), safe='')}"
-    else:
-        banzai_path = "/en"
-    banzai_url = (
-        "https://banzai24.com" + banzai_path
-        + f"?countryISO=JP&source=archive&yearStart={int(year_from)}&yearEnd={int(year_to)}"
-    )
-    jp_query = quote(model_value or make_value or search_value, safe="")
-    jp_sheet_url = "https://jpsheet.com/auction-price-history/" + (f"?q={jp_query}" if jp_query else "")
-    make_key = "".join(ch for ch in make_value.casefold() if ch.isalnum())
-    model_key = "".join(ch for ch in model_value.casefold() if ch.isalnum())
+    raw_make_key = "".join(ch for ch in make_value.casefold() if ch.isalnum())
+    raw_model_key = "".join(ch for ch in model_value.casefold() if ch.isalnum())
+    make_aliases = {
+        "тойота": "toyota", "хонда": "honda", "ниссан": "nissan",
+        "мазда": "mazda", "мицубиси": "mitsubishi", "субару": "subaru",
+        "сузуки": "suzuki", "лексус": "lexus"
+    }
+    model_aliases = {
+        "приус": "prius", "рав4": "rav4", "рав": "rav4",
+        "прадо": "landcruiserprado", "лендкрузерпрадо": "landcruiserprado",
+        "аква": "aqua", "харриер": "harrier", "витц": "vitz",
+        "ярис": "yaris", "альфард": "alphard", "королла": "corolla",
+        "райз": "raize", "вокси": "voxy", "веллфайр": "vellfire",
+        "ярискросс": "yariscross", "фит": "fit", "везел": "vezel",
+        "фрид": "freed", "икстрейл": "xtrail", "хтрейл": "xtrail",
+        "сх5": "cx5"
+    }
+    make_key = make_aliases.get(raw_make_key, raw_make_key)
+    model_key = model_aliases.get(raw_model_key, raw_model_key)
     aleado_model_map = {
         "toyota": {
             "prius": ("PRIUS", 718), "rav4": ("RAV4", 710),
@@ -440,31 +442,55 @@ def _japan_model_search_links(make: str, model: str, year_from: int, year_to: in
         "subaru": ("SUBARU", 7), "suzuki": ("SUZUKI", 8),
         "lexus": ("LEXUS", 59)
     }
-    aleado_link = None
-    aleado_key = "toyota" if not make_key and model_key in aleado_model_map["toyota"] else make_key
-    if aleado_key in aleado_model_map and model_key in aleado_model_map[aleado_key]:
-        slug, name_id = aleado_model_map[aleado_key][model_key]
-        maker_slug, company_id = aleado_makes[aleado_key]
-        aleado_link = f"https://aleado.com/autostat/{slug}.asp?company_id={company_id}&name_id={name_id}"
-    elif aleado_key in aleado_makes:
-        maker_slug, company_id = aleado_makes[aleado_key]
-        aleado_link = f"https://aleado.com/autostat/{maker_slug}.asp?company_id={company_id}"
+    if not make_key:
+        for candidate in ("toyota", "honda", "nissan", "mazda"):
+            if model_key in aleado_model_map.get(candidate, {}):
+                make_key = candidate
+                break
+    model_slugs = {
+        "landcruiserprado": "LAND-CRUISER-PRADO", "landcruiser": "LAND-CRUISER",
+        "yariscross": "YARIS-CROSS", "xtrail": "X-TRAIL", "cx5": "CX-5"
+    }
+    model_slug = model_slugs.get(model_key, model_key.upper() if model_key else "")
+    maker_slug = aleado_makes.get(make_key, (make_key.upper(), 0))[0]
+    if make_key and model_slug:
+        banzai_path = f"/en/{quote(maker_slug, safe='')}/{quote(model_slug, safe='')}"
+    elif make_key:
+        banzai_path = f"/en/{quote(maker_slug, safe='')}"
+    else:
+        banzai_path = "/en"
+    banzai_url = (
+        "https://banzai24.com" + banzai_path
+        + f"?countryISO=JP&source=archive&yearStart={int(year_from)}&yearEnd={int(year_to)}"
+    )
+    jp_query = quote(model_slug or maker_slug, safe="-")
+    jp_sheet_url = "https://jpsheet.com/auction-price-history/" + (f"?q={jp_query}" if jp_query else "")
     links = []
-    if make_key in aleado_makes and model_value:
-        carvector_make = aleado_makes[make_key][0].lower()
-        carvector_model = quote("-".join(model_value.casefold().split()), safe="-")
+    if make_key in aleado_makes and model_slug:
+        carvector_make = maker_slug.lower()
+        carvector_model = quote(model_slug.lower(), safe="-")
         links.append({
             "name": "Carvector — поиск проданных японских лотов",
             "url": f"https://carvector.com/stat/{carvector_make}/{carvector_model}",
-            "kind": "Поиск по модели: найденные автомобили, статусы завершённых торгов и ценовые поля",
-            "access": "Публичная выдача показывает часть закрытых лотов; фотографии и отдельные сведения могут требовать входа. Уточняйте смысл поля «Average price» у источника."
+            "kind": "Модельная статистика, найденные автомобили и статусы завершённых торгов",
+            "access": "Публичная выдача показывает часть лотов; бесплатный аккаунт открывает больше деталей и фотографий. Дополнительные 360°/HD материалы могут требовать депозит. Сверяйте методику поля Average price."
         })
+    aleado_key = make_key
+    if aleado_key in aleado_model_map and model_key in aleado_model_map[aleado_key]:
+        slug, name_id = aleado_model_map[aleado_key][model_key]
+        company_id = aleado_makes[aleado_key][1]
+        aleado_link = f"https://aleado.com/autostat/{slug}.asp?company_id={company_id}&name_id={name_id}"
+    elif aleado_key in aleado_makes:
+        slug, company_id = aleado_makes[aleado_key]
+        aleado_link = f"https://aleado.com/autostat/{slug}.asp?company_id={company_id}"
+    else:
+        aleado_link = None
     if aleado_link:
         links.append({
             "name": "Aleado — статистика проданных аукционных лотов",
             "url": aleado_link,
-            "kind": "По годам: число продаж и средняя цена в тысячах иен; для некоторых моделей — фильтры по оценке и модификации",
-            "access": "Публичная страница источника. Значения и единицы измерения нужно сверять на странице; PAPAUTO не копирует базу."
+            "kind": "По годам: количество продаж и средняя цена в тысячах иен",
+            "access": "Публичные модельные страницы; расчёт основан на последних шести месяцах и исключает часть особых продаж. PAPAUTO не копирует базу."
         })
     links.extend([
         {"name": "Banzai24 — архив японских торгов", "url": banzai_url,
@@ -1014,7 +1040,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         ]
         message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") найден открытый слой TTPAI: модельные средние цены по возрасту и последние сделки; также есть публичные судебные результаты. Но бесплатный массовый поток обычных дилерских аукционных лотов с полными фото и аукционными листами пока не подтверждён."
     return {"ok": True, "country": country, "data_type": "source_hub", "source": "PAPAUTO source registry",
-        "source_hub_version": "2026-10-30-r10", "count": len(sample_records), "records": sample_records, "sources": sources, "model_search_links": model_search_links, "sample_stats": sample_stats,
+        "source_hub_version": "2026-10-30-r11", "count": len(sample_records), "records": sample_records, "sources": sources, "model_search_links": model_search_links, "sample_stats": sample_stats,
         "unsold_records": unsold_records, "china_judicial_sample": china_judicial_sample, "china_market_sample": china_market_sample, "message": message,
         "disclaimer": "Публичный пример не равен полному массиву торгов. Фотографии и аукционные листы показываем только из источников, где это разрешено; платные отчёты не копируем. Цены объявлений, стартовые ставки, судебные продажи и завершённые дилерские аукционы не смешиваются."}
 
