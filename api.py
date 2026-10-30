@@ -713,6 +713,9 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
             "max_price": max(prices) if prices else None, "currency": "KRW", "records": records,
             "disclaimer": "Это цены активных объявлений на корейском рынке, а не подтверждённые цены завершённых аукционов. Доставка, таможня и оформление в РФ не включены."}
     # Japan and China currently have no licensed, reusable bulk feed configured.
+    sample_stats = None
+    sample_records = []
+    unsold_records = []
     # Instead of returning a dead-end error or inventing model prices, expose a ranked
     # source hub with explicit access/quality labels so users can inspect primary sources.
     if country == "japan":
