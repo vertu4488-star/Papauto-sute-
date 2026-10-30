@@ -11,6 +11,7 @@ from typing import Optional
 
 import httpx
 from china_stats import fetch_ttpai_model_stats
+from korea_auction_stats import fetch_korea_monthly_stats
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, field_validator
@@ -827,6 +828,12 @@ async def market_overview():
         logger.warning("USS monthly data unavailable: %s", exc)
         return {"ok": True, "available": False, "source": "USS Monthly Data", "source_url": source_url,
                 "message": "Не удалось обновить открытую статистику USS. Повторите позже; значения не подменяются выдуманными цифрами."}
+
+
+@app.get("/api/korea-auction-overview")
+async def korea_auction_overview():
+    """Free public monthly auction totals from the Korean national association."""
+    return await fetch_korea_monthly_stats()
 
 
 @app.get("/api/auction-statistics")
