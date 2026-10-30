@@ -145,13 +145,13 @@
     position: absolute;
     top: 10px;
     right: 12px;
-    color: #c9f36a;
+    color: #a9bdcc;
     font-size: 15px;
     font-weight: 700;
   }
   .mobile-dashboard a:first-child {
-    border-color: rgba(201,243,106,.48);
-    background: linear-gradient(145deg, #263a36 0%, #14231f 100%);
+    border-color: rgba(169,189,204,.48);
+    background: linear-gradient(145deg, #26313b 0%, #151e27 100%);
   }
   .mobile-dashboard a strong {
     max-width: 88%;
@@ -307,9 +307,9 @@
     -webkit-tap-highlight-color: transparent;
   }
   .mobile-bottom-nav a span { font-size: 17px; line-height: 1; }
-  .mobile-bottom-nav a.primary { color: #c9f36a; font-weight: 750; }
+  .mobile-bottom-nav a.primary { color: #a9bdcc; font-weight: 750; }
   .mobile-bottom-nav a:active,
-  .mobile-bottom-nav a:focus-visible { color: #c9f36a; }
+  .mobile-bottom-nav a:focus-visible { color: #a9bdcc; }
   [id] { scroll-margin-top: 76px; }
 }
 
