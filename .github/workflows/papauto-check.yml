@@ -1,4 +1,4 @@
-name: PAPAUTO syntax checks
+name: PAPAUTO syntax and smoke checks
 
 on:
   push:
@@ -6,6 +6,9 @@ on:
     paths:
       - "api.py"
       - "app.js"
+      - "index.html"
+      - "auction-data.html"
+      - "styles.css"
       - ".github/workflows/papauto-check.yml"
   workflow_dispatch:
 
@@ -30,3 +33,39 @@ jobs:
         run: python -m py_compile api.py
       - name: Check browser JavaScript syntax
         run: node --check app.js
+      - name: Wait for Render API deployment and test Japan source hub
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL="https://papauto-leads.onrender.com/api/auction-statistics?country=japan&make=Toyota&model=RAV4&year_from=2019&year_to=2025"
+          for attempt in $(seq 1 18); do
+            if curl --silent --show-error --fail "$URL" -o /tmp/japan.json; then
+              break
+            fi
+            if [ "$attempt" -eq 18 ]; then
+              echo "Render API did not return a successful response after 180 seconds"
+              exit 1
+            fi
+            sleep 10
+          done
+          python - <<'PY'
+          import json
+          with open("/tmp/japan.json", encoding="utf-8") as f:
+              data = json.load(f)
+          assert data.get("data_type") == "source_hub", data
+          assert len(data.get("sources", [])) >= 5, data
+          print("Japan source hub OK:", len(data["sources"]), "sources")
+          PY
+      - name: Test China source hub
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --silent --show-error --fail "https://papauto-leads.onrender.com/api/auction-statistics?country=china&make=BYD&model=Song%20Plus&year_from=2020&year_to=2025" -o /tmp/china.json
+          python - <<'PY'
+          import json
+          with open("/tmp/china.json", encoding="utf-8") as f:
+              data = json.load(f)
+          assert data.get("data_type") == "source_hub", data
+          assert len(data.get("sources", [])) >= 5, data
+          print("China source hub OK:", len(data["sources"]), "sources")
+          PY
