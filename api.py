@@ -413,7 +413,33 @@ def _japan_model_search_links(make: str, model: str, year_from: int, year_to: in
     )
     jp_query = quote(model_value or make_value or search_value, safe="")
     jp_sheet_url = "https://jpsheet.com/auction-price-history/" + (f"?q={jp_query}" if jp_query else "")
-    return [
+    make_key = "".join(ch for ch in make_value.casefold() if ch.isalnum())
+    model_key = "".join(ch for ch in model_value.casefold() if ch.isalnum())
+    aleado_toyota_models = {
+        "prius": ("PRIUS", 718), "rav4": ("RAV4", 710),
+        "landcruiserprado": ("LAND-CRUISER-PRADO", 751),
+        "aqua": ("AQUA", 2273), "harrier": ("HARRIER", 781),
+        "landcruiser": ("LAND-CRUISER", 757), "vitz": ("VITZ", 663),
+        "yaris": ("YARIS", 1692), "alphard": ("ALPHARD", 2216),
+        "corolla": ("COROLLA", 827), "raize": ("RAIZE", 3320),
+        "voxy": ("VOXY", 661), "vellfire": ("VELLFIRE", 1682),
+        "yariscross": ("YARIS-CROSS", 3351)
+    }
+    aleado_link = None
+    if make_key in {"toyota", "toyotamotor", ""} and model_key in aleado_toyota_models:
+        slug, name_id = aleado_toyota_models[model_key]
+        aleado_link = f"https://aleado.com/autostat/{slug}.asp?company_id=9&name_id={name_id}"
+    elif make_key in {"toyota", "toyotamotor"}:
+        aleado_link = "https://aleado.com/autostat/TOYOTA.asp?company_id=9"
+    links = []
+    if aleado_link:
+        links.append({
+            "name": "Aleado — статистика проданных аукционных лотов",
+            "url": aleado_link,
+            "kind": "По годам: число продаж и средняя цена в тысячах иен; для некоторых моделей — фильтры по оценке и модификации",
+            "access": "Публичная страница источника. Значения и единицы измерения нужно сверять на странице; PAPAUTO не копирует базу."
+        })
+    links.extend([
         {"name": "Banzai24 — архив японских торгов", "url": banzai_url,
          "kind": "Архив закрытых торгов по марке, модели и годам",
          "access": "Публичная выдача; часть финальных цен, фотографий и листов может быть ограничена аккаунтом."},
@@ -429,7 +455,7 @@ def _japan_model_search_links(make: str, model: str, year_from: int, year_to: in
         {"name": "Auctions22 — прошлые торги", "url": "https://auctions22.com/past",
          "kind": "Публичные результаты и статусы Sold / Not sold",
          "access": "Сайт заявляет бесплатную регистрацию для просмотра полных цен, характеристик и фотографий."}
-    ]
+    ])
 
 
 @app.get("/api/vehicles")
