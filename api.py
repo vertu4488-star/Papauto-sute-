@@ -762,6 +762,7 @@ async def assistant_select(req: VehicleSelectionInput):
     """Create a grounded shortlist and follow-up questions; never pretend recommendations are live auction lots."""
     gemini_key = (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_AI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
     if not gemini_key:
+        logger.error("Gemini API key is not configured for assistant selection")
         raise HTTPException(status_code=503, detail="ИИ-подбор пока не подключён: в Render нужен действующий ключ Gemini API.")
     catalogue = [
         {"make": "Toyota", "model": "Aqua", "fit": "компактный гибрид для города и экономии топлива", "markets": ["Япония"]},
@@ -813,6 +814,14 @@ async def assistant_select(req: VehicleSelectionInput):
                 }
             )
         if response.status_code != 200:
+            try:
+                error_payload = response.json()
+                error_info = error_payload.get("error", {}) if isinstance(error_payload, dict) else {}
+                error_message = str(error_info.get("message", ""))[:400]
+                error_code = error_info.get("status") or response.status_code
+            except ValueError:
+                error_message, error_code = "non-JSON response", response.status_code
+            logger.error("Gemini assistant selection failed: http=%s code=%s message=%s", response.status_code, error_code, error_message)
             raise HTTPException(status_code=502, detail="ИИ-подбор не ответил. Проверьте ключ Gemini API и доступность модели.")
         payload = response.json()
         candidates = payload.get("candidates") or []
@@ -822,6 +831,7 @@ async def assistant_select(req: VehicleSelectionInput):
             raise HTTPException(status_code=502, detail="ИИ-подбор вернул пустой ответ. Попробуйте уточнить запрос.")
         import json
         result = json.loads(raw)
+        logger.info("Gemini assistant selection succeeded: response_chars=%s", len(raw))
         allowed = {(item["make"].lower(), item["model"].lower()) for item in catalogue}
         recommendations = []
         for item in result.get("recommendations", [])[:5]:
@@ -865,6 +875,7 @@ async def voice_transcribe(request: Request):
         raise HTTPException(status_code=415, detail="Неподдерживаемый формат аудиозаписи.")
     gemini_key = (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_AI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
     if not gemini_key:
+        logger.error("Gemini API key is not configured for voice transcription")
         raise HTTPException(status_code=503, detail="Голосовой сервис пока не настроен: в Render backend нужен ключ Gemini API.")
     prompt = (
         "Точно расшифруй речь на русском языке. Верни только распознанные слова без пояснений, "
@@ -886,7 +897,14 @@ async def voice_transcribe(request: Request):
                 json=payload
             )
         if response.status_code != 200:
-            logger.warning("Gemini voice transcription failed with HTTP %s", response.status_code)
+            try:
+                error_payload = response.json()
+                error_info = error_payload.get("error", {}) if isinstance(error_payload, dict) else {}
+                error_message = str(error_info.get("message", ""))[:400]
+                error_code = error_info.get("status") or response.status_code
+            except ValueError:
+                error_message, error_code = "non-JSON response", response.status_code
+            logger.error("Gemini voice transcription failed: http=%s code=%s message=%s", response.status_code, error_code, error_message)
             raise HTTPException(status_code=502, detail="Сервис распознавания речи временно недоступен. Попробуйте позже.")
         data = response.json()
         candidates = data.get("candidates") or []
@@ -894,7 +912,9 @@ async def voice_transcribe(request: Request):
         transcript = " ".join(part.get("text", "") for part in parts if part.get("text")).strip()
         transcript = transcript.strip().strip('"«»').strip()
         if not transcript:
+            logger.warning("Gemini voice transcription returned an empty transcript")
             raise HTTPException(status_code=422, detail="Не удалось разобрать речь. Попробуйте сказать запрос ещё раз.")
+        logger.info("Gemini voice transcription succeeded: transcript_chars=%s", len(transcript))
         return {"ok": True, "text": transcript}
     except HTTPException:
         raise
