@@ -86,13 +86,39 @@ const searchResults=$("vehicleSearchResults");
 if(searchResults&&"MutationObserver" in window){
  new MutationObserver(()=>{if(!searchResults.hidden&&searchResults.children.length){const count=searchResults.querySelectorAll(".vehicle-result-card").length;if(count)speak("Поиск завершён. Получено предложений: "+count+". Цены и наличие нужно подтвердить у продавца; доставка и оформление в России считаются отдельно.")}}).observe(searchResults,{childList:true,subtree:true,attributes:true,attributeFilter:["hidden"]});
 }
-if(!SpeechRecognition){listen.disabled=true;listen.textContent="Голосовой ввод не поддерживается";sayStatus("Этот браузер не поддерживает распознавание речи. Введите запрос текстом и нажмите «Заполнить параметры»; для голосового ввода попробуйте Chrome.");}
-else{
- recognition=new SpeechRecognition();recognition.lang="ru-RU";recognition.continuous=false;recognition.interimResults=true;recognition.maxAlternatives=1;
- recognition.onstart=()=>{listening=true;listen.textContent="Слушаю…";sayStatus("Говорите запрос. Например: «Найди Honda Fit из Японии до полутора миллионов, с 2019 по 2022 год».")};
- recognition.onresult=e=>{let finalText="",interim="";for(let i=e.resultIndex;i<e.results.length;i++){const s=e.results[i][0].transcript;if(e.results[i].isFinal)finalText+=s;else interim+=s}input.value=(finalText||interim).trim();if(finalText)applyParsed(parse(finalText),true)};
- recognition.onerror=e=>sayStatus(e.error==="not-allowed"?"Нет доступа к микрофону. Разрешите доступ в настройках браузера.":"Не удалось распознать речь ("+e.error+"). Попробуйте ещё раз или введите запрос текстом.");
- recognition.onend=()=>{listening=false;listen.textContent="🎙 Говорить";};
- listen.addEventListener("click",()=>{if(listening){recognition.stop();return}try{recognition.start()}catch{sayStatus("Распознавание уже запущено. Договорите запрос.")}});
+const micIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"></rect><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"></path></svg>';
+const resetMic=()=>{listening=false;listen.setAttribute("aria-pressed","false");listen.classList.remove("is-listening");listen.innerHTML=micIcon};
+if(!SpeechRecognition){
+ listen.disabled=true;
+ listen.title="Голосовой поиск недоступен в этом браузере";
+ sayStatus("Голосовой поиск не поддерживается этим браузером. Откройте сайт в актуальном Chrome или Safari.");
+}else{
+ recognition=new SpeechRecognition();
+ recognition.lang="ru-RU";
+ recognition.continuous=false;
+ recognition.interimResults=true;
+ recognition.maxAlternatives=1;
+ recognition.onstart=()=>{listening=true;listen.setAttribute("aria-pressed","true");listen.classList.add("is-listening");sayStatus("Слушаю…")};
+ recognition.onresult=e=>{
+  let finalText="",interim="";
+  for(let i=e.resultIndex;i<e.results.length;i++){
+   const s=e.results[i][0]?.transcript||"";
+   if(e.results[i].isFinal)finalText+=s;else interim+=s;
+  }
+  if(interim&&!finalText)input.value=interim.trim();
+  if(finalText.trim()){input.value=finalText.trim();applyParsed(parse(finalText.trim()),true)}
+ };
+ recognition.onnomatch=()=>sayStatus("Не удалось разобрать запрос. Попробуйте ещё раз.");
+ recognition.onerror=e=>{
+  const messages={"not-allowed":"Нет доступа к микрофону. Проверьте разрешение для сайта в настройках браузера.","service-not-allowed":"Браузер запретил службу распознавания речи.","audio-capture":"Не удалось включить микрофон. Проверьте, не занят ли он другим приложением.","network":"Служба распознавания речи недоступна из-за ошибки сети.","no-speech":"Речь не обнаружена. Нажмите на микрофон и повторите запрос.","aborted":"Голосовой ввод остановлен."};
+  sayStatus(messages[e.error]||("Ошибка голосового ввода: "+e.error+". Попробуйте ещё раз."));
+  resetMic();
+ };
+ recognition.onend=()=>{const hadText=input.value.trim();resetMic();if(!hadText)sayStatus("Нажмите на микрофон и произнесите запрос.")};
+ listen.addEventListener("click",()=>{
+  if(listening){try{recognition.stop()}catch{}return}
+  input.value="";sayStatus("Подключаем микрофон…");
+  try{recognition.start()}catch(error){resetMic();sayStatus(error?.name==="InvalidStateError"?"Распознавание уже запущено. Подождите завершения.":"Не удалось запустить микрофон. Обновите страницу и попробуйте ещё раз.")}
+ });
 }
 })();
