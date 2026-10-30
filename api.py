@@ -538,6 +538,38 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
         raise HTTPException(status_code=400, detail="Минимальный объём двигателя не может быть больше максимального.")
     limit = min(max(limit, 1), 50)
 
+    if country == "china":
+        live_china = await fetch_ttpai_model_stats(make, model)
+        if live_china and live_china.get("ok"):
+            records = [
+                {
+                    "make": make,
+                    "model": model,
+                    "date": item.get("date"),
+                    "description": item.get("description"),
+                    "city": live_china.get("city"),
+                    "source": "TTPAI",
+                    "record_type": "historical_transaction",
+                    "price": None,
+                    "mileage": None,
+                    "photos": [],
+                }
+                for item in live_china.get("recent_sales", [])
+            ]
+            return {
+                "ok": True,
+                "country": "china",
+                "data_type": "historical_transactions",
+                "source": "TTPAI",
+                "model": live_china.get("model"),
+                "city": live_china.get("city"),
+                "count": len(records),
+                "records": records,
+                "source_url": live_china.get("source_url"),
+                "retrieved_at": live_china.get("retrieved_at"),
+                "disclaimer": "Это история недавно завершённых сделок на китайском рынке подержанных автомобилей, а не активные объявления и не полный архив оптовых аукционов. Цена конкретной сделки и фотографии не публикуются в этом блоке.",
+            }
+
     if country == "south-korea":
         api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
         if not api_key:
