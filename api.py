@@ -573,6 +573,28 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
             }
 
     if country == "south-korea":
+        public_stats = await fetch_korea_monthly_stats()
+        if public_stats.get("ok"):
+            monthly_lines = [
+                f"{row['month']}: выставлено {row['offered']:,}, продано {row['sold']:,}, доля {row['completion_rate_percent']}%".replace(",", " ")
+                for row in public_stats.get("history", [])
+            ]
+            return {
+                "ok": True, "country": "south-korea", "data_type": "source_hub",
+                "source": public_stats["source"], "count": len(public_stats.get("history", [])),
+                "records": [], "model_search_links": [],
+                "sources": [{
+                    "name": "Национальная ассоциация автомобильных аукционов Кореи",
+                    "url": public_stats["source_url"],
+                    "access": "Открытая месячная статистика · без регистрации и API-ключа",
+                    "data_kind": "Выставленные и проданные автомобили по месяцам",
+                    "note": "Последние опубликованные месяцы: " + "; ".join(monthly_lines) + ". Это официальные агрегированные итоги аукционного рынка, не индивидуальные карточки лотов."
+                }],
+                "message": "Официальная месячная статистика Кореи получена напрямую с сайта отраслевой ассоциации. " + "; ".join(monthly_lines),
+                "disclaimer": public_stats.get("disclaimer", "")
+            }
+        logger.warning("Korean public monthly auction statistics unavailable: %s", public_stats.get("message"))
+        # Fall through to the existing XAPI Korea listing integration if configured.
         api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
         if not api_key:
             raise HTTPException(
