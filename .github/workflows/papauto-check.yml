@@ -73,5 +73,6 @@ jobs:
           assert data.get("records") == [], data
           assert len(data.get("china_judicial_sample", [])) == 4, data
           assert len(data.get("china_market_sample", [])) == 3, data
-          print("China source hub OK:", len(data["sources"]), "sources,", len(data["china_market_sample"]), "TTPAI model samples,", len(data["china_judicial_sample"]), "judicial examples")
+          assert data["china_market_sample"][2].get("photo_example_url"), data
+          print("China source hub OK:", len(data["sources"]), "sources,", len(data["china_market_sample"]), "TTPAI model samples incl. public photo link,", len(data["china_judicial_sample"]), "judicial examples")
           PY
