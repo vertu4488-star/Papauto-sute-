@@ -42,6 +42,13 @@ _MODELS = {
     ("比亚迪", "秦plus"): ("BYD Qin Plus", "Shenzhen", "https://www.ttpai.cn/shenzhen/price/biyadi-qinplus"),
     ("zeekr", "x"): ("Zeekr X", "Shanghai", "https://www.ttpai.cn/shanghai/price/jike-jikex"),
     ("极氪", "x"): ("Zeekr X", "Shanghai", "https://www.ttpai.cn/shanghai/price/jike-jikex"),
+    ("toyota", "camry"): ("Toyota Camry", "Shanghai", "https://www.ttpai.cn/shanghai/price/fengtian"),
+    ("丰田", "凯美瑞"): ("Toyota Camry", "Shanghai", "https://www.ttpai.cn/shanghai/price/fengtian"),
+    ("bmw", "3 series"): ("BMW 3 Series", "Chengdu", "https://www.ttpai.cn/chengdu/price/baoma-baoma3xi"),
+    ("bmw", "3系"): ("BMW 3 Series", "Chengdu", "https://www.ttpai.cn/chengdu/price/baoma-baoma3xi"),
+    ("宝马", "3系"): ("BMW 3 Series", "Chengdu", "https://www.ttpai.cn/chengdu/price/baoma-baoma3xi"),
+    ("byd", "han"): ("BYD Han", "Guangzhou", "https://www.ttpai.cn/guangzhou/price/biyadi-han"),
+    ("比亚迪", "汉"): ("BYD Han", "Guangzhou", "https://www.ttpai.cn/guangzhou/price/biyadi-han"),
 }
 
 
