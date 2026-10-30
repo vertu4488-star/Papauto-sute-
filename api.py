@@ -881,7 +881,7 @@ async def voice_transcribe(request: Request):
     try:
         async with httpx.AsyncClient(timeout=45.0) as client:
             response = await client.post(
-                "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
                 params={"key": gemini_key},
                 json=payload
             )
