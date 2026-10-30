@@ -21,6 +21,20 @@ class _VisibleText(HTMLParser):
 
 # Only pages whose URLs and displayed transaction summaries have been checked.
 _MODELS = {
+    ("тесла", "model 3"): ("Tesla Model 3", "Shanghai", "https://www.ttpai.cn/shanghai/price/tesila-model3"),
+    ("тесла", "модель 3"): ("Tesla Model 3", "Shanghai", "https://www.ttpai.cn/shanghai/price/tesila-model3"),
+    ("тесла", "model y"): ("Tesla Model Y", "Shanghai", "https://www.ttpai.cn/shanghai/price/tesila-modely"),
+    ("тесла", "модель y"): ("Tesla Model Y", "Shanghai", "https://www.ttpai.cn/shanghai/price/tesila-modely"),
+    ("тесла", "model x"): ("Tesla Model X", "Shanghai", "https://www.ttpai.cn/shanghai/price/tesila-modelx"),
+    ("тесла", "модель x"): ("Tesla Model X", "Shanghai", "https://www.ttpai.cn/shanghai/price/tesila-modelx"),
+    ("тесла", "model s"): ("Tesla Model S", "Shanghai", "https://www.ttpai.cn/shanghai/price/tesila-models"),
+    ("тесла", "модель s"): ("Tesla Model S", "Shanghai", "https://www.ttpai.cn/shanghai/price/tesila-models"),
+    ("тойота", "камри"): ("Toyota Camry", "Shanghai", "https://www.ttpai.cn/shanghai/price/fengtian"),
+    ("тойота", "королла"): ("Toyota Corolla", "Xi'an", "https://www.ttpai.cn/xian/price/fengtian-kaluola"),
+    ("тойота", "королла кросс"): ("Toyota Corolla Cross", "Shanghai", "https://www.ttpai.cn/shanghai/price/fengtian-kaluolaruifang"),
+    ("бмв", "3 серия"): ("BMW 3 Series", "Chengdu", "https://www.ttpai.cn/chengdu/price/baoma-baoma3xi"),
+    ("бид", "song plus"): ("BYD Song Plus", "Shenzhen", "https://www.ttpai.cn/shenzhen/price/biyadi-songplusxinnengyuan"),
+    ("бид", "хан"): ("BYD Han", "Guangzhou", "https://www.ttpai.cn/guangzhou/price/biyadi-han"),
     ("tesla", "model 3"): ("Tesla Model 3", "Shanghai", "https://www.ttpai.cn/shanghai/price/tesila-model3"),
     ("tesla", "model3"): ("Tesla Model 3", "Shanghai", "https://www.ttpai.cn/shanghai/price/tesila-model3"),
     ("tesla", "model y"): ("Tesla Model Y", "Shanghai", "https://www.ttpai.cn/shanghai/price/tesila-modely"),
