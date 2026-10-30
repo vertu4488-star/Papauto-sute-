@@ -139,7 +139,7 @@ if(auctionStatsForm){
       const money=n=>n==null?"—":new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(Number(n))+" CNY";
       card.append(el("p","", "Средняя цена: 3 года — "+money(item.age_3_avg_cny)+"; 5 лет — "+money(item.age_5_avg_cny)+"; 7 лет — "+money(item.age_7_avg_cny)+"."));
       if(item.recent_sales)card.append(el("p","", "Последние сделки: "+item.recent_sales));
-      const link=document.createElement("a");link.href=String(item.url||"https://www.ttpai.cn/");link.target="_blank";link.rel="noopener noreferrer";link.textContent="Открыть историю модели ↗";card.append(link);grid.append(card);
+      const link=document.createElement("a");link.href=String(item.url||"https://www.ttpai.cn/");link.target="_blank";link.rel="noopener noreferrer";link.textContent="Открыть историю модели ↗";card.append(link);if(item.photo_example_url){const photoLink=document.createElement("a");photoLink.href=String(item.photo_example_url);photoLink.target="_blank";photoLink.rel="noopener noreferrer";photoLink.textContent=item.photo_example_note||"Открыть пример с фотографиями ↗";card.append(photoLink)}grid.append(card);
      });
      panel.append(grid);out.append(panel);
     }
