@@ -492,6 +492,12 @@ def _japan_model_search_links(make: str, model: str, year_from: int, year_to: in
             "kind": "По годам: количество продаж и средняя цена в тысячах иен",
             "access": "Публичные модельные страницы; расчёт основан на последних шести месяцах и исключает часть особых продаж. PAPAUTO не копирует базу."
         })
+    links.append({
+        "name": "Aleado — бесплатная демо-база",
+        "url": "https://demo.aleado.com/auctions/?lang=ru",
+        "kind": "Демонстрационный доступ к поиску по моделям и характеристикам",
+        "access": "На странице Aleado опубликованы тестовые учётные данные: логин demo, пароль guest. Демо может показывать ограниченную выборку, а не всю базу."
+    })
     links.extend([
         {"name": "Banzai24 — архив японских торгов", "url": banzai_url,
          "kind": "Архив закрытых торгов по марке, модели и годам",
@@ -1040,7 +1046,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         ]
         message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") найден открытый слой TTPAI: модельные средние цены по возрасту и последние сделки; также есть публичные судебные результаты. Но бесплатный массовый поток обычных дилерских аукционных лотов с полными фото и аукционными листами пока не подтверждён."
     return {"ok": True, "country": country, "data_type": "source_hub", "source": "PAPAUTO source registry",
-        "source_hub_version": "2026-10-30-r11", "count": len(sample_records), "records": sample_records, "sources": sources, "model_search_links": model_search_links, "sample_stats": sample_stats,
+        "source_hub_version": "2026-10-30-r12", "count": len(sample_records), "records": sample_records, "sources": sources, "model_search_links": model_search_links, "sample_stats": sample_stats,
         "unsold_records": unsold_records, "china_judicial_sample": china_judicial_sample, "china_market_sample": china_market_sample, "message": message,
         "disclaimer": "Публичный пример не равен полному массиву торгов. Фотографии и аукционные листы показываем только из источников, где это разрешено; платные отчёты не копируем. Цены объявлений, стартовые ставки, судебные продажи и завершённые дилерские аукционы не смешиваются."}
 
