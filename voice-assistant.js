@@ -87,38 +87,64 @@ if(searchResults&&"MutationObserver" in window){
  new MutationObserver(()=>{if(!searchResults.hidden&&searchResults.children.length){const count=searchResults.querySelectorAll(".vehicle-result-card").length;if(count)speak("Поиск завершён. Получено предложений: "+count+". Цены и наличие нужно подтвердить у продавца; доставка и оформление в России считаются отдельно.")}}).observe(searchResults,{childList:true,subtree:true,attributes:true,attributeFilter:["hidden"]});
 }
 const micIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"></rect><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"></path></svg>';
-const resetMic=()=>{listening=false;listen.setAttribute("aria-pressed","false");listen.classList.remove("is-listening");listen.innerHTML=micIcon};
-if(!SpeechRecognition){
- listen.disabled=true;
- listen.title="Голосовой поиск недоступен в этом браузере";
- sayStatus("Голосовой поиск не поддерживается этим браузером. Откройте сайт в актуальном Chrome или Safari.");
-}else{
- recognition=new SpeechRecognition();
- recognition.lang="ru-RU";
- recognition.continuous=false;
- recognition.interimResults=true;
- recognition.maxAlternatives=1;
- recognition.onstart=()=>{listening=true;listen.setAttribute("aria-pressed","true");listen.classList.add("is-listening");sayStatus("Слушаю…")};
- recognition.onresult=e=>{
-  let finalText="",interim="";
-  for(let i=e.resultIndex;i<e.results.length;i++){
-   const s=e.results[i][0]?.transcript||"";
-   if(e.results[i].isFinal)finalText+=s;else interim+=s;
-  }
-  if(interim&&!finalText)input.value=interim.trim();
-  if(finalText.trim()){input.value=finalText.trim();applyParsed(parse(finalText.trim()),true)}
- };
- recognition.onnomatch=()=>sayStatus("Не удалось разобрать запрос. Попробуйте ещё раз.");
- recognition.onerror=e=>{
-  const messages={"not-allowed":"Нет доступа к микрофону. Проверьте разрешение для сайта в настройках браузера.","service-not-allowed":"Браузер запретил службу распознавания речи.","audio-capture":"Не удалось включить микрофон. Проверьте, не занят ли он другим приложением.","network":"Служба распознавания речи недоступна из-за ошибки сети.","no-speech":"Речь не обнаружена. Нажмите на микрофон и повторите запрос.","aborted":"Голосовой ввод остановлен."};
-  sayStatus(messages[e.error]||("Ошибка голосового ввода: "+e.error+". Попробуйте ещё раз."));
-  resetMic();
- };
- recognition.onend=()=>{const hadText=input.value.trim();resetMic();if(!hadText)sayStatus("Нажмите на микрофон и произнесите запрос.")};
- listen.addEventListener("click",()=>{
-  if(listening){try{recognition.stop()}catch{}return}
-  input.value="";sayStatus("Подключаем микрофон…");
-  try{recognition.start()}catch(error){resetMic();sayStatus(error?.name==="InvalidStateError"?"Распознавание уже запущено. Подождите завершения.":"Не удалось запустить микрофон. Обновите страницу и попробуйте ещё раз.")}
- });
+let recording=false,stream=null,audioContext=null,source=null,processor=null,pcmChunks=[];
+const resetMic=()=>{recording=false;listen.setAttribute("aria-pressed","false");listen.classList.remove("is-listening");listen.innerHTML=micIcon};
+function encodeWav(chunks,sampleRate){
+ const length=chunks.reduce((n,c)=>n+c.length,0),buffer=new ArrayBuffer(44+length*2),view=new DataView(buffer);
+ const write=(offset,str)=>{for(let i=0;i<str.length;i++)view.setUint8(offset+i,str.charCodeAt(i))};
+ write(0,"RIFF");view.setUint32(4,36+length*2,true);write(8,"WAVE");write(12,"fmt ");view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,1,true);view.setUint32(24,sampleRate,true);view.setUint32(28,sampleRate*2,true);view.setUint16(32,2,true);view.setUint16(34,16,true);write(36,"data");view.setUint32(40,length*2,true);
+ let offset=44;
+ for(const chunk of chunks)for(let i=0;i<chunk.length;i++){const sample=Math.max(-1,Math.min(1,chunk[i]));view.setInt16(offset,sample<0?sample*0x8000:sample*0x7fff,true);offset+=2}
+ return new Blob([buffer],{type:"audio/wav"});
 }
+async function stopRecording(){
+ if(!recording)return;
+ recording=false;listen.setAttribute("aria-pressed","false");listen.classList.remove("is-listening");listen.innerHTML=micIcon;
+ sayStatus("Обрабатываю запись…");
+ try{
+  if(processor){processor.disconnect();processor.onaudioprocess=null}
+  if(source)source.disconnect();
+  const wav=encodeWav(pcmChunks,audioContext.sampleRate);
+  if(stream)stream.getTracks().forEach(t=>t.stop());
+  if(audioContext)await audioContext.close();
+  stream=null;audioContext=null;source=null;processor=null;pcmChunks=[];
+  if(wav.size<1000){sayStatus("Запись слишком короткая. Нажмите микрофон и произнесите запрос.");return}
+  const response=await fetch("https://papauto-leads.onrender.com/api/voice/transcribe",{method:"POST",headers:{"Content-Type":"audio/wav"},body:wav});
+  const data=await response.json().catch(()=>({}));
+  if(!response.ok)throw new Error(data.detail||"Не удалось распознать речь.");
+  input.value=data.text||"";
+  if(!input.value.trim()){sayStatus("Не удалось разобрать речь. Попробуйте ещё раз.");return}
+  applyParsed(parse(input.value),true);
+ }catch(error){
+  sayStatus(error?.message||"Не удалось обработать запись. Проверьте разрешение микрофона и повторите.");
+  if(stream)stream.getTracks().forEach(t=>t.stop());
+  if(audioContext)try{await audioContext.close()}catch{}
+  stream=null;audioContext=null;source=null;processor=null;pcmChunks=[];
+ }
+}
+async function startRecording(){
+ try{
+  if(!navigator.mediaDevices?.getUserMedia||!window.AudioContext){sayStatus("Этот браузер не поддерживает запись голоса. Обновите iOS и откройте сайт в Safari.");return}
+  input.value="";pcmChunks=[];
+  sayStatus("Запрашиваем доступ к микрофону…");
+  stream=await navigator.mediaDevices.getUserMedia({audio:{channelCount:1,echoCancellation:true,noiseSuppression:true,autoGainControl:true}});
+  audioContext=new (window.AudioContext||window.webkitAudioContext)();
+  if(audioContext.state==="suspended")await audioContext.resume();
+  source=audioContext.createMediaStreamSource(stream);
+  processor=audioContext.createScriptProcessor(4096,1,1);
+  processor.onaudioprocess=e=>{if(recording)pcmChunks.push(new Float32Array(e.inputBuffer.getChannelData(0)))};
+  source.connect(processor);processor.connect(audioContext.destination);
+  recording=true;listen.setAttribute("aria-pressed","true");listen.classList.add("is-listening");
+  listen.innerHTML='<span class="voice-recording-dot" aria-hidden="true"></span>';
+  sayStatus("Идёт запись. Говорите, затем нажмите кнопку ещё раз.");
+ }catch(error){
+  resetMic();
+  const msg=error?.name==="NotAllowedError"?"Нет доступа к микрофону. Разрешите Safari использовать микрофон для papauto.ru.":error?.name==="NotFoundError"?"Микрофон не найден.":"Не удалось включить запись. Проверьте разрешение микрофона в настройках iPhone.";
+  sayStatus(msg);
+  if(stream)stream.getTracks().forEach(t=>t.stop());
+  if(audioContext)try{await audioContext.close()}catch{}
+  stream=null;audioContext=null;source=null;processor=null;
+ }
+}
+listen.addEventListener("click",()=>{if(recording)stopRecording();else startRecording()});
 })();
