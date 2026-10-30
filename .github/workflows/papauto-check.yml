@@ -38,9 +38,9 @@ jobs:
         run: |
           set -euo pipefail
           URL="https://papauto-leads.onrender.com/api/auction-statistics?country=japan&make=Toyota&model=RAV4&year_from=2019&year_to=2025"
-          EXPECTED_VERSION="2026-10-30-r4"
+          EXPECTED_VERSION="2026-10-30-r5"
           for attempt in $(seq 1 18); do
-            if curl --silent --show-error --fail "$URL" -o /tmp/japan.json && python -c 'import json,sys; d=json.load(open("/tmp/japan.json",encoding="utf-8")); sys.exit(0 if d.get("source_hub_version")=="2026-10-30-r4" else 1)'; then
+            if curl --silent --show-error --fail "$URL" -o /tmp/japan.json && python -c 'import json,sys; d=json.load(open("/tmp/japan.json",encoding="utf-8")); sys.exit(0 if d.get("source_hub_version")=="2026-10-30-r5" else 1)'; then
               break
             fi
             if [ "$attempt" -eq 18 ]; then
@@ -54,11 +54,40 @@ jobs:
           with open("/tmp/japan.json", encoding="utf-8") as f:
               data = json.load(f)
           assert data.get("data_type") == "source_hub", data
-          assert data.get("source_hub_version") == "2026-10-30-r4", data
+          assert data.get("source_hub_version") == "2026-10-30-r5", data
           assert len(data.get("sources", [])) >= 5, data
           assert data.get("sample_stats", {}).get("sample_count") == 9, data
           assert len(data.get("records", [])) == 9, data
           print("Japan source hub and RAV4 sample OK:", len(data["sources"]), "sources,", len(data["records"]), "sold sample lots")
+      - name: Test Japan model-specific search links
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --silent --show-error --fail "https://papauto-leads.onrender.com/api/auction-statistics?country=japan&make=Toyota&model=Prius&year_from=2018&year_to=2025" -o /tmp/prius.json
+          python - <<'PY'
+          import json
+          data = json.load(open("/tmp/prius.json", encoding="utf-8"))
+          assert data.get("source_hub_version") == "2026-10-30-r5", data
+          assert data.get("sample_stats") is None, data
+          links = data.get("model_search_links", [])
+          assert len(links) >= 5, data
+          banzai = next(x for x in links if x["name"].startswith("Banzai24"))
+          assert "/TOYOTA/PRIUS?" in banzai["url"], banzai
+          assert "yearStart=2018" in banzai["url"] and "yearEnd=2025" in banzai["url"], banzai
+          print("Prius model search links OK:", len(links), "sources")
+          PY
+      - name: Test Japan vehicle search fallback
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --silent --show-error --fail "https://papauto-leads.onrender.com/api/vehicles?country=japan&make=Toyota&model=Prius&year_from=2018&year_to=2025" -o /tmp/japan-vehicles.json
+          python - <<'PY'
+          import json
+          data = json.load(open("/tmp/japan-vehicles.json", encoding="utf-8"))
+          assert data.get("data_type") == "external_search", data
+          assert len(data.get("search_links", [])) >= 5, data
+          print("Japan vehicle search fallback OK")
+          PY
           PY
       - name: Test China source hub
         shell: bash
@@ -70,7 +99,7 @@ jobs:
           with open("/tmp/china.json", encoding="utf-8") as f:
               data = json.load(f)
           assert data.get("data_type") == "source_hub", data
-          assert data.get("source_hub_version") == "2026-10-30-r4", data
+          assert data.get("source_hub_version") == "2026-10-30-r5", data
           assert len(data.get("sources", [])) >= 5, data
           assert data.get("sample_stats") is None, data
           assert data.get("records") == [], data
