@@ -810,7 +810,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
              "url": "https://www.ttpai.cn/shanghai/price/dazhong-polo"}
         ]
         china_judicial_sample = [
-            {"name": "BMW 2.0T", "year": "2021", "auction": "Gongpai / Jining District Court", "date": "2026-06-27", "final_price_cny": 63030.32, "note": "Оценка 100 947 ¥; пробег в публичной карточке не указан.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=52859"},
+            {"name": "BMW 2.0T", "year": "2021", "auction": "Gongpai / Jining District Court", "date": "2026-06-27", "final_price_cny": 63030.32, "note": "Оценка 100 947 CNY; пробег в публичной карточке не указан.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=52859"},
             {"name": "Audi", "year": "—", "auction": "Gongpai / Jining District Court", "date": "2026-09-10", "final_price_cny": 35713, "note": "В карточке опубликованы фото автомобиля и подтверждение завершения торгов.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=53103"},
             {"name": "Buick", "year": "—", "auction": "Gongpai / Jinan High-tech Court", "date": "2026-05-15", "final_price_cny": 162000, "note": "Публично доступно подтверждение сделки и судебные документы.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=52715"},
             {"name": "Volkswagen", "year": "—", "auction": "Gongpai / Daming County Court", "date": "2026-06-18", "final_price_cny": 63900, "note": "В карточке опубликованы сведения о торгах и подтверждение成交.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=52792"}
