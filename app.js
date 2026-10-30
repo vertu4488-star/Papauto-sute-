@@ -88,6 +88,15 @@ if(auctionStatsForm){
      section.append(el("p","uss-overview-note","Средняя цена рассчитана по всем проданным автомобилям USS за месяц. Это не прогноз и не цена конкретной модели."));
      overview.append(section);
     }
+    const koreaResponse=await fetch(api+"/api/korea-auction-overview",{headers:{Accept:"application/json"}});
+    const koreaData=await koreaResponse.json();
+    if(koreaResponse.ok&&koreaData.ok&&Array.isArray(koreaData.history)){
+     const rows=koreaData.history.slice(-3).map(x=>x.month+": "+new Intl.NumberFormat("ru-RU").format(x.sold)+" продано / "+new Intl.NumberFormat("ru-RU").format(x.offered)+" выставлено ("+x.completion_rate_percent+"%)");
+     overview.append(el("h3","","Южная Корея · итоги автомобильных аукционов"));
+     rows.forEach(x=>overview.append(el("p","uss-overview-note",x)));
+     const koreaLink=el("a","uss-source-link","Источник: ассоциация автомобильных аукционов Кореи ↗");koreaLink.href=koreaData.source_url;koreaLink.target="_blank";koreaLink.rel="noopener noreferrer";overview.append(koreaLink);
+    }
+
    }catch(err){overview.replaceChildren(el("div","uss-overview-head", "Официальная сводка USS временно недоступна"),el("p","uss-overview-note",err.message||"Повторите позже. Значения не подменяются примерными цифрами."))}
   };loadOverview();
  }
