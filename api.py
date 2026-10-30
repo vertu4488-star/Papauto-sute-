@@ -803,26 +803,54 @@ async def assistant_select(req: VehicleSelectionInput):
         "Верни строго JSON: summary (краткий вывод на русском), recommendations (массив объектов с make,model,why,checks), "
         "questions (массив строк), caveats (массив строк). В рекомендациях только модели из списка."
     )
-    try:
-        async with httpx.AsyncClient(timeout=25.0) as client:
-            response = await client.post(
-                "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
-                headers={"x-goog-api-key": gemini_key},
-                json={
-                    "contents": [{"role": "user", "parts": [{"text": __import__("json").dumps({"instruction": instruction, "request": brief}, ensure_ascii=False)}]}],
-                    "generationConfig": {"responseMimeType": "application/json", "temperature": 0.2}
-                }
-            )
-        if response.status_code != 200:
+    # Gemini 3.8 can return transient 503 overload errors. Fall back immediately
+    # to 3.6 Flash so a temporary spike does not disable the entire voice flow.
+    response = None
+    last_error = None
+    transient_statuses = {429, 500, 502, 503, 504}
+    for model in ("gemini-3.8-flash", "gemini-3.6-flash"):
+        try:
+            async with httpx.AsyncClient(timeout=httpx.Timeout(20.0, connect=10.0)) as client:
+                candidate_response = await client.post(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                    headers={"x-goog-api-key": gemini_key},
+                    json={
+                        "contents": [{"role": "user", "parts": [{"text": __import__("json").dumps({"instruction": instruction, "request": brief}, ensure_ascii=False)}]}],
+                        "generationConfig": {"responseMimeType": "application/json", "temperature": 0.2}
+                    }
+                )
+            if candidate_response.status_code == 200:
+                response = candidate_response
+                logger.info("Gemini assistant selection responded via %s", model)
+                break
             try:
-                error_payload = response.json()
+                error_payload = candidate_response.json()
                 error_info = error_payload.get("error", {}) if isinstance(error_payload, dict) else {}
-                error_message = str(error_info.get("message", ""))[:400]
-                error_code = error_info.get("status") or response.status_code
+                error_message = str(error_info.get("message", ""))[:300]
+                error_code = error_info.get("status") or candidate_response.status_code
             except ValueError:
-                error_message, error_code = "non-JSON response", response.status_code
-            logger.error("Gemini assistant selection failed: http=%s code=%s message=%s", response.status_code, error_code, error_message)
-            raise HTTPException(status_code=502, detail="ИИ-подбор не ответил. Проверьте ключ Gemini API и доступность модели.")
+                error_message, error_code = "non-JSON response", candidate_response.status_code
+            logger.warning(
+                "Gemini assistant model %s returned HTTP %s code=%s message=%s",
+                model, candidate_response.status_code, error_code, error_message
+            )
+            last_error = (candidate_response.status_code, error_code, error_message)
+            if candidate_response.status_code not in transient_statuses:
+                break
+        except httpx.RequestError as exc:
+            logger.warning("Gemini assistant model %s request failed: %s", model, type(exc).__name__)
+            last_error = (502, "NETWORK_ERROR", type(exc).__name__)
+
+    if response is None:
+        status_code, error_code, error_message = last_error or (503, "UNAVAILABLE", "No Gemini model responded")
+        logger.error(
+            "Gemini assistant selection failed after fallback: http=%s code=%s message=%s",
+            status_code, error_code, error_message
+        )
+        raise HTTPException(
+            status_code=503 if status_code in (429, 503) else 502,
+            detail="ИИ-подбор временно перегружен. Попробуйте ещё раз через несколько секунд."
+        )
         payload = response.json()
         candidates = payload.get("candidates") or []
         parts = (candidates[0].get("content") or {}).get("parts") or [] if candidates else []
@@ -864,7 +892,7 @@ async def assistant_select(req: VehicleSelectionInput):
 
 @app.post("/api/voice/transcribe")
 async def voice_transcribe(request: Request):
-    """Transcribe short Russian voice requests using Gemini; accepts browser-recorded WAV."""
+    """Transcribe Russian voice requests with Gemini Flash in one pass."""
     audio = await request.body()
     if not audio:
         raise HTTPException(status_code=400, detail="Запись пустая. Попробуйте ещё раз.")
@@ -877,141 +905,59 @@ async def voice_transcribe(request: Request):
     if not gemini_key:
         logger.error("Gemini API key is not configured for voice transcription")
         raise HTTPException(status_code=503, detail="Голосовой сервис пока не настроен: в Render backend нужен ключ Gemini API.")
-    prompt = (
-        "Точно расшифруй речь на русском языке. Верни только распознанные слова без пояснений, "
-        "кавычек и комментариев. Сохраняй названия марок и моделей автомобилей. "
-        "Если речи нет, верни пустую строку."
-    )
+
+    # The dedicated transcription endpoint repeatedly returned HTTP 200 with an
+    # empty transcript in production. Call the Flash model that has actually
+    # transcribed this user's WAV successfully, avoiding the wasted first request.
     payload = {
-        "contents": [{"role": "user", "parts": [
-            {"text": prompt},
-            {"inline_data": {"mime_type": "audio/wav", "data": base64.b64encode(audio).decode("ascii")}}
-        ]}],
-        "generationConfig": {
-            "audioTranscriptionConfig": {
-                "languageCodes": ["ru-RU"],
-                "customVocabulary": [
-                    "PAPAUTO", "Toyota", "RAV4", "RAV 4", "Prius", "Aqua", "Corolla", "Camry",
-                    "Harrier", "Yaris", "Vitz", "Honda", "Fit", "Freed", "Vezel", "Stepwgn",
-                    "Nissan", "Note", "Serena", "X-Trail", "Mazda", "CX-5", "Subaru",
-                    "Forester", "Outback", "Suzuki", "Mitsubishi", "Lexus", "RX", "NX",
-                    "Hyundai", "Kia", "Genesis", "BMW", "Mercedes-Benz", "Volkswagen",
-                    "Audi", "BYD", "Geely", "Chery", "Haval", "Zeekr", "Li Auto",
-                    "Encar", "USS", "TAA", "JU", "CAA", "аукцион", "аукционный лист",
-                    "оценка", "пробег", "гибрид", "электромобиль", "правый руль",
-                    "полный привод", "растаможка", "утильсбор", "Новосибирск"
-                ],
-                "mode": "SMART"
-            }
-        }
+        "contents": [{
+            "role": "user",
+            "parts": [
+                {"text": (
+                    "Прослушай приложенную аудиозапись и дословно расшифруй речь "
+                    "на русском языке. Верни только распознанный текст, без пояснений. "
+                    "Сохраняй названия марок и моделей автомобилей, особенно Toyota RAV4. "
+                    "Если речи нет, верни пустую строку."
+                )},
+                {"inline_data": {
+                    "mime_type": "audio/wav",
+                    "data": base64.b64encode(audio).decode("ascii")
+                }}
+            ]
+        }],
+        "generationConfig": {"temperature": 0.1, "maxOutputTokens": 512}
     }
     try:
-        # Gemini audio processing can take longer than ordinary text requests.
-        # Use explicit phase timeouts and one bounded retry for transient stalls.
-        timeout = httpx.Timeout(connect=20.0, read=120.0, write=60.0, pool=20.0)
-        response = None
-        transient_statuses = {429, 500, 502, 503, 504}
-        for attempt in range(3):
-            try:
-                async with httpx.AsyncClient(timeout=timeout) as client:
-                    response = await client.post(
-                        "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-transcribe:generateContent",
-                        headers={"x-goog-api-key": gemini_key},
-                        json=payload
-                    )
-                if response.status_code in transient_statuses and attempt < 2:
-                    logger.warning(
-                        "Gemini voice transcription received temporary HTTP %s (attempt %s/3); retrying",
-                        response.status_code, attempt + 1
-                    )
-                    await asyncio.sleep(2.0 * (attempt + 1))
-                    continue
-                break
-            except httpx.TimeoutException as exc:
-                logger.warning(
-                    "Gemini voice transcription timed out (attempt %s/3): %s",
-                    attempt + 1, type(exc).__name__
-                )
-                if attempt == 2:
-                    raise
-                await asyncio.sleep(2.0 * (attempt + 1))
-            except httpx.RequestError as exc:
-                logger.warning(
-                    "Gemini voice transcription network failure (attempt %s/3): %s",
-                    attempt + 1, type(exc).__name__
-                )
-                if attempt == 2:
-                    raise
-                await asyncio.sleep(2.0 * (attempt + 1))
-        if response is None:
-            raise HTTPException(status_code=502, detail="Не удалось получить ответ сервиса распознавания речи.")
+        timeout = httpx.Timeout(25.0, connect=10.0)
+        async with httpx.AsyncClient(timeout=timeout) as client:
+            response = await client.post(
+                "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent",
+                headers={"x-goog-api-key": gemini_key},
+                json=payload
+            )
         if response.status_code != 200:
             try:
                 error_payload = response.json()
                 error_info = error_payload.get("error", {}) if isinstance(error_payload, dict) else {}
-                error_message = str(error_info.get("message", ""))[:400]
+                error_message = str(error_info.get("message", ""))[:300]
                 error_code = error_info.get("status") or response.status_code
             except ValueError:
                 error_message, error_code = "non-JSON response", response.status_code
-            logger.error("Gemini voice transcription failed after retries: http=%s code=%s message=%s", response.status_code, error_code, error_message)
-            if response.status_code in (429, 503):
-                raise HTTPException(status_code=503, detail="Gemini временно перегружен. Повторите голосовой запрос через несколько секунд.")
-            raise HTTPException(status_code=502, detail="Сервис распознавания речи временно недоступен. Попробуйте позже.")
+            logger.error(
+                "Gemini Flash voice transcription failed: http=%s code=%s message=%s",
+                response.status_code, error_code, error_message
+            )
+            raise HTTPException(
+                status_code=503 if response.status_code in (429, 503) else 502,
+                detail="Сервис распознавания речи временно перегружен. Попробуйте ещё раз."
+            )
         data = response.json()
         candidates = data.get("candidates") or []
         parts = (candidates[0].get("content") or {}).get("parts") or [] if candidates else []
-        transcript = " ".join(part.get("text", "") for part in parts if part.get("text")).strip()
+        transcript = " ".join(part.get("text", "") for part in parts if part.get("text"))
         transcript = transcript.strip().strip('"«»').strip()
-
-        # Gemini 3.5 Transcribe has been observed returning HTTP 200 with no
-        # transcript for valid audio. Fall back to the stable multimodal Flash
-        # model, which can transcribe audio from the same inline WAV payload.
         if not transcript:
-            logger.warning(
-                "Dedicated Gemini transcription returned no text; trying gemini-3.6-flash fallback"
-            )
-            fallback_payload = {
-                "contents": [{
-                    "role": "user",
-                    "parts": [
-                        {"text": (
-                            "Прослушай приложенную аудиозапись и дословно расшифруй речь "
-                            "на русском языке. Верни только распознанный текст, без пояснений. "
-                            "Сохраняй названия марок и моделей автомобилей. Если речи нет, "
-                            "верни пустую строку."
-                        )},
-                        {"inline_data": {
-                            "mime_type": "audio/wav",
-                            "data": base64.b64encode(audio).decode("ascii")
-                        }}
-                    ]
-                }],
-                "generationConfig": {"temperature": 0.1, "maxOutputTokens": 512}
-            }
-            async with httpx.AsyncClient(timeout=timeout) as client:
-                fallback_response = await client.post(
-                    "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent",
-                    headers={"x-goog-api-key": gemini_key},
-                    json=fallback_payload
-                )
-            if fallback_response.status_code == 200:
-                fallback_data = fallback_response.json()
-                fallback_candidates = fallback_data.get("candidates") or []
-                fallback_parts = (
-                    (fallback_candidates[0].get("content") or {}).get("parts") or []
-                    if fallback_candidates else []
-                )
-                transcript = " ".join(
-                    part.get("text", "") for part in fallback_parts if part.get("text")
-                ).strip().strip('"«»').strip()
-            else:
-                logger.error(
-                    "Gemini Flash transcription fallback failed: http=%s",
-                    fallback_response.status_code
-                )
-
-        if not transcript:
-            logger.warning("Both Gemini transcription paths returned an empty transcript")
+            logger.warning("Gemini Flash returned an empty voice transcript")
             raise HTTPException(
                 status_code=422,
                 detail="Не удалось разобрать запись. Проверьте, что во время записи слышна речь, и попробуйте ещё раз."
@@ -1021,8 +967,8 @@ async def voice_transcribe(request: Request):
     except HTTPException:
         raise
     except httpx.TimeoutException:
-        logger.error("Gemini voice transcription timed out after retry")
+        logger.error("Gemini Flash voice transcription timed out")
         raise HTTPException(status_code=504, detail="Gemini долго обрабатывает запись. Попробуйте короткий запрос ещё раз.")
     except httpx.RequestError as exc:
-        logger.error("Gemini voice transcription network error: %s", type(exc).__name__)
+        logger.error("Gemini Flash voice transcription network error: %s", type(exc).__name__)
         raise HTTPException(status_code=502, detail="Не удалось связаться с сервисом распознавания речи.")
