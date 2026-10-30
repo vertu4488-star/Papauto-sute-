@@ -103,6 +103,19 @@ if(auctionStatsForm){
   try{
    const response=await fetch(api+"/api/auction-statistics?"+params.toString(),{headers:{Accept:"application/json"}});let data={};try{data=await response.json()}catch{}
    if(!response.ok)throw new Error(data.detail||"Не удалось загрузить статистику.");out.replaceChildren();
+   if(data.data_type==="source_hub"){
+    out.append(el("span","auction-status-pill","Проверяемые источники · без выдуманных цен"),el("h3","","Источники для "+[$("auctionMake").value.trim(),$("auctionModel").value.trim()].filter(Boolean).join(" ")),el("p","",data.message||"Выберите источник и проверьте реальные записи."));
+    const grid=el("div","auction-source-results");
+    (Array.isArray(data.sources)?data.sources:[]).forEach(source=>{
+     const card=el("article","auction-source-result");
+     card.append(el("span","auction-source-access",source.access||"Условия доступа уточнить"),el("h4","",source.name||"Источник"),el("p","",source.note||"Описание источника не предоставлено."));
+     const kind=el("small","auction-source-kind",source.data_kind||"");card.append(kind);
+     const link=document.createElement("a");link.href=String(source.url||"");link.target="_blank";link.rel="noopener noreferrer";link.textContent="Открыть первоисточник ↗";card.append(link);
+     grid.append(card);
+    });
+    out.append(grid,el("p","auction-disclaimer",data.disclaimer||"Показываем только данные с объяснимым происхождением."));
+    return;
+   }
    if(data.data_type==="unavailable"){
     out.append(el("span","auction-status-pill","Источник пока не подключён"),el("h3","",data.source||"Нет подтверждённых данных"),el("p","",data.message||"Для этой страны источник статистики ещё не подключён."),el("p","auction-disclaimer",data.disclaimer||"Данные не выдумываем."));
     const request=document.createElement("button");request.type="button";request.className="button button-secondary";request.textContent="Запросить подбор этой модели";
