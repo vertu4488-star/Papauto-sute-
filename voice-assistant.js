@@ -1,6 +1,7 @@
 (()=>{"use strict";
 const $=id=>document.getElementById(id);
 const box=$("voiceCarAssistant"),input=$("voiceCarText"),listen=$("voiceCarListen"),apply=$("voiceCarApply"),status=$("voiceCarStatus");
+const levelBox=$("voiceCarLevel"),levelFill=$("voiceCarLevelFill"),levelText=$("voiceCarLevelText");
 if(!box||!input||!listen||!apply||!status)return;
 const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
 let recognition=null,listening=false;
@@ -120,8 +121,8 @@ if(aiResults&&"MutationObserver" in window){
 }
 
 const micIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"></rect><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"></path></svg>';
-let recording=false,stream=null,audioContext=null,source=null,processor=null,pcmChunks=[];
-const resetMic=()=>{recording=false;listen.setAttribute("aria-pressed","false");listen.classList.remove("is-listening");listen.innerHTML=micIcon};
+let recording=false,stream=null,audioContext=null,source=null,processor=null,pcmChunks=[],latestLevelDb=-Infinity,maxLevelDb=-Infinity;
+const resetMic=()=>{recording=false;listen.setAttribute("aria-pressed","false");listen.classList.remove("is-listening");listen.innerHTML=micIcon;if(levelBox)levelBox.hidden=true;if(levelFill)levelFill.style.width="0%";};
 function encodeWav(chunks,sampleRate){
  const length=chunks.reduce((n,c)=>n+c.length,0),buffer=new ArrayBuffer(44+length*2),view=new DataView(buffer);
  const write=(offset,str)=>{for(let i=0;i<str.length;i++)view.setUint8(offset+i,str.charCodeAt(i))};
@@ -158,14 +159,14 @@ async function stopRecording(){
 async function startRecording(){
  try{
   if(!navigator.mediaDevices?.getUserMedia||!window.AudioContext){sayStatus("Этот браузер не поддерживает запись голоса. Обновите iOS и откройте сайт в Safari.");return}
-  input.value="";pcmChunks=[];
+  input.value="";pcmChunks=[];latestLevelDb=-Infinity;maxLevelDb=-Infinity;if(levelBox)levelBox.hidden=false;if(levelFill)levelFill.style.width="0%";if(levelText)levelText.textContent="Уровень микрофона: ожидаю звук…";
   sayStatus("Запрашиваем доступ к микрофону…");
   stream=await navigator.mediaDevices.getUserMedia({audio:{channelCount:1,echoCancellation:true,noiseSuppression:true,autoGainControl:true}});
   audioContext=new (window.AudioContext||window.webkitAudioContext)();
   if(audioContext.state==="suspended")await audioContext.resume();
   source=audioContext.createMediaStreamSource(stream);
   processor=audioContext.createScriptProcessor(4096,1,1);
-  processor.onaudioprocess=e=>{if(recording)pcmChunks.push(new Float32Array(e.inputBuffer.getChannelData(0)))};
+  processor.onaudioprocess=e=>{if(!recording)return;const samples=e.inputBuffer.getChannelData(0);pcmChunks.push(new Float32Array(samples));let sum=0;for(let i=0;i<samples.length;i++)sum+=samples[i]*samples[i];const rms=Math.sqrt(sum/Math.max(1,samples.length));latestLevelDb=20*Math.log10(Math.max(rms,1e-7));maxLevelDb=Math.max(maxLevelDb,latestLevelDb);const percent=Math.max(0,Math.min(100,(latestLevelDb+60)/54*100));if(levelFill)levelFill.style.width=percent.toFixed(1)+"%";if(levelText)levelText.textContent="Уровень микрофона: "+(latestLevelDb<=-69?"очень тихо":latestLevelDb.toFixed(0)+" dBFS");};
   source.connect(processor);processor.connect(audioContext.destination);
   recording=true;listen.setAttribute("aria-pressed","true");listen.classList.add("is-listening");
   listen.innerHTML='<span class="voice-recording-dot" aria-hidden="true"></span>';
