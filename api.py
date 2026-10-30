@@ -415,15 +415,23 @@ def _japan_model_search_links(make: str, model: str, year_from: int, year_to: in
     jp_sheet_url = "https://jpsheet.com/auction-price-history/" + (f"?q={jp_query}" if jp_query else "")
     make_key = "".join(ch for ch in make_value.casefold() if ch.isalnum())
     model_key = "".join(ch for ch in model_value.casefold() if ch.isalnum())
-    aleado_toyota_models = {
-        "prius": ("PRIUS", 718), "rav4": ("RAV4", 710),
-        "landcruiserprado": ("LAND-CRUISER-PRADO", 751),
-        "aqua": ("AQUA", 2273), "harrier": ("HARRIER", 781),
-        "landcruiser": ("LAND-CRUISER", 757), "vitz": ("VITZ", 663),
-        "yaris": ("YARIS", 1692), "alphard": ("ALPHARD", 2216),
-        "corolla": ("COROLLA", 827), "raize": ("RAIZE", 3320),
-        "voxy": ("VOXY", 661), "vellfire": ("VELLFIRE", 1682),
-        "yariscross": ("YARIS-CROSS", 3351)
+    aleado_model_map = {
+        "toyota": {
+            "prius": ("PRIUS", 718), "rav4": ("RAV4", 710),
+            "landcruiserprado": ("LAND-CRUISER-PRADO", 751),
+            "aqua": ("AQUA", 2273), "harrier": ("HARRIER", 781),
+            "landcruiser": ("LAND-CRUISER", 757), "vitz": ("VITZ", 663),
+            "yaris": ("YARIS", 1692), "alphard": ("ALPHARD", 2216),
+            "corolla": ("COROLLA", 827), "raize": ("RAIZE", 3320),
+            "voxy": ("VOXY", 661), "vellfire": ("VELLFIRE", 1682),
+            "yariscross": ("YARIS-CROSS", 3351)
+        },
+        "honda": {
+            "fit": ("FIT", 109), "vezel": ("VEZEL", 2738),
+            "freed": ("FREED", 1629)
+        },
+        "nissan": {"xtrail": ("X-TRAIL", 415)},
+        "mazda": {"cx5": ("CX-5", 2747)}
     }
     aleado_makes = {
         "toyota": ("TOYOTA", 9), "toyotamotor": ("TOYOTA", 9),
@@ -433,13 +441,24 @@ def _japan_model_search_links(make: str, model: str, year_from: int, year_to: in
         "lexus": ("LEXUS", 59)
     }
     aleado_link = None
-    if make_key in {"toyota", "toyotamotor", ""} and model_key in aleado_toyota_models:
-        slug, name_id = aleado_toyota_models[model_key]
-        aleado_link = f"https://aleado.com/autostat/{slug}.asp?company_id=9&name_id={name_id}"
-    elif make_key in aleado_makes:
-        maker_slug, company_id = aleado_makes[make_key]
+    aleado_key = "toyota" if not make_key and model_key in aleado_model_map["toyota"] else make_key
+    if aleado_key in aleado_model_map and model_key in aleado_model_map[aleado_key]:
+        slug, name_id = aleado_model_map[aleado_key][model_key]
+        maker_slug, company_id = aleado_makes[aleado_key]
+        aleado_link = f"https://aleado.com/autostat/{slug}.asp?company_id={company_id}&name_id={name_id}"
+    elif aleado_key in aleado_makes:
+        maker_slug, company_id = aleado_makes[aleado_key]
         aleado_link = f"https://aleado.com/autostat/{maker_slug}.asp?company_id={company_id}"
     links = []
+    if make_key in aleado_makes and model_value:
+        carvector_make = aleado_makes[make_key][0].lower()
+        carvector_model = quote("-".join(model_value.casefold().split()), safe="-")
+        links.append({
+            "name": "Carvector — поиск проданных японских лотов",
+            "url": f"https://carvector.com/stat/{carvector_make}/{carvector_model}",
+            "kind": "Поиск по модели: найденные автомобили, статусы завершённых торгов и ценовые поля",
+            "access": "Публичная выдача показывает часть закрытых лотов; фотографии и отдельные сведения могут требовать входа. Уточняйте смысл поля «Average price» у источника."
+        })
     if aleado_link:
         links.append({
             "name": "Aleado — статистика проданных аукционных лотов",
@@ -995,7 +1014,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         ]
         message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") найден открытый слой TTPAI: модельные средние цены по возрасту и последние сделки; также есть публичные судебные результаты. Но бесплатный массовый поток обычных дилерских аукционных лотов с полными фото и аукционными листами пока не подтверждён."
     return {"ok": True, "country": country, "data_type": "source_hub", "source": "PAPAUTO source registry",
-        "source_hub_version": "2026-10-30-r8", "count": len(sample_records), "records": sample_records, "sources": sources, "model_search_links": model_search_links, "sample_stats": sample_stats,
+        "source_hub_version": "2026-10-30-r9", "count": len(sample_records), "records": sample_records, "sources": sources, "model_search_links": model_search_links, "sample_stats": sample_stats,
         "unsold_records": unsold_records, "china_judicial_sample": china_judicial_sample, "china_market_sample": china_market_sample, "message": message,
         "disclaimer": "Публичный пример не равен полному массиву торгов. Фотографии и аукционные листы показываем только из источников, где это разрешено; платные отчёты не копируем. Цены объявлений, стартовые ставки, судебные продажи и завершённые дилерские аукционы не смешиваются."}
 
