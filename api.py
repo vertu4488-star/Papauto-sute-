@@ -745,16 +745,53 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
              "access": "Регистрация / вход", "data_kind": "Архив прошлых лотов",
              "note": "В интерфейсе есть фильтры Past Auctions, Last Week, Last Month и Last 3 Month; часть цен и листов закрыта для незарегистрированных пользователей.",
              "priority": 2},
-            {"name": "Banzai24", "url": "https://banzai24.com/en",
-             "access": "Доступ проверить", "data_kind": "Мульти-рынок / архив",
-             "note": "Агрегатор по Японии, Корее и Китаю. Для PAPAUTO используем только японские фильтры; проверяем архив продаж, доступность цен и условия использования.",
-             "priority": 2},
+            {"name": "Banzai24 — японский архив продаж", "url": "https://banzai24.com/en?source=archive",
+             "access": "Публичные результаты и цены; дополнительные фото требуют входа / Premium", "data_kind": "10 000+ архивных лотов / финальные цены / модельная история",
+             "note": "Публичная архивная выдача показывает завершённые лоты, статусы и финальные цены; для отдельных моделей есть диапазон цен за период. По RAV4 найден публичный срез 24–29.10.2026. Дополнительные фотографии и полный аукционный лист открываются через авторизацию и JapanStat report; их не копируем.",
+             "priority": 1},
             {"name": "Auction Data Search (ADS)", "url": "https://www.auctiondatasearch.jp/",
              "access": "View Only membership; депозит/условия", "data_kind": "Статистика проданных авто за 3 месяца",
              "note": "Сайт заявляет статистику завершённых продаж за три месяца по разным аукционам Японии. Это не подтверждённый бесплатный источник: доступ View Only связан с членством.",
              "priority": 3}
         ]
-        message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") пока нет разрешённого автоматического потока с модельными ценами. Ниже — источники, где можно проверить реальные закрытые лоты. Не выдаём их данные за собственную базу PAPAUTO."
+        sample_stats = None
+        sample_records = []
+        unsold_records = []
+        query_make = (make or "").strip().lower()
+        query_model = (model or "").strip().lower()
+        if ("rav4" in query_model or ("rav4" in query_make and not query_model)) and (not query_make or "toyota" in query_make):
+            # Manually verified public sample from Banzai24 indexed lot pages, 24–29 Oct 2026.
+            # Nine sold records only; unsold lots are listed separately and excluded from calculations.
+            sample_stats = {
+                "sample_count": 9,
+                "average_final_price_jpy": 2646667,
+                "median_final_price_jpy": 2554000,
+                "min_final_price_jpy": 2108000,
+                "max_final_price_jpy": 3500000,
+                "source_model_range_min_jpy": 392000,
+                "source_model_range_max_jpy": 3940000,
+                "source_range_from": "2026-06-30",
+                "source_range_to": "2026-10-29",
+                "sample_from": "2026-10-24",
+                "sample_to": "2026-10-29",
+                "source_url": "https://banzai24.com/en/TOYOTA/RAV4?countryISO=JP&source=archive",
+                "note": "Среднее и медиана рассчитаны PAPAUTO по 9 публично видимым проданным лотам из выборки 24–29 октября 2026 года. Это не полный массив торгов. Диапазон 392 000–3 940 000 ¥ и период 30.06–29.10.2026 показаны самим источником для модели RAV4."
+            }
+            sample_records = [
+                {"name": "RAV4 Adventure 4WD", "year": "2024.05", "mileage_km": 35000, "auction": "TAA Hokkaido", "date": "2026-10-29", "grade": "3.5", "final_price_jpy": 2554000, "url": "https://banzai24.com/en/car/JP/01a17d51-dffa-7aed-8307-7b83e70ea004"},
+                {"name": "RAV4 G 4WD", "year": "2024.08", "mileage_km": 44000, "auction": "TAA Kanto", "date": "2026-10-29", "final_price_jpy": 2497000, "url": "https://banzai24.com/en/car/JP/01a180a2-ead0-7eaa-8f90-abef31942b63"},
+                {"name": "RAV4 G 4WD", "year": "2024", "mileage_km": 41000, "auction": "NAA Osaka", "date": "2026-10-29", "grade": "3.5", "final_price_jpy": 2112000, "url": "https://banzai24.com/en/car/JP/01a17d73-2cef-7370-bb54-cc7a306ffd76"},
+                {"name": "RAV4 Hybrid G 4WD", "year": "2024.02", "mileage_km": 27000, "auction": "TAA Kanto", "date": "2026-10-29", "final_price_jpy": 3500000, "url": "https://banzai24.com/en/car/JP/01a17d85-9f9d-75e9-ad4d-8366bb57e34c"},
+                {"name": "RAV4 Hybrid X", "year": "2019.11", "mileage_km": 39000, "auction": "TAA Yokohama", "date": "2026-10-24", "final_price_jpy": 2108000, "url": "https://banzai24.com/en/car/JP/01a151f3-a023-7f37-a4ce-3147cbaf6daa"},
+                {"name": "RAV4 Hybrid G 4WD", "year": "2022.09", "mileage_km": 90000, "auction": "CAA Gifu", "date": "2026-10-27", "final_price_jpy": 2679000, "url": "https://banzai24.com/en/car/JP/01a1679c-0ec6-7827-8d74-8c658c8d10be"},
+                {"name": "RAV4 Hybrid Adventure 4WD", "year": "2022.02", "mileage_km": 85000, "auction": "CAA Chubu", "date": "2026-10-28", "grade": "4.5", "final_price_jpy": 2635000, "url": "https://banzai24.com/en/car/JP/01a176e6-e09e-7eeb-af41-da3ac612d547"},
+                {"name": "RAV4 G Z Package 4WD", "year": "2022.02", "mileage_km": 49000, "auction": "CAA Chubu", "date": "2026-10-28", "final_price_jpy": 2385000, "url": "https://banzai24.com/en/car/JP/01a16d32-26e4-72db-8dfd-816eefdef56b"},
+                {"name": "RAV4 20S Prestige Style", "year": "2024.02", "mileage_km": 26000, "auction": "TAA Chubu", "date": "2026-10-29", "final_price_jpy": 3350000, "url": "https://banzai24.com/en/car/JP/01a17d83-dc72-7b6a-8ba3-8c4a0efa3ad8"}
+            ]
+            unsold_records = [
+                {"name": "RAV4 G 4WD", "year": "2024.04", "mileage_km": 27751, "auction": "TAA Kanto", "date": "2026-10-29", "last_bid_jpy": 2575000, "status": "Не продан", "url": "https://banzai24.com/en/car/JP/01a17d54-9444-722d-8262-b2b0a68107bf"}
+            ]
+        message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") пока нет разрешённого автоматического потока с модельными ценами. Ниже — источники для проверки реальных закрытых лотов." + (" Добавлен отдельный небольшой публичный пример по RAV4; это не полный архив." if sample_stats else " Не выдаём данные источников за собственную базу PAPAUTO.")
     else:
         sources = [
             {"name": "Guazi Export", "url": "https://ru.guazi.com/",
@@ -804,8 +841,9 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         ]
         message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") найденные открытые источники пока не дают подтверждённого бесплатного потока обычных дилерских аукционных продаж. Ниже — источники для проверки; судебные и аварийные торги отмечены отдельно."
     return {"ok": True, "country": country, "data_type": "source_hub", "source": "PAPAUTO source registry",
-        "count": 0, "records": [], "sources": sources, "message": message,
-        "disclaimer": "Это каталог проверяемых источников, а не импортированные записи торгов. Не копируем чужие фотографии, аукционные листы и базы без разрешения. Цены объявлений, стартовые ставки, судебные продажи и завершённые дилерские аукционы не смешиваются."}
+        "count": len(sample_records), "records": sample_records, "sources": sources, "sample_stats": sample_stats,
+        "unsold_records": unsold_records, "message": message,
+        "disclaimer": "Публичный пример не равен полному массиву торгов. Фотографии и аукционные листы показываем только из источников, где это разрешено; платные отчёты не копируем. Цены объявлений, стартовые ставки, судебные продажи и завершённые дилерские аукционы не смешиваются."}
 
 @app.get("/api/logistics/benchmarks")
 async def logistics_benchmarks():
