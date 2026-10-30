@@ -764,6 +764,7 @@ async def assistant_select(req: VehicleSelectionInput):
     if not gemini_key:
         logger.error("Gemini API key is not configured for assistant selection")
         raise HTTPException(status_code=503, detail="ИИ-подбор пока не подключён: в Render нужен действующий ключ Gemini API.")
+
     catalogue = [
         {"make": "Toyota", "model": "Aqua", "fit": "компактный гибрид для города и экономии топлива", "markets": ["Япония"]},
         {"make": "Toyota", "model": "Prius", "fit": "гибрид для города и смешанных поездок", "markets": ["Япония"]},
@@ -803,43 +804,46 @@ async def assistant_select(req: VehicleSelectionInput):
         "Верни строго JSON: summary (краткий вывод на русском), recommendations (массив объектов с make,model,why,checks), "
         "questions (массив строк), caveats (массив строк). В рекомендациях только модели из списка."
     )
-    # Gemini 3.8 can return transient 503 overload errors. Fall back immediately
-    # to 3.6 Flash so a temporary spike does not disable the entire voice flow.
+    request_body = {
+        "contents": [{"role": "user", "parts": [{
+            "text": __import__("json").dumps({"instruction": instruction, "request": brief}, ensure_ascii=False)
+        }]}],
+        "generationConfig": {"responseMimeType": "application/json", "temperature": 0.2}
+    }
+
+    # 3.8 occasionally returns HTTP 503 during demand spikes. Fall back to 3.6
+    # immediately; this keeps the voice assistant from stopping after parsing.
     response = None
     last_error = None
-    transient_statuses = {429, 500, 502, 503, 504}
     for model in ("gemini-3.8-flash", "gemini-3.6-flash"):
         try:
             async with httpx.AsyncClient(timeout=httpx.Timeout(20.0, connect=10.0)) as client:
-                candidate_response = await client.post(
+                candidate = await client.post(
                     f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
                     headers={"x-goog-api-key": gemini_key},
-                    json={
-                        "contents": [{"role": "user", "parts": [{"text": __import__("json").dumps({"instruction": instruction, "request": brief}, ensure_ascii=False)}]}],
-                        "generationConfig": {"responseMimeType": "application/json", "temperature": 0.2}
-                    }
+                    json=request_body
                 )
-            if candidate_response.status_code == 200:
-                response = candidate_response
+            if candidate.status_code == 200:
+                response = candidate
                 logger.info("Gemini assistant selection responded via %s", model)
                 break
             try:
-                error_payload = candidate_response.json()
+                error_payload = candidate.json()
                 error_info = error_payload.get("error", {}) if isinstance(error_payload, dict) else {}
                 error_message = str(error_info.get("message", ""))[:300]
-                error_code = error_info.get("status") or candidate_response.status_code
+                error_code = error_info.get("status") or candidate.status_code
             except ValueError:
-                error_message, error_code = "non-JSON response", candidate_response.status_code
+                error_message, error_code = "non-JSON response", candidate.status_code
+            last_error = (candidate.status_code, error_code, error_message)
             logger.warning(
                 "Gemini assistant model %s returned HTTP %s code=%s message=%s",
-                model, candidate_response.status_code, error_code, error_message
+                model, candidate.status_code, error_code, error_message
             )
-            last_error = (candidate_response.status_code, error_code, error_message)
-            if candidate_response.status_code not in transient_statuses:
+            if candidate.status_code not in {429, 500, 502, 503, 504}:
                 break
         except httpx.RequestError as exc:
-            logger.warning("Gemini assistant model %s request failed: %s", model, type(exc).__name__)
             last_error = (502, "NETWORK_ERROR", type(exc).__name__)
+            logger.warning("Gemini assistant model %s request failed: %s", model, type(exc).__name__)
 
     if response is None:
         status_code, error_code, error_message = last_error or (503, "UNAVAILABLE", "No Gemini model responded")
@@ -851,6 +855,8 @@ async def assistant_select(req: VehicleSelectionInput):
             status_code=503 if status_code in (429, 503) else 502,
             detail="ИИ-подбор временно перегружен. Попробуйте ещё раз через несколько секунд."
         )
+
+    try:
         payload = response.json()
         candidates = payload.get("candidates") or []
         parts = (candidates[0].get("content") or {}).get("parts") or [] if candidates else []
@@ -859,35 +865,36 @@ async def assistant_select(req: VehicleSelectionInput):
             raise HTTPException(status_code=502, detail="ИИ-подбор вернул пустой ответ. Попробуйте уточнить запрос.")
         import json
         result = json.loads(raw)
-        logger.info("Gemini assistant selection succeeded: response_chars=%s", len(raw))
-        allowed = {(item["make"].lower(), item["model"].lower()) for item in catalogue}
-        recommendations = []
-        for item in result.get("recommendations", [])[:5]:
-            if not isinstance(item, dict):
-                continue
-            key = (str(item.get("make", "")).lower(), str(item.get("model", "")).lower())
-            if key in allowed:
-                recommendations.append({
-                    "make": item["make"], "model": item["model"],
-                    "why": str(item.get("why", ""))[:600],
-                    "checks": str(item.get("checks", ""))[:600],
-                    "availability": "Модель для рассмотрения; актуальные лоты не подтверждены"
-                })
-        return {
-            "ok": True,
-            "source": "Gemini AI + справочный список моделей PAPAUTO",
-            "summary": str(result.get("summary", "Подбор подготовлен."))[:1500],
-            "recommendations": recommendations,
-            "questions": [str(x)[:400] for x in result.get("questions", [])[:3]],
-            "caveats": [str(x)[:400] for x in result.get("caveats", [])[:4]],
-            "disclaimer": "Это рекомендации по моделям, а не список актуальных лотов и не коммерческое предложение. Наличие, состояние и стоимость под ключ подтверждаются отдельно."
-        }
     except HTTPException:
         raise
-    except httpx.RequestError:
-        raise HTTPException(status_code=502, detail="Не удалось связаться с ИИ-помощником. Попробуйте позже.")
     except (ValueError, KeyError, IndexError, TypeError):
+        logger.exception("Could not parse Gemini assistant selection response")
         raise HTTPException(status_code=502, detail="Не удалось разобрать ответ ИИ-подбора. Попробуйте сформулировать запрос иначе.")
+
+    logger.info("Gemini assistant selection succeeded: response_chars=%s", len(raw))
+    allowed = {(item["make"].lower(), item["model"].lower()) for item in catalogue}
+    recommendations = []
+    for item in result.get("recommendations", [])[:5]:
+        if not isinstance(item, dict):
+            continue
+        key = (str(item.get("make", "")).lower(), str(item.get("model", "")).lower())
+        if key in allowed:
+            recommendations.append({
+                "make": item["make"],
+                "model": item["model"],
+                "why": str(item.get("why", ""))[:600],
+                "checks": str(item.get("checks", ""))[:600],
+                "availability": "Модель для рассмотрения; актуальные лоты не подтверждены"
+            })
+    return {
+        "ok": True,
+        "source": "Gemini AI + справочный список моделей PAPAUTO",
+        "summary": str(result.get("summary", "Подбор подготовлен."))[:1500],
+        "recommendations": recommendations,
+        "questions": [str(x)[:400] for x in result.get("questions", [])[:3]],
+        "caveats": [str(x)[:400] for x in result.get("caveats", [])[:4]],
+        "disclaimer": "Это рекомендации по моделям, а не список актуальных лотов и не коммерческое предложение. Наличие, состояние и стоимость под ключ подтверждаются отдельно."
+    }
 
 
 @app.post("/api/voice/transcribe")
