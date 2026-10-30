@@ -111,7 +111,7 @@ if(auctionStatsForm){
      const stats=data.sample_stats;
      const metrics=el("div","auction-sample-metrics");
      const metric=(label,value)=>{const box=el("div","auction-sample-metric");box.append(el("small","",label),el("strong","",value));metrics.append(box)};
-     const money=n=>new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(Number(n||0))+" ¥";
+     const money=n=>new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(Number(n||0))+" JPY";
      metric("Продано в выборке",String(stats.sample_count));
      metric("Средняя цена",money(stats.average_final_price_jpy));
      metric("Медиана",money(stats.median_final_price_jpy));
@@ -136,7 +136,7 @@ if(auctionStatsForm){
      const grid=el("div","auction-source-results");
      data.china_market_sample.forEach(item=>{
       const card=el("article","auction-source-result");card.append(el("span","auction-source-access","TTPAI · публичная статистика"),el("h4","",item.name||"Модель"));
-      const money=n=>n==null?"—":new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(Number(n))+" ¥";
+      const money=n=>n==null?"—":new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(Number(n))+" CNY";
       card.append(el("p","", "Средняя цена: 3 года — "+money(item.age_3_avg_cny)+"; 5 лет — "+money(item.age_5_avg_cny)+"; 7 лет — "+money(item.age_7_avg_cny)+"."));
       if(item.recent_sales)card.append(el("p","", "Последние сделки: "+item.recent_sales));
       const link=document.createElement("a");link.href=String(item.url||"https://www.ttpai.cn/");link.target="_blank";link.rel="noopener noreferrer";link.textContent="Открыть историю модели ↗";card.append(link);grid.append(card);
