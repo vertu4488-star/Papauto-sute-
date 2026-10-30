@@ -38,9 +38,9 @@ jobs:
         run: |
           set -euo pipefail
           URL="https://papauto-leads.onrender.com/api/auction-statistics?country=japan&make=Toyota&model=RAV4&year_from=2019&year_to=2025"
-          EXPECTED_VERSION="2026-10-30-r8"
+          EXPECTED_VERSION="2026-10-30-r10"
           for attempt in $(seq 1 18); do
-            if curl --silent --show-error --fail "$URL" -o /tmp/japan.json && python -c 'import json,sys; d=json.load(open("/tmp/japan.json",encoding="utf-8")); sys.exit(0 if d.get("source_hub_version")=="2026-10-30-r8" else 1)'; then
+            if curl --silent --show-error --fail "$URL" -o /tmp/japan.json && python -c 'import json,sys; d=json.load(open("/tmp/japan.json",encoding="utf-8")); sys.exit(0 if d.get("source_hub_version")=="2026-10-30-r10" else 1)'; then
               break
             fi
             if [ "$attempt" -eq 18 ]; then
@@ -54,7 +54,7 @@ jobs:
           with open("/tmp/japan.json", encoding="utf-8") as f:
               data = json.load(f)
           assert data.get("data_type") == "source_hub", data
-          assert data.get("source_hub_version") == "2026-10-30-r8", data
+          assert data.get("source_hub_version") == "2026-10-30-r10", data
           assert len(data.get("sources", [])) >= 5, data
           assert data.get("sample_stats", {}).get("sample_count") == 9, data
           assert len(data.get("records", [])) == 9, data
@@ -68,13 +68,15 @@ jobs:
           python - <<'PY'
           import json
           data = json.load(open("/tmp/prius.json", encoding="utf-8"))
-          assert data.get("source_hub_version") == "2026-10-30-r8", data
+          assert data.get("source_hub_version") == "2026-10-30-r10", data
           assert data.get("sample_stats") is None, data
           links = data.get("model_search_links", [])
           assert len(links) >= 5, data
           banzai = next(x for x in links if x["name"].startswith("Banzai24"))
           assert "/TOYOTA/PRIUS?" in banzai["url"], banzai
           assert "yearStart=2018" in banzai["url"] and "yearEnd=2025" in banzai["url"], banzai
+          carvector = next(x for x in links if x["name"].startswith("Carvector"))
+          assert carvector["url"] == "https://carvector.com/stat/toyota/prius", carvector
           aleado = next(x for x in links if x["name"].startswith("Aleado"))
           assert "PRIUS.asp?company_id=9&name_id=718" in aleado["url"], aleado
           print("Prius model search links OK:", len(links), "sources incl. Aleado")
@@ -114,7 +116,7 @@ jobs:
           with open("/tmp/china.json", encoding="utf-8") as f:
               data = json.load(f)
           assert data.get("data_type") == "source_hub", data
-          assert data.get("source_hub_version") == "2026-10-30-r8", data
+          assert data.get("source_hub_version") == "2026-10-30-r10", data
           assert len(data.get("sources", [])) >= 5, data
           assert data.get("sample_stats") is None, data
           assert data.get("records") == [], data
