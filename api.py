@@ -716,6 +716,8 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
     sample_stats = None
     sample_records = []
     unsold_records = []
+    china_judicial_sample = []
+    china_market_sample = []
     # Instead of returning a dead-end error or inventing model prices, expose a ranked
     # source hub with explicit access/quality labels so users can inspect primary sources.
     if country == "japan":
@@ -796,6 +798,17 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
             ]
         message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") пока нет разрешённого автоматического потока с модельными ценами. Ниже — источники для проверки реальных закрытых лотов." + (" Добавлен отдельный небольшой публичный пример по RAV4; это не полный архив." if sample_stats else " Не выдаём данные источников за собственную базу PAPAUTO.")
     else:
+        china_market_sample = [
+            {"name": "Tesla Model 3 · Shanghai", "age_3_avg_cny": 120900, "age_5_avg_cny": 97500, "age_7_avg_cny": 88100,
+             "recent_sales": "2026-09-21 · 2020 model · 101 000 km; 2026-09-04 · 2020 model · 9 000 km; 2026-09-03 · 2022 model · 92 000 km",
+             "url": "https://www.ttpai.cn/shanghai/price/tesila-model3"},
+            {"name": "Tesla Model Y · Shanghai", "age_3_avg_cny": 153100, "age_5_avg_cny": 133400, "age_7_avg_cny": None,
+             "recent_sales": "2026-09-06 · 2022 model · 20 000 km; 2026-08-26 · 2024 model · 24 000 km; 2026-08-25 · 2024 model · 14 000 km",
+             "url": "https://www.ttpai.cn/shanghai/price/tesila-modely"},
+            {"name": "Volkswagen Polo · Shanghai", "age_3_avg_cny": 58800, "age_5_avg_cny": 45300, "age_7_avg_cny": 34700,
+             "recent_sales": "2026-09-22 · 2016 model · 18 000 km; 2026-09-14 · 2012 model · 56 000 km; 2026-09-10 · 2019 model · 55 000 km",
+             "url": "https://www.ttpai.cn/shanghai/price/dazhong-polo"}
+        ]
         china_judicial_sample = [
             {"name": "BMW 2.0T", "year": "2021", "auction": "Gongpai / Jining District Court", "date": "2026-06-27", "final_price_cny": 63030.32, "note": "Оценка 100 947 ¥; пробег в публичной карточке не указан.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=52859"},
             {"name": "Audi", "year": "—", "auction": "Gongpai / Jining District Court", "date": "2026-09-10", "final_price_cny": 35713, "note": "В карточке опубликованы фото автомобиля и подтверждение завершения торгов.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=53103"},
@@ -803,6 +816,10 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
             {"name": "Volkswagen", "year": "—", "auction": "Gongpai / Daming County Court", "date": "2026-06-18", "final_price_cny": 63900, "note": "В карточке опубликованы сведения о торгах и подтверждение成交.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=52792"}
         ]
         sources = [
+            {"name": "天天拍车 / TTPAI — модельная статистика", "url": "https://www.ttpai.cn/shanghai/price/tesila-model3",
+             "access": "Публичные модельные страницы", "data_kind": "Исторические цены / средние по возрасту / последние сделки",
+             "note": "Публичные страницы показывают средние цены по возрасту автомобиля (3/5/7 лет), историю модели и последние завершённые сделки с датами, пробегом и городом. Это статистика сделок платформы, не полный экспорт аукционных лотов; фото и аукционные листы не заявлены.",
+             "priority": 1},
             {"name": "Guazi Export", "url": "https://ru.guazi.com/",
              "access": "Ограниченный бесплатный доступ после регистрации заявлен", "data_kind": "Недавно проданные / отчёты осмотра",
              "note": "Сайт заявляет временный бесплатный доступ к недавно проданным ценам и отчётам осмотра. Нужно проверить, видны ли завершённые цены и фото без оплаты и разрешено ли сохранять данные.",
@@ -851,7 +868,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") найденные открытые источники пока не дают подтверждённого бесплатного потока обычных дилерских аукционных продаж. Ниже — источники для проверки; судебные и аварийные торги отмечены отдельно."
     return {"ok": True, "country": country, "data_type": "source_hub", "source": "PAPAUTO source registry",
         "count": len(sample_records), "records": sample_records, "sources": sources, "sample_stats": sample_stats,
-        "unsold_records": unsold_records, "china_judicial_sample": china_judicial_sample, "message": message,
+        "unsold_records": unsold_records, "china_judicial_sample": china_judicial_sample, "china_market_sample": china_market_sample, "message": message,
         "disclaimer": "Публичный пример не равен полному массиву торгов. Фотографии и аукционные листы показываем только из источников, где это разрешено; платные отчёты не копируем. Цены объявлений, стартовые ставки, судебные продажи и завершённые дилерские аукционы не смешиваются."}
 
 @app.get("/api/logistics/benchmarks")
