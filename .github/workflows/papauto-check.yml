@@ -38,9 +38,9 @@ jobs:
         run: |
           set -euo pipefail
           URL="https://papauto-leads.onrender.com/api/auction-statistics?country=japan&make=Toyota&model=RAV4&year_from=2019&year_to=2025"
-          EXPECTED_VERSION="2026-10-30-r10"
+          EXPECTED_VERSION="2026-10-30-r11"
           for attempt in $(seq 1 18); do
-            if curl --silent --show-error --fail "$URL" -o /tmp/japan.json && python -c 'import json,sys; d=json.load(open("/tmp/japan.json",encoding="utf-8")); sys.exit(0 if d.get("source_hub_version")=="2026-10-30-r10" else 1)'; then
+            if curl --silent --show-error --fail "$URL" -o /tmp/japan.json && python -c 'import json,sys; d=json.load(open("/tmp/japan.json",encoding="utf-8")); sys.exit(0 if d.get("source_hub_version")=="2026-10-30-r11" else 1)'; then
               break
             fi
             if [ "$attempt" -eq 18 ]; then
@@ -54,7 +54,7 @@ jobs:
           with open("/tmp/japan.json", encoding="utf-8") as f:
               data = json.load(f)
           assert data.get("data_type") == "source_hub", data
-          assert data.get("source_hub_version") == "2026-10-30-r10", data
+          assert data.get("source_hub_version") == "2026-10-30-r11", data
           assert len(data.get("sources", [])) >= 5, data
           assert data.get("sample_stats", {}).get("sample_count") == 9, data
           assert len(data.get("records", [])) == 9, data
@@ -68,7 +68,7 @@ jobs:
           python - <<'PY'
           import json
           data = json.load(open("/tmp/prius.json", encoding="utf-8"))
-          assert data.get("source_hub_version") == "2026-10-30-r10", data
+          assert data.get("source_hub_version") == "2026-10-30-r11", data
           assert data.get("sample_stats") is None, data
           links = data.get("model_search_links", [])
           assert len(links) >= 5, data
@@ -96,6 +96,20 @@ jobs:
           assert carvector["url"] == "https://carvector.com/stat/honda/fit", carvector
           print("Honda manufacturer archive link OK")
           PY
+      - name: Test Russian model-name normalization
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --silent --show-error --fail --get "https://papauto-leads.onrender.com/api/auction-statistics" --data-urlencode "country=japan" --data-urlencode "make=Тойота" --data-urlencode "model=Рав4" --data-urlencode "year_from=2019" --data-urlencode "year_to=2025" -o /tmp/rav4-ru.json
+          python - <<'PY'
+          import json
+          data = json.load(open("/tmp/rav4-ru.json", encoding="utf-8"))
+          links = data.get("model_search_links", [])
+          assert any(x["url"].startswith("https://carvector.com/stat/toyota/rav4") for x in links), links
+          assert any("RAV4.asp?company_id=9&name_id=710" in x["url"] for x in links), links
+          assert any("/TOYOTA/RAV4?" in x["url"] for x in links), links
+          print("Russian make/model normalization OK")
+          PY
       - name: Test Japan vehicle search fallback
         shell: bash
         run: |
@@ -118,7 +132,7 @@ jobs:
           with open("/tmp/china.json", encoding="utf-8") as f:
               data = json.load(f)
           assert data.get("data_type") == "source_hub", data
-          assert data.get("source_hub_version") == "2026-10-30-r10", data
+          assert data.get("source_hub_version") == "2026-10-30-r11", data
           assert len(data.get("sources", [])) >= 5, data
           assert data.get("sample_stats") is None, data
           assert data.get("records") == [], data
