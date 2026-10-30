@@ -407,6 +407,43 @@
     </div>
   </section>
 
+  <section class="section wrap" id="account">
+    <div class="account-panel">
+      <div class="eyebrow">ЛИЧНЫЙ КАБИНЕТ PAPAUTO</div>
+      <h2>Ваши заявки<br><em>в одном месте.</em></h2>
+      <p class="account-intro">Создайте аккаунт, чтобы сохранять профиль, отправлять заявки на автомобили и возвращаться к истории обращений.</p>
+      <div class="account-auth-grid">
+        <form id="accountSignUp" class="account-auth-card">
+          <h3>Регистрация</h3>
+          <label>Имя <input id="accountName" maxlength="120" autocomplete="name" placeholder="Ваше имя"></label>
+          <label>Телефон <input id="accountPhone" maxlength="32" autocomplete="tel" placeholder="+7…"></label>
+          <label>Электронная почта <input id="accountSignUpEmail" type="email" required autocomplete="email" placeholder="name@example.com"></label>
+          <label>Пароль <input id="accountSignUpPassword" type="password" required minlength="8" autocomplete="new-password" placeholder="Не менее 8 символов"></label>
+          <button class="button button-primary" type="submit">Создать аккаунт</button>
+        </form>
+        <form id="accountSignIn" class="account-auth-card">
+          <h3>Вход</h3>
+          <label>Электронная почта <input id="accountSignInEmail" type="email" required autocomplete="email" placeholder="name@example.com"></label>
+          <label>Пароль <input id="accountSignInPassword" type="password" required autocomplete="current-password" placeholder="Ваш пароль"></label>
+          <button class="button button-secondary" type="submit">Войти</button>
+          <button class="account-text-button" type="button" id="accountResetPassword">Забыли пароль?</button>
+        </form>
+      </div>
+      <p id="accountStatus" class="account-status" role="status" aria-live="polite">Личный кабинет подключён к защищённой базе данных.</p>
+      <div id="accountDashboard" class="account-dashboard" hidden>
+        <div class="account-user-row"><div><strong id="accountUserEmail"></strong><span id="accountUserPhone"></span></div><button class="button button-secondary" type="button" id="accountSignOut">Выйти</button></div>
+        <form id="accountProfileForm" class="account-profile-form">
+          <h3>Мой профиль</h3>
+          <label>Имя <input id="accountProfileName" maxlength="120"></label>
+          <label>Телефон <input id="accountProfilePhone" maxlength="32" autocomplete="tel"></label>
+          <label>Город <input id="accountProfileCity" maxlength="100" value="Новосибирск"></label>
+          <button class="button button-secondary" type="submit">Сохранить профиль</button>
+        </form>
+        <div class="account-orders"><h3>Мои заявки</h3><div id="accountOrdersList"><p>Загрузка заявок…</p></div></div>
+      </div>
+    </div>
+  </section>
+
   <section class="section wrap" id="process">
     <div class="section-title-row"><div><div class="eyebrow">ПОНЯТНО ПО ЭТАПАМ</div><h2>От запроса<br><em>до автомобиля.</em></h2></div><p>Конкретные сроки и стоимость зависят от выбранного автомобиля, страны, логистики и оформления. Условия фиксируются до начала работ.</p></div>
     <div class="process-grid">
@@ -482,7 +519,7 @@
   <a href="#auction-statistics"><span>◷</span>Статистика</a>
   <a href="#catalog"><span>▦</span>Каталог</a>
 </nav>
-<script src="/site-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>\n<script src="/site-config.js"></script>\n<script src="/account.js" defer></script>
 <script src="/app.js" defer></script>
 <script src="/voice-assistant.js" defer></script>
 </body>
