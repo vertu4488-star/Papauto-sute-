@@ -55,18 +55,31 @@ function parse(text){
 }
 function applyParsed(p,autoSearch){
  const set=(id,v)=>{const e=$(id);if(e&&v!==undefined&&v!==null&&v!==""){e.value=String(v);e.dispatchEvent(new Event("input",{bubbles:true}));e.dispatchEvent(new Event("change",{bubbles:true}))}};
- set("vehicleCountry",p.country);set("vehicleMake",p.make);if(p.city){const city=$("city");if(city)city.value=p.city;}set("vehicleModel",p.model);set("vehicleYearFrom",p.yearFrom);set("vehicleYearTo",p.yearTo);set("vehicleMaxPrice",p.budget);set("vehicleMileageMax",p.mileage);set("vehicleVolumeMin",p.volume);set("vehicleVolumeMax",p.volume);set("vehicleBody",p.body);set("vehicleGrade",p.grade);set("vehicleLot",p.lot);set("calcCountry",p.calcCountry);
+ // Keep catalogue filters in sync for users who want to inspect them.
+ set("vehicleCountry",p.country);set("vehicleMake",p.make);set("vehicleModel",p.model);set("vehicleYearFrom",p.yearFrom);set("vehicleYearTo",p.yearTo);set("vehicleMaxPrice",p.budget);set("vehicleMileageMax",p.mileage);set("vehicleVolumeMin",p.volume);set("vehicleVolumeMax",p.volume);set("vehicleBody",p.body);set("vehicleGrade",p.grade);set("vehicleLot",p.lot);set("calcCountry",p.calcCountry);
+ // The microphone belongs to PAPAUTO SELECT: route speech to Gemini's AI selector.
+ const countryLabels={japan:"Япония","south-korea":"Южная Корея",china:"Китай"};
+ if(p.country)set("country",countryLabels[p.country]||"Не определился");
+ set("carMake",p.make);set("carModel",p.model);set("yearFrom",p.yearFrom);set("yearTo",p.yearTo);set("budget",p.budget);set("maxMileage",p.mileage);
+ if(p.city)set("city",p.city);
+ if(p.raw)set("carPrompt",p.raw);
  const details=[];
- if(p.country)details.push("страна: "+({"japan":"Япония","south-korea":"Южная Корея","china":"Китай"}[p.country]));if(p.city)details.push("город получения: "+p.city);
+ if(p.country)details.push("страна: "+(countryLabels[p.country]||p.country));if(p.city)details.push("город получения: "+p.city);
  if(p.make)details.push("марка: "+p.make);if(p.model)details.push("модель: "+p.model);
  if(p.yearFrom||p.yearTo)details.push("год: "+(p.yearFrom||"любой")+"–"+(p.yearTo||p.yearFrom));
  if(p.budget)details.push("бюджет до "+new Intl.NumberFormat("ru-RU").format(p.budget)+" ₽");
  if(p.mileage)details.push("пробег до "+new Intl.NumberFormat("ru-RU").format(p.mileage)+" км");
  if(p.volume)details.push("двигатель "+(p.volume/1000).toLocaleString("ru-RU")+" л");
  if(p.body)details.push("кузов: "+p.body);
- if(!details.length){sayStatus("Не удалось распознать параметры. Скажите, например: «Найди Toyota Prius из Японии до двух миллионов рублей, с 2019 по 2023 год».");return}
- sayStatus("Распознано: "+details.join("; ")+". Параметры внесены в форму поиска и направление калькулятора.");
- if(autoSearch){const form=$("vehicleSearchForm");if(form){setTimeout(()=>{sayStatus("Запускаю поиск по распознанным параметрам…");form.requestSubmit()},350)}}
+ if(!p.raw||p.raw.trim().length<5){sayStatus("Не удалось распознать достаточно длинный запрос. Попробуйте сказать ещё раз.");return}
+ if(autoSearch){
+  sayStatus("Речь распознана"+(details.length?": "+details.join("; "):"")+". Отправляю запрос автомобильному ИИ-консультанту…");
+  const aiButton=$("runAiSelect");
+  if(aiButton){setTimeout(()=>aiButton.click(),250)}
+  else sayStatus("Кнопка ИИ-подбора не найдена. Обновите страницу и попробуйте ещё раз.");
+ }else{
+  sayStatus("Распознано"+(details.length?": "+details.join("; "):"")+". Текст перенесён в форму PAPAUTO SELECT. Нажмите «Подобрать модели».");
+ }
 }
 apply.addEventListener("click",()=>applyParsed(parse(input.value),false));
 let lastSpoken="";
@@ -86,6 +99,26 @@ const searchResults=$("vehicleSearchResults");
 if(searchResults&&"MutationObserver" in window){
  new MutationObserver(()=>{if(!searchResults.hidden&&searchResults.children.length){const count=searchResults.querySelectorAll(".vehicle-result-card").length;if(count)speak("Поиск завершён. Получено предложений: "+count+". Цены и наличие нужно подтвердить у продавца; доставка и оформление в России считаются отдельно.")}}).observe(searchResults,{childList:true,subtree:true,attributes:true,attributeFilter:["hidden"]});
 }
+const aiResults=$("aiSelectResults");
+if(aiResults&&"MutationObserver" in window){
+ let aiSpeakTimer=null;
+ new MutationObserver(()=>{
+  if(aiResults.hidden)return;
+  clearTimeout(aiSpeakTimer);
+  aiSpeakTimer=setTimeout(()=>{
+   const summary=aiResults.querySelector(".ai-select-summary")?.textContent?.trim()||"";
+   const cards=[...aiResults.querySelectorAll(".ai-select-card")].map(card=>{
+    const title=card.querySelector("h3")?.textContent?.trim()||"";
+    const why=card.querySelector("p")?.textContent?.trim()||"";
+    return [title,why].filter(Boolean).join(". ");
+   });
+   const questions=aiResults.querySelector(".ai-select-questions")?.textContent?.trim()||"";
+   const answer=[summary,...cards,questions].filter(Boolean).join(". ");
+   if(answer)speak(answer);
+  },350);
+ }).observe(aiResults,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:["hidden"]});
+}
+
 const micIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"></rect><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"></path></svg>';
 let recording=false,stream=null,audioContext=null,source=null,processor=null,pcmChunks=[];
 const resetMic=()=>{recording=false;listen.setAttribute("aria-pressed","false");listen.classList.remove("is-listening");listen.innerHTML=micIcon};
