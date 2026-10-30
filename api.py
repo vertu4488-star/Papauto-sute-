@@ -61,6 +61,13 @@ def _fix_mojibake(value):
     return value
 
 
+def _https_photo_urls(value):
+    """Keep only absolute HTTPS image URLs supplied by the upstream provider."""
+    if not isinstance(value, list):
+        return []
+    return [url for url in value if isinstance(url, str) and url.startswith("https://") and len(url) <= 2048]
+
+
 def _canonical_korea_listing_url(source, listing_id, candidate):
     """Only expose source URLs that match the marketplace; build canonical Encar URLs."""
     from urllib.parse import urlparse
@@ -453,13 +460,17 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                 year = item.get("year") or item.get("model_year")
                 listing_id = item.get("id")
                 source = str(item.get("source") or "encar")
-                photos = item.get("photos") if isinstance(item.get("photos"), list) else []
+                photos = _https_photo_urls(item.get("photos"))
                 if not photos:
                     thumbnail = item.get("thumbnail") or item.get("thumbnail_url") or item.get("image_url") or item.get("image")
-                    if isinstance(thumbnail, str) and thumbnail.startswith("https://"):
+                    if isinstance(thumbnail, str) and thumbnail.startswith("https://") and len(thumbnail) <= 2048:
                         photos = [thumbnail]
+                listing_date = item.get("listed_at") or item.get("listing_date") or item.get("created_at") or item.get("date")
                 results.append({
-                    "id": listing_id,
+                    "id": str(listing_id) if listing_id is not None else None,
+                    "lot_number": str(listing_id) if listing_id is not None else None,
+                    "record_type": "current_listing",
+                    "listing_date": listing_date,
                     "source": source,
                     "make": _fix_mojibake(item.get("manufacturer") or item.get("make") or ""),
                     "model": _fix_mojibake(item.get("model") or ""),
@@ -493,15 +504,31 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                     if gallery:
                         item["photos"] = gallery
                         item["thumbnail"] = gallery[0]
+            # Apply descriptive filters locally when the provider search endpoint does not
+            # expose equivalent documented query parameters. Never compare KRW with RUB.
+            if body.strip():
+                needle = body.strip().casefold()
+                results = [item for item in results if needle in str(item.get("body") or "").casefold()]
+            if grade.strip():
+                wanted_grade = grade.strip().casefold()
+                results = [item for item in results if str(item.get("grade") or "").strip().casefold() == wanted_grade]
             return {
                 "ok": True,
                 "source": "XAPI Korea",
                 "country": "south-korea",
+                "record_type": "current_listing",
+                "retrieved_at": datetime.now(timezone.utc).isoformat(),
                 "total_count": payload.get("total_count", len(results)),
+                "returned_count": len(results),
                 "partial": bool(payload.get("partial", False)),
                 "source_errors": payload.get("source_errors", []),
+                "filters_applied": {
+                    "country": country, "make": make.strip(), "model": model.strip(),
+                    "year_from": year_from, "year_to": year_to, "mileage_max": mileage_max,
+                    "body": body.strip(), "grade": grade.strip(),
+                },
                 "results": results,
-                "disclaimer": "Цены показаны в корейских вонах и не включают доставку, таможню, оформление и доставку по России.",
+                "disclaimer": "Это текущие объявления, а не результаты завершённых торгов. Цена указана в корейских вонах и не включает доставку, таможню, оформление и доставку по России. Наличие и цену нужно подтвердить у исходной площадки.",
             }
         except HTTPException:
             raise
