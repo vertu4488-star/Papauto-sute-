@@ -17,6 +17,7 @@ from pydantic import BaseModel, Field, field_validator
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("papauto.api")
+logger.info("XAPI Korea key present in Render environment: %s", bool((os.getenv("XAPIKOREA_API_KEY") or "").strip()))
 
 app = FastAPI(title="PAPAUTO Lead API", version="1.0.0")
 
