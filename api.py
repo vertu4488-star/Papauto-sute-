@@ -394,6 +394,44 @@ async def vehicle_assistant(req: VehicleAssistantInput):
         raise HTTPException(status_code=502, detail="Не удалось разобрать ответ ИИ. Попробуйте указать параметры автомобиля точнее.")
 
 
+def _japan_model_search_links(make: str, model: str, year_from: int, year_to: int):
+    """Build safe, user-initiated searches on public Japanese auction/statistics sites.
+    We link to sources rather than scraping or republishing data without permission.
+    """
+    make_value = (make or "").strip()
+    model_value = (model or "").strip()
+    search_value = " ".join(value for value in (make_value, model_value) if value).strip()
+    if make_value and model_value:
+        banzai_path = f"/en/{quote(make_value.upper(), safe='')}/{quote(model_value.upper(), safe='')}"
+    elif make_value:
+        banzai_path = f"/en/{quote(make_value.upper(), safe='')}"
+    else:
+        banzai_path = "/en"
+    banzai_url = (
+        "https://banzai24.com" + banzai_path
+        + f"?countryISO=JP&source=archive&yearStart={int(year_from)}&yearEnd={int(year_to)}"
+    )
+    jp_query = quote(model_value or make_value or search_value, safe="")
+    jp_sheet_url = "https://jpsheet.com/auction-price-history/" + (f"?q={jp_query}" if jp_query else "")
+    return [
+        {"name": "Banzai24 — архив японских торгов", "url": banzai_url,
+         "kind": "Архив закрытых торгов по марке, модели и годам",
+         "access": "Публичная выдача; часть финальных цен, фотографий и листов может быть ограничена аккаунтом."},
+        {"name": "JP Sheet — история цен по модели", "url": jp_sheet_url,
+         "kind": "Публичная модельная статистика и недавние цены молотка",
+         "access": "Открыть страницу источника. Автоматический сбор и перепубликация данных без письменного разрешения запрещены."},
+        {"name": "А.М. Гамма — статистика аукционов", "url": "https://japan.amgamma.ru/car-statistics",
+         "kind": "Интерактивный поиск по марке, модели, году, пробегу и оценке",
+         "access": "На странице включить «Только проданные» и нажать «Найти»."},
+        {"name": "ES Transit — архив продаж", "url": "https://estransit.ru/statistika/",
+         "kind": "Архив по маркам, моделям, годам и аукционным площадкам",
+         "access": "В выдаче цены могут быть рассчитаны до Владивостока, а не являться ценой молотка."},
+        {"name": "Auctions22 — прошлые торги", "url": "https://auctions22.com/past",
+         "kind": "Публичные результаты и статусы Sold / Not sold",
+         "access": "Сайт заявляет бесплатную регистрацию для просмотра полных цен, характеристик и фотографий."}
+    ]
+
+
 @app.get("/api/vehicles")
 async def search_vehicles(country: str = "japan", make: str = "", model: str = "",
                           year_from: int = 1990, year_to: int = 2027,
@@ -401,7 +439,7 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                           volume_min: Optional[int] = None, volume_max: Optional[int] = None,
                           body: str = "", grade: str = "", lot_number: str = "",
                           limit: int = 20):
-    """Search live Korean listings through XAPI Korea. Japan/China remain disabled until a provider is configured."""
+    """Search Korea live; for Japan return model-specific public source searches until a licensed feed exists."""
     if country not in {"japan", "south-korea", "china"}:
         raise HTTPException(status_code=400, detail="Неизвестное направление поиска.")
     if year_from < 1990 or year_to > 2030 or year_from > year_to:
@@ -537,10 +575,17 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
             logger.error("XAPI Korea connection failure: %s: %s", type(exc).__name__, str(exc))
             raise HTTPException(status_code=502, detail="Не удалось связаться с XAPI Korea. Проверьте логи сервера для определения сетевой ошибки и попробуйте позже.")
 
-    # Japan and China are intentionally not routed to a Korean provider.
+    if country == "japan":
+        return {
+            "ok": True, "country": "japan", "data_type": "external_search",
+            "query": {"make": make.strip(), "model": model.strip(), "year_from": year_from, "year_to": year_to},
+            "search_links": _japan_model_search_links(make, model, year_from, year_to),
+            "message": "Для Японии открыты прямые поиски по архивам источников. Результаты показываются на сайтах владельцев баз; PAPAUTO не выдаёт их за собственную выгрузку и не копирует закрытые фотографии или аукционные листы."
+        }
+    # China has no confirmed free reusable live-lot feed configured.
     raise HTTPException(
         status_code=503,
-        detail="Для этого направления пока не подключён подтверждённый источник актуальных объявлений. Выберите Южную Корею или отправьте заявку на индивидуальный подбор."
+        detail="Для Китая пока не подключён подтверждённый источник актуальных объявлений. Откройте раздел статистики и публичные источники."
     )
 
 
@@ -669,6 +714,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         raise HTTPException(status_code=400, detail="Проверьте диапазон годов выпуска.")
     limit = min(max(limit, 1), 30)
     make, model, grade = make.strip()[:80], model.strip()[:80], grade.strip()[:12]
+    model_search_links = _japan_model_search_links(make, model, year_from, year_to) if country == "japan" else []
     if country == "south-korea":
         api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
         if not api_key:
@@ -796,7 +842,50 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
             unsold_records = [
                 {"name": "RAV4 G 4WD", "year": "2024.04", "mileage_km": 27751, "auction": "TAA Kanto", "date": "2026-10-29", "last_bid_jpy": 2575000, "status": "Не продан", "url": "https://banzai24.com/en/car/JP/01a17d54-9444-722d-8262-b2b0a68107bf"}
             ]
-        message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") пока нет разрешённого автоматического потока с модельными ценами. Ниже — источники для проверки реальных закрытых лотов." + (" Добавлен отдельный небольшой публичный пример по RAV4; это не полный архив." if sample_stats else " Не выдаём данные источников за собственную базу PAPAUTO.")
+            # Apply the requested year, grade and row limit to the small manually checked
+            # RAV4 sample. Never present the unfiltered sample as a model-wide search.
+            def _sample_year(record):
+                try:
+                    return int(str(record.get("year", ""))[:4])
+                except (TypeError, ValueError):
+                    return None
+            sample_records = [
+                record for record in sample_records
+                if _sample_year(record) is not None and year_from <= _sample_year(record) <= year_to
+            ]
+            if grade:
+                wanted_grade = grade.casefold()
+                sample_records = [
+                    record for record in sample_records
+                    if str(record.get("grade") or "").strip().casefold() == wanted_grade
+                ]
+            sample_records = sample_records[:limit]
+            sold_prices = sorted(
+                int(record["final_price_jpy"]) for record in sample_records
+                if isinstance(record.get("final_price_jpy"), (int, float)) and record["final_price_jpy"] > 0
+            )
+            if sold_prices:
+                middle = len(sold_prices) // 2
+                sample_median = sold_prices[middle] if len(sold_prices) % 2 else (sold_prices[middle - 1] + sold_prices[middle]) / 2
+                sample_stats = {
+                    "sample_count": len(sold_prices),
+                    "average_final_price_jpy": round(sum(sold_prices) / len(sold_prices)),
+                    "median_final_price_jpy": round(sample_median),
+                    "min_final_price_jpy": sold_prices[0],
+                    "max_final_price_jpy": sold_prices[-1],
+                    "source_model_range_min_jpy": 392000,
+                    "source_model_range_max_jpy": 3940000,
+                    "source_range_from": "2026-06-30",
+                    "source_range_to": "2026-10-29",
+                    "sample_from": "2026-10-24",
+                    "sample_to": "2026-10-29",
+                    "source_url": "https://banzai24.com/en/TOYOTA/RAV4?countryISO=JP&source=archive",
+                    "note": "Небольшая вручную проверенная публичная выборка Banzai24, отфильтрованная по выбранным годам и оценке. Это не полный архив рынка и не автоматическая выгрузка."
+                }
+            else:
+                sample_stats = None
+                sample_records = []
+        message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") сформированы прямые поиски по японским архивам и публичной модельной статистике. PAPAUTO пока не имеет лицензированного автоматического потока полных лотов, поэтому закрытые данные не копируются." + (" Ниже дополнительно показана небольшая проверенная выборка RAV4, отфильтрованная по вашим параметрам." if sample_stats else " Если выборка PAPAUTO отсутствует, откройте один из источников ниже — поиск уже подготовлен по вашей модели.")
     else:
         china_market_sample = [
             {"name": "Tesla Model 3 · Shanghai", "age_3_avg_cny": 120900, "age_5_avg_cny": 97500, "age_7_avg_cny": 88100,
@@ -867,7 +956,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         ]
         message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") найден открытый слой TTPAI: модельные средние цены по возрасту и последние сделки; также есть публичные судебные результаты. Но бесплатный массовый поток обычных дилерских аукционных лотов с полными фото и аукционными листами пока не подтверждён."
     return {"ok": True, "country": country, "data_type": "source_hub", "source": "PAPAUTO source registry",
-        "source_hub_version": "2026-10-30-r4", "count": len(sample_records), "records": sample_records, "sources": sources, "sample_stats": sample_stats,
+        "source_hub_version": "2026-10-30-r5", "count": len(sample_records), "records": sample_records, "sources": sources, "model_search_links": model_search_links, "sample_stats": sample_stats,
         "unsold_records": unsold_records, "china_judicial_sample": china_judicial_sample, "china_market_sample": china_market_sample, "message": message,
         "disclaimer": "Публичный пример не равен полному массиву торгов. Фотографии и аукционные листы показываем только из источников, где это разрешено; платные отчёты не копируем. Цены объявлений, стартовые ставки, судебные продажи и завершённые дилерские аукционы не смешиваются."}
 
