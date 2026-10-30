@@ -794,6 +794,10 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
     # source hub with explicit access/quality labels so users can inspect primary sources.
     if country == "japan":
         sources = [
+            {"name": "Aleado — статистика проданных лотов по моделям и годам", "url": "https://aleado.com/autostat/TOYOTA.asp?company_id=9",
+             "access": "Публичные модельные страницы", "data_kind": "Количество проданных лотов / средняя цена / разбивка по годам",
+             "note": "Для ряда марок и моделей доступны публичные страницы с количеством проданных автомобилей и средней ценой по годам; цены в таблицах могут быть указаны в тысячах иен. Для Toyota есть отдельный каталог моделей. Используем как внешний источник, не копируем массово.",
+             "priority": 1},
             {"name": "А.М. Гамма — статистика аукционов", "url": "https://japan.amgamma.ru/car-statistics",
              "access": "Открытый интерактивный поиск", "data_kind": "Архив / только проданные",
              "note": "Есть фильтры по марке, модели, кузову, оценке, объёму, году, пробегу и дате; предусмотрен переключатель «Только проданные». Это наиболее перспективный бесплатный кандидат для проверки модельных результатов. Автоматическое использование данных пока не разрешено и не подключено.",
@@ -982,7 +986,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         ]
         message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") найден открытый слой TTPAI: модельные средние цены по возрасту и последние сделки; также есть публичные судебные результаты. Но бесплатный массовый поток обычных дилерских аукционных лотов с полными фото и аукционными листами пока не подтверждён."
     return {"ok": True, "country": country, "data_type": "source_hub", "source": "PAPAUTO source registry",
-        "source_hub_version": "2026-10-30-r5", "count": len(sample_records), "records": sample_records, "sources": sources, "model_search_links": model_search_links, "sample_stats": sample_stats,
+        "source_hub_version": "2026-10-30-r6", "count": len(sample_records), "records": sample_records, "sources": sources, "model_search_links": model_search_links, "sample_stats": sample_stats,
         "unsold_records": unsold_records, "china_judicial_sample": china_judicial_sample, "china_market_sample": china_market_sample, "message": message,
         "disclaimer": "Публичный пример не равен полному массиву торгов. Фотографии и аукционные листы показываем только из источников, где это разрешено; платные отчёты не копируем. Цены объявлений, стартовые ставки, судебные продажи и завершённые дилерские аукционы не смешиваются."}
 
