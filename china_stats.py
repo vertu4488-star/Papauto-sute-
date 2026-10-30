@@ -53,7 +53,7 @@ _MODELS = {
 
 
 def _norm(value):
-    return re.sub(r"\\s+", " ", (value or "").strip().casefold())
+    return re.sub(r"\s+", " ", (value or "").strip().casefold())
 
 
 async def fetch_ttpai_model_stats(make, model):
@@ -74,29 +74,29 @@ async def fetch_ttpai_model_stats(make, model):
         response.raise_for_status()
         parser = _VisibleText()
         parser.feed(response.text)
-        page_text = re.sub(r"\\s+", " ", " ".join(parser.parts))
+        page_text = re.sub(r"\s+", " ", " ".join(parser.parts))
 
         averages = {}
         for age in (3, 5, 7):
             match = re.search(
-                rf"{age}\\s*年车龄\\s*市场均价\\s*([0-9]+(?:\\.[0-9]+)?)\\s*万",
+                rf"{age}\s*年车龄\s*市场均价\s*([0-9]+(?:\.[0-9]+)?)\s*万",
                 page_text,
             )
             averages[f"age_{age}_avg_cny"] = round(float(match.group(1)) * 10000) if match else None
 
         recent_sales = []
         for match in re.finditer(
-            r"最新成交\\s*(.{0,220}?)\\s*(20\\d{2}\\.\\d{2}\\.\\d{2})成交",
+            r"最新成交\s*(.{0,220}?)\s*(20\d{2}\.\d{2}\.\d{2})成交",
             page_text,
         ):
             recent_sales.append({
-                "description": re.sub(r"\\s+", " ", match.group(1)).strip(" /／·")[:220],
+                "description": re.sub(r"\s+", " ", match.group(1)).strip(" /／·")[:220],
                 "date": match.group(2),
             })
             if len(recent_sales) >= 8:
                 break
 
-        count_match = re.search(r"已找到\\s*(\\d+)\\s*条历史成交", page_text)
+        count_match = re.search(r"已找到\s*(\d+)\s*条历史成交", page_text)
         transaction_count = int(count_match.group(1)) if count_match else None
         if not any(value is not None for value in averages.values()) and not recent_sales and transaction_count is None:
             return {
