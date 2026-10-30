@@ -1,4 +1,5 @@
 import os
+import base64
 import logging
 import html
 import asyncio
@@ -9,7 +10,7 @@ from datetime import datetime, timezone
 from typing import Optional
 
 import httpx
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, field_validator
 
@@ -849,3 +850,54 @@ async def assistant_select(req: VehicleSelectionInput):
         raise HTTPException(status_code=502, detail="Не удалось связаться с ИИ-помощником. Попробуйте позже.")
     except (ValueError, KeyError, IndexError, TypeError):
         raise HTTPException(status_code=502, detail="Не удалось разобрать ответ ИИ-подбора. Попробуйте сформулировать запрос иначе.")
+
+
+@app.post("/api/voice/transcribe")
+async def voice_transcribe(request: Request):
+    """Transcribe short Russian voice requests using Gemini; accepts browser-recorded WAV."""
+    audio = await request.body()
+    if not audio:
+        raise HTTPException(status_code=400, detail="Запись пустая. Попробуйте ещё раз.")
+    if len(audio) > 8 * 1024 * 1024:
+        raise HTTPException(status_code=413, detail="Запись слишком длинная. Попробуйте короткий запрос до минуты.")
+    content_type = request.headers.get("content-type", "").split(";")[0].strip().lower()
+    if content_type != "audio/wav":
+        raise HTTPException(status_code=415, detail="Неподдерживаемый формат аудиозаписи.")
+    gemini_key = (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_AI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
+    if not gemini_key:
+        raise HTTPException(status_code=503, detail="Голосовой сервис пока не настроен: в Render backend нужен ключ Gemini API.")
+    prompt = (
+        "Точно расшифруй речь на русском языке. Верни только распознанные слова без пояснений, "
+        "кавычек и комментариев. Сохраняй названия марок и моделей автомобилей. "
+        "Если речи нет, верни пустую строку."
+    )
+    payload = {
+        "contents": [{"role": "user", "parts": [
+            {"text": prompt},
+            {"inline_data": {"mime_type": "audio/wav", "data": base64.b64encode(audio).decode("ascii")}}
+        ]}],
+        "generationConfig": {"temperature": 0.0, "maxOutputTokens": 512}
+    }
+    try:
+        async with httpx.AsyncClient(timeout=45.0) as client:
+            response = await client.post(
+                "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                params={"key": gemini_key},
+                json=payload
+            )
+        if response.status_code != 200:
+            logger.warning("Gemini voice transcription failed with HTTP %s", response.status_code)
+            raise HTTPException(status_code=502, detail="Сервис распознавания речи временно недоступен. Попробуйте позже.")
+        data = response.json()
+        candidates = data.get("candidates") or []
+        parts = (candidates[0].get("content") or {}).get("parts") or [] if candidates else []
+        transcript = " ".join(part.get("text", "") for part in parts if part.get("text")).strip()
+        transcript = transcript.strip().strip('"«»').strip()
+        if not transcript:
+            raise HTTPException(status_code=422, detail="Не удалось разобрать речь. Попробуйте сказать запрос ещё раз.")
+        return {"ok": True, "text": transcript}
+    except HTTPException:
+        raise
+    except httpx.RequestError:
+        logger.exception("Gemini voice transcription network error")
+        raise HTTPException(status_code=502, detail="Не удалось связаться с сервисом распознавания речи.")
