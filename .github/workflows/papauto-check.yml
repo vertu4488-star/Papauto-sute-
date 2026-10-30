@@ -54,7 +54,9 @@ jobs:
               data = json.load(f)
           assert data.get("data_type") == "source_hub", data
           assert len(data.get("sources", [])) >= 5, data
-          print("Japan source hub OK:", len(data["sources"]), "sources")
+          assert data.get("sample_stats", {}).get("sample_count") == 9, data
+          assert len(data.get("records", [])) == 9, data
+          print("Japan source hub and RAV4 sample OK:", len(data["sources"]), "sources,", len(data["records"]), "sold sample lots")
           PY
       - name: Test China source hub
         shell: bash
