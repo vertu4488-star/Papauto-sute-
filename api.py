@@ -796,6 +796,12 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
             ]
         message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") пока нет разрешённого автоматического потока с модельными ценами. Ниже — источники для проверки реальных закрытых лотов." + (" Добавлен отдельный небольшой публичный пример по RAV4; это не полный архив." if sample_stats else " Не выдаём данные источников за собственную базу PAPAUTO.")
     else:
+        china_judicial_sample = [
+            {"name": "BMW 2.0T", "year": "2021", "auction": "Gongpai / Jining District Court", "date": "2026-06-27", "final_price_cny": 63030.32, "note": "Оценка 100 947 ¥; пробег в публичной карточке не указан.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=52859"},
+            {"name": "Audi", "year": "—", "auction": "Gongpai / Jining District Court", "date": "2026-09-10", "final_price_cny": 35713, "note": "В карточке опубликованы фото автомобиля и подтверждение завершения торгов.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=53103"},
+            {"name": "Buick", "year": "—", "auction": "Gongpai / Jinan High-tech Court", "date": "2026-05-15", "final_price_cny": 162000, "note": "Публично доступно подтверждение сделки и судебные документы.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=52715"},
+            {"name": "Volkswagen", "year": "—", "auction": "Gongpai / Daming County Court", "date": "2026-06-18", "final_price_cny": 63900, "note": "В карточке опубликованы сведения о торгах и подтверждение成交.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=52792"}
+        ]
         sources = [
             {"name": "Guazi Export", "url": "https://ru.guazi.com/",
              "access": "Ограниченный бесплатный доступ после регистрации заявлен", "data_kind": "Недавно проданные / отчёты осмотра",
@@ -845,7 +851,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") найденные открытые источники пока не дают подтверждённого бесплатного потока обычных дилерских аукционных продаж. Ниже — источники для проверки; судебные и аварийные торги отмечены отдельно."
     return {"ok": True, "country": country, "data_type": "source_hub", "source": "PAPAUTO source registry",
         "count": len(sample_records), "records": sample_records, "sources": sources, "sample_stats": sample_stats,
-        "unsold_records": unsold_records, "message": message,
+        "unsold_records": unsold_records, "china_judicial_sample": china_judicial_sample, "message": message,
         "disclaimer": "Публичный пример не равен полному массиву торгов. Фотографии и аукционные листы показываем только из источников, где это разрешено; платные отчёты не копируем. Цены объявлений, стартовые ставки, судебные продажи и завершённые дилерские аукционы не смешиваются."}
 
 @app.get("/api/logistics/benchmarks")
