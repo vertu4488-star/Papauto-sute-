@@ -1066,10 +1066,11 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
              "url": "https://www.ttpai.cn/shanghai/price/dazhong-polo", "photo_example_url": "https://www.ttpai.cn/shanghai/98306494", "photo_example_note": "Публичная карточка проданного Polo за сентябрь 2026 года: 8 фотографий, 18 000 км; точная цена в открытом фрагменте не раскрыта."}
         ]
         china_judicial_sample = [
-            {"name": "BMW 2.0T", "year": "2021", "auction": "Gongpai / Jining District Court", "date": "2026-06-27", "final_price_cny": 63030.32, "note": "Оценка 100 947 CNY; пробег в публичной карточке не указан.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=52859"},
-            {"name": "Audi", "year": "—", "auction": "Gongpai / Jining District Court", "date": "2026-09-10", "final_price_cny": 35713, "note": "В карточке опубликованы фото автомобиля и подтверждение завершения торгов.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=53103"},
-            {"name": "Buick", "year": "—", "auction": "Gongpai / Jinan High-tech Court", "date": "2026-05-15", "final_price_cny": 162000, "note": "Публично доступно подтверждение сделки и судебные документы.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=52715"},
-            {"name": "Volkswagen", "year": "—", "auction": "Gongpai / Daming County Court", "date": "2026-06-18", "final_price_cny": 63900, "note": "В карточке опубликованы сведения о торгах и подтверждение成交.", "url": "https://www.gpai.net/sf/item2.do?Web_Item_ID=52792"}
+            {"name": "Toyota GTM6480GL · 2011", "year": "2011", "auction": "Gongpai · Xinjiang", "date": "2026-09-30", "final_price_cny": 6850, "note": "Завершённые судебные торги; пробег 225 786 км; в карточке есть описание состояния и VIN.", "url": "https://zc.gpai.net/zc/detail?id=8634855"},
+            {"name": "Luxgen DYM6481ACB · 2014", "year": "2014", "auction": "Gongpai · Xinjiang", "date": "2026-09-29", "final_price_cny": 3100, "note": "Завершённая судебная продажа; карточка указывает VIN, дату регистрации и комплектацию.", "url": "https://zc.gpai.net/zc/detail?id=8626994"},
+            {"name": "Nissan + Jeep · 2 автомобиля", "year": "—", "auction": "Gongpai · Xinjiang", "date": "2026-09-12", "final_price_cny": 4900, "note": "Одна завершённая продажа двух автомобилей; итоговая цена относится к лоту из двух машин.", "url": "https://zc.gpai.net/zc/detail?id=8569813"},
+            {"name": "Volkswagen Passat", "year": "—", "auction": "Gongpai · Henan", "date": "2026-09-21", "final_price_cny": 4800, "note": "Завершённая продажа; карточка содержит фотографии и место хранения.", "url": "https://zc.gpai.net/zc/detail?id=8600632"},
+            {"name": "Volkswagen · легковой автомобиль", "year": "—", "auction": "Gongpai · Jiangsu", "date": "2026-08-10", "final_price_cny": 7000, "note": "Завершённые торги; карточка содержит статус продажи и итоговую ставку.", "url": "https://zc.gpai.net/zc/detail?id=8367826"}
         ]
         sources = [
             {"name": "天天拍车 / TTPAI — модельная статистика", "url": "https://www.ttpai.cn/shanghai/price/tesila-model3",
