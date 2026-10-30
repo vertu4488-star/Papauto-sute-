@@ -38,12 +38,13 @@ jobs:
         run: |
           set -euo pipefail
           URL="https://papauto-leads.onrender.com/api/auction-statistics?country=japan&make=Toyota&model=RAV4&year_from=2019&year_to=2025"
+          EXPECTED_VERSION="2026-10-30-r4"
           for attempt in $(seq 1 18); do
-            if curl --silent --show-error --fail "$URL" -o /tmp/japan.json; then
+            if curl --silent --show-error --fail "$URL" -o /tmp/japan.json && python -c 'import json,sys; d=json.load(open("/tmp/japan.json",encoding="utf-8")); sys.exit(0 if d.get("source_hub_version")=="2026-10-30-r4" else 1)'; then
               break
             fi
             if [ "$attempt" -eq 18 ]; then
-              echo "Render API did not return a successful response after 180 seconds"
+              echo "Render API did not deploy expected source hub version after 180 seconds"
               exit 1
             fi
             sleep 10
@@ -53,6 +54,7 @@ jobs:
           with open("/tmp/japan.json", encoding="utf-8") as f:
               data = json.load(f)
           assert data.get("data_type") == "source_hub", data
+          assert data.get("source_hub_version") == "2026-10-30-r4", data
           assert len(data.get("sources", [])) >= 5, data
           assert data.get("sample_stats", {}).get("sample_count") == 9, data
           assert len(data.get("records", [])) == 9, data
@@ -68,6 +70,7 @@ jobs:
           with open("/tmp/china.json", encoding="utf-8") as f:
               data = json.load(f)
           assert data.get("data_type") == "source_hub", data
+          assert data.get("source_hub_version") == "2026-10-30-r4", data
           assert len(data.get("sources", [])) >= 5, data
           assert data.get("sample_stats") is None, data
           assert data.get("records") == [], data
