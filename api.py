@@ -425,12 +425,20 @@ def _japan_model_search_links(make: str, model: str, year_from: int, year_to: in
         "voxy": ("VOXY", 661), "vellfire": ("VELLFIRE", 1682),
         "yariscross": ("YARIS-CROSS", 3351)
     }
+    aleado_makes = {
+        "toyota": ("TOYOTA", 9), "toyotamotor": ("TOYOTA", 9),
+        "honda": ("HONDA", 2), "nissan": ("NISSAN", 6),
+        "mazda": ("MAZDA", 4), "mitsubishi": ("MITSUBISHI", 5),
+        "subaru": ("SUBARU", 7), "suzuki": ("SUZUKI", 8),
+        "lexus": ("LEXUS", 59)
+    }
     aleado_link = None
     if make_key in {"toyota", "toyotamotor", ""} and model_key in aleado_toyota_models:
         slug, name_id = aleado_toyota_models[model_key]
         aleado_link = f"https://aleado.com/autostat/{slug}.asp?company_id=9&name_id={name_id}"
-    elif make_key in {"toyota", "toyotamotor"}:
-        aleado_link = "https://aleado.com/autostat/TOYOTA.asp?company_id=9"
+    elif make_key in aleado_makes:
+        maker_slug, company_id = aleado_makes[make_key]
+        aleado_link = f"https://aleado.com/autostat/{maker_slug}.asp?company_id={company_id}"
     links = []
     if aleado_link:
         links.append({
@@ -986,7 +994,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         ]
         message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") найден открытый слой TTPAI: модельные средние цены по возрасту и последние сделки; также есть публичные судебные результаты. Но бесплатный массовый поток обычных дилерских аукционных лотов с полными фото и аукционными листами пока не подтверждён."
     return {"ok": True, "country": country, "data_type": "source_hub", "source": "PAPAUTO source registry",
-        "source_hub_version": "2026-10-30-r6", "count": len(sample_records), "records": sample_records, "sources": sources, "model_search_links": model_search_links, "sample_stats": sample_stats,
+        "source_hub_version": "2026-10-30-r7", "count": len(sample_records), "records": sample_records, "sources": sources, "model_search_links": model_search_links, "sample_stats": sample_stats,
         "unsold_records": unsold_records, "china_judicial_sample": china_judicial_sample, "china_market_sample": china_market_sample, "message": message,
         "disclaimer": "Публичный пример не равен полному массиву торгов. Фотографии и аукционные листы показываем только из источников, где это разрешено; платные отчёты не копируем. Цены объявлений, стартовые ставки, судебные продажи и завершённые дилерские аукционы не смешиваются."}
 
