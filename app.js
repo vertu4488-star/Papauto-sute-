@@ -129,6 +129,19 @@ if(auctionStatsForm){
      const sourceLink=document.createElement("a");sourceLink.href=stats.source_url||"https://banzai24.com/en?source=archive";sourceLink.target="_blank";sourceLink.rel="noopener noreferrer";sourceLink.textContent="Открыть архив Banzai24 ↗";sample.append(sourceLink);
      out.append(sample);
     }
+    if(Array.isArray(data.china_judicial_sample)&&data.china_judicial_sample.length){
+     const panel=el("section","auction-sample-panel");
+     panel.append(el("div","eyebrow","КИТАЙ · ПУБЛИЧНЫЕ СУДЕБНЫЕ ТОРГИ"),el("h3","","Примеры завершённых продаж автомобилей на Gongpai"));
+     panel.append(el("p","auction-sample-note","Это судебная реализация имущества, а не обычный дилерский аукцион. Такие цены нельзя смешивать с рыночной статистикой подержанных автомобилей."));
+     const table=document.createElement("table");table.className="auction-sample-table";
+     const thead=document.createElement("thead"),headRow=document.createElement("tr");
+     ["Автомобиль","Год","Суд / площадка","Дата","Цена продажи"].forEach(label=>{const th=document.createElement("th");th.textContent=label;headRow.append(th)});
+     thead.append(headRow);table.append(thead);const tbody=document.createElement("tbody");
+     data.china_judicial_sample.forEach(record=>{const tr=document.createElement("tr");const values=[record.name||"Автомобиль",record.year||"—",record.auction||"—",record.date||"—",new Intl.NumberFormat("ru-RU",{maximumFractionDigits:2}).format(Number(record.final_price_cny||0))+" ¥"];values.forEach((value,index)=>{const td=document.createElement("td");if(index===0&&record.url){const a=document.createElement("a");a.href=record.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=String(value);td.append(a)}else{td.textContent=String(value)}tr.append(td)});tbody.append(tr)});
+     table.append(tbody);panel.append(table);
+     panel.append(el("p","auction-sample-note","Примеры взяты из открытых карточек Gongpai; часть карточек содержит фотографии, оценочные материалы и подтверждение成交. Состав документов зависит от конкретного дела."));
+     out.append(panel);
+    }
     const grid=el("div","auction-source-results");
     (Array.isArray(data.sources)?data.sources:[]).forEach(source=>{
      const card=el("article","auction-source-result");
