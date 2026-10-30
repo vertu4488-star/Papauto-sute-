@@ -129,6 +129,20 @@ if(auctionStatsForm){
      const sourceLink=document.createElement("a");sourceLink.href=stats.source_url||"https://banzai24.com/en?source=archive";sourceLink.target="_blank";sourceLink.rel="noopener noreferrer";sourceLink.textContent="Открыть архив Banzai24 ↗";sample.append(sourceLink);
      out.append(sample);
     }
+    if(Array.isArray(data.china_market_sample)&&data.china_market_sample.length){
+     const panel=el("section","auction-sample-panel");
+     panel.append(el("div","eyebrow","КИТАЙ · TTPAI · ИСТОРИЧЕСКИЕ СДЕЛКИ"),el("h3","","Публичные средние цены по возрасту автомобиля"));
+     panel.append(el("p","auction-sample-note","Это средние цены сделок на платформе TTPAI, а не финальные цены отдельных аукционных лотов. Данные по возрастным группам показаны как ориентир внутреннего китайского рынка."));
+     const grid=el("div","auction-source-results");
+     data.china_market_sample.forEach(item=>{
+      const card=el("article","auction-source-result");card.append(el("span","auction-source-access","TTPAI · публичная статистика"),el("h4","",item.name||"Модель"));
+      const money=n=>n==null?"—":new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(Number(n))+" ¥";
+      card.append(el("p","", "Средняя цена: 3 года — "+money(item.age_3_avg_cny)+"; 5 лет — "+money(item.age_5_avg_cny)+"; 7 лет — "+money(item.age_7_avg_cny)+"."));
+      if(item.recent_sales)card.append(el("p","", "Последние сделки: "+item.recent_sales));
+      const link=document.createElement("a");link.href=String(item.url||"https://www.ttpai.cn/");link.target="_blank";link.rel="noopener noreferrer";link.textContent="Открыть историю модели ↗";card.append(link);grid.append(card);
+     });
+     panel.append(grid);out.append(panel);
+    }
     if(Array.isArray(data.china_judicial_sample)&&data.china_judicial_sample.length){
      const panel=el("section","auction-sample-panel");
      panel.append(el("div","eyebrow","КИТАЙ · ПУБЛИЧНЫЕ СУДЕБНЫЕ ТОРГИ"),el("h3","","Примеры завершённых продаж автомобилей на Gongpai"));
