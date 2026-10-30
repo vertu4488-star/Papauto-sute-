@@ -34,6 +34,8 @@ function wordsNumber(t){
 function parse(text){
  const t=text.toLowerCase().replace(/ё/g,"е").replace(/\s+/g," ").trim();
  const result={raw:text};
+ const cityMatch=t.match(/(?:до|в|город(?:е)?\s+получения\s+)(новосибирск(?:а|у)?|красноярск(?:а|у)?|москва|екатеринбург(?:а|е)?|иркутск(?:а|е)?|омск(?:а|е)?|кемерово|томск(?:а|е)?|барнаул(?:а|е)?)/i);
+ if(cityMatch){const c=cityMatch[1].toLowerCase();result.city=/новосибирск/.test(c)?"Новосибирск":/красноярск/.test(c)?"Красноярск":/москва/.test(c)?"Москва":/екатеринбург/.test(c)?"Екатеринбург":/иркутск/.test(c)?"Иркутск":/омск/.test(c)?"Омск":/кемерово/.test(c)?"Кемерово":/томск/.test(c)?"Томск":"Барнаул"}
  const country=countryMap.find(c=>c.terms.some(term=>t.includes(term)));
  if(country){result.country=country.key;result.calcCountry=country.calc}
  const make=findMapped(makes,t);if(make)result.make=make;
@@ -53,9 +55,9 @@ function parse(text){
 }
 function applyParsed(p,autoSearch){
  const set=(id,v)=>{const e=$(id);if(e&&v!==undefined&&v!==null&&v!==""){e.value=String(v);e.dispatchEvent(new Event("input",{bubbles:true}));e.dispatchEvent(new Event("change",{bubbles:true}))}};
- set("vehicleCountry",p.country);set("vehicleMake",p.make);set("vehicleModel",p.model);set("vehicleYearFrom",p.yearFrom);set("vehicleYearTo",p.yearTo);set("vehicleMaxPrice",p.budget);set("vehicleMileageMax",p.mileage);set("vehicleVolumeMin",p.volume);set("vehicleVolumeMax",p.volume);set("vehicleBody",p.body);set("vehicleGrade",p.grade);set("vehicleLot",p.lot);set("calcCountry",p.calcCountry);
+ set("vehicleCountry",p.country);set("vehicleMake",p.make);if(p.city){const city=$("city");if(city)city.value=p.city;}set("vehicleModel",p.model);set("vehicleYearFrom",p.yearFrom);set("vehicleYearTo",p.yearTo);set("vehicleMaxPrice",p.budget);set("vehicleMileageMax",p.mileage);set("vehicleVolumeMin",p.volume);set("vehicleVolumeMax",p.volume);set("vehicleBody",p.body);set("vehicleGrade",p.grade);set("vehicleLot",p.lot);set("calcCountry",p.calcCountry);
  const details=[];
- if(p.country)details.push("страна: "+({"japan":"Япония","south-korea":"Южная Корея","china":"Китай"}[p.country]));
+ if(p.country)details.push("страна: "+({"japan":"Япония","south-korea":"Южная Корея","china":"Китай"}[p.country]));if(p.city)details.push("город получения: "+p.city);
  if(p.make)details.push("марка: "+p.make);if(p.model)details.push("модель: "+p.model);
  if(p.yearFrom||p.yearTo)details.push("год: "+(p.yearFrom||"любой")+"–"+(p.yearTo||p.yearFrom));
  if(p.budget)details.push("бюджет до "+new Intl.NumberFormat("ru-RU").format(p.budget)+" ₽");
@@ -67,6 +69,23 @@ function applyParsed(p,autoSearch){
  if(autoSearch){const form=$("vehicleSearchForm");if(form){setTimeout(()=>{sayStatus("Запускаю поиск по распознанным параметрам…");form.requestSubmit()},350)}}
 }
 apply.addEventListener("click",()=>applyParsed(parse(input.value),false));
+let lastSpoken="";
+function speak(text){
+ if(!("speechSynthesis" in window)||!text)return;
+ const clean=String(text).replace(/https?:\/\/\S+/g,"").replace(/\s+/g," ").trim();
+ if(!clean||clean===lastSpoken)return;
+ lastSpoken=clean;
+ try{window.speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(clean);utterance.lang="ru-RU";utterance.rate=0.96;window.speechSynthesis.speak(utterance)}catch{}
+}
+const searchStatus=$("vehicleSearchStatus");
+if(searchStatus&&"MutationObserver" in window){
+ let speakTimer=null;
+ new MutationObserver(()=>{const message=searchStatus.textContent.trim();if(!message||message===lastSpoken)return;clearTimeout(speakTimer);speakTimer=setTimeout(()=>speak(message),250)}).observe(searchStatus,{childList:true,subtree:true,characterData:true});
+}
+const searchResults=$("vehicleSearchResults");
+if(searchResults&&"MutationObserver" in window){
+ new MutationObserver(()=>{if(!searchResults.hidden&&searchResults.children.length){const count=searchResults.querySelectorAll(".vehicle-result-card").length;if(count)speak("Поиск завершён. Получено предложений: "+count+". Цены и наличие нужно подтвердить у продавца; доставка и оформление в России считаются отдельно.")}}).observe(searchResults,{childList:true,subtree:true,attributes:true,attributeFilter:["hidden"]});
+}
 if(!SpeechRecognition){listen.disabled=true;listen.textContent="Голосовой ввод не поддерживается";sayStatus("Этот браузер не поддерживает распознавание речи. Введите запрос текстом и нажмите «Заполнить параметры»; для голосового ввода попробуйте Chrome.");}
 else{
  recognition=new SpeechRecognition();recognition.lang="ru-RU";recognition.continuous=false;recognition.interimResults=true;recognition.maxAlternatives=1;
