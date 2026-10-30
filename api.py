@@ -19,17 +19,17 @@ logger = logging.getLogger("papauto.api")
 
 app = FastAPI(title="PAPAUTO Lead API", version="1.0.0")
 
-ALLOWED_ORIGINS = [
-    "https://papauto.ru",
-    "https://www.papauto.ru",
-    "https://papauto-site.onrender.com",
-]
+# Public API called by the PAPAUTO website and its browser voice recorder.
+# Credentials are not used, so wildcard CORS avoids Safari preflight failures
+# when the site is opened through www/non-www or an alternate HTTPS entry point.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
+    allow_origins=["*"],
     allow_credentials=False,
     allow_methods=["GET", "POST", "OPTIONS"],
-    allow_headers=["Content-Type"],
+    allow_headers=["*"],
+    expose_headers=["Content-Type"],
+    max_age=600,
 )
 
 @app.middleware("http")
