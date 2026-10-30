@@ -91,7 +91,9 @@ jobs:
           data = json.load(open("/tmp/honda.json", encoding="utf-8"))
           links = data.get("model_search_links", [])
           aleado = next(x for x in links if x["name"].startswith("Aleado"))
-          assert aleado["url"] == "https://aleado.com/autostat/HONDA.asp?company_id=2", aleado
+          assert aleado["url"] == "https://aleado.com/autostat/FIT.asp?company_id=2&name_id=109", aleado
+          carvector = next(x for x in links if x["name"].startswith("Carvector"))
+          assert carvector["url"] == "https://carvector.com/stat/honda/fit", carvector
           print("Honda manufacturer archive link OK")
           PY
       - name: Test Japan vehicle search fallback
