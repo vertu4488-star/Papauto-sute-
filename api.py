@@ -890,12 +890,37 @@ async def voice_transcribe(request: Request):
         "generationConfig": {"temperature": 0.0, "maxOutputTokens": 512}
     }
     try:
-        async with httpx.AsyncClient(timeout=45.0) as client:
-            response = await client.post(
-                "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
-                params={"key": gemini_key},
-                json=payload
-            )
+        # Gemini audio processing can take longer than ordinary text requests.
+        # Use explicit phase timeouts and one bounded retry for transient stalls.
+        timeout = httpx.Timeout(connect=20.0, read=120.0, write=60.0, pool=20.0)
+        response = None
+        for attempt in range(2):
+            try:
+                async with httpx.AsyncClient(timeout=timeout) as client:
+                    response = await client.post(
+                        "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
+                        params={"key": gemini_key},
+                        json=payload
+                    )
+                break
+            except httpx.TimeoutException as exc:
+                logger.warning(
+                    "Gemini voice transcription timed out (attempt %s/2): %s",
+                    attempt + 1, type(exc).__name__
+                )
+                if attempt == 1:
+                    raise
+                await asyncio.sleep(1.0)
+            except httpx.RequestError as exc:
+                logger.warning(
+                    "Gemini voice transcription network failure (attempt %s/2): %s",
+                    attempt + 1, type(exc).__name__
+                )
+                if attempt == 1:
+                    raise
+                await asyncio.sleep(1.0)
+        if response is None:
+            raise HTTPException(status_code=502, detail="Не удалось получить ответ сервиса распознавания речи.")
         if response.status_code != 200:
             try:
                 error_payload = response.json()
@@ -918,6 +943,9 @@ async def voice_transcribe(request: Request):
         return {"ok": True, "text": transcript}
     except HTTPException:
         raise
-    except httpx.RequestError:
-        logger.exception("Gemini voice transcription network error")
+    except httpx.TimeoutException:
+        logger.error("Gemini voice transcription timed out after retry")
+        raise HTTPException(status_code=504, detail="Gemini долго обрабатывает запись. Попробуйте короткий запрос ещё раз.")
+    except httpx.RequestError as exc:
+        logger.error("Gemini voice transcription network error: %s", type(exc).__name__)
         raise HTTPException(status_code=502, detail="Не удалось связаться с сервисом распознавания речи.")
