@@ -190,3 +190,6 @@ body{font-size:14px;line-height:1.55}
  .mobile-bottom-nav a.primary,.mobile-bottom-nav a:active,.mobile-bottom-nav a:focus-visible{color:var(--accent)}
  [id]{scroll-margin-top:68px}
 }
+
+/* Live microphone input meter */
+.voice-level{display:flex;align-items:center;gap:10px;margin-top:10px;max-width:360px;color:var(--muted);font-size:10px;line-height:1.4}.voice-level[hidden]{display:none}.voice-level-track{height:7px;flex:1;min-width:80px;overflow:hidden;border-radius:99px;background:#ffffff18;border:1px solid #ffffff12}.voice-level-track span{display:block;width:0;height:100%;border-radius:99px;background:var(--accent);transition:width .08s linear}.voice-level-text{white-space:nowrap}
