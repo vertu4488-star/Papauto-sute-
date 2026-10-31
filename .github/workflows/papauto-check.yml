@@ -142,13 +142,23 @@ jobs:
           import json
           with open("/tmp/china.json", encoding="utf-8") as f:
               data = json.load(f)
-          assert data.get("data_type") == "source_hub", data
-          assert data.get("source_hub_version") == "2026-10-30-r12", data
-          assert len(data.get("sources", [])) >= 5, data
-          assert data.get("sample_stats") is None, data
-          assert data.get("records") == [], data
-          assert len(data.get("china_judicial_sample", [])) == 4, data
-          assert len(data.get("china_market_sample", [])) == 3, data
-          assert data["china_market_sample"][2].get("photo_example_url"), data
-          print("China source hub OK:", len(data["sources"]), "sources,", len(data["china_market_sample"]), "TTPAI model samples incl. public photo link,", len(data["china_judicial_sample"]), "judicial examples")
+          kind = data.get("data_type")
+          if kind == "china_model_live":
+              assert data.get("source") == "TTPAI · история сделок подержанных автомобилей", data
+              assert data.get("recent_sales"), data
+              assert data.get("source_url", "").startswith("https://www.ttpai.cn/"), data
+              assert "не полный архив" in data.get("disclaimer", ""), data
+              assert data.get("transaction_count") is None or isinstance(data.get("transaction_count"), int), data
+              print("China TTPAI history OK:", len(data["recent_sales"]), "historical transactions; not active listings")
+          elif kind == "source_hub":
+              assert data.get("source_hub_version") == "2026-10-30-r12", data
+              assert len(data.get("sources", [])) >= 5, data
+              assert data.get("sample_stats") is None, data
+              assert data.get("records") == [], data
+              assert len(data.get("china_judicial_sample", [])) == 4, data
+              assert len(data.get("china_market_sample", [])) == 3, data
+              assert data["china_market_sample"][2].get("photo_example_url"), data
+              print("China source hub OK:", len(data["sources"]), "sources,", len(data["china_market_sample"]), "TTPAI model samples incl. public photo link,", len(data["china_judicial_sample"]), "judicial examples")
+          else:
+              raise AssertionError("Unexpected China response type: " + str(kind))
           PY
