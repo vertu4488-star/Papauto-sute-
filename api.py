@@ -589,7 +589,7 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                     "count": len(rows), "records": [], "model_search_links": [],
                     "sources": [{"name": "Encar — каталог автомобилей Кореи", "url": "https://www.encar.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"},
                                 {"name": public_stats.get("source", "Корейская ассоциация"), "url": public_stats.get("source_url", "https://www.kasa.or.kr/"), "access": "Открытая агрегированная статистика", "data_kind": "Месячные итоги рынка"}],
-                    "message": "Показываем открытые источники и агрегированную статистику. Запросы к платным/лимитируемым API отключены.",
+                    "message": "Открытая статистика и каталоги доступны по ссылкам. Запросы к платным/лимитируемым API отключены.",
                     "disclaimer": public_stats.get("disclaimer", "Агрегированная статистика не является каталогом индивидуальных лотов.")}
         return {"ok": True, "country": country, "data_type": "source_hub", "source": "Encar", "count": 0, "records": [],
                 "sources": [{"name": "Encar — каталог автомобилей Кореи", "url": "https://www.encar.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"}],
