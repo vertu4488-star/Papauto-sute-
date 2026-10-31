@@ -347,14 +347,14 @@
             <p class="fine-print">Тариф автовоза — ориентировочный. Перед оплатой подтвердите актуальную стоимость перевозки.</p>
           </div>
           <div class="tks-panel">
-            <h3>Автоматический расчёт таможни TKS.RU</h3>
-            <p>Укажите характеристики автомобиля и стоимость в валюте покупки. Для расчёта необходим активный лицензионный ключ TKS.RU.</p>
+            <h3>Подготовка данных для таможенного расчёта</h3>
+            <p>Бесплатный режим не обращается к платным калькуляторам. Здесь можно локально разобрать описание и подготовить характеристики для специалиста; итоговую сумму таможни внесите в общую смету после подтверждения.</p>
             <div class="vehicle-ai-box" id="vehicleAiBox">
-              <div class="vehicle-ai-heading"><span class="vehicle-ai-mark">AI</span><div><strong>Помощник по расчёту</strong><small>Опишите автомобиль — помощник соберёт параметры и запросит расчёт TKS.RU</small></div></div>
+              <div class="vehicle-ai-heading"><span class="vehicle-ai-mark">FREE</span><div><strong>Локальный помощник</strong><small>Выделяет характеристики прямо в браузере — без платных API и отправки текста</small></div></div>
               <label class="vehicle-ai-label" for="vehicleAiMessage">Например: «Toyota Prius 2019, гибрид 1.8, 122 л.с., цена 1 200 000 иен, везу как физлицо»</label>
               <textarea id="vehicleAiMessage" rows="3" maxlength="2000" placeholder="Марка, модель, год, двигатель, цена и валюта покупки…"></textarea>
-              <button class="button button-primary button-wide" id="vehicleAiSend" type="button">Разобрать данные и рассчитать ↗</button>
-              <p id="vehicleAiStatus" class="result-note" aria-live="polite">ИИ уточнит недостающие данные. Лицензионные ключи хранятся только на сервере.</p>
+              <button class="button button-primary button-wide" id="vehicleAiSend" type="button">Разобрать параметры бесплатно ↗</button>
+              <p id="vehicleAiStatus" class="result-note" aria-live="polite">Разбор выполняется в браузере. Возрастную категорию и все неизвестные значения необходимо проверить вручную.</p>
             </div>
             <div class="form-grid">
               <label>Цена в валюте покупки <input id="tksCost" type="number" min="1" step="100" placeholder="Например, 1500000" required></label>
@@ -373,8 +373,8 @@
                 <select id="tksFace"><option value="nat">Физическое лицо</option><option value="jur">Юридическое лицо</option></select>
               </label>
             </div>
-            <button class="button button-secondary button-wide" id="runTks" type="button">Рассчитать таможенные платежи</button>
-            <p class="result-note" id="tksStatus" aria-live="polite">Расчёт станет доступен после добавления лицензионного ключа TKS.RU в настройки серверного API.</p>
+            <p class="result-note">Автоматический расчёт через TKS.RU отключён. Введите подтверждённую сумму таможни в общую смету выше. Платных запросов нет.</p>
+            <p class="result-note" id="tksStatus" aria-live="polite">В бесплатном режиме внешние платные расчётчики не вызываются.</p>
             <pre id="tksResult" class="tks-result" hidden></pre>
           </div>
           <button class="button button-primary" type="submit">Рассчитать смету</button>
@@ -491,7 +491,7 @@
     <div class="account-panel">
       <div class="eyebrow">ЛИЧНЫЙ КАБИНЕТ PAPAUTO</div>
       <h2>Ваши заявки<br><em>в одном месте.</em></h2>
-      <p class="account-intro">Создайте аккаунт, чтобы сохранять профиль, отправлять заявки на автомобили и возвращаться к истории обращений.</p>
+      <p class="account-intro">Сохранённые поиски и избранные автомобили доступны на этом устройстве. Серверный кабинет с синхронизацией между устройствами пока не подключён.</p>
       <div class="account-auth-grid">
         <form id="accountSignUp" class="account-auth-card">
           <h3>Регистрация</h3>
@@ -509,7 +509,7 @@
           <button class="account-text-button" type="button" id="accountResetPassword">Забыли пароль?</button>
         </form>
       </div>
-      <p id="accountStatus" class="account-status" role="status" aria-live="polite">Личный кабинет подключён к защищённой базе данных.</p>
+      <p id="accountStatus" class="account-status" role="status" aria-live="polite">Избранное и сохранённые поиски хранятся локально в браузере. Регистрация временно отключена.</p>
       <div id="accountDashboard" class="account-dashboard" hidden>
         <div class="account-user-row"><div><strong id="accountUserEmail"></strong><span id="accountUserPhone"></span></div><button class="button button-secondary" type="button" id="accountSignOut">Выйти</button></div>
         <form id="accountProfileForm" class="account-profile-form">
