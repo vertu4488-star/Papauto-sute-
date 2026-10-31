@@ -11,6 +11,7 @@ on:
       - "account.js"
       - "voice-assistant.js"
       - "index.html"
+      - "privacy.html"
       - "auction-data.html"
       - "styles.css"
       - "marketplace.css"
@@ -87,6 +88,38 @@ jobs:
           assert data.get("sample_stats", {}).get("sample_count") == 9, data
           assert len(data.get("records", [])) == 9, data
           print("Japan source hub and RAV4 sample OK:", len(data["sources"]), "sources,", len(data["records"]), "sold sample lots")
+          PY
+      - name: Verify paid provider endpoints are hard-disabled
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          python - <<'PY'
+          import json
+          import urllib.request
+          base = "https://papauto-leads.onrender.com"
+          with urllib.request.urlopen(base + "/health", timeout=30) as response:
+              health = json.load(response)
+          assert health.get("free_mode") is True, health
+          assert health.get("paid_apis_enabled") is False, health
+          cases = [
+              ("/api/customs/calculate", {"cost": 1000000, "volume": 1800, "power": 120, "currency": "392", "engine_type": "petrol", "age": "35", "face": "nat"}),
+              ("/api/japan-auctions/chassis/search", {"chassis": "NZE141-1234567"}),
+              ("/api/assistant/vehicle", {"message": "Toyota Prius 2019"}),
+              ("/api/assistant/select", {"request": "Toyota Prius"}),
+          ]
+          for path, payload in cases:
+              request = urllib.request.Request(
+                  base + path,
+                  data=json.dumps(payload).encode(),
+                  headers={"Content-Type": "application/json"},
+                  method="POST",
+              )
+              try:
+                  urllib.request.urlopen(request, timeout=20)
+              except urllib.error.HTTPError as error:
+                  assert error.code == 503, (path, error.code, error.read().decode())
+              else:
+                  raise AssertionError(f"{path} unexpectedly accepted a disabled paid-provider request")
+          print("Free mode verified: TKS, JP Sheet and server AI endpoints return 503; no provider call is permitted.")
           PY
       - name: Test Japan model-specific search links
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
