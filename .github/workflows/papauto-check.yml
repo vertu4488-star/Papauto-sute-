@@ -53,6 +53,7 @@ jobs:
           node --check route-planner.js
           node --check voice-assistant.js
       - name: Wait for Render API deployment and test Japan source hub
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
@@ -84,6 +85,7 @@ jobs:
           print("Japan source hub and RAV4 sample OK:", len(data["sources"]), "sources,", len(data["records"]), "sold sample lots")
           PY
       - name: Test Japan model-specific search links
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
@@ -107,6 +109,7 @@ jobs:
           print("Prius model search links OK:", len(links), "sources incl. Aleado statistics and free demo")
           PY
       - name: Test Aleado manufacturer search
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
@@ -122,6 +125,7 @@ jobs:
           print("Honda manufacturer archive link OK")
           PY
       - name: Test Russian model-name normalization
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
@@ -136,6 +140,7 @@ jobs:
           print("Russian make/model normalization OK")
           PY
       - name: Test Japan vehicle search fallback
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
@@ -148,6 +153,7 @@ jobs:
           print("Japan vehicle search fallback OK")
           PY
       - name: Test China source hub
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
