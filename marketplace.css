@@ -220,3 +220,6 @@ button:hover,.button:hover{transform:translateY(-1px)}
 .decoder-source-note{color:#9eb0bf;font-size:11px}
 @media(max-width:760px){.auction-decoder-panel{padding:14px}.auction-decoder-panel .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.decoder-code-row{grid-template-columns:42px 1fr}.decoder-code-row em{grid-column:2}}
 @media(max-width:420px){.auction-decoder-panel .form-grid{grid-template-columns:1fr}}
+
+.account-notifications-heading>div{display:flex;gap:8px;flex-wrap:wrap}.account-notifications-heading .button{font-size:11px;padding:8px 10px}
+@media(max-width:650px){.account-notifications-heading>div{width:100%}.account-notifications-heading .button{flex:1}}
