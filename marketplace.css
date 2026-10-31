@@ -1,0 +1,70 @@
+/* PAPAUTO marketplace redesign — catalog-first information architecture */
+:root{--bg:#0b1016;--panel:#111b25;--panel2:#172431;--line:rgba(220,232,242,.13);--accent:#c5d5e2;--wrap:1280px}
+body{background:#0a1017;color:#edf3f8}
+.wrap{width:min(var(--wrap),calc(100% - 56px))}
+.site-header{width:min(1400px,calc(100% - 56px));height:76px;border-bottom-color:var(--line)}
+.brand-mark{border-radius:10px;background:#d8e3eb;color:#101820;transform:none}
+.brand-name{letter-spacing:.015em}
+.main-nav{gap:20px;font-size:12px}
+.header-cta{border-radius:9px;background:#d8e3eb;color:#101820;border:0;padding:12px 17px}
+.marketplace-nav{position:sticky;top:0;z-index:80;background:rgba(10,16,23,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.marketplace-nav-inner{width:min(1400px,calc(100% - 56px));margin:auto;display:flex;align-items:center;gap:10px;min-height:56px;overflow-x:auto;scrollbar-width:none}
+.marketplace-nav a{white-space:nowrap;color:#b8c5d0;font-size:12px;font-weight:650;padding:9px 13px;border-radius:7px}
+.marketplace-nav a:hover,.marketplace-nav a.marketplace-nav-strong{background:#d8e3eb;color:#101820}
+.hero{min-height:390px;padding-top:36px;padding-bottom:28px;grid-template-columns:1.05fr .95fr;gap:44px}
+.hero h1{font-size:clamp(38px,4.1vw,56px);max-width:650px;margin:16px 0}
+.hero-lead{font-size:15px;max-width:570px}
+.hero-visual{min-height:315px;border-radius:16px}
+.proof-strip{margin-top:8px;margin-bottom:24px}
+.marketplace-intro{padding:24px 0}
+.budget-start{padding:20px 22px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(110deg,#14212d,#0e1720);margin-bottom:46px}
+.section{padding-top:52px;padding-bottom:52px}
+.section-title-row{align-items:end;margin-bottom:24px}
+.section-title-row h2,.section h2{font-size:clamp(30px,3.3vw,44px);letter-spacing:-.045em}
+#catalog{padding:30px 28px 34px;border:1px solid var(--line);border-radius:16px;background:#101a24;box-shadow:0 18px 55px #0003}
+#catalog .section-title-row{display:grid;grid-template-columns:1fr .7fr}
+#catalog .calc-form{display:grid;grid-template-columns:1fr;gap:18px}
+#catalog .form-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+#catalog label,.auction-search-panel label{font-size:11px;color:#aebdca;gap:7px}
+#catalog input,#catalog select,#catalog textarea{background:#0a131c;border:1px solid #344453;border-radius:8px;min-height:44px;color:#f1f5f8;padding:10px 12px}
+#catalog .button{justify-self:start;border-radius:8px}
+#showcase .showcase-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.showcase-card,.market-source-card,.popular-model-card,.direction-card{border:1px solid var(--line);border-radius:14px;background:#111b25;overflow:hidden}
+.showcase-image{height:220px}
+.showcase-body{padding:20px}
+.showcase-body h3{font-size:20px}
+.auction-example-note,.fine-print{color:#9aaab8}
+.section[id="directions"] .direction-grid,.market-source-grid{gap:14px}
+.market-source-card{padding:22px}
+.market-source-card h3{font-size:19px}
+#auction-statistics .uss-overview,#auction-statistics .china-market-overview,#auction-statistics .auction-search-panel{border-radius:14px;border:1px solid var(--line);background:#111b25}
+#auction-statistics .auction-search-panel{padding:20px}
+#auction-statistics input,#auction-statistics select{background:#0a131c;border:1px solid #344453;color:#f1f5f8;border-radius:8px;min-height:42px;padding:9px}
+#calculator .calc-form,#assistant .assistant-panel{border:1px solid var(--line);border-radius:16px}
+#popular-models .showcase-card{border-radius:13px}
+#process .process-step,#checklist .checklist-item{border-color:var(--line)}
+.final-cta{border-radius:16px;background:linear-gradient(115deg,#182633,#101820);padding:40px}
+button,.button{transition:transform .18s ease,border-color .18s ease,background .18s ease}
+button:hover,.button:hover{transform:translateY(-1px)}
+:focus-visible{outline:2px solid #d8e3eb;outline-offset:3px}
+@media(max-width:900px){#catalog .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#showcase .showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{gap:24px}.main-nav{gap:12px}}
+@media(max-width:760px){
+ .wrap{width:calc(100% - 32px)}
+ .site-header{width:100%;height:auto;min-height:62px}
+ .marketplace-nav{position:relative;top:auto}
+ .marketplace-nav-inner{width:100%;padding:0 12px;min-height:48px;gap:4px}
+ .marketplace-nav a{font-size:11px;padding:8px 10px}
+ .hero{padding:25px 0 16px;min-height:0}
+ .hero-visual{min-height:230px;margin-top:18px}
+ .budget-start{padding:17px 14px;margin-bottom:28px}
+ .section{padding-top:34px;padding-bottom:34px}
+ #catalog{padding:19px 14px}
+ #catalog .section-title-row{display:block}
+ #catalog .form-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ #catalog label{font-size:10px}
+ #catalog input,#catalog select{min-height:42px;padding:8px;font-size:13px}
+ #showcase .showcase-grid{grid-template-columns:1fr}
+ .showcase-image{height:210px}
+ .final-cta{padding:25px 18px}
+}
+@media(max-width:390px){#catalog .form-grid{grid-template-columns:1fr}.hero h1{font-size:34px}}
