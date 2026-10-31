@@ -551,42 +551,582 @@ def _japan_model_search_links(make: str, model: str, year_from: int, year_to: in
     return links
 
 
+@app.get("/api/vehicles")
+async def search_vehicles(country: str = "japan", make: str = "", model: str = "",
+                          year_from: int = 1990, year_to: int = 2027,
+                          max_price: int = 0, mileage_max: Optional[int] = None,
+                          volume_min: Optional[int] = None, volume_max: Optional[int] = None,
+                          body: str = "", grade: str = "", lot_number: str = "",
+                          limit: int = 20):
+    """Search Korea live; for Japan return model-specific public source searches until a licensed feed exists."""
+    if country not in {"japan", "south-korea", "china"}:
+        raise HTTPException(status_code=400, detail="Неизвестное направление поиска.")
+    if year_from < 1990 or year_to > 2030 or year_from > year_to:
+        raise HTTPException(status_code=400, detail="Проверьте диапазон годов выпуска.")
+    if max_price < 0 or (mileage_max is not None and mileage_max < 0) or (volume_min is not None and volume_min < 0) or (volume_max is not None and volume_max < 0):
+        raise HTTPException(status_code=400, detail="Бюджет, пробег и объём не могут быть отрицательными.")
+    if volume_min is not None and volume_max is not None and volume_min > volume_max:
+        raise HTTPException(status_code=400, detail="Минимальный объём двигателя не может быть больше максимального.")
+    limit = min(max(limit, 1), 50)
 
-
-def _public_market_search_links(country: str, make: str, model: str, year_from: int, year_to: int):
-    """Build user-initiated, pre-filtered searches on public sources; never scrape or copy listings."""
-    terms = " ".join(part for part in [make.strip(), model.strip(), str(year_from), str(year_to)] if part).strip()
-    if not terms:
-        terms = f"автомобиль {year_from} {year_to}"
-    from urllib.parse import quote
+    # Free-only mode: do not call third-party metered APIs (XAPI Korea / TTPAI).
+    # Korea shows only the public monthly association summary when available;
+    # individual listings remain user-initiated links to the source marketplace.
+    if country == "china":
+        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Публичные источники Китая",
+                "count": 0, "records": [], "sources": [
+                    {"name": "Guazi — объявления автомобилей", "url": "https://www.guazi.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"},
+                    {"name": "Che168 — каталог автомобилей", "url": "https://www.che168.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"},
+                    {"name": "Dongchedi — автомобильный каталог", "url": "https://www.dongchedi.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Объявления и обзоры"}],
+                "message": "Для Китая доступны бесплатные переходы к открытым каталогам. Автоматические платные или тарифицируемые запросы отключены.",
+                "disclaimer": "Ссылки ведут на внешние площадки. Их цены и наличие проверяйте на странице продавца; PAPAUTO не копирует и не гарантирует внешние объявления."}
     if country == "south-korea":
-        sources = [
-            ("Encar — корейские объявления", "encar.com", "Активные объявления; цены предложения, не завершённые сделки"),
-            ("KB ChaChaCha — объявления", "kbchachacha.com", "Каталог предложений; наличие и цена подтверждаются у продавца"),
-            ("K Car — автомобили с пробегом", "kcar.com", "Каталог предложений; не статистика аукционных продаж"),
-        ]
-    elif country in {"china", "south-korea"}:
-        links = _public_market_search_links(country, make, model, year_from, year_to)
-        if country == "south-korea":
-            stats = await fetch_korea_monthly_stats()
-            sources = [{"name": item["name"], "url": item["url"], "access": item["access"], "data_kind": item["kind"]} for item in links]
-            if stats.get("ok"):
-                sources.append({"name": stats.get("source", "Официальная статистика Кореи"),
-                                "url": stats.get("source_url", "https://www.kasa.or.kr/"),
-                                "access": "Открытая агрегированная статистика",
-                                "data_kind": "Месячные итоги аукционного рынка",
-                                "note": stats.get("disclaimer", "")})
-            return {"ok": True, "country": country, "data_type": "source_hub",
-                    "source": "Открытые источники Южной Кореи", "count": 0, "records": [],
-                    "sources": sources, "model_search_links": links,
-                    "message": "Поиск подготовлен по выбранной модели и годам. Каталоги содержат активные предложения; месячная статистика показана отдельно.",
-                    "disclaimer": "Цены объявлений не равны ценам завершённых торгов. Данные проверяйте у исходной площадки."}
-        sources = [{"name": item["name"], "url": item["url"], "access": item["access"], "data_kind": item["kind"]} for item in links]
-        return {"ok": True, "country": country, "data_type": "source_hub",
-                "source": "Открытые источники Китая", "count": 0, "records": [],
-                "sources": sources, "model_search_links": links,
-                "message": "Поиск подготовлен по выбранной модели и годам в открытых китайских каталогах.",
-                "disclaimer": "Это цены предложений, а не подтверждённые цены завершённых сделок или оптовых аукционов."}
+        public_stats = await fetch_korea_monthly_stats()
+        if public_stats.get("ok"):
+            rows = public_stats.get("history", [])
+            return {"ok": True, "country": country, "data_type": "source_hub", "source": public_stats.get("source"),
+                    "count": len(rows), "records": [], "model_search_links": [],
+                    "sources": [{"name": "Encar — каталог автомобилей Кореи", "url": "https://www.encar.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"},
+                                {"name": public_stats.get("source", "Корейская ассоциация"), "url": public_stats.get("source_url", "https://www.kasa.or.kr/"), "access": "Открытая агрегированная статистика", "data_kind": "Месячные итоги рынка"}],
+                    "message": "Открытая статистика и каталоги доступны по ссылкам. Запросы к платным/лимитируемым API отключены.",
+                    "disclaimer": public_stats.get("disclaimer", "Агрегированная статистика не является каталогом индивидуальных лотов.")}
+        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Encar", "count": 0, "records": [],
+                "sources": [{"name": "Encar — каталог автомобилей Кореи", "url": "https://www.encar.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"}],
+                "message": "Автоматический API-поиск отключён в бесплатном режиме. Откройте каталог Encar.",
+                "disclaimer": "Внешние объявления и цены проверяются на сайте источника."}
+
+    if country == "china":
+        live_china = await fetch_ttpai_model_stats(make, model)
+        if live_china and live_china.get("ok"):
+            records = [
+                {
+                    "make": make,
+                    "model": model,
+                    "date": item.get("date"),
+                    "description": item.get("description"),
+                    "city": live_china.get("city"),
+                    "source": "TTPAI",
+                    "record_type": "historical_transaction",
+                    "price": None,
+                    "mileage": None,
+                    "photos": [],
+                }
+                for item in live_china.get("recent_sales", [])
+            ]
+            return {
+                "ok": True,
+                "country": "china",
+                "data_type": "historical_transactions",
+                "source": "TTPAI",
+                "model": live_china.get("model"),
+                "city": live_china.get("city"),
+                "count": len(records),
+                "records": records,
+                "source_url": live_china.get("source_url"),
+                "retrieved_at": live_china.get("retrieved_at"),
+                "disclaimer": "Это история недавно завершённых сделок на китайском рынке подержанных автомобилей, а не активные объявления и не полный архив оптовых аукционов. Цена конкретной сделки и фотографии не публикуются в этом блоке.",
+            }
+
+    if country == "south-korea":
+        # A configured XAPI key means the user requested a live vehicle catalogue.
+        # Do not let the public monthly summary short-circuit that search.
+        api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
+        public_stats = await fetch_korea_monthly_stats() if not api_key else {"ok": False, "message": "Live catalogue configured; skip summary fallback."}
+        if public_stats.get("ok"):
+            monthly_lines = [
+                f"{row['month']}: выставлено {row['offered']:,}, продано {row['sold']:,}, доля {row['completion_rate_percent']}%".replace(",", " ")
+                for row in public_stats.get("history", [])
+            ]
+            return {
+                "ok": True, "country": "south-korea", "data_type": "source_hub",
+                "source": public_stats["source"], "count": len(public_stats.get("history", [])),
+                "records": [], "model_search_links": [],
+                "sources": [{
+                    "name": "Национальная ассоциация автомобильных аукционов Кореи",
+                    "url": public_stats["source_url"],
+                    "access": "Открытая месячная статистика · без регистрации и API-ключа",
+                    "data_kind": "Выставленные и проданные автомобили по месяцам",
+                    "note": "Последние опубликованные месяцы: " + "; ".join(monthly_lines) + ". Это официальные агрегированные итоги аукционного рынка, не индивидуальные карточки лотов."
+                }],
+                "message": "Официальная месячная статистика Кореи получена напрямую с сайта отраслевой ассоциации. " + "; ".join(monthly_lines),
+                "disclaimer": public_stats.get("disclaimer", "")
+            }
+        if not api_key:
+            logger.warning("Korean public monthly auction statistics unavailable: %s", public_stats.get("message"))
+        # When the live key is configured, continue directly to XAPI Korea listings.
+        if not api_key:
+            raise HTTPException(
+                status_code=503,
+                detail="Поиск автомобилей из Южной Кореи пока не активирован. Создайте бесплатный ключ XAPI Korea и добавьте его в Render как XAPIKOREA_API_KEY."
+            )
+        params = {
+            "brand": make.strip()[:80] or None,
+            "model": model.strip()[:80] or None,
+            "year_from": year_from,
+            "year_to": year_to,
+            "mileage_max": mileage_max,
+            "limit": limit,
+            "page": 1,
+            "lang": "en",
+            "source": "encar",
+            "sale_type": "normal",
+        }
+        # The site's budget is a Russian-ruble target, while this provider's price filter
+        # is KRW/EUR. Never compare those currencies without a verified FX conversion.
+        params = {key: value for key, value in params.items() if value is not None and value != ""}
+        try:
+            async with httpx.AsyncClient(timeout=25.0) as client:
+                response = await client.get(
+                    "https://api.xapikorea.com/v1/search",
+                    params=params,
+                    headers={"X-API-Key": api_key, "Accept": "application/json"},
+                )
+            if response.status_code == 401:
+                logger.error("XAPI Korea authentication failed (401); key is present in Render but was rejected by provider")
+                raise HTTPException(status_code=503, detail="XAPI Korea отклонил ключ (HTTP 401). Сам ключ не меняли; проверьте его статус в кабинете провайдера.")
+            if response.status_code == 429:
+                logger.warning("XAPI Korea rate limit reached (429)")
+                raise HTTPException(status_code=429, detail="Достигнут лимит запросов XAPI Korea. Подождите и повторите поиск.")
+            if response.status_code != 200:
+                raise HTTPException(status_code=502, detail=f"XAPI Korea вернул ошибку поиска (HTTP {response.status_code}).")
+            try:
+                payload = response.json()
+            except ValueError:
+                raise HTTPException(status_code=502, detail="XAPI Korea вернул ответ в неизвестном формате.")
+            if not isinstance(payload, dict) or not isinstance(payload.get("results"), list):
+                logger.error("XAPI Korea returned an unexpected search response shape")
+                raise HTTPException(status_code=502, detail="Формат ответа XAPI Korea не соответствует документации.")
+            logger.info("XAPI Korea search succeeded: results=%s total_count=%s", len(payload["results"]), payload.get("total_count"))
+            results = []
+            for item in payload["results"][:limit]:
+                if not isinstance(item, dict):
+                    continue
+                price = item.get("price_krw")
+                mileage = item.get("mileage_km")
+                year = item.get("year") or item.get("model_year")
+                volume_raw = next((item.get(key) for key in (
+                    "engine_displacement_cc", "displacement_cc", "engine_volume_cc", "volume_cc"
+                ) if item.get(key) not in (None, "")), None)
+                try:
+                    volume_cc = int(float(str(volume_raw).replace(",", "."))) if volume_raw is not None else None
+                except (TypeError, ValueError):
+                    volume_cc = None
+                listing_id = item.get("id")
+                source = str(item.get("source") or "encar")
+                photos = _https_photo_urls(item.get("photos"))
+                if not photos:
+                    thumbnail = item.get("thumbnail") or item.get("thumbnail_url") or item.get("image_url") or item.get("image")
+                    if isinstance(thumbnail, str) and thumbnail.startswith("https://") and len(thumbnail) <= 2048:
+                        photos = [thumbnail]
+                listing_date = item.get("listed_at") or item.get("listing_date") or item.get("created_at") or item.get("date")
+                results.append({
+                    "id": str(listing_id) if listing_id is not None else None,
+                    "lot_number": str(listing_id) if listing_id is not None else None,
+                    "record_type": "current_listing",
+                    "listing_date": listing_date,
+                    "source": source,
+                    "make": _fix_mojibake(item.get("manufacturer") or item.get("make") or ""),
+                    "model": _fix_mojibake(item.get("model") or ""),
+                    "year": (str(year)[:4] if year is not None and str(year).isdigit() and len(str(year)) >= 4 else year),
+                    "mileage": mileage,
+                    "volume_cc": volume_cc,
+                    "price": (f"{int(price):,} ₩ — цена в Корее, без доставки и оформления в РФ".replace(",", " ") if isinstance(price, (int, float)) else _fix_mojibake(item.get("price"))),
+                    "price_krw": price,
+                    "currency": "KRW",
+                    "listing_url": _canonical_korea_listing_url(source, listing_id, item.get("encar_url") or item.get("listing_url") or item.get("url")),
+                    "source_name": {"encar": "Encar", "kbchachacha": "KB ChaChaCha", "kcar": "K Car"}.get(source, _fix_mojibake(source)),
+                    "body": _fix_mojibake(item.get("body_style") or item.get("body") or ""),
+                    "grade": _fix_mojibake(item.get("grade") or ""),
+                    "photos": photos,
+                    "thumbnail": photos[0] if photos else None,
+                    "data_source": "XAPI Korea",
+                    "availability_note": _fix_mojibake("Наличие и цену нужно повторно подтвердить у исходной площадки."),
+                })
+            # Search results may omit full galleries. Fetch details only for a small
+            # set of Encar listings that have no thumbnail, keeping API usage bounded.
+            need_details = [
+                item for item in results
+                if item.get("source") == "encar" and item.get("id") and not item.get("photos")
+            ][:8]
+            if need_details:
+                async with httpx.AsyncClient(timeout=12.0) as photo_client:
+                    galleries = await asyncio.gather(*[
+                        _xapi_photo_urls(photo_client, item["id"], api_key)
+                        for item in need_details
+                    ])
+                for item, gallery in zip(need_details, galleries):
+                    if gallery:
+                        item["photos"] = gallery
+                        item["thumbnail"] = gallery[0]
+            # Apply descriptive filters locally when the provider search endpoint does not
+            # expose equivalent documented query parameters. Never compare KRW with RUB.
+            if body.strip():
+                needle = body.strip().casefold()
+                results = [item for item in results if needle in str(item.get("body") or "").casefold()]
+            if grade.strip():
+                wanted_grade = grade.strip().casefold()
+                results = [item for item in results if str(item.get("grade") or "").strip().casefold() == wanted_grade]
+            if lot_number.strip():
+                wanted_lot = lot_number.strip().casefold()
+                results = [
+                    item for item in results
+                    if wanted_lot in str(item.get("lot_number") or item.get("id") or "").casefold()
+                ]
+            if volume_min is not None or volume_max is not None:
+                results = [
+                    item for item in results
+                    if item.get("volume_cc") is not None
+                    and (volume_min is None or item["volume_cc"] >= volume_min)
+                    and (volume_max is None or item["volume_cc"] <= volume_max)
+                ]
+            return {
+                "ok": True,
+                "source": "XAPI Korea",
+                "country": "south-korea",
+                "record_type": "current_listing",
+                "retrieved_at": datetime.now(timezone.utc).isoformat(),
+                "total_count": payload.get("total_count", len(results)),
+                "returned_count": len(results),
+                "partial": bool(payload.get("partial", False)),
+                "source_errors": payload.get("source_errors", []),
+                "filters_applied": {
+                    "country": country, "make": make.strip(), "model": model.strip(),
+                    "year_from": year_from, "year_to": year_to, "mileage_max": mileage_max,
+                    "body": body.strip(), "grade": grade.strip(),
+                    "lot_number": lot_number.strip(),
+                    "volume_min": volume_min, "volume_max": volume_max,
+                },
+                "budget_rub": max_price or None,
+                "budget_note": "Бюджет указан в рублях как ориентир общей стоимости. Он не используется как фильтр цены объявления, потому что цена источника в KRW не включает доставку, таможню и оформление.",
+                "results": results,
+                "disclaimer": "Это текущие объявления, а не результаты завершённых торгов. Цена указана в корейских вонах и не включает доставку, таможню, оформление и доставку по России. Наличие и цену нужно подтвердить у исходной площадки.",
+            }
+        except HTTPException:
+            raise
+        except httpx.RequestError as exc:
+            logger.error("XAPI Korea connection failure: %s: %s", type(exc).__name__, str(exc))
+            raise HTTPException(status_code=502, detail="Не удалось связаться с XAPI Korea. Проверьте логи сервера для определения сетевой ошибки и попробуйте позже.")
+
+    if country == "japan":
+        return {
+            "ok": True, "country": "japan", "data_type": "external_search",
+            "query": {"make": make.strip(), "model": model.strip(), "year_from": year_from, "year_to": year_to},
+            "search_links": _japan_model_search_links(make, model, year_from, year_to),
+            "message": "Для Японии открыты прямые поиски по архивам источников. Результаты показываются на сайтах владельцев баз; PAPAUTO не выдаёт их за собственную выгрузку и не копирует закрытые фотографии или аукционные листы."
+        }
+    # China has no confirmed free reusable live-lot feed configured.
+    raise HTTPException(
+        status_code=503,
+        detail="Для Китая пока не подключён подтверждённый источник актуальных объявлений. Откройте раздел статистики и публичные источники."
+    )
+
+
+
+class VehicleSearchAssistantInput(BaseModel):
+    message: str = Field(min_length=3, max_length=2000)
+    country: str = Field(pattern=r"^(japan|south-korea|china)$")
+    city: str = Field(default="Новосибирск", max_length=80)
+
+
+@app.post("/api/assistant/search")
+async def assistant_search_vehicles(req: VehicleSearchAssistantInput):
+    """Parse a vehicle request locally; never call a metered generative-AI API."""
+    import re
+
+    raw = req.message.strip()
+    normalized = raw.casefold().replace("ё", "е")
+
+    make_aliases = {
+        "toyota": ["toyota", "тойота", "тойоты", "тойоту"],
+        "honda": ["honda", "хонда", "хонду"],
+        "nissan": ["nissan", "ниссан", "ниссанов"],
+        "mazda": ["mazda", "мазда", "мазду"],
+        "mitsubishi": ["mitsubishi", "митсубиси"],
+        "subaru": ["subaru", "субару"],
+        "suzuki": ["suzuki", "сузуки"],
+        "lexus": ["lexus", "лексус"],
+        "hyundai": ["hyundai", "хендай", "хундай"],
+        "kia": ["kia", "киа"],
+        "byd": ["byd", "бид"],
+        "volkswagen": ["volkswagen", "фольксваген", "vw"],
+        "bmw": ["bmw", "бмв"],
+        "mercedes-benz": ["mercedes", "мерседес"],
+        "audi": ["audi", "ауди"],
+        "volvo": ["volvo", "вольво"],
+        "tesla": ["tesla", "тесла"],
+    }
+    make = ""
+    for canonical, aliases in make_aliases.items():
+        if any(re.search(r"(?<![a-zа-я0-9])" + re.escape(alias) + r"(?![a-zа-я0-9])", normalized) for alias in aliases):
+            make = canonical.title() if canonical != "byd" else "BYD"
+            break
+
+    model_aliases = {
+        "rav4": ["rav4", "рав4", "рав 4", "рав-4"],
+        "prius": ["prius", "приус"],
+        "fit": ["fit", "фит"],
+        "vezel": ["vezel", "vezel", "везел"],
+        "cr-v": ["cr-v", "crv", "срв", "црв"],
+        "cx-5": ["cx-5", "cx5", "сх5"],
+        "x-trail": ["x-trail", "xtrail", "икстрейл", "х-трейл"],
+        "outlander": ["outlander", "аутлендер"],
+        "forester": ["forester", "форестер"],
+        "corolla": ["corolla", "королла"],
+        "camry": ["camry", "камри"],
+        "vitz": ["vitz", "витц"],
+        "aqua": ["aqua", "аква"],
+        "land cruiser prado": ["land cruiser prado", "prado", "прадо"],
+        "avante": ["avante", "elantra", "авант", "элантра"],
+        "sportage": ["sportage", "спортейдж"],
+        "sorento": ["sorento", "соренто"],
+        "song": ["song", "сонг"],
+        "model 3": ["model 3", "модель 3"],
+    }
+    model = ""
+    for canonical, aliases in model_aliases.items():
+        if any(alias in normalized for alias in aliases):
+            model = canonical.upper() if canonical in {"rav4", "cx-5", "cr-v", "x-trail"} else canonical.title()
+            break
+
+    years = [int(value) for value in re.findall(r"(?<!\d)(?:19|20)\d{2}(?!\d)", normalized)]
+    year_from, year_to = (min(years), max(years)) if years else (1990, 2030)
+
+    mileage_max = None
+    mileage_match = re.search(r"(?:пробег\s*)?до\s*(\d+(?:[.,]\d+)?)\s*(тыс(?:\.?|яч)?|км)", normalized)
+    if mileage_match:
+        number = float(mileage_match.group(1).replace(",", "."))
+        mileage_max = int(number * 1000 if "тыс" in mileage_match.group(2) else number)
+
+    volume_min = volume_max = None
+    volume_range = re.search(r"(?:от|между)\s*(\d+(?:[.,]\d+)?)\s*(?:до|[-–])\s*(\d+(?:[.,]\d+)?)\s*(?:л(?:итр(?:а|ов)?)?)(?![а-я])", normalized)
+    if volume_range:
+        volumes = [int(float(value.replace(",", ".")) * 1000) for value in volume_range.groups()]
+    else:
+        volume_values = re.findall(r"(\d+(?:[.,]\d+)?)\s*(?:л(?:итр(?:а|ов)?)?)(?![а-я])", normalized)
+        cc_values = re.findall(r"(\d{4,5})\s*(?:см\s*[³3]|куб\.?\s*см)", normalized)
+        volumes = [int(float(value.replace(",", ".")) * 1000) for value in volume_values]
+        volumes.extend(int(value) for value in cc_values)
+    if len(volumes) >= 2:
+        volume_min, volume_max = volumes[0], volumes[1]
+    elif volumes:
+        volume_min = volume_max = volumes[0]
+
+    body = ""
+    for phrase, value in (("кроссовер", "SUV"), ("внедорожник", "SUV"), ("suv", "SUV"),
+                          ("седан", "Sedan"), ("универсал", "Wagon"), ("минивэн", "Minivan"),
+                          ("хэтчбек", "Hatchback"), ("купе", "Coupe")):
+        if phrase in normalized:
+            body = value
+            break
+
+    grade_match = re.search(r"(?:оценка|грейд|grade)\s*([0-9](?:\.[0-9])?|[rs])", normalized)
+    grade = grade_match.group(1).upper() if grade_match else ""
+    lot_match = re.search(r"(?:лот|lot)\s*#?\s*([a-z0-9-]{3,24})", normalized)
+    lot_number = lot_match.group(1).upper() if lot_match else ""
+
+    preferences = []
+    for phrase in ("полный привод", "4wd", "awd", "не вариатор", "без вариатора",
+                   "автомат", "механика", "дизель", "бензин", "гибрид", "электро",
+                   "белый", "черный", "чёрный", "красный", "кожаный салон"):
+        if phrase in normalized:
+            preferences.append(phrase)
+
+    search_filters = {
+        "country": req.country, "make": make, "model": model,
+        "year_from": year_from, "year_to": year_to,
+        "mileage_max": mileage_max, "volume_min": volume_min,
+        "volume_max": volume_max, "body": body, "grade": grade,
+        "lot_number": lot_number, "limit": 20,
+    }
+    if volume_min is not None and volume_max is not None and volume_min > volume_max:
+        raise HTTPException(status_code=422, detail="В запросе указан противоречивый диапазон объёма двигателя.")
+
+    result = await search_vehicles(**search_filters)
+    reply = "Запрос разобран локально, без обращения к платному ИИ-сервису. "
+    if not make and not model:
+        reply += "Марку и модель не удалось определить автоматически — укажите их в полях поиска."
+    else:
+        reply += "Проверьте распознанные параметры перед переходом к источникам."
+    return {
+        "ok": True, "reply": reply, "filters": search_filters,
+        "preferences_not_applied": preferences, "city": req.city,
+        "search": result, "processing_mode": "local_free",
+    }
+
+
+
+class _USSMonthlyTableParser(HTMLParser):
+    """Extract table rows from USS's publicly published monthly auction report."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.tables = []
+        self.in_table = False
+        self.in_row = False
+        self.in_cell = False
+        self.current_table = []
+        self.current_row = []
+        self.current_cell = []
+
+    def handle_starttag(self, tag, attrs):
+        tag = tag.lower()
+        if tag == "table" and not self.in_table:
+            self.in_table = True
+            self.current_table = []
+        elif self.in_table and tag == "tr":
+            self.in_row = True
+            self.current_row = []
+        elif self.in_table and self.in_row and tag in {"td", "th"}:
+            self.in_cell = True
+            self.current_cell = []
+
+    def handle_data(self, data):
+        if self.in_table and self.in_row and self.in_cell:
+            self.current_cell.append(data)
+
+    def handle_endtag(self, tag):
+        tag = tag.lower()
+        if self.in_table and self.in_row and self.in_cell and tag in {"td", "th"}:
+            self.current_row.append(" ".join(" ".join(self.current_cell).split()))
+            self.current_cell = []
+            self.in_cell = False
+        elif self.in_table and tag == "tr":
+            if self.current_row:
+                self.current_table.append(self.current_row)
+            self.current_row = []
+            self.in_row = False
+        elif tag == "table" and self.in_table:
+            if self.current_table:
+                self.tables.append(self.current_table)
+            self.current_table = []
+            self.in_table = False
+
+
+def _uss_monthly_history(page: str):
+    """Extract the published monthly USS aggregate series from its public HTML table."""
+    parser = _USSMonthlyTableParser()
+    parser.feed(page)
+    month_names = {"Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec.", "Jan.", "Feb.", "Mar.",
+                   "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", "1月", "2月", "3月"}
+
+    def number(value):
+        cleaned = value.replace(",", "").replace("千円", "").replace("台", "").replace("%", "").strip()
+        try:
+            return float(cleaned) if cleaned and cleaned not in {"-", "—"} else None
+        except ValueError:
+            return None
+
+    for table in parser.tables:
+        rows = []
+        for cells in table:
+            if len(cells) < 14 or cells[0].strip() not in month_names:
+                continue
+            offered = number(cells[3])
+            sold = number(cells[6])
+            rate = number(cells[9])
+            average_thousand_yen = number(cells[11])
+            if offered is not None and sold is not None and rate is not None and average_thousand_yen is not None:
+                rows.append({
+                    "month": cells[0].strip(),
+                    "auctions": number(cells[1]),
+                    "offered": int(offered),
+                    "sold": int(sold),
+                    "contract_rate_percent": round(rate, 1),
+                    "average_sold_price_jpy": int(average_thousand_yen * 1000),
+                })
+        if rows:
+            return rows
+    return []
+
+
+def _uss_monthly_snapshot(page: str):
+    rows = _uss_monthly_history(page)
+    return rows[-1] if rows else None
+
+
+@app.get("/api/market-overview")
+async def market_overview():
+    """Fetch open, aggregate Japanese auction statistics directly from USS; no API key."""
+    source_url = "https://www.ussnet.co.jp/en/ir/library/monthly/index.html"
+    try:
+        async with httpx.AsyncClient(timeout=12.0, follow_redirects=True) as client:
+            response = await client.get(source_url, headers={"User-Agent": "PAPAUTO market statistics contact: website"})
+            response.raise_for_status()
+        history = _uss_monthly_history(response.text)
+        snapshot = history[-1] if history else None
+        if not snapshot:
+            logger.warning("USS monthly page was fetched but its table format was not recognized")
+            return {"ok": True, "available": False, "source": "USS Monthly Data", "source_url": source_url,
+                    "message": "Официальная страница доступна, но формат таблицы изменился. Обновим разбор данных."}
+        return {"ok": True, "available": True, "source": "USS Monthly Data", "source_url": source_url,
+                "data_month": snapshot["month"], "retrieved_at": datetime.now(timezone.utc).isoformat(),
+                "metrics": snapshot, "history": history[-6:],
+                "disclaimer": "Открытая агрегированная статистика USS по всему рынку. Это не цена конкретной модели и не архив отдельных проданных лотов."}
+    except (httpx.HTTPError, ValueError) as exc:
+        logger.warning("USS monthly data unavailable: %s", exc)
+        return {"ok": True, "available": False, "source": "USS Monthly Data", "source_url": source_url,
+                "message": "Не удалось обновить открытую статистику USS. Повторите позже; значения не подменяются выдуманными цифрами."}
+
+
+@app.get("/api/korea-auction-overview")
+async def korea_auction_overview():
+    """Free public monthly auction totals from the Korean national association."""
+    return await fetch_korea_monthly_stats()
+
+
+@app.get("/api/auction-statistics")
+async def auction_statistics(country: str = "japan", make: str = "", model: str = "",
+                             year_from: int = 1990, year_to: int = 2030,
+                             grade: str = "", mileage_min: Optional[int] = None,
+                             mileage_max: Optional[int] = None,
+                             price_min_jpy: Optional[int] = None,
+                             price_max_jpy: Optional[int] = None,
+                             date_from: str = "", date_to: str = "",
+                             include_unsold: bool = False, limit: int = 20):
+    """Show source data; Korean results are current asking-price listings, not sold-auction records."""
+    if country not in {"japan", "south-korea", "china"}:
+        raise HTTPException(status_code=400, detail="Неизвестное направление поиска.")
+    if year_from < 1990 or year_to > 2030 or year_from > year_to:
+        raise HTTPException(status_code=400, detail="Проверьте диапазон годов выпуска.")
+    if mileage_min is not None and mileage_min < 0 or mileage_max is not None and mileage_max < 0:
+        raise HTTPException(status_code=400, detail="Пробег не может быть отрицательным.")
+    if mileage_min is not None and mileage_max is not None and mileage_min > mileage_max:
+        raise HTTPException(status_code=400, detail="Минимальный пробег не может быть больше максимального.")
+    if price_min_jpy is not None and price_min_jpy < 0 or price_max_jpy is not None and price_max_jpy < 0:
+        raise HTTPException(status_code=400, detail="Цена не может быть отрицательной.")
+    if price_min_jpy is not None and price_max_jpy is not None and price_min_jpy > price_max_jpy:
+        raise HTTPException(status_code=400, detail="Минимальная цена не может быть больше максимальной.")
+    for date_value in (date_from, date_to):
+        if date_value:
+            try:
+                datetime.strptime(date_value, "%Y-%m-%d")
+            except ValueError:
+                raise HTTPException(status_code=400, detail="Дата должна быть в формате ГГГГ-ММ-ДД.")
+    if date_from and date_to and date_from > date_to:
+        raise HTTPException(status_code=400, detail="Начальная дата не может быть позже конечной.")
+    limit = min(max(limit, 1), 30)
+
+    # Free-only mode: use verified public pages where available; never call metered APIs.
+    make, model, grade = make.strip()[:80], model.strip()[:80], grade.strip()[:12]
+    if country == "china":
+        # Free-only mode: do not call TTPAI or any third-party catalogue endpoint.
+        # The returned links are source navigation, not PAPAUTO inventory or sold-lot statistics.
+        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Публичные источники Китая",
+                "count": 0, "records": [], "sources": [
+                    {"name": "Guazi — рынок подержанных авто", "url": "https://www.guazi.com/", "access": "Публичный каталог", "data_kind": "Объявления"},
+                    {"name": "Che168 — каталог авто", "url": "https://www.che168.com/", "access": "Публичный каталог", "data_kind": "Объявления"},
+                    {"name": "Dongchedi — каталог и обзоры", "url": "https://www.dongchedi.com/", "access": "Публичный сайт", "data_kind": "Объявления и обзоры"}],
+                "message": "В бесплатном режиме PAPAUTO не загружает объявления или историю сделок Китая автоматически. Доступны открытые каталоги для ручного поиска.",
+                "disclaimer": "Внешние каталоги содержат цены предложений, а не подтверждённые цены завершённых сделок или оптовых аукционов."}
+    if country == "south-korea":
+        public_stats = await fetch_korea_monthly_stats()
+        sources = [{"name": "Encar — активные объявления", "url": "https://www.encar.com/", "access": "Публичный каталог", "data_kind": "Текущие объявления, не цены завершённых торгов"}]
+        if public_stats.get("ok"):
+            sources.append({"name": public_stats.get("source", "Корейская ассоциация"), "url": public_stats.get("source_url", "https://www.kasa.or.kr/"),
+                            "access": "Открытая агрегированная статистика", "data_kind": "Месячные итоги аукционного рынка"})
+        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Открытые источники Кореи",
+                "count": 0, "records": [], "sources": sources,
+                "message": "В бесплатном режиме показываем открытые источники и официальную месячную сводку, если она доступна. Платный API-каталог не вызывается.",
+                "disclaimer": "Активные объявления Encar не являются результатами завершённых аукционов."}
     model_search_links = _japan_model_search_links(make, model, year_from, year_to) if country == "japan" else []
     if country == "south-korea":
         api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
