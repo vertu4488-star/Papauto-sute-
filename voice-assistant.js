@@ -74,10 +74,10 @@ function applyParsed(p,autoSearch){
  if(p.body)details.push("кузов: "+p.body);
  if(!p.raw||p.raw.trim().length<5){sayStatus("Не удалось распознать достаточно длинный запрос. Попробуйте сказать ещё раз.");return}
  if(autoSearch){
-  sayStatus("Речь распознана"+(details.length?": "+details.join("; "):"")+". Отправляю запрос автомобильному ИИ-консультанту…");
-  const aiButton=$("runAiSelect");
-  if(aiButton){setTimeout(()=>aiButton.click(),250)}
-  else sayStatus("Кнопка ИИ-подбора не найдена. Обновите страницу и попробуйте ещё раз.");
+  sayStatus("Речь распознана"+(details.length?": "+details.join("; "):"")+". Выполняю бесплатный поиск по открытым источникам…");
+  const form=$("vehicleSearchForm");
+  if(form){setTimeout(()=>form.requestSubmit(),250)}
+  else sayStatus("Поля распознаны. Перейдите в каталог и нажмите «Найти автомобили».");
  }else{
   sayStatus("Распознано"+(details.length?": "+details.join("; "):"")+". Текст перенесён в форму PAPAUTO SELECT. Нажмите «Подобрать модели».");
  }
@@ -121,79 +121,6 @@ if(aiResults&&"MutationObserver" in window){
 }
 
 const micIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"></rect><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"></path></svg>';
-let recording=false,stream=null,audioContext=null,source=null,processor=null,pcmChunks=[],latestLevelDb=-Infinity,maxLevelDb=-Infinity;
-const resetMic=()=>{recording=false;listen.setAttribute("aria-pressed","false");listen.classList.remove("is-listening");listen.innerHTML=micIcon;if(levelBox)levelBox.hidden=true;if(levelFill)levelFill.style.width="0%";};
-function encodeWav(chunks,sampleRate){
- const length=chunks.reduce((n,c)=>n+c.length,0);
- // iOS Safari can deliver a very quiet PCM stream even when the microphone
- // meter shows activity. Apply bounded RMS normalization before 16-bit WAV
- // encoding; cap gain to avoid turning background noise into excessive volume.
- let sumSquares=0,peak=0;
- for(const chunk of chunks)for(let i=0;i<chunk.length;i++){
-  const sample=chunk[i];sumSquares+=sample*sample;peak=Math.max(peak,Math.abs(sample));
- }
- const rms=Math.sqrt(sumSquares/Math.max(1,length));
- const gain=rms>0.0005?Math.min(12,0.12/rms):1;
- const buffer=new ArrayBuffer(44+length*2),view=new DataView(buffer);
- const write=(offset,str)=>{for(let i=0;i<str.length;i++)view.setUint8(offset+i,str.charCodeAt(i))};
- write(0,"RIFF");view.setUint32(4,36+length*2,true);write(8,"WAVE");write(12,"fmt ");view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,1,true);view.setUint32(24,sampleRate,true);view.setUint32(28,sampleRate*2,true);view.setUint16(32,2,true);view.setUint16(34,16,true);write(36,"data");view.setUint32(40,length*2,true);
- let offset=44;
- for(const chunk of chunks)for(let i=0;i<chunk.length;i++){
-  const amplified=chunk[i]*gain;
-  const sample=Math.max(-0.98,Math.min(0.98,amplified));
-  view.setInt16(offset,sample<0?sample*0x8000:sample*0x7fff,true);offset+=2;
- }
- return new Blob([buffer],{type:"audio/wav"});
-}
-async function stopRecording(){
- if(!recording)return;
- recording=false;listen.setAttribute("aria-pressed","false");listen.classList.remove("is-listening");listen.innerHTML=micIcon;
- sayStatus("Обрабатываю запись…");
- try{
-  if(processor){processor.disconnect();processor.onaudioprocess=null}
-  if(source)source.disconnect();
-  const wav=encodeWav(pcmChunks,audioContext.sampleRate);
-  if(stream)stream.getTracks().forEach(t=>t.stop());
-  if(audioContext)await audioContext.close();
-  stream=null;audioContext=null;source=null;processor=null;pcmChunks=[];
-  if(wav.size<1000){sayStatus("Запись слишком короткая. Нажмите микрофон и произнесите запрос.");return}
-  const response=await fetch("https://papauto-leads.onrender.com/api/voice/transcribe",{method:"POST",headers:{"Content-Type":"audio/wav"},body:wav});
-  const data=await response.json().catch(()=>({}));
-  if(!response.ok)throw new Error(data.detail||"Не удалось распознать речь.");
-  input.value=data.text||"";
-  if(!input.value.trim()){sayStatus("Не удалось разобрать речь. Попробуйте ещё раз.");return}
-  applyParsed(parse(input.value),true);
- }catch(error){
-  sayStatus(error?.message||"Не удалось обработать запись. Проверьте разрешение микрофона и повторите.");
-  if(stream)stream.getTracks().forEach(t=>t.stop());
-  if(audioContext)try{await audioContext.close()}catch{}
-  stream=null;audioContext=null;source=null;processor=null;pcmChunks=[];
- }
-}
-async function startRecording(){
- try{
-  if(!navigator.mediaDevices?.getUserMedia||!window.AudioContext){sayStatus("Этот браузер не поддерживает запись голоса. Обновите iOS и откройте сайт в Safari.");return}
-  input.value="";pcmChunks=[];latestLevelDb=-Infinity;maxLevelDb=-Infinity;if(levelBox)levelBox.hidden=false;if(levelFill)levelFill.style.width="0%";if(levelText)levelText.textContent="Уровень микрофона: ожидаю звук…";
-  sayStatus("Запрашиваем доступ к микрофону…");
-  stream=await navigator.mediaDevices.getUserMedia({audio:{channelCount:1,echoCancellation:true,noiseSuppression:true,autoGainControl:true}});
-  audioContext=new (window.AudioContext||window.webkitAudioContext)();
-  if(audioContext.state==="suspended")await audioContext.resume();
-  source=audioContext.createMediaStreamSource(stream);
-  processor=audioContext.createScriptProcessor(4096,1,1);
-  processor.onaudioprocess=e=>{if(!recording)return;const samples=e.inputBuffer.getChannelData(0);pcmChunks.push(new Float32Array(samples));let sum=0;for(let i=0;i<samples.length;i++)sum+=samples[i]*samples[i];const rms=Math.sqrt(sum/Math.max(1,samples.length));latestLevelDb=20*Math.log10(Math.max(rms,1e-7));maxLevelDb=Math.max(maxLevelDb,latestLevelDb);const percent=Math.max(0,Math.min(100,(latestLevelDb+60)/54*100));if(levelFill)levelFill.style.width=percent.toFixed(1)+"%";if(levelText)levelText.textContent="Уровень микрофона: "+(latestLevelDb<=-69?"очень тихо":latestLevelDb.toFixed(0)+" dBFS");};
-  source.connect(processor);processor.connect(audioContext.destination);
-  recording=true;listen.setAttribute("aria-pressed","true");listen.classList.add("is-listening");
-  listen.innerHTML='<span class="voice-recording-dot" aria-hidden="true"></span>';
-  sayStatus("Идёт запись. Говорите, затем нажмите кнопку ещё раз.");
- }catch(error){
-  resetMic();
-  const msg=error?.name==="NotAllowedError"?"Нет доступа к микрофону. Разрешите Safari использовать микрофон для papauto.ru.":error?.name==="NotFoundError"?"Микрофон не найден.":"Не удалось включить запись. Проверьте разрешение микрофона в настройках iPhone.";
-  sayStatus(msg);
-  if(stream)stream.getTracks().forEach(t=>t.stop());
-  if(audioContext)try{await audioContext.close()}catch{}
-  stream=null;audioContext=null;source=null;processor=null;
- }
-}
 let nativeManualStop=false,nativeGotResult=false;
 function startNativeRecognition(){
  if(!SpeechRecognition)return false;
@@ -227,8 +154,7 @@ function startNativeRecognition(){
     sayStatus("Браузер не разрешил распознавание речи. Проверьте разрешение микрофона и попробуйте текстовый ввод.");
     return;
    }
-   sayStatus("Встроенное распознавание недоступно. Переключаюсь на резервный режим…");
-   setTimeout(()=>{if(!recording&&!listening)startRecording()},250);
+   sayStatus("В этом браузере нет бесплатного распознавания речи. Введите запрос текстом.");
   };
   recognition.onend=()=>{
    if(!listening)return;
@@ -239,8 +165,7 @@ function startNativeRecognition(){
     return;
    }
    if(!nativeGotResult){
-    sayStatus("Браузер не вернул текст. Переключаюсь на резервную запись…");
-    setTimeout(()=>{if(!recording&&!listening)startRecording()},250);
+    sayStatus("Браузер не вернул текст. Попробуйте ещё раз или введите запрос вручную.");
    }
   };
   recognition.start();
@@ -252,12 +177,11 @@ function startNativeRecognition(){
  }
 }
 listen.addEventListener("click",()=>{
- if(recording){stopRecording();return}
  if(listening&&recognition){
   nativeManualStop=true;
   try{recognition.stop()}catch{listening=false;resetMic()}
   return;
  }
- if(!startNativeRecognition())startRecording();
+ if(!startNativeRecognition())sayStatus("Бесплатное распознавание речи не поддерживается этим браузером. Введите запрос текстом.");
 });
 })();
