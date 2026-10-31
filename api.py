@@ -1108,17 +1108,14 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
     # Free-only mode: use verified public pages where available; never call metered APIs.
     make, model, grade = make.strip()[:80], model.strip()[:80], grade.strip()[:12]
     if country == "china":
-        # TTPAI exposes public model transaction summaries for a limited, verified model list.
-        # These are retail-market transactions, not wholesale auction hammer prices.
-        live_china = await fetch_ttpai_model_stats(make, model) if make and model else None
-        if live_china and live_china.get("ok"):
-            return live_china
+        # Free-only mode: do not call TTPAI or any third-party catalogue endpoint.
+        # The returned links are source navigation, not PAPAUTO inventory or sold-lot statistics.
         return {"ok": True, "country": country, "data_type": "source_hub", "source": "Публичные источники Китая",
                 "count": 0, "records": [], "sources": [
                     {"name": "Guazi — рынок подержанных авто", "url": "https://www.guazi.com/", "access": "Публичный каталог", "data_kind": "Объявления"},
                     {"name": "Che168 — каталог авто", "url": "https://www.che168.com/", "access": "Публичный каталог", "data_kind": "Объявления"},
                     {"name": "Dongchedi — каталог и обзоры", "url": "https://www.dongchedi.com/", "access": "Публичный сайт", "data_kind": "Объявления и обзоры"}],
-                "message": "Для этой модели нет подтверждённой открытой статистики TTPAI. Доступны публичные каталоги.",
+                "message": "В бесплатном режиме PAPAUTO не загружает объявления или историю сделок Китая автоматически. Доступны открытые каталоги для ручного поиска.",
                 "disclaimer": "Внешние каталоги содержат цены предложений, а не подтверждённые цены завершённых сделок или оптовых аукционов."}
     if country == "south-korea":
         public_stats = await fetch_korea_monthly_stats()
