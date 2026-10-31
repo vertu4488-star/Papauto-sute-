@@ -166,3 +166,11 @@ button:hover,.button:hover{transform:translateY(-1px)}
 .saved-search-delete{font-size:17px;color:#b8c5d0}
 .saved-search-note,.saved-search-empty{display:block;margin:10px 0 0;color:#9cabb8;font-size:11px;line-height:1.5}
 @media(max-width:640px){.saved-search-actions{display:grid;grid-template-columns:1fr}.saved-search-actions .button{width:100%}.saved-search-item{max-width:100%}.saved-search-load{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+
+/* Advanced filters for the small, verified Japan/RAV4 sample only. */
+.auction-sample-filter-panel{grid-column:1/-1;padding:16px;border:1px solid var(--line);border-radius:12px;background:#0d1721;margin:4px 0 10px}
+.auction-sample-filter-panel .form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.auction-sample-filter-panel input{width:100%;min-width:0}
+.auction-unsold-toggle{display:flex!important;flex-direction:row!important;align-items:center;gap:9px!important;margin-top:12px;color:#d4dee6!important}
+.auction-unsold-toggle input{width:auto;min-height:0}
+@media(max-width:760px){.auction-sample-filter-panel .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
