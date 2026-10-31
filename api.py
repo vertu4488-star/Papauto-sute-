@@ -1075,6 +1075,30 @@ async def korea_auction_overview():
     return await fetch_korea_monthly_stats()
 
 
+@app.get("/api/public-japan-lots")
+async def public_japan_lots():
+    """Small, manually verified sample of publicly indexed Japanese auction results.
+    Each card links to its provider's original lot page; no photos or auction sheets are mirrored.
+    """
+    records = [
+        {"name":"HONDA N-BOX L","year":"2021.12","mileage_km":50000,"auction":"TAA Yokohama","date":"2026-10-31","grade":"3","final_price_jpy":760000,"url":"https://banzai24.com/en/car/JP/01a18a7e-1930-7db1-97c2-a9932eede01e","make":"Honda","model":"N-Box"},
+        {"name":"HONDA N-BOX CUSTOM L TURBO STYLE BLACK","year":"2023.04","mileage_km":32000,"auction":"JU Gifu","date":"2026-10-31","grade":None,"final_price_jpy":754000,"url":"https://banzai24.com/en/car/JP/01a18a91-5382-7e18-916f-0115cc2b333e","make":"Honda","model":"N-Box"},
+        {"name":"HONDA N-BOX CUSTOM G L TURBO HONDA SENS","year":"2018.12","mileage_km":29780,"auction":"JU Nara","date":"2026-10-31","grade":"4.5","final_price_jpy":1224000,"url":"https://banzai24.com/en/car/JP/01a18681-4ccc-720a-80a9-15e065e553e5","make":"Honda","model":"N-Box"},
+        {"name":"HONDA N-BOX CUSTOM G SS PACKAGE","year":"2013.11","mileage_km":153000,"auction":"JU Gifu","date":"2026-10-31","grade":"3.5","final_price_jpy":115000,"url":"https://banzai24.com/en/car/JP/01a18a5a-6466-7d26-b42d-d11ba6cacb6e","make":"Honda","model":"N-Box"},
+        {"name":"NISSAN NOTE MEDALIST","year":"2013.10","mileage_km":32000,"auction":"TAA Yokohama","date":"2026-10-24","grade":"3","final_price_jpy":61000,"url":"https://banzai24.com/en/car/JP/01a15227-cb9b-7d7c-a58e-3c50fdc1a7a2","make":"Nissan","model":"Note"},
+        {"name":"TOYOTA ROOMY CUSTOM G","year":"2026.05","mileage_km":2000,"auction":"TAA Yokohama","date":"2026-10-31","grade":"4.5","final_price_jpy":1804000,"url":"https://banzai24.com/en/car/JP/01a17634-4fbb-765b-b787-880c765c287f","make":"Toyota","model":"Roomy"}
+    ]
+    return {
+        "ok": True,
+        "source": "Banzai24 — публично индексируемые страницы отдельных лотов",
+        "source_url": "https://banzai24.com/en",
+        "retrieved_at": datetime.now(timezone.utc).isoformat(),
+        "count": len(records),
+        "records": records,
+        "disclaimer": "Небольшая вручную проверенная публичная выборка. Цены и характеристики относятся только к указанным лотам; это не полный архив торгов. Источник — Banzai24. Фото и аукционные листы не копируются."
+    }
+
+
 @app.get("/api/jp-sheet-public-stats")
 async def jp_sheet_public_stats():
     """JP Sheet figures explicitly permitted for quotation with attribution; aggregate only."""
