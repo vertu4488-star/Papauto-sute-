@@ -597,29 +597,6 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
         raise HTTPException(status_code=400, detail="Минимальный объём двигателя не может быть больше максимального.")
     limit = min(max(limit, 1), 50)
 
-        # Free-only mode: offer filtered searches on public catalogues, without copying their listings.
-    if country in {"south-korea", "china"}:
-        links = _public_market_search_links(country, make, model, year_from, year_to)
-        sources = [{"name": item["name"], "url": item["url"], "access": item["access"], "data_kind": item["kind"]} for item in links]
-        if country == "south-korea":
-            stats = await fetch_korea_monthly_stats()
-            if stats.get("ok"):
-                sources.append({"name": stats.get("source", "Официальная статистика Кореи"),
-                                "url": stats.get("source_url", "https://www.kasa.or.kr/"),
-                                "access": "Открытая агрегированная статистика",
-                                "data_kind": "Месячные итоги аукционного рынка",
-                                "note": stats.get("disclaimer", "")})
-            return {"ok": True, "country": country, "data_type": "source_hub",
-                    "source": "Открытые каталоги Южной Кореи", "count": 0, "records": [],
-                    "sources": sources, "search_links": links,
-                    "message": "Подготовлены поиски по выбранной модели в корейских каталогах. Открытая месячная статистика ассоциации показана отдельно, если источник доступен.",
-                    "disclaimer": "Каталоги содержат активные предложения, а не подтверждённые цены завершённых торгов."}
-        return {"ok": True, "country": country, "data_type": "source_hub",
-                "source": "Открытые каталоги Китая", "count": 0, "records": [],
-                "sources": sources, "search_links": links,
-                "message": "Подготовлены поиски по выбранной модели в китайских каталогах. Актуальные предложения открываются на сайтах площадок.",
-                "disclaimer": "Каталоги содержат цены предложений, а не подтверждённые цены завершённых сделок."}
-
     if country == "china":
         live_china = await fetch_ttpai_model_stats(make, model)
         if live_china and live_china.get("ok"):
