@@ -223,3 +223,5 @@ button:hover,.button:hover{transform:translateY(-1px)}
 
 .account-notifications-heading>div{display:flex;gap:8px;flex-wrap:wrap}.account-notifications-heading .button{font-size:11px;padding:8px 10px}
 @media(max-width:650px){.account-notifications-heading>div{width:100%}.account-notifications-heading .button{flex:1}}
+
+.account-cloud-notice{margin:18px 0;padding:16px;border:1px solid #8d7950;border-radius:12px;background:#211e17;color:#eadfca}.account-cloud-notice strong{display:block;margin-bottom:8px}.account-cloud-notice p{margin:0;color:#c9bea9;font-size:12px;line-height:1.7}
