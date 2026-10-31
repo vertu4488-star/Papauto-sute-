@@ -306,7 +306,91 @@ class VehicleAssistantInput(BaseModel):
 
 @app.post("/api/assistant/vehicle")
 async def vehicle_assistant(req: VehicleAssistantInput):
-    raise HTTPException(status_code=503, detail="В бесплатном режиме серверный ИИ отключён: платные AI API не вызываются. Используйте бесплатный локальный поиск и голосовой ввод браузера.")
+    # Deterministic, free shortlist. No external AI/API calls and no invented live inventory.
+    raw = req.message.casefold().replace("ё", "е")
+    country_aliases = {
+        "japan": "Япония", "south-korea": "Южная Корея", "china": "Китай",
+        "япония": "Япония", "южная корея": "Южная Корея", "китай": "Китай",
+    }
+    preferred_country = country_aliases.get((req.country or "").strip().casefold(), "")
+    catalogue = [
+        {"make":"Toyota","model":"Aqua","markets":["Япония"],"tags":["город","экономия","гибрид","компактный"],"fit":"компактный гибрид для города и экономии топлива","checks":"Проверить состояние гибридной батареи и историю обслуживания."},
+        {"make":"Toyota","model":"Prius","markets":["Япония"],"tags":["город","экономия","гибрид","семья"],"fit":"экономичный гибрид для города и смешанных поездок","checks":"Проверить батарею, инвертор и историю обслуживания."},
+        {"make":"Honda","model":"Fit","markets":["Япония"],"tags":["город","экономия","компактный"],"fit":"компактный городской автомобиль с практичным салоном","checks":"Уточнить тип трансмиссии и проверить её работу."},
+        {"make":"Toyota","model":"Corolla","markets":["Япония","Китай"],"tags":["седан","город","семья","экономия"],"fit":"универсальный семейный автомобиль для города и трассы","checks":"Сверить комплектацию, двигатель и тип трансмиссии конкретной версии."},
+        {"make":"Toyota","model":"RAV4","markets":["Япония","Китай"],"tags":["кроссовер","семья","полный привод","рыбалка","багаж"],"fit":"семейный кроссовер; у отдельных версий есть полный привод","checks":"Проверить привод, коробку, аукционный лист и историю ДТП."},
+        {"make":"Honda","model":"Vezel","markets":["Япония"],"tags":["кроссовер","город","экономия","гибрид"],"fit":"компактный кроссовер для города и поездок за город","checks":"Проверить гибридную систему и тип трансмиссии конкретной версии."},
+        {"make":"Mazda","model":"CX-5","markets":["Япония","Южная Корея","Китай"],"tags":["кроссовер","семья","полный привод","рыбалка"],"fit":"семейный кроссовер с удобным салоном и доступными версиями AWD","checks":"Проверить двигатель, коробку, привод и историю кузовного ремонта."},
+        {"make":"Subaru","model":"Forester","markets":["Япония"],"tags":["кроссовер","семья","полный привод","рыбалка","снег"],"fit":"кроссовер для плохих дорог и поездок за город","checks":"Особенно внимательно проверить двигатель, вариатор и систему полного привода."},
+        {"make":"Nissan","model":"X-Trail","markets":["Япония"],"tags":["кроссовер","семья","полный привод","рыбалка"],"fit":"просторный семейный кроссовер, встречаются полноприводные версии","checks":"Проверить вариатор, полный привод и состояние днища."},
+        {"make":"Honda","model":"Stepwgn","markets":["Япония"],"tags":["минивэн","семья","простор","7 мест"],"fit":"просторный семейный минивэн с удобной посадкой","checks":"Проверить работу трансмиссии, дверей и механизмов салона."},
+        {"make":"Toyota","model":"Noah","markets":["Япония"],"tags":["минивэн","семья","простор","7 мест"],"fit":"семейный минивэн с несколькими вариантами компоновки салона","checks":"Сверить число мест, комплектацию и состояние гибридной системы, если она есть."},
+        {"make":"Kia","model":"Sportage","markets":["Южная Корея"],"tags":["кроссовер","семья","полный привод"],"fit":"семейный кроссовер с большим выбором комплектаций","checks":"Сверить двигатель, коробку, привод и корейскую историю обслуживания."},
+        {"make":"Hyundai","model":"Tucson","markets":["Южная Корея"],"tags":["кроссовер","семья","полный привод"],"fit":"универсальный семейный кроссовер","checks":"Проверить двигатель, коробку и историю обслуживания."},
+        {"make":"Hyundai","model":"Avante","markets":["Южная Корея"],"tags":["седан","город","экономия"],"fit":"компактный седан для города и трассы","checks":"Сверить комплектацию и тип двигателя."},
+        {"make":"Kia","model":"K5","markets":["Южная Корея"],"tags":["седан","семья","комфорт"],"fit":"комфортный седан для города и дальних поездок","checks":"Проверить двигатель, коробку и юридическую историю."},
+        {"make":"BYD","model":"Song Plus","markets":["Китай"],"tags":["кроссовер","семья","гибрид","электро"],"fit":"просторный кроссовер; доступны гибридные и электрические версии","checks":"Уточнить тип силовой установки, зарядный стандарт и гарантийные условия."},
+        {"make":"Geely","model":"Monjaro","markets":["Китай"],"tags":["кроссовер","семья","комфорт","полный привод"],"fit":"просторный кроссовер с богатым оснащением","checks":"Проверить комплектацию, программное обеспечение и доступность запчастей."},
+        {"make":"Chery","model":"Tiggo 7","markets":["Китай"],"tags":["кроссовер","семья","город"],"fit":"семейный кроссовер для повседневной эксплуатации","checks":"Сверить двигатель, коробку и комплектацию по VIN."},
+        {"make":"Haval","model":"H6","markets":["Китай"],"tags":["кроссовер","семья","комфорт"],"fit":"семейный кроссовер с просторным салоном","checks":"Проверить комплектацию, трансмиссию и сервисную историю."},
+    ]
+    def _matches(item):
+        score = 0
+        make = (req.make or "").strip().casefold()
+        model = (req.model or "").strip().casefold()
+        if make and item["make"].casefold() == make:
+            score += 12
+        if model and item["model"].casefold() == model:
+            score += 16
+        if preferred_country and preferred_country in item["markets"]:
+            score += 5
+        elif preferred_country:
+            score -= 8
+        for tag in item["tags"]:
+            if tag in raw:
+                score += 3
+        if any(term in raw for term in ("рыбал", "грунтов", "плохих дорог", "лес")) and "рыбалка" in item["tags"]:
+            score += 8
+        if any(term in raw for term in ("семь мест", "7 мест", "большая семья")) and ("7 мест" in item["tags"] or "минивэн" in item["tags"]):
+            score += 8
+        return score
+    ranked = sorted(catalogue, key=_matches, reverse=True)
+    if preferred_country:
+        matching = [item for item in ranked if preferred_country in item["markets"]]
+        if matching:
+            ranked = matching
+    if req.make or req.model:
+        exact = [item for item in ranked if (not req.make or item["make"].casefold() == req.make.strip().casefold()) and (not req.model or item["model"].casefold() == req.model.strip().casefold())]
+        if exact:
+            ranked = exact + [item for item in ranked if item not in exact]
+    recommendations = [{
+        "make": item["make"], "model": item["model"], "why": item["fit"],
+        "checks": item["checks"], "markets": item["markets"],
+        "availability": "Модель для рассмотрения; актуальные лоты не подтверждены"
+    } for item in ranked[:5]]
+    questions = []
+    if req.budget is None and not re.search(r"\\d", raw):
+        questions.append("Какой бюджет под ключ до вашего города?")
+    if not any(term in raw for term in ("вариатор", "автомат", "механика", "коробк")):
+        questions.append("Есть ли предпочтения по коробке передач?")
+    if not any(term in raw for term in ("полный привод", "передний привод", "4wd", "awd")):
+        questions.append("Нужен ли полный привод?")
+    caveats = [
+        "Подбор моделей справочный: он не подтверждает наличие конкретного автомобиля.",
+        "Цена под ключ рассчитывается отдельно по конкретному лоту, дате, мощности, объёму двигателя и городу доставки.",
+    ]
+    summary = "Подготовил бесплатный предварительный список моделей по вашему описанию."
+    if req.city:
+        summary += " Город получения: " + req.city.strip()[:100] + "."
+    if preferred_country:
+        summary += " Приоритетный рынок: " + preferred_country + "."
+    return {
+        "ok": True, "source": "PAPAUTO · локальный подбор без платных API",
+        "summary": summary, "recommendations": recommendations,
+        "questions": questions[:3], "caveats": caveats,
+        "disclaimer": "Это рекомендации по моделям, а не список актуальных лотов и не коммерческое предложение. Наличие, состояние и стоимость под ключ подтверждаются отдельно.",
+        "processing_mode": "local_free"
+    }
     """Extract vehicle-import parameters from natural language and calculate customs when sufficient data is known."""
     gemini_key = (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_AI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
     if not gemini_key:
