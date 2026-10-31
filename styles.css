@@ -260,3 +260,8 @@ html{scroll-padding-top:100px;background:var(--bg)}body{background:#f3f5f7;color
 .account-local-history>p{margin:0;color:var(--muted,#64748b)}
 .account-local-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
 .account-local-actions button{padding:8px 12px;border:1px solid var(--line,#d8dde3);border-radius:10px;background:transparent;color:inherit;cursor:pointer}
+
+/* Offline estimate export and print */
+.estimate-actions{display:grid;gap:8px}
+.account-local-toolbar{display:flex;gap:10px;flex-wrap:wrap}
+@media print{body *{visibility:hidden!important}#calculator,#calculator *{visibility:visible!important}#calculator{position:absolute;left:0;top:0;width:100%;background:#fff!important;color:#111!important}#calculator button,.mobile-bottom-nav,.site-header,.site-footer{display:none!important}.calc-result,.calc-form,.calc-panel{break-inside:avoid;box-shadow:none!important}}
