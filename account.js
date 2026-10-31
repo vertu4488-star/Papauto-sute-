@@ -29,6 +29,7 @@ function save(lead,sent){
 window.PAPAUTO_ACCOUNT={saveRequest:lead=>save(lead,false)};
 window.addEventListener("papauto:lead-prepared",e=>save(e.detail,false));
 window.addEventListener("papauto:lead-submitted",e=>save(e.detail,true));
+if(exportButton)exportButton.addEventListener("click",()=>{const data=JSON.stringify(read(),null,2),blob=new Blob([data],{type:"application/json;charset=utf-8"}),url=URL.createObjectURL(blob),link=document.createElement("a");link.href=url;link.download="papauto-local-requests-"+new Date().toISOString().slice(0,10)+".json";document.body.append(link);link.click();link.remove();URL.revokeObjectURL(url)});
 if(clear)clear.addEventListener("click",()=>{localStorage.removeItem(KEY);render();if(status)status.textContent="Локальная история очищена."});
 render();
 })();
