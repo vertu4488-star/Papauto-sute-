@@ -161,14 +161,16 @@ if(auctionStatsForm){
  if(overview){
   const loadOverview=async()=>{
    const api=String(cfg.apiBaseUrl||"").replace(/\/$/,"");
-   if(!api){overview.textContent="Официальная сводка USS пока недоступна: сервер данных не настроен.";return}
+   if(!api){overview.textContent="Сервер статистики не настроен.";return}
+   overview.replaceChildren(el("p","uss-overview-note","Загружаем официальную статистику Японии и Кореи…"));
+   let shown=false;
    try{
     const response=await fetch(api+"/api/market-overview",{headers:{Accept:"application/json"}});
     const data=await response.json();
-    if(!response.ok||!data.available||!data.metrics)throw new Error(data.message||"Официальная сводка временно недоступна.");
+    if(!response.ok||!data.available||!data.metrics)throw new Error(data.message||"USS временно не отдал сводку.");
     const m=data.metrics,grid=el("div","uss-metric-grid");
     const moneyYen=new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(m.average_sold_price_jpy)+" ¥";
-    [[ "Выставлено",new Intl.NumberFormat("ru-RU").format(m.offered) ],["Продано",new Intl.NumberFormat("ru-RU").format(m.sold)],["Доля продаж",String(m.contract_rate_percent).replace(".",",")+"%"],["Средняя цена продажи",moneyYen]].forEach(([label,value])=>{const card=el("div","uss-metric");card.append(el("small","",label),el("strong","",value));grid.append(card)});
+    [["Выставлено",new Intl.NumberFormat("ru-RU").format(m.offered)],["Продано",new Intl.NumberFormat("ru-RU").format(m.sold)],["Доля продаж",String(m.contract_rate_percent).replace(".",",")+"%"],["Средняя цена продажи",moneyYen]].forEach(([label,value])=>{const card=el("div","uss-metric");card.append(el("small","",label),el("strong","",value));grid.append(card)});
     overview.replaceChildren();
     const head=el("div","uss-overview-head"),copy=el("div",""),eyebrow=el("span","eyebrow","ОТКРЫТЫЕ ДАННЫЕ · ЯПОНИЯ"),title=el("h3","","Последняя сводка аукционов USS"),pill=el("span","uss-live-label","Источник отвечает");
     copy.append(eyebrow,title);head.append(copy,pill);overview.append(head,grid);
@@ -189,20 +191,26 @@ if(auctionStatsForm){
       const meta=el("small","uss-history-meta",price+" · продано "+sold+" · доля продаж "+String(item.contract_rate_percent).replace(".",",")+"%");
       row.append(month,track,meta);section.append(row);
      });
-     section.append(el("p","uss-overview-note","Средняя цена рассчитана по всем проданным автомобилям USS за месяц. Это не прогноз и не цена конкретной модели."));
+     section.append(el("p","uss-overview-note","Средняя цена рассчитана по всем проданным автомобилям USS за месяц. Это общая статистика, не цена конкретной модели."));
      overview.append(section);
     }
+    shown=true;
+   }catch(err){
+    overview.replaceChildren(el("div","uss-overview-head","Статистика Японии временно недоступна"),el("p","uss-overview-note",err.message||"Источник USS не ответил."));
+   }
+   try{
     const koreaResponse=await fetch(api+"/api/korea-auction-overview",{headers:{Accept:"application/json"}});
     const koreaData=await koreaResponse.json();
-    if(koreaResponse.ok&&koreaData.ok&&Array.isArray(koreaData.history)){
-     const rows=koreaData.history.slice(-3).map(x=>x.month+": "+new Intl.NumberFormat("ru-RU").format(x.sold)+" продано / "+new Intl.NumberFormat("ru-RU").format(x.offered)+" выставлено ("+x.completion_rate_percent+"%)");
-     overview.append(el("h3","","Южная Корея · итоги автомобильных аукционов"));
-     rows.forEach(x=>overview.append(el("p","uss-overview-note",x)));
-     const koreaLink=el("a","uss-source-link","Источник: ассоциация автомобильных аукционов Кореи ↗");koreaLink.href=koreaData.source_url;koreaLink.target="_blank";koreaLink.rel="noopener noreferrer";overview.append(koreaLink);
-    }
-
-   }catch(err){overview.replaceChildren(el("div","uss-overview-head", "Официальная сводка USS временно недоступна"),el("p","uss-overview-note",err.message||"Повторите позже. Значения не подменяются примерными цифрами."))}
-  };loadOverview();
+    if(!koreaResponse.ok||!koreaData.ok||!Array.isArray(koreaData.history)||!koreaData.history.length)throw new Error(koreaData.message||"Ассоциация Кореи временно не отдала статистику.");
+    if(!shown)overview.replaceChildren();
+    overview.append(el("h3","","Южная Корея · итоги автомобильных аукционов"));
+    koreaData.history.slice(-3).forEach(x=>overview.append(el("p","uss-overview-note",x.month+": "+new Intl.NumberFormat("ru-RU").format(x.sold)+" продано / "+new Intl.NumberFormat("ru-RU").format(x.offered)+" выставлено ("+x.completion_rate_percent+"%)")));
+    const koreaLink=el("a","uss-source-link","Источник: ассоциация автомобильных аукционов Кореи ↗");koreaLink.href=koreaData.source_url;koreaLink.target="_blank";koreaLink.rel="noopener noreferrer";overview.append(koreaLink);
+   }catch(err){
+    overview.append(el("p","uss-overview-note","Статистика Кореи временно недоступна: "+(err.message||"источник не ответил")));
+   }
+  };
+  loadOverview();
  }
  const renderRecord=(r,c)=>{const card=el("article","auction-stat-record");card.append(el("h4","",[r.make,r.model,r.year].filter(Boolean).join(" ")));const bits=[];if(r.mileage_km!=null)bits.push("Пробег: "+new Intl.NumberFormat("ru-RU").format(r.mileage_km)+" км");bits.push("Цена в источнике: "+fmt(r.price,c));card.append(el("p","",bits.join(" · ")));card.append(el("small","auction-record-source","Источник: "+(r.source||"источник данных")));return card};
  const sampleFilters=$("auctionSampleFilters");
