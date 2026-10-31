@@ -205,13 +205,24 @@ if(auctionStatsForm){
   };loadOverview();
  }
  const renderRecord=(r,c)=>{const card=el("article","auction-stat-record");card.append(el("h4","",[r.make,r.model,r.year].filter(Boolean).join(" ")));const bits=[];if(r.mileage_km!=null)bits.push("Пробег: "+new Intl.NumberFormat("ru-RU").format(r.mileage_km)+" км");bits.push("Цена в источнике: "+fmt(r.price,c));card.append(el("p","",bits.join(" · ")));card.append(el("small","auction-record-source","Источник: "+(r.source||"источник данных")));return card};
- const updateMode=()=>{gradeWrap.hidden=country.value!=="japan"};country.addEventListener("change",updateMode);updateMode();
+ const sampleFilters=$("auctionSampleFilters");
+ const updateMode=()=>{
+  gradeWrap.hidden=country.value!=="japan";
+  const isRav4=country.value==="japan"&&/rav.?4/i.test(($("auctionModel").value||"")+ " "+($("auctionMake").value||""));
+  if(sampleFilters)sampleFilters.hidden=!isRav4;
+ };
+ country.addEventListener("change",updateMode);
+ ["auctionMake","auctionModel"].forEach(id=>$(id)?.addEventListener("input",updateMode));
+ updateMode();
  auctionStatsForm.addEventListener("submit",async e=>{
   e.preventDefault();const api=String(cfg.apiBaseUrl||"").replace(/\/$/,"");
   if(!api){out.replaceChildren(el("p","auction-error","Сервер данных не настроен."));return}
   const from=Number($("auctionYearFrom").value||1990),to=Number($("auctionYearTo").value||2030);
   if(from>to){out.replaceChildren(el("p","auction-error","Год «от» не может быть больше года «до»."));return}
   const params=new URLSearchParams({country:country.value,make:$("auctionMake").value.trim(),model:$("auctionModel").value.trim(),year_from:String(from),year_to:String(to),grade:$("auctionGrade").value,limit:"20"});
+  const optionalFilters=[["mileage_min","auctionMileageMin"],["mileage_max","auctionMileageMax"],["price_min_jpy","auctionPriceMin"],["price_max_jpy","auctionPriceMax"],["date_from","auctionDateFrom"],["date_to","auctionDateTo"]];
+  optionalFilters.forEach(([key,id])=>{const value=$(id)?.value.trim();if(value)params.set(key,value)});
+  if($("auctionIncludeUnsold")?.checked)params.set("include_unsold","true");
   submit.disabled=true;submit.textContent="Ищем…";out.replaceChildren(el("p","auction-loading","Получаем данные источника…"));
   try{
    const response=await fetch(api+"/api/auction-statistics?"+params.toString(),{headers:{Accept:"application/json"}});let data={};try{data=await response.json()}catch{}
@@ -261,7 +272,12 @@ if(auctionStatsForm){
      const tbody=document.createElement("tbody");
      data.records.forEach(record=>{const tr=document.createElement("tr");const cells=[record.name||"Toyota RAV4",record.year||"—",record.mileage_km?new Intl.NumberFormat("ru-RU").format(record.mileage_km)+" км":"—",record.auction||"—",record.date||"—",money(record.final_price_jpy)];cells.forEach((value,index)=>{const td=document.createElement("td");if(index===0&&record.url){const a=document.createElement("a");a.href=record.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=String(value);td.append(a)}else{td.textContent=String(value)}tr.append(td)});tbody.append(tr)});
      table.append(tbody);sample.append(table);
-     if(Array.isArray(data.unsold_records)&&data.unsold_records.length){const u=data.unsold_records[0];sample.append(el("p","auction-sample-unsold","Отдельно: "+(u.name||"RAV4")+" — не продан; последняя ставка "+money(u.last_bid_jpy)+". Эта запись не включена в среднее и медиану."))}
+     if(Array.isArray(data.unsold_records)&&data.unsold_records.length){
+      const unsold=el("section","auction-unsold-list");
+      unsold.append(el("h4","","Непроданные лоты · отдельно от продаж"));
+      data.unsold_records.forEach(u=>{const row=el("p","auction-sample-unsold",[u.name||"RAV4",u.date,u.mileage_km!=null?new Intl.NumberFormat("ru-RU").format(u.mileage_km)+" км":""].filter(Boolean).join(" · ")+" — последняя ставка "+money(u.last_bid_jpy)+". Не включён в среднее и медиану.");if(u.url){const a=document.createElement("a");a.href=u.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=" Открыть лот ↗";row.append(a)}unsold.append(row)});
+      sample.append(unsold);
+     }
      sample.append(el("p","auction-sample-note",stats.note||"Выборка неполная и не представляет весь рынок. Дополнительные фото и полные аукционные листы доступны у первоисточника по его правилам."));
      const sourceLink=document.createElement("a");sourceLink.href=stats.source_url||"https://banzai24.com/en?source=archive";sourceLink.target="_blank";sourceLink.rel="noopener noreferrer";sourceLink.textContent="Открыть архив Banzai24 ↗";sample.append(sourceLink);
      out.append(sample);
