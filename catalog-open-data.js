@@ -3,9 +3,9 @@
   const SOURCE = "https://cdn.jsdelivr.net/gh/gor3a/vehicle-makes-models@main/data/json/all.json";
   const LABELS = { japan: "ЯПОНИЯ", "south-korea": "ЮЖНАЯ КОРЕЯ", china: "КИТАЙ" };
   const MAKES = {
-    japan: ["Toyota","Lexus","Honda","Nissan","Mazda","Suzuki","Subaru","Mitsubishi","Daihatsu","Isuzu","Hino","Acura","Infiniti"],
-    "south-korea": ["Hyundai","Kia","Genesis","SsangYong","KG Mobility","Daewoo"],
-    china: ["BYD","Geely","Chery","Changan","Haval","Great Wall","GWM","GAC","Hongqi","FAW","Dongfeng","Wuling","Baojun","NIO","Xpeng","XPeng","Li Auto","Leapmotor","Zeekr","Lynk & Co","JAC","Jetour","Exeed","Omoda","Jaecoo","Tank","Aito","Seres","Foton","Roewe","MG","Maxus","SAIC","BAIC","JMC","Avatr","Deepal","Denza","Yangwang","Fangchengbao"]
+    japan: ["Toyota","Lexus","Honda","Nissan","Mazda","Suzuki","Subaru","Mitsubishi","Daihatsu","Isuzu","Hino","Acura","Infiniti","Mitsuoka","光岡","Autozam","Eunos","Scion"],
+    "south-korea": ["Hyundai","Kia","Genesis","SsangYong","KG Mobility","Daewoo","Renault Samsung","Samsung","GM Korea","Chevrolet Korea"],
+    china: ["BYD","Geely","Chery","Changan","Haval","Great Wall","GWM","GAC","Hongqi","FAW","Dongfeng","Wuling","Baojun","NIO","Nio","Xpeng","XPeng","Li Auto","Li Xiang","Leapmotor","Zeekr","Lynk & Co","JAC","Jetour","Exeed","Omoda","Jaecoo","Tank","Aito","Seres","Foton","Roewe","MG","Maxus","SAIC","BAIC","JMC","Avatr","Deepal","Denza","Yangwang","Fangchengbao","Chery Exeed","Soueast","Kaiyi","Cowin","Karry","Venucia","Qoros","Hozon","Neta","Aiways","HiPhi","Voyah","M-Hero","Mengshi","Forthing","Fengon","DFSK","Landian","Bestune","Besturn","Hongqi","Jetta","Jiyue","Rox","Polestones","Onvo","Firefly","Arcfox","BAW","Borgward","Changhe","Dayun","Enovate","Everus","Gonow","Haima","Hanteng","Hawtai","Hengchi","Hengrun","Huanghai","Jinbei","King Long","Lifan","Lingbox","Nanjing","Noble","Qiantu","Ranz","Shuanghuan","Soueast","Weichai","Yema","Yudo","Zotye","ZX Auto","Zhidou","Zinoro","Zedriv","Skywell","Skyworth","Leapmotor","Polestar China","Rising Auto","Feifan","IM Motors","Jidu","Deepal","Aion","Trumpchi","Hyptec","Eon","GAC Aion","GAC Trumpchi","GAC Hyptec","BAIC BJEV","Beijing","Foton","Faw","FAW Bestune","Jiefang","Sinotruk","Higer","Yutong"]
   };
   const $ = id => document.getElementById(id);
   const grid=$("catalogGrid"), q=$("modelQuery"), country=$("countryFilter"), power=$("powerFilter"), count=$("catalogCount"), empty=$("catalogEmpty");
