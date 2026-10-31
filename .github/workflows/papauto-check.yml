@@ -8,6 +8,7 @@ on:
     paths:
       - "api.py"
       - "app.js"
+      - "account.js"
       - "voice-assistant.js"
       - "index.html"
       - "auction-data.html"
@@ -48,6 +49,7 @@ jobs:
       - name: Check browser JavaScript syntax
         run: |
           node --check app.js
+          node --check account.js
           node --check marketplace-interactions.js
           node --check saved-searches.js
           node --check smart-search.js
