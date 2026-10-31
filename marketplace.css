@@ -410,3 +410,29 @@ h1,h2,h3,h4,.brand-name,.main-nav,.marketplace-nav a,.button{
 .ai-assistant-mark svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
 .assistant-title-line{gap:18px;align-items:center}
 @media(max-width:600px){.ai-assistant-mark{width:48px;height:48px;flex-basis:48px;border-radius:16px}.ai-assistant-mark svg{width:22px;height:22px}}
+
+
+/* Final neutral palette override: no orange/gold accent remains. */
+:root{--accent:#66727d!important;--blue:#53606c!important}
+.hero-photo-caption .hero-photo-kicker,.hero-photo-visual .top-label b,
+.hero-photo-caption small,.final-cta .eyebrow,.final-cta h2 em{color:#c5cdd4!important}
+.hero-photo-visual .note-icon,.hero-photo-visual .note-arrow{color:#c5cdd4!important;background:#ffffff20!important}
+.marketplace-country-links a:hover,.direction-card:hover{border-color:#aab4bd!important}
+.calc-form input:focus,.calc-form select:focus,.assistant-form input:focus,
+.assistant-form select:focus,.assistant-form textarea:focus,
+#vehicleSearchForm input:focus,#vehicleSearchForm select:focus,
+#catalog input:focus,#catalog select:focus,#catalog textarea:focus,
+#auction-statistics input:focus,#auction-statistics select:focus{
+ border-color:#89949e!important;box-shadow:0 0 0 3px rgba(102,114,125,.13)!important
+}
+.ai-assistant-mark{
+ background:radial-gradient(circle at 28% 22%,rgba(110,190,255,.23),transparent 48%),linear-gradient(145deg,#f1f6fb,#e4ebf4)!important;
+ border:1px solid #c9d6e4!important;color:#456f9f!important;
+ box-shadow:0 8px 22px rgba(54,93,139,.13),inset 0 1px 0 #fff!important;
+}
+.ai-assistant-mark svg{stroke:url(#papautoAiGradient)!important;stroke-width:1.8!important}
+.ai-assistant-mark>span{
+ background:linear-gradient(110deg,#3478c8 0%,#7556bd 55%,#278f9a 100%);
+ -webkit-background-clip:text;background-clip:text;color:transparent!important;
+ font-weight:800!important;letter-spacing:.04em!important
+}
