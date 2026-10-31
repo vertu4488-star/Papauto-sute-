@@ -22,10 +22,11 @@
 </header>
 <main class="archive-wrap">
 <a class="archive-back" href="/?view=auctions">← К разделу «Аукционы»</a>
-<header class="archive-head"><div class="eyebrow">PAPAUTO · ЯПОНИЯ · ИСТОРИЯ ТОРГОВ</div><h1>Статистика <em>завершённых лотов</em></h1><p>Фильтруйте опубликованные результаты по модели, году, оценке, пробегу и дате. Проданные и непроданные лоты показываются раздельно. В расчёт средней цены входят только записи с подтверждённой финальной ценой.</p></header>
+<header class="archive-head"><div class="eyebrow">PAPAUTO · ЯПОНИЯ · ИСТОРИЯ ТОРГОВ</div><h1>Статистика <em>завершённых лотов</em></h1><p>Ищите автомобили любых марок и моделей. Фильтры PAPAUTO не ограничены Toyota: выберите марку и модель или откройте полный каталог аукционных источников. Проданные и непроданные лоты показываются раздельно; средние цены рассчитываются только по подтверждённым результатам.</p></header>
+<section class="archive-note" style="margin:0 0 18px"><b>Каталог всех марок и моделей</b><div class="archive-sources" style="margin-bottom:0"><a href="https://auctions22.com/models" target="_blank" rel="noopener noreferrer">51 марка · 422 модели · каталог и история лотов ↗</a><a href="https://auctions22.com/past" target="_blank" rel="noopener noreferrer">Завершённые торги Auctions22 ↗</a><a href="https://jpsheet.com/auction-price-history/" target="_blank" rel="noopener noreferrer">JP Sheet · статистика по 200 моделям ↗</a><a href="https://www.tokidoki.su/stat/" target="_blank" rel="noopener noreferrer">Toki-Doki · статистика продаж ↗</a></div><p style="margin:10px 0 0">Внешние каталоги открываются у владельцев данных. Полные цены и аукционные листы могут требовать бесплатной регистрации. PAPAUTO не копирует закрытые базы и не показывает неподтверждённые цифры как собственную статистику.</p></section>
 <form class="archive-filters" id="archiveForm">
-<label>Марка<input id="make" value="Toyota" maxlength="80" placeholder="Toyota, Honda, Nissan"></label>
-<label>Модель<input id="model" value="RAV4" maxlength="80" placeholder="RAV4, Prius, Vezel"></label>
+<label>Марка<input id="make" maxlength="80" placeholder="Любая марка: Toyota, Honda, BMW…"></label>
+<label>Модель<input id="model" maxlength="80" placeholder="Любая модель: Prius, Vezel, X5…"></label>
 <label>Год от<input id="yearFrom" type="number" min="1990" max="2030" value="1990"></label>
 <label>Год до<input id="yearTo" type="number" min="1990" max="2030" value="2030"></label>
 <label>Оценка<select id="grade"><option value="">Любая оценка</option><option>5</option><option>4.5</option><option>4</option><option>3.5</option><option>3</option><option>R</option><option>RA</option></select></label>
@@ -99,7 +100,7 @@ async function search(event){
  finally{$("searchButton").disabled=false;$("searchButton").textContent="Найти лоты ↗"}
 }
 $("archiveForm").addEventListener("submit",search);
-$("resetButton").addEventListener("click",()=>{$("archiveForm").reset();$("make").value="Toyota";$("model").value="RAV4";$("yearFrom").value="1990";$("yearTo").value="2030";search()});
+$("resetButton").addEventListener("click",()=>{$("archiveForm").reset();$("make").value="";$("model").value="";$("yearFrom").value="1990";$("yearTo").value="2030";search()});
 search();
 })();
 </script>
