@@ -50,7 +50,7 @@ if(exportEstimate)exportEstimate.addEventListener("click",()=>{
  const rows=[["Показатель","Значение"],["Дата",new Date().toLocaleString("ru-RU")],["Направление",$("calcCountry").value]];
  document.querySelectorAll("#resultLines > div").forEach(row=>{const cells=row.querySelectorAll("span,b");if(cells.length===2)rows.push([cells[0].textContent,cells[1].textContent])});
  rows.push(["Сумма заполненных статей",$("resultTotal").textContent],["Цена аналога в России",$("marketReferencePrice")?.value||"не указана"],["Сравнение",$("marketComparison")?.textContent||""],["Ограничения",$("resultNote").textContent]);
- const csv="\\uFEFF"+rows.map(row=>row.map(value=>'"'+String(value??"").replace(/"/g,'""')+'"').join(";")).join("\\r\\n");
+ const csv=String.fromCharCode(65279)+rows.map(row=>row.map(value=>{let cell=String(value??"");if(/^[=+@-]/.test(cell))cell="'"+cell;return '"'+cell.replace(/"/g,'""')+'"'}).join(";")).join(String.fromCharCode(13,10));
  const blob=new Blob([csv],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),link=document.createElement("a");
  link.href=url;link.download="papauto-estimate-"+new Date().toISOString().slice(0,10)+".csv";document.body.append(link);link.click();link.remove();URL.revokeObjectURL(url);
 });
