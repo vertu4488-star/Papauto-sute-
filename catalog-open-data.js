@@ -11,7 +11,7 @@
   const grid=$("catalogGrid"), q=$("modelQuery"), country=$("countryFilter"), power=$("powerFilter"), count=$("catalogCount"), empty=$("catalogEmpty");
   if (!grid || !q || !country || !power) return;
   let rows=[], loaded=false, visibleLimit=120;
-  const imageCache=new Map();
+  const imageCache=new Map(), imagePending=new Set();
   let imageQueue=[], imageWorkers=0;
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   function marketFor(make) {
@@ -48,15 +48,16 @@
     grid.innerHTML=filtered.slice(0,visibleLimit).map(x=>'<article class="model-card"><div class="model-photo"><img loading="lazy" alt="'+esc(x.make+' '+x.model)+'" data-model-image="'+esc(x.make+' '+x.model)+'"><span>ФОТО МОДЕЛИ</span><a class="photo-credit" target="_blank" rel="noopener" hidden></a></div><div class="country">'+LABELS[x.market]+'</div><h2>'+esc(x.make)+' '+esc(x.model)+'</h2><div class="make">'+esc(x.generation)+(x.year?' · с '+esc(x.year):'')+'</div><div class="engine">'+esc(x.engine)+'</div><div class="market">'+(x.electric?'ЭЛЕКТРОМОБИЛЬ':(x.cc?((x.cc/1000).toFixed(1)+' Л · '):'Объём не указан · ')+esc(x.fuel||'ДВС'))+'</div><div class="make">'+(x.hp?esc(x.hp)+' л.с.':'')+(x.transmission?' · '+esc(x.transmission):'')+'</div></article>').join("");
     loadModelImages();
     empty.style.display=filtered.length?"none":"block";
-    if(filtered.length>240) empty.textContent="Показаны первые 240 вариантов. Уточните поиск или выберите страну — всего найдено "+filtered.length.toLocaleString("ru-RU")+".";
-    else empty.textContent="По выбранным параметрам вариантов не найдено.";
+    empty.textContent="По выбранным параметрам модификаций не найдено.";
+    const more=$("catalogMore");
+    if(more){more.hidden=filtered.length<=visibleLimit;more.textContent="Показать ещё · осталось "+Math.max(0,filtered.length-visibleLimit).toLocaleString("ru-RU");}
   }
   function loadModelImages(){
     grid.querySelectorAll("img[data-model-image]").forEach(img=>{
       const key=img.dataset.modelImage;
       if(imageCache.has(key)){applyImage(img,imageCache.get(key));return;}
-      if(img.dataset.queued)return;
-      img.dataset.queued="1";imageQueue.push({img,key});
+      if(imagePending.has(key))return;
+      imagePending.add(key);img.dataset.queued="1";imageQueue.push({img,key});
     });
     pumpImages();
   }
@@ -74,7 +75,7 @@
         const p=Object.values(data.query?.pages||{})[0],info=p?.imageinfo?.[0];
         const item=info?.thumburl?{thumb:info.thumburl,page:"https://commons.wikimedia.org/wiki/"+encodeURIComponent(p.title.replace(/ /g,"_"))}:null;
         imageCache.set(job.key,item);applyImage(job.img,item);
-      }).catch(()=>imageCache.set(job.key,null)).finally(()=>{imageWorkers--;pumpImages();});
+      }).catch(()=>imageCache.set(job.key,null)).finally(()=>{imagePending.delete(job.key);imageWorkers--;pumpImages();});
     }
   }
   [q,country,power].forEach(el=>el.addEventListener(el===q?"input":"change",()=>{visibleLimit=120;render();}));
