@@ -1071,12 +1071,33 @@ async def korea_auction_overview():
 @app.get("/api/auction-statistics")
 async def auction_statistics(country: str = "japan", make: str = "", model: str = "",
                              year_from: int = 1990, year_to: int = 2030,
-                             grade: str = "", limit: int = 20):
+                             grade: str = "", mileage_min: Optional[int] = None,
+                             mileage_max: Optional[int] = None,
+                             price_min_jpy: Optional[int] = None,
+                             price_max_jpy: Optional[int] = None,
+                             date_from: str = "", date_to: str = "",
+                             include_unsold: bool = False, limit: int = 20):
     """Show source data; Korean results are current asking-price listings, not sold-auction records."""
     if country not in {"japan", "south-korea", "china"}:
         raise HTTPException(status_code=400, detail="Неизвестное направление поиска.")
     if year_from < 1990 or year_to > 2030 or year_from > year_to:
         raise HTTPException(status_code=400, detail="Проверьте диапазон годов выпуска.")
+    if mileage_min is not None and mileage_min < 0 or mileage_max is not None and mileage_max < 0:
+        raise HTTPException(status_code=400, detail="Пробег не может быть отрицательным.")
+    if mileage_min is not None and mileage_max is not None and mileage_min > mileage_max:
+        raise HTTPException(status_code=400, detail="Минимальный пробег не может быть больше максимального.")
+    if price_min_jpy is not None and price_min_jpy < 0 or price_max_jpy is not None and price_max_jpy < 0:
+        raise HTTPException(status_code=400, detail="Цена не может быть отрицательной.")
+    if price_min_jpy is not None and price_max_jpy is not None and price_min_jpy > price_max_jpy:
+        raise HTTPException(status_code=400, detail="Минимальная цена не может быть больше максимальной.")
+    for date_value in (date_from, date_to):
+        if date_value:
+            try:
+                datetime.strptime(date_value, "%Y-%m-%d")
+            except ValueError:
+                raise HTTPException(status_code=400, detail="Дата должна быть в формате ГГГГ-ММ-ДД.")
+    if date_from and date_to and date_from > date_to:
+        raise HTTPException(status_code=400, detail="Начальная дата не может быть позже конечной.")
     limit = min(max(limit, 1), 30)
 
     # Free-only mode: use verified public pages where available; never call metered APIs.
@@ -1257,7 +1278,31 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
                     record for record in sample_records
                     if str(record.get("grade") or "").strip().casefold() == wanted_grade
                 ]
+            if mileage_min is not None:
+                sample_records = [record for record in sample_records if isinstance(record.get("mileage_km"), (int, float)) and record["mileage_km"] >= mileage_min]
+            if mileage_max is not None:
+                sample_records = [record for record in sample_records if isinstance(record.get("mileage_km"), (int, float)) and record["mileage_km"] <= mileage_max]
+            if price_min_jpy is not None:
+                sample_records = [record for record in sample_records if record.get("final_price_jpy", 0) >= price_min_jpy]
+            if price_max_jpy is not None:
+                sample_records = [record for record in sample_records if record.get("final_price_jpy", 0) <= price_max_jpy]
+            if date_from:
+                sample_records = [record for record in sample_records if str(record.get("date") or "") >= date_from]
+            if date_to:
+                sample_records = [record for record in sample_records if str(record.get("date") or "") <= date_to]
             sample_records = sample_records[:limit]
+            if include_unsold:
+                unsold_records = [
+                    record for record in unsold_records
+                    if (not date_from or str(record.get("date") or "") >= date_from)
+                    and (not date_to or str(record.get("date") or "") <= date_to)
+                    and (mileage_min is None or record.get("mileage_km", -1) >= mileage_min)
+                    and (mileage_max is None or record.get("mileage_km", 10**12) <= mileage_max)
+                    and (price_min_jpy is None or record.get("last_bid_jpy", 0) >= price_min_jpy)
+                    and (price_max_jpy is None or record.get("last_bid_jpy", 0) <= price_max_jpy)
+                ]
+            else:
+                unsold_records = []
             sold_prices = sorted(
                 int(record["final_price_jpy"]) for record in sample_records
                 if isinstance(record.get("final_price_jpy"), (int, float)) and record["final_price_jpy"] > 0
