@@ -28,6 +28,7 @@ class FakeAsyncClient:
                 "model": "Avante",
                 "year": 2022,
                 "mileage_km": 50000,
+                "engine_displacement_cc": 1591,
                 "price_krw": 12345678,
                 "listing_url": "https://www.kbchachacha.com/public/car/detail.kbc?carSeq=listing-123",
                 "photos": ["https://images.example.org/car.jpg"],
@@ -73,6 +74,38 @@ class VehicleSearchRoutingTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(len(result["results"]), 1)
         self.assertEqual(result["results"][0]["model"], "Avante")
         self.assertEqual(result["results"][0]["currency"], "KRW")
+
+
+    async def test_korea_applies_lot_and_engine_volume_filters(self):
+        env = {key: value for key, value in os.environ.items() if key != "XAPIKOREA_API_KEY"}
+        env["XAPIKOREA_API_KEY"] = "test-key"
+        with patch.dict(os.environ, env, clear=True), patch("api.fetch_korea_monthly_stats", new_callable=AsyncMock) as monthly, patch("api.httpx.AsyncClient", FakeAsyncClient):
+            result = await api.search_vehicles(
+                country="south-korea", make="Hyundai", model="Avante",
+                year_from=2020, year_to=2025, max_price=1500000,
+                mileage_max=None, volume_min=1500, volume_max=1700,
+                body="", grade="", lot_number="listing-123", limit=20,
+            )
+        monthly.assert_not_awaited()
+        self.assertEqual(result["returned_count"], 1)
+        self.assertEqual(result["results"][0]["volume_cc"], 1591)
+        self.assertEqual(result["filters_applied"]["lot_number"], "listing-123")
+        self.assertEqual(result["filters_applied"]["volume_min"], 1500)
+
+    async def test_korea_excludes_unknown_engine_volume_when_volume_filter_is_requested(self):
+        env = {key: value for key, value in os.environ.items() if key != "XAPIKOREA_API_KEY"}
+        env["XAPIKOREA_API_KEY"] = "test-key"
+        fake = FakeAsyncClient()
+        fake.response._payload["results"][0].pop("engine_displacement_cc", None)
+        with patch.dict(os.environ, env, clear=True), patch("api.fetch_korea_monthly_stats", new_callable=AsyncMock), patch("api.httpx.AsyncClient", return_value=fake):
+            result = await api.search_vehicles(
+                country="south-korea", make="Hyundai", model="Avante",
+                year_from=2020, year_to=2025, max_price=0,
+                mileage_max=None, volume_min=1500, volume_max=None,
+                body="", grade="", lot_number="", limit=20,
+            )
+        self.assertEqual(result["returned_count"], 0)
+        self.assertEqual(result["results"], [])
 
     async def test_korea_without_live_key_uses_official_monthly_summary(self):
         env = {key: value for key, value in os.environ.items() if key != "XAPIKOREA_API_KEY"}

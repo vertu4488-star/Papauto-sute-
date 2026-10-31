@@ -12,6 +12,9 @@ on:
       - "index.html"
       - "auction-data.html"
       - "styles.css"
+      - "marketplace.css"
+      - "mobile.css"
+      - "site-config.js"
       - ".github/workflows/papauto-check.yml"
   workflow_dispatch:
 

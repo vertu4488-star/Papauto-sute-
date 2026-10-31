@@ -678,6 +678,13 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                 price = item.get("price_krw")
                 mileage = item.get("mileage_km")
                 year = item.get("year") or item.get("model_year")
+                volume_raw = next((item.get(key) for key in (
+                    "engine_displacement_cc", "displacement_cc", "engine_volume_cc", "volume_cc"
+                ) if item.get(key) not in (None, "")), None)
+                try:
+                    volume_cc = int(float(str(volume_raw).replace(",", "."))) if volume_raw is not None else None
+                except (TypeError, ValueError):
+                    volume_cc = None
                 listing_id = item.get("id")
                 source = str(item.get("source") or "encar")
                 photos = _https_photo_urls(item.get("photos"))
@@ -696,6 +703,7 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                     "model": _fix_mojibake(item.get("model") or ""),
                     "year": (str(year)[:4] if year is not None and str(year).isdigit() and len(str(year)) >= 4 else year),
                     "mileage": mileage,
+                    "volume_cc": volume_cc,
                     "price": (f"{int(price):,} ₩ — цена в Корее, без доставки и оформления в РФ".replace(",", " ") if isinstance(price, (int, float)) else _fix_mojibake(item.get("price"))),
                     "price_krw": price,
                     "currency": "KRW",
@@ -732,6 +740,19 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
             if grade.strip():
                 wanted_grade = grade.strip().casefold()
                 results = [item for item in results if str(item.get("grade") or "").strip().casefold() == wanted_grade]
+            if lot_number.strip():
+                wanted_lot = lot_number.strip().casefold()
+                results = [
+                    item for item in results
+                    if wanted_lot in str(item.get("lot_number") or item.get("id") or "").casefold()
+                ]
+            if volume_min is not None or volume_max is not None:
+                results = [
+                    item for item in results
+                    if item.get("volume_cc") is not None
+                    and (volume_min is None or item["volume_cc"] >= volume_min)
+                    and (volume_max is None or item["volume_cc"] <= volume_max)
+                ]
             return {
                 "ok": True,
                 "source": "XAPI Korea",
@@ -746,6 +767,8 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                     "country": country, "make": make.strip(), "model": model.strip(),
                     "year_from": year_from, "year_to": year_to, "mileage_max": mileage_max,
                     "body": body.strip(), "grade": grade.strip(),
+                    "lot_number": lot_number.strip(),
+                    "volume_min": volume_min, "volume_max": volume_max,
                 },
                 "budget_rub": max_price or None,
                 "budget_note": "Бюджет указан в рублях как ориентир общей стоимости. Он не используется как фильтр цены объявления, потому что цена источника в KRW не включает доставку, таможню и оформление.",
