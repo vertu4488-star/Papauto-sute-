@@ -1,0 +1,16 @@
+/* PAPAUTO — local estimate history */
+.estimate-history{margin-top:22px;padding-top:18px;border-top:1px solid var(--line,rgba(255,255,255,.12))}
+.estimate-history-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
+.estimate-history-head h3{margin:0 0 5px;font-size:17px}
+.estimate-history-head p,.estimate-history-empty{margin:0;color:var(--muted,#9eacb9);font-size:12px;line-height:1.5}
+.estimate-history-head .button{min-height:36px;padding:8px 11px;font-size:11px;white-space:nowrap}
+.estimate-history-list{display:grid;gap:8px}
+.estimate-history-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 12px;border:1px solid var(--line,rgba(255,255,255,.12));border-radius:12px;background:rgba(255,255,255,.025)}
+.estimate-history-item>div:first-child{display:grid;gap:4px;min-width:0}
+.estimate-history-item strong{font-size:12px;overflow-wrap:anywhere}
+.estimate-history-item small{font-size:10px;color:var(--muted,#9eacb9)}
+.estimate-history-actions{display:flex;gap:6px;flex-shrink:0}
+.estimate-history-actions button{border:1px solid var(--line,rgba(255,255,255,.16));border-radius:8px;background:transparent;color:inherit;padding:7px 9px;font-size:10px;cursor:pointer}
+.estimate-history-actions button:hover{background:rgba(255,255,255,.08)}
+.estimate-history-warning{font-size:11px;color:#c6b58b}
+@media(max-width:600px){.estimate-history-head{flex-direction:column}.estimate-history-item{align-items:flex-start;flex-direction:column}.estimate-history-actions{width:100%}.estimate-history-actions button{flex:1;min-height:38px}}
