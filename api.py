@@ -1075,6 +1075,28 @@ async def korea_auction_overview():
     return await fetch_korea_monthly_stats()
 
 
+@app.get("/api/jp-sheet-public-stats")
+async def jp_sheet_public_stats():
+    """JP Sheet figures explicitly permitted for quotation with attribution; aggregate only."""
+    return {
+        "ok": True,
+        "source": "JP Sheet — Japanese Auction Sheet Data",
+        "source_url": "https://jpsheet.com/auction-sheet-data/",
+        "updated_at": "2026-10-31",
+        "permission": "Сводные показатели разрешено цитировать с указанием источника. Это не разрешение на массовую выгрузку отдельных карточек.",
+        "cars": 5003,
+        "auction_results": 1455,
+        "reports": 3647,
+        "translated_sheets": 851,
+        "repeat_auction_percent": 31.7,
+        "higher_grade_percent": 24.5,
+        "lower_grade_percent": 16.2,
+        "repair_grade_percent": 16.0,
+        "median_sheet_age_months": 8.5,
+        "disclaimer": "Выборка клиентов JP Sheet и проверенных командой результатов; не полный рынок Японии. Личные данные, номера лотов и отдельные карточки не публикуются."
+    }
+
+
 @app.get("/api/auction-statistics")
 async def auction_statistics(country: str = "japan", make: str = "", model: str = "",
                              year_from: int = 1990, year_to: int = 2030,
