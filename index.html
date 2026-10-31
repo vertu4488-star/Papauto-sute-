@@ -408,6 +408,19 @@
     <p class="benchmark-footnote">Обновлено 29.10.2026 по опубликованным страницам перевозчиков. Валютные суммы не пересчитаны в рубли, чтобы не выдавать приблизительный курс за фактическую сумму платежа. Ставки могут измениться.</p>
   </section>
 
+  <section class="section wrap smart-search-section" id="smart-search">
+    <div class="section-title-row"><div><div class="eyebrow">PAPAUTO INTELLIGENT SEARCH</div><h2>Опишите автомобиль.<br><em>Найдём подходящие лоты.</em></h2></div><p>Напишите запрос обычными словами. Подборщик выделит марку, модель, годы и другие параметры, затем обратится к доступным источникам выбранного рынка.</p></div>
+    <div class="smart-search-panel">
+      <div class="smart-search-controls">
+        <label>Рынок<select id="smartSearchCountry"><option value="japan">Япония · завершённые аукционы</option><option value="south-korea">Южная Корея · актуальные объявления</option><option value="china">Китай · история сделок</option></select></label>
+        <label>Город получения<input id="smartSearchCity" value="Новосибирск" maxlength="80" placeholder="Новосибирск"></label>
+      </div>
+      <label class="smart-search-prompt-label" for="smartSearchPrompt">Какую машину ищем?</label>
+      <textarea id="smartSearchPrompt" rows="3" maxlength="2000" placeholder="Например: Toyota RAV4, 2020–2023 год, полный привод, не вариатор, до 2,5 млн рублей под ключ в Новосибирск. Важен хороший аукционный балл и без серьёзных ДТП."></textarea>
+      <div class="smart-search-submit-row"><button class="button button-primary" type="button" id="smartSearchRun">Найти автомобили ↗</button><span class="smart-search-status" id="smartSearchStatus" aria-live="polite">Подборщик уточнит параметры и покажет доступные результаты и источники.</span></div>
+      <div id="smartSearchResults" class="smart-search-results" hidden></div>
+    </div>
+  </section>
   <section class="section wrap" id="assistant">
     <div class="assistant-panel">
       <div class="assistant-copy"><div class="eyebrow">PAPAUTO SELECT</div><div class="catalog-title-line assistant-title-line"><h2>Опишите машину<br><em>своими словами.</em></h2><button class="voice-icon-button" type="button" id="voiceCarListen" aria-label="Голосовой поиск" title="Голосовой поиск" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"></rect><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"></path></svg></button></div><p>Например: «Семейный кроссовер до 2,5 млн ₽, не старше 2021 года, с полным приводом». Мы предложим подходящие модели из справочного списка, объясним различия и поможем добавить выбранный вариант в заявку. Актуальные лоты и цены подтверждаются отдельно.</p><div class="assistant-disclaimer">Подбор поможет сравнить подходящие модели и сформировать вопросы для проверки. Он не выдаёт рекомендации за актуальные лоты и не придумывает цены.</div><div class="voice-car-assistant" id="voiceCarAssistant"><textarea id="voiceCarText" rows="1" maxlength="1000" aria-label="Распознанный голосовой запрос"></textarea><button type="button" id="voiceCarApply" hidden>Применить</button><p class="voice-car-status" id="voiceCarStatus" aria-live="polite"></p><div class="voice-level" id="voiceCarLevel" hidden><div class="voice-level-track"><span id="voiceCarLevelFill"></span></div><span id="voiceCarLevelText">Уровень микрофона: —</span></div></div></div>
@@ -564,6 +577,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>\n<script src="/site-config.js"></script>\n<script src="/account.js" defer></script>
 <script src="/app.js" defer></script>
 <script src="/marketplace-interactions.js" defer></script>
+<script src="/smart-search.js" defer></script>
 <script src="/voice-assistant.js" defer></script>
 </body>
 </html>
