@@ -747,6 +747,8 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                     "year_from": year_from, "year_to": year_to, "mileage_max": mileage_max,
                     "body": body.strip(), "grade": grade.strip(),
                 },
+                "budget_rub": max_price or None,
+                "budget_note": "Бюджет указан в рублях как ориентир общей стоимости. Он не используется как фильтр цены объявления, потому что цена источника в KRW не включает доставку, таможню и оформление.",
                 "results": results,
                 "disclaimer": "Это текущие объявления, а не результаты завершённых торгов. Цена указана в корейских вонах и не включает доставку, таможню, оформление и доставку по России. Наличие и цену нужно подтвердить у исходной площадки.",
             }
