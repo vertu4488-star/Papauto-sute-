@@ -88,3 +88,16 @@ button:hover,.button:hover{transform:translateY(-1px)}
 .vehicle-compare-table th{color:#aebdca;font-weight:600}
 .vehicle-compare-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 @media(max-width:600px){.vehicle-tools-panel{padding:14px}.vehicle-saved-item{align-items:flex-start}.vehicle-compare-table{display:block;overflow-x:auto;white-space:nowrap}}
+
+/* Saved and shareable vehicle searches */
+.saved-search-panel{margin:14px 0 20px;padding:16px;border:1px solid var(--line);border-radius:12px;background:rgba(17,27,37,.72)}
+.saved-search-actions{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.saved-search-actions .button{font-size:12px;padding:10px 13px}
+.saved-search-heading{font-size:12px;font-weight:750;letter-spacing:.04em;text-transform:uppercase;color:#c5d5e2;margin-bottom:9px}
+.saved-search-list{display:flex;flex-wrap:wrap;gap:8px}
+.saved-search-item{display:flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#111b25}
+.saved-search-load,.saved-search-delete{border:0;background:transparent;color:#edf3f8;padding:9px 11px;font:inherit;cursor:pointer}
+.saved-search-load{font-size:12px}.saved-search-load:hover,.saved-search-delete:hover{background:#263747}
+.saved-search-delete{font-size:17px;color:#b8c5d0}
+.saved-search-note,.saved-search-empty{display:block;margin:10px 0 0;color:#9cabb8;font-size:11px;line-height:1.5}
+@media(max-width:640px){.saved-search-actions{display:grid;grid-template-columns:1fr}.saved-search-actions .button{width:100%}.saved-search-item{max-width:100%}.saved-search-load{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
