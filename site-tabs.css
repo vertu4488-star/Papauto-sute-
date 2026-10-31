@@ -1,0 +1,48 @@
+/* PAPAUTO section tabs: keep the existing visual identity and split the long page into focused views. */
+[hidden] { display: none !important; }
+.site-tabs {
+  width: min(1320px, calc(100% - 48px));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 12px 0 14px;
+  border-bottom: 1px solid rgba(23,33,43,.10);
+}
+.site-tabs::-webkit-scrollbar { display:none; }
+.site-tabs a {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 9px 14px;
+  border: 1px solid #dce2e7;
+  border-radius: 10px;
+  color: #52606b;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+  transition: background .18s, color .18s, border-color .18s;
+}
+.site-tabs a:hover, .site-tabs a.is-active {
+  color: #fff;
+  background: #66727d;
+  border-color: #66727d;
+}
+.site-tabs a:focus-visible { outline: 2px solid #66727d; outline-offset: 3px; }
+.main-nav a.is-active { color: #66727d; }
+.mobile-bottom-nav a.is-active { color: #66727d; font-weight: 800; }
+#main > [hidden] { display:none !important; }
+@media(max-width:760px) {
+  .site-tabs { width:100%; padding:9px 16px 11px; gap:7px; border-bottom:1px solid #dce2e7; }
+  .site-tabs a { min-height:37px; padding:8px 12px; font-size:11px; border-radius:9px; }
+  .main-nav { max-height: min(72vh, 560px); overflow-y:auto; }
+  .mobile-bottom-nav { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); }
+  .mobile-bottom-nav a { min-width:0; gap:3px; }
+}
+@media(min-width:761px) {
+  .mobile-bottom-nav { display:none !important; }
+}
