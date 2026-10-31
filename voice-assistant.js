@@ -194,5 +194,70 @@ async function startRecording(){
   stream=null;audioContext=null;source=null;processor=null;
  }
 }
-listen.addEventListener("click",()=>{if(recording)stopRecording();else startRecording()});
+let nativeManualStop=false,nativeGotResult=false;
+function startNativeRecognition(){
+ if(!SpeechRecognition)return false;
+ try{
+  recognition=new SpeechRecognition();
+  recognition.lang="ru-RU";
+  recognition.interimResults=false;
+  recognition.maxAlternatives=3;
+  recognition.continuous=false;
+  nativeManualStop=false;
+  nativeGotResult=false;
+  input.value="";
+  listening=true;
+  listen.setAttribute("aria-pressed","true");
+  listen.classList.add("is-listening");
+  sayStatus("Слушаю запрос через встроенное распознавание речи…");
+  recognition.onresult=event=>{
+   const transcript=Array.from(event.results||[]).map(result=>result[0]?.transcript||"").join(" ").trim();
+   if(!transcript)return;
+   nativeGotResult=true;
+   listening=false;
+   resetMic();
+   input.value=transcript;
+   applyParsed(parse(transcript),true);
+  };
+  recognition.onerror=event=>{
+   if(!listening)return;
+   listening=false;
+   resetMic();
+   if(event.error==="not-allowed"||event.error==="service-not-allowed"){
+    sayStatus("Браузер не разрешил распознавание речи. Проверьте разрешение микрофона и попробуйте текстовый ввод.");
+    return;
+   }
+   sayStatus("Встроенное распознавание недоступно. Переключаюсь на резервный режим…");
+   setTimeout(()=>{if(!recording&&!listening)startRecording()},250);
+  };
+  recognition.onend=()=>{
+   if(!listening)return;
+   listening=false;
+   resetMic();
+   if(nativeManualStop){
+    sayStatus(nativeGotResult?"Распознавание завершено.":"Запись остановлена. Можно попробовать ещё раз.");
+    return;
+   }
+   if(!nativeGotResult){
+    sayStatus("Браузер не вернул текст. Переключаюсь на резервную запись…");
+    setTimeout(()=>{if(!recording&&!listening)startRecording()},250);
+   }
+  };
+  recognition.start();
+  return true;
+ }catch(error){
+  listening=false;
+  resetMic();
+  return false;
+ }
+}
+listen.addEventListener("click",()=>{
+ if(recording){stopRecording();return}
+ if(listening&&recognition){
+  nativeManualStop=true;
+  try{recognition.stop()}catch{listening=false;resetMic()}
+  return;
+ }
+ if(!startNativeRecognition())startRecording();
+});
 })();
