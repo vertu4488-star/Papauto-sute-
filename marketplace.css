@@ -131,3 +131,21 @@ button:hover,.button:hover{transform:translateY(-1px)}
 .leaflet-container{font-family:inherit;font-size:12px;line-height:1.4}
 @media(max-width:850px){.route-map-layout{grid-template-columns:1fr}.route-map{min-height:340px}}
 @media(max-width:600px){.route-planner-panel{padding:12px}.route-planner-controls{grid-template-columns:1fr}.route-map{min-height:300px}.route-summary h3{font-size:18px}}
+
+
+/* Japanese auction archive lookup by chassis number */
+.japan-chassis-panel{margin-top:22px;padding:20px;border:1px solid var(--line);border-radius:14px;background:#0d1721}
+.japan-chassis-heading h3{margin:6px 0;font-size:19px;color:#eef4f8}
+.japan-chassis-heading p{max-width:760px;color:#aebdca;font-size:12px;line-height:1.55}
+.japan-chassis-controls{margin-top:14px}
+.japan-chassis-controls label{display:block;margin-bottom:7px;color:#c0ccd6;font-size:12px}
+.japan-chassis-row{display:flex;gap:10px;align-items:center}
+.japan-chassis-row input{flex:1;min-width:0;min-height:44px;background:#09121b;border:1px solid #354655;border-radius:8px;color:#f2f6f9;padding:10px 12px;font:inherit;text-transform:uppercase}
+.japan-chassis-results{margin-top:16px;display:grid;gap:10px}
+.japan-chassis-card{padding:14px;border:1px solid var(--line);border-radius:10px;background:#111e29}
+.japan-chassis-card h4{margin:0 0 8px;font-size:15px}
+.japan-chassis-meta{display:flex;flex-wrap:wrap;gap:7px}
+.japan-chassis-meta span{padding:5px 8px;border:1px solid #344655;border-radius:7px;color:#c8d4de;font-size:11px}
+.japan-chassis-note{margin-top:12px;color:#aebdca;font-size:11px;line-height:1.55}
+.japan-chassis-test{display:inline-block;margin-bottom:8px;padding:4px 8px;border:1px solid #9a8152;border-radius:20px;color:#e3c58e;font-size:10px}
+@media(max-width:650px){.japan-chassis-panel{padding:14px}.japan-chassis-row{align-items:stretch;flex-direction:column}.japan-chassis-row .button{width:100%}}
