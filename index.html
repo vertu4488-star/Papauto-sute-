@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="/mobile.css">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/marketplace.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -250,6 +251,25 @@
     </div>
   </section>
 
+  <section class="section wrap" id="route-planner">
+    <div class="section-title-row"><div><div class="eyebrow">МАРШРУТ ДО ВАШЕГО ГОРОДА</div><h2>Путь автомобиля<br><em>до вашей двери.</em></h2></div><p>Выберите страну отправления и город получения. На карте отдельно показаны морское направление до Владивостока и автомобильный маршрут по России.</p></div>
+    <div class="route-planner-panel">
+      <div class="route-planner-controls">
+        <label>Страна отправления<select id="routeOrigin"><option value="japan">Япония · Йокогама</option><option value="south-korea">Южная Корея · Пусан</option><option value="china">Китай · Шанхай</option></select></label>
+        <label>Город получения<select id="routeDestination"><option value="Новосибирск">Новосибирск</option><option value="Красноярск">Красноярск</option><option value="Иркутск">Иркутск</option><option value="Омск">Омск</option><option value="Кемерово">Кемерово</option><option value="Томск">Томск</option><option value="Барнаул">Барнаул</option><option value="Москва">Москва</option><option value="Екатеринбург">Екатеринбург</option><option value="Казань">Казань</option><option value="Владивосток">Владивосток</option></select></label>
+      </div>
+      <div class="route-map-layout">
+        <div id="papautoRouteMap" class="route-map" role="img" aria-label="Карта маршрута доставки автомобиля из Азии через Владивосток до выбранного города"></div>
+        <div class="route-summary">
+          <div class="route-summary-kicker">МАРШРУТ ДОСТАВКИ</div><h3 id="routeSummaryTitle">Йокогама → Владивосток → Новосибирск</h3>
+          <div class="route-leg"><span>01 · Море до Владивостока</span><strong id="routeSeaLabel">Международная доставка</strong></div>
+          <div class="route-leg"><span>02 · Автовоз по России</span><strong id="routeRoadDistance">Рассчитываем маршрут…</strong></div>
+          <p id="routeMapNote" class="route-map-note">Морское плечо показано схематично. Дорожная линия строится по автомобильной сети; срок и тариф автовоза подтверждаются перевозчиком.</p>
+          <ol class="route-stages"><li>Покупка и подготовка в стране отправления</li><li>Порт отправления и морская перевозка</li><li>Прибытие во Владивосток</li><li>Таможенное оформление и документы</li><li>Проверка и передача автовозу</li><li>Доставка в выбранный город</li><li>Выдача автомобиля</li></ol>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="section wrap" id="regional-delivery">
     <div class="section-title-row"><div><div class="eyebrow">ДОСТАВКА ПО РЕГИОНАМ</div><h2>Подбор авто в вашем <em>городе</em></h2></div><p>Отдельные страницы для региональных запросов: информация о расчёте полной стоимости, проверке автомобиля и доставке до города получения.</p></div>
     <div class="direction-grid">
@@ -578,6 +598,8 @@
 <script src="/app.js" defer></script>
 <script src="/marketplace-interactions.js" defer></script>
 <script src="/smart-search.js" defer></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+<script src="/route-planner.js" defer></script>
 <script src="/voice-assistant.js" defer></script>
 </body>
 </html>
