@@ -109,7 +109,7 @@ button:hover,.button:hover{transform:translateY(-1px)}
 .smart-search-card img{width:100%;height:170px;object-fit:cover;border-radius:8px;margin-bottom:10px;background:#0a1118}
 .smart-search-card a{display:inline-block;margin-top:8px;color:#e0eaf2;font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .smart-search-badge{display:inline-block;border:1px solid #526575;border-radius:99px;padding:4px 8px;color:#c9d7e2;font-size:10px;margin-bottom:8px}
-.smart-search-warning{margin:12px 0 0;padding:12px;border-left:3px solid #a88c5a;background:#1a1b1a;color:#d8c9ac;font-size:12px;line-height:1.55}
+.smart-search-warning{margin:12px 0 0;padding:12px;border-left:3px solid #8a98a6;background:#1a1b1a;color:#c3cbd2;font-size:12px;line-height:1.55}
 @media(max-width:700px){.smart-search-panel{padding:16px}.smart-search-controls,.smart-search-result-grid{grid-template-columns:1fr}.smart-search-submit-row{align-items:stretch}.smart-search-submit-row .button{width:100%}.smart-search-card img{height:190px}}
 
 
@@ -147,7 +147,7 @@ button:hover,.button:hover{transform:translateY(-1px)}
 .japan-chassis-meta{display:flex;flex-wrap:wrap;gap:7px}
 .japan-chassis-meta span{padding:5px 8px;border:1px solid #344655;border-radius:7px;color:#c8d4de;font-size:11px}
 .japan-chassis-note{margin-top:12px;color:#aebdca;font-size:11px;line-height:1.55}
-.japan-chassis-test{display:inline-block;margin-bottom:8px;padding:4px 8px;border:1px solid #9a8152;border-radius:20px;color:#e3c58e;font-size:10px}
+.japan-chassis-test{display:inline-block;margin-bottom:8px;padding:4px 8px;border:1px solid #8a98a6;border-radius:20px;color:#c3cbd2;font-size:10px}
 @media(max-width:650px){.japan-chassis-panel{padding:14px}.japan-chassis-row{align-items:stretch;flex-direction:column}.japan-chassis-row .button{width:100%}}
 
 /* Free archive search links */
@@ -214,7 +214,7 @@ button:hover,.button:hover{transform:translateY(-1px)}
 .decoder-result-item p,.decoder-risk-summary p,.decoder-disclaimer{color:#aab8c4;font-size:12px;line-height:1.65}
 .decoder-code-row{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;padding:9px 0;border-top:1px solid var(--line);font-size:12px}
 .decoder-code-row em{font-style:normal;font-size:10px;color:#c7d4de}
-.decoder-risk-high{color:#f0b6a8!important}.decoder-risk-medium{color:#e5d1a5!important}.decoder-risk-low{color:#a9c8b7!important}.decoder-risk-unknown{color:#c4b4e2!important}
+.decoder-risk-high{color:#f0b6a8!important}.decoder-risk-medium{color:#8a98a6!important}.decoder-risk-low{color:#a9c8b7!important}.decoder-risk-unknown{color:#c4b4e2!important}
 .decoder-high-attention{display:block;color:#f0b6a8;margin:8px 0}
 .decoder-checklist,.decoder-risk-summary ul{padding-left:20px;color:#c5d1db;font-size:12px;line-height:1.8}
 .decoder-source-note{color:#9eb0bf;font-size:11px}
@@ -224,7 +224,7 @@ button:hover,.button:hover{transform:translateY(-1px)}
 .account-notifications-heading>div{display:flex;gap:8px;flex-wrap:wrap}.account-notifications-heading .button{font-size:11px;padding:8px 10px}
 @media(max-width:650px){.account-notifications-heading>div{width:100%}.account-notifications-heading .button{flex:1}}
 
-.account-cloud-notice{margin:18px 0;padding:16px;border:1px solid #8d7950;border-radius:12px;background:#211e17;color:#eadfca}.account-cloud-notice strong{display:block;margin-bottom:8px}.account-cloud-notice p{margin:0;color:#c9bea9;font-size:12px;line-height:1.7}
+.account-cloud-notice{margin:18px 0;padding:16px;border:1px solid #aab4bd;border-radius:12px;background:#f1f4f6;color:#526170}.account-cloud-notice strong{display:block;margin-bottom:8px}.account-cloud-notice p{margin:0;color:#687681;font-size:12px;line-height:1.7}
 
 .decoder-image-upload{display:grid;gap:9px;margin:8px 0 16px;padding:14px;border:1px dashed #536575;border-radius:10px;background:#0c151e}.decoder-image-upload input{max-width:100%}.decoder-image-status{font-size:11px;color:#aab8c4}.decoder-image-upload img{display:block;max-width:100%;max-height:520px;object-fit:contain;object-position:left top;border-radius:8px;background:#080d12}
 
@@ -345,7 +345,7 @@ a{color:inherit}
 }
 .smart-search-warning,.japan-chassis-test,.account-cloud-notice{border-color:#cbd4dc!important;color:#526170!important}
 .decoder-risk-high,.decoder-high-attention{color:#a33b36!important}
-.decoder-risk-medium{color:#765d31!important}
+.decoder-risk-medium{color:#8a98a6!important}
 .decoder-risk-low{color:#32644a!important}
 .decoder-risk-unknown{color:#5f5680!important}
 .auction-stat-metric,.benchmark-card strong,.result-total{color:#1c2935!important}
