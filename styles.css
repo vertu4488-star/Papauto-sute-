@@ -292,3 +292,44 @@ html{scroll-padding-top:100px;background:var(--bg)}body{background:#f3f5f7;color
   .hero-photo-visual { width: 100%; min-width: 0; box-sizing: border-box; }
   main > section, .wrap { min-width: 0; }
 }
+
+
+/* Mobile-first concise hero: prioritize useful actions over marketing copy */
+@media (max-width: 760px) {
+  .hero.wrap, main > .hero, .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 12px;
+    padding: 18px 16px 12px;
+  }
+  .hero-copy { display: contents; }
+  .hero .eyebrow { order: 0; margin: 0 0 2px; font-size: 10px; line-height: 1.4; }
+  .hero h1 {
+    order: 1; font-size: clamp(25px, 6.5vw, 31px);
+    line-height: 1.12; letter-spacing: -.035em;
+    margin: 0; max-width: none;
+  }
+  .hero h1 br { display: none; }
+  .hero h1 em { display: none; }
+  .hero-lead {
+    order: 2; margin: 0; max-width: none;
+    font-size: 13px; line-height: 1.45; color: #5f6c77;
+  }
+  .hero-actions {
+    order: 3; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px; margin: 2px 0 0;
+  }
+  .hero-actions .button {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; min-height: 46px; box-sizing: border-box;
+    padding: 10px 9px; font-size: 12px; line-height: 1.25; text-align: center;
+  }
+  .hero-actions .integration-link { display: none !important; }
+  .hero-checks { display: none; }
+  .hero-photo-visual { order: 4; min-height: 190px; height: 190px; border-radius: 14px; }
+  .hero-photo-caption { left: 14px; bottom: 18px; }
+  .hero-photo-caption strong { font-size: 20px; line-height: 1.15; }
+  .hero-photo-caption small { display: none; }
+  .hero-photo-visual .floating-note { display: none; }
+  .hero-photo-visual .top-label { top: 12px; left: 12px; }
+}
