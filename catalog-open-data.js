@@ -33,7 +33,7 @@
               const cc=Number(engine.displacementCc);
               const electric=/electric/i.test(engine.fuelType||"") || /kwh/i.test(engine.label||"");
               if(!electric && !String(engine.label||"").trim() && (!Number.isFinite(cc) || cc<=0)) continue;
-              out.push({market,make,model:model.name||"",generation:gen.name||"",year:gen.yearStart||model.yearStart||"",engine:engine.label||"Параметры не указаны",fuel:engine.fuelType||"",cc:electric?0:(Number.isFinite(cc)&&cc>0?cc:null),hp:engine.powerHp||"",transmission:engine.transmission||"",drive:engine.drivetrain||"",electric});
+              out.push({market,make,model:model.name||"",generation:gen.name||"",year:gen.yearStart||model.yearStart||"",engine:engine.label||"Параметры не указаны",fuel:engine.fuelType||"",cc:electric?0:(Number.isFinite(cc)&&cc>0?cc:null),hp:engine.powerHp||"",torque:engine.torqueNm||"",transmission:engine.transmission||"",drive:engine.drivetrain||"",electric});
             }
           }
         }
@@ -64,16 +64,16 @@
   function applyImage(img,data){
     if(!img.isConnected||!data)return;
     img.src=data.thumb;
-    img.onload=()=>{img.classList.add("loaded");const credit=img.parentElement.querySelector(".photo-credit");if(credit){credit.href=data.page;credit.textContent="Источник: Wikimedia Commons";credit.hidden=false;}};
+    img.onload=()=>{img.classList.add("loaded");const credit=img.parentElement.querySelector(".photo-credit");if(credit){credit.href=data.page;credit.textContent="Фото: "+data.author+" · "+data.license;credit.title="Открыть страницу файла и условия лицензии";credit.hidden=false;}};
     img.onerror=()=>img.removeAttribute("src");
   }
   function pumpImages(){
     while(imageWorkers<3&&imageQueue.length){
       const job=imageQueue.shift();imageWorkers++;
-      const api="https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch="+encodeURIComponent('filetype:bitmap "'+job.key+'" car')+"&gsrnamespace=6&gsrlimit=1&prop=imageinfo&iiprop=url&iiurlwidth=720&format=json&origin=*";
+      const api="https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch="+encodeURIComponent('filetype:bitmap "'+job.key+'" car')+"&gsrnamespace=6&gsrlimit=1&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=720&format=json&origin=*";
       fetch(api).then(r=>{if(!r.ok)throw Error("Commons "+r.status);return r.json();}).then(data=>{
         const p=Object.values(data.query?.pages||{})[0],info=p?.imageinfo?.[0];
-        const item=info?.thumburl?{thumb:info.thumburl,page:"https://commons.wikimedia.org/wiki/"+encodeURIComponent(p.title.replace(/ /g,"_"))}:null;
+        const meta=info?.extmetadata||{};const clean=v=>String(v||"").replace(/<[^>]*>/g," ").replace(/&amp;/g,"&").replace(/&#039;/g,"\'").replace(/\s+/g," ").trim();const author=clean(meta.Artist?.Value)||clean(meta.Credit?.Value)||"Автор не указан";const license=clean(meta.LicenseShortName?.Value)||"Лицензия указана на странице файла";const licenseUrl=meta.LicenseUrl?.Value||"";const item=info?.thumburl?{thumb:info.thumburl,page:"https://commons.wikimedia.org/wiki/"+encodeURIComponent(p.title.replace(/ /g,"_")),author,license,licenseUrl}:null;
         imageCache.set(job.key,item);applyImage(job.img,item);
       }).catch(()=>imageCache.set(job.key,null)).finally(()=>{imagePending.delete(job.key);imageWorkers--;pumpImages();});
     }
