@@ -602,7 +602,10 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
             }
 
     if country == "south-korea":
-        public_stats = await fetch_korea_monthly_stats()
+        # A configured XAPI key means the user requested a live vehicle catalogue.
+        # Do not let the public monthly summary short-circuit that search.
+        api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
+        public_stats = await fetch_korea_monthly_stats() if not api_key else {"ok": False, "message": "Live catalogue configured; skip summary fallback."}
         if public_stats.get("ok"):
             monthly_lines = [
                 f"{row['month']}: выставлено {row['offered']:,}, продано {row['sold']:,}, доля {row['completion_rate_percent']}%".replace(",", " ")
@@ -622,9 +625,9 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                 "message": "Официальная месячная статистика Кореи получена напрямую с сайта отраслевой ассоциации. " + "; ".join(monthly_lines),
                 "disclaimer": public_stats.get("disclaimer", "")
             }
-        logger.warning("Korean public monthly auction statistics unavailable: %s", public_stats.get("message"))
-        # Fall through to the existing XAPI Korea listing integration if configured.
-        api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
+        if not api_key:
+            logger.warning("Korean public monthly auction statistics unavailable: %s", public_stats.get("message"))
+        # When the live key is configured, continue directly to XAPI Korea listings.
         if not api_key:
             raise HTTPException(
                 status_code=503,
@@ -744,6 +747,8 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                     "year_from": year_from, "year_to": year_to, "mileage_max": mileage_max,
                     "body": body.strip(), "grade": grade.strip(),
                 },
+                "budget_rub": max_price or None,
+                "budget_note": "Бюджет указан в рублях как ориентир общей стоимости. Он не используется как фильтр цены объявления, потому что цена источника в KRW не включает доставку, таможню и оформление.",
                 "results": results,
                 "disclaimer": "Это текущие объявления, а не результаты завершённых торгов. Цена указана в корейских вонах и не включает доставку, таможню, оформление и доставку по России. Наличие и цену нужно подтвердить у исходной площадки.",
             }
