@@ -132,7 +132,7 @@ class Lead(BaseModel):
     budget: Optional[int] = Field(default=None, ge=0, le=2_000_000_000)
     city: str = Field(default="Новосибирск", max_length=80)
     request: str = Field(min_length=5, max_length=4000)
-    consent: bool = True
+    consent: bool = False
 
     @field_validator("contact", "request")
     @classmethod
