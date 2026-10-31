@@ -333,3 +333,13 @@ html{scroll-padding-top:100px;background:var(--bg)}body{background:#f3f5f7;color
   .hero-photo-visual .floating-note { display: none; }
   .hero-photo-visual .top-label { top: 12px; left: 12px; }
 }
+
+
+/* PAPAUTO Select — visible voice-first request panel */
+.voice-car-assistant{display:grid;gap:12px;margin:18px 0;padding:16px;border:1px solid var(--line,#d9dee4);border-radius:16px;background:rgba(255,255,255,.045)}
+.voice-car-assistant>strong{font-size:15px;letter-spacing:.01em}
+.voice-car-assistant textarea{width:100%;min-height:76px;box-sizing:border-box;padding:12px;border:1px solid var(--line,#cbd2da);border-radius:10px;background:var(--surface,#fff);color:inherit;font:inherit;resize:vertical}
+.voice-car-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.voice-car-actions .button{min-height:46px;justify-content:center}
+.voice-car-status{margin:0;font-size:13px;line-height:1.5;color:var(--muted,#65717d)}
+@media(max-width:600px){.voice-car-assistant{padding:12px;margin:12px 0}.voice-car-actions{grid-template-columns:1fr 1fr}.voice-car-actions .button{padding:10px 8px;font-size:13px}}
