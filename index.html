@@ -492,35 +492,12 @@
       <div class="eyebrow">ЛИЧНЫЙ КАБИНЕТ PAPAUTO</div>
       <h2>Ваши заявки<br><em>в одном месте.</em></h2>
       <p class="account-intro">Сохранённые поиски и избранные автомобили доступны на этом устройстве. Серверный кабинет с синхронизацией между устройствами пока не подключён.</p>
-      <div class="account-auth-grid">
-        <form id="accountSignUp" class="account-auth-card">
-          <h3>Регистрация</h3>
-          <label>Имя <input id="accountName" maxlength="120" autocomplete="name" placeholder="Ваше имя"></label>
-          <label>Телефон <input id="accountPhone" maxlength="32" autocomplete="tel" placeholder="+7…"></label>
-          <label>Электронная почта <input id="accountSignUpEmail" type="email" required autocomplete="email" placeholder="name@example.com"></label>
-          <label>Пароль <input id="accountSignUpPassword" type="password" required minlength="8" autocomplete="new-password" placeholder="Не менее 8 символов"></label>
-          <button class="button button-primary" type="submit">Создать аккаунт</button>
-        </form>
-        <form id="accountSignIn" class="account-auth-card">
-          <h3>Вход</h3>
-          <label>Электронная почта <input id="accountSignInEmail" type="email" required autocomplete="email" placeholder="name@example.com"></label>
-          <label>Пароль <input id="accountSignInPassword" type="password" required autocomplete="current-password" placeholder="Ваш пароль"></label>
-          <button class="button button-secondary" type="submit">Войти</button>
-          <button class="account-text-button" type="button" id="accountResetPassword">Забыли пароль?</button>
-        </form>
+      <div class="account-local-history">
+        <p>Заявки сохраняются только в этом браузере. Они не синхронизируются между устройствами и не заменяют отправку менеджеру.</p>
+        <div id="accountLocalRequests"><p>Подготовленные заявки появятся здесь.</p></div>
+        <button class="button button-secondary" type="button" id="clearLocalRequests">Очистить локальную историю</button>
       </div>
-      <p id="accountStatus" class="account-status" role="status" aria-live="polite">Избранное и сохранённые поиски хранятся локально в браузере. Регистрация временно отключена.</p>
-      <div id="accountDashboard" class="account-dashboard" hidden>
-        <div class="account-user-row"><div><strong id="accountUserEmail"></strong><span id="accountUserPhone"></span></div><button class="button button-secondary" type="button" id="accountSignOut">Выйти</button></div>
-        <form id="accountProfileForm" class="account-profile-form">
-          <h3>Мой профиль</h3>
-          <label>Имя <input id="accountProfileName" maxlength="120"></label>
-          <label>Телефон <input id="accountProfilePhone" maxlength="32" autocomplete="tel"></label>
-          <label>Город <input id="accountProfileCity" maxlength="100" value="Новосибирск"></label>
-          <button class="button button-secondary" type="submit">Сохранить профиль</button>
-        </form>
-        <div class="account-orders"><h3>Мои заявки</h3><div id="accountOrdersList"><p>Загрузка заявок…</p></div></div>
-      </div>
+      <p id="accountStatus" class="account-status" role="status" aria-live="polite">Локальная история включена. Для отправки менеджеру используйте Telegram.</p>
     </div>
   </section>
 
