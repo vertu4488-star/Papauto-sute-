@@ -207,7 +207,7 @@ async def health():
         "telegram_configured": bool(os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID")),
         "free_mode": True,
         "paid_apis_enabled": False,
-        "disabled_paid_integrations": ["Gemini", "TKS.RU", "XAPI Korea", "TTPAI", "JP Sheet reports"],
+        "disabled_paid_integrations": ["Gemini", "TKS.RU", "XAPI Korea", "TTPAI", "JP Sheet API and reports"],
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
@@ -1637,7 +1637,11 @@ class JapanChassisSearchInput(BaseModel):
 
 @app.post("/api/japan-auctions/chassis/search")
 async def search_japan_auction_history(req: JapanChassisSearchInput):
-    """Free JP Sheet chassis lookup; full reports are never fetched automatically."""
+    # Free-only guarantee: use browser-generated public search links, never a provider API key.
+    raise HTTPException(
+        status_code=503,
+        detail="Прямой API-поиск JP Sheet отключён в бесплатном режиме. Используйте подготовленные открытые поисковые ссылки по номеру кузова."
+    )
     api_key = (os.getenv("JPSHEET_API_KEY") or "").strip()
     if not api_key:
         raise HTTPException(status_code=503, detail="Поиск по номеру кузова подключается через API-ключ JP Sheet (JPSHEET_API_KEY).")
