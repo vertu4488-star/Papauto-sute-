@@ -94,6 +94,7 @@ jobs:
         run: |
           python - <<'PY'
           import json
+          import urllib.error
           import urllib.request
           base = "https://papauto-leads.onrender.com"
           with urllib.request.urlopen(base + "/health", timeout=30) as response:
