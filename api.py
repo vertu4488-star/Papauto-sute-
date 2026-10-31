@@ -1463,7 +1463,7 @@ async def assistant_select(req: VehicleSelectionInput):
         "availability": "Модель для рассмотрения; актуальные лоты не подтверждены"
     } for item in ranked[:5]]
     questions = []
-    if req.budget is None and not re.search(r"\\d", raw): questions.append("Какой бюджет под ключ до вашего города?")
+    if req.budget is None and not re.search(r"\d", raw): questions.append("Какой бюджет под ключ до вашего города?")
     if not any(term in raw for term in ("вариатор", "автомат", "механика", "коробк")): questions.append("Есть ли предпочтения по коробке передач?")
     if not any(term in raw for term in ("полный привод", "передний привод", "4wd", "awd")): questions.append("Нужен ли полный привод?")
     summary = "Подготовил бесплатный предварительный список моделей по вашему описанию."
