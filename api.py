@@ -569,6 +569,32 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
         raise HTTPException(status_code=400, detail="Минимальный объём двигателя не может быть больше максимального.")
     limit = min(max(limit, 1), 50)
 
+    # Free-only mode: do not call third-party metered APIs (XAPI Korea / TTPAI).
+    # Korea shows only the public monthly association summary when available;
+    # individual listings remain user-initiated links to the source marketplace.
+    if country == "china":
+        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Публичные источники Китая",
+                "count": 0, "records": [], "sources": [
+                    {"name": "Guazi — объявления автомобилей", "url": "https://www.guazi.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"},
+                    {"name": "Che168 — каталог автомобилей", "url": "https://www.che168.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"},
+                    {"name": "Dongchedi — автомобильный каталог", "url": "https://www.dongchedi.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Объявления и обзоры"}],
+                "message": "Для Китая доступны бесплатные переходы к открытым каталогам. Автоматические платные или тарифицируемые запросы отключены.",
+                "disclaimer": "Ссылки ведут на внешние площадки. Их цены и наличие проверяйте на странице продавца; PAPAUTO не копирует и не гарантирует внешние объявления."}
+    if country == "south-korea":
+        public_stats = await fetch_korea_monthly_stats()
+        if public_stats.get("ok"):
+            rows = public_stats.get("history", [])
+            return {"ok": True, "country": country, "data_type": "source_hub", "source": public_stats.get("source"),
+                    "count": len(rows), "records": [], "model_search_links": [],
+                    "sources": [{"name": "Encar — каталог автомобилей Кореи", "url": "https://www.encar.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"},
+                                {"name": public_stats.get("source", "Корейская ассоциация"), "url": public_stats.get("source_url", "https://www.kasa.or.kr/"), "access": "Открытая агрегированная статистика", "data_kind": "Месячные итоги рынка"}],
+                    "message": "Показываем открытые источники и общую статистику. Запросы к платным/лимитируемым API отключены.",
+                    "disclaimer": public_stats.get("disclaimer", "Агрегированная статистика не является каталогом индивидуальных лотов.")}
+        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Encar", "count": 0, "records": [],
+                "sources": [{"name": "Encar — каталог автомобилей Кореи", "url": "https://www.encar.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"}],
+                "message": "Автоматический API-поиск отключён в бесплатном режиме. Откройте каталог Encar.",
+                "disclaimer": "Внешние объявления и цены проверяются на сайте источника."}
+
     if country == "china":
         live_china = await fetch_ttpai_model_stats(make, model)
         if live_china and live_china.get("ok"):
@@ -1024,6 +1050,26 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
     if year_from < 1990 or year_to > 2030 or year_from > year_to:
         raise HTTPException(status_code=400, detail="Проверьте диапазон годов выпуска.")
     limit = min(max(limit, 1), 30)
+
+    # Free-only mode: never call metered third-party inventory/statistics APIs.
+    if country == "china":
+        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Публичные источники Китая",
+                "count": 0, "records": [], "sources": [
+                    {"name": "Guazi — рынок подержанных авто", "url": "https://www.guazi.com/", "access": "Публичный каталог", "data_kind": "Объявления"},
+                    {"name": "Che168 — каталог авто", "url": "https://www.che168.com/", "access": "Публичный каталог", "data_kind": "Объявления"},
+                    {"name": "Dongchedi — каталог и обзоры", "url": "https://www.dongchedi.com/", "access": "Публичный сайт", "data_kind": "Объявления и обзоры"}],
+                "message": "Автоматические платные API-запросы отключены. Используйте открытые каталоги.",
+                "disclaimer": "Это внешние каталоги, а не архив завершённых аукционов. Цены и наличие проверяйте у продавца."}
+    if country == "south-korea":
+        public_stats = await fetch_korea_monthly_stats()
+        sources = [{"name": "Encar — активные объявления", "url": "https://www.encar.com/", "access": "Публичный каталог", "data_kind": "Текущие объявления, не цены завершённых торгов"}]
+        if public_stats.get("ok"):
+            sources.append({"name": public_stats.get("source", "Корейская ассоциация"), "url": public_stats.get("source_url", "https://www.kasa.or.kr/"),
+                            "access": "Открытая агрегированная статистика", "data_kind": "Месячные итоги аукционного рынка"})
+        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Открытые источники Кореи",
+                "count": 0, "records": [], "sources": sources,
+                "message": "В бесплатном режиме показываем открытые источники и официальную месячную сводку, если она доступна. Платный API-каталог не вызывается.",
+                "disclaimer": "Активные объявления Encar не являются результатами завершённых аукционов."}
     make, model, grade = make.strip()[:80], model.strip()[:80], grade.strip()[:12]
     model_search_links = _japan_model_search_links(make, model, year_from, year_to) if country == "japan" else []
     if country == "china":
