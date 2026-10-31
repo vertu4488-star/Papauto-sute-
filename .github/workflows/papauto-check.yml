@@ -63,7 +63,7 @@ jobs:
         run: |
           set -euo pipefail
           URL="https://papauto-leads.onrender.com/api/auction-statistics?country=japan&make=Toyota&model=RAV4&year_from=2019&year_to=2025"
-          EXPECTED_VERSION="2026-10-30-r12"
+          EXPECTED_VERSION="2026-10-31-r13"
           for attempt in $(seq 1 18); do
             if curl --silent --show-error --fail "$URL&probe=${GITHUB_RUN_ID}-${attempt}" -o /tmp/japan.json; then
               ACTUAL_VERSION=$(python -c 'import json; print(json.load(open("/tmp/japan.json",encoding="utf-8")).get("source_hub_version","missing"))')
@@ -83,7 +83,7 @@ jobs:
           with open("/tmp/japan.json", encoding="utf-8") as f:
               data = json.load(f)
           assert data.get("data_type") == "source_hub", data
-          assert data.get("source_hub_version") == "2026-10-30-r12", data
+          assert data.get("source_hub_version") == "2026-10-31-r13", data
           assert len(data.get("sources", [])) >= 5, data
           assert data.get("sample_stats", {}).get("sample_count") == 9, data
           assert len(data.get("records", [])) == 9, data
@@ -140,7 +140,7 @@ jobs:
           python - <<'PY'
           import json
           data = json.load(open("/tmp/prius.json", encoding="utf-8"))
-          assert data.get("source_hub_version") == "2026-10-30-r12", data
+          assert data.get("source_hub_version") == "2026-10-31-r13", data
           assert data.get("sample_stats") is None, data
           links = data.get("model_search_links", [])
           assert len(links) >= 5, data
