@@ -74,7 +74,7 @@ button:hover,.button:hover{transform:translateY(-1px)}
 .vehicle-card-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .vehicle-card-actions button,.vehicle-tools-panel button{border:1px solid #526171;background:#17232e;color:#eaf0f5;border-radius:10px;padding:9px 12px;font:inherit;font-size:12px;font-weight:600;cursor:pointer}
 .vehicle-card-actions button:hover,.vehicle-tools-panel button:hover{border-color:#9fb4c5;background:#20313f}
-.vehicle-card-actions .vehicle-save-button[aria-pressed="true"]{border-color:#d6b1b1;color:#ffdada}
+.vehicle-card-actions .vehicle-save-button[aria-pressed="true"]{border-color:#aab4bd;color:#e3e8ed}
 .vehicle-card-actions .vehicle-compare-button[aria-pressed="true"]{border-color:#9fc6b1;color:#c7f3dc}
 .vehicle-tools-panel{margin:22px 0;padding:20px;border:1px solid #ffffff24;border-radius:18px;background:linear-gradient(145deg,#172532,#0e1720)}
 .vehicle-tools-heading h3{margin:0 0 6px;font:750 20px Manrope,sans-serif}
@@ -214,8 +214,8 @@ button:hover,.button:hover{transform:translateY(-1px)}
 .decoder-result-item p,.decoder-risk-summary p,.decoder-disclaimer{color:#aab8c4;font-size:12px;line-height:1.65}
 .decoder-code-row{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;padding:9px 0;border-top:1px solid var(--line);font-size:12px}
 .decoder-code-row em{font-style:normal;font-size:10px;color:#c7d4de}
-.decoder-risk-high{color:#f0b6a8!important}.decoder-risk-medium{color:#8a98a6!important}.decoder-risk-low{color:#a9c8b7!important}.decoder-risk-unknown{color:#c4b4e2!important}
-.decoder-high-attention{display:block;color:#f0b6a8;margin:8px 0}
+.decoder-risk-high{color:#aeb8c2!important}.decoder-risk-medium{color:#8a98a6!important}.decoder-risk-low{color:#a9c8b7!important}.decoder-risk-unknown{color:#c4b4e2!important}
+.decoder-high-attention{display:block;color:#aeb8c2;margin:8px 0}
 .decoder-checklist,.decoder-risk-summary ul{padding-left:20px;color:#c5d1db;font-size:12px;line-height:1.8}
 .decoder-source-note{color:#9eb0bf;font-size:11px}
 @media(max-width:760px){.auction-decoder-panel{padding:14px}.auction-decoder-panel .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.decoder-code-row{grid-template-columns:42px 1fr}.decoder-code-row em{grid-column:2}}
