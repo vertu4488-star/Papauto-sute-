@@ -105,7 +105,6 @@ jobs:
               ("/api/customs/calculate", {"cost": 1000000, "volume": 1800, "power": 120, "currency": "392", "engine_type": "petrol", "age": "35", "face": "nat"}),
               ("/api/japan-auctions/chassis/search", {"chassis": "NZE141-1234567"}),
               ("/api/assistant/vehicle", {"message": "Toyota Prius 2019"}),
-              ("/api/assistant/select", {"message": "Найди Toyota Prius"}),
           ]
           for path, payload in cases:
               request = urllib.request.Request(
@@ -120,7 +119,17 @@ jobs:
                   assert error.code == 503, (path, error.code, error.read().decode())
               else:
                   raise AssertionError(f"{path} unexpectedly accepted a disabled paid-provider request")
-          print("Free mode verified: TKS, JP Sheet and server AI endpoints return 503; no provider call is permitted.")
+          selection = urllib.request.Request(
+              base + "/api/assistant/select",
+              data=json.dumps({"message": "Нужен семейный кроссовер для рыбалки", "country": "japan", "budget": 2500000, "city": "Новосибирск"}).encode(),
+              headers={"Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(selection, timeout=20) as response:
+              shortlist = json.load(response)
+          assert shortlist.get("processing_mode") == "local_free", shortlist
+          assert shortlist.get("recommendations"), shortlist
+          print("Free mode verified: paid TKS / JP Sheet / server-AI endpoints are disabled; model shortlist runs locally without Gemini.")
           PY
       - name: Test Japan model-specific search links
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
