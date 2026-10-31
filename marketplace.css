@@ -231,3 +231,143 @@ button:hover,.button:hover{transform:translateY(-1px)}
 
 /* Off-screen honeypot field: available to bots, invisible to real visitors. */
 .bot-field{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
+
+
+/* PAPAUTO strict marketplace visual system — 2026-10-31 */
+:root{
+  color-scheme:light;
+  --bg:#f3f5f7;
+  --panel:#ffffff;
+  --panel2:#edf1f4;
+  --line:#dce2e8;
+  --accent:#243f57;
+  --blue:#315b7d;
+  --text:#17212b;
+  --muted:#65717d;
+  --wrap:1280px;
+}
+html{background:#f3f5f7;color-scheme:light}
+body{background:#f3f5f7!important;color:#17212b!important}
+a{color:inherit}
+.site-header{background:#fff;border-bottom:1px solid #dce2e8}
+.brand-mark{background:#1c2935!important;color:#fff!important;border-radius:7px}
+.brand-name{color:#17212b}
+.brand-dot{color:#315b7d!important}
+.brand-name small{color:#71808d}
+.main-nav{color:#4d5965}
+.main-nav a:hover,.footer-links a:hover{color:#315b7d}
+.header-cta{background:#1c2935!important;color:#fff!important;border:1px solid #1c2935!important;border-radius:7px}
+.header-cta span,.button span{color:#d7e1e9!important}
+.marketplace-nav{background:rgba(255,255,255,.96)!important;border-bottom:1px solid #dce2e8}
+.marketplace-nav a{color:#53606c!important;border-radius:6px}
+.marketplace-nav a:hover,.marketplace-nav a.marketplace-nav-strong{background:#1c2935!important;color:#fff!important}
+.eyebrow{color:#53677a!important}
+.live-dot{background:#315b7d!important;box-shadow:0 0 0 5px #315b7d18!important}
+.hero h1,.section h2,.final-cta h2,.assistant-copy h2,.checklist-panel h2{color:#17212b}
+.hero h1 em,.section h2 em,.final-cta h2 em,.assistant-copy h2 em,.checklist-panel h2 em{color:#315b7d!important}
+.hero-lead,.section-title-row>p,.assistant-copy>p,.checklist-panel>div>p{color:#5f6b77!important}
+.hero-visual{background:#dfe5ea!important;border:1px solid #d4dce3!important;border-radius:12px!important}
+.hero-photo-shade{background:linear-gradient(0deg,rgba(10,18,26,.72),rgba(10,18,26,.03) 75%)!important}
+.visual-label{color:#e5ebf0}
+.visual-label b{color:#fff!important}
+.floating-note{background:rgba(20,31,42,.94)!important;border:1px solid rgba(255,255,255,.18)}
+.note-icon{background:#ffffff18!important;color:#fff!important}
+.proof-strip,.budget-start,.marketplace-intro,.marketplace-country-links a,
+#catalog,.showcase-card,.benchmark-card,.direction-card,.process-grid article,
+.checklist-panel,.account-panel,.faq-list details,.country-callout,.final-cta{
+  background:#fff!important;border-color:#dce2e8!important;box-shadow:0 3px 14px rgba(20,35,50,.035)
+}
+.proof-strip{border-radius:10px}
+.proof-strip>div{border-color:#e3e8ed!important}
+.proof-strip b,.marketplace-intro h2,.budget-start h2,.section h2,.showcase-card h3,
+.direction-card h3,.process-grid h3,.faq-list summary,.account-data-section h3{color:#1b2732!important}
+.proof-strip span,.budget-start p,.direction-card p,.process-grid p,.faq-list details p,
+.showcase-body p,.country-callout p{color:#65717d!important}
+.budget-start{background:#fff!important;border-radius:10px}
+.budget-shortcuts button,.budget-market-shortcuts button{background:#f5f7f9!important;border:1px solid #d8e0e7!important;color:#263747!important;border-radius:7px}
+.budget-shortcuts button:hover,.budget-market-shortcuts button:hover{background:#e8eef3!important;border-color:#9aabba!important}
+.marketplace-country-links a{border:1px solid #dce2e8!important;border-radius:8px}
+.marketplace-country-links a>span{background:#1c2935!important;color:#fff!important;border-radius:5px}
+.marketplace-country-links b{color:#1b2732!important}
+.marketplace-country-links small{color:#6b7782!important}
+.button{border-radius:7px!important;box-shadow:none!important}
+.button-primary{background:#1c2935!important;color:#fff!important;border:1px solid #1c2935!important}
+.button-primary:hover{background:#2d4357!important}
+.button-secondary{background:#fff!important;border:1px solid #bfc9d2!important;color:#263747!important}
+.button-secondary:hover{background:#edf1f4!important}
+.calc-form,.calc-result,.assistant-panel,.vehicle-tools-panel,.auction-decoder-panel,
+.japan-chassis-panel,.tks-panel,.account-auth-panel,.account-data-section,
+.account-cloud-notice,.route-planner-panel,.auction-sample-filter-panel{
+  background:#fff!important;color:#1b2732!important;border:1px solid #dce2e8!important;border-radius:10px!important
+}
+.calc-form label,.assistant-form label,.auction-decoder-panel label,.japan-chassis-controls label{color:#44515e!important}
+.calc-form input,.calc-form select,.assistant-form input,.assistant-form textarea,
+.assistant-form select,.request-output textarea,#catalog input,#catalog select,#catalog textarea,
+#auction-statistics input,#auction-statistics select,.smart-search-panel input,
+.smart-search-panel select,.smart-search-panel textarea,.route-planner-controls select,
+.japan-chassis-row input,.auction-decoder-panel input,.auction-decoder-panel select,
+.auction-decoder-panel textarea,.account-auth-form input{
+  background:#fff!important;color:#1b2732!important;border:1px solid #cbd4dc!important;border-radius:7px!important
+}
+.calc-form input::placeholder,.assistant-form input::placeholder,.assistant-form textarea::placeholder{color:#8b96a0!important}
+.calc-result{background:#f5f7f9!important}
+.result-top,.result-label,.result-lines>div,.result-note{color:#65717d!important}
+.result-total,.result-lines b{color:#1c2935!important}
+.result-icon{background:#e7edf2!important;color:#315b7d!important}
+.result-lines,.result-lines>div{border-color:#dce2e8!important}
+.assistant-panel{background:#fff!important}
+.assistant-disclaimer,.smart-search-warning,.account-cloud-notice{
+  border-left:3px solid #8a9bab!important;background:#f1f4f6!important;color:#526170!important
+}
+.assistant-disclaimer{border-left-color:#8a9bab!important}
+.process-grid article>span,.checklist-panel li span,.faq-list summary::after{color:#315b7d!important}
+.checklist-panel{background:#fff!important}
+.checklist-panel li{color:#465360!important;border-color:#e2e7ec!important}
+.faq-list{border-color:#dce2e8!important}
+.faq-list details{border-bottom:1px solid #dce2e8!important}
+.final-cta{background:#e9eef2!important;border:1px solid #d7e0e7!important}
+.final-cta p{color:#5f6b77!important}
+.site-footer{background:#fff;border-top:1px solid #dce2e8}
+.footer-links,.footer-note,.footer-bottom{color:#65717d!important}
+.social-block{border-color:#dce2e8!important}
+.social-block>strong,.social-links a,.telegram-channel-link{color:#44515e!important}
+.tks-result,.vehicle-results{background:#f5f7f9!important;color:#344453!important;border-color:#dce2e8!important}
+.market-source-card,.smart-search-card,.japan-chassis-card,.account-order-card,
+.account-notification,.auction-stats-card,.auction-stats-results,.vehicle-saved-item,
+.vehicle-compare-table,.saved-search-item,.route-map,.route-summary{
+  background:#fff!important;color:#263747!important;border-color:#dce2e8!important
+}
+.smart-search-card h3,.route-summary h3,.account-order-card>strong,.account-notification>strong{color:#1b2732!important}
+.smart-search-card p,.route-map-note,.route-leg,.route-summary-kicker,
+.account-order-card p,.account-notification p,.account-data-section p{color:#65717d!important}
+.smart-search-badge,.japan-chassis-meta span,.account-order-status,.saved-search-item{
+  background:#f1f4f6!important;color:#435260!important;border-color:#d4dde5!important
+}
+.smart-search-warning,.japan-chassis-test,.account-cloud-notice{border-color:#cbd4dc!important;color:#526170!important}
+.decoder-risk-high,.decoder-high-attention{color:#a33b36!important}
+.decoder-risk-medium{color:#765d31!important}
+.decoder-risk-low{color:#32644a!important}
+.decoder-risk-unknown{color:#5f5680!important}
+.auction-stat-metric,.benchmark-card strong,.result-total{color:#1c2935!important}
+.mobile-dashboard a,.mobile-dashboard a:first-child{
+  background:#fff!important;border:1px solid #dce2e8!important;border-radius:9px!important;
+  box-shadow:0 2px 8px rgba(20,35,50,.04)!important;color:#1b2732!important
+}
+.mobile-dashboard a strong{color:#1b2732!important}
+.mobile-dashboard a span{color:#65717d!important}
+.mobile-dashboard a::after{color:#315b7d!important}
+.mobile-bottom-nav{background:rgba(255,255,255,.97)!important;border-top:1px solid #dce2e8!important}
+.mobile-bottom-nav a,.mobile-bottom-nav a.primary,.mobile-bottom-nav a:active,
+.mobile-bottom-nav a:focus-visible{color:#526170!important}
+.mobile-bottom-nav a.primary{font-weight:800!important;color:#1c2935!important}
+.menu-toggle{background:#fff!important;color:#1c2935!important;border:1px solid #cbd4dc!important}
+.main-nav.open{background:#fff!important;border-color:#dce2e8!important;box-shadow:0 12px 28px rgba(20,35,50,.12)}
+.main-nav.open a{color:#263747!important;border-color:#e7ebef!important}
+:focus-visible{outline:2px solid #315b7d!important}
+@media(max-width:760px){
+ .site-header{background:rgba(255,255,255,.97)!important;border-bottom-color:#dce2e8!important}
+ .marketplace-nav-inner{background:transparent}
+ .mobile-dashboard{gap:8px}
+ .mobile-dashboard a{min-height:88px}
+ .calc-form,.calc-result,.assistant-panel{box-shadow:none!important}
+}
