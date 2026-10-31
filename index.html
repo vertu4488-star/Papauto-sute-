@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="/marketplace.css">
   <link rel="stylesheet" href="/estimate-history.css">
   <link rel="stylesheet" href="/lead-draft-history.css">
+  <link rel="stylesheet" href="/site-tabs.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <script type="application/ld+json">
   {
@@ -52,11 +53,27 @@
   </a>
   <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
   <nav class="main-nav" aria-label="Главная навигация">
-    <a href="/catalog.html">Каталог моделей</a><a href="/catalogs.html">Открытые каталоги</a><a href="#directions">Япония · Корея · Китай</a><a href="#auction-statistics">Аукционы</a><a href="/auction-data.html">Источники данных</a><a href="#calculator">Расчёт цены</a><a href="/delivery.html">Доставка</a><a href="#assistant">PAPAUTO SELECT</a>
+    <a href="/?view=home" data-site-tab="home">Главная</a>
+    <a href="/?view=catalog" data-site-tab="catalog">Каталог</a>
+    <a href="/?view=directions" data-site-tab="directions">Направления</a>
+    <a href="/?view=auctions" data-site-tab="auctions">Аукционы</a>
+    <a href="/?view=calculator" data-site-tab="calculator">Расчёт</a>
+    <a href="/?view=select" data-site-tab="select">PAPAUTO SELECT</a>
+    <a href="/?view=about" data-site-tab="about">О компании</a>
+    <a href="/catalogs.html">Открытые каталоги</a>
+    <a href="/delivery.html">Доставка</a>
   </nav>
-  <a class="header-cta" href="#request">Обсудить подбор <span>↗</span></a>
+  <a class="header-cta" href="/?view=select#assistant">Обсудить подбор <span>↗</span></a>
 </header>
-<nav class="marketplace-nav" aria-label="Разделы автомобильного маркетплейса"><div class="marketplace-nav-inner"><a class="marketplace-nav-strong" href="/catalog.html">Каталог моделей</a><a href="#directions">Япония</a><a href="#directions">Южная Корея</a><a href="#directions">Китай</a><a href="#auction-statistics">Аукционная статистика</a><a href="#popular-models">Популярные модели</a><a href="#calculator">Калькулятор под ключ</a><a href="#assistant">Умный подбор</a></div></nav>
+<nav class="site-tabs" aria-label="Разделы сайта">
+  <a href="/?view=home" data-site-tab="home">Главная</a>
+  <a href="/?view=catalog" data-site-tab="catalog">Каталог автомобилей</a>
+  <a href="/?view=directions" data-site-tab="directions">Япония · Корея · Китай</a>
+  <a href="/?view=auctions" data-site-tab="auctions">Аукционы и статистика</a>
+  <a href="/?view=calculator" data-site-tab="calculator">Калькулятор</a>
+  <a href="/?view=select" data-site-tab="select">Подбор PAPAUTO SELECT</a>
+  <a href="/?view=about" data-site-tab="about">О компании</a>
+</nav>
 
 <main id="main">
   <section class="hero wrap">
@@ -628,13 +645,15 @@
   <p class="footer-note">Предварительные расчёты носят информационный характер и не являются публичной офертой. Данные о стоимости и возможности ввоза уточняются перед сделкой.</p>
   <div class="footer-bottom"><span>© <span id="year"></span> PAPAUTO</span><span>Доставка по регионам России</span></div>
 </footer>
-<nav class="mobile-bottom-nav" aria-label="Быстрая навигация">
-  <a class="primary" href="#assistant"><span>⌕</span>Подбор</a>
-  <a href="#calculator"><span>▤</span>Расчёт</a>
-  <a href="#auction-statistics"><span>◷</span>Статистика</a>
-  <a href="#catalog"><span>▦</span>Каталог</a>
+<nav class="mobile-bottom-nav" aria-label="Разделы PAPAUTO">
+  <a href="/?view=home" data-site-tab="home"><span>⌂</span>Главная</a>
+  <a href="/?view=catalog" data-site-tab="catalog"><span>▦</span>Каталог</a>
+  <a href="/?view=directions" data-site-tab="directions"><span>◎</span>Направления</a>
+  <a href="/?view=calculator" data-site-tab="calculator"><span>▤</span>Расчёт</a>
+  <a class="primary" href="/?view=select" data-site-tab="select"><span>⌕</span>Подбор</a>
 </nav>
-<script src="/site-config.js"></script>\n<script src="/account.js" defer></script>
+<script src="/site-config.js"></script>
+<script src="/site-tabs.js" defer></script>\n<script src="/account.js" defer></script>
 <script src="/app.js" defer></script>
 <script src="/marketplace-interactions.js" defer></script>
 <script src="/saved-searches.js" defer></script>
