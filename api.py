@@ -1342,6 +1342,12 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
                 sample_records = []
         message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") сформированы прямые поиски по японским архивам и публичной модельной статистике. PAPAUTO пока не имеет лицензированного автоматического потока полных лотов, поэтому закрытые данные не копируются." + (" Ниже дополнительно показана небольшая проверенная выборка RAV4, отфильтрованная по вашим параметрам." if sample_stats else " Если выборка PAPAUTO отсутствует, откройте один из источников ниже — поиск уже подготовлен по вашей модели.")
     else:
+        # First attempt a live, model-specific request to TTPAI. Only supported
+        # public model pages are queried; no sample prices are substituted.
+        china_stats = await fetch_ttpai_model_stats(make, model)
+        if china_stats and china_stats.get("ok"):
+            logger.info("PAPAUTO China auction-statistics request succeeded: make=%s model=%s", make, model)
+            return china_stats
         china_market_sample = [
             {"name": "Tesla Model 3 · Shanghai", "age_3_avg_cny": 120900, "age_5_avg_cny": 97500, "age_7_avg_cny": 88100,
              "recent_sales": "2026-09-21 · 2020 model · 101 000 km; 2026-09-04 · 2020 model · 9 000 km; 2026-09-03 · 2022 model · 92 000 km",
