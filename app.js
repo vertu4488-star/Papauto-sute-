@@ -113,7 +113,38 @@ if(aiSelectButton)aiSelectButton.addEventListener("click",async()=>{
   out.replaceChildren(summary);
   const note=document.createElement("p");note.className="ai-select-disclaimer";
   note.textContent="Поиск использует доступные открытые источники. Бюджет, тип привода и коробка не применяются как фильтры, если источник их не предоставляет.";
-  out.append(note);out.hidden=false;
+  out.append(note);
+   try{
+    const budgetValue=Number($("budget").value||0);
+    const selectionResponse=await fetch(api+"/api/assistant/select",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({
+     message,country,budget:budgetValue>0?budgetValue:null,city:$("city").value.trim()||"Новосибирск",
+     make:$("carMake").value.trim()||f.make||"",model:$("carModel").value.trim()||f.model||"",
+     year_from:$("yearFrom").value?Number($("yearFrom").value):(f.year_from||null),
+     year_to:$("yearTo").value?Number($("yearTo").value):(f.year_to||null),
+     mileage_max:$("maxMileage").value?Number($("maxMileage").value):(f.mileage_max||null)
+    })});
+    const shortlist=await selectionResponse.json().catch(()=>({}));
+    if(selectionResponse.ok&&Array.isArray(shortlist.recommendations)){
+     const heading=document.createElement("h3");heading.className="ai-select-summary";heading.textContent=shortlist.summary||"Предварительные рекомендации PAPAUTO";out.append(heading);
+     shortlist.recommendations.forEach(item=>{
+      const card=document.createElement("article");card.className="ai-select-card";
+      const title=document.createElement("h3");title.textContent=[item.make,item.model].filter(Boolean).join(" ");
+      const why=document.createElement("p");why.textContent=item.why||"Подходит для дальнейшего рассмотрения.";
+      const checks=document.createElement("p");checks.textContent="Что проверить: "+(item.checks||"комплектацию и состояние конкретного автомобиля.");
+      const market=document.createElement("small");market.textContent="Рынки: "+(Array.isArray(item.markets)?item.markets.join(", "):"уточняются")+" · актуальные лоты не подтверждены";
+      card.append(title,why,checks,market);out.append(card);
+     });
+     if(Array.isArray(shortlist.questions)&&shortlist.questions.length){
+      const questions=document.createElement("p");questions.className="ai-select-disclaimer";questions.textContent="Чтобы уточнить подбор: "+shortlist.questions.join(" ");
+      out.append(questions);
+     }
+     if(shortlist.disclaimer){const disclaimer=document.createElement("p");disclaimer.className="ai-select-disclaimer";disclaimer.textContent=shortlist.disclaimer;out.append(disclaimer)}
+    }
+   }catch(shortlistError){
+    const fallback=document.createElement("p");fallback.className="ai-select-disclaimer";fallback.textContent="Справочный список моделей временно недоступен; параметры поиска сохранены.";
+    out.append(fallback);
+   }
+   out.hidden=false;
   status.textContent="Параметры перенесены в каталог. Выполняю бесплатный поиск…";
   const form=$("vehicleSearchForm");if(form)form.requestSubmit();else status.textContent="Параметры готовы. Перейдите в каталог и нажмите «Найти автомобили».";
  }catch(error){status.textContent=error.message||"Ошибка бесплатного подбора."}
