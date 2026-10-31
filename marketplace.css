@@ -199,3 +199,24 @@ button:hover,.button:hover{transform:translateY(-1px)}
 .account-notification-read{margin:8px 8px 0 0;border:1px solid #526171;border-radius:7px;background:#17232e;color:#dce6ed;padding:7px 10px;font-size:11px;cursor:pointer}
 .account-notification a{display:inline-block;margin:8px 0 0;color:#dce6ed;font-size:12px}
 @media(max-width:650px){.account-auth-form{grid-template-columns:1fr}.account-auth-form button{width:100%}.account-auth-panel,.account-data-section{padding:13px}}
+
+/* Interactive auction sheet decoder */
+.auction-decoder-panel{margin:26px 0 8px;padding:22px;border:1px solid var(--line);border-radius:14px;background:#101b25}
+.auction-decoder-panel h3{margin:8px 0;font-size:22px}
+.auction-decoder-panel form{display:grid;gap:13px}
+.auction-decoder-panel .form-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.auction-decoder-panel label{display:grid;gap:7px;color:#b9c6d0;font-size:12px}
+.auction-decoder-panel input,.auction-decoder-panel select,.auction-decoder-panel textarea{width:100%;min-width:0;padding:10px 12px;border:1px solid #344453;border-radius:8px;background:#0a131c;color:#f1f5f8}
+.decoder-code-chips{display:flex;flex-wrap:wrap;gap:7px}
+.decoder-code-chips button{padding:7px 10px;border:1px solid #526171;border-radius:7px;background:#17232e;color:#eaf0f5;cursor:pointer}
+.auction-decoder-result{margin-top:18px}
+.decoder-result-item,.decoder-risk-summary{margin:10px 0;padding:13px;border:1px solid var(--line);border-radius:9px;background:#0c151e}
+.decoder-result-item p,.decoder-risk-summary p,.decoder-disclaimer{color:#aab8c4;font-size:12px;line-height:1.65}
+.decoder-code-row{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;padding:9px 0;border-top:1px solid var(--line);font-size:12px}
+.decoder-code-row em{font-style:normal;font-size:10px;color:#c7d4de}
+.decoder-risk-high{color:#f0b6a8!important}.decoder-risk-medium{color:#e5d1a5!important}.decoder-risk-low{color:#a9c8b7!important}.decoder-risk-unknown{color:#c4b4e2!important}
+.decoder-high-attention{display:block;color:#f0b6a8;margin:8px 0}
+.decoder-checklist,.decoder-risk-summary ul{padding-left:20px;color:#c5d1db;font-size:12px;line-height:1.8}
+.decoder-source-note{color:#9eb0bf;font-size:11px}
+@media(max-width:760px){.auction-decoder-panel{padding:14px}.auction-decoder-panel .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.decoder-code-row{grid-template-columns:42px 1fr}.decoder-code-row em{grid-column:2}}
+@media(max-width:420px){.auction-decoder-panel .form-grid{grid-template-columns:1fr}}
