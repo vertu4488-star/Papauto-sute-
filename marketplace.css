@@ -371,3 +371,42 @@ a{color:inherit}
  .mobile-dashboard a{min-height:88px}
  .calc-form,.calc-result,.assistant-panel{box-shadow:none!important}
 }
+
+
+/* PAPAUTO — refined Apple-inspired typography and quiet AI identity */
+:root{
+  --font-system:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,sans-serif;
+}
+html,body,button,input,select,textarea{
+  font-family:var(--font-system)!important;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+body{font-weight:350;letter-spacing:-.012em}
+h1,h2,h3,h4,.brand-name,.main-nav,.marketplace-nav a,.button{
+  font-family:var(--font-system)!important;
+  font-weight:400;
+  letter-spacing:-.035em;
+}
+.hero h1{font-weight:350;letter-spacing:-.055em;line-height:1.04}
+.hero h1 em,.section h2 em{font-weight:300}
+.hero-lead,.section-title-row>p,.assistant-copy>p{
+  font-weight:350;line-height:1.75;letter-spacing:-.012em
+}
+.eyebrow{font-weight:550;letter-spacing:.12em}
+.main-nav a,.marketplace-nav a{font-weight:450}
+.header-cta,.button{font-weight:500;letter-spacing:-.01em}
+.ai-assistant-mark{
+  width:58px;height:58px;flex:0 0 58px;
+  display:inline-flex;align-items:center;justify-content:center;gap:2px;
+  border:1px solid rgba(180,199,216,.28);
+  border-radius:19px;
+  background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.035));
+  color:#eaf2f8;
+  box-shadow:0 8px 26px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.12);
+  font-size:10px;font-weight:650;letter-spacing:.08em;
+}
+.ai-assistant-mark svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
+.assistant-title-line{gap:18px;align-items:center}
+@media(max-width:600px){.ai-assistant-mark{width:48px;height:48px;flex-basis:48px;border-radius:16px}.ai-assistant-mark svg{width:22px;height:22px}}
