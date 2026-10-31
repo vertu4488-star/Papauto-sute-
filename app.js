@@ -241,8 +241,8 @@ if(auctionStatsForm){
     out.append(el("span","auction-status-pill","Проверяемые источники · без выдуманных цен"),el("h3","","Источники для "+[$("auctionMake").value.trim(),$("auctionModel").value.trim()].filter(Boolean).join(" ")),el("p","",data.message||"Выберите источник и проверьте реальные записи."));
     if(Array.isArray(data.model_search_links)&&data.model_search_links.length){
      const panel=el("section","auction-sample-panel");
-     panel.append(el("div","eyebrow","ЯПОНИЯ · ПОИСК ПО ВЫБРАННОЙ МОДЕЛИ"),el("h3","","Открыть подготовленные поиски в аукционных архивах"));
-     panel.append(el("p","auction-sample-note","Ссылки уже учитывают марку, модель и годы там, где источник поддерживает такие параметры. Мы не копируем закрытые базы: цены, фотографии и аукционные листы открываются у владельца источника."));
+     panel.append(el("div","eyebrow",(country.value==="south-korea"?"ЮЖНАЯ КОРЕЯ":country.value==="china"?"КИТАЙ":"ЯПОНИЯ")+" · ПОИСК ПО ВЫБРАННОЙ МОДЕЛИ"),el("h3","","Открыть подготовленные поиски по выбранным параметрам"));
+     panel.append(el("p","auction-sample-note","Ссылки подготовлены с учётом марки, модели и годов выпуска. Для Кореи и Китая это поиск по открытым каталогам; для Японии — архивы и статистика. Мы не копируем закрытые базы: карточки, цены и аукционные листы открываются у владельца источника."));
      const grid=el("div","auction-source-results");
      data.model_search_links.forEach(source=>{
       const card=el("article","auction-source-result");
