@@ -163,6 +163,20 @@ class VehicleAssistantSearchTests(unittest.IsolatedAsyncioTestCase):
         search.assert_not_awaited()
 
 
+class FreeModeSafetyTests(unittest.IsolatedAsyncioTestCase):
+    async def test_customs_calculator_never_calls_tks_even_if_old_key_exists(self):
+        payload = api.CustomsRequest(
+            cost=1500000, volume=1800, power=120, currency="392",
+            engine_type="petrol", age="35", face="nat"
+        )
+        with patch.dict(os.environ, {"TKS_AUTO_API_KEY": "a" * 32}, clear=False), \\
+             patch("api.httpx.AsyncClient") as client:
+            with self.assertRaises(api.HTTPException) as ctx:
+                await api.calculate_customs(payload)
+        self.assertEqual(ctx.exception.status_code, 503)
+        client.assert_not_called()
+
+
 class JapanChassisSearchTests(unittest.IsolatedAsyncioTestCase):
     async def test_japan_chassis_search_normalizes_and_returns_free_match_summary(self):
         class JPResponse:
