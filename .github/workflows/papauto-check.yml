@@ -53,6 +53,7 @@ jobs:
           node --check route-planner.js
           node --check voice-assistant.js
       - name: Wait for Render API deployment and test Japan source hub
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
@@ -84,6 +85,7 @@ jobs:
           print("Japan source hub and RAV4 sample OK:", len(data["sources"]), "sources,", len(data["records"]), "sold sample lots")
           PY
       - name: Test Japan model-specific search links
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
@@ -107,6 +109,7 @@ jobs:
           print("Prius model search links OK:", len(links), "sources incl. Aleado statistics and free demo")
           PY
       - name: Test Aleado manufacturer search
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
@@ -122,6 +125,7 @@ jobs:
           print("Honda manufacturer archive link OK")
           PY
       - name: Test Russian model-name normalization
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
@@ -136,6 +140,7 @@ jobs:
           print("Russian make/model normalization OK")
           PY
       - name: Test Japan vehicle search fallback
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
@@ -148,6 +153,7 @@ jobs:
           print("Japan vehicle search fallback OK")
           PY
       - name: Test China source hub
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
@@ -156,25 +162,11 @@ jobs:
           import json
           with open("/tmp/china.json", encoding="utf-8") as f:
               data = json.load(f)
-          kind = data.get("data_type")
-          if kind == "china_model_live":
-              assert data.get("source") == "TTPAI · история сделок подержанных автомобилей", data
-              assert data.get("recent_sales"), data
-              assert data.get("source_url", "").startswith("https://www.ttpai.cn/"), data
-              assert "не полный архив" in data.get("disclaimer", ""), data
-              assert data.get("transaction_count") is None or isinstance(data.get("transaction_count"), int), data
-              print("China TTPAI history OK:", len(data["recent_sales"]), "historical transactions; not active listings")
-          elif kind == "source_hub":
-              assert data.get("source_hub_version") == "2026-10-30-r12", data
-              assert len(data.get("sources", [])) >= 5, data
-              assert data.get("sample_stats") is None, data
-              assert data.get("records") == [], data
-              assert len(data.get("china_judicial_sample", [])) >= 4, data
-              assert len(data.get("china_market_sample", [])) == 3, data
-              assert data["china_market_sample"][2].get("photo_example_url"), data
-              print("China source hub OK:", len(data["sources"]), "sources,", len(data["china_market_sample"]), "TTPAI model samples incl. public photo link,", len(data["china_judicial_sample"]), "judicial examples")
-          else:
-              raise AssertionError("Unexpected China response type: " + str(kind))
+          assert data.get("data_type") == "source_hub", data
+          assert data.get("records") == [], data
+          assert len(data.get("sources", [])) >= 3, data
+          assert "TTPAI" not in str(data.get("source", "")), data
+          print("China free-only source hub OK:", len(data["sources"]), "public catalog links; no metered API records")
           PY
 
       - name: Verify Korean live listings after production deploy
@@ -189,10 +181,11 @@ jobs:
               if python - <<'PY'
           import json
           data = json.load(open("/tmp/korea.json", encoding="utf-8"))
-          if data.get("record_type") == "current_listing" and data.get("source") == "XAPI Korea":
-              print("Korea live listing endpoint OK; records returned:", data.get("returned_count"))
+          if data.get("data_type") == "source_hub" and any("Encar" in item.get("name", "") for item in data.get("sources", [])):
+              assert data.get("records") == [], data
+              print("Korea free-only source hub OK; metered XAPI listings are disabled.")
               raise SystemExit(0)
-          print("Waiting for live route; current response:", data.get("data_type") or data.get("detail") or "unknown")
+          print("Waiting for free-only route; current response:", data.get("data_type") or data.get("detail") or "unknown")
           raise SystemExit(1)
           PY
               then

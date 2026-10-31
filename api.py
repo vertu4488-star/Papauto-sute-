@@ -318,6 +318,7 @@ class VehicleAssistantInput(BaseModel):
 
 @app.post("/api/assistant/vehicle")
 async def vehicle_assistant(req: VehicleAssistantInput):
+    raise HTTPException(status_code=503, detail="В бесплатном режиме серверный ИИ отключён: платные AI API не вызываются. Используйте бесплатный локальный поиск и голосовой ввод браузера.")
     """Extract vehicle-import parameters from natural language and calculate customs when sufficient data is known."""
     gemini_key = (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_AI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
     if not gemini_key:
@@ -569,6 +570,32 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
         raise HTTPException(status_code=400, detail="Минимальный объём двигателя не может быть больше максимального.")
     limit = min(max(limit, 1), 50)
 
+    # Free-only mode: do not call third-party metered APIs (XAPI Korea / TTPAI).
+    # Korea shows only the public monthly association summary when available;
+    # individual listings remain user-initiated links to the source marketplace.
+    if country == "china":
+        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Публичные источники Китая",
+                "count": 0, "records": [], "sources": [
+                    {"name": "Guazi — объявления автомобилей", "url": "https://www.guazi.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"},
+                    {"name": "Che168 — каталог автомобилей", "url": "https://www.che168.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"},
+                    {"name": "Dongchedi — автомобильный каталог", "url": "https://www.dongchedi.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Объявления и обзоры"}],
+                "message": "Для Китая доступны бесплатные переходы к открытым каталогам. Автоматические платные или тарифицируемые запросы отключены.",
+                "disclaimer": "Ссылки ведут на внешние площадки. Их цены и наличие проверяйте на странице продавца; PAPAUTO не копирует и не гарантирует внешние объявления."}
+    if country == "south-korea":
+        public_stats = await fetch_korea_monthly_stats()
+        if public_stats.get("ok"):
+            rows = public_stats.get("history", [])
+            return {"ok": True, "country": country, "data_type": "source_hub", "source": public_stats.get("source"),
+                    "count": len(rows), "records": [], "model_search_links": [],
+                    "sources": [{"name": "Encar — каталог автомобилей Кореи", "url": "https://www.encar.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"},
+                                {"name": public_stats.get("source", "Корейская ассоциация"), "url": public_stats.get("source_url", "https://www.kasa.or.kr/"), "access": "Открытая агрегированная статистика", "data_kind": "Месячные итоги рынка"}],
+                    "message": "Открытая статистика и каталоги доступны по ссылкам. Запросы к платным/лимитируемым API отключены.",
+                    "disclaimer": public_stats.get("disclaimer", "Агрегированная статистика не является каталогом индивидуальных лотов.")}
+        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Encar", "count": 0, "records": [],
+                "sources": [{"name": "Encar — каталог автомобилей Кореи", "url": "https://www.encar.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"}],
+                "message": "Автоматический API-поиск отключён в бесплатном режиме. Откройте каталог Encar.",
+                "disclaimer": "Внешние объявления и цены проверяются на сайте источника."}
+
     if country == "china":
         live_china = await fetch_ttpai_model_stats(make, model)
         if live_china and live_china.get("ok"):
@@ -804,95 +831,128 @@ class VehicleSearchAssistantInput(BaseModel):
 
 @app.post("/api/assistant/search")
 async def assistant_search_vehicles(req: VehicleSearchAssistantInput):
-    """Turn a free-form vehicle request into validated filters, then query configured sources."""
-    gemini_key = (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_AI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
-    if not gemini_key:
-        raise HTTPException(status_code=503, detail="ИИ-подборщик временно недоступен: ключ Gemini не настроен на сервере.")
-    import json
-    prompt = {
-        "instruction": (
-            "Ты извлекаешь параметры поиска автомобиля из свободного русского текста. "
-            "Верни строго JSON без Markdown: {reply, filters, preferences_not_applied}. "
-            "filters: make, model, year_from, year_to, mileage_max, volume_min, volume_max, body, grade, lot_number. "
-            "Для неизвестных строк верни пустую строку, для неизвестных чисел null. "
-            "Не угадывай характеристики, бюджет в рублях не превращай в цену лота в иенах/вонах/юанях. "
-            "Если пользователь не назвал год, используй year_from=1990 и year_to=2030. "
-            "В preferences_not_applied перечисли требования вроде коробки, привода, цвета, топлива, "
-            "состояния или комплектации, если текущий фильтр их не поддерживает. "
-            "Не утверждай, что найденные машины подходят по этим неподдерживаемым требованиям."
-        ),
-        "country": req.country,
-        "city": req.city,
-        "request": req.message,
+    """Parse a vehicle request locally; never call a metered generative-AI API."""
+    import re
+
+    raw = req.message.strip()
+    normalized = raw.casefold().replace("ё", "е")
+
+    make_aliases = {
+        "toyota": ["toyota", "тойота", "тойоты", "тойоту"],
+        "honda": ["honda", "хонда", "хонду"],
+        "nissan": ["nissan", "ниссан", "ниссанов"],
+        "mazda": ["mazda", "мазда", "мазду"],
+        "mitsubishi": ["mitsubishi", "митсубиси"],
+        "subaru": ["subaru", "субару"],
+        "suzuki": ["suzuki", "сузуки"],
+        "lexus": ["lexus", "лексус"],
+        "hyundai": ["hyundai", "хендай", "хундай"],
+        "kia": ["kia", "киа"],
+        "byd": ["byd", "бид"],
+        "volkswagen": ["volkswagen", "фольксваген", "vw"],
+        "bmw": ["bmw", "бмв"],
+        "mercedes-benz": ["mercedes", "мерседес"],
+        "audi": ["audi", "ауди"],
+        "volvo": ["volvo", "вольво"],
+        "tesla": ["tesla", "тесла"],
     }
-    try:
-        async with httpx.AsyncClient(timeout=25.0) as client:
-            response = await client.post(
-                "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
-                headers={"x-goog-api-key": gemini_key},
-                json={
-                    "contents": [{"role": "user", "parts": [{"text": json.dumps(prompt, ensure_ascii=False)}]}],
-                    "generationConfig": {"responseMimeType": "application/json", "temperature": 0.1}
-                }
-            )
-        if response.status_code != 200:
-            logger.error("Gemini vehicle search parsing failed: HTTP %s", response.status_code)
-            raise HTTPException(status_code=502, detail="ИИ не смог разобрать запрос. Попробуйте описать машину короче.")
-        payload = response.json()
-        candidates = payload.get("candidates") or []
-        parts = (candidates[0].get("content") or {}).get("parts") or [] if candidates else []
-        raw = next((part.get("text", "") for part in parts if part.get("text")), "")
-        parsed = json.loads(raw)
-        filters = parsed.get("filters") or {}
-        if not isinstance(filters, dict):
-            raise ValueError("filters must be an object")
-        def clean_text(name, limit=80):
-            value = filters.get(name)
-            return str(value).strip()[:limit] if value not in (None, "") else ""
-        def clean_int(name, default=None, minimum=0, maximum=2030):
-            value = filters.get(name)
-            if value in (None, ""):
-                return default
-            number = int(float(value))
-            return min(max(number, minimum), maximum)
-        year_from = clean_int("year_from", 1990, 1990, 2030)
-        year_to = clean_int("year_to", 2030, 1990, 2030)
-        if year_from > year_to:
-            year_from, year_to = year_to, year_from
-        search_filters = {
-            "country": req.country,
-            "make": clean_text("make"),
-            "model": clean_text("model"),
-            "year_from": year_from,
-            "year_to": year_to,
-            "mileage_max": clean_int("mileage_max", None, 0, 2_000_000),
-            "volume_min": clean_int("volume_min", None, 0, 20_000),
-            "volume_max": clean_int("volume_max", None, 0, 20_000),
-            "body": clean_text("body", 60),
-            "grade": clean_text("grade", 10),
-            "lot_number": clean_text("lot_number", 40),
-            "limit": 20,
-        }
-        if search_filters["volume_min"] is not None and search_filters["volume_max"] is not None and search_filters["volume_min"] > search_filters["volume_max"]:
-            raise HTTPException(status_code=422, detail="В запросе указан противоречивый диапазон объёма двигателя.")
-        result = await search_vehicles(**search_filters)
-        preferences = parsed.get("preferences_not_applied") or []
-        if not isinstance(preferences, list):
-            preferences = []
-        preferences = [str(x).strip()[:160] for x in preferences if str(x).strip()][:10]
-        return {
-            "ok": True,
-            "reply": str(parsed.get("reply") or "Я разобрал запрос и подготовил поиск.")[:500],
-            "filters": search_filters,
-            "preferences_not_applied": preferences,
-            "city": req.city,
-            "search": result,
-        }
-    except HTTPException:
-        raise
-    except (httpx.RequestError, ValueError, KeyError, IndexError, TypeError) as exc:
-        logger.warning("Vehicle assistant search could not complete: %s", type(exc).__name__)
-        raise HTTPException(status_code=502, detail="Не удалось разобрать запрос или получить результаты. Попробуйте уточнить марку и модель.")
+    make = ""
+    for canonical, aliases in make_aliases.items():
+        if any(re.search(r"(?<![a-zа-я0-9])" + re.escape(alias) + r"(?![a-zа-я0-9])", normalized) for alias in aliases):
+            make = canonical.title() if canonical != "byd" else "BYD"
+            break
+
+    model_aliases = {
+        "rav4": ["rav4", "рав4", "рав 4", "рав-4"],
+        "prius": ["prius", "приус"],
+        "fit": ["fit", "фит"],
+        "vezel": ["vezel", "vezel", "везел"],
+        "cr-v": ["cr-v", "crv", "срв", "црв"],
+        "cx-5": ["cx-5", "cx5", "сх5"],
+        "x-trail": ["x-trail", "xtrail", "икстрейл", "х-трейл"],
+        "outlander": ["outlander", "аутлендер"],
+        "forester": ["forester", "форестер"],
+        "corolla": ["corolla", "королла"],
+        "camry": ["camry", "камри"],
+        "vitz": ["vitz", "витц"],
+        "aqua": ["aqua", "аква"],
+        "land cruiser prado": ["land cruiser prado", "prado", "прадо"],
+        "avante": ["avante", "elantra", "авант", "элантра"],
+        "sportage": ["sportage", "спортейдж"],
+        "sorento": ["sorento", "соренто"],
+        "song": ["song", "сонг"],
+        "model 3": ["model 3", "модель 3"],
+    }
+    model = ""
+    for canonical, aliases in model_aliases.items():
+        if any(alias in normalized for alias in aliases):
+            model = canonical.upper() if canonical in {"rav4", "cx-5", "cr-v", "x-trail"} else canonical.title()
+            break
+
+    years = [int(value) for value in re.findall(r"(?<!\d)(?:19|20)\d{2}(?!\d)", normalized)]
+    year_from, year_to = (min(years), max(years)) if years else (1990, 2030)
+
+    mileage_max = None
+    mileage_match = re.search(r"(?:пробег\s*)?до\s*(\d+(?:[.,]\d+)?)\s*(тыс(?:\.?|яч)?|км)", normalized)
+    if mileage_match:
+        number = float(mileage_match.group(1).replace(",", "."))
+        mileage_max = int(number * 1000 if "тыс" in mileage_match.group(2) else number)
+
+    volume_min = volume_max = None
+    volume_range = re.search(r"(?:от|между)\s*(\d+(?:[.,]\d+)?)\s*(?:до|[-–])\s*(\d+(?:[.,]\d+)?)\s*(?:л(?:итр(?:а|ов)?)?)(?![а-я])", normalized)
+    if volume_range:
+        volumes = [int(float(value.replace(",", ".")) * 1000) for value in volume_range.groups()]
+    else:
+        volume_values = re.findall(r"(\d+(?:[.,]\d+)?)\s*(?:л(?:итр(?:а|ов)?)?)(?![а-я])", normalized)
+        cc_values = re.findall(r"(\d{4,5})\s*(?:см\s*[³3]|куб\.?\s*см)", normalized)
+        volumes = [int(float(value.replace(",", ".")) * 1000) for value in volume_values]
+        volumes.extend(int(value) for value in cc_values)
+    if len(volumes) >= 2:
+        volume_min, volume_max = volumes[0], volumes[1]
+    elif volumes:
+        volume_min = volume_max = volumes[0]
+
+    body = ""
+    for phrase, value in (("кроссовер", "SUV"), ("внедорожник", "SUV"), ("suv", "SUV"),
+                          ("седан", "Sedan"), ("универсал", "Wagon"), ("минивэн", "Minivan"),
+                          ("хэтчбек", "Hatchback"), ("купе", "Coupe")):
+        if phrase in normalized:
+            body = value
+            break
+
+    grade_match = re.search(r"(?:оценка|грейд|grade)\s*([0-9](?:\.[0-9])?|[rs])", normalized)
+    grade = grade_match.group(1).upper() if grade_match else ""
+    lot_match = re.search(r"(?:лот|lot)\s*#?\s*([a-z0-9-]{3,24})", normalized)
+    lot_number = lot_match.group(1).upper() if lot_match else ""
+
+    preferences = []
+    for phrase in ("полный привод", "4wd", "awd", "не вариатор", "без вариатора",
+                   "автомат", "механика", "дизель", "бензин", "гибрид", "электро",
+                   "белый", "черный", "чёрный", "красный", "кожаный салон"):
+        if phrase in normalized:
+            preferences.append(phrase)
+
+    search_filters = {
+        "country": req.country, "make": make, "model": model,
+        "year_from": year_from, "year_to": year_to,
+        "mileage_max": mileage_max, "volume_min": volume_min,
+        "volume_max": volume_max, "body": body, "grade": grade,
+        "lot_number": lot_number, "limit": 20,
+    }
+    if volume_min is not None and volume_max is not None and volume_min > volume_max:
+        raise HTTPException(status_code=422, detail="В запросе указан противоречивый диапазон объёма двигателя.")
+
+    result = await search_vehicles(**search_filters)
+    reply = "Запрос разобран локально, без обращения к платному ИИ-сервису. "
+    if not make and not model:
+        reply += "Марку и модель не удалось определить автоматически — укажите их в полях поиска."
+    else:
+        reply += "Проверьте распознанные параметры перед переходом к источникам."
+    return {
+        "ok": True, "reply": reply, "filters": search_filters,
+        "preferences_not_applied": preferences, "city": req.city,
+        "search": result, "processing_mode": "local_free",
+    }
 
 
 
@@ -1024,6 +1084,26 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
     if year_from < 1990 or year_to > 2030 or year_from > year_to:
         raise HTTPException(status_code=400, detail="Проверьте диапазон годов выпуска.")
     limit = min(max(limit, 1), 30)
+
+    # Free-only mode: never call metered third-party inventory/statistics APIs.
+    if country == "china":
+        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Публичные источники Китая",
+                "count": 0, "records": [], "sources": [
+                    {"name": "Guazi — рынок подержанных авто", "url": "https://www.guazi.com/", "access": "Публичный каталог", "data_kind": "Объявления"},
+                    {"name": "Che168 — каталог авто", "url": "https://www.che168.com/", "access": "Публичный каталог", "data_kind": "Объявления"},
+                    {"name": "Dongchedi — каталог и обзоры", "url": "https://www.dongchedi.com/", "access": "Публичный сайт", "data_kind": "Объявления и обзоры"}],
+                "message": "Автоматические платные API-запросы отключены. Используйте открытые каталоги.",
+                "disclaimer": "Это внешние каталоги, а не архив завершённых аукционов. Цены и наличие проверяйте у продавца."}
+    if country == "south-korea":
+        public_stats = await fetch_korea_monthly_stats()
+        sources = [{"name": "Encar — активные объявления", "url": "https://www.encar.com/", "access": "Публичный каталог", "data_kind": "Текущие объявления, не цены завершённых торгов"}]
+        if public_stats.get("ok"):
+            sources.append({"name": public_stats.get("source", "Корейская ассоциация"), "url": public_stats.get("source_url", "https://www.kasa.or.kr/"),
+                            "access": "Открытая агрегированная статистика", "data_kind": "Месячные итоги аукционного рынка"})
+        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Открытые источники Кореи",
+                "count": 0, "records": [], "sources": sources,
+                "message": "В бесплатном режиме показываем открытые источники и официальную месячную сводку, если она доступна. Платный API-каталог не вызывается.",
+                "disclaimer": "Активные объявления Encar не являются результатами завершённых аукционов."}
     make, model, grade = make.strip()[:80], model.strip()[:80], grade.strip()[:12]
     model_search_links = _japan_model_search_links(make, model, year_from, year_to) if country == "japan" else []
     if country == "china":
@@ -1334,6 +1414,7 @@ class VehicleSelectionInput(BaseModel):
 
 @app.post("/api/assistant/select")
 async def assistant_select(req: VehicleSelectionInput):
+    raise HTTPException(status_code=503, detail="В бесплатном режиме серверный ИИ отключён: платные AI API не вызываются. Используйте бесплатный локальный поиск и голосовой ввод браузера.")
     """Create a grounded shortlist and follow-up questions; never pretend recommendations are live auction lots."""
     gemini_key = (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_AI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
     if not gemini_key:
@@ -1474,6 +1555,7 @@ async def assistant_select(req: VehicleSelectionInput):
 
 @app.post("/api/voice/transcribe")
 async def voice_transcribe(request: Request):
+    raise HTTPException(status_code=503, detail="В бесплатном режиме серверный ИИ отключён: платные AI API не вызываются. Используйте бесплатный локальный поиск и голосовой ввод браузера.")
     """Transcribe Russian voice requests with Gemini Flash in one pass."""
     audio = await request.body()
     if not audio:

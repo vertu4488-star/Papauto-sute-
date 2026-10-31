@@ -149,3 +149,7 @@ button:hover,.button:hover{transform:translateY(-1px)}
 .japan-chassis-note{margin-top:12px;color:#aebdca;font-size:11px;line-height:1.55}
 .japan-chassis-test{display:inline-block;margin-bottom:8px;padding:4px 8px;border:1px solid #9a8152;border-radius:20px;color:#e3c58e;font-size:10px}
 @media(max-width:650px){.japan-chassis-panel{padding:14px}.japan-chassis-row{align-items:stretch;flex-direction:column}.japan-chassis-row .button{width:100%}}
+
+/* Free archive search links */
+.japan-chassis-source-link{display:block;width:fit-content;margin:8px 0;padding:9px 12px;border:1px solid var(--line);border-radius:8px;color:#dce7ef;text-decoration:none;font-size:12px;background:#111e29}
+.japan-chassis-source-link:hover{border-color:#8aa7bf;color:#fff}

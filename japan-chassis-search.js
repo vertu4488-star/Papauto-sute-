@@ -1,46 +1,27 @@
 (()=>{"use strict";
-const $=id=>document.getElementById(id);
-const input=$("japanChassisInput"),button=$("japanChassisSearch"),status=$("japanChassisStatus"),out=$("japanChassisResults");
-const cfg=window.PAPAUTO_CONFIG||{};
-if(!input||!button||!status||!out)return;
-const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node};
-const addMeta=(parent,label,value)=>{if(value===null||value===undefined||String(value).trim()==="")return;parent.append(el("span","",label+": "+value))};
-function render(data){
- out.replaceChildren();
- if(data.test_data)out.append(el("span","japan-chassis-test","ТЕСТОВАЯ ЗАПИСЬ ИСТОЧНИКА — НЕ РЕАЛЬНЫЙ ЛОТ"));
- if(!data.found||!data.matches.length){out.append(el("p","japan-chassis-note","В архиве JP Sheet не найдено совпадений по этому номеру кузова. Это не доказывает, что автомобиль никогда не участвовал в торгах: покрытие зависит от доступных источнику архивов."));return}
- data.matches.forEach((item,index)=>{
-   const card=el("article","japan-chassis-card");
-   card.append(el("h4","",(item.make+" "+item.model+" "+item.year).trim()||"Аукционная запись "+(index+1)));
-   const meta=el("div","japan-chassis-meta");
-   addMeta(meta,"Совпадение",item.match==="exact"?"точное":item.match);
-   addMeta(meta,"Объём",item.engine_cc?item.engine_cc+" см³":null);
-   addMeta(meta,"Оценка",item.grade);
-   addMeta(meta,"КПП",item.transmission);
-   addMeta(meta,"Цвет",item.color);
-   addMeta(meta,"Статус",item.result);
-   addMeta(meta,"Стартовая цена",item.start_price);
-   addMeta(meta,"Фото в полном отчёте",item.photos_count);
-   card.append(meta);
-   card.append(el("p","japan-chassis-note","Номер кузова: "+data.chassis+". Для просмотра даты торгов, номера лота, итоговой цены, аукционного листа и самих фотографий потребуется отдельный полный отчёт. Он может расходовать кредит провайдера и пока не запрашивается автоматически."));
-   out.append(card);
- });
- if(data.credits_left!==null)out.append(el("p","japan-chassis-note","Остаток кредитов API: "+data.credits_left+". Проверка номера кузова бесплатна."));
-}
-button.addEventListener("click",async()=>{
+const input=document.getElementById("japanChassisInput");
+const button=document.getElementById("japanChassisSearch");
+const status=document.getElementById("japanChassisStatus");
+const output=document.getElementById("japanChassisResults");
+if(!input||!button||!status||!output)return;
+const sources=[
+ ["Google · поиск по JP Sheet","jpsheet.com"],
+ ["Google · архив Carvector","carvector.com"],
+ ["Google · архив Aleado","aleado.com"],
+ ["Google · архив Banzai24","banzai24.com"],
+ ["Google · прошлые торги Auctions22","auctions22.com"]
+];
+const valid=value=>/^[A-Z0-9-]{5,32}$/.test(value);
+button.addEventListener("click",()=>{
  const chassis=input.value.trim().toUpperCase();
- const api=String(cfg.apiBaseUrl||"").replace(/\/$/,"");
- if(!/^[A-Z0-9-]{5,32}$/.test(chassis)){status.textContent="Введите номер кузова латинскими буквами и цифрами.";return}
- if(!api){status.textContent="API сайта не настроен.";return}
- button.disabled=true;status.textContent="Проверяем архив JP Sheet…";out.hidden=true;
- try{
-   const response=await fetch(api+"/api/japan-auctions/chassis/search",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({chassis})});
-   let data={};try{data=await response.json()}catch{}
-   if(!response.ok)throw new Error(data.detail||"Не удалось проверить номер кузова.");
-   render(data);out.hidden=false;
-   status.textContent=data.found?"Найдены записи в архиве JP Sheet.":"Совпадений не найдено.";
- }catch(error){status.textContent=error.message||"Ошибка соединения с архивом."}
- finally{button.disabled=false}
+ if(!valid(chassis)){status.textContent="Введите номер кузова латинскими буквами и цифрами (5–32 символа).";output.hidden=true;return;}
+ output.replaceChildren();
+ const note=document.createElement("p");note.className="japan-chassis-note";note.textContent="Открываются обычные поисковые страницы Google по указанному номеру кузова. Сам поиск бесплатный; сайты-источники могут ограничивать просмотр или предлагать платные отчёты — ничего покупать не нужно.";output.append(note);
+ for(const [label,domain] of sources){
+  const link=document.createElement("a");link.className="japan-chassis-source-link";link.href="https://www.google.com/search?q="+encodeURIComponent('site:'+domain+' "'+chassis+'"');link.target="_blank";link.rel="noopener noreferrer";link.textContent=label+" ↗";output.append(link);
+ }
+ output.hidden=false;
+ status.textContent="Подготовлено 5 бесплатных поисковых ссылок. PAPAUTO не обращается к платным API и не списывает кредиты.";
 });
-input.addEventListener("keydown",event=>{if(event.key==="Enter"){event.preventDefault();button.click()}});
+input.addEventListener("keydown",event=>{if(event.key==="Enter"){event.preventDefault();button.click();}});
 })();
