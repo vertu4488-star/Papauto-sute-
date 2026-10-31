@@ -184,6 +184,6 @@ listen.addEventListener("click",()=>{
   try{recognition.stop()}catch{listening=false;resetMic()}
   return;
  }
- if(!startNativeRecognition())sayStatus("Бесплатное распознавание речи не поддерживается этим браузером. Введите запрос текстом.");
+ if(!startNativeRecognition()){sayStatus("В этом браузере нет встроенного распознавания. На iPhone нажмите микрофон на клавиатуре, продиктуйте запрос в поле выше, затем нажмите «Разобрать запрос».");input.focus();}
 });
 })();
