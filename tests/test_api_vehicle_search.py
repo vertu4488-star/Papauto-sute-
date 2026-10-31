@@ -92,6 +92,18 @@ class VehicleSearchRoutingTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(result["recommendations"])
         self.assertIn("PAPAUTO", result["source"])
 
+    async def test_korea_and_china_searches_build_model_specific_public_links(self):
+        with patch("api.fetch_korea_monthly_stats", new_callable=AsyncMock, return_value={"ok": False}):
+            korea = await api.search_vehicles(country="south-korea", make="Hyundai", model="Tucson", year_from=2021, year_to=2025)
+        self.assertEqual(korea["data_type"], "source_hub")
+        self.assertGreaterEqual(len(korea["search_links"]), 3)
+        self.assertIn("Tucson", korea["search_links"][0]["url"])
+        self.assertIn("Hyundai", korea["search_links"][0]["url"])
+        china = await api.search_vehicles(country="china", make="BYD", model="Song Plus", year_from=2022, year_to=2025)
+        self.assertEqual(china["data_type"], "source_hub")
+        self.assertGreaterEqual(len(china["search_links"]), 4)
+        self.assertIn("Song", china["search_links"][0]["url"])
+
     async def test_china_auction_statistics_does_not_call_metered_ttpai_api(self):
         with patch("api.fetch_ttpai_model_stats", new_callable=AsyncMock) as ttpai:
             result = await api.auction_statistics(country="china", make="BYD", model="Song")
