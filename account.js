@@ -1,5 +1,5 @@
 (()=>{"use strict";
-const KEY="papauto_local_requests_v1",root=document.getElementById("accountLocalRequests"),status=document.getElementById("accountStatus"),clear=document.getElementById("clearLocalRequests");
+const KEY="papauto_local_requests_v1",root=document.getElementById("accountLocalRequests"),status=document.getElementById("accountStatus"),clear=document.getElementById("clearLocalRequests"),exportButton=document.getElementById("exportLocalRequests");
 const read=()=>{try{const x=JSON.parse(localStorage.getItem(KEY)||"[]");return Array.isArray(x)?x:[]}catch{return[]}};
 const write=x=>{try{localStorage.setItem(KEY,JSON.stringify(x.slice(0,20)));return true}catch{return false}};
 const fmt=x=>new Date(x).toLocaleString("ru-RU");
