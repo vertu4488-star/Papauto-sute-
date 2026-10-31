@@ -535,16 +535,9 @@
       <div class="eyebrow">ЛИЧНЫЙ КАБИНЕТ PAPAUTO</div>
       <h2>Ваши заявки<br><em>и уведомления.</em></h2>
       <p class="account-intro">Войдите или создайте аккаунт, чтобы синхронизировать заявки, избранное, сохранённые поиски и этапы заказа между устройствами.</p>
-      <div class="account-auth-panel" id="accountAuthPanel">
-        <div class="account-auth-tabs"><button class="button button-secondary is-active" type="button" data-auth-mode="signin">Войти</button><button class="button button-secondary" type="button" data-auth-mode="signup">Создать аккаунт</button></div>
-        <form id="accountAuthForm" class="account-auth-form">
-          <label for="accountDisplayName" id="accountDisplayNameWrap" hidden>Ваше имя<input id="accountDisplayName" type="text" maxlength="120" autocomplete="name" placeholder="Имя"></label>
-          <label for="accountPhone" id="accountPhoneWrap" hidden>Телефон для связи (необязательно)<input id="accountPhone" type="tel" maxlength="32" autocomplete="tel" placeholder="+7…"></label>
-          <label for="accountEmail">Электронная почта<input id="accountEmail" type="email" autocomplete="email" required maxlength="254" placeholder="name@example.com"></label>
-          <label for="accountPassword">Пароль<input id="accountPassword" type="password" autocomplete="current-password" minlength="8" required placeholder="Не менее 8 символов"></label>
-          <button class="button button-primary" id="accountAuthSubmit" type="submit">Войти</button>
-        </form>
-        <p id="accountAuthStatus" class="account-status" role="status" aria-live="polite">Для синхронизации нужен аккаунт. Локальные данные останутся в браузере до входа.</p>
+      <div class="account-cloud-notice" id="accountCloudNotice">
+        <strong>Облачная синхронизация временно не включена.</strong>
+        <p>Мы подготовили структуру кабинета и уведомлений, но не передаём персональные данные клиентов в зарубежную базу. Для запуска синхронизации заявок нужен сервер хранения в России и проверка документов оператора.</p>
       </div>
       <div id="accountSignedIn" hidden>
         <div class="account-user-row"><div><strong id="accountUserEmail"></strong><p id="accountUserMeta">Аккаунт PAPAUTO</p></div><button class="button button-secondary" type="button" id="accountSignOut">Выйти</button></div>
@@ -636,7 +629,7 @@
   <a href="#auction-statistics"><span>◷</span>Статистика</a>
   <a href="#catalog"><span>▦</span>Каталог</a>
 </nav>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>\n<script src="/site-config.js"></script>\n<script src="/account.js" defer></script>
+<script src="/site-config.js"></script>\n<script src="/account.js" defer></script>
 <script src="/app.js" defer></script>
 <script src="/marketplace-interactions.js" defer></script>
 <script src="/saved-searches.js" defer></script>
