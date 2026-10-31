@@ -205,70 +205,53 @@ async def health():
     return {
         "status": "ok",
         "telegram_configured": bool(os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID")),
-        "ai_configured": bool(os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_AI_API_KEY") or os.getenv("GOOGLE_API_KEY")),
-        "tks_configured": bool(os.getenv("TKS_AUTO_API_KEY") or os.getenv("TKS_API_KEY")),
-        "xapi_korea_configured": bool((os.getenv("XAPIKOREA_API_KEY") or "").strip()),
-        "auction_provider_configured": bool(os.getenv("AUCTIONS_API_URL") and os.getenv("AUCTIONS_API_KEY")),
+        "free_mode": True,
+        "paid_apis_enabled": False,
+        "disabled_paid_integrations": ["Gemini", "TKS.RU", "XAPI Korea", "TTPAI", "JP Sheet reports"],
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
 @app.post("/api/leads")
 async def create_lead(lead: Lead):
+    """Send a lead through the configured Telegram bot; no paid database is required."""
     if not lead.consent:
         raise HTTPException(status_code=400, detail="Необходимо согласие на обработку данных.")
-    supabase_url = (os.getenv("SUPABASE_URL") or "").strip().rstrip("/")
-    supabase_key = (os.getenv("SUPABASE_PUBLISHABLE_KEY") or "").strip()
-    if not supabase_url or not supabase_key:
-        raise HTTPException(status_code=503, detail="Хранилище заявок временно не настроено.")
-    record = {
-        "name": lead.name,
-        "contact": lead.contact,
-        "country": lead.country,
-        "budget": lead.budget,
-        "city": lead.city,
-        "request": lead.request,
-        "consent": True
-    }
-    try:
-        async with httpx.AsyncClient(timeout=12.0) as client:
-            stored = await client.post(
-                f"{supabase_url}/rest/v1/leads",
-                headers={"apikey": supabase_key, "Authorization": f"Bearer {supabase_key}", "Content-Type": "application/json", "Prefer": "return=minimal"},
-                json=record
-            )
-        if stored.status_code not in (200, 201, 204):
-            logger.error("Supabase lead insert failed: status=%s body=%s", stored.status_code, stored.text[:500])
-            raise HTTPException(status_code=502, detail="Не удалось сохранить заявку. Попробуйте позже.")
-    except httpx.RequestError:
-        raise HTTPException(status_code=502, detail="Не удалось связаться с базой заявок. Попробуйте позже.")
 
     token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
     chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
-    notified = False
-    if token and chat_id:
-        message = (
-            "🚘 <b>Новая заявка PAPAUTO</b>\\n"
-            f"<b>Время:</b> {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\\n"
-            f"<b>Имя:</b> {html.escape(lead.name or 'не указано')}\\n"
-            f"<b>Контакт:</b> {html.escape(lead.contact)}\\n"
-            f"<b>Направление:</b> {html.escape(lead.country)}\\n"
-            f"<b>Бюджет:</b> {f'{lead.budget:,}'.replace(',', ' ' ) + ' ₽' if lead.budget is not None else 'не указан'}\\n"
-            f"<b>Город:</b> {html.escape(lead.city)}\\n"
-            f"<b>Запрос:</b> {html.escape(lead.request)}"
+    if not token or not chat_id:
+        raise HTTPException(
+            status_code=503,
+            detail="Автоматическая отправка временно недоступна. Скопируйте заявку и отправьте её менеджеру через Telegram."
         )
-        try:
-            async with httpx.AsyncClient(timeout=12.0) as client:
-                response = await client.post(
-                    f"https://api.telegram.org/bot{token}/sendMessage",
-                    json={"chat_id": chat_id, "text": message, "parse_mode": "HTML", "disable_web_page_preview": True}
-                )
-            data = response.json()
-            notified = response.status_code == 200 and bool(data.get("ok"))
-            if not notified:
-                logger.error("Telegram lead notification failed: status=%s", response.status_code)
-        except (httpx.RequestError, ValueError):
-            logger.exception("Telegram lead notification request failed")
-    return {"ok": True, "stored": True, "notified": notified, "message": "Заявка сохранена. Менеджер свяжется с вами."}
+
+    message = (
+        "🚘 <b>Новая заявка PAPAUTO</b>\\n"
+        f"<b>Время:</b> {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\\n"
+        f"<b>Имя:</b> {html.escape(lead.name or 'не указано')}\\n"
+        f"<b>Контакт:</b> {html.escape(lead.contact)}\\n"
+        f"<b>Направление:</b> {html.escape(lead.country)}\\n"
+        f"<b>Бюджет:</b> {f'{lead.budget:,}'.replace(',', ' ' ) + ' ₽' if lead.budget is not None else 'не указан'}\\n"
+        f"<b>Город:</b> {html.escape(lead.city)}\\n"
+        f"<b>Запрос:</b> {html.escape(lead.request)}"
+    )
+    try:
+        async with httpx.AsyncClient(timeout=12.0) as client:
+            response = await client.post(
+                f"https://api.telegram.org/bot{token}/sendMessage",
+                json={"chat_id": chat_id, "text": message, "parse_mode": "HTML", "disable_web_page_preview": True}
+            )
+        data = response.json()
+        if response.status_code != 200 or not data.get("ok"):
+            logger.error("Telegram lead notification failed: status=%s", response.status_code)
+            raise HTTPException(status_code=502, detail="Telegram не подтвердил доставку заявки. Скопируйте текст и отправьте его вручную.")
+    except httpx.RequestError:
+        logger.exception("Telegram lead notification request failed")
+        raise HTTPException(status_code=502, detail="Не удалось связаться с Telegram. Скопируйте текст и отправьте его вручную.")
+    except ValueError:
+        raise HTTPException(status_code=502, detail="Telegram вернул некорректный ответ. Скопируйте текст и отправьте его вручную.")
+
+    return {"ok": True, "stored": False, "notified": True, "message": "Заявка доставлена менеджеру через Telegram."}
 
 
 class CustomsRequest(BaseModel):
@@ -283,6 +266,11 @@ class CustomsRequest(BaseModel):
 
 @app.post("/api/customs/calculate")
 async def calculate_customs(req: CustomsRequest):
+    # Strict free-only policy: never contact TKS.RU, even if an old key remains in Render.
+    raise HTTPException(
+        status_code=503,
+        detail="Автоматический расчёт TKS.RU отключён в бесплатном режиме. Платные запросы не отправляются. Введите подтверждённую сумму таможенных платежей в общую смету вручную."
+    )
     key = (os.getenv("TKS_AUTO_API_KEY") or os.getenv("TKS_API_KEY") or "").strip()
     if not key:
         raise HTTPException(status_code=503, detail="Расчёт TKS.RU пока не активирован: необходим действующий лицензионный ключ TKS_AUTO_API_KEY. Ключ оформляется у TKS.RU.")
