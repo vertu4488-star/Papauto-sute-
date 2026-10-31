@@ -95,6 +95,25 @@
   </section>
 
 
+  <section class="budget-start wrap" aria-label="Быстрый подбор автомобиля по бюджету">
+    <div class="budget-start-head">
+      <div><div class="eyebrow">БЫСТРЫЙ ПОДБОР</div><h2>Начните с бюджета.<br><em>Остальное уточним вместе.</em></h2></div>
+      <p>Выберите ориентир — PAPAUTO SELECT перенесёт бюджет в заявку. Наличие конкретного автомобиля и окончательная стоимость подтверждаются по источнику и условиям сделки.</p>
+    </div>
+    <div class="budget-shortcuts">
+      <button type="button" data-budget-shortcut="1000000"><span>до</span><strong>1 млн ₽</strong><small>Городские авто</small></button>
+      <button type="button" data-budget-shortcut="1500000"><span>до</span><strong>1,5 млн ₽</strong><small>Бюджетный выбор</small></button>
+      <button type="button" data-budget-shortcut="2000000"><span>до</span><strong>2 млн ₽</strong><small>Больше вариантов</small></button>
+      <button type="button" data-budget-shortcut="3000000"><span>до</span><strong>3 млн ₽</strong><small>Седаны и кроссоверы</small></button>
+    </div>
+    <div class="budget-market-shortcuts" aria-label="Выберите направление">
+      <span>Или начните с рынка:</span>
+      <button type="button" data-market-shortcut="japan">Япония</button>
+      <button type="button" data-market-shortcut="south-korea">Южная Корея</button>
+      <button type="button" data-market-shortcut="china">Китай</button>
+    </div>
+  </section>
+
   <section class="section wrap" id="catalog">
     <div class="section-title-row catalog-heading"><div><div class="eyebrow">КАТАЛОГ И ПОИСК</div><div class="catalog-title-line"><h2>Найдите автомобиль<br><em>по своим параметрам.</em></h2></div></div><p>Фильтры как на автомобильной площадке: страна, марка, модель, год, бюджет, пробег и параметры двигателя. Можно заполнить запрос голосом через PAPAUTO SELECT.</p></div>
     
@@ -103,8 +122,8 @@
         <label>Страна / рынок<select id="vehicleCountry"><option value="japan">Япония · аукционы</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select></label>
         <label>Марка<input id="vehicleMake" placeholder="Toyota, Honda, Hyundai…" maxlength="80"></label>
         <label>Модель<input id="vehicleModel" placeholder="RAV4, Prius…" maxlength="80"></label>
-        <label>Год от<input id="vehicleYearFrom" type="number" min="1990" max="2027" value="2019"></label>
-        <label>Год до<input id="vehicleYearTo" type="number" min="1990" max="2027" value="2024"></label>
+        <label>Год от<input id="vehicleYearFrom" type="number" min="1990" max="2027" value="2021"></label>
+        <label>Год до<input id="vehicleYearTo" type="number" min="1990" max="2027" value="2026"></label>
         <label>Бюджет до, ₽<input id="vehicleMaxPrice" type="number" min="0" placeholder="Необязательно"></label>
         <label>Пробег до, км<input id="vehicleMileageMax" type="number" min="0" max="2000000" placeholder="Любой"></label>
         <label>Объём двигателя от, см³<input id="vehicleVolumeMin" type="number" min="0" max="20000" placeholder="Любой"></label>
@@ -390,7 +409,7 @@
         <label for="carPrompt">Дополнительные пожелания *</label>
         <textarea id="carPrompt" rows="3" required maxlength="3000" placeholder="Тип кузова, двигатель, коробка, привод, комплектация, важные опции…"></textarea>
         <div class="form-grid">
-          <label for="city">Город получения * <input id="city" value="" maxlength="80" required placeholder="Например, Новосибирск, Казань, Москва"></label>
+          <label for="city">Город получения * <input id="city" value="Новосибирск" maxlength="80" required placeholder="Например, Новосибирск, Казань, Москва"></label>
           <label for="leadName">Имя <input id="leadName" maxlength="100" autocomplete="name" placeholder="Как к вам обращаться"></label>
         </div>
         <label for="contact">Телефон или Telegram для ответа * <input id="contact" maxlength="120" autocomplete="tel" required placeholder="+7… или @username"></label>
