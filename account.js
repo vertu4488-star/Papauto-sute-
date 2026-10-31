@@ -26,8 +26,8 @@ function saveLocal(lead,sent){
 function setMode(mode){
  authMode=mode==="signup"?"signup":"signin";
  document.querySelectorAll("[data-auth-mode]").forEach(b=>{const active=b.dataset.authMode===authMode;b.classList.toggle("is-active",active);b.setAttribute("aria-pressed",String(active))});
- const nameWrap=$("accountDisplayNameWrap"),submit=$("accountAuthSubmit"),password=$("accountPassword");
- if(nameWrap)nameWrap.hidden=authMode!=="signup";
+ const nameWrap=$("accountDisplayNameWrap"),phoneWrap=$("accountPhoneWrap"),submit=$("accountAuthSubmit"),password=$("accountPassword");
+ if(nameWrap)nameWrap.hidden=authMode!=="signup";if(phoneWrap)phoneWrap.hidden=authMode!=="signup";
  if(submit)submit.textContent=authMode==="signup"?"Создать аккаунт":"Войти";
  if(password)password.autocomplete=authMode==="signup"?"new-password":"current-password";
  say("accountAuthStatus",authMode==="signup"?"Укажите почту и придумайте пароль не короче 8 символов.":"Войдите, чтобы открыть заявки и синхронизировать данные.");
@@ -126,11 +126,11 @@ async function showSession(session){
 if(client){
  const authForm=$("accountAuthForm");
  if(authForm)authForm.addEventListener("submit",async e=>{
-  e.preventDefault();const email=$("accountEmail").value.trim(),password=$("accountPassword").value,displayName=$("accountDisplayName")?.value.trim()||"";
+  e.preventDefault();const email=$("accountEmail").value.trim(),password=$("accountPassword").value,displayName=$("accountDisplayName")?.value.trim()||"",phone=$("accountPhone")?.value.trim()||"";
   const button=$("accountAuthSubmit");button.disabled=true;
   try{
    if(authMode==="signup"){
-    const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:displayName},emailRedirectTo:location.origin+"/#account"}});
+    const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:displayName,phone},emailRedirectTo:location.origin+"/#account"}});
     if(error)throw error;
     if(data.session){say("accountAuthStatus","Аккаунт создан. Вы вошли в систему.");await showSession(data.session)}
     else say("accountAuthStatus","Проверьте почту и подтвердите адрес, затем войдите. Если письмо не пришло, проверьте настройки SMTP и лимиты отправки Supabase.");
