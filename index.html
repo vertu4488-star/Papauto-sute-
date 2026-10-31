@@ -539,6 +539,7 @@
         <div class="account-auth-tabs"><button class="button button-secondary is-active" type="button" data-auth-mode="signin">Войти</button><button class="button button-secondary" type="button" data-auth-mode="signup">Создать аккаунт</button></div>
         <form id="accountAuthForm" class="account-auth-form">
           <label for="accountDisplayName" id="accountDisplayNameWrap" hidden>Ваше имя<input id="accountDisplayName" type="text" maxlength="120" autocomplete="name" placeholder="Имя"></label>
+          <label for="accountPhone" id="accountPhoneWrap" hidden>Телефон для связи (необязательно)<input id="accountPhone" type="tel" maxlength="32" autocomplete="tel" placeholder="+7…"></label>
           <label for="accountEmail">Электронная почта<input id="accountEmail" type="email" autocomplete="email" required maxlength="254" placeholder="name@example.com"></label>
           <label for="accountPassword">Пароль<input id="accountPassword" type="password" autocomplete="current-password" minlength="8" required placeholder="Не менее 8 символов"></label>
           <button class="button button-primary" id="accountAuthSubmit" type="submit">Войти</button>
