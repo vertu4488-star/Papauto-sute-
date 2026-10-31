@@ -52,7 +52,25 @@
   const params = new URLSearchParams(location.search);
   const initial = valid.has(params.get('view')) ? params.get('view') : (getViewFromHash() || 'home');
   apply(initial);
+  if (location.hash && getViewFromHash() === initial) {
+    requestAnimationFrame(() => {
+      const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (target) target.scrollIntoView({behavior:'instant', block:'start'});
+    });
+  }
   document.addEventListener('click', event => {
+    const budgetShortcut = event.target.closest('[data-budget-shortcut]');
+    if (budgetShortcut) {
+      apply('select', true);
+      requestAnimationFrame(() => document.getElementById('assistant')?.scrollIntoView({behavior:'smooth', block:'start'}));
+      return;
+    }
+    const marketShortcut = event.target.closest('[data-market-shortcut]');
+    if (marketShortcut) {
+      apply('catalog', true);
+      requestAnimationFrame(() => document.getElementById('catalog')?.scrollIntoView({behavior:'smooth', block:'start'}));
+      return;
+    }
     const tab = event.target.closest('[data-site-tab]');
     if (tab) {
       event.preventDefault();
