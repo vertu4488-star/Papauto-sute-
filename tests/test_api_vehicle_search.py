@@ -46,105 +46,46 @@ class FakeAsyncClient:
 
 
 class VehicleSearchRoutingTests(unittest.IsolatedAsyncioTestCase):
-    async def test_korea_key_prioritizes_live_listings_over_monthly_summary(self):
-        env = {key: value for key, value in os.environ.items() if key != "XAPIKOREA_API_KEY"}
-        env["XAPIKOREA_API_KEY"] = "test-key"
-        with patch.dict(os.environ, env, clear=True), \
-             patch("api.fetch_korea_monthly_stats", new_callable=AsyncMock) as monthly, \
-             patch("api.httpx.AsyncClient", FakeAsyncClient):
-            result = await api.search_vehicles(
-                country="south-korea",
-                make="Hyundai",
-                model="Avante",
-                year_from=2020,
-                year_to=2025,
-                max_price=0,
-                mileage_max=None,
-                volume_min=None,
-                volume_max=None,
-                body="",
-                grade="",
-                lot_number="",
-                limit=20,
-            )
-
-        monthly.assert_not_awaited()
-        self.assertEqual(result["record_type"], "current_listing")
-        self.assertEqual(result["source"], "XAPI Korea")
-        self.assertEqual(len(result["results"]), 1)
-        self.assertEqual(result["results"][0]["model"], "Avante")
-        self.assertEqual(result["results"][0]["currency"], "KRW")
-
-
-    async def test_korea_applies_lot_and_engine_volume_filters(self):
-        env = {key: value for key, value in os.environ.items() if key != "XAPIKOREA_API_KEY"}
-        env["XAPIKOREA_API_KEY"] = "test-key"
-        with patch.dict(os.environ, env, clear=True), patch("api.fetch_korea_monthly_stats", new_callable=AsyncMock) as monthly, patch("api.httpx.AsyncClient", FakeAsyncClient):
-            result = await api.search_vehicles(
-                country="south-korea", make="Hyundai", model="Avante",
-                year_from=2020, year_to=2025, max_price=1500000,
-                mileage_max=None, volume_min=1500, volume_max=1700,
-                body="", grade="", lot_number="listing-123", limit=20,
-            )
-        monthly.assert_not_awaited()
-        self.assertEqual(result["returned_count"], 1)
-        self.assertEqual(result["results"][0]["volume_cc"], 1591)
-        self.assertEqual(result["filters_applied"]["lot_number"], "listing-123")
-        self.assertEqual(result["filters_applied"]["volume_min"], 1500)
-
-    async def test_korea_excludes_unknown_engine_volume_when_volume_filter_is_requested(self):
-        env = {key: value for key, value in os.environ.items() if key != "XAPIKOREA_API_KEY"}
-        env["XAPIKOREA_API_KEY"] = "test-key"
-        fake = FakeAsyncClient()
-        fake.response._payload["results"][0].pop("engine_displacement_cc", None)
-        with patch.dict(os.environ, env, clear=True), patch("api.fetch_korea_monthly_stats", new_callable=AsyncMock), patch("api.httpx.AsyncClient", return_value=fake):
-            result = await api.search_vehicles(
-                country="south-korea", make="Hyundai", model="Avante",
-                year_from=2020, year_to=2025, max_price=0,
-                mileage_max=None, volume_min=1500, volume_max=None,
-                body="", grade="", lot_number="", limit=20,
-            )
-        self.assertEqual(result["returned_count"], 0)
-        self.assertEqual(result["results"], [])
-
-    async def test_korea_without_live_key_uses_official_monthly_summary(self):
-        env = {key: value for key, value in os.environ.items() if key != "XAPIKOREA_API_KEY"}
+    async def test_korea_uses_only_public_monthly_summary_even_when_paid_key_exists(self):
         stats = {
             "ok": True,
             "source": "Korea Automobile Auction Association",
             "source_url": "https://www.aaa-korea.com/en/data",
-            "history": [{
-                "year": 2026,
-                "month_number": 9,
-                "month": "2026-09",
-                "offered": 1000,
-                "sold": 700,
-                "completion_rate_percent": 70,
-            }],
+            "history": [{"month": "2026-09", "offered": 1000, "sold": 700, "completion_rate_percent": 70}],
             "disclaimer": "Monthly aggregate statistics only.",
         }
-        with patch.dict(os.environ, env, clear=True), \
-             patch("api.fetch_korea_monthly_stats", new_callable=AsyncMock, return_value=stats):
-            result = await api.search_vehicles(
-                country="south-korea",
-                make="Hyundai",
-                model="Avante",
-                year_from=2020,
-                year_to=2025,
-                max_price=0,
-                mileage_max=None,
-                volume_min=None,
-                volume_max=None,
-                body="",
-                grade="",
-                lot_number="",
-                limit=20,
-            )
-
+        with patch.dict(os.environ, {"XAPIKOREA_API_KEY": "unused-test-key"}, clear=False), \\
+             patch("api.fetch_korea_monthly_stats", new_callable=AsyncMock, return_value=stats) as monthly, \\
+             patch("api.httpx.AsyncClient") as client:
+            result = await api.search_vehicles(country="south-korea", make="Hyundai", model="Avante")
+        monthly.assert_awaited_once()
+        client.assert_not_called()
         self.assertEqual(result["data_type"], "source_hub")
-        self.assertEqual(result["source"], "Korea Automobile Auction Association")
         self.assertEqual(result["records"], [])
         self.assertIn("статистика", result["message"].lower())
+
+    async def test_korea_falls_back_to_free_encar_source_without_paid_api(self):
+        with patch.dict(os.environ, {"XAPIKOREA_API_KEY": "unused-test-key"}, clear=False), \\
+             patch("api.fetch_korea_monthly_stats", new_callable=AsyncMock, return_value={"ok": False, "message": "offline"}), \\
+             patch("api.httpx.AsyncClient") as client:
+            result = await api.search_vehicles(country="south-korea", make="Hyundai", model="Avante")
+        client.assert_not_called()
+        self.assertEqual(result["data_type"], "source_hub")
+        self.assertTrue(any("Encar" in item["name"] for item in result["sources"]))
+
+    async def test_china_search_does_not_call_metered_ttpai_api(self):
+        with patch("api.fetch_ttpai_model_stats", new_callable=AsyncMock) as ttpai:
+            result = await api.search_vehicles(country="china", make="BYD", model="Song")
+        ttpai.assert_not_awaited()
+        self.assertEqual(result["data_type"], "source_hub")
+        self.assertTrue(result["sources"])
+
+    async def test_china_auction_statistics_does_not_call_metered_ttpai_api(self):
+        with patch("api.fetch_ttpai_model_stats", new_callable=AsyncMock) as ttpai:
+            result = await api.auction_statistics(country="china", make="BYD", model="Song")
+        ttpai.assert_not_awaited()
+        self.assertEqual(result["data_type"], "source_hub")
+        self.assertTrue(result["sources"])
 
 
 class FakeGeminiResponse:
