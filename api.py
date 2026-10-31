@@ -899,11 +899,15 @@ async def assistant_search_vehicles(req: VehicleSearchAssistantInput):
         mileage_max = int(number * 1000 if "тыс" in mileage_match.group(2) else number)
 
     volume_min = volume_max = None
-    volume_values = re.findall(r"(\d+(?:[.,]\d+)?)\s*(?:л(?:итр(?:а|ов)?)?)(?![а-я])", normalized)
-    cc_values = re.findall(r"(\d{4,5})\s*(?:см\s*[³3]|куб\.?\s*см)", normalized)
-    volumes = [int(float(value.replace(",", ".")) * 1000) for value in volume_values]
-    volumes.extend(int(value) for value in cc_values)
-    if len(volumes) >= 2 and re.search(r"(?:от|между|диапазон)", normalized):
+    volume_range = re.search(r"(?:от|между)\s*(\d+(?:[.,]\d+)?)\s*(?:до|[-–])\s*(\d+(?:[.,]\d+)?)\s*(?:л(?:итр(?:а|ов)?)?)(?![а-я])", normalized)
+    if volume_range:
+        volumes = [int(float(value.replace(",", ".")) * 1000) for value in volume_range.groups()]
+    else:
+        volume_values = re.findall(r"(\d+(?:[.,]\d+)?)\s*(?:л(?:итр(?:а|ов)?)?)(?![а-я])", normalized)
+        cc_values = re.findall(r"(\d{4,5})\s*(?:см\s*[³3]|куб\.?\s*см)", normalized)
+        volumes = [int(float(value.replace(",", ".")) * 1000) for value in volume_values]
+        volumes.extend(int(value) for value in cc_values)
+    if len(volumes) >= 2:
         volume_min, volume_max = volumes[0], volumes[1]
     elif volumes:
         volume_min = volume_max = volumes[0]
