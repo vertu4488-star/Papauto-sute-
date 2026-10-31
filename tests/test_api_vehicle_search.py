@@ -190,10 +190,10 @@ class FreeModeSafetyTests(unittest.IsolatedAsyncioTestCase):
             cost=1500000, volume=1800, power=120, currency="392",
             engine_type="petrol", age="35", face="nat"
         )
-        with patch.dict(os.environ, {"TKS_AUTO_API_KEY": "a" * 32}, clear=False), \\
-             patch("api.httpx.AsyncClient") as client:
-            with self.assertRaises(api.HTTPException) as ctx:
-                await api.calculate_customs(payload)
+        with patch.dict(os.environ, {"TKS_AUTO_API_KEY": "a" * 32}, clear=False):
+            with patch("api.httpx.AsyncClient") as client:
+                with self.assertRaises(api.HTTPException) as ctx:
+                    await api.calculate_customs(payload)
         self.assertEqual(ctx.exception.status_code, 503)
         client.assert_not_called()
 
