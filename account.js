@@ -115,7 +115,7 @@ async function createRequest(lead){
 async function startRealtime(){
  if(!client||!user)return;
  if(realtimeChannel)await client.removeChannel(realtimeChannel);
- realtimeChannel=client.channel("papauto-notifications-"+user.id).on("postgres_changes",{event:"INSERT",schema:"public",table:"notifications",filter:"user_id=eq."+user.id},()=>loadNotifications()).subscribe();
+ realtimeChannel=client.channel("papauto-notifications-"+user.id).on("postgres_changes",{event:"INSERT",schema:"public",table:"notifications",filter:"user_id=eq."+user.id},payload=>{loadNotifications();const n=payload.new;if(window.Notification&&Notification.permission==="granted"&&document.visibilityState!=="visible"){try{new Notification(n.title||"PAPAUTO",{body:n.body||"Обновился статус вашей заявки.",icon:"/favicon.ico"})}catch{}}}).subscribe();
 }
 async function showSession(session){
  user=session?.user||null;
@@ -150,6 +150,7 @@ if(client){
   finally{button.disabled=false}
  });
  const signOut=$("accountSignOut");if(signOut)signOut.addEventListener("click",async()=>{await client.auth.signOut();await showSession(null);say("accountAuthStatus","Вы вышли из аккаунта.")});
+ const enablePush=$("accountEnablePush");if(enablePush)enablePush.addEventListener("click",async()=>{if(!("Notification" in window)){say("accountSyncStatus","Этот браузер не поддерживает системные уведомления.");return}try{const permission=await Notification.requestPermission();say("accountSyncStatus",permission==="granted"?"Уведомления браузера включены, пока сайт открыт.":"Разрешение на уведомления не выдано.")}catch{say("accountSyncStatus","Не удалось запросить разрешение. Проверьте настройки браузера.")}});
  const markAll=$("accountMarkAllRead");if(markAll)markAll.addEventListener("click",async()=>{if(!user)return;const {error}=await client.from("notifications").update({read_at:new Date().toISOString()}).eq("user_id",user.id).is("read_at",null);if(error)say("accountSyncStatus","Не удалось обновить уведомления: "+error.message);else loadNotifications()});
  client.auth.getSession().then(({data})=>showSession(data.session));
  client.auth.onAuthStateChange((event,session)=>{if(event==="SIGNED_IN"||event==="SIGNED_OUT"||event==="TOKEN_REFRESHED")showSession(session)});
