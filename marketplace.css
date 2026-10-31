@@ -153,3 +153,16 @@ button:hover,.button:hover{transform:translateY(-1px)}
 /* Free archive search links */
 .japan-chassis-source-link{display:block;width:fit-content;margin:8px 0;padding:9px 12px;border:1px solid var(--line);border-radius:8px;color:#dce7ef;text-decoration:none;font-size:12px;background:#111e29}
 .japan-chassis-source-link:hover{border-color:#8aa7bf;color:#fff}
+
+/* Saved and shareable vehicle searches */
+.saved-search-panel{margin:14px 0 20px;padding:16px;border:1px solid var(--line);border-radius:12px;background:rgba(17,27,37,.72)}
+.saved-search-actions{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.saved-search-actions .button{font-size:12px;padding:10px 13px}
+.saved-search-heading{font-size:12px;font-weight:750;letter-spacing:.04em;text-transform:uppercase;color:#c5d5e2;margin-bottom:9px}
+.saved-search-list{display:flex;flex-wrap:wrap;gap:8px}
+.saved-search-item{display:flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#111b25}
+.saved-search-load,.saved-search-delete{border:0;background:transparent;color:#edf3f8;padding:9px 11px;font:inherit;cursor:pointer}
+.saved-search-load{font-size:12px}.saved-search-load:hover,.saved-search-delete:hover{background:#263747}
+.saved-search-delete{font-size:17px;color:#b8c5d0}
+.saved-search-note,.saved-search-empty{display:block;margin:10px 0 0;color:#9cabb8;font-size:11px;line-height:1.5}
+@media(max-width:640px){.saved-search-actions{display:grid;grid-template-columns:1fr}.saved-search-actions .button{width:100%}.saved-search-item{max-width:100%}.saved-search-load{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
