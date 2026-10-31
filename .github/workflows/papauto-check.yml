@@ -14,6 +14,7 @@ on:
       - "styles.css"
       - "marketplace.css"
       - "smart-search.js"
+      - "japan-chassis-search.js"
       - "route-planner.js"
       - "mobile.css"
       - "site-config.js"
@@ -48,6 +49,7 @@ jobs:
           node --check app.js
           node --check marketplace-interactions.js
           node --check smart-search.js
+          node --check japan-chassis-search.js
           node --check route-planner.js
           node --check voice-assistant.js
       - name: Wait for Render API deployment and test Japan source hub
