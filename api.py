@@ -889,22 +889,22 @@ async def assistant_search_vehicles(req: VehicleSearchAssistantInput):
             model = canonical.upper() if canonical in {"rav4", "cx-5", "cr-v", "x-trail"} else canonical.title()
             break
 
-    years = [int(value) for value in re.findall(r"(?<!\\d)(?:19|20)\\d{2}(?!\\d)", normalized)]
+    years = [int(value) for value in re.findall(r"(?<!\d)(?:19|20)\d{2}(?!\d)", normalized)]
     year_from, year_to = (min(years), max(years)) if years else (1990, 2030)
 
     mileage_max = None
-    mileage_match = re.search(r"(?:пробег\\s*)?до\\s*(\\d+(?:[.,]\\d+)?)\\s*(тыс(?:\\.?|яч)?|км)", normalized)
+    mileage_match = re.search(r"(?:пробег\s*)?до\s*(\d+(?:[.,]\d+)?)\s*(тыс(?:\.?|яч)?|км)", normalized)
     if mileage_match:
         number = float(mileage_match.group(1).replace(",", "."))
         mileage_max = int(number * 1000 if "тыс" in mileage_match.group(2) else number)
 
     volume_min = volume_max = None
-    volume_values = re.findall(r"(\\d+(?:[.,]\\d+)?)\\s*(?:л(?:итр(?:а|ов)?)?)(?![а-я])", normalized)
-    cc_values = re.findall(r"(\\d{4,5})\\s*(?:см\\s*[³3]|куб\\.?\\s*см)", normalized)
+    volume_values = re.findall(r"(\d+(?:[.,]\d+)?)\s*(?:л(?:итр(?:а|ов)?)?)(?![а-я])", normalized)
+    cc_values = re.findall(r"(\d{4,5})\s*(?:см\s*[³3]|куб\.?\s*см)", normalized)
     volumes = [int(float(value.replace(",", ".")) * 1000) for value in volume_values]
     volumes.extend(int(value) for value in cc_values)
     if len(volumes) >= 2 and re.search(r"(?:от|между|диапазон)", normalized):
-        volume_min, volume_max = min(volumes), max(volumes)
+        volume_min, volume_max = volumes[0], volumes[1]
     elif volumes:
         volume_min = volume_max = volumes[0]
 
@@ -916,9 +916,9 @@ async def assistant_search_vehicles(req: VehicleSearchAssistantInput):
             body = value
             break
 
-    grade_match = re.search(r"(?:оценка|грейд|grade)\\s*([0-9](?:\\.[0-9])?|[rs])", normalized)
+    grade_match = re.search(r"(?:оценка|грейд|grade)\s*([0-9](?:\.[0-9])?|[rs])", normalized)
     grade = grade_match.group(1).upper() if grade_match else ""
-    lot_match = re.search(r"(?:лот|lot)\\s*#?\\s*([a-z0-9-]{3,24})", normalized)
+    lot_match = re.search(r"(?:лот|lot)\s*#?\s*([a-z0-9-]{3,24})", normalized)
     lot_number = lot_match.group(1).upper() if lot_match else ""
 
     preferences = []
