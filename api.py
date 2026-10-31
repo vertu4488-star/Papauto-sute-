@@ -1107,29 +1107,6 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         raise HTTPException(status_code=400, detail="Начальная дата не может быть позже конечной.")
     limit = min(max(limit, 1), 30)
 
-    # Free-only mode: use verified public pages where available; never call metered APIs.
-    make, model, grade = make.strip()[:80], model.strip()[:80], grade.strip()[:12]
-    if country in {"china", "south-korea"}:
-        links = _public_market_search_links(country, make, model, year_from, year_to)
-        sources = [{"name": item["name"], "url": item["url"], "access": item["access"], "data_kind": item["kind"]} for item in links]
-        if country == "south-korea":
-            stats = await fetch_korea_monthly_stats()
-            if stats.get("ok"):
-                sources.append({"name": stats.get("source", "Официальная статистика Кореи"),
-                                "url": stats.get("source_url", "https://www.kasa.or.kr/"),
-                                "access": "Открытая агрегированная статистика",
-                                "data_kind": "Месячные итоги аукционного рынка",
-                                "note": stats.get("disclaimer", "")})
-            return {"ok": True, "country": country, "data_type": "source_hub",
-                    "source": "Открытые источники Южной Кореи", "count": 0, "records": [],
-                    "sources": sources, "model_search_links": links,
-                    "message": "Поиск подготовлен по выбранной модели. Каталоги содержат активные предложения; месячная статистика показана отдельно.",
-                    "disclaimer": "Цены объявлений не равны ценам завершённых торгов."}
-        return {"ok": True, "country": country, "data_type": "source_hub",
-                "source": "Открытые источники Китая", "count": 0, "records": [],
-                "sources": sources, "model_search_links": links,
-                "message": "Поиск подготовлен по выбранной модели в открытых китайских каталогах.",
-                "disclaimer": "Это цены предложений, а не подтверждённые цены завершённых сделок."}
     model_search_links = _japan_model_search_links(make, model, year_from, year_to) if country == "japan" else []
     if country == "south-korea":
         api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
