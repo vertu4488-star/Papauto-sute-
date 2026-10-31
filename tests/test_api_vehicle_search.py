@@ -189,8 +189,8 @@ class FakeGeminiClient:
 
 class VehicleAssistantSearchTests(unittest.IsolatedAsyncioTestCase):
     async def test_natural_language_request_becomes_filters_and_calls_market_source(self):
-        with patch.dict(os.environ, {"GEMINI_API_KEY": "test-key"}, clear=False), \\
-             patch("api.httpx.AsyncClient", FakeGeminiClient), \\
+        with patch.dict(os.environ, {"GEMINI_API_KEY": "test-key"}, clear=False), \
+             patch("api.httpx.AsyncClient", FakeGeminiClient), \
              patch("api.search_vehicles", new_callable=AsyncMock, return_value={
                  "ok": True, "country": "japan", "data_type": "external_search",
                  "search_links": [{"name": "Archive", "url": "https://example.org"}]
@@ -238,8 +238,8 @@ class VehicleAssistantSearchTests(unittest.IsolatedAsyncioTestCase):
             async def post(self, *args, **kwargs):
                 return InvalidVolumeResponse()
 
-        with patch.dict(os.environ, {"GEMINI_API_KEY": "test-key"}, clear=False), \\
-             patch("api.httpx.AsyncClient", InvalidVolumeClient), \\
+        with patch.dict(os.environ, {"GEMINI_API_KEY": "test-key"}, clear=False), \
+             patch("api.httpx.AsyncClient", InvalidVolumeClient), \
              patch("api.search_vehicles", new_callable=AsyncMock) as search:
             with self.assertRaises(api.HTTPException) as ctx:
                 await api.assistant_search_vehicles(
