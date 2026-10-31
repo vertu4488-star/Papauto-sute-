@@ -1,35 +1,168 @@
 (()=>{"use strict";
-const KEY="papauto_local_requests_v1",root=document.getElementById("accountLocalRequests"),status=document.getElementById("accountStatus"),clear=document.getElementById("clearLocalRequests"),exportButton=document.getElementById("exportLocalRequests");
-const read=()=>{try{const x=JSON.parse(localStorage.getItem(KEY)||"[]");return Array.isArray(x)?x:[]}catch{return[]}};
-const write=x=>{try{localStorage.setItem(KEY,JSON.stringify(x.slice(0,20)));return true}catch{return false}};
-const fmt=x=>new Date(x).toLocaleString("ru-RU");
-function render(){
- if(!root)return;
- const items=read();root.replaceChildren();
- if(!items.length){const p=document.createElement("p");p.textContent="Подготовленных заявок пока нет.";root.append(p);return}
- items.forEach(item=>{
+const cfg=window.PAPAUTO_CONFIG||{},KEY_REQUESTS="papauto_local_requests_v1",KEY_FAV="papauto:favorites:v1",KEY_SEARCH="papauto:saved-searches:v1";
+const $=id=>document.getElementById(id),safeJson=(key,fallback=[])=>{try{const v=JSON.parse(localStorage.getItem(key)||"null");return Array.isArray(v)?v:fallback}catch{return fallback}};
+const writeLocal=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value));return true}catch{return false}};
+const localRoot=$("accountLocalRequests"),localStatus=$("accountStatus"),authPanel=$("accountAuthPanel"),signedPanel=$("accountSignedIn");
+let client=null,user=null,authMode="signin",realtimeChannel=null,loading=false;
+if(window.supabase?.createClient&&cfg.supabaseUrl&&cfg.supabasePublishableKey){client=window.supabase.createClient(cfg.supabaseUrl,cfg.supabasePublishableKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}})}
+const say=(id,msg)=>{const el=$(id);if(el)el.textContent=msg};
+const date=x=>{try{return new Date(x).toLocaleString("ru-RU")}catch{return ""}};
+const countryMap={"Япония":"Japan","Южная Корея":"South Korea","Китай":"China","Не определился":"Japan"};
+const statusLabels={new:"Заявка зарегистрирована",reviewing:"Проверка заявки",searching:"Идёт поиск автомобиля",auction_won:"Автомобиль выигран",purchased:"Автомобиль выкуплен",in_transit:"В пути",customs:"Таможенное оформление",delivered:"Доставлен",completed:"Завершён",cancelled:"Отменён"};
+function renderLocal(){
+ if(!localRoot)return;
+ const items=safeJson(KEY_REQUESTS);localRoot.replaceChildren();
+ if(!items.length){const p=document.createElement("p");p.textContent="Локальных заявок пока нет.";localRoot.append(p);return}
+ items.slice(0,10).forEach(item=>{const card=document.createElement("article");card.className="account-order-card";const title=document.createElement("strong");title.textContent=[item.make,item.model,item.year].filter(Boolean).join(" ")||"Заявка на подбор";const meta=document.createElement("p");meta.textContent=[item.country||"Направление не указано",date(item.saved_at),item.sent?"отправлена менеджеру":"сохранена на устройстве"].join(" · ");const body=document.createElement("p");body.textContent=item.request||"Описание не сохранено";card.append(title,meta,body);localRoot.append(card)});
+}
+function saveLocal(lead,sent){
+ if(!lead||!lead.request)return;
+ const items=safeJson(KEY_REQUESTS),dedupe=String(lead.request)+"|"+String(lead.contact||"");
+ const old=items.find(x=>x.dedupe===dedupe);
+ if(old){old.sent=old.sent||Boolean(sent);old.saved_at=Date.now()}
+ else items.unshift({id:Date.now().toString(36)+Math.random().toString(36).slice(2,7),dedupe,make:lead.make||"",model:lead.model||"",year:lead.yearTo||lead.yearFrom||"",country:lead.country||"",request:lead.request,contact:lead.contact||"",saved_at:Date.now(),sent:Boolean(sent)});
+ const ok=writeLocal(KEY_REQUESTS,items.slice(0,20));renderLocal();say("accountStatus",ok?(sent?"Заявка отправлена менеджеру; локальная копия сохранена.":"Заявка сохранена на этом устройстве."):"Не удалось сохранить локальную историю.");
+}
+function setMode(mode){
+ authMode=mode==="signup"?"signup":"signin";
+ document.querySelectorAll("[data-auth-mode]").forEach(b=>{const active=b.dataset.authMode===authMode;b.classList.toggle("is-active",active);b.setAttribute("aria-pressed",String(active))});
+ const nameWrap=$("accountDisplayNameWrap"),submit=$("accountAuthSubmit"),password=$("accountPassword");
+ if(nameWrap)nameWrap.hidden=authMode!=="signup";
+ if(submit)submit.textContent=authMode==="signup"?"Создать аккаунт":"Войти";
+ if(password)password.autocomplete=authMode==="signup"?"new-password":"current-password";
+ say("accountAuthStatus",authMode==="signup"?"Укажите почту и придумайте пароль не короче 8 символов.":"Войдите, чтобы открыть заявки и синхронизировать данные.");
+}
+document.querySelectorAll("[data-auth-mode]").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.authMode)));
+async function loadRequests(){
+ if(!client||!user)return;
+ const box=$("accountCloudRequests");if(!box)return;
+ const {data:requests,error}=await client.from("customer_requests").select("id,country,vehicle_make,vehicle_model,vehicle_year,budget_rub,details,status,created_at,updated_at").eq("user_id",user.id).order("created_at",{ascending:false}).limit(30);
+ if(error){box.textContent="Не удалось загрузить заявки: "+error.message;return}
+ box.replaceChildren();
+ if(!requests?.length){const p=document.createElement("p");p.textContent="Заявок в облачном кабинете пока нет. После входа отправьте заявку на подбор — она появится здесь.";box.append(p);return}
+ const ids=requests.map(x=>x.id);
+ const {data:events}=await client.from("order_events").select("request_id,status,message,created_at").in("request_id",ids).order("created_at",{ascending:true});
+ requests.forEach(req=>{
   const card=document.createElement("article");card.className="account-order-card";
-  const title=document.createElement("strong");title.textContent=[item.make,item.model,item.year].filter(Boolean).join(" ")||"Заявка на подбор";
-  const meta=document.createElement("p");meta.textContent=[item.country||"Направление не указано",fmt(item.saved_at),item.sent?"отправлена менеджеру":"сохранена на устройстве"].join(" · ");
-  const body=document.createElement("p");body.textContent=item.request||"Описание не сохранено";
-  const actions=document.createElement("div");actions.className="account-local-actions";
-  const copy=document.createElement("button");copy.type="button";copy.textContent="Скопировать";copy.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(item.request||"");if(status)status.textContent="Текст заявки скопирован."}catch{if(status)status.textContent="Не удалось скопировать автоматически."}});
-  const remove=document.createElement("button");remove.type="button";remove.textContent="Удалить";remove.addEventListener("click",()=>{write(read().filter(x=>x.id!==item.id));render()});
-  actions.append(copy,remove);card.append(title,meta,body,actions);root.append(card);
+  const title=document.createElement("strong");title.textContent=[req.vehicle_make,req.vehicle_model,req.vehicle_year].filter(Boolean).join(" ")||"Заявка на автомобиль";
+  const status=document.createElement("span");status.className="account-order-status";status.textContent=statusLabels[req.status]||req.status;
+  const meta=document.createElement("p");meta.textContent=[req.country,date(req.created_at),req.budget_rub?new Intl.NumberFormat("ru-RU").format(req.budget_rub)+" ₽":""].filter(Boolean).join(" · ");
+  const details=document.createElement("p");details.textContent=req.details||"Дополнительные пожелания не указаны.";
+  const timeline=document.createElement("ol");timeline.className="account-order-timeline";
+  (events||[]).filter(e=>e.request_id===req.id).forEach(ev=>{const li=document.createElement("li"),b=document.createElement("strong"),small=document.createElement("small");b.textContent=statusLabels[ev.status]||ev.status;small.textContent=date(ev.created_at)+(ev.message?" · "+ev.message:"");li.append(b,small);timeline.append(li)});
+  card.append(title,status,meta,details,timeline);box.append(card);
  });
 }
-function save(lead,sent){
- if(!lead||!lead.request)return;
- const items=read(),key=String(lead.request)+"|"+String(lead.contact||"");
- const existing=items.find(x=>x.dedupe===key);
- if(existing){existing.sent=existing.sent||Boolean(sent);existing.saved_at=Date.now()}
- else items.unshift({id:(Date.now().toString(36)+Math.random().toString(36).slice(2,7)),dedupe:key,make:lead.make||"",model:lead.model||"",year:lead.yearTo||lead.yearFrom||"",country:lead.country||"",request:lead.request,contact:lead.contact||"",saved_at:Date.now(),sent:Boolean(sent)});
- const ok=write(items);render();if(status)status.textContent=ok?(sent?"Заявка отмечена как отправленная менеджеру.":"Заявка сохранена локально в этом браузере."):"Не удалось сохранить историю: проверьте свободное место браузера.";
+async function loadNotifications(){
+ if(!client||!user)return;
+ const box=$("accountNotifications");if(!box)return;
+ const {data,error}=await client.from("notifications").select("id,title,body,link,read_at,created_at").eq("user_id",user.id).order("created_at",{ascending:false}).limit(40);
+ if(error){box.textContent="Не удалось загрузить уведомления.";return}
+ box.replaceChildren();
+ if(!data?.length){const p=document.createElement("p");p.textContent="Уведомлений пока нет. Они появятся при изменении статуса вашей заявки.";box.append(p);return}
+ data.forEach(n=>{const item=document.createElement("article");item.className="account-notification"+(n.read_at?" is-read":"");const title=document.createElement("strong"),body=document.createElement("p"),meta=document.createElement("small");title.textContent=n.title;body.textContent=n.body;meta.textContent=date(n.created_at);item.append(title,body,meta);if(!n.read_at){const btn=document.createElement("button");btn.type="button";btn.className="account-notification-read";btn.textContent="Прочитано";btn.addEventListener("click",async()=>{const {error}=await client.from("notifications").update({read_at:new Date().toISOString()}).eq("id",n.id).eq("user_id",user.id);if(!error)loadNotifications()});item.append(btn)}if(n.link){const a=document.createElement("a");a.href=n.link;a.textContent="Открыть кабинет";item.append(a)}box.append(item)});
 }
-window.PAPAUTO_ACCOUNT={saveRequest:lead=>save(lead,false)};
-window.addEventListener("papauto:lead-prepared",e=>save(e.detail,false));
-window.addEventListener("papauto:lead-submitted",e=>save(e.detail,true));
-if(exportButton)exportButton.addEventListener("click",()=>{const data=JSON.stringify(read(),null,2),blob=new Blob([data],{type:"application/json;charset=utf-8"}),url=URL.createObjectURL(blob),link=document.createElement("a");link.href=url;link.download="papauto-local-requests-"+new Date().toISOString().slice(0,10)+".json";document.body.append(link);link.click();link.remove();URL.revokeObjectURL(url)});
-if(clear)clear.addEventListener("click",()=>{localStorage.removeItem(KEY);render();if(status)status.textContent="Локальная история очищена."});
-render();
+async function persistFavorites(items){
+ if(!client||!user)return;
+ const rows=(items||[]).filter(x=>x&&x.id).map(x=>({user_id:user.id,source:({"japan":"Japan","south-korea":"South Korea","korea":"South Korea","china":"China","Japan":"Japan","South Korea":"South Korea","China":"China","PAPAUTO":"PAPAUTO"}[x.source]||"PAPAUTO"),external_id:String(x.id).slice(0,160),listing_url:String(x.url||x.link||"").slice(0,2048),vehicle_snapshot:x}));
+ if(!rows.length)return;
+ const {error}=await client.from("favorites").upsert(rows,{onConflict:"user_id,source,external_id"});
+ if(error)say("accountSyncStatus","Не удалось синхронизировать избранное: "+error.message);
+ else say("accountSyncStatus","Избранное синхронизировано с аккаунтом.");
+}
+async function persistSearches(items){
+ if(!client||!user)return;
+ const rows=(items||[]).filter(x=>x&&x.filters).map(x=>({user_id:user.id,title:String(x.name||"Мой поиск").slice(0,120),filters:x.filters,notifications_enabled:true}));
+ if(!rows.length)return;
+ const {error}=await client.from("saved_searches").upsert(rows,{onConflict:"user_id,title"});
+ if(error)say("accountSyncStatus","Не удалось синхронизировать поиски: "+error.message);
+ else say("accountSyncStatus","Сохранённые поиски синхронизированы с аккаунтом.");
+}
+async function hydratePersonalData(){
+ if(!client||!user)return;
+ const [fav,search]=await Promise.all([
+  client.from("favorites").select("source,external_id,listing_url,vehicle_snapshot").eq("user_id",user.id).order("created_at",{ascending:false}).limit(50),
+  client.from("saved_searches").select("title,filters,created_at").eq("user_id",user.id).order("created_at",{ascending:false}).limit(10)
+ ]);
+ const localFav=safeJson(KEY_FAV),localSearch=safeJson(KEY_SEARCH);
+ if(fav.error)say("accountSyncStatus","Ошибка загрузки избранного: "+fav.error.message);
+ else if(fav.data?.length)writeLocal(KEY_FAV,fav.data.map(x=>x.vehicle_snapshot||{id:x.external_id,source:x.source,url:x.listing_url}));
+ else if(localFav.length)await persistFavorites(localFav);
+ if(search.error)say("accountSyncStatus","Ошибка загрузки поисков: "+search.error.message);
+ else if(search.data?.length)writeLocal(KEY_SEARCH,search.data.map(x=>({name:x.title,filters:x.filters,savedAt:x.created_at})));
+ else if(localSearch.length)await persistSearches(localSearch);
+ window.dispatchEvent(new CustomEvent("papauto:cloud-data-loaded"));
+ say("accountSyncStatus","Кабинет подключён. Избранное и сохранённые поиски синхронизируются.");
+}
+async function createRequest(lead){
+ if(!client||!user||!lead?.consent)return;
+ const country=countryMap[lead.country]||"Japan";
+ const details=String(lead.request||"").slice(0,5000);
+ const payload={user_id:user.id,country,vehicle_make:String(lead.make||"").slice(0,100),vehicle_model:String(lead.model||"").slice(0,100),vehicle_year:Number(lead.yearTo||lead.yearFrom)||null,budget_rub:Number(lead.budget)||null,details};
+ const {error}=await client.from("customer_requests").insert(payload);
+ if(error){say("accountSyncStatus","Заявка отправлена менеджеру, но не сохранена в кабинете: "+error.message);return}
+ say("accountSyncStatus","Заявка также сохранена в вашем облачном кабинете.");
+ await loadRequests();await loadNotifications();
+}
+async function startRealtime(){
+ if(!client||!user)return;
+ if(realtimeChannel)await client.removeChannel(realtimeChannel);
+ realtimeChannel=client.channel("papauto-notifications-"+user.id).on("postgres_changes",{event:"INSERT",schema:"public",table:"notifications",filter:"user_id=eq."+user.id},()=>loadNotifications()).subscribe();
+}
+async function showSession(session){
+ user=session?.user||null;
+ if(authPanel)authPanel.hidden=Boolean(user);
+ if(signedPanel)signedPanel.hidden=!user;
+ if(user){
+  say("accountUserEmail",user.email||"Аккаунт PAPAUTO");
+  say("accountUserMeta","Вы вошли в личный кабинет");
+  await hydratePersonalData();await Promise.all([loadRequests(),loadNotifications()]);await startRealtime();
+ }else{
+  if(realtimeChannel&&client){await client.removeChannel(realtimeChannel);realtimeChannel=null}
+  if($("accountCloudRequests"))$("accountCloudRequests").textContent="Войдите, чтобы увидеть заявки.";
+  if($("accountNotifications"))$("accountNotifications").textContent="Войдите, чтобы получать уведомления.";
+ }
+}
+if(client){
+ const authForm=$("accountAuthForm");
+ if(authForm)authForm.addEventListener("submit",async e=>{
+  e.preventDefault();const email=$("accountEmail").value.trim(),password=$("accountPassword").value,displayName=$("accountDisplayName")?.value.trim()||"";
+  const button=$("accountAuthSubmit");button.disabled=true;
+  try{
+   if(authMode==="signup"){
+    const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:displayName},emailRedirectTo:location.origin+"/#account"}});
+    if(error)throw error;
+    if(data.session){say("accountAuthStatus","Аккаунт создан. Вы вошли в систему.");await showSession(data.session)}
+    else say("accountAuthStatus","Проверьте почту и подтвердите адрес, затем войдите. Если письмо не пришло, проверьте настройки SMTP и лимиты отправки Supabase.");
+   }else{
+    const {data,error}=await client.auth.signInWithPassword({email,password});if(error)throw error;
+    say("accountAuthStatus","Вход выполнен.");await showSession(data.session);
+   }
+  }catch(err){say("accountAuthStatus",err.message||"Не удалось выполнить вход.")}
+  finally{button.disabled=false}
+ });
+ const signOut=$("accountSignOut");if(signOut)signOut.addEventListener("click",async()=>{await client.auth.signOut();await showSession(null);say("accountAuthStatus","Вы вышли из аккаунта.")});
+ const markAll=$("accountMarkAllRead");if(markAll)markAll.addEventListener("click",async()=>{if(!user)return;const {error}=await client.from("notifications").update({read_at:new Date().toISOString()}).eq("user_id",user.id).is("read_at",null);if(error)say("accountSyncStatus","Не удалось обновить уведомления: "+error.message);else loadNotifications()});
+ client.auth.getSession().then(({data})=>showSession(data.session));
+ client.auth.onAuthStateChange((event,session)=>{if(event==="SIGNED_IN"||event==="SIGNED_OUT"||event==="TOKEN_REFRESHED")showSession(session)});
+ window.PAPAUTO_ACCOUNT={
+  saveRequest:lead=>saveLocal(lead,false),
+  persistFavorites,
+  persistSearches,
+  createRequest,
+  getUser:()=>user
+ };
+ window.addEventListener("papauto:lead-prepared",e=>saveLocal(e.detail,false));
+ window.addEventListener("papauto:lead-submitted",e=>{saveLocal(e.detail,true);if(user)createRequest(e.detail)});
+ window.addEventListener("papauto:favorites-changed",e=>persistFavorites(e.detail));
+ window.addEventListener("papauto:saved-searches-changed",e=>persistSearches(e.detail));
+}else{
+ say("accountAuthStatus","Подключение кабинета временно недоступно. Проверьте загрузку Supabase и публичную конфигурацию.");
+ window.PAPAUTO_ACCOUNT={saveRequest:lead=>saveLocal(lead,false)};
+ window.addEventListener("papauto:lead-prepared",e=>saveLocal(e.detail,false));
+ window.addEventListener("papauto:lead-submitted",e=>saveLocal(e.detail,true));
+}
+const exportButton=$("exportLocalRequests");if(exportButton)exportButton.addEventListener("click",()=>{const blob=new Blob([JSON.stringify(safeJson(KEY_REQUESTS),null,2)],{type:"application/json;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="papauto-local-requests-"+new Date().toISOString().slice(0,10)+".json";document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url)});
+const clear=$("clearLocalRequests");if(clear)clear.addEventListener("click",()=>{localStorage.removeItem(KEY_REQUESTS);renderLocal();say("accountStatus","Локальная история очищена.")});
+renderLocal();setMode("signin");
 })();
