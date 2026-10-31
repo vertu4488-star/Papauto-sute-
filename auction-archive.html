@@ -30,10 +30,10 @@
 <p style="margin:8px 0 0">Здесь показываются карточки автомобилей, которые ранее участвовали в торгах и имеют подтверждённый результат. В карточках нет переходов на сторонние сайты. Цена указана только как цена торгов в Японии, если она подтверждена источником; расходы на доставку и оформление считаются отдельно.</p>
 </section>
 <section class="archive-note" id="jpSheetStats" aria-live="polite">
-<b>Открытая статистика JP Sheet · разрешено цитирование с указанием источника</b>
-<p id="jpSheetState" style="margin:8px 0">Загружаем опубликованные сводные показатели…</p>
+<b>Сводная статистика торгов</b>
+<p id="jpSheetState" style="margin:8px 0">Сводная статистика будет доступна после подключения подтверждённых данных.</p>
 <div class="archive-metrics" id="jpSheetMetrics"></div>
-<p class="muted" id="jpSheetDisclaimer">Источник: <a class="source-link" href="https://jpsheet.com/auction-sheet-data/" target="_blank" rel="noopener noreferrer">JP Sheet — Japanese Auction Sheet Data ↗</a>. Это агрегированная выборка, а не 10 000 отдельных лотов и не полный рынок.</p>
+<p class="muted" id="jpSheetDisclaimer">Сводные показатели не являются отдельными карточками лотов.</p>
 </section>
 <section class="archive-note" id="publicJapanLots" aria-live="polite">
 <b>Ещё открытые карточки японских торгов</b>
@@ -138,13 +138,13 @@ async function search(event){
   records.forEach(r=>$("grid").append(renderRecord(r,false)));
   if($("includeUnsold").checked)unsold.forEach(r=>$("grid").append(renderRecord(r,true)));
   const total=records.length+($("includeUnsold").checked?unsold.length:0);
-  $("state").textContent=total?"Найдено записей: "+total+" · продано: "+records.length+" · непродано: "+($("includeUnsold").checked?unsold.length:0)+" · "+(data.source||"источник указан ниже"):"По выбранным параметрам встроенных записей не найдено.";
+  $("state").textContent=total?"Найдено записей: "+total+" · продано: "+records.length+" · непродано: "+($("includeUnsold").checked?unsold.length:0)+" · "+(data.source||"источник указан ниже"):"По выбранным параметрам записей не найдено.";
   if(!total){
    $("empty").hidden=false;
    $("empty").textContent=data.message||"Для этой модели у PAPAUTO пока нет подтверждённой встроенной выборки. Ниже доступны проверенные внешние источники; откройте их для поиска по выбранной модели.";
   }
   if(stats&&stats.note){const note=document.createElement("p");note.className="muted";setText(note,stats.note);$("state").append(document.createTextNode(" "));$("state").append(note)}
- }catch(error){$("state").textContent="Статистика временно недоступна: "+(error.message||"ошибка соединения");$("empty").hidden=false;$("empty").textContent="Не удалось получить данные. Попробуйте ещё раз или откройте первоисточники ниже."}
+ }catch(error){$("state").textContent="Статистика временно недоступна: "+(error.message||"ошибка соединения");$("empty").hidden=false;$("empty").textContent="Не удалось получить данные. Попробуйте ещё раз позже."}
  finally{$("searchButton").disabled=false;$("searchButton").textContent="Найти лоты ↗"}
 }
 $("archiveForm").addEventListener("submit",search);
