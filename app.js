@@ -119,8 +119,8 @@ if(aiSelectButton)aiSelectButton.addEventListener("click",async()=>{
     const selectionResponse=await fetch(api+"/api/assistant/select",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({
      message,country,budget:budgetValue>0?budgetValue:null,city:$("city").value.trim()||"Новосибирск",
      make:$("carMake").value.trim()||f.make||"",model:$("carModel").value.trim()||f.model||"",
-     year_from:$("yearFrom").value?Number($("yearFrom").value):(f.year_from>1990?f.year_from:null),
-     year_to:$("yearTo").value?Number($("yearTo").value):(f.year_to<2030?f.year_to:null),
+     year_from:$("yearFrom").value?Number($("yearFrom").value):(f.year_from>1990&&f.year_from<=2027?f.year_from:null),
+     year_to:$("yearTo").value?Number($("yearTo").value):(f.year_to<2030&&f.year_to<=2027?f.year_to:null),
      mileage_max:$("maxMileage").value?Number($("maxMileage").value):(f.mileage_max||null)
     })});
     const shortlist=await selectionResponse.json().catch(()=>({}));
