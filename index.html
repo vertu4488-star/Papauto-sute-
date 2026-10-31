@@ -332,6 +332,10 @@
           </label>
           <label>Цена автомобиля, ₽ <input id="carCost" inputmode="numeric" type="number" min="0" step="10000" placeholder="Например, 1 500 000"></label>
           <div class="form-grid">
+            <label>Аукционная / дилерская комиссия, ₽ <input id="auctionFee" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если известна"></label>
+            <label>Доставка по стране покупки, ₽ <input id="originDelivery" inputmode="numeric" type="number" min="0" step="1000" placeholder="До порта / склада"></label>
+            <label>Экспортные документы и порт, ₽ <input id="exportDocs" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если известны"></label>
+            <label>Страхование и хранение, ₽ <input id="insurance" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если применимо"></label>
             <label>Доставка до России, ₽ <input id="shipping" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если известна"></label>
             <label>Таможня и сборы, ₽ <input id="customs" inputmode="numeric" type="number" min="0" step="1000" placeholder="По расчёту специалиста"></label>
             <label>Оформление, ₽ <input id="paperwork" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если известно"></label>
@@ -347,22 +351,22 @@
             <p class="fine-print">Тариф автовоза — ориентировочный. Перед оплатой подтвердите актуальную стоимость перевозки.</p>
           </div>
           <div class="tks-panel">
-            <h3>Автоматический расчёт таможни TKS.RU</h3>
-            <p>Укажите характеристики автомобиля и стоимость в валюте покупки. Для расчёта необходим активный лицензионный ключ TKS.RU.</p>
+            <h3>Подготовка данных для таможенного расчёта</h3>
+            <p>Бесплатный режим не обращается к платным калькуляторам. Здесь можно локально разобрать описание и подготовить характеристики для специалиста; итоговую сумму таможни внесите в общую смету после подтверждения.</p>
             <div class="vehicle-ai-box" id="vehicleAiBox">
-              <div class="vehicle-ai-heading"><span class="vehicle-ai-mark">AI</span><div><strong>Помощник по расчёту</strong><small>Опишите автомобиль — помощник соберёт параметры и запросит расчёт TKS.RU</small></div></div>
+              <div class="vehicle-ai-heading"><span class="vehicle-ai-mark">FREE</span><div><strong>Локальный помощник</strong><small>Выделяет характеристики прямо в браузере — без платных API и отправки текста</small></div></div>
               <label class="vehicle-ai-label" for="vehicleAiMessage">Например: «Toyota Prius 2019, гибрид 1.8, 122 л.с., цена 1 200 000 иен, везу как физлицо»</label>
               <textarea id="vehicleAiMessage" rows="3" maxlength="2000" placeholder="Марка, модель, год, двигатель, цена и валюта покупки…"></textarea>
-              <button class="button button-primary button-wide" id="vehicleAiSend" type="button">Разобрать данные и рассчитать ↗</button>
-              <p id="vehicleAiStatus" class="result-note" aria-live="polite">ИИ уточнит недостающие данные. Лицензионные ключи хранятся только на сервере.</p>
+              <button class="button button-primary button-wide" id="vehicleAiSend" type="button">Разобрать параметры бесплатно ↗</button>
+              <p id="vehicleAiStatus" class="result-note" aria-live="polite">Разбор выполняется в браузере. Возрастную категорию и все неизвестные значения необходимо проверить вручную.</p>
             </div>
             <div class="form-grid">
-              <label>Цена в валюте покупки <input id="tksCost" type="number" min="1" step="100" placeholder="Например, 1500000" required></label>
+              <label>Цена в валюте покупки <input id="tksCost" type="number" min="1" step="100" placeholder="Например, 1500000"></label>
               <label>Валюта
                 <select id="tksCurrency"><option value="392">Японская иена (JPY)</option><option value="410">Южнокорейская вона (KRW)</option><option value="156">Китайский юань (CNY)</option><option value="840">Доллар США (USD)</option><option value="643">Российский рубль (RUB)</option></select>
               </label>
-              <label>Объём двигателя, см³ <input id="tksVolume" type="number" min="0" max="20000" placeholder="Например, 2000" required></label>
-              <label>Мощность, л.с. <input id="tksPower" type="number" min="0" max="5000" placeholder="Например, 150" required></label>
+              <label>Объём двигателя, см³ <input id="tksVolume" type="number" min="0" max="20000" placeholder="Например, 2000"></label>
+              <label>Мощность, л.с. <input id="tksPower" type="number" min="0" max="5000" placeholder="Например, 150"></label>
               <label>Тип двигателя
                 <select id="tksEngine"><option value="petrol">Бензин</option><option value="diesel">Дизель</option><option value="petrol_electric">Бензиновый гибрид</option><option value="diesel_electric">Дизельный гибрид</option><option value="electric">Электромобиль</option><option value="no_engine">Без двигателя</option></select>
               </label>
@@ -373,8 +377,8 @@
                 <select id="tksFace"><option value="nat">Физическое лицо</option><option value="jur">Юридическое лицо</option></select>
               </label>
             </div>
-            <button class="button button-secondary button-wide" id="runTks" type="button">Рассчитать таможенные платежи</button>
-            <p class="result-note" id="tksStatus" aria-live="polite">Расчёт станет доступен после добавления лицензионного ключа TKS.RU в настройки серверного API.</p>
+            <p class="result-note">Автоматический расчёт через TKS.RU отключён. Введите подтверждённую сумму таможни в общую смету выше. Платных запросов нет.</p>
+            <p class="result-note" id="tksStatus" aria-live="polite">В бесплатном режиме внешние платные расчётчики не вызываются.</p>
             <pre id="tksResult" class="tks-result" hidden></pre>
           </div>
           <button class="button button-primary" type="submit">Рассчитать смету</button>
@@ -385,6 +389,8 @@
           <p class="result-label">Сумма заполненных расходов</p><div class="result-total" id="resultTotal">— ₽</div>
           <div class="result-lines" id="resultLines"><div><span>Добавьте известные суммы</span><b>—</b></div></div>
           <p class="result-note" id="resultNote">Итог пока не рассчитан. Неизвестные статьи не учитываются, поэтому сумма может быть ниже фактических расходов.</p>
+          <label class="market-reference-field">Цена сопоставимого автомобиля в России, ₽ <input id="marketReferencePrice" type="number" min="0" step="10000" placeholder="Введите цену из выбранного вами объявления"></label>
+          <p class="result-note" id="marketComparison">Введите цену российского аналога, чтобы сравнить её с суммой заполненных расходов. Это не автоматическая рыночная оценка.</p>
           <button class="button button-secondary button-wide" type="button" id="copyEstimate">Скопировать смету</button>
         </aside>
       </div>
@@ -491,36 +497,13 @@
     <div class="account-panel">
       <div class="eyebrow">ЛИЧНЫЙ КАБИНЕТ PAPAUTO</div>
       <h2>Ваши заявки<br><em>в одном месте.</em></h2>
-      <p class="account-intro">Создайте аккаунт, чтобы сохранять профиль, отправлять заявки на автомобили и возвращаться к истории обращений.</p>
-      <div class="account-auth-grid">
-        <form id="accountSignUp" class="account-auth-card">
-          <h3>Регистрация</h3>
-          <label>Имя <input id="accountName" maxlength="120" autocomplete="name" placeholder="Ваше имя"></label>
-          <label>Телефон <input id="accountPhone" maxlength="32" autocomplete="tel" placeholder="+7…"></label>
-          <label>Электронная почта <input id="accountSignUpEmail" type="email" required autocomplete="email" placeholder="name@example.com"></label>
-          <label>Пароль <input id="accountSignUpPassword" type="password" required minlength="8" autocomplete="new-password" placeholder="Не менее 8 символов"></label>
-          <button class="button button-primary" type="submit">Создать аккаунт</button>
-        </form>
-        <form id="accountSignIn" class="account-auth-card">
-          <h3>Вход</h3>
-          <label>Электронная почта <input id="accountSignInEmail" type="email" required autocomplete="email" placeholder="name@example.com"></label>
-          <label>Пароль <input id="accountSignInPassword" type="password" required autocomplete="current-password" placeholder="Ваш пароль"></label>
-          <button class="button button-secondary" type="submit">Войти</button>
-          <button class="account-text-button" type="button" id="accountResetPassword">Забыли пароль?</button>
-        </form>
+      <p class="account-intro">Сохранённые поиски и избранные автомобили доступны на этом устройстве. Серверный кабинет с синхронизацией между устройствами пока не подключён.</p>
+      <div class="account-local-history">
+        <p>Заявки сохраняются только в этом браузере. Они не синхронизируются между устройствами и не заменяют отправку менеджеру.</p>
+        <div id="accountLocalRequests"><p>Подготовленные заявки появятся здесь.</p></div>
+        <button class="button button-secondary" type="button" id="clearLocalRequests">Очистить локальную историю</button>
       </div>
-      <p id="accountStatus" class="account-status" role="status" aria-live="polite">Личный кабинет подключён к защищённой базе данных.</p>
-      <div id="accountDashboard" class="account-dashboard" hidden>
-        <div class="account-user-row"><div><strong id="accountUserEmail"></strong><span id="accountUserPhone"></span></div><button class="button button-secondary" type="button" id="accountSignOut">Выйти</button></div>
-        <form id="accountProfileForm" class="account-profile-form">
-          <h3>Мой профиль</h3>
-          <label>Имя <input id="accountProfileName" maxlength="120"></label>
-          <label>Телефон <input id="accountProfilePhone" maxlength="32" autocomplete="tel"></label>
-          <label>Город <input id="accountProfileCity" maxlength="100" value="Новосибирск"></label>
-          <button class="button button-secondary" type="submit">Сохранить профиль</button>
-        </form>
-        <div class="account-orders"><h3>Мои заявки</h3><div id="accountOrdersList"><p>Загрузка заявок…</p></div></div>
-      </div>
+      <p id="accountStatus" class="account-status" role="status" aria-live="polite">Локальная история включена. Для отправки менеджеру используйте Telegram.</p>
     </div>
   </section>
 

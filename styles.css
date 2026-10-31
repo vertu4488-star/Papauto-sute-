@@ -254,3 +254,9 @@ html{scroll-padding-top:100px;background:var(--bg)}body{background:#f3f5f7;color
 .auction-stats-visual svg{display:block;width:100%;max-height:210px;margin-top:12px}
 .auction-stats-visual small{align-self:flex-end;font-size:9px;color:#788691;margin-top:2px}
 @media(max-width:760px){.auction-stats-visual{min-height:210px;padding:16px}.auction-stats-visual-label{top:14px;left:16px}}
+
+/* Free local request history */
+.account-local-history{display:grid;gap:14px;margin-top:20px;padding:20px;border:1px solid var(--line,#d8dde3);border-radius:18px;background:var(--surface,#fff)}
+.account-local-history>p{margin:0;color:var(--muted,#64748b)}
+.account-local-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.account-local-actions button{padding:8px 12px;border:1px solid var(--line,#d8dde3);border-radius:10px;background:transparent;color:inherit;cursor:pointer}
