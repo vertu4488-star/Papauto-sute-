@@ -10,7 +10,7 @@
   const $ = id => document.getElementById(id);
   const grid=$("catalogGrid"), q=$("modelQuery"), country=$("countryFilter"), power=$("powerFilter"), count=$("catalogCount"), empty=$("catalogEmpty");
   if (!grid || !q || !country || !power) return;
-  let rows=[], loaded=false;
+  let rows=[], loaded=false, visibleLimit=120;
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   function marketFor(make) {
     const name=String(make||"").toLocaleLowerCase("en");
@@ -42,8 +42,8 @@
   function render() {
     const term=q.value.trim().toLocaleLowerCase("ru");
     const filtered=rows.filter(x=>(!country.value||x.market===country.value)&&(!term||[x.make,x.model,x.generation,x.engine,x.fuel].join(" ").toLocaleLowerCase("ru").includes(term))&&(!power.value||(power.value==="ev"?x.electric:!x.electric)));
-    count.textContent=loaded ? "Вариантов двигателей и поколений: "+filtered.length.toLocaleString("ru-RU")+" · всего в выбранном справочнике: "+rows.length.toLocaleString("ru-RU") : "Загружаем открытую базу поколений и двигателей…";
-    grid.innerHTML=filtered.slice(0,240).map(x=>'<article class="model-card"><div class="country">'+LABELS[x.market]+'</div><h2>'+esc(x.make)+' '+esc(x.model)+'</h2><div class="make">'+esc(x.generation)+(x.year?' · с '+esc(x.year):'')+'</div><div class="engine">'+esc(x.engine)+'</div><div class="market">'+(x.electric?'ЭЛЕКТРОМОБИЛЬ':(x.cc?((x.cc/1000).toFixed(1)+' Л · '):'Объём не указан · ')+esc(x.fuel||'ДВС'))+'</div><div class="make">'+(x.hp?esc(x.hp)+' л.с.':'')+(x.transmission?' · '+esc(x.transmission):'')+'</div></article>').join("");
+    count.textContent=loaded ? "Найдено модификаций: "+filtered.length.toLocaleString("ru-RU")+" · всего в выбранном справочнике: "+rows.length.toLocaleString("ru-RU") : "Загружаем открытую базу поколений и двигателей…";
+    grid.innerHTML=filtered.slice(0,visibleLimit).map(x=>'<article class="model-card"><div class="country">'+LABELS[x.market]+'</div><h2>'+esc(x.make)+' '+esc(x.model)+'</h2><div class="make">'+esc(x.generation)+(x.year?' · с '+esc(x.year):'')+'</div><div class="engine">'+esc(x.engine)+'</div><div class="market">'+(x.electric?'ЭЛЕКТРОМОБИЛЬ':(x.cc?((x.cc/1000).toFixed(1)+' Л · '):'Объём не указан · ')+esc(x.fuel||'ДВС'))+'</div><div class="make">'+(x.hp?esc(x.hp)+' л.с.':'')+(x.transmission?' · '+esc(x.transmission):'')+'</div></article>').join("");
     empty.style.display=filtered.length?"none":"block";
     if(filtered.length>240) empty.textContent="Показаны первые 240 вариантов. Уточните поиск или выберите страну — всего найдено "+filtered.length.toLocaleString("ru-RU")+".";
     else empty.textContent="По выбранным параметрам вариантов не найдено.";
