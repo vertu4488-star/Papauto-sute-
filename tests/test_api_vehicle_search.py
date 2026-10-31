@@ -80,6 +80,18 @@ class VehicleSearchRoutingTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result["data_type"], "source_hub")
         self.assertTrue(result["sources"])
 
+    async def test_local_assistant_selection_returns_free_model_shortlist(self):
+        request = api.VehicleSelectionInput(
+            message="Нужен семейный кроссовер для рыбалки с полным приводом",
+            country="japan", budget=2500000, city="Новосибирск"
+        )
+        with patch("api.httpx.AsyncClient") as client:
+            result = await api.assistant_select(request)
+        client.assert_not_called()
+        self.assertEqual(result["processing_mode"], "local_free")
+        self.assertTrue(result["recommendations"])
+        self.assertIn("PAPAUTO", result["source"])
+
     async def test_china_auction_statistics_does_not_call_metered_ttpai_api(self):
         with patch("api.fetch_ttpai_model_stats", new_callable=AsyncMock) as ttpai:
             result = await api.auction_statistics(country="china", make="BYD", model="Song")
