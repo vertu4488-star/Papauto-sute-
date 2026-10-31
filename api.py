@@ -133,6 +133,7 @@ class Lead(BaseModel):
     city: str = Field(default="Новосибирск", max_length=80)
     request: str = Field(min_length=5, max_length=4000)
     consent: bool = False
+    website: str = Field(default="", max_length=200)
 
     @field_validator("contact", "request")
     @classmethod
@@ -216,6 +217,10 @@ async def create_lead(lead: Lead):
     """Send a lead through the configured Telegram bot; no paid database is required."""
     if not lead.consent:
         raise HTTPException(status_code=400, detail="Необходимо согласие на обработку данных.")
+
+    # Honeypot: reject automated form submissions without forwarding them to Telegram.
+    if lead.website.strip():
+        raise HTTPException(status_code=400, detail="Не удалось обработать заявку. Проверьте заполнение формы.")
 
     token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
     chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
