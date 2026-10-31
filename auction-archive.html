@@ -30,6 +30,12 @@
 <div class="archive-metrics" id="jpSheetMetrics"></div>
 <p class="muted" id="jpSheetDisclaimer">Источник: <a class="source-link" href="https://jpsheet.com/auction-sheet-data/" target="_blank" rel="noopener noreferrer">JP Sheet — Japanese Auction Sheet Data ↗</a>. Это агрегированная выборка, а не 10 000 отдельных лотов и не полный рынок.</p>
 </section>
+<section class="archive-note" id="publicJapanLots" aria-live="polite">
+<b>Ещё открытые карточки японских торгов</b>
+<p id="publicJapanLotsState" style="margin:8px 0">Загружаем проверенные карточки из открытых страниц Banzai24…</p>
+<div id="publicJapanLotsGrid" class="archive-grid"></div>
+<p class="muted" id="publicJapanLotsDisclaimer">Источник: <a class="source-link" href="https://banzai24.com/en" target="_blank" rel="noopener noreferrer">Banzai24 ↗</a>. Каждая карточка ведёт на исходную страницу лота.</p>
+</section>
 <form class="archive-filters" id="archiveForm">
 <label>Марка<input id="make" maxlength="80" placeholder="Любая марка: Toyota, Honda, BMW…"></label>
 <label>Модель<input id="model" maxlength="80" placeholder="Любая модель: Prius, Vezel, X5…"></label>
@@ -75,6 +81,22 @@ async function loadJpSheetStats(){
   $("jpSheetState").textContent="Опубликовано "+data.updated_at+" · "+fmt(data.reports)+" отчётов · "+fmt(data.translated_sheets)+" переведённых листов.";
   $("jpSheetDisclaimer").textContent=data.disclaimer+" Право использования: "+data.permission;
  }catch(error){$("jpSheetState").textContent="Не удалось загрузить открытую статистику: "+error.message}
+}
+async function loadPublicJapanLots(){
+ try{
+  const response=await fetch(api+"/api/public-japan-lots",{headers:{Accept:"application/json"}});
+  if(!response.ok)throw new Error("HTTP "+response.status);
+  const data=await response.json();if(!data.ok)throw new Error("Источник временно недоступен");
+  const grid=$("publicJapanLotsGrid");grid.replaceChildren();
+  (data.records||[]).forEach(record=>{
+   const card=renderRecord(record,false);
+   const meta=card.querySelector(".lot-meta");
+   if(meta&&record.make&&record.model)meta.textContent=record.make+" · "+record.model+" · "+meta.textContent;
+   grid.append(card);
+  });
+  $("publicJapanLotsState").textContent="Добавлено карточек: "+(data.count||0)+" · данные проверены по отдельным страницам лотов · "+new Date(data.retrieved_at).toLocaleString("ru-RU");
+  $("publicJapanLotsDisclaimer").textContent=data.disclaimer;
+ }catch(error){$("publicJapanLotsState").textContent="Не удалось загрузить карточки: "+error.message}
 }
 function metric(label,value){const box=document.createElement("div");box.className="archive-metric";const l=document.createElement("span"),v=document.createElement("strong");setText(l,label);setText(v,value);box.append(l,v);return box}
 function field(parent,label,value){const d=document.createElement("div"),s=document.createElement("small"),b=document.createElement("b");setText(s,label);setText(b,value);d.append(s,b);parent.append(d)}
@@ -126,6 +148,7 @@ $("archiveForm").addEventListener("submit",search);
 $("resetButton").addEventListener("click",()=>{$("archiveForm").reset();$("make").value="";$("model").value="";$("yearFrom").value="1990";$("yearTo").value="2030";search()});
 search();
 loadJpSheetStats();
+loadPublicJapanLots();
 })();
 </script>
 </body></html>
