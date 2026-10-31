@@ -576,6 +576,32 @@
     </div>
   </section>
 
+  <section class="section wrap finance-tools" id="finance-tools">
+    <div class="section-title-row"><div><div class="eyebrow">ФИНАНСЫ · TRADE-IN</div><h2>Рассчитайте покупку<br><em>и доплату за ваш автомобиль.</em></h2></div><p>Бесплатный предварительный расчёт кредита и обмена. Введите свои условия — результат пересчитывается автоматически, без отправки персональных данных.</p></div>
+    <div class="finance-tools-grid">
+      <article class="finance-tool-card"><span class="finance-tool-kicker">01 / КРЕДИТНЫЙ КАЛЬКУЛЯТОР</span><h3>Ежемесячный платёж</h3>
+        <div class="finance-fields">
+          <label>Стоимость автомобиля, ₽<input id="financeCarPrice" type="number" min="0" step="10000" value="2500000"></label>
+          <label>Первоначальный взнос, ₽<input id="financeDown" type="number" min="0" step="10000" value="500000"></label>
+          <label>Срок кредита, лет<input id="financeYears" type="number" min="1" max="10" step="1" value="5"></label>
+          <label>Ставка, % годовых<input id="financeRate" type="number" min="0" max="100" step="0.1" value="20"></label>
+        </div>
+        <div class="finance-result"><small>Ориентировочный платёж в месяц</small><strong id="financeMonthly">—</strong><span id="financeLoanTotal">Укажите параметры кредита</span></div>
+        <p class="finance-disclaimer">Аннуитетный ознакомительный расчёт. Не является предложением банка; страховки, комиссии и индивидуальные условия не учтены.</p>
+      </article>
+      <article class="finance-tool-card"><span class="finance-tool-kicker">02 / TRADE-IN И ВЫКУП</span><h3>Сколько нужно доплатить</h3>
+        <div class="finance-fields">
+          <label>Цена выбранного автомобиля, ₽<input id="tradeTarget" type="number" min="0" step="10000" value="2500000"></label>
+          <label>Ориентир стоимости вашего авто, ₽<input id="tradeValue" type="number" min="0" step="10000" value="900000"></label>
+          <label>Дополнительные расходы, ₽<input id="tradeExtra" type="number" min="0" step="10000" value="0"></label>
+        </div>
+        <div class="finance-result"><small>Ориентировочная доплата</small><strong id="tradeDifference">—</strong><span id="tradeRatio">Введите стоимость вашего автомобиля</span></div>
+        <a class="button button-primary finance-cta" href="#assistant">Обсудить оценку и подбор ↗</a>
+        <p class="finance-disclaimer">Стоимость старого автомобиля — ваша предварительная оценка, не оценка PAPAUTO. Фактическая цена определяется после осмотра и проверки документов.</p>
+      </article>
+    </div>
+  </section>
+
   <section class="section wrap" id="process">
     <div class="section-title-row"><div><div class="eyebrow">ПОНЯТНО ПО ЭТАПАМ</div><h2>От запроса<br><em>до автомобиля.</em></h2></div><p>Конкретные сроки и стоимость зависят от выбранного автомобиля, страны, логистики и оформления. Условия фиксируются до начала работ.</p></div>
     <div class="process-grid">
@@ -655,6 +681,7 @@
 <script src="/site-config.js"></script>
 <script src="/site-tabs.js" defer></script>\n<script src="/account.js" defer></script>
 <script src="/app.js" defer></script>
+<script src="/finance-tools.js" defer></script>
 <script src="/marketplace-interactions.js" defer></script>
 <script src="/saved-searches.js" defer></script>
 <script src="/smart-search.js" defer></script>
