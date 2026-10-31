@@ -11,6 +11,8 @@
   const grid=$("catalogGrid"), q=$("modelQuery"), country=$("countryFilter"), power=$("powerFilter"), count=$("catalogCount"), empty=$("catalogEmpty");
   if (!grid || !q || !country || !power) return;
   let rows=[], loaded=false, visibleLimit=120;
+  const imageCache=new Map();
+  let imageQueue=[], imageWorkers=0;
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   function marketFor(make) {
     const name=String(make||"").toLocaleLowerCase("en");
@@ -43,10 +45,37 @@
     const term=q.value.trim().toLocaleLowerCase("ru");
     const filtered=rows.filter(x=>(!country.value||x.market===country.value)&&(!term||[x.make,x.model,x.generation,x.engine,x.fuel].join(" ").toLocaleLowerCase("ru").includes(term))&&(!power.value||(power.value==="ev"?x.electric:!x.electric)));
     count.textContent=loaded ? "Найдено модификаций: "+filtered.length.toLocaleString("ru-RU")+" · всего в выбранном справочнике: "+rows.length.toLocaleString("ru-RU") : "Загружаем открытую базу поколений и двигателей…";
-    grid.innerHTML=filtered.slice(0,visibleLimit).map(x=>'<article class="model-card"><div class="country">'+LABELS[x.market]+'</div><h2>'+esc(x.make)+' '+esc(x.model)+'</h2><div class="make">'+esc(x.generation)+(x.year?' · с '+esc(x.year):'')+'</div><div class="engine">'+esc(x.engine)+'</div><div class="market">'+(x.electric?'ЭЛЕКТРОМОБИЛЬ':(x.cc?((x.cc/1000).toFixed(1)+' Л · '):'Объём не указан · ')+esc(x.fuel||'ДВС'))+'</div><div class="make">'+(x.hp?esc(x.hp)+' л.с.':'')+(x.transmission?' · '+esc(x.transmission):'')+'</div></article>').join("");
+    grid.innerHTML=filtered.slice(0,visibleLimit).map(x=>'<article class="model-card"><div class="model-photo"><img loading="lazy" alt="'+esc(x.make+' '+x.model)+'" data-model-image="'+esc(x.make+' '+x.model)+'"><span>ФОТО МОДЕЛИ</span><a class="photo-credit" target="_blank" rel="noopener" hidden></a></div><div class="country">'+LABELS[x.market]+'</div><h2>'+esc(x.make)+' '+esc(x.model)+'</h2><div class="make">'+esc(x.generation)+(x.year?' · с '+esc(x.year):'')+'</div><div class="engine">'+esc(x.engine)+'</div><div class="market">'+(x.electric?'ЭЛЕКТРОМОБИЛЬ':(x.cc?((x.cc/1000).toFixed(1)+' Л · '):'Объём не указан · ')+esc(x.fuel||'ДВС'))+'</div><div class="make">'+(x.hp?esc(x.hp)+' л.с.':'')+(x.transmission?' · '+esc(x.transmission):'')+'</div></article>').join("");
+    loadModelImages();
     empty.style.display=filtered.length?"none":"block";
     if(filtered.length>240) empty.textContent="Показаны первые 240 вариантов. Уточните поиск или выберите страну — всего найдено "+filtered.length.toLocaleString("ru-RU")+".";
     else empty.textContent="По выбранным параметрам вариантов не найдено.";
+  }
+  function loadModelImages(){
+    grid.querySelectorAll("img[data-model-image]").forEach(img=>{
+      const key=img.dataset.modelImage;
+      if(imageCache.has(key)){applyImage(img,imageCache.get(key));return;}
+      if(img.dataset.queued)return;
+      img.dataset.queued="1";imageQueue.push({img,key});
+    });
+    pumpImages();
+  }
+  function applyImage(img,data){
+    if(!img.isConnected||!data)return;
+    img.src=data.thumb;
+    img.onload=()=>{img.classList.add("loaded");const credit=img.parentElement.querySelector(".photo-credit");if(credit){credit.href=data.page;credit.textContent="Источник: Wikimedia Commons";credit.hidden=false;}};
+    img.onerror=()=>img.removeAttribute("src");
+  }
+  function pumpImages(){
+    while(imageWorkers<3&&imageQueue.length){
+      const job=imageQueue.shift();imageWorkers++;
+      const api="https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch="+encodeURIComponent('filetype:bitmap "'+job.key+'" car')+"&gsrnamespace=6&gsrlimit=1&prop=imageinfo&iiprop=url&iiurlwidth=720&format=json&origin=*";
+      fetch(api).then(r=>{if(!r.ok)throw Error("Commons "+r.status);return r.json();}).then(data=>{
+        const p=Object.values(data.query?.pages||{})[0],info=p?.imageinfo?.[0];
+        const item=info?.thumburl?{thumb:info.thumburl,page:"https://commons.wikimedia.org/wiki/"+encodeURIComponent(p.title.replace(/ /g,"_"))}:null;
+        imageCache.set(job.key,item);applyImage(job.img,item);
+      }).catch(()=>imageCache.set(job.key,null)).finally(()=>{imageWorkers--;pumpImages();});
+    }
   }
   [q,country,power].forEach(el=>el.addEventListener(el===q?"input":"change",()=>{visibleLimit=120;render();}));
   const moreButton=$("catalogMore"); if(moreButton)moreButton.addEventListener("click",()=>{visibleLimit+=120;render();});
