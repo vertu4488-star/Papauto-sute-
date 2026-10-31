@@ -166,7 +166,7 @@ if(client){
  window.addEventListener("papauto:favorites-changed",e=>persistFavorites(e.detail));
  window.addEventListener("papauto:saved-searches-changed",e=>persistSearches(e.detail));
 }else{
- say("accountAuthStatus","Подключение кабинета временно недоступно. Проверьте загрузку Supabase и публичную конфигурацию.");
+ const notice=$("accountCloudNotice");if(notice)notice.hidden=false;say("accountStatus","Облачный кабинет приостановлен до подключения российского хранилища персональных данных.");
  window.PAPAUTO_ACCOUNT={saveRequest:lead=>saveLocal(lead,false)};
  window.addEventListener("papauto:lead-prepared",e=>saveLocal(e.detail,false));
  window.addEventListener("papauto:lead-submitted",e=>saveLocal(e.detail,true));
