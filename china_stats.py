@@ -79,7 +79,7 @@ async def fetch_ttpai_model_stats(make, model):
         return None
     display_name, city, url = info
     try:
-        async with httpx.AsyncClient(timeout=18.0, follow_redirects=True) as client:
+        async with httpx.AsyncClient(timeout=httpx.Timeout(8.0, connect=3.0), follow_redirects=True) as client:
             response = await client.get(
                 url,
                 headers={
