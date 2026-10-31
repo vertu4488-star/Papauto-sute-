@@ -111,7 +111,7 @@ class VehicleSearchRoutingTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result["data_type"], "source_hub")
         self.assertEqual(result["source"], "Korea Automobile Auction Association")
         self.assertEqual(result["records"], [])
-        self.assertIn("official", result["message"].lower())
+        self.assertIn("статистика", result["message"].lower())
 
 
 if __name__ == "__main__":
