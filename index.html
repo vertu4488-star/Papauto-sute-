@@ -313,6 +313,26 @@
 </div>
 <button class="button button-primary" id="auctionStatsSubmit" type="submit">Найти статистику ↗</button><p class="fine-print">Не подставляем вымышленные результаты. Если источник не предоставляет архив завершённых торгов, это будет указано прямо.</p>
 </form><div class="auction-stats-results" id="auctionStatsResults" aria-live="polite"><div class="auction-empty-state"><span class="auction-empty-icon">⌕</span><h3>Выберите страну и модель</h3><p>Здесь появятся найденные данные, диапазон цен и пояснение об источнике.</p></div></div></div>
+<div class="auction-decoder-panel" id="auctionSheetDecoder">
+  <div class="eyebrow">ИНТЕРАКТИВНАЯ ПРОВЕРКА · ЯПОНИЯ</div>
+  <h3>Расшифровать аукционный лист</h3>
+  <p class="fine-print">Введите оценки и отметки с листа. Инструмент объяснит типовые значения и выделит пункты для дополнительной проверки. Обозначения отличаются между аукционными домами — это предварительная расшифровка, а не подтверждение состояния автомобиля.</p>
+  <form id="auctionDecoderForm">
+    <div class="form-grid">
+      <label>Общая оценка<select id="decoderOverall"><option value="">Не указана</option><option>S</option><option>6</option><option>5</option><option>4.5</option><option>4</option><option>3.5</option><option>3</option><option>2</option><option>1</option><option>R</option><option>RA</option><option>0</option><option>***</option></select></label>
+      <label>Салон<select id="decoderInterior"><option value="">Не указан</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></label>
+      <label>Пробег, км<input id="decoderMileage" type="number" min="0" max="999999" placeholder="Например, 68400"></label>
+      <label>Аукционный дом<input id="decoderHouse" maxlength="80" placeholder="USS, TAA, JU…"></label>
+    </div>
+    <label>Отметки с карты кузова<input id="decoderCodes" maxlength="300" placeholder="Например: A1, U2, W1, XX, S1"></label>
+    <div class="decoder-code-chips" aria-label="Частые обозначения">
+      <button type="button" data-decoder-code="A1">A1</button><button type="button" data-decoder-code="A2">A2</button><button type="button" data-decoder-code="U1">U1</button><button type="button" data-decoder-code="U2">U2</button><button type="button" data-decoder-code="W1">W1</button><button type="button" data-decoder-code="W2">W2</button><button type="button" data-decoder-code="S1">S1</button><button type="button" data-decoder-code="S2">S2</button><button type="button" data-decoder-code="C1">C1</button><button type="button" data-decoder-code="X">X</button><button type="button" data-decoder-code="XX">XX</button><button type="button" data-decoder-code="G">G</button>
+    </div>
+    <label>Рукописные замечания инспектора<textarea id="decoderNotes" rows="3" maxlength="2000" placeholder="Вставьте или перепишите замечания, если они есть…"></textarea></label>
+    <button class="button button-primary" type="submit">Расшифровать и проверить риски</button>
+  </form>
+  <div id="auctionDecoderResult" class="auction-decoder-result" aria-live="polite"><p>Заполните поля и нажмите «Расшифровать» — здесь появится разбор оценок, повреждений и вопросов продавцу.</p></div>
+</div>
 </section>
 
 <section class="section wrap market-sources-section" id="market-sources">
