@@ -147,5 +147,107 @@ class VehicleSearchRoutingTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn("статистика", result["message"].lower())
 
 
+class FakeGeminiResponse:
+    status_code = 200
+
+    def json(self):
+        import json
+        return {
+            "candidates": [{
+                "content": {
+                    "parts": [{
+                        "text": json.dumps({
+                            "reply": "Нашёл параметры Toyota RAV4.",
+                            "filters": {
+                                "make": "Toyota", "model": "RAV4",
+                                "year_from": 2020, "year_to": 2023,
+                                "mileage_max": 80000, "volume_min": None,
+                                "volume_max": None, "body": "SUV",
+                                "grade": "", "lot_number": ""
+                            },
+                            "preferences_not_applied": ["полный привод", "не вариатор"]
+                        }, ensure_ascii=False)
+                    }]
+                }
+            }]
+        }
+
+
+class FakeGeminiClient:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, exc_type, exc, tb):
+        return False
+
+    async def post(self, *args, **kwargs):
+        return FakeGeminiResponse()
+
+
+class VehicleAssistantSearchTests(unittest.IsolatedAsyncioTestCase):
+    async def test_natural_language_request_becomes_filters_and_calls_market_source(self):
+        with patch.dict(os.environ, {"GEMINI_API_KEY": "test-key"}, clear=False), \\
+             patch("api.httpx.AsyncClient", FakeGeminiClient), \\
+             patch("api.search_vehicles", new_callable=AsyncMock, return_value={
+                 "ok": True, "country": "japan", "data_type": "external_search",
+                 "search_links": [{"name": "Archive", "url": "https://example.org"}]
+             }) as search:
+            result = await api.assistant_search_vehicles(
+                api.VehicleSearchAssistantInput(
+                    message="Нужен Toyota RAV4 2020–2023, пробег до 80 тысяч, полный привод, не вариатор",
+                    country="japan",
+                    city="Новосибирск",
+                )
+            )
+
+        self.assertEqual(result["filters"]["make"], "Toyota")
+        self.assertEqual(result["filters"]["model"], "RAV4")
+        self.assertEqual(result["filters"]["year_from"], 2020)
+        self.assertEqual(result["filters"]["year_to"], 2023)
+        self.assertEqual(result["filters"]["mileage_max"], 80000)
+        self.assertEqual(result["preferences_not_applied"], ["полный привод", "не вариатор"])
+        search.assert_awaited_once()
+        self.assertEqual(search.await_args.kwargs["country"], "japan")
+
+    async def test_natural_language_search_rejects_invalid_volume_range(self):
+        class InvalidVolumeResponse(FakeGeminiResponse):
+            def json(self):
+                import json
+                return {
+                    "candidates": [{
+                        "content": {
+                            "parts": [{
+                                "text": json.dumps({
+                                    "reply": "Параметры распознаны.",
+                                    "filters": {
+                                        "make": "Toyota", "model": "RAV4",
+                                        "year_from": 2020, "year_to": 2023,
+                                        "volume_min": 2500, "volume_max": 1500
+                                    },
+                                    "preferences_not_applied": []
+                                }, ensure_ascii=False)
+                            }]
+                        }
+                    }]
+                }
+
+        class InvalidVolumeClient(FakeGeminiClient):
+            async def post(self, *args, **kwargs):
+                return InvalidVolumeResponse()
+
+        with patch.dict(os.environ, {"GEMINI_API_KEY": "test-key"}, clear=False), \\
+             patch("api.httpx.AsyncClient", InvalidVolumeClient), \\
+             patch("api.search_vehicles", new_callable=AsyncMock) as search:
+            with self.assertRaises(api.HTTPException) as ctx:
+                await api.assistant_search_vehicles(
+                    api.VehicleSearchAssistantInput(message="Toyota RAV4", country="japan")
+                )
+        self.assertEqual(ctx.exception.status_code, 422)
+        search.assert_not_awaited()
+
+
 if __name__ == "__main__":
     unittest.main()
