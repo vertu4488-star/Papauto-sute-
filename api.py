@@ -1414,7 +1414,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
         )
         message = "Китай: TTPAI отдаёт открытые модельные средние и последние сделки. Дополнительно собраны публичные карточки завершённых автомобильных судебных торгов Gongpai за июль–сентябрь 2026: " + china_month_summary + ". Это проверенная поисковая выборка, не полный месячный итог рынка и не дилерские оптовые торги."
     return {"ok": True, "country": country, "data_type": "source_hub", "source": "PAPAUTO source registry",
-        "source_hub_version": "2026-10-30-r12", "count": len(sample_records), "records": sample_records, "sources": sources, "model_search_links": model_search_links, "sample_stats": sample_stats,
+        "source_hub_version": "2026-10-31-r13", "count": len(sample_records), "records": sample_records, "sources": sources, "model_search_links": model_search_links, "sample_stats": sample_stats,
         "unsold_records": unsold_records, "china_judicial_sample": china_judicial_sample, "china_market_sample": china_market_sample, "message": message,
         "disclaimer": "Публичный пример не равен полному массиву торгов. Фотографии и аукционные листы показываем только из источников, где это разрешено; платные отчёты не копируем. Цены объявлений, стартовые ставки, судебные продажи и завершённые дилерские аукционы не смешиваются."}
 
