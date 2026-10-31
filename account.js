@@ -65,18 +65,22 @@ async function loadNotifications(){
 async function persistFavorites(items){
  if(!client||!user)return;
  const rows=(items||[]).filter(x=>x&&x.id).map(x=>({user_id:user.id,source:({"japan":"Japan","south-korea":"South Korea","korea":"South Korea","china":"China","Japan":"Japan","South Korea":"South Korea","China":"China","PAPAUTO":"PAPAUTO"}[x.source]||"PAPAUTO"),external_id:String(x.id).slice(0,160),listing_url:String(x.url||x.link||"").slice(0,2048),vehicle_snapshot:x}));
- if(!rows.length)return;
- const {error}=await client.from("favorites").upsert(rows,{onConflict:"user_id,source,external_id"});
- if(error)say("accountSyncStatus","Не удалось синхронизировать избранное: "+error.message);
- else say("accountSyncStatus","Избранное синхронизировано с аккаунтом.");
+ const {data:existing,error:readError}=await client.from("favorites").select("id,source,external_id").eq("user_id",user.id);
+ if(readError){say("accountSyncStatus","Не удалось проверить избранное: "+readError.message);return}
+ const keep=new Set(rows.map(x=>x.source+"|"+x.external_id)),stale=(existing||[]).filter(x=>!keep.has(x.source+"|"+x.external_id)).map(x=>x.id);
+ if(stale.length){const {error}=await client.from("favorites").delete().eq("user_id",user.id).in("id",stale);if(error){say("accountSyncStatus","Не удалось удалить устаревшее избранное: "+error.message);return}}
+ if(rows.length){const {error}=await client.from("favorites").upsert(rows,{onConflict:"user_id,source,external_id"});if(error){say("accountSyncStatus","Не удалось синхронизировать избранное: "+error.message);return}}
+ say("accountSyncStatus","Избранное синхронизировано с аккаунтом.");
 }
 async function persistSearches(items){
  if(!client||!user)return;
  const rows=(items||[]).filter(x=>x&&x.filters).map(x=>({user_id:user.id,title:String(x.name||"Мой поиск").slice(0,120),filters:x.filters,notifications_enabled:true}));
- if(!rows.length)return;
- const {error}=await client.from("saved_searches").upsert(rows,{onConflict:"user_id,title"});
- if(error)say("accountSyncStatus","Не удалось синхронизировать поиски: "+error.message);
- else say("accountSyncStatus","Сохранённые поиски синхронизированы с аккаунтом.");
+ const {data:existing,error:readError}=await client.from("saved_searches").select("id,title").eq("user_id",user.id);
+ if(readError){say("accountSyncStatus","Не удалось проверить сохранённые поиски: "+readError.message);return}
+ const keep=new Set(rows.map(x=>x.title)),stale=(existing||[]).filter(x=>!keep.has(x.title)).map(x=>x.id);
+ if(stale.length){const {error}=await client.from("saved_searches").delete().eq("user_id",user.id).in("id",stale);if(error){say("accountSyncStatus","Не удалось удалить старые поиски: "+error.message);return}}
+ if(rows.length){const {error}=await client.from("saved_searches").upsert(rows,{onConflict:"user_id,title"});if(error){say("accountSyncStatus","Не удалось синхронизировать поиски: "+error.message);return}}
+ say("accountSyncStatus","Сохранённые поиски синхронизированы с аккаунтом.");
 }
 async function hydratePersonalData(){
  if(!client||!user)return;
@@ -86,11 +90,15 @@ async function hydratePersonalData(){
  ]);
  const localFav=safeJson(KEY_FAV),localSearch=safeJson(KEY_SEARCH);
  if(fav.error)say("accountSyncStatus","Ошибка загрузки избранного: "+fav.error.message);
- else if(fav.data?.length)writeLocal(KEY_FAV,fav.data.map(x=>x.vehicle_snapshot||{id:x.external_id,source:x.source,url:x.listing_url}));
- else if(localFav.length)await persistFavorites(localFav);
+ else{
+  const cloud=(fav.data||[]).map(x=>x.vehicle_snapshot||{id:x.external_id,source:x.source,url:x.listing_url}),seen=new Set(cloud.map(x=>String(x.id)));
+  const merged=[...cloud,...localFav.filter(x=>!seen.has(String(x.id)))].slice(0,50);writeLocal(KEY_FAV,merged);if(localFav.length)await persistFavorites(merged);
+ }
  if(search.error)say("accountSyncStatus","Ошибка загрузки поисков: "+search.error.message);
- else if(search.data?.length)writeLocal(KEY_SEARCH,search.data.map(x=>({name:x.title,filters:x.filters,savedAt:x.created_at})));
- else if(localSearch.length)await persistSearches(localSearch);
+ else{
+  const cloud=(search.data||[]).map(x=>({name:x.title,filters:x.filters,savedAt:x.created_at})),seen=new Set(cloud.map(x=>JSON.stringify(x.filters)));
+  const merged=[...cloud,...localSearch.filter(x=>!seen.has(JSON.stringify(x.filters)))].slice(0,10);writeLocal(KEY_SEARCH,merged);if(localSearch.length)await persistSearches(merged);
+ }
  window.dispatchEvent(new CustomEvent("papauto:cloud-data-loaded"));
  say("accountSyncStatus","Кабинет подключён. Избранное и сохранённые поиски синхронизируются.");
 }
