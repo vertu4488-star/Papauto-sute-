@@ -343,3 +343,15 @@ html{scroll-padding-top:100px;background:var(--bg)}body{background:#f3f5f7;color
 .voice-car-actions .button{min-height:46px;justify-content:center}
 .voice-car-status{margin:0;font-size:13px;line-height:1.5;color:var(--muted,#65717d)}
 @media(max-width:600px){.voice-car-assistant{padding:12px;margin:12px 0}.voice-car-actions{grid-template-columns:1fr 1fr}.voice-car-actions .button{padding:10px 8px;font-size:13px}}
+
+
+/* PAPAUTO brand logo */
+.brand{min-width:0;flex:0 0 auto;display:flex;align-items:center}
+.brand-logo{display:block;width:clamp(178px,20vw,244px);height:auto;max-height:58px;object-fit:contain;object-position:left center}
+@media(max-width:760px){
+  .brand-logo{width:clamp(150px,43vw,198px);max-height:46px}
+  .site-header{gap:12px}
+}
+@media(max-width:380px){
+  .brand-logo{width:146px}
+}
