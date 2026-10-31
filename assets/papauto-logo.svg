@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 112" role="img" aria-labelledby="title desc">
+<title id="title">PAPAUTO</title><desc id="desc">Графический знак P и надпись PAPAUTO — автомобили под заказ</desc>
+<g fill="none" stroke="#e7ebef" stroke-width="5" stroke-linejoin="round">
+<path d="M8 14h62c30 0 47 17 47 43S100 100 70 100H8z"/>
+<path d="M35 40h34c12 0 19 6 19 17S81 74 69 74H35z" fill="#e7ebef" stroke="none"/>
+<path d="M13 7h70" stroke="#87919b" stroke-width="3"/>
+</g>
+<text x="142" y="66" fill="#f4f6f8" font-family="Arial,Helvetica,sans-serif" font-size="51" font-weight="800" letter-spacing="4">PAPAUTO</text>
+<path d="M145 79h260" stroke="#87919b" stroke-width="2"/>
+<text x="145" y="100" fill="#aab3bc" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="600" letter-spacing="3.2">АВТОМОБИЛИ ПОД ЗАКАЗ</text>
+</svg>
