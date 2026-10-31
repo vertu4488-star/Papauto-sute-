@@ -104,7 +104,7 @@ jobs:
               ("/api/customs/calculate", {"cost": 1000000, "volume": 1800, "power": 120, "currency": "392", "engine_type": "petrol", "age": "35", "face": "nat"}),
               ("/api/japan-auctions/chassis/search", {"chassis": "NZE141-1234567"}),
               ("/api/assistant/vehicle", {"message": "Toyota Prius 2019"}),
-              ("/api/assistant/select", {"request": "Toyota Prius"}),
+              ("/api/assistant/select", {"message": "Найди Toyota Prius"}),
           ]
           for path, payload in cases:
               request = urllib.request.Request(
