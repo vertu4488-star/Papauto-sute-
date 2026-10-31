@@ -164,6 +164,27 @@ class VehicleAssistantSearchTests(unittest.IsolatedAsyncioTestCase):
 
 
 class FreeModeSafetyTests(unittest.IsolatedAsyncioTestCase):
+    async def test_lead_delivery_works_without_supabase_database(self):
+        class TelegramResponse:
+            status_code = 200
+            def json(self):
+                return {"ok": True, "result": {"message_id": 123}}
+        class TelegramClient:
+            def __init__(self, *args, **kwargs): pass
+            async def __aenter__(self): return self
+            async def __aexit__(self, *args): return False
+            async def post(self, *args, **kwargs): return TelegramResponse()
+        lead = api.Lead(
+            name="Тест", contact="@test", country="Япония", budget=1000000,
+            city="Новосибирск", request="Toyota Prius", consent=True
+        )
+        env = {k: v for k, v in os.environ.items() if not k.startswith("SUPABASE_")}
+        env.update({"TELEGRAM_BOT_TOKEN": "test-token", "TELEGRAM_CHAT_ID": "123"})
+        with patch.dict(os.environ, env, clear=True), patch("api.httpx.AsyncClient", TelegramClient):
+            result = await api.create_lead(lead)
+        self.assertTrue(result["notified"])
+        self.assertFalse(result["stored"])
+
     async def test_customs_calculator_never_calls_tks_even_if_old_key_exists(self):
         payload = api.CustomsRequest(
             cost=1500000, volume=1800, power=120, currency="392",
