@@ -230,3 +230,21 @@ html{scroll-padding-top:100px;background:var(--bg)}body{background:#f3f5f7;color
 .auction-sample-table a{color:var(--accent,#a9bdcc);text-decoration:underline;text-underline-offset:2px}
 .auction-sample-unsold,.auction-sample-note{font-size:.73rem;line-height:1.6;color:var(--muted,#aab8c4);margin:.75rem 0}
 @media(max-width:620px){.auction-sample-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.auction-sample-panel{padding:.8rem}}
+
+
+/* Budget-first marketplace shortcuts inspired by leading vehicle catalogues. */
+.budget-start{padding:34px 0 18px}
+.budget-start-head{display:grid;grid-template-columns:1fr minmax(280px,.8fr);gap:24px;align-items:end;margin-bottom:18px}
+.budget-start-head h2{font-size:clamp(28px,3.2vw,40px);line-height:1.08;letter-spacing:-.05em;margin:10px 0 0;color:#17212b}
+.budget-start-head h2 em{font-style:normal;color:#ed5b32}
+.budget-start-head>p{max-width:620px;margin:0;color:#64717d;font-size:13px;line-height:1.7}
+.budget-shortcuts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.budget-shortcuts button{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-width:0;padding:18px 18px 16px;text-align:left;border:1px solid #e1e7eb;border-radius:14px;background:#fff;color:#1b2833;box-shadow:0 6px 20px rgba(25,40,54,.035);cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s}
+.budget-shortcuts button:hover,.budget-shortcuts button:focus-visible{transform:translateY(-2px);border-color:#ed5b32;box-shadow:0 12px 24px rgba(25,40,54,.08);outline:none}
+.budget-shortcuts button span{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#ed5b32}
+.budget-shortcuts button strong{font-size:clamp(18px,2vw,24px);letter-spacing:-.035em}
+.budget-shortcuts button small{font-size:11px;color:#71808b;line-height:1.45}
+.budget-market-shortcuts{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:13px;color:#71808b;font-size:11px}
+.budget-market-shortcuts button{padding:8px 13px;border:1px solid #dce3e8;border-radius:999px;background:#fff;color:#273541;font-size:11px;font-weight:750;cursor:pointer}
+.budget-market-shortcuts button:hover,.budget-market-shortcuts button:focus-visible{border-color:#ed5b32;color:#d94d27;outline:none}
+@media(max-width:760px){.budget-start{padding:22px 0 8px}.budget-start-head{grid-template-columns:1fr;gap:8px;margin-bottom:12px}.budget-start-head h2{font-size:28px}.budget-start-head>p{font-size:12px}.budget-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.budget-shortcuts button{padding:13px 12px;border-radius:12px}.budget-shortcuts button strong{font-size:20px}.budget-market-shortcuts{gap:6px}.budget-market-shortcuts button{padding:8px 10px}}
