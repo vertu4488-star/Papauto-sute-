@@ -1,11 +1,14 @@
 name: PAPAUTO syntax and smoke checks
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
     paths:
       - "api.py"
       - "app.js"
+      - "voice-assistant.js"
       - "index.html"
       - "auction-data.html"
       - "styles.css"
@@ -32,7 +35,9 @@ jobs:
       - name: Check Python syntax
         run: python -m py_compile api.py
       - name: Check browser JavaScript syntax
-        run: node --check app.js
+        run: |
+          node --check app.js
+          node --check voice-assistant.js
       - name: Wait for Render API deployment and test Japan source hub
         shell: bash
         run: |
