@@ -265,3 +265,30 @@ html{scroll-padding-top:100px;background:var(--bg)}body{background:#f3f5f7;color
 .estimate-actions{display:grid;gap:8px}
 .account-local-toolbar{display:flex;gap:10px;flex-wrap:wrap}
 @media print{body *{visibility:hidden!important}#calculator,#calculator *{visibility:visible!important}#calculator{position:absolute;left:0;top:0;width:100%;background:#fff!important;color:#111!important}#calculator button,.mobile-bottom-nav,.site-header,.site-footer{display:none!important}.calc-result,.calc-form,.calc-panel{break-inside:avoid;box-shadow:none!important}}
+
+
+/* PAPAUTO mobile layout correction — 31 Oct 2026 */
+@media (max-width: 760px) {
+  html, body { width: 100%; max-width: 100%; overflow-x: clip; }
+  .site-header { width: 100%; max-width: 100%; margin: 0; padding-left: 16px; padding-right: 16px; box-sizing: border-box; }
+  .hero.wrap, main > .hero, .hero {
+    width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px; padding: 24px 20px 24px; margin-left: 0; margin-right: 0;
+    min-height: 0;
+  }
+  .hero-copy { width: 100%; max-width: none; min-width: 0; }
+  .hero h1 {
+    max-width: none; width: 100%; font-size: clamp(31px, 8.1vw, 38px);
+    line-height: 1.12; letter-spacing: -.045em; overflow-wrap: normal;
+    word-break: normal; margin: 18px 0 18px;
+  }
+  .hero h1 br { display: none; }
+  .hero h1 em { display: inline; }
+  .hero-lead { max-width: 100%; font-size: 15px; line-height: 1.65; }
+  .hero-actions { display: grid; grid-template-columns: minmax(0,1fr); gap: 10px; }
+  .hero-actions .button { width: 100%; box-sizing: border-box; justify-content: center; }
+  .hero-checks { gap: 10px 14px; }
+  .hero-photo-visual { width: 100%; min-width: 0; box-sizing: border-box; }
+  main > section, .wrap { min-width: 0; }
+}
