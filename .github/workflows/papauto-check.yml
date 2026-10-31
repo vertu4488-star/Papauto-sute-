@@ -13,6 +13,8 @@ on:
       - "auction-data.html"
       - "styles.css"
       - "marketplace.css"
+      - "smart-search.js"
+      - "route-planner.js"
       - "mobile.css"
       - "site-config.js"
       - ".github/workflows/papauto-check.yml"
@@ -45,6 +47,8 @@ jobs:
         run: |
           node --check app.js
           node --check marketplace-interactions.js
+          node --check smart-search.js
+          node --check route-planner.js
           node --check voice-assistant.js
       - name: Wait for Render API deployment and test Japan source hub
         shell: bash

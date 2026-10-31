@@ -88,3 +88,46 @@ button:hover,.button:hover{transform:translateY(-1px)}
 .vehicle-compare-table th{color:#aebdca;font-weight:600}
 .vehicle-compare-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 @media(max-width:600px){.vehicle-tools-panel{padding:14px}.vehicle-saved-item{align-items:flex-start}.vehicle-compare-table{display:block;overflow-x:auto;white-space:nowrap}}
+
+
+/* Natural-language vehicle finder inspired by modern import marketplaces */
+.smart-search-section{padding-top:24px}
+.smart-search-panel{border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,#142330,#0d151e);padding:24px;box-shadow:0 18px 55px #0003}
+.smart-search-controls{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:15px}
+.smart-search-panel label{display:grid;gap:7px;color:#b8c7d3;font-size:12px}
+.smart-search-panel input,.smart-search-panel select,.smart-search-panel textarea{width:100%;background:#09121b;border:1px solid #354655;border-radius:9px;color:#f2f6f9;padding:12px;font:inherit;min-height:44px}
+.smart-search-prompt-label{margin-bottom:7px}
+.smart-search-panel textarea{resize:vertical;min-height:94px;line-height:1.55}
+.smart-search-submit-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:14px}
+.smart-search-status{color:#a8b7c4;font-size:12px;line-height:1.5}
+.smart-search-results{margin-top:20px;border-top:1px solid var(--line);padding-top:18px}
+.smart-search-interpretation{padding:13px 15px;background:#0b151e;border:1px solid var(--line);border-radius:10px;margin-bottom:14px;color:#d9e3eb;font-size:13px;line-height:1.6}
+.smart-search-result-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.smart-search-card{min-width:0;border:1px solid var(--line);border-radius:12px;background:#101b25;padding:14px}
+.smart-search-card h3{font-size:16px;margin:0 0 8px;color:#f1f5f8}
+.smart-search-card p{font-size:12px;line-height:1.55;color:#aebdca;margin:5px 0}
+.smart-search-card img{width:100%;height:170px;object-fit:cover;border-radius:8px;margin-bottom:10px;background:#0a1118}
+.smart-search-card a{display:inline-block;margin-top:8px;color:#e0eaf2;font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.smart-search-badge{display:inline-block;border:1px solid #526575;border-radius:99px;padding:4px 8px;color:#c9d7e2;font-size:10px;margin-bottom:8px}
+.smart-search-warning{margin:12px 0 0;padding:12px;border-left:3px solid #a88c5a;background:#1a1b1a;color:#d8c9ac;font-size:12px;line-height:1.55}
+@media(max-width:700px){.smart-search-panel{padding:16px}.smart-search-controls,.smart-search-result-grid{grid-template-columns:1fr}.smart-search-submit-row{align-items:stretch}.smart-search-submit-row .button{width:100%}.smart-search-card img{height:190px}}
+
+
+/* Interactive delivery route map */
+.route-planner-panel{border:1px solid var(--line);border-radius:16px;background:#101a24;padding:20px}
+.route-planner-controls{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.route-planner-controls label{display:grid;gap:7px;color:#aebdca;font-size:12px}
+.route-planner-controls select{min-height:44px;background:#09121b;border:1px solid #354655;border-radius:8px;color:#f2f6f9;padding:10px}
+.route-map-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);gap:18px}
+.route-map{min-height:440px;border-radius:12px;overflow:hidden;background:#14212d;border:1px solid var(--line)}
+.route-summary{padding:8px 4px}
+.route-summary-kicker{font-size:10px;letter-spacing:.13em;color:#9cabb8;font-weight:800}
+.route-summary h3{font-size:20px;line-height:1.3;margin:10px 0 18px;color:#f0f4f7}
+.route-leg{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px;color:#aebdca}
+.route-leg strong{color:#e8eef3;text-align:right}
+.route-map-note{font-size:11px;line-height:1.55;color:#9cabb8;margin:14px 0}
+.route-stages{padding-left:20px;margin:16px 0;color:#c3d0da;font-size:11px;line-height:1.8}
+.route-stages li::marker{color:#d8e3eb}
+.leaflet-container{font-family:inherit;font-size:12px;line-height:1.4}
+@media(max-width:850px){.route-map-layout{grid-template-columns:1fr}.route-map{min-height:340px}}
+@media(max-width:600px){.route-planner-panel{padding:12px}.route-planner-controls{grid-template-columns:1fr}.route-map{min-height:300px}.route-summary h3{font-size:18px}}
