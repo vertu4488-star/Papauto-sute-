@@ -391,7 +391,11 @@
           <p class="result-note" id="resultNote">Итог пока не рассчитан. Неизвестные статьи не учитываются, поэтому сумма может быть ниже фактических расходов.</p>
           <label class="market-reference-field">Цена сопоставимого автомобиля в России, ₽ <input id="marketReferencePrice" type="number" min="0" step="10000" placeholder="Введите цену из выбранного вами объявления"></label>
           <p class="result-note" id="marketComparison">Введите цену российского аналога, чтобы сравнить её с суммой заполненных расходов. Это не автоматическая рыночная оценка.</p>
-          <button class="button button-secondary button-wide" type="button" id="copyEstimate">Скопировать смету</button>
+          <div class="estimate-actions">
+            <button class="button button-secondary button-wide" type="button" id="copyEstimate">Скопировать смету</button>
+            <button class="button button-secondary button-wide" type="button" id="exportEstimate">Скачать смету CSV</button>
+            <button class="button button-secondary button-wide" type="button" id="printEstimate">Печать / PDF</button>
+          </div>
         </aside>
       </div>
     </div>
@@ -501,7 +505,7 @@
       <div class="account-local-history">
         <p>Заявки сохраняются только в этом браузере. Они не синхронизируются между устройствами и не заменяют отправку менеджеру.</p>
         <div id="accountLocalRequests"><p>Подготовленные заявки появятся здесь.</p></div>
-        <button class="button button-secondary" type="button" id="clearLocalRequests">Очистить локальную историю</button>
+        <div class="account-local-toolbar"><button class="button button-secondary" type="button" id="exportLocalRequests">Скачать историю JSON</button><button class="button button-secondary" type="button" id="clearLocalRequests">Очистить локальную историю</button></div>
       </div>
       <p id="accountStatus" class="account-status" role="status" aria-live="polite">Локальная история включена. Для отправки менеджеру используйте Telegram.</p>
     </div>
