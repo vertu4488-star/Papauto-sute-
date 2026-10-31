@@ -166,3 +166,35 @@ jobs:
           else:
               raise AssertionError("Unexpected China response type: " + str(kind))
           PY
+
+      - name: Verify Korean live listings after production deploy
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL="https://papauto-leads.onrender.com/api/vehicles?country=south-korea&make=Hyundai&year_from=2020&year_to=2026&limit=3"
+          for attempt in $(seq 1 18); do
+            HTTP_CODE=$(curl --silent --show-error --output /tmp/korea.json --write-out "%{http_code}" "$URL")
+            if [ "$HTTP_CODE" = "200" ]; then
+              if python - <<'PY'
+          import json
+          data = json.load(open("/tmp/korea.json", encoding="utf-8"))
+          if data.get("record_type") == "current_listing" and data.get("source") == "XAPI Korea":
+              print("Korea live listing endpoint OK; records returned:", data.get("returned_count"))
+              raise SystemExit(0)
+          print("Waiting for live route; current response:", data.get("data_type") or data.get("detail") or "unknown")
+          raise SystemExit(1)
+          PY
+              then
+                exit 0
+              fi
+            else
+              echo "Korea provider probe returned HTTP $HTTP_CODE; waiting for backend deployment/provider response."
+            fi
+            if [ "$attempt" -eq 18 ]; then
+              echo "Korea live listing endpoint did not return a valid XAPI Korea listing response."
+              cat /tmp/korea.json
+              exit 1
+            fi
+            sleep 10
+          done
