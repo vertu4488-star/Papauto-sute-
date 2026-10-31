@@ -551,6 +551,34 @@ def _japan_model_search_links(make: str, model: str, year_from: int, year_to: in
     return links
 
 
+
+def _public_market_search_links(country: str, make: str, model: str, year_from: int, year_to: int):
+    """Build user-initiated searches on public source sites without scraping their catalogues."""
+    from urllib.parse import quote
+    terms = " ".join(part for part in [make.strip(), model.strip(), str(year_from), str(year_to)] if part).strip()
+    if not terms:
+        terms = f"автомобиль {year_from} {year_to}"
+    sources = {
+        "south-korea": [
+            ("Encar — корейские объявления", "encar.com", "Активные объявления; цены предложения"),
+            ("KB ChaChaCha — объявления", "kbchachacha.com", "Каталог предложений; наличие уточняется у продавца"),
+            ("K Car — автомобили с пробегом", "kcar.com", "Каталог предложений; не история аукционных продаж"),
+        ],
+        "china": [
+            ("Guazi — объявления Китая", "guazi.com", "Активные предложения; цены продавцов"),
+            ("Che168 — каталог автомобилей", "che168.com", "Активные предложения; цены продавцов"),
+            ("Dongchedi — каталог и обзоры", "dongchedi.com", "Каталог и обзоры; не архив завершённых торгов"),
+            ("Autohome — каталог моделей", "autohome.com.cn", "Каталоги и комплектации; наличие уточняется у продавца"),
+        ],
+    }.get(country, [])
+    return [{
+        "name": name,
+        "url": "https://www.google.com/search?q=" + quote(f"site:{domain} {terms}"),
+        "kind": kind,
+        "access": "Поиск подготовлен по выбранной марке, модели и годам; актуальность проверяется на сайте источника.",
+    } for name, domain, kind in sources]
+
+
 @app.get("/api/vehicles")
 async def search_vehicles(country: str = "japan", make: str = "", model: str = "",
                           year_from: int = 1990, year_to: int = 2027,
@@ -569,31 +597,28 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
         raise HTTPException(status_code=400, detail="Минимальный объём двигателя не может быть больше максимального.")
     limit = min(max(limit, 1), 50)
 
-    # Free-only mode: do not call third-party metered APIs (XAPI Korea / TTPAI).
-    # Korea shows only the public monthly association summary when available;
-    # individual listings remain user-initiated links to the source marketplace.
-    if country == "china":
-        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Публичные источники Китая",
-                "count": 0, "records": [], "sources": [
-                    {"name": "Guazi — объявления автомобилей", "url": "https://www.guazi.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"},
-                    {"name": "Che168 — каталог автомобилей", "url": "https://www.che168.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"},
-                    {"name": "Dongchedi — автомобильный каталог", "url": "https://www.dongchedi.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Объявления и обзоры"}],
-                "message": "Для Китая доступны бесплатные переходы к открытым каталогам. Автоматические платные или тарифицируемые запросы отключены.",
-                "disclaimer": "Ссылки ведут на внешние площадки. Их цены и наличие проверяйте на странице продавца; PAPAUTO не копирует и не гарантирует внешние объявления."}
-    if country == "south-korea":
-        public_stats = await fetch_korea_monthly_stats()
-        if public_stats.get("ok"):
-            rows = public_stats.get("history", [])
-            return {"ok": True, "country": country, "data_type": "source_hub", "source": public_stats.get("source"),
-                    "count": len(rows), "records": [], "model_search_links": [],
-                    "sources": [{"name": "Encar — каталог автомобилей Кореи", "url": "https://www.encar.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"},
-                                {"name": public_stats.get("source", "Корейская ассоциация"), "url": public_stats.get("source_url", "https://www.kasa.or.kr/"), "access": "Открытая агрегированная статистика", "data_kind": "Месячные итоги рынка"}],
-                    "message": "Открытая статистика и каталоги доступны по ссылкам. Запросы к платным/лимитируемым API отключены.",
-                    "disclaimer": public_stats.get("disclaimer", "Агрегированная статистика не является каталогом индивидуальных лотов.")}
-        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Encar", "count": 0, "records": [],
-                "sources": [{"name": "Encar — каталог автомобилей Кореи", "url": "https://www.encar.com/", "access": "Публичный сайт; поиск выполняется вручную", "data_kind": "Активные объявления"}],
-                "message": "Автоматический API-поиск отключён в бесплатном режиме. Откройте каталог Encar.",
-                "disclaimer": "Внешние объявления и цены проверяются на сайте источника."}
+        # Free-only mode: offer filtered searches on public catalogues, without copying their listings.
+    if country in {"south-korea", "china"}:
+        links = _public_market_search_links(country, make, model, year_from, year_to)
+        sources = [{"name": item["name"], "url": item["url"], "access": item["access"], "data_kind": item["kind"]} for item in links]
+        if country == "south-korea":
+            stats = await fetch_korea_monthly_stats()
+            if stats.get("ok"):
+                sources.append({"name": stats.get("source", "Официальная статистика Кореи"),
+                                "url": stats.get("source_url", "https://www.kasa.or.kr/"),
+                                "access": "Открытая агрегированная статистика",
+                                "data_kind": "Месячные итоги аукционного рынка",
+                                "note": stats.get("disclaimer", "")})
+            return {"ok": True, "country": country, "data_type": "source_hub",
+                    "source": "Открытые каталоги Южной Кореи", "count": 0, "records": [],
+                    "sources": sources, "search_links": links,
+                    "message": "Подготовлены поиски по выбранной модели в корейских каталогах. Открытая месячная статистика ассоциации показана отдельно, если источник доступен.",
+                    "disclaimer": "Каталоги содержат активные предложения, а не подтверждённые цены завершённых торгов."}
+        return {"ok": True, "country": country, "data_type": "source_hub",
+                "source": "Открытые каталоги Китая", "count": 0, "records": [],
+                "sources": sources, "search_links": links,
+                "message": "Подготовлены поиски по выбранной модели в китайских каталогах. Актуальные предложения открываются на сайтах площадок.",
+                "disclaimer": "Каталоги содержат цены предложений, а не подтверждённые цены завершённых сделок."}
 
     if country == "china":
         live_china = await fetch_ttpai_model_stats(make, model)
@@ -1107,26 +1132,27 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
 
     # Free-only mode: use verified public pages where available; never call metered APIs.
     make, model, grade = make.strip()[:80], model.strip()[:80], grade.strip()[:12]
-    if country == "china":
-        # Free-only mode: do not call TTPAI or any third-party catalogue endpoint.
-        # The returned links are source navigation, not PAPAUTO inventory or sold-lot statistics.
-        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Публичные источники Китая",
-                "count": 0, "records": [], "sources": [
-                    {"name": "Guazi — рынок подержанных авто", "url": "https://www.guazi.com/", "access": "Публичный каталог", "data_kind": "Объявления"},
-                    {"name": "Che168 — каталог авто", "url": "https://www.che168.com/", "access": "Публичный каталог", "data_kind": "Объявления"},
-                    {"name": "Dongchedi — каталог и обзоры", "url": "https://www.dongchedi.com/", "access": "Публичный сайт", "data_kind": "Объявления и обзоры"}],
-                "message": "В бесплатном режиме PAPAUTO не загружает объявления или историю сделок Китая автоматически. Доступны открытые каталоги для ручного поиска.",
-                "disclaimer": "Внешние каталоги содержат цены предложений, а не подтверждённые цены завершённых сделок или оптовых аукционов."}
-    if country == "south-korea":
-        public_stats = await fetch_korea_monthly_stats()
-        sources = [{"name": "Encar — активные объявления", "url": "https://www.encar.com/", "access": "Публичный каталог", "data_kind": "Текущие объявления, не цены завершённых торгов"}]
-        if public_stats.get("ok"):
-            sources.append({"name": public_stats.get("source", "Корейская ассоциация"), "url": public_stats.get("source_url", "https://www.kasa.or.kr/"),
-                            "access": "Открытая агрегированная статистика", "data_kind": "Месячные итоги аукционного рынка"})
-        return {"ok": True, "country": country, "data_type": "source_hub", "source": "Открытые источники Кореи",
-                "count": 0, "records": [], "sources": sources,
-                "message": "В бесплатном режиме показываем открытые источники и официальную месячную сводку, если она доступна. Платный API-каталог не вызывается.",
-                "disclaimer": "Активные объявления Encar не являются результатами завершённых аукционов."}
+    if country in {"china", "south-korea"}:
+        links = _public_market_search_links(country, make, model, year_from, year_to)
+        sources = [{"name": item["name"], "url": item["url"], "access": item["access"], "data_kind": item["kind"]} for item in links]
+        if country == "south-korea":
+            stats = await fetch_korea_monthly_stats()
+            if stats.get("ok"):
+                sources.append({"name": stats.get("source", "Официальная статистика Кореи"),
+                                "url": stats.get("source_url", "https://www.kasa.or.kr/"),
+                                "access": "Открытая агрегированная статистика",
+                                "data_kind": "Месячные итоги аукционного рынка",
+                                "note": stats.get("disclaimer", "")})
+            return {"ok": True, "country": country, "data_type": "source_hub",
+                    "source": "Открытые источники Южной Кореи", "count": 0, "records": [],
+                    "sources": sources, "model_search_links": links,
+                    "message": "Поиск подготовлен по выбранной модели. Каталоги содержат активные предложения; месячная статистика показана отдельно.",
+                    "disclaimer": "Цены объявлений не равны ценам завершённых торгов."}
+        return {"ok": True, "country": country, "data_type": "source_hub",
+                "source": "Открытые источники Китая", "count": 0, "records": [],
+                "sources": sources, "model_search_links": links,
+                "message": "Поиск подготовлен по выбранной модели в открытых китайских каталогах.",
+                "disclaimer": "Это цены предложений, а не подтверждённые цены завершённых сделок."}
     model_search_links = _japan_model_search_links(make, model, year_from, year_to) if country == "japan" else []
     if country == "south-korea":
         api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
