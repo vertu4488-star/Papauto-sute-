@@ -1554,3 +1554,71 @@ async def voice_transcribe(request: Request):
     except httpx.RequestError as exc:
         logger.error("Gemini Flash voice transcription network error: %s", type(exc).__name__)
         raise HTTPException(status_code=502, detail="Не удалось связаться с сервисом распознавания речи.")
+
+
+class JapanChassisSearchInput(BaseModel):
+    chassis: str = Field(min_length=5, max_length=32, pattern=r"^[A-Za-z0-9-]{5,32}$")
+
+    @field_validator("chassis")
+    @classmethod
+    def normalize_chassis(cls, value: str) -> str:
+        return value.strip().upper()
+
+
+@app.post("/api/japan-auctions/chassis/search")
+async def search_japan_auction_history(req: JapanChassisSearchInput):
+    """Free JP Sheet chassis lookup; full reports are never fetched automatically."""
+    api_key = (os.getenv("JPSHEET_API_KEY") or "").strip()
+    if not api_key:
+        raise HTTPException(status_code=503, detail="Поиск по номеру кузова подключается через API-ключ JP Sheet (JPSHEET_API_KEY).")
+    try:
+        async with httpx.AsyncClient(timeout=15.0) as client:
+            response = await client.get(
+                "https://jpsheet.com/business/v1/search",
+                params={"chassis": req.chassis},
+                headers={"Authorization": f"Bearer {api_key}", "Accept": "application/json"},
+            )
+        if response.status_code == 401:
+            raise HTTPException(status_code=503, detail="JP Sheet отклонил API-ключ. Проверьте ключ в кабинете провайдера.")
+        if response.status_code == 429:
+            raise HTTPException(status_code=429, detail="JP Sheet временно ограничил частоту запросов. Повторите позже.")
+        if response.status_code != 200:
+            logger.warning("JP Sheet chassis search returned HTTP %s", response.status_code)
+            raise HTTPException(status_code=502, detail="JP Sheet временно не вернул результаты поиска.")
+        payload = response.json()
+        if not isinstance(payload, dict) or payload.get("ok") is not True:
+            raise HTTPException(status_code=502, detail="JP Sheet вернул неожиданный ответ.")
+        matches = payload.get("matches") if isinstance(payload.get("matches"), list) else []
+        safe_matches = []
+        for item in matches[:20]:
+            if not isinstance(item, dict):
+                continue
+            safe_matches.append({
+                "ref": str(item.get("ref") or "")[:160],
+                "match": str(item.get("match") or "")[:30],
+                "make": str(item.get("make") or "")[:80],
+                "model": str(item.get("model") or "")[:120],
+                "year": str(item.get("year") or "")[:12],
+                "engine_cc": str(item.get("engine_cc") or "")[:20],
+                "grade": str(item.get("grade") or "")[:20],
+                "transmission": str(item.get("transmission") or "")[:30],
+                "color": str(item.get("color") or "")[:40],
+                "result": str(item.get("result") or "")[:30],
+                "start_price": str(item.get("start_price") or "")[:40],
+                "photos_count": item.get("photos") if isinstance(item.get("photos"), int) else None,
+            })
+        return {
+            "ok": True, "source": "JP Sheet", "chassis": req.chassis,
+            "found": bool(payload.get("found")), "test_data": bool(payload.get("test")),
+            "matches": safe_matches,
+            "credits_left": payload.get("credits_left") if isinstance(payload.get("credits_left"), int) else None,
+            "retrieved_at": datetime.now(timezone.utc).isoformat(),
+            "disclaimer": "Поиск номера кузова бесплатный. Полный аукционный отчёт, история и доступные фотографии открываются отдельным запросом и могут расходовать кредит. Цена аукциона не включает доставку, пошлины и оформление.",
+        }
+    except HTTPException:
+        raise
+    except httpx.TimeoutException:
+        raise HTTPException(status_code=504, detail="JP Sheet не ответил вовремя. Повторите поиск позже.")
+    except (httpx.RequestError, ValueError, TypeError) as exc:
+        logger.warning("JP Sheet chassis search failed: %s", type(exc).__name__)
+        raise HTTPException(status_code=502, detail="Не удалось получить ответ от JP Sheet.")
