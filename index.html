@@ -513,14 +513,30 @@
   <section class="section wrap" id="account">
     <div class="account-panel">
       <div class="eyebrow">ЛИЧНЫЙ КАБИНЕТ PAPAUTO</div>
-      <h2>Ваши заявки<br><em>в одном месте.</em></h2>
-      <p class="account-intro">Сохранённые поиски и избранные автомобили доступны на этом устройстве. Серверный кабинет с синхронизацией между устройствами пока не подключён.</p>
+      <h2>Ваши заявки<br><em>и уведомления.</em></h2>
+      <p class="account-intro">Войдите или создайте аккаунт, чтобы синхронизировать заявки, избранное, сохранённые поиски и этапы заказа между устройствами.</p>
+      <div class="account-auth-panel" id="accountAuthPanel">
+        <div class="account-auth-tabs"><button class="button button-secondary is-active" type="button" data-auth-mode="signin">Войти</button><button class="button button-secondary" type="button" data-auth-mode="signup">Создать аккаунт</button></div>
+        <form id="accountAuthForm" class="account-auth-form">
+          <label for="accountDisplayName" id="accountDisplayNameWrap" hidden>Ваше имя<input id="accountDisplayName" type="text" maxlength="120" autocomplete="name" placeholder="Имя"></label>
+          <label for="accountEmail">Электронная почта<input id="accountEmail" type="email" autocomplete="email" required maxlength="254" placeholder="name@example.com"></label>
+          <label for="accountPassword">Пароль<input id="accountPassword" type="password" autocomplete="current-password" minlength="8" required placeholder="Не менее 8 символов"></label>
+          <button class="button button-primary" id="accountAuthSubmit" type="submit">Войти</button>
+        </form>
+        <p id="accountAuthStatus" class="account-status" role="status" aria-live="polite">Для синхронизации нужен аккаунт. Локальные данные останутся в браузере до входа.</p>
+      </div>
+      <div id="accountSignedIn" hidden>
+        <div class="account-user-row"><div><strong id="accountUserEmail"></strong><p id="accountUserMeta">Аккаунт PAPAUTO</p></div><button class="button button-secondary" type="button" id="accountSignOut">Выйти</button></div>
+        <section class="account-data-section"><h3>Мои заявки и этапы заказа</h3><div id="accountCloudRequests"><p>Заявок пока нет.</p></div></section>
+        <section class="account-data-section"><div class="account-notifications-heading"><h3>Уведомления</h3><button class="button button-secondary" type="button" id="accountMarkAllRead">Отметить прочитанными</button></div><div id="accountNotifications"><p>Новых уведомлений нет.</p></div></section>
+        <section class="account-data-section"><h3>Синхронизация</h3><p>Избранные автомобили и сохранённые поиски синхронизируются с аккаунтом, когда вы вошли на сайт.</p><p id="accountSyncStatus" class="account-status" role="status" aria-live="polite"></p></section>
+      </div>
       <div class="account-local-history">
-        <p>Заявки сохраняются только в этом браузере. Они не синхронизируются между устройствами и не заменяют отправку менеджеру.</p>
-        <div id="accountLocalRequests"><p>Подготовленные заявки появятся здесь.</p></div>
+        <p>Подготовленные заявки без входа временно хранятся только в этом браузере. Вы можете выгрузить или удалить эту локальную историю.</p>
+        <div id="accountLocalRequests"><p>Локальных заявок пока нет.</p></div>
         <div class="account-local-toolbar"><button class="button button-secondary" type="button" id="exportLocalRequests">Скачать историю JSON</button><button class="button button-secondary" type="button" id="clearLocalRequests">Очистить локальную историю</button></div>
       </div>
-      <p id="accountStatus" class="account-status" role="status" aria-live="polite">Локальная история включена. Для отправки менеджеру используйте Telegram.</p>
+      <p id="accountStatus" class="account-status" role="status" aria-live="polite">Локальная история доступна на этом устройстве.</p>
     </div>
   </section>
 
