@@ -25,19 +25,9 @@
 <a class="archive-back" href="/?view=auctions">← К разделу «Аукционы»</a>
 <header class="archive-head"><div class="eyebrow">PAPAUTO · ЯПОНИЯ · ИСТОРИЯ ТОРГОВ</div><h1>Статистика <em>завершённых лотов</em></h1><p>Ищите автомобили любых марок и моделей. Фильтры PAPAUTO не ограничены Toyota: выберите марку и модель или откройте полный каталог аукционных источников. Проданные и непроданные лоты показываются раздельно; средние цены рассчитываются только по подтверждённым результатам.</p></header>
 <section class="archive-note" style="margin:0 0 18px"><b>Каталог всех марок и моделей</b><div class="archive-sources" style="margin-bottom:0"><a href="https://auctions22.com/models" target="_blank" rel="noopener noreferrer">51 марка · 422 модели · каталог и история лотов ↗</a><a href="https://auctions22.com/past" target="_blank" rel="noopener noreferrer">Завершённые торги Auctions22 ↗</a><a href="https://jpsheet.com/auction-price-history/" target="_blank" rel="noopener noreferrer">JP Sheet · статистика по 200 моделям ↗</a><a href="https://www.tokidoki.su/stat/" target="_blank" rel="noopener noreferrer">Toki-Doki · статистика продаж ↗</a></div><p style="margin:10px 0 0">Внешние каталоги открываются у владельцев данных. Полные цены и аукционные листы могут требовать бесплатной регистрации. PAPAUTO не копирует закрытые базы и не показывает неподтверждённые цифры как собственную статистику.</p></section>
-<section class="auction-live-wrap" id="auctionLiveArchive">
-<div class="auction-live-head"><div><b>Реальные результаты завершённых торгов в Японии</b><p>Встроенная статистика прошлых продаж: марка, модель, год, пробег, оценка и итог торгов. Это результаты аукционных продаж, а не активные объявления и не выполненные заказы импортёров.</p></div><a href="https://redpandamotors.ru/japan/stats/" target="_blank" rel="noopener noreferrer">Открыть статистику отдельно ↗</a></div>
-<div class="archive-sources" aria-label="Источники статистики завершённых торгов">
-<a href="https://redpandamotors.ru/japan/stats/" target="_blank" rel="noopener noreferrer">Red Panda Motors · завершённые продажи ↗</a>
-<a href="https://jpstar.ru/statistika/" target="_blank" rel="noopener noreferrer">Japan Star · архив продаж ↗</a>
-<a href="https://tempa-cars.ru/statistika/" target="_blank" rel="noopener noreferrer">Tempa Cars · результаты торгов ↗</a>
-<a href="https://tokai-auto.ru/statistika/" target="_blank" rel="noopener noreferrer">Tokai Auto · история продаж ↗</a>
-<a href="https://jpauc.ru/japan/stats/" target="_blank" rel="noopener noreferrer">JPAUC · проданные лоты ↗</a>
-<a href="https://auc.smsrv.ru/" target="_blank" rel="noopener noreferrer">SMSRV · аукционная площадка ↗</a>
-</div>
-<div class="archive-note" style="margin:0 0 12px">В статистике источника показываются сведения по отдельным завершённым лотам. Цена торгов в Японии не равна стоимости автомобиля под ключ: доставка, комиссии, таможня и другие расходы рассчитываются отдельно. Данные и изображения принадлежат соответствующим источникам.</div>
-<iframe class="auction-live-frame" src="https://redpandamotors.ru/japan/stats/" title="Статистика реальных завершённых продаж японских автоаукционов" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-<p class="muted" style="margin:12px 0 0">Если источник запрещает встраивание в окно сайта, откройте его через ссылку «Открыть статистику отдельно» выше. Мы не копируем чужие фотографии или закрытые базы в базу PAPAUTO без разрешения владельца.</p>
+<section class="archive-note" id="auctionLiveArchive" style="margin:0 0 18px">
+<b>Архив завершённых лотов</b>
+<p style="margin:8px 0 0">Здесь показываются карточки автомобилей, которые ранее участвовали в торгах и имеют подтверждённый результат. В карточках нет переходов на сторонние сайты. Цена указана только как цена торгов в Японии, если она подтверждена источником; расходы на доставку и оформление считаются отдельно.</p>
 </section>
 <section class="archive-note" id="jpSheetStats" aria-live="polite">
 <b>Открытая статистика JP Sheet · разрешено цитирование с указанием источника</b>
@@ -124,7 +114,6 @@ function renderRecord(record,unsold=false){
  field(data,"Год выпуска",record.year||"—");field(data,"Пробег",record.mileage_km!=null?fmt(record.mileage_km)+" км":"—");
  field(data,"Оценка",record.grade||"—");field(data,unsold?"Последняя ставка":"Финальная цена",money(unsold?record.last_bid_jpy:record.final_price_jpy));
  card.append(status,title,meta,data);
- if(record.url){const link=document.createElement("a");link.href=record.url;link.target="_blank";link.rel="noopener noreferrer";setText(link,"Открыть оригинальную карточку лота ↗");card.append(link)}
  return card;
 }
 async function search(event){
@@ -154,7 +143,6 @@ async function search(event){
    $("empty").hidden=false;
    $("empty").textContent=data.message||"Для этой модели у PAPAUTO пока нет подтверждённой встроенной выборки. Ниже доступны проверенные внешние источники; откройте их для поиска по выбранной модели.";
   }
-  (Array.isArray(data.sources)?data.sources:[]).slice(0,8).forEach(source=>{if(!source.url)return;const a=document.createElement("a");a.href=source.url;a.target="_blank";a.rel="noopener noreferrer";setText(a,(source.name||"Первоисточник")+" ↗");$("sources").append(a)});
   if(stats&&stats.note){const note=document.createElement("p");note.className="muted";setText(note,stats.note);$("state").append(document.createTextNode(" "));$("state").append(note)}
  }catch(error){$("state").textContent="Статистика временно недоступна: "+(error.message||"ошибка соединения");$("empty").hidden=false;$("empty").textContent="Не удалось получить данные. Попробуйте ещё раз или откройте первоисточники ниже."}
  finally{$("searchButton").disabled=false;$("searchButton").textContent="Найти лоты ↗"}
