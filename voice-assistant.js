@@ -75,8 +75,10 @@ function applyParsed(p,autoSearch){
  if(!p.raw||p.raw.trim().length<5){sayStatus("Не удалось распознать достаточно длинный запрос. Попробуйте сказать ещё раз.");return}
  if(autoSearch){
   sayStatus("Речь распознана"+(details.length?": "+details.join("; "):"")+". Выполняю бесплатный поиск по открытым источникам…");
+  const selectButton=$("runAiSelect");
   const form=$("vehicleSearchForm");
-  if(form){setTimeout(()=>form.requestSubmit(),250)}
+  if(selectButton){setTimeout(()=>selectButton.click(),250)}
+  else if(form){setTimeout(()=>form.requestSubmit(),250)}
   else sayStatus("Поля распознаны. Перейдите в каталог и нажмите «Найти автомобили».");
  }else{
   sayStatus("Распознано"+(details.length?": "+details.join("; "):"")+". Текст перенесён в форму PAPAUTO SELECT. Нажмите «Подобрать модели».");
