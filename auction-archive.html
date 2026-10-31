@@ -24,6 +24,12 @@
 <a class="archive-back" href="/?view=auctions">← К разделу «Аукционы»</a>
 <header class="archive-head"><div class="eyebrow">PAPAUTO · ЯПОНИЯ · ИСТОРИЯ ТОРГОВ</div><h1>Статистика <em>завершённых лотов</em></h1><p>Ищите автомобили любых марок и моделей. Фильтры PAPAUTO не ограничены Toyota: выберите марку и модель или откройте полный каталог аукционных источников. Проданные и непроданные лоты показываются раздельно; средние цены рассчитываются только по подтверждённым результатам.</p></header>
 <section class="archive-note" style="margin:0 0 18px"><b>Каталог всех марок и моделей</b><div class="archive-sources" style="margin-bottom:0"><a href="https://auctions22.com/models" target="_blank" rel="noopener noreferrer">51 марка · 422 модели · каталог и история лотов ↗</a><a href="https://auctions22.com/past" target="_blank" rel="noopener noreferrer">Завершённые торги Auctions22 ↗</a><a href="https://jpsheet.com/auction-price-history/" target="_blank" rel="noopener noreferrer">JP Sheet · статистика по 200 моделям ↗</a><a href="https://www.tokidoki.su/stat/" target="_blank" rel="noopener noreferrer">Toki-Doki · статистика продаж ↗</a></div><p style="margin:10px 0 0">Внешние каталоги открываются у владельцев данных. Полные цены и аукционные листы могут требовать бесплатной регистрации. PAPAUTO не копирует закрытые базы и не показывает неподтверждённые цифры как собственную статистику.</p></section>
+<section class="archive-note" id="jpSheetStats" aria-live="polite">
+<b>Открытая статистика JP Sheet · разрешено цитирование с указанием источника</b>
+<p id="jpSheetState" style="margin:8px 0">Загружаем опубликованные сводные показатели…</p>
+<div class="archive-metrics" id="jpSheetMetrics"></div>
+<p class="muted" id="jpSheetDisclaimer">Источник: <a class="source-link" href="https://jpsheet.com/auction-sheet-data/" target="_blank" rel="noopener noreferrer">JP Sheet — Japanese Auction Sheet Data ↗</a>. Это агрегированная выборка, а не 10 000 отдельных лотов и не полный рынок.</p>
+</section>
 <form class="archive-filters" id="archiveForm">
 <label>Марка<input id="make" maxlength="80" placeholder="Любая марка: Toyota, Honda, BMW…"></label>
 <label>Модель<input id="model" maxlength="80" placeholder="Любая модель: Prius, Vezel, X5…"></label>
@@ -53,6 +59,23 @@ const $=id=>document.getElementById(id),cfg=window.PAPAUTO_CONFIG||{},api=String
 const fmt=n=>new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(Number(n||0));
 const money=n=>n==null?"—":fmt(n)+" ¥";
 const setText=(node,value)=>{node.textContent=String(value??"—")};
+async function loadJpSheetStats(){
+ try{
+  const response=await fetch(api+"/api/jp-sheet-public-stats",{headers:{Accept:"application/json"}});
+  if(!response.ok)throw new Error("HTTP "+response.status);
+  const data=await response.json();
+  if(!data.ok)throw new Error("Источник временно недоступен");
+  const root=$("jpSheetMetrics");root.replaceChildren();
+  [
+   ["Автомобилей в выборке",fmt(data.cars)],
+   ["Проверенных результатов",fmt(data.auction_results)],
+   ["Повторно выставлялись",data.repeat_auction_percent+"%"],
+   ["Средний возраст листа",data.median_sheet_age_months+" мес."]
+  ].forEach(([label,value])=>root.append(metric(label,value)));
+  $("jpSheetState").textContent="Опубликовано "+data.updated_at+" · "+fmt(data.reports)+" отчётов · "+fmt(data.translated_sheets)+" переведённых листов.";
+  $("jpSheetDisclaimer").textContent=data.disclaimer+" Право использования: "+data.permission;
+ }catch(error){$("jpSheetState").textContent="Не удалось загрузить открытую статистику: "+error.message}
+}
 function metric(label,value){const box=document.createElement("div");box.className="archive-metric";const l=document.createElement("span"),v=document.createElement("strong");setText(l,label);setText(v,value);box.append(l,v);return box}
 function field(parent,label,value){const d=document.createElement("div"),s=document.createElement("small"),b=document.createElement("b");setText(s,label);setText(b,value);d.append(s,b);parent.append(d)}
 function renderRecord(record,unsold=false){
@@ -102,6 +125,7 @@ async function search(event){
 $("archiveForm").addEventListener("submit",search);
 $("resetButton").addEventListener("click",()=>{$("archiveForm").reset();$("make").value="";$("model").value="";$("yearFrom").value="1990";$("yearTo").value="2030";search()});
 search();
+loadJpSheetStats();
 })();
 </script>
 </body></html>
