@@ -332,6 +332,10 @@
           </label>
           <label>Цена автомобиля, ₽ <input id="carCost" inputmode="numeric" type="number" min="0" step="10000" placeholder="Например, 1 500 000"></label>
           <div class="form-grid">
+            <label>Аукционная / дилерская комиссия, ₽ <input id="auctionFee" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если известна"></label>
+            <label>Доставка по стране покупки, ₽ <input id="originDelivery" inputmode="numeric" type="number" min="0" step="1000" placeholder="До порта / склада"></label>
+            <label>Экспортные документы и порт, ₽ <input id="exportDocs" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если известны"></label>
+            <label>Страхование и хранение, ₽ <input id="insurance" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если применимо"></label>
             <label>Доставка до России, ₽ <input id="shipping" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если известна"></label>
             <label>Таможня и сборы, ₽ <input id="customs" inputmode="numeric" type="number" min="0" step="1000" placeholder="По расчёту специалиста"></label>
             <label>Оформление, ₽ <input id="paperwork" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если известно"></label>
@@ -385,6 +389,8 @@
           <p class="result-label">Сумма заполненных расходов</p><div class="result-total" id="resultTotal">— ₽</div>
           <div class="result-lines" id="resultLines"><div><span>Добавьте известные суммы</span><b>—</b></div></div>
           <p class="result-note" id="resultNote">Итог пока не рассчитан. Неизвестные статьи не учитываются, поэтому сумма может быть ниже фактических расходов.</p>
+          <label class="market-reference-field">Цена сопоставимого автомобиля в России, ₽ <input id="marketReferencePrice" type="number" min="0" step="10000" placeholder="Введите цену из выбранного вами объявления"></label>
+          <p class="result-note" id="marketComparison">Введите цену российского аналога, чтобы сравнить её с суммой заполненных расходов. Это не автоматическая рыночная оценка.</p>
           <button class="button button-secondary button-wide" type="button" id="copyEstimate">Скопировать смету</button>
         </aside>
       </div>
