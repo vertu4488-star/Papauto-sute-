@@ -68,7 +68,7 @@ class VehicleSearchRoutingTests(unittest.IsolatedAsyncioTestCase):
             )
 
         monthly.assert_not_awaited()
-        self.assertEqual(result["data_type"], "current_listings")
+        self.assertEqual(result["record_type"], "current_listing")
         self.assertEqual(result["source"], "XAPI Korea")
         self.assertEqual(len(result["results"]), 1)
         self.assertEqual(result["results"][0]["model"], "Avante")
