@@ -1111,6 +1111,36 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
     if country == "south-korea":
         api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
         if not api_key:
+            public_stats = await fetch_korea_monthly_stats()
+            links = _public_market_search_links(country, make, model, year_from, year_to)
+            if public_stats.get("ok"):
+                history = public_stats.get("history", [])
+                lines = [
+                    f"{row['month']}: выставлено {row['offered']:,}, продано {row['sold']:,}, доля {row['completion_rate_percent']}%".replace(",", " ")
+                    for row in history
+                ]
+                return {
+                    "ok": True, "country": country, "data_type": "source_hub",
+                    "source": public_stats["source"], "count": len(history), "records": [],
+                    "model_search_links": links,
+                    "sources": [{
+                        "name": "Korea Automobile Auction Association",
+                        "url": public_stats["source_url"],
+                        "access": "Открытая статистика · без регистрации и API-ключа",
+                        "data_kind": "Месячные итоги выставленных и проданных автомобилей",
+                        "note": "Последние опубликованные месяцы: " + "; ".join(lines)
+                    }],
+                    "message": "Публичная статистика автомобильных аукционов Кореи: " + "; ".join(lines),
+                    "disclaimer": public_stats.get("disclaimer", "")
+                }
+            return {
+                "ok": True, "country": country, "data_type": "source_hub",
+                "source": "Открытые каталоги Южной Кореи", "count": 0, "records": [],
+                "model_search_links": links, "sources": [],
+                "message": public_stats.get("message", "Открытая статистика временно недоступна."),
+                "disclaimer": "Каталоги содержат активные объявления, не завершённые торги."
+            }
+        if not api_key:
             raise HTTPException(status_code=503, detail="Поиск по Южной Корее пока не активирован: в Render нужен XAPIKOREA_API_KEY.")
         params = {"brand": make or None, "model": model or None, "year_from": year_from, "year_to": year_to, "limit": limit, "page": 1, "lang": "en", "source": "encar", "sale_type": "normal"}
         params = {k: v for k, v in params.items() if v is not None and v != ""}
