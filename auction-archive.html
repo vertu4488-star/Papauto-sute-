@@ -1,31 +1,106 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Архив завершённых автоаукционов — PAPAUTO</title><meta name="description" content="Проверяемые результаты завершённых автомобильных торгов с датами, пробегом, стартовой и финальной ценой и ссылками на источник."><link rel="stylesheet" href="/mobile.css"><link rel="stylesheet" href="/styles.css"><style>.archive-wrap{max-width:1280px;margin:auto;padding:46px 24px 84px;color:#1d1d1f;background:#fff}.archive-head{margin-bottom:28px}.archive-head h1{font-size:clamp(34px,5vw,56px);line-height:1.04;letter-spacing:-.045em;color:#1d1d1f}.archive-head h1 span{color:#06c}.archive-head p{color:#6e6e73;max-width:800px;line-height:1.65;font-size:16px}.archive-tools{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 18px}.archive-tools input,.archive-tools select{background:#f5f5f7;color:#1d1d1f;border:1px solid #d2d2d7;border-radius:12px;padding:13px 16px;min-height:48px;font:inherit;outline:none}.archive-tools input:focus,.archive-tools select:focus{border-color:#06c;box-shadow:0 0 0 3px #06c22}.archive-tools input{flex:1;min-width:220px}.archive-count{color:#6e6e73;font-size:13px;margin:10px 0 18px}.archive-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.lot{border:1px solid #d2d2d7;border-radius:20px;background:#fff;padding:0 0 18px;min-width:0;overflow:hidden;box-shadow:0 2px 10px #00000008}.lot h2{font-size:19px;line-height:1.25;color:#1d1d1f;margin:15px 18px 6px}.lot .sub{font-size:12px;color:#6e6e73;margin:0 18px 14px}.lot dl{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 18px}.lot dl div{background:#f5f5f7;border-radius:10px;padding:10px}.lot dt{font-size:10px;color:#6e6e73}.lot dd{margin:4px 0 0;font-size:14px;font-weight:650;color:#1d1d1f}.lot .price{color:#06c}.lot a{display:inline-block;margin:15px 18px 0;color:#06c;font-size:14px;text-decoration:none}.lot a:hover{text-decoration:underline}.lot .status{display:inline-block;font-size:11px;background:#f5f5f7;color:#1d1d1f;border-radius:20px;padding:6px 10px;margin:14px 0 0 18px}.lot-photo{display:block;width:100%;height:205px;object-fit:cover;background:#f5f5f7}.photo-caption{font-size:10px;color:#86868b;margin:7px 18px 0}.archive-note{border:1px solid #d2d2d7;border-radius:16px;padding:18px;color:#6e6e73;font-size:13px;line-height:1.65;margin:28px 0;background:#f5f5f7}.archive-note b{color:#1d1d1f}.no-results{display:none;color:#6e6e73;padding:24px}.back-link{display:inline-block;margin:0 0 20px;color:#06c;text-decoration:none}.back-link:hover{text-decoration:underline}@media(max-width:900px){.archive-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.archive-wrap{padding:28px 16px 60px}.archive-grid{grid-template-columns:1fr}.lot{border-radius:17px}.lot-photo{height:220px}.archive-head h1{font-size:36px}}</style></head><body><main class="archive-wrap"><a class="back-link" href="/auction-data.html">← Источники и методика</a><header class="archive-head"><h1>Архив <span>завершённых торгов</span></h1><p>Первые проверенные карточки японских аукционов за последние три месяца. В каталог включены только лоты со статусом Sold и указанной финальной ценой. Это исторические результаты, не предложения к покупке.</p></header><div class="archive-tools"><input id="q" type="search" placeholder="Поиск: Toyota, Honda, TAA…"><select id="sort"><option value="date">Сначала новые</option><option value="price">Цена: по возрастанию</option><option value="km">Пробег: по возрастанию</option></select></div><div class="archive-count" id="count" aria-live="polite"></div><section class="archive-grid" id="grid"></section><p class="no-results" id="empty">По этому запросу ничего не найдено.</p><aside class="archive-note"><b>Фотографии и аукционные листы.</b> Источник показывает дополнительные фотографии и отчёты в рамках своего доступа; часть материалов доступна только после входа или по платному тарифу. PAPAUTO не копирует закрытые изображения и листы. Открывайте оригинальную карточку лота по ссылке — там доступны разрешённые владельцем материалы. Стартовая и финальная цены указаны в японских иенах; доставка, комиссии, экспорт и таможенные платежи не включены.</aside><a class="back-link" href="/#auction-statistics">← К калькулятору и статистике PAPAUTO</a></main><script>
-const lots=[
-["SUZUKI WAGON R STINGRAY X","TAA Yokohama","18003","2026-10-31","2010.08",104000,"0.7 л","¥33 000","¥39 000","https://banzai24.com/en"],
-["TOYOTA YARIS X","TAA Yokohama","12002","2026-10-31","2023.09",30000,"1.0 л","¥300 000","¥1 263 000","https://banzai24.com/en"],
-["SUBARU OUTBACK X-BREAK EX 4WD","TAA Yokohama","12003","2026-10-31","2021.12",48000,"1.8 л","¥1 400 000","¥2 459 000","https://banzai24.com/en"],
-["TOYOTA RAIZE Z","TAA Hyogo","1","2026-10-31","2022.04",84000,"1.2 л","¥600 000","¥1 431 000","https://banzai24.com/en"],
-["SUZUKI MR WAGON G","TAA Yokohama","18005","2026-10-31","2005.10",78000,"0.7 л","¥33 000","¥33 000","https://banzai24.com/en"],
-["SUBARU R2 I","TAA Yokohama","18006","2026-10-31","2004.07",92000,"0.7 л","¥33 000","¥33 000","https://banzai24.com/en"],
-["TOYOTA PASSO X","TAA Yokohama","78001","2026-10-31","2013.10",85000,"1.0 л","¥60 000","¥61 000","https://banzai24.com/en"],
-["NISSAN MOCO X","TAA Yokohama","78002","2026-10-31","2012.02",100000,"0.7 л","¥33 000","¥33 000","https://banzai24.com/en"],
-["TOYOTA AQUA S STYLE BLACK","TAA Yokohama","14001","2026-10-31","2017.02",29000,"1.5 л","¥1 000","¥490 000","https://banzai24.com/en"],
-["HONDA CR-Z BETA","TAA Yokohama","18002","2026-10-31","2010.09",77000,"1.5 л","¥60 000","¥147 000","https://banzai24.com/en"],
-["SUZUKI WAGON R FX LIMITED","TAA Yokohama","78003","2026-10-31","2009.10",66000,"0.7 л","¥33 000","¥33 000","https://banzai24.com/en"],
-["HONDA VEZEL HYBRID Z HONDA SENSING","TAA Hyogo","2","2026-10-31","2017.10",136000,"1.5 л","¥150 000","¥804 000","https://banzai24.com/en"],
-["TOYOTA VOXY HYBRID ZS KIRAMEKI 3","TAA Hyogo","3","2026-10-31","2021.06",103000,"1.8 л","¥1 100 000","¥1 967 000","https://banzai24.com/en"],
-["TOYOTA ALPHARD AS PLATINUM","TAA Hyogo","4","2026-10-31","2006.08",133000,"2.4 л","¥10 000","¥223 000","https://banzai24.com/en"],
-["BMW Z4 2.5I","TAA Yokohama","18001","2026-10-31","2005.07",106000,"2.5 л","¥100 000","¥138 000","https://banzai24.com/en"],
-["DAIHATSU HIJET STANDARD","TAA Hyogo","3001","2026-10-31","2019.05",155000,"0.7 л","¥40 000","¥157 000","https://banzai24.com/en"],
-["DAIHATSU MOVE CONTE X","TAA Hyogo","3003","2026-10-31","2013.10",120000,"0.7 л","¥30 000","¥48 000","https://banzai24.com/en"],
-["SUZUKI EVERY JOIN","TAA Hyogo","3004","2026-10-31","2010.10",111000,"0.7 л","¥30 000","¥111 000","https://banzai24.com/en"],
-["BMW 3 SERIES 2.0","TAA Yokohama","18004","2026-10-31","2010.06",81000,"2.0 л","¥80 000","¥93 000","https://banzai24.com/en"],
-["DAIHATSU TANTO CUSTOM X LIMITED","CAA Chubu","95004","2026-10-21","2008.03",96000,"0.7 л","¥0","¥38 000","https://banzai24.com/en/car/JP/01a14324-81b6-796f-961b-66b139141abe"],
-["NISSAN DAYZ HIGHWAY STAR G TURBO PROP","MIRIVE Osaka","90105","2026-10-29","2020",83926,"0.7 л","—","¥372 000","https://banzai24.com/en"],
-["NISSAN DAYZ X","ORIX bid Club Atsugi","100","2026-10-29","2020",69012,"0.7 л","—","¥394 000","https://banzai24.com/en"],
-["NISSAN DAYZ X","ORIX bid Club Atsugi","1041","2026-10-29","2020",76821,"0.7 л","—","¥359 000","https://banzai24.com/en"]
-];
-const fmt=n=>new Intl.NumberFormat("ru-RU").format(n),grid=document.getElementById("grid");
-const photos=[["WAGON R","https://img.nextage.jp/stock_images/4252420/4252420_mdl_27e4ea3b.jpg","Иллюстративное фото Suzuki Wagon R Stingray"],["TOYOTA YARIS","https://picture1.goo-net.com/7000507429/30250219/J/70005074293025021900700.jpg","Иллюстративное фото модели Toyota Yaris"],["TOYOTA RAIZE","https://s.auto.drom.ru/i24292/foreignimport/japan_auction_images/gen580_6eb0db8995002994992b64a34a0767ce14678fa5.jpg","Фото модели Toyota Raize из объявления"],["HONDA VEZEL","https://sbimotor.com/uploads/car/images/1376249/1564660982A.jpg","Иллюстративное фото модели Honda Vezel"],["SUBARU OUTBACK","https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/images/car-reviews/first-drives/legacy/21outback_off-road_0.jpg?itok=sRWdqRpL","Иллюстративное фото модели Subaru Outback"],["NISSAN MOCO","https://ccsrpcma.carsensor.net/CSphoto/bkkn/170/336/U00047170336/U00047170336_001L.JPG","Иллюстративное фото Nissan Moco"],["HONDA CR-Z","https://img.goo-net.com/goo/magazine/contents/103902/thmt-00000103902.jpg","Иллюстративное фото Honda CR-Z"],["NISSAN DAYZ","https://ccsrpcma.carsensor.net/CSphoto/bkkn/258/166/UZ0052258166/UZ0052258166_002L.JPG","Иллюстративное фото Nissan Dayz"],["TOYOTA VOXY","https://kinto-jp.com/cms-images/assets/c8f79fe8d67e4eb3a34ad72f0d950baf/719e213144cb493fa2cb35712065b5b7/toyota-minivan_11.jpg","Иллюстративное фото линейки минивэнов Toyota"],["TOYOTA ALPHARD","https://www.toyota-mobi-tokyo.co.jp/file/cms/03601/4497409/image.jpg","Иллюстративное фото линейки минивэнов Toyota"]];function photoFor(name){return photos.find(p=>name.includes(p[0]))}function render(){const q=document.getElementById("q").value.trim().toLowerCase(),sort=document.getElementById("sort").value;let rows=lots.filter(x=>x.join(" ").toLowerCase().includes(q));rows.sort((a,b)=>sort==="price"?Number(a[8].replace(/[^0-9]/g,""))-Number(b[8].replace(/[^0-9]/g,"")):sort==="km"?a[5]-b[5]:b[3].localeCompare(a[3]));grid.innerHTML=rows.map(x=>{const p=photoFor(x[0]);return `<article class="lot">${p?`<img class="lot-photo" loading="lazy" src="${p[1]}" alt="${x[0]}"><div class="photo-caption">${p[2]}</div>`:`<div class="lot-photo" aria-label="Фото автомобиля пока недоступно"></div>`}<span class="status">Продан · Sold</span><h2>${x[0]}</h2><div class="sub">${x[1]} · Лот ${x[2]} · ${new Date(x[3]).toLocaleDateString("ru-RU")}</div><dl><div><dt>Год / месяц</dt><dd>${x[4]}</dd></div><div><dt>Пробег</dt><dd>${fmt(x[5])} км</dd></div><div><dt>Двигатель</dt><dd>${x[6]}</dd></div><div><dt>Стартовая цена</dt><dd>${x[7]}</dd></div><div><dt>Финальная цена</dt><dd class="price">${x[8]}</dd></div><div><dt>Рынок</dt><dd>Япония</dd></div></dl><a href="${x[9]}" target="_blank" rel="noopener noreferrer">Открыть карточку / источник ↗</a></article>`}).join("");document.getElementById("count").textContent="Показано лотов: "+rows.length+" из "+lots.length+" · только подтверждённый статус Sold";document.getElementById("empty").style.display=rows.length?"none":"block"}
-document.getElementById("q").addEventListener("input",render);document.getElementById("sort").addEventListener("change",render);render();
-</script></body></html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Статистика и архив завершённых автоаукционов — PAPAUTO</title>
+<meta name="description" content="Поиск проверенных завершённых лотов японских автоаукционов: год, пробег, оценка, дата и финальная цена.">
+<link rel="canonical" href="https://papauto.ru/auction-archive.html">
+<link rel="stylesheet" href="/mobile.css"><link rel="stylesheet" href="/styles.css">
+<style>
+.archive-wrap{max-width:1320px;margin:auto;padding:44px 24px 84px;color:#e8edf2}.archive-head{margin-bottom:26px}.archive-head h1{font:800 clamp(34px,5vw,56px)/1.05 Manrope,sans-serif;letter-spacing:-.045em;margin:10px 0}.archive-head h1 em{font-style:normal;color:var(--accent)}.archive-head p,.muted{color:#aab7c4;line-height:1.7;max-width:850px}.archive-back{display:inline-block;color:#c7d4df;text-decoration:none;margin-bottom:18px}.archive-back:hover{color:var(--accent)}
+.archive-filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:20px;border:1px solid var(--line);border-radius:18px;background:#111b25}.archive-filters label{display:grid;gap:7px;color:#aab7c4;font-size:12px}.archive-filters input,.archive-filters select{width:100%;min-width:0;min-height:44px;padding:10px 12px;border:1px solid #354452;border-radius:10px;background:#0b131b;color:#edf2f6;font:inherit}.archive-filters button{align-self:end;min-height:44px}.archive-toggle{display:flex!important;grid-column:1/-1;align-items:center;display:flex!important;gap:9px!important}.archive-toggle input{width:auto;min-height:auto}.archive-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px}.archive-state{margin:18px 0;color:#aab7c4;font-size:13px}.archive-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}.archive-metric{padding:16px;border:1px solid var(--line);border-radius:14px;background:#111b25}.archive-metric span{display:block;color:#95a4b1;font-size:11px}.archive-metric strong{display:block;color:#f0f3f6;font:800 22px Manrope,sans-serif;margin-top:7px;overflow-wrap:anywhere}.archive-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.archive-lot{padding:18px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#15212c,#101720);min-width:0}.archive-lot h2{font:700 17px Manrope,sans-serif;margin:10px 0 5px}.archive-lot .lot-meta{color:#91a2b0;font-size:11px;line-height:1.6}.lot-status{display:inline-flex;padding:5px 9px;border-radius:20px;background:#17352c;color:#9de1bf;font-size:10px}.lot-status.unsold{background:#3a3220;color:#e7d09a}.lot-data{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}.lot-data div{padding:9px;border-radius:9px;background:#0b131b}.lot-data small{display:block;color:#8fa0ae;font-size:10px}.lot-data b{display:block;margin-top:4px;font-size:13px;color:#e9eef2}.lot-price{color:#f0f3f6!important}.archive-lot a,.source-link{color:#c9d9e6;text-decoration:underline;text-underline-offset:3px;font-size:12px}.archive-note{margin:24px 0;padding:17px;border:1px solid var(--line);border-radius:14px;color:#aab7c4;background:#111b25;font-size:12px;line-height:1.7}.archive-empty{padding:24px;border:1px dashed #53616d;border-radius:14px;color:#aab7c4;line-height:1.7}.archive-sources{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.archive-sources a{color:#c9d9e6;font-size:12px}
+@media(max-width:900px){.archive-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.archive-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.archive-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.archive-wrap{padding:28px 16px 60px}.archive-grid{grid-template-columns:1fr}.archive-filters{grid-template-columns:1fr;padding:14px}.archive-metrics{gap:8px}.archive-metric{padding:12px}.archive-metric strong{font-size:19px}}
+</style>
+</head>
+<body>
+<header class="site-header">
+<a class="brand" href="/" aria-label="PAPAUTO — главная"><span class="brand-mark">P</span><span class="brand-name">PAPAUTO<span class="brand-dot">.</span><small>АВТОМОБИЛИ ПОД ЗАКАЗ</small></span></a>
+<button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+<nav class="main-nav" aria-label="Главная навигация"><a href="/">Главная</a><a href="/?view=catalog">Каталог</a><a href="/?view=auctions">Аукционы</a><a href="/?view=calculator">Расчёт</a></nav>
+<a class="header-cta" href="/?view=select#assistant">Обсудить подбор ↗</a>
+</header>
+<main class="archive-wrap">
+<a class="archive-back" href="/?view=auctions">← К разделу «Аукционы»</a>
+<header class="archive-head"><div class="eyebrow">PAPAUTO · ЯПОНИЯ · ИСТОРИЯ ТОРГОВ</div><h1>Статистика <em>завершённых лотов</em></h1><p>Фильтруйте опубликованные результаты по модели, году, оценке, пробегу и дате. Проданные и непроданные лоты показываются раздельно. В расчёт средней цены входят только записи с подтверждённой финальной ценой.</p></header>
+<form class="archive-filters" id="archiveForm">
+<label>Марка<input id="make" value="Toyota" maxlength="80" placeholder="Toyota, Honda, Nissan"></label>
+<label>Модель<input id="model" value="RAV4" maxlength="80" placeholder="RAV4, Prius, Vezel"></label>
+<label>Год от<input id="yearFrom" type="number" min="1990" max="2030" value="1990"></label>
+<label>Год до<input id="yearTo" type="number" min="1990" max="2030" value="2030"></label>
+<label>Оценка<select id="grade"><option value="">Любая оценка</option><option>5</option><option>4.5</option><option>4</option><option>3.5</option><option>3</option><option>R</option><option>RA</option></select></label>
+<label>Пробег от, км<input id="mileageMin" type="number" min="0" placeholder="Неважно"></label>
+<label>Пробег до, км<input id="mileageMax" type="number" min="0" placeholder="Неважно"></label>
+<label>Дата торгов от<input id="dateFrom" type="date"></label>
+<label>Дата торгов до<input id="dateTo" type="date"></label>
+<label>Цена от, ¥<input id="priceMin" type="number" min="0" placeholder="Неважно"></label>
+<label>Цена до, ¥<input id="priceMax" type="number" min="0" placeholder="Неважно"></label>
+<label class="archive-toggle"><input id="includeUnsold" type="checkbox"> Показывать непроданные лоты отдельно</label>
+<div class="archive-actions"><button class="button button-primary" id="searchButton" type="submit">Найти лоты ↗</button><button class="button button-secondary" id="resetButton" type="button">Сбросить</button></div>
+</form>
+<div id="state" class="archive-state" aria-live="polite">Загружаем проверенную выборку завершённых торгов…</div>
+<div id="metrics" class="archive-metrics"></div>
+<section id="grid" class="archive-grid" aria-live="polite"></section>
+<section id="empty" class="archive-empty" hidden></section>
+<div id="sources" class="archive-sources"></div>
+<aside class="archive-note"><b>Как читать данные.</b> Это открытая выборка первоисточника, а не полный рынок всех японских аукционов. Финальная цена — цена торгов в Японии; доставка, комиссия, экспортные документы и таможенные платежи не включены. Непроданные лоты не участвуют в средней и медианной цене. Фотографии и аукционные листы открываются у владельца источника в соответствии с его правилами доступа.</aside>
+</main>
+<script src="/site-config.js"></script><script>
+(()=>{
+"use strict";
+const $=id=>document.getElementById(id),cfg=window.PAPAUTO_CONFIG||{},api=String(cfg.apiBaseUrl||"").replace(/\/$/,"");
+const fmt=n=>new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(Number(n||0));
+const money=n=>n==null?"—":fmt(n)+" ¥";
+const setText=(node,value)=>{node.textContent=String(value??"—")};
+function metric(label,value){const box=document.createElement("div");box.className="archive-metric";const l=document.createElement("span"),v=document.createElement("strong");setText(l,label);setText(v,value);box.append(l,v);return box}
+function field(parent,label,value){const d=document.createElement("div"),s=document.createElement("small"),b=document.createElement("b");setText(s,label);setText(b,value);d.append(s,b);parent.append(d)}
+function renderRecord(record,unsold=false){
+ const card=document.createElement("article");card.className="archive-lot";
+ const status=document.createElement("span");status.className="lot-status"+(unsold?" unsold":"");setText(status,unsold?"Не продан · UNSOLD":"Продан · SOLD");
+ const title=document.createElement("h2");setText(title,record.name||"Автомобиль");
+ const meta=document.createElement("div");meta.className="lot-meta";setText(meta,[record.auction,record.lot_number?"Лот "+record.lot_number:null,record.date,record.year].filter(Boolean).join(" · "));
+ const data=document.createElement("div");data.className="lot-data";
+ field(data,"Год выпуска",record.year||"—");field(data,"Пробег",record.mileage_km!=null?fmt(record.mileage_km)+" км":"—");
+ field(data,"Оценка",record.grade||"—");field(data,unsold?"Последняя ставка":"Финальная цена",money(unsold?record.last_bid_jpy:record.final_price_jpy));
+ card.append(status,title,meta,data);
+ if(record.url){const link=document.createElement("a");link.href=record.url;link.target="_blank";link.rel="noopener noreferrer";setText(link,"Открыть оригинальную карточку лота ↗");card.append(link)}
+ return card;
+}
+async function search(event){
+ if(event)event.preventDefault();
+ $("searchButton").disabled=true;$("searchButton").textContent="Ищем…";
+ $("state").textContent="Запрашиваем подтверждённые записи у PAPAUTO API…";
+ $("metrics").replaceChildren();$("grid").replaceChildren();$("sources").replaceChildren();$("empty").hidden=true;
+ try{
+  if(!api)throw new Error("Не настроен адрес API.");
+  const params=new URLSearchParams({country:"japan",make:$("make").value.trim(),model:$("model").value.trim(),year_from:$("yearFrom").value||"1990",year_to:$("yearTo").value||"2030",grade:$("grade").value,limit:"30"});
+  const optional=[["mileage_min","mileageMin"],["mileage_max","mileageMax"],["price_min_jpy","priceMin"],["price_max_jpy","priceMax"],["date_from","dateFrom"],["date_to","dateTo"]];
+  optional.forEach(([key,id])=>{const v=$(id).value.trim();if(v)params.set(key,v)});
+  if($("includeUnsold").checked)params.set("include_unsold","true");
+  const response=await fetch(api+"/api/auction-statistics?"+params.toString(),{headers:{Accept:"application/json"}});
+  const data=await response.json();if(!response.ok)throw new Error(data.detail||"API не смог загрузить архив.");
+  const records=Array.isArray(data.records)?data.records:[];
+  const unsold=Array.isArray(data.unsold_records)?data.unsold_records:[];
+  const stats=data.sample_stats;
+  if(stats&&records.length){
+   $("metrics").append(metric("Продано в выборке",stats.sample_count),metric("Средняя цена",money(stats.average_final_price_jpy)),metric("Медианная цена",money(stats.median_final_price_jpy)),metric("Диапазон цен",money(stats.min_final_price_jpy)+" — "+money(stats.max_final_price_jpy)));
+  }
+  records.forEach(r=>$("grid").append(renderRecord(r,false)));
+  if($("includeUnsold").checked)unsold.forEach(r=>$("grid").append(renderRecord(r,true)));
+  const total=records.length+($("includeUnsold").checked?unsold.length:0);
+  $("state").textContent=total?"Найдено записей: "+total+" · продано: "+records.length+" · непродано: "+($("includeUnsold").checked?unsold.length:0)+" · "+(data.source||"источник указан ниже"):"По выбранным параметрам встроенных записей не найдено.";
+  if(!total){
+   $("empty").hidden=false;
+   $("empty").textContent=data.message||"Для этой модели у PAPAUTO пока нет подтверждённой встроенной выборки. Ниже доступны проверенные внешние источники; откройте их для поиска по выбранной модели.";
+  }
+  (Array.isArray(data.sources)?data.sources:[]).slice(0,8).forEach(source=>{if(!source.url)return;const a=document.createElement("a");a.href=source.url;a.target="_blank";a.rel="noopener noreferrer";setText(a,(source.name||"Первоисточник")+" ↗");$("sources").append(a)});
+  if(stats&&stats.note){const note=document.createElement("p");note.className="muted";setText(note,stats.note);$("state").append(document.createTextNode(" "));$("state").append(note)}
+ }catch(error){$("state").textContent="Статистика временно недоступна: "+(error.message||"ошибка соединения");$("empty").hidden=false;$("empty").textContent="Не удалось получить данные. Попробуйте ещё раз или откройте первоисточники ниже."}
+ finally{$("searchButton").disabled=false;$("searchButton").textContent="Найти лоты ↗"}
+}
+$("archiveForm").addEventListener("submit",search);
+$("resetButton").addEventListener("click",()=>{$("archiveForm").reset();$("make").value="Toyota";$("model").value="RAV4";$("yearFrom").value="1990";$("yearTo").value="2030";search()});
+search();
+})();
+</script>
+</body></html>
