@@ -1,1 +1,1 @@
-window.PAPAUTO_CONFIG={apiBaseUrl:"https://papauto-leads.onrender.com",supabaseUrl:"https://uawhysfuewosfbscviay.supabase.co",supabasePublishableKey:"sb_publishable_7ek3sIDkWs7GL86AA30IJg_n9ckwO0M",telegramBotUrl:"https://t.me/PAPAUTORU",telegramChannelUrl:"https://t.me/PAPAUTO1",vkUrl:"",instagramUrl:"",youtubeUrl:""};
+window.PAPAUTO_CONFIG={apiBaseUrl:"https://papauto-leads.onrender.com",telegramBotUrl:"https://t.me/PAPAUTORU",telegramChannelUrl:"https://t.me/PAPAUTO1",vkUrl:"",instagramUrl:"",youtubeUrl:""};
