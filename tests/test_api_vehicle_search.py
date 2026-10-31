@@ -54,8 +54,8 @@ class VehicleSearchRoutingTests(unittest.IsolatedAsyncioTestCase):
             "history": [{"month": "2026-09", "offered": 1000, "sold": 700, "completion_rate_percent": 70}],
             "disclaimer": "Monthly aggregate statistics only.",
         }
-        with patch.dict(os.environ, {"XAPIKOREA_API_KEY": "unused-test-key"}, clear=False), \\
-             patch("api.fetch_korea_monthly_stats", new_callable=AsyncMock, return_value=stats) as monthly, \\
+        with patch.dict(os.environ, {"XAPIKOREA_API_KEY": "unused-test-key"}, clear=False), \
+             patch("api.fetch_korea_monthly_stats", new_callable=AsyncMock, return_value=stats) as monthly, \
              patch("api.httpx.AsyncClient") as client:
             result = await api.search_vehicles(country="south-korea", make="Hyundai", model="Avante")
         monthly.assert_awaited_once()
@@ -65,8 +65,8 @@ class VehicleSearchRoutingTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn("статистика", result["message"].lower())
 
     async def test_korea_falls_back_to_free_encar_source_without_paid_api(self):
-        with patch.dict(os.environ, {"XAPIKOREA_API_KEY": "unused-test-key"}, clear=False), \\
-             patch("api.fetch_korea_monthly_stats", new_callable=AsyncMock, return_value={"ok": False, "message": "offline"}), \\
+        with patch.dict(os.environ, {"XAPIKOREA_API_KEY": "unused-test-key"}, clear=False), \
+             patch("api.fetch_korea_monthly_stats", new_callable=AsyncMock, return_value={"ok": False, "message": "offline"}), \
              patch("api.httpx.AsyncClient") as client:
             result = await api.search_vehicles(country="south-korea", make="Hyundai", model="Avante")
         client.assert_not_called()
