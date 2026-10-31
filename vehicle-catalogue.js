@@ -25,6 +25,7 @@
       ["Volkswagen","Lavida","1.5 л"],["Volkswagen","Sagitar","1.2–1.5 л"],["Volkswagen","Golf","1.4–1.5 л"],["Volkswagen","T-Cross","1.5 л"],["Volkswagen","T-Roc","1.4–2.0 л (проверять версию)"],["Volkswagen","Tharu","1.4–2.0 л (проверять версию)"],["Toyota","Corolla","1.2–1.8 л"],["Toyota","Levin","1.2–1.8 л"],["Toyota","Frontlander","2.0 л"],["Toyota","C-HR","1.2–2.0 л (проверять версию)"],["Honda","Civic","1.5 л"],["Honda","Breeze","1.5–2.0 л"],["Honda","XR-V","1.5 л"],["Honda","Fit","1.5 л"],["Honda","Crider","1.0–1.5 л"],["Honda","HR-V","1.5 л"],["Nissan","Sylphy","1.6 л"],["Nissan","Qashqai","1.3–2.0 л"],["Nissan","Kicks","1.5 л"],["Mazda","CX-30","2.0 л"],["Mazda","Mazda3","2.0 л"],["BMW","X1","1.5–2.0 л"],["BMW","X2","1.5–2.0 л"],["Audi","Q3","1.4–2.0 л"],["Buick","Excelle GT","1.5 л"],["Buick","Envision","1.5–2.0 л"]
     ]
   };
+  window.PAPAUTO_CATALOG = catalog;
   const country = document.getElementById("vehicleCountry");
   const make = document.getElementById("vehicleMake");
   const model = document.getElementById("vehicleModel");
