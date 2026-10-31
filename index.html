@@ -138,6 +138,11 @@
       <button class="button button-primary" id="vehicleSearchButton" type="submit">Найти автомобили</button>
       <p class="result-note" id="vehicleSearchStatus" aria-live="polite">Задайте параметры и отправьте запрос. Выдача актуальных лотов зависит от доступности лицензированных источников данных; архивные примеры отдельно помечены.</p>
       <div id="vehicleSearchResults" class="vehicle-results" hidden></div>
+      <section id="vehicleToolsPanel" class="vehicle-tools-panel" aria-live="polite" hidden>
+        <div class="vehicle-tools-heading"><h3>Избранное и сравнение</h3><p>Сохранённые автомобили остаются в этом браузере на этом устройстве.</p></div>
+        <div id="vehicleSavedList" class="vehicle-saved-list"></div>
+        <div id="vehicleCompareList" class="vehicle-compare-list"></div>
+      </section>
     </form>
   </section>
 
@@ -558,6 +563,7 @@
 </nav>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>\n<script src="/site-config.js"></script>\n<script src="/account.js" defer></script>
 <script src="/app.js" defer></script>
+<script src="/marketplace-interactions.js" defer></script>
 <script src="/voice-assistant.js" defer></script>
 </body>
 </html>

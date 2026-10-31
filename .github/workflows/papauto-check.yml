@@ -44,6 +44,7 @@ jobs:
       - name: Check browser JavaScript syntax
         run: |
           node --check app.js
+          node --check marketplace-interactions.js
           node --check voice-assistant.js
       - name: Wait for Render API deployment and test Japan source hub
         shell: bash
