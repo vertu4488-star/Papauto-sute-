@@ -96,8 +96,8 @@ if(aiSelectButton)aiSelectButton.addEventListener("click",async()=>{
  if(message.length<5){status.textContent="Опишите автомобиль или заполните марку и модель.";$("carPrompt").focus();return}
  const label=$("country").value.toLowerCase();
  const country=label.includes("коре")?"south-korea":label.includes("кита")?"china":"japan";
- aiSelectButton.disabled=true;aiSelectButton.textContent="Подбираю бесплатно…";
- status.textContent="Разбираю запрос локально, без платного ИИ-сервиса…";out.hidden=true;
+ aiSelectButton.disabled=true;aiSelectButton.textContent="Подбираю автомобиль…";
+ status.textContent="Анализирую запрос и подбираю подходящие модели…";out.hidden=true;
  try{
   const response=await fetch(api+"/api/assistant/search",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message,country,city:$("city").value.trim()||"Новосибирск"})});
   const data=await response.json().catch(()=>({}));
@@ -114,6 +114,7 @@ if(aiSelectButton)aiSelectButton.addEventListener("click",async()=>{
   const note=document.createElement("p");note.className="ai-select-disclaimer";
   note.textContent="Поиск использует доступные открытые источники. Бюджет, тип привода и коробка не применяются как фильтры, если источник их не предоставляет.";
   out.append(note);
+  let selectionMode="local_free";
    try{
     const budgetValue=Number($("budget").value||0);
     const selectionResponse=await fetch(api+"/api/assistant/select",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({
@@ -124,6 +125,7 @@ if(aiSelectButton)aiSelectButton.addEventListener("click",async()=>{
      mileage_max:$("maxMileage").value?Number($("maxMileage").value):(f.mileage_max||null)
     })});
     const shortlist=await selectionResponse.json().catch(()=>({}));
+    if(shortlist.processing_mode)selectionMode=shortlist.processing_mode;
     if(selectionResponse.ok&&Array.isArray(shortlist.recommendations)){
      const heading=document.createElement("h3");heading.className="ai-select-summary";heading.textContent=shortlist.summary||"Предварительные рекомендации PAPAUTO";out.append(heading);
      shortlist.recommendations.forEach(item=>{
@@ -145,10 +147,10 @@ if(aiSelectButton)aiSelectButton.addEventListener("click",async()=>{
     out.append(fallback);
    }
    out.hidden=false;
-  status.textContent="Параметры перенесены в каталог. Выполняю бесплатный поиск…";
+  status.textContent=selectionMode==="zai_glm"?"ИИ-подбор Z.ai завершён. Параметры перенесены в каталог; выполняю поиск…":"Локальный подбор завершён. Параметры перенесены в каталог; выполняю бесплатный поиск…";
   const form=$("vehicleSearchForm");if(form)form.requestSubmit();else status.textContent="Параметры готовы. Перейдите в каталог и нажмите «Найти автомобили».";
  }catch(error){status.textContent=error.message||"Ошибка бесплатного подбора."}
- finally{aiSelectButton.disabled=false;aiSelectButton.textContent="Подобрать бесплатно ↗"}
+ finally{aiSelectButton.disabled=false;aiSelectButton.textContent="Подобрать автомобиль ↗"}
 });
 const form=$("assistantForm");let preparedLead=null;if(form)form.addEventListener("submit",e=>{e.preventDefault();const p=$("carPrompt").value.trim();if(!p){$("carPrompt").focus();return}const country=$("country").value;const budget=$("budget").value.trim();const city=$("city").value.trim()||"Новосибирск";const contact=$("contact").value.trim();const name=$("leadName")?.value.trim()||"";const make=$("carMake").value.trim();const model=$("carModel").value.trim();const yearFrom=$("yearFrom").value.trim();const yearTo=$("yearTo").value.trim();const mileage=$("maxMileage").value.trim();const listingUrl=$("carListingUrl")?.value.trim()||"";if(listingUrl&&!/^https?:\/\//i.test(listingUrl)){$("copyStatus").textContent="Ссылка на автомобиль должна начинаться с http:// или https://.";$("carListingUrl").focus();return}if(yearFrom&&yearTo&&Number(yearFrom)>Number(yearTo)){$("copyStatus").textContent="Год «от» не может быть больше года «до».";return}const lines=["Заявка на подбор автомобиля — PAPAUTO","Направление: "+country,"Марка: "+(make||"не указана"),"Модель: "+(model||"не указана"),"Год выпуска: "+(yearFrom||"не указан")+" — "+(yearTo||"не указан"),"Максимальный пробег: "+(mileage?new Intl.NumberFormat("ru-RU").format(Number(mileage))+" км":"не указан"),"Бюджет: "+(budget?money(Number(budget)):"не указан"),"Город получения: "+city,"Дополнительные пожелания: "+p];if(listingUrl)lines.push("Ссылка на выбранный автомобиль/лот: "+listingUrl);if(name)lines.push("Имя: "+name);lines.push("Контакт для ответа: "+contact,"Просьба: подобрать доступные варианты и подготовить предварительную смету с учётом доставки и оформления.");$("requestText").value=lines.join("\n");$("requestOutput").hidden=false;preparedLead={name,contact,country,budget:budget?Number(budget):null,city,request:lines.slice(1,listingUrl?10:9).join("\n")+(name?"\nИмя: "+name:""),consent:$("leadConsent")?.checked===true,website:$("website")?.value.trim()||""};window.dispatchEvent(new CustomEvent("papauto:lead-prepared",{detail:{...preparedLead,make,model,yearFrom,yearTo}}));$("copyStatus").textContent="";$("sendRequest").disabled=false;$("sendRequest").textContent="Отправить менеджеру ↗"});const send=$("sendRequest");if(send)send.addEventListener("click",async()=>{if(!preparedLead){$("copyStatus").textContent="Сначала заполните заявку и нажмите «Подготовить заявку».";return}if(!preparedLead.contact){$("copyStatus").textContent="Укажите телефон или Telegram для ответа."; $("contact").focus();return}if(!$("leadConsent")?.checked){$("copyStatus").textContent="Необходимо согласие на обработку данных.";return}if(!cfg.apiBaseUrl){$("copyStatus").textContent="Автоматическая отправка ещё не настроена. Скопируйте заявку.";return}send.disabled=true;send.textContent="Отправляем…";try{const response=await fetch(url(cfg.apiBaseUrl.replace(/\/$/,"")+"/api/leads"),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(preparedLead)});let data={};try{data=await response.json()}catch{}if(!response.ok)throw new Error(data.detail||"Не удалось отправить заявку.");$("copyStatus").textContent=data.message||"Заявка отправлена менеджеру." ;send.textContent="Заявка отправлена";;window.dispatchEvent(new CustomEvent("papauto:lead-submitted",{detail:{...preparedLead,make:$("carMake").value.trim(),model:$("carModel").value.trim(),yearFrom:$("yearFrom").value.trim(),yearTo:$("yearTo").value.trim(),mileage:$("maxMileage").value.trim()}}));}catch(err){$("copyStatus").textContent=(err.message||"Ошибка отправки")+". Заявка сохранена в локальной истории; можно отправить её через Telegram вручную.";const share=document.createElement("a");share.className="button button-secondary";share.href="https://t.me/share/url?url="+encodeURIComponent("https://papauto.ru/")+"&text="+encodeURIComponent($("requestText").value);share.target="_blank";share.rel="noopener noreferrer";share.textContent="Отправить через Telegram ↗";$("copyStatus").append(document.createTextNode(" "),share);send.textContent="Повторить отправку";send.disabled=false}});document.querySelectorAll("[data-car-request]").forEach(link=>link.addEventListener("click",()=>{const prompt=$("carPrompt");if(prompt){prompt.value=link.getAttribute("data-car-request")||"";prompt.focus();}}));const cr=$("copyRequest");if(cr)cr.addEventListener("click",async()=>{try{await navigator.clipboard.writeText($("requestText").value);$("copyStatus").textContent="Заявка скопирована"}catch{$("requestText").select();$("copyStatus").textContent="Выделите текст и скопируйте вручную"}})
 const auctionStatsForm=$("auctionStatsForm");
