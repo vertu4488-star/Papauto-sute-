@@ -1509,6 +1509,111 @@ async def assistant_select(req: VehicleSelectionInput):
         {"make":"Chery","model":"Tiggo 7","markets":["Китай"],"tags":["кроссовер","семья","город"],"fit":"семейный кроссовер для повседневной эксплуатации","checks":"Сверить двигатель, коробку и комплектацию по VIN."},
         {"make":"Haval","model":"H6","markets":["Китай"],"tags":["кроссовер","семья","комфорт"],"fit":"семейный кроссовер с просторным салоном","checks":"Проверить комплектацию, трансмиссию и сервисную историю."},
     ]
+
+    # Prefer Z.ai GLM for the natural-language shortlist when the owner has configured
+    # a ZAI_API_KEY in Render. Without a key, preserve the existing no-cost local mode.
+    zai_key = (os.getenv("ZAI_API_KEY") or os.getenv("ZAI_API_TOKEN") or "").strip()
+    if zai_key:
+        ai_request = {
+            "model": (os.getenv("ZAI_MODEL") or "glm-4.6").strip(),
+            "temperature": 0.2,
+            "response_format": {"type": "json_object"},
+            "messages": [
+                {
+                    "role": "system",
+                    "content": (
+                        "Ты — автомобильный ИИ-консультант PAPAUTO для подбора автомобилей из Японии, "
+                        "Южной Кореи и Китая для ввоза в Россию. Отвечай по-русски. Используй только "
+                        "модели из переданного каталога. Не выдумывай актуальные лоты, наличие, цены, "
+                        "пробеги, комплектации, таможенные ставки или сроки. Не утверждай, что бюджет "
+                        "точно достаточен: он только ориентир. Верни строго JSON с полями summary, "
+                        "recommendations (объекты make, model, why, checks), questions (до 3 строк), "
+                        "caveats (до 4 строк)."
+                    )
+                },
+                {
+                    "role": "user",
+                    "content": __import__("json").dumps({
+                        "request": {
+                            "message": req.message,
+                            "country": req.country,
+                            "budget_rub": req.budget,
+                            "delivery_city": req.city,
+                            "make": req.make,
+                            "model": req.model,
+                            "year_from": req.year_from,
+                            "year_to": req.year_to,
+                            "maximum_mileage_km": req.mileage_max
+                        },
+                        "catalogue": [
+                            {"make": item["make"], "model": item["model"],
+                             "markets": item["markets"], "description": item["fit"],
+                             "checks": item["checks"]}
+                            for item in catalogue
+                        ]
+                    }, ensure_ascii=False)
+                }
+            ]
+        }
+        try:
+            async with httpx.AsyncClient(timeout=httpx.Timeout(25.0, connect=10.0)) as client:
+                ai_response = await client.post(
+                    "https://api.z.ai/api/paas/v4/chat/completions",
+                    headers={"Authorization": f"Bearer {zai_key}", "Content-Type": "application/json"},
+                    json=ai_request
+                )
+            if ai_response.status_code == 200:
+                ai_payload = ai_response.json()
+                raw_content = ((ai_payload.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
+                if isinstance(raw_content, list):
+                    raw_content = "".join(part.get("text", "") for part in raw_content if isinstance(part, dict))
+                raw_content = str(raw_content).strip()
+                if raw_content.startswith("```"):
+                    raw_content = raw_content.split("\n", 1)[-1]
+                    if raw_content.endswith("```"):
+                        raw_content = raw_content[:-3].strip()
+                    if raw_content.lower().startswith("json"):
+                        raw_content = raw_content[4:].strip()
+                ai_result = __import__("json").loads(raw_content)
+                allowed_models = {(item["make"].casefold(), item["model"].casefold()): item for item in catalogue}
+                ai_recommendations = []
+                for candidate in (ai_result.get("recommendations") or [])[:5]:
+                    if not isinstance(candidate, dict):
+                        continue
+                    key = (str(candidate.get("make", "")).casefold(), str(candidate.get("model", "")).casefold())
+                    source_item = allowed_models.get(key)
+                    if not source_item:
+                        continue
+                    if preferred_country and preferred_country not in source_item["markets"]:
+                        continue
+                    ai_recommendations.append({
+                        "make": source_item["make"], "model": source_item["model"],
+                        "why": str(candidate.get("why") or source_item["fit"])[:600],
+                        "checks": str(candidate.get("checks") or source_item["checks"])[:600],
+                        "markets": source_item["markets"],
+                        "availability": "Модель для рассмотрения; актуальные лоты не подтверждены"
+                    })
+                if ai_recommendations:
+                    logger.info("PAPAUTO shortlist generated by Z.ai model %s", ai_request["model"])
+                    return {
+                        "ok": True,
+                        "source": "Z.ai / GLM · ИИ-подбор PAPAUTO",
+                        "summary": str(ai_result.get("summary") or "Подготовил предварительные рекомендации.")[:1500],
+                        "recommendations": ai_recommendations,
+                        "questions": [str(x)[:400] for x in (ai_result.get("questions") or [])[:3]],
+                        "caveats": [str(x)[:400] for x in (ai_result.get("caveats") or [])[:4]] or [
+                            "Это рекомендации по моделям, не подтверждение наличия конкретного лота.",
+                            "Стоимость под ключ рассчитывается отдельно по конкретному автомобилю и городу доставки."
+                        ],
+                        "disclaimer": "ИИ-рекомендации не подтверждают наличие лота, состояние автомобиля или окончательную стоимость под ключ.",
+                        "processing_mode": "zai_glm"
+                    }
+                logger.warning("Z.ai returned no validated vehicle recommendations; using local fallback")
+            else:
+                logger.warning("Z.ai assistant returned HTTP %s; using local fallback", ai_response.status_code)
+        except (httpx.RequestError, ValueError, KeyError, IndexError, TypeError) as exc:
+            logger.warning("Z.ai assistant failed (%s); using local fallback", type(exc).__name__)
+
     def score(item):
         value = 0
         make = (req.make or "").strip().casefold()
