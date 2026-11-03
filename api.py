@@ -1513,9 +1513,15 @@ async def assistant_select(req: VehicleSelectionInput):
     # Prefer Z.ai GLM for the natural-language shortlist when the owner has configured
     # a ZAI_API_KEY in Render. Without a key, preserve the existing no-cost local mode.
     zai_key = (os.getenv("ZAI_API_KEY") or os.getenv("ZAI_API_TOKEN") or "").strip()
+    zai_model = (os.getenv("ZAI_MODEL") or "glm-4.5-flash").strip()
+    # Keep the free stage restricted to models listed as free by the provider.
+    if zai_model not in {"glm-4.5-flash", "glm-4.7-flash"}:
+        zai_model = "glm-4.5-flash"
     if zai_key:
         ai_request = {
-            "model": (os.getenv("ZAI_MODEL") or "glm-4.6").strip(),
+            "model": zai_model,
+            "max_tokens": 1500,
+            "thinking": {"type": "disabled"},
             "temperature": 0.2,
             "response_format": {"type": "json_object"},
             "messages": [
@@ -1611,7 +1617,7 @@ async def assistant_select(req: VehicleSelectionInput):
                 logger.warning("Z.ai returned no validated vehicle recommendations; using local fallback")
             else:
                 logger.warning("Z.ai assistant returned HTTP %s; using local fallback", ai_response.status_code)
-        except (httpx.RequestError, ValueError, KeyError, IndexError, TypeError) as exc:
+        except (httpx.RequestError, ValueError, KeyError, IndexError, TypeError, AttributeError) as exc:
             logger.warning("Z.ai assistant failed (%s); using local fallback", type(exc).__name__)
 
     def score(item):
