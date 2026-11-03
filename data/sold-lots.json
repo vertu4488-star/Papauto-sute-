@@ -1,1 +1,44 @@
-{"updated_at":null,"coverage":"Подтверждённая база завершённых продаж пока не подключена.","lots":[]}
+{
+  "updated_at": "2026-11-03",
+  "coverage": "Небольшая ручная справочная выборка публичных результатов: две продажи Toyota RAV4 из Японии. Это не полный архив за три месяца. Индивидуальные завершённые продажи Кореи и Китая пока не подключены. Фотографии и аукционные листы не скопированы.",
+  "lots": [
+    {
+      "id": "jp-aucnet-20261102-19901",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "RAV4 Hybrid G",
+      "year": 2021,
+      "mileage": 87000,
+      "grade": "4.5",
+      "auction": "Aucnet",
+      "lot": "19901",
+      "sold_date": "2026-11-02",
+      "price": 2220000,
+      "currency": "JPY",
+      "status": "sold",
+      "source": "Banzai24 · публичная карточка, проверено 03.11.2026",
+      "source_url": "https://banzai24.com/en/car/JP/01a19002-ca3e-770d-83b2-80cad9945820",
+      "photos": [],
+      "sheet_url": ""
+    },
+    {
+      "id": "jp-jutokyo-20261102-160",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "RAV4 Style",
+      "year": 2012,
+      "mileage": 152784,
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "160",
+      "sold_date": "2026-11-02",
+      "price": 596000,
+      "currency": "JPY",
+      "status": "sold",
+      "source": "Banzai24 · публичная карточка, проверено 03.11.2026",
+      "source_url": "https://banzai24.com/en/car/JP/01a18b01-f0f1-7cd6-86f1-3d270366d2cd",
+      "photos": [],
+      "sheet_url": ""
+    }
+  ]
+}
