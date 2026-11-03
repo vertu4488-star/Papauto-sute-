@@ -586,7 +586,7 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
                           volume_min: Optional[int] = None, volume_max: Optional[int] = None,
                           body: str = "", grade: str = "", lot_number: str = "",
                           limit: int = 20):
-    """Search Korea live; for Japan return model-specific public source searches until a licensed feed exists."""
+    """Free source searches and public summaries, without metered listing APIs."""
     if country not in {"japan", "south-korea", "china"}:
         raise HTTPException(status_code=400, detail="Неизвестное направление поиска.")
     if year_from < 1990 or year_to > 2030 or year_from > year_to:
@@ -598,42 +598,17 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
     limit = min(max(limit, 1), 50)
 
     if country == "china":
-        live_china = await fetch_ttpai_model_stats(make, model)
-        if live_china and live_china.get("ok"):
-            records = [
-                {
-                    "make": make,
-                    "model": model,
-                    "date": item.get("date"),
-                    "description": item.get("description"),
-                    "city": live_china.get("city"),
-                    "source": "TTPAI",
-                    "record_type": "historical_transaction",
-                    "price": None,
-                    "mileage": None,
-                    "photos": [],
-                }
-                for item in live_china.get("recent_sales", [])
-            ]
-            return {
-                "ok": True,
-                "country": "china",
-                "data_type": "historical_transactions",
-                "source": "TTPAI",
-                "model": live_china.get("model"),
-                "city": live_china.get("city"),
-                "count": len(records),
-                "records": records,
-                "source_url": live_china.get("source_url"),
-                "retrieved_at": live_china.get("retrieved_at"),
-                "disclaimer": "Это история недавно завершённых сделок на китайском рынке подержанных автомобилей, а не активные объявления и не полный архив оптовых аукционов. Цена конкретной сделки и фотографии не публикуются в этом блоке.",
-            }
+        links = _public_market_search_links(country, make, model, year_from, year_to)
+        return {"ok": True, "country": country, "data_type": "source_hub",
+                "source": "PAPAUTO · открытые каталоги Китая", "count": 0, "records": [],
+                "search_links": links, "sources": links,
+                "message": "Бесплатный поиск подготовлен. Подтверждённая база завершённых продаж не подключена.",
+                "disclaimer": "Каталоги предложений не являются статистикой завершённых продаж."}
 
     if country == "south-korea":
-        # A configured XAPI key means the user requested a live vehicle catalogue.
-        # Do not let the public monthly summary short-circuit that search.
-        api_key = (os.getenv("XAPIKOREA_API_KEY") or "").strip()
-        public_stats = await fetch_korea_monthly_stats() if not api_key else {"ok": False, "message": "Live catalogue configured; skip summary fallback."}
+        # Public monthly statistics remain available without provider credentials.
+        api_key = ""  # Free-only mode never spends provider requests from a retained key.
+        public_stats = await fetch_korea_monthly_stats()
         if public_stats.get("ok"):
             monthly_lines = [
                 f"{row['month']}: выставлено {row['offered']:,}, продано {row['sold']:,}, доля {row['completion_rate_percent']}%".replace(",", " ")
@@ -655,160 +630,12 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
             }
         if not api_key:
             logger.warning("Korean public monthly auction statistics unavailable: %s", public_stats.get("message"))
-        # When the live key is configured, continue directly to XAPI Korea listings.
-        if not api_key:
-            raise HTTPException(
-                status_code=503,
-                detail="Поиск автомобилей из Южной Кореи пока не активирован. Создайте бесплатный ключ XAPI Korea и добавьте его в Render как XAPIKOREA_API_KEY."
-            )
-        params = {
-            "brand": make.strip()[:80] or None,
-            "model": model.strip()[:80] or None,
-            "year_from": year_from,
-            "year_to": year_to,
-            "mileage_max": mileage_max,
-            "limit": limit,
-            "page": 1,
-            "lang": "en",
-            "source": "encar",
-            "sale_type": "normal",
-        }
-        # The site's budget is a Russian-ruble target, while this provider's price filter
-        # is KRW/EUR. Never compare those currencies without a verified FX conversion.
-        params = {key: value for key, value in params.items() if value is not None and value != ""}
-        try:
-            async with httpx.AsyncClient(timeout=25.0) as client:
-                response = await client.get(
-                    "https://api.xapikorea.com/v1/search",
-                    params=params,
-                    headers={"X-API-Key": api_key, "Accept": "application/json"},
-                )
-            if response.status_code == 401:
-                logger.error("XAPI Korea authentication failed (401); key is present in Render but was rejected by provider")
-                raise HTTPException(status_code=503, detail="XAPI Korea отклонил ключ (HTTP 401). Сам ключ не меняли; проверьте его статус в кабинете провайдера.")
-            if response.status_code == 429:
-                logger.warning("XAPI Korea rate limit reached (429)")
-                raise HTTPException(status_code=429, detail="Достигнут лимит запросов XAPI Korea. Подождите и повторите поиск.")
-            if response.status_code != 200:
-                raise HTTPException(status_code=502, detail=f"XAPI Korea вернул ошибку поиска (HTTP {response.status_code}).")
-            try:
-                payload = response.json()
-            except ValueError:
-                raise HTTPException(status_code=502, detail="XAPI Korea вернул ответ в неизвестном формате.")
-            if not isinstance(payload, dict) or not isinstance(payload.get("results"), list):
-                logger.error("XAPI Korea returned an unexpected search response shape")
-                raise HTTPException(status_code=502, detail="Формат ответа XAPI Korea не соответствует документации.")
-            logger.info("XAPI Korea search succeeded: results=%s total_count=%s", len(payload["results"]), payload.get("total_count"))
-            results = []
-            for item in payload["results"][:limit]:
-                if not isinstance(item, dict):
-                    continue
-                price = item.get("price_krw")
-                mileage = item.get("mileage_km")
-                year = item.get("year") or item.get("model_year")
-                volume_raw = next((item.get(key) for key in (
-                    "engine_displacement_cc", "displacement_cc", "engine_volume_cc", "volume_cc"
-                ) if item.get(key) not in (None, "")), None)
-                try:
-                    volume_cc = int(float(str(volume_raw).replace(",", "."))) if volume_raw is not None else None
-                except (TypeError, ValueError):
-                    volume_cc = None
-                listing_id = item.get("id")
-                source = str(item.get("source") or "encar")
-                photos = _https_photo_urls(item.get("photos"))
-                if not photos:
-                    thumbnail = item.get("thumbnail") or item.get("thumbnail_url") or item.get("image_url") or item.get("image")
-                    if isinstance(thumbnail, str) and thumbnail.startswith("https://") and len(thumbnail) <= 2048:
-                        photos = [thumbnail]
-                listing_date = item.get("listed_at") or item.get("listing_date") or item.get("created_at") or item.get("date")
-                results.append({
-                    "id": str(listing_id) if listing_id is not None else None,
-                    "lot_number": str(listing_id) if listing_id is not None else None,
-                    "record_type": "current_listing",
-                    "listing_date": listing_date,
-                    "source": source,
-                    "make": _fix_mojibake(item.get("manufacturer") or item.get("make") or ""),
-                    "model": _fix_mojibake(item.get("model") or ""),
-                    "year": (str(year)[:4] if year is not None and str(year).isdigit() and len(str(year)) >= 4 else year),
-                    "mileage": mileage,
-                    "volume_cc": volume_cc,
-                    "price": (f"{int(price):,} ₩ — цена в Корее, без доставки и оформления в РФ".replace(",", " ") if isinstance(price, (int, float)) else _fix_mojibake(item.get("price"))),
-                    "price_krw": price,
-                    "currency": "KRW",
-                    "listing_url": _canonical_korea_listing_url(source, listing_id, item.get("encar_url") or item.get("listing_url") or item.get("url")),
-                    "source_name": {"encar": "Encar", "kbchachacha": "KB ChaChaCha", "kcar": "K Car"}.get(source, _fix_mojibake(source)),
-                    "body": _fix_mojibake(item.get("body_style") or item.get("body") or ""),
-                    "grade": _fix_mojibake(item.get("grade") or ""),
-                    "photos": photos,
-                    "thumbnail": photos[0] if photos else None,
-                    "data_source": "XAPI Korea",
-                    "availability_note": _fix_mojibake("Наличие и цену нужно повторно подтвердить у исходной площадки."),
-                })
-            # Search results may omit full galleries. Fetch details only for a small
-            # set of Encar listings that have no thumbnail, keeping API usage bounded.
-            need_details = [
-                item for item in results
-                if item.get("source") == "encar" and item.get("id") and not item.get("photos")
-            ][:8]
-            if need_details:
-                async with httpx.AsyncClient(timeout=12.0) as photo_client:
-                    galleries = await asyncio.gather(*[
-                        _xapi_photo_urls(photo_client, item["id"], api_key)
-                        for item in need_details
-                    ])
-                for item, gallery in zip(need_details, galleries):
-                    if gallery:
-                        item["photos"] = gallery
-                        item["thumbnail"] = gallery[0]
-            # Apply descriptive filters locally when the provider search endpoint does not
-            # expose equivalent documented query parameters. Never compare KRW with RUB.
-            if body.strip():
-                needle = body.strip().casefold()
-                results = [item for item in results if needle in str(item.get("body") or "").casefold()]
-            if grade.strip():
-                wanted_grade = grade.strip().casefold()
-                results = [item for item in results if str(item.get("grade") or "").strip().casefold() == wanted_grade]
-            if lot_number.strip():
-                wanted_lot = lot_number.strip().casefold()
-                results = [
-                    item for item in results
-                    if wanted_lot in str(item.get("lot_number") or item.get("id") or "").casefold()
-                ]
-            if volume_min is not None or volume_max is not None:
-                results = [
-                    item for item in results
-                    if item.get("volume_cc") is not None
-                    and (volume_min is None or item["volume_cc"] >= volume_min)
-                    and (volume_max is None or item["volume_cc"] <= volume_max)
-                ]
-            return {
-                "ok": True,
-                "source": "XAPI Korea",
-                "country": "south-korea",
-                "record_type": "current_listing",
-                "retrieved_at": datetime.now(timezone.utc).isoformat(),
-                "total_count": payload.get("total_count", len(results)),
-                "returned_count": len(results),
-                "partial": bool(payload.get("partial", False)),
-                "source_errors": payload.get("source_errors", []),
-                "filters_applied": {
-                    "country": country, "make": make.strip(), "model": model.strip(),
-                    "year_from": year_from, "year_to": year_to, "mileage_max": mileage_max,
-                    "body": body.strip(), "grade": grade.strip(),
-                    "lot_number": lot_number.strip(),
-                    "volume_min": volume_min, "volume_max": volume_max,
-                },
-                "budget_rub": max_price or None,
-                "budget_note": "Бюджет указан в рублях как ориентир общей стоимости. Он не используется как фильтр цены объявления, потому что цена источника в KRW не включает доставку, таможню и оформление.",
-                "results": results,
-                "disclaimer": "Это текущие объявления, а не результаты завершённых торгов. Цена указана в корейских вонах и не включает доставку, таможню, оформление и доставку по России. Наличие и цену нужно подтвердить у исходной площадки.",
-            }
-        except HTTPException:
-            raise
-        except httpx.RequestError as exc:
-            logger.error("XAPI Korea connection failure: %s: %s", type(exc).__name__, str(exc))
-            raise HTTPException(status_code=502, detail="Не удалось связаться с XAPI Korea. Проверьте логи сервера для определения сетевой ошибки и попробуйте позже.")
-
+        links = _public_market_search_links(country, make, model, year_from, year_to)
+        return {"ok": True, "country": country, "data_type": "source_hub",
+                "source": "PAPAUTO · открытые каталоги Кореи", "count": 0, "records": [],
+                "search_links": links, "sources": links,
+                "message": "Статистика источника временно недоступна. Доступен бесплатный поиск по каталогам.",
+                "disclaimer": "Объявления не подтверждают завершённую продажу."}
     if country == "japan":
         return {
             "ok": True, "country": "japan", "data_type": "external_search",
@@ -1350,12 +1177,7 @@ async def auction_statistics(country: str = "japan", make: str = "", model: str 
                 sample_records = []
         message = "По запросу " + " ".join(x for x in (make, model) if x) + " (" + str(year_from) + "–" + str(year_to) + ") сформированы прямые поиски по японским архивам и публичной модельной статистике. PAPAUTO пока не имеет лицензированного автоматического потока полных лотов, поэтому закрытые данные не копируются." + (" Ниже дополнительно показана небольшая проверенная выборка RAV4, отфильтрованная по вашим параметрам." if sample_stats else " Если выборка PAPAUTO отсутствует, откройте один из источников ниже — поиск уже подготовлен по вашей модели.")
     else:
-        # First attempt a live, model-specific request to TTPAI. Only supported
-        # public model pages are queried; no sample prices are substituted.
-        china_stats = await fetch_ttpai_model_stats(make, model)
-        if china_stats and china_stats.get("ok"):
-            logger.info("PAPAUTO China auction-statistics request succeeded: make=%s model=%s", make, model)
-            return china_stats
+        # Free-only overview: do not call the optional model-data provider.
         china_market_sample = [
             {"name": "Tesla Model 3 · Shanghai", "age_3_avg_cny": 120900, "age_5_avg_cny": 97500, "age_7_avg_cny": 88100,
              "recent_sales": "2026-09-21 · 2020 model · 101 000 km; 2026-09-04 · 2020 model · 9 000 km; 2026-09-03 · 2022 model · 92 000 km",
@@ -1513,9 +1335,15 @@ async def assistant_select(req: VehicleSelectionInput):
     # Prefer Z.ai GLM for the natural-language shortlist when the owner has configured
     # a ZAI_API_KEY in Render. Without a key, preserve the existing no-cost local mode.
     zai_key = (os.getenv("ZAI_API_KEY") or os.getenv("ZAI_API_TOKEN") or "").strip()
+    zai_model = (os.getenv("ZAI_MODEL") or "glm-4.5-flash").strip()
+    # Keep the free stage restricted to models listed as free by the provider.
+    if zai_model not in {"glm-4.5-flash", "glm-4.7-flash"}:
+        zai_model = "glm-4.5-flash"
     if zai_key:
         ai_request = {
-            "model": (os.getenv("ZAI_MODEL") or "glm-4.6").strip(),
+            "model": zai_model,
+            "max_tokens": 1500,
+            "thinking": {"type": "disabled"},
             "temperature": 0.2,
             "response_format": {"type": "json_object"},
             "messages": [
@@ -1611,7 +1439,7 @@ async def assistant_select(req: VehicleSelectionInput):
                 logger.warning("Z.ai returned no validated vehicle recommendations; using local fallback")
             else:
                 logger.warning("Z.ai assistant returned HTTP %s; using local fallback", ai_response.status_code)
-        except (httpx.RequestError, ValueError, KeyError, IndexError, TypeError) as exc:
+        except (httpx.RequestError, ValueError, KeyError, IndexError, TypeError, AttributeError) as exc:
             logger.warning("Z.ai assistant failed (%s); using local fallback", type(exc).__name__)
 
     def score(item):

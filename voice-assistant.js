@@ -5,6 +5,7 @@ const levelBox=$("voiceCarLevel"),levelFill=$("voiceCarLevelFill"),levelText=$("
 if(!box||!input||!listen||!apply||!status)return;
 const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
 let recognition=null,listening=false;
+function resetMic(){listen.setAttribute("aria-pressed","false");listen.classList.remove("is-listening");if(levelBox)levelBox.hidden=true;if(levelFill)levelFill.style.width="0%";}
 const sayStatus=(s)=>{status.textContent=s};
 const countryMap=[
  {key:"japan",calc:"Япония",terms:["япони","япон","аукцион","uss"]},
