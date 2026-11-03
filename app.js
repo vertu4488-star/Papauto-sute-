@@ -134,7 +134,9 @@ if(aiSelectButton)aiSelectButton.addEventListener("click",async()=>{
       const why=document.createElement("p");why.textContent=item.why||"Подходит для дальнейшего рассмотрения.";
       const checks=document.createElement("p");checks.textContent="Что проверить: "+(item.checks||"комплектацию и состояние конкретного автомобиля.");
       const market=document.createElement("small");market.textContent="Рынки: "+(Array.isArray(item.markets)?item.markets.join(", "):"уточняются")+" · актуальные лоты не подтверждены";
-      card.append(title,why,checks,market);out.append(card);
+      const archive=document.createElement("a");archive.className="button button-secondary";archive.textContent="Посмотреть завершённые продажи";
+      archive.href="/auction-archive.html?"+new URLSearchParams({make:item.make||"",model:item.model||""}).toString();
+      card.append(title,why,checks,market,archive);out.append(card);
      });
      if(Array.isArray(shortlist.questions)&&shortlist.questions.length){
       const questions=document.createElement("p");questions.className="ai-select-disclaimer";questions.textContent="Чтобы уточнить подбор: "+shortlist.questions.join(" ");
