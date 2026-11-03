@@ -607,7 +607,7 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
 
     if country == "south-korea":
         # Public monthly statistics remain available without provider credentials.
-        api_key = ""  # Free-only mode never spends provider requests from a retained key.
+        links = _public_market_search_links(country, make, model, year_from, year_to)
         public_stats = await fetch_korea_monthly_stats()
         if public_stats.get("ok"):
             monthly_lines = [
@@ -617,19 +617,18 @@ async def search_vehicles(country: str = "japan", make: str = "", model: str = "
             return {
                 "ok": True, "country": "south-korea", "data_type": "source_hub",
                 "source": public_stats["source"], "count": len(public_stats.get("history", [])),
-                "records": [], "model_search_links": [],
+                "records": [], "model_search_links": links, "search_links": links,
                 "sources": [{
                     "name": "Национальная ассоциация автомобильных аукционов Кореи",
                     "url": public_stats["source_url"],
                     "access": "Открытая месячная статистика · без регистрации и API-ключа",
                     "data_kind": "Выставленные и проданные автомобили по месяцам",
                     "note": "Последние опубликованные месяцы: " + "; ".join(monthly_lines) + ". Это официальные агрегированные итоги аукционного рынка, не индивидуальные карточки лотов."
-                }],
+                }] + links,
                 "message": "Официальная месячная статистика Кореи получена напрямую с сайта отраслевой ассоциации. " + "; ".join(monthly_lines),
                 "disclaimer": public_stats.get("disclaimer", "")
             }
-        if not api_key:
-            logger.warning("Korean public monthly auction statistics unavailable: %s", public_stats.get("message"))
+        logger.warning("Korean public monthly auction statistics unavailable: %s", public_stats.get("message"))
         links = _public_market_search_links(country, make, model, year_from, year_to)
         return {"ok": True, "country": country, "data_type": "source_hub",
                 "source": "PAPAUTO · открытые каталоги Кореи", "count": 0, "records": [],

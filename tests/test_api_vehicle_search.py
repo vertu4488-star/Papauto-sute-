@@ -63,6 +63,8 @@ class VehicleSearchRoutingTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result["data_type"], "source_hub")
         self.assertEqual(result["records"], [])
         self.assertIn("статистика", result["message"].lower())
+        self.assertTrue(any("Encar" in item["name"] for item in result["sources"]))
+        self.assertTrue(result["search_links"])
 
     async def test_korea_falls_back_to_free_encar_source_without_paid_api(self):
         with patch.dict(os.environ, {"XAPIKOREA_API_KEY": "unused-test-key"}, clear=False), \
