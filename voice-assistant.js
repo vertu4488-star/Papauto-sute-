@@ -3,6 +3,7 @@ const $=id=>document.getElementById(id);
 const box=$("voiceCarAssistant"),input=$("voiceCarText"),listen=$("voiceCarListen"),apply=$("voiceCarApply"),status=$("voiceCarStatus");
 const levelBox=$("voiceCarLevel"),levelFill=$("voiceCarLevelFill"),levelText=$("voiceCarLevelText");
 if(!box||!input||!listen||!apply||!status)return;
+box.dataset.voiceReady="true";
 const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
 let recognition=null,listening=false;
 function resetMic(){listen.setAttribute("aria-pressed","false");listen.classList.remove("is-listening");if(levelBox)levelBox.hidden=true;if(levelFill)levelFill.style.width="0%";}
