@@ -1,0 +1,32 @@
+/* PAPAUTO model-directory refinement | light editorial catalog */
+:root{color-scheme:light}
+html{scroll-behavior:smooth}
+body{background:#fff;-webkit-font-smoothing:antialiased}
+.catalog-page{max-width:1380px;padding:34px clamp(16px,4vw,60px) 100px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+.catalog-intro{max-width:920px;padding-top:12px}
+.catalog-intro .eyebrow{font-size:11px;color:#687582;letter-spacing:.17em}
+.catalog-intro h1{font-weight:720;letter-spacing:-.06em;line-height:1.09;max-width:920px;margin:20px 0}
+.catalog-intro h1 em{color:#697b8d}
+.catalog-intro p{font-size:15px;line-height:1.7;max-width:750px}
+.catalog-page>nav[aria-label="Популярные модели"]{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:27px 0 12px;font-size:0}
+.catalog-page>nav[aria-label="Популярные модели"] a{font-size:12px;display:inline-flex;align-items:center;min-height:36px;padding:8px 12px;border:1px solid #e5e8ed;border-radius:999px;color:#485868;text-decoration:none;background:#f7f8fa}
+.catalog-page>nav[aria-label="Популярные модели"] a:hover{background:#eaf0f6;border-color:#cbd6df}
+.catalog-filters{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:12px;padding:14px;border:1px solid #e5e8ed;border-radius:20px;background:#fbfcfd;margin:28px 0 16px}
+.catalog-filters input,.catalog-filters select{background:#fff;border:1px solid #d8dee6;border-radius:13px;min-height:51px;color:#1e2934;font-size:14px}
+.catalog-filters input:focus,.catalog-filters select:focus{outline:3px solid #c4d9eb;outline-offset:2px}
+.catalog-count{color:#566674;font-size:13px;font-weight:600;margin:22px 0}
+.catalog-grid{gap:18px}
+.model-card{overflow:hidden;border:1px solid #e3e8ed;border-radius:20px;background:#fff;padding:18px;box-shadow:0 4px 19px rgba(20,37,52,.035);transition:border-color .2s,box-shadow .2s,transform .2s}
+.model-card:hover{transform:translateY(-3px);border-color:#becbd8;box-shadow:0 17px 35px rgba(20,37,52,.10)}
+.model-photo{height:190px;background:#f0f3f6}
+.model-card h2{font-size:19px;font-weight:690;letter-spacing:-.025em;color:#1b2833}
+.model-card .country{font-size:10px;color:#73828f;font-weight:650}
+.model-card .make{font-size:13px;color:#586977}
+.model-card .engine{background:#edf2f5;border-radius:999px;color:#495d6b}
+.model-card .market{color:#3d667f}
+.catalog-disclaimer{background:#f8fafb;border:1px solid #e4eaf0;border-radius:16px}
+a:focus-visible,button:focus-visible{outline:3px solid #a8c8e4;outline-offset:3px}
+@media(max-width:1000px){.catalog-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.catalog-page{padding:24px 16px 90px}.catalog-intro h1{font-size:clamp(30px,8vw,42px)}.catalog-intro p{font-size:13px}.catalog-filters{grid-template-columns:1fr 1fr;padding:12px;gap:9px}.catalog-filters input{grid-column:1/-1}.catalog-filters input,.catalog-filters select{font-size:16px}.model-card{border-radius:16px;padding:13px}.model-photo{height:150px;margin:-13px -13px 14px;width:calc(100% + 26px)}.model-card h2{font-size:17px}}
+@media(max-width:430px){.catalog-grid{grid-template-columns:1fr}.model-photo{height:205px}.model-card{padding:16px}.model-photo{margin:-16px -16px 15px;width:calc(100% + 32px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
