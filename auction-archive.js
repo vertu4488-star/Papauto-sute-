@@ -16,7 +16,7 @@ async function showExamplePhoto(r,card,container){
  if(!photoCache.has(key))photoCache.set(key,(async()=>{
   try {
    const model=r.model.split(/\s+/).slice(0,2).join(' ');
-   const query=r.make+' '+model;
+   const query=r.make+' '+model+' '+r.year;
    const params=new URLSearchParams({action:'query',generator:'search',gsrsearch:'filetype:bitmap '+query+' -interior -engine',gsrnamespace:'6',gsrlimit:'8',prop:'imageinfo',iiprop:'url|extmetadata',iiurlwidth:'560',format:'json',origin:'*'});
    const response=await fetch('https://commons.wikimedia.org/w/api.php?'+params,{signal:AbortSignal.timeout(9000)});
    if(!response.ok)return null;
@@ -26,7 +26,11 @@ async function showExamplePhoto(r,card,container){
     const info=page.imageinfo?.[0],meta=info?.extmetadata||{};
     const license=meta.LicenseShortName?.value||'';
     if(!info?.thumburl||!/CC0|Public domain|CC BY(?:-SA)?/i.test(license))continue;
-    if(!page.title.toLowerCase().includes(r.make.toLowerCase()))continue;
+    const title=page.title.toLowerCase();
+    if(!title.includes(r.make.toLowerCase()))continue;
+    if(!new RegExp('\\\\b'+r.year+'\\\\b').test(page.title))continue;
+    const essential=model.toLowerCase().split(/\\s+/).filter(t=>t.length>2);
+    if(!essential.every(t=>title.includes(t)))continue;
     return {url:info.thumburl,description:info.descriptionurl,license,author:(meta.Artist?.value||'Wikimedia Commons').replace(/<[^>]*>/g,'').slice(0,100)};
    }
   }catch{}
@@ -36,7 +40,7 @@ async function showExamplePhoto(r,card,container){
  if(!card.isConnected)return;if(!result){container.replaceChildren(node('div','Для этой модели нет подходящей фотографии с открытой лицензией','no-photo'));return;}
  const img=node('img');img.src=result.url;img.loading='lazy';img.alt='Иллюстрация модели, не фотография проданного лота';img.referrerPolicy='no-referrer';
  img.onerror=()=>{container.replaceChildren(node('div','Изображение временно недоступно','no-photo'))};
- const caption=node('p','Фото аналогичной модели, не этого лота · '+result.license,'photo-disclaimer');
+ const caption=node('p','Иллюстрация автомобиля '+r.year+' г., не фото указанной продажи · '+result.license,'photo-disclaimer');
  const credit=link('Автор / лицензия',result.description);credit.style.display='inline-block';credit.style.fontSize='12px';
  container.replaceChildren(img,caption,credit);
 }
