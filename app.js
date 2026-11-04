@@ -134,8 +134,8 @@ if(aiSelectButton)aiSelectButton.addEventListener("click",async()=>{
       const why=document.createElement("p");why.textContent=item.why||"Подходит для дальнейшего рассмотрения.";
       const checks=document.createElement("p");checks.textContent="Что проверить: "+(item.checks||"комплектацию и состояние конкретного автомобиля.");
       const market=document.createElement("small");market.textContent="Рынки: "+(Array.isArray(item.markets)?item.markets.join(", "):"уточняются")+" · актуальные лоты не подтверждены";
-      const archive=document.createElement("a");archive.className="button button-secondary";archive.textContent="Посмотреть завершённые продажи";
-      archive.href="/auction-archive.html?"+new URLSearchParams({make:item.make||"",model:item.model||""}).toString();
+      const archive=document.createElement("a");archive.className="button button-secondary";archive.textContent="Посмотреть примеры автомобилей";
+      archive.href="/examples.html?"+new URLSearchParams({make:item.make||"",model:item.model||""}).toString();
       card.append(title,why,checks,market,archive);out.append(card);
      });
      if(Array.isArray(shortlist.questions)&&shortlist.questions.length){

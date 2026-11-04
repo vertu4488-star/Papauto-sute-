@@ -17,7 +17,7 @@ const makes=[
  ["Toyota",["toyota","тойота","тойоты","тойоту"]],["Honda",["honda","хонда"]],["Nissan",["nissan","ниссан"]],["Mazda",["mazda","мазда"]],["Subaru",["subaru","субару"]],["Suzuki",["suzuki","сузуки"]],["Mitsubishi",["mitsubishi","митсубиси"]],["Lexus",["lexus","лексус"]],["Daihatsu",["daihatsu","дайхатсу"]],["Isuzu",["isuzu","исузу"]],["Hyundai",["hyundai","хендай","хундай"]],["Kia",["kia","киа"]],["Genesis",["genesis","дженезис"]],["BMW",["bmw","бмв"]],["Mercedes-Benz",["mercedes","мерседес"]],["Volkswagen",["volkswagen","фольксваген"]],["Audi",["audi","ауди"]],["BYD",["byd","бид"]],["Geely",["geely","джили","джили"]],["Chery",["chery","чери"]],["Haval",["haval","хавал"]],["Zeekr",["zeekr","зикр","зикер"]],["Li Auto",["li auto","ли авто","лисян"]],["Tesla",["tesla","тесла"]],["Renault",["renault","рено"]],["Ford",["ford","форд"]],["Chevrolet",["chevrolet","шевроле"]],["Volvo",["volvo","вольво"]]
 ];
 const models=[
- ["RAV4",["rav4","рав4","рав 4"]],["Prius",["prius","приус"]],["Aqua",["aqua","аква"]],["Corolla",["corolla","королла"]],["Camry",["camry","камри"]],["Harrier",["harrier","харриер"]],["Yaris",["yaris","ярис","витц","vitz"]],["Fit",["fit","фит"]],["Freed",["freed","фрид"]],["Vezel",["vezel","везел"]],["Noah",["noah","ноах"]],["Voxy",["voxy","вокси"]],["C-HR",["c-hr","chr","с-хр"]],["Land Cruiser",["land cruiser","ленд крузер","ланд крузер"]],["Prado",["prado","прадо"]],["Highlander",["highlander","хайлендер"]],["Crown",["crown","краун"]],["Note",["note","ноут"]],["Serena",["serena","серена"]],["X-Trail",["x-trail","икстрейл","х-трейл"]],["Leaf",["leaf","лиф"]],["CX-5",["cx-5","cx5","сх5"]],["Forester",["forester","форестер"]],["Outback",["outback","аутбек"]],["Impreza",["impreza","импреза"]],["Sportage",["sportage","спортейдж"]],["Tucson",["tucson","туссан"]],["Santa Fe",["santa fe","санта фе"]],["Sonata",["sonata","соната"]],["K5",["k5","к5"]],["Carnival",["carnival","карнивал"]],["Elantra",["elantra","элантра"]],["Staria",["staria","стария"]],["Model 3",["model 3","модель 3"]],["Model Y",["model y","модель y"]],["Tiguan",["tiguan","тигуан"]],["Touareg",["touareg","туарег"]],["X5",["x5","икс5"]],["3 Series",["3 series","3 серия"]],["RX",["rx","рх"]],["NX",["nx","нх"]],["L7",["l7","л7"]],["L9",["l9","л9"]],["Song Plus",["song plus","сонг плюс"]],["Monjaro",["monjaro","монджаро"]],["Coolray",["coolray","кулрей"]]
+ ["RAV4",["rav4","рав4","рав 4"]],["Prius",["prius","приус"]],["Aqua",["aqua","аква"]],["Corolla",["corolla","королла"]],["Camry",["camry","камри"]],["Harrier",["harrier","харриер"]],["Vitz",["витц","vitz"]],["Yaris",["yaris","ярис"]],["Avante",["avante","аванте","авантэ"]],["Fit",["fit","фит"]],["Freed",["freed","фрид"]],["Vezel",["vezel","везел"]],["Noah",["noah","ноах"]],["Voxy",["voxy","вокси"]],["C-HR",["c-hr","chr","с-хр"]],["Land Cruiser",["land cruiser","ленд крузер","ланд крузер"]],["Prado",["prado","прадо"]],["Highlander",["highlander","хайлендер"]],["Crown",["crown","краун"]],["Note",["note","ноут"]],["Serena",["serena","серена"]],["X-Trail",["x-trail","икстрейл","х-трейл"]],["Leaf",["leaf","лиф"]],["CX-5",["cx-5","cx5","сх5"]],["Forester",["forester","форестер"]],["Outback",["outback","аутбек"]],["Impreza",["impreza","импреза"]],["Sportage",["sportage","спортейдж"]],["Tucson",["tucson","туссан"]],["Santa Fe",["santa fe","санта фе"]],["Sonata",["sonata","соната"]],["K5",["k5","к5"]],["Carnival",["carnival","карнивал"]],["Elantra",["elantra","элантра"]],["Staria",["staria","стария"]],["Model 3",["model 3","модель 3"]],["Model Y",["model y","модель y"]],["Tiguan",["tiguan","тигуан"]],["Touareg",["touareg","туарег"]],["X5",["x5","икс5"]],["3 Series",["3 series","3 серия"]],["RX",["rx","рх"]],["NX",["nx","нх"]],["L7",["l7","л7"]],["L9",["l9","л9"]],["Song Plus",["song plus","сонг плюс"]],["Monjaro",["monjaro","монджаро"]],["Coolray",["coolray","кулрей"]]
 ];
 function escapeRx(s){return s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}
 function hasTerm(t,term){return new RegExp("(^|[^a-zа-я0-9])"+escapeRx(term.toLowerCase())+"([^a-zа-я0-9]|$)","i").test(t)}
@@ -44,7 +44,7 @@ function parse(text){
  const make=findMapped(makes,t);if(make)result.make=make;
  const model=findMapped(models,t);if(model)result.model=model;
  const years=[...t.matchAll(/\b(19\d{2}|20\d{2})\b/g)].map(m=>Number(m[1])).filter(y=>y>=1990&&y<=2027);
- if(years.length){result.yearFrom=Math.min(...years);result.yearTo=Math.max(...years)}
+ if(years.length){result.yearFrom=Math.min(...years);result.yearTo=years.length===1&&/(?:от|после|с)\s*(?:19|20)\d{2}|(?:19|20)\d{2}\s*\+/.test(t)?new Date().getFullYear():Math.max(...years)}
  const budget=wordsNumber(t);if(budget!==null&&budget>=50000&&budget<=200000000)result.budget=budget;
  let m=t.match(/(?:пробег(?:ом)?|до пробега|пробег до)\s*(?:до\s*)?(\d[\d\s.,]*)\s*(?:тыс(?:яч)?\s*)?км?/i);
  if(m){let n=Number(m[1].replace(/[\s,]/g,""));if(/тыс/i.test(m[0]))n*=1000;if(n>0&&n<=2000000)result.mileage=Math.round(n)}
@@ -76,7 +76,7 @@ function applyParsed(p,autoSearch){
  if(p.body)details.push("кузов: "+p.body);
  if(!p.raw||p.raw.trim().length<5){sayStatus("Не удалось распознать достаточно длинный запрос. Попробуйте сказать ещё раз.");return}
  if(autoSearch){
-  sayStatus("Речь распознана"+(details.length?": "+details.join("; "):"")+". Выполняю бесплатный поиск по открытым источникам…");
+  sayStatus("Речь распознана"+(details.length?": "+details.join("; "):"")+". Подбираю автомобили…");
   const selectButton=$("runAiSelect");
   const form=$("vehicleSearchForm");
   if(selectButton){setTimeout(()=>selectButton.click(),250)}
@@ -86,7 +86,7 @@ function applyParsed(p,autoSearch){
   sayStatus("Распознано"+(details.length?": "+details.join("; "):"")+". Текст перенесён в форму PAPAUTO SELECT. Нажмите «Подобрать модели».");
  }
 }
-apply.addEventListener("click",()=>applyParsed(parse(input.value),false));
+apply.addEventListener("click",()=>applyParsed(parse(input.value),true));
 let lastSpoken="";
 function speak(text){
  if(!("speechSynthesis" in window)||!text)return;
@@ -140,7 +140,8 @@ function startNativeRecognition(){
   listening=true;
   listen.setAttribute("aria-pressed","true");
   listen.classList.add("is-listening");
-  sayStatus("Слушаю запрос через встроенное распознавание речи…");
+  try{window.speechSynthesis?.cancel()}catch{}
+  sayStatus("Слушаю. Назовите модель, год и бюджет…");
   recognition.onresult=event=>{
    const transcript=Array.from(event.results||[]).map(result=>result[0]?.transcript||"").join(" ").trim();
    if(!transcript)return;
@@ -158,7 +159,7 @@ function startNativeRecognition(){
     sayStatus("Браузер не разрешил распознавание речи. Проверьте разрешение микрофона и попробуйте текстовый ввод.");
     return;
    }
-   sayStatus("В этом браузере нет бесплатного распознавания речи. Введите запрос текстом.");
+   sayStatus("Сервис распознавания браузера недоступен. На iPhone используйте микрофон клавиатуры, затем нажмите «Подобрать».");
   };
   recognition.onend=()=>{
    if(!listening)return;
@@ -186,6 +187,6 @@ listen.addEventListener("click",()=>{
   try{recognition.stop()}catch{listening=false;resetMic()}
   return;
  }
- if(!startNativeRecognition()){sayStatus("В этом браузере нет встроенного распознавания. На iPhone нажмите микрофон на клавиатуре, продиктуйте запрос в поле выше, затем нажмите «Разобрать запрос».");input.focus();}
+ if(!startNativeRecognition()){sayStatus("В этом браузере нет встроенного распознавания. На iPhone нажмите микрофон на клавиатуре, продиктуйте запрос в поле выше, затем нажмите «Подобрать».");input.focus();}
 });
 })();

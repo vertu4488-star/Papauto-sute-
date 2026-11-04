@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-11-04",
+  "listings": [
+    {
+      "id": "kr-IC5622137",
+      "country": "south-korea",
+      "make": "Hyundai",
+      "model": "Avante CN7 Inspiration",
+      "year": 2022,
+      "mileage": 83947,
+      "price": null,
+      "currency": "KRW",
+      "status": "listing",
+      "source": "Autowini",
+      "source_url": "https://www.autowini.com/en/Cars/IC5622137/cars-detail",
+      "note": "1,598 см³ · CVT. Цена скрыта источником. Наличие требует проверки."
+    },
+    {
+      "id": "kr-IC5522609",
+      "country": "south-korea",
+      "make": "Hyundai",
+      "model": "Avante CN7",
+      "year": 2022,
+      "mileage": 197311,
+      "price": null,
+      "currency": "KRW",
+      "status": "listing",
+      "source": "Autowini",
+      "source_url": "https://www.autowini.com/en/Cars/IC5522609/cars-detail",
+      "note": "1,598 см³ · автомат · передний привод. Цена скрыта источником."
+    },
+    {
+      "id": "cn-163482566",
+      "country": "china",
+      "make": "Geely",
+      "model": "Monjaro / Xingyue L",
+      "year": 2023,
+      "mileage": 52300,
+      "price": 99900,
+      "currency": "CNY",
+      "status": "withdrawn",
+      "source": "Guazi",
+      "source_url": "https://www.guazi.com/car-detail/c163482566125267.html",
+      "note": "2.0T · 8AT · передний привод. Объявление снято. Последняя цена предложения; продажа не подтверждена."
+    }
+  ]
+}
