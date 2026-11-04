@@ -8,38 +8,55 @@ import requests
 from bs4 import BeautifulSoup
 BASE="https://japancarimportdirect.com/en/auction-statistics/"
 def records(html):
-    root=BeautifulSoup(html,"html.parser"); out=[]
+    root=BeautifulSoup(html,"html.parser")
+    results={}
+    brands=["MERCEDES BENZ","LAND ROVER","TOYOTA","HONDA","NISSAN","DAIHATSU","SUZUKI","MAZDA","SUBARU","MITSUBISHI","LEXUS","BMW","VOLKSWAGEN","HINO","ISUZU","AUDI","PEUGEOT","MINI"]
     for a in root.select('a[href*="auction-result"]'):
         url=urljoin(BASE,a.get("href",""))
-        if not re.search(r"/auction-statistics/[^/]+-auction-result-[^/]+/?$",urlparse(url).path):continue
-        for p in [a,*list(a.parents)[:5]]:
-            t=p.get_text(" ",strip=True)
-            if 30<len(t)<1300 and "Final price" in t and "km" in t and "€" in t:break
-        else:continue
-        date=re.search(r"(\d{1,2})/(\d{1,2})/(202\d)",t)
-        year=re.search(r"\b(19\d\d|20\d\d)\s*[·,]\s*([\d,]+)\s*km",t)
-        price=re.search(r"€\s*([\d,]+)\s*Final price",t,re.I)
-        if not (date and year and price):continue
-        m,d,y=map(int,date.groups())
-        try:sold=dt.date(y,m,d).isoformat()
+        path=urlparse(url).path
+        if not re.search(r"/auction-statistics/[^/]+-auction-result-[^/]+/?$",path):continue
+        slug=path.rstrip("/").split("/")[-1]
+        head=re.match(r"(19\\d\\d|20\\d\\d)-(.+?)-auction-result-",slug)
+        if not head:continue
+        name=re.sub(r"-\\d+$","",head.group(2)).replace("-"," ").upper()
+        make_model=None
+        for brand in sorted(brands,key=len,reverse=True):
+            if name.startswith(brand+" "):make_model=(brand.title(),name[len(brand):].strip().title());break
+        if not make_model:
+            tokens=name.split(" ",1)
+            if len(tokens)!=2:continue
+            make_model=(tokens[0].title(),tokens[1].title())
+        tile=None
+        for parent in [a,*list(a.parents)[:6]]:
+            links=parent.select('a[href*="auction-result"]')
+            # Reject a parent that spans multiple different lot cards.
+            if len(set(x.get("href","") for x in links))>1:continue
+            t=parent.get_text(" ",strip=True)
+            if 30<len(t)<1100 and "Final price" in t and "km" in t and "€" in t:
+                tile=t;break
+        if not tile:continue
+        date=re.search(r"(\\d{1,2})/(\\d{1,2})/(20\\d\\d)",tile)
+        year=re.search(r"\\b(19\\d\\d|20\\d\\d)\\s*[·•]\\s*([\\d,]+)\\s*km",tile)
+        price=re.search(r"€\\s*([\\d,]+)\\s*Final\\s+price",tile,re.I)
+        if not(date and year and price):continue
+        try:sold=dt.date(int(date.group(3)),int(date.group(1)),int(date.group(2))).isoformat()
         except ValueError:continue
         if sold>dt.date.today().isoformat():continue
-        name=re.search(r"\b(?:19|20)\d\d\s+([A-Z][A-Z0-9 -]{3,85}?)(?=\s+(?:19|20)\d\d\s*[·,])",t)
-        if not name:continue
-        make,_,model=name.group(1).strip().partition(" ")
-        if not model:continue
-        grade=re.search(r"Auction grade\s*(S|RA?|[0-6](?:\.5)?)\b",t,re.I)
-        price_eur=int(price.group(1).replace(",",""))
-        if price_eur<=0:continue
-        slug=urlparse(url).path.rstrip("/").split("/")[-1]
-        out.append(dict(id="jci-"+slug[-60:],country="japan",make=make.title(),model=model.title(),year=int(year.group(1)),mileage=int(year.group(2).replace(",","")),grade=grade.group(1).upper() if grade else "",auction="Japanese auction",lot="",sold_date=sold,price=price_eur,currency="EUR",status="sold",source="Japan Car Import Direct · итоговая цена в EUR по курсу источника",source_url=url,photos=[],sheet_url=""))
-    return out
+        mileage=int(year.group(2).replace(",",""))
+        amount=int(price.group(1).replace(",",""))
+        if amount<=0 or mileage>2000000:continue
+        if int(year.group(1))!=int(head.group(1)):continue
+        grade=re.search(r"Auction grade\\s*(S|RA?|[0-6](?:\\.5)?)\\b",tile,re.I)
+        make,model=make_model
+        results[url]=dict(id="jci-"+slug[-85:],country="japan",make=make,model=model,year=int(year.group(1)),mileage=mileage,grade=grade.group(1).upper() if grade else "",auction="Japanese auction",lot="",sold_date=sold,price=amount,currency="EUR",status="sold",source="Japan Car Import Direct · итоговая цена в EUR по курсу источника",source_url=url,photos=[],sheet_url="")
+    return list(results.values())
+
 def main():
     s=requests.Session();s.headers["User-Agent"]="PapAutoMarketResearch/1.0 (public historical statistics)"
     rows={}
     for page in range(1,41):
         r=s.get(BASE,params={"page":page} if page>1 else None,timeout=25)
-        if r.status_code in (401,403,429):break
+        if r.status_code in (401,403,429):raise SystemExit("Source denies automated access; no data published")
         r.raise_for_status()
         found=records(r.text)
         print("Page",page,"parsed",len(found),flush=True)
