@@ -1,0 +1,109 @@
+{
+  "checked_at": "2026-11-04",
+  "source": "Japan Car Import Direct",
+  "source_url": "https://japancarimportdirect.com/en/auction-statistics/",
+  "total_results": 16060,
+  "total_sold": 11971,
+  "models": [
+    {
+      "make": "Toyota",
+      "model": "Yaris",
+      "sold": 426
+    },
+    {
+      "make": "Nissan",
+      "model": "Note",
+      "sold": 422
+    },
+    {
+      "make": "Nissan",
+      "model": "Roox",
+      "sold": 359
+    },
+    {
+      "make": "Daihatsu",
+      "model": "Tanto",
+      "sold": 356
+    },
+    {
+      "make": "Honda",
+      "model": "N Box",
+      "sold": 337
+    },
+    {
+      "make": "Toyota",
+      "model": "Raize",
+      "sold": 299
+    },
+    {
+      "make": "Nissan",
+      "model": "Clipper Van",
+      "sold": 283
+    },
+    {
+      "make": "Nissan",
+      "model": "Dayz",
+      "sold": 276
+    },
+    {
+      "make": "Daihatsu",
+      "model": "Mira E S",
+      "sold": 267
+    },
+    {
+      "make": "Honda",
+      "model": "Vezel",
+      "sold": 262
+    },
+    {
+      "make": "Toyota",
+      "model": "Alphard",
+      "sold": 255
+    },
+    {
+      "make": "Toyota",
+      "model": "Prius",
+      "sold": 227
+    },
+    {
+      "make": "Toyota",
+      "model": "Aqua",
+      "sold": 207
+    },
+    {
+      "make": "Nissan",
+      "model": "Serena",
+      "sold": 206
+    },
+    {
+      "make": "Toyota",
+      "model": "Yaris Cross",
+      "sold": 200
+    },
+    {
+      "make": "Daihatsu",
+      "model": "Move",
+      "sold": 185
+    },
+    {
+      "make": "Toyota",
+      "model": "Roomy",
+      "sold": 185
+    },
+    {
+      "make": "Daihatsu",
+      "model": "Taft",
+      "sold": 183
+    },
+    {
+      "make": "Suzuki",
+      "model": "Every",
+      "sold": 182
+    },
+    {
+      "make": "Suzuki",
+      "model": "Wagon R",
+      "sold": 182
+    }
+  ]
+}
