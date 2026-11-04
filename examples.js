@@ -7,9 +7,9 @@ const baseModel=r=>r.model.startsWith('RAV4')?'RAV4':r.model.startsWith('Prius')
 async function illustration(r,figure){
  const key=r.make+' '+baseModel(r);
  if(!cache.has(key))cache.set(key,(async()=>{try{
- const params=new URLSearchParams({action:'query',generator:'search',gsrsearch:'filetype:bitmap "'+key+'" car',gsrnamespace:'6',gsrlimit:'3',prop:'imageinfo',iiprop:'url|extmetadata',iiurlwidth:'640',format:'json',origin:'*'});
+ const params=new URLSearchParams({action:'query',generator:'search',gsrsearch:'filetype:bitmap intitle:"'+key+'" front -police -taxi -safari -interior -engine',gsrnamespace:'6',gsrlimit:'3',prop:'imageinfo',iiprop:'url|extmetadata',iiurlwidth:'640',format:'json',origin:'*'});
  const resp=await fetch('https://commons.wikimedia.org/w/api.php?'+params,{signal:AbortSignal.timeout(8000)});if(!resp.ok)return null;const data=await resp.json();
- for(const page of Object.values(data.query?.pages||{})){const i=page.imageinfo?.[0],m=i?.extmetadata||{},license=m.LicenseShortName?.value||m.LicenseShortName?.Value||'';if(i?.thumburl&&/CC0|Public domain|CC BY(?:-SA)?/i.test(license))return {url:i.thumburl,page:i.descriptionurl,author:(m.Artist?.value||m.Artist?.Value||'Wikimedia Commons').replace(/<[^>]*>/g,''),license};}
+ for(const page of Object.values(data.query?.pages||{}).sort((a,b)=>(a.index??99)-(b.index??99))){const i=page.imageinfo?.[0],m=i?.extmetadata||{},license=m.LicenseShortName?.value||m.LicenseShortName?.Value||'';if(i?.thumburl&&/CC0|Public domain|CC BY(?:-SA)?/i.test(license))return {url:i.thumburl,page:i.descriptionurl,author:(m.Artist?.value||m.Artist?.Value||'Wikimedia Commons').replace(/<[^>]*>/g,''),license};}
  }catch{}return null;})());
  const image=await cache.get(key);if(!image||!figure.isConnected)return;
  const img=el('img');img.alt='Иллюстрация модели '+key+' — не фото лота';img.loading='lazy';img.src=image.url;
