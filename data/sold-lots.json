@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-11-04",
-  "coverage": "Ручная выборка 100 подтверждённых завершённых продаж из открытой выдачи Banzai24. Новые записи 02–03.11.2026 и 30.10.2026, цены JPY без доставки и таможни. Оценка, фото конкретных лотов и аукционные листы указываются только когда публично доступны. Общая база обновляется вручную, не является полной статистикой рынка.",
+  "coverage": "100 реальных записей завершённых продаж; публично показываются только лоты с оригинальными фотографиями из источника. Для остальных лотов нет проверенных фотографий. Фото размещены как внешние ссылки на исходный сервис, доступность может меняться. Цена в JPY без доставки и таможни.",
   "lots": [
     {
       "id": "jp-aucnet-20261102-19901",
@@ -18,8 +18,12 @@
       "status": "sold",
       "source": "Banzai24 · публичная карточка, проверено 03.11.2026",
       "source_url": "https://banzai24.com/en/car/JP/01a19002-ca3e-770d-83b2-80cad9945820",
-      "photos": [],
-      "sheet_url": ""
+      "photos": [
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEeljYm-lON5p3o2b-g5pz7rklIF-7d2ZDgWBPs2xhY9MFMmF56gbz8Cw_do-a5gCGOH9IsVf"
+      ],
+      "sheet_url": "",
+      "photo_source": "https://banzai24.com/en/car/JP/01a19002-ca3e-770d-83b2-80cad9945820",
+      "photo_attribution": "Banzai24 / auction photo; displayed from original source"
     },
     {
       "id": "jp-jutokyo-20261102-160",
@@ -37,8 +41,12 @@
       "status": "sold",
       "source": "Banzai24 · публичная карточка, проверено 03.11.2026",
       "source_url": "https://banzai24.com/en/car/JP/01a18b01-f0f1-7cd6-86f1-3d270366d2cd",
-      "photos": [],
-      "sheet_url": ""
+      "photos": [
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEeljYm-lOIJqjI2erw47m7q1lkuf5hQP_YJd-r3rY3INKAkII7WQJxck4ypsoVrAq0ELlKDv"
+      ],
+      "sheet_url": "",
+      "photo_source": "https://banzai24.com/en/car/JP/01a18b01-f0f1-7cd6-86f1-3d270366d2cd",
+      "photo_attribution": "Banzai24 / auction photo; displayed from original source"
     },
     {
       "id": "jp-prius",
@@ -56,8 +64,12 @@
       "status": "sold",
       "source": "Banzai24 · проверено 04.11.2026",
       "source_url": "https://banzai24.com/en/car/JP/01a16cfb-2c72-7ecd-9429-2fc1fa307089",
-      "photos": [],
-      "sheet_url": ""
+      "photos": [
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEeljY22uONI92IybrAVrnOrgxQQ17-B5lro4vaoSkjdausBcHG1qlzr26lvMG4qKHWladB2n"
+      ],
+      "sheet_url": "",
+      "photo_source": "https://banzai24.com/en/car/JP/01a16cfb-2c72-7ecd-9429-2fc1fa307089",
+      "photo_attribution": "Banzai24 / auction photo; displayed from original source"
     },
     {
       "id": "jp-aqua",
@@ -75,8 +87,12 @@
       "status": "sold",
       "source": "Banzai24 · проверено 04.11.2026",
       "source_url": "https://banzai24.com/en/car/JP/01a17ffc-4647-77f8-a7a6-5250622f1491",
-      "photos": [],
-      "sheet_url": ""
+      "photos": [
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEeljY22uONBo39ucqAQ9mbm9mBA8cWZKq_ePvKYuYIlhOstKPh0ZaevAN-NSsX59rjAARM7f"
+      ],
+      "sheet_url": "",
+      "photo_source": "https://banzai24.com/en/car/JP/01a17ffc-4647-77f8-a7a6-5250622f1491",
+      "photo_attribution": "Banzai24 / auction photo; displayed from original source"
     },
     {
       "id": "jp-fit1",
@@ -94,8 +110,12 @@
       "status": "sold",
       "source": "Banzai24 · проверено 04.11.2026",
       "source_url": "https://banzai24.com/en/car/JP/01a18b94-6d72-77f4-b9ea-7aca24457d22",
-      "photos": [],
-      "sheet_url": ""
+      "photos": [
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEeljYm-lON5ohY-b9lhoybngwYBnQ51MfwmFxfBhroD8RAySPwmMa2rV2Bkhl_nsUSZOG-bo"
+      ],
+      "sheet_url": "",
+      "photo_source": "https://banzai24.com/en/car/JP/01a18b94-6d72-77f4-b9ea-7aca24457d22",
+      "photo_attribution": "Banzai24 / auction photo; displayed from original source"
     },
     {
       "id": "jp-fit2",
@@ -113,8 +133,12 @@
       "status": "sold",
       "source": "Banzai24 · проверено 04.11.2026",
       "source_url": "https://banzai24.com/en/car/JP/01a18a5d-279b-7476-a8b7-dbc88988e445",
-      "photos": [],
-      "sheet_url": ""
+      "photos": [
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEeljYm-lOIFpioib-Vtgnrjgkr29uvAQ1qRGuZXZ5H90Ae4-uf2wOUq65MLHROpZFKNgJJs3"
+      ],
+      "sheet_url": "",
+      "photo_source": "https://banzai24.com/en/car/JP/01a18a5d-279b-7476-a8b7-dbc88988e445",
+      "photo_attribution": "Banzai24 / auction photo; displayed from original source"
     },
     {
       "id": "jp-ju-tokyo-20261102-3011",
