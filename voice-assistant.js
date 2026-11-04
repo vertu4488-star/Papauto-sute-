@@ -57,6 +57,12 @@ function parse(text){
  return result;
 }
 function applyParsed(p,autoSearch){
+ if(!p.raw||p.raw.trim().length<5){sayStatus("Опишите автомобиль подробнее.");return}
+ // A new spoken request must not inherit another car's market or constraints.
+ for(const id of ["carMake","carModel","yearFrom","yearTo","budget","maxMileage","vehicleMake","vehicleModel","vehicleYearFrom","vehicleYearTo","vehicleMaxPrice","vehicleMileageMax","vehicleVolumeMin","vehicleVolumeMax","vehicleBody","vehicleGrade","vehicleLot"]){const e=$(id);if(e)e.value="";}
+ if($("country"))$("country").value="Не определился";
+ if($("vehicleCountry"))$("vehicleCountry").value="";
+
  const set=(id,v)=>{const e=$(id);if(e&&v!==undefined&&v!==null&&v!==""){e.value=String(v);e.dispatchEvent(new Event("input",{bubbles:true}));e.dispatchEvent(new Event("change",{bubbles:true}))}};
  // Keep catalogue filters in sync for users who want to inspect them.
  set("vehicleCountry",p.country);set("vehicleMake",p.make);set("vehicleModel",p.model);set("vehicleYearFrom",p.yearFrom);set("vehicleYearTo",p.yearTo);set("vehicleMaxPrice",p.budget);set("vehicleMileageMax",p.mileage);set("vehicleVolumeMin",p.volume);set("vehicleVolumeMax",p.volume);set("vehicleBody",p.body);set("vehicleGrade",p.grade);set("vehicleLot",p.lot);set("calcCountry",p.calcCountry);
