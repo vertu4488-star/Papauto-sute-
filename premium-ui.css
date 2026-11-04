@@ -1,0 +1,112 @@
+/* PAPAUTO · premium UI refinement · 2026-11-04
+   Progressive presentation layer. Existing catalog, forms and APIs stay intact. */
+:root {
+  --premium-accent:#cbd6e2;
+  --premium-stroke:rgba(222,233,244,.15);
+  --premium-soft:#aebccc;
+  color-scheme: dark;
+}
+html { scroll-behavior:smooth; }
+body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+h1,h2,h3,.brand-name { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif !important; }
+h1,h2 { text-wrap:balance; }
+p { text-wrap:pretty; }
+a,button { -webkit-tap-highlight-color:transparent; }
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible { outline:3px solid #a7d5ff !important; outline-offset:3px; }
+button:disabled { cursor:not-allowed; opacity:.6; }
+.site-header { position:relative; isolation:isolate; }
+.brand-mark { font-weight:750; box-shadow:inset 0 1px rgba(255,255,255,.45); }
+.brand-name { font-weight:740; letter-spacing:-.035em; }
+.brand-dot { color:#d6e4f0; }
+.header-cta,.button-primary { background:#e8eef4 !important; color:#101820 !important; font-weight:650; }
+.header-cta:hover,.button-primary:hover { background:#fff !important; }
+.button-primary span,.header-cta span { color:inherit; }
+.button,.header-cta { transition:transform .2s ease,background-color .2s ease,box-shadow .2s ease; }
+.button-primary:hover,.header-cta:hover { box-shadow:0 12px 35px rgba(218,233,250,.13); }
+.site-tabs { width:min(1280px,calc(100% - 56px)); background:transparent; border-bottom:1px solid var(--premium-stroke); }
+.site-tabs a { background:rgba(255,255,255,.035); color:#b7c5d2; border:1px solid rgba(255,255,255,.11); border-radius:999px; font-weight:560; letter-spacing:0; }
+.site-tabs a:hover { color:#fff; background:rgba(255,255,255,.10); border-color:rgba(255,255,255,.25); }
+.site-tabs a.is-active { color:#0b141c; background:#e6edf3; border-color:#e6edf3; }
+.hero { position:relative; }
+.hero .eyebrow { color:#c8d3dc; }
+.hero h1 { font-weight:710; letter-spacing:-.06em; }
+.hero-lead { color:#b4c0cb; line-height:1.7; }
+.hero-photo-visual { box-shadow:0 24px 60px rgba(0,0,0,.24); }
+.hero-car-photo { transform:scale(1.005); transition:transform .7s ease; }
+.hero-photo-visual:hover .hero-car-photo { transform:scale(1.035); }
+.proof-strip { border-color:var(--premium-stroke); background:rgba(255,255,255,.025); }
+.marketplace-intro,.budget-start,.calc-form,.calc-result,.assistant-panel,.market-source-card,.popular-model-card,.direction-card,.showcase-card,.auction-stats-card { transition:border-color .2s ease,box-shadow .2s ease; }
+.direction-card:hover,.popular-model-card:hover,.market-source-card:hover,.showcase-card:hover { border-color:rgba(230,238,248,.3); box-shadow:0 16px 45px rgba(0,0,0,.12); }
+#catalog,#calculator .calc-form,#assistant .assistant-panel { border-color:var(--premium-stroke); }
+#catalog input,#catalog select,#catalog textarea,#auction-statistics input,#auction-statistics select { border-radius:11px; }
+input,select,textarea { max-width:100%; }
+input:focus,select:focus,textarea:focus { border-color:#9cb2c8 !important; }
+.fine-print,.auction-example-note { line-height:1.6; }
+.site-footer { border-top:1px solid var(--premium-stroke); }
+@media(min-width:1200px) {
+ .site-header { width:min(1360px,calc(100% - 64px)); }
+ .hero { padding-top:50px; padding-bottom:45px; }
+ .hero h1 { font-size:clamp(43px,4.3vw,61px); }
+}
+@media(min-width:761px) {
+ .main-nav { gap:15px; overflow-x:auto; scrollbar-width:none; }
+ .main-nav a { white-space:nowrap; }
+ .main-nav a:nth-child(n+9) { display:none; }
+ .site-tabs { padding-top:13px; padding-bottom:15px; }
+}
+@media(max-width:760px) {
+ :root { color-scheme:dark; }
+ html { scroll-padding-top:112px; }
+ body { padding-bottom:calc(86px + env(safe-area-inset-bottom)); }
+ .site-header { position:sticky; top:0; z-index:140; min-height:62px; background:rgba(10,16,23,.94); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); border-bottom:1px solid var(--premium-stroke); }
+ .brand-mark { width:36px; height:36px; border-radius:10px; font-size:20px; }
+ .brand-name { font-size:17px; font-weight:720; }
+ .brand-name small { font-size:7px; letter-spacing:.13em; }
+ .menu-toggle { width:44px; height:44px; display:flex; align-items:center; justify-content:center; margin-left:auto; border:1px solid rgba(255,255,255,.17); border-radius:13px; background:rgba(255,255,255,.065); font-size:20px; }
+ .main-nav { top:calc(100% + 7px); left:12px; right:12px; max-height:min(70dvh,540px); padding:12px; gap:3px; border:1px solid rgba(255,255,255,.18); border-radius:18px; background:#101923; box-shadow:0 28px 65px rgba(0,0,0,.5); }
+ .main-nav.open { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:stretch; }
+ .main-nav a { display:flex; align-items:center; min-width:0; min-height:44px; padding:12px 10px; border:0; border-radius:10px; font-size:12px; color:#e5edf4; background:rgba(255,255,255,.04); }
+ .main-nav a.is-active { background:rgba(229,239,247,.15); color:white; }
+ .site-tabs { position:relative; z-index:10; width:100%; padding:10px 16px 12px; border-color:var(--premium-stroke); gap:7px; scroll-snap-type:x proximity; }
+ .site-tabs a { scroll-snap-align:start; font-size:11px; padding:9px 13px; min-height:39px; }
+ .hero { padding:24px 0 17px; }
+ .hero .eyebrow { font-size:9px; }
+ .hero h1 { font-size:clamp(31px,8.25vw,41px); line-height:1.09; letter-spacing:-.052em; margin:14px 0 12px; }
+ .hero h1 br { display:none; }
+ .hero-lead { font-size:13px; line-height:1.57; }
+ .hero-actions { margin-top:18px; }
+ .hero-actions .button { min-height:48px; border-radius:13px; font-size:13px; }
+ .hero-copy>p:first-of-type { margin:0 0 12px; }
+ .hero-copy>p:first-of-type .button { min-height:36px; border-radius:999px; padding:8px 12px; font-size:11px; border-color:rgba(255,255,255,.20); }
+ .mobile-dashboard { width:calc(100% - 32px); grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-bottom:24px; }
+ .mobile-dashboard a { min-height:104px; padding:14px; border-radius:17px; border:1px solid var(--premium-stroke); background:linear-gradient(145deg,#192632,#111a24); }
+ .mobile-dashboard a:first-child { background:linear-gradient(135deg,#2a3946,#17232e); border-color:rgba(223,235,246,.32); }
+ .mobile-dashboard a strong { font-size:13px; letter-spacing:-.02em; line-height:1.2; }
+ .mobile-dashboard a span { font-size:10px; color:#b8c6d1; }
+ .section { padding-top:30px; padding-bottom:36px; }
+ .section-title-row h2,.assistant-copy h2,.checklist-panel h2 { font-size:clamp(27px,7.1vw,35px); letter-spacing:-.045em; }
+ .section-title-row>p { font-size:12px; line-height:1.58; }
+ .direction-grid { grid-template-columns:1fr 1fr; }
+ .direction-card { border-radius:16px; }
+ .direction-card h3 { font-size:15px; }
+ .direction-card p { font-size:11px; }
+ .direction-card .card-link { font-size:11px; }
+ .calc-form,.calc-result,.assistant-panel,.auction-stats-section form { padding:17px; border-radius:18px; }
+ #catalog { padding:18px 15px; border-radius:18px; }
+ #catalog input,#catalog select,#catalog textarea { min-height:46px; font-size:16px; }
+ .mobile-bottom-nav { z-index:150; padding:7px 8px calc(7px + env(safe-area-inset-bottom)); background:rgba(10,16,23,.96); border-top:1px solid rgba(235,245,255,.15); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); }
+ .mobile-bottom-nav a { min-height:49px; gap:5px; font-size:10px; color:#aebdca; border-radius:12px; }
+ .mobile-bottom-nav a span { font-size:19px; }
+ .mobile-bottom-nav a.is-active,.mobile-bottom-nav a.primary.is-active { color:#fff; background:rgba(238,246,255,.12); font-weight:680; }
+ .mobile-bottom-nav a:active { background:rgba(238,246,255,.10); }
+ [id] { scroll-margin-top:112px; }
+}
+@media(max-width:390px) {
+ .hero h1 { font-size:30px; }
+ .mobile-dashboard a { min-height:98px; padding:12px; }
+ .mobile-bottom-nav a { font-size:9px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ html { scroll-behavior:auto; }
+ *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+}
