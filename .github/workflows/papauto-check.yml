@@ -14,7 +14,13 @@ on:
       - "app.js"
       - "account.js"
       - "voice-assistant.js"
-      - "index.html"
+      - "*.html"
+      - "buyer-tools.*"
+      - "content/**"
+      - "scripts/build_content.py"
+      - "tests/test_seo.py"
+      - "sitemap.xml"
+      - "robots.txt"
       - "privacy.html"
       - "auction-data.html"
       - "styles.css"
@@ -47,6 +53,10 @@ jobs:
           node-version: "20"
       - name: Install API test dependencies
         run: python -m pip install -r requirements.txt
+      - name: Verify content builder is reproducible
+        run: |
+          python scripts/build_content.py
+          git diff --exit-code -- "*.html" sitemap.xml
       - name: Check Python syntax
         run: python -m py_compile api.py tests/test_api_vehicle_search.py
       - name: Test live listing routing and safe fallback

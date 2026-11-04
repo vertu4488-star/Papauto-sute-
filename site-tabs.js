@@ -1,6 +1,6 @@
 (() => {
   const groups = {
-    home: ['.hero', '.mobile-dashboard', '.proof-strip', '.marketplace-intro', '.budget-start'],
+    home: ['.hero', '.mobile-dashboard', '.proof-strip', '.marketplace-intro', '.budget-start', '#quick-selection'],
     catalog: ['#catalog', '#showcase', '#popular-models'],
     directions: ['#directions', '#route-planner', '#regional-delivery'],
     auctions: ['#seo-guides', '#auction-statistics', '#market-sources'],
