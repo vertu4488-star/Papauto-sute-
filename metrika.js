@@ -17,4 +17,9 @@
     if(/^tel:/i.test(href))ym(id,"reachGoal","phone_click");
     if(/^(https?:\/\/)?(t\.me|telegram\.me)\//i.test(href))ym(id,"reachGoal","telegram_click");
   });
+  // Count only server-confirmed submissions; never send contact data to analytics.
+  window.addEventListener("papauto:lead-submitted", function () {
+    if (typeof window.ym === "function") window.ym(id, "reachGoal", "generate_lead");
+    if (typeof window.gtag === "function") window.gtag("event", "generate_lead", {form_id: "assistantForm"});
+  });
 })();
