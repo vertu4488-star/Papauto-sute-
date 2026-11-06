@@ -3,6 +3,7 @@ import base64
 import logging
 import html
 import asyncio
+import psycopg
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from urllib.parse import quote
@@ -222,6 +223,24 @@ async def create_lead(lead: Lead):
     if lead.website.strip():
         raise HTTPException(status_code=400, detail="Не удалось обработать заявку. Проверьте заполнение формы.")
 
+    db_url = os.getenv("DATABASE_URL", "").strip()
+    if not db_url:
+        logger.error("PapAuto DATABASE_URL is missing; refusing to lose lead")
+        raise HTTPException(status_code=503, detail="Хранилище заявок временно недоступно. Повторите отправку позже.")
+
+    try:
+        with psycopg.connect(db_url, connect_timeout=7) as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    """INSERT INTO leads (name,contact,country,budget,city,request,consent)
+                       VALUES (%s,%s,%s,%s,%s,%s,%s) RETURNING id""",
+                    (lead.name.strip(),lead.contact,lead.country,lead.budget,lead.city,lead.request,lead.consent),
+                )
+                lead_id = str(cur.fetchone()[0])
+    except psycopg.Error:
+        logger.exception("PapAuto lead database insertion failed")
+        raise HTTPException(status_code=503, detail="Не удалось сохранить заявку. Повторите отправку позже.")
+
     token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
     chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
     if not token or not chat_id:
@@ -256,7 +275,13 @@ async def create_lead(lead: Lead):
     except ValueError:
         raise HTTPException(status_code=502, detail="Telegram вернул некорректный ответ. Скопируйте текст и отправьте его вручную.")
 
-    return {"ok": True, "stored": False, "notified": True, "message": "Заявка доставлена менеджеру через Telegram."}
+    try:
+        with psycopg.connect(db_url, connect_timeout=7) as conn:
+            with conn.cursor() as cur:
+                cur.execute("UPDATE leads SET telegram_notified_at=now() WHERE id=%s", (lead_id,))
+    except psycopg.Error:
+        logger.warning("PapAuto lead saved and notified, but notification timestamp update failed")
+    return {"ok": True, "stored": True, "notified": True, "message": "Заявка сохранена в Neon и доставлена менеджеру через Telegram."}
 
 
 class CustomsRequest(BaseModel):
