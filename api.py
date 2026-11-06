@@ -204,7 +204,17 @@ async def exchange_rates():
 
 @app.get("/health")
 async def health():
+    db_ok = False
+    if os.getenv("DATABASE_URL"):
+        try:
+            with psycopg.connect(os.environ["DATABASE_URL"], connect_timeout=5) as conn:
+                with conn.cursor() as cur:
+                    cur.execute("SELECT to_regclass('public.leads') IS NOT NULL")
+                    db_ok = bool(cur.fetchone()[0])
+        except psycopg.Error:
+            logger.warning("PapAuto health check cannot reach Neon")
     return {
+        "database_connected": db_ok,
         "status": "ok",
         "telegram_configured": bool(os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID")),
         "free_mode": True,
