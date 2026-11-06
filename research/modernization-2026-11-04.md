@@ -12,7 +12,7 @@
 Числа лотов, цены и заявления конкурентов не подтверждались независимым аудитом. Их тексты, базы, дизайн и фотографии в рамках этой доработки не копировались. Платные источники не подключались.
 
 ## Найденные проблемы
-- Apex https://papauto.ru/ отдаёт 301 на https://www.papauto.ru/, а canonical, og:url, BreadcrumbList и sitemap ссылались обратно на apex.
+- Apex https://papauto.ru/ отдаёт 301 на https://papauto.ru/, а canonical, og:url, BreadcrumbList и sitemap ссылались обратно на apex.
 - FAQPage на главной содержал вопросы, не совпадавшие с видимым FAQ.
 - В sitemap отсутствовала существующая страница catalogs.html.
 - privacy.html не содержала meta description.

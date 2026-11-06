@@ -4,7 +4,7 @@ from pathlib import Path
 from html import escape
 from xml.etree import ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
-BASE='https://www.papauto.ru'
+BASE='https://papauto.ru'
 def e(value): return escape(str(value),quote=True)
 def link(url):
     if not url.startswith('/') or url.startswith('//'): raise ValueError('Only internal links are allowed')

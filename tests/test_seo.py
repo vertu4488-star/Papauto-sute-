@@ -19,7 +19,7 @@ class SEOTests(unittest.TestCase):
         self.assertEqual(len(urls),len(set(urls)))
         for url in urls:
             with self.subTest(url=url):
-                self.assertEqual(urlsplit(url).netloc,'www.papauto.ru')
+                self.assertEqual(urlsplit(url).netloc,'papauto.ru')
                 path=urlsplit(url).path.lstrip('/') or 'index.html'
                 text=(ROOT/path).read_text();s=Signals(text)
                 self.assertEqual(s.canon,[url]);self.assertEqual(s.h1,1);self.assertEqual(s.titles,1)
