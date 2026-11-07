@@ -14,6 +14,7 @@ import httpx
 from china_stats import fetch_ttpai_model_stats
 from korea_auction_stats import fetch_korea_monthly_stats
 from fastapi import FastAPI, HTTPException, Request, Response
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, field_validator
 
@@ -21,14 +22,19 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("papauto.api")
 logger.info("XAPI Korea key present in Render environment: %s", bool((os.getenv("XAPIKOREA_API_KEY") or "").strip()))
 
-app = FastAPI(title="PAPAUTO Lead API", version="1.0.0")
+# The browser-facing site is public; detailed internal API schemas are not.
+app = FastAPI(title="PAPAUTO Lead API", version="1.0.0", docs_url=None, redoc_url=None, openapi_url=None)
 
-# Public API called by the PAPAUTO website and its browser voice recorder.
-# Credentials are not used, so wildcard CORS avoids Safari preflight failures
-# when the site is opened through www/non-www or an alternate HTTPS entry point.
+# Cross-origin requests are used only by our deployed public frontend.
+# CORS limits what third-party pages can read; it is not authentication.
+ALLOWED_SITE_ORIGINS = (
+    "https://papauto.ru",
+    "https://www.papauto.ru",
+    "https://papauto-site.onrender.com",
+)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=list(ALLOWED_SITE_ORIGINS),
     allow_credentials=False,
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
@@ -37,10 +43,27 @@ app.add_middleware(
 )
 
 @app.middleware("http")
-async def ensure_json_utf8(request, call_next):
+async def ensure_json_utf8(request: Request, call_next):
+    # The contact form never requires a large request. Reject oversized posts
+    # before Pydantic validation and any database or Telegram side effects.
+    if request.url.path == "/api/leads" and request.method == "POST":
+        raw_size = request.headers.get("content-length", "")
+        if raw_size:
+            try:
+                if int(raw_size) > 16384:
+                    return JSONResponse(status_code=413, content={"detail": "Слишком большой запрос"}, headers={"Cache-Control": "no-store", "X-Content-Type-Options": "nosniff"})
+            except ValueError:
+                return JSONResponse(status_code=400, content={"detail": "Некорректный размер запроса"}, headers={"Cache-Control": "no-store", "X-Content-Type-Options": "nosniff"})
     response = await call_next(request)
     if response.headers.get("content-type", "").startswith("application/json"):
         response.headers["content-type"] = "application/json; charset=utf-8"
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Referrer-Policy"] = "no-referrer"
+    response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()"
+    response.headers["Content-Security-Policy"] = "default-src 'none'; frame-ancestors 'none'; base-uri 'none'"
+    if request.method != "GET" or request.url.path in ("/ready", "/health"):
+        response.headers["Cache-Control"] = "no-store"
     return response
 
 

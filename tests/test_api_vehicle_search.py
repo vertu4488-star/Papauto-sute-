@@ -282,3 +282,30 @@ class JapanChassisSearchTests(unittest.IsolatedAsyncioTestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PublicApiSecurityTests(unittest.TestCase):
+    def test_schema_is_not_public(self):
+        from fastapi.testclient import TestClient
+        with TestClient(api.app) as client:
+            for path in ("/docs", "/redoc", "/openapi.json"):
+                self.assertEqual(client.get(path).status_code, 404, path)
+
+    def test_cors_denies_external_sites_but_allows_own_frontend(self):
+        from fastapi.testclient import TestClient
+        with TestClient(api.app) as client:
+            headers = {"Origin": "https://random-malicious.example", "Access-Control-Request-Method": "POST"}
+            denied = client.options("/api/leads", headers=headers)
+            self.assertNotEqual(denied.headers.get("access-control-allow-origin"), headers["Origin"])
+            allowed = client.options("/api/leads", headers={**headers, "Origin": "https://papauto.ru"})
+            self.assertEqual(allowed.headers.get("access-control-allow-origin"), "https://papauto.ru")
+
+    def test_security_headers_and_oversized_lead(self):
+        from fastapi.testclient import TestClient
+        with TestClient(api.app) as client:
+            root = client.get("/")
+            self.assertEqual(root.headers.get("x-content-type-options"), "nosniff")
+            self.assertEqual(root.headers.get("x-frame-options"), "DENY")
+            bad = client.post("/api/leads", content=b"x" * 16385,
+                              headers={"Content-Type": "application/json"})
+            self.assertEqual(bad.status_code, 413)
