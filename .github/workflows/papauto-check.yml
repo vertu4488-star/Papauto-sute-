@@ -5,36 +5,6 @@ on:
     branches: [main]
   push:
     branches: [main]
-    paths:
-      - "auction-archive*"
-      - "archive-*.js"
-      - "data/sold-lots.json"
-      - "tests/**"
-      - "api.py"
-      - "app.js"
-      - "account.js"
-      - "voice-assistant.js"
-      - "*.html"
-      - "buyer-tools.*"
-      - "content/**"
-      - "scripts/build_content.py"
-      - "scripts/build_static_public.py"
-      - "tests/test_seo.py"
-      - "sitemap.xml"
-      - "robots.txt"
-      - "privacy.html"
-      - "auction-data.html"
-      - "styles.css"
-      - "marketplace.css"
-      - "saved-searches.js"
-      - "smart-search.js"
-      - "japan-chassis-search.js"
-      - "route-planner.js"
-      - "mobile.css"
-      - "premium-ui.css"
-      - "catalog-premium.css"
-      - "site-config.js"
-      - ".github/workflows/papauto-check.yml"
   workflow_dispatch:
 
 permissions:
