@@ -282,7 +282,7 @@ if(auctionStatsForm){
      ["Модель / комплектация","Год","Пробег","Площадка","Дата","Финальная цена"].forEach(label=>{const th=document.createElement("th");th.textContent=label;headRow.append(th)});
      thead.append(headRow);table.append(thead);
      const tbody=document.createElement("tbody");
-     data.records.forEach(record=>{const tr=document.createElement("tr");const cells=[record.name||"Toyota RAV4",record.year||"—",record.mileage_km?new Intl.NumberFormat("ru-RU").format(record.mileage_km)+" км":"—",record.auction||"—",record.date||"—",money(record.final_price_jpy)];cells.forEach((value,index)=>{const td=document.createElement("td");td.textContent=String(value)tr.append(td)});tbody.append(tr)});
+     data.records.forEach(record=>{const tr=document.createElement("tr");const cells=[record.name||"Toyota RAV4",record.year||"—",record.mileage_km?new Intl.NumberFormat("ru-RU").format(record.mileage_km)+" км":"—",record.auction||"—",record.date||"—",money(record.final_price_jpy)];cells.forEach((value,index)=>{const td=document.createElement("td");td.textContent=String(value);tr.append(td)});tbody.append(tr)});
      table.append(tbody);sample.append(table);
      if(Array.isArray(data.unsold_records)&&data.unsold_records.length){
       const unsold=el("section","auction-unsold-list");
@@ -316,7 +316,7 @@ if(auctionStatsForm){
      const thead=document.createElement("thead"),headRow=document.createElement("tr");
      ["Автомобиль","Год","Суд / площадка","Дата","Цена продажи"].forEach(label=>{const th=document.createElement("th");th.textContent=label;headRow.append(th)});
      thead.append(headRow);table.append(thead);const tbody=document.createElement("tbody");
-     data.china_judicial_sample.forEach(record=>{const tr=document.createElement("tr");const values=[record.name||"Автомобиль",record.year||"—",record.auction||"—",record.date||"—",new Intl.NumberFormat("ru-RU",{maximumFractionDigits:2}).format(Number(record.final_price_cny||0))+" ¥"];values.forEach((value,index)=>{const td=document.createElement("td");td.textContent=String(value)tr.append(td)});tbody.append(tr)});
+     data.china_judicial_sample.forEach(record=>{const tr=document.createElement("tr");const values=[record.name||"Автомобиль",record.year||"—",record.auction||"—",record.date||"—",new Intl.NumberFormat("ru-RU",{maximumFractionDigits:2}).format(Number(record.final_price_cny||0))+" ¥"];values.forEach((value,index)=>{const td=document.createElement("td");td.textContent=String(value);tr.append(td)});tbody.append(tr)});
      table.append(tbody);panel.append(table);
      panel.append(el("p","auction-sample-note","Примеры взяты из открытых карточек Gongpai; часть карточек содержит фотографии, оценочные материалы и подтверждение成交. Состав документов зависит от конкретного дела."));
      out.append(panel);
