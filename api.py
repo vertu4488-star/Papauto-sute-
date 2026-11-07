@@ -291,8 +291,10 @@ async def create_lead(lead: Lead):
             logger.error("Telegram lead notification failed: status=%s", response.status_code)
             raise HTTPException(status_code=502, detail="Telegram не подтвердил доставку заявки. Скопируйте текст и отправьте его вручную.")
     except httpx.RequestError:
-        logger.exception("Telegram lead notification request failed")
-        raise HTTPException(status_code=502, detail="Не удалось связаться с Telegram. Скопируйте текст и отправьте его вручную.")
+        # httpx exception tracebacks can contain the full Bot API URL and its token.
+        # Never write that URL or exception object to application logs.
+        logger.warning("Telegram lead notification network request failed; lead remains stored in Neon")
+        raise HTTPException(status_code=502, detail="Заявка сохранена, но уведомление Telegram не доставлено. Не отправляйте её повторно; при необходимости свяжитесь с менеджером.")
     except ValueError:
         raise HTTPException(status_code=502, detail="Telegram вернул некорректный ответ. Скопируйте текст и отправьте его вручную.")
 
