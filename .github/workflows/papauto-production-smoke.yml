@@ -1,12 +1,10 @@
-name: PAPAUTO production smoke checks
+name: PAPAUTO scheduled production audit
 
-# Run only after isolated predeploy checks complete, so Render can safely
-# switch to "After CI Checks Pass" without circular waits on production.
+# This audit is independent of the commit's pre-deploy checks.
+# It must never hold Render's "After CI Checks Pass" gate while waiting for Render.
 on:
-  workflow_run:
-    workflows: ["PAPAUTO predeploy checks"]
-    types: [completed]
-    branches: [main]
+  schedule:
+    - cron: '47 21 * * *'
   workflow_dispatch:
 
 permissions:
@@ -18,19 +16,12 @@ concurrency:
 
 jobs:
   production:
-    if: >-
-      github.event_name == 'workflow_dispatch' ||
-      (github.event.workflow_run.conclusion == 'success' &&
-       !contains(github.event.workflow_run.head_commit.message, '[skip render]'))
     runs-on: ubuntu-latest
     timeout-minutes: 18
     steps:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Give Render time to start the production deployment
-        if: github.event_name == 'workflow_run'
-        run: sleep 60
       - name: Wait for Render API deployment and test Japan source hub
         shell: bash
         run: |
