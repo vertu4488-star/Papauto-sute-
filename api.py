@@ -229,6 +229,15 @@ async def health():
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
+@app.get("/ready")
+async def ready():
+    """Readiness means the application can actually persist incoming leads."""
+    status = await health()
+    if not status["database_connected"]:
+        raise HTTPException(status_code=503, detail="Хранилище заявок временно недоступно")
+    return {"status": "ready", "database_connected": True}
+
+
 @app.post("/api/leads")
 async def create_lead(lead: Lead):
     """Send a lead through the configured Telegram bot; no paid database is required."""
