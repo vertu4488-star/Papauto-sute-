@@ -189,6 +189,22 @@ class VehicleAssistantSearchTests(unittest.IsolatedAsyncioTestCase):
         search.assert_not_awaited()
 
 
+class ReadinessTests(unittest.IsolatedAsyncioTestCase):
+    async def test_ready_reports_database_reachable(self):
+        with patch("api.health", new_callable=AsyncMock) as status:
+            status.return_value = {"database_connected": True}
+            self.assertEqual(
+                await api.ready(), {"status": "ready", "database_connected": True}
+            )
+
+    async def test_ready_returns_503_when_neon_unavailable(self):
+        with patch("api.health", new_callable=AsyncMock) as status:
+            status.return_value = {"database_connected": False}
+            with self.assertRaises(api.HTTPException) as error:
+                await api.ready()
+            self.assertEqual(error.exception.status_code, 503)
+
+
 class FreeModeSafetyTests(unittest.IsolatedAsyncioTestCase):
     async def test_leads_fail_closed_if_database_unavailable(self):
         lead = api.Lead(
