@@ -9,6 +9,25 @@ services:
     branch: main
     buildCommand: python scripts/build_static_public.py
     staticPublishPath: ./render-public
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: Referrer-Policy
+        value: no-referrer
+      - path: /*
+        name: Permissions-Policy
+        value: "camera=(), geolocation=(), microphone=(self)"
+      - path: /*
+        name: Content-Security-Policy
+        value: "frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+      - path: /*
+        name: Strict-Transport-Security
+        value: "max-age=31536000"
     autoDeployTrigger: checksPass
     buildFilter:
       paths:
