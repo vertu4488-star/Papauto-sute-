@@ -64,5 +64,11 @@ class NoExternalSellerLinks(unittest.TestCase):
             self.assertNotIn(forbidden, js)
         self.assertIn('link.href="/?view=select', js)
 
+    def test_smart_search_keeps_buyer_on_papauto(self):
+        js = (ROOT / "smart-search.js").read_text(encoding="utf-8")
+        self.assertNotIn("a.href=url", js)
+        self.assertNotIn("a.target=\"_blank\"", js)
+        self.assertIn('a.href="/?view=select#assistant"', js)
+
 if __name__ == "__main__":
     unittest.main()
