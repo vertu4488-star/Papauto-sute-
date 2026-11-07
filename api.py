@@ -241,6 +241,17 @@ async def create_lead(lead: Lead):
     try:
         with psycopg.connect(db_url, connect_timeout=7) as conn:
             with conn.cursor() as cur:
+                # A database-backed per-contact limit works across app restarts,
+                # and it does not rely on spoofable forwarding IP headers.
+                identity = lead.contact.strip().lower()
+                cur.execute("SELECT pg_advisory_xact_lock(hashtext(%s))", ("papauto-lead:" + identity,))
+                cur.execute(
+                    "SELECT COUNT(*) FROM leads WHERE lower(contact)=%s "
+                    "AND created_at > now() - interval '1 hour'",
+                    (identity,),
+                )
+                if cur.fetchone()[0] >= 6:
+                    raise HTTPException(status_code=429, detail="Слишком много заявок. Повторите позднее или напишите менеджеру.")
                 cur.execute(
                     """INSERT INTO leads (name,contact,country,budget,city,request,consent)
                        VALUES (%s,%s,%s,%s,%s,%s,%s) RETURNING id""",
