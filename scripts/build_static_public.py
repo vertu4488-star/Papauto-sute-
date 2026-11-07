@@ -7,6 +7,8 @@ Run from the repository checkout with Python 3.11+.
 from pathlib import Path
 import os
 import shutil
+import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / "render-public"
@@ -26,6 +28,13 @@ PUBLIC_FOLDERS = {
 
 
 def copy_public_files() -> list[str]:
+    # Build gate: refuse publication when customer navigation leaves PAPAUTO.
+    subprocess.run(
+        [sys.executable, "-m", "unittest", "discover", "-s", "tests",
+         "-p", "test_no_external_sales_links.py"],
+        cwd=ROOT,
+        check=True,
+    )
     # This is a generated output directory; never accept a symbolic-link target.
     if TARGET.is_symlink():
         raise RuntimeError("Refusing to overwrite a symlinked publish directory")
