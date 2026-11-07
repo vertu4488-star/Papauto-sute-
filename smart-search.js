@@ -2,7 +2,7 @@
 const $=id=>document.getElementById(id),button=$("smartSearchRun"),form=$("smartSearchPrompt"),out=$("smartSearchResults"),status=$("smartSearchStatus"),cfg=window.PAPAUTO_CONFIG||{};
 if(!button||!form||!out||!status)return;
 const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n};
-const link=(parent,url,label)=>{if(!url||!/^https:\/\//i.test(url))return;const a=el("a","",label);a.href=url;a.target="_blank";a.rel="noopener noreferrer";parent.append(a)};
+const link=(parent,url,label)=>{const a=el("a","","Подобрать через PAPAUTO");a.href="/?view=select#assistant";parent.append(a)};
 const money=v=>v==null?"Цена не указана":String(v);
 function render(data){
  out.replaceChildren();
@@ -15,18 +15,22 @@ function render(data){
  const records=Array.isArray(search.results)?search.results:[];
  if(country==="south-korea"&&records.length){
    const grid=el("div","smart-search-result-grid");
-   records.forEach(item=>{const card=el("article","smart-search-card");card.append(el("span","smart-search-badge","АКТУАЛЬНОЕ ОБЪЯВЛЕНИЕ · "+(item.source_name||"Корея")));if(item.thumbnail){const img=document.createElement("img");img.src=item.thumbnail;img.alt=[item.make,item.model,item.year].filter(Boolean).join(" ");img.loading="lazy";card.append(img)}card.append(el("h3","",[item.make,item.model,item.year].filter(Boolean).join(" ")||"Автомобиль"));card.append(el("p","", "Пробег: "+(item.mileage!=null?Number(item.mileage).toLocaleString("ru-RU")+" км":"не указан")));card.append(el("p","", "Цена: "+money(item.price)));card.append(el("p","","Источник: "+(item.source_name||item.data_source||"XAPI Korea")));link(card,item.listing_url,"Открыть объявление ↗");grid.append(card)});out.append(grid);
-   out.append(el("p","smart-search-warning",search.disclaimer||"Это текущие объявления, а не завершённые торги. Наличие и цену подтвердите у продавца."));
+   records.forEach(item=>{const card=el("article","smart-search-card");card.append(el("span","smart-search-badge","ПРИМЕР ПРЕДЛОЖЕНИЯ · "+(item.source_name||"Корея")));if(item.thumbnail){const img=document.createElement("img");img.src=item.thumbnail;img.alt=[item.make,item.model,item.year].filter(Boolean).join(" ");img.loading="lazy";card.append(img)}card.append(el("h3","",[item.make,item.model,item.year].filter(Boolean).join(" ")||"Автомобиль"));card.append(el("p","", "Пробег: "+(item.mileage!=null?Number(item.mileage).toLocaleString("ru-RU")+" км":"не указан")));card.append(el("p","", "Цена: "+money(item.price)));card.append(el("p","","Источник: "+(item.source_name||item.data_source||"XAPI Korea")));link(card,item.listing_url,"Открыть объявление ↗");grid.append(card)});out.append(grid);
+   out.append(el("p","smart-search-warning",search.disclaimer||"Это текущие объявления, а не завершённые торги. Наличие и цену проверяет специалист PapAuto перед оформлением заказа."));
  }else if(country==="japan"&&Array.isArray(search.search_links)){
-   const grid=el("div","smart-search-result-grid");
-   search.search_links.forEach(item=>{const card=el("article","smart-search-card");card.append(el("span","smart-search-badge","АРХИВ / СТАТИСТИКА ИСТОЧНИКА"));card.append(el("h3","",item.name));card.append(el("p","",item.kind||"Поиск завершённых лотов и статистики"));card.append(el("p","",item.access||"Доступ и состав данных определяет источник."));link(card,item.url,"Открыть архив и лоты ↗");grid.append(card)});out.append(grid);
-   out.append(el("p","smart-search-warning","Японские источники открываются на своих сайтах. PAPAUTO пока не получает из них лицензионную ленту отдельных завершённых лотов с фотографиями и аукционными листами внутри собственного каталога."));
+   const card=el("article","smart-search-card");
+   card.append(el("span","smart-search-badge","ЯПОНИЯ · ПОДБОР PAPAUTO"));
+   card.append(el("h3","","Найти подходящую машину на японском аукционе"));
+   card.append(el("p","","Подтверждение конкретного лота, его фотографии, пробег, оценка и итоговая цена проверяются специалистом PAPAUTO. Покупателю не требуется переходить к сторонним аукционным посредникам."));
+   link(card,"","Запросить подбор");
+   out.append(card);
+   out.append(el("p","smart-search-warning","Мы используем архивы только для внутренней проверки, без внешних переходов для посетителя."));
  }else if(country==="china"&&Array.isArray(search.records)&&search.records.length){
    const grid=el("div","smart-search-result-grid");
    search.records.forEach(item=>{const card=el("article","smart-search-card");card.append(el("span","smart-search-badge","ЗАВЕРШЁННАЯ СДЕЛКА · ИСТОРИЯ"));card.append(el("h3","",[item.make,item.model].filter(Boolean).join(" ")||"Сделка"));card.append(el("p","",[item.date,item.description].filter(Boolean).join(" · ")||"Описание не предоставлено источником"));card.append(el("p","","Источник: "+(item.source||search.source||"TTPAI")));grid.append(card)});out.append(grid);link(out,search.source_url,"Открыть данные источника ↗");
    out.append(el("p","smart-search-warning",search.disclaimer||"Исторические сделки не являются автомобилями, доступными к покупке сейчас."));
  }else{
-   out.append(el("p","smart-search-warning",search.message||search.disclaimer||"По этому запросу источник не вернул карточки автомобилей. Попробуйте изменить параметры или открыть внешние архивы."));
+   out.append(el("p","smart-search-warning",search.message||search.disclaimer||"По этому запросу источник не вернул карточки автомобилей. Попробуйте изменить параметры или оставить заявку на PAPAUTO."));
  }
  if(Array.isArray(data.preferences_not_applied)&&data.preferences_not_applied.length){const warning=el("div","smart-search-warning","Эти пожелания пока не участвуют в технической фильтрации: "+data.preferences_not_applied.join("; ")+". Проверьте их отдельно в карточке автомобиля.");out.append(warning)}
  if(search.count===0||search.returned_count===0)status.textContent="По точным фильтрам карточки не найдены. Ниже показаны доступные архивы или пояснение по источнику.";
