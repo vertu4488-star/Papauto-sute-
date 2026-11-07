@@ -70,5 +70,28 @@ class NoExternalSellerLinks(unittest.TestCase):
         self.assertNotIn("a.target=\"_blank\"", js)
         self.assertIn('a.href="/?view=select#assistant"', js)
 
+    def test_legacy_drom_pages_not_published(self):
+        for legacy_page in (
+            "drom-novosibirsk-2026.html",
+            "novosibirsk-avto-bez-probega-2026.html",
+        ):
+            self.assertFalse((ROOT / legacy_page).exists(), legacy_page)
+
+    def test_public_assets_contain_no_drom_traces(self):
+        import re
+
+        public_assets = (
+            list(ROOT.glob("*.html"))
+            + list(ROOT.glob("*.js"))
+            + list((ROOT / "data").glob("*.json"))
+            + [ROOT / "sitemap.xml"]
+        )
+        stale = [
+            path.name
+            for path in public_assets
+            if re.search(r"drom|дром", path.read_text(encoding="utf-8"), re.I)
+        ]
+        self.assertEqual(stale, [], "Drom legacy mentions remain in public assets")
+
 if __name__ == "__main__":
     unittest.main()
