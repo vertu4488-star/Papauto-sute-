@@ -29,7 +29,9 @@ function boot(homepage = false) {
     // The real homepage supplies gtag and its own GA4 contact listeners.
     window.gtag = (...args) => manualGaCalls.push(args);
   }
-  vm.runInNewContext(script, { document, window, Date }, { timeout: 2000 });
+  // A browser exposes window properties (including ym) as global identifiers.
+  Object.assign(window, { document, window, Date });
+  vm.runInNewContext(script, window, { timeout: 2000 });
 
   const yandexCalls = () => Array.from(window.ym.a || [], (args) => Array.from(args));
   const googleCalls = () => homepage
