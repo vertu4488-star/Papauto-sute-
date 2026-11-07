@@ -18,6 +18,7 @@ on:
       - "buyer-tools.*"
       - "content/**"
       - "scripts/build_content.py"
+      - "scripts/build_static_public.py"
       - "tests/test_seo.py"
       - "sitemap.xml"
       - "robots.txt"
@@ -59,6 +60,19 @@ jobs:
         run: |
           python scripts/build_content.py
           git diff --exit-code -- "*.html" sitemap.xml
+      - name: Verify static bundle contains no application source or credentials
+        run: |
+          python scripts/build_static_public.py
+          python - <<'PY'
+          from pathlib import Path
+          public = Path('render-public')
+          paths = {f.relative_to(public).as_posix() for f in public.rglob('*') if f.is_file()}
+          assert {'index.html','catalog.html','app.js','styles.css',
+                  'robots.txt','sitemap.xml','assets/papauto-logo.svg'}.issubset(paths)
+          assert not any(path.endswith(('.py','.md','.toml','.yml','.yaml')) for path in paths)
+          assert not any(path.startswith(('.github/','scripts/','tests/','research/','content/')) for path in paths)
+          print(f'Static publish bundle safely contains {len(paths)} public files')
+          PY
       - name: Check new design assets and navigation wiring
         run: |
           python - <<'PY'
