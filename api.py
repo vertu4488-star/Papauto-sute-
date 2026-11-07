@@ -13,7 +13,7 @@ from typing import Optional
 import httpx
 from china_stats import fetch_ttpai_model_stats
 from korea_auction_stats import fetch_korea_monthly_stats
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, field_validator
 
@@ -143,6 +143,12 @@ class Lead(BaseModel):
         if not value:
             raise ValueError("Поле не должно быть пустым")
         return value
+
+@app.head("/")
+async def root_probe():
+    """Answer hosting/provider HEAD probes without treating them as application errors."""
+    return Response(status_code=200)
+
 
 @app.get("/")
 async def root():
