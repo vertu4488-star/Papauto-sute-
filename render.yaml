@@ -1,0 +1,24 @@
+# Proposed adoption of the EXISTING PapAuto static site.
+# Do not apply before reviewing the Render Blueprint plan.
+# The API service papauto-leads is intentionally not managed here.
+services:
+  - type: web
+    name: papauto-site
+    runtime: static
+    repo: https://github.com/vertu4488-star/Papauto-sute-
+    branch: main
+    buildCommand: python scripts/build_static_public.py
+    staticPublishPath: ./render-public
+    autoDeployTrigger: checksPass
+    buildFilter:
+      paths:
+        - "*.html"
+        - "*.css"
+        - "*.js"
+        - "*.xml"
+        - "*.txt"
+        - "assets/**"
+        - "data/**"
+        - "content/**"
+        - "scripts/build_content.py"
+        - "scripts/build_static_public.py"
