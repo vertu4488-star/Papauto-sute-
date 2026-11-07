@@ -22,4 +22,18 @@
     if (typeof window.ym === "function") window.ym(id, "reachGoal", "generate_lead");
     if (typeof window.gtag === "function") window.gtag("event", "generate_lead", {form_id: "assistantForm"});
   });
+  // Google Analytics 4 on all landing pages. Home pages already initialize gtag.
+  // Do not initialize it a second time, or page_view would be counted twice.
+  if (typeof window.gtag !== "function") {
+    var gaId = "G-JBPEKLFCXW";
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", gaId);
+    var gaScript = document.createElement("script");
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=" + gaId;
+    document.head.appendChild(gaScript);
+  }
+
 })();
