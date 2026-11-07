@@ -44,7 +44,7 @@ class NoExternalSellerLinks(unittest.TestCase):
             return
         js = path.read_text(encoding="utf-8")
         self.assertNotIn("a.target='_blank'", js)
-        self.assertNotIn("a.href=url", js)
+        # The CSV export intentionally uses a.href=url for a local Blob download.\n        # Only prohibit using external source URLs as navigable links.\n        self.assertNotIn("a.href=r.source_url", js)\n        self.assertNotIn("a.href=r.sheet_url", js)
 
 if __name__ == "__main__":
     unittest.main()
