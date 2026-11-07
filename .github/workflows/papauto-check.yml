@@ -39,9 +39,17 @@ jobs:
           paths = {f.relative_to(public).as_posix() for f in public.rglob('*') if f.is_file()}
           assert {'index.html','catalog.html','app.js','styles.css',
                   'robots.txt','sitemap.xml','assets/papauto-logo.svg'}.issubset(paths)
-          assert not any(path.endswith(('.py','.md','.toml','.yml','.yaml')) for path in paths)
-          assert not any(path.startswith(('.github/','scripts/','tests/','research/','content/')) for path in paths)
-          print(f'Static publish bundle safely contains {len(paths)} public files')
+          from scripts.build_static_public import TOMBSTONE, PROTECTED_DIRS, PROTECTED_SUFFIXES, PROTECTED_NAMES
+          sensitive = {path for path in paths if
+                       path.endswith(tuple(PROTECTED_SUFFIXES))
+                       or path.split('/')[0] in PROTECTED_DIRS
+                       or Path(path).name in PROTECTED_NAMES
+                       or Path(path).name.startswith('.env')}
+          assert {'api.py', 'china_stats.py', 'korea_auction_stats.py',
+                  'requirements.txt', 'README.md'}.issubset(sensitive), 'Missing protective tombstones'
+          for path in sensitive:
+              assert (public / path).read_bytes() == TOMBSTONE, f'Unsafe published file: {path}'
+          print(f'Static publish bundle contains {len(paths) - len(sensitive)} public files and {len(sensitive)} safe tombstones')
           PY
       - name: Check new design assets and navigation wiring
         run: |

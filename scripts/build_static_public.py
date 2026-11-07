@@ -5,11 +5,20 @@ it also contains Python API code, tests, GitHub workflows and build scripts.
 Run from the repository checkout with Python 3.11+.
 """
 from pathlib import Path
+import os
 import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / "render-public"
-ROOT_SUFFIXES = {".html", ".css", ".js", ".xml", ".txt", ".webmanifest"}
+ROOT_SUFFIXES = {".html", ".css", ".js", ".xml", ".webmanifest"}
+PUBLIC_TEXT_FILES = {"robots.txt", "ads.txt", "security.txt"}
+# Some former Render builds published the whole repository. Explicit tombstones
+# replace old assets that otherwise remain fetchable at their old URLs.
+TOMBSTONE = b"404 Not Found - PAPAUTO\n"
+PROTECTED_SUFFIXES = {".py", ".pyc", ".md", ".toml", ".yaml", ".yml", ".ini", ".cfg", ".sh", ".sql", ".log", ".lock", ".txt"}
+PROTECTED_NAMES = {".gitignore", ".python-version", "Dockerfile", "Makefile", "LICENSE", "render.yaml"}
+PROTECTED_DIRS = {".github", "scripts", "tests", "research", "content", "docs"}
+WALK_EXCLUDE = {".git", "render-public", "node_modules", "__pycache__", ".pytest_cache", ".venv", "venv", ".mypy_cache", ".ruff_cache"}
 PUBLIC_FOLDERS = {
     "assets": {".svg", ".png", ".jpg", ".jpeg", ".webp", ".gif", ".ico"},
     "data": {".json"},
@@ -26,7 +35,7 @@ def copy_public_files() -> list[str]:
     copied = []
 
     for src in sorted(ROOT.iterdir()):
-        if src.is_file() and not src.is_symlink() and src.suffix.lower() in ROOT_SUFFIXES:
+        if src.is_file() and not src.is_symlink() and (src.suffix.lower() in ROOT_SUFFIXES or src.name in PUBLIC_TEXT_FILES):
             dst = TARGET / src.name
             shutil.copy2(src, dst)
             copied.append(dst.relative_to(TARGET).as_posix())
@@ -44,6 +53,40 @@ def copy_public_files() -> list[str]:
             shutil.copy2(src, dst)
             copied.append(dst.relative_to(TARGET).as_posix())
 
+    public_paths = set(copied)
+    tombstones = []
+    for current_dir, dirs, filenames in os.walk(ROOT):
+        dirs[:] = sorted(
+            d for d in dirs
+            if d not in WALK_EXCLUDE and not (Path(current_dir) / d).is_symlink()
+        )
+        for filename in sorted(filenames):
+            src = Path(current_dir) / filename
+            if src.is_symlink() or not src.is_file():
+                continue
+            relative = src.relative_to(ROOT)
+            url_path = relative.as_posix()
+            if url_path in public_paths or relative.parts[0] in WALK_EXCLUDE:
+                continue
+            unsafe = (
+                src.suffix.lower() in PROTECTED_SUFFIXES
+                or src.name in PROTECTED_NAMES
+                or src.name.startswith(".env")
+                or relative.parts[0] in PROTECTED_DIRS
+            )
+            if not unsafe:
+                continue
+            dest = TARGET / relative
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_bytes(TOMBSTONE)
+            tombstones.append(url_path)
+
+    # Never allow the actual contents of a protected source file into the
+    # static site output. Only the fixed, non-sensitive placeholder may exist.
+    for path in tombstones:
+        if (TARGET / path).read_bytes() != TOMBSTONE:
+            raise RuntimeError("Protected asset was not safely replaced")
+
     required = {"index.html", "catalog.html", "styles.css", "app.js",
                 "robots.txt", "sitemap.xml", "assets/papauto-logo.svg",
                 "data/vehicle-examples.json"}
@@ -51,11 +94,7 @@ def copy_public_files() -> list[str]:
     if missing:
         raise RuntimeError("Public site build missing files: " + ", ".join(sorted(missing)))
 
-    forbidden = [file for file in TARGET.rglob("*") if file.is_file()
-                 and file.suffix.lower() in {".py", ".md", ".yml", ".yaml", ".toml"}]
-    if forbidden:
-        raise RuntimeError("Unsafe source files in static publish output")
-    print(f"Prepared {len(copied)} static files in {TARGET.name}/")
+    print(f"Prepared {len(copied)} public files and {len(tombstones)} safe tombstones in {TARGET.name}/")
     return copied
 
 
