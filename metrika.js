@@ -20,7 +20,7 @@
       ym(id,"reachGoal","phone_click");
       if(gaStartedByShared && typeof window.gtag === "function") window.gtag("event","contact_phone_click",{contact_method:"phone"});
     }
-    if(/^(https?:\\/\\/)?(t\\.me|telegram\\.me)\\//i.test(href)) {
+    if (/^(?:(?:https?:)?[/][/])?(?:t[.]me|telegram[.]me)[/]/i.test(href)) {
       ym(id,"reachGoal","telegram_click");
       if(gaStartedByShared && typeof window.gtag === "function") window.gtag("event","contact_telegram_click",{contact_method:"telegram"});
     }
