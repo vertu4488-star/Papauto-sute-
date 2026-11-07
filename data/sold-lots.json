@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-04",
-  "coverage": "100 реальных записей завершённых продаж; публично показываются только лоты с оригинальными фотографиями из источника. Для остальных лотов нет проверенных фотографий. Фото размещены как внешние ссылки на исходный сервис, доступность может меняться. Цена в JPY без доставки и таможни.",
+  "updated_at": "2026-11-07",
+  "coverage": "103 реальные записи завершённых продаж; публично показываются только лоты с оригинальными фотографиями из источника. Для остальных лотов нет проверенных фотографий. Фото размещены как внешние ссылки на исходный сервис, доступность может меняться. Цена в JPY без доставки и таможни. Добавлены фото и связанные с ними данные для девяти лотов: фото пока загружаются по ссылкам источника, права на повторное использование требуют проверки.",
   "lots": [
     {
       "id": "jp-aucnet-20261102-19901",
@@ -1927,6 +1927,81 @@
       "source_url": "https://banzai24.com/en/car/JP/01a186a5-0c52-7de9-b793-591760d82f20",
       "photos": [],
       "sheet_url": ""
+    },
+    {
+      "id": "jp-taa-hyogo-20260905-231",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Freed",
+      "year": 2021,
+      "mileage": 44000,
+      "grade": "3.5",
+      "auction": "TAA Hyogo",
+      "lot": "231",
+      "sold_date": "2026-09-05",
+      "price": 1556000,
+      "currency": "JPY",
+      "status": "sold",
+      "source": "Проверенная открытая история торгов · 07.11.2026",
+      "source_url": "https://banzai24.com/en/car/JP/01a056ac-1375-7f20-b7f1-519148b81767",
+      "photos": [
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEelivvBc4Qzl04nx8BT29toMf6d5Uoj3U_yWXklKPuAlF3S3yggunlfvGfO-JxC0QN3ndMMs",
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEelivvBc4Qzl04nx8BT29toMf6d5Uoj3U_yWXklKPuAlF3S3yggunlfvGfO-JxC0QN7nnluW",
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEelivvBc4Qzl04nx8BT29toMf6d5Uoj3U_yWXklKPuAlF3S3yggunlfvGfO-JxC0QN_nsumJ"
+      ],
+      "sheet_url": "",
+      "photo_source": "https://banzai24.com/en/car/JP/01a056ac-1375-7f20-b7f1-519148b81767",
+      "photo_attribution": "Banzai24 / исходные фотографии лота · права не подтверждены"
+    },
+    {
+      "id": "jp-ju-chiba-20261030-7008",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Sienta",
+      "year": 2022,
+      "mileage": 48252,
+      "grade": null,
+      "auction": "JU Chiba",
+      "lot": "7008",
+      "sold_date": "2026-10-30",
+      "price": 1031000,
+      "currency": "JPY",
+      "status": "sold",
+      "source": "Проверенная открытая история торгов · 07.11.2026",
+      "source_url": "https://banzai24.com/en/car/JP/01a17d86-2d75-74b2-9175-a7d4c9a67119",
+      "photos": [
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEeljY2ynON5u2Nqc-QVszuq9kpHWyM0JKVzcwUYCcPQ2QKrBA4gXwyqWU9mlmbxfkMgTL35b",
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEeljY2ynON5u2Nqc-QVszuq9kpHWyM0JKVzcwUYCcPQ2QKrBA4gXwyqWU9mlmbxfkMsTpZVG",
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEeljY2ynON5u2Nqc-QVszuq9kpHWyM0JKVzcwUYCcPQ2QKrBA4gXwyqWU9mlmbxfkMoTNwxj"
+      ],
+      "sheet_url": "",
+      "photo_source": "https://banzai24.com/en/car/JP/01a17d86-2d75-74b2-9175-a7d4c9a67119",
+      "photo_attribution": "Banzai24 / исходные фотографии лота · права не подтверждены"
+    },
+    {
+      "id": "jp-taa-yokohama-20261031-210",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Vitz",
+      "year": 2016,
+      "mileage": 72000,
+      "grade": "R",
+      "auction": "TAA Yokohama",
+      "lot": "210",
+      "sold_date": "2026-10-31",
+      "price": 373000,
+      "currency": "JPY",
+      "status": "sold",
+      "source": "Проверенная открытая история торгов · 07.11.2026",
+      "source_url": "https://banzai24.com/en/car/JP/01a1815c-c11e-7929-8401-544d54d0106f",
+      "photos": [
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEeljY2ymON893t2er1lpz7zgk8YMsc9iz7DtVaE4F63psoNRN584TulRgHNYCe9PMuZyXnMc",
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEeljY2ymON893t2er1lpz7zgk8YMsc9iz7DtVaE4F63psoNRN584TulRgHNYCe9PMuVywP-R",
+        "https://banzai24.com/api/image-service/v2_AAECAwQFBgcICQoLDA0ODwrokxFmqnaUC8GYaEpo2tUXeblInE28RSohlYfiEeljY2ymON893t2er1lpz7zgk8YMsc9iz7DtVaE4F63psoNRN584TulRgHNYCe9PMuRyf9F2"
+      ],
+      "sheet_url": "",
+      "photo_source": "https://banzai24.com/en/car/JP/01a1815c-c11e-7929-8401-544d54d0106f",
+      "photo_attribution": "Banzai24 / исходные фотографии лота · права не подтверждены"
     }
   ]
 }
