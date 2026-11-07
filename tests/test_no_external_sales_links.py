@@ -44,7 +44,25 @@ class NoExternalSellerLinks(unittest.TestCase):
             return
         js = path.read_text(encoding="utf-8")
         self.assertNotIn("a.target='_blank'", js)
-        # The CSV export intentionally uses a.href=url for a local Blob download.\n        # Only prohibit using external source URLs as navigable links.\n        self.assertNotIn("a.href=r.source_url", js)\n        self.assertNotIn("a.href=r.sheet_url", js)
+        # The CSV export intentionally uses a.href=url for a local Blob download.
+        # Only prohibit using external source URLs as navigable links.
+        self.assertNotIn("a.href=r.source_url", js)
+        self.assertNotIn("a.href=r.sheet_url", js)
+
+    def test_dynamic_source_links(self):
+        homepage = (ROOT / "app.js").read_text(encoding="utf-8")
+        for forbidden in (
+            "banzai24.com", "www.ttpai.cn", "a.href=record.url",
+            "a.href=source.url", "a.href=data.source_url",
+            "a.href=item.listing_url",
+        ):
+            self.assertNotIn(forbidden, homepage)
+
+    def test_chassis_search_does_not_send_client_outside(self):
+        js = (ROOT / "japan-chassis-search.js").read_text(encoding="utf-8")
+        for forbidden in ("google.com/search", "banzai24.com", "carvector.com", "jpsheet.com"):
+            self.assertNotIn(forbidden, js)
+        self.assertIn('link.href="/?view=select', js)
 
 if __name__ == "__main__":
     unittest.main()
