@@ -39,8 +39,8 @@ jobs:
               ("PapAuto leads and Neon", "https://papauto-leads.onrender.com/health", "database_connected"),
               ("New iPhone Service website", "https://new-iphone-repair-site.onrender.com/", None),
               ("New iPhone Service public domain", "https://xn----8sbco1afeiieo2a4o.xn--p1ai/", None),
-              ("New iPhone Service Telegram application", "https://new-iphone-service.onrender.com/health", None),
-              ("New iPhone Service CRM and Neon", "https://new-iphone-crm-api-staging.onrender.com/ready", None),
+              ("New iPhone Service Telegram application", "https://new-iphone-service.onrender.com/health", ("status", "healthy")),
+              ("New iPhone Service CRM and Neon", "https://new-iphone-crm-api-staging.onrender.com/ready", ("status", "ready")),
           ]
 
           def check(target):
@@ -59,8 +59,9 @@ jobs:
                           raise RuntimeError(f"Unexpected HTTP {status}")
                       if required_field is not None:
                           payload = json.loads(body)
-                          if payload.get(required_field) is not True:
-                              raise RuntimeError(f"Health body reports {required_field}=false")
+                          field, expected = required_field if isinstance(required_field, tuple) else (required_field, True)
+                          if payload.get(field) != expected:
+                              raise RuntimeError(f"Health body reports unexpected value for {field}")
                       return name, True, f"HTTP {status} (attempt {attempt})"
                   except (urllib.error.URLError, TimeoutError, ValueError, RuntimeError) as exc:
                       last_error = f"{type(exc).__name__}: {str(exc)[:220]}"
