@@ -219,6 +219,26 @@ class FreeModeSafetyTests(unittest.IsolatedAsyncioTestCase):
             self.assertEqual(cursor.execute.call_count, 2)
             client.assert_not_called()
 
+    async def test_global_flood_limit_rejects_many_unique_contacts_before_side_effects(self):
+        lead = api.Lead(
+            name="Тест", contact="@different-contact", country="Япония",
+            budget=1000000, city="Новосибирск",
+            request="Toyota Prius", consent=True,
+        )
+        with patch.dict(os.environ, {"DATABASE_URL": "postgresql://unreachable"}, clear=False), \
+             patch("api.psycopg.connect") as connect, \
+             patch("api.httpx.AsyncClient") as client:
+            cursor = connect.return_value.__enter__.return_value.cursor.return_value.__enter__.return_value
+            cursor.fetchone.side_effect = [(0,), (60,)]
+            with self.assertRaises(api.HTTPException) as ctx:
+                await api.create_lead(lead)
+            self.assertEqual(ctx.exception.status_code, 429)
+            sql = [call.args[0] for call in cursor.execute.call_args_list]
+            self.assertEqual(len(sql), 4)
+            self.assertTrue(any("papauto-leads-global-limit" in str(call.args) for call in cursor.execute.call_args_list))
+            self.assertFalse(any("INSERT INTO leads" in command for command in sql))
+            client.assert_not_called()
+
     async def test_customs_calculator_never_calls_tks_even_if_old_key_exists(self):
         payload = api.CustomsRequest(
             cost=1500000, volume=1800, power=120, currency="392",
