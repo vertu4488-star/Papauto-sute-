@@ -258,6 +258,13 @@ async def create_lead(lead: Lead):
                 )
                 if cur.fetchone()[0] >= 6:
                     raise HTTPException(status_code=429, detail="Слишком много заявок. Повторите позднее или напишите менеджеру.")
+                # A global transaction lock also limits floods using many fake contacts.
+                # Unlike IP-based limits, this cannot be bypassed with spoofed proxy headers.
+                cur.execute("SELECT pg_advisory_xact_lock(hashtext(%s))", ("papauto-leads-global-limit",))
+                cur.execute("SELECT COUNT(*) FROM leads WHERE created_at > now() - interval '10 minutes'")
+                if cur.fetchone()[0] >= 60:
+                    logger.warning("PapAuto global lead flood limit reached; request rejected before storage or Telegram")
+                    raise HTTPException(status_code=429, detail="Слишком много заявок. Пожалуйста, повторите немного позже.")
                 cur.execute(
                     """INSERT INTO leads (name,contact,country,budget,city,request,consent)
                        VALUES (%s,%s,%s,%s,%s,%s,%s) RETURNING id""",
