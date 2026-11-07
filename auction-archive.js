@@ -7,7 +7,7 @@ const save=(key,v)=>{try{localStorage.setItem(key,JSON.stringify(v));return true
 const node=(tag,value,cls)=>{const e=document.createElement(tag);if(value!=null)e.textContent=String(value);if(cls)e.className=cls;return e};
 const button=(label,fn)=>{const e=node('button',label);e.type='button';e.addEventListener('click',fn);return e};
 const money=(v,c)=>Number(v).toLocaleString('ru-RU',{maximumFractionDigits:0})+' '+c;
-const link=(label,url)=>{const a=node('a',label);a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a};
+const link=(label,url)=>{const e=node('span',label.replace(/\s*[↗→]\s*$/,'').trim());e.className='source-reference';return e};
 function rows(){return [...new Map([...published,...local].map(r=>[r.id,r])).values()]}
 // Иллюстрации модели: отдельно от фото конкретного лота. Только файлы Commons с открытой лицензией.
 const photoCache=new Map();
@@ -40,7 +40,7 @@ async function showExamplePhoto(r,card,container){
  if(!card.isConnected)return;if(!result){container.replaceChildren(node('div','Для этой модели нет подходящей фотографии с открытой лицензией','no-photo'));return;}
  const img=node('img');img.src=result.url;img.loading='lazy';img.alt='Иллюстрация модели, не фотография проданного лота';img.referrerPolicy='no-referrer';
  img.onerror=()=>{container.replaceChildren(node('div','Изображение временно недоступно','no-photo'))};
- const caption=node('p','Иллюстрация автомобиля '+r.year+' г., не фото указанной продажи · '+result.license,'photo-disclaimer');
+ const caption=node('p','Иллюстрация модели '+r.year+' г., не фото указанной продажи · '+result.author+' / Wikimedia Commons · '+result.license,'photo-disclaimer');
  const credit=link('Автор / лицензия',result.description);credit.style.display='inline-block';credit.style.fontSize='12px';
  container.replaceChildren(img,caption,credit);
 }
