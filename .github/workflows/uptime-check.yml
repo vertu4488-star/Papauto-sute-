@@ -4,6 +4,10 @@ name: Independent uptime checks
 on:
   schedule:
     - cron: '23 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/uptime-check.yml'
   workflow_dispatch:
 
 permissions:
