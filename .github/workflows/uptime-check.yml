@@ -38,6 +38,7 @@ jobs:
               ("PapAuto website", "https://papauto.ru/", None),
               ("PapAuto leads and Neon", "https://papauto-leads.onrender.com/health", "database_connected"),
               ("New iPhone Service website", "https://new-iphone-repair-site.onrender.com/", None),
+              ("New iPhone Service public domain", "https://xn----8sbco1afeiieo2a4o.xn--p1ai/", None),
               ("New iPhone Service Telegram application", "https://new-iphone-service.onrender.com/health", None),
               ("New iPhone Service CRM and Neon", "https://new-iphone-crm-api-staging.onrender.com/ready", None),
           ]
