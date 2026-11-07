@@ -10,12 +10,20 @@
     k.async=1;k.src=r;a.parentNode.insertBefore(k,a);
   })(window,document,"script","https://mc.yandex.ru/metrika/tag.js?id="+id,"ym");
   ym(id,"init",{ssr:true,webvisor:false,clickmap:true,accurateTrackBounce:true,trackLinks:true});
+  // The homepage has its own GA4 click tracking; SEO pages use the shared fallback.
+  var gaStartedByShared = typeof window.gtag !== "function";
   document.addEventListener("click",function(e){
     var a=e.target&&e.target.closest&&e.target.closest("a[href]");
     if(!a)return;
     var href=a.getAttribute("href")||"";
-    if(/^tel:/i.test(href))ym(id,"reachGoal","phone_click");
-    if(/^(https?:\/\/)?(t\.me|telegram\.me)\//i.test(href))ym(id,"reachGoal","telegram_click");
+    if(/^tel:/i.test(href)) {
+      ym(id,"reachGoal","phone_click");
+      if(gaStartedByShared && typeof window.gtag === "function") window.gtag("event","contact_phone_click",{contact_method:"phone"});
+    }
+    if(/^(https?:\\/\\/)?(t\\.me|telegram\\.me)\\//i.test(href)) {
+      ym(id,"reachGoal","telegram_click");
+      if(gaStartedByShared && typeof window.gtag === "function") window.gtag("event","contact_telegram_click",{contact_method:"telegram"});
+    }
   });
   // Count only server-confirmed submissions; never send contact data to analytics.
   window.addEventListener("papauto:lead-submitted", function () {
@@ -24,7 +32,7 @@
   });
   // Google Analytics 4 on all landing pages. Home pages already initialize gtag.
   // Do not initialize it a second time, or page_view would be counted twice.
-  if (typeof window.gtag !== "function") {
+  if (gaStartedByShared) {
     var gaId = "G-JBPEKLFCXW";
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
