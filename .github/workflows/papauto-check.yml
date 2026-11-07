@@ -75,6 +75,7 @@ jobs:
       - name: Check browser JavaScript syntax
         run: |
           node --check metrika.js
+          node tests/test_analytics.cjs
           node --check app.js
           node --check account.js
           node --check marketplace-interactions.js
