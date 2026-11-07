@@ -96,6 +96,28 @@ def copy_public_files() -> list[str]:
         if (TARGET / path).read_bytes() != TOMBSTONE:
             raise RuntimeError("Protected asset was not safely replaced")
 
+    # Render's CDN may continue serving deleted static file URLs. Publish fresh
+    # noindex retirement pages to overwrite any previously cached third-party
+    # marketplace articles. These routes are not listed in the sitemap.
+    retired_legacy_pages = (
+        "drom-novosibirsk-2026.html",
+        "novosibirsk-avto-bez-probega-2026.html",
+    )
+    retirement_html = (
+        '<!doctype html><html lang="ru"><head><meta charset="utf-8">'
+        '<meta name="robots" content="noindex,nofollow">'
+        '<meta name="viewport" content="width=device-width,initial-scale=1">'
+        '<title>Страница удалена | PAPAUTO</title></head>'
+        '<body data-page-retired="true"><main><h1>Страница удалена</h1>'
+        '<p>Информация более не публикуется. Актуальный каталог и подбор автомобилей доступны на PAPAUTO.</p>'
+        '<p><a href="/catalog.html">Каталог автомобилей PAPAUTO</a></p>'
+        '</main></body></html>'
+    )
+    for retired in retired_legacy_pages:
+        if retired in public_paths:
+            raise RuntimeError("Retired route was reintroduced: " + retired)
+        (TARGET / retired).write_text(retirement_html, encoding="utf-8")
+
     required = {"index.html", "catalog.html", "styles.css", "app.js",
                 "robots.txt", "sitemap.xml", "assets/papauto-logo.svg",
                 "data/vehicle-examples.json"}
