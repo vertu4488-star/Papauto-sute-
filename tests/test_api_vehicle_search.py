@@ -190,26 +190,18 @@ class VehicleAssistantSearchTests(unittest.IsolatedAsyncioTestCase):
 
 
 class FreeModeSafetyTests(unittest.IsolatedAsyncioTestCase):
-    async def test_lead_delivery_works_without_supabase_database(self):
-        class TelegramResponse:
-            status_code = 200
-            def json(self):
-                return {"ok": True, "result": {"message_id": 123}}
-        class TelegramClient:
-            def __init__(self, *args, **kwargs): pass
-            async def __aenter__(self): return self
-            async def __aexit__(self, *args): return False
-            async def post(self, *args, **kwargs): return TelegramResponse()
+    async def test_leads_fail_closed_if_database_unavailable(self):
         lead = api.Lead(
             name="Тест", contact="@test", country="Япония", budget=1000000,
             city="Новосибирск", request="Toyota Prius", consent=True
         )
-        env = {k: v for k, v in os.environ.items() if not k.startswith("SUPABASE_")}
+        env = {k: v for k, v in os.environ.items() if k != "DATABASE_URL"}
         env.update({"TELEGRAM_BOT_TOKEN": "test-token", "TELEGRAM_CHAT_ID": "123"})
-        with patch.dict(os.environ, env, clear=True), patch("api.httpx.AsyncClient", TelegramClient):
-            result = await api.create_lead(lead)
-        self.assertTrue(result["notified"])
-        self.assertFalse(result["stored"])
+        with patch.dict(os.environ, env, clear=True), patch("api.httpx.AsyncClient") as client:
+            with self.assertRaises(api.HTTPException) as ctx:
+                await api.create_lead(lead)
+        self.assertEqual(ctx.exception.status_code, 503)
+        client.assert_not_called()
 
     async def test_customs_calculator_never_calls_tks_even_if_old_key_exists(self):
         payload = api.CustomsRequest(
