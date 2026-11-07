@@ -203,6 +203,22 @@ class FreeModeSafetyTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(ctx.exception.status_code, 503)
         client.assert_not_called()
 
+    async def test_lead_flood_limit_rejects_before_saving_or_notifying(self):
+        lead = api.Lead(
+            name="Тест", contact="@repeated", country="Япония", budget=1000000,
+            city="Новосибирск", request="Toyota Prius", consent=True
+        )
+        with patch.dict(os.environ, {"DATABASE_URL": "postgresql://unreachable"}, clear=False), \
+             patch("api.psycopg.connect") as connect, \
+             patch("api.httpx.AsyncClient") as client:
+            cursor = connect.return_value.__enter__.return_value.cursor.return_value.__enter__.return_value
+            cursor.fetchone.return_value = (6,)
+            with self.assertRaises(api.HTTPException) as ctx:
+                await api.create_lead(lead)
+            self.assertEqual(ctx.exception.status_code, 429)
+            self.assertEqual(cursor.execute.call_count, 2)
+            client.assert_not_called()
+
     async def test_customs_calculator_never_calls_tks_even_if_old_key_exists(self):
         payload = api.CustomsRequest(
             cost=1500000, volume=1800, power=120, currency="392",
