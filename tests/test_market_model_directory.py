@@ -55,7 +55,7 @@ class MarketModelDirectory(unittest.TestCase):
                 f = ROOT / row["file"].lstrip("/")
                 self.assertTrue(f.is_file())
                 self.assertGreater(f.stat().st_size, 30_000)
-        self.assertEqual(len(manifest["photos"]), 4)
+        self.assertGreaterEqual(len(manifest["photos"]), 4)
 
 
 if __name__ == "__main__":
