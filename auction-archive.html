@@ -13,6 +13,10 @@
 .cost-table th{font-weight:560}
 .cost-table td{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 .cost-table .cost-rubles{font-weight:680}
+.cost-table .cost-cf td.cost-rubles{color:#125fab;font-weight:780}
+.cost-table .cost-duty td.cost-rubles{color:#1a2940;font-weight:780}
+.cost-mobile-currencies{display:none;color:#60758a;font-weight:500;font-size:10px;line-height:1.5;margin-top:3px}
+.cost-table .cost-duty .cost-source{color:#47627e;font-size:12px;font-weight:650}
 .cost-table .cost-reference{color:#7c8996;background:#f9fafb}
 .cost-table .cost-package{background:#f0f6ff}
 .cost-table .cost-package th,.cost-table .cost-package td{font-weight:740;color:#164b83}
@@ -38,14 +42,14 @@
 .cost-foot{font-size:12px;background:#f8fafc;border-radius:12px;padding:14px 17px;margin-top:22px}
 .cost-reset{border:1px solid #c7d0df;background:white;padding:10px 15px;border-radius:10px;cursor:pointer}
 @media(max-width:850px){.cost-split{grid-template-columns:1fr}.cost-fields{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:550px){.cost-table th,.cost-table td{padding:11px 5px;font-size:11px}.cost-fields{grid-template-columns:1fr}.cost-source{display:none}.demo-cost .cost-head{display:block}}
+@media(max-width:550px){.cost-table th,.cost-table td{padding:11px 5px;font-size:11px}.cost-fields{grid-template-columns:1fr}.cost-source{display:none}.cost-mobile-currencies{display:block}.demo-cost .cost-head{display:block}}
 </style></head><body><header><a class="brand" href="/">PAPAUTO</a><nav><a href="/catalog.html">Модели</a><a href="/?view=select#assistant">Подбор</a><a href="/">Главная</a></nav></header><main><section class="intro"><span class="eyebrow">PAPAUTO · АУКЦИОННЫЙ КАТАЛОГ</span><h1>Конкретные автомобили.<br>Проверенные фотографии лотов.</h1><p>Япония, Южная Корея и Китай. Для каждой опубликованной машины используются фотографии именно её аукционной карточки, подтверждённые характеристики и данные торгов. Никаких ссылок на конкурентов или случайных фотографий других автомобилей.</p></section><div class="filters"><input id="auctionSearch" aria-label="Поиск по модели и лоту" placeholder="Марка, модель, кузов, год, номер лота"><select id="auctionCountry" aria-label="Страна"><option value="">Все страны</option><option value="japan">Япония</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select></div><p id="auctionCount" class="n">Проверяем каталог…</p><div id="auctionGrid" class="grid"></div><div id="auctionStatus" class="notice" role="status">Размещаем только фотографии с подтвержденными правами на коммерческое использование.</div><section class="demo-cost" id="importDemoCost" aria-label="Демонстрационный расчёт стоимости до Новосибирска">
 <div class="cost-head"><div class="cost-intro"><span class="cost-tag">ДЕМОНСТРАЦИОННЫЙ ПРИМЕР · НЕ РЕАЛЬНЫЙ ЛОТ</span>
 <h2>Автомобиль 1 496 см³ · пример сметы<br>От покупки до Новосибирска</h2>
-<p>Пример построен на присланном расчётном экране: цена автомобиля без пошлин и доставки — 187 710 ₽, общий C&amp;F — 90 000 ¥, пошлина, утильсбор, СВХ и прочие расходы. <strong>Шесть услуг объединены в одну строку «СБКТС и оформление — единый пакет».</strong> Стартовая ставка и фактическая цена продажи на скриншоте не указаны. Это образец структуры, не публичная оферта PapAuto.</p>
+<p>Пример построен на присланном расчётном экране: цена автомобиля без пошлин и доставки — 187 710 ₽, тариф C&amp;F — 90 000 ¥ <strong>(отображается именно в иенах)</strong>, пошлина — 4 787 EUR / 5 394 USD / 441 140 ₽, а также утильсбор, СВХ и другие расходы. <strong>Шесть услуг объединены в одну строку «СБКТС и оформление — единый пакет».</strong> Стартовая ставка и фактическая цена продажи на скриншоте не указаны. Это образец структуры, не публичная оферта PapAuto.</p>
 </div></div>
 <div class="cost-split">
-<div style="min-width:0;overflow-x:auto"><table class="cost-table"><thead><tr><th scope="col">Статья расходов</th><th scope="col" class="cost-source">В валюте</th><th scope="col" style="text-align:right">В рублях</th></tr></thead><tbody id="importDemoRows"></tbody></table></div>
+<div style="min-width:0;overflow-x:auto"><table class="cost-table"><thead><tr><th scope="col">Статья расходов</th><th scope="col" class="cost-source">В EUR / USD</th><th scope="col" style="text-align:right">Стоимость</th></tr></thead><tbody id="importDemoRows"></tbody></table></div>
 <aside class="cost-final"><span class="kicker">Примерная стоимость во Владивостоке</span><strong id="demoVladivostokTotal">—</strong>
 <div class="city-total"><span class="kicker">Примерная стоимость в Новосибирске</span><strong id="demoNovosibirskTotal">—</strong></div>
 <small id="demoRate">Курс условный</small>
@@ -53,5 +57,5 @@
 <a class="cta" href="/?view=select#assistant">Запросить персональную смету</a></aside>
 </div>
 <details class="cost-edit"><summary>Изменить параметры демонстрационного расчёта</summary><div class="cost-fields" id="importDemoFields"></div><button class="cost-reset" type="button" id="importDemoReset">Восстановить пример</button></details>
-<p class="cost-foot">В образце стартовая ставка не указана и не учитывается. C&amp;F уже объединяет японские расходы и морской фрахт, второй раз они не прибавляются. Государственный таможенный сбор включён в пакет СБКТС и сопутствующих услуг, хотя юридически это отдельный обязательный платёж. Изменение стоимости пакета производится одним полем; исходный состав доступен по нажатию.</p>
+<p class="cost-foot">В образце стартовая ставка не указана и не учитывается. C&amp;F указан в иенах; для итоговой суммы он пересчитывается внутри калькулятора по учебному курсу. EUR, USD и RUB для пошлины отображаются вместе по условным курсам из образца, без повторного включения в итог. C&amp;F уже объединяет японские расходы и морской фрахт, второй раз они не прибавляются. Государственный таможенный сбор включён в пакет СБКТС и сопутствующих услуг, хотя юридически это отдельный обязательный платёж. Изменение стоимости пакета производится одним полем; исходный состав доступен по нажатию.</p>
 <p id="demoSourceReconcile" class="cost-mismatch" role="note"></p></section><p><a class="cta" href="/?view=select#assistant">Запросить подбор автомобиля</a></p></main><script defer src="/auction-archive.js"></script><script defer src="/demo-import-cost.js"></script></body></html>
