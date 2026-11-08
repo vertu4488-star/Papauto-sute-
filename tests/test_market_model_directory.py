@@ -55,7 +55,15 @@ class MarketModelDirectory(unittest.TestCase):
                 f = ROOT / row["file"].lstrip("/")
                 self.assertTrue(f.is_file())
                 self.assertGreater(f.stat().st_size, 30_000)
-        self.assertGreaterEqual(len(manifest["photos"]), 4)
+        self.assertGreaterEqual(len(manifest["photos"]), 20)
+        # Fail the predeploy gate if the public catalog references an image that
+        # is not rights-audited and physically self-hosted in the current tree.
+        from_preview = set(re.findall(
+            r'\["[^"]+\|[^"]+\|[^"]+","(/assets/demo/[^"]+\.webp)"\]', js
+        ))
+        tracked = {row["file"] for row in manifest["photos"]}
+        self.assertEqual(len(tracked), len(manifest["photos"]))
+        self.assertSetEqual(from_preview, tracked)
 
 
 if __name__ == "__main__":
