@@ -1,0 +1,60 @@
+{
+  "photos": [
+    {
+      "model": "Honda Freed Hybrid",
+      "file": "/assets/demo/honda-freed-hybrid-cc0.webp",
+      "source_title": "File:Moscow, Honda Freed Hybrid (2nd generation) silver, Sept 2025 01.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Moscow%2C_Honda_Freed_Hybrid_%282nd_generation%29_silver%2C_Sept_2025_01.jpg",
+      "rights": "Creative Commons Zero 1.0 Universal (CC0)",
+      "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "author": "Retired electrician",
+      "image_sha256": "7d3575aaa659e3cf4502fb1723ef3cb26d7fc2e4675b39a39c97d7b20ed9364f",
+      "width": 1349,
+      "height": 1000,
+      "size_bytes": 238090,
+      "verified_at_utc": "2026-11-08T07:30:13.682485+00:00"
+    },
+    {
+      "model": "Toyota Prius",
+      "file": "/assets/demo/toyota-prius-cc0.webp",
+      "source_title": "File:Toyota DAA-ZVW51 Prius A Premium“Touring Selection” (23032914482).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Toyota_DAA-ZVW51_Prius_A_Premium%E2%80%9CTouring_Selection%E2%80%9D_%2823032914482%29.jpg",
+      "rights": "Creative Commons Zero 1.0 Universal (CC0)",
+      "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "author": "先従隗始",
+      "image_sha256": "332558502806ba14c862e010608ec93cc891a9a78614e4d69d0b1e463c48c634",
+      "width": 1440,
+      "height": 960,
+      "size_bytes": 272756,
+      "verified_at_utc": "2026-11-08T07:30:14.307504+00:00"
+    },
+    {
+      "model": "Hyundai Staria",
+      "file": "/assets/demo/hyundai-staria-cc0.webp",
+      "source_title": "File:Hyundai Staria in Basel.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Hyundai_Staria_in_Basel.jpg",
+      "rights": "Creative Commons Zero 1.0 Universal (CC0)",
+      "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "author": "Calreyn88",
+      "image_sha256": "1c21795a4d83987c06a1263f76abfe422c84c5ee780845f20255016aaf316d1d",
+      "width": 1440,
+      "height": 831,
+      "size_bytes": 56398,
+      "verified_at_utc": "2026-11-08T07:30:14.804909+00:00"
+    },
+    {
+      "model": "Geely Xingyue L / Monjaro",
+      "file": "/assets/demo/geely-monjaro-cc0.webp",
+      "source_title": "File:Geely Xingyue L 2025 facelift 001.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Geely_Xingyue_L_2025_facelift_001.jpg",
+      "rights": "Creative Commons Zero 1.0 Universal (CC0)",
+      "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "author": "JustAnotherCarDesigner",
+      "image_sha256": "b6a2af151cabb87a2a196ac1a92533e394c72edd789c0627951ec6da24780614",
+      "width": 1333,
+      "height": 1000,
+      "size_bytes": 463986,
+      "verified_at_utc": "2026-11-08T07:30:15.745682+00:00"
+    }
+  ]
+}
