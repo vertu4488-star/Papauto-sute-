@@ -33,8 +33,24 @@ def main():
     session = requests.Session()
     session.headers.update(HEADERS)
     OUT.mkdir(parents=True, exist_ok=True)
+    old_records = {}
+    if LEDGER.exists():
+        for record in json.loads(LEDGER.read_text(encoding="utf-8")).get("photos", []):
+            old_records[record["source_title"]] = record
     results = []
     for item in entries:
+        # Skip previously verified real CC0 files when the exact photographed
+        # source, file path and SHA-256 are already recorded in provenance.
+        # This avoids re-downloading 300 existing photos on every extension.
+        previous = old_records.get("File:" + item["commons_filename"])
+        dest = OUT / item["local_name"]
+        if (previous and previous.get("file") == "/assets/demo/" + dest.name
+                and previous.get("rights") == "Creative Commons Zero 1.0 Universal (CC0)"
+                and dest.is_file() and dest.stat().st_size > 32_000
+                and hashlib.sha256(dest.read_bytes()).hexdigest() == previous.get("image_sha256")):
+            results.append(previous)
+            print("Previously verified CC0 image preserved:", dest.name)
+            continue
         filename = item["commons_filename"]
         params = {
             "action": "query",
