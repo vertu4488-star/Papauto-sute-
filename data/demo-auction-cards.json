@@ -1,6 +1,6 @@
 {
-  "status": "demonstration",
-  "notice": "Все машины, изображения, пробег, ставки, оценки и цены — учебные примеры, НЕ реальные завершённые лоты или актуальные объявления. Иконографика сделана для PapAuto.",
+  "status": "model_photographs_and_estimated_costs",
+  "notice": "Фотографии реальных моделей автомобилей опубликованы по лицензии CC0. Пробеги, аукционные оценки и цены, если приведены, являются ориентировочными; это НЕ подтверждённые результаты продаж или машины в наличии.",
   "rates_status": "illustrative",
   "lots": [
     {
@@ -10,10 +10,10 @@
       "model": "Freed Hybrid",
       "year": 2021,
       "body": "GB7 · минивэн",
-      "color": "Белый",
+      "color": "Серебристый",
       "mileage_km": 130000,
-      "grade": "4 (условно)",
-      "image": "/assets/demo/freed.svg",
+      "grade": null,
+      "image": "/assets/demo/honda-freed-hybrid-cc0.webp",
       "start_price": 200000,
       "sale_price": 500000,
       "currency": "JPY",
@@ -27,7 +27,10 @@
       "storage_rub": 35000,
       "commission_rub": 50000,
       "truck_rub": 145000,
-      "engine": "1,5 л, гибрид"
+      "engine": "1,5 л, гибрид",
+      "photo_rights": "CC0 1.0",
+      "photo_context": "Фотография модели, не конкретного продаваемого автомобиля",
+      "grade_status": "Не подтверждена, не показывать"
     },
     {
       "id": "demo-prius-jp",
@@ -36,10 +39,10 @@
       "model": "Prius",
       "year": 2020,
       "body": "ZVW51 · хетчбэк",
-      "color": "Серебристый",
+      "color": "Белый",
       "mileage_km": 93000,
-      "grade": "4,5 (условно)",
-      "image": "/assets/demo/prius.svg",
+      "grade": null,
+      "image": "/assets/demo/toyota-prius-cc0.webp",
       "start_price": 350000,
       "sale_price": 750000,
       "currency": "JPY",
@@ -53,7 +56,10 @@
       "storage_rub": 35000,
       "commission_rub": 50000,
       "truck_rub": 145000,
-      "engine": "1,8 л, гибрид"
+      "engine": "1,8 л, гибрид",
+      "photo_rights": "CC0 1.0",
+      "photo_context": "Фотография модели, не конкретного продаваемого автомобиля",
+      "grade_status": "Не подтверждена, не показывать"
     },
     {
       "id": "demo-staria-kr",
@@ -62,10 +68,10 @@
       "model": "Staria",
       "year": 2022,
       "body": "Минивэн",
-      "color": "Тёмно-синий",
+      "color": "Не уточнён",
       "mileage_km": 63000,
-      "grade": "Не подтверждена",
-      "image": "/assets/demo/staria.svg",
+      "grade": null,
+      "image": "/assets/demo/hyundai-staria-cc0.webp",
       "start_price": 11000000,
       "sale_price": 15000000,
       "currency": "KRW",
@@ -79,19 +85,22 @@
       "storage_rub": 35000,
       "commission_rub": 50000,
       "truck_rub": 150000,
-      "engine": "2,2 л, дизель"
+      "engine": "2,2 л, дизель",
+      "photo_rights": "CC0 1.0",
+      "photo_context": "Фотография модели, не конкретного продаваемого автомобиля",
+      "grade_status": "Не подтверждена, не показывать"
     },
     {
       "id": "demo-monjaro-cn",
       "country": "china",
       "make": "Geely",
       "model": "Monjaro",
-      "year": 2024,
-      "body": "KX11 · кроссовер",
-      "color": "Чёрный",
+      "year": 2025,
+      "body": "Xingyue L · Monjaro · кроссовер",
+      "color": "Не уточнён",
       "mileage_km": 24000,
-      "grade": "Не подтверждена",
-      "image": "/assets/demo/monjaro.svg",
+      "grade": null,
+      "image": "/assets/demo/geely-monjaro-cc0.webp",
       "start_price": 110000,
       "sale_price": 128000,
       "currency": "CNY",
@@ -105,7 +114,10 @@
       "storage_rub": 35000,
       "commission_rub": 50000,
       "truck_rub": 164000,
-      "engine": "2,0 л, турбо"
+      "engine": "2,0 л, турбо",
+      "photo_rights": "CC0 1.0",
+      "photo_context": "Фотография модели, не конкретного продаваемого автомобиля",
+      "grade_status": "Не подтверждена, не показывать"
     }
   ]
 }
