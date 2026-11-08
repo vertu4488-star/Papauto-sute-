@@ -130,7 +130,9 @@
     if(css)e.className=css;
     return e;
   };
-  let limit = 96;
+  // Show all one hundred photo-backed model cards on initial catalog load.
+  const pageSize = 120;
+  let limit = pageSize;
 
   function fillMakes(){
     const selected=make.value;
@@ -184,11 +186,11 @@
     if(empty)empty.style.display=matched.length?"none":"block";
     if(more)more.hidden=matched.length<=limit;
   }
-  country.addEventListener("change",()=>{limit=96;fillMakes();render()});
-  make.addEventListener("change",()=>{limit=96;render()});
-  search.addEventListener("input",()=>{limit=96;render()});
-  power.addEventListener("change",()=>{limit=96;render()});
-  if(more)more.addEventListener("click",()=>{limit+=96;render()});
+  country.addEventListener("change",()=>{limit=pageSize;fillMakes();render()});
+  make.addEventListener("change",()=>{limit=pageSize;render()});
+  search.addEventListener("input",()=>{limit=pageSize;render()});
+  power.addEventListener("change",()=>{limit=pageSize;render()});
+  if(more)more.addEventListener("click",()=>{limit+=pageSize;render()});
   fillMakes();
   render();
 })();
