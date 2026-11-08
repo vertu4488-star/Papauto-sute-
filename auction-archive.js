@@ -9,7 +9,8 @@ let rows=[];
 function render(){
  const q=search.value.trim().toLowerCase(),c=country.value;
  const filtered=rows.filter(r=>(!c||c===r.country)&&(!q||[r.make,r.model,r.year,r.body,r.color,r.lot].join(" ").toLowerCase().includes(q)));
- count.textContent="Проверенных карточек с фотографиями: "+filtered.length;grid.replaceChildren();
+ count.hidden=!filtered.length;status.hidden=!filtered.length;grid.hidden=!filtered.length;
+ count.textContent="Подтверждённых аукционных лотов: "+filtered.length;grid.replaceChildren();
  for(const r of filtered){
  const card=element("article",undefined,"lot"),img=element("img");img.src=r.photos[0];img.alt="Фото аукционного лота: "+r.make+" "+r.model+" "+r.year;img.loading="lazy";img.onerror=()=>{card.remove()};card.append(img);
  const body=element("div",undefined,"lot-body");body.append(element("div",names[r.country]||"Не указано","market"),element("h2",r.make+" "+r.model+" · "+r.year));
