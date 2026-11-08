@@ -37,6 +37,7 @@ RENDER_JS = ROOT / "catalog-open-data.js"
 REPORT = ROOT / "research/cc0-expansion-discovery-report.json"
 OUT = ROOT / "assets/demo"
 CREDITS = ROOT / "photo-credits.html"
+CATALOG_HTML = ROOT / "catalog.html"
 API = "https://commons.wikimedia.org/w/api.php"
 GOAL = 133
 # Remaining unpublished models after the verified 367/518 checkpoint.
@@ -379,7 +380,7 @@ def main():
             iterator = pool.map(search_one, candidates)
             for item, images in iterator:
                 searches += 1
-                if remaining <= 0:
+                if remaining <= 0 or len(selected) >= GOAL:
                     break
                 if not images:
                     continue
@@ -454,6 +455,13 @@ def main():
     manifest["rules"] = "Verified CC0 or commercial-use CC BY / CC BY-SA Wikimedia Commons photographs; credit page published when attribution required; no external seller links in cards."
     SOURCE.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     write_photo_credits(ledger["photos"])
+    # Bust browser asset cache only after verified images are published.
+    html = CATALOG_HTML.read_text(encoding="utf-8")
+    html, n = re.subn(r"catalog-open-data\\.js\\?v=[^\"\']+",
+                      "catalog-open-data.js?v=verified-" + str(old_rows + len(selected)) + "-20261108", html)
+    if n != 1:
+        raise RuntimeError("Cannot update catalog gallery version once and only once")
+    CATALOG_HTML.write_text(html, encoding="utf-8")
     print("DONE:", json.dumps({k: v for k, v in report.items()
                                if k != "verified_source_titles"}, ensure_ascii=False), flush=True)
 
