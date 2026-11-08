@@ -10,9 +10,10 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 
 class PublicAnchors(HTMLParser):
-    def __init__(self):
+    def __init__(self, credits_only=False):
         super().__init__(convert_charrefs=True)
         self.external = []
+        self.credits_only = credits_only
 
     def handle_starttag(self, tag, attrs):
         if tag.lower() != "a":
@@ -26,13 +27,18 @@ class PublicAnchors(HTMLParser):
             return
         u = urlsplit(absolute)
         if u.hostname not in {"papauto.ru", "www.papauto.ru"}:
+            # Mandatory photo credits link only to Commons and CC licences.
+            if self.credits_only and u.scheme == "https" and u.hostname in {
+                "commons.wikimedia.org", "creativecommons.org"
+            }:
+                return
             self.external.append(href)
 
 class NoExternalSellerLinks(unittest.TestCase):
     def test_public_html_keeps_visitors_in_papauto(self):
         failures = []
         for path in sorted(ROOT.glob("*.html")):
-            parser = PublicAnchors()
+            parser = PublicAnchors(credits_only=(path.name == "photo-credits.html"))
             parser.feed(path.read_text(encoding="utf-8"))
             for href in parser.external:
                 failures.append(f"{path.name}: {href}")
