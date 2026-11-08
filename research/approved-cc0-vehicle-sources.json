@@ -1800,6 +1800,408 @@
       "local_name": "japan-mazda-verisa-cc0.webp",
       "commons_filename": "Mazda VERISA C (DC5W) front.JPG",
       "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Mazda Roadster",
+      "local_name": "japan-mazda-roadster-cc0.webp",
+      "commons_filename": "Mazda Roadster RF VS '26 (10).jpg",
+      "author": "Oq10pass"
+    },
+    {
+      "model": "Mazda Axela Sport",
+      "local_name": "japan-mazda-axela-sport-cc0.webp",
+      "commons_filename": "Mazda Axela Sport (BK) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Mazda Flair Wagon",
+      "local_name": "japan-mazda-flair-wagon-cc0.webp",
+      "commons_filename": "2018-2021 Mazda Flair Wagon Tough Style.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Subaru XV",
+      "local_name": "japan-subaru-xv-cc0.webp",
+      "commons_filename": "Subaru XV Advance Style Edition rear.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Subaru BRZ",
+      "local_name": "japan-subaru-brz-cc0.webp",
+      "commons_filename": "Subaru BRZ (48014967593).jpg",
+      "author": "Guillaume Vachey from Chalon sur Saone, France"
+    },
+    {
+      "model": "Subaru WRX",
+      "local_name": "japan-subaru-wrx-cc0.webp",
+      "commons_filename": "Moscow car show 2025-08-03 Subaru WRX 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Subaru Exiga",
+      "local_name": "japan-subaru-exiga-cc0.webp",
+      "commons_filename": "Subaru EXIGA tS (YA5) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Subaru Justy",
+      "local_name": "japan-subaru-justy-cc0.webp",
+      "commons_filename": "Subaru Justy (48024429832).jpg",
+      "author": "Guillaume Vachey from Chalon sur Saone, France"
+    },
+    {
+      "model": "Subaru Legacy",
+      "local_name": "japan-subaru-legacy-cc0.webp",
+      "commons_filename": "19 Subaru Legacy 2.5i Premium.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "Subaru Levorg",
+      "local_name": "japan-subaru-levorg-cc0.webp",
+      "commons_filename": "Subaru Levorg (41253186764).jpg",
+      "author": "Guillaume Vachey from Chalon sur Saone, France"
+    },
+    {
+      "model": "Subaru Sambar",
+      "local_name": "japan-subaru-sambar-cc0.webp",
+      "commons_filename": "Moscow, Subaru Sambar (6th generation) or Dias, May 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Subaru Stella",
+      "local_name": "japan-subaru-stella-cc0.webp",
+      "commons_filename": "Subaru Stella (LA100F) Front.jpg",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Daihatsu Boon",
+      "local_name": "japan-daihatsu-boon-cc0.webp",
+      "commons_filename": "Daihatsu BOON 1.0CL (M600S) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Daihatsu Cast",
+      "local_name": "japan-daihatsu-cast-cc0.webp",
+      "commons_filename": "2015-2017 Daihatsu Cast Style G.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Daihatsu Move",
+      "local_name": "japan-daihatsu-move-cc0.webp",
+      "commons_filename": "Moscow, Daihatsu Move (LA150) Sept 2025 07.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Daihatsu Thor",
+      "local_name": "japan-daihatsu-thor-cc0.webp",
+      "commons_filename": "Moscow, Daihatsu Thor, Aug 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Daihatsu Wake",
+      "local_name": "japan-daihatsu-wake-cc0.webp",
+      "commons_filename": "Moscow, Daihatsu Wake orange, Mar 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Daihatsu Atrai",
+      "local_name": "japan-daihatsu-atrai-cc0.webp",
+      "commons_filename": "Moscow, Daihatsu Atrai military-green, May 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Daihatsu Copen",
+      "local_name": "japan-daihatsu-copen-cc0.webp",
+      "commons_filename": "Moscow, Daihatsu Copen Cero, July 2025 03.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Daihatsu Rocky",
+      "local_name": "japan-daihatsu-rocky-cc0.webp",
+      "commons_filename": "1992 Daihatsu Rocky SX.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Daihatsu Mira e:S",
+      "local_name": "japan-daihatsu-mira-e-s-cc0.webp",
+      "commons_filename": "2nd generation Daihatsu Mira e-S X.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Daihatsu Mira Cocoa",
+      "local_name": "japan-daihatsu-mira-cocoa-cc0.webp",
+      "commons_filename": "Daihatsu Mira Cocoa (L675S) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Daihatsu Hijet Cargo",
+      "local_name": "japan-daihatsu-hijet-cargo-cc0.webp",
+      "commons_filename": "2021 Daihatsu Hijet Cargo Deluxe Color Package.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Daihatsu Hijet Truck",
+      "local_name": "japan-daihatsu-hijet-truck-cc0.webp",
+      "commons_filename": "1974-1979 Daihatsu Hijet Truck S38P.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Daihatsu Move Canbus",
+      "local_name": "japan-daihatsu-move-canbus-cc0.webp",
+      "commons_filename": "Daihatsu Move Canbus Theory G.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Mitsubishi RVR",
+      "local_name": "japan-mitsubishi-rvr-cc0.webp",
+      "commons_filename": "Mitsubishi RVR G (GA4W) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Mitsubishi eK X",
+      "local_name": "japan-mitsubishi-ek-x-cc0.webp",
+      "commons_filename": "Mitsubishi eK X.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Mitsubishi Pajero",
+      "local_name": "japan-mitsubishi-pajero-cc0.webp",
+      "commons_filename": "2007 Mitsubishi Pajero 3.8 SWB silver front.jpg",
+      "author": "Throwawayacc222"
+    },
+    {
+      "model": "Mitsubishi eK X EV",
+      "local_name": "japan-mitsubishi-ek-x-ev-cc0.webp",
+      "commons_filename": "The frontview of Mitsubishi eK X EV G (ZAA-B5AW-LDCB).jpg",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Mitsubishi eK Space",
+      "local_name": "japan-mitsubishi-ek-space-cc0.webp",
+      "commons_filename": "2023 Mitsubishi eK Space G.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Mitsubishi eK Wagon",
+      "local_name": "japan-mitsubishi-ek-wagon-cc0.webp",
+      "commons_filename": "2020 Mitsubishi eK Wagon blue grey front.jpg",
+      "author": "Throwawayacc222"
+    },
+    {
+      "model": "Mitsubishi Delica D:2",
+      "local_name": "japan-mitsubishi-delica-d-2-cc0.webp",
+      "commons_filename": "2018-2020 Mitsubishi Delica D-2 Custom Hybrid SV.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Mitsubishi Delica D:5",
+      "local_name": "japan-mitsubishi-delica-d-5-cc0.webp",
+      "commons_filename": "Mitsubishi DELICA D：5 D-Premium (CV1W) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Mitsubishi Delica Mini",
+      "local_name": "japan-mitsubishi-delica-mini-cc0.webp",
+      "commons_filename": "Mitsubishi Delica Mini Tomica 55th.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Mitsubishi Eclipse Cross",
+      "local_name": "japan-mitsubishi-eclipse-cross-cc0.webp",
+      "commons_filename": "Mitsubishi Eclipse Cross (27627286647).jpg",
+      "author": "Guillaume Vachey from Chalon sur Saone, France"
+    },
+    {
+      "model": "Lexus LBX",
+      "local_name": "japan-lexus-lbx-cc0.webp",
+      "commons_filename": "2026 Lexus LBX Morizo RR.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Lexus GX 550",
+      "local_name": "japan-lexus-gx-550-cc0.webp",
+      "commons_filename": "Lexus GX 550 Luxury+ (2024) (55259657880).jpg",
+      "author": "Charles from Port Chester, New York"
+    },
+    {
+      "model": "Avatr 11",
+      "local_name": "china-avatr-11-cc0.webp",
+      "commons_filename": "Moscow, Avatr 11 white, June 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Avatr 12",
+      "local_name": "china-avatr-12-cc0.webp",
+      "commons_filename": "Avatr 12 image01.jpg",
+      "author": "H4 boxer"
+    },
+    {
+      "model": "Deepal S05",
+      "local_name": "china-deepal-s05-cc0.webp",
+      "commons_filename": "Deepal S05 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Deepal G318",
+      "local_name": "china-deepal-g318-cc0.webp",
+      "commons_filename": "Deepal G318 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Leapmotor C10",
+      "local_name": "china-leapmotor-c10-cc0.webp",
+      "commons_filename": "Leapmotor C10 facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Wuling Bingo",
+      "local_name": "china-wuling-bingo-cc0.webp",
+      "commons_filename": "Wuling Bingo SUV 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Wuling Starlight",
+      "local_name": "china-wuling-starlight-cc0.webp",
+      "commons_filename": "Wuling Starlight 001.jpg",
+      "author": "Quzhouliulian"
+    },
+    {
+      "model": "Wuling Hongguang Mini EV",
+      "local_name": "china-wuling-hongguang-mini-ev-cc0.webp",
+      "commons_filename": "Wuling Hongguang Mini EV II facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Lynk & Co 01",
+      "local_name": "china-lynk-co-01-cc0.webp",
+      "commons_filename": "Lynk & Co 01 154924.jpg",
+      "author": "Trop86"
+    },
+    {
+      "model": "Lynk & Co 03",
+      "local_name": "china-lynk-co-03-cc0.webp",
+      "commons_filename": "Lynk & Co 03 facelift 007.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Lynk & Co 09",
+      "local_name": "china-lynk-co-09-cc0.webp",
+      "commons_filename": "Lynk & Co 09 EM-P 001.jpg",
+      "author": "Quzhouliulian"
+    },
+    {
+      "model": "Lynk & Co 900",
+      "local_name": "china-lynk-co-900-cc0.webp",
+      "commons_filename": "Moscow, Lynk&Co 900, Apr 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Lynk & Co 08 EM-P",
+      "local_name": "china-lynk-co-08-em-p-cc0.webp",
+      "commons_filename": "Lynk & Co 08 EM-P 2024040401.jpg",
+      "author": "Evnerd"
+    },
+    {
+      "model": "BMW X2",
+      "local_name": "china-bmw-x2-cc0.webp",
+      "commons_filename": "25 BMW X2 M35i.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "Mazda CX-30",
+      "local_name": "china-mazda-cx-30-cc0.webp",
+      "commons_filename": "Mazda CX-30 XD AWD rear.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Toyota Camry",
+      "local_name": "china-toyota-camry-cc0.webp",
+      "commons_filename": "2016 Toyota Camry Exclusive white front.jpg",
+      "author": "Throwawayacc222"
+    },
+    {
+      "model": "Honda Civic",
+      "local_name": "china-honda-civic-cc0.webp",
+      "commons_filename": "Honda civic 001.jpg",
+      "author": "Iorisrandombses5001"
+    },
+    {
+      "model": "Volkswagen Tharu",
+      "local_name": "china-volkswagen-tharu-cc0.webp",
+      "commons_filename": "Volkswagen Tharu facelift 006.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Toyota Venza",
+      "local_name": "china-toyota-venza-cc0.webp",
+      "commons_filename": "Toyota Venza UZ-spec spotted in Greater Manchester, UK 01.jpg",
+      "author": "MoCars"
+    },
+    {
+      "model": "Honda Breeze",
+      "local_name": "china-honda-breeze-cc0.webp",
+      "commons_filename": "Honda Breeze II 003.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Volkswagen Lavida",
+      "local_name": "china-volkswagen-lavida-cc0.webp",
+      "commons_filename": "Volkswagen Lavida III facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Nissan Sylphy",
+      "local_name": "china-nissan-sylphy-cc0.webp",
+      "commons_filename": "Nissan Sylphy e-POWER in Nissan Global HQ Gallery, 2021, front.jpg",
+      "author": "Kazyakuruma"
+    },
+    {
+      "model": "Volkswagen Tayron",
+      "local_name": "china-volkswagen-tayron-cc0.webp",
+      "commons_filename": "Volkswagen Tayron facelift 008.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Toyota Corolla",
+      "local_name": "china-toyota-corolla-cc0.webp",
+      "commons_filename": "2022 Toyota Corolla Touring G.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Volkswagen Magotan",
+      "local_name": "china-volkswagen-magotan-cc0.webp",
+      "commons_filename": "Volkswagen Magotan III 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Honda Odyssey",
+      "local_name": "china-honda-odyssey-cc0.webp",
+      "commons_filename": "19 Honda Odyssey EX-L.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "Nissan Qashqai",
+      "local_name": "china-nissan-qashqai-cc0.webp",
+      "commons_filename": "Nissan Qashqai Glory 003.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Volkswagen Sagitar",
+      "local_name": "china-volkswagen-sagitar-cc0.webp",
+      "commons_filename": "Volkswagen Sagitar IV 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Buick Envision",
+      "local_name": "china-buick-envision-cc0.webp",
+      "commons_filename": "Buick Envision Plus facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Toyota Highlander",
+      "local_name": "china-toyota-highlander-cc0.webp",
+      "commons_filename": "2025 Toyota Highlander Limited white rear.jpg",
+      "author": "Throwawayacc222"
     }
   ]
 }
