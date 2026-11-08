@@ -437,7 +437,7 @@
         img.width=900; img.height=600; img.loading="lazy";img.decoding="async";
         img.addEventListener("load",()=>img.classList.add("loaded"),{once:true});
         img.addEventListener("error",()=>{frame.remove();},{once:true});
-        frame.append(img,label("span","ФОТО МОДЕЛИ · CC0"));card.append(frame);
+        frame.append(img,label("span","ФОТО МОДЕЛИ"));card.append(frame);
       }
       card.append(label("small",markets[r.market]||r.market,"country"),
         label("h2",r.brand+" "+r.model),
@@ -449,7 +449,7 @@
     }
     count.textContent="Моделей в справочнике: "+matched.length+
       " · настоящих фотографий моделей: "+photoByModel.size+
-      " · снимки с подтверждённой лицензией CC0";
+      " · фотографии с проверенными правами на коммерческое использование";
     if(empty)empty.style.display=matched.length?"none":"block";
     if(more)more.hidden=matched.length<=limit;
   }
