@@ -14,7 +14,11 @@
 .cost-table td{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 .cost-table .cost-rubles{font-weight:680}
 .cost-table .cost-cf td.cost-rubles{color:#125fab;font-weight:780}
-.cost-table .cost-duty td.cost-rubles{color:#1a2940;font-weight:780}
+.cost-table .cost-duty td{padding:14px 9px;background:#f7faff}
+.cost-duty-line{display:flex;align-items:center;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cost-duty-line strong{font-size:13px;color:#1a2940;font-weight:730}
+.cost-duty-values{font-size:13px;color:#1a2940;font-weight:730;text-align:right}
+@media(max-width:560px){.cost-duty-line strong,.cost-duty-values{font-size:11px}.cost-duty-line{gap:6px}.cost-table .cost-duty td{padding:11px 5px}}
 .cost-mobile-currencies{display:none;color:#60758a;font-weight:500;font-size:10px;line-height:1.5;margin-top:3px}
 .cost-table .cost-duty .cost-source{color:#47627e;font-size:12px;font-weight:650}
 .cost-table .cost-reference{color:#7c8996;background:#f9fafb}
@@ -46,10 +50,10 @@
 </style></head><body><header><a class="brand" href="/">PAPAUTO</a><nav><a href="/catalog.html">Модели</a><a href="/?view=select#assistant">Подбор</a><a href="/">Главная</a></nav></header><main><section class="intro"><span class="eyebrow">PAPAUTO · АУКЦИОННЫЙ КАТАЛОГ</span><h1>Конкретные автомобили.<br>Проверенные фотографии лотов.</h1><p>Япония, Южная Корея и Китай. Для каждой опубликованной машины используются фотографии именно её аукционной карточки, подтверждённые характеристики и данные торгов. Никаких ссылок на конкурентов или случайных фотографий других автомобилей.</p></section><div class="filters"><input id="auctionSearch" aria-label="Поиск по модели и лоту" placeholder="Марка, модель, кузов, год, номер лота"><select id="auctionCountry" aria-label="Страна"><option value="">Все страны</option><option value="japan">Япония</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select></div><p id="auctionCount" class="n">Проверяем каталог…</p><div id="auctionGrid" class="grid"></div><div id="auctionStatus" class="notice" role="status">Размещаем только фотографии с подтвержденными правами на коммерческое использование.</div><section class="demo-cost" id="importDemoCost" aria-label="Демонстрационный расчёт стоимости до Новосибирска">
 <div class="cost-head"><div class="cost-intro"><span class="cost-tag">ДЕМОНСТРАЦИОННЫЙ ПРИМЕР · НЕ РЕАЛЬНЫЙ ЛОТ</span>
 <h2>Автомобиль 1 496 см³ · пример сметы<br>От покупки до Новосибирска</h2>
-<p>Пример построен на присланном расчётном экране: цена автомобиля без пошлин и доставки — 187 710 ₽, тариф C&amp;F — 90 000 ¥ <strong>(отображается именно в иенах)</strong>, пошлина — 4 787 EUR / 5 394 USD / 441 140 ₽, а также утильсбор, СВХ и другие расходы. <strong>Шесть услуг объединены в одну строку «СБКТС и оформление — единый пакет».</strong> Стартовая ставка и фактическая цена продажи на скриншоте не указаны. Это образец структуры, не публичная оферта PapAuto.</p>
+<p>Пример построен на присланном расчётном экране: цена автомобиля без пошлин и доставки — 187 710 ₽, тариф C&amp;F — 90 000 ¥ <strong>(отображается именно в иенах)</strong>, пошлина в трёх валютах одной строкой, а также утильсбор, СВХ и другие расходы. <strong>Шесть услуг объединены в одну строку «СБКТС и оформление — единый пакет».</strong> Стартовая ставка и фактическая цена продажи на скриншоте не указаны. Это образец структуры, не публичная оферта PapAuto.</p>
 </div></div>
 <div class="cost-split">
-<div style="min-width:0;overflow-x:auto"><table class="cost-table"><thead><tr><th scope="col">Статья расходов</th><th scope="col" class="cost-source">В EUR / USD</th><th scope="col" style="text-align:right">Стоимость</th></tr></thead><tbody id="importDemoRows"></tbody></table></div>
+<div style="min-width:0;overflow-x:auto"><table class="cost-table"><thead><tr><th scope="col">Статья расходов</th><th scope="col" class="cost-source">В валюте</th><th scope="col" style="text-align:right">Стоимость</th></tr></thead><tbody id="importDemoRows"></tbody></table></div>
 <aside class="cost-final"><span class="kicker">Примерная стоимость во Владивостоке</span><strong id="demoVladivostokTotal">—</strong>
 <div class="city-total"><span class="kicker">Примерная стоимость в Новосибирске</span><strong id="demoNovosibirskTotal">—</strong></div>
 <small id="demoRate">Курс условный</small>
