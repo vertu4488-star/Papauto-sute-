@@ -8,6 +8,8 @@ on:
       - "**/*.html"
       - "sitemap.xml"
       - "robots.txt"
+      - "data/**"
+      - "assets/auction/**"
       - ".github/workflows/indexnow.yml"
   workflow_dispatch:
 
@@ -91,6 +93,8 @@ jobs:
                       urls.append(base + "/" + name)
               if "robots.txt" in changes:
                   urls.append(base + "/")
+              if any(name.startswith("data/") or name.startswith("assets/auction/") for name in changes):
+                  urls.extend([base + "/", base + "/auction-archive.html"])
 
           urls = list(dict.fromkeys(urls))
           if not urls:
