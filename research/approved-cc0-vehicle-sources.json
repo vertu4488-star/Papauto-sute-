@@ -1,0 +1,29 @@
+{
+  "rules": "Public site uses model reference photography, not verified auction records. Only specified Wikimedia Commons CC0 files may be fetched. Internal provenance is kept under research/. No attribution or external user links required by CC0.",
+  "photos": [
+    {
+      "model": "Honda Freed Hybrid",
+      "local_name": "honda-freed-hybrid-cc0.webp",
+      "commons_filename": "Moscow, Honda Freed Hybrid (2nd generation) silver, Sept 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Toyota Prius",
+      "local_name": "toyota-prius-cc0.webp",
+      "commons_filename": "Toyota DAA-ZVW51 Prius A Premium“Touring Selection” (23032914482).jpg",
+      "author": "先従隗始"
+    },
+    {
+      "model": "Hyundai Staria",
+      "local_name": "hyundai-staria-cc0.webp",
+      "commons_filename": "Hyundai Staria in Basel.jpg",
+      "author": "Calreyn88"
+    },
+    {
+      "model": "Geely Xingyue L / Monjaro",
+      "local_name": "geely-monjaro-cc0.webp",
+      "commons_filename": "Geely Xingyue L 2025 facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    }
+  ]
+}
