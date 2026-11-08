@@ -99,7 +99,8 @@
       card.append(a);grid.append(card);
     }
     count.textContent="Моделей в справочнике: "+matched.length+
-      " · фотографии добавляем только с разрешённым использованием";
+      " · настоящих фотографий моделей: "+photoByModel.size+
+      " · снимки с подтверждённой лицензией CC0";
     if(empty)empty.style.display=matched.length?"none":"block";
     if(more)more.hidden=matched.length<=limit;
   }
