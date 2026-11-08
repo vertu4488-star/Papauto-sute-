@@ -17,9 +17,12 @@ function render(){
   if(!srcOK(v.image))continue;
   const card=one("article",undefined,"demo-lot");
   const picture=one("div",undefined,"demo-lot-image");
-  const img=one("img");img.loading="lazy";img.src=v.image;img.alt="Иллюстрация: "+v.make+" "+v.model;
+  const photo=one("div",undefined,"demo-photo-sprite");
+  photo.classList.add("demo-photo-"+v.id.replace(/[^a-z0-9-]/g,""));
+  photo.setAttribute("role","img");
+  photo.setAttribute("aria-label","Сгенерированное иллюстративное изображение модели "+v.make+" "+v.model);
   const badge=one("span","ДЕМО · НЕ РЕАЛЬНЫЙ ЛОТ","demo-lot-badge");
-  picture.append(img,badge);card.append(picture);
+  picture.append(photo,badge);card.append(picture);
   const body=one("div",undefined,"demo-lot-body");
   body.append(one("div",countries[v.country]+" · "+v.year,"demo-lot-country"),one("h3",v.make+" "+v.model));
   body.append(one("p",v.engine+" · "+v.body+" · "+v.color+" · "+number(v.mileage_km)+" км · оценка: "+v.grade,"demo-lot-specs"));

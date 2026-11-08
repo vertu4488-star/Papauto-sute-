@@ -21,7 +21,7 @@ function render(){
  body.append(element("p",money,"price"),element("p","Архивный автомобиль. Не объявление о наличии.","note"));
  const a=element("a","Подобрать похожий автомобиль","cta");a.href="/?view=select&similar="+encodeURIComponent(r.make+" "+r.model+" "+r.year)+"#assistant";body.append(a);card.append(body);grid.append(card);
  }
- status.textContent=filtered.length?"Указаны архивные экземпляры, не машины в наличии.":"Архив временно пуст: неподтверждённые фотографии сняты с публикации. Проверяем права на снимки конкретных аукционных автомобилей. Заявку на подбор можно оставить сейчас.";
+ status.textContent=filtered.length?"Указаны архивные экземпляры, не машины в наличии.":"Подтверждённых реальных лотов пока нет; ниже уже доступны четыре демонстрационные карточки с изображениями и полным условным расчётом. Это не реальные результаты аукционов.";
 }
 country.addEventListener("change",render);search.addEventListener("input",render);
 fetch("/data/approved-auction-lots.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP");return r.json()}).then(j=>{rows=(Array.isArray(j.lots)?j.lots:[]).filter(valid);render()}).catch(()=>{rows=[];render()});
