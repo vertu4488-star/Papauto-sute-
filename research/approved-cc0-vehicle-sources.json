@@ -1,5 +1,5 @@
 {
-  "rules": "Public site uses model reference photography, not verified auction records. Only specified Wikimedia Commons CC0 files may be fetched. Internal provenance is kept under research/. No attribution or external user links required by CC0.",
+  "rules": "Public model reference photos only, not individual auction vehicles. Fetch only these precisely named Commons source files after checking live CC0 licensing; retain internal provenance, self-host optimized WebP; no third-party links in customer-facing cards.",
   "photos": [
     {
       "model": "Honda Freed Hybrid",
@@ -23,6 +23,102 @@
       "model": "Geely Xingyue L / Monjaro",
       "local_name": "geely-monjaro-cc0.webp",
       "commons_filename": "Geely Xingyue L 2025 facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Toyota Aqua",
+      "local_name": "toyota-aqua-cc0.webp",
+      "commons_filename": "2017-2021 Toyota Aqua.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Toyota Vitz",
+      "local_name": "toyota-vitz-cc0.webp",
+      "commons_filename": "Toyota Vitz.jpg",
+      "author": "Сергей Михель"
+    },
+    {
+      "model": "Toyota Yaris",
+      "local_name": "toyota-yaris-cc0.webp",
+      "commons_filename": "2020-2024 Toyota Yaris.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Toyota Corolla",
+      "local_name": "toyota-corolla-cc0.webp",
+      "commons_filename": "2019-2022 Toyota Corolla.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Honda Vezel",
+      "local_name": "honda-vezel-cc0.webp",
+      "commons_filename": "Moscow, Honda Vezel silver, Aug 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Nissan March",
+      "local_name": "nissan-march-cc0.webp",
+      "commons_filename": "Nissan MARCH 12S (K13) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Hyundai Avante / Elantra",
+      "local_name": "hyundai-avante-cc0.webp",
+      "commons_filename": "2023 Hyundai Elantra Limited in Silver, front left, 04-04-2026.jpg",
+      "author": "Cutlass"
+    },
+    {
+      "model": "Kia K5",
+      "local_name": "kia-k5-cc0.webp",
+      "commons_filename": "Moscow, Kia K5 white, Aug 2025 03.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Kia Sportage",
+      "local_name": "kia-sportage-cc0.webp",
+      "commons_filename": "Kia Sportage (NQ5) 1758033820001.jpg",
+      "author": "Trop86"
+    },
+    {
+      "model": "BYD Dolphin",
+      "local_name": "byd-dolphin-cc0.webp",
+      "commons_filename": "2024-08 BYD Dolphin.jpg",
+      "author": "Wikisympathisant"
+    },
+    {
+      "model": "BYD Qin L DM-i",
+      "local_name": "byd-qin-l-cc0.webp",
+      "commons_filename": "BYD Qin L DM-i 008.jpg",
+      "author": "KitsuneDP"
+    },
+    {
+      "model": "Geely Coolray / Binyue",
+      "local_name": "geely-coolray-cc0.webp",
+      "commons_filename": "Geely Coolray 1.5 Premium 2024 (1).jpg",
+      "author": "Captainmorlypogi1959"
+    },
+    {
+      "model": "Changan UNI-V",
+      "local_name": "changan-uni-v-cc0.webp",
+      "commons_filename": "Moscow, Changan Uni-V, Aug 2025 02.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Changan UNI-T",
+      "local_name": "changan-uni-t-cc0.webp",
+      "commons_filename": "Moscow, Changan Uni-T Citydrive, Aug 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Changan UNI-Z",
+      "local_name": "changan-uni-z-cc0.webp",
+      "commons_filename": "Changan UNI-Z 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Zeekr 007",
+      "local_name": "zeekr-007-cc0.webp",
+      "commons_filename": "Zeekr 007 007.jpg",
       "author": "JustAnotherCarDesigner"
     }
   ]
