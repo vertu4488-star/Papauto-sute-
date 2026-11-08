@@ -44,12 +44,22 @@ class MarketModelDirectory(unittest.TestCase):
         self.assertLess(page.index('id="modelQuery"'), page.index('aria-label="Популярные модели"'))
         self.assertNotIn("Карточки реальных аукционных лотов с фотографиями", page)
 
-    def test_all_photo_previews_are_self_hosted_cc0_with_evidence(self):
+    def test_all_photo_previews_are_self_hosted_with_commercial_rights_and_attribution(self):
         js = (ROOT / "catalog-open-data.js").read_text(encoding="utf-8")
         manifest = json.loads((ROOT / "research" / "cc0-photo-provenance.json").read_text(encoding="utf-8"))
         for row in manifest["photos"]:
             with self.subTest(photo=row["file"]):
-                self.assertEqual(row["rights"], "Creative Commons Zero 1.0 Universal (CC0)")
+                self.assertTrue(
+                    row["rights"] == "Creative Commons Zero 1.0 Universal (CC0)"
+                    or re.fullmatch(r"CC BY(?:-SA)? (?:2\\.0|2\\.5|3\\.0|4\\.0)", row["rights"]),
+                    row["rights"])
+                if "CC0" not in row["rights"]:
+                    self.assertIn("creativecommons.org/licenses/", row["license_evidence"])
+                    self.assertTrue(row["author"].strip())
+                    self.assertTrue(row["source_page"].startswith("https://commons.wikimedia.org/wiki/File:"))
+                    credits = (ROOT / "photo-credits.html").read_text(encoding="utf-8")
+                    self.assertIn(row["file"], credits)
+                    self.assertIn(row["license_evidence"], credits)
                 self.assertIn(row["file"], js)
                 self.assertTrue(row["file"].startswith("/assets/demo/"))
                 f = ROOT / row["file"].lstrip("/")
