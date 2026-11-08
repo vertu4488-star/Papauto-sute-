@@ -1598,17 +1598,16 @@
     {
       "model": "Toyota GR Yaris",
       "file": "/assets/demo/japan-toyota-gr-yaris-cc0.webp",
-      "source_title": "File:Toyota GR Yaris GR-DAT prototype.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Toyota_GR_Yaris_GR-DAT_prototype.jpg",
+      "source_title": "File:2024 Toyota GR Yaris RZ GR-DAT.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:2024_Toyota_GR_Yaris_RZ_GR-DAT.jpg",
       "rights": "Creative Commons Zero 1.0 Universal (CC0)",
       "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "author": "TTTNIS",
-      "image_sha256": "5a1fdbba4abdaa7de83b4c1e12eb2a502c557f13b12d6affa21a37db2007c858",
+      "image_sha256": "c3ee4ce5ac0c7e20910d8fd8613ecd0a55a9065aa453b86d41a69e09211d1533",
       "width": 1440,
-      "height": 896,
-      "size_bytes": 231838,
-      "verified_at_utc": "2026-11-08T09:45:35.633441+00:00",
-      "discovery_method": "Strict normalized manufacturer/model title match and live CC0 API"
+      "height": 729,
+      "size_bytes": 214008,
+      "verified_at_utc": "2026-11-08T09:50:33.461984+00:00"
     },
     {
       "model": "Toyota GR Corolla",
@@ -1748,17 +1747,16 @@
     {
       "model": "Toyota Crown Crossover",
       "file": "/assets/demo/japan-toyota-crown-crossover-cc0.webp",
-      "source_title": "File:Toyota Crown Crossover RS hybrid transmission.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Toyota_Crown_Crossover_RS_hybrid_transmission.jpg",
+      "source_title": "File:Toyota CROWN CROSSOVER Z (6AA-AZSH35-AEXGB) front.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Toyota_CROWN_CROSSOVER_Z_%286AA-AZSH35-AEXGB%29_front.jpg",
       "rights": "Creative Commons Zero 1.0 Universal (CC0)",
       "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "author": "TTTNIS",
-      "image_sha256": "e1d6a5218ce9268b2b29988c7e50165dbebf52d265a5a5c10758b4d1386b6e02",
-      "width": 866,
+      "author": "Tokumeigakarinoaoshima",
+      "image_sha256": "46d30fac719e2ac4b8cea87b81c313f1b9a5576b5332b9ef8a516d5594f0ba06",
+      "width": 1333,
       "height": 1000,
-      "size_bytes": 144430,
-      "verified_at_utc": "2026-11-08T09:45:40.196790+00:00",
-      "discovery_method": "Strict normalized manufacturer/model title match and live CC0 API"
+      "size_bytes": 432992,
+      "verified_at_utc": "2026-11-08T09:50:34.320734+00:00"
     },
     {
       "model": "Honda Jade",
@@ -2258,17 +2256,16 @@
     {
       "model": "Nissan Note e-POWER",
       "file": "/assets/demo/japan-nissan-note-e-power-cc0.webp",
-      "source_title": "File:Nissan Note e-Power Boot.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Nissan_Note_e-Power_Boot.jpg",
+      "source_title": "File:Nissan Note e-POWER X.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Nissan_Note_e-POWER_X.jpg",
       "rights": "Creative Commons Zero 1.0 Universal (CC0)",
       "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "author": "TTTNIS",
-      "image_sha256": "c011d4e3dc30365bd84f2dbc5c3c483de7b3b49d2ebc4eb4c1001524a55c833d",
+      "image_sha256": "b8115b2188748a6625c14b7bed0660f15fd4fa9a92677d549ea9893502b1c9fb",
       "width": 1440,
-      "height": 979,
-      "size_bytes": 372314,
-      "verified_at_utc": "2026-11-08T09:45:57.947051+00:00",
-      "discovery_method": "Strict normalized manufacturer/model title match and live CC0 API"
+      "height": 832,
+      "size_bytes": 170006,
+      "verified_at_utc": "2026-11-08T09:50:34.964848+00:00"
     },
     {
       "model": "Nissan NV100 Clipper",
@@ -2303,17 +2300,16 @@
     {
       "model": "Suzuki Xbee",
       "file": "/assets/demo/japan-suzuki-xbee-cc0.webp",
-      "source_title": "File:Moscow, Suzuki Xbee, Pajero Sport, Aug 2025 01.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Moscow%2C_Suzuki_Xbee%2C_Pajero_Sport%2C_Aug_2025_01.jpg",
+      "source_title": "File:Moscow, Suzuki Xbee, Aug 2025 01.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Moscow%2C_Suzuki_Xbee%2C_Aug_2025_01.jpg",
       "rights": "Creative Commons Zero 1.0 Universal (CC0)",
       "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "author": "Retired electrician",
-      "image_sha256": "cd36e4c00be1200b231378b9795dd562270d858e67d090a19dccb387a92a4a7d",
-      "width": 1440,
-      "height": 901,
-      "size_bytes": 229040,
-      "verified_at_utc": "2026-11-08T09:45:58.981733+00:00",
-      "discovery_method": "Strict normalized manufacturer/model title match and live CC0 API"
+      "image_sha256": "e73964ece7836e48dcf04d48d4d9a4d7422f24c14fc2b882f2dd4dbe667da896",
+      "width": 1333,
+      "height": 1000,
+      "size_bytes": 204012,
+      "verified_at_utc": "2026-11-08T09:50:35.738049+00:00"
     },
     {
       "model": "Suzuki Every",
@@ -2453,17 +2449,16 @@
     {
       "model": "Suzuki Spacia Custom",
       "file": "/assets/demo/japan-suzuki-spacia-custom-cc0.webp",
-      "source_title": "File:2023 Suzuki Spacia Custom Concept.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:2023_Suzuki_Spacia_Custom_Concept.jpg",
+      "source_title": "File:2017-2021 Suzuki Spacia Custom Hybrid XS.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:2017-2021_Suzuki_Spacia_Custom_Hybrid_XS.jpg",
       "rights": "Creative Commons Zero 1.0 Universal (CC0)",
       "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "author": "TTTNIS",
-      "image_sha256": "476884a8711c143c0f974f0781333b13785936359a5754b1e37097354341141e",
+      "image_sha256": "6ae22f57c01a357106e06b48182624588bedbadb666d97109e9a91a60217c8e5",
       "width": 1440,
-      "height": 949,
-      "size_bytes": 290126,
-      "verified_at_utc": "2026-11-08T09:46:05.114232+00:00",
-      "discovery_method": "Strict normalized manufacturer/model title match and live CC0 API"
+      "height": 788,
+      "size_bytes": 209628,
+      "verified_at_utc": "2026-11-08T09:50:36.427890+00:00"
     },
     {
       "model": "Suzuki Wagon R Smile",
@@ -2813,17 +2808,16 @@
     {
       "model": "Genesis GV60",
       "file": "/assets/demo/south-korea-genesis-gv60-cc0.webp",
-      "source_title": "File:Genesis GV60 Magma Concept 001.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Genesis_GV60_Magma_Concept_001.jpg",
+      "source_title": "File:24 Genesis GV60 Standard.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:24_Genesis_GV60_Standard.jpg",
       "rights": "Creative Commons Zero 1.0 Universal (CC0)",
       "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "author": "JustAnotherCarDesigner",
-      "image_sha256": "1668761711cbaaab7d4f75a97a178c94547ea81343f34094956abbf776422f03",
+      "author": "HJUdall",
+      "image_sha256": "480d075ac5cc0b6b4292e845cfaf3748c9031fe362541eadde59656aad28dd88",
       "width": 1333,
       "height": 1000,
-      "size_bytes": 288696,
-      "verified_at_utc": "2026-11-08T09:46:17.559771+00:00",
-      "discovery_method": "Strict normalized manufacturer/model title match and live CC0 API"
+      "size_bytes": 379314,
+      "verified_at_utc": "2026-11-08T09:50:37.432703+00:00"
     },
     {
       "model": "SsangYong Musso",
@@ -2858,17 +2852,16 @@
     {
       "model": "SsangYong Rexton",
       "file": "/assets/demo/south-korea-ssangyong-rexton-cc0.webp",
-      "source_title": "File:Ssangyong rexton police vehicle Trinidad St Joseph police station.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Ssangyong_rexton_police_vehicle_Trinidad_St_Joseph_police_station.jpg",
+      "source_title": "File:Ssangyong Rexton (48551201211).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ssangyong_Rexton_%2848551201211%29.jpg",
       "rights": "Creative Commons Zero 1.0 Universal (CC0)",
       "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "author": "999real",
-      "image_sha256": "1d85875ef953aa6c225524ff251ad2b62fc6f02de69ef2b11ed212bc7431c9c4",
-      "width": 1094,
-      "height": 1000,
-      "size_bytes": 107996,
-      "verified_at_utc": "2026-11-08T09:46:18.663384+00:00",
-      "discovery_method": "Strict normalized manufacturer/model title match and live CC0 API"
+      "author": "crash71100",
+      "image_sha256": "c7fd9f29c89bc29ae3ccc13a4fbf93c1c720e0c9b1fe552fb1143bf3be1064a0",
+      "width": 1440,
+      "height": 938,
+      "size_bytes": 336178,
+      "verified_at_utc": "2026-11-08T09:50:39.918573+00:00"
     },
     {
       "model": "SsangYong Tivoli",
@@ -3008,17 +3001,16 @@
     {
       "model": "Mercedes-Benz G-Class",
       "file": "/assets/demo/south-korea-mercedes-benz-g-class-cc0.webp",
-      "source_title": "File:Mercedes-Benz G-Class G300CDI W461 Swiss Army with Hess Shelter - command and communications vehicle.png",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_G-Class_G300CDI_W461_Swiss_Army_with_Hess_Shelter_-_command_and_communications_vehicle.png",
+      "source_title": "File:Mercedes Benz G-Class Timboektoe-1.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Mercedes_Benz_G-Class_Timboektoe-1.jpg",
       "rights": "Creative Commons Zero 1.0 Universal (CC0)",
       "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "author": "Fabien Tremoulinas",
-      "image_sha256": "ffac5af28670a08097be0687011810997a6ae1b09528120978279324fdcd71e2",
-      "width": 1405,
-      "height": 1000,
-      "size_bytes": 568620,
-      "verified_at_utc": "2026-11-08T09:46:22.558636+00:00",
-      "discovery_method": "Strict normalized manufacturer/model title match and live CC0 API"
+      "author": "Defensie",
+      "image_sha256": "51b24a2de414f8d53178df8aa54968741680dd5f0308280505a2a128c52259bb",
+      "width": 1250,
+      "height": 834,
+      "size_bytes": 152710,
+      "verified_at_utc": "2026-11-08T09:50:40.587579+00:00"
     },
     {
       "model": "Mercedes-Benz V-Class",
