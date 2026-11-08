@@ -11,7 +11,7 @@ body{background:#fff;-webkit-font-smoothing:antialiased}
 .catalog-page>nav[aria-label="Популярные модели"]{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:27px 0 12px;font-size:0}
 .catalog-page>nav[aria-label="Популярные модели"] a{font-size:12px;display:inline-flex;align-items:center;min-height:36px;padding:8px 12px;border:1px solid #e5e8ed;border-radius:999px;color:#485868;text-decoration:none;background:#f7f8fa}
 .catalog-page>nav[aria-label="Популярные модели"] a:hover{background:#eaf0f6;border-color:#cbd6df}
-.catalog-filters{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:12px;padding:14px;border:1px solid #e5e8ed;border-radius:20px;background:#fbfcfd;margin:28px 0 16px}
+.catalog-filters{display:grid;grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr));gap:12px;padding:14px;border:1px solid #e5e8ed;border-radius:20px;background:#fbfcfd;margin:28px 0 16px}
 .catalog-filters input,.catalog-filters select{background:#fff;border:1px solid #d8dee6;border-radius:13px;min-height:51px;color:#1e2934;font-size:14px}
 .catalog-filters input:focus,.catalog-filters select:focus{outline:3px solid #c4d9eb;outline-offset:2px}
 .catalog-count{color:#566674;font-size:13px;font-weight:600;margin:22px 0}
@@ -30,3 +30,10 @@ a:focus-visible,button:focus-visible{outline:3px solid #a8c8e4;outline-offset:3p
 @media(max-width:760px){.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.catalog-page{padding:24px 16px 90px}.catalog-intro h1{font-size:clamp(30px,8vw,42px)}.catalog-intro p{font-size:13px}.catalog-filters{grid-template-columns:1fr 1fr;padding:12px;gap:9px}.catalog-filters input{grid-column:1/-1}.catalog-filters input,.catalog-filters select{font-size:16px}.model-card{border-radius:16px;padding:13px}.model-photo{height:150px;margin:-13px -13px 14px;width:calc(100% + 26px)}.model-card h2{font-size:17px}}
 @media(max-width:430px){.catalog-grid{grid-template-columns:1fr}.model-photo{height:205px}.model-card{padding:16px}.model-photo{margin:-16px -16px 15px;width:calc(100% + 32px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* Vehicle photography: locally hosted CC0 originals only. */
+.model-photo img{background:#edf1f5}
+.model-card:has(.model-photo){border-color:#dbe5ee}
+.model-card .model-request{display:inline-block;color:#1265b5;font-size:13px;font-weight:670;text-decoration:none;margin-top:15px}
+.model-card .model-request:focus-visible{outline:3px solid #aac9e8;outline-offset:3px}
+@media(max-width:760px){.catalog-filters select#powerFilter{grid-column:1/-1}}
