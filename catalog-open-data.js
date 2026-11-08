@@ -33,7 +33,16 @@
     ["china|changan|uni-v","/assets/demo/changan-uni-v-cc0.webp"],
     ["china|changan|uni-t","/assets/demo/changan-uni-t-cc0.webp"],
     ["china|changan|uni-z","/assets/demo/changan-uni-z-cc0.webp"],
-    ["china|zeekr|007","/assets/demo/zeekr-007-cc0.webp"]
+    ["china|zeekr|007","/assets/demo/zeekr-007-cc0.webp"],
+    ["japan|toyota|sienta","/assets/demo/toyota-sienta-cc0.webp"],
+    ["japan|honda|fit","/assets/demo/honda-fit-cc0.webp"],
+    ["japan|nissan|note","/assets/demo/nissan-note-cc0.webp"],
+    ["japan|nissan|serena","/assets/demo/nissan-serena-cc0.webp"],
+    ["japan|mazda|cx-5","/assets/demo/mazda-cx5-cc0.webp"],
+    ["south-korea|kia|seltos","/assets/demo/kia-seltos-cc0.webp"],
+    ["south-korea|kia|sorento","/assets/demo/kia-sorento-cc0.webp"],
+    ["china|byd|song plus","/assets/demo/byd-song-plus-cc0.webp"],
+    ["china|haval|jolion","/assets/demo/haval-jolion-cc0.webp"]
   ]);
   const photoDetail = {
     "japan|honda|freed":"demo-freed-jp",
