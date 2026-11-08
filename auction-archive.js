@@ -1,69 +1,28 @@
-(()=>{'use strict';
-const $=id=>document.getElementById(id),C=window.ArchiveCore,F=$('filters'),names={japan:'Япония','south-korea':'Южная Корея',china:'Китай'},keys={local:'papauto.archive.import.v1',favorites:'papauto.archive.favorites.v1',compare:'papauto.archive.compare.v1'};
-const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}};
-const list=key=>{const a=read(key,[]);return Array.isArray(a)?a.filter(x=>typeof x==='string'):[]};
-let local=[];try{local=C.normalize(read(keys.local,[]))}catch{}let published=[],favorites=new Set(list(keys.favorites)),compare=new Set(list(keys.compare).slice(0,3)),shown=24,filtered=[];
-const save=(key,v)=>{try{localStorage.setItem(key,JSON.stringify(v));return true}catch{$('importStatus').textContent='Браузер не сохранил изменения: хранилище недоступно или заполнено.';return false}};
-const node=(tag,value,cls)=>{const e=document.createElement(tag);if(value!=null)e.textContent=String(value);if(cls)e.className=cls;return e};
-const button=(label,fn)=>{const e=node('button',label);e.type='button';e.addEventListener('click',fn);return e};
-const money=(v,c)=>Number(v).toLocaleString('ru-RU',{maximumFractionDigits:0})+' '+c;
-const link=(label,url)=>{const e=node('span',label.replace(/\s*[↗→]\s*$/,'').trim());e.className='source-reference';return e};
-function rows(){return [...new Map([...published,...local].map(r=>[r.id,r])).values()]}
-// Иллюстрации модели: отдельно от фото конкретного лота. Только файлы Commons с открытой лицензией.
-const photoCache=new Map();
-async function showExamplePhoto(r,card,container){
- const key=r.make+' '+r.model+' '+r.year;
- if(!photoCache.has(key))photoCache.set(key,(async()=>{
-  try {
-   const model=r.model.split(/\s+/).slice(0,2).join(' ');
-   const query=r.make+' '+model+' '+r.year;
-   const params=new URLSearchParams({action:'query',generator:'search',gsrsearch:'filetype:bitmap '+query+' -interior -engine',gsrnamespace:'6',gsrlimit:'8',prop:'imageinfo',iiprop:'url|extmetadata',iiurlwidth:'560',format:'json',origin:'*'});
-   const response=await fetch('https://commons.wikimedia.org/w/api.php?'+params,{signal:AbortSignal.timeout(9000)});
-   if(!response.ok)return null;
-   const json=await response.json();
-   const pages=Object.values(json.query?.pages||{}).sort((a,b)=>(a.index??99)-(b.index??99));
-   for(const page of pages){
-    const info=page.imageinfo?.[0],meta=info?.extmetadata||{};
-    const license=meta.LicenseShortName?.value||'';
-    if(!info?.thumburl||!/CC0|Public domain|CC BY(?:-SA)?/i.test(license))continue;
-    const title=page.title.toLowerCase();
-    if(!title.includes(r.make.toLowerCase()))continue;
-    if(!new RegExp('\\\\b'+r.year+'\\\\b').test(page.title))continue;
-    const essential=model.toLowerCase().split(/\\s+/).filter(t=>t.length>2);
-    if(!essential.every(t=>title.includes(t)))continue;
-    return {url:info.thumburl,description:info.descriptionurl,license,author:(meta.Artist?.value||'Wikimedia Commons').replace(/<[^>]*>/g,'').slice(0,100)};
-   }
-  }catch{}
-  return null;
- })());
- const result=await photoCache.get(key);
- if(!card.isConnected)return;if(!result){container.replaceChildren(node('div','Для этой модели нет подходящей фотографии с открытой лицензией','no-photo'));return;}
- const img=node('img');img.src=result.url;img.loading='lazy';img.alt='Иллюстрация модели, не фотография проданного лота';img.referrerPolicy='no-referrer';
- img.onerror=()=>{container.replaceChildren(node('div','Изображение временно недоступно','no-photo'))};
- const caption=node('p','Иллюстрация модели '+r.year+' г., не фото указанной продажи · '+result.author+' / Wikimedia Commons · '+result.license,'photo-disclaimer');
- const credit=link('Автор / лицензия',result.description);credit.style.display='inline-block';credit.style.fontSize='12px';
- container.replaceChildren(img,caption,credit);
+(()=>{"use strict";
+const by=id=>document.getElementById(id),grid=by("auctionGrid"),status=by("auctionStatus"),count=by("auctionCount"),country=by("auctionCountry"),search=by("auctionSearch");
+if(!grid||!status)return;
+const names={japan:"Япония","south-korea":"Южная Корея",china:"Китай"};
+const element=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=String(text);if(cls)n.className=cls;return n};
+const safePhoto=p=>typeof p==="string"&&/^\/assets\/auction\/[a-z0-9._/-]+\.(jpg|jpeg|png|webp)$/i.test(p)&&!p.includes("..");
+const valid=r=>r&&r.image_rights==="approved"&&r.make&&r.model&&Number.isInteger(Number(r.year))&&Array.isArray(r.photos)&&r.photos.length>0&&r.photos.every(safePhoto);
+let rows=[];
+function render(){
+ const q=search.value.trim().toLowerCase(),c=country.value;
+ const filtered=rows.filter(r=>(!c||c===r.country)&&(!q||[r.make,r.model,r.year,r.body,r.color,r.lot].join(" ").toLowerCase().includes(q)));
+ count.textContent="Проверенных карточек с фотографиями: "+filtered.length;grid.replaceChildren();
+ for(const r of filtered){
+ const card=element("article",undefined,"lot"),img=element("img");img.src=r.photos[0];img.alt="Фото аукционного лота: "+r.make+" "+r.model+" "+r.year;img.loading="lazy";img.onerror=()=>{card.remove()};card.append(img);
+ const body=element("div",undefined,"lot-body");body.append(element("div",names[r.country]||"Не указано","market"),element("h2",r.make+" "+r.model+" · "+r.year));
+ const specs=element("div",undefined,"specs");
+ for(const [k,v] of [["Кузов",r.body],["Цвет",r.color],["Пробег",r.mileage_km==null?null:Number(r.mileage_km).toLocaleString("ru-RU")+" км"],["Оценка",r.grade],["Лот",r.lot],["Аукцион",r.auction]]){
+ const cell=element("div");cell.append(element("small",k),element("strong",v||"Не указано"));specs.append(cell)}
+ body.append(specs);
+ const money=r.sale_status==="verified_sold"&&Number.isFinite(Number(r.sold_price))?Number(r.sold_price).toLocaleString("ru-RU")+" "+(r.currency||""):"Фактическая цена не подтверждена";
+ body.append(element("p",money,"price"),element("p","Архивный автомобиль. Не объявление о наличии.","note"));
+ const a=element("a","Подобрать похожий автомобиль","cta");a.href="/?view=select&similar="+encodeURIComponent(r.make+" "+r.model+" "+r.year)+"#assistant";body.append(a);card.append(body);grid.append(card);
+ }
+ status.textContent=filtered.length?"Указаны архивные экземпляры, не машины в наличии.":"Архив временно пуст: неподтверждённые фотографии сняты с публикации. Проверяем права на снимки конкретных аукционных автомобилей. Заявку на подбор можно оставить сейчас.";
 }
-
-function period(){const v=F.elements.period.value;if(v==='custom')return;const end=new Date(),start=new Date();if(v!=='all'){const day=start.getUTCDate();start.setUTCDate(1);start.setUTCMonth(start.getUTCMonth()-Number(v));const last=new Date(Date.UTC(start.getUTCFullYear(),start.getUTCMonth()+1,0)).getUTCDate();start.setUTCDate(Math.min(day,last));}F.elements.from.value=v==='all'?'':start.toISOString().slice(0,10);F.elements.to.value=v==='all'?'':end.toISOString().slice(0,10)}
-function render(){const f=Object.fromEntries(new FormData(F));f.query=$('query').value.trim();if(F.elements.favorites.checked)f.favorites=[...favorites];if(f.from&&f.to&&f.from>f.to||f.yearFrom&&f.yearTo&&+f.yearFrom>+f.yearTo){$('status').textContent='Начало диапазона должно быть не позже конца.';$('grid').replaceChildren();$('stats').replaceChildren();$('chart').replaceChildren();$('more').hidden=true;filtered=[];return}
-filtered=C.filter(rows().filter(r=>Array.isArray(r.photos)&&r.photos.length>0),f);const currencies=new Set(filtered.map(r=>r.currency));const sort=F.elements.sort.value;filtered.sort((a,b)=>sort==='price'&&currencies.size===1?a.price-b.price:sort==='mileage'?(a.mileage??Infinity)-(b.mileage??Infinity):sort==='old'?a.sold_date.localeCompare(b.sold_date):b.sold_date.localeCompare(a.sold_date));
-$('status').textContent='Карточек с фото именно этого лота: '+filtered.length+'. Всего исторических записей: '+published.length+'. Другие лоты без исходных фотографий не показываем как фотокарточки.'+(sort==='price'&&currencies.size>1?' Для сортировки по цене выберите одну страну.':'');
-$('stats').replaceChildren();for(const s of C.stats(filtered)){const e=node('article',null,'stat');e.append(node('span',s.currency+' · '+s.count+' продаж'),node('strong','Медиана '+money(s.median,s.currency)),node('p','Средняя '+money(s.mean,s.currency)+' · от '+money(s.min,s.currency)+' до '+money(s.max,s.currency)));$('stats').append(e)}
-$('chart').replaceChildren();for(const currency of currencies){$('chart').append(node('h3',currency));const months=new Map();filtered.filter(r=>r.currency===currency).forEach(r=>{const m=r.sold_date.slice(0,7);if(!months.has(m))months.set(m,[]);months.get(m).push(r.price)});const points=[...months].sort(([a],[b])=>a.localeCompare(b)).map(([m,v])=>[m,v.reduce((a,b)=>a+b,0)/v.length,v.length]);const max=Math.max(...points.map(x=>x[1]));for(const [m,v,n] of points){const row=node('div',null,'bar'),bar=node('b');bar.style.width=(v/max*100)+'%';row.append(node('span',m+' · '+n),bar,node('span',money(v,currency)));$('chart').append(row)}}
-$('grid').replaceChildren();for(const r of filtered.slice(0,shown)){const card=node('article',null,'card');if(r.photos[0]){const img=node('img');img.src=r.photos[0];img.alt=r.make+' '+r.model;img.loading='lazy';img.referrerPolicy='no-referrer';img.addEventListener('error',()=>{card.remove();$('status').textContent='Часть фотографий недоступна у источника; такие карточки скрыты.'},{once:true});card.append(img)}else {const preview=node('div',null,'preview');preview.append(node('div','Подбираем фото модели…','no-photo'));card.append(preview);showExamplePhoto(r,card,preview)}const body=node('div',null,'body');body.append(node('span','ПРОДАН · '+names[r.country]+' · '+r.sold_date,'badge'),node('h2',r.make+' '+r.model+' · '+r.year),node('p',(r.mileage===null?'Пробег не указан':r.mileage.toLocaleString('ru-RU')+' км')+' · Оценка '+(r.grade||'не указана')),node('p',money(r.price,r.currency),'money'));const actions=node('div',null,'actions');actions.append(button('Открыть',()=>detail(r)),button(favorites.has(r.id)?'★ В избранном':'☆ Сохранить',()=>{favorites.has(r.id)?favorites.delete(r.id):favorites.add(r.id);save(keys.favorites,[...favorites]);render()}),button(compare.has(r.id)?'Убрать из сравнения':'Сравнить',()=>{if(compare.has(r.id))compare.delete(r.id);else if(compare.size<3)compare.add(r.id);else{$('status').textContent='Можно сравнить не более трёх машин.';return}save(keys.compare,[...compare]);render()}));body.append(actions);card.append(body);$('grid').append(card)}
-if(!filtered.length)$('grid').append(node('p',rows().length?'По этим фильтрам продаж нет. Измените период или параметры.':'В архиве пока нет продаж с выбранными параметрами.','empty'));
-$('more').hidden=shown>=filtered.length;renderCompare();}
-function detail(r){const b=$('detailBody');b.replaceChildren(node('h2',r.make+' '+r.model+' '+r.year));const gallery=node('div',null,'gallery');for(const url of r.photos){const img=node('img');img.src=url;img.alt=r.make+' '+r.model;img.loading='lazy';img.referrerPolicy='no-referrer';img.onerror=()=>img.remove();gallery.append(img)}b.append(gallery,node('p','Продан '+r.sold_date+' · '+money(r.price,r.currency)),node('p','Аукцион: '+(r.auction||'не указан')+' · Оценка: '+(r.grade||'не указана')));if(r.photo_source||r.source_url)b.append(node('p','Фотографии конкретного лота · источник: '+r.source));if(r.sheet_url)b.append(node('p','Аукционный лист: запросите копию через PapAuto.'));else b.append(node('p','Аукционный лист не предоставлен.'));b.append(node('p','Источник: '+r.source));const ask=node('a','Подобрать похожую машину →');const params=new URLSearchParams({view:'select',archive_make:r.make,archive_model:r.model,archive_year:r.year,archive_country:r.country});ask.href='/?'+params.toString()+'#assistant';b.append(ask);$('detail').showModal()}
-function renderCompare(){const selected=rows().filter(r=>compare.has(r.id));$('comparison').hidden=!selected.length;const table=node('table'),head=node('tr');head.append(node('th','Параметр'));selected.forEach(r=>head.append(node('th',r.make+' '+r.model)));table.append(head);for(const [label,fn] of [['Страна',r=>names[r.country]],['Год',r=>r.year],['Дата продажи',r=>r.sold_date],['Пробег, км',r=>r.mileage??'Не указан'],['Оценка',r=>r.grade||'Не указана'],['Цена торгов',r=>money(r.price,r.currency)],['Аукцион',r=>r.auction||'Не указан']]){const tr=node('tr');tr.append(node('th',label));selected.forEach(r=>tr.append(node('td',fn(r))));table.append(tr)}$('compareTable').replaceChildren(table)}
-function options(){for(const [id,field] of [['makes','make'],['models','model']])$(id).replaceChildren(...[...new Set(rows().map(r=>r[field]))].sort().map(v=>{const e=node('option');e.value=v;return e}))}
-const headers=['id','country','make','model','year','sold_date','price','currency','status','source','source_url','mileage','grade','auction','lot','photos','sheet_url'];
-function download(name,body,type){const url=URL.createObjectURL(new Blob(['\uFEFF',body],{type})),a=node('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
-$('template').onclick=()=>download('papauto-archive-template.csv',headers.join(',')+'\r\n','text/csv;charset=utf-8');
-$('export').onclick=()=>{const safe=v=>{let s=String(v??'');if(/^[=+@\-\t\r]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"'};download('papauto-sold-lots.csv',[headers.join(','),...filtered.map(r=>headers.map(h=>safe(h==='photos'?r.photos.join('|'):r[h])).join(','))].join('\r\n'),'text/csv;charset=utf-8')};
-$('importFile').onchange=async e=>{try{const file=e.target.files[0];if(!file)return;if(file.size>10*1024*1024)throw Error('Файл должен быть не больше 10 МБ.');const raw=await file.text();const parsed=file.name.toLowerCase().endsWith('.csv')?C.csv(raw):JSON.parse(raw.replace(/^\uFEFF/,''));const imported=C.normalize(Array.isArray(parsed)?parsed:parsed.lots);const merged=[...new Map([...local,...imported].map(r=>[r.id,r])).values()];if(merged.length>50000)throw Error('Лимит — 50 000 местных записей.');if(!save(keys.local,merged))return;local=merged;options();render();$('importStatus').textContent='Загружено '+imported.length+' записей. Они доступны только в этом браузере.';}catch(err){$('importStatus').textContent=err.message}finally{e.target.value=''}};
-$('clearImport').onclick=()=>{if(save(keys.local,[])){local=[];options();render();$('importStatus').textContent='Местные записи удалены.'}};
-F.addEventListener('input',e=>{if(['from','to'].includes(e.target.name))F.elements.period.value='custom';if(e.target.name==='period')period();shown=24;render()});F.addEventListener('submit',e=>e.preventDefault());F.addEventListener('reset',()=>setTimeout(()=>{period();$('query').value='';shown=24;render()},0));$('query').oninput=()=>{shown=24;render()};$('more').onclick=()=>{shown+=24;render()};$('closeDetail').onclick=()=>$('detail').close();$('print').onclick=()=>{shown=filtered.length;render();window.print()};$('clearCompare').onclick=()=>{compare.clear();save(keys.compare,[]);render()};
-const Speech=window.SpeechRecognition||window.webkitSpeechRecognition;let recognition=null;$('mic').onclick=()=>{if(!Speech){$('status').textContent='Используйте микрофон клавиатуры для диктовки в поле поиска.';$('query').focus();return}if(recognition){recognition.stop();return}recognition=new Speech();recognition.lang='ru-RU';recognition.onresult=e=>{$('query').value=e.results[0][0].transcript;shown=24;render()};recognition.onerror=()=>{$('status').textContent='Распознавание недоступно. Введите запрос или используйте диктовку клавиатуры.'};recognition.onend=()=>{recognition=null;$('mic').setAttribute('aria-pressed','false')};try{recognition.start();$('mic').setAttribute('aria-pressed','true')}catch{recognition=null;$('status').textContent='Не удалось запустить микрофон.'}};
-period();const params=new URLSearchParams(location.search);for(const name of ['make','model','country']){const value=params.get(name);if(value)F.elements[name].value=value.slice(0,100)}options();render();const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12000);Promise.all(['/data/sold-lots.json','/data/jp-direct-sold.json'].map(async(url,index)=>{const r=await fetch(url,{signal:controller.signal});if(!r.ok){if(index===1)return {lots:[]};throw Error('HTTP '+r.status)}return r.json()})).then(([base,extra])=>{const data=base;published=C.normalize([...base.lots,...extra.lots]);$('coverage').textContent=published.length?'В базе: '+published.length+' завершённых продаж; карточек с фотографиями конкретной машины: '+published.filter(r=>Array.isArray(r.photos)&&r.photos.length).length+'. Остальные записи не отображаются как карточки. Обновлено: '+(data.updated_at||'дата не указана')+'. '+(data.coverage||''): 'Общий архив пока пуст: источник подтверждённых продаж не подключён.';options();render()}).catch(()=>{$('coverage').textContent='Общий архив загрузить не удалось. Местные записи и импорт доступны.'}).finally(()=>clearTimeout(timer));
+country.addEventListener("change",render);search.addEventListener("input",render);
+fetch("/data/approved-auction-lots.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP");return r.json()}).then(j=>{rows=(Array.isArray(j.lots)?j.lots:[]).filter(valid);render()}).catch(()=>{rows=[];render()});
 })();
