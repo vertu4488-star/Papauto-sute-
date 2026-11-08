@@ -19,6 +19,8 @@
     vehicle_rub: 187710,
     cf_jpy: 90000,                 // C&F already combines Japan costs and freight.
     rub_per_jpy: 0.51,             // Historical rate shown in screenshot, not live FX.
+    rub_per_eur: 92.1499,          // Demo effective exchange rate reproducing screenshot.
+    usd_per_eur: 1.1268,          // Demo EUR to USD effective reference rate, not live.
     duty_rub: 441140,
     recycling_rub: 5200,
     sbkts_package_rub: totalPackage,
@@ -29,8 +31,8 @@
   const rows = [
     {key:"starting_jpy", label:"Стартовая ставка (в образце не указана)", currency:"¥", group:"reference", excluded:true},
     {key:"vehicle_rub", label:"Цена автомобиля без пошлин и доставки", currency:"₽", group:"vehicle"},
-    {key:"cf_jpy", label:"C&F — доставка и расходы по Японии, вместе", currency:"¥", group:"japan"},
-    {key:"duty_rub", label:"Таможенная пошлина (1 496 см³, 3,2 €/см³ в образце)", currency:"₽", group:"customs"},
+    {key:"cf_jpy", label:"C&F — расходы по Японии и морской фрахт (в иенах)", currency:"¥", group:"japan"},
+    {key:"duty_rub", label:"Таможенная пошлина (1 496 см³ × 3,2 €/см³)", currency:"₽", group:"customs"},
     {key:"recycling_rub", label:"Утилизационный сбор", currency:"₽", group:"customs"},
     {key:"sbkts_package_rub", label:"СБКТС и оформление — единый пакет", currency:"₽", group:"services", expandable:true},
     {key:"storage_rub", label:"СВХ — склад временного хранения", currency:"₽", group:"services"},
@@ -50,6 +52,8 @@
     const tr = document.createElement("tr");
     if(row.excluded) tr.className="cost-reference";
     if(row.expandable) tr.className="cost-package";
+    if(row.key==="cf_jpy") tr.className="cost-cf";
+    if(row.key==="duty_rub") tr.className="cost-duty";
     const label = document.createElement("th");
     label.scope="row";
     const labelText = document.createElement("span");
@@ -89,18 +93,39 @@
     for(const row of rows){
       const shown=displayed.get(row.key);
       const value=state[row.key];
-      shown.original.textContent=row.currency==="¥" ?
-        (row.excluded&&value===0 ? "Не указана" : num(value,"¥")) : "—";
-      shown.total.textContent=row.excluded&&value===0 ? "—" :
-        num(toRub(row),"₽")+(row.excluded?" · не суммируется":"");
+      if(row.key==="cf_jpy"){
+        // C&F is displayed only in JPY; its RUB equivalent is used internally for the total.
+        shown.original.textContent="—";
+        shown.total.textContent=num(value,"¥");
+        shown.total.title="В общем итоге учтено "+num(toRub(row),"₽")+" по учебному курсу.";
+      }else if(row.key==="duty_rub"){
+        const euro=Math.round(value/Math.max(0.0001,state.rub_per_eur));
+        const usd=Math.round(value/Math.max(0.0001,state.rub_per_eur)*state.usd_per_eur);
+        const foreign=num(euro,"EUR")+" · "+num(usd,"USD");
+        shown.original.textContent=foreign;
+        const main=document.createElement("span");
+        main.textContent=num(value,"₽");
+        const mobile=document.createElement("small");
+        mobile.className="cost-mobile-currencies";
+        mobile.textContent=foreign;
+        shown.total.replaceChildren(main,mobile);
+      }else{
+        shown.original.textContent=row.currency==="¥" ?
+          (row.excluded&&value===0 ? "Не указана" : num(value,"¥")) : "—";
+        shown.total.textContent=row.excluded&&value===0 ? "—" :
+          num(toRub(row),"₽")+(row.excluded?" · не суммируется":"");
+      }
     }
     const vladivostok=rows.filter(row=>!row.excluded&&row.group!=="delivery")
       .reduce((sum,row)=>sum+toRub(row),0);
     root.querySelector("#demoVladivostokTotal").textContent=num(vladivostok,"₽");
     root.querySelector("#demoNovosibirskTotal").textContent=
       num(vladivostok+state.trucking_rub,"₽");
-    root.querySelector("#demoRate").textContent="Курс из образца: 1 ¥ = "+
-      new Intl.NumberFormat("ru-RU",{maximumFractionDigits:4}).format(state.rub_per_jpy)+" ₽";
+    const rateFormat=n=>new Intl.NumberFormat("ru-RU",{maximumFractionDigits:4}).format(n);
+    root.querySelector("#demoRate").textContent=
+      "Учебные курсы: 1 ¥ = "+rateFormat(state.rub_per_jpy)+" ₽; "+
+      "1 EUR = "+rateFormat(state.rub_per_eur)+" ₽; "+
+      "1 EUR = "+rateFormat(state.usd_per_eur)+" USD. Не биржевые котировки.";
     const note=root.querySelector("#demoSourceReconcile");
     if(note)note.textContent="Таможенный сбор 2 462 ₽ уже включён в пакет СБКТС, поэтому отдельно не прибавляется. "+
       "По исходному скриншоту пошлина + таможенный сбор + утильсбор дают 448 802 ₽, а не 450 802 ₽, как подписано в источнике. "+
@@ -114,14 +139,15 @@
     heading.textContent=label;
     const input=document.createElement("input");
     input.type="number";
-    input.min="0";
+    input.min=(key==="rub_per_eur"||key==="usd_per_eur")?"0.0001":"0";
     input.max="100000000";
     input.step=step;
     input.value=assumptions[key];
     input.setAttribute("aria-label",label);
     input.addEventListener("input",()=>{
       const value=Number(input.value);
-      if(input.value.trim()!==""&&Number.isFinite(value)&&value>=0&&value<=100000000){
+      const rateField=key==="rub_per_eur"||key==="usd_per_eur";
+      if(input.value.trim()!==""&&Number.isFinite(value)&&value>=0&&value<=100000000&&(!rateField||value>0)){
         state[key]=value;render();
       }
     });
@@ -133,6 +159,8 @@
     addInput(row.key,row.label+" ("+row.currency+")",row.currency==="¥"?1000:100);
   }
   addInput("rub_per_jpy","Курс: ₽ за 1 ¥ (учебный)",0.0001);
+  addInput("rub_per_eur","Курс: ₽ за 1 EUR (учебный)",0.0001);
+  addInput("usd_per_eur","Курс: USD за 1 EUR (учебный)",0.0001);
   root.querySelector("#importDemoReset").addEventListener("click",()=>{
     Object.assign(state,assumptions);
     controls.forEach((input,key)=>{input.value=assumptions[key];});
