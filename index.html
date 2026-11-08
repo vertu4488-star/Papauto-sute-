@@ -83,7 +83,7 @@
       <div class="hero-checks"><span>✓ Подбор под бюджет</span><span>✓ Проверка данных и документов</span><span>✓ Расчёт до вашего города</span></div>
     </div>
     <div class="hero-visual hero-photo-visual" aria-label="Автомобиль на дороге">
-      <img class="hero-car-photo" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1500&q=88" alt="Современный автомобиль — визуальный образ PAPAUTO" fetchpriority="high">
+      <div class="hero-car-photo" role="presentation" style="background:linear-gradient(120deg,#152839,#5a7184);min-height:280px"></div>
       <div class="hero-photo-shade"></div>
       <div class="visual-label top-label"><span>SMART AUTO SELECTION</span><b>JP · KR · CN</b></div>
       <div class="hero-photo-caption"><span class="hero-photo-kicker">PAPAUTO SELECT</span><strong>Подбор автомобиля<br>под ваши условия</strong><small>От первого поиска до доставки в ваш город</small></div>
@@ -161,83 +161,12 @@
   </section>
 
   <section class="section wrap" id="showcase">
-    <div class="section-title-row">
-      <div><div class="eyebrow">ПРИМЕРЫ АУКЦИОННЫХ ЛОТОВ</div><h2>Вот конкретные машины.<br><em>Вот из чего складывается цена.</em></h2></div>
-      <p>Показываем открытые примеры аукционных записей и расчётов сторонних источников. Это не наши выполненные заказы и не предложение купить именно эти автомобили: лоты уже могли быть проданы, а итоговые суммы нужно пересчитать на текущую дату.</p>
-    </div>
-    <div class="showcase-grid auction-example-grid">
-      <article class="showcase-card auction-example-card">
-        <div class="showcase-image" aria-label="Открыть источник аукционного лота Toyota Vitz">
-          <img src="https://japan.storage.yandexcloud.net/2026/09/20/bf5ee5f5-fea9-524d-a934-0dcfa537453b/32734389.avif" alt="Toyota Vitz 2017, фото из страницы аукционного лота в источнике" loading="lazy">
-          <span class="showcase-badge">АРХИВНЫЙ ЛОТ · JP</span>
-        </div>
-        <div class="showcase-body">
-          <div class="showcase-meta"><span>TOYOTA · БЕНЗИН</span><span>2017</span></div>
-          <h3>Toyota Vitz GR Sport</h3>
-          <p>Лот №10272 · CAA Kyouyuu · дата страницы 30.09.2026. Пробег 9 000 км, 1,5 л, 109 л.с., оценка 4.5.</p>
-          <div class="auction-price-lines">
-            <div><span>Цена в Японии</span><b>2 050 000 ¥</b></div>
-            <div><span>Расчёт источника до Владивостока</span><b>1 731 288 ₽</b></div>
-          </div>
-          <p class="auction-example-note">Сумма из опубликованного расчёта источника; она может отличаться от текущей из-за курса, ставок и условий оформления. Доставка до Новосибирска не включена в указанную сумму.</p>
-
-          <a class="button button-primary auction-request" href="#assistant" data-car-request="Toyota Vitz GR Sport 2017, лот 10272, цена в Японии 2 050 000 JPY. Нужен актуальный расчёт под ключ до моего города.">Рассчитать похожий автомобиль ↗</a>
-        </div>
-      </article>
-      <article class="showcase-card auction-example-card">
-        <div class="showcase-image" aria-label="Открыть источник аукционного лота Toyota Vitz Hybrid">
-          <img src="https://japan.storage.yandexcloud.net/2026/09/23/4c86f77e-9f06-5bbf-b9f8-9f942686cd85/33253218.avif" alt="Toyota Vitz Hybrid GR Sport 2017, фото со страницы аукционного лота" loading="lazy">
-          <span class="showcase-badge">АРХИВНЫЙ ЛОТ · JP</span>
-        </div>
-        <div class="showcase-body">
-          <div class="showcase-meta"><span>TOYOTA · ГИБРИД</span><span>2017</span></div>
-          <h3>Toyota Vitz Hybrid GR Sport</h3>
-          <p>Лот №2463 · LAP Kyoyuzaiko · дата страницы 06.10.2026. Пробег 94 000 км, 1,5 л, оценка 4.</p>
-          <div class="auction-price-lines">
-            <div><span>Цена в Японии</span><b>858 000 ¥</b></div>
-            <div><span>Расчёт источника до Владивостока</span><b>1 451 619 ₽</b></div>
-          </div>
-          <p class="auction-example-note">В опубликованном расчёте указаны отдельные расходы на фрахт, пошлину, оформление и комиссию. Значения приведены как исторический ориентир, не как сегодняшняя оферта.</p>
-
-          <a class="button button-primary auction-request" href="#assistant" data-car-request="Toyota Vitz Hybrid GR Sport 2017, лот 2463, цена в Японии 858 000 JPY. Нужен актуальный расчёт под ключ до моего города.">Рассчитать похожий автомобиль ↗</a>
-        </div>
-      </article>
-      <article class="showcase-card auction-example-card">
-        <div class="showcase-image" aria-label="Открыть источник статистики аукционов Toyota Aqua">
-          <div class="auction-stats-visual" role="img" aria-label="Иллюстрация статистики цен аукционных торгов, не фотография автомобиля">
-            <span class="auction-stats-visual-label">ИСТОРИЯ ЦЕН · JP</span>
-            <svg viewBox="0 0 420 220" aria-hidden="true" focusable="false">
-              <path d="M34 32H392M34 76H392M34 120H392M34 164H392" stroke="currentColor" stroke-opacity=".13" stroke-width="1"/>
-              <path d="M34 22V184H392" stroke="currentColor" stroke-opacity=".38" stroke-width="1.5" fill="none"/>
-              <rect x="66" y="104" width="38" height="80" rx="5" fill="#66727d" fill-opacity=".62"/>
-              <rect x="126" y="82" width="38" height="102" rx="5" fill="#66727d" fill-opacity=".78"/>
-              <rect x="186" y="116" width="38" height="68" rx="5" fill="#66727d" fill-opacity=".48"/>
-              <rect x="246" y="54" width="38" height="130" rx="5" fill="#66727d"/>
-              <rect x="306" y="91" width="38" height="93" rx="5" fill="#66727d" fill-opacity=".68"/>
-              <path d="M85 95L145 72L205 106L265 42L325 77" fill="none" stroke="#1d3546" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="85" cy="95" r="4.5" fill="#1d3546"/><circle cx="145" cy="72" r="4.5" fill="#1d3546"/><circle cx="205" cy="106" r="4.5" fill="#1d3546"/><circle cx="265" cy="42" r="4.5" fill="#1d3546"/><circle cx="325" cy="77" r="4.5" fill="#1d3546"/>
-              <text x="84" y="205" font-size="10" text-anchor="middle" fill="currentColor" opacity=".7">М1</text><text x="144" y="205" font-size="10" text-anchor="middle" fill="currentColor" opacity=".7">М2</text><text x="204" y="205" font-size="10" text-anchor="middle" fill="currentColor" opacity=".7">М3</text><text x="264" y="205" font-size="10" text-anchor="middle" fill="currentColor" opacity=".7">М4</text><text x="324" y="205" font-size="10" text-anchor="middle" fill="currentColor" opacity=".7">М5</text>
-            </svg>
-            <small>Схема для иллюстрации · не реальные значения</small>
-          </div>
-          <span class="showcase-badge">СТАТИСТИКА · JP</span>
-        </div>
-        <div class="showcase-body">
-          <div class="showcase-meta"><span>TOYOTA · ГИБРИД</span><span>2021</span></div>
-          <h3>Toyota Aqua</h3>
-          <p>Пример из страницы статистики торгов: 2021 год, 174 000 км, 1,5 л, оценка 3.5, аукцион TAA Chubu, дата 29.10.2026.</p>
-          <div class="auction-price-lines">
-            <div><span>Средняя цена похожих в источнике</span><b>499 000 ¥</b></div>
-            <div><span>Расчёт источника до Владивостока</span><b>1 062 542 ₽</b></div>
-          </div>
-          <p class="auction-example-note">Иллюстративное описание сегмента, не подтверждение продажи или наличия конкретного автомобиля. Актуальные параметры нужно запросить отдельно.</p>
-
-          <a class="button button-primary auction-request" href="#assistant" data-car-request="Toyota Aqua, ориентир из статистики торгов: 2021 год, 174 000 км, средняя цена похожих 499 000 JPY. Нужен подбор актуального лота и расчёт под ключ до моего города.">Найти актуальный лот ↗</a>
-        </div>
-      </article>
-    </div>
-    <p class="showcase-disclaimer">Важно: суммы в этих примерах — опубликованные расчёты/ориентиры стороннего источника до Владивостока, а не подтверждённая цена PAPAUTO под ключ до любого города России. Актуальную смету для похожего автомобиля подготовим по вашему запросу.</p>
-  </section>
+  <div class="section-title-row">
+    <div><div class="eyebrow">АУКЦИОННЫЙ КАТАЛОГ PAPAUTO</div><h2>Только конкретные машины.<br><em>Никаких случайных фотографий.</em></h2></div>
+    <p>Прежние фотографии, чужие расчёты и неподтверждённые примеры сняты с публикации. Подготовлен отдельный архив реальных аукционных автомобилей. Для коммерческого размещения снимков проверяем права и соответствие каждому лоту.</p>
+  </div>
+  <a class="button button-primary" href="/auction-archive.html">Открыть аукционный архив PapAuto</a>
+</section>
 
   <section class="section wrap" id="directions">
     <div class="section-title-row"><div><div class="eyebrow">ВЫБЕРИТЕ НАПРАВЛЕНИЕ</div><h2>Три рынка.<br><em>Один понятный процесс.</em></h2></div><p>Подбор зависит от модели, года выпуска, бюджета, состояния и возможности законного оформления в России. Мы начинаем с задачи, а не с обещаний.</p></div>
