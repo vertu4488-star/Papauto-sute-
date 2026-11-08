@@ -42,6 +42,12 @@ def copy_public_files() -> list[str]:
         cwd=ROOT,
         check=True,
     )
+    subprocess.run(
+        [sys.executable, "-m", "unittest", "discover", "-s", "tests",
+         "-p", "test_market_model_directory.py"],
+        cwd=ROOT,
+        check=True,
+    )
     # This is a generated output directory; never accept a symbolic-link target.
     if TARGET.is_symlink():
         raise RuntimeError("Refusing to overwrite a symlinked publish directory")
