@@ -120,6 +120,60 @@
       "local_name": "zeekr-007-cc0.webp",
       "commons_filename": "Zeekr 007 007.jpg",
       "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Toyota Sienta",
+      "local_name": "toyota-sienta-cc0.webp",
+      "commons_filename": "Toyota Sienta HEV Z '25 (1).jpg",
+      "author": "Oq10pass"
+    },
+    {
+      "model": "Honda Fit",
+      "local_name": "honda-fit-cc0.webp",
+      "commons_filename": "Honda Fit Home e HEV.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Nissan Note",
+      "local_name": "nissan-note-cc0.webp",
+      "commons_filename": "2020-2024 Nissan Note S.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Nissan Serena",
+      "local_name": "nissan-serena-cc0.webp",
+      "commons_filename": "Moscow, Nissan Serena (C27) e-Power silver, Sept 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Mazda CX-5",
+      "local_name": "mazda-cx5-cc0.webp",
+      "commons_filename": "2026 Mazda CX-5 e-SKYACTIV G 2.5 L.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Kia Seltos",
+      "local_name": "kia-seltos-cc0.webp",
+      "commons_filename": "Kia Seltos.jpg",
+      "author": "Ziongarage"
+    },
+    {
+      "model": "Kia Sorento",
+      "local_name": "kia-sorento-cc0.webp",
+      "commons_filename": "Moscow, Kia Sorento white, May 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "BYD Song Plus",
+      "local_name": "byd-song-plus-cc0.webp",
+      "commons_filename": "BYD Song Plus Champion Edition 001.jpg",
+      "author": "Quzhouliulian"
+    },
+    {
+      "model": "Haval Jolion",
+      "local_name": "haval-jolion-cc0.webp",
+      "commons_filename": "2025 Haval Jolion white front.jpg",
+      "author": "Throwawayacc222"
     }
   ]
 }
