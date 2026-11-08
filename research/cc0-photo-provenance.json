@@ -2270,17 +2270,16 @@
     {
       "model": "Nissan NV100 Clipper",
       "file": "/assets/demo/japan-nissan-nv100-clipper-cc0.webp",
-      "source_title": "File:Tokyo Metropolitan Police Department Nissan NV100 Clipper patrol car.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Tokyo_Metropolitan_Police_Department_Nissan_NV100_Clipper_patrol_car.jpg",
+      "source_title": "File:2015-2024 Nissan NV100 Clipper.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:2015-2024_Nissan_NV100_Clipper.jpg",
       "rights": "Creative Commons Zero 1.0 Universal (CC0)",
       "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "author": "TTTNIS",
-      "image_sha256": "6ebcd34267b31a0cff0bfdd76866cc6e06b12302fa9b1f6c83f976f064d43a74",
+      "image_sha256": "d05ac5b01bcfe09bb1421035b71e740b4105f573ca396a1f96ab76218664251b",
       "width": 1440,
-      "height": 903,
-      "size_bytes": 219548,
-      "verified_at_utc": "2026-11-08T09:45:58.294589+00:00",
-      "discovery_method": "Strict normalized manufacturer/model title match and live CC0 API"
+      "height": 939,
+      "size_bytes": 149936,
+      "verified_at_utc": "2026-11-08T09:51:51.134159+00:00"
     },
     {
       "model": "Suzuki Alto",
