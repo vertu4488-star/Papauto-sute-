@@ -9,6 +9,7 @@ import os
 import shutil
 import subprocess
 import sys
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / "render-public"
@@ -61,6 +62,23 @@ def copy_public_files() -> list[str]:
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src, dst)
             copied.append(dst.relative_to(TARGET).as_posix())
+
+    # Only our own explicitly approved auction photos may be published.
+    # This also retires historical hotlinked photos on existing SEO/model pages.
+    for page in TARGET.glob("*.html"):
+        html = page.read_text(encoding="utf-8")
+        def approved_img(match):
+            tag = match.group(0)
+            src = re.search(r"""src\s*=\s*["']([^"']+)["']""", tag, re.I)
+            url = src.group(1) if src else ""
+            if url.startswith("/assets/auction/") or url == "/assets/papauto-logo.svg":
+                return tag
+            return ""
+        html = re.sub(r"<img\b[^>]*>", approved_img, html, flags=re.I | re.S)
+        html = re.sub(r"<source\b[^>]*>", "", html, flags=re.I | re.S)
+        page.write_text(html, encoding="utf-8")
+        if re.search(r"<img[^>]+src\s*=\s*[\"']https?://", html, flags=re.I):
+            raise RuntimeError("External vehicle photograph found: " + page.name)
 
     public_paths = set(copied)
     tombstones = []
