@@ -51,7 +51,7 @@ class MarketModelDirectory(unittest.TestCase):
             with self.subTest(photo=row["file"]):
                 self.assertTrue(
                     row["rights"] == "Creative Commons Zero 1.0 Universal (CC0)"
-                    or re.fullmatch(r"CC BY(?:-SA)? (?:2\\.0|2\\.5|3\\.0|4\\.0)", row["rights"]),
+                    or re.fullmatch(r"CC BY(?:-SA)? (?:2\.0|2\.5|3\.0|4\.0)", row["rights"]),
                     row["rights"])
                 if "CC0" not in row["rights"]:
                     self.assertIn("creativecommons.org/licenses/", row["license_evidence"])
