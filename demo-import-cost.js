@@ -50,6 +50,24 @@
 
   for(const row of rows) {
     const tr = document.createElement("tr");
+    if(row.key==="duty_rub") {
+      // Exactly one duty row. The three currencies represent ONE customs payment.
+      tr.className="cost-duty";
+      const cell=document.createElement("td");
+      cell.colSpan=3;
+      const line=document.createElement("div");
+      line.className="cost-duty-line";
+      const name=document.createElement("strong");
+      name.textContent="Пошлина:";
+      const values=document.createElement("span");
+      values.className="cost-duty-values";
+      line.append(name,values);
+      cell.append(line);
+      tr.append(cell);
+      table.append(tr);
+      displayed.set(row.key,{values});
+      continue;
+    }
     if(row.excluded) tr.className="cost-reference";
     if(row.expandable) tr.className="cost-package";
     if(row.key==="cf_jpy") tr.className="cost-cf";
@@ -100,15 +118,8 @@
         shown.total.title="В общем итоге учтено "+num(toRub(row),"₽")+" по учебному курсу.";
       }else if(row.key==="duty_rub"){
         const euro=Math.round(value/Math.max(0.0001,state.rub_per_eur));
-        const usd=Math.round(value/Math.max(0.0001,state.rub_per_eur)*state.usd_per_eur);
-        const foreign=num(euro,"EUR")+" · "+num(usd,"USD");
-        shown.original.textContent=foreign;
-        const main=document.createElement("span");
-        main.textContent=num(value,"₽");
-        const mobile=document.createElement("small");
-        mobile.className="cost-mobile-currencies";
-        mobile.textContent=foreign;
-        shown.total.replaceChildren(main,mobile);
+        const usd=Math.round(euro*state.usd_per_eur);
+        shown.values.textContent=num(euro,"EUR")+", "+num(usd,"USD")+", "+num(value,"₽");
       }else{
         shown.original.textContent=row.currency==="¥" ?
           (row.excluded&&value===0 ? "Не указана" : num(value,"¥")) : "—";
