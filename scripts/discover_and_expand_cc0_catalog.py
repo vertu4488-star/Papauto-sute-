@@ -20,8 +20,9 @@ import time
 import unicodedata
 from collections import defaultdict
 from datetime import datetime, timezone
+from html import escape, unescape
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 
 import requests
 from PIL import Image, ImageOps
@@ -35,10 +36,11 @@ MODEL_JS = ROOT / "vehicle-catalogue.js"
 RENDER_JS = ROOT / "catalog-open-data.js"
 REPORT = ROOT / "research/cc0-expansion-discovery-report.json"
 OUT = ROOT / "assets/demo"
+CREDITS = ROOT / "photo-credits.html"
 API = "https://commons.wikimedia.org/w/api.php"
-GOAL = 218
-# Exact outstanding market totals at the verified 300/518 checkpoint.
-QUOTAS = {"japan": 61, "south-korea": 66, "china": 91}
+GOAL = 133
+# Remaining unpublished models after the verified 367/518 checkpoint.
+QUOTAS = {"japan": 24, "south-korea": 66, "china": 61}
 HEADERS = {
     "User-Agent": "PapAutoCC0CarPhotoResearch/1.0 (https://papauto.ru/; contact: use website)",
     "Accept": "application/json,image/*,*/*"
@@ -84,19 +86,56 @@ def aliases(model):
     return [v for v in values if len(normalize(v)) >= 2]
 
 
+# Only verified commercial-use Creative Commons attribution licences or CC0.
+ALLOWED_RIGHTS = re.compile(r"^https://creativecommons\.org/licenses/(by|by-sa)/(2\.0|2\.5|3\.0|4\.0)/?$", re.I)
+
+BRAND_VARIANTS = {
+    "Chevrolet Korea": ["Chevrolet", "Chevrolet Korea", "GM Korea"],
+    "Renault Korea": ["Renault", "Renault Samsung", "Samsung", "Renault Korea"],
+    "SsangYong": ["SsangYong", "KGM"],
+    "Mercedes-Benz": ["Mercedes-Benz", "Mercedes Benz", "Mercedes"],
+}
+MODEL_VARIANTS = {
+    ("Kia", "Kia Seltos"): ["Seltos"],
+    ("Kia", "Morning"): ["Morning", "Picanto"],
+    ("Kia", "K7"): ["K7", "Cadenza"],
+    ("Hyundai", "Grandeur"): ["Grandeur", "Azera"],
+    ("Hyundai", "Accent"): ["Accent", "Verna"],
+    ("Renault Korea", "XM3 / Arkana"): ["XM3", "Arkana"],
+    ("Toyota", "Prado"): ["Prado", "Land Cruiser Prado"],
+    ("Toyota", "Copen"): ["Copen"],
+}
+
+def model_aliases(brand, model):
+    return list(dict.fromkeys(MODEL_VARIANTS.get((brand, model), aliases(model))))
+
+def brand_aliases(brand):
+    return BRAND_VARIANTS.get(brand, [brand])
+
+def detect_rights(meta):
+    name = unescape(re.sub(r"<[^>]+>", "", meta.get("LicenseShortName", {}).get("value", ""))).strip()
+    url = meta.get("LicenseUrl", {}).get("value", "").strip()
+    if "CC0" in name or "publicdomain/zero" in url.lower():
+        return ("Creative Commons Zero 1.0 Universal (CC0)", "https://creativecommons.org/publicdomain/zero/1.0/")
+    p = urlparse(url)
+    if p.scheme != "https" or p.hostname != "creativecommons.org":
+        return None
+    if not ALLOWED_RIGHTS.fullmatch(url):
+        return None
+    suffix = p.path.strip("/").split("/")
+    return ("CC " + suffix[1].upper() + " " + suffix[2], url)
+
 def file_matches(title, brand, model):
     stem = re.sub(r"^File:", "", title, flags=re.I)
     stem = re.sub(r"\.(?:jpe?g|png|webp)$", "", stem, flags=re.I)
     if BLOCKED.search(stem):
         return False
     norm = " " + normalize(stem) + " "
-    b = normalize(brand)
-    if not b or not re.search(r"(?<!\w)" + re.escape(b) + r"(?!\w)", norm):
-        return False
-    for option in aliases(model):
-        phrase = b + " " + normalize(option)
-        if re.search(r"(?<!\w)" + re.escape(phrase) + r"(?!\w)", norm):
-            return True
+    for b in brand_aliases(brand):
+        for option in model_aliases(brand, model):
+            phrase = normalize(b) + " " + normalize(option)
+            if phrase.strip() and " " + phrase + " " in norm:
+                return True
     return False
 
 
@@ -154,23 +193,28 @@ def search_one(item):
     market, brand, model, key = item
     s = session()
     candidates = []
-    attempts = 0
-    for alias in aliases(model)[:2]:
-        if len(normalize(alias)) <= 1:
-            continue
-        attempts += 1
-        term = "intitle:" + brand + " " + alias
+    searches = []
+    for brand_variant in brand_aliases(brand)[:3]:
+        for alias in model_aliases(brand, model)[:3]:
+            if len(normalize(alias)) < 2:
+                continue
+            searches.extend([
+                "intitle:" + brand_variant + " " + alias,
+                '"' + brand_variant + " " + alias + '"',
+                "intitle:" + alias + " " + brand_variant,
+            ])
+    for term in list(dict.fromkeys(searches))[:12]:
         try:
             result = s.get(API, params={
                 "action": "query", "format": "json", "formatversion": "2",
                 "generator": "search", "gsrsearch": term, "gsrnamespace": "6",
-                "gsrlimit": "30", "prop": "imageinfo",
+                "gsrlimit": "80", "prop": "imageinfo",
                 "iiprop": "url|extmetadata|size|mime", "iiurlwidth": "1440"
             }, timeout=36)
             result.raise_for_status()
             pages = result.json().get("query", {}).get("pages", [])
         except (requests.RequestException, ValueError) as exc:
-            print("Commons search retryable error for", brand, model, str(exc)[:120], flush=True)
+            print("Commons photo search retryable", brand, model, str(exc)[:100], flush=True)
             continue
         for p in pages:
             title = p.get("title", "")
@@ -179,9 +223,13 @@ def search_one(item):
                 continue
             info = infos[0]
             meta = info.get("extmetadata", {})
-            license_name = meta.get("LicenseShortName", {}).get("value", "")
-            license_url = meta.get("LicenseUrl", {}).get("value", "")
-            if "CC0" not in license_name and "publicdomain/zero" not in license_url.lower():
+            rights = detect_rights(meta)
+            if not rights:
+                continue
+            author = unescape(re.sub(r"<[^>]+>", " ", meta.get("Artist", {}).get("value", ""))).strip()
+            author = " ".join(author.split())[:200]
+            # BY and BY-SA photos require attributable author and license.
+            if "CC0" not in rights[0] and not author:
                 continue
             w, h = info.get("width", 0), info.get("height", 0)
             if w < 850 or h < 500 or not info.get("mime", "image/jpeg").startswith("image/"):
@@ -191,9 +239,8 @@ def search_one(item):
             candidates.append({
                 "title": title, "url": info.get("thumburl") or info.get("url"),
                 "width": w, "height": h,
-                "license_url": license_url,
-                "author": re.sub(r"<[^>]+>", "", meta.get("Artist", {}).get("value", ""))[:200],
-                "score": score_photo(title, info)
+                "rights": rights[0], "license_url": rights[1],
+                "author": author, "score": score_photo(title, info) + (5 if "CC0" in rights[0] else 0)
             })
         if candidates:
             break
@@ -213,7 +260,7 @@ def save_photo(target, candidates, already):
     slug = re.sub(r"[^a-z0-9-]", "", slug)
     if not slug:
         return None
-    local = slug + "-cc0.webp"
+    local = slug + "-licensed.webp"
     if local in already["names"]:
         return None
     dest = OUT / local
@@ -247,27 +294,61 @@ def save_photo(target, candidates, already):
                 "source_title": candidate["title"],
                 "source_page": "https://commons.wikimedia.org/wiki/File:" +
                                quote(filename.replace(" ", "_")),
-                "rights": "Creative Commons Zero 1.0 Universal (CC0)",
+                "rights": candidate["rights"],
                 "license_evidence": candidate["license_url"],
                 "author": author,
                 "image_sha256": sha,
                 "width": img.width, "height": img.height,
                 "size_bytes": len(data),
                 "verified_at_utc": datetime.now(timezone.utc).isoformat(),
-                "discovery_method": "Strict normalized manufacturer/model title match and live CC0 API"
+                "discovery_method": "Exact make/model match and live Commons commercial-use license audit",
+                "changes": "Resized and converted to WebP; no semantic image edits"
             }
             source_entry = {
                 "model": brand + " " + model,
                 "local_name": local,
                 "commons_filename": filename,
-                "author": author
+                "author": author,
+                "rights": candidate["rights"]
             }
-            print("CC0 verified:", market, brand, model, "<=", filename,
+            print("Licensed authentic photograph:", candidate["rights"], market, brand, model, "<=", filename,
                   img.width, img.height, len(data), flush=True)
             return key, source_entry, provenance
         except (requests.RequestException, OSError, ValueError) as exc:
             print("Skipped failed photo download", filename, str(exc)[:100], flush=True)
     return None
+
+
+def write_photo_credits(records):
+    """Publish local photo licensing attributions without outbound seller links."""
+    parts = [
+        '<!doctype html><html lang="ru"><head><meta charset="utf-8">',
+        '<meta name="viewport" content="width=device-width,initial-scale=1">',
+        '<meta name="robots" content="noindex,follow">',
+        '<title>Источники и лицензии фотографий | PAPAUTO</title>',
+        '<style>body{font:15px/1.6 system-ui,sans-serif;max-width:940px;margin:36px auto;padding:0 18px;color:#1d1d1f}',
+        'li{margin:0 0 18px}a{color:#06c}h1{font-size:30px}small{color:#65656a}</style>',
+        '</head><body><a href="/catalog.html">← Каталог PapAuto</a>',
+        '<h1>Источники и лицензии фотографий автомобилей</h1>',
+        '<p>Фотографии моделей автомобилей; это не снимки завершённых аукционных лотов.',
+        'Для лицензий с указанием авторства перечислены создатель, первоисточник, лицензия и обработка.</p><ol>'
+    ]
+    for record in records:
+        if "CC0" in record["rights"]:
+            continue
+        model = escape(record["model"])
+        author = escape(record["author"])
+        url = escape(record["source_page"], quote=True)
+        lic = escape(record["license_evidence"], quote=True)
+        name = escape(record["rights"])
+        file = escape(record["file"], quote=True)
+        parts.append('<li><strong>' + model + '</strong>: ' + author +
+            ' · <a href="' + url + '" rel="noopener noreferrer">исходное фото</a> · ' +
+            '<a href="' + lic + '" rel="noopener noreferrer">' + name + '</a> · ' +
+            '<a href="' + file + '">локальная копия</a>. ' +
+            '<small>Изменения: уменьшен размер, преобразован формат в WebP. Содержимое сохранено.</small></li>')
+    parts.append('</ol><p>Фотографии с лицензией CC0 могут использоваться без обязательного указания авторства.</p></body></html>')
+    CREDITS.write_text("\n".join(parts) + "\n", encoding="utf-8")
 
 
 def main():
@@ -340,7 +421,7 @@ def main():
                     fileused.add(source["local_name"])
                     totals[market] += 1
     if not selected:
-        raise RuntimeError("No real CC0 car photographs discovered: leave public catalog untouched")
+        raise RuntimeError("No appropriately licensed real car photographs discovered: leave public catalog untouched")
     # Only successfully downloaded and independently verified files become cards.
     new_lines = ['    ["' + key + '","' + prov["file"] + '"]'
                  for key, source, prov, market in selected]
@@ -364,12 +445,15 @@ def main():
         "country_new_photos": dict(totals),
         "searched_models": searches, "download_failures": errors,
         "existing_original_photos": old_rows,
-        "license_policy": "Wikimedia Commons CC0 only, live API metadata, full real automobile image",
+        "license_policy": "Wikimedia Commons verified CC0 or CC BY / CC BY-SA commercial-use license with published attribution",
         "images_are_auction_lots": False,
         "verified_source_titles": [r[1]["commons_filename"] for r in selected],
         "elapsed_seconds": round(time.monotonic() - start, 2)
     }
     REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    manifest["rules"] = "Verified CC0 or commercial-use CC BY / CC BY-SA Wikimedia Commons photographs; credit page published when attribution required; no external seller links in cards."
+    SOURCE.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_photo_credits(ledger["photos"])
     print("DONE:", json.dumps({k: v for k, v in report.items()
                                if k != "verified_source_titles"}, ensure_ascii=False), flush=True)
 
