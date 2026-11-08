@@ -19,6 +19,12 @@
     ["south-korea|hyundai|staria","/assets/demo/hyundai-staria-cc0.webp"],
     ["china|geely|monjaro","/assets/demo/geely-monjaro-cc0.webp"]
   ]);
+  const photoDetail = {
+    "japan|honda|freed":"demo-freed-jp",
+    "japan|toyota|prius":"demo-prius-jp",
+    "south-korea|hyundai|staria":"demo-staria-kr",
+    "china|geely|monjaro":"demo-monjaro-cn"
+  };
   const lower = value => String(value||"").normalize("NFKC").toLocaleLowerCase("ru").trim();
   const keyOf = r => [r.market,lower(r.brand),lower(r.model)].join("|");
   const isElectric = r => /электро|electric|\bev\b/i.test(r.engine);
@@ -72,7 +78,7 @@
         label("h2",r.brand+" "+r.model),
         label("div",r.engine,"engine"));
       const a=label("a",localPhoto?"Фото и расчёт →":"Рассчитать подбор →","model-request");
-      a.href=localPhoto?"/auction-archive.html":"/?view=select&similar="+encodeURIComponent(r.brand+" "+r.model)+"#assistant";
+      a.href=localPhoto?"/auction-archive.html#"+photoDetail[keyOf(r)]: "/?view=select&similar="+encodeURIComponent(r.brand+" "+r.model)+"#assistant";
       card.append(a);grid.append(card);
     }
     count.textContent="Моделей в справочнике: "+matched.length+
