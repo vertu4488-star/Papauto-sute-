@@ -348,6 +348,258 @@
       "local_name": "gac-gs8-cc0.webp",
       "commons_filename": "Moscow, GAC GS8 (2nd generation) Traveler white, Aug 2026 011.jpg",
       "author": "Retired electrician"
+    },
+    {
+      "model": "Toyota Camry",
+      "local_name": "toyota-camry-cc0.webp",
+      "commons_filename": "Toyota Camry 001.jpg",
+      "author": "Sardaka"
+    },
+    {
+      "model": "Toyota Raize",
+      "local_name": "toyota-raize-cc0.webp",
+      "commons_filename": "Toyota Raize G '19 (1).jpg",
+      "author": "Oq10pass"
+    },
+    {
+      "model": "Toyota Voxy",
+      "local_name": "toyota-voxy-cc0.webp",
+      "commons_filename": "Toyota Voxy Hybrid S-Z.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Toyota Corolla Cross",
+      "local_name": "toyota-corolla-cross-cc0.webp",
+      "commons_filename": "Toyota Corolla Cross Z '25 (2).jpg",
+      "author": "Oq10pass"
+    },
+    {
+      "model": "Toyota C-HR",
+      "local_name": "toyota-chr-cc0.webp",
+      "commons_filename": "Toyota C-HR 083619655.jpg",
+      "author": "Trop86"
+    },
+    {
+      "model": "Honda Civic",
+      "local_name": "honda-civic-cc0.webp",
+      "commons_filename": "Honda Civic 181937159.jpg",
+      "author": "Trop86"
+    },
+    {
+      "model": "Honda CR-V",
+      "local_name": "honda-crv-cc0.webp",
+      "commons_filename": "Honda CR-V 091313750.jpg",
+      "author": "Trop86"
+    },
+    {
+      "model": "Honda Odyssey",
+      "local_name": "honda-odyssey-cc0.webp",
+      "commons_filename": "1996 Honda Odyssey RA1.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Nissan Leaf",
+      "local_name": "nissan-leaf-cc0.webp",
+      "commons_filename": "2012 Nissan Leaf SL in Cayenne Red, front right, 07-08-2026.jpg",
+      "author": "Cutlass"
+    },
+    {
+      "model": "Nissan X-Trail",
+      "local_name": "nissan-xtrail-cc0.webp",
+      "commons_filename": "Nissan X-Trail 185910.jpg",
+      "author": "Trop86"
+    },
+    {
+      "model": "Suzuki Swift",
+      "local_name": "suzuki-swift-cc0.webp",
+      "commons_filename": "Suzuki Swift (AY06 XWX) - 7 June 2026.jpg",
+      "author": "Aethonatic"
+    },
+    {
+      "model": "Suzuki Hustler",
+      "local_name": "suzuki-hustler-cc0.webp",
+      "commons_filename": "Suzuki-Hustler-2026.jpg",
+      "author": "Ohcock"
+    },
+    {
+      "model": "Suzuki Wagon R",
+      "local_name": "suzuki-wagonr-cc0.webp",
+      "commons_filename": "Suzuki WAGON R (MH22S&MH23S) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Subaru Impreza",
+      "local_name": "subaru-impreza-cc0.webp",
+      "commons_filename": "Subaru Impreza 124801.jpg",
+      "author": "Trop86"
+    },
+    {
+      "model": "Suzuki Spacia",
+      "local_name": "suzuki-spacia-cc0.webp",
+      "commons_filename": "Suzuki Spacia '24 (1).jpg",
+      "author": "Oq10pass"
+    },
+    {
+      "model": "Daihatsu Taft",
+      "local_name": "daihatsu-taft-cc0.webp",
+      "commons_filename": "Daihatsu Taft G '23 (1).jpg",
+      "author": "Oq10pass"
+    },
+    {
+      "model": "Mitsubishi Outlander",
+      "local_name": "mitsubishi-outlander-cc0.webp",
+      "commons_filename": "Mitsubishi Outlander (CU0).JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Mazda Mazda3",
+      "local_name": "mazda-mazda3-cc0.webp",
+      "commons_filename": "24 Mazda 3 Hatchback 2.5 S Preferred.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "Hyundai Ioniq 5",
+      "local_name": "hyundai-ioniq5-cc0.webp",
+      "commons_filename": "Hyundai Ioniq 5.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Kia EV9",
+      "local_name": "kia-ev9-cc0.webp",
+      "commons_filename": "Kia EV 9.jpg",
+      "author": "V0lkanic"
+    },
+    {
+      "model": "Kia Soul",
+      "local_name": "kia-soul-cc0.webp",
+      "commons_filename": "Kia soul.jpg",
+      "author": "ProjectManhattan"
+    },
+    {
+      "model": "Genesis GV80",
+      "local_name": "genesis-gv80-cc0.webp",
+      "commons_filename": "25 Genesis GV80 2.5T Standard.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "Kia Stinger",
+      "local_name": "kia-stinger-cc0.webp",
+      "commons_filename": "Kia Stinger (50866158607).jpg",
+      "author": "crash71100"
+    },
+    {
+      "model": "Genesis G80",
+      "local_name": "genesis-g80-cc0.webp",
+      "commons_filename": "25 Genesis G80 3.5T Sport Advanced.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "Genesis GV70",
+      "local_name": "genesis-gv70-cc0.webp",
+      "commons_filename": "Moscow, Genesis GV70 black, May 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Kia Niro",
+      "local_name": "kia-niro-cc0.webp",
+      "commons_filename": "Kia Niro Hybrid (2024) (54742895948).jpg",
+      "author": "Charles from Port Chester, New York"
+    },
+    {
+      "model": "BYD Seagull",
+      "local_name": "byd-seagull-cc0.webp",
+      "commons_filename": "BYD Seagull 010.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Changan CS75 Plus",
+      "local_name": "changan-cs75-plus-cc0.webp",
+      "commons_filename": "Changan CS75 Plus III facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Geely Tugella",
+      "local_name": "geely-tugella-cc0.webp",
+      "commons_filename": "Moscow, Geely Tugella white, Jan 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Changan UNI-K",
+      "local_name": "changan-uni-k-cc0.webp",
+      "commons_filename": "Moscow, Changan Uni-K, Oct 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Xiaomi SU7",
+      "local_name": "xiaomi-su7-cc0.webp",
+      "commons_filename": "Xiaomi SU7 MY2026 IMG01.jpg",
+      "author": "Poprace"
+    },
+    {
+      "model": "Xiaomi SU7 Ultra",
+      "local_name": "xiaomi-su7-ultra-cc0.webp",
+      "commons_filename": "Xiaomi SU7 Ultra 001.jpg",
+      "author": "Zoerides"
+    },
+    {
+      "model": "Geely Galaxy E5",
+      "local_name": "geely-galaxy-e5-cc0.webp",
+      "commons_filename": "Geely Galaxy E5 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "AITO M7",
+      "local_name": "aito-m7-cc0.webp",
+      "commons_filename": "AITO M7 facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Voyah Free",
+      "local_name": "voyah-free-cc0.webp",
+      "commons_filename": "2025 Voyah Free EVR Sport Edition bronze front.jpg",
+      "author": "Throwawayacc222"
+    },
+    {
+      "model": "GAC Trumpchi M8",
+      "local_name": "gac-m8-cc0.webp",
+      "commons_filename": "Moscow, GAC M8 Aug 2025 06.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Chery Arrizo 8",
+      "local_name": "chery-arrizo8-cc0.webp",
+      "commons_filename": "Moscow, Chery Arrizo 8 taxi, Mar 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Chery Arrizo 8 Pro",
+      "local_name": "chery-arrizo8-pro-cc0.webp",
+      "commons_filename": "Chery Arrizo 8 Pro facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "BYD Han EV",
+      "local_name": "byd-han-ev-cc0.webp",
+      "commons_filename": "BYD Han EV in Neu-Ulm 104813.jpg",
+      "author": "Trop86"
+    },
+    {
+      "model": "Chery Tiggo 8 Pro",
+      "local_name": "chery-tiggo8-pro-cc0.webp",
+      "commons_filename": "Chery Tiggo 8 Pro 010.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Tank 400",
+      "local_name": "tank-400-cc0.webp",
+      "commons_filename": "Tank 400 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "BYD Seal 06",
+      "local_name": "byd-seal06-cc0.webp",
+      "commons_filename": "BYD Seal 06 EV facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
     }
   ]
 }
