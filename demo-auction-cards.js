@@ -15,7 +15,7 @@ function render(){
  grid.replaceChildren();
  for(const v of list){
   if(!srcOK(v.image))continue;
-  const card=one("article",undefined,"demo-lot");
+  const card=one("article",undefined,"demo-lot");card.id=v.id;card.style.scrollMarginTop="22px";
   const picture=one("div",undefined,"demo-lot-image");
   const photo=one("img");
   photo.src=v.image;
@@ -65,5 +65,8 @@ function render(){
  }
 }
 [country,query].forEach(el=>el.addEventListener(el===query?"input":"change",render));
-fetch("/data/demo-auction-cards.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("demo data unavailable");return r.json()}).then(j=>{data=Array.isArray(j.lots)?j.lots:[];render()}).catch(()=>{count.textContent="Карточки автомобилей временно недоступны";});
+fetch("/data/demo-auction-cards.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("demo data unavailable");return r.json()}).then(j=>{data=Array.isArray(j.lots)?j.lots:[];render();
+  const target=location.hash.slice(1);
+  if(target && data.some(r=>r.id===target))
+    requestAnimationFrame(()=>document.getElementById(target)?.scrollIntoView({block:"start"}))}).catch(()=>{count.textContent="Карточки автомобилей временно недоступны";});
 })();
