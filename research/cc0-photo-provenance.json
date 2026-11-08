@@ -5024,17 +5024,16 @@
     {
       "model": "Wuling Bingo",
       "file": "/assets/demo/china-wuling-bingo-cc0.webp",
-      "source_title": "File:Wuling Bingo SUV 001.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Wuling_Bingo_SUV_001.jpg",
+      "source_title": "File:Wuling Binguo 006.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Wuling_Binguo_006.jpg",
       "rights": "Creative Commons Zero 1.0 Universal (CC0)",
       "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "author": "JustAnotherCarDesigner",
-      "image_sha256": "34c45d0dd277cadf7d762605cd35ca3f9b21d1bf180c6b9f98b77270f971d5c8",
+      "author": "Quzhouliulian",
+      "image_sha256": "fd6859aaa76c4ca8e6569f6caf6c6ac2cfa5f993cde90fdd2992be620627c063",
       "width": 1333,
       "height": 1000,
-      "size_bytes": 222358,
-      "verified_at_utc": "2026-11-08T11:13:13.260374+00:00",
-      "discovery_method": "Strict normalized manufacturer/model title match and live CC0 API"
+      "size_bytes": 362026,
+      "verified_at_utc": "2026-11-08T11:16:15.202724+00:00"
     },
     {
       "model": "Wuling Starlight",
