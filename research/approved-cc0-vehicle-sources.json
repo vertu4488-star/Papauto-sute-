@@ -600,6 +600,1206 @@
       "local_name": "byd-seal06-cc0.webp",
       "commons_filename": "BYD Seal 06 EV facelift 001.jpg",
       "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Toyota bB",
+      "local_name": "japan-toyota-bb-cc0.webp",
+      "commons_filename": "Toyota bB Open Deck (TA-NCP34).jpg",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Toyota Ist",
+      "local_name": "japan-toyota-ist-cc0.webp",
+      "commons_filename": "Toyota ist 150G (XP110) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Toyota Tank",
+      "local_name": "japan-toyota-tank-cc0.webp",
+      "commons_filename": "Moscow, Toyota Tank red, Apr 2026 04.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Toyota Wish",
+      "local_name": "japan-toyota-wish-cc0.webp",
+      "commons_filename": "A Toyota Wish Uber Taxi in Taiwan.png",
+      "author": "Cars in Taiwan"
+    },
+    {
+      "model": "Toyota Hilux",
+      "local_name": "japan-toyota-hilux-cc0.webp",
+      "commons_filename": "20200517 Toyota Hilux.jpg",
+      "author": "Kahvilokki"
+    },
+    {
+      "model": "Toyota Passo",
+      "local_name": "japan-toyota-passo-cc0.webp",
+      "commons_filename": "2018-2023 Toyota Passo Moda.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Toyota Roomy",
+      "local_name": "japan-toyota-roomy-cc0.webp",
+      "commons_filename": "Moscow, Toyota Roomy, no plates, Aug 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Toyota Mark X",
+      "local_name": "japan-toyota-mark-x-cc0.webp",
+      "commons_filename": "Toyota MARK X ZiO 240\"Five Style\" (DBA-ANA10) front.jpg",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Toyota Ractis",
+      "local_name": "japan-toyota-ractis-cc0.webp",
+      "commons_filename": "Moscow, Toyota Ractis (XP100) Sept 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Toyota Caldina",
+      "local_name": "japan-toyota-caldina-cc0.webp",
+      "commons_filename": "1999 Toyota Caldina white front.jpg",
+      "author": "Throwawayacc222"
+    },
+    {
+      "model": "Toyota Esquire",
+      "local_name": "japan-toyota-esquire-cc0.webp",
+      "commons_filename": "2014-2017 Toyota Esquire front.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Toyota Harrier",
+      "local_name": "japan-toyota-harrier-cc0.webp",
+      "commons_filename": "2017-2020 Toyota Harrier Hybrid Premium front left.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Toyota Succeed",
+      "local_name": "japan-toyota-succeed-cc0.webp",
+      "commons_filename": "Toyota Succeed Off-road Package front - Tokyo Auto Salon 2015.jpg",
+      "author": "Loadbeta"
+    },
+    {
+      "model": "Toyota GR Yaris",
+      "local_name": "japan-toyota-gr-yaris-cc0.webp",
+      "commons_filename": "Toyota GR Yaris GR-DAT prototype.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Toyota GR Corolla",
+      "local_name": "japan-toyota-gr-corolla-cc0.webp",
+      "commons_filename": "25 Toyota GR Corolla Core.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "Toyota Crown Sport",
+      "local_name": "japan-toyota-crown-sport-cc0.webp",
+      "commons_filename": "Toyota Crown Sport Z.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Toyota Pixis Epoch",
+      "local_name": "japan-toyota-pixis-epoch-cc0.webp",
+      "commons_filename": "2013-2017 Toyota Pixis Epoch Gf.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Toyota Yaris Cross",
+      "local_name": "japan-toyota-yaris-cross-cc0.webp",
+      "commons_filename": "2023 Toyota Yaris Cross 1.5 HEV S GR Parts (AC200) (Front).jpg",
+      "author": "Mocarey15"
+    },
+    {
+      "model": "Toyota Corolla Axio",
+      "local_name": "japan-toyota-corolla-axio-cc0.webp",
+      "commons_filename": "Toyota Corolla Axio (E160) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Toyota Crown Hybrid",
+      "local_name": "japan-toyota-crown-hybrid-cc0.webp",
+      "commons_filename": "2012-2015 Toyota Crown Hybrid Athlete S front.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Toyota Corolla Rumion",
+      "local_name": "japan-toyota-corolla-rumion-cc0.webp",
+      "commons_filename": "Toyota COROLLA RUMION 1.5X \"AEROTOURER\" 2WD (NZE151N) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Toyota Corolla Fielder",
+      "local_name": "japan-toyota-corolla-fielder-cc0.webp",
+      "commons_filename": "Toyota Corolla Fielder (E140 & E160) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Toyota Corolla Touring",
+      "local_name": "japan-toyota-corolla-touring-cc0.webp",
+      "commons_filename": "2024 Toyota Corolla Touring Hybrid W×B.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Toyota Crown Crossover",
+      "local_name": "japan-toyota-crown-crossover-cc0.webp",
+      "commons_filename": "Toyota Crown Crossover RS hybrid transmission.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Honda Jade",
+      "local_name": "japan-honda-jade-cc0.webp",
+      "commons_filename": "2015 Honda Jade RS blue.jpg",
+      "author": "Throwawayacc222"
+    },
+    {
+      "model": "Honda Jazz",
+      "local_name": "japan-honda-jazz-cc0.webp",
+      "commons_filename": "Honda Jazz (Rear), Jakarta, Indonesia.jpg",
+      "author": "RichardSummersault"
+    },
+    {
+      "model": "Honda S660",
+      "local_name": "japan-honda-s660-cc0.webp",
+      "commons_filename": "Honda S660 α (JW5) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Honda WR-V",
+      "local_name": "japan-honda-wr-v-cc0.webp",
+      "commons_filename": "Honda WR-V (Front), Jakarta, Indonesia.jpg",
+      "author": "RichardSummersault"
+    },
+    {
+      "model": "Honda Grace",
+      "local_name": "japan-honda-grace-cc0.webp",
+      "commons_filename": "Honda GRACE HYBRID EX (GM4) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Honda N-ONE",
+      "local_name": "japan-honda-n-one-cc0.webp",
+      "commons_filename": "Honda N-ONE e L.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Honda N-VAN",
+      "local_name": "japan-honda-n-van-cc0.webp",
+      "commons_filename": "Moscow, Honda N-van white, Nov 2026 02.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Honda Accord",
+      "local_name": "japan-honda-accord-cc0.webp",
+      "commons_filename": "2007 Honda Accord Euro R with Mugen tuning front.jpg",
+      "author": "Throwawayacc222"
+    },
+    {
+      "model": "Honda Freed+",
+      "local_name": "japan-honda-freed-cc0.webp",
+      "commons_filename": "Moscow, Honda Freed, Aug 2025 07.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Honda Stream",
+      "local_name": "japan-honda-stream-cc0.webp",
+      "commons_filename": "2012 Honda Stream RSZ white front.jpg",
+      "author": "Throwawayacc222"
+    },
+    {
+      "model": "Honda Insight",
+      "local_name": "japan-honda-insight-cc0.webp",
+      "commons_filename": "Moscow, Honda Insight (ZE2) Aug 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Honda Shuttle",
+      "local_name": "japan-honda-shuttle-cc0.webp",
+      "commons_filename": "Honda Shuttle (51267566955).jpg",
+      "author": "crash71100"
+    },
+    {
+      "model": "Honda Fit Shuttle",
+      "local_name": "japan-honda-fit-shuttle-cc0.webp",
+      "commons_filename": "Honda FIT SHUTTLE 15X front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Honda N-BOX Custom",
+      "local_name": "japan-honda-n-box-custom-cc0.webp",
+      "commons_filename": "3rd generation Honda N-BOX Custom Turbo.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Honda Vezel Hybrid",
+      "local_name": "japan-honda-vezel-hybrid-cc0.webp",
+      "commons_filename": "Honda Vezel Hybrid X front - Tokyo Motor Show 2013.jpg",
+      "author": "Loadbeta"
+    },
+    {
+      "model": "Honda Stepwgn Spada",
+      "local_name": "japan-honda-stepwgn-spada-cc0.webp",
+      "commons_filename": "Moscow, Honda Stepwgn Spada, Aug 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Nissan AD",
+      "local_name": "japan-nissan-ad-cc0.webp",
+      "commons_filename": "Nissan AD (Y11 & Y12) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Nissan Cube",
+      "local_name": "japan-nissan-cube-cc0.webp",
+      "commons_filename": "2002 Nissan Cube light blue front.jpg",
+      "author": "Throwawayacc222"
+    },
+    {
+      "model": "Nissan Fuga",
+      "local_name": "japan-nissan-fuga-cc0.webp",
+      "commons_filename": "Nissan FUGA HYBRID (HY51) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Nissan Juke",
+      "local_name": "japan-nissan-juke-cc0.webp",
+      "commons_filename": "2013 Nissan Juke Nismo Front Left.png",
+      "author": "LukaCali"
+    },
+    {
+      "model": "Nissan Moco",
+      "local_name": "japan-nissan-moco-cc0.webp",
+      "commons_filename": "Nissan Moco 20110219 front.jpg",
+      "author": "Loadbeta"
+    },
+    {
+      "model": "Nissan Roox",
+      "local_name": "japan-nissan-roox-cc0.webp",
+      "commons_filename": "2025 Nissan Roox Highway Star X.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Nissan Ariya",
+      "local_name": "japan-nissan-ariya-cc0.webp",
+      "commons_filename": "Nissan Ariya 2024Summer.jpg",
+      "author": "Mr.ちゅらさん"
+    },
+    {
+      "model": "Nissan Kicks",
+      "local_name": "japan-nissan-kicks-cc0.webp",
+      "commons_filename": "Nissan Kicks second generation Brazil.jpg",
+      "author": "Mateusmatsuda"
+    },
+    {
+      "model": "Nissan Micra",
+      "local_name": "japan-nissan-micra-cc0.webp",
+      "commons_filename": "Nissan Micra (43957817575).jpg",
+      "author": "Guillaume Vachey from Chalon sur Saone, France"
+    },
+    {
+      "model": "Nissan NV200",
+      "local_name": "japan-nissan-nv200-cc0.webp",
+      "commons_filename": "Nissan NV200 Evalia 154313.jpg",
+      "author": "Trop86"
+    },
+    {
+      "model": "Nissan Caravan",
+      "local_name": "japan-nissan-caravan-cc0.webp",
+      "commons_filename": "Nissan Caravan E26 Premium GX.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Nissan Elgrand",
+      "local_name": "japan-nissan-elgrand-cc0.webp",
+      "commons_filename": "2014-2020 Nissan Elgrand Highway Star Urban Chrome.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Nissan Qashqai",
+      "local_name": "japan-nissan-qashqai-cc0.webp",
+      "commons_filename": "Nissan Qashqai Glory 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Nissan Skyline",
+      "local_name": "japan-nissan-skyline-cc0.webp",
+      "commons_filename": "Moscow, blue Nissan Skyline, July 2025 02.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Nissan Wingroad",
+      "local_name": "japan-nissan-wingroad-cc0.webp",
+      "commons_filename": "Nissan WINGROAD Rider (Y12) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Nissan Dayz Roox",
+      "local_name": "japan-nissan-dayz-roox-cc0.webp",
+      "commons_filename": "2014-2016 Nissan Dayz Roox Highway Star front right.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Nissan Fairlady Z",
+      "local_name": "japan-nissan-fairlady-z-cc0.webp",
+      "commons_filename": "Nissan Fairlady Z, red.jpg",
+      "author": "Syced"
+    },
+    {
+      "model": "Nissan Note e-POWER",
+      "local_name": "japan-nissan-note-e-power-cc0.webp",
+      "commons_filename": "Nissan Note e-Power Boot.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Nissan NV100 Clipper",
+      "local_name": "japan-nissan-nv100-clipper-cc0.webp",
+      "commons_filename": "Tokyo Metropolitan Police Department Nissan NV100 Clipper patrol car.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Suzuki Alto",
+      "local_name": "japan-suzuki-alto-cc0.webp",
+      "commons_filename": "2021-2025 Suzuki Alto L.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Suzuki Xbee",
+      "local_name": "japan-suzuki-xbee-cc0.webp",
+      "commons_filename": "Moscow, Suzuki Xbee, Pajero Sport, Aug 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Suzuki Every",
+      "local_name": "japan-suzuki-every-cc0.webp",
+      "commons_filename": "2024 Suzuki Every Wagon PZ Turbo Special.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Suzuki Fronx",
+      "local_name": "japan-suzuki-fronx-cc0.webp",
+      "commons_filename": "Suzuki FRONX (4AA-WEB3S-XBSL-ZN) front.jpg",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Suzuki Ignis",
+      "local_name": "japan-suzuki-ignis-cc0.webp",
+      "commons_filename": "Suzuki Ignis front.JPG",
+      "author": "Corvettec6r"
+    },
+    {
+      "model": "Suzuki Solio",
+      "local_name": "japan-suzuki-solio-cc0.webp",
+      "commons_filename": "Moscow, Suzuki Solio Bandit hybrid dark-red, June 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Suzuki Escudo",
+      "local_name": "japan-suzuki-escudo-cc0.webp",
+      "commons_filename": "3rd generation Suzuki ESCUDO XG rear.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Suzuki Alto Lapin",
+      "local_name": "japan-suzuki-alto-lapin-cc0.webp",
+      "commons_filename": "Suzuki ALTO Lapin X (HE33S) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Suzuki Jimny Nomade",
+      "local_name": "japan-suzuki-jimny-nomade-cc0.webp",
+      "commons_filename": "2025 Suzuki Jimny Nomade FC.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Suzuki Jimny Sierra",
+      "local_name": "japan-suzuki-jimny-sierra-cc0.webp",
+      "commons_filename": "Suzuki Jimny SIERRA (JB43W) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Suzuki Solio Bandit",
+      "local_name": "japan-suzuki-solio-bandit-cc0.webp",
+      "commons_filename": "Moscow, Suzuki Solio Bandit hybrid black, Nov 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Suzuki Spacia Custom",
+      "local_name": "japan-suzuki-spacia-custom-cc0.webp",
+      "commons_filename": "2023 Suzuki Spacia Custom Concept.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Suzuki Wagon R Smile",
+      "local_name": "japan-suzuki-wagon-r-smile-cc0.webp",
+      "commons_filename": "2021-2024 Suzuki Wagon R Smile G.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Suzuki Hustler Hybrid",
+      "local_name": "japan-suzuki-hustler-hybrid-cc0.webp",
+      "commons_filename": "2020-2022 Suzuki Hustler Hybrid X.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Mazda CX-3",
+      "local_name": "japan-mazda-cx-3-cc0.webp",
+      "commons_filename": "21 Mazda CX-3 Sport.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "Mazda Axela",
+      "local_name": "japan-mazda-axela-cc0.webp",
+      "commons_filename": "Mazda AXELA Sedan (BM) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Hyundai H-1",
+      "local_name": "south-korea-hyundai-h-1-cc0.webp",
+      "commons_filename": "Hyundai H-1 (51553899631).jpg",
+      "author": "crash71100"
+    },
+    {
+      "model": "Hyundai i20",
+      "local_name": "south-korea-hyundai-i20-cc0.webp",
+      "commons_filename": "Hyundai i20 Rally1 2025.jpg",
+      "author": "Calreyn88"
+    },
+    {
+      "model": "Hyundai i30",
+      "local_name": "south-korea-hyundai-i30-cc0.webp",
+      "commons_filename": "2021 Hyundai i30 N Line T-GDi - 1482cc 1.5 (159PS) Petrol - Shadow Grey - 02-2025, Front.jpg",
+      "author": "Harvey Bold"
+    },
+    {
+      "model": "Hyundai Kona",
+      "local_name": "south-korea-hyundai-kona-cc0.webp",
+      "commons_filename": "Moscow, Hyundai Kona, Aug 2025 02.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Hyundai Nexo",
+      "local_name": "south-korea-hyundai-nexo-cc0.webp",
+      "commons_filename": "Hyundai Nexo Zurich Taxi.jpg",
+      "author": "Calreyn88"
+    },
+    {
+      "model": "Hyundai Creta",
+      "local_name": "south-korea-hyundai-creta-cc0.webp",
+      "commons_filename": "Moscow, Hyundai Creta I - Yandex streetview cameramobile Sept 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Hyundai Equus",
+      "local_name": "south-korea-hyundai-equus-cc0.webp",
+      "commons_filename": "16 Hyundai Equus Signature.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "Hyundai Ioniq",
+      "local_name": "south-korea-hyundai-ioniq-cc0.webp",
+      "commons_filename": "Hyundai ioniq 9.jpg",
+      "author": "Calreyn88"
+    },
+    {
+      "model": "Hyundai Venue",
+      "local_name": "south-korea-hyundai-venue-cc0.webp",
+      "commons_filename": "23 Hyundai Venue SEL.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "Hyundai Ioniq 6",
+      "local_name": "south-korea-hyundai-ioniq-6-cc0.webp",
+      "commons_filename": "Hyundai ioniq 6 N Drift Car 2025 1.jpg",
+      "author": "Calreyn88"
+    },
+    {
+      "model": "Hyundai Ioniq 9",
+      "local_name": "south-korea-hyundai-ioniq-9-cc0.webp",
+      "commons_filename": "26 Hyundai Ioniq 9 Limited.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "Hyundai Veloster",
+      "local_name": "south-korea-hyundai-veloster-cc0.webp",
+      "commons_filename": "Hyundai Veloster (48025472703).jpg",
+      "author": "Guillaume Vachey from Chalon sur Saone, France"
+    },
+    {
+      "model": "Hyundai Grand Starex",
+      "local_name": "south-korea-hyundai-grand-starex-cc0.webp",
+      "commons_filename": "2011 Hyundai Grand Starex 2.5 VGT AT HVX VIP Pack black front.jpg",
+      "author": "Throwawayacc222"
+    },
+    {
+      "model": "Kia K3",
+      "local_name": "south-korea-kia-k3-cc0.webp",
+      "commons_filename": "Kia K3 II 001.jpg",
+      "author": "Quzhouliulian"
+    },
+    {
+      "model": "Kia EV5",
+      "local_name": "south-korea-kia-ev5-cc0.webp",
+      "commons_filename": "Kia EV5 002.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Kia Ceed",
+      "local_name": "south-korea-kia-ceed-cc0.webp",
+      "commons_filename": "Palubní (přístrojová) deska automobilu Kia Ceed..jpg",
+      "author": "Krelyshy"
+    },
+    {
+      "model": "Kia Carens",
+      "local_name": "south-korea-kia-carens-cc0.webp",
+      "commons_filename": "Kia Carens II (FJ) front view.jpg",
+      "author": "Riza Shabanaj"
+    },
+    {
+      "model": "Kia Niro EV",
+      "local_name": "south-korea-kia-niro-ev-cc0.webp",
+      "commons_filename": "22 Kia Niro EV EX Premium.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "Kia Morning / Picanto",
+      "local_name": "south-korea-kia-morning-picanto-cc0.webp",
+      "commons_filename": "2021 KIA Picanto X-Line S - 998cc 1.0 (65PS) Petrol - Lime Light Metallic - 10-2024, Front.jpg",
+      "author": "Harvey Bold"
+    },
+    {
+      "model": "Genesis GV60",
+      "local_name": "south-korea-genesis-gv60-cc0.webp",
+      "commons_filename": "Genesis GV60 Magma Concept 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "SsangYong Musso",
+      "local_name": "south-korea-ssangyong-musso-cc0.webp",
+      "commons_filename": "Ssangyong Musso (48615799493).jpg",
+      "author": "crash71100"
+    },
+    {
+      "model": "SsangYong Actyon",
+      "local_name": "south-korea-ssangyong-actyon-cc0.webp",
+      "commons_filename": "Ssangyong Actyon Sports.jpg",
+      "author": "crash71100"
+    },
+    {
+      "model": "SsangYong Rexton",
+      "local_name": "south-korea-ssangyong-rexton-cc0.webp",
+      "commons_filename": "Ssangyong rexton police vehicle Trinidad St Joseph police station.jpg",
+      "author": "999real"
+    },
+    {
+      "model": "SsangYong Tivoli",
+      "local_name": "south-korea-ssangyong-tivoli-cc0.webp",
+      "commons_filename": "Ssangyong Tivoli (51500939953).jpg",
+      "author": "crash71100"
+    },
+    {
+      "model": "SsangYong Korando",
+      "local_name": "south-korea-ssangyong-korando-cc0.webp",
+      "commons_filename": "Ssangyong Korando (50844712612).jpg",
+      "author": "crash71100"
+    },
+    {
+      "model": "BMW X1",
+      "local_name": "south-korea-bmw-x1-cc0.webp",
+      "commons_filename": "24 BMW X1 M35i.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "BMW i4",
+      "local_name": "south-korea-bmw-i4-cc0.webp",
+      "commons_filename": "23 BMW i4 eDrive40.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "BMW 1 Series",
+      "local_name": "south-korea-bmw-1-series-cc0.webp",
+      "commons_filename": "BMW 1 Series (F52) 003.jpg",
+      "author": "Quzhouliulian"
+    },
+    {
+      "model": "BMW 2 Series",
+      "local_name": "south-korea-bmw-2-series-cc0.webp",
+      "commons_filename": "BMW 2 Series (Rear), Jakarta, Indonesia.jpg",
+      "author": "RichardSummersault"
+    },
+    {
+      "model": "Mercedes-Benz EQA",
+      "local_name": "south-korea-mercedes-benz-eqa-cc0.webp",
+      "commons_filename": "2025 Mercedes-Benz EQA 250+ AMG Line Executive EV - 70.5kWh (190PS) Electric - Polar White - 03-2025, Front.jpg",
+      "author": "Harvey Bold"
+    },
+    {
+      "model": "Mercedes-Benz EQE",
+      "local_name": "south-korea-mercedes-benz-eqe-cc0.webp",
+      "commons_filename": "Moscow, Mercedes-Benz EQE (X294) July 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Mercedes-Benz A-Class",
+      "local_name": "south-korea-mercedes-benz-a-class-cc0.webp",
+      "commons_filename": "Mercedes-Benz A-Class (Front), Jakarta, Indonesia.jpg",
+      "author": "RichardSummersault"
+    },
+    {
+      "model": "Mercedes-Benz G-Class",
+      "local_name": "south-korea-mercedes-benz-g-class-cc0.webp",
+      "commons_filename": "Mercedes-Benz G-Class G300CDI W461 Swiss Army with Hess Shelter - command and communications vehicle.png",
+      "author": "Fabien Tremoulinas"
+    },
+    {
+      "model": "Mercedes-Benz V-Class",
+      "local_name": "south-korea-mercedes-benz-v-class-cc0.webp",
+      "commons_filename": "Mercedes-Benz V-Class W447 Rear Glass Hatch Feature.jpg",
+      "author": "MoCars"
+    },
+    {
+      "model": "Mercedes-Benz GLE-Class",
+      "local_name": "south-korea-mercedes-benz-gle-class-cc0.webp",
+      "commons_filename": "Moscow, Taganka, Mercedes-Benz GLE-Class, Sept 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Audi A3",
+      "local_name": "south-korea-audi-a3-cc0.webp",
+      "commons_filename": "2018 Audi A3 LIMOUSINE S line Edition.jpg",
+      "author": "ClearHam"
+    },
+    {
+      "model": "Audi A7",
+      "local_name": "south-korea-audi-a7-cc0.webp",
+      "commons_filename": "Moscow, Audi A7, orange rims, Feb 2026 02.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Audi A8",
+      "local_name": "south-korea-audi-a8-cc0.webp",
+      "commons_filename": "Audi A8 L Horch 004.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Volkswagen Passat",
+      "local_name": "south-korea-volkswagen-passat-cc0.webp",
+      "commons_filename": "Volkswagen Passat Pro 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Porsche 911",
+      "local_name": "south-korea-porsche-911-cc0.webp",
+      "commons_filename": "Porsche 911 (40781883663).jpg",
+      "author": "Thomas Vogt from Paderborn, Deutschland"
+    },
+    {
+      "model": "Porsche Macan",
+      "local_name": "south-korea-porsche-macan-cc0.webp",
+      "commons_filename": "2020 Porsche Macan GTS grey front.jpg",
+      "author": "Throwawayacc222"
+    },
+    {
+      "model": "Porsche Panamera",
+      "local_name": "south-korea-porsche-panamera-cc0.webp",
+      "commons_filename": "Porsche Panamera (Foch parking).jpg",
+      "author": "Mathious Ier"
+    },
+    {
+      "model": "BYD e2",
+      "local_name": "china-byd-e2-cc0.webp",
+      "commons_filename": "BYD e2 facelift 004.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "BYD Seal",
+      "local_name": "china-byd-seal-cc0.webp",
+      "commons_filename": "BYD Seal 08 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "BYD Song L",
+      "local_name": "china-byd-song-l-cc0.webp",
+      "commons_filename": "BYD Song L DM-i 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "BYD Qin Plus",
+      "local_name": "china-byd-qin-plus-cc0.webp",
+      "commons_filename": "BYD Qin Plus DM-i facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "BYD Song Pro",
+      "local_name": "china-byd-song-pro-cc0.webp",
+      "commons_filename": "BYD Song Pro DM-i 2023 facelift 001.jpg",
+      "author": "Quzhouliulian"
+    },
+    {
+      "model": "BYD Song L EV",
+      "local_name": "china-byd-song-l-ev-cc0.webp",
+      "commons_filename": "BYD Song L EV 001.jpg",
+      "author": "KitsuneDP"
+    },
+    {
+      "model": "BYD Yuan Plus",
+      "local_name": "china-byd-yuan-plus-cc0.webp",
+      "commons_filename": "BYD Yuan Plus facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "BYD Seal 06 GT",
+      "local_name": "china-byd-seal-06-gt-cc0.webp",
+      "commons_filename": "BYD Seal 06 GT 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "BYD Seal 05 DM-i",
+      "local_name": "china-byd-seal-05-dm-i-cc0.webp",
+      "commons_filename": "BYD Seal 05 DM-i.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "BYD Qin Plus DM-i",
+      "local_name": "china-byd-qin-plus-dm-i-cc0.webp",
+      "commons_filename": "BYD Qin Plus DM-i facelift 003.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "BYD Sea Lion 07 EV",
+      "local_name": "china-byd-sea-lion-07-ev-cc0.webp",
+      "commons_filename": "BYD Sea Lion 07 EV 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "BYD Song Plus DM-i",
+      "local_name": "china-byd-song-plus-dm-i-cc0.webp",
+      "commons_filename": "BYD Song Plus Champion Edition and BYD Song Plus DM-i 001.jpg",
+      "author": "Jengtingchen"
+    },
+    {
+      "model": "Geely Panda",
+      "local_name": "china-geely-panda-cc0.webp",
+      "commons_filename": "Geely Panda Mini EV facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Geely Binrui",
+      "local_name": "china-geely-binrui-cc0.webp",
+      "commons_filename": "Geely Binrui Cool facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Geely Boyue L",
+      "local_name": "china-geely-boyue-l-cc0.webp",
+      "commons_filename": "Geely Boyue L IV 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Geely Cityray",
+      "local_name": "china-geely-cityray-cc0.webp",
+      "commons_filename": "Moscow, big and small (Geely Cityray, BMW Z E89) Apr 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Geely Preface",
+      "local_name": "china-geely-preface-cc0.webp",
+      "commons_filename": "Geely Preface L 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Geely Emgrand L",
+      "local_name": "china-geely-emgrand-l-cc0.webp",
+      "commons_filename": "Geely Emgrand L Hi-P facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Geely Galaxy E8",
+      "local_name": "china-geely-galaxy-e8-cc0.webp",
+      "commons_filename": "Geely Galaxy E8 004.jpg",
+      "author": "Zoerides"
+    },
+    {
+      "model": "Geely Galaxy L6",
+      "local_name": "china-geely-galaxy-l6-cc0.webp",
+      "commons_filename": "Geely Galaxy L6 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Geely Galaxy L7",
+      "local_name": "china-geely-galaxy-l7-cc0.webp",
+      "commons_filename": "Geely Galaxy L7 EM-i 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Geely Galaxy M9",
+      "local_name": "china-geely-galaxy-m9-cc0.webp",
+      "commons_filename": "Geely Galaxy M9 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Geely Galaxy Starship 7",
+      "local_name": "china-geely-galaxy-starship-7-cc0.webp",
+      "commons_filename": "Geely Galaxy Starship 7 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Changan Eado",
+      "local_name": "china-changan-eado-cc0.webp",
+      "commons_filename": "Changan Eado III 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Changan Alsvin",
+      "local_name": "china-changan-alsvin-cc0.webp",
+      "commons_filename": "Moscow, Changan Alsvin blue, Apr 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Changan CS35 Plus",
+      "local_name": "china-changan-cs35-plus-cc0.webp",
+      "commons_filename": "Moscow, Changan CS35 plus Delimobil, Aug 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Changan Raeton Plus",
+      "local_name": "china-changan-raeton-plus-cc0.webp",
+      "commons_filename": "Changan Raeton Plus 008.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Chery Omoda 5",
+      "local_name": "china-chery-omoda-5-cc0.webp",
+      "commons_filename": "Chery Omoda 5 008.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Chery Tiggo 9",
+      "local_name": "china-chery-tiggo-9-cc0.webp",
+      "commons_filename": "Chery Tiggo 9 2026 facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Chery Arrizo 5",
+      "local_name": "china-chery-arrizo-5-cc0.webp",
+      "commons_filename": "Chery Arrizo 5 2024 facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Chery Tiggo 5x",
+      "local_name": "china-chery-tiggo-5x-cc0.webp",
+      "commons_filename": "Chery Tiggo 5x 2020 facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Chery Tiggo 7 Plus",
+      "local_name": "china-chery-tiggo-7-plus-cc0.webp",
+      "commons_filename": "Chery Tiggo 7 Plus IMG001.jpg",
+      "author": "Zotyefan"
+    },
+    {
+      "model": "Chery Tiggo 8 Plus",
+      "local_name": "china-chery-tiggo-8-plus-cc0.webp",
+      "commons_filename": "Chery Tiggo 8 Plus 019.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Haval F7",
+      "local_name": "china-haval-f7-cc0.webp",
+      "commons_filename": "2025 Haval F7 Elite 4WD white front.jpg",
+      "author": "Throwawayacc222"
+    },
+    {
+      "model": "Haval H6",
+      "local_name": "china-haval-h6-cc0.webp",
+      "commons_filename": "Haval H6 III PHEV 001.jpg",
+      "author": "Quzhouliulian"
+    },
+    {
+      "model": "Haval H7",
+      "local_name": "china-haval-h7-cc0.webp",
+      "commons_filename": "Moscow, Haval H7 silver, Sept 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Haval H9",
+      "local_name": "china-haval-h9-cc0.webp",
+      "commons_filename": "Moscow, Haval H9, Aug 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Haval M6",
+      "local_name": "china-haval-m6-cc0.webp",
+      "commons_filename": "Moscow, Haval M6 white, May 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Haval F7x",
+      "local_name": "china-haval-f7x-cc0.webp",
+      "commons_filename": "Moscow, Haval F7x (BMW wannabee) May 2022 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Haval Raptor",
+      "local_name": "china-haval-raptor-cc0.webp",
+      "commons_filename": "Haval H9 II and Haval Raptor 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Haval Big Dog / Dargo",
+      "local_name": "china-haval-big-dog-dargo-cc0.webp",
+      "commons_filename": "Moscow, Belkacar Haval Dargo, May 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "GAC GS3",
+      "local_name": "china-gac-gs3-cc0.webp",
+      "commons_filename": "Moscow, 2nd Syromyatnichesky Lane, rental GAC GS3 May 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "GAC Aion Y",
+      "local_name": "china-gac-aion-y-cc0.webp",
+      "commons_filename": "2024 GAC Aion Y Plus Premium in TSM Bandung 01.jpg",
+      "author": "MoCars"
+    },
+    {
+      "model": "GAC Trumpchi E8",
+      "local_name": "china-gac-trumpchi-e8-cc0.webp",
+      "commons_filename": "Moscow, GAC Trumpchi E8, Aug 2025 02.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Zeekr 7X",
+      "local_name": "china-zeekr-7x-cc0.webp",
+      "commons_filename": "Zeekr 7X 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Zeekr 9X",
+      "local_name": "china-zeekr-9x-cc0.webp",
+      "commons_filename": "Moscow, Zeekr 9X black, Feb 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Zeekr 009",
+      "local_name": "china-zeekr-009-cc0.webp",
+      "commons_filename": "Zeekr 009 020.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Zeekr Mix",
+      "local_name": "china-zeekr-mix-cc0.webp",
+      "commons_filename": "Zeekr Mix 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Tank 500",
+      "local_name": "china-tank-500-cc0.webp",
+      "commons_filename": "Moscow, Tank 500, June 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Tank 700",
+      "local_name": "china-tank-700-cc0.webp",
+      "commons_filename": "Tank 700 008.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Xiaomi YU7",
+      "local_name": "china-xiaomi-yu7-cc0.webp",
+      "commons_filename": "Xiaomi YU7 GT 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "AITO M6",
+      "local_name": "china-aito-m6-cc0.webp",
+      "commons_filename": "AITO M6 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "AITO M8",
+      "local_name": "china-aito-m8-cc0.webp",
+      "commons_filename": "AITO M8 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "AITO M9",
+      "local_name": "china-aito-m9-cc0.webp",
+      "commons_filename": "Aito M9 electric crossover SUV image01.jpg",
+      "author": "Rubygrof"
+    },
+    {
+      "model": "Voyah Dream",
+      "local_name": "china-voyah-dream-cc0.webp",
+      "commons_filename": "Moscow, Voyah Dream black, Apr 2026 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Voyah Courage",
+      "local_name": "china-voyah-courage-cc0.webp",
+      "commons_filename": "Voyah Courage 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Voyah Passion",
+      "local_name": "china-voyah-passion-cc0.webp",
+      "commons_filename": "Moscow, Voyah Passion July 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Hongqi H5",
+      "local_name": "china-hongqi-h5-cc0.webp",
+      "commons_filename": "Hongqi H5 II 011.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Hongqi H9",
+      "local_name": "china-hongqi-h9-cc0.webp",
+      "commons_filename": "Hongqi H9 facelift 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Hongqi HQ9",
+      "local_name": "china-hongqi-hq9-cc0.webp",
+      "commons_filename": "Hongqi HQ9 MY2024 IMG01.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Hongqi HS5",
+      "local_name": "china-hongqi-hs5-cc0.webp",
+      "commons_filename": "Hongqi HS5 facelift 009.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Hongqi HS7",
+      "local_name": "china-hongqi-hs7-cc0.webp",
+      "commons_filename": "Hongqi HS7 II PHEV 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Hongqi E-HS9",
+      "local_name": "china-hongqi-e-hs9-cc0.webp",
+      "commons_filename": "Hongqi E-HS9 009.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Jetour X90",
+      "local_name": "china-jetour-x90-cc0.webp",
+      "commons_filename": "Jetour X90 Pro MY2024 IMG01.jpg",
+      "author": "Poprace"
+    },
+    {
+      "model": "Jetour Dashing",
+      "local_name": "china-jetour-dashing-cc0.webp",
+      "commons_filename": "Moscow, grey Jetour Dashing 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Jetour X70 Plus",
+      "local_name": "china-jetour-x70-plus-cc0.webp",
+      "commons_filename": "Jetour X70 Plus facelift 001.jpg",
+      "author": "Jengtingchen"
+    },
+    {
+      "model": "Jetour X90 Plus",
+      "local_name": "china-jetour-x90-plus-cc0.webp",
+      "commons_filename": "2024 Jetour X90 Plus 2.0 DCT white front.jpg",
+      "author": "Throwawayacc222"
+    },
+    {
+      "model": "Jetour Shanhai T1",
+      "local_name": "china-jetour-shanhai-t1-cc0.webp",
+      "commons_filename": "Jetour Shanhai T1 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Exeed LX",
+      "local_name": "china-exeed-lx-cc0.webp",
+      "commons_filename": "Moscow, rental Exeed LX April 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Exeed RX",
+      "local_name": "china-exeed-rx-cc0.webp",
+      "commons_filename": "Moscow, Exeed RX (Exeed Yaoguang) Aug 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Exeed VX",
+      "local_name": "china-exeed-vx-cc0.webp",
+      "commons_filename": "Moscow, Exeed VX, July 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Exeed ET5",
+      "local_name": "china-exeed-et5-cc0.webp",
+      "commons_filename": "Exeed ET5 MY2026 IMG01.jpg",
+      "author": "Poprace"
+    },
+    {
+      "model": "Exeed TXL",
+      "local_name": "china-exeed-txl-cc0.webp",
+      "commons_filename": "Moscow, Exeed TXL dark-green, Sept 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Avatr 06",
+      "local_name": "china-avatr-06-cc0.webp",
+      "commons_filename": "Avatr 06 001.jpg",
+      "author": "JustAnotherCarDesigner"
+    },
+    {
+      "model": "Avatr 07",
+      "local_name": "china-avatr-07-cc0.webp",
+      "commons_filename": "Moscow, Avatr 07, Aug 2025 01.jpg",
+      "author": "Retired electrician"
+    },
+    {
+      "model": "Mazda CX-30",
+      "local_name": "japan-mazda-cx-30-cc0.webp",
+      "commons_filename": "20 Mazda CX-30 Preferred.jpg",
+      "author": "HJUdall"
+    },
+    {
+      "model": "Mazda CX-60",
+      "local_name": "japan-mazda-cx-60-cc0.webp",
+      "commons_filename": "Mazda CX-60 161931.jpg",
+      "author": "Trop86"
+    },
+    {
+      "model": "Mazda CX-80",
+      "local_name": "japan-mazda-cx-80-cc0.webp",
+      "commons_filename": "Mazda CX-80 XD Drive Edition.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Mazda Carol",
+      "local_name": "japan-mazda-carol-cc0.webp",
+      "commons_filename": "1968 Mazda Carol 360.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Mazda Demio",
+      "local_name": "japan-mazda-demio-cc0.webp",
+      "commons_filename": "Mazda Demio XD Touring L Package.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Mazda Atenza",
+      "local_name": "japan-mazda-atenza-cc0.webp",
+      "commons_filename": "2003 Mazda Atenza Sport 23Z.jpg",
+      "author": "TTTNIS"
+    },
+    {
+      "model": "Mazda Biante",
+      "local_name": "japan-mazda-biante-cc0.webp",
+      "commons_filename": "Mazda BIANTE GRANZ-SKYACTIV (CCFFW) at night front.JPG",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "model": "Mazda Verisa",
+      "local_name": "japan-mazda-verisa-cc0.webp",
+      "commons_filename": "Mazda VERISA C (DC5W) front.JPG",
+      "author": "Tokumeigakarinoaoshima"
     }
   ]
 }
