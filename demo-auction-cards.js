@@ -6,26 +6,29 @@ const currency={JPY:"¥",KRW:"₩",CNY:"¥"};
 const number=n=>new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(n);
 const rub=n=>number(n)+" ₽";
 const one=(tag,txt,cls)=>{const e=document.createElement(tag);if(txt!==undefined)e.textContent=String(txt);if(cls)e.className=cls;return e};
-const srcOK=s=>/^\/assets\/demo\/[a-z0-9-]+\.svg$/.test(s);
+const srcOK=s=>/^\/assets\/demo\/[a-z0-9-]+-cc0\.webp$/.test(s);
 let data=[];
 function render(){
  const needle=query.value.trim().toLowerCase(),c=country.value;
  const list=data.filter(v=>(!c||v.country===c)&&(!needle||[v.make,v.model,v.year,v.body,v.color].join(" ").toLowerCase().includes(needle)));
- count.textContent="Демонстрационных карточек: "+list.length;
+ count.textContent="Автомобилей с реальными фотографиями моделей: "+list.length;
  grid.replaceChildren();
  for(const v of list){
   if(!srcOK(v.image))continue;
   const card=one("article",undefined,"demo-lot");
   const picture=one("div",undefined,"demo-lot-image");
-  const photo=one("div",undefined,"demo-photo-sprite");
-  photo.classList.add("demo-photo-"+v.id.replace(/[^a-z0-9-]/g,""));
-  photo.setAttribute("role","img");
-  photo.setAttribute("aria-label","Сгенерированное иллюстративное изображение модели "+v.make+" "+v.model);
-  const badge=one("span","ДЕМО · НЕ РЕАЛЬНЫЙ ЛОТ","demo-lot-badge");
-  picture.append(photo,badge);card.append(picture);
+  const photo=one("img");
+  photo.src=v.image;
+  photo.alt="Реальная фотография модели "+v.make+" "+v.model+", не конкретного продаваемого автомобиля";
+  photo.loading="lazy";
+  photo.decoding="async";
+  photo.width=1200;
+  photo.height=800;
+  photo.onerror=()=>{photo.hidden=true;const notice=one("span","Фотография временно недоступна","demo-photo-unavailable");picture.append(notice);};
+  picture.append(photo);card.append(picture);
   const body=one("div",undefined,"demo-lot-body");
   body.append(one("div",countries[v.country]+" · "+v.year,"demo-lot-country"),one("h3",v.make+" "+v.model));
-  body.append(one("p",v.engine+" · "+v.body+" · "+v.color+" · "+number(v.mileage_km)+" км · оценка: "+v.grade,"demo-lot-specs"));
+  body.append(one("p",v.engine+" · "+v.body+" · "+(v.color==="Не уточнён"?"":v.color+" · ")+number(v.mileage_km)+" км (пример пробега)","demo-lot-specs"));
   const baseRub=Math.round(v.sale_price*v.rate_to_rub);
   const cfRub=Math.round(v.japan_cf*v.rate_to_rub);
   const exportRub=Math.round(v.export_fees*v.rate_to_rub);
@@ -33,7 +36,7 @@ function render(){
   const vlad=baseRub+cfRub+exportRub+freightRub+v.duty_rub+v.util_rub+v.sbkts_rub+v.storage_rub+v.commission_rub;
   const nov=vlad+v.truck_rub;
   const price=one("div",undefined,"demo-lot-total");
-  price.append(one("span","Итого до Новосибирска (пример)"),one("strong",rub(nov)));
+  price.append(one("span","Ориентир стоимости до Новосибирска"),one("strong",rub(nov)));
   body.append(price);
   const details=one("details",undefined,"demo-lot-details");
   const summary=one("summary","Показать полный расчёт");
@@ -41,8 +44,8 @@ function render(){
   const lines=one("div",undefined,"demo-lot-lines");
   const line=(label,val,isTotal=false)=>{const row=one("div",undefined,"demo-lot-line"+(isTotal?" is-total":""));row.append(one("span",label),one("strong",val));lines.append(row)};
   const sign=currency[v.currency]||v.currency;
-  line("Стартовая цена (в итог не входит)",number(v.start_price)+" "+sign);
-  line("Цена продажи (условная)",number(v.sale_price)+" "+sign);
+  line("Ориентир начальной ставки (в итог не входит)",number(v.start_price)+" "+sign);
+  line("Ориентир цены покупки (не результат реальных торгов)",number(v.sale_price)+" "+sign);
   if(v.country==="japan")line("C&F, расходы Японии + фрахт",number(v.japan_cf)+" ¥");
   else{line("Расходы в стране",number(v.export_fees)+" "+sign);line("Морской фрахт",number(v.freight)+" "+sign);}
   const euro=Math.round(v.duty_rub/92.1499),usd=Math.round(euro*1.1268);
@@ -55,12 +58,12 @@ function render(){
   line("Автовоз до Новосибирска",rub(v.truck_rub));
   line("Итого до Новосибирска",rub(nov),true);
   details.append(lines);body.append(details);
-  const note=one("p","Все показатели и оценки условные. Фото — авторская иллюстрация, не аукционный снимок. Не автомобиль в наличии.","demo-lot-warning");
+  const note=one("p","Реальная фотография модели с лицензией CC0. Пробег и все суммы — пример расчёта, не подтверждённая продажа и не автомобиль в наличии.","demo-lot-warning");
   const link=one("a","Запросить расчёт похожего автомобиля","demo-lot-cta");
   link.href="/?view=select&similar="+encodeURIComponent(v.make+" "+v.model+" "+v.year)+"#assistant";
   body.append(note,link);card.append(body);grid.append(card);
  }
 }
 [country,query].forEach(el=>el.addEventListener(el===query?"input":"change",render));
-fetch("/data/demo-auction-cards.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("demo data unavailable");return r.json()}).then(j=>{data=Array.isArray(j.lots)?j.lots:[];render()}).catch(()=>{count.textContent="Демонстрационные карточки временно недоступны";});
+fetch("/data/demo-auction-cards.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("demo data unavailable");return r.json()}).then(j=>{data=Array.isArray(j.lots)?j.lots:[];render()}).catch(()=>{count.textContent="Карточки автомобилей временно недоступны";});
 })();
