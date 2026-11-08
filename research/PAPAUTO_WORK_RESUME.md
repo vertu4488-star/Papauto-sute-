@@ -68,9 +68,9 @@
 ## Выполнено: 100 настоящих фотокарточек — 8 ноября 2026
 - Добавлена ещё 42 фото: Япония 18, Южная Корея 8, Китай 16. Суммарно 100 отдельных настоящих фотографий моделей.
 - Распределение фотокарточек: Япония 45, Корея 21, Китай 34.
-- Новые модели включают Toyota Camry, Raize, Voxy, Corolla Cross, Honda Civic/CR-V, Nissan Leaf/X-Trail, Suzuki Swift/Spacia, Hyundai Ioniq 5, Kia EV9/Niro, Genesis GV70/GV80, BYD Seagull/Han EV/Seal 06, Chery Tiggo 8 Pro, Xiaomi SU7, Zeekr? (Zeekr 001 already present), Geely Galaxy E5, AITO M7, GAC Trumpchi M8, Tank 400.
+- Новые модели включают Toyota Camry, Raize, Voxy, Corolla Cross, Honda Civic/CR-V, Nissan Leaf/X-Trail, Suzuki Swift/Spacia, Hyundai Ioniq 5, Kia EV9/Niro, Genesis GV70/GV80, BYD Seagull/Han EV/Seal 06, Chery Tiggo 8 Pro, Xiaomi SU7, Geely Galaxy E5, AITO M7, GAC Trumpchi M8, Tank 400.
 - Все источники конкретных фото указаны в research/approved-cc0-vehicle-sources.json, фактические хеши/лицензии в research/cc0-photo-provenance.json. Проверены 100 локальных WebP и 100 отдельных JS-карточек без отсутствующих файлов.
-- Публичная страница проверена независимо: HTTP 200, 518 моделей, ровно 100 различных URL фотографий и отсутствие исходящих ссылок на продавцов. GitHub тесты пройдены; Render подтвердил публикацию с хэшем 26d1666beea1, до обновления cache-bust версии.
+- Публичная страница проверена независимо: HTTP 200, 518 моделей, ровно 100 различных URL фотографий и отсутствие исходящих ссылок на продавцов. GitHub тесты пройдены; Render подтвердил последнюю публичную версию `83817ce3f30f` как live, включая обновлённую версию JS для мобильных браузеров.
 - Изменена первоначальная страница на 120 карточек, чтобы все 100 фотографий отображались без дополнительного нажатия.
 - Это реальные фото моделей, не аукционные лоты с датами, пробегом и ценой. Не выдавать их за фактические лоты.
 
