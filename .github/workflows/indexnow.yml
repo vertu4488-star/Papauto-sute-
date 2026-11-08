@@ -1,0 +1,117 @@
+name: Notify Yandex via IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "*.html"
+      - "**/*.html"
+      - "sitemap.xml"
+      - "robots.txt"
+      - ".github/workflows/indexnow.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    name: Verify public site and notify IndexNow
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify PapAuto is public and ownership key is served
+        id: verify
+        continue-on-error: true
+        shell: bash
+        env:
+          INDEXNOW_KEY: d260ebec4a8764da2a8a41fc9d6791a8
+        run: |
+          set -euo pipefail
+          for n in $(seq 1 18); do
+            contents="$(curl --connect-timeout 6 --max-time 12 -fsSL "https://papauto.ru/${INDEXNOW_KEY}.txt" || true)"
+            if [[ "$contents" == "$INDEXNOW_KEY" ]] && curl --connect-timeout 6 --max-time 12 -fsSL https://papauto.ru/ -o /tmp/papauto-index.html && grep -qi 'PAPAUTO' /tmp/papauto-index.html && ! grep -qi 'Welcome to nginx' /tmp/papauto-index.html; then
+              echo "Verified HTTPS PapAuto page and IndexNow key"
+              exit 0
+            fi
+            echo "Waiting for correct live PapAuto site (attempt $n)"
+            sleep 10
+          done
+          echo "::warning::Live domain or IndexNow key was unavailable; no indexing notification sent"
+          exit 1
+
+      - name: Submit changed PapAuto pages to Yandex
+        if: steps.verify.outcome == 'success'
+        continue-on-error: true
+        env:
+          INDEXNOW_KEY: d260ebec4a8764da2a8a41fc9d6791a8
+          PREVIOUS_SHA: ${{ github.event.before }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          import urllib.error
+          import urllib.request
+          import xml.etree.ElementTree as ET
+          from urllib.parse import urlsplit
+
+          host = "papauto.ru"
+          base = "https://" + host
+          sitemap_urls = []
+          for element in ET.parse("sitemap.xml").iter():
+              if element.tag.rsplit("}", 1)[-1] != "loc" or not element.text:
+                  continue
+              url = element.text.strip()
+              parsed = urlsplit(url)
+              if parsed.scheme == "https" and parsed.netloc == host:
+                  sitemap_urls.append(url)
+
+          previous_sha = os.environ.get("PREVIOUS_SHA", "")
+          if previous_sha and previous_sha.strip("0"):
+              changes = subprocess.check_output(
+                  ["git", "diff", "--name-only", previous_sha, "HEAD"], text=True
+              ).splitlines()
+          else:
+              changes = [".github/workflows/indexnow.yml"]
+
+          if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch" or ".github/workflows/indexnow.yml" in changes or "sitemap.xml" in changes:
+              urls = sitemap_urls
+          else:
+              urls = []
+              for name in changes:
+                  if name == "index.html":
+                      urls.append(base + "/")
+                  elif name.endswith(".html") and "/" not in name:
+                      urls.append(base + "/" + name)
+              if "robots.txt" in changes:
+                  urls.append(base + "/")
+
+          urls = list(dict.fromkeys(urls))
+          if not urls:
+              print("No changed canonical page URLs to notify.")
+              raise SystemExit(0)
+          payload = json.dumps({
+              "host": host,
+              "key": os.environ["INDEXNOW_KEY"],
+              "keyLocation": base + "/" + os.environ["INDEXNOW_KEY"] + ".txt",
+              "urlList": urls,
+          }).encode("utf-8")
+          req = urllib.request.Request(
+              "https://yandex.com/indexnow",
+              data=payload,
+              headers={"Content-Type": "application/json; charset=utf-8"},
+              method="POST",
+          )
+          try:
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  print(f"Yandex IndexNow HTTP {response.status}; submitted {len(urls)} URLs.")
+          except urllib.error.HTTPError as exc:
+              print(f"::warning::Yandex IndexNow returned HTTP {exc.code}: {exc.read().decode(errors='replace')}")
+              raise
+          PY
