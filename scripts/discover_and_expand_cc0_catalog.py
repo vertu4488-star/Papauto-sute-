@@ -457,7 +457,7 @@ def main():
     write_photo_credits(ledger["photos"])
     # Bust browser asset cache only after verified images are published.
     html = CATALOG_HTML.read_text(encoding="utf-8")
-    html, n = re.subn(r"catalog-open-data\\.js\\?v=[^\"\']+",
+    html, n = re.subn(r'catalog-open-data\.js\?v=[^"]+',
                       "catalog-open-data.js?v=verified-" + str(old_rows + len(selected)) + "-20261108", html)
     if n != 1:
         raise RuntimeError("Cannot update catalog gallery version once and only once")
