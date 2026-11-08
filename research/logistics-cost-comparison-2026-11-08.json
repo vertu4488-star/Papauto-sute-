@@ -1,0 +1,145 @@
+{
+  "checked_at": "2026-11-08",
+  "context": "Публичные ценовые страницы, не оферты и не индивидуальные предложения; тарифы подлежат перепроверке перед сделкой.",
+  "lines": [
+    {
+      "company": "RealJapAuto",
+      "group": "Япония + фрахт C&F",
+      "amount": "200 000–320 000 ¥ при цене лота до 3 млн ¥; изменяется по диапазонам ставок",
+      "url": "https://realjapauto.ru/rashody-ceny/",
+      "breakdown": "Аукционные сборы, агент, документы, Япония, порт, фрахт; не прибавлять фрахт повторно"
+    },
+    {
+      "company": "RealJapAuto",
+      "group": "Владивосток",
+      "amount": "55 000–70 000 ₽",
+      "url": "https://realjapauto.ru/rashody-ceny/",
+      "breakdown": "СВХ, брокер, СБКТС, ЭПТС и перегон"
+    },
+    {
+      "company": "RealJapAuto",
+      "group": "Комиссия",
+      "amount": "20 000–50 000 ₽ по стоимости лота",
+      "url": "https://realjapauto.ru/rashody-ceny/"
+    },
+    {
+      "company": "NipponLot",
+      "group": "Япония + фрахт C&F",
+      "amount": "145 000–226 000 ¥ по габаритам кузова",
+      "url": "https://nipponlot.ru/rastamozhka/",
+      "breakdown": "Сборы, подготовка, экспорт, порт, морская перевозка"
+    },
+    {
+      "company": "NipponLot",
+      "group": "Брокер и документы",
+      "amount": "69 100 ₽ (пример калькулятора)",
+      "url": "https://nipponlot.ru/",
+      "breakdown": "СВХ, брокер, СБКТС и ЭПТС"
+    },
+    {
+      "company": "NipponLot",
+      "group": "Комиссия и страховка",
+      "amount": "30 000 ₽ + 50 000 ₽ страховка отказа",
+      "url": "https://nipponlot.ru/ceny/"
+    },
+    {
+      "company": "ВоронаКар",
+      "group": "Расходы по Японии",
+      "amount": "110 000 ¥ + 5% суммы ставки свыше 1 млн ¥",
+      "url": "https://www.carvorona.ru/pricing"
+    },
+    {
+      "company": "ВоронаКар",
+      "group": "Фрахт отдельно",
+      "amount": "ориентир $400",
+      "url": "https://www.carvorona.ru/pricing"
+    },
+    {
+      "company": "ВоронаКар",
+      "group": "Комиссия",
+      "amount": "40 000 ₽",
+      "url": "https://www.carvorona.ru/pricing"
+    },
+    {
+      "company": "Марс Импорт",
+      "group": "Пример Toyota Pixis Epoch",
+      "amount": "85 000 ¥ по Японии + 58 000 ¥ фрахт + 57 000 ₽ СВХ/оформление + 6 000 ₽ забор/лаборатория + 50 000 ₽ комиссия",
+      "url": "https://mars-import.ru/",
+      "notes": "Пример конкретного лота, не универсальный тариф"
+    },
+    {
+      "company": "АвтоДилер Тарасов",
+      "group": "Схема формирования цены",
+      "amount": "в публичной странице нет универсальных отдельно опубликованных чисел для Японии/фрахта/брокера",
+      "url": "https://tamx.ru/avto-pod-zakaz"
+    },
+    {
+      "company": "Токидоки",
+      "group": "Комиссия",
+      "amount": "50 000 ₽ согласно FAQ",
+      "url": "https://tokidoki.su/stat/kak-kupit/faq"
+    },
+    {
+      "company": "Токидоки",
+      "group": "Владивосток → Новосибирск автовоз",
+      "amount": "145 000 ₽ мини/седан/кроссовер/джип; 150 000 ₽ микроавтобус",
+      "url": "https://tokidoki.su/dostavka/"
+    },
+    {
+      "company": "Токидоки",
+      "group": "Владивосток → Новосибирск ж/д",
+      "amount": "170 000 ₽ седан/минивэн/кроссовер; 175 000 ₽ джип/микроавтобус",
+      "url": "https://tokidoki.su/dostavka/"
+    },
+    {
+      "company": "Автопорт",
+      "group": "Владивосток → Новосибирск",
+      "amount": "от 119 900 ₽",
+      "url": "https://autoport-group.com/"
+    },
+    {
+      "company": "Автомак",
+      "group": "Владивосток → Новосибирск (оценка)",
+      "amount": "149 092 ₽ легковой, 164 001 ₽ кроссовер, 178 910 ₽ минивэн",
+      "url": "https://automack.ru/import/japan/nsk/"
+    },
+    {
+      "company": "Фрегат",
+      "group": "Брокер+СБКТС+ЭПТС",
+      "amount": "30 000 ₽ физлицо Япония, СВХ дополнительно",
+      "url": "https://fregat-dv.ru/",
+      "notes": "Страница старее других — необходима проверка актуальности"
+    },
+    {
+      "company": "VLB BROKER",
+      "group": "Комплекс во Владивостоке",
+      "amount": "60 000 ₽ стандартный пример для физлица, включает СВХ от 30 000 ₽, документы ~20 000 ₽, ТО ~10 000 ₽",
+      "url": "https://vlb-broker.ru/b2b/tamozhennoe-oformlenie-avtomobiley/"
+    },
+    {
+      "company": "White Broker",
+      "group": "Комплекс Владивосток",
+      "amount": "60 000 ₽ ориентир за стандартный цикл",
+      "url": "https://whitebrokerdv.ru/services/rastamozhka-avto-iz-yaponii"
+    }
+  ],
+  "demo": {
+    "model": "Toyota Corolla Touring (2023, 1.5 л) — полностью условный пример",
+    "price_type": "нет реального завершённого лота",
+    "jpy_rub_example": 0.55,
+    "start_jpy": 800000,
+    "sold_jpy": 1000000,
+    "japan_jpy": 100000,
+    "freight_jpy": 58000,
+    "bank_rub": 10000,
+    "duty_rub": 235000,
+    "util_rub": 5200,
+    "customs_fee_rub": 5000,
+    "vladivostok_services_rub": 65000,
+    "company_fee_rub": 50000,
+    "truck_rub": 145000,
+    "subtotal_vladivostok_rub": 1007100,
+    "total_novosibirsk_rub": 1152100,
+    "warning": "Все тарифы в примере учебные и не фиксируются до сделки; пошлина/утильсбор зависят от конкретного авто и правового режима ввоза"
+  }
+}
