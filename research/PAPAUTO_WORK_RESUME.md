@@ -27,16 +27,16 @@
 - Исследован каталог конкурента JTECO.ru как справочник названий моделей. На PapAuto размещён **собственный перечень 518 уникальных моделей**, а НЕ 518 проданных лотов.
 - Распределение справочника: 189 Япония, 129 Южная Корея, 200 Китай.
 - Реализованы поиск, фильтры по стране, марке и силовой установке, адаптивный каталог. Исходники: `vehicle-catalogue.js`, `catalog-open-data.js`, `catalog.html`, `catalog-premium.css`.
-- Публичные фотографии локальные, настоящие: 20 снимков на 08.11.2026 к моменту этой записи, CC0 и с подтверждением прав; источник `research/approved-cc0-vehicle-sources.json`, доказательства и хеши `research/cc0-photo-provenance.json`, файлы `assets/demo/*.webp`.
+- Публичные фотографии локальные, настоящие: 29 снимков, реально опубликованных на 08.11.2026, CC0 и с подтверждением прав; источник `research/approved-cc0-vehicle-sources.json`, доказательства и хеши `research/cc0-photo-provenance.json`, файлы `assets/demo/*.webp`.
 - Загрузчик: `scripts/import_cc0_vehicle_images.py`; Github Actions: `.github/workflows/import-cc0-car-photos.yml`. Каждая новая фотография проверяется по Commons API как CC0, скачивается, оптимизируется, сохраняется в репозитории и учёте. Возможны остановки импортов при сбое источника: не заявлять публикацию без проверки.
-- Самые последние проверенные на сайте 20 фотомоделей включают Toyota Prius, Aqua, Yaris, Vitz, Corolla, Honda Freed, Vezel, Nissan March, Hyundai Staria, Avante, Kia K5, Sportage, BYD Dolphin, Qin L, Geely Coolray, Monjaro, Changan UNI-T, UNI-V, UNI-Z, Zeekr 007.
+- Первые 20 моделей с фотографиями включают Toyota Prius, Aqua, Yaris, Vitz, Corolla, Honda Freed, Vezel, Nissan March, Hyundai Staria, Avante, Kia K5, Sportage, BYD Dolphin, Qin L, Geely Coolray, Monjaro, Changan UNI-T, UNI-V, UNI-Z, Zeekr 007.
 - Изображения модели не следует путать с фотографиями конкретного продававшегося авто.
-- Успешный live Render деплой на момент записи: через git hash `42f8a23` и проверку страниц HTTP 200; количество 20 фото на публичной странице подтверждено.
+- Успешный live Render деплой: git hash `fa17ae0afce3` (08.11.2026), тесты GitHub passed, публичный каталог HTTP 200: 518 моделей, 29 реальных фото с разными URL проверены.
 - Автотесты: `tests/test_market_model_directory.py`; сборка `scripts/build_static_public.py`.
 - 4 примерные карточки с расчетами в `data/demo-auction-cards.json` — иллюстративные, НЕ подтверждённые фактические сделки.
 
-## Следующая задача
-- Добавить точные реальные фото к следующим моделям с проверенным CC0:
+## Добавлено 9 фото в этой сессии (готово, опубликовано)
+- Модели и реальные CC0 источники:
   * Toyota Sienta (Toyota Sienta HEV Z '25 (1).jpg)
   * Honda Fit (Honda Fit Home e HEV.jpg)
   * Nissan Note (2020-2024 Nissan Note S.jpg)
@@ -46,7 +46,11 @@
   * Kia Sorento (Moscow, Kia Sorento white, May 2026 01.jpg)
   * BYD Song Plus (BYD Song Plus Champion Edition 001.jpg)
   * Haval Jolion (2025 Haval Jolion white front.jpg)
-- Подтвердить каждое CC0, подать в существующий импортёр, проверить хеш/размер/открытие WebP, обновить JS-карты точно по названиям моделей; проверить GitHub Actions success, Render live и публичную страницу.
+- Выполнено: проверено CC0, выполнен импорт через GitHub Actions, девять новых WebP сохранены в assets/demo, новые модели связаны через catalog-open-data.js, Render live и публичная страница проверены.
+
+## Следующая задача
+- Следующий этап: увеличить число реальных фотографий до 50+, приоритет массовые модели Novosibirsk (Toyota, Honda, Hyundai, Kia, Geely, BYD), не копировать фото без разрешения.
+- До каждой новой публикации обязательно проверить достоверное соответствие марки/модели, источник и лицензию, корректное отображение на сайте.
 - Обогащать описания, не выдавать непроверенные технические характеристики за факты.
 - Для завершённых лотов — искать правомерно доступные снимки именно продававшейся машины и подтверждённые аукционные цены; не смешивать данные различных лотов.
 - Не путать «закрепить ChatGPT беседу» (действие пользователя: долго удерживать чат и выбрать Pin chat) с этим сохранением рабочего состояния в GitHub.
