@@ -36,8 +36,9 @@ RENDER_JS = ROOT / "catalog-open-data.js"
 REPORT = ROOT / "research/cc0-expansion-discovery-report.json"
 OUT = ROOT / "assets/demo"
 API = "https://commons.wikimedia.org/w/api.php"
-GOAL = 200
-QUOTAS = {"japan": 75, "south-korea": 50, "china": 75}
+GOAL = 218
+# Exact outstanding market totals at the verified 300/518 checkpoint.
+QUOTAS = {"japan": 61, "south-korea": 66, "china": 91}
 HEADERS = {
     "User-Agent": "PapAutoCC0CarPhotoResearch/1.0 (https://papauto.ru/; contact: use website)",
     "Accept": "application/json,image/*,*/*"
@@ -47,7 +48,9 @@ BLOCKED = re.compile(
     r"illustration|drawing|sketch|painting|brochure|advertisement|poster|"
     r"toy|lego|miniature|diecast|die.cast|scale.model|hot.wheels|"
     r"model.kit|badge|logo|emblem|dashboard|interior|steering.wheel|"
-    r"engine.bay|license.plate|key.fob|wheel.rim|console|animation)\b", re.I
+    r"engine.bay|license.plate|key.fob|wheel.rim|console|animation|"
+    r"collage|montage|prototype|concept|police|rally|racecar|"
+    r"cutaway|camouflage|wreck|accident)\b", re.I
 )
 BRAND_ORDER = {
     "japan": ["Toyota", "Honda", "Nissan", "Suzuki", "Mazda", "Subaru", "Daihatsu", "Mitsubishi",
