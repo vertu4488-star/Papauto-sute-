@@ -52,6 +52,10 @@ class ApprovedAuctionMedia(unittest.TestCase):
                         f"Invalid image format: {name}"
                     )
 
+    def test_authorized_media_importer_compiles(self):
+        importer = ROOT / "scripts" / "import_auction_photos.py"
+        compile(importer.read_text(encoding="utf-8"), str(importer), "exec")
+
     def test_price_is_not_presented_as_proven_without_evidence(self):
         for r in self.lots:
             with self.subTest(lot=r.get("id")):
