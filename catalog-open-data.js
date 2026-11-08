@@ -11,13 +11,29 @@
   const rows = Object.entries(window.PAPAUTO_CATALOG || {}).flatMap(([market, data]) =>
     (Array.isArray(data) ? data : []).map(([brand, model, engine]) =>
       ({market,brand,model,engine:engine||"Характеристики уточняются"})));
-  // Only four locally hosted, researched CC0 images. Never reuse one photo for
+  // Locally hosted, rights-verified real CC0 model photos (not auction lot photography). Never reuse one photo for
   // another model or claim the image shows a particular sold auction vehicle.
   const photoByModel = new Map([
     ["japan|honda|freed","/assets/demo/honda-freed-hybrid-cc0.webp"],
     ["japan|toyota|prius","/assets/demo/toyota-prius-cc0.webp"],
     ["south-korea|hyundai|staria","/assets/demo/hyundai-staria-cc0.webp"],
-    ["china|geely|monjaro","/assets/demo/geely-monjaro-cc0.webp"]
+    ["china|geely|monjaro","/assets/demo/geely-monjaro-cc0.webp"],
+    ["japan|toyota|aqua","/assets/demo/toyota-aqua-cc0.webp"],
+    ["japan|toyota|vitz","/assets/demo/toyota-vitz-cc0.webp"],
+    ["japan|toyota|yaris","/assets/demo/toyota-yaris-cc0.webp"],
+    ["japan|toyota|corolla","/assets/demo/toyota-corolla-cc0.webp"],
+    ["japan|honda|vezel","/assets/demo/honda-vezel-cc0.webp"],
+    ["japan|nissan|march","/assets/demo/nissan-march-cc0.webp"],
+    ["south-korea|hyundai|avante / elantra","/assets/demo/hyundai-avante-cc0.webp"],
+    ["south-korea|kia|k5","/assets/demo/kia-k5-cc0.webp"],
+    ["south-korea|kia|sportage","/assets/demo/kia-sportage-cc0.webp"],
+    ["china|byd|dolphin","/assets/demo/byd-dolphin-cc0.webp"],
+    ["china|byd|qin l","/assets/demo/byd-qin-l-cc0.webp"],
+    ["china|geely|coolray / binyue","/assets/demo/geely-coolray-cc0.webp"],
+    ["china|changan|uni-v","/assets/demo/changan-uni-v-cc0.webp"],
+    ["china|changan|uni-t","/assets/demo/changan-uni-t-cc0.webp"],
+    ["china|changan|uni-z","/assets/demo/changan-uni-z-cc0.webp"],
+    ["china|zeekr|007","/assets/demo/zeekr-007-cc0.webp"]
   ]);
   const photoDetail = {
     "japan|honda|freed":"demo-freed-jp",
@@ -77,8 +93,9 @@
       card.append(label("small",markets[r.market]||r.market,"country"),
         label("h2",r.brand+" "+r.model),
         label("div",r.engine,"engine"));
-      const a=label("a",localPhoto?"Фото и расчёт →":"Рассчитать подбор →","model-request");
-      a.href=localPhoto?"/auction-archive.html#"+photoDetail[keyOf(r)]: "/?view=select&similar="+encodeURIComponent(r.brand+" "+r.model)+"#assistant";
+      const detailedExample=photoDetail[keyOf(r)];
+      const a=label("a",detailedExample?"Фото и расчёт →":"Рассчитать подбор →","model-request");
+      a.href=detailedExample?"/auction-archive.html#"+detailedExample: "/?view=select&similar="+encodeURIComponent(r.brand+" "+r.model)+"#assistant";
       card.append(a);grid.append(card);
     }
     count.textContent="Моделей в справочнике: "+matched.length+
