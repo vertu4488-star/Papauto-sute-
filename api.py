@@ -265,6 +265,28 @@ async def ready():
     return {"status": "ready", "database_connected": True}
 
 
+def _record_telegram_failure(db_url: str, lead_id: str, reason: str) -> None:
+    """Keep a durable, non-sensitive delivery status for saved leads."""
+    try:
+        with psycopg.connect(db_url, connect_timeout=7) as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "UPDATE leads SET telegram_error=%s WHERE id=%s AND telegram_notified_at IS NULL",
+                    (reason, lead_id),
+                )
+    except psycopg.Error:
+        logger.warning("PapAuto could not persist Telegram delivery failure status")
+
+
+def _accepted_without_telegram(db_url: str, lead_id: str, reason: str, message: str):
+    """HTTP 202: stored in Neon, notification not confirmed. Never ask to POST twice."""
+    _record_telegram_failure(db_url, lead_id, reason)
+    return JSONResponse(
+        status_code=202,
+        content={"ok": True, "stored": True, "notified": False, "message": message},
+    )
+
+
 @app.post("/api/leads")
 async def create_lead(lead: Lead):
     """Send a lead through the configured Telegram bot; no paid database is required."""
@@ -314,9 +336,9 @@ async def create_lead(lead: Lead):
     token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
     chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
     if not token or not chat_id:
-        raise HTTPException(
-            status_code=503,
-            detail="Автоматическая отправка временно недоступна. Скопируйте заявку и отправьте её менеджеру через Telegram."
+        return _accepted_without_telegram(
+            db_url, lead_id, "missing_telegram_config",
+            "Заявка сохранена, но Telegram сейчас не настроен. Чтобы ускорить ответ, свяжитесь с менеджером через Telegram.",
         )
 
     message = (
@@ -350,19 +372,28 @@ async def create_lead(lead: Lead):
                 "other"
             )
             logger.error("Telegram lead notification failed: status=%s reason=%s", response.status_code, reason)
-            raise HTTPException(status_code=502, detail="Заявка сохранена, но Telegram не подтвердил уведомление. Не отправляйте повторно — обратитесь к менеджеру.")
+            return _accepted_without_telegram(
+                db_url, lead_id, f"telegram_http_{response.status_code}_{reason}",
+                "Заявка сохранена, но Telegram не подтвердил доставку. Повторно форму не отправляйте; при необходимости свяжитесь с менеджером.",
+            )
     except httpx.RequestError:
         # httpx exception tracebacks can contain the full Bot API URL and its token.
         # Never write that URL or exception object to application logs.
         logger.warning("Telegram lead notification network request failed; lead remains stored in Neon")
-        raise HTTPException(status_code=502, detail="Заявка сохранена, но уведомление Telegram не доставлено. Не отправляйте её повторно; при необходимости свяжитесь с менеджером.")
+        return _accepted_without_telegram(
+            db_url, lead_id, "telegram_network_unconfirmed",
+            "Заявка сохранена, но доставка в Telegram не подтверждена. Повторно форму не отправляйте; при необходимости свяжитесь с менеджером.",
+        )
     except ValueError:
-        raise HTTPException(status_code=502, detail="Telegram вернул некорректный ответ. Скопируйте текст и отправьте его вручную.")
+        return _accepted_without_telegram(
+            db_url, lead_id, "telegram_invalid_response",
+            "Заявка сохранена, но Telegram вернул некорректный ответ. Повторно форму не отправляйте; при необходимости свяжитесь с менеджером.",
+        )
 
     try:
         with psycopg.connect(db_url, connect_timeout=7) as conn:
             with conn.cursor() as cur:
-                cur.execute("UPDATE leads SET telegram_notified_at=now() WHERE id=%s", (lead_id,))
+                cur.execute("UPDATE leads SET telegram_notified_at=now(), telegram_error=NULL WHERE id=%s", (lead_id,))
     except psycopg.Error:
         logger.warning("PapAuto lead saved and notified, but notification timestamp update failed")
     return {"ok": True, "stored": True, "notified": True, "message": "Заявка сохранена в Neon и доставлена менеджеру через Telegram."}
