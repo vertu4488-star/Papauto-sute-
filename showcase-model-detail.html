@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<title>Детали подбора автомобиля — PAPAUTO</title>
+<meta name="description" content="Характеристики модели, ориентир рынка и запрос точной стоимости автомобиля из Японии, Южной Кореи или Китая в PAPAUTO.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#152639;background:#f1f5f8;font-synthesis:none}
+*{box-sizing:border-box}
+body{margin:0}
+a{color:#195a89}
+header{background:#122438;color:white;padding:18px max(22px,calc((100% - 1160px)/2));display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+header a{color:white;text-decoration:none}header strong{font-size:22px;letter-spacing:.07em}header nav{display:flex;gap:17px;font-size:14px}
+main{width:min(1160px,calc(100% - 32px));margin:38px auto 65px}
+.breadcrumb{font-size:13px;color:#687b8a;margin:0 0 21px}
+h1{font-size:clamp(32px,5vw,48px);line-height:1.11;letter-spacing:-.04em;margin:8px 0 17px}
+h2{font-size:21px;margin:0 0 18px}
+.market{display:inline-block;border:1px solid #c6d8e4;background:#e9f2f7;color:#24536f;border-radius:20px;font-size:12px;padding:6px 12px;font-weight:700}
+.layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(310px,.9fr);gap:23px;align-items:start}
+.photo,.info,.breakdown{background:white;border:1px solid #e0e8ef;border-radius:20px;overflow:hidden;box-shadow:0 9px 25px rgba(20,49,71,.05)}
+.photo img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#dfe8ed}
+.photo p{padding:0 20px 17px;font-size:12px;color:#657889;margin:0;line-height:1.5}
+.info{padding:25px}.spec{font-size:16px;color:#374e5f;margin:0 0 17px}
+.price{border-top:1px solid #e4eaf0;border-bottom:1px solid #e4eaf0;padding:17px 0;margin:20px 0}
+.price-label{font-size:12px;color:#587087;font-weight:700}.price strong{display:block;font-size:30px;color:#12567f;letter-spacing:-.045em;margin:5px 0}.price-detail{font-size:13px;color:#617689}
+.note{font-size:14px;line-height:1.65;color:#3b5364}
+.disclaimer{font-size:12px;line-height:1.65;color:#607487;background:#eff5f8;border-radius:12px;padding:13px 15px;margin:18px 0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.button{display:inline-flex;align-items:center;justify-content:center;background:#125b88;color:white;text-decoration:none;border-radius:12px;padding:14px 19px;font-weight:750}
+.button.alt{background:#eef4f7;color:#173f5b;border:1px solid #d2dfe8}
+.breakdown{padding:24px;margin-top:24px}.breakdown p{font-size:14px;line-height:1.7;color:#4b6474;margin:0}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:17px}
+.step{padding:13px;background:#f2f6f9;border-radius:11px;font-size:13px;color:#334d5f}
+footer{border-top:1px solid #d5e0e9;padding:24px 20px;text-align:center;font-size:12px;color:#63778a}
+#detail[hidden],#notFound[hidden]{display:none}
+@media(max-width:780px){main{margin-top:23px}.layout{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.info{padding:20px}header nav{gap:10px}}
+</style>
+<script src="/showcase-model-detail.js" defer></script>
+</head>
+<body>
+<header><a href="/"><strong>PAPAUTO</strong></a><nav><a href="/?view=home#pa-vitrine">Каталог</a><a href="/?view=calculator#calculator">Калькулятор</a><a href="/?view=select#assistant">Подбор</a></nav></header>
+<main>
+<p class="breadcrumb"><a href="/">Главная</a> / <a href="/?view=home#pa-vitrine">Примеры моделей</a> / <span id="crumb">Автомобиль</span></p>
+<div id="detail" hidden>
+<span id="country" class="market"></span>
+<h1 id="name"></h1>
+<div class="layout">
+<section class="photo"><img id="photo" alt="Фотография модели автомобиля, не конкретный лот" width="960" height="600"><p>Иллюстративная фотография модели с проверенными правами использования, не снимок предлагаемого автомобиля. <a href="/photo-credits.html">Об использовании фотографий</a>.</p></section>
+<section class="info">
+<h2>Параметры для подбора</h2>
+<p id="spec" class="spec"></p>
+<div class="price"><span class="price-label">Публичный рыночный ориентир по аналогу</span><strong id="price"></strong><span id="priceDetail" class="price-detail"></span></div>
+<p id="note" class="note"></p>
+<div class="disclaimer">Цена приведена по стороннему рыночному примеру. Она может относиться к другому автомобилю или включать не все расходы до Новосибирска. Это не наличие, не цена сделки и не оферта PapAuto. Год, пробег и двигатель конкретного лота проверяются перед расчётом.</div>
+<div class="actions"><a class="button" id="quote" href="/?view=select#assistant">Рассчитать стоимость ↗</a><a class="button alt" href="/?view=calculator#calculator">Калькулятор расходов</a></div>
+</section>
+</div>
+<section class="breakdown"><h2>Что проверим перед покупкой</h2><p>Сначала подберём реальный автомобиль и подтвердим его документы, фото, технические характеристики и историю. Затем подготовим индивидуальную смету с доставкой в ваш город. Сведения об архивных аукционных лотах публикуются отдельно от этой модельной витрины.</p><div class="steps"><div class="step">Марка, поколение и комплектация</div><div class="step">Год, пробег, мотор и мощность</div><div class="step">Аукционный лист / история ДТП</div><div class="step">Цена покупки и расходы за рубежом</div><div class="step">Таможня, утильсбор и документы</div><div class="step">Доставка до Новосибирска</div></div></section>
+</div>
+<div id="notFound" hidden><h1>Модель пока недоступна</h1><p>Вернитесь к <a href="/?view=home#pa-vitrine">витрине автомобилей</a> и выберите модель из каталога.</p></div>
+</main>
+<footer>© PAPAUTO · Справочные характеристики и цены не являются публичной офертой</footer>
+</body>
+</html>
