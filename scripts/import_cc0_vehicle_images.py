@@ -42,16 +42,21 @@ def main():
     results = dict(old_records)
     skipped_non_cc0 = 0
     for item in entries:
-        # Skip previously verified real CC0 files when the exact photographed
-        # source, file path and SHA-256 are already recorded in provenance.
-        # This avoids re-downloading 300 existing photos on every extension.
+        # Skip any previously license-verified photo (CC0, BY or BY-SA)
+        # when its source title, local file and SHA-256 still match provenance.
+        # The attribution-aware catalog importer owns BY/BY-SA verification.
+        # This avoids hundreds of redundant Wikimedia API calls and 429s.
         previous = old_records.get("File:" + item["commons_filename"])
         dest = OUT / item["local_name"]
         if (previous and previous.get("file") == "/assets/demo/" + dest.name
-                and previous.get("rights") == "Creative Commons Zero 1.0 Universal (CC0)"
+                and previous.get("rights") in {
+                    "Creative Commons Zero 1.0 Universal (CC0)",
+                    "CC BY-SA 4.0", "CC BY-SA 3.0", "CC BY 4.0", "CC BY 2.0",
+                }
+                and previous.get("source_page", "").startswith("https://commons.wikimedia.org/")
                 and dest.is_file() and dest.stat().st_size > 32_000
                 and hashlib.sha256(dest.read_bytes()).hexdigest() == previous.get("image_sha256")):
-            print("Previously verified CC0 image preserved:", dest.name)
+            print("Previously license-verified image preserved:", dest.name, previous["rights"])
             continue
         filename = item["commons_filename"]
         params = {
