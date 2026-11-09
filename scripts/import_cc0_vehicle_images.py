@@ -37,7 +37,10 @@ def main():
     if LEDGER.exists():
         for record in json.loads(LEDGER.read_text(encoding="utf-8")).get("photos", []):
             old_records[record["source_title"]] = record
-    results = []
+    # Preserve provenance for CC BY / BY-SA photos imported by the separate
+    # verified-catalog workflow; this CC0-only importer must never erase it.
+    results = dict(old_records)
+    skipped_non_cc0 = 0
     for item in entries:
         # Skip previously verified real CC0 files when the exact photographed
         # source, file path and SHA-256 are already recorded in provenance.
@@ -48,7 +51,6 @@ def main():
                 and previous.get("rights") == "Creative Commons Zero 1.0 Universal (CC0)"
                 and dest.is_file() and dest.stat().st_size > 32_000
                 and hashlib.sha256(dest.read_bytes()).hexdigest() == previous.get("image_sha256")):
-            results.append(previous)
             print("Previously verified CC0 image preserved:", dest.name)
             continue
         filename = item["commons_filename"]
@@ -71,7 +73,9 @@ def main():
         lic = (meta.get("LicenseShortName") or {}).get("value", "")
         license_url = (meta.get("LicenseUrl") or {}).get("value", "")
         if "CC0" not in lic and "publicdomain/zero" not in license_url.lower():
-            raise ValueError("Image is NOT CC0: " + filename + " license=" + lic)
+            skipped_non_cc0 += 1
+            print("Skipping non-CC0 photo (left for attribution-aware importer):", filename, "license=", lic)
+            continue
         if not info.get("mime", "image/jpeg").startswith("image/"):
             raise ValueError("Not an image: " + filename)
         url = info.get("thumburl") or info["url"]
@@ -96,7 +100,7 @@ def main():
         content = dest.read_bytes()
         if len(content) < 32_000:
             raise ValueError("Optimized image is suspiciously small: " + str(dest))
-        results.append({
+        results["File:" + filename] = {
             "model": item["model"],
             "file": "/assets/demo/" + dest.name,
             "source_title": "File:" + filename,
@@ -109,10 +113,10 @@ def main():
             "height": im.height,
             "size_bytes": len(content),
             "verified_at_utc": datetime.now(timezone.utc).isoformat()
-        })
+        }
         print(f"Imported {dest.name}: {im.width}x{im.height}, {len(content)} bytes, {lic}")
-    LEDGER.write_text(json.dumps({"photos": results}, indent=2, ensure_ascii=False)+"\n", encoding="utf-8")
-    print("All", len(results), "CC0 car photographs have been verified and self-hosted.")
+    LEDGER.write_text(json.dumps({"photos": list(results.values())}, indent=2, ensure_ascii=False)+"\n", encoding="utf-8")
+    print("CC0 import complete; retained", len(results), "provenance records; skipped", skipped_non_cc0, "non-CC0 sources.")
 
 
 if __name__ == "__main__":
