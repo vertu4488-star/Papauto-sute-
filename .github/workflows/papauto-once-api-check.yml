@@ -5,7 +5,7 @@ on:
       - '.github/workflows/papauto-once-api-check.yml'
 jobs:
   one_time_probe:
-    if: ${{ github.event.head_commit.message == 'PAPAUTO verify private group after Render Live 20261109' && github.run_attempt == 1 }}
+    if: ${{ github.event.head_commit.message == 'PAPAUTO verify basic group chat after Render Live 20261109' && github.run_attempt == 1 }}
     runs-on: ubuntu-latest
     timeout-minutes: 6
     steps:
@@ -54,8 +54,8 @@ jobs:
 
           # Explicitly synthetic non-customer entry; avoid using any real contacts or phone numbers.
           test_lead = {
-              "name": "ТЕСТ-6 PAPAUTO — НЕ КЛИЕНТ",
-              "contact": "QA-NO-REPLY-20261109-PRIVATE-GROUP-1922",
+              "name": "ТЕСТ-7 PAPAUTO — НЕ КЛИЕНТ",
+              "contact": "QA-NO-REPLY-20261109-PRIVATE-GROUP-1925",
               "country": "Япония",
               "budget": 1,
               "city": "Новосибирск",
