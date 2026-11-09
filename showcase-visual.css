@@ -2,7 +2,7 @@
 /* PAPAUTO model showcase: verified self-hosted photographs only. */
 .hero-photo-visual .hero-car-photo{
   position:absolute;inset:0;min-height:0!important;
-  background-image:linear-gradient(180deg,rgba(6,14,25,.04) 14%,rgba(8,18,32,.78) 100%),url('/assets/demo/honda-freed-hybrid-cc0.webp')!important;
+  background-image:linear-gradient(180deg,rgba(6,14,25,.04) 14%,rgba(8,18,32,.78) 100%),url('/assets/demo/kia-k5-cc0.webp')!important;
   background-position:center;background-size:cover;background-repeat:no-repeat
 }
 .hero-photo-visual .hero-photo-shade{pointer-events:none}
@@ -35,3 +35,29 @@
 @media(max-width:1040px){.pa-vitrine-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:780px){.pa-vitrine-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.pa-vitrine{padding-top:20px}.pa-car-body{padding:12px}.pa-car-body h3{font-size:16px}}
 @media(max-width:500px){.pa-vitrine-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.pa-car-type{font-size:9px;padding:4px 6px}.pa-car-body h3{font-size:14px}.pa-car-price{font-size:13px}.pa-car-note{font-size:10px}.pa-car-actions a{padding:7px 8px;font-size:11px}.pa-vitrine-controls button{font-size:12px;padding:9px 11px}.pa-vitrine-more{width:100%;text-align:center}.hero-photo-visual .hero-car-photo{background-position:50% 40%}}
+
+/* 2026-11-09 · PapAuto clearer, consistent model showcase. Public market price
+   examples are NOT offers or prices of the cars shown in the photos. */
+.pa-vitrine-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.pa-car-card{border-radius:20px;box-shadow:0 10px 30px rgba(10,29,49,.08);transition:transform .22s ease,box-shadow .22s ease}
+.pa-car-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(10,29,49,.14)}
+.pa-car-photo{aspect-ratio:16/10;background:linear-gradient(145deg,#e7ebf1,#f8f9fa)}
+.pa-car-photo img{object-fit:cover;object-position:center 52%;transition:transform .35s ease}
+.pa-car-card:hover .pa-car-photo img{transform:scale(1.025)}
+.pa-car-type{top:auto;bottom:11px;left:11px;background:rgba(255,255,255,.93);font-size:11px}
+.pa-photo-type{position:absolute;top:11px;right:11px;z-index:2;padding:6px 9px;background:rgba(18,37,57,.82);color:#fff;border-radius:8px;font-size:10px;font-weight:650;letter-spacing:.015em}
+.pa-car-body{padding:17px 19px 20px;gap:0}
+.pa-car-body h3{font-size:21px;margin-bottom:9px}
+.pa-car-meta{color:#4c6276;font-size:12px;line-height:1.5;min-height:33px;margin-bottom:11px;font-weight:620}
+.pa-car-price{margin:0 0 12px;padding:12px 0 10px;display:flex;flex-direction:column;gap:4px;border-top:1px solid #e5e9ed;border-bottom:1px solid #e5e9ed}
+.pa-car-price .pa-price-label{font-size:11px;color:#536b7d;font-weight:660}
+.pa-car-price strong{font-size:22px;line-height:1.2;color:#163e61;font-weight:800;letter-spacing:-.035em}
+.pa-car-price small{font-size:11px;color:#536a78;line-height:1.4}
+.pa-car-note{font-size:12px;line-height:1.6;min-height:55px;margin-bottom:15px}
+.pa-car-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:39px;padding:9px 13px}
+.pa-car-actions a:last-child{background:#165785;border-color:#165785}
+.pa-vitrine-price-disclaimer{margin:20px 0 14px;padding:15px 18px;background:#f0f5f8;border:1px solid #dbe5ec;color:#3c5265;border-radius:14px;font-size:12px;line-height:1.65}
+.pa-vitrine-price-disclaimer a{color:#164e78;text-decoration:underline;text-underline-offset:2px}
+.hero-photo-visual .hero-car-photo{background-position:50% 58%!important}
+@media(max-width:1040px){.pa-vitrine-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}}
+@media(max-width:560px){.pa-vitrine-grid{grid-template-columns:1fr;gap:15px}.pa-car-photo{aspect-ratio:16/9}.pa-car-body{padding:15px 17px 18px}.pa-car-body h3{font-size:20px}.pa-car-meta{min-height:0;font-size:13px}.pa-car-price strong{font-size:22px}.pa-car-note{min-height:0;font-size:13px}.pa-car-actions a{font-size:13px;min-height:43px}.pa-vitrine-price-disclaimer{font-size:12px}}
