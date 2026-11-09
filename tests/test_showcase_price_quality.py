@@ -34,7 +34,7 @@ class ShowcasePriceQuality(unittest.TestCase):
                 self.assertIn("По расчёту", card)
         self.assertEqual(len(set(models)), 24)
         self.assertGreaterEqual(len(set(notes)), 20)
-        self.assertEqual(prices, 13)
+        self.assertEqual(prices, 24)
         self.assertIn("не цены продажи PAPAUTO", section)
         self.assertNotIn("href=\"https://", section)
 
