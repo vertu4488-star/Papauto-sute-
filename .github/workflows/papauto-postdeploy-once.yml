@@ -1,0 +1,65 @@
+name: PAPAUTO post-deploy one-time API verification
+on:
+  push:
+    paths:
+      - '.github/workflows/papauto-postdeploy-once.yml'
+jobs:
+  one_time_diagnostic:
+    if: ${{ github.event.head_commit.message == 'PAPAUTO verify postdeploy CORS and Telegram once' && github.run_attempt == 1 }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Verify TLS and browser-origin CORS; submit exactly one labeled test
+        env:
+          API: https://api.papauto.ru
+          ORIGIN: https://vertu4488-star.github.io
+        run: |
+          python3 - <<'PY'
+          import ssl
+          import urllib.request
+          import urllib.error
+          import json, os, sys
+
+          base=os.environ["API"]
+          origin=os.environ["ORIGIN"]
+          ctx=ssl.create_default_context()
+
+          def req(path,method="GET",headers=None,payload=None):
+              data=json.dumps(payload,ensure_ascii=False).encode("utf-8") if payload is not None else None
+              request=urllib.request.Request(base+path,method=method,headers=headers or {},data=data)
+              try:
+                  with urllib.request.urlopen(request,timeout=25,context=ctx) as response:
+                      return response.status,dict(response.headers),response.read(8192).decode("utf-8","replace")
+              except urllib.error.HTTPError as e:
+                  return e.code,dict(e.headers),e.read(8192).decode("utf-8","replace")
+
+          code,h,b=req("/ready")
+          print("TLS_OK",code==200,"READY",code,b[:280])
+          if code!=200 or not json.loads(b).get("database_connected"): sys.exit("STOP: readiness failed, no test lead submitted")
+
+          code,h,b=req("/api/leads","OPTIONS",{
+              "Origin":origin,
+              "Access-Control-Request-Method":"POST",
+              "Access-Control-Request-Headers":"content-type",
+          })
+          good = code==200 and h.get("access-control-allow-origin")==origin
+          print("PREVIEW_CORS", "PASS" if good else "FAIL",code)
+          if not good: sys.exit("STOP: browser-origin CORS still fails, no test lead submitted")
+
+          payload={
+            "name":"ТЕСТ PAPAUTO №2 — НЕ КЛИЕНТ",
+            "contact":"QA-NO-REPLY-20261109-POSTDEPLOY",
+            "country":"Япония","city":"Новосибирск","budget":1,
+            "request":"ТЕСТОВАЯ ЗАЯВКА 2: проверка после обновления сервера. НЕ ОБРАБАТЫВАТЬ КАК ЗАКАЗ. Нет реального клиента.",
+            "consent":True,"website":""
+          }
+          code,h,b=req("/api/leads","POST",{"Origin":origin,"Content-Type":"application/json"},payload)
+          print("POST_STATUS",code)
+          print("POST_RESPONSE",b[:600])
+          if code==200:
+              data=json.loads(b)
+              if data.get("stored") is True and data.get("notified") is True:
+                  print("END_TO_END_LEAD_PASS")
+                  sys.exit(0)
+          sys.exit("Lead notification failed. DO NOT RETRY: entry may already be saved in Neon. Check Render application log for safe reason category.")
+          PY
