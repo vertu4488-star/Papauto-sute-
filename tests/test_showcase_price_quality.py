@@ -27,7 +27,7 @@ class ShowcasePriceQuality(unittest.TestCase):
             note = re.search(r'<p class="pa-car-note">([^<]+)</p>', card)
             self.assertIsNotNone(note)
             notes.append(note.group(1))
-            if "Рыночный ориентир по аналогу" in card:
+            if "Рыночный ориентир" in card:
                 prices += 1
                 self.assertRegex(card, r"≈ [\d\s]+ ₽")
             else:
@@ -36,6 +36,9 @@ class ShowcasePriceQuality(unittest.TestCase):
         self.assertGreaterEqual(len(set(notes)), 20)
         self.assertEqual(prices, 24)
         self.assertIn("не цены продажи PAPAUTO", section)
+        self.assertIn("до Владивостока", section)
+        self.assertIn("медиана", section)
+        self.assertIn("минимум", section)
         self.assertNotIn("href=\"https://", section)
 
     def test_hero_photo_and_caption_match(self):
