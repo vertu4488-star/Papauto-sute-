@@ -1,0 +1,81 @@
+name: PAPAUTO one-time HTTPS and lead delivery diagnostic
+on:
+  push:
+    paths:
+      - '.github/workflows/papauto-once-api-check.yml'
+jobs:
+  one_time_probe:
+    if: ${{ github.event.head_commit.message == 'PAPAUTO one-time diagnostic HTTPS CORS lead' && github.run_attempt == 1 }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Check TLS, readiness, CORS and submit a clearly marked synthetic test once
+        env:
+          API: https://api.papauto.ru
+          ORIGIN: https://vertu4488-star.github.io
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import ssl
+          import sys
+          import urllib.request
+          import urllib.error
+
+          base = os.environ["API"]
+          ctx = ssl.create_default_context()
+
+          def call(path, method="GET", headers=None, payload=None):
+              body = json.dumps(payload, ensure_ascii=False).encode("utf-8") if payload is not None else None
+              req = urllib.request.Request(base + path, data=body, headers=headers or {}, method=method)
+              try:
+                  with urllib.request.urlopen(req, timeout=25, context=ctx) as response:
+                      return response.status, dict(response.headers), response.read(8192).decode("utf-8", "replace")
+              except urllib.error.HTTPError as exc:
+                  return exc.code, dict(exc.headers), exc.read(8192).decode("utf-8", "replace")
+
+          status, headers, body = call("/ready")
+          print("HTTPS_TLS_VERIFIED=true" if status == 200 else "HTTPS_TLS_VERIFIED=unknown")
+          print("READY_STATUS", status, body[:300])
+          if status != 200 or json.loads(body).get("database_connected") is not True:
+              sys.exit("Readiness failed; no test lead sent.")
+
+          status, headers, body = call(
+              "/api/leads",
+              method="OPTIONS",
+              headers={
+                  "Origin": os.environ["ORIGIN"],
+                  "Access-Control-Request-Method": "POST",
+                  "Access-Control-Request-Headers": "content-type",
+              },
+          )
+          preview_cors = status == 200 and headers.get("access-control-allow-origin") == os.environ["ORIGIN"]
+          print("GITHUB_PAGES_CORS_PREVIEW", "PASS" if preview_cors else "FAIL", "status", status)
+
+          # Explicitly synthetic non-customer entry; avoid using any real contacts or phone numbers.
+          test_lead = {
+              "name": "ТЕСТ PAPAUTO — НЕ КЛИЕНТ",
+              "contact": "QA-NO-REPLY-20261109-HTTPS",
+              "country": "Япония",
+              "budget": 1,
+              "city": "Новосибирск",
+              "request": "ТЕСТОВАЯ ЗАЯВКА PAPAUTO: проверка API, Neon и Telegram. НЕ ОБРАБАТЫВАТЬ КАК ЗАКАЗ; не связываться, не подбирать автомобили.",
+              "consent": True,
+              "website": "",
+          }
+          status, headers, body = call(
+              "/api/leads",
+              method="POST",
+              headers={"Content-Type":"application/json","Origin":"https://papauto.ru"},
+              payload=test_lead,
+          )
+          print("LEAD_POST_STATUS", status)
+          print("LEAD_POST_RESPONSE", body[:1000])
+          try:
+              result = json.loads(body)
+          except ValueError:
+              sys.exit("Lead API did not return JSON; see status.")
+          if status != 200 or result.get("stored") is not True or result.get("notified") is not True:
+              sys.exit("Lead is not yet confirmed saved-and-notified. Do NOT retry automatically: submission may already be stored in Neon.")
+          print("END_TO_END_LEAD=PASS", "BROWSER_PREVIEW_CORS=" + ("PASS" if preview_cors else "FAIL"))
+          PY
