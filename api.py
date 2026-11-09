@@ -19,6 +19,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, field_validator
 
 logging.basicConfig(level=logging.INFO)
+# HTTPX INFO logs include the full Telegram Bot API URL (and token); suppress them.
+logging.getLogger("httpx").setLevel(logging.WARNING)
 logger = logging.getLogger("papauto.api")
 logger.info("XAPI Korea key present in Render environment: %s", bool((os.getenv("XAPIKOREA_API_KEY") or "").strip()))
 
