@@ -5,7 +5,7 @@ on:
       - '.github/workflows/papauto-once-api-check.yml'
 jobs:
   one_time_probe:
-    if: ${{ github.event.head_commit.message == 'PAPAUTO one-time diagnostic HTTPS CORS lead' && github.run_attempt == 1 }}
+    if: ${{ github.event.head_commit.message == 'PAPAUTO one-time follow-up Telegram diagnostics' && github.run_attempt == 1 }}
     runs-on: ubuntu-latest
     timeout-minutes: 6
     steps:
@@ -54,8 +54,8 @@ jobs:
 
           # Explicitly synthetic non-customer entry; avoid using any real contacts or phone numbers.
           test_lead = {
-              "name": "ТЕСТ PAPAUTO — НЕ КЛИЕНТ",
-              "contact": "QA-NO-REPLY-20261109-HTTPS",
+              "name": "ТЕСТ-2 PAPAUTO — НЕ КЛИЕНТ",
+              "contact": "QA-NO-REPLY-20261109-HTTPS2",
               "country": "Япония",
               "budget": 1,
               "city": "Новосибирск",
