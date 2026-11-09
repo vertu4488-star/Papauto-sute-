@@ -7554,6 +7554,20 @@
       "verified_at_utc": "2026-11-09T03:08:26.982411+00:00",
       "discovery_method": "Exact make/model match and live Commons commercial-use license audit",
       "changes": "Resized and converted to WebP; no semantic image edits"
+    },
+    {
+      "model": "Hyundai Tucson",
+      "file": "/assets/demo/hyundai-tucson-cc0.webp",
+      "source_title": "File:24 Hyundai Tucson SEL.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:24_Hyundai_Tucson_SEL.jpg",
+      "rights": "Creative Commons Zero 1.0 Universal (CC0)",
+      "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "author": "HJUdall",
+      "image_sha256": "0bd9d30b27a683a4da2222b7d47baed36459d50a0cacbda85c223b4269476481",
+      "width": 1333,
+      "height": 1000,
+      "size_bytes": 433216,
+      "verified_at_utc": "2026-11-09T14:46:34.065283+00:00"
     }
   ]
 }
