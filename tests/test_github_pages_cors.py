@@ -22,5 +22,12 @@ class GithubPagesCorsTest(unittest.TestCase):
         self.assertTrue(all(url.startswith("https://") for url in allowed))
 
 
+    def test_frontend_uses_own_api_hostname_not_render_directly(self):
+        config = (Path(__file__).resolve().parents[1] / "site-config.js").read_text(encoding="utf-8")
+        self.assertIn('apiBaseUrl:"https://api.papauto.ru"', config)
+        self.assertNotIn('apiBaseUrl:"https://papauto-leads.onrender.com"', config)
+
+
+
 if __name__ == "__main__":
     unittest.main()
