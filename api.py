@@ -31,6 +31,8 @@ ALLOWED_SITE_ORIGINS = (
     "https://papauto.ru",
     "https://www.papauto.ru",
     "https://papauto-site.onrender.com",
+    # Isolated GitHub Pages test site; CORS is not authentication.
+    "https://vertu4488-star.github.io",
 )
 app.add_middleware(
     CORSMiddleware,
