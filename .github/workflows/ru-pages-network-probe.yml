@@ -20,6 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
+      - name: Check out PAPAUTO repository
+        uses: actions/checkout@v4
+      - name: Set up Python for safe static build
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
       - name: Generate isolated public diagnostics
         shell: bash
         run: |
@@ -58,7 +64,14 @@ jobs:
           (root / "large.html").write_text(large, encoding="utf-8")
           print("Generated", len(page.encode()), "bytes HTML and", len(large.encode()), "bytes large page")
           PY
-      - name: Upload only isolated test files
+      - name: Add isolated noindex PAPAUTO site preview
+        shell: bash
+        run: |
+          python scripts/build_static_public.py
+          python scripts/build_pages_preview.py
+          test -s _github_pages_probe/papauto-preview/index.html
+          test -s _github_pages_probe/papauto-preview/catalog.html
+      - name: Upload diagnostics and isolated public preview
         uses: actions/upload-pages-artifact@v4
         with:
           path: _github_pages_probe
