@@ -1,0 +1,37 @@
+
+/* PAPAUTO model showcase: verified self-hosted photographs only. */
+.hero-photo-visual .hero-car-photo{
+  position:absolute;inset:0;min-height:0!important;
+  background-image:linear-gradient(180deg,rgba(6,14,25,.04) 14%,rgba(8,18,32,.78) 100%),url('/assets/demo/honda-freed-hybrid-cc0.webp')!important;
+  background-position:center;background-size:cover;background-repeat:no-repeat
+}
+.hero-photo-visual .hero-photo-shade{pointer-events:none}
+.pa-vitrine{padding:28px 0 45px;scroll-margin-top:88px}
+.pa-vitrine-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px;flex-wrap:wrap}
+.pa-vitrine .pa-kicker{font-size:11px;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:#71818f}
+.pa-vitrine h2{font-size:clamp(28px,3.6vw,46px)!important;letter-spacing:-.04em;margin:7px 0 9px;line-height:1.08;color:inherit}
+.pa-vitrine-head p{color:#758390;max-width:610px;margin:0;font-size:14px;line-height:1.6}
+.pa-vitrine-more{background:#172635;color:#fff;padding:11px 17px;border-radius:100px;text-decoration:none;font-weight:650;font-size:13px;white-space:nowrap}
+.pa-vitrine-controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:19px}
+.pa-vitrine-controls button{background:#fff;border:1px solid #dce2e6;border-radius:999px;color:#223044;padding:11px 17px;font-weight:650;font-size:13px}
+.pa-vitrine-controls button[aria-pressed="true"]{background:#193f66;color:#fff;border-color:#193f66}
+.pa-vitrine-controls input{min-width:160px;flex:1 1 230px;border:1px solid #dce2e6;border-radius:999px;background:#fff;padding:11px 16px;color:#182431;font-size:14px}
+.pa-vitrine-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
+.pa-car-card{background:#fff;border:1px solid #e0e5e9;min-width:0;border-radius:18px;overflow:hidden;box-shadow:0 8px 26px rgba(12,23,38,.055);color:#1c2936;display:flex;flex-direction:column}
+.pa-car-photo{width:100%;aspect-ratio:4/2.75;background:#edf1f3;overflow:hidden;position:relative}
+.pa-car-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.pa-car-type{position:absolute;top:10px;left:10px;padding:6px 9px;border-radius:30px;background:#fffef6;color:#31475b;font-size:10px;font-weight:700;box-shadow:0 1px 6px #0002}
+.pa-car-body{padding:15px 16px 17px;display:flex;flex-direction:column;flex:1}
+.pa-car-body h3{font-size:18px;font-weight:760;line-height:1.25;letter-spacing:-.025em;margin:0 0 10px;color:#182633}
+.pa-car-meta{margin:0 0 8px;font-size:12px;color:#597082}
+.pa-car-price{font-size:16px;font-weight:770;margin:0 0 11px;color:#173b5a}
+.pa-car-note{font-size:11px;color:#677b8a;line-height:1.5;margin:0 0 14px}
+.pa-car-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto}
+.pa-car-actions a{border:1px solid #ced8df;border-radius:9px;padding:8px 10px;font-size:12px;text-decoration:none;font-weight:700;color:#183952}
+.pa-car-actions a:last-child{border-color:#1d537a;background:#1d537a;color:#fff}
+.pa-vitrine-bottom{color:#74818e;font-size:12px;line-height:1.55;margin-top:17px}
+.pa-car-card[hidden]{display:none}
+.pa-vitrine-empty{padding:25px;color:#627384}
+@media(max-width:1040px){.pa-vitrine-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:780px){.pa-vitrine-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.pa-vitrine{padding-top:20px}.pa-car-body{padding:12px}.pa-car-body h3{font-size:16px}}
+@media(max-width:500px){.pa-vitrine-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.pa-car-type{font-size:9px;padding:4px 6px}.pa-car-body h3{font-size:14px}.pa-car-price{font-size:13px}.pa-car-note{font-size:10px}.pa-car-actions a{padding:7px 8px;font-size:11px}.pa-vitrine-controls button{font-size:12px;padding:9px 11px}.pa-vitrine-more{width:100%;text-align:center}.hero-photo-visual .hero-car-photo{background-position:50% 40%}}

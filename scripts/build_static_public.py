@@ -83,7 +83,9 @@ def copy_public_files() -> list[str]:
             tag = match.group(0)
             src = re.search(r"""src\s*=\s*["']([^"']+)["']""", tag, re.I)
             url = src.group(1) if src else ""
-            if url.startswith("/assets/auction/") or url == "/assets/papauto-logo.svg":
+            if (url.startswith("/assets/auction/") or url == "/assets/papauto-logo.svg"
+                or re.fullmatch(r"/assets/demo/[a-z0-9-]+-cc0\.webp", url)
+                or url == "/assets/visual/fallback-vehicle.svg"):
                 return tag
             return ""
         html = re.sub(r"<img\b[^>]*>", approved_img, html, flags=re.I | re.S)
