@@ -1,0 +1,78 @@
+name: Russia access test — GitHub Pages
+
+on:
+  push:
+    paths:
+      - '.github/workflows/ru-pages-network-probe.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ru-pages-network-probe
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Generate isolated public diagnostics
+        shell: bash
+        run: |
+          mkdir -p _github_pages_probe
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          import html
+
+          root = Path("_github_pages_probe")
+          (root / ".nojekyll").write_text("", encoding="utf-8")
+          (root / "robots.txt").write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
+
+          page = """<!doctype html>
+          <html lang="ru"><head><meta charset="utf-8">
+          <meta name="robots" content="noindex,nofollow">
+          <meta name="viewport" content="width=device-width,initial-scale=1">
+          <title>GitHub Pages — проверка доступа из России</title>
+          <style>body{font:18px/1.6 Arial,sans-serif;max-width:850px;margin:40px auto;padding:18px;background:#f7f9fd;color:#1b2a41}main{padding:28px;background:white;border-radius:16px}a{color:#1367ac}h1{font-size:28px}</style>
+          </head><body><main><h1>GitHub Pages доступен</h1>
+          <p>Если эта страница открылась без VPN, сеть GitHub Pages доступна через ваш провайдер для короткой страницы.</p>
+          <p>Проверьте также <a href="./large.html">большую страницу (около 100 КБ)</a> и прокрутите её вниз.</p>
+          <p>Это безопасная проверка. DNS сайтов papauto.ru и ремонт-яблока.рф не менялся, Render продолжает работать.</p>
+          </main></body></html>"""
+          (root / "index.html").write_text(page, encoding="utf-8")
+
+          data = "".join(hashlib.sha256(str(i).encode()).hexdigest() for i in range(1800))
+          large = ('<!doctype html><html lang="ru"><head><meta charset="utf-8">'
+                   '<meta name="robots" content="noindex,nofollow">'
+                   '<title>Тест большой страницы GitHub Pages</title></head><body>'
+                   '<h1>Проверка передачи более 100 КБ</h1>'
+                   '<p>Чтобы подтвердить полную загрузку, прокрутите в самый низ.</p>'
+                   '<pre style="white-space:pre-wrap;overflow-wrap:anywhere">'
+                   + html.escape(data) + '</pre>'
+                   '<h1>КОНЕЦ ТЕСТА — ПОЛНАЯ ЗАГРУЗКА</h1></body></html>')
+          (root / "large.html").write_text(large, encoding="utf-8")
+          print("Generated", len(page.encode()), "bytes HTML and", len(large.encode()), "bytes large page")
+          PY
+      - name: Upload only isolated test files
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _github_pages_probe
+
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Deploy diagnostic site
+        id: deployment
+        uses: actions/deploy-pages@v4
