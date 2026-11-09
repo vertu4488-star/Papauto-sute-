@@ -120,7 +120,12 @@ def main():
             "verified_at_utc": datetime.now(timezone.utc).isoformat()
         }
         print(f"Imported {dest.name}: {im.width}x{im.height}, {len(content)} bytes, {lic}")
-    LEDGER.write_text(json.dumps({"photos": list(results.values())}, indent=2, ensure_ascii=False)+"\n", encoding="utf-8")
+    # When a CC0 source for a model is replaced, retire the obsolete provenance
+    # entry that points at the same local path. Keep the newest imported record.
+    by_file = {}
+    for record in results.values():
+        by_file[record["file"]] = record
+    LEDGER.write_text(json.dumps({"photos": list(by_file.values())}, indent=2, ensure_ascii=False)+"\n", encoding="utf-8")
     print("CC0 import complete; retained", len(results), "provenance records; skipped", skipped_non_cc0, "non-CC0 sources.")
 
 
