@@ -335,8 +335,20 @@ async def create_lead(lead: Lead):
             )
         data = response.json()
         if response.status_code != 200 or not data.get("ok"):
-            logger.error("Telegram lead notification failed: status=%s", response.status_code)
-            raise HTTPException(status_code=502, detail="Telegram не подтвердил доставку заявки. Скопируйте текст и отправьте его вручную.")
+            # Categorize Telegram's failure without logging tokens, chat IDs, request data,
+            # untrusted raw descriptions or API URLs.
+            description = str(data.get("description", "")).lower() if isinstance(data, dict) else ""
+            reason = (
+                "chat_not_found" if "chat not found" in description else
+                "bot_blocked" if "bot was blocked" in description else
+                "not_enough_rights" if "not enough rights" in description else
+                "cant_parse_entities" if "can't parse entities" in description else
+                "chat_migrated" if "group chat was upgraded" in description or "migrated" in description else
+                "message_too_long" if "message is too long" in description else
+                "other"
+            )
+            logger.error("Telegram lead notification failed: status=%s reason=%s", response.status_code, reason)
+            raise HTTPException(status_code=502, detail="Заявка сохранена, но Telegram не подтвердил уведомление. Не отправляйте повторно — обратитесь к менеджеру.")
     except httpx.RequestError:
         # httpx exception tracebacks can contain the full Bot API URL and its token.
         # Never write that URL or exception object to application logs.
