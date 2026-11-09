@@ -5,7 +5,7 @@ on:
       - '.github/workflows/papauto-once-api-check.yml'
 jobs:
   one_time_probe:
-    if: ${{ github.event.head_commit.message == 'PAPAUTO one-time verified recipient Telegram test 20261109' && github.run_attempt == 1 }}
+    if: ${{ github.event.head_commit.message == 'PAPAUTO one-time private group notification verification 20261109' && github.run_attempt == 1 }}
     runs-on: ubuntu-latest
     timeout-minutes: 6
     steps:
@@ -54,12 +54,12 @@ jobs:
 
           # Explicitly synthetic non-customer entry; avoid using any real contacts or phone numbers.
           test_lead = {
-              "name": "ТЕСТ-4 PAPAUTO — НЕ КЛИЕНТ",
-              "contact": "QA-NO-REPLY-20261109-CHATID-1850",
+              "name": "ТЕСТ-5 PAPAUTO — НЕ КЛИЕНТ",
+              "contact": "QA-NO-REPLY-20261109-PRIVATE-GROUP-1921",
               "country": "Япония",
               "budget": 1,
               "city": "Новосибирск",
-              "request": "ТЕСТОВАЯ ЗАЯВКА PAPAUTO: проверка API, Neon и Telegram. НЕ ОБРАБАТЫВАТЬ КАК ЗАКАЗ; не связываться, не подбирать автомобили.",
+              "request": "ТЕСТОВАЯ ЗАЯВКА В ЗАКРЫТУЮ ГРУППУ PAPAUTO: проверка API, Neon и Telegram. НЕ ОБРАБАТЫВАТЬ КАК ЗАКАЗ; не связываться, не подбирать автомобили.",
               "consent": True,
               "website": "",
           }
