@@ -513,7 +513,9 @@
     ["china|honda|elysion","/assets/demo/china-honda-elysion-licensed.webp"],
     ["china|honda|integra","/assets/demo/china-honda-integra-licensed.webp"],
     ["china|volkswagen|t-cross","/assets/demo/china-volkswagen-t-cross-licensed.webp"],
-    ["china|buick|excelle gt","/assets/demo/china-buick-excelle-gt-licensed.webp"]
+    ["china|buick|excelle gt","/assets/demo/china-buick-excelle-gt-licensed.webp"],
+    ["china|toyota|frontlander","/assets/demo/china-toyota-frontlander-licensed.webp"],
+    ["china|toyota|corolla cross","/assets/demo/china-toyota-corolla-cross-licensed.webp"]
   ]);
   const photoDetail = {
     "japan|honda|freed":"demo-freed-jp",

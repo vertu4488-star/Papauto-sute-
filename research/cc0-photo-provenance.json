@@ -7522,6 +7522,38 @@
       "verified_at_utc": "2026-11-08T11:31:13.078838+00:00",
       "discovery_method": "Exact make/model match and live Commons commercial-use license audit",
       "changes": "Resized and converted to WebP; no semantic image edits"
+    },
+    {
+      "model": "Toyota Frontlander",
+      "file": "/assets/demo/china-toyota-frontlander-licensed.webp",
+      "source_title": "File:TOYOTA FRONTLANDER (TOYOTA COROLLA CROSS) China.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:TOYOTA_FRONTLANDER_%28TOYOTA_COROLLA_CROSS%29_China.jpg",
+      "rights": "CC BY-SA 4.0",
+      "license_evidence": "https://creativecommons.org/licenses/by-sa/4.0",
+      "author": "Dinkun Chen",
+      "image_sha256": "1de55bc6b20ea702b2ccb88e6dd99d94392dcd05085d883096b7cecab2f85118",
+      "width": 1440,
+      "height": 728,
+      "size_bytes": 123644,
+      "verified_at_utc": "2026-11-09T03:08:26.456033+00:00",
+      "discovery_method": "Exact make/model match and live Commons commercial-use license audit",
+      "changes": "Resized and converted to WebP; no semantic image edits"
+    },
+    {
+      "model": "Toyota Corolla Cross",
+      "file": "/assets/demo/china-toyota-corolla-cross-licensed.webp",
+      "source_title": "File:2022 FAW-Toyota Corolla Cross (front).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:2022_FAW-Toyota_Corolla_Cross_%28front%29.jpg",
+      "rights": "CC BY-SA 4.0",
+      "license_evidence": "https://creativecommons.org/licenses/by-sa/4.0",
+      "author": "User 3204",
+      "image_sha256": "8d9b7a28b1aa8627c44ad69a362fcf85773ab4546e7caf5c52a8da7604bd5b19",
+      "width": 1440,
+      "height": 846,
+      "size_bytes": 188822,
+      "verified_at_utc": "2026-11-09T03:08:26.982411+00:00",
+      "discovery_method": "Exact make/model match and live Commons commercial-use license audit",
+      "changes": "Resized and converted to WebP; no semantic image edits"
     }
   ]
 }
