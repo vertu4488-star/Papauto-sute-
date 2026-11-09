@@ -605,16 +605,16 @@
     {
       "model": "Hyundai Tucson",
       "file": "/assets/demo/hyundai-tucson-cc0.webp",
-      "source_title": "File:Moscow, Hyundai Tucson, Feb 2026 01.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Moscow%2C_Hyundai_Tucson%2C_Feb_2026_01.jpg",
+      "source_title": "File:24 Hyundai Tucson SEL.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:24_Hyundai_Tucson_SEL.jpg",
       "rights": "Creative Commons Zero 1.0 Universal (CC0)",
       "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "author": "Retired electrician",
-      "image_sha256": "2377e5853aa60eb55634fbf44c40f9e3928386603c9c1cf5005c573e6f070d9d",
-      "width": 1440,
-      "height": 960,
-      "size_bytes": 349280,
-      "verified_at_utc": "2026-11-08T09:29:07.367443+00:00"
+      "author": "HJUdall",
+      "image_sha256": "0bd9d30b27a683a4da2222b7d47baed36459d50a0cacbda85c223b4269476481",
+      "width": 1333,
+      "height": 1000,
+      "size_bytes": 433216,
+      "verified_at_utc": "2026-11-09T14:46:34.065283+00:00"
     },
     {
       "model": "Hyundai Sonata",
@@ -7554,20 +7554,6 @@
       "verified_at_utc": "2026-11-09T03:08:26.982411+00:00",
       "discovery_method": "Exact make/model match and live Commons commercial-use license audit",
       "changes": "Resized and converted to WebP; no semantic image edits"
-    },
-    {
-      "model": "Hyundai Tucson",
-      "file": "/assets/demo/hyundai-tucson-cc0.webp",
-      "source_title": "File:24 Hyundai Tucson SEL.jpg",
-      "source_page": "https://commons.wikimedia.org/wiki/File:24_Hyundai_Tucson_SEL.jpg",
-      "rights": "Creative Commons Zero 1.0 Universal (CC0)",
-      "license_evidence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "author": "HJUdall",
-      "image_sha256": "0bd9d30b27a683a4da2222b7d47baed36459d50a0cacbda85c223b4269476481",
-      "width": 1333,
-      "height": 1000,
-      "size_bytes": 433216,
-      "verified_at_utc": "2026-11-09T14:46:34.065283+00:00"
     }
   ]
 }
