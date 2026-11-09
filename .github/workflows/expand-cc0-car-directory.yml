@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: expand-real-cc0-model-photos
+  group: papauto-catalog-writes
   cancel-in-progress: false
 
 jobs:
@@ -44,4 +44,21 @@ jobs:
             exit 0
           fi
           git commit -m "Add verified photo-backed PapAuto model cards with source credits toward 500"
-          git push
+          # Other workflows also publish to main. Rebase instead of force-pushing
+          # so licensed image provenance and concurrent site edits are preserved.
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Catalog updates safely published"
+              exit 0
+            fi
+            echo "Remote main advanced; refreshing before retry $attempt/5"
+            git fetch origin main
+            if ! git rebase origin/main; then
+              git rebase --abort
+              echo "::error::Concurrent edits conflict; refusing to overwrite changes"
+              exit 1
+            fi
+            sleep $((attempt * 3))
+          done
+          echo "::error::Could not publish after five non-destructive attempts"
+          exit 1
