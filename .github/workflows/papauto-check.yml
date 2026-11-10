@@ -39,8 +39,8 @@ jobs:
           paths = {f.relative_to(public).as_posix() for f in public.rglob('*') if f.is_file()}
           assert {'index.html','catalog.html','app.js','styles.css',
                   'robots.txt','sitemap.xml','assets/papauto-logo.svg'}.issubset(paths)
-          from scripts.build_static_public import TOMBSTONE, PROTECTED_DIRS, PROTECTED_SUFFIXES, PROTECTED_NAMES
-          safe_text = {'robots.txt', 'ads.txt', 'security.txt', 'd260ebec4a8764da2a8a41fc9d6791a8.txt'}
+          from scripts.build_static_public import TOMBSTONE, PROTECTED_DIRS, PROTECTED_SUFFIXES, PROTECTED_NAMES, PUBLIC_TEXT_FILES
+          safe_text = PUBLIC_TEXT_FILES
           sensitive = {path for path in paths if path not in safe_text and (
                        path.endswith(tuple(PROTECTED_SUFFIXES))
                        or path.split('/')[0] in PROTECTED_DIRS
