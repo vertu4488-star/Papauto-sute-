@@ -14,7 +14,7 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / "render-public"
 ROOT_SUFFIXES = {".html", ".css", ".js", ".xml", ".webmanifest"}
-PUBLIC_TEXT_FILES = {"robots.txt", "ads.txt", "security.txt", "d260ebec4a8764da2a8a41fc9d6791a8.txt"}
+PUBLIC_TEXT_FILES = {"robots.txt", "ads.txt", "security.txt", "d260ebec4a8764da2a8a41fc9d6791a8.txt", "ae47dec4705c4a088f3dd56a3fdeb764.txt"}
 # Some former Render builds published the whole repository. Explicit tombstones
 # replace old assets that otherwise remain fetchable at their old URLs.
 TOMBSTONE = b"404 Not Found - PAPAUTO\n"
