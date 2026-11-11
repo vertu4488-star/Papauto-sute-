@@ -23,7 +23,10 @@ export default async (req: Request) => {
     "Vary":"Origin",
   };
   if (origin && ORIGINS.has(origin)) headers["Access-Control-Allow-Origin"]=origin;
-  if (!origin || !ORIGINS.has(origin))
+  // Some privacy-focused browsers omit Origin on same-origin POST. Do not
+  // mistake a missing Origin for an unauthorized request. CORS is not auth:
+  // upstream validates leads and enforces database-backed rate limits.
+  if (origin && !ORIGINS.has(origin))
     return reply({ok:false,reason:"origin_not_allowed"},403,headers);
   if (req.method==="OPTIONS")
     return new Response(null,{status:204,headers});
