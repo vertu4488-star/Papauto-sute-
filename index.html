@@ -8,6 +8,17 @@
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://papauto.ru/">
   <meta name="theme-color" content="#0b1016">
+  <script>
+  // Legacy PapAuto SELECT links now point to a dedicated, distraction-free form.
+  (function(){
+    const p=new URLSearchParams(location.search);
+    if(p.get('view')==='select' || location.hash==='#assistant') {
+      const dest=new URL('/podbor.html',location.origin);
+      if(p.has('similar'))dest.searchParams.set('similar',p.get('similar'));
+      location.replace(dest.href);
+    }
+  })();
+</script>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PAPAUTO">
   <meta property="og:title" content="PAPAUTO — автомобили под заказ с доставкой по России">
@@ -51,7 +62,7 @@
     <a href="/?view=directions" data-site-tab="directions">Направления</a>
     <a href="/?view=auctions" data-site-tab="auctions">Аукционы</a>
     <a href="/?view=calculator" data-site-tab="calculator">Расчёт</a>
-    <a href="/?view=select" data-site-tab="select">PAPAUTO SELECT</a>
+    <a href="/podbor.html">PAPAUTO SELECT</a>
     <a href="/?view=about" data-site-tab="about">О компании</a>
     <a href="/auction-archive.html">Карточки PapAuto</a>
     <a href="/delivery.html">Доставка</a>
@@ -59,7 +70,7 @@
     <a href="/avto-iz-korei-novosibirsk.html">Корея → Новосибирск</a>
     <a href="/avto-iz-kitaya-novosibirsk.html">Китай → Новосибирск</a>
   </nav>
-  <a class="header-cta" href="/?view=select#assistant">Обсудить подбор <span>↗</span></a>
+  <a class="header-cta" href="/podbor.html">Обсудить подбор <span>↗</span></a>
 </header>
 <nav class="site-tabs" aria-label="Разделы сайта">
   <a href="/?view=home" data-site-tab="home">Главная</a>
@@ -67,7 +78,7 @@
   <a href="/?view=directions" data-site-tab="directions">Япония · Корея · Китай</a>
   <a href="/?view=auctions" data-site-tab="auctions">Аукционы и статистика</a>
   <a href="/?view=calculator" data-site-tab="calculator">Калькулятор</a>
-  <a href="/?view=select" data-site-tab="select">Подбор PAPAUTO SELECT</a>
+  <a href="/podbor.html">Подбор PAPAUTO SELECT</a>
   <a href="/?view=about" data-site-tab="about">О компании</a>
 </nav>
 
@@ -78,8 +89,8 @@
       <h1>Автомобили из Японии,<br><em>Кореи и Китая под заказ.</em></h1>
       <p><a class="button button-secondary" href="/auction-archive.html">Аукционный архив PapAuto →</a></p><p class="hero-lead">Сравнивайте автомобили из Японии, Кореи и Китая. Подбирайте по бюджету и параметрам, изучайте аукционную историю и заранее разбирайтесь, из чего складывается цена до вашего города.</p>
       <div class="hero-actions">
-        <a class="button button-primary" href="#request">Подобрать автомобиль <span>↗</span></a>
-        <a class="button button-secondary" href="#calculator">Рассчитать бюджет</a>
+        <a class="button button-primary" href="/podbor.html">Подобрать автомобиль <span>↗</span></a>
+        <a class="button button-secondary" href="/podbor.html">Рассчитать бюджет</a>
         <a class="button button-secondary integration-link" data-integration="telegramBotUrl" href="#" hidden>Написать в Telegram <span>↗</span></a>
       </div>
       <div class="hero-checks"><span>✓ Подбор под бюджет</span><span>✓ Проверка данных и документов</span><span>✓ Расчёт до вашего города</span></div>
@@ -174,8 +185,8 @@
 </section>
 
   <nav class="mobile-dashboard" aria-label="Быстрые действия">
-    <a href="#assistant"><strong>Подобрать автомобиль</strong><span>Подбор по бюджету и параметрам ↗</span></a>
-    <a href="#calculator"><strong>Калькулятор</strong><span>Стоимость автомобиля под ключ ↗</span></a>
+    <a href="/podbor.html"><strong>Подобрать автомобиль</strong><span>Подбор по бюджету и параметрам ↗</span></a>
+    <a href="/podbor.html"><strong>Калькулятор</strong><span>Стоимость автомобиля под ключ ↗</span></a>
     <a href="#auction-statistics"><strong>Аукционная статистика</strong><span>Цены, модели и параметры ↗</span></a>
     <a href="#catalog"><strong>Каталог и поиск</strong><span>Примеры автомобилей ↗</span></a>
   </nav>
@@ -212,7 +223,7 @@
     </div>
   </section>
 
-  <section class="section wrap" id="quick-selection"><div class="eyebrow">ПОДБОР ЗА МИНУТУ</div><h2>Найдите автомобиль <em>без длинной анкеты</em></h2><p>Выберите страну, марку, модель и год. Цена и дополнительные параметры — по желанию.</p><a class="button button-primary" href="/?view=select#assistant">Начать подбор ↗</a></section>
+  <section class="section wrap" id="quick-selection"><div class="eyebrow">ПОДБОР ЗА МИНУТУ</div><h2>Найдите автомобиль <em>без длинной анкеты</em></h2><p>Выберите страну, марку, модель и год. Цена и дополнительные параметры — по желанию.</p><a class="button button-primary" href="/podbor.html">Начать подбор ↗</a></section>
   <section class="section wrap" id="catalog">
     <div class="section-title-row catalog-heading"><div><div class="eyebrow">КАТАЛОГ И ПОИСК</div><div class="catalog-title-line"><h2>Найдите автомобиль<br><em>по своим параметрам.</em></h2></div></div><p>Фильтры как на автомобильной площадке: страна, марка, модель, год, бюджет, пробег и параметры двигателя. Можно заполнить запрос голосом через PAPAUTO SELECT.</p></div>
     
@@ -596,7 +607,7 @@
 
   <section class="final-cta wrap" id="request">
     <div><div class="eyebrow">НАЧНЁМ С ВАШЕЙ ЗАДАЧИ</div><h2>Сначала — понятный расчёт.<br><em>Потом — решение.</em></h2><p>Опишите автомобиль и бюджет. Подготовим запрос, с которым можно начать предметный разговор.</p></div>
-    <a class="button button-primary" href="#assistant">Составить запрос <span>↗</span></a>
+    <a class="button button-primary" href="/podbor.html">Составить запрос <span>↗</span></a>
   </section>
 </main>
 <footer class="site-footer">
@@ -611,7 +622,7 @@
   <a href="/?view=catalog" data-site-tab="catalog"><span>▦</span>Каталог</a>
   <a href="/?view=directions" data-site-tab="directions"><span>◎</span>Направления</a>
   <a href="/?view=calculator" data-site-tab="calculator"><span>▤</span>Расчёт</a>
-  <a class="primary" href="/?view=select" data-site-tab="select"><span>⌕</span>Подбор</a>
+  <a class="primary" href="/podbor.html"><span>⌕</span>Подбор</a>
 </nav>
 <script src="/showcase-visual.js" defer></script>
 <script src="/site-config.js?v=20261109api"></script>
