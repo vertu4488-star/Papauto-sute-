@@ -54,4 +54,4 @@ const {chromium}=require('playwright');
  await page.screenshot({path:'survey-end-to-end.png',fullPage:true});
  await browser.close();
  if(posts.length!==1 || !posts[0].consent)throw Error('Lead POST not exactly once with consent');
-})().catch(e=>{console.error('PAPAUTO_BROWSER_TEST_FAILED='+e.stack);process.exitCode=1});
+})().catch(e=>{console.error('PAPAUTO_BROWSER_TEST_FAILED='+e.stack);process.exit(1)});
