@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#ffffff">
+<title>PapAuto — новый каталог и расчёт импорта · прототип</title>
+<meta name="description" content="Тестовая версия строгого каталога PapAuto: модели под заказ, иллюстративные сметы импорта и отдельный архив подтверждённых аукционных продаж.">
+<link rel="stylesheet" href="/catalog-v2.css?v=1">
+<script defer src="/catalog-v2.js?v=1"></script>
+</head>
+<body>
+<a class="skip" href="#main">К содержимому</a>
+<header class="topbar">
+ <div class="top-inner">
+  <a href="/catalog-v2.html" class="brand" aria-label="PapAuto — каталог">
+   <span class="brand-icon" aria-hidden="true">P</span><span class="brand-name">PapAuto</span><span class="brand-tag">Автомобили под заказ<br>из Японии, Кореи и Китая</span>
+  </a>
+  <nav class="desktop-nav" aria-label="Основная навигация">
+   <a class="current" href="/catalog-v2.html">Каталог и статистика</a>
+   <a href="https://papauto.ru/">Главная</a>
+   <a href="https://papauto.ru/#calculator">Калькулятор</a>
+  </nav>
+  <a class="nav-action" href="/podbor.html">Оставить заявку <span aria-hidden="true">↗</span></a>
+ </div>
+</header>
+<main id="main" class="main-shell">
+ <section class="hero" aria-labelledby="hero-title">
+  <div>
+   <div class="overline"><span class="dot"></span> PAPAUTO · КАТАЛОГ НОВОГО ПОКОЛЕНИЯ</div>
+   <h1 id="hero-title">Автомобили из Японии,<br>Кореи и Китая. <em>Без догадок.</em></h1>
+   <p class="hero-copy">Подбор моделей, фотографии и прозрачная структура расходов. Аукционная статистика публикуется только после проверки конкретных торгов.</p>
+  </div>
+  <div class="hero-side">
+   <div class="hero-chip"><span>🇯🇵</span><b>Япония</b><small>Аукционы</small></div>
+   <div class="hero-chip"><span>🇰🇷</span><b>Корея</b><small>Автоплощадки</small></div>
+   <div class="hero-chip"><span>🇨🇳</span><b>Китай</b><small>Автомобили под заказ</small></div>
+  </div>
+ </section>
+ <div class="stage-notice" role="note"><span class="notice-icon">i</span><div><b>Рабочий прототип каталога · не публичная статистика торгов.</b><span> Цены и пробеги в примерах — учебные сценарии. Реальные аукционные результаты будем добавлять только с подтверждёнными данными и правами на фото.</span></div></div>
+ <div class="section-tabs" role="tablist" aria-label="Разделы каталога">
+  <button type="button" role="tab" aria-selected="true" id="tab-samples" aria-controls="panel-samples" data-tab="samples">Примеры расчётов <span class="tab-count" id="sampleTabCount">4</span></button>
+  <button type="button" role="tab" aria-selected="false" id="tab-models" aria-controls="panel-models" data-tab="models">Модели под заказ <span class="tab-count" id="modelTabCount">20</span></button>
+  <button type="button" role="tab" aria-selected="false" id="tab-archive" aria-controls="panel-archive" data-tab="archive">Статистика аукционов <span class="tab-count" id="archiveTabCount">0</span></button>
+ </div>
+ <section class="filter-shell" aria-label="Фильтры">
+  <div class="filter-head"><span>Параметры поиска</span><button class="mobile-filter-toggle" type="button" id="toggleFilters" aria-expanded="false" aria-controls="filterFields">Фильтры <span aria-hidden="true">☷</span></button></div>
+  <div class="filter-grid" id="filterFields">
+   <label><span>Страна</span><select id="countryFilter"><option value="">Все страны</option><option value="japan">Япония</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select></label>
+   <label><span>Марка</span><select id="makeFilter"><option value="">Все марки</option></select></label>
+   <label><span>Поиск модели</span><input id="searchFilter" type="search" placeholder="Например, Honda Freed" autocomplete="off"></label>
+   <label id="yearWrap"><span>Год не ранее</span><select id="yearFilter"><option value="">Любой</option><option value="2025">2025</option><option value="2022">2022</option><option value="2020">2020</option><option value="2018">2018</option></select></label>
+   <label id="budgetWrap"><span>Бюджет до, ₽</span><select id="budgetFilter"><option value="">Любой</option><option value="1500000">1,5 млн</option><option value="2000000">2 млн</option><option value="3000000">3 млн</option><option value="5000000">5 млн</option></select></label>
+   <label><span>Сортировка</span><select id="sortFilter"><option value="default">По умолчанию</option><option value="name">По модели А–Я</option><option value="country">По стране</option><option value="price">По учебной стоимости</option></select></label>
+  </div>
+  <div class="filter-footer"><span id="activeFilters" aria-live="polite">Показаны все страны</span><button type="button" id="resetFilters">Сбросить фильтры <span aria-hidden="true">↺</span></button></div>
+ </section>
+ <div class="results-head"><div><span class="results-eyebrow" id="resultsEyebrow">ПРИМЕРЫ КОНФИГУРАЦИИ</span><h2 id="resultsHeading">Карточки с подробной сметой</h2><p id="resultsDescription">Наглядно показываем структуру будущих карточек. Ни одна из них не является подтверждённой аукционной продажей.</p></div><div class="found-count" id="foundCount" aria-live="polite">Загрузка…</div></div>
+ <section id="panel-samples" role="tabpanel" aria-labelledby="tab-samples" class="tab-panel"><div id="sampleList" class="list"></div></section>
+ <section id="panel-models" role="tabpanel" aria-labelledby="tab-models" class="tab-panel" hidden><div id="modelList" class="model-list"></div><div class="load-more-box"><button id="loadMore" type="button" hidden>Показать ещё модели <span aria-hidden="true">↓</span></button></div></section>
+ <section id="panel-archive" role="tabpanel" aria-labelledby="tab-archive" class="tab-panel" hidden><div class="archive-empty"><span class="archive-ico" aria-hidden="true">✓</span><h3>Только проверенная статистика</h3><p>Пока нет архивных продаж, подтверждённых документами и фотографиями конкретного лота. Мы не будем заполнять этот раздел вымышленными данными ради количества.</p><p>Как только появятся проверенные результаты, здесь будут реальные цены в JPY / KRW / CNY, аукционы, оценки и актуальные затраты на импорт.</p><a href="/podbor.html" class="btn primary">Подобрать автомобиль <span aria-hidden="true">↗</span></a></div><div id="archiveList"></div></section>
+ <div id="emptyState" class="empty" hidden><h3>По выбранным фильтрам ничего не найдено</h3><p>Попробуйте другую страну или марку либо сбросьте условия поиска.</p><button type="button" id="emptyReset" class="btn secondary">Сбросить фильтры</button></div>
+ <section class="how-calc" aria-labelledby="howCalcTitle"><div class="how-calc-left"><div class="overline">ПРОЗРАЧНОСТЬ РАСХОДОВ</div><h2 id="howCalcTitle">Никаких «цен с потолка»</h2><p>У каждой подтверждённой сделки будут видны цена покупки в исходной валюте, расходы до Владивостока и доставка до Новосибирска. Тарифы обновляются с указанием даты, а непроверенные суммы не маскируются под точную цену.</p></div><div class="how-points"><div><span>01</span><b>Цена автомобиля</b><small>Исходная валюта и курс</small></div><div><span>02</span><b>Таможня и логистика</b><small>Пошлины, утильсбор, СВХ</small></div><div><span>03</span><b>Под ключ</b><small>Владивосток / Новосибирск</small></div></div></section>
+ <footer><div><strong>PapAuto</strong><p>Автомобили из Японии, Кореи и Китая под заказ.</p></div><a href="https://papauto.ru/">Вернуться на основной сайт</a><span>Демонстрационная версия · 11.11.2026</span></footer>
+</main>
+</body>
+</html>
