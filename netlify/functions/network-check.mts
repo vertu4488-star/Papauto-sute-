@@ -5,6 +5,8 @@
 const allowedOrigins = new Set([
   "https://vertu4488-star.github.io",
   "https://papauto.ru",
+  // Production hostname of this isolated Netlify network probe.
+  "https://classy-genie-e78657.netlify.app",
 ]);
 const headers = (origin: string | null) => {
   const h: Record<string, string> = {
