@@ -1,0 +1,7 @@
+# Isolated PapAuto API connectivity test. Never publish the repository root.
+[build]
+  publish = "netlify-probe-site"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
