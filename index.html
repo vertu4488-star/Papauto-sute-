@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="/estimate-history.css">
   <link rel="stylesheet" href="/lead-draft-history.css">
   <link rel="stylesheet" href="/site-tabs.css">
+  <link rel="stylesheet" href="/tom-select.vendor.css?v=2.2.2">
+  <link rel="stylesheet" href="/auto-picker.css?v=1">
   <link rel="stylesheet" href="/showcase-visual.css?v=20261109cards4">
   <script type="application/ld+json">
   {
@@ -210,7 +212,8 @@
     </div>
   </section>
 
-  <section class="section wrap" id="quick-selection"><div class="eyebrow">ПОДБОР ЗА МИНУТУ</div><h2>Какой автомобиль <em>ищете вы?</em></h2><form id="quickSelection" class="quick-grid"><label>Страна<select name="market"><option>Не определился</option><option>Япония</option><option>Южная Корея</option><option>Китай</option></select></label><label>Бюджет до, ₽<input name="budget" type="number" min="100000" max="2000000000" step="50000" placeholder="2 000 000" required></label><label>Для каких задач<select name="purpose"><option>Для города</option><option>Для семьи</option><option>Для путешествий</option><option>Для работы</option></select></label><label>Город получения<input name="city" maxlength="80" value="Новосибирск" required></label><button class="button button-primary" type="submit">Продолжить подбор →</button><p>Перенесём пожелания в заявку. Контакт можно добавить на следующем шаге.</p></form><nav class="buyer-links" aria-label="Помощь покупателю"><a href="/choose-market.html">Как выбрать страну →</a><a href="/order-guide.html">Этапы заказа →</a><a href="/buyer-checklist.html">Чек-лист покупателя →</a></nav></section><section class="section wrap" id="catalog">
+  <section class="section wrap" id="quick-selection"><div class="eyebrow">ПОДБОР ЗА МИНУТУ</div><h2>Найдите автомобиль <em>без длинной анкеты</em></h2><p>Выберите страну, марку, модель и год. Цена и дополнительные параметры — по желанию.</p><a class="button button-primary" href="/?view=select#assistant">Начать подбор ↗</a></section>
+  <section class="section wrap" id="catalog">
     <div class="section-title-row catalog-heading"><div><div class="eyebrow">КАТАЛОГ И ПОИСК</div><div class="catalog-title-line"><h2>Найдите автомобиль<br><em>по своим параметрам.</em></h2></div></div><p>Фильтры как на автомобильной площадке: страна, марка, модель, год, бюджет, пробег и параметры двигателя. Можно заполнить запрос голосом через PAPAUTO SELECT.</p></div>
     
     <form class="calc-form" id="vehicleSearchForm">
@@ -353,87 +356,92 @@
   <p class="source-directory-cta"><a class="button button-secondary" href="/auction-archive.html">Открыть архив PapAutoЯпонии и Китая ↗</a></p>
 </section>
 
+
   <section class="section calculator-section" id="calculator">
     <div class="wrap">
-      <div class="section-title-row"><div><div class="eyebrow">ПРЕДВАРИТЕЛЬНЫЙ РАСЧЁТ</div><h2>Считайте весь бюджет,<br><em>а не только цену машины.</em></h2></div><p>Заполните известные суммы. Неизвестные расходы оставьте пустыми — калькулятор не подставляет случайные цифры. Расчёт ориентировочный, не является офертой.</p></div>
-      <div class="calculator-layout">
-        <form class="calc-form" id="calcForm">
-          <label>Направление
-            <select id="calcCountry"><option value="Япония">Япония</option><option value="Южная Корея">Южная Корея</option><option value="Китай">Китай</option></select>
-          </label>
-          <label>Цена автомобиля, ₽ <input id="carCost" inputmode="numeric" type="number" min="0" step="10000" placeholder="Например, 1 500 000"></label>
-          <div class="form-grid">
-            <label>Аукционная / дилерская комиссия, ₽ <input id="auctionFee" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если известна"></label>
-            <label>Доставка по стране покупки, ₽ <input id="originDelivery" inputmode="numeric" type="number" min="0" step="1000" placeholder="До порта / склада"></label>
-            <label>Экспортные документы и порт, ₽ <input id="exportDocs" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если известны"></label>
-            <label>Страхование и хранение, ₽ <input id="insurance" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если применимо"></label>
-            <label>Доставка до России, ₽ <input id="shipping" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если известна"></label>
-            <label>Таможня и сборы, ₽ <input id="customs" inputmode="numeric" type="number" min="0" step="1000" placeholder="По расчёту специалиста"></label>
-            <label>Оформление, ₽ <input id="paperwork" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если известно"></label>
-            <label>Доставка до вашего города, ₽ <input id="localDelivery" inputmode="numeric" type="number" min="0" step="1000" placeholder="Если известна"></label>
-            <label>Услуги компании, ₽ <input id="fee" inputmode="numeric" type="number" min="0" step="1000" placeholder="Согласуется отдельно"></label>
-            <label>Другие расходы, ₽ <input id="otherCosts" inputmode="numeric" type="number" min="0" step="1000" placeholder="При наличии"></label>
+      <div class="section-title-row">
+        <div><div class="eyebrow">PAPAUTO · УМНЫЙ ПОДБОР</div><h2>Выберите машину.<br><em>Остальное мы рассчитаем.</em></h2></div>
+        <p>Марка и модель выбираются из подсказок. Опечатки исправляются при поиске. Никаких десятков обязательных полей.</p>
+      </div>
+      <div class="papauto-picker" id="assistant">
+        <div class="picker-surface">
+          <div class="picker-head">
+            <div><div class="picker-kicker">ШАГ 1 · АВТОМОБИЛЬ</div><h3>Какую машину ищем?</h3><p>Подбор из собственного справочника автомобилей Японии, Кореи и Китая.</p></div>
+            <div class="picker-chip">Без регистрации</div>
           </div>
-          <div class="carrier-prefill">
-            <label for="carrierClass">Ориентир доставки автовозом Владивосток — Новосибирск
-              <select id="carrierClass"><option value="110000">Малолитражка — 110 000 ₽</option><option value="120000" selected>Седан / хэтчбек — 120 000 ₽</option><option value="125000">Универсал — 125 000 ₽</option><option value="130000">Кроссовер — 130 000 ₽</option><option value="140000">Внедорожник / минивэн — 140 000 ₽</option></select>
-            </label>
-            <button class="button button-secondary button-wide" type="button" id="fillCarrierTariff">Подставить в смету</button>
-            <p class="fine-print">Тариф автовоза — ориентировочный. Перед оплатой подтвердите актуальную стоимость перевозки.</p>
-          </div>
-          <div class="tks-panel">
-            <h3>Подготовка данных для таможенного расчёта</h3>
-            <p>Бесплатный режим не обращается к платным калькуляторам. Здесь можно локально разобрать описание и подготовить характеристики для специалиста; итоговую сумму таможни внесите в общую смету после подтверждения.</p>
-            <div class="vehicle-ai-box" id="vehicleAiBox">
-              <div class="vehicle-ai-heading"><span class="vehicle-ai-mark">FREE</span><div><strong>Локальный помощник</strong><small>Выделяет характеристики прямо в браузере — без платных API и отправки текста</small></div></div>
-              <label class="vehicle-ai-label" for="vehicleAiMessage">Например: «Toyota Prius 2019, гибрид 1.8, 122 л.с., цена 1 200 000 иен, везу как физлицо»</label>
-              <textarea id="vehicleAiMessage" rows="3" maxlength="2000" placeholder="Марка, модель, год, двигатель, цена и валюта покупки…"></textarea>
-              <button class="button button-primary button-wide" id="vehicleAiSend" type="button">Разобрать параметры бесплатно ↗</button>
-              <p id="vehicleAiStatus" class="result-note" aria-live="polite">Разбор выполняется в браузере. Возрастную категорию и все неизвестные значения необходимо проверить вручную.</p>
-            </div>
-            <div class="form-grid">
-              <label>Цена в валюте покупки <input id="tksCost" type="number" min="1" step="100" placeholder="Например, 1500000"></label>
-              <label>Валюта
-                <select id="tksCurrency"><option value="392">Японская иена (JPY)</option><option value="410">Южнокорейская вона (KRW)</option><option value="156">Китайский юань (CNY)</option><option value="840">Доллар США (USD)</option><option value="643">Российский рубль (RUB)</option></select>
+          <form id="carPickerForm" autocomplete="on">
+            <div class="picker-grid">
+              <label class="picker-field" for="pickerCountry">Откуда автомобиль?
+                <select id="pickerCountry" name="market"><option value="japan">Япония</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select>
               </label>
-              <label>Объём двигателя, см³ <input id="tksVolume" type="number" min="0" max="20000" placeholder="Например, 2000"></label>
-              <label>Мощность, л.с. <input id="tksPower" type="number" min="0" max="5000" placeholder="Например, 150"></label>
-              <label>Тип двигателя
-                <select id="tksEngine"><option value="petrol">Бензин</option><option value="diesel">Дизель</option><option value="petrol_electric">Бензиновый гибрид</option><option value="diesel_electric">Дизельный гибрид</option><option value="electric">Электромобиль</option><option value="no_engine">Без двигателя</option></select>
+              <label class="picker-field" for="pickerMake">Марка
+                <select id="pickerMake" name="make"><option value="">Начните вводить марку</option></select>
+                <small>Например, напишите «Toyta» — найдём Toyota.</small>
               </label>
-              <label>Возраст автомобиля
-                <select id="tksAge"><option value="3">Меньше 3 лет</option><option value="35">От 3 до 5 лет</option><option value="57">От 5 до 7 лет</option><option value="7">Старше 7 лет</option></select>
+              <label class="picker-field" for="pickerModel">Модель
+                <select id="pickerModel" name="model"><option value="">Сначала выберите марку</option></select>
+                <small id="pickerModelHint">Сначала выберите марку</small>
               </label>
-              <label>Кто ввозит
-                <select id="tksFace"><option value="nat">Физическое лицо</option><option value="jur">Юридическое лицо</option></select>
+              <label class="picker-field" for="pickerYear">Год выпуска
+                <select id="pickerYear" name="year"><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022" selected>2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option></select>
+              </label>
+              <label class="picker-field" for="pickerCity">Город получения
+                <input id="pickerCity" name="city" value="Новосибирск" placeholder="Например, Новосибирск" maxlength="80" autocomplete="address-level2">
+              </label>
+              <label class="picker-field" for="pickerBudget">Бюджет до, ₽ <span>Необязательно</span>
+                <input id="pickerBudget" name="budget" type="number" min="0" max="2000000000" inputmode="numeric" placeholder="Можно не указывать">
               </label>
             </div>
-            <p class="result-note">Автоматический расчёт через TKS.RU отключён. Введите подтверждённую сумму таможни в общую смету выше. Платных запросов нет.</p>
-            <p class="result-note" id="tksStatus" aria-live="polite">В бесплатном режиме внешние платные расчётчики не вызываются.</p>
-            <pre id="tksResult" class="tks-result" hidden></pre>
+            <details class="picker-advanced" id="pickerAdvanced">
+              <summary>Расширенные параметры — по желанию</summary>
+              <div class="picker-advanced-grid">
+                <label class="picker-field" for="pickerEngine">Тип двигателя
+                  <select id="pickerEngine"><option value="">Любой</option><option>Бензин</option><option>Дизель</option><option>Гибрид</option><option>Электромобиль</option></select>
+                </label>
+                <label class="picker-field" for="pickerEngineSize">Объём двигателя, см³
+                  <input id="pickerEngineSize" type="number" min="0" max="20000" placeholder="Необязательно" inputmode="numeric">
+                </label>
+                <label class="picker-field" for="pickerPower">Мощность, л.с.
+                  <input id="pickerPower" type="number" min="0" max="5000" placeholder="Необязательно" inputmode="numeric">
+                </label>
+                <label class="picker-field" for="pickerPurchasePrice">Известная цена машины в валюте покупки
+                  <input id="pickerPurchasePrice" type="number" min="0" placeholder="Если уже выбрали лот" inputmode="decimal">
+                </label>
+                <label class="picker-field" for="pickerNotes">Пожелания
+                  <textarea id="pickerNotes" rows="2" maxlength="1800" placeholder="Например: левый руль, гибрид, белый цвет"></textarea>
+                </label>
+              </div>
+            </details>
+            <div class="picker-cta-row">
+              <p>Подбор бесплатный. Точную цену под ключ подтверждаем после проверки лота, ставок таможни и доставки.</p>
+              <button type="submit" class="picker-primary">Подобрать и рассчитать <span aria-hidden="true">↗</span></button>
+            </div>
+            <p class="picker-status" id="pickerStatus" role="status" aria-live="polite"></p>
+          </form>
+          <div class="picker-result" id="pickerResult" hidden>
+            <div class="picker-result-top"><div><div class="picker-kicker">ШАГ 2 · ПРЕДВАРИТЕЛЬНЫЙ РАСЧЁТ</div><h3 id="pickerResultTitle"></h3><p class="picker-route" id="pickerResultRoute"></p></div><span class="picker-chip">Выбрано</span></div>
+            <p class="picker-budget" id="pickerResultBudget"></p>
+            <p class="picker-cost-note" id="pickerPurchaseResult"></p>
+            <p class="picker-unknown">Точная цена под ключ включает стоимость конкретного лота, пошлины, утильсбор, доставку и комиссию. Пока нет подтверждённых параметров машины, не показываем выдуманную сумму.</p>
+            <form id="pickerLeadForm" class="picker-contact" hidden>
+              <h4>Получить точный расчёт и варианты</h4>
+              <p>Оставьте контакт только если хотите ответ менеджера. Никакой регистрации и обязательного бюджета.</p>
+              <div class="picker-contact-grid">
+                <label class="picker-field" for="pickerName">Как обращаться? <span>По желанию</span><input id="pickerName" maxlength="100" autocomplete="name" placeholder="Ваше имя"></label>
+                <label class="picker-field" for="pickerContact">Телефон или Telegram <input id="pickerContact" maxlength="120" autocomplete="tel" placeholder="+7… или @username" required></label>
+              </div>
+              <input class="picker-honeypot" id="pickerWebsite" tabindex="-1" autocomplete="off" aria-hidden="true" name="website">
+              <label class="picker-consent" for="pickerConsent"><input id="pickerConsent" type="checkbox" required><span>Согласен(на) на обработку данных для ответа на заявку. <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a>.</span></label>
+              <button class="picker-primary" id="pickerSend" type="submit">Отправить заявку <span aria-hidden="true">↗</span></button>
+              <p class="picker-lead-status" id="pickerLeadStatus" role="status" aria-live="polite"></p>
+            </form>
           </div>
-          <button class="button button-primary" type="submit">Рассчитать смету</button>
-          <p class="fine-print">Ставки и сборы зависят от характеристик автомобиля и действующих правил. Для юридически значимого расчёта нужны данные конкретной машины.</p>
-        </form>
-        <aside class="calc-result" aria-live="polite">
-          <div class="result-top"><span>ВАША СМЕТА</span><span class="result-icon">↗</span></div>
-          <p class="result-label">Сумма заполненных расходов</p><div class="result-total" id="resultTotal">— ₽</div>
-          <div class="result-lines" id="resultLines"><div><span>Добавьте известные суммы</span><b>—</b></div></div>
-          <p class="result-note" id="resultNote">Итог пока не рассчитан. Неизвестные статьи не учитываются, поэтому сумма может быть ниже фактических расходов.</p>
-          <label class="market-reference-field">Цена сопоставимого автомобиля в России, ₽ <input id="marketReferencePrice" type="number" min="0" step="10000" placeholder="Введите цену из выбранного вами объявления"></label>
-          <p class="result-note" id="marketComparison">Введите цену российского аналога, чтобы сравнить её с суммой заполненных расходов. Это не автоматическая рыночная оценка.</p>
-          <div class="estimate-actions">
-            <button class="button button-secondary button-wide" type="button" id="copyEstimate">Скопировать смету</button>
-            <button class="button button-secondary button-wide" type="button" id="exportEstimate">Скачать смету CSV</button>
-            <button class="button button-secondary button-wide" type="button" id="printEstimate">Печать / PDF</button>
-          </div>
-        </aside>
+        </div>
       </div>
     </div>
   </section>
 
-  
-  <section class="section wrap currency-section" id="currency-converter">
+    <section class="section wrap currency-section" id="currency-converter">
     <div class="section-title-row">
       <div><div class="eyebrow">ВАЛЮТНЫЙ КОНВЕРТЕР</div><h2>Сравните цену автомобиля<br><em>в рублях и долларах</em></h2></div>
       <p>Выберите страну покупки — конвертер автоматически предложит нужную валюту и пересчитает стоимость по официальным курсам Банка России.</p>
@@ -487,50 +495,8 @@
       </div>
     </div>
   </section>
-  <section class="section wrap" id="assistant">
-    <div class="assistant-panel">
-      <div class="assistant-copy"><div class="eyebrow">PAPAUTO SELECT</div><div class="catalog-title-line assistant-title-line"><h2>Опишите машину<br><em>своими словами.</em></h2><span class="ai-assistant-mark" role="img" aria-label="PAPAUTO AI"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="papautoAiGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3478c8"></stop><stop offset=".55" stop-color="#7556bd"></stop><stop offset="1" stop-color="#278f9a"></stop></linearGradient></defs><path d="M16 3.5 18.9 12l8.6 3-8.6 2.9-2.9 8.6-2.9-8.6-8.6-2.9 8.6-3L16 3.5Z"></path><path d="m25.5 3 .9 2.6L29 6.5l-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9.9-2.6Z"></path></svg><span>AI</span></span></div><p>Например: «Семейный кроссовер до 2,5 млн ₽, не старше 2021 года, с полным приводом». Мы предложим подходящие модели из справочного списка, объясним различия и поможем добавить выбранный вариант в заявку. Актуальные лоты и цены подтверждаются отдельно.</p><div class="assistant-disclaimer">Подбор поможет сравнить подходящие модели и сформировать вопросы для проверки. Он не выдаёт рекомендации за актуальные лоты и не придумывает цены.</div></div>
-      <form class="assistant-form" id="assistantForm">
-        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" class="bot-field" placeholder="Не заполняйте это поле">
-        <p class="form-intro">Укажите основные параметры — менеджеру будет проще подобрать варианты и рассчитать стоимость до вашего города. Поля со звёздочкой обязательны.</p><div id="voiceCarAssistant" class="voice-car-assistant"><strong>Голосовой подбор PAPAUTO</strong><textarea id="voiceCarText" rows="2" maxlength="2000" placeholder="Опишите автомобиль своими словами"></textarea><div class="voice-car-actions"><button class="button button-secondary" type="button" id="voiceCarListen" aria-label="Голосовой поиск">🎙</button><button class="button button-primary" type="button" id="voiceCarApply">Подобрать</button></div><p id="voiceCarStatus" role="status" aria-live="polite">Голосовой ввод доступен в поддерживаемых браузерах. Можно также ввести текст.</p></div>
-        <label for="country">Откуда рассматриваете автомобиль? *</label>
-        <select id="country" name="country" required>
-          <option value="Не определился">Пока не определился</option>
-          <option value="Япония">Япония</option>
-          <option value="Южная Корея">Южная Корея</option>
-          <option value="Китай">Китай</option>
-        </select>
-        <div class="form-grid">
-          <label for="carMake">Марка <input id="carMake" maxlength="80" placeholder="Например, Toyota"></label>
-          <label for="carModel">Модель <input id="carModel" maxlength="80" placeholder="Например, RAV4"></label>
-          <label for="yearFrom">Год выпуска от <input id="yearFrom" type="number" min="1990" max="2027" step="1" placeholder="2020"></label>
-          <label for="yearTo">Год выпуска до <input id="yearTo" type="number" min="1990" max="2027" step="1" placeholder="2024"></label>
-          <label for="budget">Бюджет до, ₽ <input id="budget" type="number" min="1" max="2000000000" step="50000" placeholder="Например, 2500000"></label>
-          <label for="maxMileage">Пробег до, км <input id="maxMileage" type="number" min="0" max="2000000" step="5000" placeholder="Например, 80000"></label>
-        </div>
-        <div class="ai-select-tools"><button class="button button-secondary" type="button" id="runAiSelect">Подобрать бесплатно ↗</button><p id="aiSelectStatus" class="result-note" aria-live="polite">Запрос разбирается локально. Подбор использует только открытые источники и не обращается к платным AI API.</p><div id="aiSelectResults" class="ai-select-results" hidden></div></div>
-        <label for="carListingUrl">Ссылка на понравившийся автомобиль или лот (необязательно) <input id="carListingUrl" type="url" maxlength="1000" inputmode="url" placeholder="Вставьте ссылку из каталога или с аукциона"></label>
-        <label for="carPrompt">Дополнительные пожелания *</label>
-        <textarea id="carPrompt" rows="3" required maxlength="3000" placeholder="Тип кузова, двигатель, коробка, привод, комплектация, важные опции…"></textarea>
-        <div class="form-grid">
-          <label for="city">Город получения * <input id="city" value="Новосибирск" maxlength="80" required placeholder="Например, Новосибирск, Казань, Москва"></label>
-          <label for="leadName">Имя <input id="leadName" maxlength="100" autocomplete="name" placeholder="Как к вам обращаться"></label>
-        </div>
-        <label for="contact">Телефон или Telegram для ответа * <input id="contact" maxlength="120" autocomplete="tel" required placeholder="+7… или @username"></label>
-        <button class="button button-primary" type="submit">Подготовить заявку <span>↗</span></button>
-        <div class="request-output" id="requestOutput" hidden>
-          <p>Проверьте сформированную заявку. Для отправки менеджеру подтвердите согласие на обработку данных.</p>
-          <textarea id="requestText" rows="9" readonly aria-label="Текст заявки"></textarea>
-          <label class="consent-line"><input id="leadConsent" type="checkbox"> Согласен(на) на обработку данных для ответа на заявку. <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a></label>
-          <button class="button button-primary" type="button" id="sendRequest">Отправить менеджеру <span>↗</span></button>
-          <button class="button button-secondary" type="button" id="copyRequest">Скопировать заявку</button>
-          <span class="copy-status" id="copyStatus" aria-live="polite"></span>
-        </div>
-      </form>
-    </div>
-  </section>
 
-  <section class="section wrap" id="account">
+    <section class="section wrap" id="account">
     <div class="account-panel">
       <div class="eyebrow">ЛИЧНЫЙ КАБИНЕТ PAPAUTO</div>
       <h2>Ваши заявки<br><em>и уведомления.</em></h2>
@@ -653,9 +619,12 @@
 <script src="/voice-assistant.js?v=20261103" ></script>
 <script src="/auction-sheet-decoder.js" defer></script>
   <script src="/vehicle-catalogue.js" defer></script>
+<script src="/tom-select.vendor.js" defer></script>
+<script src="/fuse.vendor.js" defer></script>
+<script src="/auto-picker.js?v=1" defer></script>
 <script src="/estimate-history.js" defer></script>
 <script src="/lead-draft-history.js" defer></script>
 <script src="/similar-car-request.js" defer></script>
 <script src="/archive-request.js"></script>
-<script src="/buyer-tools.js" defer></script><script>(function(){function track(name,params){if(typeof window.gtag==="function")window.gtag("event",name,params||{});}document.addEventListener("click",function(e){var a=e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href")||"";if(/^tel:/i.test(h))track("contact_phone_click",{contact_method:"phone"});else if(/^https?:\/\/t\.me\//i.test(h))track("contact_telegram_click",{contact_method:"telegram"});});document.addEventListener("submit",function(e){var id=e.target&&e.target.id;var events={quickSelection:"quick_selection_submit",vehicleSearchForm:"vehicle_search_submit",auctionStatsForm:"auction_search_submit",auctionDecoderForm:"auction_decoder_submit",calcForm:"calculator_submit",assistantForm:"assistant_form_submit"};if(events[id])track(events[id],{form_id:id});},true);})();</script></body>
+<script src="/buyer-tools.js" defer></script><script>(function(){function track(name,params){if(typeof window.gtag==="function")window.gtag("event",name,params||{});}document.addEventListener("click",function(e){var a=e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href")||"";if(/^tel:/i.test(h))track("contact_phone_click",{contact_method:"phone"});else if(/^https?:\/\/t\.me\//i.test(h))track("contact_telegram_click",{contact_method:"telegram"});});document.addEventListener("submit",function(e){var id=e.target&&e.target.id;var events={quickSelection:"quick_selection_submit",vehicleSearchForm:"vehicle_search_submit",auctionStatsForm:"auction_search_submit",auctionDecoderForm:"auction_decoder_submit",carPickerForm:"car_picker_select",pickerLeadForm:"car_picker_lead_submit"};if(events[id])track(events[id],{form_id:id});},true);})();</script></body>
 </html>
