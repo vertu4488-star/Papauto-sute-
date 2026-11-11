@@ -33,6 +33,18 @@ body{padding:0;margin:0;min-height:100vh}
 .picker-confirmation .checkmark{width:64px;height:64px;border-radius:50%;background:#e2f8ed;color:#127846;font-size:36px;display:grid;place-items:center;margin:auto}
 .picker-confirmation button{border:0;border-radius:12px;background:#1760a8;color:#fff;font-size:16px;font-weight:700;width:100%;min-height:50px;cursor:pointer}
 @media(max-width:640px){.standalone-header{padding:12px 17px}.standalone-main{width:100%;margin:9px auto 22px;padding:0 8px}.standalone-heading{padding:12px 12px 9px}.standalone-heading h1{font-size:27px}.picker-surface{border-radius:16px}.picker-confirmation{padding:25px 18px}}
+.picker-contact-method{display:flex;gap:8px;margin:12px 0 4px}
+.picker-contact-method button{border:1px solid #cbd6e3;border-radius:10px;padding:9px 18px;background:#fff;color:#27435d;font:600 14px system-ui;cursor:pointer}
+.picker-contact-method button.is-selected{background:#1760a8;color:white;border-color:#1760a8}
+.picker-keypad-toggle{background:transparent;border:0;color:#1a62a8;text-decoration:underline;font:600 13px system-ui;cursor:pointer;padding:8px 0 7px;text-align:left}
+.picker-keypad{padding:13px;border:1px solid #c9d9eb;background:#f3f8ff;border-radius:14px;margin:5px 0 16px;max-width:370px}
+.picker-keypad[hidden]{display:none!important}
+.picker-keypad p{margin:0 0 12px!important;font-size:13px;color:#294b6e}
+.picker-keypad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.picker-keypad-grid button{min-height:54px;touch-action:manipulation;background:#fff;border:1px solid #c6d5e6;border-radius:11px;font:700 23px system-ui;color:#173859;cursor:pointer}
+.picker-keypad-grid button:active{background:#deecff}
+.picker-keypad-done{width:100%;min-height:44px;margin-top:12px;background:#1760a8;color:white;border:0;border-radius:10px;font:650 14px system-ui;cursor:pointer}
+@media(max-width:640px){.picker-keypad{max-width:none}.picker-contact-method button{flex:1}}
 </style>
 </head>
 <body>
@@ -104,7 +116,30 @@ body{padding:0;margin:0;min-height:100vh}
               <p>Оставьте контакт только если хотите ответ менеджера. Никакой регистрации и обязательного бюджета.</p>
               <div class="picker-contact-grid">
                 <label class="picker-field" for="pickerName">Как обращаться? <span>По желанию</span><input id="pickerName" maxlength="100" autocomplete="name" placeholder="Ваше имя"></label>
-                <label class="picker-field" for="pickerContact">Телефон или Telegram <input id="pickerContact" maxlength="120" autocomplete="tel" placeholder="+7… или @username" required></label>
+                <label class="picker-field" for="pickerContact">Телефон для ответа <input id="pickerContact" name="contact" type="tel" inputmode="tel" enterkeyhint="done" maxlength="120" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="+7 9XX XXX-XX-XX" required></label>
+              </div>
+              <div class="picker-contact-method" role="group" aria-label="Удобный способ связи">
+                <button type="button" data-contact-mode="phone" aria-pressed="true" class="is-selected">Телефон</button>
+                <button type="button" data-contact-mode="telegram" aria-pressed="false">Telegram</button>
+              </div>
+              <button type="button" class="picker-keypad-toggle" id="pickerOpenKeypad" aria-expanded="false" aria-controls="pickerKeypad">Не появилась клавиатура? Ввести номер кнопками</button>
+              <div class="picker-keypad" id="pickerKeypad" hidden>
+                <p>Введите номер здесь — клавиатура iPhone не требуется.</p>
+                <div class="picker-keypad-grid" role="group" aria-label="Цифровая клавиатура телефона">
+                  <button type="button" data-phone-key="1" aria-label="1">1</button>
+                  <button type="button" data-phone-key="2" aria-label="2">2</button>
+                  <button type="button" data-phone-key="3" aria-label="3">3</button>
+                  <button type="button" data-phone-key="4" aria-label="4">4</button>
+                  <button type="button" data-phone-key="5" aria-label="5">5</button>
+                  <button type="button" data-phone-key="6" aria-label="6">6</button>
+                  <button type="button" data-phone-key="7" aria-label="7">7</button>
+                  <button type="button" data-phone-key="8" aria-label="8">8</button>
+                  <button type="button" data-phone-key="9" aria-label="9">9</button>
+                  <button type="button" data-phone-key="clear" aria-label="Очистить номер">C</button>
+                  <button type="button" data-phone-key="0" aria-label="0">0</button>
+                  <button type="button" data-phone-key="backspace" aria-label="Удалить последнюю цифру">⌫</button>
+                </div>
+                <button type="button" id="pickerKeypadDone" class="picker-keypad-done">Готово — номер введён</button>
               </div>
               <input class="picker-honeypot" id="pickerWebsite" tabindex="-1" autocomplete="off" aria-hidden="true" name="website">
               <label class="picker-consent" for="pickerConsent"><input id="pickerConsent" type="checkbox" required><span>Согласен(на) на обработку данных для ответа на заявку. <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a>.</span></label>
@@ -127,5 +162,6 @@ body{padding:0;margin:0;min-height:100vh}
 <script src="/tom-select.vendor.js" defer></script>
 <script src="/fuse.vendor.js" defer></script>
 <script src="/auto-picker.js?v=3" defer></script>
+<script src="/mobile-contact.js?v=1" defer></script>
 <script defer src="/metrika.js"></script>
 </body></html>
