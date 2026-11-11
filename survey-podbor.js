@@ -116,7 +116,7 @@
   // software keyboard. Always render a touch-operated dialpad with this field.
   survey.onValidateQuestion.add((_sender, options)=>{
     if(options.question?.name!=='phone' || !options.value)return;
-    const digits=String(options.value).replace(/\\D/g,'');
+    const digits=String(options.value).replace(/\D/g,'');
     if(digits.length<10 || digits.length>15){
       options.error='Введите полный номер: от 10 до 15 цифр.';
     }
