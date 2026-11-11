@@ -64,7 +64,7 @@ const requestParams=new URLSearchParams(location.search);
 const marketByCode={japan:'Япония','south-korea':'Южная Корея',china:'Китай'};
 const selectedMarket=marketByCode[requestParams.get('country')];
 if(selectedMarket&&cars[selectedMarket]){$('market').value=selectedMarket;updateMakes();}
-for(const id of ['make','model']){const value=requestParams.get(id);if(value&&value.length<=80&&/^[\\p{L}\\p{N} .+\\-/()]+$/u.test(value)){$(id).value=value;if(id==='make')updateModels();}}
+for(const id of ['make','model']) { const value=requestParams.get(id); if(value && value.length<=80 && !/[<>]/.test(value)) { $(id).value=value; if(id==='make') updateModels(); } }
 const selectedYear=requestParams.get('year');
 if(selectedYear&&/^20[0-2][0-9]$/.test(selectedYear))$('year').value=selectedYear;
 function fail(message){$('error').textContent=message;return false}
