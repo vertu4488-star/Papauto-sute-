@@ -4,6 +4,14 @@ on:
   push:
     paths:
       - '.github/workflows/ru-pages-network-probe.yml'
+      - '*.html'
+      - '*.css'
+      - '*.js'
+      - 'assets/**'
+      - 'data/**'
+      - 'vendor_surveyjs.py'
+      - 'scripts/build_static_public.py'
+      - 'scripts/build_pages_preview.py'
   workflow_dispatch:
 
 permissions:
