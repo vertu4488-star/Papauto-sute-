@@ -204,7 +204,9 @@
     }catch(err){
       leadForm.dataset.sent='unknown';
       send.textContent='Статус не подтверждён';
-      leadStatus.textContent='Не удалось подтвердить отправку. Заявка могла сохраниться и прийти в Telegram. НЕ отправляйте повторно, пока менеджер не проверит.';
+      const httpCode = /^HTTP (\\d{3})$/.exec(String(err?.message||'')); 
+      const reason = httpCode ? ('Сервер ответил HTTP '+httpCode[1]+'. ') : 'Сетевое соединение прервалось. ';
+      leadStatus.textContent=reason+'Подтверждения отправки нет. Заявка могла сохраниться и прийти в Telegram. НЕ отправляйте повторно, пока менеджер не проверит.';
     }
   });
   // Improve the separate catalogue filters without changing their API or result cards.
