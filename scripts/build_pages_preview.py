@@ -86,6 +86,20 @@ def make_preview() -> None:
     (TARGET / '.nojekyll').write_text('', encoding='utf-8')
     (TARGET / 'robots.txt').write_text('User-agent: *\nDisallow: /\n', encoding='utf-8')
 
+    # Route ONLY this isolated noindex GitHub Pages preview to the tested
+    # Netlify bridge. The production site-config.js stays unchanged on Render.
+    preview_config = TARGET / 'site-config.js'
+    if not preview_config.is_file():
+        raise RuntimeError('Public preview is missing site-config.js')
+    config_text = preview_config.read_text(encoding='utf-8')
+    original_api = 'https://api.papauto.ru'
+    preview_api = 'https://classy-genie-e78657.netlify.app'
+    if config_text.count(original_api) != 1:
+        raise RuntimeError('Unexpected API config; refusing unsafe preview override')
+    preview_config.write_text(
+        config_text.replace(original_api, preview_api), encoding='utf-8'
+    )
+
     index = TARGET / 'index.html'
     page = index.read_text(encoding='utf-8')
     marker = (
