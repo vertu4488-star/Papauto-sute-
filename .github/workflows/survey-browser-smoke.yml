@@ -58,10 +58,16 @@ jobs:
             if(!info.visible?.includes('Марка') || !info.visible?.includes('Модель'))process.exitCode=1;
           })().catch(e=>{console.error(e);process.exitCode=1});
           NODE
+      - name: Verify car selection, mobile contact, and confirmed popup (mock API only)
+        run: |
+          python -m http.server 8765 -d render-public > /tmp/papauto-e2e-static.log 2>&1 &
+          node scripts/qa_surveyjs_browser.cjs
       - name: Upload diagnostic screenshot
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: survey-mobile-diagnostic
-          path: survey-mobile-diagnostic.png
+          path: |
+            survey-mobile-diagnostic.png
+            survey-end-to-end.png
           if-no-files-found: ignore
