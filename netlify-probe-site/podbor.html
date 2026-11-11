@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Подбор автомобиля — PapAuto · тест Netlify</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#1d2d44;background:#f3f6fb;color-scheme:light}*{box-sizing:border-box}body{margin:0;min-height:100dvh}header{background:#fff;border-bottom:1px solid #e5eaf1;padding:16px max(16px,calc((100vw - 820px)/2));display:flex;align-items:center;justify-content:space-between}.brand{font-size:22px;font-weight:900;letter-spacing:-.04em}.brand b{display:inline-grid;background:#233c59;color:#fff;width:36px;height:36px;border-radius:10px;place-items:center;margin-right:10px}.tag{color:#486783;font-size:12px;font-weight:700}main{max-width:790px;margin:20px auto;padding:0 12px 24px}.intro{padding:3px 7px 14px}h1{font-size:clamp(26px,4vw,36px);letter-spacing:-.045em;margin:0 0 8px}p{line-height:1.5}.intro p{font-size:14px;color:#53677d;margin:0}.card{background:#fff;border:1px solid #dfe6ed;border-radius:20px;box-shadow:0 12px 38px #14283d0c;padding:25px}.progress{display:flex;gap:8px;margin-bottom:22px}.progress span{height:5px;background:#e1e8f0;border-radius:4px;flex:1}.progress span.on{background:#1965b0}.step-title{font-size:21px;font-weight:800;margin:0 0 17px}label{font-weight:650;display:block;font-size:14px;margin:0 0 6px}.field{margin-bottom:17px}input,select,textarea{font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;border:1px solid #cbd7e4;border-radius:10px;padding:13px 12px;width:100%;background:#fff;color:#172c43;min-height:49px;outline-color:#2476c0}textarea{min-height:85px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:#2476c0}select{appearance:auto}.two{display:grid;grid-template-columns:1fr 1fr;gap:13px}.actions{display:flex;justify-content:space-between;gap:10px;margin-top:22px}.actions button,.modal button{border:0;border-radius:11px;background:#1965b0;color:#fff;padding:14px 22px;min-height:50px;font-size:16px;font-weight:750;cursor:pointer}.actions button.secondary{background:#eef2f7;color:#25496e}.actions button:disabled{opacity:.5;cursor:progress}.hint{font-size:12px;color:#6b7e92;margin:4px 0 0}.choice{display:flex;gap:10px}.choice label{display:flex;align-items:center;gap:7px;padding:12px;background:#f5f8fc;border:1px solid #dce5ef;border-radius:11px;flex:1;margin:0;cursor:pointer}.choice input{width:19px;min-height:19px;height:19px;margin:0}.agree{display:flex;align-items:start;gap:10px;font-size:13px;line-height:1.5}.agree input{min-height:20px;width:20px;height:20px;flex-shrink:0}.err{color:#ae1835;font-size:14px;line-height:1.5;min-height:15px}.status{color:#225780;font-size:14px;line-height:1.5}.test{color:#345875;background:#e8f0f9;padding:11px 13px;border-radius:9px;margin-bottom:17px;font-size:13px}.dial{border:1px solid #d8e5f1;border-radius:14px;padding:10px;background:#f6faff;max-width:360px;margin:12px auto}.dial .keys{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.dial button{border:1px solid #c4d5e7;border-radius:10px;min-height:49px;background:#fff;color:#203e5b;font-size:23px;font-weight:750;touch-action:manipulation}.dial button:active{background:#dfeffc}.dial .dial-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.dial .dial-actions button{font-size:14px;min-height:42px}.dial p{text-align:center;margin:0 0 10px;font-size:12px;color:#637990}.hidden{display:none!important}.modal{position:fixed;inset:0;background:#1d2e4aba;display:grid;place-items:center;padding:20px;z-index:10}.modal article{max-width:420px;width:100%;background:white;padding:30px 22px;border-radius:20px;text-align:center}.modal h2{font-size:25px}.ok-icon{font-size:35px;color:#16834f}.footer{text-align:center;color:#708095;font-size:12px;padding:15px}@media(max-width:560px){main{padding:0 8px 20px;margin:13px auto}.card{border-radius:15px;padding:16px}.two{grid-template-columns:1fr}.brand{font-size:19px}.choice{flex-direction:column}.actions button{flex:1}.dial{max-width:none}}
+</style>
+</head><body>
+<header><div class="brand"><b>P</b>PapAuto</div><div class="tag">ТЕСТ · Netlify</div></header>
+<main>
+<div class="intro"><h1>Подбор автомобиля</h1><p>Япония, Южная Корея или Китай. Укажите автомобиль и телефон для связи — без длинной анкеты.</p></div>
+<div class="card">
+<div class="test">Это тестовая копия PapAuto, размещённая отдельно от основного сайта. Заявки отправляются в действующую систему PapAuto.</div>
+<div class="progress"><span id="p1" class="on"></span><span id="p2"></span></div>
+<form id="form" novalidate>
+<section id="step1">
+<h2 class="step-title">1. Какой автомобиль нужен?</h2>
+<div class="field"><label for="market">Откуда привезти автомобиль *</label><select id="market" required><option value="Япония">Япония</option><option value="Южная Корея">Южная Корея</option><option value="Китай">Китай</option></select></div>
+<div class="two">
+<div class="field"><label for="make">Марка *</label><input id="make" list="make-list" autocomplete="off" placeholder="Например, Toyota" maxlength="60" required><datalist id="make-list"></datalist></div>
+<div class="field"><label for="model">Модель *</label><input id="model" list="model-list" autocomplete="off" placeholder="Например, Corolla" maxlength="60" required><datalist id="model-list"></datalist></div>
+</div>
+<div class="two">
+<div class="field"><label for="year">Год выпуска</label><input id="year" type="number" inputmode="numeric" min="1980" max="2027" placeholder="2022"></div>
+<div class="field"><label for="budget">Бюджет, ₽</label><input id="budget" type="number" inputmode="numeric" min="0" max="2000000000" placeholder="1 500 000"></div>
+</div>
+<div class="actions"><span></span><button id="next" type="button">Продолжить</button></div>
+</section>
+<section id="step2" class="hidden">
+<h2 class="step-title">2. Как с вами связаться?</h2>
+<div class="field"><label for="contactMethod">Предпочитаемый способ связи</label><div class="choice">
+<label><input type="radio" name="method" value="Телефонный звонок" checked> Позвонить</label>
+<label><input type="radio" name="method" value="Telegram по номеру"> Telegram по номеру</label>
+</div><p class="hint">Для Telegram укажите номер телефона, а не никнейм.</p></div>
+<div class="two">
+<div class="field"><label for="phone">Номер телефона *</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 999 123-45-67" required maxlength="25"><p class="hint">Если клавиатура iPhone не открывается, используйте цифры ниже.</p></div>
+<div class="field"><label for="name">Имя (по желанию)</label><input id="name" autocomplete="name" maxlength="100" placeholder="Ваше имя"></div>
+</div>
+<div class="dial"><p>Дополнительная цифровая клавиатура</p><div class="keys" id="keys"><button type="button" data-k="1">1</button><button type="button" data-k="2">2</button><button type="button" data-k="3">3</button><button type="button" data-k="4">4</button><button type="button" data-k="5">5</button><button type="button" data-k="6">6</button><button type="button" data-k="7">7</button><button type="button" data-k="8">8</button><button type="button" data-k="9">9</button><button type="button" data-k="+">+</button><button type="button" data-k="0">0</button><button type="button" data-k="back">⌫</button></div><div class="dial-actions"><button type="button" data-k="+7">+7</button><button type="button" data-k="clear">Очистить</button></div></div>
+<div class="two"><div class="field"><label for="city">Город</label><input id="city" value="Новосибирск" maxlength="80"></div><div class="field"><label for="notes">Пожелания (необязательно)</label><textarea id="notes" maxlength="800" placeholder="Комплектация, пробег, цвет…"></textarea></div></div>
+<label class="agree"><input type="checkbox" id="consent"><span>Согласен(на) на обработку персональных данных только для ответа на заявку. *</span></label>
+<div class="actions"><button class="secondary" id="back" type="button">Назад</button><button id="send" type="submit">Отправить заявку</button></div>
+</section>
+<p id="error" class="err" role="alert"></p><p id="status" class="status" role="status"></p>
+</form></div><div class="footer">Тестовый адрес Netlify · PapAuto</div></main>
+<div id="success" class="modal hidden" role="dialog" aria-modal="true"><article><div class="ok-icon">✓</div><h2 id="successTitle">Ваша заявка отправлена!</h2><p id="successText">Заявка сохранена и передана менеджеру PapAuto.</p><button type="button" id="close">Понятно</button></article></div>
+<script>
+(()=>{
+"use strict";
+const $=id=>document.getElementById(id);
+const cars={
+"Япония":{"Toyota":["Corolla","Prius","Aqua","Yaris","Sienta","Vitz","Harrier","Camry","RAV4","Noah","Voxy","Alphard"],"Honda":["Fit","Freed","Stepwgn","Vezel","Civic","N-Box","Shuttle"],"Nissan":["Note","Serena","X-Trail","Leaf"],"Mazda":["Demio","CX-5","Axela"],"Subaru":["Forester","Impreza","Levorg"],"Suzuki":["Swift","Jimny","Solio"],"Mitsubishi":["Outlander","Delica D:5"]},
+"Южная Корея":{"Hyundai":["Avante","Sonata","Tucson","Santa Fe","Palisade","Kona"],"Kia":["K3","K5","Sportage","Sorento","Carnival"],"Genesis":["G70","G80","GV70","GV80"],"SsangYong":["Tivoli","Rexton"]},
+"Китай":{"Geely":["Monjaro","Atlas","Coolray","Preface"],"Chery":["Tiggo 7 Pro","Tiggo 8 Pro"],"Haval":["Jolion","H6","Dargo"],"BYD":["Song Plus","Qin Plus","Han","Seal"],"Changan":["UNI-K","UNI-V","CS75 Plus"],"Zeekr":["001","X","007"],"Li Auto":["L6","L7","L8","L9"]}};
+function updateMakes(){const o=cars[$('market').value];$('make-list').replaceChildren(...Object.keys(o).map(s=>new Option(s,s)));updateModels()}
+function updateModels(){const make=$('make').value.trim();const o=cars[$('market').value];const k=Object.keys(o).find(s=>s.toLowerCase()===make.toLowerCase());$('model-list').replaceChildren(...(o[k]||[]).map(s=>new Option(s,s)))}
+$('market').addEventListener('change',()=>{$('make').value='';$('model').value='';updateMakes()});
+$('make').addEventListener('input',updateModels);updateMakes();
+function fail(message){$('error').textContent=message;return false}
+$('next').addEventListener('click',()=>{if(!$('make').value.trim()||!$('model').value.trim())return fail('Укажите марку и модель автомобиля.');if($('year').value&&(+($('year').value)<1980||+($('year').value)>2027))return fail('Проверьте год выпуска.');$('error').textContent='';$('step1').classList.add('hidden');$('step2').classList.remove('hidden');$('p2').classList.add('on');window.scrollTo(0,0)});
+$('back').addEventListener('click',()=>{$('error').textContent='';$('step2').classList.add('hidden');$('step1').classList.remove('hidden');$('p2').classList.remove('on');window.scrollTo(0,0)});
+$('keys').parentElement.addEventListener('click',e=>{const btn=e.target.closest('button[data-k]');if(!btn)return;const k=btn.dataset.k,p=$('phone');if(k==='clear')p.value='';else if(k==='back')p.value=p.value.slice(0,-1);else if(k==='+7')p.value='+7';else p.value+=k;p.dispatchEvent(new Event('input',{bubbles:true}))});
+let state='ready';
+$('form').addEventListener('submit',async e=>{
+ e.preventDefault();if(state!=='ready')return;
+ const phone=$('phone').value.trim(),digits=phone.replace(/\D/g,'');
+ if(digits.length<10||digits.length>15)return fail('Введите полный номер телефона (от 10 до 15 цифр).');
+ if(!$('consent').checked)return fail('Необходимо согласие на обработку данных.');
+ const model=$('model').value.trim(),year=$('year').value.trim();
+ const budget=$('budget').value.trim();
+ if(budget&&(Number(budget)<0||Number(budget)>2000000000))return fail('Проверьте бюджет.');
+ const method=document.querySelector('input[name="method"]:checked')?.value||'Телефонный звонок';
+ const payload={name:$('name').value.trim(),contact:phone,country:$('market').value,city:$('city').value.trim()||'Новосибирск',
+   budget:budget?Number(budget):null,
+   request:['Подбор автомобиля через PapAuto (Netlify, тест мобильной сети)','Марка: '+$('make').value.trim(),'Модель: '+model,
+      year?'Год: '+year:'Год: не указан','Предпочитаемый способ связи: '+method,
+      budget?'Бюджет: '+budget+' ₽':'Бюджет не указан',
+      $('notes').value.trim()?'Пожелания: '+$('notes').value.trim():'',
+      'Нужна подтверждённая цена под ключ, включая таможню, утильсбор и доставку.'].filter(Boolean).join('\n'),
+   consent:true,website:''};
+ $('error').textContent='';$('status').textContent='Передаём заявку менеджеру…';state='pending';$('send').disabled=true;
+ try{
+  const r=await fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+     credentials:'omit',body:JSON.stringify(payload),signal:AbortSignal.timeout(32000)});
+  let result={};try{result=await r.json()}catch{}
+  if(r.ok&&result.ok===true&&result.stored===true){
+   state='done';$('status').textContent='Заявка сохранена.';
+   $('successTitle').textContent=result.notified===true?'Ваша заявка отправлена!':'Ваша заявка сохранена!';
+   $('successText').textContent=result.notified===true?
+    'Заявка сохранена и передана менеджеру PapAuto через Telegram.':
+    'Заявка сохранена, уведомление Telegram пока не подтверждено. Повторно отправлять не нужно.';
+   $('success').classList.remove('hidden');
+  }else{
+   state='unknown';$('status').textContent='';
+   fail('Статус заявки не подтверждён (HTTP '+r.status+'). Не отправляйте повторно до проверки в PapAuto.');
+  }
+ }catch(_){
+   state='unknown';$('status').textContent='';
+   fail('Сбой связи. Заявка могла сохраниться. Не отправляйте повторно до проверки в PapAuto.');
+ }
+});
+$('close').addEventListener('click',()=>{$('success').classList.add('hidden')});
+})();
+</script></body></html>
