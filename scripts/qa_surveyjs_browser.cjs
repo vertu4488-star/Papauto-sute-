@@ -35,10 +35,24 @@ const {chromium}=require('playwright');
  const next=page.getByRole('button',{name:/Далее|Продолжить|Next/i}).last();
  await next.click({timeout:7000});
  console.log('PAPAUTO_STEP2='+(await page.locator('#surveyContainer').innerText()).slice(0,1400));
- const phoneQ=page.locator('.sd-question').filter({hasText:'Телефон для ответа'}).first();
+ const phoneQ=page.locator('.sd-question[data-name="phone"]');
  const phone=phoneQ.locator('input:not([type="hidden"])').first();
  console.log('PAPAUTO_CONTACT_INPUT='+JSON.stringify({type:await phone.getAttribute('type'),inputMode:await phone.getAttribute('inputmode')}));
- await phone.fill('+79000000000');
+ const pad=phoneQ.locator('.pa-phonepad');
+ await pad.waitFor({timeout:10000});
+ await pad.locator('.pa-phonepad-prefix').click();
+ for(const digit of '9000000000'){
+   await pad.locator('.pa-phonepad-key[aria-label="'+digit+'"]').click();
+ }
+ const dialed=await phone.inputValue();
+ console.log('PAPAUTO_DIALPAD='+JSON.stringify({buttons:await pad.locator('button').count(),dialed}));
+ if(dialed!=='+79000000000')throw new Error('Touch dialpad failed: '+dialed);
+ // Telegram must use the SAME phone input, not a separate username.
+ await page.locator('.sd-question[data-name="contact_method"]').getByText('Telegram по номеру',{exact:true}).click();
+ const samePhone=await page.locator('.sd-question[data-name="phone"]').isVisible();
+ const usernameFields=await page.locator('.sd-question[data-name="telegram"]').count();
+ console.log('PAPAUTO_TELEGRAM_BY_PHONE='+JSON.stringify({samePhone,usernameFields,phone:await phone.inputValue()}));
+ if(!samePhone||usernameFields!==0)throw new Error('Telegram incorrectly asks for a username');
  const consentQ=page.locator('.sd-question').filter({hasText:'Согласие на обработку'}).first();
  await consentQ.locator('input[type="checkbox"]').first().check({force:true});
  const submit=page.getByRole('button',{name:/Отправить заявку|Завершить|Complete/i}).last();
@@ -49,5 +63,5 @@ const {chromium}=require('playwright');
  console.log('PAPAUTO_ERRORS='+JSON.stringify(errors));
  await page.screenshot({path:'survey-end-to-end.png',fullPage:true});
  await browser.close();
- if(posts.length!==1 || !posts[0].consent)throw Error('Lead POST not exactly once with consent');
+ if(posts.length!==1 || !posts[0].consent || !posts[0].request.includes('Telegram по номеру'))throw Error('Lead POST not exactly once with consent and Telegram number');
 })().catch(e=>{console.error('PAPAUTO_BROWSER_TEST_FAILED='+e.stack);process.exit(1)});
