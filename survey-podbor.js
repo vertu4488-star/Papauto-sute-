@@ -4,6 +4,7 @@
  */
 (() => {
   'use strict';
+  try {
   const mount = document.getElementById('surveyContainer');
   const msg = document.getElementById('surveyStatus');
   const dialog = document.getElementById('surveySuccessDialog');
@@ -201,4 +202,8 @@
   });
   survey.render(mount);
   msg.textContent='';
+  } catch (error) {
+    const message = document.getElementById('surveyStatus');
+    if(message) message.textContent = 'Ошибка запуска формы (' + String(error?.name || 'Unknown') + '): ' + String(error?.message || 'неизвестная ошибка').slice(0,180);
+  }
 })();
