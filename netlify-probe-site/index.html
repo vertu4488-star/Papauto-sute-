@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>PapAuto — проверка Netlify API из России</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:690px;margin:40px auto;padding:16px;color:#132235}button{padding:14px 18px;border:0;border-radius:8px;background:#145eb9;color:white;font-size:17px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f4fa;padding:18px;border-radius:8px}small{color:#52606d}</style>
+</head><body><main>
+<h1>PapAuto — тест зарубежного API</h1>
+<p>Безопасная проверка из мобильной сети без VPN. Никакие контакты не передаются, заявки не создаются.</p>
+<button type="button" id="check">Проверить GET и POST</button>
+<pre id="status" role="status">Проверка не запускалась.</pre>
+<p><small>Это техническая тестовая версия, а не форма для клиентов.</small></p>
+<script>
+document.querySelector('#check').addEventListener('click',async()=>{
+ const e=document.querySelector('#status');e.textContent='Проверяем...';
+ let lines=[];
+ try{
+  const g=await fetch('/api/network-check',{cache:'no-store'});
+  lines.push('GET: HTTP '+g.status+' '+(await g.text()));
+ }catch(err){lines.push('GET ошибка: '+String(err));}
+ try{
+  const p=await fetch('/api/network-check',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind:'network-check',nonce:'papauto-20261111'})});
+  lines.push('POST: HTTP '+p.status+' '+(await p.text()));
+ }catch(err){lines.push('POST ошибка: '+String(err));}
+ e.textContent=lines.join('\n\n');
+});
+</script></main></body></html>
