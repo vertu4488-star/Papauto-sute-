@@ -4,6 +4,7 @@
  */
 (() => {
   'use strict';
+  let startupStage = 'initialization';
   try {
   const mount = document.getElementById('surveyContainer');
   const msg = document.getElementById('surveyStatus');
@@ -94,6 +95,7 @@
       }
     ]
   };
+  startupStage = 'construct Model';
   const survey = new window.Survey.Model(schema);
   const updateMakes = market => {
     const q=survey.getQuestionByName('make');
@@ -109,6 +111,7 @@
     if(!options.includes(survey.getValue('model')))survey.setValue('model',undefined);
     // SurveyJS 3 exposes isReadOnly as a getter; the empty choices list suffices.
   };
+  startupStage = 'attach event listeners';
   survey.onValueChanged.add((sender,options)=>{
     if(options.name==='market')updateMakes(options.value);
     if(options.name==='make')updateModels(sender.getValue('market'),options.value);
@@ -126,6 +129,7 @@
     }).filter(x=>x.best<=Math.max(1,Math.floor(key.length/3))).sort((a,b)=>a.best-b.best).slice(0,80);
     if(fuzzy.length)options.filteredChoices=fuzzy.map(x=>x.item);
   });
+  startupStage = 'populate dropdowns';
   updateMakes('japan');
   const similar=new URL(location.href).searchParams.get('similar');
   if(similar && similar.length<=90){
@@ -200,10 +204,11 @@
     if(typeof dialog?.close==='function')dialog.close();
     else dialog?.removeAttribute('open');
   });
+  startupStage = 'render form';
   survey.render(mount);
   msg.textContent='';
   } catch (error) {
     const message = document.getElementById('surveyStatus');
-    if(message) message.textContent = 'Ошибка запуска формы (' + String(error?.name || 'Unknown') + '): ' + String(error?.message || 'неизвестная ошибка').slice(0,150) + ' | STACK: ' + String(error?.stack || '').split('\\n').slice(0,5).join(' | ').slice(0,650);
+    if(message) message.textContent = 'Ошибка на этапе [' + startupStage + '] (' + String(error?.name || 'Unknown') + '): ' + String(error?.message || 'неизвестная ошибка').slice(0,150) + ' | STACK: ' + String(error?.stack || '').split('\\n').slice(0,5).join(' | ').slice(0,650);
   }
 })();
