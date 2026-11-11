@@ -84,14 +84,12 @@
         description:'Контакт нужен только для ответа на вашу заявку. Регистрация не требуется.',
         elements:[
           {type:'text',name:'name',title:'Как к вам обращаться? (необязательно)',maxLength:100},
-          {type:'radiogroup',name:'contact_method',title:'Удобный способ связи',isRequired:true,defaultValue:'phone',
-           colCount:2,choices:[{value:'phone',text:'Телефон'},{value:'telegram',text:'Telegram'}]},
-          {type:'text',name:'phone',title:'Телефон для ответа',inputType:'tel',
-           placeholder:'+7 900 123-45-67',visibleIf:"{contact_method} = 'phone'",isRequired:true,maxLength:30,
-           validators:[{type:'regex',regex:'^\\+?[0-9() \\-]{10,25}$',text:'Введите телефон полностью или выберите Telegram.'}]},
-          {type:'text',name:'telegram',title:'Ваш Telegram',inputType:'text',placeholder:'@username',
-           visibleIf:"{contact_method} = 'telegram'",isRequired:true,maxLength:60,
-           validators:[{type:'regex',regex:'^@?[A-Za-z0-9_]{5,32}$',text:'Введите Telegram в формате @username.'}]},
+          {type:'radiogroup',name:'contact_method',title:'Как удобнее связаться?',isRequired:true,defaultValue:'phone',
+           colCount:2,choices:[{value:'phone',text:'Позвонить'},{value:'telegram',text:'Telegram по номеру'}]},
+          {type:'text',name:'phone',title:'Номер телефона для связи',inputType:'tel',
+           placeholder:'+7 900 123-45-67',isRequired:true,maxLength:25,
+           description:'Номер для звонка или Telegram. Если клавиатура не появляется, используйте кнопки ниже.',
+           validators:[{type:'regex',regex:'^\+?[0-9() \-]{10,25}$',text:'Введите полный номер телефона.'}]},
           {type:'checkbox',name:'consent',title:'Согласие на обработку персональных данных',
            isRequired:true,choices:[{value:'agree',text:'Согласен(на) на обработку данных только для ответа на заявку.'}]}
         ]
@@ -114,10 +112,75 @@
     if(!options.includes(survey.getValue('model')))survey.setValue('model',undefined);
     // SurveyJS 3 exposes isReadOnly as a getter; the empty choices list suffices.
   };
+  // Physical keyboards and embedded iOS browsers can suppress the native
+  // software keyboard. Always render a touch-operated dialpad with this field.
+  survey.onAfterRenderQuestion.add((_sender, options)=>{
+    if(options.question?.name!=='phone')return;
+    const host=options.htmlElement?.querySelector('.sd-question__content')||options.htmlElement;
+    if(!host||host.querySelector('.pa-phonepad'))return;
+    const pad=document.createElement('div');
+    pad.className='pa-phonepad';
+    pad.setAttribute('role','group');
+    pad.setAttribute('aria-label','Цифровой набор номера');
+    const label=document.createElement('p');
+    label.className='pa-phonepad-title';
+    label.textContent='Наберите номер кнопками';
+    pad.appendChild(label);
+    const grid=document.createElement('div');
+    grid.className='pa-phonepad-grid';
+    for(const key of ['1','2','3','4','5','6','7','8','9','+','0','⌫']){
+      const button=document.createElement('button');
+      button.type='button';
+      button.className='pa-phonepad-key';
+      button.textContent=key;
+      button.setAttribute('aria-label',key==='⌫'?'Удалить последнюю цифру':key==='+'?'Плюс':key);
+      button.addEventListener('click',event=>{
+        event.preventDefault();
+        const prior=String(survey.getValue('phone')||'');
+        let next=prior;
+        if(key==='⌫') next=prior.slice(0,-1);
+        else if(key==='+'){if(!prior)next='+';}
+        else if(prior.length<25)next=prior+key;
+        survey.setValue('phone',next);
+      });
+      grid.appendChild(button);
+    }
+    pad.appendChild(grid);
+    const actions=document.createElement('div');
+    actions.className='pa-phonepad-actions';
+    const prefix=document.createElement('button');
+    prefix.type='button';
+    prefix.className='pa-phonepad-prefix';
+    prefix.textContent='+7';
+    prefix.setAttribute('aria-label','Начать номер с плюс семь');
+    prefix.addEventListener('click',event=>{
+      event.preventDefault();
+      const prior=String(survey.getValue('phone')||'');
+      const digits=prior.replace(/\D/g,'');
+      survey.setValue('phone',prior?'+7'+digits.replace(/^[78]/,''):'+7');
+    });
+    const clear=document.createElement('button');
+    clear.type='button';
+    clear.className='pa-phonepad-clear';
+    clear.textContent='Очистить';
+    clear.addEventListener('click',event=>{
+      event.preventDefault();
+      survey.setValue('phone','');
+    });
+    actions.append(prefix,clear);
+    pad.appendChild(actions);
+    host.appendChild(pad);
+  });
   startupStage = 'attach event listeners';
   survey.onValueChanged.add((sender,options)=>{
     if(options.name==='market')updateMakes(options.value);
     if(options.name==='make')updateModels(sender.getValue('market'),options.value);
+    if(options.name==='contact_method'){
+      const phone=sender.getQuestionByName('phone');
+      if(phone)phone.description=options.value==='telegram'
+        ? 'Введите телефон, к которому привязан Telegram. Связь по номеру зависит от настроек конфиденциальности Telegram.'
+        : 'Введите номер для звонка или воспользуйтесь кнопками ниже.';
+    }
   });
   survey.onChoicesSearch.add((sender,options)=>{
     if(options.question?.name!=='make' && options.question?.name!=='model')return;
@@ -152,12 +215,13 @@
     state='pending';
     msg.textContent='Передаём заявку менеджеру…';
     const d=survey.data;
-    const contact=d.contact_method==='telegram'?String(d.telegram||'').trim():String(d.phone||'').trim();
+    const contact=String(d.phone||'').trim();
     const request=[
       'Подбор автомобиля через PapAuto (SurveyJS)',
       'Марка: '+d.make,
       'Модель: '+d.model,
       'Год: '+d.year,
+      'Предпочитаемый способ связи: '+(d.contact_method==='telegram'?'Telegram по номеру (если разрешено настройками приватности)':'Телефонный звонок'),
       d.budget?'Бюджет: '+d.budget+' ₽':'Бюджет не указан',
       d.notes?'Пожелания: '+d.notes:'',
       'Нужна подтверждённая цена под ключ, включая таможню, утильсбор и доставку.'
