@@ -5,7 +5,7 @@
     directions: ['#directions', '#route-planner', '#regional-delivery'],
     auctions: ['#seo-guides', '#auction-statistics', '#market-sources'],
     calculator: ['#calculator', '#currency-converter', '#logisticsBenchmarks'],
-    select: ['#smart-search', '#assistant', '#account', '.account-data-section'],
+    select: ['#calculator', '#account', '.account-data-section'],
     about: ['#process', '#checklist', '#auto-import-russia', '#faq', '#request']
   };
   const all = Object.values(groups).flat();
@@ -13,6 +13,8 @@
   Object.entries(groups).forEach(([view, selectors]) => selectors.forEach(selector => {
     if (selector.startsWith('#')) knownIds.set(selector.slice(1), view);
   }));
+  // Old catalogue and marketing links still use #assistant as the picker anchor.
+  knownIds.set('assistant','select');
   const valid = new Set(Object.keys(groups));
   const getViewFromHash = () => {
     const id = decodeURIComponent(location.hash.slice(1));
