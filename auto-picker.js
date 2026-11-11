@@ -204,8 +204,8 @@
     }catch(err){
       leadForm.dataset.sent='unknown';
       send.textContent='Статус не подтверждён';
-      const httpCode = /^HTTP (\\d{3})$/.exec(String(err?.message||'')); 
-      const reason = httpCode ? ('Сервер ответил HTTP '+httpCode[1]+'. ') : 'Сетевое соединение прервалось. ';
+      const httpCode = String(err?.message||'');
+      const reason = /^HTTP [0-9]{3}$/.test(httpCode) ? ('Сервер ответил '+httpCode+'. ') : 'Сетевое соединение прервалось. ';
       leadStatus.textContent=reason+'Подтверждения отправки нет. Заявка могла сохраниться и прийти в Telegram. НЕ отправляйте повторно, пока менеджер не проверит.';
     }
   });
