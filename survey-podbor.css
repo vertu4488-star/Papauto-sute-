@@ -1,0 +1,48 @@
+/* PapAuto dedicated two-step SurveyJS form.
+ * This stylesheet only configures visual branding; validation, navigation,
+ * question rendering and mobile controls are implemented by SurveyJS.
+ */
+:root{color-scheme:light;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#f3f6fa;color:#1e293b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:#f3f6fa}
+.pa-header{height:70px;background:#fff;border-bottom:1px solid #e4eaf1;display:flex;justify-content:space-between;align-items:center;padding:0 max(20px,calc((100vw - 910px)/2))}
+.pa-brand{text-decoration:none;color:#19283d;font-size:22px;font-weight:850;letter-spacing:-.04em;display:flex;gap:11px;align-items:center}
+.pa-brand span{background:#192b44;color:#fff;width:40px;height:40px;display:grid;place-items:center;border-radius:11px}
+.pa-back{color:#20588e;text-decoration:none;font-size:14px;font-weight:600}
+.pa-main{width:min(100% - 28px,900px);margin:23px auto 36px}
+.pa-intro{padding:0 12px 12px}
+.pa-intro h1{font-size:clamp(25px,4vw,37px);letter-spacing:-.05em;margin:0 0 9px;color:#1a2b43}
+.pa-intro p{font-size:14px;color:#65758b;line-height:1.55;margin:0}
+.pa-card{background:#fff;border:1px solid #dfe6ef;box-shadow:0 12px 42px rgba(17,38,70,.065);border-radius:22px;overflow:hidden;padding:0}
+#surveyContainer{min-height:370px}
+#surveyContainer .sd-root-modern{--sjs-primary-backcolor:#1760a8;--sjs-primary-forecolor:#fff;--sjs-general-backcolor:#fff;--sjs-general-forecolor:#172c43;--sjs-border-default:#d7e1ef;--sjs-corner-radius:11px;margin:0 auto!important;background:#fff!important}
+#surveyContainer .sd-container-modern{max-width:none!important}
+#surveyContainer .sd-body{padding:0!important}
+#surveyContainer .sd-page{padding:4px 10px 18px!important}
+#surveyContainer .sd-question{max-width:100%!important}
+#surveyContainer input,#surveyContainer select,#surveyContainer textarea{font-size:16px!important;min-height:44px}
+#surveyContainer .sd-btn{min-height:48px;border-radius:11px;font-weight:700}
+#surveyContainer .sd-description{font-size:14px;line-height:1.5}
+.pa-status{font-size:13px;color:#365e80;min-height:18px;margin:10px 20px 15px;line-height:1.6}
+.pa-footer{text-align:center;color:#708097;font-size:12px;padding:8px 15px 25px}
+.pa-footer a{color:#4e7194}
+.pa-dialog{width:min(90vw,460px);border:0;border-radius:23px;padding:29px 25px;text-align:center;box-shadow:0 20px 70px #0e203652;color:#1d3047}
+.pa-dialog::backdrop{background:#0d192ab3}
+.pa-dialog h2{font-size:25px;letter-spacing:-.04em;margin:12px 0}
+.pa-dialog p{font-size:15px;line-height:1.55;color:#5b6d81;margin:0 0 19px}
+.pa-dialog .pa-check{width:63px;height:63px;border-radius:50%;background:#ddf7e7;color:#168148;margin:auto;display:grid;place-items:center;font-size:34px;font-weight:800}
+.pa-dialog button{border:none;border-radius:11px;min-height:50px;width:100%;font-weight:700;font-size:16px;color:#fff;background:#1760a8;cursor:pointer}
+@media(max-width:650px){
+ .pa-header{height:64px;padding:0 16px}
+ .pa-brand{font-size:19px}.pa-brand span{width:35px;height:35px;font-size:17px}
+ .pa-main{width:100%;margin:11px auto 20px;padding:0 8px}
+ .pa-intro{padding:10px 11px 13px}
+ .pa-intro h1{font-size:27px}
+ .pa-card{border-radius:16px}
+ #surveyContainer .sd-page{padding:0 5px 12px!important}
+ #surveyContainer .sd-question{padding:12px 5px!important}
+ #surveyContainer .sd-navigation{padding:12px!important}
+ #surveyContainer .sd-radio__decorator{min-width:20px;min-height:20px}
+ .pa-footer{padding-top:6px}
+}
