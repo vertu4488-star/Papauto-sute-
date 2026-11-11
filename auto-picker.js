@@ -179,6 +179,7 @@
     parts.push('Просьба подтвердить наличие лота, доставку, таможню, утильсбор и итоговую цену под ключ до '+v.city+'.');
     return parts.join('\n');
   };
+  $('pickerSuccessClose')?.addEventListener('click',()=>{const d=$('pickerSuccessDialog');if(typeof d?.close==='function')d.close();else d?.removeAttribute('open')});
   leadForm.addEventListener('submit',async event=>{
     event.preventDefault();
     if(leadForm.dataset.prepared!=='yes'||leadForm.dataset.sent==='pending'||leadForm.dataset.sent==='done'||leadForm.dataset.sent==='unknown')return;
@@ -202,9 +203,21 @@
         if([400,413,422].includes(r.status)){leadForm.dataset.sent='';send.disabled=false;send.textContent='Исправить и отправить';leadStatus.textContent=d.detail||'Проверьте данные заявки.';return}
         throw new Error('HTTP '+r.status);
       }
+      // Never present a success dialog on HTTP 200 alone: the database must confirm storage.
+      if(d.stored !== true || d.ok !== true) throw new Error('Delivery status unconfirmed');
       leadForm.dataset.sent='done';
-      send.textContent=d.notified===false?'Заявка сохранена':'Заявка отправлена';
-      leadStatus.textContent=d.message||(d.notified===false?'Заявка сохранена, менеджер проверит уведомления.':'Заявка доставлена менеджеру.');
+      send.textContent=d.notified===true?'Заявка отправлена':'Заявка сохранена';
+      leadStatus.textContent=d.message||(d.notified===true?'Заявка доставлена менеджеру.':'Заявка сохранена, менеджер проверит уведомления.');
+      // Only the standalone form displays a modal, after the server confirms success.
+      const successDialog=$('pickerSuccessDialog');
+      if(successDialog) {
+        $('pickerSuccessTitle').textContent=d.notified===true?'Ваша заявка отправлена!':'Ваша заявка принята!';
+        $('pickerSuccessText').textContent=d.notified===true
+          ? 'Заявка сохранена и передана менеджеру через Telegram. Мы свяжемся с вами по указанному контакту.'
+          : 'Заявка сохранена. Уведомление менеджеру пока не подтверждено; повторно отправлять не нужно.';
+        if(typeof successDialog.showModal==='function') successDialog.showModal();
+        else successDialog.setAttribute('open','');
+      }
       window.dispatchEvent(new CustomEvent('papauto:lead-submitted',{detail:{...payload,make:chosenMake,model:chosenModel,yearFrom:year.value,yearTo:year.value}}));
     }catch(err){
       leadForm.dataset.sent='unknown';
