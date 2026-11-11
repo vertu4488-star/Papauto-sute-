@@ -107,7 +107,7 @@
     const options=getModels(market,make);
     q.choices=options.map(value=>({value,text:value}));
     if(!options.includes(survey.getValue('model')))survey.setValue('model',undefined);
-    q.isReadOnly=!make;
+    // SurveyJS 3 exposes isReadOnly as a getter; the empty choices list suffices.
   };
   survey.onValueChanged.add((sender,options)=>{
     if(options.name==='market')updateMakes(options.value);
