@@ -10,6 +10,16 @@
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="stylesheet" href="/vendor/surveyjs/survey-core.min.css?v=3.2.4">
 <link rel="stylesheet" href="/survey-podbor.css?v=1">
+<script>
+window.addEventListener('error',function(e){
+  var box=document.getElementById('surveyStatus');
+  if(box&&box.textContent.indexOf('Загружаем')>=0) box.textContent='Ошибка загрузки формы: '+String(e.message||e.target?.src||'script').slice(0,190);
+},true);
+window.addEventListener('unhandledrejection',function(e){
+  var box=document.getElementById('surveyStatus');
+  if(box&&box.textContent.indexOf('Загружаем')>=0) box.textContent='Ошибка формы: '+String(e.reason?.message||e.reason||'неизвестно').slice(0,190);
+});
+</script>
 </head>
 <body>
 <header class="pa-header">
@@ -39,6 +49,6 @@
 <script defer src="/vendor/surveyjs/survey.core.min.js?v=3.2.4"></script>
 <script defer src="/vendor/surveyjs/survey.i18n.min.js?v=3.2.4"></script>
 <script defer src="/vendor/surveyjs/survey-js-ui.min.js?v=3.2.4"></script>
-<script defer src="/survey-podbor.js?v=2"></script>
+<script defer src="/survey-podbor.js?v=3"></script>
 </body>
 </html>
