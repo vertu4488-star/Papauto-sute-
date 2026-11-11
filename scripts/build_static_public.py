@@ -76,6 +76,11 @@ def copy_public_files() -> list[str]:
             shutil.copy2(src, dst)
             copied.append(dst.relative_to(TARGET).as_posix())
 
+    # The complete prebuilt SurveyJS renderer is pinned and hosted on PAPAUTO.
+    # Never rely on external CDN scripts at runtime, including in Russia.
+    from vendor_surveyjs import fetch_surveyjs
+    fetch_surveyjs(TARGET)
+
     # Only our own explicitly approved auction photos may be published.
     # This also retires historical hotlinked photos on existing SEO/model pages.
     for page in TARGET.glob("*.html"):
