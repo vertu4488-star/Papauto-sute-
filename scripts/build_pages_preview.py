@@ -78,6 +78,12 @@ def make_preview() -> None:
                     '', content, flags=re.I,
                 )
             content = replace_static_urls(content)
+            if source.suffix.lower() == '.html':
+                # Do not reuse a previous iPhone/Safari cached API config URL.
+                content = content.replace(
+                    'site-config.js?v=20261111api',
+                    'site-config.js?v=netlify-mts-20261111',
+                )
             dest.write_text(content, encoding='utf-8')
         else:
             shutil.copy2(source, dest)
@@ -99,6 +105,20 @@ def make_preview() -> None:
     preview_config.write_text(
         config_text.replace(original_api, preview_api), encoding='utf-8'
     )
+
+    # Cross-origin API probe runs on github.io, just like the real test form.
+    # Its deliberately invalid request MUST be rejected before any lead is saved.
+    bridge_check = TARGET / 'netlify-bridge-check.html'
+    bridge_check.write_text('''<!doctype html><html lang="ru"><head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PapAuto — проверка отправки через GitHub Pages</title>
+<style>body{max-width:700px;margin:2rem auto;padding:1rem;font:16px/1.5 system-ui;color:#162c41}button{padding:14px 19px;background:#1760a8;border:0;border-radius:10px;color:#fff;font-size:17px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf3f8;padding:16px;border-radius:10px}</style></head><body><main>
+<h1>PapAuto — тест связи формы и Netlify</h1>
+<p>Безопасная проверка: запрос без телефона и личных данных. API должен отклонить его с HTTP 422, это означает, что соединение работает.</p>
+<button id="send" type="button">Проверить соединение</button><pre id="result" role="status">Ожидает проверки.</pre>
+<script>document.querySelector('#send').onclick=async()=>{const o=document.querySelector('#result');o.textContent='Проверяем…';try{const r=await fetch('https://classy-genie-e78657.netlify.app/api/leads',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},credentials:'omit',body:JSON.stringify({kind:'network-check'})});o.textContent='HTTP '+r.status+'\\n'+await r.text();}catch(e){o.textContent='Ошибка сети / CORS: '+String(e)}};</script>
+</main></body></html>''', encoding='utf-8')
 
     index = TARGET / 'index.html'
     page = index.read_text(encoding='utf-8')
