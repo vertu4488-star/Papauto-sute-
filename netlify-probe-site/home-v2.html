@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0c1727">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>PapAuto — автомобили из Японии, Кореи и Китая · новый дизайн</title>
+<meta name="description" content="Тестовый премиальный дизайн PapAuto: автомобили под заказ, поиск моделей и прозрачная структура расходов до Новосибирска.">
+<link rel="stylesheet" href="/home-v2.css?v=dark-hero-20261111b">
+<script defer src="/home-v2.js?v=dark-hero-20261111b"></script>
+</head>
+<body>
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header" id="top">
+  <div class="nav-wrap">
+    <a class="brand" href="/home-v2.html" aria-label="PapAuto — главная">
+      <span class="brand-word">PAPAUTO</span><span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-caption">Автомобили под заказ<br>из Японии, Кореи и Китая</span>
+    </a>
+    <nav class="main-nav" aria-label="Основная навигация" id="mainNav">
+      <a aria-current="page" href="/home-v2.html">Главная</a>
+      <a href="/catalog-v2.html?section=models">Каталог</a>
+      <a href="/catalog-v2.html?section=archive">Аукционы</a>
+      <a href="/catalog-v2.html?section=samples">Расчёт стоимости</a>
+      <a href="#how">Как мы работаем</a>
+    </nav>
+    <a class="header-cta" href="/podbor.html">Оставить заявку <span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню" aria-controls="mainNav" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-art" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-content page-width">
+    <div class="hero-overline"><span>АВТОМОБИЛИ ПОД ЗАКАЗ</span><i></i></div>
+    <h1 id="hero-title">Автомобили из Японии,<br>Кореи и Китая.<br><em>Без догадок.</em></h1>
+    <p class="hero-lead">Подбор автомобиля под ваши условия, проверка документов и прозрачный расчёт расходов до Новосибирска.</p>
+    <div class="hero-actions">
+      <a class="btn btn-main" href="/podbor.html"><span aria-hidden="true">⌕</span> Подобрать автомобиль</a>
+      <a class="btn btn-outline" href="/catalog-v2.html?section=samples"><span aria-hidden="true">▤</span> Рассчитать стоимость</a>
+    </div>
+    <p class="hero-caption">Фоновое изображение — иллюстрация, не автомобиль в продаже.</p>
+  </div>
+</section>
+<section class="benefits" aria-label="Почему PapAuto">
+  <div class="benefits-wrap page-width">
+   <div class="benefit"><span class="benefit-icon" aria-hidden="true">◇</span><div><b>Проверка автомобилей</b><small>История и документы до покупки</small></div></div>
+   <div class="benefit"><span class="benefit-icon" aria-hidden="true">▣</span><div><b>Доставка под ключ</b><small>До Новосибирска и по России</small></div></div>
+   <div class="benefit"><span class="benefit-icon" aria-hidden="true">◎</span><div><b>Прозрачные расходы</b><small>Покупка, пошлины, логистика</small></div></div>
+   <div class="benefit"><span class="benefit-icon" aria-hidden="true">↗</span><div><b>Подбор под бюджет</b><small>Япония, Южная Корея, Китай</small></div></div>
+  </div>
+</section>
+<section class="catalog-section page-width" id="catalog" aria-labelledby="catalog-title">
+ <div class="section-heading"><div><span class="eyebrow">PAPAUTO · ВЫБЕРИТЕ НАПРАВЛЕНИЕ</span><h2 id="catalog-title">Популярные модели под заказ</h2><p>Фотографии моделей — не конкретные лоты. Итоговую цену рассчитываем после уточнения автомобиля.</p></div><a class="section-link" href="/catalog-v2.html?section=models">Смотреть весь каталог <span aria-hidden="true">→</span></a></div>
+ <form id="quickSearch" class="quick-search" aria-label="Поиск модели">
+   <label><span>Страна</span><select name="country" id="countryInput"><option value="">Все страны</option><option value="japan">Япония</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select></label>
+   <label><span>Марка</span><select name="make" id="makeInput"><option value="">Все марки</option></select></label>
+   <label><span>Модель</span><select name="model" id="modelInput"><option value="">Все модели</option></select></label>
+   <button class="find-button" type="submit"><span aria-hidden="true">⌕</span> Найти автомобиль</button>
+ </form>
+ <div class="category-chips" aria-label="Направления"><button class="chip active" data-country="" aria-pressed="true" type="button">Все модели</button><button class="chip" data-country="japan" aria-pressed="false" type="button">🇯🇵 Япония</button><button class="chip" data-country="south-korea" aria-pressed="false" type="button">🇰🇷 Южная Корея</button><button class="chip" data-country="china" aria-pressed="false" type="button">🇨🇳 Китай</button></div>
+ <div class="models" id="models" aria-live="polite"></div>
+ <p class="model-footnote">Расчёт и наличие автомобиля подтверждаются после подбора конкретного варианта. Указанные фотографии служат для выбора модели.</p>
+</section>
+<section class="cost-strip page-width" id="expenses" aria-labelledby="expenses-title">
+  <div class="cost-left"><span class="eyebrow">ПОЛНАЯ СТОИМОСТЬ</span><h2 id="expenses-title">Все расходы —<br><em>до последней строки.</em></h2><p>Цена покупки, расходы в стране отправления, фрахт, таможенные платежи, утильсбор, оформление, комиссия и доставка до Новосибирска.</p><a class="btn btn-main" href="/catalog-v2.html?section=samples">Посмотреть структуру расходов <span aria-hidden="true">↗</span></a></div>
+  <div class="cost-right"><div class="cost-head">Из чего складывается цена под ключ</div><div class="cost-item"><span>Стоимость автомобиля</span><span>JPY / KRW / CNY</span></div><div class="cost-item"><span>Аукцион и расходы в стране</span><span>По подтверждённым тарифам</span></div><div class="cost-item"><span>Фрахт и портовые услуги</span><span>Маршрут / дата</span></div><div class="cost-item"><span>Таможня и утильсбор</span><span>По характеристикам авто</span></div><div class="cost-item"><span>Доставка до Новосибирска</span><span>Отдельной строкой</span></div><div class="cost-total"><span>Итог под ключ</span><b>По индивидуальной смете</b></div><small>Смета зависит от курса, возраста и характеристик автомобиля. Учебные примеры не являются офертой.</small></div>
+</section>
+<section class="process page-width" id="how" aria-labelledby="process-title">
+ <div class="section-heading"><div><span class="eyebrow">КАК МЫ РАБОТАЕМ</span><h2 id="process-title">Простой процесс покупки</h2></div></div>
+ <div class="process-grid"><article><b>01</b><h3>Выбираем автомобиль</h3><p>Фиксируем модель, бюджет, комплектацию и требования к состоянию.</p></article><article><b>02</b><h3>Проверяем данные</h3><p>Сверяем происхождение, документы, историю и доступность.</p></article><article><b>03</b><h3>Считаем расходы</h3><p>Раскрываем все статьи затрат, включая таможню и доставку.</p></article><article><b>04</b><h3>Организуем доставку</h3><p>Согласовываем маршрут, сроки и передачу автомобиля клиенту.</p></article></div>
+</section>
+<section class="footer-cta"><div class="page-width footer-cta-inner"><div><span class="eyebrow">PAPAUTO · ПОДБОР ПОД ЗАКАЗ</span><h2>Подберём автомобиль<br>под ваши условия</h2><p>Оставьте параметры автомобиля — подготовим персональный расчёт.</p></div><a href="/podbor.html" class="btn btn-main">Оставить заявку <span aria-hidden="true">↗</span></a></div></section>
+</main>
+<footer class="site-footer"><div class="page-width footer-inner"><span class="footer-brand">PAPAUTO</span><div><span>Автомобили из Японии, Южной Кореи и Китая</span><small>Тестовая версия нового дизайна · Цены и лоты только после проверки</small></div><nav aria-label="Навигация внизу"><a href="/catalog-v2.html?section=models">Каталог</a><a href="/catalog-v2.html?section=archive">Статистика аукционов</a><a href="/podbor.html">Заявка</a></nav></div></footer>
+</body></html>
