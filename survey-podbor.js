@@ -89,7 +89,7 @@
           {type:'text',name:'phone',title:'Номер телефона для связи',inputType:'tel',
            placeholder:'+7 900 123-45-67',isRequired:true,maxLength:25,
            description:'Номер для звонка или Telegram. Если клавиатура не появляется, используйте кнопки ниже.',
-           validators:[{type:'regex',regex:'^\+?[0-9() \-]{10,25}$',text:'Введите полный номер телефона.'}]},
+           validators:[{type:'regex',regex:'^[0-9+ ()-]{10,25}$',text:'Введите полный номер телефона.'}]},
           {type:'checkbox',name:'consent',title:'Согласие на обработку персональных данных',
            isRequired:true,choices:[{value:'agree',text:'Согласен(на) на обработку данных только для ответа на заявку.'}]}
         ]
@@ -114,6 +114,13 @@
   };
   // Physical keyboards and embedded iOS browsers can suppress the native
   // software keyboard. Always render a touch-operated dialpad with this field.
+  survey.onValidateQuestion.add((_sender, options)=>{
+    if(options.question?.name!=='phone' || !options.value)return;
+    const digits=String(options.value).replace(/\\D/g,'');
+    if(digits.length<10 || digits.length>15){
+      options.error='Введите полный номер: от 10 до 15 цифр.';
+    }
+  });
   survey.onAfterRenderQuestion.add((_sender, options)=>{
     if(options.question?.name!=='phone')return;
     const host=options.htmlElement?.querySelector('.sd-question__content')||options.htmlElement;
