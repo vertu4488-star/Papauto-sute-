@@ -54,6 +54,9 @@
     prevText:'Назад',
     completedHtml:'<h2>Заявка принята</h2><p>Результат подтверждён сервером PapAuto.</p>',
     clearInvisibleValues:'onComplete',
+    // Commit native phone and Telegram input on each keystroke; onBlur can
+    // race the final iOS tap and trigger a false required-field error.
+    textUpdateMode:'onTyping',
     pages:[
       {
         name:'car',title:'1. Выберите автомобиль',
