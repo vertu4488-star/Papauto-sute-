@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'survey-podbor.js'
+      - 'scripts/qa_surveyjs_browser.cjs'
       - 'survey-diagnostics.js'
       - 'survey-podbor.css'
       - 'podbor.html'
