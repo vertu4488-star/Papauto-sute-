@@ -1,0 +1,67 @@
+name: SurveyJS browser smoke test
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'survey-podbor.js'
+      - 'survey-diagnostics.js'
+      - 'survey-podbor.css'
+      - 'podbor.html'
+      - 'scripts/vendor_surveyjs.py'
+      - 'scripts/build_static_public.py'
+      - '.github/workflows/survey-browser-smoke.yml'
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build self-hosted site assets
+        run: python scripts/build_static_public.py
+      - name: Install headless browser
+        run: |
+          npm install --no-save playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Verify new standalone form in Chromium
+        run: |
+          python -m http.server 8765 -d render-public > /tmp/papauto-static.log 2>&1 &
+          node <<'NODE'
+          const {chromium}=require('playwright');
+          (async ()=>{
+            const browser=await chromium.launch({headless:true});
+            const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+            const errors=[],responses=[];
+            page.on('pageerror',e=>errors.push(e.message));
+            page.on('console',m=>{if(m.type()==='error')errors.push('console: '+m.text())});
+            page.on('response',r=>{if(r.status()>=400)responses.push(r.status()+' '+r.url())});
+            await page.goto('http://127.0.0.1:8765/podbor.html',{waitUntil:'load',timeout:45000});
+            await page.waitForTimeout(12000);
+            const info=await page.evaluate(()=>({
+              status:document.getElementById('surveyStatus')?.innerText,
+              surveyModel:typeof window.Survey?.Model,
+              surveyRender:typeof window.Survey?.Model?.prototype?.render,
+              surveyUI:typeof window.SurveyUI,
+              catalogue:typeof window.PAPAUTO_CATALOG,
+              visible:document.getElementById('surveyContainer')?.innerText?.slice(0,1200)
+            }));
+            console.log('PAPAUTO_SURVEY_DIAGNOSTIC='+JSON.stringify(info));
+            console.log('PAPAUTO_SURVEY_PAGE_ERRORS='+JSON.stringify(errors));
+            console.log('PAPAUTO_SURVEY_HTTP_ERRORS='+JSON.stringify(responses));
+            await page.screenshot({path:'survey-mobile-diagnostic.png',fullPage:true});
+            await browser.close();
+            if(!info.visible?.includes('Марка') || !info.visible?.includes('Модель'))process.exitCode=1;
+          })().catch(e=>{console.error(e);process.exitCode=1});
+          NODE
+      - name: Upload diagnostic screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: survey-mobile-diagnostic
+          path: survey-mobile-diagnostic.png
+          if-no-files-found: ignore
