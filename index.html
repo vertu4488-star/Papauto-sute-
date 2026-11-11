@@ -31,8 +31,6 @@
   <link rel="stylesheet" href="/estimate-history.css">
   <link rel="stylesheet" href="/lead-draft-history.css">
   <link rel="stylesheet" href="/site-tabs.css">
-  <link rel="stylesheet" href="/tom-select.vendor.css?v=2.2.2">
-  <link rel="stylesheet" href="/auto-picker.css?v=1">
   <link rel="stylesheet" href="/showcase-visual.css?v=20261109cards4">
   <script type="application/ld+json">
   {
@@ -376,83 +374,13 @@
   <section class="section calculator-section" id="calculator">
     <div class="wrap">
       <div class="section-title-row">
-        <div><div class="eyebrow">PAPAUTO · УМНЫЙ ПОДБОР</div><h2>Выберите машину.<br><em>Остальное мы рассчитаем.</em></h2></div>
-        <p>Марка и модель выбираются из подсказок. Опечатки исправляются при поиске. Никаких десятков обязательных полей.</p>
+        <div><div class="eyebrow">PAPAUTO · ПОДБОР АВТОМОБИЛЯ</div><h2>Подбор машины <em>в два шага</em></h2></div>
+        <p>Выберите марку, модель и год. Затем оставьте контакт для ответа — без бесконечной ленты и длинных анкет.</p>
       </div>
-      <div class="papauto-picker" id="assistant">
-        <div class="picker-surface">
-          <div class="picker-head">
-            <div><div class="picker-kicker">ШАГ 1 · АВТОМОБИЛЬ</div><h3>Какую машину ищем?</h3><p>Подбор из собственного справочника автомобилей Японии, Кореи и Китая.</p></div>
-            <div class="picker-chip">Без регистрации</div>
-          </div>
-          <form id="carPickerForm" autocomplete="on">
-            <div class="picker-grid">
-              <label class="picker-field" for="pickerCountry">Откуда автомобиль?
-                <select id="pickerCountry" name="market"><option value="japan">Япония</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select>
-              </label>
-              <label class="picker-field" for="pickerMake">Марка
-                <select id="pickerMake" name="make"><option value="">Начните вводить марку</option></select>
-                <small>Например, напишите «Toyta» — найдём Toyota.</small>
-              </label>
-              <label class="picker-field" for="pickerModel">Модель
-                <select id="pickerModel" name="model"><option value="">Сначала выберите марку</option></select>
-                <small id="pickerModelHint">Сначала выберите марку</small>
-              </label>
-              <label class="picker-field" for="pickerYear">Год выпуска
-                <select id="pickerYear" name="year"><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022" selected>2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option></select>
-              </label>
-              <label class="picker-field" for="pickerCity">Город получения
-                <input id="pickerCity" name="city" value="Новосибирск" placeholder="Например, Новосибирск" maxlength="80" autocomplete="address-level2">
-              </label>
-              <label class="picker-field" for="pickerBudget">Бюджет до, ₽ <span>Необязательно</span>
-                <input id="pickerBudget" name="budget" type="number" min="0" max="2000000000" inputmode="numeric" placeholder="Можно не указывать">
-              </label>
-            </div>
-            <details class="picker-advanced" id="pickerAdvanced">
-              <summary>Расширенные параметры — по желанию</summary>
-              <div class="picker-advanced-grid">
-                <label class="picker-field" for="pickerEngine">Тип двигателя
-                  <select id="pickerEngine"><option value="">Любой</option><option>Бензин</option><option>Дизель</option><option>Гибрид</option><option>Электромобиль</option></select>
-                </label>
-                <label class="picker-field" for="pickerEngineSize">Объём двигателя, см³
-                  <input id="pickerEngineSize" type="number" min="0" max="20000" placeholder="Необязательно" inputmode="numeric">
-                </label>
-                <label class="picker-field" for="pickerPower">Мощность, л.с.
-                  <input id="pickerPower" type="number" min="0" max="5000" placeholder="Необязательно" inputmode="numeric">
-                </label>
-                <label class="picker-field" for="pickerPurchasePrice">Известная цена машины в валюте покупки
-                  <input id="pickerPurchasePrice" type="number" min="0" placeholder="Если уже выбрали лот" inputmode="decimal">
-                </label>
-                <label class="picker-field" for="pickerNotes">Пожелания
-                  <textarea id="pickerNotes" rows="2" maxlength="1800" placeholder="Например: левый руль, гибрид, белый цвет"></textarea>
-                </label>
-              </div>
-            </details>
-            <div class="picker-cta-row">
-              <p>Подбор бесплатный. Точную цену под ключ подтверждаем после проверки лота, ставок таможни и доставки.</p>
-              <button type="submit" class="picker-primary">Подобрать и рассчитать <span aria-hidden="true">↗</span></button>
-            </div>
-            <p class="picker-status" id="pickerStatus" role="status" aria-live="polite"></p>
-          </form>
-          <div class="picker-result" id="pickerResult" hidden>
-            <div class="picker-result-top"><div><div class="picker-kicker">ШАГ 2 · ПРЕДВАРИТЕЛЬНЫЙ РАСЧЁТ</div><h3 id="pickerResultTitle"></h3><p class="picker-route" id="pickerResultRoute"></p></div><span class="picker-chip">Выбрано</span></div>
-            <p class="picker-budget" id="pickerResultBudget"></p>
-            <p class="picker-cost-note" id="pickerPurchaseResult"></p>
-            <p class="picker-unknown">Точная цена под ключ включает стоимость конкретного лота, пошлины, утильсбор, доставку и комиссию. Пока нет подтверждённых параметров машины, не показываем выдуманную сумму.</p>
-            <form id="pickerLeadForm" class="picker-contact" hidden>
-              <h4>Получить точный расчёт и варианты</h4>
-              <p>Оставьте контакт только если хотите ответ менеджера. Никакой регистрации и обязательного бюджета.</p>
-              <div class="picker-contact-grid">
-                <label class="picker-field" for="pickerName">Как обращаться? <span>По желанию</span><input id="pickerName" maxlength="100" autocomplete="name" placeholder="Ваше имя"></label>
-                <label class="picker-field" for="pickerContact">Телефон или Telegram <input id="pickerContact" maxlength="120" autocomplete="tel" placeholder="+7… или @username" required></label>
-              </div>
-              <input class="picker-honeypot" id="pickerWebsite" tabindex="-1" autocomplete="off" aria-hidden="true" name="website">
-              <label class="picker-consent" for="pickerConsent"><input id="pickerConsent" type="checkbox" required><span>Согласен(на) на обработку данных для ответа на заявку. <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a>.</span></label>
-              <button class="picker-primary" id="pickerSend" type="submit">Отправить заявку <span aria-hidden="true">↗</span></button>
-              <p class="picker-lead-status" id="pickerLeadStatus" role="status" aria-live="polite"></p>
-            </form>
-          </div>
-        </div>
+      <div class="card" style="max-width:820px;margin:12px auto 30px;padding:clamp(19px,3vw,32px)">
+        <h3 style="margin:0 0 9px">Готовая форма подбора</h3>
+        <p>Япония, Корея, Китай · Бюджет необязателен · Доступно с телефона и компьютера</p>
+        <a class="button button-primary" href="/podbor.html">Открыть подбор автомобиля ↗</a>
       </div>
     </div>
   </section>
@@ -635,9 +563,6 @@
 <script src="/voice-assistant.js?v=20261103" ></script>
 <script src="/auction-sheet-decoder.js" defer></script>
   <script src="/vehicle-catalogue.js" defer></script>
-<script src="/tom-select.vendor.js" defer></script>
-<script src="/fuse.vendor.js" defer></script>
-<script src="/auto-picker.js?v=2" defer></script>
 <script src="/estimate-history.js" defer></script>
 <script src="/lead-draft-history.js" defer></script>
 <script src="/similar-car-request.js" defer></script>
