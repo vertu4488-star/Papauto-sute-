@@ -2,166 +2,43 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Подобрать автомобиль — PAPAUTO</title>
-<meta name="description" content="Заявка на подбор автомобиля из Японии, Кореи и Китая. Выберите марку, модель и год; бюджет необязателен.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Подбор автомобиля — PapAuto</title>
+<meta name="description" content="Подберите автомобиль из Японии, Кореи или Китая в двух шагах. Марка, модель, год, контакт — без лишней анкеты.">
+<meta name="theme-color" content="#f3f6fa">
 <link rel="canonical" href="https://papauto.ru/podbor.html">
-<meta name="theme-color" content="#101b2b">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/tom-select.vendor.css?v=2.2.2">
-<link rel="stylesheet" href="/auto-picker.css?v=2">
-<style>
-:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#17253b;background:#f3f6fa}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{padding:0;margin:0;min-height:100vh}
-.standalone-header{background:#fff;border-bottom:1px solid #e2e8f0;padding:12px max(15px,calc((100% - 1070px)/2));display:flex;gap:15px;align-items:center;justify-content:space-between}
-.standalone-logo{color:#172336;font-size:21px;font-weight:850;letter-spacing:-.04em;text-decoration:none;display:flex;gap:10px;align-items:center}
-.standalone-logo span{display:grid;place-items:center;background:#1e2a40;color:#fff;width:38px;height:38px;border-radius:10px;font-size:20px}
-.standalone-back{color:#264e80;text-decoration:none;font-size:14px;font-weight:650}
-.standalone-main{width:min(100% - 28px,1000px);margin:18px auto 42px}
-.standalone-heading{margin:0 auto 10px;padding:8px 4px 0;max-width:940px}
-.standalone-heading h1{font-size:clamp(25px,4vw,36px);margin:0 0 6px;letter-spacing:-.04em}
-.standalone-heading p{font-size:14px;color:#64748b;line-height:1.5;margin:0}
-.papauto-picker{margin:0 auto}.picker-surface{padding:clamp(18px,3vw,30px)}
-.standalone-footer{font-size:12px;color:#718096;text-align:center;padding:0 16px 26px}
-.standalone-footer a{color:#486884}
-.picker-confirmation{border:none;border-radius:22px;box-shadow:0 24px 75px #0f22364d;width:min(92vw,480px);padding:29px 25px;color:#152b43;text-align:center}
-.picker-confirmation::backdrop{background:#0d1b2baa}
-.picker-confirmation h2{font-size:26px;letter-spacing:-.03em;margin:15px 0 10px}
-.picker-confirmation p{color:#4a637c;font-size:15px;line-height:1.6;margin:0 0 20px}
-.picker-confirmation .checkmark{width:64px;height:64px;border-radius:50%;background:#e2f8ed;color:#127846;font-size:36px;display:grid;place-items:center;margin:auto}
-.picker-confirmation button{border:0;border-radius:12px;background:#1760a8;color:#fff;font-size:16px;font-weight:700;width:100%;min-height:50px;cursor:pointer}
-@media(max-width:640px){.standalone-header{padding:12px 17px}.standalone-main{width:100%;margin:9px auto 22px;padding:0 8px}.standalone-heading{padding:12px 12px 9px}.standalone-heading h1{font-size:27px}.picker-surface{border-radius:16px}.picker-confirmation{padding:25px 18px}}
-.picker-contact-method{display:flex;gap:8px;margin:12px 0 4px}
-.picker-contact-method button{border:1px solid #cbd6e3;border-radius:10px;padding:9px 18px;background:#fff;color:#27435d;font:600 14px system-ui;cursor:pointer}
-.picker-contact-method button.is-selected{background:#1760a8;color:white;border-color:#1760a8}
-.picker-keypad-toggle{background:transparent;border:0;color:#1a62a8;text-decoration:underline;font:600 13px system-ui;cursor:pointer;padding:8px 0 7px;text-align:left}
-.picker-keypad{padding:13px;border:1px solid #c9d9eb;background:#f3f8ff;border-radius:14px;margin:5px 0 16px;max-width:370px}
-.picker-keypad[hidden]{display:none!important}
-.picker-keypad p{margin:0 0 12px!important;font-size:13px;color:#294b6e}
-.picker-keypad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-.picker-keypad-grid button{min-height:54px;touch-action:manipulation;background:#fff;border:1px solid #c6d5e6;border-radius:11px;font:700 23px system-ui;color:#173859;cursor:pointer}
-.picker-keypad-grid button:active{background:#deecff}
-.picker-keypad-done{width:100%;min-height:44px;margin-top:12px;background:#1760a8;color:white;border:0;border-radius:10px;font:650 14px system-ui;cursor:pointer}
-@media(max-width:640px){.picker-keypad{max-width:none}.picker-contact-method button{flex:1}}
-</style>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/vendor/surveyjs/survey-core.min.css?v=3.2.4">
+<link rel="stylesheet" href="/survey-podbor.css?v=1">
 </head>
 <body>
-<header class="standalone-header"><a href="/" class="standalone-logo"><span>P</span>PAPAUTO.</a><a class="standalone-back" href="/">← На главную</a></header>
-<main class="standalone-main">
-  <div class="standalone-heading"><h1>Подбор автомобиля</h1><p>Одна заявка — без каталога, бесконечной ленты и регистрации.</p></div>
-      <div class="papauto-picker" id="assistant">
-        <div class="picker-surface">
-          <div class="picker-head">
-            <div><div class="picker-kicker">ШАГ 1 · АВТОМОБИЛЬ</div><h3>Какую машину ищем?</h3><p>Подбор из собственного справочника автомобилей Японии, Кореи и Китая.</p></div>
-            <div class="picker-chip">Без регистрации</div>
-          </div>
-          <form id="carPickerForm" autocomplete="on">
-            <div class="picker-grid">
-              <label class="picker-field" for="pickerCountry">Откуда автомобиль?
-                <select id="pickerCountry" name="market"><option value="japan">Япония</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select>
-              </label>
-              <label class="picker-field" for="pickerMake">Марка
-                <select id="pickerMake" name="make"><option value="">Начните вводить марку</option></select>
-                <small>Например, напишите «Toyta» — найдём Toyota.</small>
-              </label>
-              <label class="picker-field" for="pickerModel">Модель
-                <select id="pickerModel" name="model"><option value="">Сначала выберите марку</option></select>
-                <small id="pickerModelHint">Сначала выберите марку</small>
-              </label>
-              <label class="picker-field" for="pickerYear">Год выпуска
-                <select id="pickerYear" name="year"><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022" selected>2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option></select>
-              </label>
-              <label class="picker-field" for="pickerCity">Город получения
-                <input id="pickerCity" name="city" value="Новосибирск" placeholder="Например, Новосибирск" maxlength="80" autocomplete="address-level2">
-              </label>
-              <label class="picker-field" for="pickerBudget">Бюджет до, ₽ <span>Необязательно</span>
-                <input id="pickerBudget" name="budget" type="number" min="0" max="2000000000" inputmode="numeric" placeholder="Можно не указывать">
-              </label>
-            </div>
-            <details class="picker-advanced" id="pickerAdvanced">
-              <summary>Расширенные параметры — по желанию</summary>
-              <div class="picker-advanced-grid">
-                <label class="picker-field" for="pickerEngine">Тип двигателя
-                  <select id="pickerEngine"><option value="">Любой</option><option>Бензин</option><option>Дизель</option><option>Гибрид</option><option>Электромобиль</option></select>
-                </label>
-                <label class="picker-field" for="pickerEngineSize">Объём двигателя, см³
-                  <input id="pickerEngineSize" type="number" min="0" max="20000" placeholder="Необязательно" inputmode="numeric">
-                </label>
-                <label class="picker-field" for="pickerPower">Мощность, л.с.
-                  <input id="pickerPower" type="number" min="0" max="5000" placeholder="Необязательно" inputmode="numeric">
-                </label>
-                <label class="picker-field" for="pickerPurchasePrice">Известная цена машины в валюте покупки
-                  <input id="pickerPurchasePrice" type="number" min="0" placeholder="Если уже выбрали лот" inputmode="decimal">
-                </label>
-                <label class="picker-field" for="pickerNotes">Пожелания
-                  <textarea id="pickerNotes" rows="2" maxlength="1800" placeholder="Например: левый руль, гибрид, белый цвет"></textarea>
-                </label>
-              </div>
-            </details>
-            <div class="picker-cta-row">
-              <p>Подбор бесплатный. Точную цену под ключ подтверждаем после проверки лота, ставок таможни и доставки.</p>
-              <button type="submit" class="picker-primary">Подобрать и рассчитать <span aria-hidden="true">↗</span></button>
-            </div>
-            <p class="picker-status" id="pickerStatus" role="status" aria-live="polite"></p>
-          </form>
-          <div class="picker-result" id="pickerResult" hidden>
-            <div class="picker-result-top"><div><div class="picker-kicker">ШАГ 2 · ПРЕДВАРИТЕЛЬНЫЙ РАСЧЁТ</div><h3 id="pickerResultTitle"></h3><p class="picker-route" id="pickerResultRoute"></p></div><span class="picker-chip">Выбрано</span></div>
-            <p class="picker-budget" id="pickerResultBudget"></p>
-            <p class="picker-cost-note" id="pickerPurchaseResult"></p>
-            <p class="picker-unknown">Точная цена под ключ включает стоимость конкретного лота, пошлины, утильсбор, доставку и комиссию. Пока нет подтверждённых параметров машины, не показываем выдуманную сумму.</p>
-            <form id="pickerLeadForm" class="picker-contact" hidden>
-              <h4>Получить точный расчёт и варианты</h4>
-              <p>Оставьте контакт только если хотите ответ менеджера. Никакой регистрации и обязательного бюджета.</p>
-              <div class="picker-contact-grid">
-                <label class="picker-field" for="pickerName">Как обращаться? <span>По желанию</span><input id="pickerName" maxlength="100" autocomplete="name" placeholder="Ваше имя"></label>
-                <label class="picker-field" for="pickerContact">Телефон для ответа <input id="pickerContact" name="contact" type="tel" inputmode="tel" enterkeyhint="done" maxlength="120" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="+7 9XX XXX-XX-XX" required></label>
-              </div>
-              <div class="picker-contact-method" role="group" aria-label="Удобный способ связи">
-                <button type="button" data-contact-mode="phone" aria-pressed="true" class="is-selected">Телефон</button>
-                <button type="button" data-contact-mode="telegram" aria-pressed="false">Telegram</button>
-              </div>
-              <button type="button" class="picker-keypad-toggle" id="pickerOpenKeypad" aria-expanded="false" aria-controls="pickerKeypad">Не появилась клавиатура? Ввести номер кнопками</button>
-              <div class="picker-keypad" id="pickerKeypad" hidden>
-                <p>Введите номер здесь — клавиатура iPhone не требуется.</p>
-                <div class="picker-keypad-grid" role="group" aria-label="Цифровая клавиатура телефона">
-                  <button type="button" data-phone-key="1" aria-label="1">1</button>
-                  <button type="button" data-phone-key="2" aria-label="2">2</button>
-                  <button type="button" data-phone-key="3" aria-label="3">3</button>
-                  <button type="button" data-phone-key="4" aria-label="4">4</button>
-                  <button type="button" data-phone-key="5" aria-label="5">5</button>
-                  <button type="button" data-phone-key="6" aria-label="6">6</button>
-                  <button type="button" data-phone-key="7" aria-label="7">7</button>
-                  <button type="button" data-phone-key="8" aria-label="8">8</button>
-                  <button type="button" data-phone-key="9" aria-label="9">9</button>
-                  <button type="button" data-phone-key="clear" aria-label="Очистить номер">C</button>
-                  <button type="button" data-phone-key="0" aria-label="0">0</button>
-                  <button type="button" data-phone-key="backspace" aria-label="Удалить последнюю цифру">⌫</button>
-                </div>
-                <button type="button" id="pickerKeypadDone" class="picker-keypad-done">Готово — номер введён</button>
-              </div>
-              <input class="picker-honeypot" id="pickerWebsite" tabindex="-1" autocomplete="off" aria-hidden="true" name="website">
-              <label class="picker-consent" for="pickerConsent"><input id="pickerConsent" type="checkbox" required><span>Согласен(на) на обработку данных для ответа на заявку. <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a>.</span></label>
-              <button class="picker-primary" id="pickerSend" type="submit">Отправить заявку <span aria-hidden="true">↗</span></button>
-              <p class="picker-lead-status" id="pickerLeadStatus" role="status" aria-live="polite"></p>
-            </form>
-          </div>
-        </div>
-      </div>
+<header class="pa-header">
+<a href="/" class="pa-brand" aria-label="PapAuto — на главную"><span>P</span>PAPAUTO.</a>
+<a class="pa-back" href="/">← На главную</a>
+</header>
+<main class="pa-main">
+<div class="pa-intro">
+<h1>Подбор автомобиля</h1>
+<p>Одна понятная заявка. Выберите машину, затем укажите контакт для ответа — без ленты и регистрации.</p>
+</div>
+<div class="pa-card">
+<div id="surveyContainer" aria-label="Форма подбора PapAuto"></div>
+<p id="surveyStatus" class="pa-status" role="status" aria-live="polite">Загружаем форму подбора…</p>
+</div>
 </main>
-<dialog id="pickerSuccessDialog" class="picker-confirmation" aria-labelledby="pickerSuccessTitle" aria-describedby="pickerSuccessText">
-  <div class="checkmark" aria-hidden="true">✓</div>
-  <h2 id="pickerSuccessTitle">Заявка отправлена!</h2>
-  <p id="pickerSuccessText">Ваша заявка сохранена. Менеджер свяжется с вами по указанному контакту.</p>
-  <button type="button" id="pickerSuccessClose">Понятно</button>
+<dialog id="surveySuccessDialog" class="pa-dialog" aria-labelledby="surveySuccessTitle">
+<div class="pa-check" aria-hidden="true">✓</div>
+<h2 id="surveySuccessTitle">Ваша заявка отправлена!</h2>
+<p id="surveySuccessText">Заявка принята менеджером PapAuto.</p>
+<button id="surveySuccessClose" type="button">Понятно</button>
 </dialog>
-<footer class="standalone-footer">PAPAUTO · Япония, Корея, Китай · <a href="/privacy.html">Политика конфиденциальности</a></footer>
-<script src="/site-config.js?v=20261111api" defer></script>
-<script src="/vehicle-catalogue.js" defer></script>
-<script src="/tom-select.vendor.js" defer></script>
-<script src="/fuse.vendor.js" defer></script>
-<script src="/auto-picker.js?v=3" defer></script>
-<script src="/mobile-contact.js?v=1" defer></script>
-<script defer src="/metrika.js"></script>
-</body></html>
+<footer class="pa-footer">PAPAUTO · Япония, Корея, Китай · <a href="/privacy.html">Политика конфиденциальности</a></footer>
+<script defer src="/site-config.js?v=20261111api"></script>
+<script defer src="/vehicle-catalogue.js"></script>
+<!-- Complete SurveyJS form renderer, MIT. Prebuilt packages served from PapAuto. -->
+<script defer src="/vendor/surveyjs/survey.core.min.js?v=3.2.4"></script>
+<script defer src="/vendor/surveyjs/survey.i18n.min.js?v=3.2.4"></script>
+<script defer src="/vendor/surveyjs/survey-js-ui.min.js?v=3.2.4"></script>
+<script defer src="/survey-podbor.js?v=1"></script>
+</body>
+</html>
