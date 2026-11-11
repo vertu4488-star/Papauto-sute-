@@ -5,7 +5,7 @@
     directions: ['#directions', '#route-planner', '#regional-delivery'],
     auctions: ['#seo-guides', '#auction-statistics', '#market-sources'],
     calculator: ['#calculator', '#currency-converter', '#logisticsBenchmarks'],
-    select: ['#calculator', '#account', '.account-data-section'],
+    select: [], // PAPAUTO SELECT has moved to /podbor.html; no long account feed.
     about: ['#process', '#checklist', '#auto-import-russia', '#faq', '#request']
   };
   const all = Object.values(groups).flat();
@@ -63,8 +63,8 @@
   document.addEventListener('click', event => {
     const budgetShortcut = event.target.closest('[data-budget-shortcut]');
     if (budgetShortcut) {
-      apply('select', true);
-      requestAnimationFrame(() => document.getElementById('assistant')?.scrollIntoView({behavior:'smooth', block:'start'}));
+      event.preventDefault();
+      window.location.assign('/podbor.html');
       return;
     }
     const marketShortcut = event.target.closest('[data-market-shortcut]');
@@ -76,6 +76,7 @@
     const tab = event.target.closest('[data-site-tab]');
     if (tab) {
       event.preventDefault();
+      if(tab.dataset.siteTab==='select'){window.location.assign('/podbor.html');return}
       apply(tab.dataset.siteTab, true);
       return;
     }
