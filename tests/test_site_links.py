@@ -12,6 +12,13 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 HOSTS = {"papauto.ru", "www.papauto.ru"}
 SITEMAP_NS = "{http://www.sitemaps.org/schemas/sitemap/0.9}loc"
+# Only these four published files are created from pinned MIT SurveyJS package
+# archives at build time; they intentionally do not live in the repository.
+from scripts.vendor_surveyjs import ASSETS as SURVEYJS_ASSETS
+BUILT_VENDOR_FILES = {
+    ROOT / "vendor" / "surveyjs" / filename for filename in SURVEYJS_ASSETS
+}
+
 
 
 class Links(HTMLParser):
@@ -79,7 +86,7 @@ class PAPAUTOLinksTest(unittest.TestCase):
             parsed.feed(page.read_text(encoding="utf-8"))
             for tag, raw in parsed.links:
                 target = local_target(page, raw)
-                if target is not None and not target.is_file():
+                if target is not None and not target.is_file() and target not in BUILT_VENDOR_FILES:
                     errors.append(f"{page.name}: {tag} {raw} -> {target.relative_to(ROOT)}")
         self.assertEqual(errors, [], "\n".join(errors[:40]))
 
