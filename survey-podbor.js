@@ -204,6 +204,6 @@
   msg.textContent='';
   } catch (error) {
     const message = document.getElementById('surveyStatus');
-    if(message) message.textContent = 'Ошибка запуска формы (' + String(error?.name || 'Unknown') + '): ' + String(error?.message || 'неизвестная ошибка').slice(0,180);
+    if(message) message.textContent = 'Ошибка запуска формы (' + String(error?.name || 'Unknown') + '): ' + String(error?.message || 'неизвестная ошибка').slice(0,150) + ' | STACK: ' + String(error?.stack || '').split('\\n').slice(0,5).join(' | ').slice(0,650);
   }
 })();
