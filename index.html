@@ -224,13 +224,18 @@
         <label>Год от<input id="vehicleYearFrom" type="number" min="1990" max="2027" value="2021"></label>
         <label>Год до<input id="vehicleYearTo" type="number" min="1990" max="2027" value="2026"></label>
         <label>Бюджет до, ₽ (ориентир)<input id="vehicleMaxPrice" type="number" min="0" placeholder="Необязательно"></label>
-        <label>Пробег до, км<input id="vehicleMileageMax" type="number" min="0" max="2000000" placeholder="Любой"></label>
+      </div>
+      <details class="picker-advanced" id="catalogAdvanced">
+        <summary>Расширенные фильтры · пробег, двигатель, оценка, лот</summary>
+        <div class="form-grid">
+          <label>Пробег до, км<input id="vehicleMileageMax" type="number" min="0" max="2000000" placeholder="Любой"></label>
         <label>Объём двигателя от, см³<input id="vehicleVolumeMin" type="number" min="0" max="20000" placeholder="Любой"></label>
         <label>Объём двигателя до, см³<input id="vehicleVolumeMax" type="number" min="0" max="20000" placeholder="Любой"></label>
         <label>Тип кузова<input id="vehicleBody" placeholder="Кроссовер, седан…" maxlength="60"></label>
         <label>Аукционная оценка<input id="vehicleGrade" placeholder="Например, 4 или 4.5" maxlength="10"></label>
-        <label>Номер лота<input id="vehicleLot" placeholder="Если известен" maxlength="40"></label>
-      </div>
+          <label>Номер лота<input id="vehicleLot" placeholder="Если известен" maxlength="40"></label>
+        </div>
+      </details>
       <p class="result-note">Важно: бюджет в рублях — ориентир стоимости автомобиля до Новосибирска. Цена корейского объявления указана в KRW и не включает доставку, таможню и оформление, поэтому бюджет не применяется как прямой фильтр цены лота.</p>
       <button class="button button-primary" id="vehicleSearchButton" type="submit">Найти автомобили</button>
       <p class="result-note" id="vehicleSearchStatus" aria-live="polite">Задайте параметры и отправьте запрос. Выдача актуальных лотов зависит от доступности лицензированных источников данных; архивные примеры отдельно помечены.</p>
