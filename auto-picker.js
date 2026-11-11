@@ -51,6 +51,10 @@
     let current = items;
     const control = new window.TomSelect(element,{
       options:items,
+      // Our catalogue options use {value,label,alias}; Tom Select defaults to text.
+      // Without labelField it renders "undefined" on iOS Safari.
+      valueField:'value',
+      labelField:'label',
       create:false,
       maxItems:1,
       allowEmptyOption:true,
@@ -59,6 +63,7 @@
       score:query=>fuzzyScore(current)(query),
       onChange,
       render:{
+        item:(item,escape)=>'<div>'+escape(item.label||item.value||'')+'</div>',
         option:(item,escape)=>'<div class="picker-option"><span>'+escape(item.label)+'</span></div>',
         no_results:(_data,escape)=>'<div class="no-results">Не найдено. Проверьте написание или выберите другую марку.</div>'
       }
