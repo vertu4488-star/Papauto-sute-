@@ -1,0 +1,49 @@
+name: Pin Manrope variable Cyrillic font for premium PapAuto
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pin-premium-manrope.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: papauto-catalog-writes
+  cancel-in-progress: false
+jobs:
+  pin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Download pinned open-source Manrope release and its OFL license
+        run: |
+          mkdir -p /tmp/papauto-fonts assets/fonts
+          cd /tmp/papauto-fonts
+          npm pack @fontsource-variable/manrope@5.3.0 --silent
+          tar xzf fontsource-variable-manrope-5.3.0.tgz
+          test -s package/files/manrope-cyrillic-wght-normal.woff2
+          test -s package/files/manrope-latin-wght-normal.woff2
+          cp package/files/manrope-cyrillic-wght-normal.woff2 "$GITHUB_WORKSPACE/assets/fonts/manrope-cyrillic-variable.woff2"
+          cp package/files/manrope-latin-wght-normal.woff2 "$GITHUB_WORKSPACE/assets/fonts/manrope-latin-variable.woff2"
+          if [ -f package/OFL.txt ]; then cp package/OFL.txt "$GITHUB_WORKSPACE/assets/fonts/MANROPE_OFL.txt"; fi
+          ls -lh "$GITHUB_WORKSPACE/assets/fonts"
+      - name: Commit self-hosted fonts without re-writing main history
+        run: |
+          git config user.name "papauto-automation"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/fonts/manrope-*.woff2 assets/fonts/MANROPE_OFL.txt 2>/dev/null || git add assets/fonts/manrope-*.woff2
+          if git diff --cached --quiet; then echo "Fonts unchanged"; exit 0; fi
+          git commit -m "Self-host Manrope variable font with Cyrillic and Latin subsets for premium design"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((attempt * 3))
+          done
+          exit 1
