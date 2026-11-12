@@ -1,0 +1,20 @@
+/* PapAuto native self-hosted auction galleries: no remote image assets or vendor links. */
+#auctionGrid.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:21px}
+#auctionGrid .lot{border-radius:19px;box-shadow:0 9px 30px rgba(22,54,80,.045)}
+.lot-gallery{background:#edf2f5;padding:12px 12px 9px}
+.lot-main{background:#e0e6eb;position:relative;border-radius:13px;overflow:hidden}
+.lot-main img{display:block;width:100%;height:305px;aspect-ratio:auto;object-fit:contain;background:linear-gradient(135deg,#e4eaf0,#f7f9fb)}
+.lot-main.is-sheet img{background:white}
+.lot-gallery-caption{position:absolute;bottom:9px;left:9px;margin:0;padding:6px 11px;border-radius:7px;background:#182d41e3;color:#fff;font-size:12px;font-weight:650}
+.lot-thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 2px 1px;scrollbar-width:thin}
+.lot-thumb{border:2px solid transparent;border-radius:9px;padding:0;background:white;min-width:83px;width:83px;height:69px;overflow:hidden;cursor:pointer;position:relative}
+.lot-thumb:focus-visible{outline:3px solid #145c9e;outline-offset:2px}
+.lot-thumb.selected{border-color:#176bc0}
+.lot-thumb img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:auto}
+.lot-thumb .sheet-tag{position:absolute;bottom:0;left:0;right:0;background:#112d49dd;color:#fff;font-weight:700;font-size:10px}
+.lot-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 10px}
+.lot-fact{padding:7px 0;border-bottom:1px solid #edf0f4}
+.lot-fact small{display:block;color:#778698;font-size:11px}
+.lot-fact strong{display:block;font-size:13px;margin:4px 0 0;overflow-wrap:anywhere}
+@media(max-width:950px){#auctionGrid.grid{grid-template-columns:1fr}.lot-main img{height:min(53vw,330px)}}
+@media(max-width:580px){.lot-gallery{padding:8px}.lot-main img{height:215px}.lot-body{padding:15px}.lot-thumb{min-width:73px;width:73px;height:60px}.lot-fact strong{font-size:12px}}
