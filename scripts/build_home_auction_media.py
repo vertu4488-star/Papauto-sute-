@@ -35,7 +35,7 @@ def download_one(pair):
                     raise RuntimeError("Unexpected response status")
             if 3_000 <= len(payload) <= 4_000_000 and payload[:3] == b"\\xff\\xd8\\xff":
                 return rel, payload
-            raise RuntimeError("Invalid or oversized JPEG for " + str(rel))
+            raise RuntimeError("Invalid JPEG " + str(rel) + " from " + urlsplit(url).path + ": bytes=" + str(len(payload)) + ", magic=" + payload[:18].hex() + ", type=" + str(response.headers.get("Content-Type")))
         except Exception:
             if attempt == 2:
                 raise
