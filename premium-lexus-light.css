@@ -33,7 +33,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .hero-visual img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:62% center;display:block}
 .hero-visual small{position:absolute;bottom:13px;right:16px;z-index:3;font-size:10px;letter-spacing:.12em;color:#fff;background:#463d337d;padding:5px 9px;border-radius:5px}
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;align-items:center;padding:13px 12px;margin:18px 0 15px;background:#ffffff9c;border-radius:19px;border:1px solid #eee7e0}
-.stats>div{min-width:0;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 15px;border-right:1px solid #e7ded5}
+.stats>div{min-width:0;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 15px;border:0;background:transparent;border-right:1px solid #e7ded5}
 .stats>div:last-child{border-right:0}
 .stats strong{font-family:"Helvetica Neue",Arial,sans-serif;font-size:clamp(27px,3vw,42px);font-weight:300;line-height:1;letter-spacing:-.04em;color:#816b5e;flex-shrink:0;display:inline}
 .stats small{font-size:11px;line-height:1.45;color:#55565e;font-weight:400;max-width:118px}
@@ -43,6 +43,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .info .info-item:nth-child(2){background:linear-gradient(115deg,#fffdfa,#eef1f5)}
 .info summary{font-size:15px;font-weight:500;letter-spacing:-.014em;cursor:pointer;list-style:none}
 .info summary::-webkit-details-marker{display:none}
+.info summary small{display:block;margin-top:5px;font-size:11px;line-height:1.35;font-weight:400;color:#817770;letter-spacing:0}
 .info summary:after{content:"+";font-size:18px;font-weight:300;float:right;color:#a78f79;margin-left:7px}
 .info details[open] summary:after{content:"−"}
 .info p{margin:9px 0 0;line-height:1.6;font-size:12px;color:#686772}
