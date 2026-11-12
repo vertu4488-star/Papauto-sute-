@@ -61,3 +61,9 @@
 }
 @media(max-width:340px){.selection-grid{grid-template-columns:1fr}.selection-photo{aspect-ratio:16/9}.selection-card h3{font-size:17px}}
 @media(prefers-reduced-motion:reduce){.selection-tabs button{transition:none}}
+
+/* Three market intro cards + bridge for deep links to historical real lots. */
+.info{grid-template-columns:repeat(3,minmax(0,1fr))}
+.selection-bridge{display:block!important;font-size:12px!important;line-height:1.6!important;color:#7e756e!important;margin:4px 0 10px!important}
+.selection-bridge a{color:#527496;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.info{grid-template-columns:1fr}}
