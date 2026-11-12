@@ -129,7 +129,9 @@ def normalize_lot(row, media_dir):
         "vehicle_evidence_reference": str(row["vehicle_evidence_reference"]),
         "sale_status": status
     }
-    for field in ("body", "color", "grade", "auction", "lot", "mileage_km"):
+    for field in ("body", "color", "grade", "auction", "lot", "mileage_km",
+                  "auction_date", "trim", "engine", "engine_cc", "transmission",
+                  "inspector_notes", "fuel_type", "steering", "power_hp"):
         if row.get(field) is not None:
             public[field] = row[field]
     if status == "verified_sold":
