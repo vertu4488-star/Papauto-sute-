@@ -10,6 +10,7 @@ import shutil
 import subprocess
 import sys
 import re
+import json
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / "render-public"
@@ -81,8 +82,22 @@ def copy_public_files() -> list[str]:
     from vendor_surveyjs import fetch_surveyjs
     fetch_surveyjs(TARGET)
 
-    # Only our own explicitly approved auction photos may be published.
-    # This also retires historical hotlinked photos on existing SEO/model pages.
+    # Auction images remain restricted to rights-approved local assets.
+    # Home page may use locally hosted, license-documented illustrative
+    # model photos; these are never represented as pictures of the auction lot.
+    provenance_path = ROOT / "research" / "cc0-photo-provenance.json"
+    if not provenance_path.is_file():
+        raise RuntimeError("Missing photo rights provenance")
+    provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
+    approved_licensed_photos = set()
+    for item in provenance.get("photos", []):
+        photo_path = item.get("file", "")
+        license_name = item.get("rights", "")
+        if (re.fullmatch(r"/assets/demo/[a-z0-9-]+-licensed[.]webp", photo_path)
+            and (license_name == "CC BY-SA 4.0" or license_name.startswith("Creative Commons Zero"))
+            and (ROOT / photo_path.lstrip("/")).is_file()):
+            approved_licensed_photos.add(photo_path)
+    # Strip external/unknown photos from old SEO and archive pages.
     for page in TARGET.glob("*.html"):
         html = page.read_text(encoding="utf-8")
         def approved_img(match):
@@ -91,6 +106,7 @@ def copy_public_files() -> list[str]:
             url = src.group(1) if src else ""
             if (url.startswith("/assets/auction/") or url == "/assets/papauto-logo.svg"
                 or re.fullmatch(r"/assets/demo/[a-z0-9-]+-cc0\.webp", url)
+                or (page.name == "index.html" and url in approved_licensed_photos)
                 or url == "/assets/visual/fallback-vehicle.svg"):
                 return tag
             return ""
