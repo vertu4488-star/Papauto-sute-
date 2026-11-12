@@ -39,7 +39,7 @@ class ShowcasePriceQuality(unittest.TestCase):
         self.assertIn("Фоновая фотография — конкретный автомобиль с японского аукциона",html)
         self.assertNotIn("На фото Kia K5",html)
         self.assertIn("/assets/auction/home/toyota-corolla-sport-2023-20038-photo-1.jpg",hero_css)
-        self.assertTrue((ROOT/"assets/visual/lexus-dark-car-hero.webp").is_file())
+        self.assertTrue((ROOT/"assets/auction/home/toyota-corolla-sport-2023-20038-photo-1.jpg").is_file())
         self.assertIn('/papauto-lexus-hero.css',html)
         self.assertIn('href="/?view=calculator"',html)
         self.assertIn("pa-vitrine-grid{grid-template-columns:1fr",css)
