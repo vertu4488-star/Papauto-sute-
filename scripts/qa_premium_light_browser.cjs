@@ -38,6 +38,30 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
         mobileMenuVisible:getComputedStyle(document.querySelector('.mobile-nav')).display!=='none'
       };
     });
+    // The expanded selection is separate from the 17 real historical lots.
+    await page.locator('[data-selection-grid] .selection-card').first().waitFor({state:'visible',timeout:20000});
+    const expanded=await page.evaluate(()=>({
+      css:[...document.styleSheets].some(s=>s.href?.includes('premium-expanded-catalog.css')),
+      all:document.querySelector('[data-selection-count]')?.textContent,
+      count:document.querySelectorAll('[data-selection-grid] .selection-card').length,
+      chinaTab:!!document.querySelector('[data-selection-filter="china"]'),
+      photo:document.querySelector('[data-selection-grid] img')?.getAttribute('src')
+    }));
+    assert(expanded.css,'Expanded catalogue CSS missing at '+viewport.width);
+    assert(expanded.chinaTab,'China market tab not present');
+    assert(expanded.all.includes('из 135'),'Expected 135 models in catalogue, got '+expanded.all);
+    assert.equal(expanded.count,12,'Expected paginated 12 model cards');
+    assert(expanded.photo?.startsWith('/assets/demo/'),'Expected local model image');
+    await page.locator('[data-selection-filter="china"]').click();
+    assert((await page.locator('[data-selection-count]').textContent()).includes('из 45'),'China should offer 45 reference models');
+    assert((await page.locator('[data-selection-grid] .selection-card').first().innerText()).includes('Geely'),'China starts with priority Geely model');
+    await page.locator('[data-selection-more]').click();
+    assert.equal(await page.locator('[data-selection-grid] .selection-card').count(),24,'Show more should append twelve');
+    await page.locator('[data-selection-filter="korea"]').click();
+    assert((await page.locator('[data-selection-count]').textContent()).includes('из 45'),'Korea should offer 45 reference models');
+    await page.locator('[data-selection-filter="japan"]').click();
+    assert((await page.locator('[data-selection-count]').textContent()).includes('из 45'),'Japan should offer 45 reference models');
+    await page.locator('[data-selection-filter="all"]').click();
     assert(state.linkedCSS,'Light premium CSS missing at '+viewport.width);
     assert(state.manropeActivated,'Self-hosted Manrope Cyrillic font not active at '+viewport.width);
     assert.equal(state.realCards,17);
@@ -81,6 +105,10 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
   preview.on('response',r=>{if(r.status()>=400)previewFailures.push('HTTP '+r.status()+' '+r.url())});
   await preview.goto('http://127.0.0.1:8765/premium-mobile-photo-demo.html',{waitUntil:'load',timeout:45000});
   await preview.locator('.real-card').first().waitFor({state:'visible'});
+  await preview.locator('[data-selection-grid] .selection-card').first().waitFor({state:'visible',timeout:20000});
+  assert((await preview.locator('[data-selection-count]').textContent()).includes('из 135'),'Preview should have 135 models');
+  await preview.locator('[data-selection-filter="china"]').click();
+  assert((await preview.locator('[data-selection-count]').textContent()).includes('из 45'),'China should be selectable in mobile preview');
   const previewState=await preview.evaluate(()=>{
     const image=document.querySelector('.hero-visual img');
     const main=document.querySelector('.real-card .real-img-main img');
