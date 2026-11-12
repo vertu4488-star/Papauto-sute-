@@ -12,7 +12,8 @@ const empty=root.querySelector('[data-selection-empty]');
 const FLAGS={japan:'🇯🇵 Япония',korea:'🇰🇷 Корея',china:'🇨🇳 Китай'};
 const LABELS={japan:'Япония',korea:'Корея',china:'Китай'};
 const valid={japan:1,korea:1,china:1};
-let records=[],market='all',shown=12,visible=[],generation=0;
+const requestedMarket=new URLSearchParams(window.location.search).get('market');
+let records=[],market=['japan','korea','china'].includes(requestedMarket)?requestedMarket:'all',shown=12,visible=[];
 const el=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e;};
 const norm=s=>String(s||'').toLocaleLowerCase('ru').replace(/ё/g,'е').trim();
 function priorityAll(data){const groups={japan:[],korea:[],china:[]};data.forEach(x=>groups[x.market].push(x));const result=[];for(let i=0;i<45;i++)for(const k of ['china','japan','korea'])if(groups[k][i])result.push(groups[k][i]);return result;}
@@ -52,6 +53,7 @@ tabs.forEach(btn=>btn.addEventListener('click',()=>{
  tabs.forEach(x=>{const on=x===btn;x.classList.toggle('is-active',on);x.setAttribute('aria-pressed',String(on));});
  shown=12;filter();
 }));
+tabs.forEach(x=>{const selected=x.dataset.selectionFilter===market;x.classList.toggle('is-active',selected);x.setAttribute('aria-pressed',String(selected));});
 query?.addEventListener('input',()=>{shown=12;filter()});
 more.addEventListener('click',()=>{shown+=12;render()});
 count.textContent='Загружаем модели из Японии, Кореи и Китая…';
