@@ -1,0 +1,80 @@
+{
+  "created": "2026-11-12",
+  "title": "Photo and auction-sheet reference inventory for eight PapAuto sold Japanese auction lots",
+  "license": "UNVERIFIED. References only, not publication authorization. Do not mirror, download to public CDN or embed on a commercial page until written rights/license verified.",
+  "papaAutoHomepage": "https://papauto.ru/",
+  "records": [
+    {
+      "slug": "toyota-corolla-sport-2023-20038",
+      "origin": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-sport/0wKwUzmSQYuHLEP/",
+      "cover_photo_reference": "https://7.tru.ru/imgs/pO07nIwqYwonXGxmDwLUq6NWNQWBB4JW7us1MCcVXaEQrX7ESNF",
+      "auction_sheet_reference": "https://7.tru.ru/imgs/pO07nIwqYwoEV9zl9e3UQtJ5fknbtLsf1O8SM3UK5UkpXPywmD1",
+      "reported_photo_count": 11,
+      "source_verified": true,
+      "license_verified": false
+    },
+    {
+      "slug": "honda-fit-2021-10355",
+      "origin": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/72x3c4enAYNv6T5/",
+      "cover_photo_reference": "https://7.tru.ru/imgs/5ObzqbcQQl4SQFsxunkV90H0apnvEDkqCc67zkX9cnvCuIZZAovn7wwm1",
+      "auction_sheet_reference": "https://7.tru.ru/imgs/5ObzqbcQQl4W1YjN4fOBa0LI2rsC8xIEXGD6JPAqav8QyxBnLAgvkLwGC",
+      "reported_photo_count": 11,
+      "source_verified": true,
+      "license_verified": false
+    },
+    {
+      "slug": "nissan-note-2021-227",
+      "origin": "https://atp-auto.ru/avto-iz-yaponii/nissan/note/3IxTdrBc6nEjjS/",
+      "cover_photo_reference": "https://7.tru.ru/imgs/2YCY8IWQcECBENPHGPJvnyKnfRQkb2he2nIhSUadCCOU0w6oMyi",
+      "auction_sheet_reference": "https://7.tru.ru/imgs/2YCY8IWQcECCXGs1EqrJIFm0whX9D5DI6IiTqfimfuOOBiKfN00",
+      "reported_photo_count": 9,
+      "source_verified": true,
+      "license_verified": false
+    },
+    {
+      "slug": "mazda-cx5-2022-307",
+      "origin": "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-5/5IfzW8ENzpOIq2/",
+      "cover_photo_reference": "https://7.tru.ru/imgs/sVJWVOQ2DnAx7DjCb3aofChFRZ7UQw9Ke1L5j2hQqcfBuB",
+      "auction_sheet_reference": "https://7.tru.ru/imgs/sVJWVOQ2DnAQ0v6TCEe3Roban24l2SiGNqcGN7cMaSJKO6",
+      "reported_photo_count": 2,
+      "source_verified": true,
+      "license_verified": false
+    },
+    {
+      "slug": "suzuki-jimny-2024-272",
+      "origin": "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/40JxgrZaxrU6pf/",
+      "cover_photo_reference": "https://7.tru.ru/imgs/pO07nIwqYwonXGxmDwLUq6NWNQWBB4JW7us1Nx2ztP06hFM5lJV",
+      "auction_sheet_reference": "https://7.tru.ru/imgs/pO07nIwqYwoEV9zl9e3UQtJ5fknbtLsf1O8SMXJnByOENydVPzg",
+      "reported_photo_count": 11,
+      "source_verified": true,
+      "license_verified": false
+    },
+    {
+      "slug": "subaru-levorg-2023-13004",
+      "origin": "https://atp-auto.ru/avto-iz-yaponii/subaru/levorg/5mfonXPvdRg559w/",
+      "cover_photo_reference": "https://7.tru.ru/imgs/463IU8XOP2oUY6jurrazXBvvnclnyO7anDB73MWu4eeNKBMV6nWN0u",
+      "auction_sheet_reference": "https://7.tru.ru/imgs/2LbJxeWeJW1HaKdllwwmp8MGeiuaaJd5JpXZws8jjWIecICR6A5uDR8f",
+      "reported_photo_count": 11,
+      "source_verified": true,
+      "license_verified": false
+    },
+    {
+      "slug": "bmw-1series-2024-227",
+      "origin": "https://atp-auto.ru/avto-iz-yaponii/bmw/1-series/3IxTdrBdBfECka/",
+      "cover_photo_reference": "https://7.tru.ru/imgs/757Dm8EUlfWEWohGwXgKIqmPCkdF8ucgpKZEgUwopeDN8RC",
+      "auction_sheet_reference": "https://7.tru.ru/imgs/757Dm8EUlfWIVZyObKfwelpt1PCUBRQlHbkrvwzkgR2BQv7",
+      "reported_photo_count": 7,
+      "source_verified": true,
+      "license_verified": false
+    },
+    {
+      "slug": "audi-a3-2019-301",
+      "origin": "https://atp-auto.ru/avto-iz-yaponii/audi/a3/5Fx1VP2e6wsPUj/",
+      "cover_photo_reference": "https://7.tru.ru/imgs/757Dm8EUlfWEWohGwXgKGTMtBToJQwByK2vHP5FE0iF6RMX",
+      "auction_sheet_reference": "https://7.tru.ru/imgs/757Dm8EUlfWIVZyObKfwcOP81oNZkUfE2rQv4GIA1V3UAqr",
+      "reported_photo_count": 4,
+      "source_verified": true,
+      "license_verified": false
+    }
+  ]
+}
