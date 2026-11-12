@@ -25,7 +25,7 @@ PROTECTED_NAMES = {".gitignore", ".python-version", "Dockerfile", "Makefile", "L
 PROTECTED_DIRS = {".github", "scripts", "tests", "research", "content", "docs"}
 WALK_EXCLUDE = {".git", "render-public", "node_modules", "__pycache__", ".pytest_cache", ".venv", "venv", ".mypy_cache", ".ruff_cache"}
 PUBLIC_FOLDERS = {
-    "assets": {".svg", ".png", ".jpg", ".jpeg", ".webp", ".gif", ".ico"},
+    "assets": {".svg", ".png", ".jpg", ".jpeg", ".webp", ".gif", ".ico", ".woff2"},
     "data": {".json"},
 }
 
