@@ -569,7 +569,7 @@
         label("p","Варианты двигателя: "+PapAutoMetadata.fuelLabel(types(r)),"vehicle-fuel"),
         label("p","Документы: проверяются для выбранного автомобиля.","vehicle-documents"));
       const detailedExample=photoDetail[keyOf(r)];
-      const a=label("a",detailedExample?"Фото и расчёт →":"Рассчитать подбор →","model-request");
+      const a=label("a",detailedExample?"Пример расчёта →":"Рассчитать подбор →","model-request");
       a.href=detailedExample?"/auction-archive.html#"+detailedExample: "/?view=select&similar="+encodeURIComponent(r.brand+" "+r.model)+"#assistant";
       card.append(a);grid.append(card);
     }
