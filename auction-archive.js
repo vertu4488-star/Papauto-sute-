@@ -38,7 +38,7 @@ function show(){
   const needle=search.value.toLocaleLowerCase("ru").trim(),locationCountry=country.value;
   const filtered=records.filter(r=>(!locationCountry||r.country===locationCountry)&&(!needle||[r.make,r.model,r.body,r.year,r.grade,r.lot].join(" ").toLocaleLowerCase("ru").includes(needle)));
   grid.replaceChildren();
-  count.textContent="Подтверждённых архивных карточек: "+filtered.length;
+  count.textContent="Примеров автомобилей: "+filtered.length;
   grid.hidden=!filtered.length;
   for(const r of filtered){
     const card=make("article",undefined,"lot");
@@ -58,15 +58,15 @@ function show(){
     if(r.sale_status==="verified_sold"&&r.currency&&Number(r.sold_price)>0){
       body.append(make("p","Цена продажи на аукционе: "+number(r.sold_price)+" "+r.currency,"price"));
     }else body.append(make("p","Цена продажи не подтверждена","price"));
-    body.append(make("p","Архивный пример. Этот автомобиль не предлагается как находящийся в наличии. Доступность аналогичной машины, экспорт и стоимость до России проверяются отдельно.","note"));
+    body.append(make("p","Пример автомобиля. Подберём аналогичный по вашим параметрам и рассчитаем доставку.","note"));
     const a=make("a","Подобрать аналогичный автомобиль","cta");
     a.href="/podbor.html?similar="+encodeURIComponent(r.make+" "+r.model+" "+r.year);
     body.append(a);card.append(body);grid.append(card);
   }
   status.textContent=filtered.length?
-    "Архивные примеры реальных автомобилей. Все фотографии и аукционные листы размещены на сервере PapAuto с подтверждёнными правами. Это не машины в наличии.":
+    "Фотографии и аукционные листы конкретных автомобилей. Выберите пример и закажите аналогичный.":
     records.length?"По выбранным параметрам карточек не найдено.":
-    "Архив фотографий готов к наполнению. Лоты с непроверенными правами и без аукционного листа не публикуются; для подбора автомобиля используйте заявку.";
+    "Новые примеры автомобилей появятся после проверки фотографий и документов. Уже сейчас можно заказать подбор.";
 }
 country.addEventListener("change",show);search.addEventListener("input",show);
 fetch("/data/approved-auction-lots.json",{cache:"no-store"}).then(resp=>{if(!resp.ok)throw Error("Failed to load");return resp.json()})
