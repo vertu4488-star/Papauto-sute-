@@ -32,9 +32,14 @@ class ShowcasePriceQuality(unittest.TestCase):
     def test_hero_photo_and_caption_match(self):
         html=(ROOT/"index.html").read_text(encoding="utf-8")
         css=(ROOT/"showcase-visual.css").read_text(encoding="utf-8")
-        self.assertIn("На фото Kia K5",html)
-        self.assertIn("url('/assets/demo/kia-k5-cc0.webp')",css)
-        self.assertNotIn("url('/assets/demo/honda-freed-hybrid-cc0.webp')",css)
+        hero_css=(ROOT/"papauto-lexus-hero.css").read_text(encoding="utf-8")
+        self.assertIn("Без догадок.",html)
+        self.assertIn("Фоновое изображение — иллюстрация",html)
+        self.assertNotIn("На фото Kia K5",html)
+        self.assertIn("/assets/visual/lexus-dark-car-hero.webp",hero_css)
+        self.assertTrue((ROOT/"assets/visual/lexus-dark-car-hero.webp").is_file())
+        self.assertIn('/papauto-lexus-hero.css',html)
+        self.assertIn('href="/?view=calculator"',html)
         self.assertIn("pa-vitrine-grid{grid-template-columns:1fr",css)
 
 if __name__=="__main__":
