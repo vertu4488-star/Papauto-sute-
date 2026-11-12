@@ -1,0 +1,9 @@
+/* Uniform non-photographic placeholders until auction media is licensed and approved. */
+.pa-car-photo{aspect-ratio:auto!important;height:96px!important;min-height:96px!important;background:linear-gradient(125deg,#edf2f6,#e6ecf1)!important;display:flex!important;align-items:center;justify-content:center;padding:18px 12px!important;overflow:hidden}
+.pa-car-photo img{display:none!important}
+.pa-car-photo .pa-photo-type{position:absolute!important;top:7px!important;right:8px!important;font-size:9px!important;background:#dbe5ec!important;color:#4b6577!important}
+.pa-car-photo .pa-car-type{position:absolute!important;bottom:7px!important;left:10px!important}
+.pa-auction-pending{text-align:center;color:#466176;font-size:12px;line-height:1.6;font-weight:650;letter-spacing:.01em}
+.catalog-grid .model-photo{display:none!important}
+.photo.auction-pending{height:94px!important;min-height:94px!important;background:linear-gradient(125deg,#edf2f6,#e8eff4)!important;display:grid!important;place-items:center!important;padding:10px 15px!important}
+.photo.auction-pending>span{position:static!important;background:transparent!important;color:#4b6577!important;text-align:center!important;font-weight:650!important;font-size:12px!important;line-height:1.4}
