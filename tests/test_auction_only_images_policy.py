@@ -65,6 +65,17 @@ class AuctionOnlyImages(unittest.TestCase):
         for item in models["items"]:
             self.assertFalse(set(item).intersection({"photo","image","photo_source","image_url","auction_sheet"}))
 
+    def test_cdn_retirement_list_replaces_every_deleted_street_image(self):
+        manifest=json.loads((ROOT / "research/retired-non-auction-photo-paths-2026-11-12.json").read_text(encoding="utf-8"))
+        paths=manifest["paths"]
+        self.assertEqual(len(paths),519)
+        self.assertEqual(len(set(paths)),519)
+        self.assertEqual(sum(p.startswith("assets/demo/") for p in paths),507)
+        for p in paths:
+            self.assertFalse((ROOT / p).exists(),p)
+        builder=(ROOT / "scripts/build_static_public.py").read_text(encoding="utf-8")
+        self.assertIn("dst.write_bytes(TOMBSTONE)",builder)
+
     def test_builder_disallows_street_photo_imports(self):
         builder=(ROOT / "scripts/build_static_public.py").read_text(encoding="utf-8")
         self.assertIn("PAPAUTO_POLICY: assets/demo",builder)
