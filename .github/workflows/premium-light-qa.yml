@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths:
       - "premium-japan-korea.html"
+      - "premium-mobile-photo-demo.html"
+      - "premium-mobile-photo-demo.css"
+      - "scripts/build_static_public.py"
       - "premium-lexus-light.css"
       - "scripts/qa_premium_light_browser.cjs"
       - ".github/workflows/premium-light-qa.yml"
@@ -42,4 +45,5 @@ jobs:
             premium-light-mobile.png
             premium-light-small.png
             premium-light-mobile-catalog.png
+            premium-mobile-photo-preview.png
           if-no-files-found: ignore
