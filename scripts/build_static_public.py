@@ -79,6 +79,29 @@ def copy_public_files() -> list[str]:
             shutil.copy2(src, dst)
             copied.append(dst.relative_to(TARGET).as_posix())
 
+    # Explicit invalid-byte replacements for old non-auction photo URLs.
+    # Render/CDN may keep deleted assets reachable after a normal static deploy.
+    # Retaining ONLY tombstone pathnames prevents any original image bytes returning.
+    retired_manifest = ROOT / "research" / "retired-non-auction-photo-paths-2026-11-12.json"
+    retired_data = json.loads(retired_manifest.read_text(encoding="utf-8"))
+    retired_media = retired_data["paths"]
+    if len(retired_media) < 519 or len(set(retired_media)) != len(retired_media):
+        raise RuntimeError("PAPAUTO_POLICY: expected complete unique retired-photo tombstones")
+    for rel in retired_media:
+        if not isinstance(rel, str) or not re.fullmatch(r"assets/[a-z0-9_./-]+", rel):
+            raise RuntimeError("PAPAUTO_POLICY: invalid retired media pathname")
+        if not (rel.startswith("assets/demo/")
+                or rel.startswith("assets/visual/")
+                or rel.startswith("assets/premium-auctions/")
+                or rel == "assets/auction/demo-cars-sprite.webp"):
+            raise RuntimeError("PAPAUTO_POLICY: unexpected tombstone target " + rel)
+        if (ROOT / rel).exists():
+            raise RuntimeError("PAPAUTO_POLICY: deleted non-auction image was restored " + rel)
+        dst = TARGET / rel
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        dst.write_bytes(TOMBSTONE)
+        copied.append(rel)
+
     # Download genuine exact-lot photos and sheets to our own static host.
     from build_home_auction_media import materialize
     media_count = materialize(TARGET)
