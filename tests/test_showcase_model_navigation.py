@@ -20,7 +20,7 @@ class ShowcaseModelNavigation(unittest.TestCase):
         script = (ROOT / "showcase-model-detail.js").read_text(encoding="utf-8")
         self.assertIn('href="/catalog.html"', home)
         self.assertIn('id="pa-vitrine"', home)
-        self.assertIn("РЕАЛЬНЫЕ РЕЗУЛЬТАТЫ ТОРГОВ", home)
+        self.assertIn("СТАТИСТИКА АУКЦИОНОВ", home)
         self.assertEqual(home.count('class="pa-real-lot"'), 25)
         self.assertNotIn('class="pa-car-card"', home)
         self.assertIn("showcase-model-detail.js", html)

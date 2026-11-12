@@ -24,7 +24,7 @@ def built_exact_auction_files():
     """Pinned, exact-lot photos/materials created by the public static build."""
     doc = json.loads((ROOT / "research" / "home-8-exact-lot-photo-sheet-references-2026-11-12.json").read_text(encoding="utf-8"))
     records = doc.get("records", [])
-    if len(records) != 8:
+    if len(records) != 25:
         raise RuntimeError("Unexpected number of pinned auction photo lots")
     out = set()
     for entry in records:
