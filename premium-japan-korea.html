@@ -25,12 +25,32 @@ a{color:inherit}.top{background:#101823;color:white;padding:18px max(20px,calc((
 .footer-note{margin-top:28px;padding:22px;border-radius:16px;background:#fff;border:1px solid var(--line);font-size:13px;line-height:1.75;color:#58697c}.footer-note strong{color:#1a2b3f}
 .bottom-nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:22px;font-size:13px}.bottom-nav a{color:#0a58ae;font-weight:700}
 @media(max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.top{padding:16px 22px}}@media(max-width:630px){.wrap{padding:16px 12px 55px}.top{padding:14px 15px;align-items:flex-start}.top nav{gap:10px}.top nav a{font-size:11px}.hero{padding:29px 20px;border-radius:19px}.hero p{font-size:13px}.stats div{min-width:0;flex:1}.stats strong{font-size:23px}.stats small{font-size:10px}.filterbar{position:static;padding:12px}.tabs{width:100%}.tabs button{flex:1;padding:9px 4px}.filterbar select{flex:1}.grid{grid-template-columns:1fr;gap:12px}.car-photo{height:220px}.info{margin:13px 0 24px}.info>div{flex:1 1 100%}}
-</style></head><body>
+
+.real-example{background:#f6f9fd;border:1px solid #d7e3f0;border-radius:13px;padding:12px;margin:3px 0 15px;display:flex;flex-direction:column;gap:9px}
+.real-example-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px}
+.real-example-badge{color:#176149;background:#e2f1ec;padding:4px 7px;border-radius:5px;font-size:9px;font-weight:900;letter-spacing:.025em}
+.real-example-id{font-size:10px;color:#53697e;font-weight:700}.real-example-title{font-size:14px;line-height:1.3;letter-spacing:-.02em;margin:0}
+.real-example-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.lot-datum{border:1px solid #e3eaf3;background:#fff;padding:7px 9px;border-radius:7px;min-width:0}
+.lot-datum small{font-size:10px;color:#6b7e90;display:block;margin-bottom:3px}
+.lot-datum strong{font-size:12px;font-weight:750;overflow-wrap:anywhere}
+.real-example-price{font-size:14px;font-weight:850;color:#0e5d47;letter-spacing:-.015em}
+.real-example-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.lot-media-button{position:relative;border:0;background:#e4ebf4;padding:0;cursor:zoom-in;overflow:hidden;border-radius:8px;height:95px}
+.lot-media-button img{width:100%;height:100%;object-fit:cover}
+.lot-media-button span{position:absolute;bottom:0;left:0;right:0;background:#102030b0;color:#fff;padding:3px;text-align:center;font-size:9px}
+.real-example-disclosure,.real-example-note{font-size:10px;line-height:1.55;margin:0;color:#52657a}
+.real-example-note{color:#915428}.real-example-actions{font-size:10px;font-weight:700;color:#41566b}
+.lot-lightbox{border:0;border-radius:14px;padding:30px 15px 15px;max-width:min(95vw,1000px);max-height:94vh;box-shadow:0 16px 80px #101b2aaa;position:fixed}
+.lot-lightbox::backdrop{background:#000c}.lot-lightbox-img{display:block;max-width:100%;max-height:80vh;object-fit:contain}
+.lot-lightbox-close{position:absolute;top:3px;right:5px;cursor:pointer;border:0;border-radius:8px;padding:5px 11px;background:#f0f4f9;color:#12243b;font:inherit;font-size:12px}
+@media(max-width:630px){.real-example-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.lot-media-button{height:90px}}
+</style><script defer src="/premium-real-examples.js?v=20261112a"></script></head><body>
 <header class="top"><a href="/" class="logo">PAPAUTO.</a><nav><a href="/catalog.html">Каталог</a><a href="/japan-compact-models.html">Япония</a><a href="/korea-popular-models.html">Корея</a><a href="/podbor.html">Оставить заявку</a></nav></header>
 <main class="wrap"><section class="hero"><p class="eyebrow">PapAuto · премиальные авто · 2026</p>
 <h1>Немецкие автомобили <span>из Японии и Кореи.</span></h1>
 <p>BMW, Mercedes-Benz и Audi — отдельно по двум рынкам. Япония: правый руль. Южная Корея: левый руль. Моторы и комплектации указаны для выбранной страны, а не скопированы из другой.</p>
-<div class="stats"><div><strong>16</strong><small>моделей и поколений</small></div><div><strong>32</strong><small>варианта подбора</small></div><div><strong>2</strong><small>рынка и расположения руля</small></div></div></section>
+<div class="stats"><div><strong>16</strong><small>моделей и поколений</small></div><div><strong>32</strong><small>варианта подбора</small></div><div><strong>2</strong><small>рынка и расположения руля</small></div><div><strong id="real-example-count">Проверка</strong><small>примеров из конкретных источников</small></div></div></section>
 <div class="info"><div><strong>🇯🇵 Из Японии · правый руль</strong><p>Приоритет — бензиновые двигатели до 1900 см³ без гибридной системы. Для прямого экспорта в Россию действуют ограничения по автомобилям свыше 1900 см³ и гибридам; допустимость проверяется по конкретной машине.</p></div><div><strong>🇰🇷 Из Южной Кореи · левый руль</strong><p>Здесь у той же модели может быть другой мотор — часто 2,0 л. Для каждого автомобиля отдельно рассчитываем мощность, утильсбор, таможню и доставку в Новосибирск.</p></div></div>
 <div class="head"><h2>Выберите автомобиль</h2><p>Подборка моделей — цены и пробег определяются по реальному предложению</p></div>
 <section class="filterbar" aria-label="Фильтры премиальных моделей"><div class="tabs" role="group" aria-label="Выберите рынок"><button type="button" data-country-button="all" class="active" aria-pressed="true">Все страны</button><button type="button" data-country-button="jp" aria-pressed="false">🇯🇵 Япония</button><button type="button" data-country-button="kr" aria-pressed="false">🇰🇷 Корея</button></div><select id="brand" aria-label="Марка"><option value="all">Все марки</option><option value="BMW">BMW</option><option value="Mercedes-Benz">Mercedes-Benz</option><option value="Audi">Audi</option></select><input id="search" type="search" aria-label="Поиск по модели" placeholder="Модель, кузов, двигатель…"><label class="smallcheck"><input id="under" type="checkbox"> Только до 160 л. с.</label></section>
