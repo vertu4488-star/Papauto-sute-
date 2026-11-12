@@ -6,6 +6,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import posixpath
+import json
 import unittest
 import xml.etree.ElementTree as ET
 
@@ -18,6 +19,25 @@ from scripts.vendor_surveyjs import ASSETS as SURVEYJS_ASSETS
 BUILT_VENDOR_FILES = {
     ROOT / "vendor" / "surveyjs" / filename for filename in SURVEYJS_ASSETS
 }
+
+def built_exact_auction_files():
+    """Pinned, exact-lot photos/materials created by the public static build."""
+    doc = json.loads((ROOT / "research" / "home-8-exact-lot-photo-sheet-references-2026-11-12.json").read_text(encoding="utf-8"))
+    records = doc.get("records", [])
+    if len(records) != 8:
+        raise RuntimeError("Unexpected number of pinned auction photo lots")
+    out = set()
+    for entry in records:
+        slug = entry["slug"]
+        if not slug or any(c not in "abcdefghijklmnopqrstuvwxyz0123456789-" for c in slug):
+            raise RuntimeError("Invalid auction lot slug")
+        photos = entry["auction_photos"]
+        for idx, url in enumerate(photos, 1):
+            out.add(ROOT / "assets" / "auction" / "home" / f"{slug}-photo-{idx}.jpg")
+        out.add(ROOT / "assets" / "auction" / "home" / f"{slug}-sheet.jpg")
+    return out
+
+BUILT_AUCTION_FILES = built_exact_auction_files()
 
 
 
@@ -86,7 +106,7 @@ class PAPAUTOLinksTest(unittest.TestCase):
             parsed.feed(page.read_text(encoding="utf-8"))
             for tag, raw in parsed.links:
                 target = local_target(page, raw)
-                if target is not None and not target.is_file() and target not in BUILT_VENDOR_FILES:
+                if target is not None and not target.is_file() and target not in BUILT_VENDOR_FILES and target not in BUILT_AUCTION_FILES:
                     errors.append(f"{page.name}: {tag} {raw} -> {target.relative_to(ROOT)}")
         self.assertEqual(errors, [], "\n".join(errors[:40]))
 
