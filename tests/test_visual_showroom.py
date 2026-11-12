@@ -46,7 +46,7 @@ class HomeShowroom(unittest.TestCase):
             if "CC0" in item.get("rights", "") or "CC BY-SA" in item.get("rights", "")
         }
         for src in parser.images:
-            self.assertRegex(src, r"^/assets/demo/[a-z0-9-]+\\.webp$", "Only local model photos are allowed")
+            self.assertRegex(src, r"^/assets/demo/[a-z0-9-]+\.webp$", "Only local model photos are allowed")
             self.assertIn(src, licensed, f"Missing rights provenance: {src}")
             self.assertTrue((ROOT / src.lstrip("/")).is_file(), f"Missing model photo: {src}")
         self.assertIn("Фото модели", section)
