@@ -80,7 +80,7 @@ def copy_public_files() -> list[str]:
     # Download genuine exact-lot photos and sheets to our own static host.
     from build_home_auction_media import materialize
     media_count = materialize(TARGET)
-    if media_count < 16:
+    if media_count < 50:
         raise RuntimeError("Incomplete required auction covers or auction sheets")
 
     # The complete prebuilt SurveyJS renderer is pinned and hosted on PAPAUTO.

@@ -52,8 +52,8 @@ def download_one(pair):
 def materialize(root):
     doc = json.loads(SOURCE.read_text(encoding="utf-8"))
     lots = doc.get("records", [])
-    if len(lots) != 8:
-        raise RuntimeError("Expected eight exact auction lots")
+    if len(lots) != 25:
+        raise RuntimeError("Expected 25 exact auction lots")
     tasks = []
     for lot in lots:
         slug = lot["slug"]
@@ -82,19 +82,20 @@ def materialize(root):
         dest = Path(root) / rel
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_bytes(data)
-    # Remove links to optional missing angle photos, never leave broken thumbnails.
+    # Missing optional angles must not leave broken thumbnails on either page.
     if skipped:
-        index = Path(root) / "index.html"
-        html = index.read_text(encoding="utf-8")
-        for rel in skipped:
-            url = "/" + rel.as_posix()
-            pattern = r'<a href="' + re.escape(url) + r'"[^>]*>.*?</a>'
-            html, count = re.subn(pattern, "", html, count=1, flags=re.S)
-            if count != 1:
-                raise RuntimeError("Could not remove missing thumbnail " + url)
-        index.write_text(html, encoding="utf-8")
+        for name in ("index.html", "auction-lots.html"):
+            page = Path(root) / name
+            html = page.read_text(encoding="utf-8")
+            for rel in skipped:
+                url = "/" + rel.as_posix()
+                pattern = r'<a href="' + re.escape(url) + r'"[^>]*>.*?</a>'
+                html, count = re.subn(pattern, "", html, count=1, flags=re.S)
+                if name == "auction-lots.html" and count != 1:
+                    raise RuntimeError("Gallery thumbnail was not removed: " + url)
+            page.write_text(html, encoding="utf-8")
     required_count = sum(1 for _, _, required in tasks if required)
-    if required_count != 16 or len(downloaded) < required_count:
+    if required_count != 2 * len(lots) or len(downloaded) < required_count:
         raise RuntimeError("One or more required auction main photos or sheets not present")
     print(f"Prepared {len(downloaded)} local auction JPEG files; omitted {len(skipped)} unavailable angles")
     return len(downloaded)

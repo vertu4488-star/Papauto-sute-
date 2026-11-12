@@ -21,7 +21,7 @@ class ShowcaseModelNavigation(unittest.TestCase):
         self.assertIn('href="/catalog.html"', home)
         self.assertIn('id="pa-vitrine"', home)
         self.assertIn("РЕАЛЬНЫЕ РЕЗУЛЬТАТЫ ТОРГОВ", home)
-        self.assertEqual(home.count('class="pa-real-lot"'), 8)
+        self.assertEqual(home.count('class="pa-real-lot"'), 25)
         self.assertNotIn('class="pa-car-card"', home)
         self.assertIn("showcase-model-detail.js", html)
         self.assertIn('content="noindex,follow"', html)

@@ -11,10 +11,10 @@ class ShowcasePriceQuality(unittest.TestCase):
         html = (ROOT / "index.html").read_text(encoding="utf-8")
         section = html.split('<section class="pa-vitrine', 1)[1].split("</section>", 1)[0]
         cards = re.findall(r'<article class="pa-real-lot"[^>]*>[\s\S]*?</article>', section)
-        self.assertEqual(len(cards), 8)
-        self.assertEqual(section.count('class="pa-real-media"'),8)
-        self.assertEqual(section.count('class="pa-real-sheet"'),8)
-        self.assertEqual(len(re.findall(r'<img[^>]+src="/assets/auction/home/',section)),31)
+        self.assertEqual(len(cards), 25)
+        self.assertEqual(section.count('class="pa-real-media"'),25)
+        self.assertEqual(section.count('class="pa-real-sheet"'),25)
+        self.assertEqual(len(re.findall(r'<img[^>]+src="/assets/auction/home/',section)),87)
         self.assertNotIn("pa-car-photo", section)
         evidence=json.loads((ROOT/"research"/"home-auction-examples-2026-11-12.json").read_text(encoding="utf-8"))
         self.assertEqual(len(evidence["lots"]), 8)
@@ -30,7 +30,7 @@ class ShowcasePriceQuality(unittest.TestCase):
             self.assertIn('href="/podbor.html?similar=',card)
             self.assertNotIn("http",card)
         self.assertNotIn("≈ ",section)
-        self.assertIn("не стоимость доставки",section)
+        self.assertIn("без расходов до Новосибирска",section)
     def test_hero_photo_and_caption_match(self):
         html=(ROOT/"index.html").read_text(encoding="utf-8")
         css=(ROOT/"showcase-visual.css").read_text(encoding="utf-8")
