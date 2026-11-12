@@ -1,14 +1,18 @@
+/* Self-hosted Manrope variable font, Cyrillic + Latin, OFL-1.1.
+   Copyright 2019 The Manrope Project Authors. No runtime CDN dependency. */
+@font-face{font-family:"PapAutoManrope";src:url("/assets/fonts/manrope-cyrillic-variable.woff2") format("woff2");font-style:normal;font-weight:200 800;font-display:swap;unicode-range:U+0400-052F,U+1C80-1C8F,U+20BD,U+2116,U+2DE0-2DFF,U+A640-A69F}
+@font-face{font-family:"PapAutoManrope";src:url("/assets/fonts/manrope-latin-variable.woff2") format("woff2");font-style:normal;font-weight:200 800;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 /* PapAuto · light premium editorial redesign, 2026-11-12.
    Only premium-japan-korea.html loads this layer. Existing auctions, filters,
    sources, forms and URLs are intentionally untouched. No external fonts/CDN. */
 :root{--ink:#22242a;--mid:#6e6f76;--blue:#46627f;--line:#e6ded6;--bg:#faf8f5;--warm:#c2ad97;--paper:#fffdfb;color-scheme:light}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{margin:0;background:radial-gradient(ellipse 80% 480px at 84% 0%,#efe7df 0%,transparent 72%),linear-gradient(#fcfaf8,#f8f5f1 950px,#fbfaf8 1700px);color:var(--ink);font-family:"Helvetica Neue",Arial,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.55}
+body{margin:0;background:radial-gradient(ellipse 80% 480px at 84% 0%,#efe7df 0%,transparent 72%),linear-gradient(#fcfaf8,#f8f5f1 950px,#fbfaf8 1700px);color:var(--ink);font-family:"PapAutoManrope","Helvetica Neue",Arial,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.55}
 a{color:inherit}button,input,select{font:inherit}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #7e97ae;outline-offset:3px}
 .top{z-index:30;position:relative;min-height:75px;background:#fffcf9eb;color:#262a2f;padding:17px max(24px,calc((100% - 1390px)/2));border-bottom:1px solid #eae3db;display:flex;justify-content:space-between;align-items:center;gap:18px;box-shadow:0 2px 22px #42312108;backdrop-filter:blur(12px)}
-.logo{font-family:"Helvetica Neue",Arial,sans-serif;font-size:24px;font-weight:500;letter-spacing:.24em;line-height:1.15;text-decoration:none;white-space:nowrap}
+.logo{font-family:"PapAutoManrope","Helvetica Neue",Arial,sans-serif;font-size:24px;font-weight:500;letter-spacing:.24em;line-height:1.15;text-decoration:none;white-space:nowrap}
 .top>nav{display:flex;gap:clamp(14px,2.2vw,35px);align-items:center;flex-wrap:wrap}
 .top nav a{font-size:13px;font-weight:400;letter-spacing:.015em;color:#3b3c42;text-decoration:none;transition:color .15s}
 .top nav a:hover{color:#466c93}
@@ -20,7 +24,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .hero-layout{display:grid;grid-template-columns:minmax(0,52%) minmax(0,48%);min-height:414px;align-items:stretch}
 .hero-copy{padding:clamp(25px,4.3vw,63px) 12px 42px clamp(26px,4.2vw,64px);position:relative;z-index:2;align-self:center}
 .eyebrow{color:#977b66;font-size:10px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;margin:0 0 19px}
-.hero h1{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:300;font-size:clamp(34px,3.9vw,59px);line-height:1.09;letter-spacing:-.052em;margin:0 0 20px;max-width:770px}
+.hero h1{font-family:"PapAutoManrope","Helvetica Neue",Arial,sans-serif;font-weight:300;font-size:clamp(34px,3.9vw,59px);line-height:1.09;letter-spacing:-.052em;margin:0 0 20px;max-width:770px}
 .hero h1 span{display:inline;color:#577390;font-weight:300;font-style:italic}
 .hero p.eyebrow{color:#8a6d5b;font-weight:500}
 .hero p.hero-lead{color:#4c5056;font-weight:400}
@@ -37,7 +41,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;align-items:center;padding:13px 12px;margin:18px 0 15px;background:#ffffff9c;border-radius:19px;border:1px solid #eee7e0}
 .stats>div{min-width:0;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 15px;border:0;background:transparent;border-right:1px solid #e7ded5}
 .stats>div:last-child{border-right:0}
-.stats strong{font-family:"Helvetica Neue",Arial,sans-serif;font-size:clamp(27px,3vw,42px);font-weight:300;line-height:1;letter-spacing:-.04em;color:#816b5e;flex-shrink:0;display:inline}
+.stats strong{font-family:"PapAutoManrope","Helvetica Neue",Arial,sans-serif;font-size:clamp(27px,3vw,42px);font-weight:300;line-height:1;letter-spacing:-.04em;color:#816b5e;flex-shrink:0;display:inline}
 .stats small{font-size:11px;line-height:1.45;color:#55565e;font-weight:400;max-width:118px}
 .stats .stat-symbol{color:#bcaa97;font-size:23px;line-height:1;font-weight:300;flex-shrink:0}
 .info{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:0 0 32px}
