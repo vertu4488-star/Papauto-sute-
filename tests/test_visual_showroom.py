@@ -27,7 +27,8 @@ class ShowroomParser(HTMLParser):
 
 
 class HomeShowroom(unittest.TestCase):
-    def test_rights_checked_local_photos_and_no_seller_links(self):
+    def test_removed_street_photos_and_no_seller_links(self):
+        """Keep 24 working model cards but do not show heterogeneous street photos."""
         html = (ROOT / "index.html").read_text(encoding="utf-8")
         start = html.index('<section class="pa-vitrine')
         end = html.index("</section>", start) + len("</section>")
@@ -36,16 +37,9 @@ class HomeShowroom(unittest.TestCase):
         parser.feed(section)
 
         self.assertEqual(parser.cards, EXPECTED)
-        photos = [s for s in parser.images if s.startswith("/assets/demo/")]
-        self.assertEqual(len(photos), EXPECTED)
-        manifest = json.loads((ROOT / "research" / "cc0-photo-provenance.json").read_text(encoding="utf-8"))
-        verified = {row["file"] for row in manifest["photos"]}
-        for path in photos:
-            with self.subTest(path=path):
-                self.assertRegex(path, r"^/assets/demo/[a-z0-9-]+-cc0\.webp$")
-                self.assertIn(path, verified)
-                self.assertTrue((ROOT / path.lstrip("/")).is_file())
-        self.assertEqual(len(set(photos)), EXPECTED)
+        self.assertFalse(parser.images, "Model photos must stay hidden until auction media is approved")
+        self.assertEqual(section.count('class="pa-auction-pending"'), EXPECTED)
+        self.assertIn("auction-photo-hold.css", html)
         for href in parser.hrefs:
             self.assertTrue(href.startswith("/"), f"External showroom link: {href}")
         self.assertNotIn("drom", section.lower())
@@ -61,7 +55,7 @@ class HomeShowroom(unittest.TestCase):
         self.assertIn("'#pa-vitrine'", tabs)
         self.assertIn('re.fullmatch(r"/assets/demo/', build)
         self.assertIn('url == "/assets/visual/fallback-vehicle.svg"', build)
-        self.assertIn('assets/visual/fallback-vehicle.svg', html)
+        self.assertIn('/auction-photo-hold.css', html)
 
 
 if __name__ == "__main__":
