@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths:
       - "premium-japan-korea.html"
+      - "premium-expanded-catalog.css"
+      - "premium-expanded-catalog.js"
+      - "data/papauto-expanded-45x3-2026.json"
       - "premium-mobile-photo-demo.html"
       - "premium-mobile-photo-demo.css"
       - "scripts/build_static_public.py"
