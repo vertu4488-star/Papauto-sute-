@@ -1,6 +1,6 @@
 {
   "version": "2026-11-12",
-  "provenance": "Real auctions and listings; no fabricated records. Japanese source-hosted gallery photos still require permission for commercial republication. Third auction image may be a sheet but its identity is NOT independently confirmed. Korean items are listing examples, NOT auction sheets. No external outgoing links in UI.",
+  "provenance": "Confirmed Japanese sold auctions with exact related photos and separate original sheets for 8 of 10 examples, cross-checked against source auction number/date/venue; Korean listings lack auction-grade sheets. External image hotlinks may fail and require publication permissions.",
   "lots": [
     {
       "id": "JP-1",
@@ -22,8 +22,10 @@
       "media": [],
       "source_status": "sold",
       "media_verified_as_specific_lot": false,
-      "auction_sheet_verified": false,
-      "note": "Внимание: прямой экспорт автомобиля с мотором свыше 1900 см³ из Японии в РФ ограничен."
+      "auction_sheet_verified": true,
+      "note": "Внимание: прямой экспорт автомобиля с мотором свыше 1900 см³ из Японии в РФ ограничен.",
+      "auction_sheet_url": "https://jp2.pa-server.ru/auc_auto/2026_11_06/1899812960/1793788083.4244_14.webp",
+      "auction_sheet_source_page": "https://estransit.ru/statistika/bmw/x1/31230220.html"
     },
     {
       "id": "JP-2",
@@ -44,13 +46,14 @@
       "source": "https://jteco.ru/auto/stat/bmw/x2/",
       "media": [
         "https://jp2.pa-server.ru/auc_auto/2026_11_04/1898348487/1793470984.5699_17.webp",
-        "https://jp2.pa-server.ru/auc_auto/2026_11_04/1898348487/1793470984.6847_18.webp",
-        "https://jp2.pa-server.ru/auc_auto/2026_11_04/1898348487/1793470984.4732_16.webp"
+        "https://jp2.pa-server.ru/auc_auto/2026_11_04/1898348487/1793470984.6847_18.webp"
       ],
       "source_status": "sold",
       "media_verified_as_specific_lot": true,
-      "auction_sheet_verified": false,
-      "note": ""
+      "auction_sheet_verified": true,
+      "note": "",
+      "auction_sheet_url": "https://jp2.pa-server.ru/auc_auto/2026_11_04/1898348487/1793470984.4732_16.webp",
+      "auction_sheet_source_page": "https://estransit.ru/statistika/bmw/x2/31206699.html"
     },
     {
       "id": "JP-3",
@@ -71,13 +74,14 @@
       "source": "https://jteco.ru/auto/stat/bmw/1-series/",
       "media": [
         "https://jp2.pa-server.ru/auc_auto/2026_11_07/1899651416/1793758572.6244_5.webp",
-        "https://jp2.pa-server.ru/auc_auto/2026_11_07/1899651416/1793758572.7309_6.webp",
-        "https://jp2.pa-server.ru/auc_auto/2026_11_07/1899651416/1793758572.5370_4.webp"
+        "https://jp2.pa-server.ru/auc_auto/2026_11_07/1899651416/1793758572.7309_6.webp"
       ],
       "source_status": "sold",
       "media_verified_as_specific_lot": true,
-      "auction_sheet_verified": false,
-      "note": ""
+      "auction_sheet_verified": true,
+      "note": "",
+      "auction_sheet_url": "https://jp2.pa-server.ru/auc_auto/2026_11_07/1899651416/1793758572.5370_4.webp",
+      "auction_sheet_source_page": "https://estransit.ru/statistika/bmw/1-series/31235945.html"
     },
     {
       "id": "JP-4",
@@ -103,8 +107,10 @@
       ],
       "source_status": "sold",
       "media_verified_as_specific_lot": true,
-      "auction_sheet_verified": false,
-      "note": ""
+      "auction_sheet_verified": true,
+      "note": "",
+      "auction_sheet_url": "https://jp2.pa-server.ru/auc_auto/2026_11_11/1902662787/1794330470.0668_13.webp",
+      "auction_sheet_source_page": "https://estransit.ru/statistika/bmw/2-series/31277360.html"
     },
     {
       "id": "JP-5",
@@ -125,13 +131,14 @@
       "source": "https://jteco.ru/auto/stat/bmw/x3/",
       "media": [
         "https://jp2.pa-server.ru/auc_auto/2026_11_07/1900316305/1793881154.2274_40.webp",
-        "https://jp2.pa-server.ru/auc_auto/2026_11_07/1900316305/1793881154.3417_41.webp",
-        "https://jp2.pa-server.ru/auc_auto/2026_11_07/1900316305/1793881154.1284_39.webp"
+        "https://jp2.pa-server.ru/auc_auto/2026_11_07/1900316305/1793881154.3417_41.webp"
       ],
       "source_status": "sold",
       "media_verified_as_specific_lot": true,
-      "auction_sheet_verified": false,
-      "note": "Внимание: прямой экспорт автомобиля с мотором свыше 1900 см³ из Японии в РФ ограничен."
+      "auction_sheet_verified": true,
+      "note": "Внимание: прямой экспорт автомобиля с мотором свыше 1900 см³ из Японии в РФ ограничен.",
+      "auction_sheet_url": "https://jp2.pa-server.ru/auc_auto/2026_11_07/1900316305/1793881154.1284_39.webp",
+      "auction_sheet_source_page": "https://estransit.ru/statistika/bmw/x3/31240828.html"
     },
     {
       "id": "JP-6",
@@ -206,8 +213,10 @@
       ],
       "source_status": "sold",
       "media_verified_as_specific_lot": true,
-      "auction_sheet_verified": false,
-      "note": ""
+      "auction_sheet_verified": true,
+      "note": "",
+      "auction_sheet_url": "https://jp2.pa-server.ru/auc_auto/2026_11_09/1900940929/1794006289.4055_1.webp",
+      "auction_sheet_source_page": "https://estransit.ru/statistika/audi/q2/31246878.html"
     },
     {
       "id": "JP-9",
@@ -233,8 +242,10 @@
       ],
       "source_status": "sold",
       "media_verified_as_specific_lot": true,
-      "auction_sheet_verified": false,
-      "note": ""
+      "auction_sheet_verified": true,
+      "note": "",
+      "auction_sheet_url": "https://jp2.pa-server.ru/auc_auto/2026_11_09/1900940703/1794020747.9959_21.webp",
+      "auction_sheet_source_page": "https://estransit.ru/statistika/audi/q3/31246851.html"
     },
     {
       "id": "JP-10",
@@ -260,8 +271,11 @@
       ],
       "source_status": "sold",
       "media_verified_as_specific_lot": true,
-      "auction_sheet_verified": false,
-      "note": ""
+      "auction_sheet_verified": true,
+      "note": "Гибридная версия: прямой экспорт из Японии в Россию ограничен, даже при объёме 1,5 л. Это исторический результат торгов, а не доступное предложение для ввоза.",
+      "auction_sheet_url": "https://jp2.pa-server.ru/auc_auto/2026_11_07/1899651497/1793758456.4049_13.webp",
+      "auction_sheet_source_page": "https://estransit.ru/statistika/audi/q3/31235993.html",
+      "hybrid": true
     },
     {
       "id": "IC5660641",
