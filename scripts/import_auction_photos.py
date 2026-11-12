@@ -7,7 +7,7 @@ obtained and explicitly licensed for commercial self-hosting.
 Usage: python scripts/import_auction_photos.py --intake PATH --media-dir DIR
 
 The intake document is a JSON object {"lots": [...]} with per-lot fields:
- id, country, make, model, year, photos (relative local filenames), rights:
+ id, country, make, model, year, photos (relative local filenames), auction_sheet (relative filename), rights:
  {holder, evidence_reference, commercial_use, self_host};
  optionally lot, auction, body, color, mileage_km, grade,
  sale_status, sold_date, sold_price, currency, sale_evidence_reference,
@@ -86,6 +86,25 @@ def normalize_lot(row, media_dir):
         name = f"{key}-{i:02d}-{sha[:12]}{fmt}"
         binaries.append((name, data, sha))
 
+    # The auction inspection sheet is a separate, authentic, locally hosted image.
+    # Permission for ordinary vehicle photographs is not permission for a scanned sheet.
+    require(rights.get("sheet_commercial_use") is True, f"{key}: auction sheet commercial rights required")
+    require(rights.get("sheet_self_host") is True, f"{key}: auction sheet self-host permission required")
+    source_sheet = row.get("auction_sheet")
+    require(isinstance(source_sheet, str) and len(source_sheet) < 255, f"{key}: auction sheet required")
+    sheet_rel = Path(source_sheet)
+    require(not sheet_rel.is_absolute() and ".." not in sheet_rel.parts
+            and sheet_rel.suffix.lower() in ALLOWED_EXT, f"{key}: unsafe auction sheet path")
+    sheet_path = (media_dir / sheet_rel).resolve()
+    require(sheet_path.is_relative_to(media_dir.resolve())
+            and sheet_path.is_file() and not sheet_path.is_symlink(), f"{key}: auction sheet is missing")
+    sheet_data = sheet_path.read_bytes()
+    require(2048 <= len(sheet_data) <= 15 * 1024 * 1024, f"{key}: auction sheet size not allowed")
+    sheet_format = image_format(sheet_data)
+    sheet_hash = hashlib.sha256(sheet_data).hexdigest()
+    sheet_name = f"{key}-sheet-{sheet_hash[:12]}{sheet_format}"
+    binaries.append((sheet_name, sheet_data, sheet_hash))
+
     status = row.get("sale_status", "reference_only")
     require(status in {"reference_only", "verified_sold"}, f"{key}: invalid sale status")
     if status == "verified_sold":
@@ -99,7 +118,9 @@ def normalize_lot(row, media_dir):
         "id": key, "country": country,
         "make": str(row["make"]).strip()[:80], "model": str(row["model"]).strip()[:120],
         "year": year,
-        "photos": [f"/assets/auction/{name}" for name, _, _ in binaries],
+        "photos": [f"/assets/auction/{name}" for name, _, _ in binaries[:-1]],
+        "auction_sheet": f"/assets/auction/{sheet_name}",
+        "sheet_permission": True,
         "image_rights": "approved",
         "rights_holder": str(rights["holder"]),
         "rights_reference": str(rights["evidence_reference"]),
@@ -118,6 +139,7 @@ def normalize_lot(row, media_dir):
         "id": key, "photo_sha256": [sha for _, _, sha in binaries],
         "source_url": row.get("source_url"),
         "original_photo_files": photos,
+        "original_auction_sheet_file": source_sheet,
         "license_evidence": rights["evidence_reference"],
         "license_holder": rights["holder"],
         "checked_on": date.today().isoformat()
@@ -170,7 +192,7 @@ def main():
                                  ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     PUBLIC.write_text(json.dumps(current, ensure_ascii=False, indent=2) + "\n",
                       encoding="utf-8")
-    print(f"Imported {len(seen)} licensed lots and {len(binaries)} self-hosted photos.")
+    print(f"Imported {len(seen)} licensed lots and {len(binaries)} self-hosted images (photos and auction sheets).")
     print("Run: python -m unittest discover -s tests -p test_auction_media_policy.py")
 
 
