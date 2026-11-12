@@ -116,6 +116,9 @@ def copy_public_files() -> list[str]:
                 or (page.name == "premium-japan-korea.html"
                     and re.fullmatch(r"/assets/premium-auctions/[a-z0-9-]+[.]webp", url)
                     and (ROOT / url.lstrip("/")).is_file())
+                or (page.name == "premium-japan-korea.html"
+                    and url == "/assets/visual/papauto-lexus-light-hero.webp"
+                    and (ROOT / url.lstrip("/")).is_file())
                 or url == "/assets/visual/fallback-vehicle.svg"):
                 return tag
             return ""
