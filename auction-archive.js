@@ -38,6 +38,9 @@ function show(){
   const needle=search.value.toLocaleLowerCase("ru").trim(),locationCountry=country.value;
   const filtered=records.filter(r=>(!locationCountry||r.country===locationCountry)&&(!needle||[r.make,r.model,r.body,r.year,r.grade,r.lot].join(" ").toLocaleLowerCase("ru").includes(needle)));
   grid.replaceChildren();
+  const filters=by("auctionFilters");
+  if(filters)filters.hidden=!records.length;
+  count.hidden=!records.length;
   count.textContent="Примеров автомобилей: "+filtered.length;
   grid.hidden=!filtered.length;
   for(const r of filtered){
@@ -66,7 +69,7 @@ function show(){
   status.textContent=filtered.length?
     "Фотографии и аукционные листы конкретных автомобилей. Выберите пример и закажите аналогичный.":
     records.length?"По выбранным параметрам карточек не найдено.":
-    "Новые примеры автомобилей появятся после проверки фотографий и документов. Уже сейчас можно заказать подбор.";
+    "Подтверждённых фотокарточек пока нет. Подберём аналогичный автомобиль по вашей заявке.";
 }
 country.addEventListener("change",show);search.addEventListener("input",show);
 fetch("/data/approved-auction-lots.json",{cache:"no-store"}).then(resp=>{if(!resp.ok)throw Error("Failed to load");return resp.json()})
