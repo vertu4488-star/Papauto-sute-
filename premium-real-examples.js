@@ -53,7 +53,7 @@
       box.append(element('div', 'real-example-price', 'Продан за ' + format(record.price_yen) + ' ¥'));
     }
     const availableMedia = Array.isArray(record.media) && record.media_verified_as_specific_lot ? record.media : [];
-    if (availableMedia.length) {
+    if (availableMedia.length || (record.auction_sheet_verified && record.auction_sheet_url)) {
       const gallery = element('div', 'real-example-gallery');
       let visible=0;
       availableMedia.slice(0, 3).forEach((src, i) => {
@@ -73,11 +73,26 @@
         gallery.append(btn);
         visible++;
       });
+      if (record.auction_sheet_verified && /^https:\/\/jp2\.pa-server\.ru\//.test(record.auction_sheet_url || '')) {
+        const sheetButton = element('button', 'lot-media-button lot-sheet-button');
+        sheetButton.type = 'button';
+        sheetButton.setAttribute('aria-label', 'Просмотреть аукционный лист для ' + record.title);
+        const sheetImage = element('img');
+        sheetImage.loading = 'lazy';
+        sheetImage.decoding = 'async';
+        sheetImage.src = record.auction_sheet_url;
+        sheetImage.alt = 'Аукционный лист ' + record.title + ', лот ' + record.lot;
+        sheetButton.append(sheetImage, element('span', null, 'Аукционный лист'));
+        sheetButton.addEventListener('click', () => openPhoto(record.auction_sheet_url));
+        sheetImage.addEventListener('error', () => { sheetButton.remove(); if(!gallery.querySelector('button')) gallery.remove(); });
+        gallery.append(sheetButton);
+        visible++;
+      }
       if (visible) box.append(gallery);
     }
     const proof = element('p', 'real-example-disclosure',
       record.kind === 'sold_auction'
-        ? 'Подтверждённая продажа · фото исходного лота на стороннем фотосервере. Аукционный лист требует отдельной проверки и подтверждения.'
+        ? 'Подтверждённая продажа. Фотоматериалы исходного лота размещены на внешнем сервере. Штатный аукционный лист доступен там, где отдельно проверен по номеру лота, дате и площадке.'
         : 'Проверенное описание конкретной машины. Это объявление, а не японский аукцион: оригинал отчёта о состоянии не получен.'
     );
     box.append(proof);
