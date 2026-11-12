@@ -41,4 +41,5 @@ jobs:
             premium-light-desktop.png
             premium-light-mobile.png
             premium-light-small.png
+            premium-light-mobile-catalog.png
           if-no-files-found: ignore
