@@ -28,7 +28,7 @@ class ShowroomParser(HTMLParser):
 
 class HomeShowroom(unittest.TestCase):
     def test_removed_street_photos_and_no_seller_links(self):
-        """Keep 24 working model cards but do not show heterogeneous street photos."""
+        """Show the 24 self-hosted licensed model photos and eight popular models without false auction claims."""
         html = (ROOT / "index.html").read_text(encoding="utf-8")
         start = html.index('<section class="pa-vitrine')
         end = html.index("</section>", start) + len("</section>")
@@ -37,8 +37,20 @@ class HomeShowroom(unittest.TestCase):
         parser.feed(section)
 
         self.assertEqual(parser.cards, EXPECTED)
-        self.assertFalse(parser.images, "Model photos must stay hidden until auction media is approved")
-        self.assertEqual(section.count('class="pa-auction-pending"'), EXPECTED)
+        self.assertEqual(len(parser.images), EXPECTED + 8, "24 catalog photos and 8 featured model photos")
+        self.assertEqual(section.count('class="pa-car-photo pa-licensed-photo"'), EXPECTED)
+        self.assertNotIn('class="pa-auction-pending"', section)
+        provenance = json.loads((ROOT / "research" / "cc0-photo-provenance.json").read_text(encoding="utf-8"))
+        licensed = {
+            item["file"] for item in provenance["photos"]
+            if "CC0" in item.get("rights", "") or "CC BY-SA" in item.get("rights", "")
+        }
+        for src in parser.images:
+            self.assertRegex(src, r"^/assets/demo/[a-z0-9-]+\\.webp$", "Only local model photos are allowed")
+            self.assertIn(src, licensed, f"Missing rights provenance: {src}")
+            self.assertTrue((ROOT / src.lstrip("/")).is_file(), f"Missing model photo: {src}")
+        self.assertIn("Фото модели", section)
+        self.assertIn("не изображения конкретных аукционных лотов", section)
         self.assertIn("auction-photo-hold.css", html)
         for href in parser.hrefs:
             self.assertTrue(href.startswith("/"), f"External showroom link: {href}")
