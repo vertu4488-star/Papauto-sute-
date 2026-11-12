@@ -17,7 +17,7 @@ function render(){
  const specs=element("div",undefined,"specs");
  for(const [k,v] of [["Кузов",r.body],["Цвет",r.color],["Пробег",r.mileage_km==null?null:Number(r.mileage_km).toLocaleString("ru-RU")+" км"],["Оценка",r.grade],["Лот",r.lot],["Аукцион",r.auction]]){
  const cell=element("div");cell.append(element("small",k),element("strong",v||"Не указано"));specs.append(cell)}
- body.append(specs);
+ body.append(specs,element("p","Двигатель: "+PapAutoMetadata.fuelLabel(PapAutoMetadata.fuelTypes(r.fuel_type||r.engine)),"vehicle-fuel"),element("p",PapAutoMetadata.documents(r),"vehicle-documents"));
  const money=r.sale_status==="verified_sold"&&Number.isFinite(Number(r.sold_price))?Number(r.sold_price).toLocaleString("ru-RU")+" "+(r.currency||""):"Фактическая цена не подтверждена";
  body.append(element("p",money,"price"),element("p","Архивный автомобиль. Не объявление о наличии.","note"));
  const a=element("a","Подобрать похожий автомобиль","cta");a.href="/?view=select&similar="+encodeURIComponent(r.make+" "+r.model+" "+r.year)+"#assistant";body.append(a);card.append(body);grid.append(card);

@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict');
+require('../vehicle-metadata.js');
+const m=globalThis.PapAutoMetadata;
+assert.deepEqual(m.fuelTypes('1.5 л'),['unknown']);
+assert.deepEqual(m.fuelTypes('гибрид (бензин)'),['hybrid']);
+assert.deepEqual(m.fuelTypes('бензиновый или гибридный вариант'),['petrol','hybrid']);
+assert.deepEqual(m.fuelTypes('DM-i / EV'),['hybrid','ev']);
+assert.deepEqual(m.fuelTypes('дизель'),['diesel']);
+assert.deepEqual(m.fuelTypes('range extender'),['hybrid']);
+assert.equal(m.documents({}), 'Документы не проверены');
+assert.equal(m.documents({document_status:'epts_issued'}), 'Документы не проверены');
+assert.equal(m.documents({document_status:'epts_issued',document_source:'checked original',documents_checked_at:'2026-11-12'}), 'ЭПТС оформлен');
+assert.equal(m.documents({document_status:'toString'}), 'Документы не проверены');
+assert(m.modelTypes('japan','Mazda','CX-5','2.0 л').includes('diesel'));
+console.log('Fuel ambiguity, hybrid variants and document verification checks passed');

@@ -525,7 +525,7 @@
   };
   const lower = value => String(value||"").normalize("NFKC").toLocaleLowerCase("ru").trim();
   const keyOf = r => [r.market,lower(r.brand),lower(r.model)].join("|");
-  const isElectric = r => /электро|electric|\bev\b/i.test(r.engine);
+  const types = r => PapAutoMetadata.modelTypes(r.market,r.brand,r.model,r.engine);
   const label = (tag,value,css) => {
     const e=document.createElement(tag);
     if(value!==undefined)e.textContent=String(value);
@@ -555,7 +555,7 @@
       (!country.value||country.value===r.market) &&
       (!selectedMake||selectedMake===lower(r.brand)) &&
       (!q||lower(r.brand+" "+r.model+" "+r.engine).includes(q)) &&
-      (!power.value||(power.value==="ev"?isElectric(r):!isElectric(r)))
+      (!power.value||types(r).includes(power.value))
     );
     // Photograph-backed cards first, then alphabetically by brand/model.
     matched.sort((a,b)=>Number(photoByModel.has(keyOf(b)))-Number(photoByModel.has(keyOf(a)))
@@ -576,7 +576,9 @@
       }
       card.append(label("small",markets[r.market]||r.market,"country"),
         label("h2",r.brand+" "+r.model),
-        label("div",r.engine,"engine"));
+        label("div",r.engine,"engine"),
+        label("p","Варианты двигателя: "+PapAutoMetadata.fuelLabel(types(r)),"vehicle-fuel"),
+        label("p","Документы: проверяются для выбранного автомобиля.","vehicle-documents"));
       const detailedExample=photoDetail[keyOf(r)];
       const a=label("a",detailedExample?"Фото и расчёт →":"Рассчитать подбор →","model-request");
       a.href=detailedExample?"/auction-archive.html#"+detailedExample: "/?view=select&similar="+encodeURIComponent(r.brand+" "+r.model)+"#assistant";
