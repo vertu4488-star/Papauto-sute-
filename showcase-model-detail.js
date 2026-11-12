@@ -33,14 +33,8 @@ fetch("/index.html",{cache:"no-store"}).then(r=>{
  const detail=card.querySelector(".pa-car-price small")?.textContent.trim()||"";
  const country=card.querySelector(".pa-car-type")?.textContent.trim()||"";
  const note=card.querySelector(".pa-car-note")?.textContent.trim()||"";
- const imgSrc=card.querySelector(".pa-car-photo img")?.getAttribute("src")||"";
- if(!/^\/assets\/demo\/[a-z0-9-]+-cc0\.webp$/.test(imgSrc))throw Error("Invalid local photo URL");
  el("name").textContent=name;el("crumb").textContent=name;el("country").textContent=country;
  el("spec").textContent=spec;el("price").textContent=price;el("priceDetail").textContent=detail;el("note").textContent=note;
- const img=el("photo");
- img.src=imgSrc+(slug==="hyundai-tucson"?"?v=20261109-clean":"");
- img.alt=name+" — фотография модели, не продаваемого автомобиля";
- img.onerror=()=>{img.onerror=null;img.src="/assets/visual/fallback-vehicle.svg";};
  el("quote").href="/?view=select&similar="+encodeURIComponent(name)+"#assistant";
  document.title=name+" — характеристики и подбор автомобиля | PAPAUTO";
  el("detail").hidden=false;

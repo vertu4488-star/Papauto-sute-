@@ -11,21 +11,13 @@ let data=[];
 function render(){
  const needle=query.value.trim().toLowerCase(),c=country.value;
  const list=data.filter(v=>(!c||v.country===c)&&(!needle||[v.make,v.model,v.year,v.body,v.color].join(" ").toLowerCase().includes(needle)));
- count.textContent="Автомобилей с реальными фотографиями моделей: "+list.length;
+ count.textContent="Примеров расчёта для выбранных моделей: "+list.length;
  grid.replaceChildren();
  for(const v of list){
   if(!srcOK(v.image))continue;
   const card=one("article",undefined,"demo-lot");card.id=v.id;card.style.scrollMarginTop="22px";
   const picture=one("div",undefined,"demo-lot-image");
-  const photo=one("img");
-  photo.src=v.image;
-  photo.alt="Реальная фотография модели "+v.make+" "+v.model+", не конкретного продаваемого автомобиля";
-  photo.loading="lazy";
-  photo.decoding="async";
-  photo.width=1200;
-  photo.height=800;
-  photo.onerror=()=>{photo.hidden=true;const notice=one("span","Фотография временно недоступна","demo-photo-unavailable");picture.append(notice);};
-  picture.append(photo);card.append(picture);
+  picture.append(one("span","Аукционные фотографии — после проверки прав","demo-photo-unavailable"));card.append(picture);
   const body=one("div",undefined,"demo-lot-body");
   body.append(one("div",countries[v.country]+" · "+v.year,"demo-lot-country"),one("h3",v.make+" "+v.model));
   body.append(one("p",v.engine+" · "+v.body+" · "+(v.color==="Не уточнён"?"":v.color+" · ")+number(v.mileage_km)+" км (пример пробега)","demo-lot-specs"));
@@ -58,7 +50,7 @@ function render(){
   line("Автовоз до Новосибирска",rub(v.truck_rub));
   line("Итого до Новосибирска",rub(nov),true);
   details.append(lines);body.append(details);
-  const note=one("p","Реальная фотография модели с лицензией CC0. Пробег и все суммы — пример расчёта, не подтверждённая продажа и не автомобиль в наличии.","demo-lot-warning");
+  const note=one("p","Фотографии неподходящего формата сняты с публикации. Пробег и все суммы — пример расчёта, не подтверждённая продажа и не автомобиль в наличии.","demo-lot-warning");
   const link=one("a","Запросить расчёт похожего автомобиля","demo-lot-cta");
   link.href="/?view=select&similar="+encodeURIComponent(v.make+" "+v.model+" "+v.year)+"#assistant";
   body.append(note,link);card.append(body);grid.append(card);

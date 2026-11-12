@@ -37,8 +37,9 @@ h2{font-size:21px;margin:0 0 18px}
 footer{border-top:1px solid #d5e0e9;padding:24px 20px;text-align:center;font-size:12px;color:#63778a}
 #detail[hidden],#notFound[hidden]{display:none}
 @media(max-width:780px){main{margin-top:23px}.layout{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.info{padding:20px}header nav{gap:10px}}
+ .auction-photo-note{display:grid;place-items:center;min-height:170px;padding:27px;background:#edf3f7;color:#35546e;text-align:center;font-weight:700;line-height:1.65}
 </style>
-<script src="/showcase-model-detail.js" defer></script>
+<script src="/showcase-model-detail.js?v=20261112c" defer></script>
 <link rel="stylesheet" href="/vehicle-metadata.css?v=20261112"><script src="/vehicle-metadata.js?v=20261112"></script></head>
 <body>
 <header><a href="/"><strong>PAPAUTO</strong></a><nav><a href="/?view=home#pa-vitrine">Каталог</a><a href="/?view=calculator#calculator">Калькулятор</a><a href="/?view=select#assistant">Подбор</a></nav></header>
@@ -48,7 +49,7 @@ footer{border-top:1px solid #d5e0e9;padding:24px 20px;text-align:center;font-siz
 <span id="country" class="market"></span>
 <h1 id="name"></h1>
 <div class="layout">
-<section class="photo"><img id="photo" src="/assets/visual/fallback-vehicle.svg" alt="Фотография модели автомобиля, не конкретный лот" width="960" height="600"><p>Иллюстративная фотография модели с проверенными правами использования, не снимок предлагаемого автомобиля. <a href="/photo-credits.html">Об использовании фотографий</a>.</p></section>
+<section class="photo"><div class="auction-photo-note" role="note">Аукционные фотографии появятся<br>после проверки источника и выбора лота</div><p>Иллюстративные фотографии сняты с публикации. Реальные снимки добавляются после проверки прав и параметров автомобиля.</p></section>
 <section class="info">
 <h2>Параметры для подбора</h2>
 <p id="spec" class="spec"></p>
