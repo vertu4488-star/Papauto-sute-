@@ -1,0 +1,44 @@
+name: PapAuto premium Lexus mobile and desktop QA
+on:
+  push:
+    branches: [main]
+    paths:
+      - "premium-japan-korea.html"
+      - "premium-lexus-light.css"
+      - "scripts/qa_premium_light_browser.cjs"
+      - ".github/workflows/premium-light-qa.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Build static public version
+        run: python scripts/build_static_public.py
+      - name: Install Playwright and Chromium
+        run: |
+          npm install --no-save playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Compare mobile 320/390px and desktop, test CSS, images, menu, filters, overflow
+        run: |
+          python -m http.server 8765 -d render-public > /tmp/papauto-premium-http.log 2>&1 &
+          node scripts/qa_premium_light_browser.cjs
+      - name: Save actual page screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: premium-light-visual-qa
+          path: |
+            premium-light-desktop.png
+            premium-light-mobile.png
+            premium-light-small.png
+          if-no-files-found: ignore
