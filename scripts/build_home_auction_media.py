@@ -20,6 +20,14 @@ JPEG_MAGIC = bytes.fromhex("ffd8ff")
 
 def download_one(pair):
     rel, url, required = pair
+    # Required photo and inspection sheet are pinned as verified local JPEGs.
+    # Avoid flaky third-party image requests on every Render deployment.
+    pinned = ROOT / rel
+    if required and pinned.is_file():
+        payload = pinned.read_bytes()
+        if 3_000 <= len(payload) <= 4_000_000 and payload[:3] == JPEG_MAGIC:
+            return rel, payload
+        raise RuntimeError("Invalid pinned auction asset: " + str(rel))
     parsed = urlsplit(url)
     if parsed.scheme != "https" or parsed.hostname != HOST or not parsed.path.startswith("/imgs/") or parsed.query:
         raise RuntimeError("Unexpected auction image source for " + str(rel))

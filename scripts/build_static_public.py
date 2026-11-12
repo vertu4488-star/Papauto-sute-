@@ -113,6 +113,9 @@ def copy_public_files() -> list[str]:
             if (url.startswith("/assets/auction/") or url == "/assets/papauto-logo.svg"
                 or re.fullmatch(r"/assets/demo/[a-z0-9-]+-cc0\.webp", url)
                 or (page.name == "index.html" and url in approved_licensed_photos)
+                or (page.name == "premium-japan-korea.html"
+                    and re.fullmatch(r"/assets/premium-auctions/[a-z0-9-]+[.]webp", url)
+                    and (ROOT / url.lstrip("/")).is_file())
                 or url == "/assets/visual/fallback-vehicle.svg"):
                 return tag
             return ""

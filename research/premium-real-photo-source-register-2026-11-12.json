@@ -1,0 +1,198 @@
+{
+  "checked_at": "2026-11-12",
+  "notice": "Trace-only provenance. No assertion of permission to commercially republish photos. Confirm rights with supplier before long-term use.",
+  "sources": [
+    {
+      "id": "bmw-x1-2021",
+      "market": "japan",
+      "source_url": "https://jteco.ru/auto/stat/bmw/x1/?id=1899651410",
+      "source_name": "JTECO — статистика японских аукционов",
+      "local_images": [
+        "/assets/premium-auctions/bmw-x1-2021-front.webp",
+        "/assets/premium-auctions/bmw-x1-2021-rear.webp"
+      ],
+      "inspection_image": "/assets/premium-auctions/bmw-x1-2021-sheet.webp",
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "bmw-x2-2019",
+      "market": "japan",
+      "source_url": "https://jteco.ru/auto/stat/bmw/x2/?id=1898348487",
+      "source_name": "JTECO — статистика японских аукционов",
+      "local_images": [
+        "/assets/premium-auctions/bmw-x2-2019-front.webp",
+        "/assets/premium-auctions/bmw-x2-2019-rear.webp"
+      ],
+      "inspection_image": "/assets/premium-auctions/bmw-x2-2019-sheet.webp",
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "bmw-118i-2019",
+      "market": "japan",
+      "source_url": "https://jteco.ru/auto/stat/bmw/1-series/?id=1899651416",
+      "source_name": "JTECO — статистика японских аукционов",
+      "local_images": [
+        "/assets/premium-auctions/bmw-118i-2019-front.webp",
+        "/assets/premium-auctions/bmw-118i-2019-rear.webp"
+      ],
+      "inspection_image": "/assets/premium-auctions/bmw-118i-2019-sheet.webp",
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "bmw-218i-2022",
+      "market": "japan",
+      "source_url": "https://jteco.ru/auto/stat/bmw/2-series/?id=1902662787",
+      "source_name": "JTECO — статистика японских аукционов",
+      "local_images": [
+        "/assets/premium-auctions/bmw-218i-2022-front.webp",
+        "/assets/premium-auctions/bmw-218i-2022-rear.webp"
+      ],
+      "inspection_image": "/assets/premium-auctions/bmw-218i-2022-sheet.webp",
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "audi-q2-2021",
+      "market": "japan",
+      "source_url": "https://jteco.ru/auto/stat/audi/q2/?id=1900940929",
+      "source_name": "JTECO — статистика японских аукционов",
+      "local_images": [
+        "/assets/premium-auctions/audi-q2-2021-front.webp",
+        "/assets/premium-auctions/audi-q2-2021-rear.webp"
+      ],
+      "inspection_image": "/assets/premium-auctions/audi-q2-2021-diagram.webp",
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "audi-q3-2021",
+      "market": "japan",
+      "source_url": "https://jteco.ru/auto/stat/audi/q3/?id=1900940703",
+      "source_name": "JTECO — статистика японских аукционов",
+      "local_images": [
+        "/assets/premium-auctions/audi-q3-2021-front.webp",
+        "/assets/premium-auctions/audi-q3-2021-rear.webp"
+      ],
+      "inspection_image": "/assets/premium-auctions/audi-q3-2021-diagram.webp",
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "audi-q3sb-2024",
+      "market": "japan",
+      "source_url": "https://jteco.ru/auto/stat/audi/q3/?id=1899651497",
+      "source_name": "JTECO — статистика японских аукционов",
+      "local_images": [
+        "/assets/premium-auctions/audi-q3sb-2024-front.webp",
+        "/assets/premium-auctions/audi-q3sb-2024-rear.webp"
+      ],
+      "inspection_image": "/assets/premium-auctions/audi-q3sb-2024-sheet.webp",
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "mercedes-glb180-2023",
+      "market": "japan",
+      "source_url": "https://jteco.ru/auto/stat/mercedes-benz/glb-class/?id=1900270509",
+      "source_name": "JTECO — статистика японских аукционов",
+      "local_images": [
+        "/assets/premium-auctions/mercedes-glb180-2023-front.webp",
+        "/assets/premium-auctions/mercedes-glb180-2023-rear.webp"
+      ],
+      "inspection_image": "/assets/premium-auctions/mercedes-glb180-2023-sheet.webp",
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "mercedes-a180-2020",
+      "market": "japan",
+      "source_url": "https://jteco.ru/auto/stat/mercedes-benz/a-class/?id=1902036269",
+      "source_name": "JTECO — статистика японских аукционов",
+      "local_images": [
+        "/assets/premium-auctions/mercedes-a180-2020-front.webp",
+        "/assets/premium-auctions/mercedes-a180-2020-rear.webp"
+      ],
+      "inspection_image": "/assets/premium-auctions/mercedes-a180-2020-sheet.webp",
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "mercedes-c180-2018",
+      "market": "japan",
+      "source_url": "https://jteco.ru/auto/stat/mercedes-benz/c-class/?id=1900684499",
+      "source_name": "JTECO — статистика японских аукционов",
+      "local_images": [
+        "/assets/premium-auctions/mercedes-c180-2018-front.webp",
+        "/assets/premium-auctions/mercedes-c180-2018-rear.webp"
+      ],
+      "inspection_image": "/assets/premium-auctions/mercedes-c180-2018-sheet.webp",
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "bmw-x3-2022",
+      "market": "japan",
+      "source_url": "https://jteco.ru/auto/stat/bmw/x3/?id=1900316305",
+      "source_name": "JTECO — статистика японских аукционов",
+      "local_images": [
+        "/assets/premium-auctions/bmw-x3-2022-front.webp",
+        "/assets/premium-auctions/bmw-x3-2022-rear.webp"
+      ],
+      "inspection_image": "/assets/premium-auctions/bmw-x3-2022-sheet.webp",
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "bmw-x1-u11-2025",
+      "market": "japan",
+      "source_url": "https://jteco.ru/auto/stat/bmw/x1/?id=1873493132",
+      "source_name": "JTECO — статистика японских аукционов",
+      "local_images": [
+        "/assets/premium-auctions/bmw-x1-u11-2025-front.webp",
+        "/assets/premium-auctions/bmw-x1-u11-2025-rear.webp"
+      ],
+      "inspection_image": "/assets/premium-auctions/bmw-x1-u11-2025-sheet.webp",
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "mercedes-gla180-2025",
+      "market": "japan",
+      "source_url": "https://jteco.ru/auto/stat/mercedes-benz/gla-class/?id=1898852904",
+      "source_name": "JTECO — статистика японских аукционов",
+      "local_images": [
+        "/assets/premium-auctions/mercedes-gla180-2025-front.webp",
+        "/assets/premium-auctions/mercedes-gla180-2025-rear.webp"
+      ],
+      "inspection_image": "/assets/premium-auctions/mercedes-gla180-2025-sheet.webp",
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "mercedes-cla180-2024",
+      "market": "japan",
+      "source_url": "https://jteco.ru/auto/stat/mercedes-benz/cla-class/?id=1899697743",
+      "source_name": "JTECO — статистика японских аукционов",
+      "local_images": [
+        "/assets/premium-auctions/mercedes-cla180-2024-front.webp",
+        "/assets/premium-auctions/mercedes-cla180-2024-rear.webp"
+      ],
+      "inspection_image": "/assets/premium-auctions/mercedes-cla180-2024-sheet.webp",
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "bmw-x1-kr-IC5605199",
+      "market": "korea",
+      "source_url": "https://www.autowini.com/en/Cars/IC5605199/cars-detail",
+      "source_name": "Autowini — объявление с рынка Кореи",
+      "local_images": [],
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "bmw-x3-kr-IC5604396",
+      "market": "korea",
+      "source_url": "https://www.autowini.com/en/Cars/IC5604396/cars-detail",
+      "source_name": "Autowini — объявление с рынка Кореи",
+      "local_images": [],
+      "rights_status": "unconfirmed"
+    },
+    {
+      "id": "audi-q3sb-kr-IC5486298",
+      "market": "korea",
+      "source_url": "https://www.autowini.com/en/Cars/IC5486298/cars-detail",
+      "source_name": "Autowini — объявление с рынка Кореи",
+      "local_images": [],
+      "rights_status": "unconfirmed"
+    }
+  ]
+}
