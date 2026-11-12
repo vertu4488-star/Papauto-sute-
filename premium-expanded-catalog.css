@@ -1,69 +1,31 @@
-/* PAPAUTO 135 illustrated model families · light Lexus responsive layout.
-   This gallery is separate from the 17 historical verified auction examples. */
-.selection-section{margin:20px 0 32px;scroll-margin-top:20px}
-.selection-inner{border:1px solid #e6ddd4;border-radius:23px;background:linear-gradient(140deg,#fffdfa 0%,#f8f4ef 72%,#f1f0ee 100%);padding:clamp(18px,3vw,33px);box-shadow:0 10px 36px #43352b0a}
-.selection-header{display:flex;justify-content:space-between;gap:22px;align-items:flex-start;flex-wrap:wrap;margin-bottom:17px}
-.selection-kicker{font-size:10px;letter-spacing:.19em;font-weight:500;text-transform:uppercase;color:#977e66;margin:0 0 9px}
-.selection-header h2{font-size:clamp(28px,3vw,42px);font-weight:300;letter-spacing:-.043em;line-height:1.15;max-width:780px;margin:0 0 11px;color:#2c3033}
-.selection-header p:not(.selection-kicker){color:#666973;font-size:13px;line-height:1.6;max-width:750px;margin:0}
-.selection-total{flex:0 0 auto;border-left:1px solid #d9cabc;padding:3px 5px 4px 19px;display:flex;flex-direction:column;gap:2px;align-items:flex-start}
-.selection-total strong{font-size:40px;line-height:1.2;font-weight:300;color:#75614e}
-.selection-total span{font-size:11px;color:#7d7571;max-width:125px}
-.selection-tools{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:19px 0 12px}
-.selection-tabs{display:flex;flex-wrap:wrap;gap:7px;min-width:0}
-.selection-tabs button{border:1px solid #e0d4c7;border-radius:999px;background:#fdfbf8;min-height:40px;padding:8px 14px;color:#505259;font-size:12px;font-weight:450;white-space:nowrap;cursor:pointer;transition:background .18s,border-color .18s}
-.selection-tabs button.is-active,.selection-tabs button[aria-pressed="true"]{background:#526d8b;border-color:#526d8b;color:#fff}
-.selection-tabs button:hover{border-color:#8a9bb0}
-.selection-search{margin-left:auto;min-width:180px;flex:1 1 225px;max-width:310px;border:1px solid #e3d9ce;background:#fff;border-radius:999px;padding:10px 14px;outline-offset:3px;color:#313942;min-height:42px;font-size:13px}
-.selection-search::placeholder{color:#999497}
-.selection-state{font-size:12px;color:#79767a;margin:7px 0 14px}
-.selection-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.selection-card{min-width:0;display:flex;flex-direction:column;overflow:hidden;border-radius:15px;background:#fff;border:1px solid #e9e2db;box-shadow:0 7px 24px #4a38280e}
-.selection-photo{background:#f1eeea;aspect-ratio:16/10;position:relative;overflow:hidden}
-.selection-photo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;padding:5px;background:linear-gradient(140deg,#f8f8f6,#ebe7e1)}
-.selection-market{position:absolute;top:10px;left:10px;z-index:2;border-radius:999px;background:#fffef7ed;color:#3c444e;padding:5px 9px;font-size:10px;box-shadow:0 2px 6px #0001}
-.selection-card-body{display:flex;flex-direction:column;flex:1;padding:15px 16px 16px}
-.selection-card h3{color:#262930;font-size:18px;font-weight:400;line-height:1.25;letter-spacing:-.025em;margin:0 0 3px;overflow-wrap:anywhere}
-.selection-card .selection-brand{font-size:11px;line-height:1.45;color:#868087;margin:0 0 9px}
-.selection-card .selection-engine{font-size:12px;line-height:1.5;color:#5b5c65;margin:0 0 5px}
-.selection-card .selection-note{font-size:10px;color:#948c85;line-height:1.4;margin:0 0 11px}
-.selection-card .selection-cta{margin-top:auto;display:flex;justify-content:space-between;gap:7px;align-items:center;min-height:36px;border-radius:999px;border:1px solid #d2c1ae;text-decoration:none;padding:9px 13px;color:#526375;font-size:12px;background:transparent}
-.selection-card .selection-cta:hover{background:#f7f0e9}
-.selection-more{display:block;margin:20px auto 0;min-height:45px;padding:12px 27px;border:1px solid #56718c;border-radius:999px;background:#526c89;color:#fff;font-size:13px;font-weight:400;cursor:pointer}
-.selection-more[hidden]{display:none}
-.selection-empty{background:#fff;padding:18px;border:1px dashed #d8d0c8;border-radius:13px;color:#6f6d71}
-.selection-smallprint{font-size:11px;line-height:1.55;color:#8a8581;margin:13px 0 0}
-.selection-smallprint a{color:#617c97;text-underline-offset:3px}
-.selection-region-quicklinks{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:16px 0 0}
-.selection-region-quicklinks a{font-size:12px;color:#63768a;text-decoration:underline;text-underline-offset:3px}
-@media(max-width:1130px){.selection-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:800px){.selection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.selection-search{max-width:none;min-width:100%}}
-@media(max-width:560px){
- .selection-inner{padding:17px 12px;border-radius:18px}
- .selection-header h2{font-size:clamp(26px,6.8vw,33px)}
- .selection-header p:not(.selection-kicker){font-size:11.5px}
- .selection-total{display:none}
- .selection-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:7px}
- .selection-tabs button{padding:10px 6px;font-size:11px;min-height:38px}
- .selection-search{flex:1 1 100%;width:100%;min-width:0}
- .selection-grid{gap:9px;grid-template-columns:repeat(2,minmax(0,1fr))}
- .selection-photo{aspect-ratio:1.35}
- .selection-photo img{padding:2px}
- .selection-market{font-size:9px;top:6px;left:6px;padding:4px 7px}
- .selection-card-body{padding:10px 10px 11px}
- .selection-card h3{font-size:15px}
- .selection-card .selection-brand{font-size:10px;margin-bottom:6px}
- .selection-card .selection-engine{font-size:10px}
- .selection-card .selection-note{font-size:9px}
- .selection-card .selection-cta{font-size:10px;padding:8px 9px;min-height:34px}
- .selection-state{font-size:11px}
- .selection-smallprint{font-size:10px}
-}
-@media(max-width:340px){.selection-grid{grid-template-columns:1fr}.selection-photo{aspect-ratio:16/9}.selection-card h3{font-size:17px}}
-@media(prefers-reduced-motion:reduce){.selection-tabs button{transition:none}}
-
-/* Three market intro cards + bridge for deep links to historical real lots. */
+/* PapAuto text-only model directory. No non-auction gallery/image slots. */
+.selection-section{margin:18px 0 34px;scroll-margin-top:24px}
+.selection-inner{border:1px solid #e7ddd3;border-radius:20px;background:#fffdfa;padding:clamp(16px,2.7vw,28px)}
+.selection-header{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:15px}
+.selection-kicker{color:#947b68;font-size:10px;letter-spacing:.16em;font-weight:500;margin:0 0 8px}
+.selection-header h2{margin:0 0 10px;font-size:clamp(26px,2.9vw,42px);font-weight:300;line-height:1.18;letter-spacing:-.045em}
+.selection-header p:not(.selection-kicker){margin:0;max-width:770px;font-size:13px;line-height:1.6;color:#727077}
+.selection-total{border-left:1px solid #e2d7cd;display:flex;flex-direction:column;padding:3px 12px;flex-shrink:0}
+.selection-total strong{font-size:39px;font-weight:300;color:#7c6656}.selection-total span{font-size:11px;color:#817a76;max-width:125px}
+.selection-tools{display:flex;gap:11px;flex-wrap:wrap;align-items:center;margin:17px 0 12px}
+.selection-tabs{display:flex;flex-wrap:wrap;gap:6px}
+.selection-tabs button{padding:9px 13px;min-height:39px;border:1px solid #dcd0c4;border-radius:999px;background:#fffcf8;color:#56545c;font:400 12px inherit;cursor:pointer}
+.selection-tabs button.is-active{background:#526d8b;border-color:#526d8b;color:white}
+.selection-search{flex:1;min-width:170px;max-width:310px;margin-left:auto;border:1px solid #e1d7cd;border-radius:999px;padding:10px 14px;font-size:13px;background:white}
+.selection-state{color:#827b79;font-size:12px;margin:8px 0 12px}
+.selection-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.selection-model-entry{background:#fff;border:1px solid #ebe4dd;border-radius:10px;padding:13px 15px;min-width:0}
+.selection-model-entry small{font-size:10px;color:#7e8b94}
+.selection-model-name{font-size:16px;font-weight:450;line-height:1.3;margin:6px 0}
+.selection-model-entry p{font-size:11px;color:#777378;margin:4px 0 10px}
+.selection-cta{font-size:11px;color:#536f8c;text-decoration:underline;text-underline-offset:3px}
+.selection-more{margin:14px auto;display:block;border:1px solid #526d8b;border-radius:999px;padding:11px 23px;color:#fff;background:#526d8b;font-size:12px;cursor:pointer}
+.selection-more[hidden],.selection-empty[hidden]{display:none}
+.selection-empty{background:#fff;padding:12px;border-radius:9px;color:#756a6a}
+.selection-smallprint{font-size:11px;line-height:1.65;color:#8b817a;margin:12px 0}
+.selection-smallprint a,.selection-region-quicklinks a,.selection-bridge a{color:#5c7996;text-underline-offset:3px}
+.selection-region-quicklinks{display:flex;flex-wrap:wrap;gap:12px;font-size:12px}
 .info{grid-template-columns:repeat(3,minmax(0,1fr))}
-.selection-bridge{display:block!important;font-size:12px!important;line-height:1.6!important;color:#7e756e!important;margin:4px 0 10px!important}
-.selection-bridge a{color:#527496;text-decoration:underline;text-underline-offset:3px}
-@media(max-width:900px){.info{grid-template-columns:1fr}}
+.selection-bridge{font-size:12px!important;color:#7e756e!important;margin:5px 0 10px!important}
+@media(max-width:880px){.info{grid-template-columns:1fr}.selection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:550px){.selection-inner{padding:15px 12px}.selection-header h2{font-size:28px}.selection-total{display:none}.selection-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}.selection-tabs button{font-size:11px;padding:9px 5px}.selection-search{min-width:100%;margin:0}.selection-grid{grid-template-columns:1fr;gap:6px}.selection-model-entry{padding:10px 13px}.selection-model-name{font-size:15px}.selection-header p:not(.selection-kicker){font-size:11px}}

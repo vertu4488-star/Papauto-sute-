@@ -72,6 +72,8 @@ def copy_public_files() -> list[str]:
             if not src.is_file() or src.is_symlink() or src.suffix.lower() not in allowed_suffixes:
                 continue
             relative = src.relative_to(ROOT)
+            if folder == 'assets' and (relative.parts[:2] == ('assets','demo') or (relative.parts[:2] == ('assets','visual') and src.name != 'fallback-vehicle.svg')):
+                continue
             dst = TARGET / relative
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src, dst)
@@ -88,21 +90,13 @@ def copy_public_files() -> list[str]:
     from vendor_surveyjs import fetch_surveyjs
     fetch_surveyjs(TARGET)
 
-    # Auction images remain restricted to rights-approved local assets.
-    # Home page may use locally hosted, license-documented illustrative
-    # model photos; these are never represented as pictures of the auction lot.
-    provenance_path = ROOT / "research" / "cc0-photo-provenance.json"
-    if not provenance_path.is_file():
-        raise RuntimeError("Missing photo rights provenance")
-    provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
-    approved_licensed_photos = set()
-    for item in provenance.get("photos", []):
-        photo_path = item.get("file", "")
-        license_name = item.get("rights", "")
-        if (re.fullmatch(r"/assets/demo/[a-z0-9-]+-licensed[.]webp", photo_path)
-            and (license_name == "CC BY-SA 4.0" or license_name.startswith("Creative Commons Zero"))
-            and (ROOT / photo_path.lstrip("/")).is_file()):
-            approved_licensed_photos.add(photo_path)
+    # Auction photography ONLY. Street/model photo libraries have been retired.
+    forbidden_gallery = ROOT / "assets" / "demo"
+    if forbidden_gallery.exists() and any(forbidden_gallery.iterdir()):
+        raise RuntimeError("PAPAUTO_POLICY: assets/demo street photo gallery must never be published")
+    # The source importer itself must not return in the active repository.
+    if (ROOT / "research" / "cc0-photo-provenance.json").exists():
+        raise RuntimeError("PAPAUTO_POLICY: obsolete street-photo source registry restored")
     # Strip external/unknown photos from old SEO and archive pages.
     for page in TARGET.glob("*.html"):
         html = page.read_text(encoding="utf-8")
@@ -110,16 +104,10 @@ def copy_public_files() -> list[str]:
             tag = match.group(0)
             src = re.search(r"""src\s*=\s*["']([^"']+)["']""", tag, re.I)
             url = src.group(1) if src else ""
-            if (url.startswith("/assets/auction/") or url == "/assets/papauto-logo.svg"
-                or re.fullmatch(r"/assets/demo/[a-z0-9-]+-cc0\.webp", url)
-                or (page.name == "index.html" and url in approved_licensed_photos)
-                or (page.name in {"premium-japan-korea.html", "premium-mobile-photo-demo.html"}
-                    and re.fullmatch(r"/assets/premium-auctions/[a-z0-9-]+[.]webp", url)
-                    and (ROOT / url.lstrip("/")).is_file())
-                or (page.name in {"premium-japan-korea.html", "premium-mobile-photo-demo.html"}
-                    and url == "/assets/visual/papauto-lexus-light-hero.webp"
-                    and (ROOT / url.lstrip("/")).is_file())
-                or url == "/assets/visual/fallback-vehicle.svg"):
+            if ((re.fullmatch(r"/assets/auction/home/[a-z0-9-]+[.]jpg",url)
+                  or re.fullmatch(r"/assets/premium-auctions/[a-z0-9-]+[.]webp",url))
+                 and (ROOT / url.lstrip("/")).is_file()
+                 or url in {"/assets/papauto-logo.svg","/assets/visual/fallback-vehicle.svg"}):
                 return tag
             return ""
         html = re.sub(r"<img\b[^>]*>", approved_img, html, flags=re.I | re.S)

@@ -44,36 +44,23 @@ class MarketModelDirectory(unittest.TestCase):
         self.assertLess(page.index('id="modelQuery"'), page.index('aria-label="Популярные модели"'))
         self.assertNotIn("Карточки реальных аукционных лотов с фотографиями", page)
 
-    def test_all_photo_previews_are_self_hosted_with_commercial_rights_and_attribution(self):
-        js = (ROOT / "catalog-open-data.js").read_text(encoding="utf-8")
-        manifest = json.loads((ROOT / "research" / "cc0-photo-provenance.json").read_text(encoding="utf-8"))
-        for row in manifest["photos"]:
-            with self.subTest(photo=row["file"]):
-                self.assertTrue(
-                    row["rights"] == "Creative Commons Zero 1.0 Universal (CC0)"
-                    or re.fullmatch(r"CC BY(?:-SA)? (?:2\.0|2\.5|3\.0|4\.0)", row["rights"]),
-                    row["rights"])
-                if "CC0" not in row["rights"]:
-                    self.assertIn("creativecommons.org/licenses/", row["license_evidence"])
-                    self.assertTrue(row["author"].strip())
-                    self.assertTrue(row["source_page"].startswith("https://commons.wikimedia.org/wiki/File:"))
-                    credits = (ROOT / "photo-credits.html").read_text(encoding="utf-8")
-                    self.assertIn(row["file"], credits)
-                    self.assertIn(row["license_evidence"], credits)
-                self.assertIn(row["file"], js)
-                self.assertTrue(row["file"].startswith("/assets/demo/"))
-                f = ROOT / row["file"].lstrip("/")
-                self.assertTrue(f.is_file())
-                self.assertGreater(f.stat().st_size, 30_000)
-        self.assertGreaterEqual(len(manifest["photos"]), 20)
-        # Fail the predeploy gate if the public catalog references an image that
-        # is not rights-audited and physically self-hosted in the current tree.
-        from_preview = set(re.findall(
-            r'\["[^"]+\|[^"]+\|[^"]+","(/assets/demo/[^"]+\.webp)"\]', js
-        ))
-        tracked = {row["file"] for row in manifest["photos"]}
-        self.assertEqual(len(tracked), len(manifest["photos"]))
-        self.assertSetEqual(from_preview, tracked)
+    def test_no_street_gallery_or_non_auction_model_sources(self):
+        """Non-auction photographs must never return through model import paths."""
+        self.assertFalse((ROOT / "assets" / "demo").exists())
+        self.assertFalse((ROOT / "research" / "cc0-photo-provenance.json").exists())
+        for relative in ("scripts/import_cc0_vehicle_images.py",
+                         "scripts/discover_and_expand_cc0_catalog.py",
+                         ".github/workflows/import-cc0-car-photos.yml",
+                         ".github/workflows/expand-cc0-car-directory.yml"):
+            self.assertFalse((ROOT / relative).exists(), relative)
+        for file in ("catalog-open-data.js", "premium-expanded-catalog.js",
+                     "premium-japan-korea.html", "premium-mobile-photo-demo.html"):
+            self.assertNotIn("/assets/demo/", (ROOT / file).read_text(encoding="utf-8"), file)
+        data = json.loads((ROOT / "data/papauto-expanded-45x3-2026.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(data["items"]), 135)
+        for country in ("japan","korea","china"):
+            self.assertEqual(sum(x["market"] == country for x in data["items"]),45)
+        self.assertTrue(all(not any(k in x for k in ("photo", "photo_source", "image", "auction_sheet")) for x in data["items"]))
 
 
 if __name__ == "__main__":

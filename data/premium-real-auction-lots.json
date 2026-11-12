@@ -1,7 +1,7 @@
 {
   "verified_at": "2026-11-12",
   "title": "Реальные примеры премиальных автомобилей из Японии и Кореи",
-  "notice": "14 японских подтверждённых продаж с локальными фотографиями и аукционными листами либо схемами; 3 конкретных корейских объявления с тремя оригинальными локально сохранёнными фотографиями каждое. Корейские записи не являются подтверждёнными аукционными продажами, а отчёты осмотра и актуальная стоимость не получены. Права на коммерческое повторное использование изображений требуют отдельной проверки.",
+  "notice": "14 японских аукционных автомобилей с фотографиями именно конкретных лотов и аукционными листами либо схемами. Неаукционные изображения и объявления сняты с публикации. Для Кореи и Китая фотографии появятся только после проверки конкретного аукционного лота.",
   "lots": [
     {
       "id": "bmw-x1-2021",
@@ -380,94 +380,6 @@
       "inspection_image": "/assets/premium-auctions/mercedes-cla180-2024-sheet.webp",
       "inspection_kind": "Аукционный лист",
       "notes": "Цена завершённых торгов в Японии без доставки и таможни."
-    },
-    {
-      "id": "bmw-x1-kr-IC5605199",
-      "market": "korea",
-      "country": "Южная Корея",
-      "steering": "Левый",
-      "model": "BMW X1 U11 sDrive20i M Sport",
-      "year": 2023,
-      "mileage": "72 931 км",
-      "engine_cc": 1998,
-      "source_name": "Autowini — объявление с рынка Кореи",
-      "lot_number": "IC5605199",
-      "status": "listing_unconfirmed",
-      "photos": [
-        "/assets/premium-auctions/bmw-x1-kr-ic5605199-photo-1.webp",
-        "/assets/premium-auctions/bmw-x1-kr-ic5605199-photo-2.webp",
-        "/assets/premium-auctions/bmw-x1-kr-ic5605199-photo-3.webp"
-      ],
-      "notes": "Фактическая доступность и стоимость не подтверждены; Три оригинальные фотографии объявления сохранены в PapAuto. Отчёт о состоянии не получен.",
-      "registration_date": "2023-09-13",
-      "exterior_color": "Чёрный",
-      "fuel": "Бензин",
-      "source_last_update": "2026-10-21",
-      "seller_condition_report": "unavailable",
-      "image_source_manifest": "research/premium-korea-media-sources-2026-11-12.json",
-      "media_type": "original_listing_photos",
-      "inspection_image": null,
-      "inspection_kind": null,
-      "photo_rights_status": "unconfirmed"
-    },
-    {
-      "id": "bmw-x3-kr-IC5604396",
-      "market": "korea",
-      "country": "Южная Корея",
-      "steering": "Левый",
-      "model": "BMW X3 G01 xDrive20i M Sport",
-      "year": 2022,
-      "mileage": "45 500 км",
-      "engine_cc": 1998,
-      "source_name": "Autowini — объявление с рынка Кореи",
-      "lot_number": "IC5604396",
-      "status": "listing_unconfirmed",
-      "photos": [
-        "/assets/premium-auctions/bmw-x3-kr-ic5604396-photo-1.webp",
-        "/assets/premium-auctions/bmw-x3-kr-ic5604396-photo-2.webp",
-        "/assets/premium-auctions/bmw-x3-kr-ic5604396-photo-3.webp"
-      ],
-      "notes": "Три фотографии конкретной машины локально сохранены. отчёт продавца о состоянии отсутствует.",
-      "registration_date": "2022-10-31",
-      "exterior_color": "Чёрный",
-      "fuel": "Бензин",
-      "source_last_update": "2026-10-20",
-      "seller_condition_report": "unavailable",
-      "image_source_manifest": "research/premium-korea-media-sources-2026-11-12.json",
-      "media_type": "original_listing_photos",
-      "inspection_image": null,
-      "inspection_kind": null,
-      "photo_rights_status": "unconfirmed"
-    },
-    {
-      "id": "audi-q3sb-kr-IC5486298",
-      "market": "korea",
-      "country": "Южная Корея",
-      "steering": "Левый",
-      "model": "Audi Q3 Sportback 35 TDI",
-      "year": 2022,
-      "mileage": "64 613 км",
-      "engine_cc": 1968,
-      "source_name": "Autowini — объявление с рынка Кореи",
-      "lot_number": "IC5486298",
-      "status": "listing_unconfirmed",
-      "photos": [
-        "/assets/premium-auctions/audi-q3sb-kr-ic5486298-photo-1.webp",
-        "/assets/premium-auctions/audi-q3sb-kr-ic5486298-photo-2.webp",
-        "/assets/premium-auctions/audi-q3sb-kr-ic5486298-photo-3.webp"
-      ],
-      "notes": "Дизель. Три оригинальные фотографии локально сохранены; отчёт о состоянии не получен, продажа или наличие не подтверждены.",
-      "registration_date": "2022-07-29",
-      "exterior_color": "Белый",
-      "fuel": "Дизель",
-      "source_last_update": "2026-09-11",
-      "seller_condition_report": "unavailable",
-      "booking_status_as_checked": "booked_as_of_2026-11-12",
-      "image_source_manifest": "research/premium-korea-media-sources-2026-11-12.json",
-      "media_type": "original_listing_photos",
-      "inspection_image": null,
-      "inspection_kind": null,
-      "photo_rights_status": "unconfirmed"
     }
   ]
 }

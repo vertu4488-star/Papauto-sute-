@@ -1,8 +1,6 @@
-/* PapAuto illustrated model choices: 45 Japan, 45 Korea, 45 China.
-   No unverified prices, mileages, lot IDs or seller links. */
+/* PapAuto: TEXT-ONLY 45x3 model reference list. Never render unsourced photographs. */
 (()=>{'use strict';
-const root=document.getElementById('market-catalog');
-if(!root)return;
+const root=document.getElementById('market-catalog');if(!root)return;
 const grid=root.querySelector('[data-selection-grid]');
 const tabs=[...root.querySelectorAll('[data-selection-filter]')];
 const query=root.querySelector('[data-selection-search]');
@@ -11,63 +9,36 @@ const more=root.querySelector('[data-selection-more]');
 const empty=root.querySelector('[data-selection-empty]');
 const FLAGS={japan:'🇯🇵 Япония',korea:'🇰🇷 Корея',china:'🇨🇳 Китай'};
 const LABELS={japan:'Япония',korea:'Корея',china:'Китай'};
-const valid={japan:1,korea:1,china:1};
-const requestedMarket=new URLSearchParams(window.location.search).get('market');
-let records=[],market=['japan','korea','china'].includes(requestedMarket)?requestedMarket:'all',shown=12,visible=[];
-const el=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e;};
+const initial=new URLSearchParams(window.location.search).get('market');
+let records=[],market=['japan','korea','china'].includes(initial)?initial:'all',shown=12,visible=[];
+const el=(tag,cls,txt)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(txt!=null)n.textContent=txt;return n};
 const norm=s=>String(s||'').toLocaleLowerCase('ru').replace(/ё/g,'е').trim();
-function priorityAll(data){const groups={japan:[],korea:[],china:[]};data.forEach(x=>groups[x.market].push(x));const result=[];for(let i=0;i<45;i++)for(const k of ['china','japan','korea'])if(groups[k][i])result.push(groups[k][i]);return result;}
-function makeCard(x){
- const article=el('article','selection-card');
- const photo=el('div','selection-photo');
- const img=el('img');
- img.src=x.photo;img.alt='Иллюстративное фото модели '+x.brand+' '+x.model+', не конкретный лот';
- img.loading='lazy';img.decoding='async';
- const badge=el('span','selection-market',FLAGS[x.market]);photo.append(img,badge);
- const body=el('div','selection-card-body');
- const title=el('h3','',x.model);
- const brand=el('p','selection-brand',x.brand);
- const engine=el('p','selection-engine','Версии: '+(x.engine||'уточняются'));
- const note=el('p','selection-note','Фото модели · цену и пробег уточняем');
- const cta=el('a','selection-cta','Подобрать такую модель ↗');
- cta.href='/podbor.html?similar='+encodeURIComponent(x.brand+' '+x.model+', '+LABELS[x.market]+', двигатель '+x.engine);
- body.append(title,brand,engine,note,cta);
- article.append(photo,body);
- return article;
-}
-function filter(){
- const q=norm(query?.value||'');
- const f=records.filter(x=>(market==='all'||market===x.market)&&(!q||norm(x.brand+' '+x.model+' '+x.engine).includes(q)));
- visible=market==='all'?priorityAll(f):f;
- render();
+function priorityAll(data){const groups={japan:[],korea:[],china:[]};for(const x of data)groups[x.market].push(x);const out=[];for(let i=0;i<45;i++)for(const k of ['china','japan','korea'])if(groups[k][i])out.push(groups[k][i]);return out}
+function row(x){
+ const article=el('article','selection-model-entry');
+ article.append(el('small','selection-market-text',FLAGS[x.market]),el('h3','selection-model-name',x.brand+' '+x.model),el('p','selection-engine','Двигатель: '+(x.engine||'уточняется')));
+ const a=el('a','selection-cta','Найти аукционный лот ↗');
+ a.href='/podbor.html?similar='+encodeURIComponent(x.brand+' '+x.model+', '+LABELS[x.market]);
+ article.append(a);return article;
 }
 function render(){
- const slice=visible.slice(0,shown);
- grid.replaceChildren(...slice.map(makeCard));
- count.textContent='Показано '+slice.length+' из '+visible.length+' моделей для подбора';
- empty.hidden=visible.length>0;
- more.hidden=shown>=visible.length;
+ const list=visible.slice(0,shown);grid.replaceChildren(...list.map(row));
+ count.textContent='Показано '+list.length+' из '+visible.length+' моделей (без фотографий)';
+ empty.hidden=visible.length!==0;more.hidden=shown>=visible.length;
 }
-tabs.forEach(btn=>btn.addEventListener('click',()=>{
- market=btn.dataset.selectionFilter;
- tabs.forEach(x=>{const on=x===btn;x.classList.toggle('is-active',on);x.setAttribute('aria-pressed',String(on));});
- shown=12;filter();
-}));
-tabs.forEach(x=>{const selected=x.dataset.selectionFilter===market;x.classList.toggle('is-active',selected);x.setAttribute('aria-pressed',String(selected));});
-query?.addEventListener('input',()=>{shown=12;filter()});
-more.addEventListener('click',()=>{shown+=12;render()});
-count.textContent='Загружаем модели из Японии, Кореи и Китая…';
-fetch('/data/papauto-expanded-45x3-2026.json',{credentials:'same-origin'})
-.then(r=>{if(!r.ok)throw Error('Catalogue data unavailable');return r.json()})
-.then(data=>{
- const list=data.items||[];
- if(list.length!==135||['japan','korea','china'].some(m=>list.filter(x=>x.market===m).length!==45))throw Error('Incorrect market counts');
- records=list.filter(x=>valid[x.market]&&/^\/assets\/demo\/[a-z0-9-]+\.webp$/.test(x.photo));
- if(records.length!==135)throw Error('Unsafe media path in model index');
- filter();
-}).catch(()=>{
- count.textContent='Не удалось загрузить каталог моделей';
- empty.hidden=false;empty.textContent='Каталог временно недоступен. Все модели доступны на странице общего каталога PapAuto.';
- more.hidden=true;
+function filter(){
+ const q=norm(query?.value);const filtered=records.filter(x=>(market==='all'||market===x.market)&&(!q||norm(x.brand+' '+x.model+' '+x.engine).includes(q)));
+ visible=market==='all'?priorityAll(filtered):filtered;render();
+}
+tabs.forEach(b=>{
+ const active=b.dataset.selectionFilter===market;b.classList.toggle('is-active',active);b.setAttribute('aria-pressed',String(active));
+ b.addEventListener('click',()=>{market=b.dataset.selectionFilter;tabs.forEach(t=>{const yes=t===b;t.classList.toggle('is-active',yes);t.setAttribute('aria-pressed',String(yes))});shown=12;filter()});
 });
+query?.addEventListener('input',()=>{shown=12;filter()});more?.addEventListener('click',()=>{shown+=12;render()});
+count.textContent='Загружаем список моделей…';
+fetch('/data/papauto-expanded-45x3-2026.json',{credentials:'same-origin'}).then(r=>{if(!r.ok)throw Error('Catalog unavailable');return r.json()}).then(d=>{
+ if(!Array.isArray(d.items)||d.items.length!==135||['japan','korea','china'].some(m=>d.items.filter(x=>x.market===m).length!==45))throw Error('Wrong country counts');
+ if(d.items.some(x=>Object.keys(x).some(k=>/photo|image|source|url/i.test(k))))throw Error('Non-auction photo source in model directory');
+ records=d.items;filter();
+}).catch(()=>{count.textContent='Справочник временно недоступен';empty.hidden=false;more.hidden=true});
 })();
