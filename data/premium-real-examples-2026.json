@@ -21,7 +21,7 @@
       "source": "https://jteco.ru/auto/stat/bmw/x1/",
       "media": [],
       "source_status": "sold",
-      "media_verified_as_specific_lot": true,
+      "media_verified_as_specific_lot": false,
       "auction_sheet_verified": false,
       "note": "Внимание: прямой экспорт автомобиля с мотором свыше 1900 см³ из Японии в РФ ограничен."
     },
@@ -151,7 +151,7 @@
       "source": "https://carvector.com/stat/mercedes-benz/c-class/38ad924f-266f-4e1f-a8c8-9a83cd57daf2",
       "media": [],
       "source_status": "sold",
-      "media_verified_as_specific_lot": true,
+      "media_verified_as_specific_lot": false,
       "auction_sheet_verified": false,
       "note": ""
     },
@@ -352,13 +352,9 @@
       "source": "https://www.autowini.com/en/Cars/IC5537084/cars-detail",
       "source_status": "stock_status_unconfirmed",
       "auction_sheet_verified": false,
-      "media_verified_as_specific_lot": true,
-      "media": [
-        "https://imagebox.autowini.com/upload/U2017020579961/car/CI202607270005146773/eab787ed-db1a-4602-adc3-54e01bc74317_320.jpg",
-        "https://imagebox.autowini.com/upload/U2026061982224/car/CI202608100005192711/ec19dd89-f51a-4e4e-9385-724661f43bc2_320.jpg",
-        "https://imagebox.autowini.com/upload/U2026061982224/car/CI202608100005192725/357cc49d-5939-445f-bc10-04b81dbe557d_320.jpg"
-      ],
-      "note": "Реальное корейское объявление, но не подтверждённый аукционный лот; отчёт о состоянии и фактическая цена продажи не опубликованы."
+      "media_verified_as_specific_lot": false,
+      "media": [],
+      "note": "Реальное корейское объявление, но не подтверждённый аукционный лот; отчёт о состоянии и фактическая цена продажи не опубликованы. Открытая страница первичного объявления недоступна, оригинальные фотографии не подтверждены."
     },
     {
       "id": "IC5409811",
@@ -392,13 +388,9 @@
       "source": "https://www.autowini.com/en/Cars/IC5582037/cars-detail",
       "source_status": "stock_status_unconfirmed",
       "auction_sheet_verified": false,
-      "media_verified_as_specific_lot": true,
-      "media": [
-        "https://imagebox.autowini.com/upload/U2026071995922/car/CI202610120005384966/8cfbe736-9a36-48f5-97f3-73053cd778be_320.jpg",
-        "https://imagebox.autowini.com/upload/U2017020579961/car/CI202610200005412250/9d6a6071-acd5-4c2c-87e7-224157465584_320.jpg",
-        "https://imagebox.autowini.com/upload/U2017020579961/car/CI202609210005328909/b7d057fc-2689-4961-bc8d-695a81dedc7c_320.jpg"
-      ],
-      "note": "Реальное корейское объявление, но не подтверждённый аукционный лот; отчёт о состоянии и фактическая цена продажи не опубликованы."
+      "media_verified_as_specific_lot": false,
+      "media": [],
+      "note": "Реальное корейское объявление, но не подтверждённый аукционный лот; отчёт о состоянии и фактическая цена продажи не опубликованы. Открытая страница первичного объявления недоступна, оригинальные фотографии не подтверждены."
     }
   ]
 }
