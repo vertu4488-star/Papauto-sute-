@@ -97,6 +97,13 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
     results.push({viewport,state,errors,failed});
     await page.close();
   }
+  // Deep link from China country page must preselect its 45 card examples.
+  const cnLink=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+  await cnLink.goto(BASE+'?market=china#market-catalog',{waitUntil:'load',timeout:45000});
+  await cnLink.locator('.selection-card').first().waitFor({state:'visible',timeout:20000});
+  assert((await cnLink.locator('[data-selection-count]').textContent()).includes('из 45'),'China deep-link should contain 45 models');
+  assert.equal(await cnLink.locator('[data-selection-filter=china]').getAttribute('aria-pressed'),'true','China tab should activate via URL');
+  await cnLink.close();
   // Isolated noindex mobile experiment: original image and auction gallery
   // must survive the strict public build and never depend on third-party media.
   const preview=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});
