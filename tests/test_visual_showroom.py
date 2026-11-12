@@ -62,7 +62,8 @@ class AuctionHomepage(unittest.TestCase):
             self.assertTrue(lot["lot"] and lot["auction"])
         build=(ROOT/"scripts"/"build_static_public.py").read_text(encoding="utf-8")
         self.assertIn('"research"',build)
-        self.assertIn('url == "/assets/visual/fallback-vehicle.svg"',build)
+        self.assertIn('"/assets/visual/fallback-vehicle.svg"',build)
+        self.assertIn('PAPAUTO_POLICY: assets/demo',build)
 
 if __name__=="__main__":
     unittest.main()

@@ -5,7 +5,7 @@
 width:100%!important;max-width:none!important;margin:0!important;min-height:525px!important;
 padding:53px max(30px,calc((100% - 1160px)/2)) 54px!important;gap:0!important;
 background:#091522!important;color:#f7f9fe!important;overflow:hidden!important;border-radius:0!important;box-shadow:none!important;}
-.hero.wrap .pa-lexus-art{position:absolute;inset:0 0 0 auto;width:61%;height:100%;background-image:url('/assets/visual/lexus-dark-car-hero.webp');background-repeat:no-repeat;background-position:center center;background-size:cover;z-index:-3;pointer-events:none;}
+.hero.wrap .pa-lexus-art{position:absolute;inset:0 0 0 auto;width:61%;height:100%;background-image:url('/assets/auction/home/toyota-corolla-sport-2023-20038-photo-1.jpg');background-repeat:no-repeat;background-position:center center;background-size:cover;z-index:-3;pointer-events:none;}
 .hero.wrap .pa-lexus-glow{position:absolute;inset:0;z-index:-2;
 background:linear-gradient(90deg,#0a182b 0%,#0e243d 26%,#102640f2 37%,#112d48b0 45%,#0e233650 57%,transparent 75%),
 linear-gradient(0deg,#07152172 0%,transparent 29%);pointer-events:none;}
