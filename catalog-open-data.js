@@ -557,23 +557,12 @@
       (!q||lower(r.brand+" "+r.model+" "+r.engine).includes(q)) &&
       (!power.value||types(r).includes(power.value))
     );
-    // Photograph-backed cards first, then alphabetically by brand/model.
-    matched.sort((a,b)=>Number(photoByModel.has(keyOf(b)))-Number(photoByModel.has(keyOf(a)))
-      ||a.brand.localeCompare(b.brand,"ru")||a.model.localeCompare(b.model,"ru"));
+    // All model cards sorted by name, not legacy stock photograph availability.
+    matched.sort((a,b)=>a.brand.localeCompare(b.brand,"ru")||a.model.localeCompare(b.model,"ru"));
     grid.replaceChildren();
     for(const r of matched.slice(0,limit)){
       const card=label("article",undefined,"model-card");
-      const localPhoto=photoByModel.get(keyOf(r));
-      if(localPhoto){
-        const frame=label("div",undefined,"model-photo");
-        const img=label("img");
-        img.src=localPhoto;
-        img.alt=r.brand+" "+r.model+" — фотография модели, не конкретного лота";
-        img.width=900; img.height=600; img.loading="lazy";img.decoding="async";
-        img.addEventListener("load",()=>img.classList.add("loaded"),{once:true});
-        img.addEventListener("error",()=>{frame.remove();},{once:true});
-        frame.append(img,label("span","ФОТО МОДЕЛИ"));card.append(frame);
-      }
+      // Прежние фотографии сняты с публикации до получения качественных аукционных кадров.
       card.append(label("small",markets[r.market]||r.market,"country"),
         label("h2",r.brand+" "+r.model),
         label("div",r.engine,"engine"),
@@ -585,8 +574,7 @@
       card.append(a);grid.append(card);
     }
     count.textContent="Моделей в справочнике: "+matched.length+
-      " · настоящих фотографий моделей: "+photoByModel.size+
-      " · фотографии с проверенными правами на коммерческое использование";
+      " · аукционные фотографии будут добавлены после проверки прав";
     if(empty)empty.style.display=matched.length?"none":"block";
     if(more)more.hidden=matched.length<=limit;
   }
