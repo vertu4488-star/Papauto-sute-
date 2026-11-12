@@ -33,7 +33,8 @@ for record in manifest["records"]:
             with Image.open(io.BytesIO(data)) as img:
                 img.verify()
             with Image.open(io.BytesIO(data)) as img:
-                if min(img.size)<200: raise ValueError("Unexpected image dimensions: "+url)
+                if min(img.size)<100: raise ValueError("Unexpected image dimensions: "+url+" "+str(img.size))
+                print("Validated",record["id"],img.size,url.rsplit("/",1)[-1])
                 img.convert("RGB").save(dst,"WEBP",quality=82,method=5)
         except (UnidentifiedImageError,OSError) as exc:
             raise ValueError("Invalid source image "+url) from exc
