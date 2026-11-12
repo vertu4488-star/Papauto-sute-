@@ -77,6 +77,12 @@ def copy_public_files() -> list[str]:
             shutil.copy2(src, dst)
             copied.append(dst.relative_to(TARGET).as_posix())
 
+    # Download genuine exact-lot photos and sheets to our own static host.
+    from build_home_auction_media import materialize
+    media_count = materialize(TARGET)
+    if media_count < 24:
+        raise RuntimeError("Incomplete on-site auction gallery")
+
     # The complete prebuilt SurveyJS renderer is pinned and hosted on PAPAUTO.
     # Never rely on external CDN scripts at runtime, including in Russia.
     from vendor_surveyjs import fetch_surveyjs

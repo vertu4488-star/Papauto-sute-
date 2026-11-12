@@ -12,7 +12,9 @@ class ShowcasePriceQuality(unittest.TestCase):
         section = html.split('<section class="pa-vitrine', 1)[1].split("</section>", 1)[0]
         cards = re.findall(r'<article class="pa-real-lot"[^>]*>[\s\S]*?</article>', section)
         self.assertEqual(len(cards), 8)
-        self.assertNotIn("<img", section)
+        self.assertEqual(section.count('class="pa-real-media"'),8)
+        self.assertEqual(section.count('class="pa-real-sheet"'),8)
+        self.assertEqual(len(re.findall(r'<img[^>]+src="/assets/auction/home/',section)),31)
         self.assertNotIn("pa-car-photo", section)
         evidence=json.loads((ROOT/"research"/"home-auction-examples-2026-11-12.json").read_text(encoding="utf-8"))
         self.assertEqual(len(evidence["lots"]), 8)
