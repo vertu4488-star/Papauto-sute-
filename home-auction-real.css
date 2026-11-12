@@ -33,3 +33,39 @@
 .pa-real-thumbs img{width:100%;height:100%;object-fit:contain;display:block}
 .pa-real-media a:focus-visible,.pa-real-thumbs a:focus-visible{outline:3px solid #3285b0;outline-offset:3px}
 @media(max-width:620px){.pa-real-media{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:7px}.pa-real-media a{aspect-ratio:4/3}.pa-real-thumbs a{width:76px}}
+
+/* Larger PapAuto auction cards; model-level sales comparison. */
+.pa-real-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pa-real-lot{padding:15px;gap:12px}
+.pa-real-lot-header{width:100%}
+.pa-real-lot h3{font-size:21px;line-height:1.25}
+.pa-real-media{margin:2px 0}
+.pa-lot-trim{grid-column:1/-1}
+.pa-real-lot>a.pa-real-cta{font-size:13px;line-height:1.35;padding:13px 10px}
+.pa-sale-stats{background:#f4f8fb;border:1px solid #dce8ef;border-radius:11px;overflow:hidden}
+.pa-sale-stats summary{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px;cursor:pointer;list-style:none;color:#205d84;font-size:12px;font-weight:700}
+.pa-sale-stats summary::-webkit-details-marker{display:none}
+.pa-sale-stats summary strong{font-size:11px;color:#34688a;text-align:right}
+.pa-sale-body{padding:3px 12px 13px;border-top:1px solid #dce7ed}
+.pa-sale-prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin:9px 0}
+.pa-sale-prices div{background:white;border:1px solid #d8e5ed;border-radius:7px;padding:6px 5px;min-width:0}
+.pa-sale-prices small{display:block;font-size:10px;color:#718195}
+.pa-sale-prices b{font-size:11px;color:#1a496c;white-space:nowrap}
+.pa-sale-body>small{display:block;font-weight:720;font-size:11px;color:#5c7487;margin:12px 0 5px}
+.pa-sale-body ul{list-style:none;padding:0;margin:0}
+.pa-sale-body li{display:flex;justify-content:space-between;gap:7px;padding:5px 0;border-bottom:1px solid #dae5ed;font-size:10px;color:#5a7183}
+.pa-sale-body li strong{white-space:nowrap;color:#274c67}
+.pa-sale-body p{font-size:10px;line-height:1.55;color:#61778a;margin:10px 0 0}
+.pa-auction-more{margin:20px 0 0}
+.pa-auction-more>summary{list-style:none;text-align:center;cursor:pointer;border:1px solid #bbd2e0;border-radius:12px;background:#edf5fa;color:#1a638f;padding:15px;font-size:15px;font-weight:740}
+.pa-auction-more>summary::-webkit-details-marker{display:none}
+.pa-auction-more[open]>summary{margin-bottom:18px}
+.pa-auction-catalog-search{display:block;width:100%;padding:14px;border:1px solid #c5d3e1;border-radius:11px;background:white;font-size:15px}
+.pa-auction-catalog-note{font-size:13px;color:#697d8d}
+.pa-lot-dialog{position:fixed;inset:0;margin:auto;padding:44px 12px 12px;border:0;border-radius:15px;max-width:96vw;max-height:91vh;background:#fff}
+.pa-lot-dialog::backdrop{background:#000b}
+.pa-lot-dialog img{max-width:calc(96vw - 24px);max-height:calc(91vh - 63px);width:auto;height:auto;object-fit:contain;display:block}
+.pa-lot-close{position:absolute;right:6px;top:5px;width:37px;height:34px;font-size:26px;border:0;border-radius:8px;cursor:pointer;background:#e8f0f6}
+.pa-real-lot[hidden]{display:none!important}
+@media(max-width:1050px){.pa-real-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:670px){.pa-real-grid{grid-template-columns:1fr}.pa-real-lot h3{font-size:21px}.pa-sale-prices b{font-size:11px}}
