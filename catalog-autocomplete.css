@@ -1,0 +1,11 @@
+/* Local catalog autocomplete: finger-sized options and accessible focus. */
+.catalog-search-wrap{position:relative;min-width:0;z-index:5}
+.catalog-search-wrap #modelQuery{display:block;width:100%;box-sizing:border-box}
+.catalog-suggestions{position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:100;max-height:min(340px,45vh);overflow:auto;overscroll-behavior:contain;padding:6px;background:#fff;border:1px solid #cad5e0;border-radius:14px;box-shadow:0 14px 38px rgba(20,40,60,.18);-webkit-overflow-scrolling:touch}
+.catalog-suggestions[hidden]{display:none!important}
+.catalog-suggestion{display:flex;width:100%;min-height:52px;align-items:center;justify-content:space-between;gap:12px;padding:11px 13px;border:0;border-radius:9px;background:#fff;text-align:left;cursor:pointer;color:#17232f;font:inherit}
+.catalog-suggestion + .catalog-suggestion{border-top:1px solid #eef2f6}
+.catalog-suggestion strong{font-size:15px;font-weight:660;line-height:1.25}
+.catalog-suggestion small{font-size:12px;color:#607284;white-space:nowrap}
+.catalog-suggestion:hover,.catalog-suggestion[aria-selected="true"],.catalog-suggestion:focus-visible{background:#e8f2ff;outline:0}
+@media(max-width:760px){.catalog-filters .catalog-search-wrap{grid-column:1/-1}.catalog-suggestions{max-height:min(310px,42vh)}.catalog-suggestion{min-height:56px}}
