@@ -1,0 +1,852 @@
+{
+  "as_of": "2026-11-12",
+  "unique_completed_sale_lots": 214,
+  "method": "Verified sold or Sold By Ne records from 500 research reserve and 25 confirmed exact lots. Models of different years/trims/mileage; selection is not a representative market average.",
+  "models": {
+    "honda/fit": {
+      "count": 9,
+      "min": 114000,
+      "median": 204000,
+      "max": 981000,
+      "latest": [
+        {
+          "year": 2017,
+          "km": 218000,
+          "grade": "3.5",
+          "price": 114000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2016,
+          "km": 134000,
+          "grade": "3.5",
+          "price": 204000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2014,
+          "km": 68000,
+          "grade": "3.5",
+          "price": 250000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "honda/freed": {
+      "count": 9,
+      "min": 121000,
+      "median": 167000,
+      "max": 2135000,
+      "latest": [
+        {
+          "year": 2020,
+          "km": 46000,
+          "grade": "R",
+          "price": 703000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2015,
+          "km": 77000,
+          "grade": "3.5",
+          "price": 321000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2012,
+          "km": 98000,
+          "grade": "3.5",
+          "price": 167000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "honda/step-wagon": {
+      "count": 9,
+      "min": 88000,
+      "median": 172000,
+      "max": 3035000,
+      "latest": [
+        {
+          "year": 2017,
+          "km": 124000,
+          "grade": "4",
+          "price": 1285000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2015,
+          "km": 115000,
+          "grade": "4",
+          "price": 725000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2010,
+          "km": 129000,
+          "grade": "R",
+          "price": 94000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "honda/n-box": {
+      "count": 8,
+      "min": 45000,
+      "median": 187000,
+      "max": 360000,
+      "latest": [
+        {
+          "year": 2019,
+          "km": 95000,
+          "grade": "3.5",
+          "price": 360000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2017,
+          "km": 114000,
+          "grade": "4",
+          "price": 177000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2015,
+          "km": 204000,
+          "grade": "3.5",
+          "price": 77000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "honda/shuttle": {
+      "count": 8,
+      "min": 250000,
+      "median": 420000,
+      "max": 735000,
+      "latest": [
+        {
+          "year": 2019,
+          "km": 72000,
+          "grade": "4",
+          "price": 735000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2015,
+          "km": 130000,
+          "grade": "4",
+          "price": 250000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2020,
+          "km": 121000,
+          "grade": "3.5",
+          "price": 533000,
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    "honda/grace": {
+      "count": 8,
+      "min": 163000,
+      "median": 554000,
+      "max": 683000,
+      "latest": [
+        {
+          "year": 2019,
+          "km": 186000,
+          "grade": "3.5",
+          "price": 553000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2018,
+          "km": 21000,
+          "grade": "3",
+          "price": 555000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2018,
+          "km": 89000,
+          "grade": "4",
+          "price": 683000,
+          "date": "2026-11-07"
+        }
+      ]
+    },
+    "honda/civic": {
+      "count": 8,
+      "min": 175000,
+      "median": 1038500,
+      "max": 4892000,
+      "latest": [
+        {
+          "year": 2018,
+          "km": 73000,
+          "grade": "4",
+          "price": 1283000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2008,
+          "km": 94000,
+          "grade": "4",
+          "price": 175000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2018,
+          "km": 79000,
+          "grade": "3.5",
+          "price": 1062000,
+          "date": "2026-11-05"
+        }
+      ]
+    },
+    "toyota/sienta": {
+      "count": 9,
+      "min": 162000,
+      "median": 274000,
+      "max": 1670000,
+      "latest": [
+        {
+          "year": 2019,
+          "km": 301000,
+          "grade": "3",
+          "price": 382000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2016,
+          "km": 302000,
+          "grade": "3",
+          "price": 267000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2015,
+          "km": 203000,
+          "grade": "R",
+          "price": 274000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "toyota/roomy": {
+      "count": 8,
+      "min": 500000,
+      "median": 822500,
+      "max": 1600000,
+      "latest": [
+        {
+          "year": 2026,
+          "km": 4000,
+          "grade": "R",
+          "price": 500000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2025,
+          "km": 4000,
+          "grade": "4",
+          "price": 1511000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2025,
+          "km": 13000,
+          "grade": "4",
+          "price": 1600000,
+          "date": "2026-11-07"
+        }
+      ]
+    },
+    "toyota/passo": {
+      "count": 8,
+      "min": 61000,
+      "median": 110000,
+      "max": 365000,
+      "latest": [
+        {
+          "year": 2016,
+          "km": 121000,
+          "grade": "4",
+          "price": 221000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2012,
+          "km": 24000,
+          "grade": "3.5",
+          "price": 128000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2010,
+          "km": 114000,
+          "grade": "3.5",
+          "price": 92000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "toyota/raize": {
+      "count": 8,
+      "min": 1231000,
+      "median": 1812000,
+      "max": 2174000,
+      "latest": [
+        {
+          "year": 2024,
+          "km": 1000,
+          "grade": "3",
+          "price": 1775000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2021,
+          "km": 74000,
+          "grade": "R",
+          "price": 1231000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2026,
+          "km": 6000,
+          "grade": "5",
+          "price": 2174000,
+          "date": "2026-11-07"
+        }
+      ]
+    },
+    "toyota/yaris": {
+      "count": 8,
+      "min": 565000,
+      "median": 722500,
+      "max": 3503000,
+      "latest": [
+        {
+          "year": 2024,
+          "km": 1000,
+          "grade": "4.5",
+          "price": 3503000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2023,
+          "km": 48000,
+          "grade": "R",
+          "price": 663000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2022,
+          "km": 58000,
+          "grade": "R",
+          "price": 702000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "toyota/corolla-sport": {
+      "count": 8,
+      "min": 150000,
+      "median": 1305500,
+      "max": 2119000,
+      "latest": [
+        {
+          "year": 2022,
+          "km": 22000,
+          "grade": "3.5",
+          "price": 1207000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2023,
+          "km": 14000,
+          "grade": "5",
+          "price": 2110000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2023,
+          "km": 56000,
+          "grade": "4",
+          "price": 2119000,
+          "date": "2026-11-07"
+        }
+      ]
+    },
+    "toyota/corolla-fielder": {
+      "count": 8,
+      "min": 202000,
+      "median": 878000,
+      "max": 1171000,
+      "latest": [
+        {
+          "year": 2015,
+          "km": 175000,
+          "grade": "3.5",
+          "price": 361000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2021,
+          "km": 11000,
+          "grade": "3",
+          "price": 1171000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2021,
+          "km": 73000,
+          "grade": "4",
+          "price": 1098000,
+          "date": "2026-11-07"
+        }
+      ]
+    },
+    "toyota/corolla-axio": {
+      "count": 8,
+      "min": 279000,
+      "median": 1233500,
+      "max": 1437000,
+      "latest": [
+        {
+          "year": 2021,
+          "km": 71000,
+          "grade": "4",
+          "price": 1430000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2021,
+          "km": 49000,
+          "grade": "3.5",
+          "price": 1437000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2021,
+          "km": 41000,
+          "grade": "3.5",
+          "price": 1431000,
+          "date": "2026-11-07"
+        }
+      ]
+    },
+    "toyota/probox": {
+      "count": 8,
+      "min": 204000,
+      "median": 867000,
+      "max": 1301000,
+      "latest": [
+        {
+          "year": 2023,
+          "km": 40000,
+          "grade": "4",
+          "price": 1235000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2023,
+          "km": 33000,
+          "grade": "4",
+          "price": 1301000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2019,
+          "km": 140000,
+          "grade": "3",
+          "price": 545000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "toyota/vitz": {
+      "count": 8,
+      "min": 142000,
+      "median": 194000,
+      "max": 582000,
+      "latest": [
+        {
+          "year": 2018,
+          "km": 10000,
+          "grade": "R",
+          "price": 582000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2018,
+          "km": 108000,
+          "grade": "R",
+          "price": 392000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2014,
+          "km": 27000,
+          "grade": "3.5",
+          "price": 180000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "toyota/wish": {
+      "count": 8,
+      "min": 207000,
+      "median": 305500,
+      "max": 622000,
+      "latest": [
+        {
+          "year": 2017,
+          "km": 138000,
+          "grade": "3.5",
+          "price": 523000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2012,
+          "km": 162000,
+          "grade": "3",
+          "price": 240000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2012,
+          "km": 80000,
+          "grade": "4",
+          "price": 622000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "suzuki/jimny": {
+      "count": 8,
+      "min": 106000,
+      "median": 1444500,
+      "max": 1872000,
+      "latest": [
+        {
+          "year": 2024,
+          "km": 3000,
+          "grade": "5",
+          "price": 1872000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2021,
+          "km": 29000,
+          "grade": "4.5",
+          "price": 1704000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2020,
+          "km": 49000,
+          "grade": "3.5",
+          "price": 1301000,
+          "date": "2026-11-07"
+        }
+      ]
+    },
+    "suzuki/swift": {
+      "count": 8,
+      "min": 79000,
+      "median": 726500,
+      "max": 1905000,
+      "latest": [
+        {
+          "year": 2019,
+          "km": 39000,
+          "grade": "R",
+          "price": 720000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2024,
+          "km": 47000,
+          "grade": "4.5",
+          "price": 1285000,
+          "date": "2026-11-07"
+        },
+        {
+          "year": 2024,
+          "km": null,
+          "grade": "6",
+          "price": 1525000,
+          "date": "2026-11-07"
+        }
+      ]
+    },
+    "suzuki/spacia": {
+      "count": 8,
+      "min": 51000,
+      "median": 299000,
+      "max": 1593000,
+      "latest": [
+        {
+          "year": 2015,
+          "km": 151000,
+          "grade": "R",
+          "price": 51000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2014,
+          "km": 154000,
+          "grade": "3.5",
+          "price": 87000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2013,
+          "km": 120000,
+          "grade": "3.5",
+          "price": 51000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "suzuki/wagon-r": {
+      "count": 8,
+      "min": 35000,
+      "median": 63000,
+      "max": 361000,
+      "latest": [
+        {
+          "year": 2022,
+          "km": 127000,
+          "grade": "4",
+          "price": 361000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2017,
+          "km": 54000,
+          "grade": "4",
+          "price": 331000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2016,
+          "km": 178000,
+          "grade": "3.5",
+          "price": 81000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "suzuki/hustler": {
+      "count": 9,
+      "min": 127000,
+      "median": 410000,
+      "max": 1205000,
+      "latest": [
+        {
+          "year": 2017,
+          "km": 69000,
+          "grade": "R",
+          "price": 465000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2015,
+          "km": 119000,
+          "grade": "R",
+          "price": 218000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2015,
+          "km": 136000,
+          "grade": "3.5",
+          "price": 127000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "suzuki/solio": {
+      "count": 8,
+      "min": 58000,
+      "median": 272000,
+      "max": 707000,
+      "latest": [
+        {
+          "year": 2024,
+          "km": 94000,
+          "grade": "4",
+          "price": 655000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2018,
+          "km": 51000,
+          "grade": "3.5",
+          "price": 450000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2015,
+          "km": 88000,
+          "grade": "3.5",
+          "price": 213000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "nissan/note": {
+      "count": 9,
+      "min": 107000,
+      "median": 232000,
+      "max": 1110000,
+      "latest": [
+        {
+          "year": 2020,
+          "km": 55000,
+          "grade": "G",
+          "price": 232000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2019,
+          "km": 51000,
+          "grade": "3.5",
+          "price": 837000,
+          "date": "2026-11-09"
+        },
+        {
+          "year": 2018,
+          "km": 22000,
+          "grade": "G",
+          "price": 385000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "mazda/cx-5": {
+      "count": 1,
+      "min": 1541000,
+      "median": 1541000,
+      "max": 1541000,
+      "latest": [
+        {
+          "year": 2022,
+          "km": 107000,
+          "grade": "4",
+          "price": 1541000,
+          "date": "2026-10-24"
+        }
+      ]
+    },
+    "subaru/levorg": {
+      "count": 1,
+      "min": 2480000,
+      "median": 2480000,
+      "max": 2480000,
+      "latest": [
+        {
+          "year": 2023,
+          "km": 31000,
+          "grade": "4.5",
+          "price": 2480000,
+          "date": "2026-10-12"
+        }
+      ]
+    },
+    "bmw/1-series": {
+      "count": 1,
+      "min": 1750000,
+      "median": 1750000,
+      "max": 1750000,
+      "latest": [
+        {
+          "year": 2024,
+          "km": 11000,
+          "grade": "5",
+          "price": 1750000,
+          "date": "2026-10-22"
+        }
+      ]
+    },
+    "audi/a3": {
+      "count": 1,
+      "min": 1105000,
+      "median": 1105000,
+      "max": 1105000,
+      "latest": [
+        {
+          "year": 2019,
+          "km": 46000,
+          "grade": "4.5",
+          "price": 1105000,
+          "date": "2026-10-24"
+        }
+      ]
+    },
+    "honda/vezel": {
+      "count": 1,
+      "min": 2003000,
+      "median": 2003000,
+      "max": 2003000,
+      "latest": [
+        {
+          "year": 2023,
+          "km": 32000,
+          "grade": "4",
+          "price": 2003000,
+          "date": "2026-11-07"
+        }
+      ]
+    },
+    "nissan/dayz": {
+      "count": 1,
+      "min": 590000,
+      "median": 590000,
+      "max": 590000,
+      "latest": [
+        {
+          "year": 2019,
+          "km": 47000,
+          "grade": "4",
+          "price": 590000,
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    "daihatsu/rocky": {
+      "count": 1,
+      "min": 1824000,
+      "median": 1824000,
+      "max": 1824000,
+      "latest": [
+        {
+          "year": 2023,
+          "km": 13000,
+          "grade": "4",
+          "price": 1824000,
+          "date": "2026-11-05"
+        }
+      ]
+    },
+    "daihatsu/tanto": {
+      "count": 1,
+      "min": 1020000,
+      "median": 1020000,
+      "max": 1020000,
+      "latest": [
+        {
+          "year": 2023,
+          "km": 15000,
+          "grade": "4",
+          "price": 1020000,
+          "date": "2026-11-09"
+        }
+      ]
+    }
+  }
+}
