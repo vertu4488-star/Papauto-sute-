@@ -1,0 +1,51 @@
+# PapAuto — резерв 500 японских аукционных лотов (12 ноября 2026)
+
+Это **только исследовательский резерв**, не список актуальных предложений и не разрешение на публикацию фотографий. 500 разных URL-адресов, 35 модельных разделов. Источник: ATP AUTO, страницы аукционных результатов конца октября — начала ноября 2026 года.
+
+* Пакеты: [001-100](auction-verified-001-100.json); [101-200](auction-verified-101-200.json); [201-300](auction-verified-201-300.json); [301-400](auction-verified-301-400.json); [401-500](auction-verified-401-500.json)
+* [Смотреть интерактивный HTML-каталог (нужно скачать файл)](auction-review-reserve-500.html)
+* Основной индекс URL: [auction-reference-reserve.json](auction-reference-reserve.json)
+
+Данные: 488 лотов с базовым набором, фотографией и ссылкой на аукционный лист; 12 требуют дополнительной проверки; 468 с непустой читаемой оценкой. Из 500: 495 имеют известный объём не более 2,0 л; 1 свыше 2,0 л; 4 без прочитанного объёма. Часть помечена как гибриды или «непроходные» по версии источника, это не юридическая оценка возможности ввоза.
+
+## Количество по моделям
+
+| Марка и модель | Количество |
+|---|---:|
+| daihatsu — move | 13 |
+| daihatsu — rocky | 16 |
+| daihatsu — tanto | 16 |
+| honda — civic | 16 |
+| honda — fit | 12 |
+| honda — freed | 16 |
+| honda — grace | 16 |
+| honda — n-box | 14 |
+| honda — shuttle | 16 |
+| honda — step-wagon | 16 |
+| honda — vezel | 8 |
+| mazda — cx-3 | 8 |
+| mazda — demio | 5 |
+| nissan — dayz | 14 |
+| nissan — march | 15 |
+| nissan — note | 13 |
+| nissan — serena | 10 |
+| suzuki — hustler | 16 |
+| suzuki — jimny | 16 |
+| suzuki — solio | 12 |
+| suzuki — spacia | 16 |
+| suzuki — swift | 16 |
+| suzuki — wagon-r | 16 |
+| toyota — aqua | 8 |
+| toyota — corolla-axio | 16 |
+| toyota — corolla-fielder | 16 |
+| toyota — corolla-sport | 16 |
+| toyota — passo | 16 |
+| toyota — probox | 16 |
+| toyota — raize | 16 |
+| toyota — roomy | 16 |
+| toyota — sienta | 16 |
+| toyota — vitz | 16 |
+| toyota — wish | 16 |
+| toyota — yaris | 16 |
+
+Права на фото и листы **не проверены**. Указаны URL оригинальных страниц и URL внешних изображений, без локального сохранения изображений. На рабочем papauto.ru ничего из резерва не опубликовано. Для перепубликации изображений необходимо подтвердить согласие правообладателя либо подходящую лицензию.
