@@ -73,6 +73,42 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
     results.push({viewport,state,errors,failed});
     await page.close();
   }
+  // Isolated noindex mobile experiment: original image and auction gallery
+  // must survive the strict public build and never depend on third-party media.
+  const preview=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});
+  const previewFailures=[];
+  preview.on('pageerror',e=>previewFailures.push('JS: '+e.message));
+  preview.on('response',r=>{if(r.status()>=400)previewFailures.push('HTTP '+r.status()+' '+r.url())});
+  await preview.goto('http://127.0.0.1:8765/premium-mobile-photo-demo.html',{waitUntil:'load',timeout:45000});
+  await preview.locator('.real-card').first().waitFor({state:'visible'});
+  const previewState=await preview.evaluate(()=>{
+    const image=document.querySelector('.hero-visual img');
+    const main=document.querySelector('.real-card .real-img-main img');
+    const sheet=document.querySelector('.real-card .real-img-sheet img');
+    return {
+      noindex:document.querySelector('meta[name="robots"]')?.content.includes('noindex'),
+      stylesheet:[...document.styleSheets].some(s=>s.href?.includes('premium-mobile-photo-demo.css')),
+      hero:!!image?.complete && image.naturalWidth>0,
+      mainPhoto:!!main?.complete && main.naturalWidth>0,
+      sheet:!!sheet?.complete && sheet.naturalWidth>0,
+      objectFit:main?getComputedStyle(main).objectFit:'',
+      pageOverflow:document.documentElement.scrollWidth-window.innerWidth,
+      cards:document.querySelectorAll('.real-card').length
+    };
+  });
+  assert(previewState.noindex,'Preview must be noindex');
+  assert(previewState.stylesheet,'Missing mobile preview CSS');
+  assert(previewState.hero,'Preview hero image was stripped by public-build whitelist');
+  assert(previewState.mainPhoto,'Preview auction photo was stripped');
+  assert(previewState.sheet,'Preview inspection sheet was stripped');
+  assert.equal(previewState.cards,17,'Preview should retain 17 real cards');
+  assert.equal(previewState.objectFit,'contain','Preview main auction photo must be uncropped');
+  assert(previewState.pageOverflow<=2,'Preview horizontal scroll '+previewState.pageOverflow+'px');
+  assert.equal(previewFailures.length,0,JSON.stringify(previewFailures));
+  await preview.locator('#verified-lots').scrollIntoViewIfNeeded();
+  await preview.screenshot({path:'premium-mobile-photo-preview.png',fullPage:false});
+  console.log('PAPAUTO_PREMIUM_MOBILE_PREVIEW_QA='+JSON.stringify(previewState));
+  await preview.close();
   console.log('PAPAUTO_PREMIUM_VISUAL_QA='+JSON.stringify(results));
   await browser.close();
 })().catch(e=>{console.error('PREMIUM_LIGHT_QA_FAILED',e.stack||e);process.exitCode=1});
