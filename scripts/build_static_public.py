@@ -164,6 +164,24 @@ def copy_public_files() -> list[str]:
     # Every new photo and sheet is local, licensed and matched to an auction lot.
     from compile_auction_gallery import compile_published_gallery
     gallery_result = compile_published_gallery(TARGET)
+    # Final release guard: a test-only fix must never be the sole protection.
+    # Quarantined source lot IDs may survive in GitHub for provenance but
+    # must not be exposed in buyer-facing HTML, JSON, or full-detail pages.
+    published_registry = json.loads(
+        (TARGET / "data/gallery-lots.json").read_text(encoding="utf-8")
+    )
+    withdrawn_ids = {"nissan-note-2021-227", "mercedes-a180-2020"}
+    public_ids = {lot["id"] for lot in published_registry["lots"]}
+    if (published_registry["lot_count"] != gallery_result["count"]
+            or published_registry["lot_count"] < 35
+            or public_ids.intersection(withdrawn_ids)):
+        raise RuntimeError("PAPAUTO_POLICY: quarantined outdoor lot in release")
+    customer_gallery = (TARGET / "gallery.html").read_text(encoding="utf-8")
+    if any(id_ in customer_gallery for id_ in withdrawn_ids):
+        raise RuntimeError("PAPAUTO_POLICY: outdoor lot leaked into gallery HTML")
+    for photo_path in QUARANTINED_OUTDOOR_MEDIA:
+        if (TARGET / photo_path).read_bytes() != TOMBSTONE:
+            raise RuntimeError("PAPAUTO_POLICY: outdoor photo bytes in release")
     # Retire historical detail URL for each publicly rejected outdoor lot.
     # Preserve source evidence in GitHub, not on customer-facing pages.
     retired_lot_html = (
