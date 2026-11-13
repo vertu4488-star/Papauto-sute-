@@ -39,6 +39,10 @@ QUARANTINED_OUTDOOR_MEDIA = {
     "assets/premium-auctions/audi-q3-2021-front.webp",
     "assets/premium-auctions/audi-q3-2021-rear.webp",
     "assets/premium-auctions/audi-q3-2021-diagram.webp",
+    # Visual audit 2026-11-13: open-air street/dealer/parking imagery.
+    "assets/auction/home/nissan-note-2021-227-photo-1.jpg",
+    "assets/premium-auctions/mercedes-a180-2020-front.webp",
+    "assets/premium-auctions/mercedes-a180-2020-rear.webp",
 }
 
 
@@ -147,6 +151,12 @@ def copy_public_files() -> list[str]:
     # Download genuine exact-lot photos and sheets to our own static host.
     from build_home_auction_media import materialize
     media_count = materialize(TARGET)
+    # The image materializer may re-copy pinned historical files. Replace
+    # quarantined paths AFTER materialization too, preventing stale CDN bytes.
+    for rejected in QUARANTINED_OUTDOOR_MEDIA:
+        dst = TARGET / rejected
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        dst.write_bytes(TOMBSTONE)
     if media_count < 50:
         raise RuntimeError("Incomplete required auction covers or auction sheets")
 
@@ -154,6 +164,20 @@ def copy_public_files() -> list[str]:
     # Every new photo and sheet is local, licensed and matched to an auction lot.
     from compile_auction_gallery import compile_published_gallery
     gallery_result = compile_published_gallery(TARGET)
+    # Retire historical detail URL for each publicly rejected outdoor lot.
+    # Preserve source evidence in GitHub, not on customer-facing pages.
+    retired_lot_html = (
+        '<!doctype html><html lang="ru"><head><meta charset="utf-8">'
+        '<meta name="robots" content="noindex,nofollow">'
+        '<title>Лот снят с публикации | PAPAUTO</title></head>'
+        '<body><main><h1>Лот снят с публикации</h1>'
+        '<p>Фотографии требуют проверки. Подберите аналогичный автомобиль.</p>'
+        '<a href="/gallery.html">Аукционный каталог</a></main></body></html>'
+    )
+    for rejected_id in ("nissan-note-2021-227", "mercedes-a180-2020"):
+        retired_file = TARGET / "lots" / (rejected_id + ".html")
+        retired_file.parent.mkdir(parents=True, exist_ok=True)
+        retired_file.write_text(retired_lot_html, encoding="utf-8")
     print(f"Gallery published: {gallery_result['count']} exact lots; "
           f"new: {gallery_result['new']}; "
           f"omitted {gallery_result['skipped_optional']} missing optional angles")
