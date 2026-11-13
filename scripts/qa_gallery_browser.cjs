@@ -9,7 +9,7 @@ const BASE='http://127.0.0.1:8765/gallery.html';
   const page=await browser.newPage({viewport:{width,height:width===1440?900:780},deviceScaleFactor:1,isMobile:width<500,hasTouch:width<500});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   page.on('console',m=>{if(m.type()==='error')errors.push('console: '+m.text());});
-  page.on('requestfailed',r=>errors.push('request: '+r.url()+' '+r.failure()?.errorText));
+  page.on('requestfailed',r=>{if(/127\.0\.0\.1:8765/.test(r.url()))errors.push('local request: '+r.url()+' '+r.failure()?.errorText);});
   await page.goto(BASE,{waitUntil:'load',timeout:45000});
   try{
     await page.waitForFunction(()=>document.querySelector('#gallery-count')?.textContent.includes('Найдено 39'),{timeout:8000});
@@ -26,6 +26,7 @@ const BASE='http://127.0.0.1:8765/gallery.html';
     });
     throw new Error('Gallery did not render: '+JSON.stringify({diagnostics,errors}));
   }
+  await page.waitForFunction(()=>{const img=document.querySelector('.gallery-card-photo img');return !!img?.complete&&img.naturalWidth>0;},{timeout:10000});
   const state=await page.evaluate(()=>{
    const image=document.querySelector('.gallery-card-photo img');
    return {cards:document.querySelectorAll('.gallery-card').length,

@@ -8,9 +8,12 @@
   brand=d.getElementById("gallery-brand"),sort=d.getElementById("gallery-sort"),
   more=d.getElementById("gallery-more"),empty=d.getElementById("gallery-empty"),
   tabs=[...d.querySelectorAll("[data-gallery-category]")],
-  viewer=d.getElementById("gallery-viewer"),viewerImage=d.getElementById("gallery-viewer-image"),
+  viewer=d.getElementById("gallery-viewer"),viewerImage=d.createElement("img"),
   viewerTitle=d.getElementById("gallery-viewer-title"),viewerCaption=d.getElementById("gallery-viewer-caption"),
   viewerThumbs=d.getElementById("gallery-viewer-thumbs");
+ // Gallery image is constructed at runtime: the secure static publisher strips empty <img> placeholders.
+ viewerImage.id="gallery-viewer-image";viewerImage.alt="";
+ d.getElementById("gallery-viewer-image-mount").append(viewerImage);
  const mediaPath=/^\/assets\/(?:auction\/home|premium-auctions)\/[a-z0-9-]+\.(?:jpg|webp)$/;
  const rub=n=>new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(n);
  const normal=s=>String(s||"").toLocaleLowerCase("ru");
