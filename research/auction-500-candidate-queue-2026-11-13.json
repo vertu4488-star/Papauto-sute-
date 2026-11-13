@@ -1,0 +1,2286 @@
+{
+  "created_at": "2026-11-13",
+  "confidentiality": "private research; never expose supplier URLs in customer pages",
+  "target_verified_lots": 500,
+  "baseline_published": 39,
+  "remaining_to_target": 461,
+  "source_image_links": 250,
+  "candidate_lots": 146,
+  "candidates_by_country": {
+    "China": 10,
+    "Japan": 120,
+    "South Korea": 16
+  },
+  "publication_ready": 0,
+  "warning": "Links may be thumbnails, unrelated/model images or unlicensed. Authentic sheet, exact-lot photo provenance and explicit commercial permissions missing. Never publish candidates until independently verified.",
+  "lots": [
+    {
+      "country": "China",
+      "model": "BYD Qin L DM, 2025 (Lot №: 357327562)",
+      "auction_date": "2026-11-03",
+      "lot_source_url": "https://plc.auction/auction/lot/byd-qin-l-dm-2025-54-357327562",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/43/2025/29369/186961/f28fab81b48454a505c913067745215b/a944673564d50a6b722f2cca1729e5cb.jpg",
+        "https://img.plc.auction/medium/img5/43/2025/29369/186961/f28fab81b48454a505c913067745215b/97307cc9221b00f0d1adacad82ecbddc.jpg",
+        "https://img.plc.auction/medium/img5/43/2025/29369/186961/f28fab81b48454a505c913067745215b/6e12525ff76f5c6989495b65d577d9ef.jpg",
+        "https://img.plc.auction/medium/img5/43/2025/29369/186961/f28fab81b48454a505c913067745215b/efe36f404c4b70c31a75005e9fd35f82.jpg",
+        "https://img.plc.auction/medium/img5/43/2025/29369/186961/f28fab81b48454a505c913067745215b/cfe8aab0f63ec032e1265b468dc7b73f.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "China",
+      "model": "BYD Sealion 06, 2026 (Lot №: 256505E0)",
+      "auction_date": "2026-11-02",
+      "lot_source_url": "https://plc.auction/auction/lot/byd-sealion-06-2026-56-256505e0",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/44/2026/29369/230645/b66c626974aa3011a632dbef80c57488/1c963c8df2047b2bf27d6c524d2f81d7.jpg",
+        "https://img.plc.auction/medium/img5/44/2026/29369/230645/b66c626974aa3011a632dbef80c57488/db74370ce2d56eaa39eb15b4984dcd12.jpg",
+        "https://img.plc.auction/medium/img5/44/2026/29369/230645/b66c626974aa3011a632dbef80c57488/485a48bd6395f50a3e0436219b077354.jpg",
+        "https://img.plc.auction/medium/img5/44/2026/29369/230645/b66c626974aa3011a632dbef80c57488/95558a270bf394d22fcad67dc558b416.jpg",
+        "https://img.plc.auction/medium/img5/44/2026/29369/230645/b66c626974aa3011a632dbef80c57488/62f97d5a831eff26dcca7a6bab6ef200.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "China",
+      "model": "BYD Song L DM, 2025 (Lot №: 357282766)",
+      "auction_date": "2026-11-08",
+      "lot_source_url": "https://plc.auction/auction/lot/byd-song-l-dm-2025-54-357282766",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/43/2025/29369/187419/f28fab81b48454a505c913067745215b/f44af4eddb33457a73ad83e08f7f19d3.jpg",
+        "https://img.plc.auction/medium/img5/43/2025/29369/187419/f28fab81b48454a505c913067745215b/2a9b8c993b4cddeb2d83be16c6196d04.jpg",
+        "https://img.plc.auction/medium/img5/43/2025/29369/187419/f28fab81b48454a505c913067745215b/27843466359845049d39be11ecf6d588.jpg",
+        "https://img.plc.auction/medium/img5/43/2025/29369/187419/f28fab81b48454a505c913067745215b/28abab49da04bd6f0118c18412c4ba70.jpg",
+        "https://img.plc.auction/medium/img5/43/2025/29369/187419/f28fab81b48454a505c913067745215b/d3566eaa6f74d6481ad49f17beebf21f.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "China",
+      "model": "BYD Yuan UP, 2025 (Lot №: 243285E0)",
+      "auction_date": "2026-11-02",
+      "lot_source_url": "https://plc.auction/auction/lot/byd-yuan-up-2025-56-243285e0",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/44/2025/29369/186948/b66c626974aa3011a632dbef80c57488/de97f5f38b3bbf76b144a73927acf742.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29369/186948/b66c626974aa3011a632dbef80c57488/42085d33f17e600cfaf75a50d1fc74a3.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29369/186948/b66c626974aa3011a632dbef80c57488/c4dddf189c6781f53e791f122157e0b2.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29369/186948/b66c626974aa3011a632dbef80c57488/cdc04385cbf68ac2c83bd9219457fc6a.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29369/186948/b66c626974aa3011a632dbef80c57488/9740ad53d4e4181816135f64b4ae8652.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "China",
+      "model": "Changan CS55 PLUS, 2026 (Lot №: 357249811)",
+      "auction_date": "2026-10-31",
+      "lot_source_url": "https://plc.auction/auction/lot/changan-cs55-plus-2026-54-357249811",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/43/2026/29394/184742/f28fab81b48454a505c913067745215b/259267262685e85e7b4228616d7c1c0a.jpg",
+        "https://img.plc.auction/medium/img5/43/2026/29394/184742/f28fab81b48454a505c913067745215b/b4fb77b338a0b0e5458f596bfba65330.jpg",
+        "https://img.plc.auction/medium/img5/43/2026/29394/184742/f28fab81b48454a505c913067745215b/f0864622ebcdddbc41ec4fa53a221f01.jpg",
+        "https://img.plc.auction/medium/img5/43/2026/29394/184742/f28fab81b48454a505c913067745215b/b5fe5a2ea5dbcc8635628d0306437de5.jpg",
+        "https://img.plc.auction/medium/img5/43/2026/29394/184742/f28fab81b48454a505c913067745215b/5a96992be9b0fb7159699619826139c0.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "China",
+      "model": "Changan CS75 PLUS, 2026 (Lot №: 357303380)",
+      "auction_date": "2026-11-08",
+      "lot_source_url": "https://plc.auction/auction/lot/changan-cs75-plus-2026-54-357303380",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/43/2026/29394/183747/f28fab81b48454a505c913067745215b/a7cb506614ea058dca4d74d7ac23e71c.jpg",
+        "https://img.plc.auction/medium/img5/43/2026/29394/183747/f28fab81b48454a505c913067745215b/93d1347312971ad419c3e9639384a1fe.jpg",
+        "https://img.plc.auction/medium/img5/43/2026/29394/183747/f28fab81b48454a505c913067745215b/b5275f262565f6b6df9aff1ac3599dd5.jpg",
+        "https://img.plc.auction/medium/img5/43/2026/29394/183747/f28fab81b48454a505c913067745215b/6542e914d0002c041d225935efdbd334.jpg",
+        "https://img.plc.auction/medium/img5/43/2026/29394/183747/f28fab81b48454a505c913067745215b/337c33a31641d646e0189eaa4cf6e217.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "China",
+      "model": "Changan UNI-V, 2025 (Lot №: 249933E0)",
+      "auction_date": "2026-11-02",
+      "lot_source_url": "https://plc.auction/auction/lot/changan-uni-v-2025-56-249933e0",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/44/2025/29394/183775/b66c626974aa3011a632dbef80c57488/362f9c0874a3e74dafbe07cccf817451.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29394/183775/b66c626974aa3011a632dbef80c57488/1c9b9063f94d72c83665171cc8482397.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29394/183775/b66c626974aa3011a632dbef80c57488/c1d902517684eb31625f89a5371ecc8f.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29394/183775/b66c626974aa3011a632dbef80c57488/d732458dc1550bee9d4236d9e4d3ce97.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29394/183775/b66c626974aa3011a632dbef80c57488/81e11db6584c64bf47cc70ebd6231863.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "China",
+      "model": "Geely Emgrand, 2026 (Lot №: 101567E0)",
+      "auction_date": "2026-11-02",
+      "lot_source_url": "https://plc.auction/auction/lot/geely-emgrand-2026-56-101567e0",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/44/2025/29375/183796/b66c626974aa3011a632dbef80c57488/55d2a1c58f52b18ea53fd32b5b4f3c85.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29375/183796/b66c626974aa3011a632dbef80c57488/abf58e9391e88d2efb2a409a5634edf4.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29375/183796/b66c626974aa3011a632dbef80c57488/1a753b76f1ce2cdec7a7bf0a929eb8de.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29375/183796/b66c626974aa3011a632dbef80c57488/3375ba075c79f7dfea1b0e83eaf01154.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29375/183796/b66c626974aa3011a632dbef80c57488/e98c59a5f0564cb3509a98475d325b99.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "China",
+      "model": "Geely Galaxy A7, 2025 (Lot №: 250063E0)",
+      "auction_date": "2026-11-02",
+      "lot_source_url": "https://plc.auction/auction/lot/geely-2025-56-250063e0",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/44/2025/29397/234535/b66c626974aa3011a632dbef80c57488/05a558aff4ca4175d1080279462f35cb.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29397/234535/b66c626974aa3011a632dbef80c57488/6d6cbb5527d37260d8da2c2d732ca19a.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29397/234535/b66c626974aa3011a632dbef80c57488/100f4d91b65af7335bea0b7a805de1fc.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29397/234535/b66c626974aa3011a632dbef80c57488/7db37ec0fd0e2ac0f05512eb4f3d2204.jpg",
+        "https://img.plc.auction/medium/img5/44/2025/29397/234535/b66c626974aa3011a632dbef80c57488/0cbde4a1a270ea3d8f7ee41c3bb7104e.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "China",
+      "model": "Geely Xingrui, 2026 (Lot №: 357449581)",
+      "auction_date": "2026-11-08",
+      "lot_source_url": "https://plc.auction/auction/lot/geely-xingrui-2026-54-357449581",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/43/2026/29375/183748/f28fab81b48454a505c913067745215b/9aeb0290e50732d1f7eada11a6c26a9d.jpg",
+        "https://img.plc.auction/medium/img5/43/2026/29375/183748/f28fab81b48454a505c913067745215b/18209d3635671ebf1c8f3239619ec700.jpg",
+        "https://img.plc.auction/medium/img5/43/2026/29375/183748/f28fab81b48454a505c913067745215b/30fa4a7db2624bee342fc02f2c858753.jpg",
+        "https://img.plc.auction/medium/img5/43/2026/29375/183748/f28fab81b48454a505c913067745215b/9ee38ace42b9ca1460631553f40bc6b5.jpg",
+        "https://img.plc.auction/medium/img5/43/2026/29375/183748/f28fab81b48454a505c913067745215b/2c42c23397eca4f48b2849ccf2180d57.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-honda-fit-1086-auction-result-tdb6osdxsktzj5/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pL0R15qGOwf9L58APrJ2GI1ZYuQsIGGEVAoAR12U4KExLS9WFGS&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2022,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-honda-fit-135-auction-result-2yx2qc8aqfr0il/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29hCkVVdA8l6S711SUB2abbnJ1xrry0R0yr9G9YkfBsnhljnLMBHi&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2023,
+      "auction_date": "2026-10-24",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-honda-fit-20193-auction-result-0maoeju6krmgltr/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YRdC0SvUlyy4CthAKeSA8aTdQhb2ilMfyt3krbhsb0Y2co5OYg&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2025,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2025-honda-fit-65-auction-result-c3mz1wbj0omyi/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29dxRtc5KHHTgSiELfQ9JAksvuKHAw0T20YJImNUPpekinruT51fi&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2023,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-honda-fit-1070-auction-result-77zlcz4nfhdqs09/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eIQ7d8wZNacAxnUxUjVPyCUQBgBkrKP1OPr6RWO9Hdw1HX0bVDBC4&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2022,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-honda-fit-52-auction-result-7skhi7ovr6geg6/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eIQ7d8wZNacAxnUxUjVPyCUQBgBkrKP1OPqS0qPjLvGerYnvMpTzy&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2023,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-honda-fit-1071-auction-result-779kcobvyw5nx4v/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eIQ7d8wZNacAxnUxUjVPyCUQBgBkrKP1OPr3eOlh74JE8HCLHQMYh&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2023,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-honda-fit-1072-auction-result-77edqeve1s2oehu/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eIQ7d8wZNacAxnUxUjVPyCUQBgBkrKP1OPr3DPhAPwnsR523oIr3H&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2022,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-honda-fit-199-auction-result-s8pbgcima5i2e2/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eIQ7d8wZNacAxnUxUjVPyCUQBgBkrKP1OPrfXkk72LzvpNqOVBCFH&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2023,
+      "auction_date": "2026-10-17",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-honda-fit-20341-auction-result-0o0c0mjgotk6dtd/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YK6RWpG4v6zRd0dmTAek4Sjz8Tq4O5rW4N8dUs0xyDLMg9Iqgq&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2022,
+      "auction_date": "2026-10-17",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-honda-fit-29501-auction-result-0b9azba3aomtz4y/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YK6RWpG4v6zRd0dmTAek4Sjz8Tq4O5rW4Nbsw0xsRVfLo3cGtZ&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2024,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-honda-fit-189-auction-result-35dvyeswasnuif/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/290to1sVVi5GFEBiDB6giZzw4Easa7vffv4aRTF5NrOvXBPXwwxIG&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2023,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-honda-fit-92-auction-result-smb1omau6rkqt/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/290to1sVVi5GFEBiDB6giZtxhYXXJu0USLwjxxOycP5OUQmehT4tr&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2022,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-honda-fit-41-auction-result-orxxvkceqxjog/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/290to1sVVi5GFEBiDB6giZzw4Easa7vffv3MEZdYNJhqgqonGtay8&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2024,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-honda-fit-90-auction-result-vyvgyiiowdcnb/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/290to1sVVi5GFEBiDB6giZtxhYXXJu0USLwmLFl75wdmLJunOOe3N&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2022,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-honda-fit-40-auction-result-swosxi24azfhj/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/290to1sVVi5GFEBiDB6giZzw4Easa7vffv3Qi8GQoT4MQFUNUfZbT&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2022,
+      "auction_date": "2026-10-10",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-honda-fit-9025-auction-result-3x72xmmvpdewgcn/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pIaBCqkWEw6TyrHP2mG9Xke3ZZebNIHQjvD1arMR1QqpuEMwtQ2&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2024,
+      "auction_date": "2026-10-06",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-honda-fit-168-auction-result-2ryysialofwrt6/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/296oUxJN6Sru5qTWvWknSoIAQ9nIj5vh87Alh8pEYLcsuk6JmPSsp&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2023,
+      "auction_date": "2026-10-06",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-honda-fit-2435-auction-result-bnkcy6rapj7z38/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/Eow817urw2RC6BocZsbQB6oRuRurKakUTKspIVJutBzKP9gvBKYx1i&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Fit",
+      "year": 2024,
+      "auction_date": "2026-10-03",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-honda-fit-7193-auction-result-2qw6k5sopz91jc6/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pVCdPPKNnwLuYezN0Jo8fyhkunQPXNUdo9ckMdC4FhxkuqYc8pj&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2026,
+      "auction_date": "2026-10-31",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-honda-freed-14027-auction-result-5bz0ckbgeab5j8y/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/sXpYrKmODJRuuMforw6zApdHdHIgUMEYW2BlR10TJw1Rw4&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2022,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-honda-freed-257-auction-result-d3qhjblmsvnywp/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eJH3o9ZQzxqelg1bvRLf9m1QqVOWzaOAZTUMxGE3RchqRYgbBpIg6&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2026,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-honda-freed-14-auction-result-coshgxgj0fee/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YRdC0SvUlyy4Ctcn39er90CbEsyn07aCZff0KYu1OTVDmCtMib&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2022,
+      "auction_date": "2026-10-24",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-honda-freed-20466-auction-result-0pboyc6e1exoe5y/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YRdC0SvUlyy4CthAKeSA8aTdQhb2ilMfyt1neybbgz4P6aXYEj&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2025,
+      "auction_date": "2026-10-24",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2025-honda-freed-9021-auction-result-3x5darvalgr9krt/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pL0R15qGOwf9L58APrJ2GI215BbSKpYm2N9N8nCf7CSWzpG5288&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2023,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-honda-freed-1116-auction-result-hr0pb2ipyklwvd/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pL0R15qGOwf9L58APrJ2GI1ZYuQsIGGEVE2Ji4emGR1qB2P5Twc&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2024,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-honda-freed-192-auction-result-rsb3mohzgpg5bc/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eIQ7d8wZNacAxnUxUjVPyCUQBgBkrKP1OPrd9dJRTx5MigGW6y7aL&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2026,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-honda-freed-7422-auction-result-2ty9nfljn7ccs9q/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pJFejfnOJwaw0KUHVpcAk28wuf3kgcHfCU18MjOik28lcfPNDnQ&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2022,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-honda-freed-1109-auction-result-ijwhh35kddvtpd/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pJFejfnOJwaw0KUHVpcAk28wrbRCfl4p5q2DCQ10CInfD4pjJjn&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2022,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-honda-freed-2024-auction-result-4r9wfrwgus0jx5/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YCY8IWQcECBENP4VkOVV2ysSdH3saxw3bRDdmOcOrvnfcMaXZs&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2022,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-honda-freed-3576-auction-result-t4rpkxfvlc8auf/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pJFejfnOJwaw0KUHVpcAk28wrbRCfl4p5q2DC18PHYMUL5LKiWH&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2026,
+      "auction_date": "2026-10-10",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-honda-freed-20460-auction-result-0pddlwwz5bkm0qi/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YCY8IWQcECBENP003VA51zJUpvF7jN8Cz8hENb05bOWniLmA0F&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2023,
+      "auction_date": "2026-10-03",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-honda-freed-7203-auction-result-2rqyrtkqows5crj/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pVCdPPKNnwLuYezN0Jo8fyhkunQPXNUdo9ckMtFAoThCTZVMkC9&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2023,
+      "auction_date": "2026-10-03",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-honda-freed-22115-auction-result-8gxxampmjtghjpg/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2ZF6PG9mSgPlstJL0GPqougUOQXtJIj5h2klpOG9VEdu21KkZY1&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2024,
+      "auction_date": "2026-10-03",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-honda-freed-7011-auction-result-31rgto86jbfne4m/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pVCdPPKNnwLuYezN0Jo8fyhkunQPXNUdo9ckK7GFYtk8GQVJyzM&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2026,
+      "auction_date": "2026-09-29",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-honda-freed-25-auction-result-285hd69w2i5y6/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2Y4loDCEWqhKELcIO6xGCL4AADMfEJ9SycC7OVm1cmMlPJM1udD&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2026,
+      "auction_date": "2026-09-29",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-honda-freed-26-auction-result-20egq3srqaqle/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2Y4loDCEWqhKELcIO6xGCL4AADMfEJ9SycC7OWAA7kUFOLCKhyX&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2026,
+      "auction_date": "2026-09-29",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-honda-freed-3524-auction-result-szvwrvn8kpv019/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pAHuaj7AfvIMxTFova4W8RKFgp0fq7TIu5FNKoAcmfj53ue9mhO&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2026,
+      "auction_date": "2026-09-29",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-honda-freed-30546-auction-result-z2slg2gb7avtks/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/3eSMgRXOmizMPFdxH7KkpgdgqA5dUAQlZjDuD1NZXwbbtG&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Honda Freed",
+      "year": 2023,
+      "auction_date": "2026-09-29",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-honda-freed-1003-auction-result-to2fzwkdcj24yj/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29G4bIi5yB9jtqc0CR9hJKoTNKsn1muZ1WtFVYk4ATxxqpt5DSr9q&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2023,
+      "auction_date": "2026-11-03",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-aqua-2007-auction-result-ggjwg2zdoqhmz/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/aCFOqjWD8BJFDxtuBYzAR3gyCjDDeRzmpJw9bSXZiuq7s&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-aqua-197-auction-result-30cy0xirxo8ded/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29hCkVVdA8l6S711SUB2abhmuFJVSavdew97u9aA9jwyicWBhMKfq&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-aqua-2093-auction-result-jlellmnubd8nob/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pMEtGTtyTwjLmnktJuft4oUtvNPjc3jUMIKtolyVuww5lYkcL8C&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2022,
+      "auction_date": "2026-10-24",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-aqua-29006-auction-result-0hlkycpqdqk13rt/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YRdC0SvUlyy4CthAKeSA8aTdQhb2ilMfyt4cj27sO6q2e5Crne&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2022,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-aqua-180-auction-result-qyivynhhueegrb/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eIQ7d8wZNacAxnUxUjVPyCUQBgBkrKP1OPrb803hedRGDsJADdROF&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2023,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-aqua-63-auction-result-b9bja55lmeqab/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29dxRtc5KHHTgSiELfQ9JAqrh0Xc29vdnTvCEMpIlSxit5wSx2tSO&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2023,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-aqua-62-auction-result-agvtrcnr4omdq/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29dxRtc5KHHTgSiELfQ9JAqrh0Xc29vdnTvCfLtoCpTtJI9BQ0POo&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2023,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-aqua-119-auction-result-2oyx5qrk6yowbh/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/290to1sVVi5GFEBiDB6giZtxhYXXJu0USLvGp5zG61MrKklxA6Xsa&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2023,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-aqua-1019-auction-result-6zuozjvjxjsuunq/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eHZa37501MYWJvOUiM7pYTOQLBnIkkPrXtdAdKlPmQHgt2nlWJIya&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2023,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-aqua-134-auction-result-2yuvatfunby7qx/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/290to1sVVi5GFEBiDB6giZzw4Easa7vffv3ICPONt7ReKkr88XiJk&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2023,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-aqua-3200-auction-result-ixi3jdhqmbxhs/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/aAPk9N5VPeGMxSsDuttwrXcuVHys4r61TxCbu0r0YTsN4&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2025,
+      "auction_date": "2026-10-10",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2025-toyota-aqua-10005-auction-result-7aexd4ldw8old5g/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pIaBCqkWEw6TyrHP2mG9Xke3ED2dHFcUFVqqUvf8cXg7xVKdUxU&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2023,
+      "auction_date": "2026-10-06",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-aqua-17-auction-result-0urqreqw14whl/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/296oUxJN6Sru5qTWvWknSoCC5tbdSs0WKn41TFQdASdQLyqClTR5Y&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2022,
+      "auction_date": "2026-10-06",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-aqua-2450-auction-result-bbn8pj5pz0lxcc/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/Eow817urw2RC6BocZsbQB6oRuRurKakUTKzyW718sA0fSQ91LnGA0i&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Aqua",
+      "year": 2024,
+      "auction_date": "2026-10-03",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-toyota-aqua-7200-auction-result-2rtj7jlvgmzzas7/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pVCdPPKNnwLuYezN0Jo8fyhkunQPXNUdo9ckMCjDIGdSNcSWU2o&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2026,
+      "auction_date": "2026-10-31",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-toyota-corolla-12088-auction-result-572ta1je67wqvwr/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/sXpYrKmODJRuuMforw6zApdHdHIgUMF1vBlFtyQEweQcyb&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2024,
+      "auction_date": "2026-10-24",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-toyota-corolla-20291-auction-result-0no5n3bxa594q31/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YRdC0SvUlyy4CthAKeSA8aTdQhb2ilMfyt3dHHyklNl5MD14hX&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2024,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-toyota-corolla-2511-auction-result-94bufrlsb7fxsca/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/gweD8CuWDoJCGFs54at45DsuqGIF2gwZ9gGg9kpWjEPgKT47&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2022,
+      "auction_date": "2026-10-10",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-corolla-104-auction-result-3djuuhh9lgt4gb/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/74p1IJx0N7By3gxsi3ILWbg03MH5ATHyC5w7KPzhA4sOfwq&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2024,
+      "auction_date": "2026-10-03",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-toyota-corolla-60021-auction-result-mzyvhxlyufpaenw/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pVCdPPKNnwLuYezN0Jo8fyhkunQPXNUdo9ckKmKcI4YlgdOYOfh&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2026,
+      "auction_date": "2026-09-29",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-toyota-corolla-8010-auction-result-pii3khk1ijgy5/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/aGmMZnG2IlPrORvcQYLJFcoFZxNVayaoZuLhd4c1n5ESH&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2023,
+      "auction_date": "2026-09-26",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-corolla-6031-auction-result-2kzwbt1lmtk4eg1/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pAHuaj7AfvIMxTFova4W8RKEY77ZkV3DoeR1kex29R5X8pIBE9S&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2023,
+      "auction_date": "2026-09-26",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-corolla-7107-auction-result-2qdmvg5hwiiowbp/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pAHuaj7AfvIMxTFova4W8RKEY77ZkV3DoeR1malbHW7E51QbjrG&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2022,
+      "auction_date": "2026-09-22",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-corolla-2083-auction-result-jflxv461ugzf7c/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/sIjKOoBHAvoRZtRo4aPuehIe4EmWxYwV90fGG1Jywa7ICk&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2024,
+      "auction_date": "2026-09-22",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-toyota-corolla-3064-auction-result-mqov7vkpr9ksd/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/ax9lzJlxeuB1myqVfthnDN5nyto7TCU11tXFFTNovwHgs&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2023,
+      "auction_date": "2026-09-19",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-corolla-12266-auction-result-4vwzital5bsg6qs/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/sIjKOoBHAvoRZtRo4aMVziNv5ei5inYyUNwS0Ey1TWYwcl&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2024,
+      "auction_date": "2026-09-19",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-toyota-corolla-72040-auction-result-oi7qfmzrdsrcbcg/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/sIjKOoBHAvoRZtRo4aMVziNv5ei5inYytCN1QsvDY33MM8&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2023,
+      "auction_date": "2026-09-08",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-corolla-2033-auction-result-imjqhsuiy5me8o/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/28CTAiDNhZ24RT1rEl3eSeE0xSG3Tea0NBOySqzsAxr5vuk5nmMh6&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2022,
+      "auction_date": "2026-09-08",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-corolla-80068-auction-result-tjtnxaqeeovhkpj/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/sEXHMxy8zMQXdbZPwd2GdGKUlDfn1y0yq0PIZAFNInxmXa&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2022,
+      "auction_date": "2026-09-08",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-corolla-1071-auction-result-779kcobvyw5nx6s/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eB0EBUlkLNdOix6Nspt8n63S7hCNmYT3lsDAFuSDAedK9ErP4PTPQ&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2023,
+      "auction_date": "2026-09-01",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-corolla-6033-auction-result-9nsuouhzqf6jvj/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/3cyKaOCfTbA0wxCsRFCtQJv6Yf8ElMm2EHmNOLfO2WjMUT&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2022,
+      "auction_date": "2026-09-01",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-corolla-3198-auction-result-ishblp76a7ocr/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/avU2o3LJHzTKiMqlPNSFn5ml74ZXPhuE3ftcqz1HadUDv&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2024,
+      "auction_date": "2026-09-01",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-toyota-corolla-1064-auction-result-t1ussnu6byjnkc/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2XAQpLLjx3pRR8UrUGV6AxReBW2pfOj22pxLLBoANPlK4gDdho3&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2025,
+      "auction_date": "2026-08-22",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2025-toyota-corolla-2153-auction-result-xqsket39se86ll/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/sBBEKGuxz5j3qU9gZf0wTBPm9TSvxLzBntw2kZUSJv10DM&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Corolla",
+      "year": 2025,
+      "auction_date": "2026-08-22",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2025-toyota-corolla-2126-auction-result-xazmd6cyrhdhtz/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/sBBEKGuxz5j3qU9gZf0wTBPm9TSvxLzAF1FwqajrESpvga&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2023,
+      "auction_date": "2026-11-03",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-prius-2041-auction-result-irisslkfrgprlv/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pMEtGTtyTwjLmnktJuft4oUtvNPjc3jUMJ0ujkxAEmfPhGNJHWn&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2022,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-prius-2504-auction-result-9eanshvv4as5ouz/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/gxc6hiSvzWsTBa1zsuxmnj9ysxmaK4qnllg3mJToBmHqCu5K&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2023,
+      "auction_date": "2026-10-24",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-prius-23021-auction-result-8iclscoovybbzk7/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YRdC0SvUlyy4CthAKeSA8aTdQhb2ilMfysXhknW60t46hylGFG&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2025,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2025-toyota-prius-2520-auction-result-96h6a1leetbdzj3/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/gxc6hiSvzWsTBa1zsuxmnj9ysxmaK4pYkoYM4U1YaQDMyvLj&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2022,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-prius-2716-auction-result-eu0ybzpm1f8kzp/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/E6TIlIxiz0w974RfkIuIS1169eDyunwcbBxbpoUDNpOJ5eG83nYfzj&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2023,
+      "auction_date": "2026-10-20",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-prius-1065-auction-result-76hjbnktrkvlrxs/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eIQ7d8wZNacAxnUxUjVPyCUQBgBkrKP1OPqYBFSpuTXhxs7lu4Ykv&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2022,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-prius-116-auction-result-hx7ioazqheohn2/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eHZa37501MYWJvOUiM7pYTOQLBnIkkPrXtdz1HwSasLQGKHrAtDC5&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2023,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-prius-1014-auction-result-6z1ws7l0fxht7dp/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eHZa37501MYWJvOUiM7pYTOQLBnIkkPrXtdycFEeHxuaOdq1upuc5&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2023,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-prius-1015-auction-result-6z7pfwerijetnro/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eHZa37501MYWJvOUiM7pYTOQLBnIkkPrXtdyBGAyr18ZxzOhbh9gu&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2023,
+      "auction_date": "2026-10-13",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-prius-3570-auction-result-t6gcfp1zipvwg2/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pJFejfnOJwaw0KUHVpcAk28wrbRCfl4p5q2DC650jRkcHcaHujZ&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2023,
+      "auction_date": "2026-10-10",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-prius-21065-auction-result-8cv6g8t5pfx5fuk/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YCY8IWQcECBENP003VA51zJUpvF7jN8Cz8hnXtPfCdg9iSKhV1&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2023,
+      "auction_date": "2026-10-06",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-prius-7011-auction-result-31rgto86jxvvi31/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/gDUgn6xsbKzNYBXZZFraBbnHkvGStNPo615KLQkPrVl9tlFE&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2025,
+      "auction_date": "2026-09-29",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2025-toyota-prius-2174-auction-result-y48ibeujchivcy/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/sJZMkk9uARFPnCNajEKFz5EfpmYiCf4bFNn2v5aSX5Tcid&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2023,
+      "auction_date": "2026-09-26",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-prius-5808-auction-result-2tberfecfkx9maz/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pAHuaj7AfvIMxTFova4W8RKEY77ZkV3DoeR1mbzLBUcWlHxgDO4&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "Toyota Prius",
+      "year": 2022,
+      "auction_date": "2026-09-26",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-prius-8551-auction-result-3b8sawsx8q3hf9t/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pAHuaj7AfvIMxTFova4W8RKEY77ZkV3DoeR1kKE5C5BzDSNqxxt&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA RAIZE",
+      "year": 2026,
+      "auction_date": "2026-11-03",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-toyota-raize-7005-auction-result-32k6rjqiv7im9t4/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/gy0xqZg5wucavECXxJ2iN0jj0pRO05vtuUsy0UqrLJB2T3Ql&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA RAIZE",
+      "year": 2026,
+      "auction_date": "2026-11-03",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-toyota-raize-2014-auction-result-iaz5qxv6qjw4tj/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pMEtGTtyTwjLmnktJuft4oUtvNPjc3jUMJ0uiC5K0rqdQCb04yL&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA RAIZE",
+      "year": 2026,
+      "auction_date": "2026-11-03",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-toyota-raize-2012-auction-result-ia5tb7cyrif6b4/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/pMEtGTtyTwjLmnktJuft4oUtvNPjc3jUMJ0uizBAlv0zSytFsS8&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA RAIZE",
+      "year": 2023,
+      "auction_date": "2026-11-03",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-raize-3118-auction-result-ibphgatjtk4ax/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/aCFOqjWD8BJFDxtuBYzAR3gyCjDDeRx49yNCCVfeeJz0y&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA RAIZE",
+      "year": 2026,
+      "auction_date": "2026-10-31",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-toyota-raize-12313-auction-result-4wgle9zavy0krte/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/sXpYrKmODJRuuMforw6zApdHdHIgUMEYB2L1mF0Qqg4JnO&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA RAIZE",
+      "year": 2026,
+      "auction_date": "2026-10-31",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-toyota-raize-2026-auction-result-ihmumi75i4ae5x/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/sXpYrKmODJRuuMforw9UfRZDHfI9rel7P7xIr3LS8fv6qh&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2026,
+      "auction_date": "2026-10-31",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-toyota-yaris-2147-auction-result-xmnu0r5k4uukiv/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/sXpYrKmODJRuuMforw9UfRZDHfI9rel8msb6CEvUl6BM6k&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2026,
+      "auction_date": "2026-10-31",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2026-toyota-yaris-12359-auction-result-4x7cgw9gmjmqs3s/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/sXpYrKmODJRuuMforw6zApdHdHIgUMEZKFlmCrQW0ATTkw&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2023,
+      "auction_date": "2026-10-31",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-yaris-22012-auction-result-8s4o21tm2r8gobu/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YYlmnllLc2wg2NlOATwQatsSyEVYMD7z49O6SFOvxZ41VI6Wg0&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2022,
+      "auction_date": "2026-10-31",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-yaris-22195-auction-result-8hj5xwxvyjijxgy/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YYlmnllLc2wg2NlOATwQatsSyEVYMD7z49TU8PfLn6oOZ1TEw3&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-yaris-258-auction-result-d9jvzvtpesogao/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eJH3o9ZQzxqelg1bvRLf9m1QqVOWzaOAZTUMWHAmAEVfBkEsihmkv&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-yaris-268-auction-result-enjpxdnlpprsc4/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eJH3o9ZQzxqelg1bvRLf9m1QqVOWzaOAZTUSbTOv8FgT82JXhwLfX&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-yaris-256-auction-result-cwx4ss3uwynhi1/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eJH3o9ZQzxqelg1bvRLf9m1QqVOWzaOAZTUM9FHJ8JDC9BRUUy5bF&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2024,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-toyota-yaris-188-auction-result-34lq9w2g70xqm0/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29hCkVVdA8l6S711SUB2abhmuFJVSavdew92DWSLkLOJvSfmZoZoo&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-yaris-98-auction-result-bxzeeyp2yhwlju/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eJH3o9ZQzxqelg1bvRLf9m1QqVOWzaOAZTV8VuuUIGjNPd3K0n7zJ&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2024,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-toyota-yaris-186-auction-result-33retv9j8ygstt/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29hCkVVdA8l6S711SUB2abhmuFJVSavdew91PV18RQx740sPBFHfy&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-yaris-130-auction-result-2bduamjvj1d15o/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29hCkVVdA8l6S711SUB2abhmuFJVSavdew8CdZCI9Fmbq8ApqTgTY&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-yaris-132-auction-result-2xajv3nnozr9y7/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29hCkVVdA8l6S711SUB2abhmuFJVSavdew8yZS7agYdDzesfTY7kC&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2024,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-toyota-yaris-190-auction-result-3aypegcfqiefte/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29hCkVVdA8l6S711SUB2abhmuFJVSavdew98HaZxkHs1ui8pmnGsG&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-yaris-40-auction-result-6ysa5wedfkfg76/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eJH3o9ZQzxqelg1bvRLf9m1QqVOWzaOAZTUIvxeRwzRfJsnMARo6j&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-yaris-266-auction-result-ebwxr1mr8vrjjf/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eJH3o9ZQzxqelg1bvRLf9m1QqVOWzaOAZTURnRVREJZfEiXpTNt88&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-yaris-255-auction-result-cr4q3yksabnqtb/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eJH3o9ZQzxqelg1bvRLf9m1QqVOWzaOAZTULJELpogZNpftEdGq8f&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-yaris-131-auction-result-2x9e6km7uh1ebl/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29hCkVVdA8l6S711SUB2abhmuFJVSavdew8yAR0QxvzOPS4Zd7sgc&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-yaris-29-auction-result-4ppyhvrs7d8kpc/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/eJH3o9ZQzxqelg1bvRLf9m1QqVOWzaOAZTUxC8QgJ7w0YHOvVuW0Z&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2024,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-toyota-yaris-183-auction-result-32uwylovedj1es/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29hCkVVdA8l6S711SUB2abhmuFJVSavdew8ZCSbaFsBDR5i2x5L3i&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2023,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2023-toyota-yaris-129-auction-result-2usauk0mskmeu5/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29hCkVVdA8l6S711SUB2abhmuFJVSavdew8wzMsfScmJb57DKMdU7&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2022,
+      "auction_date": "2026-10-27",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-yaris-17-auction-result-0urqreqwp2nlk/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/29hCkVVdA8l6S711SUB2abhmuFJVSavdew8qwyltSgJsp9hb2EVWp&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2022,
+      "auction_date": "2026-10-24",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-yaris-22079-auction-result-8sgk1uojdoxdrag/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YRdC0SvUlyy4CthAKeSA8aTdQhb2ilMfyt2f7o1bTktWzZe8S0&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2022,
+      "auction_date": "2026-10-24",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2022-toyota-yaris-70010-auction-result-qmgyt8aa0nulcjc/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/2YRdC0SvUlyy4CthAKeSA8aTdQhb2ilMfysX4RqtPwlsiHn8EGA&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "Japan",
+      "model": "TOYOTA YARIS",
+      "year": 2024,
+      "auction_date": "2026-10-24",
+      "lot_source_url": "https://www.japanautoimport.com/en/auction-statistics/2024-toyota-yaris-2121-auction-result-xyitsv1eqbpic5/",
+      "source_sale_status": "sold_reported_by_source",
+      "photo_references": [
+        "https://8.ajes.com/imgs/sVJWVOQ2DnAx7DjCb3dIV64Clx7MmXOPWsA38FVJ1CutEA&h=50"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "Hyundai Avante Modern, 2026 (Lot №: 43036970)",
+      "auction_date": "2026-11-01",
+      "lot_source_url": "https://plc.auction/auction/lot/hyundai-avante-2026-12-43036970",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/04/2026/8/6631/219e2bbcda05f1db2dc589e65e788d43/43036970_001.jpg",
+        "https://img.plc.auction/medium/img5/04/2026/8/6631/219e2bbcda05f1db2dc589e65e788d43/43036970_002.jpg",
+        "https://img.plc.auction/medium/img5/04/2026/8/6631/219e2bbcda05f1db2dc589e65e788d43/43036970_003.jpg",
+        "https://img.plc.auction/medium/img5/04/2026/8/6631/219e2bbcda05f1db2dc589e65e788d43/43036970_004.jpg",
+        "https://img.plc.auction/medium/img5/04/2026/8/6631/219e2bbcda05f1db2dc589e65e788d43/43036970_005.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "Hyundai Avante, 2018 (Lot №: 42947360)",
+      "auction_date": "2026-11-08",
+      "lot_source_url": "https://plc.auction/auction/lot/hyundai-avante-2018-12-42947360",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/04/2018/8/6631/586de5cf066b725c3f728e26c78c8d0d/42947360_001.jpg",
+        "https://img.plc.auction/medium/img5/04/2018/8/6631/586de5cf066b725c3f728e26c78c8d0d/42947360_002.jpg",
+        "https://img.plc.auction/medium/img5/04/2018/8/6631/586de5cf066b725c3f728e26c78c8d0d/42947360_003.jpg",
+        "https://img.plc.auction/medium/img5/04/2018/8/6631/586de5cf066b725c3f728e26c78c8d0d/42947360_004.jpg",
+        "https://img.plc.auction/medium/img5/04/2018/8/6631/586de5cf066b725c3f728e26c78c8d0d/42947360_005.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "Hyundai Avante, 2018 (Lot №: IC5460847)",
+      "auction_date": "2026-11-08",
+      "lot_source_url": "https://plc.auction/auction/lot/hyundai-avante-2018-11-ic5460847",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/02/2018/8/6631/4d1fea1842bce7770a9877a2286b4ece/67173961-2a18-4155-a2ba-bb9f6733a159.jpeg",
+        "https://img.plc.auction/medium/img5/02/2018/8/6631/4d1fea1842bce7770a9877a2286b4ece/a6f1b17a-5fbc-412b-b0af-13cfd1435e82.jpeg",
+        "https://img.plc.auction/medium/img5/02/2018/8/6631/4d1fea1842bce7770a9877a2286b4ece/fb461652-7a66-4db1-865a-6062a53b80d6.jpeg",
+        "https://img.plc.auction/medium/img5/02/2018/8/6631/4d1fea1842bce7770a9877a2286b4ece/bc6c8975-e0e6-45f1-b987-3be60288f006.jpeg",
+        "https://img.plc.auction/medium/img5/02/2018/8/6631/4d1fea1842bce7770a9877a2286b4ece/bf10e043-d5dd-4bbd-8d38-affc217d055f.jpeg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "Hyundai Avante, 2019 (Lot №: 41525725)",
+      "auction_date": "2026-11-08",
+      "lot_source_url": "https://plc.auction/auction/lot/hyundai-avante-2019-12-41525725",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/04/2019/8/6631/f62eb93e46e16066e59c6090057edb9d/41525725_001.jpg",
+        "https://img.plc.auction/medium/img5/04/2019/8/6631/f62eb93e46e16066e59c6090057edb9d/41525725_002.jpg",
+        "https://img.plc.auction/medium/img5/04/2019/8/6631/f62eb93e46e16066e59c6090057edb9d/41525725_003.jpg",
+        "https://img.plc.auction/medium/img5/04/2019/8/6631/f62eb93e46e16066e59c6090057edb9d/41525725_004.jpg",
+        "https://img.plc.auction/medium/img5/04/2019/8/6631/f62eb93e46e16066e59c6090057edb9d/41525725_005.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "Hyundai Avante, 2019 (Lot №: 983781)",
+      "auction_date": "2026-11-06",
+      "lot_source_url": "https://plc.auction/auction/lot/hyundai-avante-2019-23-983781",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/13/2019/8/209831/3d286557201ed4576e13156d8cd9d338/1793865359_32651.jpg",
+        "https://img.plc.auction/medium/img5/13/2019/8/209831/3d286557201ed4576e13156d8cd9d338/1793865359_56643.jpg",
+        "https://img.plc.auction/medium/img5/13/2019/8/209831/3d286557201ed4576e13156d8cd9d338/1793865359_82609.jpg",
+        "https://img.plc.auction/medium/img5/13/2019/8/209831/3d286557201ed4576e13156d8cd9d338/1793865360_07286.jpg",
+        "https://img.plc.auction/medium/img5/13/2019/8/209831/3d286557201ed4576e13156d8cd9d338/1793865360_32222.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "Hyundai Avante, 2020 (Lot №: 28583031)",
+      "auction_date": "2026-11-08",
+      "lot_source_url": "https://plc.auction/auction/lot/hyundai-avante-2020-15-28583031",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/25/2020/871/6490/54a388fff38ac1a18f08fb1e1219d6c4/0c286c8059cbb57606d0721c5280e95c.jpg",
+        "https://img.plc.auction/medium/img5/25/2020/871/6490/54a388fff38ac1a18f08fb1e1219d6c4/665bd4b34c5260a74a3c8d29009c2428.jpg",
+        "https://img.plc.auction/medium/img5/25/2020/871/6490/54a388fff38ac1a18f08fb1e1219d6c4/d4e2040b5385ea17bedec0b23cb7c646.jpg",
+        "https://img.plc.auction/medium/img5/25/2020/871/6490/54a388fff38ac1a18f08fb1e1219d6c4/5f7799672a5ddb014606b8bce20e5339.jpg",
+        "https://img.plc.auction/medium/img5/25/2020/871/6490/54a388fff38ac1a18f08fb1e1219d6c4/8a911f449f506227256a6f852ad6089a.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "Hyundai Avante, 2026 (Lot №: 28889646)",
+      "auction_date": "2026-11-08",
+      "lot_source_url": "https://plc.auction/auction/lot/hyundai-avante-2026-15-28889646",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/25/2026/871/6490/a25b01bd36c6a515679efdf9184d2c63/230efe31d8156b7d2b4040a9c8241f4b.jpg",
+        "https://img.plc.auction/medium/img5/25/2026/871/6490/a25b01bd36c6a515679efdf9184d2c63/9396c262878c8118752f6f54bff9deeb.jpg",
+        "https://img.plc.auction/medium/img5/25/2026/871/6490/a25b01bd36c6a515679efdf9184d2c63/b5705e4c3342b66f47f0e0fd9bf1a58d.jpg",
+        "https://img.plc.auction/medium/img5/25/2026/871/6490/a25b01bd36c6a515679efdf9184d2c63/77c664fdf64298b3a50d178a6f35ba9a.jpg",
+        "https://img.plc.auction/medium/img5/25/2026/871/6490/a25b01bd36c6a515679efdf9184d2c63/8a8137da2b456989342b5a361e5ed016.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "Hyundai Palisade Calligraphy, 2026 (Lot №: 43051542)",
+      "auction_date": "2026-11-01",
+      "lot_source_url": "https://plc.auction/auction/lot/hyundai-palisade-2026-kmhrk81abtu-12-43051542",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/04/2026/8/5017/8ac7eaf6a0b1d73bd102fdf5c03a8f83/43051542_001.jpg",
+        "https://img.plc.auction/medium/img5/04/2026/8/5017/8ac7eaf6a0b1d73bd102fdf5c03a8f83/43051542_002.jpg",
+        "https://img.plc.auction/medium/img5/04/2026/8/5017/8ac7eaf6a0b1d73bd102fdf5c03a8f83/43051542_003.jpg",
+        "https://img.plc.auction/medium/img5/04/2026/8/5017/8ac7eaf6a0b1d73bd102fdf5c03a8f83/43051542_004.jpg",
+        "https://img.plc.auction/medium/img5/04/2026/8/5017/8ac7eaf6a0b1d73bd102fdf5c03a8f83/43051542_005.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "Hyundai Sonata, 2026 (Lot №: IC5439972)",
+      "auction_date": "2026-09-12",
+      "lot_source_url": "https://plc.auction/auction/lot/hyundai-sonata-2026-11-ic5439972",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/02/2026/8/8/e6b7101562395dbd82723ffd001928a3/94ac8dfa-5a5b-4de8-88f4-d113f10bcac1.jpeg",
+        "https://img.plc.auction/medium/img5/02/2026/8/8/e6b7101562395dbd82723ffd001928a3/a2c2b1cd-75bb-419b-9003-61b962221508.jpeg",
+        "https://img.plc.auction/medium/img5/02/2026/8/8/e6b7101562395dbd82723ffd001928a3/8c0dd7d2-8858-4eed-a35f-003e030de6b6.jpeg",
+        "https://img.plc.auction/medium/img5/02/2026/8/8/e6b7101562395dbd82723ffd001928a3/1b2e7d83-6a36-4b6d-b155-487ed5200737.jpeg",
+        "https://img.plc.auction/medium/img5/02/2026/8/8/e6b7101562395dbd82723ffd001928a3/e2085dbf-a4bf-4e6f-bd38-1454cb87c9d5.jpeg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "KIA K3, 2014 (Lot №: 28621270)",
+      "auction_date": "2026-10-05",
+      "lot_source_url": "https://plc.auction/auction/lot/kia-k3-2014-15-28621270",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/25/2014/872/125283/e885aee52bb27f31854a8ec19c8c311e/2b7d5a8f383eebdf147b7545185f1066.jpg",
+        "https://img.plc.auction/medium/img5/25/2014/872/125283/e885aee52bb27f31854a8ec19c8c311e/0cb2da922cf5b40d3549295c47a9160b.jpg",
+        "https://img.plc.auction/medium/img5/25/2014/872/125283/e885aee52bb27f31854a8ec19c8c311e/362226a3bd1d606028ac3336fa26b7e6.jpg",
+        "https://img.plc.auction/medium/img5/25/2014/872/125283/e885aee52bb27f31854a8ec19c8c311e/45ee29f89b01b8ebd4304d8d786d9e57.jpg",
+        "https://img.plc.auction/medium/img5/25/2014/872/125283/e885aee52bb27f31854a8ec19c8c311e/1d904570e9fd3d4bc5f98899c2455ea6.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "KIA K3, 2014 (Lot №: IC3907325)",
+      "auction_date": "2026-11-07",
+      "lot_source_url": "https://plc.auction/auction/lot/kia-k3-2014-11-ic3907325",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/02/2014/6/2760/f432ca58697af228f8ceb3c89af2d56e/92fa7c3d-7b62-4123-83f6-ba9558a5e328.jpg",
+        "https://img.plc.auction/medium/img5/02/2014/6/2760/f432ca58697af228f8ceb3c89af2d56e/35bdf4a2-b6f6-48e9-94ba-80d37b876c1b.jpg",
+        "https://img.plc.auction/medium/img5/02/2014/6/2760/f432ca58697af228f8ceb3c89af2d56e/702771e5-1811-47d9-a869-05d6cd749033.jpg",
+        "https://img.plc.auction/medium/img5/02/2014/6/2760/f432ca58697af228f8ceb3c89af2d56e/b3af6641-89f6-487d-8dda-57a523fa654e.jpg",
+        "https://img.plc.auction/medium/img5/02/2014/6/2760/f432ca58697af228f8ceb3c89af2d56e/9e42512e-7f6b-4d1f-b39c-a9310f3dc598.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "KIA K3, 2016 (Lot №: 28426992)",
+      "auction_date": "2026-11-08",
+      "lot_source_url": "https://plc.auction/auction/lot/kia-k3-2016-15-28426992",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/25/2016/872/125283/81f4f5f2c6e9f982ac65e83feaaf10a7/efd87c67a8948f80207d0bb050bb2890.jpg",
+        "https://img.plc.auction/medium/img5/25/2016/872/125283/81f4f5f2c6e9f982ac65e83feaaf10a7/7a1efe3a811e985d3c597ae7cab47658.jpg",
+        "https://img.plc.auction/medium/img5/25/2016/872/125283/81f4f5f2c6e9f982ac65e83feaaf10a7/8e0bdda608cb9c7754397b93260fe0dd.jpg",
+        "https://img.plc.auction/medium/img5/25/2016/872/125283/81f4f5f2c6e9f982ac65e83feaaf10a7/bdbdc703d72afed787e15d8e1ff38f22.jpg",
+        "https://img.plc.auction/medium/img5/25/2016/872/125283/81f4f5f2c6e9f982ac65e83feaaf10a7/49d3762a17440e6ac8a66e9579ed52bc.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "KIA K3, 2016 (Lot №: 28633964)",
+      "auction_date": "2026-11-08",
+      "lot_source_url": "https://plc.auction/auction/lot/kia-k3-2016-15-28633964",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/25/2016/872/125283/8822ddad07cdf7c01d6499b84155457a/de4bccf7ce1d7e46e8b6cf522794798d.jpg",
+        "https://img.plc.auction/medium/img5/25/2016/872/125283/8822ddad07cdf7c01d6499b84155457a/16031be6db30afcff00044ddea4abf4a.jpg",
+        "https://img.plc.auction/medium/img5/25/2016/872/125283/8822ddad07cdf7c01d6499b84155457a/7e1e29efad5ed2042d73ab44b9c2e264.jpg",
+        "https://img.plc.auction/medium/img5/25/2016/872/125283/8822ddad07cdf7c01d6499b84155457a/7b5e867d2241661391e4f67cdd2cfd82.jpg",
+        "https://img.plc.auction/medium/img5/25/2016/872/125283/8822ddad07cdf7c01d6499b84155457a/6ebfd02bd531489baecdfaf7f9c71d07.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "KIA K3, 2017 (Lot №: 43030006)",
+      "auction_date": "2026-11-08",
+      "lot_source_url": "https://plc.auction/auction/lot/kia-k3-2017-12-43030006",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/04/2017/6/2760/219e2bbcda05f1db2dc589e65e788d43/43030006_001.jpg",
+        "https://img.plc.auction/medium/img5/04/2017/6/2760/219e2bbcda05f1db2dc589e65e788d43/43030006_002.jpg",
+        "https://img.plc.auction/medium/img5/04/2017/6/2760/219e2bbcda05f1db2dc589e65e788d43/43030006_003.jpg",
+        "https://img.plc.auction/medium/img5/04/2017/6/2760/219e2bbcda05f1db2dc589e65e788d43/43030006_004.jpg",
+        "https://img.plc.auction/medium/img5/04/2017/6/2760/219e2bbcda05f1db2dc589e65e788d43/43030006_005.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "KIA Seltos, 2026 (Lot №: IC5617985)",
+      "auction_date": "2026-10-28",
+      "lot_source_url": "https://plc.auction/auction/lot/kia-seltos-2026-11-ic5617985",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/02/2026/6/6598/44d96ddeb9b4326df3e198431c0509ce/6ba555e4-4360-4696-8e3b-d2a77e60b873.jpeg",
+        "https://img.plc.auction/medium/img5/02/2026/6/6598/44d96ddeb9b4326df3e198431c0509ce/1e420075-3028-48ad-a7b6-499a29475f79.jpeg",
+        "https://img.plc.auction/medium/img5/02/2026/6/6598/44d96ddeb9b4326df3e198431c0509ce/3871ef0c-2509-4ed2-9258-67b995e24086.jpeg",
+        "https://img.plc.auction/medium/img5/02/2026/6/6598/44d96ddeb9b4326df3e198431c0509ce/77f1f9e9-5c76-4a5d-a678-5a1d87108dc6.jpeg",
+        "https://img.plc.auction/medium/img5/02/2026/6/6598/44d96ddeb9b4326df3e198431c0509ce/9785d90d-eccc-43bf-87ad-c33d6f7842d5.jpeg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    },
+    {
+      "country": "South Korea",
+      "model": "KIA Sorento Signature, 2026 (Lot №: 42946601)",
+      "auction_date": "2026-10-24",
+      "lot_source_url": "https://plc.auction/auction/lot/kia-sorento-2026-12-42946601",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "photo_references": [
+        "https://img.plc.auction/medium/img5/04/2026/6/1614/586de5cf066b725c3f728e26c78c8d0d/42946601_001.jpg",
+        "https://img.plc.auction/medium/img5/04/2026/6/1614/586de5cf066b725c3f728e26c78c8d0d/42946601_002.jpg",
+        "https://img.plc.auction/medium/img5/04/2026/6/1614/586de5cf066b725c3f728e26c78c8d0d/42946601_003.jpg",
+        "https://img.plc.auction/medium/img5/04/2026/6/1614/586de5cf066b725c3f728e26c78c8d0d/42946601_004.jpg",
+        "https://img.plc.auction/medium/img5/04/2026/6/1614/586de5cf066b725c3f728e26c78c8d0d/42946601_005.jpg"
+      ],
+      "verified_full_size": false,
+      "verified_matching_full_auction_sheet": false,
+      "verified_commercial_rights": false,
+      "ready_for_publication": false
+    }
+  ]
+}
