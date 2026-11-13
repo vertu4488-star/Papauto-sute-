@@ -23,7 +23,7 @@ for(const lot of gallery.lots){
  assert(selection?.model,'Missing catalogue model for '+lot.id);
  assert(catalogue[lot.market].some(([m,n])=>m===selection.make&&n===selection.model),
         'Selected non-existent model '+lot.id);
- assert.equal(selection.reference,lot.model+' '+String(lot.year));
+ assert.equal(selection.reference,lot.model,'Exact trim must be preserved; year is a separate field');
  checked++;
 }
 console.log('PAPAUTO_AUCTION_LEAD_FULL_COVERAGE='+JSON.stringify({checked,lots:gallery.lots.length,complete_sheets:true}));
