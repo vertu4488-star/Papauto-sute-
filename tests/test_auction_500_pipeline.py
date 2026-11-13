@@ -112,22 +112,22 @@ class AuctionOnlyExpansionPipeline(unittest.TestCase):
         rights_path.write_text(json.dumps({"lots": [private]}), encoding="utf-8")
         return target, approved_path, rights_path
 
-    def test_compiles_40_cards_with_one_licensed_korean_auction_lot(self):
+    def test_compiles_38_cards_with_one_licensed_korean_auction_lot(self):
         pub, private, binaries = normalize_lot(self.row, self.media)
         target, approved_path, rights_path = self._prepare_target(pub, private, binaries)
         result = compile_published_gallery(target, approved_path, rights_path)
-        self.assertEqual(result["count"], 40)
+        self.assertEqual(result["count"], 38)
         self.assertEqual(result["new"], 1)
         doc = json.loads((target / "data/gallery-lots.json").read_text(encoding="utf-8"))
-        self.assertEqual(len(doc["lots"]), 40)
+        self.assertEqual(len(doc["lots"]), 38)
         new = doc["lots"][-1]
         self.assertEqual(new["market"], "south-korea")
         self.assertEqual(new["inspection_kind"], "Аукционный лист")
         self.assertEqual(new["status"], "reference_only")
         self.assertEqual(new["price_amount"], 0)
         html = (target / "gallery.html").read_text(encoding="utf-8")
-        self.assertEqual(html.count('class="gallery-card"'), 40)
-        self.assertIn("Все 40</button>", html)
+        self.assertEqual(html.count('class="gallery-card"'), 38)
+        self.assertIn("Все 38</button>", html)
         self.assertIn("Аукционный лист Hyundai Avante", html)
         self.assertIn("Цена продажи не подтверждена", html)
         self.assertNotIn("/assets/demo/", html)

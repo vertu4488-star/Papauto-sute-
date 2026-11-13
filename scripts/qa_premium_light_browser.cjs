@@ -65,8 +65,8 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
     await page.locator('[data-selection-filter="all"]').click();
     assert(state.linkedCSS,'Light premium CSS missing at '+viewport.width);
     assert(state.manropeActivated,'Self-hosted Manrope Cyrillic font not active at '+viewport.width);
-    assert.equal(state.realCards,14);
-    assert.equal(state.countryCounts.japan,14);
+    assert.equal(state.realCards,12);
+    assert.equal(state.countryCounts.japan,12);
     assert.equal(state.countryCounts.korea,0);
     assert.equal(state.models,0);
     assert.equal(await page.locator('[data-selection-grid] img').count(),0,'Non-auction model gallery has returned');
@@ -88,9 +88,9 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
     assert.equal(await page.locator('[data-real-filter=korea]').count(),0,'Do not advertise unverified Korean auction lots');
     assert.equal(await page.locator('.real-card[data-real-market=korea]').count(),0,'Unverified Korean auction cards returned');
     await page.locator('[data-real-filter=japan]').click();
-    assert.equal(await page.locator('.real-card:visible').count(),14,'Japan filter invalid');
+    assert.equal(await page.locator('.real-card:visible').count(),12,'Japan filter invalid');
     await page.locator('[data-real-filter=all]').click();
-    assert.equal(await page.locator('.real-card:visible').count(),14,'All auction filter invalid');
+    assert.equal(await page.locator('.real-card:visible').count(),12,'All auction filter invalid');
     if(viewport.width===390){
       await page.locator('#verified-lots').scrollIntoViewIfNeeded();
       await page.screenshot({path:'premium-light-mobile-catalog.png',fullPage:false});
@@ -139,7 +139,7 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
   assert(previewState.hero,'Preview hero image was stripped by public-build whitelist');
   assert(previewState.mainPhoto,'Preview auction photo was stripped');
   assert(previewState.sheet,'Preview inspection sheet was stripped');
-  assert.equal(previewState.cards,14,'Preview should retain 14 real auction cards');
+  assert.equal(previewState.cards,12,'Preview should retain 14 real auction cards');
   assert.equal(previewState.objectFit,'contain','Preview main auction photo must be uncropped');
   assert(previewState.pageOverflow<=2,'Preview horizontal scroll '+previewState.pageOverflow+'px');
   assert.equal(previewFailures.length,0,JSON.stringify(previewFailures));
@@ -147,11 +147,11 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
   await preview.screenshot({path:'premium-mobile-photo-preview.png',fullPage:false});
   console.log('PAPAUTO_PREMIUM_MOBILE_PREVIEW_QA='+JSON.stringify(previewState));
   await preview.close();
-  // Read-only cost calculator QA: prove 14 sold lots, arithmetic and currency labels.
+  // Read-only cost calculator QA: prove 12 sold lots, arithmetic and currency labels.
   // All fields are local inputs; no network POST is sent to PapAuto API.
   const cost=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
   await cost.goto(BASE,{waitUntil:'load',timeout:45000});
-  await cost.waitForFunction(()=>document.querySelector('#picLot')?.options.length===14,{timeout:30000});
+  await cost.waitForFunction(()=>document.querySelector('#picLot')?.options.length===12,{timeout:30000});
   assert.equal(await cost.locator('#pic-total').count(),0,'Unexpected duplicate older calculator');
   assert.equal(await cost.locator('.pic-total strong').innerText(),'—','No fabricated prefilled estimate permitted');
   const selected=await cost.locator('#picLot').inputValue();

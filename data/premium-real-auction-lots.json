@@ -1,7 +1,7 @@
 {
   "verified_at": "2026-11-12",
   "title": "Реальные примеры премиальных автомобилей из Японии и Кореи",
-  "notice": "14 японских аукционных автомобилей с фотографиями именно конкретных лотов и аукционными листами либо схемами. Неаукционные изображения и объявления сняты с публикации. Для Кореи и Китая фотографии появятся только после проверки конкретного аукционного лота.",
+  "notice": "12 японских аукционных автомобилей с фотографиями конкретных лотов и полными аукционными листами. Два Audi с одними схемами повреждений выведены из клиентских витрин до получения оригинального аукционного листа. Новые карточки Кореи и Китая публикуем только с подтверждением оригинальных документов и прав.",
   "lots": [
     {
       "id": "bmw-x1-2021",
@@ -110,60 +110,6 @@
       "inspection_image": "/assets/premium-auctions/bmw-218i-2022-sheet.webp",
       "inspection_kind": "Аукционный лист",
       "notes": "Цена является результатом аукциона в Японии, без расходов на ввоз."
-    },
-    {
-      "id": "audi-q2-2021",
-      "market": "japan",
-      "country": "Япония",
-      "steering": "Правый",
-      "model": "Audi Q2 35 TFSI Advance",
-      "year": 2021,
-      "mileage": "23 000 км",
-      "engine_cc": 1500,
-      "power_hp": 150,
-      "grade": "4.5",
-      "auction": "AUCNET",
-      "lot_number": "36046",
-      "auction_date": "09.11.2026",
-      "price_jpy": "1 750 000 ¥",
-      "chassis_code": "GADPC",
-      "source_name": "JTECO — статистика японских аукционов",
-      "status": "sold",
-      "export_restricted": false,
-      "photos": [
-        "/assets/premium-auctions/audi-q2-2021-front.webp",
-        "/assets/premium-auctions/audi-q2-2021-rear.webp"
-      ],
-      "inspection_image": "/assets/premium-auctions/audi-q2-2021-diagram.webp",
-      "inspection_kind": "Схема повреждений",
-      "notes": "В открытых материалах доступна только схема повреждений; полный аукционный лист не подтверждён."
-    },
-    {
-      "id": "audi-q3-2021",
-      "market": "japan",
-      "country": "Япония",
-      "steering": "Правый",
-      "model": "Audi Q3 35 TFSI S Line",
-      "year": 2021,
-      "mileage": "32 000 км",
-      "engine_cc": 1500,
-      "power_hp": 150,
-      "grade": "4",
-      "auction": "AUCNET",
-      "lot_number": "33533",
-      "auction_date": "09.11.2026",
-      "price_jpy": "2 380 000 ¥",
-      "chassis_code": "F3DPC",
-      "source_name": "JTECO — статистика японских аукционов",
-      "status": "sold",
-      "export_restricted": false,
-      "photos": [
-        "/assets/premium-auctions/audi-q3-2021-front.webp",
-        "/assets/premium-auctions/audi-q3-2021-rear.webp"
-      ],
-      "inspection_image": "/assets/premium-auctions/audi-q3-2021-diagram.webp",
-      "inspection_kind": "Схема повреждений",
-      "notes": "В открытых материалах доступна только схема повреждений; полный аукционный лист не подтверждён."
     },
     {
       "id": "audi-q3sb-2024",

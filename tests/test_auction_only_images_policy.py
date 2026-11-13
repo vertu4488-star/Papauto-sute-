@@ -52,10 +52,11 @@ class AuctionOnlyImages(unittest.TestCase):
 
     def test_confirmed_auction_lots_only(self):
         data=json.loads((ROOT / "data/premium-real-auction-lots.json").read_text(encoding="utf-8"))
-        self.assertEqual(len(data["lots"]),14)
+        self.assertEqual(len(data["lots"]),12)
         self.assertTrue(all(lot["market"] == "japan" for lot in data["lots"]))
+        self.assertTrue(all(lot["inspection_kind"] == "Аукционный лист" for lot in data["lots"]))
         doc=(ROOT / "premium-japan-korea.html").read_text(encoding="utf-8")
-        self.assertEqual(doc.count('class="real-card"'),14)
+        self.assertEqual(doc.count('class="real-card"'),12)
         self.assertNotIn('data-real-market="korea"',doc)
         self.assertNotIn('class="car" data-brand=',doc)
         self.assertIn('/assets/premium-auctions/bmw-x1-u11-2025-front.webp',doc)
