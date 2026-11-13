@@ -10,7 +10,9 @@ const cases=[
  {reference:'Geely Monjaro 2025 · Китай',make:'Geely',model:'Monjaro',year:'2025'}
 ];
 (async()=>{
- const browser=await chromium.launch({headless:true});
+ let browser;
+ try {
+ browser=await chromium.launch({headless:true});
  const results=[];
  for(const spec of cases){
   const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
@@ -39,6 +41,8 @@ const cases=[
   if(spec.make==='Toyota')await page.screenshot({path:'survey-prefill-mobile.png',fullPage:false});
   await page.close();
  }
- await browser.close();
  console.log('PAPAUTO_GALLERY_TO_SURVEY_PREFILL='+JSON.stringify(results));
+ } finally {
+   if(browser)await browser.close();
+ }
 })().catch(e=>{console.error('PAPAUTO_PREFILL_BROWSER_FAILED',e.stack||e);process.exitCode=1});
