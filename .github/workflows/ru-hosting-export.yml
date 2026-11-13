@@ -15,6 +15,7 @@ on:
       - 'data/**'
       - 'content/**'
       - 'scripts/build_static_public.py'
+      - 'scripts/package_ru_hosting.py'
 
 permissions:
   contents: read
@@ -46,10 +47,23 @@ jobs:
           test -f render-public/site-config.js
           test -f render-public/assets/papauto-logo.svg
           grep -q "https://api.papauto.ru" render-public/site-config.js
-      - name: Package for Russian web hosting
+      - name: Validate and sanitize Russian-hosting release
+        run: python scripts/package_ru_hosting.py --source render-public --out ru-hosting-clean
+      - name: Ensure release does not contain outdated street images or source code
+        run: |
+          test -s ru-hosting-clean/index.html
+          test -s ru-hosting-clean/gallery.html
+          test -s ru-hosting-clean/.htaccess
+          test ! -e ru-hosting-clean/assets/demo
+          test ! -e ru-hosting-clean/research
+          test ! -e ru-hosting-clean/api.py
+          test ! -e ru-hosting-clean/assets/premium-auctions/audi-q2-2021-diagram.webp
+          test ! -e ru-hosting-clean/assets/premium-auctions/audi-q3-2021-diagram.webp
+      - name: Upload clean static website for Russian web hosting
         uses: actions/upload-artifact@v4
         with:
-          name: papauto-ru-hosting
-          path: render-public/
+          name: papauto-ru-hosting-clean
+          path: ru-hosting-clean/
+          include-hidden-files: true
           if-no-files-found: error
           retention-days: 14
