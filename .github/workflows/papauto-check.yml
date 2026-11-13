@@ -72,6 +72,11 @@ jobs:
         run: python -m py_compile api.py tests/test_api_vehicle_search.py
       - name: Test live listing routing and safe fallback
         run: python -m unittest discover -s tests -v
+      - name: Check auction-card to application prefill
+        run: |
+          node --check survey-similar-prefill.js
+          node --check survey-podbor.js
+          node tests/test_survey_similar_prefill.cjs
       - name: Check browser JavaScript syntax
         run: |
           node --check metrika.js

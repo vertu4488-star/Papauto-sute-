@@ -204,17 +204,25 @@
   });
   startupStage = 'populate dropdowns';
   updateMakes('japan');
+  // Internal gallery CTAs include trim, year and country:
+  // e.g. "Toyota Corolla Sport 2023 · Япония", not a bare catalogue label.
+  // Restore a matching base model but always preserve the exact auction trim
+  // in notes; if the model is unknown, do NOT choose a misleading substitute.
   const similar=new URL(location.href).searchParams.get('similar');
-  if(similar && similar.length<=90){
-    const query=similar.toLocaleLowerCase('ru');
-    outer:for(const [market,rows] of Object.entries(catalog)){
-      for(const item of rows){
-        if((item[0]+' '+item[1]).toLocaleLowerCase('ru')===query){
-          survey.setValue('market',market);survey.setValue('make',item[0]);survey.setValue('model',item[1]);
-          break outer;
-        }
-      }
+  const ref=window.PapAutoSimilarPrefill?.resolve(similar,catalog);
+  if(ref){
+    if(ref.market&&markets[ref.market]){
+      survey.setValue('market',ref.market);
+      updateMakes(ref.market);
     }
+    if(ref.make){
+      survey.setValue('make',ref.make);
+      updateModels(ref.market||'japan',ref.make);
+    }
+    if(ref.model)survey.setValue('model',ref.model);
+    if(ref.year&&yearChoices.includes(ref.year))survey.setValue('year',ref.year);
+    survey.setValue('notes','Интересует аналог аукционного лота: '+ref.reference+
+      (ref.year?' '+ref.year:'')+'. Уточнить комплектацию, цену и доступность.');
   }
   let state='ready',savedNotification=false;
   survey.onCompleting.add(async (_, options)=>{
