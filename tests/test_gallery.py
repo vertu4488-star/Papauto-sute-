@@ -49,6 +49,7 @@ class AuctionGalleryTests(unittest.TestCase):
         self.assertIn("data-gallery-category",page)
         self.assertIn('href="/podbor.html"',page)
         self.assertIn('JSON.parse(bootstrap.textContent)',js)
+        self.assertIn("Gallery published:",(ROOT/"scripts/build_static_public.py").read_text(encoding="utf-8"))
         self.assertNotIn("https://",js)
         self.assertNotIn("/assets/demo/",js)
         self.assertIn("https://papauto.ru/gallery.html",(ROOT/"sitemap.xml").read_text(encoding="utf-8"))
