@@ -20,6 +20,11 @@ JPEG_MAGIC = bytes.fromhex("ffd8ff")
 
 def download_one(pair):
     rel, url, required = pair
+    # Fail closed: optional remote angles have NOT been visually screened for
+    # outdoor/dealer photos. Do not download or publish them automatically.
+    # Exact main cover + corresponding full sheet remain mandatory.
+    if not required:
+        return rel, None
     # Required photo and inspection sheet are pinned as verified local JPEGs.
     # Avoid flaky third-party image requests on every Render deployment.
     pinned = ROOT / rel
