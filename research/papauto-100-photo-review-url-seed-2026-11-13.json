@@ -1,0 +1,583 @@
+{
+  "version": 1,
+  "purpose": "Internal review only: exact auction-source listing candidates assembled before requesting photo publication approval",
+  "created_at": "2026-11-13",
+  "candidate_count": 107,
+  "live_site_unmodified": true,
+  "source_photo_rights_verified": false,
+  "live_publication_allowed": false,
+  "photographs_must_be_checked_one_by_one": true,
+  "records": [
+    {
+      "model": "Toyota Passo",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/passo/VwPQPR3n58PQr/",
+      "known_lot": "99",
+      "stage": "VISUAL_PASS_RIGHTS_HOLD"
+    },
+    {
+      "model": "Toyota Passo",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/passo/4Udbqcix3LpDDqJ/",
+      "known_lot": "12113",
+      "stage": "exact_source_found_needs_visual_sheet_rights"
+    },
+    {
+      "model": "Toyota Noah",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/4qX7XGHggsXLU4/",
+      "known_lot": "201",
+      "stage": "exact_source_found_needs_visual_sheet_rights"
+    },
+    {
+      "model": "Toyota Noah",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/4ZFdCt1Brob8Tnn/",
+      "known_lot": "12568",
+      "stage": "REJECT_PHOTO_LOCATION"
+    },
+    {
+      "model": "Toyota Voxy",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/64y19Okizu1RSQ/",
+      "known_lot": "412",
+      "stage": "REJECT_PHOTO_LOCATION_AND_SHEET_UNCLEAR"
+    },
+    {
+      "model": "Toyota Voxy",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/yjSM3Lb0K7hZZD/",
+      "known_lot": "2102",
+      "stage": "exact_source_found_needs_visual_sheet_rights"
+    },
+    {
+      "model": "Honda Freed Spike",
+      "year": 2015,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/7a4Q1uHAXnxmEYk/",
+      "known_lot": "10042",
+      "stage": "PENDING_DIRECT_VISUAL_REVIEW"
+    },
+    {
+      "model": "Honda Freed Spike",
+      "year": 2013,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/7a81FkIFONFi3yH/",
+      "known_lot": "10049",
+      "stage": "exact_source_found_needs_visual_sheet_rights"
+    },
+    {
+      "model": "Toyota Vitz",
+      "year": 2018,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/32H0VjdIu8AliOg/",
+      "known_lot": "709",
+      "stage": "exact_source_found_needs_visual_sheet_rights"
+    },
+    {
+      "model": "Toyota C-HR",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/c-hr/4ZbjppHzT98g2h3/",
+      "known_lot": "12517",
+      "stage": "exact_source_found_needs_visual_sheet_rights"
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2019,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/fVwR2LBdgHsTQ/",
+      "known_lot": "291",
+      "stage": "exact_source_found_needs_visual_sheet_rights"
+    },
+    {
+      "model": "Nissan Note",
+      "year": 2019,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/nissan/note/5Bz0CkbgEaB5j8Z/",
+      "known_lot": "14027",
+      "stage": "exact_source_found_needs_visual_sheet_rights"
+    },
+    {
+      "model": "Toyota Aqua",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/2UHxsBdWu8fxhL/",
+      "known_lot": "171",
+      "stage": "exact_source_found_needs_visual_sheet_rights"
+    },
+    {
+      "model": "Toyota Prius",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/prius/4ZlJzBbH1n7J8US/",
+      "known_lot": "12534",
+      "stage": "exact_source_found_needs_visual_sheet_rights"
+    },
+    {
+      "model": "Toyota Corolla Fielder",
+      "year": 2017,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/2pr3U9SASgu1gi/",
+      "known_lot": "110",
+      "stage": "exact_source_found_needs_visual_sheet_rights"
+    },
+    {
+      "model": "Toyota Voxy",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/56tsqBQdRXQ6Oqy/",
+      "known_lot": "12020",
+      "stage": "exact_source_found_needs_visual_sheet_rights"
+    },
+    {
+      "model": "Toyota Passo",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/passo/gu7En5QJNqYYB/",
+      "known_lot": "204",
+      "stage": "exact_source_found_needs_visual_sheet_rights"
+    },
+    {
+      "model": "Toyota Noah",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/y48ibeUjEQY9aX/",
+      "known_lot": "2174",
+      "stage": "exact_source_found_needs_visual_sheet_rights"
+    },
+    {
+      "model": "Toyota Passo",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/passo/47fy8CQ08Oz2S/"
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2024,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/577qwlu3JZYTllO/"
+    },
+    {
+      "model": "Honda Freed Spike",
+      "year": 2014,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/72ImxU0nfcoFapw/"
+    },
+    {
+      "model": "Toyota Noah",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/56syeWplkZeoQy7/"
+    },
+    {
+      "model": "Honda Freed Spike",
+      "year": 2014,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/9uMhgktxZAySVF8/"
+    },
+    {
+      "model": "Toyota Voxy",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/56t1kM8MBtxfkur/"
+    },
+    {
+      "model": "Toyota Voxy",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/4V5cqN0Z0WYG9wk/"
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2024,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/A7Nt2OB9S3srJ/"
+    },
+    {
+      "model": "Toyota Voxy",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/56yTyCrv4PufBIC/"
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2024,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/H9qHBcklq7ib/"
+    },
+    {
+      "model": "Toyota Voxy",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/4UpS4ymQurVl0M6/"
+    },
+    {
+      "model": "Toyota Noah",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/yKCkg48QA3euvt/"
+    },
+    {
+      "model": "Toyota Corolla Fielder",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/fQb7TozzgL8eU/"
+    },
+    {
+      "model": "Toyota Corolla Fielder",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/0oWCrY3GwI43J3/"
+    },
+    {
+      "model": "Toyota Corolla Fielder",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/481Yg0lywQqXlI/"
+    },
+    {
+      "model": "Toyota Corolla Fielder",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/tlZvEKCISyZpvJ/"
+    },
+    {
+      "model": "Toyota Corolla Fielder",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/2uSaUK0MrVONPz/"
+    },
+    {
+      "model": "Toyota Corolla Fielder",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/0wCndysY5b2t5IM/"
+    },
+    {
+      "model": "Toyota Corolla Fielder",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/bS7qoeGzCkwuv5/"
+    },
+    {
+      "model": "Toyota Corolla Fielder",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/bCsvctf8u5I8Ax/"
+    },
+    {
+      "model": "Toyota Roomy",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/roomy/yjqGd3JTfNrw4i/"
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2024,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/4VtzHviC4k16bdj/"
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2024,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/4UmfiSDkmxuzifB/"
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2024,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/6Zl6XOcrOlBydBl/"
+    },
+    {
+      "model": "Honda Freed",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/freed/7ayEpdrv3CcVuXl/"
+    },
+    {
+      "model": "Honda Freed",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/freed/71oNBL9dndGif3r/"
+    },
+    {
+      "model": "Mazda CX-5",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-5/38K880jmg2Bcyqt/"
+    },
+    {
+      "model": "Nissan Note",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/nissan/note/3fZXFhTrimOsL4/"
+    },
+    {
+      "model": "Toyota Aqua",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/514eBFZUxihZufo/"
+    },
+    {
+      "model": "Toyota Aqua",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/4UD1MK0BcCJTa53/"
+    },
+    {
+      "model": "Toyota Aqua",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/4Urel4wahUPSBBe/"
+    },
+    {
+      "model": "Toyota Aqua",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/7xx7tjBhLprrEI/"
+    },
+    {
+      "model": "Toyota Voxy",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/56PF3tXLTUJztxf/"
+    },
+    {
+      "model": "Toyota Voxy",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/4abD7aqqbdDU6A/"
+    },
+    {
+      "model": "Toyota Voxy",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/6IMz43lv2mDmgL/"
+    },
+    {
+      "model": "Toyota Voxy",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/IIGG2IYBgERbXC/"
+    },
+    {
+      "model": "Toyota Voxy",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/56yTyCrv4PufBIQ/"
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/4V4if8J7CYmZaDG/"
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/bn4iQ7i6kBXez3/"
+    },
+    {
+      "model": "Honda Freed",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/freed/4ZAeAi8Lw1POA2M/"
+    },
+    {
+      "model": "Toyota Noah",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/56NQF071PXwbxM2/"
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/579eTGlNNXchh89/"
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/5ln26ROJjcMu8dU/"
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/IFY82ql1kPMijA/"
+    },
+    {
+      "model": "Toyota Raize",
+      "year": 2024,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/raize/2R5MMRHOsyPTvA/"
+    },
+    {
+      "model": "Toyota Raize",
+      "year": 2024,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/raize/48t56RMPfoz1rE/"
+    },
+    {
+      "model": "Toyota Raize",
+      "year": 2024,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/raize/4ZEjqNzIUpzqVuI/"
+    },
+    {
+      "model": "Honda Vezel",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/vezel/71h71zWJQUvU33O/"
+    },
+    {
+      "model": "Honda Vezel",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/vezel/4YkioOQ8LWydwbp/"
+    },
+    {
+      "model": "Honda Vezel",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/vezel/2zp8fUysGQi9ez/"
+    },
+    {
+      "model": "Honda Vezel",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/vezel/4nkmhXb9m3bUnv/"
+    },
+    {
+      "model": "Honda Vezel",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/vezel/4tFFXZkR8k56ch/"
+    },
+    {
+      "model": "Honda Vezel",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/vezel/3fZXFhTsDpRwGp/"
+    },
+    {
+      "model": "Toyota C-HR",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/c-hr/qYAOh7CFYw7RJ/"
+    },
+    {
+      "model": "Toyota C-HR",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/c-hr/3enq3bnodWadA2/"
+    },
+    {
+      "model": "Toyota C-HR",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/c-hr/3Zjn5XS48LYix8/"
+    },
+    {
+      "model": "Suzuki Jimny",
+      "year": 2024,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/YUPcu6vWogHl7c/"
+    },
+    {
+      "model": "Toyota Prius",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/prius/56HXriMinBzbgxC/"
+    },
+    {
+      "model": "Toyota Prius",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/prius/4Ux8yTPSKgMSSPJ/"
+    },
+    {
+      "model": "Toyota Prius",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/prius/56Ba2N2Hoh1u2qx/"
+    },
+    {
+      "model": "Toyota Prius",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/prius/siIkdt6NtLdjb/"
+    },
+    {
+      "model": "Toyota Prius",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/prius/xWLYvcKAOB8n1f/"
+    },
+    {
+      "model": "Toyota Prius",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/prius/xYAlQ5vELOviLB/"
+    },
+    {
+      "model": "Toyota Prius",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/prius/J5rc596niurxIv/"
+    },
+    {
+      "model": "Suzuki Spacia",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/suzuki/spacia/20egq3sPT9NLD/"
+    },
+    {
+      "model": "Toyota Passo",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/passo/31ALiUWoQ5fOwa/"
+    },
+    {
+      "model": "Toyota Passo",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/passo/481Yg0lyyCQpAK/"
+    },
+    {
+      "model": "Toyota Passo",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/passo/fQb7TozmfUHS7/"
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/4UrGqTeByp9J6xF/"
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/w0z9He0TfrCNh/"
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/odROLvHoK9RQ9/"
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/4UzQ8U9wlcBXMtL/"
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/4Pk3t0Mk8VQAwaB/"
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/xtLX8kBzx9WsMN/"
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/Jr6TLY5FarOwaV/"
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2023,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/6ZkDRYu1xRiHJF8/"
+    },
+    {
+      "model": "Mazda CX-8",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-8/wrSO6l9T2Yfxs/"
+    },
+    {
+      "model": "Nissan Note",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/nissan/note/oKhCTRCzRA3xB/"
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/A1l9J1OJy4F6vu/"
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/x4KO97FWD3uHm/"
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/Nn9PVWfwKyrvc/"
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2021,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/ARm0jSgQJCHAB8/"
+    },
+    {
+      "model": "Nissan Note",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/nissan/note/DJy9LkJ4iOjYr/"
+    },
+    {
+      "model": "Nissan Note",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/nissan/note/3x7VJsdOmCgdE6q/"
+    },
+    {
+      "model": "Nissan Leaf",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/nissan/leaf/sxsleNjNhXUVUX/"
+    },
+    {
+      "model": "Nissan Leaf",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/nissan/leaf/323R9DnFdfswd5/"
+    },
+    {
+      "model": "Nissan Leaf",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/nissan/leaf/syOCJWDAKSsnJY/"
+    },
+    {
+      "model": "Nissan Leaf",
+      "year": 2022,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/nissan/leaf/Bg83VoqxkNPZo/"
+    },
+    {
+      "model": "Toyota Yaris",
+      "year": 2020,
+      "source_url": "https://atp-auto.ru/avto-iz-yaponii/toyota/yaris/5BwT00B5jJ5PTqi/"
+    }
+  ]
+}
