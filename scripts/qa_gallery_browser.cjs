@@ -34,7 +34,7 @@ const BASE='http://127.0.0.1:8765/gallery.html';
     imageLoaded:image?.complete&&image.naturalWidth>0,
     fit:getComputedStyle(image).objectFit,
     pageOverflow:document.documentElement.scrollWidth-window.innerWidth,
-    wholeImages:[...document.querySelectorAll('.gallery-card-photo img')].every(i=>i.src.includes('/assets/auction/home/')||i.src.includes('/assets/premium-auctions/')),
+    wholeImages:[...document.querySelectorAll('.gallery-card-photo img')].every(i=>i.src.includes('/assets/auction/home/')||i.src.includes('/assets/premium-auctions/')||i.src.includes('/assets/auction/approved/')),
     localStyles:[...document.styleSheets].some(s=>s.href?.includes('/gallery.css')),
     noStreet:[...document.images].every(i=>!/\/assets\/(demo|visual)\//.test(i.getAttribute('src')||''))};
   });
@@ -69,6 +69,15 @@ const BASE='http://127.0.0.1:8765/gallery.html';
   const expectedPopular=await page.evaluate(()=>JSON.parse(document.querySelector('#gallery-bootstrap').textContent).lots.filter(l=>l.category==='popular').length);
   assert((await page.locator('#gallery-count').innerText()).includes('Найдено '+expectedPopular),'Popular grouping count mismatch');
   await page.locator('button.gallery-tab.gallery-tab[data-gallery-category=all]').click();
+  const availableMarkets=await page.locator('#gallery-market-filter option').allTextContents();
+  assert(availableMarkets.some(x=>x.includes('Япония')),'Missing verified Japan market');
+  const recordedMarkets=await page.evaluate(()=>[...new Set(JSON.parse(document.querySelector('#gallery-bootstrap').textContent).lots.map(l=>l.market))]);
+  assert.equal(availableMarkets.length,recordedMarkets.length+1,'Must not advertise countries without approved photos and sheets');
+  await page.locator('#gallery-market-filter').selectOption('japan');
+  assert((await page.locator('#gallery-count').innerText()).includes('Найдено '+
+    (await page.evaluate(()=>JSON.parse(document.querySelector('#gallery-bootstrap').textContent).lots.filter(l=>l.market==='japan').length))),
+    'Country filter must show only matching auction lots');
+  await page.locator('#gallery-market-filter').selectOption('all');
   await page.locator('#gallery-search').fill('Toyota');
   const hits=await page.locator('.gallery-card').count();
   assert(hits>0&&hits<=12,'Toyota search must return real filtered cars');
@@ -90,7 +99,7 @@ const BASE='http://127.0.0.1:8765/gallery.html';
    await page.locator('#gallery-grid').scrollIntoViewIfNeeded();
    await page.screenshot({path:width===390?'gallery-mobile.png':'gallery-desktop.png',fullPage:false});
   }
-  findings.push({width,firstLot:id,firstImageLoaded:state.imageLoaded,visible:39,overflow:overflowAfter,errors});
+  findings.push({width,firstLot:id,firstImageLoaded:state.imageLoaded,visible:expectedAll,overflow:overflowAfter,errors});
   await page.close();
  }
  console.log('PAPAUTO_AUCTION_GALLERY_QA='+JSON.stringify(findings));

@@ -1,4 +1,4 @@
-/* PapAuto unified auction gallery: 25 genuine home lots + 14 premium examples.
+/* PapAuto unified auction gallery: 25 home + 12 premium full-sheet examples.
    No exterior photos, third-party outgoing links or synthesized prices. */
 (() => {
  "use strict";
@@ -6,6 +6,7 @@
  if(!grid)return;
  const count=d.getElementById("gallery-count"),search=d.getElementById("gallery-search"),
   brand=d.getElementById("gallery-brand"),sort=d.getElementById("gallery-sort"),
+  marketFilter=d.getElementById("gallery-market-filter"),
   more=d.getElementById("gallery-more"),empty=d.getElementById("gallery-empty"),
   tabs=[...d.querySelectorAll("[data-gallery-category]")],
   viewer=d.getElementById("gallery-viewer"),viewerImage=d.createElement("img"),
@@ -103,17 +104,23 @@
  function draw(){
    const term=normal((search.value||"").trim());
    const mark=brand.value||"all";
+   const region=marketFilter.value||"all";
    const activeCategory=["all","premium","popular"].includes(category)?category:"all";
    filtered=all.filter(lot=>(activeCategory==="all"||lot.category===activeCategory)&&
+      (region==="all"||lot.market===region)&&
       (mark==="all"||brandName(lot)===mark)&&
       (!term||normal(lot.model+" "+lot.year+" "+lot.auction+" "+lot.lot_number).includes(term)));
    // Browser form-state restoration must never hide the complete gallery on first load.
    // When the UI says "Все", no search/brand constraints are permitted.
-   if(activeCategory==="all"&&mark==="all"&&!term&&filtered.length!==all.length)filtered=all.slice();
+   if(activeCategory==="all"&&region==="all"&&mark==="all"&&!term&&filtered.length!==all.length)filtered=all.slice();
    if(sort.value==="recommended")filtered.sort((a,b)=>(b.category==="premium")-(a.category==="premium") || b.year-a.year || priceValue(b)-priceValue(a));
    else if(sort.value==="year")filtered.sort((a,b)=>b.year-a.year || priceValue(b)-priceValue(a));
-   else if(sort.value==="price-low")filtered.sort((a,b)=>(priceValue(a)||Number.MAX_SAFE_INTEGER)-(priceValue(b)||Number.MAX_SAFE_INTEGER));
-   else if(sort.value==="price-high")filtered.sort((a,b)=>priceValue(b)-priceValue(a));
+   // Prices in JPY, KRW and CNY are NOT comparable. Group by market first;
+   // only then sort in that market's original currency (no fictitious FX).
+   else if(sort.value==="price-low")filtered.sort((a,b)=>a.market.localeCompare(b.market)||
+      (priceValue(a)||Number.MAX_SAFE_INTEGER)-(priceValue(b)||Number.MAX_SAFE_INTEGER));
+   else if(sort.value==="price-high")filtered.sort((a,b)=>a.market.localeCompare(b.market)||
+      (priceValue(b)?priceValue(b):-1)-(priceValue(a)?priceValue(a):-1));
    const fragment=d.createDocumentFragment();
    filtered.slice(0,shown).forEach((lot,i)=>fragment.append(card(lot,i)));
    grid.replaceChildren(fragment);
@@ -122,18 +129,30 @@
    more.hidden=filtered.length<=shown;more.textContent="Показать ещё "+Math.min(MAX,filtered.length-shown)+" автомобилей ↓";
  }
  function resetPage(){shown=MAX;draw();}
+ function updateMarkets(){
+   const chosen=marketFilter.value;
+   const available=all.filter(lot=>category==="all"||lot.category===category);
+   const regions=["japan","south-korea","china"].filter(r=>available.some(lot=>lot.market===r));
+   const label={"japan":"🇯🇵 Япония","south-korea":"🇰🇷 Корея","china":"🇨🇳 Китай"};
+   marketFilter.replaceChildren(new Option("Все страны ("+available.length+")","all"),
+     ...regions.map(r=>new Option(label[r]+" ("+available.filter(lot=>lot.market===r).length+")",r)));
+   marketFilter.value=regions.includes(chosen)?chosen:"all";
+ }
  function updateBrands(){
-   const chosen=brand.value;
-   const marks=[...new Set(all.filter(lot=>category==="all"||lot.category===category).map(brandName))].sort((a,b)=>a.localeCompare(b,"ru"));
+   const chosen=brand.value,region=marketFilter.value||"all";
+   const marks=[...new Set(all.filter(lot=>(category==="all"||lot.category===category)
+      &&(region==="all"||lot.market===region)).map(brandName))].sort((a,b)=>a.localeCompare(b,"ru"));
    brand.replaceChildren(new Option("Все марки","all"),...marks.map(m=>new Option(m,m)));
    brand.value=marks.includes(chosen)?chosen:"all";
  }
  tabs.forEach(tab=>tab.addEventListener("click",()=>{
    category=tab.dataset.galleryCategory;
    tabs.forEach(t=>{const selected=t===tab;t.classList.toggle("is-active",selected);t.setAttribute("aria-pressed",String(selected));});
-   updateBrands();resetPage();
+   updateMarkets();updateBrands();resetPage();
  }));
- search.addEventListener("input",resetPage);brand.addEventListener("change",resetPage);sort.addEventListener("change",resetPage);
+ search.addEventListener("input",resetPage);
+ marketFilter.addEventListener("change",()=>{updateBrands();resetPage();});
+ brand.addEventListener("change",resetPage);sort.addEventListener("change",resetPage);
  more.addEventListener("click",()=>{shown+=MAX;draw();});
  function viewAt(index){
    if(!view.items.length)return;
@@ -202,6 +221,7 @@
    });
    search.value="";search.disabled=false;
    sort.value="recommended";sort.disabled=false;
+   updateMarkets();marketFilter.value="all";marketFilter.disabled=false;
    updateBrands();brand.value="all";brand.disabled=false;
    draw();
  }catch(error){

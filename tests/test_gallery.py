@@ -48,6 +48,9 @@ class AuctionGalleryTests(unittest.TestCase):
         self.assertNotIn('fetch("/data/gallery-lots.json"',js)
         self.assertIn("object-fit:contain",(ROOT/"gallery.css").read_text(encoding="utf-8"))
         self.assertIn("data-gallery-category",page)
+        self.assertIn('id="gallery-market-filter"',page)
+        self.assertIn("a.market.localeCompare(b.market)",js,
+                      "Never compare JPY, KRW and CNY amounts directly")
         self.assertIn('href="/podbor.html"',page)
         self.assertIn('JSON.parse(bootstrap.textContent)',js)
         self.assertIn("Gallery published:",(ROOT/"scripts/build_static_public.py").read_text(encoding="utf-8"))
