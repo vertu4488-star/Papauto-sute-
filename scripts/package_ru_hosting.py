@@ -20,6 +20,14 @@ RETIRED_PREFIXES = (
     "assets/premium-auctions/audi-q2-2021-",
     "assets/premium-auctions/audi-q3-2021-",
 )
+# Historical street-photo lots remain only in internal source control, not in
+# a fresh RU-hosting upload. Unlike an existing host/CDN, new hosting needs
+# neither their retirement pages nor their placeholder photographs.
+RETIRED_LOT_PAGES = frozenset({
+    "lots/nissan-note-2021-227.html",
+    "lots/mercedes-a180-2020.html",
+})
+
 HTACCESS = """# PapAuto for REG.RU Apache/Linux only.
 # Provision valid TLS/SSL before routing papauto.ru here.
 # This package does not migrate the API, Neon or Telegram.
@@ -63,7 +71,7 @@ Require all denied
 def is_public(name: str, size: int) -> bool:
     if size == 0 or name.startswith(".") or ".." in Path(name).parts:
         return False
-    if any(name.startswith(prefix) for prefix in RETIRED_PREFIXES):
+    if name in RETIRED_LOT_PAGES or any(name.startswith(prefix) for prefix in RETIRED_PREFIXES):
         return False
     parts = Path(name).parts
     if len(parts) == 1:
@@ -117,9 +125,15 @@ def build(source: Path, target: Path) -> dict:
         raise RuntimeError("Incomplete RU static export: " + ", ".join(missing))
     gallery = json.loads((target / "data/gallery-lots.json").read_text(encoding="utf-8"))
     lots = gallery.get("lots", [])
-    if not 37 <= len(lots) <= 500 or gallery.get("lot_count") != len(lots):
+    if not 35 <= len(lots) <= 500 or gallery.get("lot_count") != len(lots):
         raise RuntimeError("Invalid count in full-sheet auction gallery")
     html = (target / "gallery.html").read_text(encoding="utf-8")
+    if any(lot.get("id") in {
+            "nissan-note-2021-227", "mercedes-a180-2020"} for lot in lots):
+        raise RuntimeError("Outdoor-only lot cannot enter RU hosting export")
+    if any(name in html for name in ("nissan-note-2021-227",
+                                    "mercedes-a180-2020")):
+        raise RuntimeError("Withdrawn auction card still present in RU gallery")
     if html.count('class="gallery-card"') != len(lots):
         raise RuntimeError("Published auction cards and data do not match")
     if len(list((target / "lots").glob("*.html"))) != len(lots):
