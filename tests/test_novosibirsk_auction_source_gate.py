@@ -38,7 +38,7 @@ class NovosibirskAuctionSourceGate(unittest.TestCase):
             self.assertEqual(row["public_asset_paths"], [])
 
     def test_unchanged_public_gallery(self):
-        self.assertEqual(self.intake["public_lot_count_unchanged"], 37)
+        self.assertEqual(self.intake["expected_public_lot_count_after_visual_quarantine"], 35)
         self.assertEqual(self.intake["new_public_lots"], 0)
         self.assertEqual(self.gallery["lot_count"], 37)
         ids = {lot["id"] for lot in self.gallery["lots"]}
