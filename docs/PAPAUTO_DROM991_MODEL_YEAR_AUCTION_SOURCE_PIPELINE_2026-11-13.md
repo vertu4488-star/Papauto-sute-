@@ -65,7 +65,6 @@
 | Honda Freed Spike 2013 | Honda AA Tokyo №10049 | GP3 | exact_source_found_needs_visual_sheet_rights | Ссылка на лист есть |
 | Toyota Vitz 2018 | ZERO Chiba №709 | NSP135 | exact_source_found_needs_visual_sheet_rights | Ссылка на лист есть |
 | Toyota C-HR 2020 | TAA Yokohama №12517 | ZYX11 | exact_source_found_needs_visual_sheet_rights | Ссылка на лист есть |
-
 | Honda Fit 2019 | TAA Hiroshima №291 | GK5 | exact_source_found_needs_visual_sheet_rights | Ссылка на лист есть |
 | Nissan Note 2019 | TAA Yokohama №14027 | HE12 | exact_source_found_needs_visual_sheet_rights | Ссылка на лист есть |
 | Toyota Aqua 2022 | TAA Kyushu №171 | MXPK11 | exact_source_found_needs_visual_sheet_rights | Ссылка на лист есть |
