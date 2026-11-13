@@ -78,27 +78,44 @@ class AuctionOnlyImages(unittest.TestCase):
         builder=(ROOT / "scripts/build_static_public.py").read_text(encoding="utf-8")
         self.assertIn("dst.write_bytes(TOMBSTONE)",builder)
 
-    def test_rejected_outdoor_audi_images_have_tombstones_and_never_enter_gallery(self):
+    def test_rejected_outdoor_images_are_tombstoned_and_never_reach_release(self):
         from scripts.build_static_public import QUARANTINED_OUTDOOR_MEDIA, TOMBSTONE
-        self.assertEqual(len(QUARANTINED_OUTDOOR_MEDIA),6)
-        self.assertEqual(QUARANTINED_OUTDOOR_MEDIA,{
+        old_audi = {
             "assets/premium-auctions/audi-q2-2021-front.webp",
             "assets/premium-auctions/audi-q2-2021-rear.webp",
             "assets/premium-auctions/audi-q2-2021-diagram.webp",
             "assets/premium-auctions/audi-q3-2021-front.webp",
             "assets/premium-auctions/audi-q3-2021-rear.webp",
             "assets/premium-auctions/audi-q3-2021-diagram.webp",
-        })
+        }
+        newly_rejected = {
+            "assets/auction/home/nissan-note-2021-227-photo-1.jpg",
+            "assets/premium-auctions/mercedes-a180-2020-front.webp",
+            "assets/premium-auctions/mercedes-a180-2020-rear.webp",
+        }
+        self.assertEqual(QUARANTINED_OUTDOOR_MEDIA, old_audi | newly_rejected)
         gallery=json.loads((ROOT / "data/gallery-lots.json").read_text(encoding="utf-8"))
-        rendered=(ROOT / "gallery.html").read_text(encoding="utf-8")
-        for rel in QUARANTINED_OUTDOOR_MEDIA:
-            self.assertNotIn("/"+rel,rendered)
-            self.assertFalse(any("/"+rel in json.dumps(lot) for lot in gallery["lots"]))
-        export=ROOT/"render-public"
-        # On CI the static publisher creates the release folder before QA.
+        source_html=(ROOT / "gallery.html").read_text(encoding="utf-8")
+        # Six historical Audi images are gone entirely; two newer records stay
+        # in internal source control for provenance, not in the published site.
+        for rel in old_audi:
+            self.assertNotIn("/" + rel, source_html)
+            self.assertFalse(any("/" + rel in json.dumps(lot) for lot in gallery["lots"]))
+        self.assertEqual(gallery["lot_count"], 37)
+        for rel in newly_rejected:
+            self.assertTrue(any("/" + rel in json.dumps(lot) for lot in gallery["lots"]))
+        export=ROOT / "render-public"
         if export.is_dir():
             for rel in QUARANTINED_OUTDOOR_MEDIA:
-                self.assertEqual((export/rel).read_bytes(),TOMBSTONE)
+                self.assertEqual((export / rel).read_bytes(), TOMBSTONE)
+            pub_html=(export / "gallery.html").read_text(encoding="utf-8")
+            pub=json.loads((export / "data/gallery-lots.json").read_text(encoding="utf-8"))
+            self.assertEqual(pub["lot_count"], 35)
+            for rel in QUARANTINED_OUTDOOR_MEDIA:
+                self.assertNotIn("/" + rel, pub_html)
+                self.assertFalse(any("/" + rel in json.dumps(lot) for lot in pub["lots"]))
+            for rejected in ("nissan-note-2021-227", "mercedes-a180-2020"):
+                self.assertFalse(any(lot["id"] == rejected for lot in pub["lots"]))
 
     def test_builder_disallows_street_photo_imports(self):
         builder=(ROOT / "scripts/build_static_public.py").read_text(encoding="utf-8")
