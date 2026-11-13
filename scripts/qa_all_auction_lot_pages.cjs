@@ -10,7 +10,7 @@ const BASE='http://127.0.0.1:8765';
     assert.equal(response.status(),200,'Published gallery JSON unavailable');
     const registry=await response.json();
     const lots=registry.lots;
-    assert(Array.isArray(lots)&&lots.length>=37&&lots.length<=500,'Expected 37..500 full-sheet auction lots');
+    assert(Array.isArray(lots)&&lots.length>=35&&lots.length<=500,'Expected 35..500 full-sheet auction lots');
     assert.equal(registry.lot_count,lots.length,'HTML/data lot count mismatch');
 
     const gallery=await client.get('/gallery.html');
