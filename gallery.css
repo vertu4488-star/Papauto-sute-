@@ -48,6 +48,7 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}button{cur
 .gallery-card-warning{font-size:10px;color:#92521f;padding:10px;background:#fff6e9;margin-top:10px;border-radius:8px;line-height:1.55}
 .gallery-price{margin-top:auto;padding:14px 0 10px}.gallery-price span{color:#698092;font-size:10px;display:block}.gallery-price strong{display:block;color:#124c83;font-size:22px;font-weight:900;letter-spacing:-.04em;margin-top:2px}
 .gallery-card-footer{display:grid;grid-template-columns:1fr 1.2fr;gap:8px;padding:0 15px 15px}
+.gallery-full{grid-column:1/-1;border:1px solid #c7daea;border-radius:8px;background:#f5fafe;color:#165785;font-size:11px;font-weight:800;text-align:center;padding:10px 12px}
 .gallery-detail,.gallery-apply{min-width:0;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px 7px;font-size:10px;font-weight:850}
 .gallery-detail{background:#eff5fb;border:1px solid #d3e1ee;color:#195f9d}.gallery-apply{background:var(--gal-navy);color:#fff}
 .gallery-more-wrap{display:flex;justify-content:center;padding:24px 0 0}.gallery-more{background:#fff;border:1px solid #c6d8e6;border-radius:10px;color:#185c98;font-weight:800;font-size:13px;padding:15px 30px}

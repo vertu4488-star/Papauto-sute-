@@ -241,4 +241,10 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
     page_path.write_text(page, encoding="utf-8")
     registry_path.write_text(json.dumps(gallery, ensure_ascii=False, indent=2) + "\n",
                              encoding="utf-8")
-    return {"count": total, "new": len(additional), "skipped_optional": trimmed}
+    try:
+        from scripts.generate_auction_lot_pages import generate
+    except ModuleNotFoundError:
+        from generate_auction_lot_pages import generate
+    generated = generate(gallery, target)
+    return {"count": total, "new": len(additional), "skipped_optional": trimmed,
+            "detail_pages": generated["detail_pages"]}

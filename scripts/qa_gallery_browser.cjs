@@ -62,6 +62,23 @@ const BASE='http://127.0.0.1:8765/gallery.html';
   assert.notEqual(firstCaption,secondCaption,'Keyboard must navigate gallery images');
   await page.keyboard.press('Escape');
   assert.equal(await page.locator('#gallery-viewer[open]').count(),0,'Escape must close viewer');
+  // Every detailed page is a self-hosted original auction photo + matching sheet.
+  const detailedLink=await card.locator('a.gallery-full').getAttribute('href');
+  assert(detailedLink&&detailedLink.startsWith('/lots/'),'Expected internal detailed lot page');
+  const detailPage=await browser.newPage({viewport:{width,height:width===1440?900:780},isMobile:width<500});
+  const detailErrors=[];
+  detailPage.on('pageerror',e=>detailErrors.push(e.message));
+  await detailPage.goto('http://127.0.0.1:8765'+detailedLink,{waitUntil:'load',timeout:30000});
+  assert(await detailPage.locator('meta[name="robots"][content="noindex,follow"]').count(),
+    'Detail pages must remain non-indexed until site is fully ready');
+  assert(await detailPage.locator('.lot-photo img').count()>0,'Missing exact-lot photo');
+  assert.equal(await detailPage.locator('.lot-sheet img').count(),1,'Full auction sheet required');
+  assert((await detailPage.locator('.lot-description').innerText()).length>=100,
+    'Each lot must have sourced full description');
+  const detailOverflow=await detailPage.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
+  assert(detailOverflow<=2,'Detailed lot page overflows mobile viewport');
+  assert.equal(detailErrors.length,0,'Detailed page JavaScript errors');
+  await detailPage.close();
   await page.locator('button.gallery-tab.gallery-tab[data-gallery-category=premium]').click();
   const expectedPremium=await page.evaluate(()=>JSON.parse(document.querySelector('#gallery-bootstrap').textContent).lots.filter(l=>l.category==='premium').length);
   assert((await page.locator('#gallery-count').innerText()).includes('Найдено '+expectedPremium),'Premium grouping count mismatch');

@@ -52,6 +52,8 @@ class AuctionGalleryTests(unittest.TestCase):
         self.assertIn('id="gallery-grid"',page)
         self.assertIn('id="gallery-bootstrap"',page)
         self.assertEqual(page.count('class="gallery-card"'),37)
+        self.assertEqual(page.count('class="gallery-full"'),37)
+        self.assertIn('href="/lots/toyota-corolla-sport-2023-20038.html"',page)
         self.assertEqual(page.count('class="gallery-description"'),37)
         self.assertIn('element("p","gallery-description",lot.description)',js)
 

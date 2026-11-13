@@ -96,6 +96,9 @@
                 element("strong","",priceText(lot)));
    body.append(price);item.append(body);
    const footer=element("div","gallery-card-footer");
+   const full=element("a","gallery-full","Подробная карточка лота");
+   full.href="/lots/"+lot.id+".html";
+   footer.append(full);
    const details=element("button","gallery-detail","Фото и лист");details.type="button";details.dataset.action="view";
    const apply=element("a","gallery-apply","Подобрать аналог");apply.href="/podbor.html?similar="+encodeURIComponent(lot.model+" "+lot.year+" · "+countryOf(lot).name);
    footer.append(details,apply);item.append(footer);
