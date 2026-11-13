@@ -74,4 +74,4 @@ const BASE='http://127.0.0.1:8765/gallery.html';
  }
  console.log('PAPAUTO_AUCTION_GALLERY_QA='+JSON.stringify(findings));
  await browser.close();
-})().catch(e=>{console.error('GALLERY_QA_FAILED',e.stack||e);process.exitCode=1});
+})().catch(e=>{console.error('GALLERY_QA_FAILED',e.stack||e);process.exit(1);});
