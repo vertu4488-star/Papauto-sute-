@@ -236,7 +236,7 @@ def copy_public_files() -> list[str]:
                     removed.append(article)
                     return ""
                 return article
-            html = re.sub(r"<article\\b[^>]*>[\\s\\S]*?</article>\\s*",
+            html = re.sub(r"<article\b[^>]*>[\s\S]*?</article>\s*",
                           screen_article, html)
             if len(removed) != 1:
                 raise RuntimeError(
