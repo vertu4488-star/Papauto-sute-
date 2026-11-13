@@ -147,6 +147,30 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
   await preview.screenshot({path:'premium-mobile-photo-preview.png',fullPage:false});
   console.log('PAPAUTO_PREMIUM_MOBILE_PREVIEW_QA='+JSON.stringify(previewState));
   await preview.close();
+  // Read-only cost calculator QA: prove 14 sold lots, arithmetic and currency labels.
+  // All fields are local inputs; no network POST is sent to PapAuto API.
+  const cost=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+  await cost.goto(BASE,{waitUntil:'load',timeout:45000});
+  await cost.waitForFunction(()=>document.querySelector('#picLot')?.options.length===14,{timeout:30000});
+  assert.equal(await cost.locator('#pic-total').count(),0,'Unexpected duplicate older calculator');
+  assert.equal(await cost.locator('.pic-total strong').innerText(),'—','No fabricated prefilled estimate permitted');
+  const selected=await cost.locator('#picLot').inputValue();
+  const registry=await cost.evaluate(async()=>{const r=await fetch('/data/premium-real-auction-lots.json');return r.json()});
+  const lot=registry.lots.find(x=>x.id===selected);
+  assert(lot && lot.status==='sold' && lot.market==='japan','Price must belong to a verified Japan sale');
+  const sourceJpy=Number(String(lot.price_jpy).replace(/\D/g,''));
+  const inputs=cost.locator('.pic-controls input');
+  assert.equal(await inputs.count(),12,'Expected all cost fields');
+  const values=['1','0','100','2','1.5','0','0','0','0','0','0','0'];
+  for(let i=0;i<values.length;i++)await inputs.nth(i).fill(values[i]);
+  const expected=new Intl.NumberFormat('ru-RU',{maximumFractionDigits:0}).format(sourceJpy+200)+' ₽';
+  await cost.waitForFunction(expected=>document.querySelector('.pic-total strong')?.textContent===expected,expected,{timeout:10000});
+  assert((await cost.locator('.pic-result').innerText()).includes('100 EUR · 150 USD · 200 ₽'),
+    'Duty must be shown in EUR, USD and RUB on one line');
+  const costOverflow=await cost.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
+  assert(costOverflow<=2,'Cost estimate overflows mobile viewport: '+costOverflow);
+  console.log('PAPAUTO_COST_WORKSHEET_QA='+JSON.stringify({verifiedLots:registry.lots.length,selected,expected,overflow:costOverflow}));
+  await cost.close();
   console.log('PAPAUTO_PREMIUM_VISUAL_QA='+JSON.stringify(results));
   await browser.close();
 })().catch(e=>{console.error('PREMIUM_LIGHT_QA_FAILED',e.stack||e);process.exitCode=1});

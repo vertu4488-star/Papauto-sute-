@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - "premium-japan-korea.html"
+      - "premium-import-estimate.js"
+      - "premium-import-estimate.css"
       - "premium-expanded-catalog.css"
       - "premium-expanded-catalog.js"
       - "data/papauto-expanded-45x3-2026.json"
