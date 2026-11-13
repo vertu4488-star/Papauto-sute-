@@ -226,7 +226,7 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
     # Never replace outdoor images with random stock/dealer placeholders.
     for rejected in sorted(QUARANTINED_OUTDOOR_LOTS):
         pattern = (r'<article class="gallery-card" id="gallery-lot-'
-                   + re.escape(rejected) + r'"[^>]*>.*?</article>\\s*')
+                   + re.escape(rejected) + r'"[^>]*>.*?</article>\s*')
         page, count = re.subn(pattern, "", page, count=1, flags=re.S)
         if count != 1:
             raise RuntimeError("PAPAUTO_POLICY: outdoor static card not found " + rejected)
