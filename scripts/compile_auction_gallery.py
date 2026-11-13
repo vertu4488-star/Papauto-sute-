@@ -16,6 +16,11 @@ APPROVED = ROOT / "data" / "approved-auction-lots.json"
 LEDGER = ROOT / "research" / "auction-photo-rights-ledger.json"
 BASELINE = 37
 MAX_LOTS = 500
+# Source/provenance keeps all 37 entries, but two outdoor-only records are
+# never allowed in the customer-facing release (including static fallback).
+QUARANTINED_OUTDOOR_LOTS = frozenset({
+    "nissan-note-2021-227", "mercedes-a180-2020",
+})
 COUNTRY = {"japan": ("ЯПОНИЯ", "🇯🇵", "JPY"),
            "south-korea": ("КОРЕЯ", "🇰🇷", "KRW"),
            "china": ("КИТАЙ", "🇨🇳", "CNY")}
@@ -147,6 +152,12 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
     ids = {r["id"] for r in base}
     if len(ids) != BASELINE:
         raise RuntimeError("PAPAUTO_POLICY: duplicate base lot ID")
+    if not QUARANTINED_OUTDOOR_LOTS.issubset(ids):
+        raise RuntimeError("PAPAUTO_POLICY: expected quarantined provenance records missing")
+    source_baseline_ids = ids.copy()
+    # Reject identified outdoor imagery BEFORE validating/using public asset paths.
+    # Keep full unmodified records in private research and source JSON.
+    base = [r for r in base if r["id"] not in QUARANTINED_OUTDOOR_LOTS]
     trimmed = 0
     for lot in base:
         photos = lot.get("photos") or []
@@ -209,8 +220,17 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
     if not hit:
         raise RuntimeError("PAPAUTO_POLICY: embedded auction gallery registry missing")
     original = json.loads(hit.group(2))
-    if {r["id"] for r in original.get("lots", [])} != {r["id"] for r in base}:
+    if {r["id"] for r in original.get("lots", [])} != source_baseline_ids:
         raise RuntimeError("PAPAUTO_POLICY: unexpected source page gallery IDs")
+    # Remove static HTML cards as well: without JS, outdoor lots must be absent.
+    # Never replace outdoor images with random stock/dealer placeholders.
+    for rejected in sorted(QUARANTINED_OUTDOOR_LOTS):
+        pattern = (r'<article class="gallery-card" id="gallery-lot-'
+                   + re.escape(rejected) + r'"[^>]*>.*?</article>\\s*')
+        page, count = re.subn(pattern, "", page, count=1, flags=re.S)
+        if count != 1:
+            raise RuntimeError("PAPAUTO_POLICY: outdoor static card not found " + rejected)
+    hit = re.search(boot, page, flags=re.S)
     if additional:
         before = page[:hit.start()]
         end_of_grid = before.rfind("</div>")
@@ -228,6 +248,11 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
                         f"Премиальные · {premium_count}</button>", 1)
     page = page.replace("Популярные · 23</button>",
                         f"Популярные · {popular_count}</button>", 1)
+    page = page.replace("<strong>37</strong>", f"<strong>{total}</strong>", 1)
+    page = page.replace("<strong>25</strong>",
+                        f"<strong>{sum(r['origin'] == 'home' for r in base)}</strong>", 1)
+    page = page.replace("<strong>12</strong>",
+                        f"<strong>{sum(r['origin'] == 'premium' for r in base)}</strong>", 1)
     page = page.replace("37 разных лотов", f"{total} разных лотов", 1)
     page = page.replace("37 аукционных автомобилей · все карточки доступны",
                         f"{total} аукционных автомобилей · все карточки доступны", 1)
