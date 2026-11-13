@@ -1,0 +1,587 @@
+{
+  "generated_at": "2026-11-13",
+  "purpose": "FIRST RESEARCH WAVE ONLY; no lot in this file is publishable",
+  "production_gallery_complete_sheet_count": 37,
+  "target": 500,
+  "missing_to_target": 463,
+  "source": "research/auction-500-candidate-queue-2026-11-13.json",
+  "total_unapproved_candidates": 146,
+  "all_source_image_urls": 250,
+  "low_resolution_thumbnail_urls": 120,
+  "number_of_candidate_lots_with_five_photo_urls": 26,
+  "number_of_candidates_with_matching_original_full_auction_sheet": 0,
+  "number_of_candidates_with_approved_rights": 0,
+  "statuses": {
+    "closed_listing_unverified_sale": 18,
+    "listing_not_confirmed_sold": 8,
+    "sold_reported_by_source": 120
+  },
+  "markets": {
+    "China": 10,
+    "Japan": 120,
+    "South Korea": 16
+  },
+  "photo_url_count_distribution": {
+    "1": 120,
+    "5": 26
+  },
+  "first_wave_candidate_count": 26,
+  "first_wave_rule": "Potential candidate ranking only: 5 linked photos per source lot, but provenance, auction context, full sheet and rights are unverified. Do NOT auto-import or show on website.",
+  "required_before_publication": [
+    "verify source is real auction-house lot and not a dealer advertisement",
+    "ensure all photos are of exact same lot, not street/staged or stock photography",
+    "obtain original matching full auction sheet and verify auction date and lot number",
+    "obtain commercial use and self-hosting permission for EACH photo and the auction sheet",
+    "verify mileage, auction grade and complete truthful description",
+    "verify sale price with final winning bid evidence, or leave price unconfirmed",
+    "pass import_auction_photos.py then browser CI and Render checks"
+  ],
+  "first_wave": [
+    {
+      "rank": 1,
+      "market": "China",
+      "model": "BYD Qin L DM, 2025 (Lot №: 357327562)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/byd-qin-l-dm-2025-54-357327562",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 2,
+      "market": "China",
+      "model": "BYD Sealion 06, 2026 (Lot №: 256505E0)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/byd-sealion-06-2026-56-256505e0",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 3,
+      "market": "China",
+      "model": "BYD Song L DM, 2025 (Lot №: 357282766)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/byd-song-l-dm-2025-54-357282766",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 4,
+      "market": "China",
+      "model": "BYD Yuan UP, 2025 (Lot №: 243285E0)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/byd-yuan-up-2025-56-243285e0",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 5,
+      "market": "China",
+      "model": "Changan CS55 PLUS, 2026 (Lot №: 357249811)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/changan-cs55-plus-2026-54-357249811",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 6,
+      "market": "China",
+      "model": "Changan CS75 PLUS, 2026 (Lot №: 357303380)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/changan-cs75-plus-2026-54-357303380",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 7,
+      "market": "China",
+      "model": "Changan UNI-V, 2025 (Lot №: 249933E0)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/changan-uni-v-2025-56-249933e0",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 8,
+      "market": "China",
+      "model": "Geely Emgrand, 2026 (Lot №: 101567E0)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/geely-emgrand-2026-56-101567e0",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 9,
+      "market": "China",
+      "model": "Geely Galaxy A7, 2025 (Lot №: 250063E0)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/geely-2025-56-250063e0",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 10,
+      "market": "China",
+      "model": "Geely Xingrui, 2026 (Lot №: 357449581)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/geely-xingrui-2026-54-357449581",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 11,
+      "market": "South Korea",
+      "model": "Hyundai Avante Modern, 2026 (Lot №: 43036970)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/hyundai-avante-2026-12-43036970",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 12,
+      "market": "South Korea",
+      "model": "Hyundai Avante, 2018 (Lot №: 42947360)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/hyundai-avante-2018-12-42947360",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 13,
+      "market": "South Korea",
+      "model": "Hyundai Avante, 2018 (Lot №: IC5460847)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/hyundai-avante-2018-11-ic5460847",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 14,
+      "market": "South Korea",
+      "model": "Hyundai Avante, 2019 (Lot №: 41525725)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/hyundai-avante-2019-12-41525725",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 15,
+      "market": "South Korea",
+      "model": "Hyundai Avante, 2019 (Lot №: 983781)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/hyundai-avante-2019-23-983781",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 16,
+      "market": "South Korea",
+      "model": "Hyundai Avante, 2020 (Lot №: 28583031)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/hyundai-avante-2020-15-28583031",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 17,
+      "market": "South Korea",
+      "model": "Hyundai Avante, 2026 (Lot №: 28889646)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/hyundai-avante-2026-15-28889646",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 18,
+      "market": "South Korea",
+      "model": "Hyundai Palisade Calligraphy, 2026 (Lot №: 43051542)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/hyundai-palisade-2026-kmhrk81abtu-12-43051542",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 19,
+      "market": "South Korea",
+      "model": "Hyundai Sonata, 2026 (Lot №: IC5439972)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/hyundai-sonata-2026-11-ic5439972",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 20,
+      "market": "South Korea",
+      "model": "KIA K3, 2014 (Lot №: 28621270)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/kia-k3-2014-15-28621270",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 21,
+      "market": "South Korea",
+      "model": "KIA K3, 2014 (Lot №: IC3907325)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/kia-k3-2014-11-ic3907325",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 22,
+      "market": "South Korea",
+      "model": "KIA K3, 2016 (Lot №: 28426992)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/kia-k3-2016-15-28426992",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 23,
+      "market": "South Korea",
+      "model": "KIA K3, 2016 (Lot №: 28633964)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/kia-k3-2016-15-28633964",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 24,
+      "market": "South Korea",
+      "model": "KIA K3, 2017 (Lot №: 43030006)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/kia-k3-2017-12-43030006",
+      "source_sale_status": "listing_not_confirmed_sold",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 25,
+      "market": "South Korea",
+      "model": "KIA Seltos, 2026 (Lot №: IC5617985)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/kia-seltos-2026-11-ic5617985",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    },
+    {
+      "rank": 26,
+      "market": "South Korea",
+      "model": "KIA Sorento Signature, 2026 (Lot №: 42946601)",
+      "year": null,
+      "source_lot_page": "https://plc.auction/auction/lot/kia-sorento-2026-12-42946601",
+      "source_sale_status": "closed_listing_unverified_sale",
+      "original_image_reference_count": 5,
+      "original_image_quality_verified": false,
+      "auction_house_origin_verified": false,
+      "no_street_or_dealer_photos_verified": false,
+      "full_original_sheet_verified": false,
+      "photo_and_sheet_rights_verified": false,
+      "actual_sale_price_verified": false,
+      "publication_status": "HOLD_RESEARCH_ONLY",
+      "blockers": [
+        "auction-only photos not verified",
+        "full original inspection sheet not supplied",
+        "commercial media licensing not supplied"
+      ]
+    }
+  ]
+}
