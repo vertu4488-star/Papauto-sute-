@@ -12,6 +12,10 @@ on:
       - "gallery.html"
       - "gallery.js"
       - "scripts/qa_gallery_browser.cjs"
+      - "scripts/qa_all_auction_lot_pages.cjs"
+      - "scripts/generate_auction_lot_pages.py"
+      - "tests/test_gallery_lot_pages.py"
+      - "lot-detail.css"
       - "gallery.css"
       - "data/gallery-lots.json"
       - "tests/test_gallery.py"
@@ -51,6 +55,7 @@ jobs:
         run: |
           python -m http.server 8765 -d render-public > /tmp/papauto-premium-http.log 2>&1 &
           node scripts/qa_gallery_browser.cjs
+          node scripts/qa_all_auction_lot_pages.cjs
           node scripts/qa_premium_light_browser.cjs
       - name: Save actual page screenshots
         if: always()
