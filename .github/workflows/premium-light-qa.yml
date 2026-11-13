@@ -45,6 +45,7 @@ jobs:
         run: |
           python -m http.server 8765 -d render-public > /tmp/papauto-premium-http.log 2>&1 &
           node scripts/qa_premium_light_browser.cjs
+          node scripts/qa_gallery_browser.cjs
       - name: Save actual page screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -56,4 +57,6 @@ jobs:
             premium-light-small.png
             premium-light-mobile-catalog.png
             premium-mobile-photo-preview.png
+            gallery-desktop.png
+            gallery-mobile.png
           if-no-files-found: ignore
