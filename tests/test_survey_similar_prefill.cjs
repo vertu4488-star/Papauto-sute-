@@ -24,6 +24,17 @@ pick('Kia K5 2021 · Южная Корея',{market:'south-korea',make:'Kia',mod
 pick('Geely Monjaro 2024 · Китай',{market:'china',make:'Geely',model:'Monjaro'});
 pick('Toyota Corolla',{market:'japan',make:'Toyota',model:'Corolla',year:null});
 pick('Unknown Auto 2024 · Китай',{market:'china',make:null,model:null,matched:false});
+// Our Japan catalogue must actually contain the photographed premium models.
+const vmCatalog={window:{},document:{getElementById:()=>null}};
+vm.runInNewContext(fs.readFileSync('vehicle-catalogue.js','utf8'),vmCatalog);
+const japan=vmCatalog.window.PAPAUTO_CATALOG.japan;
+for(const [make,model] of [['BMW','X1'],['BMW','X2'],['BMW','1 Series'],['Mercedes-Benz','GLA'],['Mercedes-Benz','GLB'],['Audi','Q2'],['Audi','Q3']]){
+ assert(japan.some(([m,x])=>m===make&&x===model),'Missing model in Japan form: '+make+' '+model);
+}
+const applied=resolve('BMW X1 sDrive18i 2021 · Япония',vmCatalog.window.PAPAUTO_CATALOG);
+assert.equal(applied.market,'japan');
+assert.equal(applied.make,'BMW');
+assert.equal(applied.model,'X1');
 assert.equal(resolve('',catalogue),null);
 assert.equal(resolve('x'.repeat(181),catalogue),null);
 const page=fs.readFileSync('podbor.html','utf8');

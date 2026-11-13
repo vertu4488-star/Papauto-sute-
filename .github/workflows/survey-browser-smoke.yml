@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'survey-podbor.js'
+      - 'vehicle-catalogue.js'
       - 'survey-similar-prefill.js'
       - 'scripts/qa_survey_prefill_browser.cjs'
       - 'scripts/qa_surveyjs_browser.cjs'
