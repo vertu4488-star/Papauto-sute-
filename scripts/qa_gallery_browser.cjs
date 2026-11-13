@@ -8,8 +8,24 @@ const BASE='http://127.0.0.1:8765/gallery.html';
  for(const width of [1440,390,320]){
   const page=await browser.newPage({viewport:{width,height:width===1440?900:780},deviceScaleFactor:1,isMobile:width<500,hasTouch:width<500});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  page.on('console',m=>{if(m.type()==='error')errors.push('console: '+m.text());});
+  page.on('requestfailed',r=>errors.push('request: '+r.url()+' '+r.failure()?.errorText));
   await page.goto(BASE,{waitUntil:'load',timeout:45000});
-  await page.waitForFunction(()=>document.querySelector('#gallery-count')?.textContent.includes('Найдено 39'),{timeout:30000});
+  try{
+    await page.waitForFunction(()=>document.querySelector('#gallery-count')?.textContent.includes('Найдено 39'),{timeout:8000});
+  }catch(e){
+    const diagnostics=await page.evaluate(async()=>{
+      let jsonReport='unknown';
+      try{const r=await fetch('/data/gallery-lots.json',{cache:'no-store'});const data=await r.json();jsonReport={status:r.status,lotCount:data.lots?.length};}catch(err){jsonReport=String(err);}
+      return {counter:document.querySelector('#gallery-count')?.textContent,
+        grid:document.querySelector('#gallery-grid')?.textContent?.slice(0,250),
+        brand:document.querySelector('#gallery-brand')?.value,
+        search:document.querySelector('#gallery-search')?.value,
+        scripts:[...document.scripts].map(x=>x.src).filter(Boolean),
+        jsonReport};
+    });
+    throw new Error('Gallery did not render: '+JSON.stringify({diagnostics,errors}));
+  }
   const state=await page.evaluate(()=>{
    const image=document.querySelector('.gallery-card-photo img');
    return {cards:document.querySelectorAll('.gallery-card').length,
