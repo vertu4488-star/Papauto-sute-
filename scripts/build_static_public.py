@@ -258,6 +258,12 @@ def copy_public_files() -> list[str]:
                 html = html.replace("🇯🇵 Япония · 12", "🇯🇵 Япония · 11")
                 html = html.replace("Показано 12 аукционных автомобилей",
                                     "Показано 11 аукционных автомобилей")
+            if page.name == "index.html":
+                html = html.replace(
+                    "Все 25 лотов с фотографиями и статистикой",
+                    "Все 24 лота с фотографиями и статистикой",
+                    1,
+                )
             if page.name == "auction-lots.html":
                 for original, screened in (
                     ("25 аукционных автомобилей", "24 аукционных автомобиля"),
@@ -267,6 +273,9 @@ def copy_public_files() -> list[str]:
                     ("Показаны все 25 автомобилей", "Показаны все 24 автомобиля"),
                 ):
                     html = html.replace(original, screened, 1)
+        if page.name == "gallery.html":
+            html = html.replace("Аукционная статистика 25 моделей",
+                                "Аукционная статистика 24 модели", 1)
         def approved_img(match):
             tag = match.group(0)
             src = re.search(r"""src\s*=\s*["']([^"']+)["']""", tag, re.I)
