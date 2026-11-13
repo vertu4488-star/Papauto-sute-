@@ -35,6 +35,7 @@ class AuctionOnlyImages(unittest.TestCase):
             relative=p.relative_to(ROOT).as_posix()
             self.assertTrue(
                 relative.startswith("assets/auction/home/")
+                or relative.startswith("assets/auction/approved/")
                 or relative.startswith("assets/premium-auctions/"),
                 f"NON-AUCTION IMAGE BLOCKED: {relative}"
             )

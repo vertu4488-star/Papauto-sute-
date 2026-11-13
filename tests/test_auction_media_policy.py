@@ -6,8 +6,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "data" / "approved-auction-lots.json"
-MEDIA = ROOT / "assets" / "auction"
-PHOTO = re.compile(r"^/assets/auction/[a-zA-Z0-9_.\-/]+\.(?:jpe?g|png|webp)$")
+MEDIA = ROOT / "assets" / "auction" / "approved"
+PHOTO = re.compile(r"^/assets/auction/approved/[a-zA-Z0-9_.\-/]+\.(?:jpe?g|png|webp)$")
 COUNTRIES = {"japan", "south-korea", "china"}
 
 
