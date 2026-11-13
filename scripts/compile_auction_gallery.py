@@ -253,6 +253,9 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
                         f"<strong>{sum(r['origin'] == 'home' for r in base)}</strong>", 1)
     page = page.replace("<strong>12</strong>",
                         f"<strong>{sum(r['origin'] == 'premium' for r in base)}</strong>", 1)
+    page = page.replace("Фото и документы 37 конкретных японских аукционных лотов",
+                        f"Фото и документы {total} конкретных японских аукционных лотов", 1)
+    page = page.replace("Все страны (37)", f"Все страны ({total})", 1)
     page = page.replace("37 разных лотов", f"{total} разных лотов", 1)
     page = page.replace("37 аукционных автомобилей · все карточки доступны",
                         f"{total} аукционных автомобилей · все карточки доступны", 1)
