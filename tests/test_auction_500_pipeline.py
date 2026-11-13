@@ -27,7 +27,7 @@ class AuctionOnlyExpansionPipeline(unittest.TestCase):
             "country": "south-korea", "make": "Hyundai", "model": "Avante",
             "year": 2021, "auction": "Lotte Auto Auction", "lot": "771",
             "auction_date": "2026-05-12", "grade": "4.5", "mileage_km": 42000,
-            "description": "Auction vehicle with matching inspection document and original listing provenance.",
+            "description": "Auction vehicle with matching inspection document and original listing provenance. The original auction photos and full matching inspection sheet are the exact same lot; this is an isolated regression fixture, never customer inventory.",
             "photos": ["lot.jpg"], "auction_sheet": "sheet.jpg",
             "photo_context": "original_auction_lot",
             "photo_evidence": [{"file": "lot.jpg", "capture_type": "auction_house_lot_photo",
@@ -101,7 +101,7 @@ class AuctionOnlyExpansionPipeline(unittest.TestCase):
             for src in (item["photos"][0], item["inspection_image"]):
                 dest = target / src.lstrip("/")
                 dest.parent.mkdir(parents=True, exist_ok=True)
-                dest.write_bytes(b"test-only")
+                dest.write_bytes(b"test-only-file-contents "*200)
         for name, content, sha in binaries:
             dest = target / "assets" / "auction" / "approved" / name
             dest.parent.mkdir(parents=True, exist_ok=True)
