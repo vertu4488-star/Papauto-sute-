@@ -102,6 +102,26 @@ def copy_public_files() -> list[str]:
         dst.write_bytes(TOMBSTONE)
         copied.append(rel)
 
+    # A customer-facing complete auction card must always have the ORIGINAL
+    # full auction sheet. Two 2021 Audi examples with only damage diagrams were
+    # quarantined; block any accidental resurrection in the public release.
+    gallery_source = json.loads((ROOT / "data" / "gallery-lots.json").read_text(encoding="utf-8"))
+    complete_lots = gallery_source.get("lots", [])
+    if len(complete_lots) < 37 or any(
+            lot.get("inspection_kind") != "Аукционный лист" for lot in complete_lots):
+        raise RuntimeError("PAPAUTO_POLICY: non-full-sheet gallery lot or incomplete baseline")
+    premium_source = json.loads((ROOT / "data" / "premium-real-auction-lots.json").read_text(encoding="utf-8"))
+    premium_lots = premium_source.get("lots", [])
+    if len(premium_lots) != 12 or any(
+            lot.get("inspection_kind") != "Аукционный лист" for lot in premium_lots):
+        raise RuntimeError("PAPAUTO_POLICY: premium page must use 12 true-sheet examples")
+    for page_name in ("gallery.html", "premium-japan-korea.html",
+                      "premium-mobile-photo-demo.html"):
+        page_text = (ROOT / page_name).read_text(encoding="utf-8")
+        if ("audi-q2-2021-diagram.webp" in page_text
+                or "audi-q3-2021-diagram.webp" in page_text):
+            raise RuntimeError("PAPAUTO_POLICY: diagram-only Audi restored to " + page_name)
+
     # Download genuine exact-lot photos and sheets to our own static host.
     from build_home_auction_media import materialize
     media_count = materialize(TARGET)
