@@ -1,0 +1,882 @@
+{
+  "inspected_at": "2026-11-13",
+  "region": "Новосибирск (город, не область)",
+  "filter": "Автомобили с пробегом; без пробега по РФ",
+  "page_urls": [
+    "https://auto.drom.ru/novosibirsk/bez-probega/all/",
+    "https://auto.drom.ru/novosibirsk/bez-probega/all/page2/"
+  ],
+  "result_count_in_live_browser": 991,
+  "separately_indexed_search_snapshot_count": 978,
+  "dynamic_count_note": "991 observed in live browser and confirmed as user's count; separately cached/indexed Drom snapshot showed 978 at another observation. Not a fixed or audited count.",
+  "listing_data_scope": "Read only first 20 visible results from each of first two Drom pages, 40 cars. Not a census of all 991 and not sales or search demand.",
+  "listing_count_sampled": 40,
+  "listings_sample": [
+    {
+      "model": "Nissan NV200",
+      "year": 2017,
+      "engine_l": 1.6,
+      "asking_rub": 1625000,
+      "mileage_km": 127636,
+      "note": "",
+      "sample_position": 1,
+      "sample_page": 1
+    },
+    {
+      "model": "Honda Freed",
+      "year": 2020,
+      "engine_l": 1.5,
+      "asking_rub": 1490000,
+      "mileage_km": 108060,
+      "note": "",
+      "sample_position": 2,
+      "sample_page": 1
+    },
+    {
+      "model": "Toyota Vitz",
+      "year": 2018,
+      "engine_l": 1.3,
+      "asking_rub": 1399000,
+      "mileage_km": 37172,
+      "note": "4WD",
+      "sample_position": 3,
+      "sample_page": 1
+    },
+    {
+      "model": "Lexus LX570",
+      "year": 2019,
+      "engine_l": 5.7,
+      "asking_rub": 11290000,
+      "mileage_km": 65000,
+      "note": "4WD",
+      "sample_position": 4,
+      "sample_page": 1
+    },
+    {
+      "model": "Toyota Voxy",
+      "year": 2018,
+      "engine_l": 1.8,
+      "asking_rub": 2665000,
+      "mileage_km": 108000,
+      "note": "hybrid",
+      "sample_position": 5,
+      "sample_page": 1
+    },
+    {
+      "model": "Suzuki Jimny",
+      "year": 2022,
+      "engine_l": 0.7,
+      "asking_rub": 1650000,
+      "mileage_km": 33500,
+      "note": "4WD",
+      "sample_position": 6,
+      "sample_page": 1
+    },
+    {
+      "model": "Mazda CX-5",
+      "year": 2014,
+      "engine_l": 2,
+      "asking_rub": 1800000,
+      "mileage_km": 97750,
+      "note": "4WD",
+      "sample_position": 7,
+      "sample_page": 1
+    },
+    {
+      "model": "Toyota Camry",
+      "year": 2015,
+      "engine_l": 2,
+      "asking_rub": 1680000,
+      "mileage_km": 165888,
+      "note": "",
+      "sample_position": 8,
+      "sample_page": 1
+    },
+    {
+      "model": "Toyota C-HR",
+      "year": 2018,
+      "engine_l": 1.2,
+      "asking_rub": 2099000,
+      "mileage_km": 117000,
+      "note": "",
+      "sample_position": 9,
+      "sample_page": 1
+    },
+    {
+      "model": "Subaru Levorg",
+      "year": 2021,
+      "engine_l": 1.8,
+      "asking_rub": 2487000,
+      "mileage_km": 35500,
+      "note": "4WD",
+      "sample_position": 10,
+      "sample_page": 1
+    },
+    {
+      "model": "Honda Freed Spike",
+      "year": 2012,
+      "engine_l": 1.5,
+      "asking_rub": 950000,
+      "mileage_km": 81028,
+      "note": "hybrid",
+      "sample_position": 11,
+      "sample_page": 1
+    },
+    {
+      "model": "Lexus LX570",
+      "year": 2017,
+      "engine_l": 5.7,
+      "asking_rub": 8190000,
+      "mileage_km": 95800,
+      "note": "4WD",
+      "sample_position": 12,
+      "sample_page": 1
+    },
+    {
+      "model": "Honda Vezel",
+      "year": 2021,
+      "engine_l": 1.5,
+      "asking_rub": 2365000,
+      "mileage_km": 8528,
+      "note": "",
+      "sample_position": 13,
+      "sample_page": 1
+    },
+    {
+      "model": "Toyota Allion",
+      "year": 2009,
+      "engine_l": 1.8,
+      "asking_rub": 1440000,
+      "mileage_km": 38000,
+      "note": "",
+      "sample_position": 14,
+      "sample_page": 1
+    },
+    {
+      "model": "Volkswagen T-Cross",
+      "year": 2021,
+      "engine_l": 1,
+      "asking_rub": 1329000,
+      "mileage_km": 50000,
+      "note": "from Japan",
+      "sample_position": 15,
+      "sample_page": 1
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2018,
+      "engine_l": 1.3,
+      "asking_rub": 1100000,
+      "mileage_km": 79000,
+      "note": "",
+      "sample_position": 16,
+      "sample_page": 1
+    },
+    {
+      "model": "Toyota Succeed",
+      "year": 2019,
+      "engine_l": 1.5,
+      "asking_rub": 1210000,
+      "mileage_km": 147800,
+      "note": "",
+      "sample_position": 17,
+      "sample_page": 1
+    },
+    {
+      "model": "Volkswagen Tayron",
+      "year": 2022,
+      "engine_l": 1.4,
+      "asking_rub": 2999000,
+      "mileage_km": 32000,
+      "note": "",
+      "sample_position": 18,
+      "sample_page": 1
+    },
+    {
+      "model": "BMW X3",
+      "year": 2020,
+      "engine_l": 2,
+      "asking_rub": 4105000,
+      "mileage_km": 93463,
+      "note": "4WD",
+      "sample_position": 19,
+      "sample_page": 1
+    },
+    {
+      "model": "RAM 1500",
+      "year": 2023,
+      "engine_l": 5.7,
+      "asking_rub": 8499000,
+      "mileage_km": 445,
+      "note": "hybrid 4WD",
+      "sample_position": 20,
+      "sample_page": 1
+    },
+    {
+      "model": "Toyota Raize",
+      "year": 2023,
+      "engine_l": 1.2,
+      "asking_rub": 1560000,
+      "mileage_km": 12000,
+      "note": "",
+      "sample_position": 21,
+      "sample_page": 2
+    },
+    {
+      "model": "Honda Freed",
+      "year": 2019,
+      "engine_l": 1.5,
+      "asking_rub": 1900000,
+      "mileage_km": 90000,
+      "note": "",
+      "sample_position": 22,
+      "sample_page": 2
+    },
+    {
+      "model": "Suzuki Hustler",
+      "year": 2014,
+      "engine_l": 0.7,
+      "asking_rub": 775000,
+      "mileage_km": 106371,
+      "note": "",
+      "sample_position": 23,
+      "sample_page": 2
+    },
+    {
+      "model": "Nissan Sylphy",
+      "year": 2019,
+      "engine_l": 1.8,
+      "asking_rub": 1349000,
+      "mileage_km": 84313,
+      "note": "",
+      "sample_position": 24,
+      "sample_page": 2
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2014,
+      "engine_l": 1.3,
+      "asking_rub": 1175000,
+      "mileage_km": 87962,
+      "note": "",
+      "sample_position": 25,
+      "sample_page": 2
+    },
+    {
+      "model": "Jaguar F-Pace",
+      "year": 2019,
+      "engine_l": 2,
+      "asking_rub": 3620000,
+      "mileage_km": 33000,
+      "note": "4WD",
+      "sample_position": 26,
+      "sample_page": 2
+    },
+    {
+      "model": "Toyota Tank",
+      "year": 2016,
+      "engine_l": 1,
+      "asking_rub": 1155000,
+      "mileage_km": 88750,
+      "note": "",
+      "sample_position": 27,
+      "sample_page": 2
+    },
+    {
+      "model": "Mercedes-Benz GLE",
+      "year": 2019,
+      "engine_l": 3,
+      "asking_rub": 7750000,
+      "mileage_km": 96904,
+      "note": "hybrid 4WD",
+      "sample_position": 28,
+      "sample_page": 2
+    },
+    {
+      "model": "Toyota Noah",
+      "year": 2018,
+      "engine_l": 2,
+      "asking_rub": 2500000,
+      "mileage_km": 90588,
+      "note": "4WD",
+      "sample_position": 29,
+      "sample_page": 2
+    },
+    {
+      "model": "Toyota Noah",
+      "year": 2019,
+      "engine_l": 2,
+      "asking_rub": 2670000,
+      "mileage_km": 35000,
+      "note": "",
+      "sample_position": 30,
+      "sample_page": 2
+    },
+    {
+      "model": "BMW X3",
+      "year": 2025,
+      "engine_l": 2,
+      "asking_rub": 6459000,
+      "mileage_km": 3600,
+      "note": "4WD",
+      "sample_position": 31,
+      "sample_page": 2
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2016,
+      "engine_l": 1.5,
+      "asking_rub": 1250000,
+      "mileage_km": 111,
+      "note": "",
+      "sample_position": 32,
+      "sample_page": 2
+    },
+    {
+      "model": "Nissan Dayz",
+      "year": 2021,
+      "engine_l": 0.7,
+      "asking_rub": 750000,
+      "mileage_km": 73000,
+      "note": "",
+      "sample_position": 33,
+      "sample_page": 2
+    },
+    {
+      "model": "Lexus RX300",
+      "year": 2025,
+      "engine_l": 2,
+      "asking_rub": 7150000,
+      "mileage_km": 3000,
+      "note": "4WD",
+      "sample_position": 34,
+      "sample_page": 2
+    },
+    {
+      "model": "Toyota Ractis",
+      "year": 2013,
+      "engine_l": 1.5,
+      "asking_rub": 1050000,
+      "mileage_km": 158000,
+      "note": "4WD",
+      "sample_position": 35,
+      "sample_page": 2
+    },
+    {
+      "model": "Subaru XV",
+      "year": 2019,
+      "engine_l": 1.6,
+      "asking_rub": 2300000,
+      "mileage_km": 50000,
+      "note": "4WD",
+      "sample_position": 36,
+      "sample_page": 2
+    },
+    {
+      "model": "Mazda CX-8",
+      "year": 2019,
+      "engine_l": 2.2,
+      "asking_rub": 3300000,
+      "mileage_km": 30000,
+      "note": "diesel 4WD",
+      "sample_position": 37,
+      "sample_page": 2
+    },
+    {
+      "model": "Nissan X-Trail",
+      "year": 2018,
+      "engine_l": 2,
+      "asking_rub": 2520000,
+      "mileage_km": 15000,
+      "note": "4WD",
+      "sample_position": 38,
+      "sample_page": 2
+    },
+    {
+      "model": "Nissan Dayz",
+      "year": 2018,
+      "engine_l": 0.7,
+      "asking_rub": 920000,
+      "mileage_km": 35000,
+      "note": "",
+      "sample_position": 39,
+      "sample_page": 2
+    },
+    {
+      "model": "Mazda CX-8",
+      "year": 2017,
+      "engine_l": 2.2,
+      "asking_rub": 2900000,
+      "mileage_km": 45000,
+      "note": "diesel",
+      "sample_position": 40,
+      "sample_page": 2
+    }
+  ],
+  "publication_policy": "Drom photos must NEVER be republished. Only exact genuine auction lot photography and matching original auction sheet; no street/dealer/parking images. Publication rights for original media must also be confirmed.",
+  "priorities": [
+    {
+      "rank": 1,
+      "model": "Honda Freed",
+      "target_years": "2017–2024",
+      "tier": "priority_1",
+      "evidence_note": "2 in first 40; family 6-7 seat",
+      "existing_papauto_auction_example": {
+        "id": "honda-freed-265",
+        "model": "Honda Freed",
+        "year": 2022,
+        "auction_grade": "4.5",
+        "mileage_km": 22000,
+        "url": "https://papauto.ru/lots/honda-freed-265.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 2,
+      "model": "Honda Freed Spike",
+      "target_years": "2011–2016",
+      "tier": "priority_1",
+      "evidence_note": "1 in first 40; specific local demand, earlier generation",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 3,
+      "model": "Toyota Corolla Fielder",
+      "target_years": "2015–2021",
+      "tier": "priority_1",
+      "evidence_note": "local model-specific listings confirmed, 2016/2019",
+      "existing_papauto_auction_example": {
+        "id": "toyota-corolla-fielder-111",
+        "model": "Toyota Corolla Fielder",
+        "year": 2018,
+        "auction_grade": "4",
+        "mileage_km": 95000,
+        "url": "https://papauto.ru/lots/toyota-corolla-fielder-111.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 4,
+      "model": "Honda Fit",
+      "target_years": "2018–2024",
+      "tier": "priority_1",
+      "evidence_note": "2 in first 40",
+      "existing_papauto_auction_example": {
+        "id": "honda-fit-2021-10355",
+        "model": "Honda Fit",
+        "year": 2021,
+        "auction_grade": "4",
+        "mileage_km": 47000,
+        "url": "https://papauto.ru/lots/honda-fit-2021-10355.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 5,
+      "model": "Nissan Note",
+      "target_years": "2017–2024",
+      "tier": "priority_1",
+      "evidence_note": "local model-specific no-RF listings confirmed",
+      "existing_papauto_auction_example": {
+        "id": "nissan-note-2021-227",
+        "model": "Nissan Note",
+        "year": 2021,
+        "auction_grade": "4.5",
+        "mileage_km": 48000,
+        "url": "https://papauto.ru/lots/nissan-note-2021-227.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 6,
+      "model": "Toyota Sienta",
+      "target_years": "2016–2024",
+      "tier": "priority_1",
+      "evidence_note": "1 in first 40; seven-seat family vehicle",
+      "existing_papauto_auction_example": {
+        "id": "toyota-sienta-321",
+        "model": "Toyota Sienta",
+        "year": 2024,
+        "auction_grade": "4",
+        "mileage_km": 11000,
+        "url": "https://papauto.ru/lots/toyota-sienta-321.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 7,
+      "model": "Toyota Roomy / Tank",
+      "target_years": "2016–2025",
+      "tier": "priority_1",
+      "evidence_note": "Toyota Tank 2016 observed; Roomy photo lot is related family, NOT exact Tank",
+      "existing_papauto_auction_example": {
+        "id": "toyota-roomy-69",
+        "model": "Toyota Roomy",
+        "year": 2025,
+        "auction_grade": "4",
+        "mileage_km": 4000,
+        "url": "https://papauto.ru/lots/toyota-roomy-69.html",
+        "matching_level": "related_family_not_exact_Tank",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 8,
+      "model": "Toyota Passo",
+      "target_years": "2018–2023",
+      "tier": "priority_1",
+      "evidence_note": "local model-specific listings; 2021 observation from category page",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 9,
+      "model": "Toyota Noah",
+      "target_years": "2017–2023",
+      "tier": "priority_1",
+      "evidence_note": "2 in first 40",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 10,
+      "model": "Toyota Voxy",
+      "target_years": "2017–2023",
+      "tier": "priority_1",
+      "evidence_note": "1 in first 40",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 11,
+      "model": "Honda Vezel",
+      "target_years": "2018–2024",
+      "tier": "priority_2",
+      "evidence_note": "1 in first 40",
+      "existing_papauto_auction_example": {
+        "id": "honda-vezel-278",
+        "model": "Honda Vezel",
+        "year": 2023,
+        "auction_grade": "4",
+        "mileage_km": 32000,
+        "url": "https://papauto.ru/lots/honda-vezel-278.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 12,
+      "model": "Toyota Raize",
+      "target_years": "2020–2026",
+      "tier": "priority_2",
+      "evidence_note": "1 in first 40",
+      "existing_papauto_auction_example": {
+        "id": "toyota-raize-87",
+        "model": "Toyota Raize",
+        "year": 2026,
+        "auction_grade": "5",
+        "mileage_km": 6000,
+        "url": "https://papauto.ru/lots/toyota-raize-87.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 13,
+      "model": "Suzuki Jimny",
+      "target_years": "2018–2024",
+      "tier": "priority_2",
+      "evidence_note": "1 in first 40",
+      "existing_papauto_auction_example": {
+        "id": "suzuki-jimny-2024-272",
+        "model": "Suzuki Jimny",
+        "year": 2024,
+        "auction_grade": "5",
+        "mileage_km": 3000,
+        "url": "https://papauto.ru/lots/suzuki-jimny-2024-272.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 14,
+      "model": "Nissan Dayz",
+      "target_years": "2018–2022",
+      "tier": "priority_2",
+      "evidence_note": "2 in first 40",
+      "existing_papauto_auction_example": {
+        "id": "nissan-dayz-218",
+        "model": "Nissan Dayz",
+        "year": 2019,
+        "auction_grade": "4",
+        "mileage_km": 47000,
+        "url": "https://papauto.ru/lots/nissan-dayz-218.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 15,
+      "model": "Subaru Levorg",
+      "target_years": "2016–2023",
+      "tier": "priority_2",
+      "evidence_note": "1 in first 40",
+      "existing_papauto_auction_example": {
+        "id": "subaru-levorg-2023-13004",
+        "model": "Subaru Levorg",
+        "year": 2023,
+        "auction_grade": "4.5",
+        "mileage_km": 31000,
+        "url": "https://papauto.ru/lots/subaru-levorg-2023-13004.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 16,
+      "model": "Mazda CX-5",
+      "target_years": "2014–2022",
+      "tier": "priority_2",
+      "evidence_note": "1 in first 40",
+      "existing_papauto_auction_example": {
+        "id": "mazda-cx5-2022-307",
+        "model": "Mazda CX-5",
+        "year": 2022,
+        "auction_grade": "4",
+        "mileage_km": 107000,
+        "url": "https://papauto.ru/lots/mazda-cx5-2022-307.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 17,
+      "model": "Suzuki Hustler",
+      "target_years": "2014–2023",
+      "tier": "priority_2",
+      "evidence_note": "1 in first 40",
+      "existing_papauto_auction_example": {
+        "id": "suzuki-hustler-448",
+        "model": "Suzuki Hustler",
+        "year": 2022,
+        "auction_grade": "4.5",
+        "mileage_km": 45000,
+        "url": "https://papauto.ru/lots/suzuki-hustler-448.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 18,
+      "model": "BMW X3",
+      "target_years": "2019–2025",
+      "tier": "priority_2",
+      "evidence_note": "2 in first 40",
+      "existing_papauto_auction_example": {
+        "id": "bmw-x3-2022",
+        "model": "BMW X3 xDrive20d",
+        "year": 2022,
+        "auction_grade": "4.5",
+        "mileage_km": 19000,
+        "url": "https://papauto.ru/lots/bmw-x3-2022.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 19,
+      "model": "Toyota Vitz",
+      "target_years": "2016–2019",
+      "tier": "priority_2",
+      "evidence_note": "1 in first 40",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 20,
+      "model": "Toyota C-HR",
+      "target_years": "2016–2021",
+      "tier": "priority_2",
+      "evidence_note": "1 in first 40",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 21,
+      "model": "Toyota Succeed",
+      "target_years": "2015–2019",
+      "tier": "priority_2",
+      "evidence_note": "1 in first 40",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 22,
+      "model": "Nissan Sylphy",
+      "target_years": "2018–2022",
+      "tier": "priority_2",
+      "evidence_note": "1 in first 40",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 23,
+      "model": "Subaru XV",
+      "target_years": "2017–2021",
+      "tier": "priority_2",
+      "evidence_note": "1 in first 40",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 24,
+      "model": "Mazda CX-8",
+      "target_years": "2017–2022",
+      "tier": "priority_2",
+      "evidence_note": "2 in first 40",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 25,
+      "model": "Nissan X-Trail",
+      "target_years": "2018–2022",
+      "tier": "priority_2",
+      "evidence_note": "1 in first 40",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 26,
+      "model": "Nissan NV200",
+      "target_years": "2016–2020",
+      "tier": "priority_3",
+      "evidence_note": "1 in first 40; utility vehicle",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 27,
+      "model": "Toyota Corolla Axio",
+      "target_years": "2016–2022",
+      "tier": "priority_3",
+      "evidence_note": "Japanese sedan adjacent to requested Fielder; no sample occurrence",
+      "existing_papauto_auction_example": {
+        "id": "toyota-corolla-axio-120",
+        "model": "Toyota Corolla Axio",
+        "year": 2021,
+        "auction_grade": "4.5",
+        "mileage_km": 42000,
+        "url": "https://papauto.ru/lots/toyota-corolla-axio-120.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 28,
+      "model": "Toyota Aqua",
+      "target_years": "2017–2024",
+      "tier": "priority_3",
+      "evidence_note": "catalogue expansion; not found in 40 sample, no prevalence claim",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 29,
+      "model": "Toyota Prius",
+      "target_years": "2017–2024",
+      "tier": "priority_3",
+      "evidence_note": "catalogue expansion; not found in 40 sample, no prevalence claim",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 30,
+      "model": "Suzuki Solio",
+      "target_years": "2017–2024",
+      "tier": "priority_3",
+      "evidence_note": "catalogue expansion; not found in 40 sample, no prevalence claim",
+      "existing_papauto_auction_example": null,
+      "action": "Find original auction-house photos and exact sheet, verify photo setting and commercial reuse rights, then import a new standalone example; NEVER use Drom photo."
+    },
+    {
+      "rank": 31,
+      "model": "Honda Stepwgn",
+      "target_years": "2016–2025",
+      "tier": "priority_3",
+      "evidence_note": "local full filter snapshots elsewhere, absent from first 40",
+      "existing_papauto_auction_example": {
+        "id": "honda-stepwgn-275",
+        "model": "Honda Stepwgn",
+        "year": 2025,
+        "auction_grade": "4.5",
+        "mileage_km": 7000,
+        "url": "https://papauto.ru/lots/honda-stepwgn-275.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    },
+    {
+      "rank": 32,
+      "model": "Suzuki Spacia",
+      "target_years": "2018–2025",
+      "tier": "priority_3",
+      "evidence_note": "existing Japanese auction lot, absent from first 40",
+      "existing_papauto_auction_example": {
+        "id": "suzuki-spacia-168",
+        "model": "Suzuki Spacia",
+        "year": 2025,
+        "auction_grade": "5",
+        "mileage_km": 1000,
+        "url": "https://papauto.ru/lots/suzuki-spacia-168.html",
+        "matching_level": "same_model_family_different_year_possible",
+        "image_setting_visually_rechecked": false,
+        "image_rights_confirmed": false
+      },
+      "action": "Visually audit existing exact-lot auction photos and show existing linked card as an example; DO NOT call it a current Novosibirsk stock car."
+    }
+  ],
+  "existing_lots_reused_count": 17,
+  "missing_new_model_photo_lots_count": 15,
+  "new_published_lots": 0,
+  "market_reading_caveat": "This is a listing inventory sample, not a verified popularity or transaction conversion ranking. Years in target_years are editorial portfolio recommendations, not a claim of presence among 40 observed.",
+  "source_disclaimer": "Prices are sellers' listed Novosibirsk RUB amounts; they are not Japan auction hammer prices, quotes or import-cost forecasts."
+}
