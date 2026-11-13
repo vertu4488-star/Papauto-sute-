@@ -29,7 +29,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "G Z",
+      "description": "Комплектация по источнику: G Z. Аукционный лот Toyota Corolla Sport 2023 года. Пробег 14 000 км, оценка 5, кузов MZEA12H. Торги JU Gifu, 07.11.2026, лот №20038. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "honda-fit-2021-10355",
@@ -55,7 +57,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": null,
+      "description": "Аукционный лот Honda Fit 2021 года. Пробег 47 000 км, оценка 4, кузов GR3. Торги Honda AA Tokyo, 26.10.2026, лот №10355. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "nissan-note-2021-227",
@@ -81,7 +85,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": null,
+      "description": "Аукционный лот Nissan Note 2021 года. Пробег 48 000 км, оценка 4.5, кузов E13. Торги NPS Tokyo Nyusatsu, 13.10.2026, лот №227. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "mazda-cx5-2022-307",
@@ -106,7 +112,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": null,
+      "description": "Аукционный лот Mazda CX-5 2022 года. Пробег 107 000 км, оценка 4, кузов KF2P. Торги TAA Yokohama, 24.10.2026, лот №307. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "suzuki-jimny-2024-272",
@@ -132,7 +140,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "4WD XC",
+      "description": "Комплектация по источнику: 4WD XC. Аукционный лот Suzuki Jimny 2024 года. Пробег 3 000 км, оценка 5, кузов JB64W. Торги JU Gifu, 07.11.2026, лот №272. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "subaru-levorg-2023-13004",
@@ -158,7 +168,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": null,
+      "description": "Аукционный лот Subaru Levorg 2023 года. Пробег 31 000 км, оценка 4.5, кузов VN5. Торги AUCNET, 12.10.2026, лот №13004. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "bmw-1series-2024-227",
@@ -184,7 +196,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "premium",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": null,
+      "description": "Аукционный лот BMW 1 Series 2024 года. Пробег 11 000 км, оценка 5, кузов 7K15. Торги ZIP Osaka, 22.10.2026, лот №227. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "audi-a3-2019-301",
@@ -210,7 +224,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "premium",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": null,
+      "description": "Аукционный лот Audi A3 2019 года. Пробег 46 000 км, оценка 4.5, кузов 8VCXS. Торги ZIP Tokyo, 24.10.2026, лот №301. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "honda-freed-265",
@@ -235,7 +251,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "Cross A",
+      "description": "Комплектация по источнику: Cross A. Аукционный лот Honda Freed 2022 года. Пробег 22 000 км, оценка 4.5, кузов GB5. Торги TAA Yokohama, 07.11.2026, лот №12546. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "honda-vezel-278",
@@ -260,7 +278,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "e:HEV Z",
+      "description": "Комплектация по источнику: e:HEV Z. Аукционный лот Honda Vezel 2023 года. Пробег 32 000 км, оценка 4, кузов RV5. Торги TAA Yokohama, 07.11.2026, лот №12072. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "honda-stepwgn-275",
@@ -285,7 +305,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "4WD Turbo",
+      "description": "Комплектация по источнику: 4WD Turbo. Аукционный лот Honda Stepwgn 2025 года. Пробег 7 000 км, оценка 4.5, кузов RP7. Торги JU Gifu, 07.11.2026, лот №7149. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "toyota-sienta-321",
@@ -310,7 +332,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "X",
+      "description": "Комплектация по источнику: X. Аукционный лот Toyota Sienta 2024 года. Пробег 11 000 км, оценка 4, кузов MXPC10G. Торги TAA Yokohama, 07.11.2026, лот №12530. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "toyota-roomy-69",
@@ -335,7 +359,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "Custom G-T",
+      "description": "Комплектация по источнику: Custom G-T. Аукционный лот Toyota Roomy 2025 года. Пробег 4 000 км, оценка 4, кузов M900A. Торги TAA Yokohama, 07.11.2026, лот №12545. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "toyota-raize-87",
@@ -360,7 +386,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "Z",
+      "description": "Комплектация по источнику: Z. Аукционный лот Toyota Raize 2026 года. Пробег 6 000 км, оценка 5, кузов A202A. Торги TAA Yokohama, 07.11.2026, лот №12440. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "toyota-yaris-95",
@@ -386,7 +414,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "X",
+      "description": "Комплектация по источнику: X. Аукционный лот Toyota Yaris 2021 года. Пробег 26 000 км, оценка 4, кузов MXPA10. Торги JU Gifu, 07.11.2026, лот №20018. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "toyota-corolla-axio-120",
@@ -411,7 +441,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "EX",
+      "description": "Комплектация по источнику: EX. Аукционный лот Toyota Corolla Axio 2021 года. Пробег 42 000 км, оценка 4.5, кузов NRE161. Торги TAA Yokohama, 07.11.2026, лот №12256. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "toyota-corolla-fielder-111",
@@ -437,7 +469,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "Hybrid G W",
+      "description": "Комплектация по источнику: Hybrid G W. Аукционный лот Toyota Corolla Fielder 2018 года. Пробег 95 000 км, оценка 4, кузов NKE165G. Торги JU Gifu, 07.11.2026, лот №8299. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "suzuki-swift-154",
@@ -462,7 +496,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "Hybrid MZ",
+      "description": "Комплектация по источнику: Hybrid MZ. Аукционный лот Suzuki Swift 2024 года. Пробег 47 000 км, оценка 4.5, кузов ZCEDS. Торги TAA Yokohama, 07.11.2026, лот №12160. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "suzuki-spacia-168",
@@ -488,7 +524,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "Hybrid GS",
+      "description": "Комплектация по источнику: Hybrid GS. Аукционный лот Suzuki Spacia 2025 года. Пробег 1 000 км, оценка 5, кузов MK94S. Торги TAA Hyogo, 07.11.2026, лот №3263. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "honda-n-box-28",
@@ -514,7 +552,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "G ｽ",
+      "description": "Комплектация по источнику: G ｽ. Аукционный лот Honda N-BOX 2019 года. Пробег 95 000 км, оценка 3.5, кузов JF3. Торги JU Tokyo, 09.11.2026, лот №1184. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "nissan-dayz-218",
@@ -539,7 +579,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "Highway St",
+      "description": "Комплектация по источнику: Highway St. Аукционный лот Nissan Dayz 2019 года. Пробег 47 000 км, оценка 4, кузов B44W. Торги JU Tokyo, 09.11.2026, лот №1177. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "daihatsu-rocky-490",
@@ -564,7 +606,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "Premium G",
+      "description": "Комплектация по источнику: Premium G. Аукционный лот Daihatsu Rocky 2023 года. Пробег 13 000 км, оценка 4, кузов A201S. Торги TAA Chubu, 05.11.2026, лот №71. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "daihatsu-tanto-225",
@@ -589,7 +633,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "X",
+      "description": "Комплектация по источнику: X. Аукционный лот Daihatsu Tanto 2023 года. Пробег 15 000 км, оценка 4, кузов LA650S. Торги JU Tokyo, 09.11.2026, лот №7049. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "suzuki-hustler-448",
@@ -614,7 +660,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "J Style",
+      "description": "Комплектация по источнику: J Style. Аукционный лот Suzuki Hustler 2022 года. Пробег 45 000 км, оценка 4.5, кузов MR92S. Торги JU Gifu, 07.11.2026, лот №46. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "suzuki-wagon-r-175",
@@ -640,7 +688,9 @@
       "inspection_kind": "Аукционный лист",
       "category": "popular",
       "export_restricted": false,
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "trim": "FA",
+      "description": "Комплектация по источнику: FA. Аукционный лот Suzuki Wagon R 2017 года. Пробег 54 000 км, оценка 4, кузов MH35S. Торги JU Tokyo, 09.11.2026, лот №1141. Фотографии автомобиля и полный аукционный лист доступны в карточке."
     },
     {
       "id": "bmw-x1-2021",
@@ -666,7 +716,11 @@
       "category": "premium",
       "export_restricted": false,
       "notes": "Цена является результатом аукциона в Японии, без расходов на ввоз.",
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "engine_cc": 1500,
+      "power_hp": 140,
+      "steering": "Правый",
+      "description": "Аукционный лот BMW X1 sDrive18i 2021 года. Пробег 52 000 км, оценка 4.5, кузов AA15. Торги ZIP Tokyo, 07.11.2026, лот №502. По карточке источника: руль правый, двигатель 1 500 см³, мощность 140 л. с. Полный аукционный лист приложен; замечания по состоянию следует смотреть в нём."
     },
     {
       "id": "bmw-x2-2019",
@@ -692,7 +746,11 @@
       "category": "premium",
       "export_restricted": false,
       "notes": "Цена является результатом аукциона в Японии, без расходов на ввоз.",
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "engine_cc": 1500,
+      "power_hp": 140,
+      "steering": "Правый",
+      "description": "Аукционный лот BMW X2 sDrive18i M Sport X 2019 года. Пробег 30 000 км, оценка 4.5, кузов YH15. Торги CAA Chubu, 04.11.2026, лот №38004. По карточке источника: руль правый, двигатель 1 500 см³, мощность 140 л. с. Полный аукционный лист приложен; замечания по состоянию следует смотреть в нём."
     },
     {
       "id": "bmw-118i-2019",
@@ -718,7 +776,11 @@
       "category": "premium",
       "export_restricted": false,
       "notes": "Цена является результатом аукциона в Японии, без расходов на ввоз.",
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "engine_cc": 1500,
+      "power_hp": 140,
+      "steering": "Правый",
+      "description": "Аукционный лот BMW 118i M Sport 2019 года. Пробег 57 000 км, оценка 4, кузов 7K15. Торги TAA Yokohama, 07.11.2026, лот №5018. По карточке источника: руль правый, двигатель 1 500 см³, мощность 140 л. с. Полный аукционный лист приложен; замечания по состоянию следует смотреть в нём."
     },
     {
       "id": "bmw-218i-2022",
@@ -744,7 +806,11 @@
       "category": "premium",
       "export_restricted": false,
       "notes": "Цена является результатом аукциона в Японии, без расходов на ввоз.",
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "engine_cc": 1500,
+      "power_hp": 140,
+      "steering": "Правый",
+      "description": "Аукционный лот BMW 218i Gran Coupe M Sport 2022 года. Пробег 26 000 км, оценка 4.5, кузов 7K15. Торги CAA Chubu, 11.11.2026, лот №38208. По карточке источника: руль правый, двигатель 1 500 см³, мощность 140 л. с. Полный аукционный лист приложен; замечания по состоянию следует смотреть в нём."
     },
     {
       "id": "audi-q3sb-2024",
@@ -770,7 +836,11 @@
       "category": "premium",
       "export_restricted": false,
       "notes": "Цена является результатом аукциона в Японии, без расходов на ввоз.",
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "engine_cc": 1490,
+      "power_hp": 150,
+      "steering": "Правый",
+      "description": "Аукционный лот Audi Q3 Sportback 35 TFSI S Line 2024 года. Пробег 29 000 км, оценка 4.5, кузов F3DFY. Торги ZIP Tokyo, 07.11.2026, лот №455. По карточке источника: руль правый, двигатель 1 490 см³, мощность 150 л. с. Полный аукционный лист приложен; замечания по состоянию следует смотреть в нём."
     },
     {
       "id": "mercedes-glb180-2023",
@@ -796,7 +866,11 @@
       "category": "premium",
       "export_restricted": false,
       "notes": "Цена является результатом аукциона в Японии, без расходов на ввоз.",
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "engine_cc": 1400,
+      "power_hp": 136,
+      "steering": "Правый",
+      "description": "Аукционный лот Mercedes-Benz GLB 180 AMG Line 2023 года. Пробег 14 000 км, оценка 3.5, кузов 247684M. Торги ARAI Bayside, 06.11.2026, лот №2751. По карточке источника: руль правый, двигатель 1 400 см³, мощность 136 л. с. Полный аукционный лист приложен; замечания по состоянию следует смотреть в нём."
     },
     {
       "id": "mercedes-a180-2020",
@@ -822,7 +896,11 @@
       "category": "premium",
       "export_restricted": false,
       "notes": "Цена является результатом аукциона в Японии, без расходов на ввоз.",
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "engine_cc": 1330,
+      "power_hp": 136,
+      "steering": "Правый",
+      "description": "Аукционный лот Mercedes-Benz A180 Sedan AMG Line 2020 года. Пробег 34 000 км, оценка 4.5, кузов 177184. Торги JU Oita, 11.11.2026, лот №47. По карточке источника: руль правый, двигатель 1 330 см³, мощность 136 л. с. Полный аукционный лист приложен; замечания по состоянию следует смотреть в нём."
     },
     {
       "id": "mercedes-c180-2018",
@@ -848,7 +926,11 @@
       "category": "premium",
       "export_restricted": false,
       "notes": "Цена является результатом аукциона в Японии, без расходов на ввоз.",
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "engine_cc": 1600,
+      "power_hp": 156,
+      "steering": "Правый",
+      "description": "Аукционный лот Mercedes-Benz C180 Avantgarde AMG Line 2018 года. Пробег 40 000 км, оценка 4.5, кузов 205240C. Торги JU Gifu, 07.11.2026, лот №60265. По карточке источника: руль правый, двигатель 1 600 см³, мощность 156 л. с. Полный аукционный лист приложен; замечания по состоянию следует смотреть в нём."
     },
     {
       "id": "bmw-x3-2022",
@@ -874,7 +956,11 @@
       "category": "premium",
       "export_restricted": true,
       "notes": "Двигатель 2,0 л: прямой экспорт из Японии в РФ ограничен. Это пример завершённых торгов, не предложение к заказу.",
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "engine_cc": 2000,
+      "power_hp": 190,
+      "steering": "Правый",
+      "description": "Аукционный лот BMW X3 xDrive20d 2022 года. Пробег 19 000 км, оценка 4.5, кузов UZ20. Торги TAA Yokohama, 07.11.2026, лот №5078. По карточке источника: руль правый, двигатель 2 000 см³, мощность 190 л. с. Полный аукционный лист приложен; замечания по состоянию следует смотреть в нём."
     },
     {
       "id": "bmw-x1-u11-2025",
@@ -900,7 +986,11 @@
       "category": "premium",
       "export_restricted": false,
       "notes": "Цена продажи без ввоза. Бензиновая версия, 156 л. с.; проверяем комплектацию и экспорт по конкретному автомобилю.",
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "engine_cc": 1490,
+      "power_hp": 156,
+      "steering": "Правый",
+      "description": "Аукционный лот BMW X1 U11 sDrive18i M Sport 2025 года. Пробег 7 000 км, оценка 5, кузов 22EE15. Торги ZIP Tokyo, 22.08.2026, лот №497. По карточке источника: руль правый, двигатель 1 490 см³, мощность 156 л. с. Полный аукционный лист приложен; замечания по состоянию следует смотреть в нём."
     },
     {
       "id": "mercedes-gla180-2025",
@@ -926,7 +1016,11 @@
       "category": "premium",
       "export_restricted": false,
       "notes": "Важное замечание: оценка R указывает на ремонтную историю. Не рекомендовать без изучения аукционного листа и состояния.",
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "engine_cc": 1400,
+      "power_hp": 136,
+      "steering": "Правый",
+      "description": "Аукционный лот Mercedes-Benz GLA 180 AMG Line 2025 года. Пробег 5 000 км, оценка R, кузов 247784M. Торги MIRIVE Saitama, 04.11.2026, лот №35044. По карточке источника: руль правый, двигатель 1 400 см³, мощность 136 л. с. Полный аукционный лист приложен; замечания по состоянию следует смотреть в нём."
     },
     {
       "id": "mercedes-cla180-2024",
@@ -952,7 +1046,11 @@
       "category": "premium",
       "export_restricted": false,
       "notes": "Цена завершённых торгов в Японии без доставки и таможни.",
-      "rights_confirmed": false
+      "rights_confirmed": false,
+      "engine_cc": 1300,
+      "power_hp": 136,
+      "steering": "Правый",
+      "description": "Аукционный лот Mercedes-Benz CLA 180 AMG Line 2024 года. Пробег 12 000 км, оценка 4.5, кузов 118384M. Торги ZIP Osaka, 05.11.2026, лот №220. По карточке источника: руль правый, двигатель 1 300 см³, мощность 136 л. с. Полный аукционный лист приложен; замечания по состоянию следует смотреть в нём."
     }
   ]
 }

@@ -1,16 +1,8 @@
 name: Notify Yandex via IndexNow
 
+# PapAuto is still being built. Do NOT automatically submit partially
+# completed pages to search engines. Keep on-demand submission for launch.
 on:
-  push:
-    branches: [main]
-    paths:
-      - "*.html"
-      - "**/*.html"
-      - "sitemap.xml"
-      - "robots.txt"
-      - "data/**"
-      - "assets/auction/**"
-      - ".github/workflows/indexnow.yml"
   workflow_dispatch:
 
 permissions:

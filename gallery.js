@@ -79,7 +79,7 @@
    const body=element("div","gallery-card-body");
    body.append(element("h3","",lot.model+" · "+lot.year));
    body.append(element("p","gallery-variant",legibility(lot)));
-   if(lot.description)body.append(element("p","gallery-variant",lot.description));
+   if(lot.description)body.append(element("p","gallery-description",lot.description));
    const facts=element("div","gallery-facts");
    const fact=(label,value)=>{
      const row=element("div","gallery-fact");row.append(element("span","",label),element("strong","",value||"Не указано"));facts.append(row);
@@ -204,7 +204,7 @@
    if(!bootstrap)throw Error("Missing static auction data");
    const data=JSON.parse(bootstrap.textContent);
    if(!Array.isArray(data.lots)||data.lots.length<37||data.lots.length>500)
-      throw Error("Auction gallery must contain 39-500 exact licensed/base records");
+      throw Error("Auction gallery must contain 37-500 exact auction lot records");
    all=data.lots.filter(l=>
       ["japan","south-korea","china"].includes(l.market)
       &&validImg(l.photos?.[0])&&validImg(l.inspection_image)

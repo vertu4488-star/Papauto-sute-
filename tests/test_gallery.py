@@ -16,6 +16,14 @@ class AuctionGalleryTests(unittest.TestCase):
         self.assertEqual(len({l["id"] for l in lots}),37)
         self.assertEqual(len([l for l in lots if l["origin"]=="home"]),25)
         self.assertEqual(len([l for l in lots if l["origin"]=="premium"]),12)
+        self.assertTrue(all(len(l.get("description",""))>=110 for l in lots),
+                        "Each auction card must include a meaningful source-backed description")
+        self.assertEqual(len({l["description"] for l in lots}),37,
+                         "Descriptions must correspond to distinct lot records")
+        self.assertTrue(all(l["description"].find(l["lot_number"])>=0 for l in lots))
+        self.assertEqual(len([l for l in lots if l.get("engine_cc")]),12,
+                         "Engine sizes must be published only when listed in the premium source")
+
         src_home={r["slug"]:r for r in source["records"]}
         src_premium={r["id"]:r for r in premium["lots"]}
         for lot in lots:
@@ -44,6 +52,9 @@ class AuctionGalleryTests(unittest.TestCase):
         self.assertIn('id="gallery-grid"',page)
         self.assertIn('id="gallery-bootstrap"',page)
         self.assertEqual(page.count('class="gallery-card"'),37)
+        self.assertEqual(page.count('class="gallery-description"'),37)
+        self.assertIn('class="gallery-description"',js)
+
         self.assertNotIn('Подготавливаем аукционную галерею…',page)
         self.assertNotIn('fetch("/data/gallery-lots.json"',js)
         self.assertIn("object-fit:contain",(ROOT/"gallery.css").read_text(encoding="utf-8"))
