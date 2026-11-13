@@ -17,7 +17,7 @@ function pick(input,expected){
 pick('Toyota Corolla Sport 2023 · Япония',{market:'japan',make:'Toyota',model:'Corolla',year:'2023',matched:true});
 pick('Toyota Corolla Fielder 2022 · Япония',{market:'japan',make:'Toyota',model:'Corolla Fielder',year:'2022'});
 pick('BMW X1 sDrive18i 2021 · Япония',{market:'japan',make:'BMW',model:'X1',year:'2021'});
-pick('BMW 118i M Sport 2019 · Япония',{market:'japan',make:'BMW',model:null,year:'2019',matched:false});
+pick('BMW 118i M Sport 2019 · Япония',{market:'japan',make:'BMW',model:'1 Series',year:'2019',matched:true});
 pick('Mercedes-Benz GLA 180 AMG 2025 · Япония',{market:'japan',make:'Mercedes-Benz',model:'GLA'});
 pick('Hyundai Avante 2024 · Корея',{market:'south-korea',make:'Hyundai',model:'Avante / Elantra'});
 pick('Kia K5 2021 · Южная Корея',{market:'south-korea',make:'Kia',model:'K5'});
