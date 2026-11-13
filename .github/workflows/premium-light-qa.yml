@@ -4,6 +4,11 @@ on:
     branches: [main]
     paths:
       - "premium-japan-korea.html"
+      - "data/approved-auction-lots.json"
+      - "assets/auction/approved/**"
+      - "scripts/import_auction_photos.py"
+      - "scripts/compile_auction_gallery.py"
+      - "tests/test_auction_500_pipeline.py"
       - "gallery.html"
       - "gallery.js"
       - "scripts/qa_gallery_browser.cjs"
