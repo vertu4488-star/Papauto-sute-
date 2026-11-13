@@ -154,7 +154,7 @@ class AuctionOnlyExpansionPipeline(unittest.TestCase):
     def test_500_hard_limit(self):
         pub, private, binaries = normalize_lot(self.row, self.media)
         target, approved_path, rights_path = self._prepare_target(pub, private, binaries)
-        approved_path.write_text(json.dumps({"lots": [pub] * 462}), encoding="utf-8")
+        approved_path.write_text(json.dumps({"lots": [pub] * 464}), encoding="utf-8")
         with self.assertRaisesRegex(RuntimeError, "500"):
             compile_published_gallery(target, approved_path, rights_path)
 

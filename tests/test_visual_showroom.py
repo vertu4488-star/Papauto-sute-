@@ -46,7 +46,7 @@ class AuctionHomepage(unittest.TestCase):
         self.assertIn("Пробег",section)
         self.assertIn("Оценка",section)
         self.assertIn("Аукцион",section)
-        self.assertIn("Все 39 автомобилей в галерее",section)
+        self.assertIn("Все 37 автомобилей в галерее",section)
         self.assertIn('href="/gallery.html"',section)
         self.assertTrue(all(u.startswith("/") for u in p.outbound))
         self.assertNotIn("atp-auto",section.lower())

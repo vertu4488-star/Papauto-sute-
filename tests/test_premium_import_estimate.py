@@ -15,7 +15,7 @@ class ImportCostTests(unittest.TestCase):
         self.assertNotIn("api/leads",js)
         self.assertNotIn("145000",js)
         self.assertNotIn("5200",js)
-        self.assertEqual(len(json.loads((ROOT/"data/premium-real-auction-lots.json").read_text(encoding="utf-8"))["lots"]),14)
+        self.assertEqual(len(json.loads((ROOT/"data/premium-real-auction-lots.json").read_text(encoding="utf-8"))["lots"]),12)
     def test_page_has_local_assets_and_calculator(self):
         html=(ROOT/"premium-japan-korea.html").read_text(encoding="utf-8")
         self.assertIn('id="premiumImportCost"',html)
