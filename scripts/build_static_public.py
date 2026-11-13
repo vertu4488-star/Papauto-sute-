@@ -29,6 +29,18 @@ PUBLIC_FOLDERS = {
     "data": {".json"},
 }
 
+# Rejected as outdoor/dealer-style presentation images. An AUCNET label in the
+# frame does not certify an auction-house photograph. Never expose these bytes
+# in a demo, public gallery, image URL, or future static release.
+QUARANTINED_OUTDOOR_MEDIA = {
+    "assets/premium-auctions/audi-q2-2021-front.webp",
+    "assets/premium-auctions/audi-q2-2021-rear.webp",
+    "assets/premium-auctions/audi-q2-2021-diagram.webp",
+    "assets/premium-auctions/audi-q3-2021-front.webp",
+    "assets/premium-auctions/audi-q3-2021-rear.webp",
+    "assets/premium-auctions/audi-q3-2021-diagram.webp",
+}
+
 
 def copy_public_files() -> list[str]:
     # Build gate: refuse publication when customer navigation leaves PAPAUTO.
@@ -72,6 +84,8 @@ def copy_public_files() -> list[str]:
             if not src.is_file() or src.is_symlink() or src.suffix.lower() not in allowed_suffixes:
                 continue
             relative = src.relative_to(ROOT)
+            if relative.as_posix() in QUARANTINED_OUTDOOR_MEDIA:
+                continue
             if folder == 'assets' and (relative.parts[:2] == ('assets','demo') or (relative.parts[:2] == ('assets','visual') and src.name != 'fallback-vehicle.svg')):
                 continue
             dst = TARGET / relative
@@ -97,6 +111,14 @@ def copy_public_files() -> list[str]:
             raise RuntimeError("PAPAUTO_POLICY: unexpected tombstone target " + rel)
         if (ROOT / rel).exists():
             raise RuntimeError("PAPAUTO_POLICY: deleted non-auction image was restored " + rel)
+        dst = TARGET / rel
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        dst.write_bytes(TOMBSTONE)
+        copied.append(rel)
+
+    # Also overwrite old direct URLs for the explicitly rejected 2021 Audi
+    # photos/diagrams. They remain in source for provenance only, NOT public.
+    for rel in sorted(QUARANTINED_OUTDOOR_MEDIA):
         dst = TARGET / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
         dst.write_bytes(TOMBSTONE)

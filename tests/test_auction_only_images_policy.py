@@ -78,6 +78,28 @@ class AuctionOnlyImages(unittest.TestCase):
         builder=(ROOT / "scripts/build_static_public.py").read_text(encoding="utf-8")
         self.assertIn("dst.write_bytes(TOMBSTONE)",builder)
 
+    def test_rejected_outdoor_audi_images_have_tombstones_and_never_enter_gallery(self):
+        from scripts.build_static_public import QUARANTINED_OUTDOOR_MEDIA, TOMBSTONE
+        self.assertEqual(len(QUARANTINED_OUTDOOR_MEDIA),6)
+        self.assertEqual(QUARANTINED_OUTDOOR_MEDIA,{
+            "assets/premium-auctions/audi-q2-2021-front.webp",
+            "assets/premium-auctions/audi-q2-2021-rear.webp",
+            "assets/premium-auctions/audi-q2-2021-diagram.webp",
+            "assets/premium-auctions/audi-q3-2021-front.webp",
+            "assets/premium-auctions/audi-q3-2021-rear.webp",
+            "assets/premium-auctions/audi-q3-2021-diagram.webp",
+        })
+        gallery=json.loads((ROOT / "data/gallery-lots.json").read_text(encoding="utf-8"))
+        rendered=(ROOT / "gallery.html").read_text(encoding="utf-8")
+        for rel in QUARANTINED_OUTDOOR_MEDIA:
+            self.assertNotIn("/"+rel,rendered)
+            self.assertFalse(any("/"+rel in json.dumps(lot) for lot in gallery["lots"]))
+        export=ROOT/"render-public"
+        # On CI the static publisher creates the release folder before QA.
+        if export.is_dir():
+            for rel in QUARANTINED_OUTDOOR_MEDIA:
+                self.assertEqual((export/rel).read_bytes(),TOMBSTONE)
+
     def test_builder_disallows_street_photo_imports(self):
         builder=(ROOT / "scripts/build_static_public.py").read_text(encoding="utf-8")
         self.assertIn("PAPAUTO_POLICY: assets/demo",builder)
