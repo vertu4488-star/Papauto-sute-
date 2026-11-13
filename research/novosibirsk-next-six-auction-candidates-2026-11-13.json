@@ -3,7 +3,6 @@
   "review_date": "2026-11-13",
   "context": "Follow-up to 991 Drom Novosibirsk sample. Six model-specific REAL auction source candidates are for internal review only, not PapAuto customer catalog.",
   "candidate_count": 6,
-  "public_lot_count_unchanged": 37,
   "new_public_lots": 0,
   "explicitly_no_drom_photos": true,
   "explicitly_no_street_photos": true,
@@ -148,5 +147,8 @@
       "public_asset_paths": [],
       "notes": "Цена продажи источника 1 730 000 ¥ не является ценой под ключ; 3 исходных ракурса, лист не подтверждён."
     }
-  ]
+  ],
+  "original_unfiltered_gallery_source_records": 37,
+  "expected_public_lot_count_after_visual_quarantine": 35,
+  "visual_audit_note": "Two outdoor-only historical entries are excluded at build time; source records preserved. Site deploy confirmation pending."
 }
