@@ -5,6 +5,7 @@ HTML contains factual static cards even without JS; client gets the same embedde
 """
 from __future__ import annotations
 import html as htmllib
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -12,6 +13,7 @@ from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 APPROVED = ROOT / "data" / "approved-auction-lots.json"
+LEDGER = ROOT / "research" / "auction-photo-rights-ledger.json"
 BASELINE = 39
 MAX_LOTS = 500
 COUNTRY = {"japan": ("ЯПОНИЯ", "🇯🇵", "JPY"),
@@ -133,7 +135,8 @@ def static_card(lot: dict) -> str:
     )
 
 
-def compile_published_gallery(target: Path, approved_path: Path = APPROVED) -> dict:
+def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
+                              ledger_path: Path = LEDGER) -> dict:
     registry_path = target / "data" / "gallery-lots.json"
     page_path = target / "gallery.html"
     gallery = json.loads(registry_path.read_text(encoding="utf-8"))
@@ -157,6 +160,31 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED) -> d
     approved = json.loads(approved_path.read_text(encoding="utf-8")).get("lots", [])
     if not isinstance(approved, list) or len(approved) + BASELINE > MAX_LOTS:
         raise RuntimeError("PAPAUTO_POLICY: approved count exceeds gallery limit of 500")
+    # The private rights ledger is mandatory when adding licensed lots.
+    # Do not accept directly edited/public-only records that bypassed the importer.
+    if approved:
+        if not ledger_path.is_file():
+            raise RuntimeError("PAPAUTO_POLICY: private photo-rights ledger missing")
+        ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+        rights_rows = ledger.get("lots", [])
+        rights = {r["id"]: r for r in rights_rows}
+        if len(rights) != len(rights_rows):
+            raise RuntimeError("PAPAUTO_POLICY: duplicate rights evidence records")
+        used_hashes = {}
+        for rec in approved:
+            right = rights.get(rec["id"])
+            if (right is None or right.get("license_evidence") != rec.get("rights_reference")
+                    or right.get("license_holder") != rec.get("rights_holder")):
+                raise RuntimeError("PAPAUTO_POLICY: license provenance not in private ledger: " + rec["id"])
+            media = rec["photos"] + [rec["auction_sheet"]]
+            digest_list = [hashlib.sha256((target / url.lstrip("/")).read_bytes()).hexdigest()
+                           for url in media]
+            if digest_list != right.get("photo_sha256"):
+                raise RuntimeError("PAPAUTO_POLICY: altered photo or sheet: " + rec["id"])
+            for sha in digest_list:
+                if sha in used_hashes and used_hashes[sha] != rec["id"]:
+                    raise RuntimeError("PAPAUTO_POLICY: photo reused in distinct auction lots")
+                used_hashes[sha] = rec["id"]
     additional = [prepare_approved(target, rec) for rec in approved]
     seen_lot_keys = {
         (r["market"], r["auction"], str(r["auction_date"]), str(r["lot_number"]))
