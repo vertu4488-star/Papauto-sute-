@@ -131,7 +131,7 @@ footer{color:#667e90;font-size:12px;margin-top:19px}
 <select id="market" aria-label="Страна"><option value="all">Все страны</option>
 <option value="japan">Япония (90)</option><option value="china">Китай (10)</option></select></div>
 <p id="resultCount" aria-live="polite"></p>
-<div class="grid" id="records">""" + "\n".join(sections) + """</div>
+<div class="grid" id="records">""" + "\n" + "\n".join(sections) + """</div>
 <footer>Внутренний исследовательский материал. Источники открываются только здесь, а не в клиентской галерее. Публичная галерея содержит 37 карточек.</footer>
 </main><script>
 (()=>{const cards=[...document.querySelectorAll(".lot")],field=document.querySelector("#search"),
