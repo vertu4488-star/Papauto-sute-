@@ -221,6 +221,52 @@ def copy_public_files() -> list[str]:
     # Strip external/unknown photos from old SEO and archive pages.
     for page in TARGET.glob("*.html"):
         html = page.read_text(encoding="utf-8")
+        # A deleted photo must not leave an empty clickable article behind.
+        # Keep the original records in GitHub; remove only the customer view.
+        needs_card_removal = {
+            "index.html", "auction-lots.html",
+            "premium-japan-korea.html", "premium-mobile-photo-demo.html",
+        }
+        if page.name in needs_card_removal:
+            removed = []
+            def screen_article(match):
+                article = match.group(0)
+                if ("nissan-note-2021-227" in article or
+                        "mercedes-a180-2020-front.webp" in article):
+                    removed.append(article)
+                    return ""
+                return article
+            html = re.sub(r"<article\\b[^>]*>[\\s\\S]*?</article>\\s*",
+                          screen_article, html)
+            if len(removed) != 1:
+                raise RuntimeError(
+                    "PAPAUTO_POLICY: unexpected withdrawn card count in " + page.name
+                )
+            if ("nissan-note-2021-227" in html or
+                    "mercedes-a180-2020-front.webp" in html or
+                    "mercedes-a180-2020-rear.webp" in html):
+                raise RuntimeError("PAPAUTO_POLICY: rejected photo link survived " + page.name)
+            if page.name.startswith("premium-"):
+                html = html.replace("12 подтверждённых аукционных лотов",
+                                    "11 опубликованных аукционных лотов")
+                html = html.replace("<strong>12</strong><small>реальных примеров",
+                                    "<strong>11</strong><small>реальных примеров")
+                html = html.replace("ниже — 12 аукционных лотов",
+                                    "ниже — 11 аукционных лотов")
+                html = html.replace("Все аукционные лоты · 12",
+                                    "Все аукционные лоты · 11")
+                html = html.replace("🇯🇵 Япония · 12", "🇯🇵 Япония · 11")
+                html = html.replace("Показано 12 аукционных автомобилей",
+                                    "Показано 11 аукционных автомобилей")
+            if page.name == "auction-lots.html":
+                for original, screened in (
+                    ("25 аукционных автомобилей", "24 аукционных автомобиля"),
+                    ("25 завершённых японских аукционных лотов",
+                     "24 завершённых японских аукционных лота"),
+                    ("25 реальных лотов", "24 реальных лота"),
+                    ("Показаны все 25 автомобилей", "Показаны все 24 автомобиля"),
+                ):
+                    html = html.replace(original, screened, 1)
         def approved_img(match):
             tag = match.group(0)
             src = re.search(r"""src\s*=\s*["']([^"']+)["']""", tag, re.I)
