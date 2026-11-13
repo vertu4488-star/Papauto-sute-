@@ -177,6 +177,10 @@ def copy_public_files() -> list[str]:
             tag = match.group(0)
             src = re.search(r"""src\s*=\s*["']([^"']+)["']""", tag, re.I)
             url = src.group(1) if src else ""
+            # Do not allow even a direct <img> on a legacy page to resurrect
+            # visually rejected street/dealer photos of Audi Q2/Q3.
+            if url.lstrip("/") in QUARANTINED_OUTDOOR_MEDIA:
+                return ""
             if ((re.fullmatch(r"/assets/auction/home/[a-z0-9-]+[.]jpg",url)
                   or re.fullmatch(r"/assets/premium-auctions/[a-z0-9-]+[.]webp",url)
                   or re.fullmatch(r"/assets/auction/approved/[a-z0-9-]+[.](?:jpg|jpeg|png|webp)",url))
