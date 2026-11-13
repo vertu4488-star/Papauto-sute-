@@ -86,11 +86,15 @@
    return item;
  }
  function draw(){
-   const term=normal(search.value.trim());
-   const mark=brand.value;
-   filtered=all.filter(lot=>(category==="all"||lot.category===category)&&
+   const term=normal((search.value||"").trim());
+   const mark=brand.value||"all";
+   const activeCategory=["all","premium","popular"].includes(category)?category:"all";
+   filtered=all.filter(lot=>(activeCategory==="all"||lot.category===activeCategory)&&
       (mark==="all"||brandName(lot)===mark)&&
       (!term||normal(lot.model+" "+lot.year+" "+lot.auction+" "+lot.lot_number).includes(term)));
+   // Browser form-state restoration must never hide the complete gallery on first load.
+   // When the UI says "Все", no search/brand constraints are permitted.
+   if(activeCategory==="all"&&mark==="all"&&!term&&filtered.length!==all.length)filtered=all.slice();
    if(sort.value==="recommended")filtered.sort((a,b)=>(b.category==="premium")-(a.category==="premium") || b.year-a.year || b.price_jpy-a.price_jpy);
    else if(sort.value==="year")filtered.sort((a,b)=>b.year-a.year || b.price_jpy-a.price_jpy);
    else if(sort.value==="price-low")filtered.sort((a,b)=>a.price_jpy-b.price_jpy);
@@ -164,7 +168,15 @@
     if(!Array.isArray(data.lots)||data.lots.length!==39)throw Error("Gallery registry incomplete");
     all=data.lots.filter(l=>l.market==="japan"&&validImg(l.photos?.[0])&&validImg(l.inspection_image)&&l.price_jpy>0);
     if(all.length!==39)throw Error("Gallery missing required auction evidence");
-    updateBrands();draw();
+    // Some embedded browsers restore stale select/search values from a prior page.
+    // Force a clean initial view; subsequent user changes remain fully interactive.
+    category="all";
+    tabs.forEach(tab=>{const selected=tab.dataset.galleryCategory==="all";tab.classList.toggle("is-active",selected);tab.setAttribute("aria-pressed",String(selected));});
+    search.value="";
+    sort.value="recommended";
+    updateBrands();
+    brand.value="all";
+    draw();
   }).catch(()=>{
     grid.replaceChildren(element("p","gallery-empty","Галерея временно недоступна. Откройте аукционные примеры или премиальный каталог."));
     count.textContent="Ошибка загрузки галереи";
