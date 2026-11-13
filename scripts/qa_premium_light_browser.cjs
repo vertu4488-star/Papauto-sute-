@@ -39,7 +39,7 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
         mobileMenuVisible:getComputedStyle(document.querySelector('.mobile-nav')).display!=='none'
       };
     });
-    // The expanded selection is separate from the 17 real historical lots.
+    // The expanded 135-model reference directory is separate from the 14 verified Japan auction lots.
     await page.locator('[data-selection-grid] .selection-model-entry').first().waitFor({state:'visible',timeout:20000});
     const expanded=await page.evaluate(()=>({
       css:[...document.styleSheets].some(s=>s.href?.includes('premium-expanded-catalog.css')),
@@ -85,8 +85,8 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
     const name=viewport.width===1440?'premium-light-desktop.png':viewport.width===390?'premium-light-mobile.png':'premium-light-small.png';
     await page.evaluate(()=>window.scrollTo(0,0));
     await page.screenshot({path:name,fullPage:false});
-    await page.locator('[data-real-filter=korea]').click();
-    assert.equal(await page.locator('.real-card:visible').count(),3,'Korea filter invalid');
+    assert.equal(await page.locator('[data-real-filter=korea]').count(),0,'Do not advertise unverified Korean auction lots');
+    assert.equal(await page.locator('.real-card[data-real-market=korea]').count(),0,'Unverified Korean auction cards returned');
     await page.locator('[data-real-filter=japan]').click();
     assert.equal(await page.locator('.real-card:visible').count(),14,'Japan filter invalid');
     await page.locator('[data-real-filter=all]').click();
