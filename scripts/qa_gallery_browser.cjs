@@ -12,7 +12,7 @@ const BASE='http://127.0.0.1:8765/gallery.html';
   page.on('requestfailed',r=>{if(/127\.0\.0\.1:8765/.test(r.url()))errors.push('local request: '+r.url()+' '+r.failure()?.errorText);});
   await page.goto(BASE,{waitUntil:'load',timeout:45000});
   try{
-    await page.waitForFunction(()=>document.querySelector('#gallery-count')?.textContent.includes('Найдено 39'),{timeout:8000});
+    await page.waitForFunction(()=>{const n=JSON.parse(document.querySelector('#gallery-bootstrap')?.textContent||'{}').lots?.length;return n&&document.querySelector('#gallery-count')?.textContent.includes('Найдено '+n);},{timeout:8000});
   }catch(e){
     const diagnostics=await page.evaluate(async()=>{
       let jsonReport='unknown';
@@ -50,10 +50,10 @@ const BASE='http://127.0.0.1:8765/gallery.html';
   const card=page.locator('.gallery-card').first();
   const id=await card.getAttribute('data-lot-id');
   const before=await card.locator('.gallery-card-photo img').getAttribute('src');
-  assert(/assets\/(premium-auctions|auction\/home)/.test(before));
+  assert(/assets\/(premium-auctions|auction\/(?:home|approved))/.test(before));
   await card.locator('.gallery-thumb').last().click();
   const after=await card.locator('.gallery-card-photo img').getAttribute('src');
-  assert(/(?:sheet|diagram)\.(?:webp|jpg)$/.test(after),'Sheet/diagram thumb must open local document');
+  assert(/(?:sheet|diagram)(?:-[a-f0-9]{12})?\.(?:webp|jpg|jpeg|png)$/.test(after),'Sheet thumb must open local document');
   await card.locator('.gallery-detail').click();
   await page.locator('#gallery-viewer[open]').waitFor({state:'visible',timeout:10000});
   const firstCaption=await page.locator('#gallery-viewer-caption').innerText();
@@ -63,21 +63,25 @@ const BASE='http://127.0.0.1:8765/gallery.html';
   await page.keyboard.press('Escape');
   assert.equal(await page.locator('#gallery-viewer[open]').count(),0,'Escape must close viewer');
   await page.locator('button.gallery-tab.gallery-tab[data-gallery-category=premium]').click();
-  assert((await page.locator('#gallery-count').innerText()).includes('Найдено 16'),'Premium grouping must show 16 cards');
+  const expectedPremium=await page.evaluate(()=>JSON.parse(document.querySelector('#gallery-bootstrap').textContent).lots.filter(l=>l.category==='premium').length);
+  assert((await page.locator('#gallery-count').innerText()).includes('Найдено '+expectedPremium),'Premium grouping count mismatch');
   await page.locator('button.gallery-tab.gallery-tab[data-gallery-category=popular]').click();
-  assert((await page.locator('#gallery-count').innerText()).includes('Найдено 23'),'Popular grouping must show 23 cards');
+  const expectedPopular=await page.evaluate(()=>JSON.parse(document.querySelector('#gallery-bootstrap').textContent).lots.filter(l=>l.category==='popular').length);
+  assert((await page.locator('#gallery-count').innerText()).includes('Найдено '+expectedPopular),'Popular grouping count mismatch');
   await page.locator('button.gallery-tab.gallery-tab[data-gallery-category=all]').click();
   await page.locator('#gallery-search').fill('Toyota');
   const hits=await page.locator('.gallery-card').count();
   assert(hits>0&&hits<=12,'Toyota search must return real filtered cars');
   for(const model of await page.locator('.gallery-card-body h3').allTextContents())assert(model.includes('Toyota'),'Wrong car in Toyota search');
   await page.locator('#gallery-search').fill('');
-  await page.locator('#gallery-more').click();
-  assert.equal(await page.locator('.gallery-card').count(),24,'Load more must append 12 cards');
-  await page.locator('#gallery-more').click();
-  assert.equal(await page.locator('.gallery-card').count(),36,'Load more must append 12 more cards');
-  await page.locator('#gallery-more').click();
-  assert.equal(await page.locator('.gallery-card').count(),39,'All 39 cards must be accessible');
+  const expectedAll=await page.evaluate(()=>JSON.parse(document.querySelector('#gallery-bootstrap').textContent).lots.length);
+  for(let expectedVisible=24;expectedVisible<expectedAll+12;expectedVisible+=12){
+    if(await page.locator('#gallery-more').isHidden())break;
+    await page.locator('#gallery-more').click();
+    assert.equal(await page.locator('.gallery-card').count(),Math.min(expectedVisible,expectedAll),
+      'Pagination must show actual auction records without fillers');
+  }
+  assert.equal(await page.locator('.gallery-card').count(),expectedAll,'All approved auction cards accessible');
   assert.equal(await page.locator('#gallery-more').isHidden(),true,'No more button after last page');
   const overflowAfter=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
   assert(overflowAfter<=2,'Expanded gallery overflows viewport');

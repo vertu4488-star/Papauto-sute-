@@ -14,7 +14,7 @@
  // Gallery image is constructed at runtime: the secure static publisher strips empty <img> placeholders.
  viewerImage.id="gallery-viewer-image";viewerImage.alt="";
  d.getElementById("gallery-viewer-image-mount").append(viewerImage);
- const mediaPath=/^\/assets\/(?:auction\/home|premium-auctions)\/[a-z0-9-]+\.(?:jpg|webp)$/;
+ const mediaPath=/^\/assets\/(?:auction\/home|premium-auctions|auction\/approved)\/[a-z0-9-]+\.(?:jpg|jpeg|png|webp)$/;
  const rub=n=>new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(n);
  const normal=s=>String(s||"").toLocaleLowerCase("ru");
  const validImg=s=>typeof s==="string"&&mediaPath.test(s)?s:null;
@@ -29,6 +29,14 @@
  const MAX=12;
  let all=[],filtered=[],shown=MAX,category="all",view={items:[],index:0,lot:null},previousFocus=null;
  const brandName=lot=>lot.model.split(" ")[0];
+ const priceValue=lot=>Number(lot.price_amount??lot.price_jpy??0);
+ const countryOf=lot=>({
+    japan:{flag:"🇯🇵",name:"ЯПОНИЯ"},
+    "south-korea":{flag:"🇰🇷",name:"КОРЕЯ"},
+    china:{flag:"🇨🇳",name:"КИТАЙ"}
+ })[lot.market]||{flag:"",name:"АУКЦИОН"};
+ const currencySymbol=lot=>({"JPY":"¥","KRW":"₩","CNY":"¥"})[lot.currency||(lot.market==="japan"?"JPY":"")]||"";
+ const priceText=lot=>priceValue(lot)>0?rub(priceValue(lot))+" "+currencySymbol(lot):"Цена продажи не подтверждена";
  const mediaItems=lot=>[
    ...lot.photos.filter(validImg).map((url,index)=>({url,label:"Ракурс "+(index+1),kind:"photo"})),
    ...(validImg(lot.inspection_image)?[{url:lot.inspection_image,label:lot.inspection_kind==="Схема повреждений"?"Схема повреждений":"Аукционный лист",kind:"sheet"}]:[])
@@ -47,7 +55,8 @@
    item.dataset.model=normal(lot.model);item.dataset.market=lot.market;item.dataset.galleryCategory=lot.category;
    item.dataset.lotId=lot.id;item.dataset.photoIndex="0";
    const head=element("div","gallery-card-head");
-   head.append(element("span","gallery-market","🇯🇵 ЯПОНИЯ · АУКЦИОН"));
+   const market=countryOf(lot);
+   head.append(element("span","gallery-market",market.flag+" "+market.name+" · АУКЦИОН"));
    head.append(element("span","gallery-grade","Оценка "+lot.grade));
    item.append(head);
    const photo=element("button","gallery-card-photo");photo.type="button";photo.dataset.action="view";
@@ -69,6 +78,7 @@
    const body=element("div","gallery-card-body");
    body.append(element("h3","",lot.model+" · "+lot.year));
    body.append(element("p","gallery-variant",legibility(lot)));
+   if(lot.description)body.append(element("p","gallery-variant",lot.description));
    const facts=element("div","gallery-facts");
    const fact=(label,value)=>{
      const row=element("div","gallery-fact");row.append(element("span","",label),element("strong","",value||"Не указано"));facts.append(row);
@@ -80,11 +90,13 @@
    body.append(facts);
    if(lot.export_restricted)body.append(element("p","gallery-card-warning","Ограничение прямого экспорта в РФ. Не предложение к поставке."));
    if(lot.inspection_kind==="Схема повреждений")body.append(element("p","gallery-card-warning","Вместо полного аукционного листа доступна только схема повреждений."));
-   const price=element("div","gallery-price");price.append(element("span","","Цена торгов, без ввоза"),element("strong","",rub(lot.price_jpy)+" ¥"));
+   const price=element("div","gallery-price");
+   price.append(element("span","",priceValue(lot)>0?"Цена торгов, без ввоза":"Цена торгов не подтверждена"),
+                element("strong","",priceText(lot)));
    body.append(price);item.append(body);
    const footer=element("div","gallery-card-footer");
    const details=element("button","gallery-detail","Фото и лист");details.type="button";details.dataset.action="view";
-   const apply=element("a","gallery-apply","Подобрать аналог");apply.href="/podbor.html?similar="+encodeURIComponent(lot.model+" "+lot.year+" · Япония");
+   const apply=element("a","gallery-apply","Подобрать аналог");apply.href="/podbor.html?similar="+encodeURIComponent(lot.model+" "+lot.year+" · "+countryOf(lot).name);
    footer.append(details,apply);item.append(footer);
    return item;
  }
@@ -98,10 +110,10 @@
    // Browser form-state restoration must never hide the complete gallery on first load.
    // When the UI says "Все", no search/brand constraints are permitted.
    if(activeCategory==="all"&&mark==="all"&&!term&&filtered.length!==all.length)filtered=all.slice();
-   if(sort.value==="recommended")filtered.sort((a,b)=>(b.category==="premium")-(a.category==="premium") || b.year-a.year || b.price_jpy-a.price_jpy);
-   else if(sort.value==="year")filtered.sort((a,b)=>b.year-a.year || b.price_jpy-a.price_jpy);
-   else if(sort.value==="price-low")filtered.sort((a,b)=>a.price_jpy-b.price_jpy);
-   else if(sort.value==="price-high")filtered.sort((a,b)=>b.price_jpy-a.price_jpy);
+   if(sort.value==="recommended")filtered.sort((a,b)=>(b.category==="premium")-(a.category==="premium") || b.year-a.year || priceValue(b)-priceValue(a));
+   else if(sort.value==="year")filtered.sort((a,b)=>b.year-a.year || priceValue(b)-priceValue(a));
+   else if(sort.value==="price-low")filtered.sort((a,b)=>(priceValue(a)||Number.MAX_SAFE_INTEGER)-(priceValue(b)||Number.MAX_SAFE_INTEGER));
+   else if(sort.value==="price-high")filtered.sort((a,b)=>priceValue(b)-priceValue(a));
    const fragment=d.createDocumentFragment();
    filtered.slice(0,shown).forEach((lot,i)=>fragment.append(card(lot,i)));
    grid.replaceChildren(fragment);
@@ -172,9 +184,15 @@
    const bootstrap=d.getElementById("gallery-bootstrap");
    if(!bootstrap)throw Error("Missing static auction data");
    const data=JSON.parse(bootstrap.textContent);
-   if(!Array.isArray(data.lots)||data.lots.length!==39)throw Error("Incomplete auction data");
-   all=data.lots.filter(l=>l.market==="japan"&&validImg(l.photos?.[0])&&validImg(l.inspection_image)&&l.price_jpy>0);
-   if(all.length!==39)throw Error("Auction-photo provenance mismatch");
+   if(!Array.isArray(data.lots)||data.lots.length<39||data.lots.length>500)
+      throw Error("Auction gallery must contain 39-500 exact licensed/base records");
+   all=data.lots.filter(l=>
+      ["japan","south-korea","china"].includes(l.market)
+      &&validImg(l.photos?.[0])&&validImg(l.inspection_image)
+      &&(l.origin==="approved"?l.rights_confirmed===true&&l.inspection_kind==="Аукционный лист":l.origin==="home"||l.origin==="premium")
+      &&((l.status==="reference_only"&&priceValue(l)===0)||priceValue(l)>0));
+   if(all.length!==data.lots.length||new Set(all.map(l=>l.id)).size!==all.length)
+      throw Error("Auction-photo provenance mismatch or duplicate IDs");
    category="all";
    tabs.forEach(tab=>{
      const selected=tab.dataset.galleryCategory==="all";
@@ -188,7 +206,7 @@
    draw();
  }catch(error){
    // Fail open to the factual static cards, never replace them with an empty grid.
-   count.textContent="39 аукционных автомобилей · статическая галерея";
+   count.textContent="Аукционные автомобили · статическая галерея";
    more.hidden=true;
    console.warn("PAPAUTO_GALLERY_STATIC_FALLBACK",error.message);
  }
