@@ -1,0 +1,4142 @@
+{
+  "schema_version": 1,
+  "project": "PapAuto",
+  "created_at": "2026-11-13",
+  "based_on_drom_novosibirsk": {
+    "filter": "used passenger vehicles; no Russian mileage; Novosibirsk city",
+    "reported_total_listings": 991,
+    "actually_reviewed_listings": 40,
+    "listing_sample_is_not_sales_statistics": true,
+    "doc": "docs/PAPAUTO_NOVOSIBIRSK_991_DROM_MARKET_2026-11-13.md",
+    "prioritized_japanese_model_groups": 32
+  },
+  "based_on_existing_catalog": "data/papauto-expanded-45x3-2026.json",
+  "baseline_model_directory_total": 135,
+  "sourcing_targets_total": 156,
+  "counts_by_market": {
+    "japan": 66,
+    "korea": 45,
+    "china": 45
+  },
+  "generation_splits_are_research_buckets": true,
+  "IMPORTANT": "Year ranges from 32-model Drom recommendation, NOT observed in every Drom listing. Other broad search windows are first-pass sourcing filters, NOT Drom facts. Generation/body labels are search hints only: verify VIN/chassis, actual trim, face and matched sheet per lot before publishing.",
+  "customer_rule": "Only auction-house interior/original sale images, full original matching sheet, verified reuse rights, no street photos, no dealer links.",
+  "rows": [
+    {
+      "id": "target-japan-honda-freed",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "Freed",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 1,
+      "drom_recommended_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2017,
+          "to": 2019,
+          "body_hint": "GB5–GB8",
+          "variant_hint": "дорестайлинг 2-го поколения",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2020,
+          "to": 2023,
+          "body_hint": "GB5–GB8",
+          "variant_hint": "рестайлинг 2-го поколения",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2024,
+          "to": 2026,
+          "body_hint": "GT1–GT8",
+          "variant_hint": "3-е поколение; не смешивать с GB",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [
+        "https://global.honda/jp/news/2024/4240627-freed.html",
+        "https://www.honda.co.jp/auto-archive/freed/2019/"
+      ],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-honda-fit",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "Fit",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 1,
+      "drom_recommended_years": {
+        "from": 2018,
+        "to": 2024
+      },
+      "initial_auction_search_years": {
+        "from": 2018,
+        "to": 2024
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2018,
+          "to": 2019,
+          "body_hint": "GK/GP",
+          "variant_hint": "рестайлинг 3-го поколения",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2020,
+          "to": 2024,
+          "body_hint": "GR/GS",
+          "variant_hint": "4-е поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-toyota-sienta",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Sienta",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 1,
+      "drom_recommended_years": {
+        "from": 2016,
+        "to": 2024
+      },
+      "initial_auction_search_years": {
+        "from": 2016,
+        "to": 2024
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2016,
+          "to": 2018,
+          "body_hint": "170",
+          "variant_hint": "2-е поколение дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2019,
+          "to": 2021,
+          "body_hint": "170",
+          "variant_hint": "2-е поколение рестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2024,
+          "body_hint": "10",
+          "variant_hint": "3-е поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-toyota-corolla",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Corolla",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-toyota-aqua",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Aqua",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 3,
+      "drom_recommended_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2017,
+          "to": 2021,
+          "body_hint": "NHP10",
+          "variant_hint": "первое поколение, поздние версии",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2024,
+          "body_hint": "MXPK1x",
+          "variant_hint": "второе поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-toyota-yaris",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Yaris",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-toyota-yaris-cross",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Yaris Cross",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-honda-vezel",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "Vezel",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2018,
+        "to": 2024
+      },
+      "initial_auction_search_years": {
+        "from": 2018,
+        "to": 2024
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2018,
+          "to": 2020,
+          "body_hint": "RU1–RU4",
+          "variant_hint": "1-е поколение рестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2021,
+          "to": 2024,
+          "body_hint": "RV3–RV6",
+          "variant_hint": "2-е поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-toyota-raize",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Raize",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2020,
+        "to": 2026
+      },
+      "initial_auction_search_years": {
+        "from": 2020,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-suzuki-jimny",
+      "market": "japan",
+      "brand": "Suzuki",
+      "model": "Jimny",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2018,
+        "to": 2024
+      },
+      "initial_auction_search_years": {
+        "from": 2018,
+        "to": 2024
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-toyota-roomy",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Roomy",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 1,
+      "drom_recommended_years": {
+        "from": 2016,
+        "to": 2025
+      },
+      "initial_auction_search_years": {
+        "from": 2016,
+        "to": 2025
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2016,
+          "to": 2020,
+          "body_hint": "M900A/M910A",
+          "variant_hint": "дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2021,
+          "to": 2025,
+          "body_hint": "M900A/M910A",
+          "variant_hint": "рестайлинг 2020+",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-toyota-passo",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Passo",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 1,
+      "drom_recommended_years": {
+        "from": 2018,
+        "to": 2023
+      },
+      "initial_auction_search_years": {
+        "from": 2018,
+        "to": 2023
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2018,
+          "to": 2023,
+          "body_hint": "M700A/M710A",
+          "variant_hint": "обновление 2018+; выпуск завершён 2023",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [
+        "https://global.toyota/en/newsroom/corporate/40238738.html"
+      ],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-toyota-vitz",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Vitz",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2016,
+        "to": 2019
+      },
+      "initial_auction_search_years": {
+        "from": 2016,
+        "to": 2019
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2016,
+          "to": 2016,
+          "body_hint": "XP130",
+          "variant_hint": "дорестайлинг/предыдущее обновление",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2017,
+          "to": 2019,
+          "body_hint": "XP130",
+          "variant_hint": "поздний рестайлинг",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-nissan-note",
+      "market": "japan",
+      "brand": "Nissan",
+      "model": "Note",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 1,
+      "drom_recommended_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2017,
+          "to": 2020,
+          "body_hint": "E12/HE12",
+          "variant_hint": "рестайлинг 2-го поколения",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2021,
+          "to": 2023,
+          "body_hint": "E13",
+          "variant_hint": "3-е поколение дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2024,
+          "to": 2024,
+          "body_hint": "E13",
+          "variant_hint": "рестайлинг 3-го поколения",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-nissan-march",
+      "market": "japan",
+      "brand": "Nissan",
+      "model": "March",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-toyota-probox",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Probox",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-toyota-corolla-fielder",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Corolla Fielder",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 1,
+      "drom_recommended_years": {
+        "from": 2015,
+        "to": 2021
+      },
+      "initial_auction_search_years": {
+        "from": 2015,
+        "to": 2021
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2015,
+          "to": 2016,
+          "body_hint": "E160",
+          "variant_hint": "рестайлинг 2015",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2017,
+          "to": 2021,
+          "body_hint": "E160",
+          "variant_hint": "обновление 2017+",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-honda-n-box",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "N-BOX",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-suzuki-spacia",
+      "market": "japan",
+      "brand": "Suzuki",
+      "model": "Spacia",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 3,
+      "drom_recommended_years": {
+        "from": 2018,
+        "to": 2025
+      },
+      "initial_auction_search_years": {
+        "from": 2018,
+        "to": 2025
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-suzuki-swift",
+      "market": "japan",
+      "brand": "Suzuki",
+      "model": "Swift",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-mazda-demio",
+      "market": "japan",
+      "brand": "Mazda",
+      "model": "Demio",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-toyota-prius",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Prius",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 3,
+      "drom_recommended_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2017,
+          "to": 2018,
+          "body_hint": "ZVW50",
+          "variant_hint": "4-е поколение дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2019,
+          "to": 2022,
+          "body_hint": "ZVW50",
+          "variant_hint": "4-е поколение рестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2023,
+          "to": 2024,
+          "body_hint": "MXWH/ZVW60",
+          "variant_hint": "5-е поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-toyota-tank",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Tank",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 1,
+      "drom_recommended_years": {
+        "from": 2016,
+        "to": 2025
+      },
+      "initial_auction_search_years": {
+        "from": 2016,
+        "to": 2025
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2016,
+          "to": 2020,
+          "body_hint": "M900A/M910A",
+          "variant_hint": "Toyota Tank, только реальный срок модели; не подменять Roomy",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-toyota-succeed",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Succeed",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2015,
+        "to": 2019
+      },
+      "initial_auction_search_years": {
+        "from": 2015,
+        "to": 2019
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-toyota-corolla-axio",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Corolla Axio",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 3,
+      "drom_recommended_years": {
+        "from": 2016,
+        "to": 2022
+      },
+      "initial_auction_search_years": {
+        "from": 2016,
+        "to": 2022
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-toyota-c-hr",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "C-HR",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2016,
+        "to": 2021
+      },
+      "initial_auction_search_years": {
+        "from": 2016,
+        "to": 2021
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-toyota-bb",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "bB",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-toyota-ractis",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Ractis",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-toyota-pixis-epoch",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Pixis Epoch",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-toyota-pixis-joy",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Pixis Joy",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-toyota-pixis-mega",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Pixis Mega",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-honda-jazz",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "Jazz",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 1,
+      "drom_recommended_years": {
+        "from": 2018,
+        "to": 2024
+      },
+      "initial_auction_search_years": {
+        "from": 2018,
+        "to": 2024
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-honda-shuttle",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "Shuttle",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-honda-grace",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "Grace",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-honda-n-wgn",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "N-WGN",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-honda-n-one",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "N-ONE",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-honda-n-van",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "N-VAN",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-honda-wr-v",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "WR-V",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-nissan-note-e-power",
+      "market": "japan",
+      "brand": "Nissan",
+      "model": "Note e-POWER",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 1,
+      "drom_recommended_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-nissan-micra",
+      "market": "japan",
+      "brand": "Nissan",
+      "model": "Micra",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-nissan-juke",
+      "market": "japan",
+      "brand": "Nissan",
+      "model": "Juke",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-nissan-qashqai",
+      "market": "japan",
+      "brand": "Nissan",
+      "model": "Qashqai",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-nissan-dayz",
+      "market": "japan",
+      "brand": "Nissan",
+      "model": "Dayz",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2018,
+        "to": 2022
+      },
+      "initial_auction_search_years": {
+        "from": 2018,
+        "to": 2022
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2018,
+          "to": 2018,
+          "body_hint": "B21W",
+          "variant_hint": "1-е поколение",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2019,
+          "to": 2022,
+          "body_hint": "B4xW",
+          "variant_hint": "2-е поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-japan-nissan-roox",
+      "market": "japan",
+      "brand": "Nissan",
+      "model": "Roox",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-japan-nissan-moco",
+      "market": "japan",
+      "brand": "Nissan",
+      "model": "Moco",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-avante-elantra",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "Avante / Elantra",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-tucson",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "Tucson",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2018,
+          "to": 2020,
+          "body_hint": "TL",
+          "variant_hint": "рестайлинг TL",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2021,
+          "to": 2023,
+          "body_hint": "NX4",
+          "variant_hint": "дорестайлинг NX4",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2024,
+          "to": 2026,
+          "body_hint": "NX4",
+          "variant_hint": "рестайлинг NX4",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-sportage",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "Sportage",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2018,
+          "to": 2021,
+          "body_hint": "QL",
+          "variant_hint": "рестайлинг QL",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2024,
+          "body_hint": "NQ5",
+          "variant_hint": "дорестайлинг NQ5",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2025,
+          "to": 2026,
+          "body_hint": "NQ5",
+          "variant_hint": "рестайлинг NQ5",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-sonata",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "Sonata",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2019,
+          "to": 2022,
+          "body_hint": "DN8",
+          "variant_hint": "дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2023,
+          "to": 2026,
+          "body_hint": "DN8",
+          "variant_hint": "The Edge рестайлинг",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-k5",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "K5",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2020,
+          "to": 2023,
+          "body_hint": "DL3",
+          "variant_hint": "дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2024,
+          "to": 2026,
+          "body_hint": "DL3",
+          "variant_hint": "рестайлинг",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-sorento",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "Sorento",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-carnival",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "Carnival",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-seltos",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "Seltos",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-santa-fe",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "Santa Fe",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2018,
+          "to": 2020,
+          "body_hint": "TM",
+          "variant_hint": "дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2021,
+          "to": 2023,
+          "body_hint": "TM",
+          "variant_hint": "рестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2024,
+          "to": 2026,
+          "body_hint": "MX5",
+          "variant_hint": "новое поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-palisade",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "Palisade",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-grandeur",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "Grandeur",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-staria",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "Staria",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-morning-picanto",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "Morning / Picanto",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-ray",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "Ray",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-bmw-3-series",
+      "market": "korea",
+      "brand": "BMW",
+      "model": "3 Series",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2019,
+          "to": 2022,
+          "body_hint": "G20/G21",
+          "variant_hint": "дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2023,
+          "to": 2026,
+          "body_hint": "G20/G21",
+          "variant_hint": "рестайлинг LCI",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-bmw-5-series",
+      "market": "korea",
+      "brand": "BMW",
+      "model": "5 Series",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2019,
+          "to": 2020,
+          "body_hint": "G30/G31",
+          "variant_hint": "дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2021,
+          "to": 2023,
+          "body_hint": "G30/G31",
+          "variant_hint": "рестайлинг LCI",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2024,
+          "to": 2026,
+          "body_hint": "G60/G61",
+          "variant_hint": "новое поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-mercedes-e-class",
+      "market": "korea",
+      "brand": "Mercedes-Benz",
+      "model": "E-Class",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-mercedes-c-class",
+      "market": "korea",
+      "brand": "Mercedes-Benz",
+      "model": "C-Class",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-bmw-x1",
+      "market": "korea",
+      "brand": "BMW",
+      "model": "X1",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2019,
+          "to": 2022,
+          "body_hint": "F48",
+          "variant_hint": "рестайлинг LCI",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2023,
+          "to": 2026,
+          "body_hint": "U11",
+          "variant_hint": "новое поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-korea-bmw-x3",
+      "market": "korea",
+      "brand": "BMW",
+      "model": "X3",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2019,
+        "to": 2025
+      },
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2025
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2019,
+          "to": 2021,
+          "body_hint": "G01",
+          "variant_hint": "дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2024,
+          "body_hint": "G01",
+          "variant_hint": "рестайлинг LCI",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2025,
+          "to": 2026,
+          "body_hint": "G45",
+          "variant_hint": "новое поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-korea-audi-a6",
+      "market": "korea",
+      "brand": "Audi",
+      "model": "A6",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-audi-q3",
+      "market": "korea",
+      "brand": "Audi",
+      "model": "Q3",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-korea-hyundai-kona",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "Kona",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-venue",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "Venue",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-creta",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "Creta",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-i30",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "i30",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-i20",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "i20",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-bayon",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "Bayon",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-casper",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "Casper",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-accent",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "Accent",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-k3-cerato",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "K3 / Cerato",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-niro",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "Niro",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-soul",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "Soul",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-stonic",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "Stonic",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-ceed",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "Ceed",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-forte",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "Forte",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-kx3",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "KX3",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-kia-carens",
+      "market": "korea",
+      "brand": "Kia",
+      "model": "Carens",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-genesis-g70",
+      "market": "korea",
+      "brand": "Genesis",
+      "model": "G70",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-chevrolet-korea-trax",
+      "market": "korea",
+      "brand": "Chevrolet Korea",
+      "model": "Trax",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-renault-korea-xm3-arkana",
+      "market": "korea",
+      "brand": "Renault Korea",
+      "model": "XM3 / Arkana",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-renault-korea-sm3",
+      "market": "korea",
+      "brand": "Renault Korea",
+      "model": "SM3",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-ssangyong-tivoli",
+      "market": "korea",
+      "brand": "SsangYong",
+      "model": "Tivoli",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-ssangyong-korando",
+      "market": "korea",
+      "brand": "SsangYong",
+      "model": "Korando",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-korea-hyundai-ioniq-6",
+      "market": "korea",
+      "brand": "Hyundai",
+      "model": "Ioniq 6",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-geely-monjaro",
+      "market": "china",
+      "brand": "Geely",
+      "model": "Monjaro",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2021,
+          "to": 2023,
+          "body_hint": "Xingyue L/KX11",
+          "variant_hint": "ранняя версия",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2024,
+          "to": 2026,
+          "body_hint": "Xingyue L/KX11",
+          "variant_hint": "обновлённая версия; сверить облик",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-geely-coolray-binyue",
+      "market": "china",
+      "brand": "Geely",
+      "model": "Coolray / Binyue",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-geely-atlas-boyue",
+      "market": "china",
+      "brand": "Geely",
+      "model": "Atlas / Boyue",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-geely-emgrand",
+      "market": "china",
+      "brand": "Geely",
+      "model": "Emgrand",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-geely-cityray",
+      "market": "china",
+      "brand": "Geely",
+      "model": "Cityray",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-byd-song-plus",
+      "market": "china",
+      "brand": "BYD",
+      "model": "Song Plus",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2020,
+          "to": 2023,
+          "body_hint": "Song Plus",
+          "variant_hint": "ранняя версия",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2024,
+          "to": 2026,
+          "body_hint": "Song Plus",
+          "variant_hint": "рестайлинг/Champion–Honor в зависимости от версии",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-byd-song-pro",
+      "market": "china",
+      "brand": "BYD",
+      "model": "Song Pro",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-byd-dolphin",
+      "market": "china",
+      "brand": "BYD",
+      "model": "Dolphin",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-byd-seagull",
+      "market": "china",
+      "brand": "BYD",
+      "model": "Seagull",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-byd-yuan-plus-atto-3",
+      "market": "china",
+      "brand": "BYD",
+      "model": "Yuan Plus / Atto 3",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-byd-qin-plus",
+      "market": "china",
+      "brand": "BYD",
+      "model": "Qin Plus",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-haval-jolion",
+      "market": "china",
+      "brand": "Haval",
+      "model": "Jolion",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2021,
+          "to": 2023,
+          "body_hint": "Jolion",
+          "variant_hint": "ранняя версия",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2024,
+          "to": 2026,
+          "body_hint": "Jolion",
+          "variant_hint": "обновлённый облик; рынок проверить",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-haval-h6",
+      "market": "china",
+      "brand": "Haval",
+      "model": "H6",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-changan-cs75-plus",
+      "market": "china",
+      "brand": "Changan",
+      "model": "CS75 Plus",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2020,
+          "to": 2021,
+          "body_hint": "CS75 Plus",
+          "variant_hint": "ранняя версия",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2024,
+          "body_hint": "CS75 Plus",
+          "variant_hint": "поздняя/2-е поколение",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2025,
+          "to": 2026,
+          "body_hint": "CS75 Plus",
+          "variant_hint": "новое поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-changan-cs55-plus",
+      "market": "china",
+      "brand": "Changan",
+      "model": "CS55 Plus",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2021,
+          "to": 2021,
+          "body_hint": "CS55 Plus",
+          "variant_hint": "ранние версии",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2024,
+          "body_hint": "CS55 Plus",
+          "variant_hint": "2-е поколение",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2025,
+          "to": 2026,
+          "body_hint": "CS55 Plus",
+          "variant_hint": "обновление; сверить регион",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-changan-eado",
+      "market": "china",
+      "brand": "Changan",
+      "model": "Eado",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-changan-cs35-plus",
+      "market": "china",
+      "brand": "Changan",
+      "model": "CS35 Plus",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-chery-tiggo-7",
+      "market": "china",
+      "brand": "Chery",
+      "model": "Tiggo 7",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-chery-tiggo-4",
+      "market": "china",
+      "brand": "Chery",
+      "model": "Tiggo 4",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-chery-arrizo-8",
+      "market": "china",
+      "brand": "Chery",
+      "model": "Arrizo 8",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-toyota-corolla",
+      "market": "china",
+      "brand": "Toyota",
+      "model": "Corolla",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "target-china-volkswagen-lavida",
+      "market": "china",
+      "brand": "Volkswagen",
+      "model": "Lavida",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-mazda-cx-30",
+      "market": "china",
+      "brand": "Mazda",
+      "model": "CX-30",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-byd-qin-l",
+      "market": "china",
+      "brand": "BYD",
+      "model": "Qin L",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-byd-destroyer-05",
+      "market": "china",
+      "brand": "BYD",
+      "model": "Destroyer 05",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-byd-song-l",
+      "market": "china",
+      "brand": "BYD",
+      "model": "Song L",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-byd-seal-06",
+      "market": "china",
+      "brand": "BYD",
+      "model": "Seal 06",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-byd-e2",
+      "market": "china",
+      "brand": "BYD",
+      "model": "e2",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-geely-binrui",
+      "market": "china",
+      "brand": "Geely",
+      "model": "Binrui",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-geely-galaxy-l6",
+      "market": "china",
+      "brand": "Geely",
+      "model": "Galaxy L6",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-geely-galaxy-e5",
+      "market": "china",
+      "brand": "Geely",
+      "model": "Galaxy E5",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-chery-tiggo-5x",
+      "market": "china",
+      "brand": "Chery",
+      "model": "Tiggo 5x",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-chery-arrizo-5",
+      "market": "china",
+      "brand": "Chery",
+      "model": "Arrizo 5",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-chery-omoda-5",
+      "market": "china",
+      "brand": "Chery",
+      "model": "Omoda 5",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-chery-jetour-x70",
+      "market": "china",
+      "brand": "Chery",
+      "model": "Jetour X70",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-haval-big-dog-dargo",
+      "market": "china",
+      "brand": "Haval",
+      "model": "Big Dog / Dargo",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-haval-m6",
+      "market": "china",
+      "brand": "Haval",
+      "model": "M6",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-haval-chitu",
+      "market": "china",
+      "brand": "Haval",
+      "model": "Chitu",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-haval-h4",
+      "market": "china",
+      "brand": "Haval",
+      "model": "H4",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-changan-uni-t",
+      "market": "china",
+      "brand": "Changan",
+      "model": "UNI-T",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-changan-uni-v",
+      "market": "china",
+      "brand": "Changan",
+      "model": "UNI-V",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-changan-alsvin",
+      "market": "china",
+      "brand": "Changan",
+      "model": "Alsvin",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-changan-lumin",
+      "market": "china",
+      "brand": "Changan",
+      "model": "Lumin",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-gac-gs3",
+      "market": "china",
+      "brand": "GAC",
+      "model": "GS3",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "target-china-gac-aion-y",
+      "market": "china",
+      "brand": "GAC",
+      "model": "Aion Y",
+      "catalog_scope": "existing_45x3_model_directory",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": false,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "drom-extra-honda-freed-spike",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "Freed Spike",
+      "catalog_scope": "drom_991_priority_not_yet_in_45_model_directory",
+      "drom_991_40_sample_priority": 1,
+      "drom_recommended_years": {
+        "from": 2011,
+        "to": 2016
+      },
+      "initial_auction_search_years": {
+        "from": 2011,
+        "to": 2016
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2011,
+          "to": 2016,
+          "body_hint": "GB3/GP3 и родственные",
+          "variant_hint": "отдельная модель Spike; точный рестайлинг по кузову",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [
+        "https://global.honda/jp/news/2023/4230111b.html"
+      ],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "drom-extra-toyota-noah",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Noah",
+      "catalog_scope": "drom_991_priority_not_yet_in_45_model_directory",
+      "drom_991_40_sample_priority": 1,
+      "drom_recommended_years": {
+        "from": 2017,
+        "to": 2023
+      },
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2023
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2017,
+          "to": 2021,
+          "body_hint": "ZRR80/ZWR80",
+          "variant_hint": "80-я серия после рестайлинга",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2023,
+          "body_hint": "ZWR90/MZRA90",
+          "variant_hint": "90-я серия, новое поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [
+        "https://global.toyota/en/newsroom/toyota/36614730.html"
+      ],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "drom-extra-toyota-voxy",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Voxy",
+      "catalog_scope": "drom_991_priority_not_yet_in_45_model_directory",
+      "drom_991_40_sample_priority": 1,
+      "drom_recommended_years": {
+        "from": 2017,
+        "to": 2023
+      },
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2023
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2017,
+          "to": 2021,
+          "body_hint": "ZRR80/ZWR80",
+          "variant_hint": "80-я серия после рестайлинга",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2023,
+          "body_hint": "ZWR90/MZRA90",
+          "variant_hint": "90-я серия, новое поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [
+        "https://global.toyota/en/newsroom/toyota/36614730.html"
+      ],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "drom-extra-subaru-levorg",
+      "market": "japan",
+      "brand": "Subaru",
+      "model": "Levorg",
+      "catalog_scope": "drom_991_priority_not_yet_in_45_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2016,
+        "to": 2023
+      },
+      "initial_auction_search_years": {
+        "from": 2016,
+        "to": 2023
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2016,
+          "to": 2020,
+          "body_hint": "VM",
+          "variant_hint": "1-е поколение",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2021,
+          "to": 2023,
+          "body_hint": "VN",
+          "variant_hint": "2-е поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "drom-extra-mazda-cx-5",
+      "market": "japan",
+      "brand": "Mazda",
+      "model": "CX-5",
+      "catalog_scope": "drom_991_priority_not_yet_in_45_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2014,
+        "to": 2022
+      },
+      "initial_auction_search_years": {
+        "from": 2014,
+        "to": 2022
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "drom-extra-suzuki-hustler",
+      "market": "japan",
+      "brand": "Suzuki",
+      "model": "Hustler",
+      "catalog_scope": "drom_991_priority_not_yet_in_45_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2014,
+        "to": 2023
+      },
+      "initial_auction_search_years": {
+        "from": 2014,
+        "to": 2023
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "drom-extra-bmw-x3",
+      "market": "japan",
+      "brand": "BMW",
+      "model": "X3",
+      "catalog_scope": "drom_991_priority_not_yet_in_45_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2019,
+        "to": 2025
+      },
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2025
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2019,
+          "to": 2021,
+          "body_hint": "G01",
+          "variant_hint": "дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2024,
+          "body_hint": "G01",
+          "variant_hint": "рестайлинг LCI",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2025,
+          "to": 2025,
+          "body_hint": "G45",
+          "variant_hint": "новое поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "drom-extra-nissan-sylphy",
+      "market": "japan",
+      "brand": "Nissan",
+      "model": "Sylphy",
+      "catalog_scope": "drom_991_priority_not_yet_in_45_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2018,
+        "to": 2022
+      },
+      "initial_auction_search_years": {
+        "from": 2018,
+        "to": 2022
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "drom-extra-subaru-xv",
+      "market": "japan",
+      "brand": "Subaru",
+      "model": "XV",
+      "catalog_scope": "drom_991_priority_not_yet_in_45_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2017,
+        "to": 2021
+      },
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2021
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "drom-extra-mazda-cx-8",
+      "market": "japan",
+      "brand": "Mazda",
+      "model": "CX-8",
+      "catalog_scope": "drom_991_priority_not_yet_in_45_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2017,
+        "to": 2022
+      },
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2022
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "drom-extra-nissan-x-trail",
+      "market": "japan",
+      "brand": "Nissan",
+      "model": "X-Trail",
+      "catalog_scope": "drom_991_priority_not_yet_in_45_model_directory",
+      "drom_991_40_sample_priority": 2,
+      "drom_recommended_years": {
+        "from": 2018,
+        "to": 2022
+      },
+      "initial_auction_search_years": {
+        "from": 2018,
+        "to": 2022
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "drom-extra-nissan-nv200",
+      "market": "japan",
+      "brand": "Nissan",
+      "model": "NV200",
+      "catalog_scope": "drom_991_priority_not_yet_in_45_model_directory",
+      "drom_991_40_sample_priority": 3,
+      "drom_recommended_years": {
+        "from": 2016,
+        "to": 2020
+      },
+      "initial_auction_search_years": {
+        "from": 2016,
+        "to": 2020
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "drom-extra-suzuki-solio",
+      "market": "japan",
+      "brand": "Suzuki",
+      "model": "Solio",
+      "catalog_scope": "drom_991_priority_not_yet_in_45_model_directory",
+      "drom_991_40_sample_priority": 3,
+      "drom_recommended_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "drom-extra-honda-stepwgn",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "Stepwgn",
+      "catalog_scope": "drom_991_priority_not_yet_in_45_model_directory",
+      "drom_991_40_sample_priority": 3,
+      "drom_recommended_years": {
+        "from": 2016,
+        "to": 2025
+      },
+      "initial_auction_search_years": {
+        "from": 2016,
+        "to": 2025
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [
+        {
+          "from": 2016,
+          "to": 2017,
+          "body_hint": "RP1–RP5",
+          "variant_hint": "5-е поколение дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2018,
+          "to": 2021,
+          "body_hint": "RP1–RP5",
+          "variant_hint": "5-е поколение обновление",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2025,
+          "body_hint": "RP6–RP8",
+          "variant_hint": "6-е поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "japan-premium-bmw-x1",
+      "market": "japan",
+      "brand": "BMW",
+      "model": "X1",
+      "catalog_scope": "prior_papauto_premium_expansion",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2019,
+        "to": 2025
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "japan-premium-bmw-3-series",
+      "market": "japan",
+      "brand": "BMW",
+      "model": "3 Series",
+      "catalog_scope": "prior_papauto_premium_expansion",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2018,
+        "to": 2025
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "japan-premium-bmw-5-series",
+      "market": "japan",
+      "brand": "BMW",
+      "model": "5 Series",
+      "catalog_scope": "prior_papauto_premium_expansion",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2018,
+        "to": 2025
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "japan-premium-mercedes-benz-c-class",
+      "market": "japan",
+      "brand": "Mercedes-Benz",
+      "model": "C-Class",
+      "catalog_scope": "prior_papauto_premium_expansion",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "japan-premium-mercedes-benz-e-class",
+      "market": "japan",
+      "brand": "Mercedes-Benz",
+      "model": "E-Class",
+      "catalog_scope": "prior_papauto_premium_expansion",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2017,
+        "to": 2025
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": false
+    },
+    {
+      "id": "japan-premium-audi-a3",
+      "market": "japan",
+      "brand": "Audi",
+      "model": "A3",
+      "catalog_scope": "prior_papauto_premium_expansion",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2018,
+        "to": 2025
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    },
+    {
+      "id": "japan-premium-audi-q3",
+      "market": "japan",
+      "brand": "Audi",
+      "model": "Q3",
+      "catalog_scope": "prior_papauto_premium_expansion",
+      "drom_991_40_sample_priority": null,
+      "drom_recommended_years": null,
+      "initial_auction_search_years": {
+        "from": 2018,
+        "to": 2025
+      },
+      "year_scope_is_drom_observation": false,
+      "facelift_generation_segments": [],
+      "segment_years_research_only": true,
+      "authority_urls_internal_only": [],
+      "desired_photo_context": "physical_auction_house_only",
+      "require_matching_full_auction_sheet": true,
+      "image_and_sheet_rights_verified": false,
+      "publish_state": "research_queue",
+      "has_existing_source_card_model_match": true
+    }
+  ]
+}
