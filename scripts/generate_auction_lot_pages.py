@@ -165,7 +165,7 @@ def generate(gallery: dict, target: Path, asset_root: Path | None = None) -> dic
     target = Path(target)
     asset_root = Path(asset_root) if asset_root is not None else target
     lots = gallery.get("lots")
-    if not isinstance(lots, list) or not 37 <= len(lots) <= 500:
+    if not isinstance(lots, list) or not 35 <= len(lots) <= 500:
         raise RuntimeError("PAPAUTO LOT: invalid source catalogue")
     ids = [r.get("id") for r in lots]
     if len(ids) != len(set(ids)):
