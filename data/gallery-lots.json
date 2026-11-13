@@ -3,7 +3,7 @@
   "updated_at": "2026-11-13",
   "description": "Only published local exact-auction-lot media are reused. No stock/street pictures; no external sales links.",
   "rights_notice": "Publication permissions for these third-party archive photographs and auction sheets have not been verified. Do not claim rights ownership; review each license before expanded distribution.",
-  "lot_count": 39,
+  "lot_count": 37,
   "lots": [
     {
       "id": "toyota-corolla-sport-2023-20038",
@@ -744,58 +744,6 @@
       "category": "premium",
       "export_restricted": false,
       "notes": "Цена является результатом аукциона в Японии, без расходов на ввоз.",
-      "rights_confirmed": false
-    },
-    {
-      "id": "audi-q2-2021",
-      "origin": "premium",
-      "market": "japan",
-      "model": "Audi Q2 35 TFSI Advance",
-      "year": 2021,
-      "mileage_km": 23000,
-      "body": "GADPC",
-      "grade": "4.5",
-      "auction": "AUCNET",
-      "lot_number": "36046",
-      "auction_date": "2026-11-09",
-      "price_jpy": 1750000,
-      "status": "sold",
-      "sale_label": "Продан на аукционе",
-      "photos": [
-        "/assets/premium-auctions/audi-q2-2021-front.webp",
-        "/assets/premium-auctions/audi-q2-2021-rear.webp"
-      ],
-      "inspection_image": "/assets/premium-auctions/audi-q2-2021-diagram.webp",
-      "inspection_kind": "Схема повреждений",
-      "category": "premium",
-      "export_restricted": false,
-      "notes": "В открытых материалах доступна только схема повреждений; полный аукционный лист не подтверждён.",
-      "rights_confirmed": false
-    },
-    {
-      "id": "audi-q3-2021",
-      "origin": "premium",
-      "market": "japan",
-      "model": "Audi Q3 35 TFSI S Line",
-      "year": 2021,
-      "mileage_km": 32000,
-      "body": "F3DPC",
-      "grade": "4",
-      "auction": "AUCNET",
-      "lot_number": "33533",
-      "auction_date": "2026-11-09",
-      "price_jpy": 2380000,
-      "status": "sold",
-      "sale_label": "Продан на аукционе",
-      "photos": [
-        "/assets/premium-auctions/audi-q3-2021-front.webp",
-        "/assets/premium-auctions/audi-q3-2021-rear.webp"
-      ],
-      "inspection_image": "/assets/premium-auctions/audi-q3-2021-diagram.webp",
-      "inspection_kind": "Схема повреждений",
-      "category": "premium",
-      "export_restricted": false,
-      "notes": "В открытых материалах доступна только схема повреждений; полный аукционный лист не подтверждён.",
       "rights_confirmed": false
     },
     {

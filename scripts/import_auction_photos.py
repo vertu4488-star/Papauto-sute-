@@ -208,7 +208,7 @@ def main():
     registry = {r["id"]: r for r in existing}
     base_gallery = json.loads((ROOT / "data" / "gallery-lots.json").read_text(encoding="utf-8"))
     base_ids = {record["id"] for record in base_gallery["lots"]}
-    require(len(base_ids) == 39, "39 source auction lot IDs expected")
+    require(len(base_ids) == 37, "37 full-sheet source auction lot IDs expected")
     ledger = json.loads(PRIVATE.read_text(encoding="utf-8")) if PRIVATE.exists() else {"lots": []}
     history = {r["id"]: r for r in ledger.get("lots", [])}
     binaries = []

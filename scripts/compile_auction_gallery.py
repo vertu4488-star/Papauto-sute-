@@ -1,4 +1,4 @@
-"""Fail-closed PAPAUTO auction gallery publisher, preserving 39 existing archive lots.
+"""Fail-closed PAPAUTO auction gallery publisher, preserving 37 full-sheet archive lots.
 
 Only new licensed full-sheet auction records are appended from the approved registry.
 HTML contains factual static cards even without JS; client gets the same embedded JSON.
@@ -14,7 +14,7 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parents[1]
 APPROVED = ROOT / "data" / "approved-auction-lots.json"
 LEDGER = ROOT / "research" / "auction-photo-rights-ledger.json"
-BASELINE = 39
+BASELINE = 37
 MAX_LOTS = 500
 COUNTRY = {"japan": ("ЯПОНИЯ", "🇯🇵", "JPY"),
            "south-korea": ("КОРЕЯ", "🇰🇷", "KRW"),
@@ -142,7 +142,7 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
     gallery = json.loads(registry_path.read_text(encoding="utf-8"))
     base = gallery.get("lots", [])
     if len(base) != BASELINE:
-        raise RuntimeError("PAPAUTO_POLICY: expected the 39 base auction records")
+        raise RuntimeError("PAPAUTO_POLICY: expected the 37 complete-sheet auction records")
     ids = {r["id"] for r in base}
     if len(ids) != BASELINE:
         raise RuntimeError("PAPAUTO_POLICY: duplicate base lot ID")
@@ -151,6 +151,8 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
         photos = lot.get("photos") or []
         if not photos:
             raise RuntimeError("PAPAUTO_POLICY: no main photo " + lot["id"])
+        if lot.get("inspection_kind") != "Аукционный лист":
+            raise RuntimeError("PAPAUTO_POLICY: full auction sheet is mandatory: " + lot["id"])
         assert_local(target, photos[0])
         assert_local(target, lot["inspection_image"])
         available = [p for p in photos if ACCEPTED_ASSET.fullmatch(p)
@@ -220,16 +222,16 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
     total = len(gallery["lots"])
     premium_count = sum(r.get("category") == "premium" for r in gallery["lots"])
     popular_count = total - premium_count
-    page = page.replace("Все 39</button>", f"Все {total}</button>", 1)
-    page = page.replace("Премиальные · 16</button>",
+    page = page.replace("Все 37</button>", f"Все {total}</button>", 1)
+    page = page.replace("Премиальные · 14</button>",
                         f"Премиальные · {premium_count}</button>", 1)
     page = page.replace("Популярные · 23</button>",
                         f"Популярные · {popular_count}</button>", 1)
-    page = page.replace("39 разных лотов", f"{total} разных лотов", 1)
-    page = page.replace("39 аукционных автомобилей · все карточки доступны",
+    page = page.replace("37 разных лотов", f"{total} разных лотов", 1)
+    page = page.replace("37 аукционных автомобилей · все карточки доступны",
                         f"{total} аукционных автомобилей · все карточки доступны", 1)
-    page = page.replace("39 примеров автомобилей", f"{total} примеров автомобилей", 1)
-    page = page.replace("— 39 лотов", f"— {total} лотов", 1)
+    page = page.replace("37 примеров автомобилей", f"{total} примеров автомобилей", 1)
+    page = page.replace("— 37 лотов", f"— {total} лотов", 1)
     hit = re.search(boot, page, flags=re.S)
     if not hit:
         raise RuntimeError("PAPAUTO_POLICY: lost embedded registry during processing")

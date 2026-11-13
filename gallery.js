@@ -179,12 +179,12 @@
  viewerImage.addEventListener("touchend",e=>{if(touchX===null)return;const delta=e.changedTouches[0].clientX-touchX;touchX=null;if(Math.abs(delta)>50)viewAt(view.index+(delta<0?1:-1));},{passive:true});
 
  // The gallery is self-contained: no fetch race, CDN JSON failure or network dependency.
- // 39 static <article> cards remain visible if JS is unavailable or the bootstrap is bad.
+ // 37 static <article> cards remain visible if JS is unavailable or the bootstrap is bad.
  try{
    const bootstrap=d.getElementById("gallery-bootstrap");
    if(!bootstrap)throw Error("Missing static auction data");
    const data=JSON.parse(bootstrap.textContent);
-   if(!Array.isArray(data.lots)||data.lots.length<39||data.lots.length>500)
+   if(!Array.isArray(data.lots)||data.lots.length<37||data.lots.length>500)
       throw Error("Auction gallery must contain 39-500 exact licensed/base records");
    all=data.lots.filter(l=>
       ["japan","south-korea","china"].includes(l.market)

@@ -2,8 +2,8 @@
   "created_at": "2026-11-13",
   "confidentiality": "private research; never expose supplier URLs in customer pages",
   "target_verified_lots": 500,
-  "baseline_published": 39,
-  "remaining_to_target": 461,
+  "baseline_published": 37,
+  "remaining_to_target": 463,
   "source_image_links": 250,
   "candidate_lots": 146,
   "candidates_by_country": {
@@ -2282,5 +2282,6 @@
       "verified_commercial_rights": false,
       "ready_for_publication": false
     }
-  ]
+  ],
+  "quarantined_missing_full_sheet": 2
 }

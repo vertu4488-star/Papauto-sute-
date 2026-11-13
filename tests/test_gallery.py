@@ -1,4 +1,4 @@
-"""Auction-only unified 39-lot gallery with image-to-lot evidence, no invented listings."""
+"""Auction-only unified 37-lot gallery with image-to-lot evidence, no invented listings."""
 from pathlib import Path
 import json
 import re
@@ -11,14 +11,15 @@ class AuctionGalleryTests(unittest.TestCase):
         source=json.loads((ROOT/"research/home-8-exact-lot-photo-sheet-references-2026-11-12.json").read_text(encoding="utf-8"))
         premium=json.loads((ROOT/"data/premium-real-auction-lots.json").read_text(encoding="utf-8"))
         lots=data["lots"]
-        self.assertEqual(data["lot_count"],39)
-        self.assertEqual(len(lots),39)
-        self.assertEqual(len({l["id"] for l in lots}),39)
+        self.assertEqual(data["lot_count"],37)
+        self.assertEqual(len(lots),37)
+        self.assertEqual(len({l["id"] for l in lots}),37)
         self.assertEqual(len([l for l in lots if l["origin"]=="home"]),25)
-        self.assertEqual(len([l for l in lots if l["origin"]=="premium"]),14)
+        self.assertEqual(len([l for l in lots if l["origin"]=="premium"]),12)
         src_home={r["slug"]:r for r in source["records"]}
         src_premium={r["id"]:r for r in premium["lots"]}
         for lot in lots:
+            self.assertEqual(lot["inspection_kind"],"Аукционный лист")
             self.assertEqual(lot["market"],"japan")
             self.assertGreater(lot["price_jpy"],0)
             self.assertFalse(lot["rights_confirmed"],"Licensing must never be fabricated")
@@ -42,7 +43,7 @@ class AuctionGalleryTests(unittest.TestCase):
         self.assertIn('rel="canonical" href="https://papauto.ru/gallery.html"',page)
         self.assertIn('id="gallery-grid"',page)
         self.assertIn('id="gallery-bootstrap"',page)
-        self.assertEqual(page.count('class="gallery-card"'),39)
+        self.assertEqual(page.count('class="gallery-card"'),37)
         self.assertNotIn('Подготавливаем аукционную галерею…',page)
         self.assertNotIn('fetch("/data/gallery-lots.json"',js)
         self.assertIn("object-fit:contain",(ROOT/"gallery.css").read_text(encoding="utf-8"))
