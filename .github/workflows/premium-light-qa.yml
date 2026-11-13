@@ -4,6 +4,11 @@ on:
     branches: [main]
     paths:
       - "premium-japan-korea.html"
+      - "gallery.html"
+      - "gallery.js"
+      - "gallery.css"
+      - "data/gallery-lots.json"
+      - "tests/test_gallery.py"
       - "premium-import-estimate.js"
       - "premium-import-estimate.css"
       - "premium-expanded-catalog.css"
