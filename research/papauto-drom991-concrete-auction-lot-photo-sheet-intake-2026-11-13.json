@@ -31,8 +31,16 @@
       "source_commercial_publication_rights_verified": false,
       "original_sheet_verified_readable": false,
       "eligible_for_publication": false,
-      "stage": "exact_source_found_needs_visual_sheet_rights",
-      "no_client_external_links": true
+      "stage": "VISUAL_PASS_RIGHTS_HOLD",
+      "no_client_external_links": true,
+      "visual_review": {
+        "date": "2026-11-13",
+        "method": "TinyFish read-only browser visit",
+        "review_status": "indoor_auction_pavilion_reported",
+        "sheet_verdict": "full_lot_99_reported",
+        "same_lot_verdict": "same_lot_number_reported",
+        "notes": "Browser agent reports both front and second photo inside a lit pavilion with no street scene; full sheet shows lot 99. Treat as image-level preliminary verification; commercial rights remain missing."
+      }
     },
     {
       "id": "drom991-verified-source-02",
@@ -121,8 +129,16 @@
       "source_commercial_publication_rights_verified": false,
       "original_sheet_verified_readable": false,
       "eligible_for_publication": false,
-      "stage": "exact_source_found_needs_visual_sheet_rights",
-      "no_client_external_links": true
+      "stage": "REJECT_PHOTO_LOCATION",
+      "no_client_external_links": true,
+      "visual_review": {
+        "date": "2026-11-13",
+        "method": "TinyFish read-only browser visit",
+        "review_status": "outdoor_reported_low_confidence",
+        "sheet_verdict": "full_lot_12568_reported",
+        "same_lot_verdict": "same_lot_number_reported",
+        "notes": "Agent marked main and second photo as open auction yard, but justification relied partly on page description; keep excluded unless direct visual recheck disproves outdoor scene."
+      }
     },
     {
       "id": "drom991-verified-source-05",
@@ -151,8 +167,16 @@
       "source_commercial_publication_rights_verified": false,
       "original_sheet_verified_readable": false,
       "eligible_for_publication": false,
-      "stage": "exact_source_found_needs_visual_sheet_rights",
-      "no_client_external_links": true
+      "stage": "REJECT_PHOTO_LOCATION_AND_SHEET_UNCLEAR",
+      "no_client_external_links": true,
+      "visual_review": {
+        "date": "2026-11-13",
+        "method": "TinyFish read-only browser visit",
+        "review_status": "outdoor_reported_low_confidence",
+        "sheet_verdict": "damage_diagram_or_full_sheet_unclear",
+        "same_lot_verdict": "same_lot_number_unconfirmed",
+        "notes": "Agent reports outdoor photos and could not verify an original full auction sheet for Voxy lot 412. Do not publish."
+      }
     },
     {
       "id": "drom991-verified-source-06",
@@ -221,8 +245,16 @@
       "source_commercial_publication_rights_verified": false,
       "original_sheet_verified_readable": false,
       "eligible_for_publication": false,
-      "stage": "exact_source_found_needs_visual_sheet_rights",
-      "no_client_external_links": true
+      "stage": "PENDING_DIRECT_VISUAL_REVIEW",
+      "no_client_external_links": true,
+      "visual_review": {
+        "date": "2026-11-13",
+        "method": "TinyFish read-only browser visit",
+        "review_status": "not_viewed_navigation_timeout",
+        "sheet_verdict": "not_viewed",
+        "same_lot_verdict": "not_viewed",
+        "notes": "Browser run timed out before reaching Freed Spike 2015 lot 10042; web metadata/source image links exist, actual visuals still unverified."
+      }
     },
     {
       "id": "drom991-verified-source-08",
@@ -342,5 +374,10 @@
     "No client redirects",
     "All review links stay in private repository research"
   ],
-  "new_public_auction_cards_from_this_batch": 0
+  "new_public_auction_cards_from_this_batch": 0,
+  "last_visual_review_date": "2026-11-13",
+  "visual_reviewed_records": 4,
+  "preliminary_indoor_source_count": 1,
+  "outdoor_or_uncertain_rejected_count": 2,
+  "visual_review_timed_out_count": 1
 }
