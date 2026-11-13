@@ -108,45 +108,13 @@ def copy_public_files() -> list[str]:
     if media_count < 50:
         raise RuntimeError("Incomplete required auction covers or auction sheets")
 
-    # Extras may be unavailable at source. Remove absent OPTIONAL photo angles
-    # from BOTH the published JSON and the embedded page bootstrap. This avoids
-    # broken thumbnails while preserving every verified cover and inspection sheet.
-    gallery_manifest = TARGET / "data" / "gallery-lots.json"
-    gallery_page = TARGET / "gallery.html"
-    if gallery_manifest.is_file() and gallery_page.is_file():
-        gallery_data = json.loads(gallery_manifest.read_text(encoding="utf-8"))
-        records = gallery_data.get("lots", [])
-        if len(records) != 39:
-            raise RuntimeError("PAPAUTO_POLICY: expected 39 exact gallery lots")
-        trimmed_angles = 0
-        for record in records:
-            photos = record.get("photos", [])
-            if not isinstance(photos, list) or not photos:
-                raise RuntimeError("PAPAUTO_POLICY: gallery photo list missing")
-            for required in (photos[0], record.get("inspection_image")):
-                if not isinstance(required, str) or not required.startswith("/assets/"):
-                    raise RuntimeError("PAPAUTO_POLICY: invalid required gallery media path")
-                if not (TARGET / required.lstrip("/")).is_file():
-                    raise RuntimeError("PAPAUTO_POLICY: main gallery media missing: " + required)
-            available = [p for p in photos if isinstance(p, str) and p.startswith("/assets/")
-                         and (TARGET / p.lstrip("/")).is_file()]
-            trimmed_angles += len(photos) - len(available)
-            record["photos"] = available
-        gallery_manifest.write_text(json.dumps(gallery_data, ensure_ascii=False,
-                                              indent=2) + "\n", encoding="utf-8")
-        html = gallery_page.read_text(encoding="utf-8")
-        pattern = r'(<script[^>]*id="gallery-bootstrap"[^>]*>)(.*?)(</script>)'
-        match = re.search(pattern, html, flags=re.S)
-        if not match:
-            raise RuntimeError("PAPAUTO_POLICY: gallery data bootstrap missing")
-        original_data = json.loads(match.group(2))
-        if {lot["id"] for lot in original_data.get("lots", [])} != {lot["id"] for lot in records}:
-            raise RuntimeError("PAPAUTO_POLICY: gallery bootstrap lot mismatch")
-        inline_json = json.dumps(gallery_data, ensure_ascii=False, separators=(",", ":"))
-        inline_json = inline_json.replace("<", "\\u003c")
-        html = html[:match.start(2)] + inline_json + html[match.end(2):]
-        gallery_page.write_text(html, encoding="utf-8")
-        print(f"Gallery published: {len(records)} exact lots; omitted {trimmed_angles} missing optional angles")
+    # Expand the site from 39 baseline lots to a maximum of 500 fully approved lots.
+    # Every new photo and sheet is local, licensed and matched to an auction lot.
+    from compile_auction_gallery import compile_published_gallery
+    gallery_result = compile_published_gallery(TARGET)
+    print(f"Gallery published: {gallery_result['count']} exact lots; "
+          f"new: {gallery_result['new']}; "
+          f"omitted {gallery_result['skipped_optional']} missing optional angles")
 
     # The complete prebuilt SurveyJS renderer is pinned and hosted on PAPAUTO.
     # Never rely on external CDN scripts at runtime, including in Russia.
@@ -168,7 +136,8 @@ def copy_public_files() -> list[str]:
             src = re.search(r"""src\s*=\s*["']([^"']+)["']""", tag, re.I)
             url = src.group(1) if src else ""
             if ((re.fullmatch(r"/assets/auction/home/[a-z0-9-]+[.]jpg",url)
-                  or re.fullmatch(r"/assets/premium-auctions/[a-z0-9-]+[.]webp",url))
+                  or re.fullmatch(r"/assets/premium-auctions/[a-z0-9-]+[.]webp",url)
+                  or re.fullmatch(r"/assets/auction/approved/[a-z0-9-]+[.](?:jpg|jpeg|png|webp)",url))
                  and (ROOT / url.lstrip("/")).is_file()
                  or url in {"/assets/papauto-logo.svg","/assets/visual/fallback-vehicle.svg"}):
                 return tag
