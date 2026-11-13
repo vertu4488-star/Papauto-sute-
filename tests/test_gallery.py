@@ -53,7 +53,7 @@ class AuctionGalleryTests(unittest.TestCase):
         self.assertIn('id="gallery-bootstrap"',page)
         self.assertEqual(page.count('class="gallery-card"'),37)
         self.assertEqual(page.count('class="gallery-description"'),37)
-        self.assertIn('class="gallery-description"',js)
+        self.assertIn('element("p","gallery-description",lot.description)',js)
 
         self.assertNotIn('Подготавливаем аукционную галерею…',page)
         self.assertNotIn('fetch("/data/gallery-lots.json"',js)
