@@ -157,8 +157,8 @@ def copy_public_files() -> list[str]:
         dst = TARGET / rejected
         dst.parent.mkdir(parents=True, exist_ok=True)
         dst.write_bytes(TOMBSTONE)
-    if media_count < 50:
-        raise RuntimeError("Incomplete required auction covers or auction sheets")
+    if media_count != 50:
+        raise RuntimeError("Expected exactly 25 screened auction covers and 25 matching sheets; unreviewed optional media blocked")
 
     # Expand the site from 39 baseline lots to a maximum of 500 fully approved lots.
     # Every new photo and sheet is local, licensed and matched to an auction lot.
