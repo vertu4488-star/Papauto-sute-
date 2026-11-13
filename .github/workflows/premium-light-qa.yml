@@ -6,6 +6,7 @@ on:
       - "premium-japan-korea.html"
       - "gallery.html"
       - "gallery.js"
+      - "scripts/qa_gallery_browser.cjs"
       - "gallery.css"
       - "data/gallery-lots.json"
       - "tests/test_gallery.py"
@@ -44,8 +45,8 @@ jobs:
       - name: Compare mobile 320/390px and desktop, test CSS, images, menu, filters, overflow
         run: |
           python -m http.server 8765 -d render-public > /tmp/papauto-premium-http.log 2>&1 &
-          node scripts/qa_premium_light_browser.cjs
           node scripts/qa_gallery_browser.cjs
+          node scripts/qa_premium_light_browser.cjs
       - name: Save actual page screenshots
         if: always()
         uses: actions/upload-artifact@v4
