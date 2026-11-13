@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'survey-podbor.js'
+      - 'survey-similar-prefill.js'
+      - 'scripts/qa_survey_prefill_browser.cjs'
       - 'scripts/qa_surveyjs_browser.cjs'
       - 'survey-diagnostics.js'
       - 'survey-podbor.css'
@@ -63,6 +65,8 @@ jobs:
         run: |
           python -m http.server 8765 -d render-public > /tmp/papauto-e2e-static.log 2>&1 &
           node scripts/qa_surveyjs_browser.cjs
+      - name: Verify 4 auction lots prefill the mobile application
+        run: node scripts/qa_survey_prefill_browser.cjs
       - name: Upload diagnostic screenshot
         if: always()
         uses: actions/upload-artifact@v4
@@ -71,4 +75,5 @@ jobs:
           path: |
             survey-mobile-diagnostic.png
             survey-end-to-end.png
+            survey-prefill-mobile.png
           if-no-files-found: ignore
