@@ -1,0 +1,354 @@
+{
+  "audit_date": "2026-11-13",
+  "audit_scope": "Manual visual review of all 37 main cover photos hosted in repository plus all 12 premium-lot second-angle photographs; other home-gallery optional angles are not comprehensively reviewed.",
+  "source_records": 37,
+  "excluded_outdoor_lot_ids": [
+    "nissan-note-2021-227",
+    "mercedes-a180-2020"
+  ],
+  "photo_paths_to_tombstone": [
+    "assets/auction/home/nissan-note-2021-227-photo-1.jpg",
+    "assets/premium-auctions/mercedes-a180-2020-front.webp",
+    "assets/premium-auctions/mercedes-a180-2020-rear.webp"
+  ],
+  "visually_indoor_cover_count": 35,
+  "visually_outdoor_cover_count": 2,
+  "prospective_customer_gallery_count": 35,
+  "rights_warning": "Visual review checks setting only. Commercial publishing rights remain unconfirmed for existing third-party auction assets.",
+  "notes": "A180 front and rear both outdoors among parked dealer vehicles. Nissan Note cover is outdoors beside buildings, and its optional additional photo files were unavailable via repository. Source provenance preserved but excluded from public generated pages.",
+  "lots": [
+    {
+      "id": "toyota-corolla-sport-2023-20038",
+      "model": "Toyota Corolla Sport",
+      "year": 2023,
+      "cover_path": "/assets/auction/home/toyota-corolla-sport-2023-20038-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "honda-fit-2021-10355",
+      "model": "Honda Fit",
+      "year": 2021,
+      "cover_path": "/assets/auction/home/honda-fit-2021-10355-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "nissan-note-2021-227",
+      "model": "Nissan Note",
+      "year": 2021,
+      "cover_path": "/assets/auction/home/nissan-note-2021-227-photo-1.jpg",
+      "visual_cover_classification": "REJECT_OUTDOOR",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": false
+    },
+    {
+      "id": "mazda-cx5-2022-307",
+      "model": "Mazda CX-5",
+      "year": 2022,
+      "cover_path": "/assets/auction/home/mazda-cx5-2022-307-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "suzuki-jimny-2024-272",
+      "model": "Suzuki Jimny",
+      "year": 2024,
+      "cover_path": "/assets/auction/home/suzuki-jimny-2024-272-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "subaru-levorg-2023-13004",
+      "model": "Subaru Levorg",
+      "year": 2023,
+      "cover_path": "/assets/auction/home/subaru-levorg-2023-13004-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "bmw-1series-2024-227",
+      "model": "BMW 1 Series",
+      "year": 2024,
+      "cover_path": "/assets/auction/home/bmw-1series-2024-227-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "audi-a3-2019-301",
+      "model": "Audi A3",
+      "year": 2019,
+      "cover_path": "/assets/auction/home/audi-a3-2019-301-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "honda-freed-265",
+      "model": "Honda Freed",
+      "year": 2022,
+      "cover_path": "/assets/auction/home/honda-freed-265-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "honda-vezel-278",
+      "model": "Honda Vezel",
+      "year": 2023,
+      "cover_path": "/assets/auction/home/honda-vezel-278-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "honda-stepwgn-275",
+      "model": "Honda Stepwgn",
+      "year": 2025,
+      "cover_path": "/assets/auction/home/honda-stepwgn-275-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "toyota-sienta-321",
+      "model": "Toyota Sienta",
+      "year": 2024,
+      "cover_path": "/assets/auction/home/toyota-sienta-321-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "toyota-roomy-69",
+      "model": "Toyota Roomy",
+      "year": 2025,
+      "cover_path": "/assets/auction/home/toyota-roomy-69-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "toyota-raize-87",
+      "model": "Toyota Raize",
+      "year": 2026,
+      "cover_path": "/assets/auction/home/toyota-raize-87-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "toyota-yaris-95",
+      "model": "Toyota Yaris",
+      "year": 2021,
+      "cover_path": "/assets/auction/home/toyota-yaris-95-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "toyota-corolla-axio-120",
+      "model": "Toyota Corolla Axio",
+      "year": 2021,
+      "cover_path": "/assets/auction/home/toyota-corolla-axio-120-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "toyota-corolla-fielder-111",
+      "model": "Toyota Corolla Fielder",
+      "year": 2018,
+      "cover_path": "/assets/auction/home/toyota-corolla-fielder-111-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "suzuki-swift-154",
+      "model": "Suzuki Swift",
+      "year": 2024,
+      "cover_path": "/assets/auction/home/suzuki-swift-154-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "suzuki-spacia-168",
+      "model": "Suzuki Spacia",
+      "year": 2025,
+      "cover_path": "/assets/auction/home/suzuki-spacia-168-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "honda-n-box-28",
+      "model": "Honda N-BOX",
+      "year": 2019,
+      "cover_path": "/assets/auction/home/honda-n-box-28-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "nissan-dayz-218",
+      "model": "Nissan Dayz",
+      "year": 2019,
+      "cover_path": "/assets/auction/home/nissan-dayz-218-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "daihatsu-rocky-490",
+      "model": "Daihatsu Rocky",
+      "year": 2023,
+      "cover_path": "/assets/auction/home/daihatsu-rocky-490-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "daihatsu-tanto-225",
+      "model": "Daihatsu Tanto",
+      "year": 2023,
+      "cover_path": "/assets/auction/home/daihatsu-tanto-225-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "suzuki-hustler-448",
+      "model": "Suzuki Hustler",
+      "year": 2022,
+      "cover_path": "/assets/auction/home/suzuki-hustler-448-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "suzuki-wagon-r-175",
+      "model": "Suzuki Wagon R",
+      "year": 2017,
+      "cover_path": "/assets/auction/home/suzuki-wagon-r-175-photo-1.jpg",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "bmw-x1-2021",
+      "model": "BMW X1 sDrive18i",
+      "year": 2021,
+      "cover_path": "/assets/premium-auctions/bmw-x1-2021-front.webp",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "bmw-x2-2019",
+      "model": "BMW X2 sDrive18i M Sport X",
+      "year": 2019,
+      "cover_path": "/assets/premium-auctions/bmw-x2-2019-front.webp",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "bmw-118i-2019",
+      "model": "BMW 118i M Sport",
+      "year": 2019,
+      "cover_path": "/assets/premium-auctions/bmw-118i-2019-front.webp",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "bmw-218i-2022",
+      "model": "BMW 218i Gran Coupe M Sport",
+      "year": 2022,
+      "cover_path": "/assets/premium-auctions/bmw-218i-2022-front.webp",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "audi-q3sb-2024",
+      "model": "Audi Q3 Sportback 35 TFSI S Line",
+      "year": 2024,
+      "cover_path": "/assets/premium-auctions/audi-q3sb-2024-front.webp",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "mercedes-glb180-2023",
+      "model": "Mercedes-Benz GLB 180 AMG Line",
+      "year": 2023,
+      "cover_path": "/assets/premium-auctions/mercedes-glb180-2023-front.webp",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "mercedes-a180-2020",
+      "model": "Mercedes-Benz A180 Sedan AMG Line",
+      "year": 2020,
+      "cover_path": "/assets/premium-auctions/mercedes-a180-2020-front.webp",
+      "visual_cover_classification": "REJECT_OUTDOOR",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": false
+    },
+    {
+      "id": "mercedes-c180-2018",
+      "model": "Mercedes-Benz C180 Avantgarde AMG Line",
+      "year": 2018,
+      "cover_path": "/assets/premium-auctions/mercedes-c180-2018-front.webp",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "bmw-x3-2022",
+      "model": "BMW X3 xDrive20d",
+      "year": 2022,
+      "cover_path": "/assets/premium-auctions/bmw-x3-2022-front.webp",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "bmw-x1-u11-2025",
+      "model": "BMW X1 U11 sDrive18i M Sport",
+      "year": 2025,
+      "cover_path": "/assets/premium-auctions/bmw-x1-u11-2025-front.webp",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "mercedes-gla180-2025",
+      "model": "Mercedes-Benz GLA 180 AMG Line",
+      "year": 2025,
+      "cover_path": "/assets/premium-auctions/mercedes-gla180-2025-front.webp",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    },
+    {
+      "id": "mercedes-cla180-2024",
+      "model": "Mercedes-Benz CLA 180 AMG Line",
+      "year": 2024,
+      "cover_path": "/assets/premium-auctions/mercedes-cla180-2024-front.webp",
+      "visual_cover_classification": "INDOOR_OR_AUCTION_BAY_VISUALLY",
+      "source_photo_rights_confirmed": false,
+      "customer_published_after_quarantine": true
+    }
+  ]
+}
