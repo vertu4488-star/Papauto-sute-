@@ -39,6 +39,18 @@ def built_exact_auction_files():
 
 BUILT_AUCTION_FILES = built_exact_auction_files()
 
+def built_auction_detail_pages():
+    """Known exact-lot URLs are materialized by the static site builder.
+    No arbitrary /lots/ path is implicitly trusted.
+    """
+    gallery=json.loads((ROOT/"data/gallery-lots.json").read_text(encoding="utf-8"))
+    if not (ROOT/"scripts/generate_auction_lot_pages.py").is_file():
+        raise RuntimeError("Auction detail page generator missing")
+    return {ROOT/"lots"/(lot["id"]+".html") for lot in gallery["lots"]}
+
+BUILT_LOT_PAGES = built_auction_detail_pages()
+
+
 
 
 class Links(HTMLParser):
@@ -106,7 +118,7 @@ class PAPAUTOLinksTest(unittest.TestCase):
             parsed.feed(page.read_text(encoding="utf-8"))
             for tag, raw in parsed.links:
                 target = local_target(page, raw)
-                if target is not None and not target.is_file() and target not in BUILT_VENDOR_FILES and target not in BUILT_AUCTION_FILES:
+                if target is not None and not target.is_file() and target not in BUILT_VENDOR_FILES and target not in BUILT_AUCTION_FILES and target not in BUILT_LOT_PAGES:
                     errors.append(f"{page.name}: {tag} {raw} -> {target.relative_to(ROOT)}")
         self.assertEqual(errors, [], "\n".join(errors[:40]))
 

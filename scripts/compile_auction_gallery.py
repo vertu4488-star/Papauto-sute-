@@ -121,7 +121,7 @@ def static_card(lot: dict) -> str:
         f'<img loading="lazy" decoding="async" src="{e(sheet)}" alt="Аукционный лист {e(name)}"></a></div>\n'
         f'<div class="gallery-card-body"><h3>{e(name)} · {lot["year"]}</h3>'
         f'<p class="gallery-variant">{e(lot["sale_label"])}</p>'
-        f'<p class="gallery-variant">{e(lot["description"])}</p>'
+        f'<p class="gallery-description">{e(lot["description"])}</p>'
         f'<div class="gallery-facts"><div class="gallery-fact"><span>Пробег</span>'
         f'<strong>{int(lot["mileage_km"]):,} км</strong></div>'
         f'<div class="gallery-fact"><span>Аукцион</span><strong>{e(lot["auction"])}</strong></div>'
@@ -129,7 +129,8 @@ def static_card(lot: dict) -> str:
         f'<div class="gallery-fact"><span>Дата / № лота</span>'
         f'<strong>{e(lot["auction_date"])} · {e(lot["lot_number"])}</strong></div></div>'
         f'<div class="gallery-price"><span>{note}</span><strong>{price}</strong></div></div>\n'
-        f'<div class="gallery-card-footer"><a class="gallery-detail" href="{e(sheet)}">'
+        f'<div class="gallery-card-footer"><a class="gallery-full" href="/lots/{e(lot["id"])}.html">'
+        f'Подробная карточка лота</a><a class="gallery-detail" href="{e(sheet)}">'
         f'Аукционный лист</a><a class="gallery-apply" href="/podbor.html?similar={similar}">'
         f'Подобрать аналог</a></div></article>\n'
     )

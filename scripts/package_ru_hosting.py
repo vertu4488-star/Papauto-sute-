@@ -70,6 +70,9 @@ def is_public(name: str, size: int) -> bool:
         return Path(name).suffix.lower() in ROOT_EXT
     if parts[0] == "data":
         return Path(name).suffix.lower() == ".json"
+    if parts[0] == "lots" and len(parts) == 2:
+        return Path(name).suffix.lower() == ".html"
+
     if parts[0] == "vendor":
         return Path(name).suffix.lower() in {".js", ".css", ".woff2"}
     if parts[0] == "assets":
@@ -107,6 +110,7 @@ def build(source: Path, target: Path) -> dict:
     required = {"index.html", "gallery.html", "gallery.js", "gallery.css",
                 "podbor.html", "404.html", "robots.txt", "sitemap.xml",
                 "site-config.js", "data/gallery-lots.json",
+                "lots/toyota-corolla-sport-2023-20038.html",
                 "assets/favicon.svg", "assets/papauto-logo.svg"}
     missing = [p for p in sorted(required) if not (target / p).is_file()]
     if missing:
@@ -118,6 +122,8 @@ def build(source: Path, target: Path) -> dict:
     html = (target / "gallery.html").read_text(encoding="utf-8")
     if html.count('class="gallery-card"') != len(lots):
         raise RuntimeError("Published auction cards and data do not match")
+    if len(list((target / "lots").glob("*.html"))) != len(lots):
+        raise RuntimeError("RU export missing auction-lot details")
     for lot in lots:
         if lot.get("inspection_kind") != "Аукционный лист":
             raise RuntimeError("Full auction sheet missing: " + lot["id"])

@@ -55,7 +55,20 @@ def render_lot(lot: dict, asset_root: Path) -> str:
     if not isinstance(lot.get("mileage_km"), int) or lot["mileage_km"] < 0:
         raise RuntimeError("PAPAUTO LOT: source-verified mileage required " + slug)
     sheet = check_media(lot.get("inspection_image"), asset_root)
-    photos = [check_media(p, asset_root) for p in photos]
+    # First angle and sheet MUST exist. Optional extra source angles may be
+    # unavailable even when referenced by an older archive; skip rather than
+    # render broken imagery. Never accept invalid or external paths.
+    first_photo = check_media(photos[0], asset_root)
+    included = [first_photo]
+    for extra in photos[1:]:
+        if not isinstance(extra, str) or not MEDIA.fullmatch(extra):
+            raise RuntimeError("PAPAUTO LOT: image is not an approved local auction asset: " + str(extra))
+        file = asset_root / extra.lstrip("/")
+        if file.is_symlink():
+            raise RuntimeError("PAPAUTO LOT: forbidden symlink " + extra)
+        if file.is_file() and file.stat().st_size >= 100:
+            included.append(extra)
+    photos = included
     if len(photos) != len(set(photos)) or sheet in photos:
         raise RuntimeError("PAPAUTO LOT: duplicate media within lot " + slug)
     region, cur, symbol = MARKETS[market]
