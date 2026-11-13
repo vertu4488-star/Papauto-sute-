@@ -162,26 +162,31 @@
  let touchX=null;
  viewerImage.addEventListener("touchstart",e=>{if(e.touches.length===1)touchX=e.touches[0].clientX;},{passive:true});
  viewerImage.addEventListener("touchend",e=>{if(touchX===null)return;const delta=e.changedTouches[0].clientX-touchX;touchX=null;if(Math.abs(delta)>50)viewAt(view.index+(delta<0?1:-1));},{passive:true});
- fetch("/data/gallery-lots.json",{cache:"no-store",credentials:"omit"})
-  .then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json();})
-  .then(data=>{
-    if(!Array.isArray(data.lots)||data.lots.length!==39)throw Error("Gallery registry incomplete");
-    all=data.lots.filter(l=>l.market==="japan"&&validImg(l.photos?.[0])&&validImg(l.inspection_image)&&l.price_jpy>0);
-    if(all.length!==39)throw Error("Gallery missing required auction evidence");
-    // Some embedded browsers restore stale select/search values from a prior page.
-    // Force a clean initial view; subsequent user changes remain fully interactive.
-    category="all";
-    tabs.forEach(tab=>{const selected=tab.dataset.galleryCategory==="all";tab.classList.toggle("is-active",selected);tab.setAttribute("aria-pressed",String(selected));});
-    search.value="";
-    sort.value="recommended";
-    updateBrands();
-    brand.value="all";
-    draw();
-  }).catch(()=>{
-    grid.replaceChildren(element("p","gallery-empty","Галерея временно недоступна. Откройте аукционные примеры или премиальный каталог."));
-    count.textContent="Ошибка загрузки галереи";
-    more.hidden=true;
-    const a=element("a","gallery-link","Открыть доступные аукционные лоты →");
-    a.href="/auction-lots.html";grid.append(a);
-  });
+
+ // The gallery is self-contained: no fetch race, CDN JSON failure or network dependency.
+ // 39 static <article> cards remain visible if JS is unavailable or the bootstrap is bad.
+ try{
+   const bootstrap=d.getElementById("gallery-bootstrap");
+   if(!bootstrap)throw Error("Missing static auction data");
+   const data=JSON.parse(bootstrap.textContent);
+   if(!Array.isArray(data.lots)||data.lots.length!==39)throw Error("Incomplete auction data");
+   all=data.lots.filter(l=>l.market==="japan"&&validImg(l.photos?.[0])&&validImg(l.inspection_image)&&l.price_jpy>0);
+   if(all.length!==39)throw Error("Auction-photo provenance mismatch");
+   category="all";
+   tabs.forEach(tab=>{
+     const selected=tab.dataset.galleryCategory==="all";
+     tab.classList.toggle("is-active",selected);
+     tab.setAttribute("aria-pressed",String(selected));
+     tab.disabled=false;
+   });
+   search.value="";search.disabled=false;
+   sort.value="recommended";sort.disabled=false;
+   updateBrands();brand.value="all";brand.disabled=false;
+   draw();
+ }catch(error){
+   // Fail open to the factual static cards, never replace them with an empty grid.
+   count.textContent="39 аукционных автомобилей · статическая галерея";
+   more.hidden=true;
+   console.warn("PAPAUTO_GALLERY_STATIC_FALLBACK",error.message);
+ }
 })();
