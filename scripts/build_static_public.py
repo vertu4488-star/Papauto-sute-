@@ -176,6 +176,12 @@ def copy_public_files() -> list[str]:
             or published_registry["lot_count"] < 35
             or public_ids.intersection(withdrawn_ids)):
         raise RuntimeError("PAPAUTO_POLICY: quarantined outdoor lot in release")
+    if gallery_result.get("detail_pages") != published_registry["lot_count"]:
+        raise RuntimeError("PAPAUTO_POLICY: published detail pages mismatch gallery")
+    for public_lot in published_registry["lots"]:
+        detail = TARGET / "lots" / (public_lot["id"] + ".html")
+        if not detail.is_file():
+            raise RuntimeError("PAPAUTO_POLICY: missing buyer lot page " + public_lot["id"])
     customer_gallery = (TARGET / "gallery.html").read_text(encoding="utf-8")
     if any(id_ in customer_gallery for id_ in withdrawn_ids):
         raise RuntimeError("PAPAUTO_POLICY: outdoor lot leaked into gallery HTML")
