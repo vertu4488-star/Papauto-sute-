@@ -6,6 +6,15 @@
   const norm = value => String(value || '').normalize('NFKC').toLocaleLowerCase('ru')
     .replace(/[\u00a0\u2000-\u200b]/g,' ').replace(/\s+/g,' ').trim();
   const prefix = (full,part) => full === part || full.startsWith(part + ' ') || full.startsWith(part+'-');
+  // Factory trim badges on real Japanese auction listings may differ from the
+  // catalogue's body-family names. Map ONLY known model-family equivalents;
+  // never replace a model with a different vehicle or invent a lot.
+  const japaneseTrimAliases = {
+    'bmw|1 series':['118i','116i','120i'],
+    'bmw|2 series':['218i','220i'],
+    'mercedes-benz|a-class':['a180','a 180'],
+    'mercedes-benz|c-class':['c180','c 180']
+  };
   function resolve(raw,catalogue) {
     if(typeof raw!=='string'||raw.length<3||raw.length>180)return null;
     let original=raw.trim();
@@ -35,7 +44,8 @@
         if(!prefix(lookup,mk))continue;
         if(!bestMake||mk.length>bestMake.score)bestMake={market:region,make,score:mk.length};
         // Slash-separated market variants (Avante / Elantra) are one catalogue model.
-        const names=[model,...model.split(/\s*\/\s*/)].filter(Boolean);
+        const names=[model,...model.split(/\s*\/\s*/),...(region==='japan'
+          ? japaneseTrimAliases[norm(make)+'|'+norm(model)]||[] : [])].filter(Boolean);
         for(const alias of names){
           const candidate=norm(make+' '+alias);
           if(prefix(lookup,candidate)&&candidate.length>matchScore){

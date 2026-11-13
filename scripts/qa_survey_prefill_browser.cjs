@@ -6,6 +6,10 @@ const BASE='http://127.0.0.1:8765/podbor.html';
 const cases=[
  {reference:'Toyota Corolla Sport 2023 · Япония',make:'Toyota',model:'Corolla',year:'2023'},
  {reference:'BMW X1 sDrive18i 2021 · Япония',make:'BMW',model:'X1',year:'2021'},
+ {reference:'BMW 118i M Sport 2019 · Япония',make:'BMW',model:'1 Series',year:'2019'},
+ {reference:'BMW 218i Gran Coupe M Sport 2022 · Япония',make:'BMW',model:'2 Series',year:'2022'},
+ {reference:'Mercedes-Benz A180 Sedan AMG Line 2020 · Япония',make:'Mercedes-Benz',model:'A-Class',year:'2020'},
+ {reference:'Mercedes-Benz C180 Avantgarde AMG Line 2018 · Япония',make:'Mercedes-Benz',model:'C-Class',year:'2018'},
  {reference:'Hyundai Avante 2024 · Корея',make:'Hyundai',model:'Avante',year:'2024'},
  {reference:'Geely Monjaro 2025 · Китай',make:'Geely',model:'Monjaro',year:'2025'}
 ];
