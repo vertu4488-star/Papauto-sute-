@@ -1,12 +1,13 @@
 (() => {
   const groups = {
     home: ['.hero', '.pa-thursday-statbar', '.pa-thursday-markets', '.pa-thursday-feature', '#pa-vitrine', '.mobile-dashboard', '.proof-strip', '.marketplace-intro', '.budget-start', '#quick-selection'],
-    catalog: ['#catalog', '#showcase', '#popular-models'],
+    catalog: ['#catalog', '#showcase', '#popular-models', '#smart-search', '#priority-models'],
     directions: ['#directions', '#route-planner', '#regional-delivery'],
     auctions: ['#seo-guides', '#auction-statistics', '#market-sources'],
     calculator: ['#calculator', '#currency-converter', '#logisticsBenchmarks'],
     select: [], // PAPAUTO SELECT has moved to /podbor.html; no long account feed.
-    about: ['#process', '#checklist', '#auto-import-russia', '#faq', '#request']
+    about: ['#process', '#checklist', '#auto-import-russia', '#faq', '#request'],
+    account: ['#account'] // Account appears only when explicitly opened; never on the market page.
   };
   const all = Object.values(groups).flat();
   const knownIds = new Map();
