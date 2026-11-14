@@ -303,6 +303,33 @@ def copy_public_files() -> list[str]:
             if (not (TARGET / hero_asset).is_file()
                     or f'<img src="/{hero_asset}"' not in html):
                 raise RuntimeError("PAPAUTO_HERO: approved BMW artwork stripped from public homepage")
+        # Keep all interior pages in the same approved warm PapAuto visual system.
+        # Inject a small presentation layer AFTER legacy page styles, without
+        # rewriting source HTML or modifying any auction media / lead form JS.
+        if page.name != "index.html":
+            warm_stylesheet = "papauto-warm-interior.css"
+            if not (TARGET / warm_stylesheet).is_file():
+                raise RuntimeError("PAPAUTO_WARM: interior theme CSS was not copied")
+            if "</head>" not in html.lower():
+                raise RuntimeError("PAPAUTO_WARM: interior page has no head: " + page.name)
+            html = re.sub(
+                r"</head>",
+                '<link rel="stylesheet" href="/papauto-warm-interior.css?v=20261114-warm-v1"></head>',
+                html, count=1, flags=re.I,
+            )
+            def add_interior_skin(match):
+                attrs = match.group(1)
+                old_class = re.search(r'\\bclass\\s*=\\s*(["\\\'])(.*?)\\1', attrs, flags=re.I | re.S)
+                if old_class:
+                    current = old_class.group(2)
+                    if "papauto-warm-interior" not in current.split():
+                        attrs = attrs[:old_class.start(2)] + current + " papauto-warm-interior" + attrs[old_class.end(2):]
+                else:
+                    attrs += ' class="papauto-warm-interior"'
+                return "<body" + attrs + ">"
+            html, body_matches = re.subn(r"<body\\b([^>]*)>", add_interior_skin, html, count=1, flags=re.I)
+            if body_matches != 1 or html.count("papauto-warm-interior.css") != 1:
+                raise RuntimeError("PAPAUTO_WARM: missing or duplicate interior theme on " + page.name)
         page.write_text(html, encoding="utf-8")
         if re.search(r"<img[^>]+src\s*=\s*[\"']https?://", html, flags=re.I):
             raise RuntimeError("External vehicle photograph found: " + page.name)
