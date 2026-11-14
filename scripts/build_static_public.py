@@ -290,11 +290,19 @@ def copy_public_files() -> list[str]:
                   or re.fullmatch(r"/assets/premium-auctions/[a-z0-9-]+[.]webp",url)
                   or re.fullmatch(r"/assets/auction/approved/[a-z0-9-]+[.](?:jpg|jpeg|png|webp)",url))
                  and (ROOT / url.lstrip("/")).is_file()
-                 or url in {"/assets/papauto-logo.svg","/assets/visual/fallback-vehicle.svg"}):
+                 or url in {"/assets/papauto-logo.svg","/assets/visual/fallback-vehicle.svg",
+                            "/assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp"}):
                 return tag
             return ""
         html = re.sub(r"<img\b[^>]*>", approved_img, html, flags=re.I | re.S)
         html = re.sub(r"<source\b[^>]*>", "", html, flags=re.I | re.S)
+        # Keep the specifically approved Thursday marketing illustration in HTML,
+        # not only in copied files. Reject a broken deployment if it disappears.
+        if page.name == "index.html":
+            hero_asset = "assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp"
+            if (not (TARGET / hero_asset).is_file()
+                    or f'<img src="/{hero_asset}"' not in html):
+                raise RuntimeError("PAPAUTO_HERO: approved BMW artwork stripped from public homepage")
         page.write_text(html, encoding="utf-8")
         if re.search(r"<img[^>]+src\s*=\s*[\"']https?://", html, flags=re.I):
             raise RuntimeError("External vehicle photograph found: " + page.name)
