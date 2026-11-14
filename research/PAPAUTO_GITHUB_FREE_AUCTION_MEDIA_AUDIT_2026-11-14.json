@@ -1,0 +1,140 @@
+{
+  "audited_at": "2026-11-14",
+  "project": "PapAuto",
+  "policy": "ONLY original indoor auction photographs + full matching authentic auction sheet + verifiable commercial display & self-host rights",
+  "messages_sent_to_rights_holders": 0,
+  "new_photocards_published": 0,
+  "connected_main_repo": "vertu4488-star/Papauto-sute-",
+  "connected_github_installed_other_repos_with_auction_photo_archive": 0,
+  "main_inventory": {
+    "lot_count": 37,
+    "auction_media_files_in_main": 92,
+    "referenced_media_paths": 123,
+    "referenced_media_missing_from_main": 37,
+    "missing_referenced_paths": [
+      "assets/auction/home/toyota-corolla-sport-2023-20038-photo-2.jpg",
+      "assets/auction/home/toyota-corolla-sport-2023-20038-photo-3.jpg",
+      "assets/auction/home/honda-fit-2021-10355-photo-2.jpg",
+      "assets/auction/home/honda-fit-2021-10355-photo-3.jpg",
+      "assets/auction/home/nissan-note-2021-227-photo-2.jpg",
+      "assets/auction/home/nissan-note-2021-227-photo-3.jpg",
+      "assets/auction/home/mazda-cx5-2022-307-photo-2.jpg",
+      "assets/auction/home/suzuki-jimny-2024-272-photo-2.jpg",
+      "assets/auction/home/suzuki-jimny-2024-272-photo-3.jpg",
+      "assets/auction/home/subaru-levorg-2023-13004-photo-2.jpg",
+      "assets/auction/home/subaru-levorg-2023-13004-photo-3.jpg",
+      "assets/auction/home/bmw-1series-2024-227-photo-2.jpg",
+      "assets/auction/home/bmw-1series-2024-227-photo-3.jpg",
+      "assets/auction/home/audi-a3-2019-301-photo-2.jpg",
+      "assets/auction/home/audi-a3-2019-301-photo-3.jpg",
+      "assets/auction/home/honda-freed-265-photo-2.jpg",
+      "assets/auction/home/honda-vezel-278-photo-2.jpg",
+      "assets/auction/home/honda-stepwgn-275-photo-2.jpg",
+      "assets/auction/home/toyota-sienta-321-photo-2.jpg",
+      "assets/auction/home/toyota-roomy-69-photo-2.jpg",
+      "assets/auction/home/toyota-raize-87-photo-2.jpg",
+      "assets/auction/home/toyota-yaris-95-photo-2.jpg",
+      "assets/auction/home/toyota-yaris-95-photo-3.jpg",
+      "assets/auction/home/toyota-corolla-axio-120-photo-2.jpg",
+      "assets/auction/home/toyota-corolla-fielder-111-photo-2.jpg",
+      "assets/auction/home/toyota-corolla-fielder-111-photo-3.jpg",
+      "assets/auction/home/suzuki-swift-154-photo-2.jpg",
+      "assets/auction/home/suzuki-spacia-168-photo-2.jpg",
+      "assets/auction/home/suzuki-spacia-168-photo-3.jpg",
+      "assets/auction/home/honda-n-box-28-photo-2.jpg",
+      "assets/auction/home/honda-n-box-28-photo-3.jpg",
+      "assets/auction/home/nissan-dayz-218-photo-2.jpg",
+      "assets/auction/home/daihatsu-rocky-490-photo-2.jpg",
+      "assets/auction/home/daihatsu-tanto-225-photo-2.jpg",
+      "assets/auction/home/suzuki-hustler-448-photo-2.jpg",
+      "assets/auction/home/suzuki-wagon-r-175-photo-2.jpg",
+      "assets/auction/home/suzuki-wagon-r-175-photo-3.jpg"
+    ],
+    "unreferenced_media_in_main": [
+      "assets/premium-auctions/audi-q2-2021-diagram.webp",
+      "assets/premium-auctions/audi-q2-2021-front.webp",
+      "assets/premium-auctions/audi-q2-2021-rear.webp",
+      "assets/premium-auctions/audi-q3-2021-diagram.webp",
+      "assets/premium-auctions/audi-q3-2021-front.webp",
+      "assets/premium-auctions/audi-q3-2021-rear.webp"
+    ],
+    "unreferenced_media_policy": "Files correspond to previously retired Audi Q2/Q3 2021 demo media; do NOT reuse"
+  },
+  "public_repos_checked": [
+    {
+      "repo": "bodleytunes/japanese_car_auction_scraper_python",
+      "project": "Scraper (Python 2.7)",
+      "license": "No repository license found",
+      "photos": "No reusable exact-lot gallery verified",
+      "full_matching_sheets": "not verified",
+      "candidate_type": "software source only",
+      "suitable": false
+    },
+    {
+      "repo": "TanvirHafiz/auction-card-translator",
+      "project": "WordPress auction card translator",
+      "license": "GPL-2.0 for WordPress plugin",
+      "photos": "None in assets except spinner.svg",
+      "full_matching_sheets": "none",
+      "candidate_type": "code only",
+      "suitable": false
+    },
+    {
+      "repo": "malith7597/car-auction-sheet-analyzer",
+      "project": "Car auction sheet analyzer",
+      "license": "No repository license found",
+      "photos": "No reusable image/photo dataset verified",
+      "full_matching_sheets": "none",
+      "candidate_type": "code only",
+      "suitable": false
+    },
+    {
+      "repo": "HuzaifaMustafa311/Cars-auctionsheets-web-design",
+      "project": "Auction sheet PHP template",
+      "license": "No repository license found",
+      "photos": "Graphic assets exist; image rights not documented",
+      "full_matching_sheets": "no same-lot gallery verified",
+      "candidate_type": "website template",
+      "suitable": false
+    },
+    {
+      "repo": "albertovichrobert6-ai/car-data-pipeline-demo",
+      "project": "Multi-market scraped vehicle image demo",
+      "license": "MIT applies to project software, third-party CarSensor image re-use not proved",
+      "photos": "183 photos of Japan from CarSensor; not necessarily auction photos",
+      "full_matching_sheets": "none",
+      "candidate_type": "unlicensed photos of ordinary listings",
+      "suitable": false
+    },
+    {
+      "repo": "SalvageAlert/SalvageAlert-auctions-dataset",
+      "project": "North American salvage-auction data",
+      "license": "CC BY-NC 4.0; prohibits commercial uses without separate license",
+      "photos": "No Japanese exact-lot photo-sheet set",
+      "full_matching_sheets": "none",
+      "candidate_type": "noncommercial dataset",
+      "suitable": false
+    },
+    {
+      "repo": "trustcarinfo/carapi",
+      "project": "Wikimedia Commons original car photos",
+      "license": "MIT applies to API code; Commons images have individual CC BY, CC BY-SA, CC0/public domain licenses",
+      "photos": "Real model stock photos with attribution and licenses; street/showroom possible, prohibited for PapAuto auction cards",
+      "full_matching_sheets": "none",
+      "candidate_type": "licensed model-photo lookup only; not auction photos",
+      "suitable": false
+    }
+  ],
+  "decision": "No newly discovered GitHub repository provides verified complete same-lot auction photo+sheet media with proven commercial self-host rights; no source is eligible for immediate import",
+  "research_only_existing_candidates": [
+    "research/PAPAUTO_NEW_10_AUCTION_CANDIDATES_2026-11-14.json",
+    "research/PAPAUTO_EXTRA_AUCTION_SOURCES_2026-11-14.json",
+    "research/PAPAUTO_AUCTION_SOURCE_AUDIT_2026-11-14.json"
+  ],
+  "specific_next_checks": [
+    "Find a GitHub repo with explicit copyright-holder declaration covering exact vehicle auction photographs and full matching auction inspection sheets for commercial rehosting, not just code",
+    "Verify source and license at individual file level and ability to download exact photos and sheet",
+    "Never reuse ordinary Wikimedia model photographs, outdoor dealer photos, images from scraped Carsensor sites, or historical retired Audi Q2/Q3 media as if they were a lot",
+    "Fix legacy gallery references to files missing from main separately, after tests confirm the deployed file paths and page behavior"
+  ]
+}
