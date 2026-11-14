@@ -250,3 +250,40 @@ body.papauto-warm-interior .country-callout h2{
     line-height:1.14!important;
   }
 }
+
+
+/* PapAuto warm hero regression guard — region and premium catalogues */
+/* Override old dark banners in regional and premium model catalogues.
+   Preserve genuine auction photos and all existing links/forms. */
+body.papauto-warm-interior .hero{
+  background:linear-gradient(115deg,#f8eee4 0%,#fffcf8 59%,#ede1d5 100%)!important;
+  color:#302b28!important;
+  border-color:#e5d8ca!important;
+}
+body.papauto-warm-interior .hero :is(h1,h2){
+  color:#302b28!important;
+  font-family:"PapAutoManrope","Helvetica Neue",Arial,sans-serif!important;
+  font-weight:280!important;
+}
+body.papauto-warm-interior .hero h1 :is(span,em){
+  color:#4c7090!important;
+  font-weight:290!important;
+}
+body.papauto-warm-interior .hero :is(p,.lead,.hero-lead){
+  color:#645a53!important;
+}
+body.papauto-warm-interior .hero :is(.figs,.figures,.stats) strong{
+  color:#332c28!important;
+}
+body.papauto-warm-interior .hero :is(.figs,.figures,.stats) :is(span,small){
+  color:#6b5d52!important;
+}
+body.papauto-warm-interior .hero :is(.figs>span,.figures>div,.stats>div){
+  background:#fffcf8!important;
+  border:1px solid #e6d8ca!important;
+  border-radius:12px;
+  color:#51473e!important;
+}
+body.papauto-warm-interior .hero .eyebrow{
+  color:#937761!important;
+}
