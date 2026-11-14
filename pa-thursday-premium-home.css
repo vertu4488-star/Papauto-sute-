@@ -431,3 +431,122 @@ body.pa-thursday-home .section-title-row h2 em{
   body.pa-thursday-home #directions .direction-card.china{grid-column:auto;min-height:230px!important}
   body.pa-thursday-home #directions .direction-card h3{margin-top:24px!important}
 }
+
+
+/* FIX WARM ACCOUNT AND HIDDEN-VIEW ISOLATION — 2026-11-14 */
+/* Explicitly obey the selected tab. The old account section was accidentally
+   visible in ALL tabs because it was missing from site-tabs.js groups. */
+body.pa-thursday-home main>section[hidden],
+body.pa-thursday-home main>div[hidden]{display:none!important}
+body.pa-thursday-home #account{
+  padding:clamp(30px,5vw,60px) 0!important;
+  background:transparent!important;
+}
+body.pa-thursday-home #account .account-panel{
+  max-width:1020px;
+  margin:0 auto;
+  padding:clamp(20px,4vw,48px)!important;
+  border:1px solid #e5d5c5!important;
+  border-radius:24px!important;
+  background:linear-gradient(150deg,#fffaf5,#f9efe5)!important;
+  box-shadow:0 18px 50px rgba(103,73,51,.07)!important;
+  color:#352f2b!important;
+}
+body.pa-thursday-home #account .eyebrow{
+  font-family:"PapAutoManrope",sans-serif!important;
+  font-size:11px!important;
+  font-weight:550!important;
+  letter-spacing:.16em!important;
+  color:#987e68!important;
+}
+body.pa-thursday-home #account .account-panel>h2{
+  font-family:"PapAutoManrope","Helvetica Neue",Arial,sans-serif!important;
+  font-size:clamp(32px,4.5vw,57px)!important;
+  font-weight:310!important;
+  font-synthesis:weight!important;
+  line-height:1.12!important;
+  letter-spacing:-.056em!important;
+  margin:15px 0 16px!important;
+  color:#332b29!important;
+}
+body.pa-thursday-home #account .account-panel>h2 em{
+  font-family:"PapAutoManrope","Helvetica Neue",Arial,sans-serif!important;
+  font-style:italic!important;
+  font-weight:300!important;
+  color:#537290!important;
+}
+body.pa-thursday-home #account .account-intro,
+body.pa-thursday-home #account .account-status{
+  font-family:"PapAutoManrope",sans-serif!important;
+  font-size:clamp(13px,1.2vw,16px)!important;
+  line-height:1.7!important;
+  color:#655b53!important;
+}
+body.pa-thursday-home #account .account-cloud-notice{
+  background:#f4e8db!important;
+  border:1px solid #dfcdb9!important;
+  border-left:3px solid #aa8e73!important;
+  border-radius:14px!important;
+  color:#5a4d42!important;
+  padding:18px!important;
+}
+body.pa-thursday-home #account .account-cloud-notice strong{
+  color:#574635!important;
+  font-family:"PapAutoManrope",sans-serif!important;
+  font-weight:630!important;
+}
+body.pa-thursday-home #account .account-cloud-notice p,
+body.pa-thursday-home #account .account-local-history>p,
+body.pa-thursday-home #account .account-data-section p{
+  color:#6c5e55!important;
+  line-height:1.75!important;
+}
+body.pa-thursday-home #account .account-local-history,
+body.pa-thursday-home #account .account-data-section,
+body.pa-thursday-home #account .account-auth-panel{
+  background:#fffcf8!important;
+  border:1px solid #e5d6c7!important;
+  border-radius:17px!important;
+  box-shadow:none!important;
+}
+body.pa-thursday-home #account .account-local-history{padding:clamp(16px,3vw,24px)!important}
+body.pa-thursday-home #account .account-order-card,
+body.pa-thursday-home #account .account-notification{
+  border:1px solid #eadccd!important;
+  background:#fffaf5!important;
+  color:#38312b!important;
+}
+body.pa-thursday-home #account .account-order-card>strong,
+body.pa-thursday-home #account .account-notification>strong,
+body.pa-thursday-home #account .account-data-section h3{
+  color:#3d332b!important;
+  font-family:"PapAutoManrope",sans-serif!important;
+  font-weight:550!important;
+}
+body.pa-thursday-home #account .button-secondary{
+  background:#fffcf8!important;
+  border:1px solid #d8c3af!important;
+  color:#51463f!important;
+  border-radius:12px!important;
+}
+body.pa-thursday-home #account .button-secondary:hover{
+  background:#f3e6d8!important;
+  border-color:#b9997f!important;
+}
+body.pa-thursday-home #account .account-order-status{
+  background:#f1e4d7!important;
+  color:#665345!important;
+  border-color:#e2cfba!important;
+}
+@media(max-width:760px){
+  body.pa-thursday-home #account .account-panel{
+    border-radius:17px!important;
+    padding:20px 16px!important;
+  }
+  body.pa-thursday-home #account .account-local-history{
+    padding:15px!important;
+  }
+  body.pa-thursday-home #account .account-panel>h2{
+    font-size:clamp(32px,7vw,42px)!important;
+  }
+}
