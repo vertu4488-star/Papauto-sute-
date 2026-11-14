@@ -92,7 +92,7 @@
    if(lot.export_restricted)body.append(element("p","gallery-card-warning","Ограничение прямого экспорта в РФ. Не предложение к поставке."));
    if(lot.inspection_kind==="Схема повреждений")body.append(element("p","gallery-card-warning","Вместо полного аукционного листа доступна только схема повреждений."));
    const price=element("div","gallery-price");
-   price.append(element("span","",priceValue(lot)>0?"Цена торгов, без ввоза":"Цена торгов не подтверждена"),
+   price.append(element("span","",priceValue(lot)>0?(lot.origin==="owner_selection"?"Цена по данным аукциона":"Цена торгов, без ввоза"):"Цена торгов не подтверждена"),
                 element("strong","",priceText(lot)));
    body.append(price);item.append(body);
    const footer=element("div","gallery-card-footer");
@@ -211,7 +211,8 @@
    all=data.lots.filter(l=>
       ["japan","south-korea","china"].includes(l.market)
       &&validImg(l.photos?.[0])&&validImg(l.inspection_image)
-      &&(l.origin==="approved"?l.rights_confirmed===true&&l.inspection_kind==="Аукционный лист":l.origin==="home"||l.origin==="premium")
+      &&(l.origin==="approved"?l.rights_confirmed===true&&l.inspection_kind==="Аукционный лист":l.origin==="home"||l.origin==="premium"
+         ||(l.origin==="owner_selection"&&l.inspection_kind==="Аукционный лист"))
       &&((l.status==="reference_only"&&priceValue(l)===0)||priceValue(l)>0));
    if(all.length!==data.lots.length||new Set(all.map(l=>l.id)).size!==all.length)
       throw Error("Auction-photo provenance mismatch or duplicate IDs");

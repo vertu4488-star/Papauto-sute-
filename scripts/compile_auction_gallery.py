@@ -1,6 +1,6 @@
 """Fail-closed PAPAUTO auction gallery publisher, preserving 37 full-sheet archive lots.
 
-Only new licensed full-sheet auction records are appended from the approved registry.
+Licensed records and the single owner-selected batch use distinct publication records.
 HTML contains factual static cards even without JS; client gets the same embedded JSON.
 """
 from __future__ import annotations
@@ -14,6 +14,7 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parents[1]
 APPROVED = ROOT / "data" / "approved-auction-lots.json"
 LEDGER = ROOT / "research" / "auction-photo-rights-ledger.json"
+OWNER_SELECTION = ROOT / "research" / "owner-selected-japan-lots-2026-11-14.json"
 BASELINE = 37
 MAX_LOTS = 500
 # Source/provenance keeps all 37 entries, but two outdoor-only records are
@@ -40,20 +41,22 @@ def assert_local(target: Path, url: str) -> None:
         raise RuntimeError("PAPAUTO_POLICY: missing auction photo/sheet: " + url)
 
 
-def prepare_approved(target: Path, record: dict) -> dict:
+def prepare_approved(target: Path, record: dict, *, owner_selected: bool = False) -> dict:
     ident = record.get("id")
     if not isinstance(ident, str) or not re.fullmatch(r"[a-z0-9][a-z0-9-]{2,75}", ident):
         raise RuntimeError("PAPAUTO_POLICY: approved lot id invalid")
     country = record.get("country")
     if country not in COUNTRY:
         raise RuntimeError("PAPAUTO_POLICY: country invalid: " + ident)
-    for flag in ("commercial_use_permission", "self_host_permission", "sheet_permission"):
-        if record.get(flag) is not True:
-            raise RuntimeError("PAPAUTO_POLICY: unlicensed photo/sheet: " + ident)
-    if record.get("image_rights") != "approved":
-        raise RuntimeError("PAPAUTO_POLICY: photo rights missing: " + ident)
-    for required in ("rights_holder", "rights_reference", "vehicle_evidence_reference",
-                     "description", "make", "model", "auction", "lot", "grade", "auction_date"):
+    required_fields = ("description", "make", "model", "auction", "lot", "grade", "auction_date")
+    if not owner_selected:
+        for flag in ("commercial_use_permission", "self_host_permission", "sheet_permission"):
+            if record.get(flag) is not True:
+                raise RuntimeError("PAPAUTO_POLICY: unlicensed photo/sheet: " + ident)
+        if record.get("image_rights") != "approved":
+            raise RuntimeError("PAPAUTO_POLICY: photo rights missing: " + ident)
+        required_fields += ("rights_holder", "rights_reference", "vehicle_evidence_reference")
+    for required in required_fields:
         if not str(record.get(required) or "").strip():
             raise RuntimeError("PAPAUTO_POLICY: missing " + required + " for " + ident)
     if len(record["description"]) < 30 or record.get("photo_context") != "original_auction_lot":
@@ -82,10 +85,18 @@ def prepare_approved(target: Path, record: dict) -> dict:
         amount = record.get("sold_price")
         if not isinstance(amount, (int, float)) or not amount > 0:
             raise RuntimeError("PAPAUTO_POLICY: sold price invalid: " + ident)
+    if owner_selected:
+        media = photos + [record["auction_sheet"]]
+        actual = [hashlib.sha256((target / url.lstrip("/")).read_bytes()).hexdigest() for url in media]
+        if actual != record.get("media_sha256") or len(set(actual)) != len(actual):
+            raise RuntimeError("PAPAUTO_POLICY: owner-selected media mismatch: " + ident)
+        amount = record.get("reported_price")
+        if type(amount) is not int or amount <= 0 or country != "japan" or status != "reference_only":
+            raise RuntimeError("PAPAUTO_POLICY: invalid owner-selected reference price: " + ident)
     make = str(record["make"]).strip()
     model = str(record["model"]).strip()
     return {
-        "id": ident, "origin": "approved", "market": country,
+        "id": ident, "origin": "owner_selection" if owner_selected else "approved", "market": country,
         "model": make + " " + model, "year": record["year"],
         "mileage_km": record["mileage_km"], "body": record.get("body", ""),
         "grade": str(record["grade"]), "auction": record["auction"],
@@ -93,11 +104,12 @@ def prepare_approved(target: Path, record: dict) -> dict:
         "price_amount": amount, "currency": currency,
         "status": "sold" if status == "verified_sold" else "reference_only",
         "sale_label": ("Продан на аукционе" if status == "verified_sold"
+                       else "Цена по данным аукциона" if owner_selected
                        else "Аукционный лот, цена продажи не подтверждена"),
         "photos": photos, "inspection_image": record["auction_sheet"],
         "inspection_kind": "Аукционный лист",
         "category": ("premium" if make.lower() in PREMIUM_MAKES else "popular"),
-        "rights_confirmed": True, "export_restricted": False,
+        "rights_confirmed": not owner_selected, "export_restricted": False,
         "description": record["description"][:1200]
     }
 
@@ -111,7 +123,10 @@ def static_card(lot: dict) -> str:
     price = (f"{int(lot['price_amount']):,}".replace(",", " ") +
              " " + {"JPY": "¥", "KRW": "₩", "CNY": "¥"}[lot["currency"]]
              if lot["price_amount"] else "Цена продажи не подтверждена")
-    note = "Цена торгов, без доставки" if lot["price_amount"] else "Оценка цены — по запросу"
+    if lot["origin"] == "owner_selection":
+        note = "Цена по данным аукциона"
+    else:
+        note = "Цена торгов, без доставки" if lot["price_amount"] else "Оценка цены — по запросу"
     similar = quote(name + " " + str(lot["year"]) + " · " + country)
     return (
         f'<article class="gallery-card" id="gallery-lot-{e(lot["id"])}" '
@@ -142,7 +157,8 @@ def static_card(lot: dict) -> str:
 
 
 def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
-                              ledger_path: Path = LEDGER) -> dict:
+                              ledger_path: Path = LEDGER, *,
+                              owner_path: Path | None = None) -> dict:
     registry_path = target / "data" / "gallery-lots.json"
     page_path = target / "gallery.html"
     gallery = json.loads(registry_path.read_text(encoding="utf-8"))
@@ -200,6 +216,14 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
                     raise RuntimeError("PAPAUTO_POLICY: photo reused in distinct auction lots")
                 used_hashes[sha] = rec["id"]
     additional = [prepare_approved(target, rec) for rec in approved]
+    if owner_path is not None:
+        selection = json.loads(owner_path.read_text(encoding="utf-8"))["lots"]
+        if len(selection) != 100 or len(base) + len(additional) + len(selection) > MAX_LOTS:
+            raise RuntimeError("PAPAUTO_POLICY: unexpected owner selection count")
+        media_hashes = [digest for row in selection for digest in row["media_sha256"]]
+        if len(set(media_hashes)) != 200 or len(media_hashes) != 200:
+            raise RuntimeError("PAPAUTO_POLICY: repeated owner-selected media")
+        additional.extend(prepare_approved(target, row, owner_selected=True) for row in selection)
     seen_lot_keys = {
         (r["market"], r["auction"], str(r["auction_date"]), str(r["lot_number"]))
         for r in base

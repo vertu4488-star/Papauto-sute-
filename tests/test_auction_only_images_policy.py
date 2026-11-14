@@ -121,7 +121,7 @@ class AuctionOnlyImages(unittest.TestCase):
                 self.assertEqual((export / rel).read_bytes(), TOMBSTONE)
             pub_html=(export / "gallery.html").read_text(encoding="utf-8")
             pub=json.loads((export / "data/gallery-lots.json").read_text(encoding="utf-8"))
-            self.assertEqual(pub["lot_count"], 35)
+            self.assertEqual(pub["lot_count"], 135)
             for rel in QUARANTINED_OUTDOOR_MEDIA:
                 self.assertNotIn("/" + rel, pub_html)
                 self.assertFalse(any("/" + rel in json.dumps(lot) for lot in pub["lots"]))

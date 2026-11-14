@@ -162,10 +162,9 @@ def copy_public_files() -> list[str]:
     if media_count != 50:
         raise RuntimeError("Expected exactly 25 screened auction covers and 25 matching sheets; unreviewed optional media blocked")
 
-    # Expand the site from 39 baseline lots to a maximum of 500 fully approved lots.
-    # Every new photo and sheet is local, licensed and matched to an auction lot.
-    from compile_auction_gallery import compile_published_gallery
-    gallery_result = compile_published_gallery(TARGET)
+    # Include the fixed owner-selected set alongside the licensed import registry.
+    from compile_auction_gallery import OWNER_SELECTION, compile_published_gallery
+    gallery_result = compile_published_gallery(TARGET, owner_path=OWNER_SELECTION)
     # Final release guard: a test-only fix must never be the sole protection.
     # Quarantined source lot IDs may survive in GitHub for provenance but
     # must not be exposed in buyer-facing HTML, JSON, or full-detail pages.

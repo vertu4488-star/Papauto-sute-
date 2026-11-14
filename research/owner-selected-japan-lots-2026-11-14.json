@@ -1,0 +1,2704 @@
+{
+  "lots": [
+    {
+      "id": "japan-selection-14",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Freed",
+      "year": 2021,
+      "mileage_km": 33000,
+      "body": "GB5",
+      "grade": "3.5",
+      "auction": "JU Gifu",
+      "lot": "20005",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов GB5. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-14-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-14-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1210000,
+      "media_sha256": [
+        "87f702f7d6df99e4265cfd66d6e177782a2b99b66dcbe8daac2cec490d667942",
+        "d2a2a32d6432601ca521d91dd48e5cc1c983778b58527f2a97444b6ae0357429"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/freed/0xopbYrAfZfcgsD/"
+    },
+    {
+      "id": "japan-selection-70",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Roomy",
+      "year": 2025,
+      "mileage_km": 13000,
+      "body": "M900A",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "12537",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов M900A. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-70-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-70-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1600000,
+      "media_sha256": [
+        "14b128cedd7f5646aea0e6899cf8478627db8e7a6fde02cc57440ffcc91079a7",
+        "146ea4446324491afeff0aad7318fdca7c6ac8eb7d2ed656524f1ed3c7b04449"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/roomy/4Zn6R7l1NQ2gzJT/"
+    },
+    {
+      "id": "japan-selection-82",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Raize",
+      "year": 2024,
+      "mileage_km": 1000,
+      "body": "A202A",
+      "grade": "3",
+      "auction": "JU Tokyo",
+      "lot": "209",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов A202A. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-82-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-82-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1775000,
+      "media_sha256": [
+        "17a822f8f452ef5fa09a9f42a62c6d61718a25abd619f3140fa615d9e8dff3fa",
+        "3ec501c0097b658a90db35718a5146474bcd3dcf8d981aef9da3b34f4485bfeb"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/raize/4uzRDqdoQKnCsx/"
+    },
+    {
+      "id": "japan-selection-108",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla fielder",
+      "year": 2021,
+      "mileage_km": 11000,
+      "body": "NRE161G",
+      "grade": "3",
+      "auction": "TAA Yokohama",
+      "lot": "12210",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов NRE161G. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-108-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-108-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1171000,
+      "media_sha256": [
+        "06582d0f38960f366345c6e9421a18bda7cfd82cbc21020beec0d60e7f88bd67",
+        "33dc6de3308c4282a489168955fbabef0ea0b9bbe22ba0c1f13a5a7e429ac0ee"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/4VuVZ1rVQMUCD3n/"
+    },
+    {
+      "id": "japan-selection-113",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla axio",
+      "year": 2021,
+      "mileage_km": 71000,
+      "body": "NKE165",
+      "grade": "4",
+      "auction": "JU Gifu",
+      "lot": "20011",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов NKE165. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-113-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-113-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1430000,
+      "media_sha256": [
+        "983388e34a41ed6e34e63a7e560eb17e1132977b8cc6a5d8d7b2fd14cd430dd5",
+        "f67b09e6716e78cf264777119c91075fd61539cb00b0d5f1dd91f02dc9422621"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-axio/0wvzO3In5QsLPBE/"
+    },
+    {
+      "id": "japan-selection-146",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Jimny",
+      "year": 2020,
+      "mileage_km": 49000,
+      "body": "JB64W",
+      "grade": "3.5",
+      "auction": "TAA Yokohama",
+      "lot": "3108",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов JB64W. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-146-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-146-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1301000,
+      "media_sha256": [
+        "4081e3a75539eabf718f3d57e2c497ecd506479cc3b36a40fb8ff1d3aadb74d6",
+        "2fcc0debb8b3a5cb87a79cab092968bc5797a70615102b9ac6aaa906cfe7465d"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/Oq95EO13mtOT7l/"
+    },
+    {
+      "id": "japan-selection-164",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Spacia",
+      "year": 2022,
+      "mileage_km": 41000,
+      "body": "MK53S",
+      "grade": "4.5",
+      "auction": "JU Gifu",
+      "lot": "20042",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов MK53S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-164-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-164-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1040000,
+      "media_sha256": [
+        "271ff66f1729e4aeb74f816516b40f59fe2cf0ab004b63ae11286112c7b5d60e",
+        "ba3fe0294d2d181ffe28df3d9f5db52acd3cb28c318eb664c11b81e04f86153c"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/spacia/0wNHzpnXIoCD0fc/"
+    },
+    {
+      "id": "japan-selection-186",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Solio",
+      "year": 2024,
+      "mileage_km": 94000,
+      "body": "MA27S",
+      "grade": "4",
+      "auction": "JU Tokyo",
+      "lot": "161",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов MA27S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-186-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-186-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 655000,
+      "media_sha256": [
+        "bf6f4b611dfbdef88f72383ce4684941957c33e0a34ca9f51d1d831fe845f8b2",
+        "05d85dce40fa47a4d4ccea269fa9c0e11689e2aaff6ddd1d0e960cdef477c3ba"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/solio/2OOjChvuV9x2YY/"
+    },
+    {
+      "id": "japan-selection-217",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Dayz",
+      "year": 2023,
+      "mileage_km": 95000,
+      "body": "B44W",
+      "grade": "3.5",
+      "auction": "NISSAN Osaka",
+      "lot": "3001",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов B44W. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-217-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-217-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 665000,
+      "media_sha256": [
+        "cbb0a03fb40376fae5f62c4c956ae08dad5b86bbbad551b7ec74356576a96984",
+        "62542ccd2397f8c35357cda3d7c327130788b1d9f981e35bc01d840bd3f8ab04"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/dayz/cTkd38XCUhUu8ze/"
+    },
+    {
+      "id": "japan-selection-320",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Sienta",
+      "year": 2021,
+      "mileage_km": 75000,
+      "body": "NHP170G",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "12547",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов NHP170G. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-320-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-320-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1371000,
+      "media_sha256": [
+        "168e396c3ebccc233bd359b4cd1ddcc9848cbcb862fef055568cbd795685db59",
+        "e59a318968ec6b59a5219d17c15a0336bf50296ca735f17d2e4cfeffafba665a"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/4ZsZ5WEJgbYgQYi/"
+    },
+    {
+      "id": "japan-selection-333",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Passo",
+      "year": 2022,
+      "mileage_km": 51000,
+      "body": "M700A",
+      "grade": "3.5",
+      "auction": "TAA Yokohama",
+      "lot": "14021",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов M700A. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-333-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-333-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 499000,
+      "media_sha256": [
+        "addb7c007ec897cc93e38206188a725000f7edfe5ff6ffc896650629547007fa",
+        "66d1d73a53ccd638a834d8a2f189778c5c79291fa75dab872497beb0f3793cad"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/passo/5Bwr4jSD4eLZptX/"
+    },
+    {
+      "id": "japan-selection-385",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Aqua",
+      "year": 2020,
+      "mileage_km": 79000,
+      "body": "NHP10",
+      "grade": "RA",
+      "auction": "ARAI Oyama VT",
+      "lot": "20029",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов NHP10. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-385-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-385-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 510000,
+      "media_sha256": [
+        "4014a288fa1601b4931b33b84755f06e8b441ff2f222fac0b9902c04403fdc98",
+        "f0f87b6f23290c36ba99dc39faf7f50c0da2e87cf74912631dd74f29420ae9a7"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/0wF6MyLBEjSgf6R/"
+    },
+    {
+      "id": "japan-selection-443",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Hustler",
+      "year": 2021,
+      "mileage_km": 21000,
+      "body": "MR52S",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "3110",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов MR52S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-443-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-443-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1350000,
+      "media_sha256": [
+        "122e115be503afa4438f4ff96746fce469892dce6f71b6cb11717a9d1fb45583",
+        "1828e053099f32330950f8fad06315a4ff9a77ac2cb0cec4a81bb4d187645309"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/NA2fJnqs0wtlTo/"
+    },
+    {
+      "id": "japan-selection-1",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Fit",
+      "year": 2014,
+      "mileage_km": 68000,
+      "body": "GP5",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "2119",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов GP5. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-1-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-1-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 250000,
+      "media_sha256": [
+        "a8915ffac97e1e2697a8f4f90a7c5d9c1efd1f5bed0525a199e918ecfa17ed9f",
+        "6a4c8d19ce62629b6c60896a94d1b50038556e7e33c5cfe2f3302694e0ede2cc"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/xw3qhUNUJtNrRX/"
+    },
+    {
+      "id": "japan-selection-129",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Vitz",
+      "year": 2014,
+      "mileage_km": 27000,
+      "body": "KSP130",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "7042",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов KSP130. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-129-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-129-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 180000,
+      "media_sha256": [
+        "05c530aedfe174b9be6117ae6eeb5d253046d0f83610817a7eb5fba49520b502",
+        "f3232f5c430b43319640aa98443aa124b54c6595f4850190fd2ff11906d7636c"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/320oeKMGmYJchsH/"
+    },
+    {
+      "id": "japan-selection-91",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Yaris",
+      "year": 2021,
+      "mileage_km": 111000,
+      "body": "MXPH10",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "299",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов MXPH10. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-91-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-91-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 565000,
+      "media_sha256": [
+        "0c17d9d8130d93064f621042688b27917ae4aaae7480d846f83760b5f2392b2f",
+        "cecef4a724eb5e72d5c4c1496e204aa215df0f55e1277a85f18bba254c42dfec"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/yaris/4oGDN7uWuNnle9/"
+    },
+    {
+      "id": "japan-selection-97",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla sport",
+      "year": 2022,
+      "mileage_km": 22000,
+      "body": "ZWE213H",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "108",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов ZWE213H. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-97-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-97-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1207000,
+      "media_sha256": [
+        "4d22e60818ef6b6591d0f16a6db9c0ae0375def0a9d1c648b6649e4f5ffebeaa",
+        "b44d8b31718dc59c59149e14c9262d9a865d5583e5a8e756e147a85a07bc3354"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-sport/3fxRPzsbL5twuX/"
+    },
+    {
+      "id": "japan-selection-122",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Probox",
+      "year": 2023,
+      "mileage_km": 40000,
+      "body": "NHP160V",
+      "grade": "4",
+      "auction": "JU Tokyo",
+      "lot": "4519",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов NHP160V. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-122-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-122-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1235000,
+      "media_sha256": [
+        "3d0ba3c4b5ae34daf9f2b6e1c9c3cd76c9f42841c3f63a3582b38f50facfea9a",
+        "1a2b9f6ddd9ed5c1aaf7d619699d6110e997b6639e0263fc543547532a07c517"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/probox/29zpvnWsgODxQtd/"
+    },
+    {
+      "id": "japan-selection-155",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Swift",
+      "year": 2022,
+      "mileage_km": 28000,
+      "body": "ZC33S",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "12022",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов ZC33S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-155-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-155-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1905000,
+      "media_sha256": [
+        "996fb2f50a8bb98d4ca7afbe34f74ca1356f6cfd52e772adfdd8ac7f902bbe74",
+        "c18fa83c9be01376bc1c262363b990c3df288bfea81c1e3ae6bf075b8f7308b8"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/swift/56pPFW7HK4pjWU1/"
+    },
+    {
+      "id": "japan-selection-230",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Tanto",
+      "year": 2021,
+      "mileage_km": 82000,
+      "body": "LA650S",
+      "grade": "4",
+      "auction": "JU Tokyo",
+      "lot": "1123",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов LA650S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-230-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-230-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 586000,
+      "media_sha256": [
+        "3a0b7f1d15793789ff1d91d77568ee10fed950dea4c845a8f8e8328eb2bdef92",
+        "f7cc49a8afaee65759ed38cce616319c85f197106ba525c1af0411bbe6d6b2dd"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/tanto/hvGlwbHujLXRcb/"
+    },
+    {
+      "id": "japan-selection-242",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Rocky",
+      "year": 2023,
+      "mileage_km": 24000,
+      "body": "A202S",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "12166",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов A202S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-242-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-242-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1750000,
+      "media_sha256": [
+        "d6f8f9bff6495d860ad4fe38d69554f28e4850062753d512540127d486172587",
+        "fbf08d58375050fed550bf43078c80fd7aaf03416b2f435e8589506e52840b57"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/rocky/4UHZOV3r916ctpN/"
+    },
+    {
+      "id": "japan-selection-250",
+      "country": "japan",
+      "make": "Mazda",
+      "model": "Cx-3",
+      "year": 2022,
+      "mileage_km": 64000,
+      "body": "DK8FW",
+      "grade": "3",
+      "auction": "JU Tokyo",
+      "lot": "2",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов DK8FW. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-250-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-250-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 813000,
+      "media_sha256": [
+        "533496a0a295003251753aab7bd2bfb7ae8fb86016977718d7456a599e70d88a",
+        "a217577c99cf3864c293c359bef883157484ff9b61f39a623d2701bd3d704b0e"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-3/2lapXk5GmievE/"
+    },
+    {
+      "id": "japan-selection-285",
+      "country": "japan",
+      "make": "Honda",
+      "model": "N box",
+      "year": 2020,
+      "mileage_km": 71000,
+      "body": "JF4",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "1105",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов JF4. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-285-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-285-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 440000,
+      "media_sha256": [
+        "088aee77f3a0784a262ac3eb6f1fa0f0e1c7b2a6bf13b55f767f32a971d91230",
+        "53ca7c0c6c250e033efde1eba46ca36ff190098cc6e9f5a4a2f8d3183cf7de80"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/n-box/ihIjWajG8ZH3W6/"
+    },
+    {
+      "id": "japan-selection-441",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Wagon r",
+      "year": 2022,
+      "mileage_km": 15000,
+      "body": "MH95S",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "3289",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов MH95S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-441-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-441-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 850000,
+      "media_sha256": [
+        "c83c9dba214474b48ecb9f9caa385e40bbe269b095f6b95ff03e88bde800a258",
+        "48dab594ecb9d334dd11e28c3e1ae1f20f1729ad3018e4202bdd86a3480dffc1"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/wagon-r/PtnCM2kkKfIqB8/"
+    },
+    {
+      "id": "japan-selection-467",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "March",
+      "year": 2022,
+      "mileage_km": 116000,
+      "body": "K13",
+      "grade": "4",
+      "auction": "NAA Tokyo",
+      "lot": "68",
+      "auction_date": "2026-11-06",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов K13. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-467-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-467-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 365000,
+      "media_sha256": [
+        "f1546be70a6c0678669ff558712eeed69cda4c2d8a270057b2368bc18b31439e",
+        "e17ec1c9a809d29ecc610c2a5f2114da857f2d933163fc911bf3db6bfeb13d60"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/march/Dp5uagp0nZ0nL/"
+    },
+    {
+      "id": "japan-selection-37",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Shuttle",
+      "year": 2020,
+      "mileage_km": 121000,
+      "body": "GP8",
+      "grade": "3.5",
+      "auction": "JU Hokkaido",
+      "lot": "1024",
+      "auction_date": "2026-11-06",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов GP8. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-37-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-37-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 533000,
+      "media_sha256": [
+        "dac499c22897e91c532416359fe454bcbb2601cc253690228fb20e345d4502a4",
+        "95eb1ba7c3d6c90a3c43c47b9cdad135ccc437c9ccc8fb4f99874ac7e6530c11"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/shuttle/sDlz683fTWCeix/"
+    },
+    {
+      "id": "japan-selection-138",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Wish",
+      "year": 2010,
+      "mileage_km": 96000,
+      "body": "ZGE20G",
+      "grade": "—",
+      "auction": "JU Tokyo",
+      "lot": "5046",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов ZGE20G. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-138-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-138-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 207000,
+      "media_sha256": [
+        "78ee45a5ac4263abb3651e5d2d950cbbdb314d4a77a138621ee0f0c66ad80013",
+        "45042e2b004c9fe53550ba90c824779325a2fb57c36eee17f730235be8f9214b"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/wish/2v509Sa5Rgh5gHL/"
+    },
+    {
+      "id": "japan-selection-203",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Serena",
+      "year": 2014,
+      "mileage_km": 87000,
+      "body": "HC26",
+      "grade": "4",
+      "auction": "JU Tokyo",
+      "lot": "2141",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов HC26. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-203-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-203-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 291000,
+      "media_sha256": [
+        "fcabc26a586c9ae96709d019cfc864b9225f415fc5857451adb6e30787e51cde",
+        "b0b1eb02147744be4f1bb335aee1ceb0cf9fb2962999030dd12a3d3fffe86b22"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/serena/xK6l09r0SU3q3s/"
+    },
+    {
+      "id": "japan-selection-234",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Move",
+      "year": 2013,
+      "mileage_km": 116000,
+      "body": "LA100S",
+      "grade": "4",
+      "auction": "JU Tokyo",
+      "lot": "1199",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов LA100S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-234-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-234-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 138000,
+      "media_sha256": [
+        "7a06d04d4b95208e791e71e8fd2fd159ef1f02b958e069052dffcbc2b8e38eef",
+        "7a410a89b2d2f81d6c51140aceab3f8fc101ae73dfb25ebffede41e32ce38698"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/move/idDtqImhJg5Ht3/"
+    },
+    {
+      "id": "japan-selection-496",
+      "country": "japan",
+      "make": "Mazda",
+      "model": "Demio",
+      "year": 2011,
+      "mileage_km": 39000,
+      "body": "DE3FS",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "18126",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов DE3FS. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-496-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-496-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 164000,
+      "media_sha256": [
+        "78f3af371227da223418b6b7d5a5394c8273f191663d419b71963aa00089e2ce",
+        "4631e49f02684d644586014947896297b8fa769efcacd6117096b3a32081d1da"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/mazda/demio/6sFBlceF2BhJc44/"
+    },
+    {
+      "id": "japan-selection-268",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Freed",
+      "year": 2020,
+      "mileage_km": 32000,
+      "body": "GB5",
+      "grade": "3.5",
+      "auction": "TAA Yokohama",
+      "lot": "12409",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов GB5. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-268-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-268-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1175000,
+      "media_sha256": [
+        "19e77c31bb4531c381d8ecba83cd3bad5dfdcc6ca8d609c89ce4f9f9d23451fd",
+        "4e8da4dc5a752afe83b76b8087f27783d5af7bf8b7f1275385072279065a0e1b"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/freed/4YOEHHRAAGUVSe0/"
+    },
+    {
+      "id": "japan-selection-71",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Roomy",
+      "year": 2022,
+      "mileage_km": 42000,
+      "body": "M900A",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "12489",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов M900A. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-71-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-71-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1358000,
+      "media_sha256": [
+        "e14f2af10689cdc7d92cbaefa9aafcae5332654a95f72bdb5b5b6e5b6b753289",
+        "a5b8a561db917100e6307761ebab03acd0d6374a48d52f44729cdcb548393e0a"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/roomy/4YCSg2e0FZ1VjLl/"
+    },
+    {
+      "id": "japan-selection-194",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Note",
+      "year": 2017,
+      "mileage_km": 36000,
+      "body": "E12",
+      "grade": "G",
+      "auction": "NISSAN Osaka",
+      "lot": "4005",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов E12. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-194-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-194-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 184000,
+      "media_sha256": [
+        "970943f8c306553cdd127f2c7b277bb6e216088eb9ec0e65977471d2c0dfc4eb",
+        "75aa2a5e31492ed2391d4a6d6d5e20febfad0d75ac5e63f0e6370f7a9d057b32"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/note/ggrDupURtzzlRSJ/"
+    },
+    {
+      "id": "japan-selection-243",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Rocky",
+      "year": 2023,
+      "mileage_km": 28000,
+      "body": "A201S",
+      "grade": "4.5",
+      "auction": "JU Gifu",
+      "lot": "8349",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов A201S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-243-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-243-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1420000,
+      "media_sha256": [
+        "bfa633e3405ae1b55d122b18e2318e9b795dd05d96e683b7bbf00897cf7d1b73",
+        "2ad984eac31889aa351cd5236a288d19938eec66f4ff3bbd0986e4dd0b69e7ee"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/rocky/39C3jpBGUbLW2oO/"
+    },
+    {
+      "id": "japan-selection-253",
+      "country": "japan",
+      "make": "Mazda",
+      "model": "Cx-3",
+      "year": 2021,
+      "mileage_km": 26000,
+      "body": "DKLFW",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "12404",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов DKLFW. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-253-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-253-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1523000,
+      "media_sha256": [
+        "44d6e2a7c68ca90bb4a3708137909fc27c69e887bf857c7a25e9faeb7f64a4a9",
+        "d0e16ac8a043c36980630cc5a8a6c1a33327bdf8e75d4e769d34c22cbe95293d"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-3/4YMoexhogfoHsws/"
+    },
+    {
+      "id": "japan-selection-437",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Wagon r",
+      "year": 2020,
+      "mileage_km": 32000,
+      "body": "MH95S",
+      "grade": "R",
+      "auction": "JU Gifu",
+      "lot": "10067",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов MH95S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-437-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-437-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 355000,
+      "media_sha256": [
+        "3eb78f9dff8566aa17d4283a226e28151a814e8d669181072d6643bbc58ec5b6",
+        "fad69160994adafa592c6607a5214498783b7971a8a0ce1f13ec1544ca32f8e2"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/wagon-r/7ahSVlVedGc2u2O/"
+    },
+    {
+      "id": "japan-selection-468",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "March",
+      "year": 2022,
+      "mileage_km": 113000,
+      "body": "K13",
+      "grade": "R",
+      "auction": "NAA Tokyo",
+      "lot": "66",
+      "auction_date": "2026-11-06",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов K13. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-468-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-468-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 363000,
+      "media_sha256": [
+        "fb7fa0e19fede7c5726b83d5a1bcd794479e7ae06349392b52ff38acb84a3a66",
+        "b6a44c0d4638cc95d5ed4c5703cce945090ea4ff88e103131a85dbb2ee268ad5"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/march/CuSOJnSaMibv6/"
+    },
+    {
+      "id": "japan-selection-22",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Step wagon",
+      "year": 2010,
+      "mileage_km": 69000,
+      "body": "RK5",
+      "grade": "3.5",
+      "auction": "NISSAN Osaka",
+      "lot": "1045",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов RK5. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-22-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-22-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 325000,
+      "media_sha256": [
+        "ab1b28523cd8812e7cef721f1cc04ed1992aea541cc42b42044c4f0b67454d46",
+        "40bc0861401e85241b80aae5207250a163844b1ef752a543cf6179615a6715c4"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/step-wagon/73OznR4PAlMshBC/"
+    },
+    {
+      "id": "japan-selection-84",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Raize",
+      "year": 2020,
+      "mileage_km": 34000,
+      "body": "A210A",
+      "grade": "4",
+      "auction": "JU Gifu",
+      "lot": "20021",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов A210A. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-84-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-84-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1685000,
+      "media_sha256": [
+        "9446159a87a5505ebec45d42b6a0f5d8995c518f663e1826b88fc7bb372e4669",
+        "200c5a2a5f311eec892bc30fe56b81f56d823e440171526922da68284e804b1c"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/raize/0wBt2T36xcpM7Q4/"
+    },
+    {
+      "id": "japan-selection-148",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Jimny",
+      "year": 2020,
+      "mileage_km": 41000,
+      "body": "JB64W",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "3025",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов JB64W. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-148-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-148-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1593000,
+      "media_sha256": [
+        "f1ab8c2e06a187f85fe6b10be2415d73309def343d15455d6d2d68a950d9515b",
+        "b16741468bb6692b15183889743dd4877909c3780b0e7864b238c88389bd6d90"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/YKR99jQ6uiLJBh/"
+    },
+    {
+      "id": "japan-selection-57",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Sienta",
+      "year": 2010,
+      "mileage_km": 55000,
+      "body": "NCP81G",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "2031",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов NCP81G. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-57-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-57-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 180000,
+      "media_sha256": [
+        "1d6018f38e75b04736ca04668a2340403a8f2fe1d320d7a25ea0905da4e0dcb8",
+        "ba2dd5d9482c4efbe2777ef9feaabb01e221ad7f18f2f0f1f662dc4ab8461c29"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/ILpf32CcXiyEZe/"
+    },
+    {
+      "id": "japan-selection-336",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Passo",
+      "year": 2023,
+      "mileage_km": 42000,
+      "body": "M700A",
+      "grade": "3.5",
+      "auction": "TAA Yokohama",
+      "lot": "12536",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов M700A. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-336-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-336-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 790000,
+      "media_sha256": [
+        "27ac8eb3df38a85c0bde77781ed1b141265de795715df7abcae579023dbd7fc9",
+        "31cbde2c382ac13e16b8a3fdf5cda0477894568e5a8cac0a3274c6c8d82be719"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/passo/4ZmDLgCzxlIq6Ny/"
+    },
+    {
+      "id": "japan-selection-181",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Hustler",
+      "year": 2016,
+      "mileage_km": 50000,
+      "body": "MR41S",
+      "grade": "RA",
+      "auction": "TAA Yokohama",
+      "lot": "3312",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов MR41S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-181-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-181-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 406000,
+      "media_sha256": [
+        "a5b732b7eaf3d2e4c836b72d2f3f6a7a477b68e6f11c9240a6084919f2b22e0f",
+        "ad6ff07ea3bb2a2d572aa3a10335da2f6d06369091b2ab95054da64e315ac5a2"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/PZyiZUydrPOIpa/"
+    },
+    {
+      "id": "japan-selection-5",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Fit",
+      "year": 2011,
+      "mileage_km": 91000,
+      "body": "GP1",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "497",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов GP1. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-5-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-5-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 130000,
+      "media_sha256": [
+        "9a9736f4950d1d76e22b309f35006d9939fb93de06ebb484b217bce6cdef3c71",
+        "11e9f6effea84a82c27907a173012e00da93f88896f96e97b970082ede1fd2a6"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/6QWg4WgiIVNBnW/"
+    },
+    {
+      "id": "japan-selection-133",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Vitz",
+      "year": 2008,
+      "mileage_km": 38000,
+      "body": "KSP90",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "263",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов KSP90. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-133-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-133-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 142000,
+      "media_sha256": [
+        "6323dddf96cc5a9b6dd41f51b4ae37be07063c47d8f188d2f37a03f10bfe2c5b",
+        "4cd40f1da3a499b451dcb7bae76849da89bd1a265f6cdb89172283476f93af6e"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/45ipfQHYv8hBST/"
+    },
+    {
+      "id": "japan-selection-93",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Yaris",
+      "year": 2024,
+      "mileage_km": 1000,
+      "body": "GXPA16",
+      "grade": "4.5",
+      "auction": "JU Tokyo",
+      "lot": "230",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов GXPA16. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-93-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-93-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 3503000,
+      "media_sha256": [
+        "55c1dd49ee8c780785310ada2fad40db970c56077103d03c1fafece67b9a29b6",
+        "c0a6f061d3726b53113fa912c229d392b2c04e59d17cdd9bfe6b2e7a47e06f9f"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/yaris/3PNoyUDsRoc0M4/"
+    },
+    {
+      "id": "japan-selection-103",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla sport",
+      "year": 2020,
+      "mileage_km": 60000,
+      "body": "ZWE211H",
+      "grade": "4",
+      "auction": "TAA Hyogo",
+      "lot": "2084",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов ZWE211H. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-103-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-103-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1308000,
+      "media_sha256": [
+        "5dee9228f2e575edea597afb6b33e5df3dbe4577e26b3d465732b9bcaac001f7",
+        "293f4ec213d73148691765ff222c12d181287a6d0caa44af716dbccc51dbac85"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-sport/JgdDKLwhr0uVAI/"
+    },
+    {
+      "id": "japan-selection-420",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Swift",
+      "year": 2023,
+      "mileage_km": 47000,
+      "body": "ZC33S",
+      "grade": "*",
+      "auction": "TAA Yokohama",
+      "lot": "4194",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов ZC33S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-420-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-420-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1000000,
+      "media_sha256": [
+        "9677973d6ffebd673ee2e0ec1238db41f214a816723e20610e21e1f6db143bfe",
+        "3c7298f58d6b25dc8b856ff937e9752511f180ecefefac54065ef6a20282d373"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/swift/25lXd6mHNT0bEmJ/"
+    },
+    {
+      "id": "japan-selection-228",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Tanto",
+      "year": 2017,
+      "mileage_km": 43000,
+      "body": "LA600S",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "1166",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов LA600S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-228-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-228-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 632000,
+      "media_sha256": [
+        "41246eb61b9c56deb43e392d701c4a8d67073ab88d978002b0c0c464b51dce0e",
+        "480e19b3330c79768bdd0dd888af4d73bf634b18fa7bbe8febc02d9fe9954385"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/tanto/hUBwoBT8cuwpWO/"
+    },
+    {
+      "id": "japan-selection-245",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Rocky",
+      "year": 2022,
+      "mileage_km": 55000,
+      "body": "A201S",
+      "grade": "4",
+      "auction": "JU Gifu",
+      "lot": "7200",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов A201S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-245-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-245-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1320000,
+      "media_sha256": [
+        "715f76b52ab8c95a204c71fbe989df3fc8465fc289d2b68ad179e72fc219d5d2",
+        "80cd11fea059385093976eddd823fd3dae45ed33ca9e18c011927f7c93f7c5d1"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/rocky/2RTJ7JlVGmzZAsb/"
+    },
+    {
+      "id": "japan-selection-249",
+      "country": "japan",
+      "make": "Mazda",
+      "model": "Cx-3",
+      "year": 2016,
+      "mileage_km": 101000,
+      "body": "DK5FW",
+      "grade": "4",
+      "auction": "JU Tokyo",
+      "lot": "414",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов DK5FW. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-249-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-249-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 621000,
+      "media_sha256": [
+        "0708b9261ed9068d146fddf54ec9dc666c2d6131b76f7aa1b0cb010f1d1761f2",
+        "ce0273a01b4401fa8c7b53f3d3263a5f59ceaf90038293bf8b52b45765f94665"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-3/65sbOfcQqpdVHH/"
+    },
+    {
+      "id": "japan-selection-176",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Wagon r",
+      "year": 2022,
+      "mileage_km": 127000,
+      "body": "MH95S",
+      "grade": "4",
+      "auction": "JU Tokyo",
+      "lot": "1125",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов MH95S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-176-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-176-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 361000,
+      "media_sha256": [
+        "5495cd9a02e8e7ed54e1830adaea7ed2d1590002b84147f27c8f6b857f6176c5",
+        "dbfe287c0094bd03ad48bcb6a51430e195d4976ff55700e9c31e09b5d4088b13"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/wagon-r/hwAxbCA2inEP5R/"
+    },
+    {
+      "id": "japan-selection-213",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "March",
+      "year": 2022,
+      "mileage_km": 144000,
+      "body": "K13",
+      "grade": "3.5",
+      "auction": "NISSAN Osaka",
+      "lot": "1125",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов K13. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-213-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-213-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 289000,
+      "media_sha256": [
+        "28bbaa96d146cfa1436abfbad4f4ab78cd77850ee80d1b73d2b5ed3fddc41cca",
+        "246161b3bfbae97a49512ecc460af3e8ea902c975bfaf2935052835d70b6c6ad"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/march/4FPEXr6y7CwwjdP/"
+    },
+    {
+      "id": "japan-selection-296",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Shuttle",
+      "year": 2020,
+      "mileage_km": 138000,
+      "body": "GK8",
+      "grade": "3.5",
+      "auction": "KCAA Fukuoka",
+      "lot": "173",
+      "auction_date": "2026-11-05",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов GK8. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-296-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-296-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 628000,
+      "media_sha256": [
+        "f274f4bee1f1fc6bb0f41149d9dd5ae221dda8913531da0b4b8cf297220b4c21",
+        "2582f3d82b985a9454757c96392f99d335369bf1b18b8e54a771095f0b6a7bf7"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/shuttle/2VBJ937tPShiRw/"
+    },
+    {
+      "id": "japan-selection-41",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Grace",
+      "year": 2015,
+      "mileage_km": 111000,
+      "body": "GM4",
+      "grade": "3",
+      "auction": "TAA Yokohama",
+      "lot": "18053",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов GM4. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-41-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-41-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 240000,
+      "media_sha256": [
+        "abdc570bf8b469c6845e14feb160b125b0e312226a85fbd816bafc46d879bc38",
+        "dca91e55121366277ba599b53f2bfc9696efbcbe2bdd6f4877e6d1b219ad6274"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/grace/6E48QXfo7CzJ77q/"
+    },
+    {
+      "id": "japan-selection-24",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Step wagon",
+      "year": 2015,
+      "mileage_km": 115000,
+      "body": "RP1",
+      "grade": "4",
+      "auction": "JU Tokyo",
+      "lot": "249",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов RP1. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-24-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-24-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 725000,
+      "media_sha256": [
+        "8da2379a60422229926c84cf4eb6cbdbe7bacfb47dca4ae6a10e2cba9df43676",
+        "a4c1c8f2722c33cfcbf90536dfb1cfadb12f47238a1fba95457392daa2e64f35"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/step-wagon/3VewzvUEJ3lX58/"
+    },
+    {
+      "id": "japan-selection-140",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Wish",
+      "year": 2012,
+      "mileage_km": 80000,
+      "body": "ZGE20W",
+      "grade": "4",
+      "auction": "JU Tokyo",
+      "lot": "477",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов ZGE20W. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-140-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-140-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 622000,
+      "media_sha256": [
+        "762e647637d2e70f9b623aeaf2b75578a1523e731444790d4802742408a93472",
+        "787f0f4c99a5ed17d5ee9ef1e6554379b024d27f9a3f8e20681d10920135bfd1"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/wish/6F0OniPo22N3V9/"
+    },
+    {
+      "id": "japan-selection-207",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Serena",
+      "year": 2014,
+      "mileage_km": 118000,
+      "body": "HFC26",
+      "grade": "3.5",
+      "auction": "NISSAN Osaka",
+      "lot": "2039",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов HFC26. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-207-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-207-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 208000,
+      "media_sha256": [
+        "dd77b6e059175bd732b4143236f8828cfd1a12eb64306c8b0b5b122688dc40a6",
+        "3cd854038173613e5a76285e0519e0c3661ffc9214a8f25ee3e25a65d186e139"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/serena/0oHpWaSKd35gpTS/"
+    },
+    {
+      "id": "japan-selection-236",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Move",
+      "year": 2013,
+      "mileage_km": 21000,
+      "body": "LA100S",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "1120",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов LA100S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-236-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-236-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 132000,
+      "media_sha256": [
+        "6fb4a8672f3eea94d163f2762236e60997f3eb23ddc3bcfc217b2e7b10a3c32e",
+        "2c8adb9ce6f6ac4b7fe8610193d337f991ceb7d9ef1e1425c037287345bb89ab"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/move/hyR1mcMlJTTeMy/"
+    },
+    {
+      "id": "japan-selection-498",
+      "country": "japan",
+      "make": "Mazda",
+      "model": "Demio",
+      "year": 2019,
+      "mileage_km": 32000,
+      "body": "DJLFS",
+      "grade": "4.5",
+      "auction": "TAA Yokohama",
+      "lot": "12334",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов DJLFS. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-498-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-498-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 944000,
+      "media_sha256": [
+        "fe6deb7ce2160a002479fd0a0f529efb779f6dd1cec2efcd93bee173c6ce8813",
+        "9bcbf846c68b8941f87a9217ace8eca9face4a41462263bfe1da9fbeba1eceda"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/mazda/demio/4WSzLEV48amBTSo/"
+    },
+    {
+      "id": "japan-selection-9",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Freed",
+      "year": 2008,
+      "mileage_km": 79000,
+      "body": "GB3",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "3028",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов GB3. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-9-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-9-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 121000,
+      "media_sha256": [
+        "e3f41c572586a9bbacbc691b729710217c50e3c85e74ede8098163cf74891fec",
+        "01705f2f207789c5d589f69689121f474d10f9e7090b80b37101540f24a73617"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/freed/YMdpDt0TRjeJBl/"
+    },
+    {
+      "id": "japan-selection-324",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Roomy",
+      "year": 2024,
+      "mileage_km": 39000,
+      "body": "M910A",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "12389",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов M910A. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-324-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-324-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1326000,
+      "media_sha256": [
+        "1849ee57fb258150e6696bceaa75ea4db63ebbf1362eaf814b9b66c96b9c5c5e",
+        "37368b3034037d909d0e719db236b4a2d6a99894380be84ab4a686e5470a5887"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/roomy/4Xoim46PJnDRHK7/"
+    },
+    {
+      "id": "japan-selection-85",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Raize",
+      "year": 2022,
+      "mileage_km": 6000,
+      "body": "A202A",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "12512",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов A202A. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-85-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-85-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1849000,
+      "media_sha256": [
+        "8e2fef440b861af17a2b051429450e7efa591ea478c6a820b3611d9d57838185",
+        "5035e91280ade2c6cdc09b80520821d92b9176aaa7ce9c01b527a33dd084e06a"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/raize/4Z03Wf8nyGB2Bzo/"
+    },
+    {
+      "id": "japan-selection-109",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla fielder",
+      "year": 2016,
+      "mileage_km": 16000,
+      "body": "NRE161G",
+      "grade": "3.5",
+      "auction": "TAA Yokohama",
+      "lot": "12024",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов NRE161G. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-109-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-109-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 871000,
+      "media_sha256": [
+        "61e7a87314b8d29d6e2cdce61fd2d9b6f12f94f109205cde685c9258398f3bf9",
+        "de47d2921fd8bf265d7de8dce45baabf07ab10f86004e596c6647dec982d9ef7"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/56qJRBxAh321UMG/"
+    },
+    {
+      "id": "japan-selection-118",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla axio",
+      "year": 2021,
+      "mileage_km": 41000,
+      "body": "NKE165",
+      "grade": "3.5",
+      "auction": "TAA Yokohama",
+      "lot": "12402",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов NKE165. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-118-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-118-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1431000,
+      "media_sha256": [
+        "a1699307e02ea8907b372b432d107de47eb840d21febc13101e4bcf805640fb8",
+        "bad34e022a1069b11ebfe0b9ef1d03b47c07d69cbc2c79fb9b0c58515f2ca044"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-axio/4YLu3RQvJgN1uDM/"
+    },
+    {
+      "id": "japan-selection-152",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Jimny",
+      "year": 2021,
+      "mileage_km": 98000,
+      "body": "JB64W",
+      "grade": "4",
+      "auction": "LAA Okayama",
+      "lot": "1167",
+      "auction_date": "2026-11-06",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов JB64W. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-152-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-152-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1588000,
+      "media_sha256": [
+        "b3cc2d371937cd11e6701556936534b21abbbaf8bdf0e853e72fbe3b65894f04",
+        "722429a525330b1e7ba92828f4eaf1e545f527ec1623755b6978a0c697c81ec5"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/hV4CekknQACQs3/"
+    },
+    {
+      "id": "japan-selection-454",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Solio",
+      "year": 2021,
+      "mileage_km": 39000,
+      "body": "MA37S",
+      "grade": "4.5",
+      "auction": "TAA Yokohama",
+      "lot": "81",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов MA37S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-454-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-454-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1456000,
+      "media_sha256": [
+        "83d1acf242361435ca519379701e080d79668602f467b866bebbd4cc0953506b",
+        "02b1d115f1a2804ec007afb80d30b6b057370de52fbd431984ca25c072b3acf3"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/solio/M1RkMCs8zyqfu/"
+    },
+    {
+      "id": "japan-selection-196",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Note",
+      "year": 2012,
+      "mileage_km": 83000,
+      "body": "E12",
+      "grade": "4",
+      "auction": "JU Tokyo",
+      "lot": "3034",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов E12. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-196-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-196-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 107000,
+      "media_sha256": [
+        "3b290f84f8d01722f19c4901be6bc8c6c8ccfa7222efdf1460bf60ff6ca5cdac",
+        "3c0b1ba293d11c24537f5b30b71022d71837e932979ff14038392f4ed32f5ad3"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/note/YQig9V8ig3R65o/"
+    },
+    {
+      "id": "japan-selection-134",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Vitz",
+      "year": 2017,
+      "mileage_km": 80000,
+      "body": "NHP130",
+      "grade": "3.5",
+      "auction": "ARAI Oyama VT",
+      "lot": "20043",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов NHP130. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-134-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-134-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 450000,
+      "media_sha256": [
+        "d7e97efc90ebc346aa8acfb2751f3e1f50eec68bffd4ff5d69e0a766c06e35a8",
+        "36581b87310f795085fa0011ce31545cdf922f95b7d36c4dbb39f13dda8f4191"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/0wO0Ff7oY6XbTUD/"
+    },
+    {
+      "id": "japan-selection-282",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Vezel",
+      "year": 2018,
+      "mileage_km": 51000,
+      "body": "RU4",
+      "grade": "4",
+      "auction": "JU Gifu",
+      "lot": "8114",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов RU4. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-282-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-282-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1180000,
+      "media_sha256": [
+        "d8d7d11c32c051da689da8fbe59fa373ef6cf83d0106bbe79fa32f1c15b88338",
+        "3eb582cdad8406e1fb72a58295e147a0cf9782bd6b2496cf4ed270fbb3e27eff"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/vezel/36OWmLNHjtEzxXq/"
+    },
+    {
+      "id": "japan-selection-96",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Yaris",
+      "year": 2022,
+      "mileage_km": 84000,
+      "body": "MXPH10",
+      "grade": "RA",
+      "auction": "TAA Yokohama",
+      "lot": "14023",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов MXPH10. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-96-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-96-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 743000,
+      "media_sha256": [
+        "da27cc985b4597f5cb151a331f07cbfaeb0069af5a8743a6eac0ab031a794023",
+        "d868565859743e1773325090841b95ccb13bdb9a3e0a78ba757573d1b267358d"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/yaris/5BxleZjvAdnGnmD/"
+    },
+    {
+      "id": "japan-selection-359",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla sport",
+      "year": 2023,
+      "mileage_km": 22000,
+      "body": "ZWE219H",
+      "grade": "5",
+      "auction": "TAA Chubu",
+      "lot": "24",
+      "auction_date": "2026-11-05",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов ZWE219H. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-359-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-359-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 2089000,
+      "media_sha256": [
+        "15beec13ad43420966ea7cf47e4cc17532fe188274e7bf93b450f66648844e78",
+        "e69e57cc06bcb37e85f9286900d3469c9b1d6b9d0f8d4e7efdccb770baec6f22"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-sport/e2NM2DvuytEV1/"
+    },
+    {
+      "id": "japan-selection-125",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Probox",
+      "year": 2023,
+      "mileage_km": 45000,
+      "body": "NHP160V",
+      "grade": "3.5",
+      "auction": "JU Gifu",
+      "lot": "2126",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов NHP160V. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-125-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-125-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1095000,
+      "media_sha256": [
+        "dd0848fdc6699b0e928cc7f9b8db1d529a1c1cb863e76f287b368fdc99271324",
+        "35547db88e9e7bf0249cff7662919a63947211cabe722845615b720368839d4f"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/probox/xAzmD6czNcIXvD/"
+    },
+    {
+      "id": "japan-selection-157",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Swift",
+      "year": 2009,
+      "mileage_km": 88000,
+      "body": "ZC71S",
+      "grade": "3.5",
+      "auction": "JU Gifu",
+      "lot": "10022",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов ZC71S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-157-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-157-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 79000,
+      "media_sha256": [
+        "b49eab8d6a4960a785e0ba7edd081f2c2aad58bf3a96e0dab85e05075364b8e7",
+        "a5b23b7a9363acffceaa49676616424af9300125d8977dbfc9bf09c33cc4f65d"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/swift/70S4yO5a4ORLXov/"
+    },
+    {
+      "id": "japan-selection-231",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Tanto",
+      "year": 2014,
+      "mileage_km": 53000,
+      "body": "LA600S",
+      "grade": "3.5",
+      "auction": "NISSAN Osaka",
+      "lot": "1117",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов LA600S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-231-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-231-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 289000,
+      "media_sha256": [
+        "67737585d48def24d373a39715996d55cc73cf2670a59d86ffa3629872fa05f7",
+        "5ed3a8e6c1026f749465da10a65a0f1e12f744aeddac69f580cc07717a797ce5"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/tanto/4EMRv0AF5J4tfFo/"
+    },
+    {
+      "id": "japan-selection-247",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Rocky",
+      "year": 2022,
+      "mileage_km": 56000,
+      "body": "A201S",
+      "grade": "4",
+      "auction": "JU Gifu",
+      "lot": "5163",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов A201S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-247-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-247-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1265000,
+      "media_sha256": [
+        "fc3f6ab7e8c6e84c1ac3f027ffac50439e78b0b7d754c822db3574bf0b8d54b5",
+        "d471998cee3df94717f50619358377f62b31a92090545da1cb7e35ed46967439"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/rocky/2k8mbkritfBtxoF/"
+    },
+    {
+      "id": "japan-selection-251",
+      "country": "japan",
+      "make": "Mazda",
+      "model": "Cx-3",
+      "year": 2018,
+      "mileage_km": 63000,
+      "body": "DK5FW",
+      "grade": "4",
+      "auction": "JU Gifu",
+      "lot": "20027",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов DK5FW. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-251-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-251-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 890000,
+      "media_sha256": [
+        "c5cc045c3ce7e47c963aceef4158c6c0f49628bf81fbe293c31d8929dd6d5ccc",
+        "26cbcd90223ff07af0311919582d41809ce857e884a38c34856b4bbc1b35cb4a"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-3/0wEbATkJ99eR1u6/"
+    },
+    {
+      "id": "japan-selection-25",
+      "country": "japan",
+      "make": "Honda",
+      "model": "N box",
+      "year": 2017,
+      "mileage_km": 114000,
+      "body": "JF1",
+      "grade": "4",
+      "auction": "JU Tokyo",
+      "lot": "1217",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов JF1. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-25-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-25-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 177000,
+      "media_sha256": [
+        "d12a0dcd63de5997111f39ad16d5c50cfb9cc6b8df999f26da2ed8614d1a0c96",
+        "01f2980552c4fa900d389bc863b11bfcac164a25bda2dc50f1b038016964b25d"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/n-box/iGboYS53wpp8Kn/"
+    },
+    {
+      "id": "japan-selection-169",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Wagon r",
+      "year": 2012,
+      "mileage_km": 84000,
+      "body": "MH34S",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "7001",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов MH34S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-169-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-169-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 183000,
+      "media_sha256": [
+        "623b64a4d850114bdbfd2b5546b59b3c8d975db94446fdb174caeddeeeac5aae",
+        "a9df99f70bd91763f15b04bdff164fc699aa53d65cc8ed63aaa214494d53d928"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/wagon-r/32IhtYYxQC9nsUM/"
+    },
+    {
+      "id": "japan-selection-209",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "March",
+      "year": 2019,
+      "mileage_km": 16000,
+      "body": "K13",
+      "grade": "—",
+      "auction": "JU Tokyo",
+      "lot": "5025",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов K13. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-209-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-209-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 63000,
+      "media_sha256": [
+        "5c364cfb72a99e66ec53ac8f8e80433f9c26e98a876c4800b6d3e971471835b8",
+        "26b0f3c41f66465b70c78314e783faaaf96c897ca3810c3c73bad6bb6513e77c"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/march/2uRUBlOcG55deiC/"
+    },
+    {
+      "id": "japan-selection-33",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Shuttle",
+      "year": 2019,
+      "mileage_km": 72000,
+      "body": "GP7",
+      "grade": "4",
+      "auction": "JU Gifu",
+      "lot": "5077",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов GP7. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-33-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-33-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 735000,
+      "media_sha256": [
+        "c910f32ba35e45c721c81a030ce58f38050b80279defabdcd7fa7bf468c67ae1",
+        "b4b8a098b21cb9dcfae91841e5d658ab4e0faef30307b1f7a8c96b2e298f1842"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/shuttle/2vmgUePFuZ8ogzB/"
+    },
+    {
+      "id": "japan-selection-42",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Grace",
+      "year": 2018,
+      "mileage_km": 21000,
+      "body": "GM6",
+      "grade": "3",
+      "auction": "JU Gifu",
+      "lot": "7168",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов GM6. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-42-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-42-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 555000,
+      "media_sha256": [
+        "7ad2559b1edf66dd6ee67603d29143b5b67b6334229e817b992fe7f80f0bc1f9",
+        "b36482a4d92c07aa716749b2db4acdfbffc9372d5b9cd49998fe17cbd9ce4319"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/grace/2QgG8IvRnmNdTCE/"
+    },
+    {
+      "id": "japan-selection-273",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Step wagon",
+      "year": 2018,
+      "mileage_km": 76000,
+      "body": "RP3",
+      "grade": "3.5",
+      "auction": "TAA Yokohama",
+      "lot": "12478",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов RP3. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-273-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-273-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1845000,
+      "media_sha256": [
+        "8182f9178b03241ed2c43a33fa43b28d98394604bc5aeb3b1bd66c0de04408bb",
+        "8d064de068413fe6489167c0f010d31c7155dc5b50343c45fd4f23ba5f71a4b4"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/step-wagon/4YwwWlbZX9L5yAB/"
+    },
+    {
+      "id": "japan-selection-142",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Wish",
+      "year": 2015,
+      "mileage_km": 94000,
+      "body": "ZGE25G",
+      "grade": "3.5",
+      "auction": "ARAI Oyama VT",
+      "lot": "20079",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов ZGE25G. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-142-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-142-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 335000,
+      "media_sha256": [
+        "d5b76a1e738d6be316c498f50c2c647a34457cae7cf145d034087a297b01b6c7",
+        "9dbd3947128a249dee57bfe9a974962014adbf044a7d31dcd00f8e544fc1fa57"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/wish/0x9xTMmbW6DhDfS/"
+    },
+    {
+      "id": "japan-selection-460",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Serena",
+      "year": 2014,
+      "mileage_km": 109000,
+      "body": "HFC26",
+      "grade": "3",
+      "auction": "NISSAN Osaka",
+      "lot": "2006",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов HFC26. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-460-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-460-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 91000,
+      "media_sha256": [
+        "bfb61f89f6a023f68190690ad117220b1cc8669c45acf10fb35ddb599c8b4743",
+        "217f5e1d7071340fb91e386d7540ac814f7294b97129a91557aeac82eae79157"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/serena/0x4NAqRQsbOESlm/"
+    },
+    {
+      "id": "japan-selection-363",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla fielder",
+      "year": 2009,
+      "mileage_km": 45000,
+      "body": "NZE141G",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "4249",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов NZE141G. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-363-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-363-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 421000,
+      "media_sha256": [
+        "0e40841b92792db2df32c7bb3876ffc35a43938f1235470e8231be90ffac969e",
+        "65f9c729648962bfc878c77b1c38f0d349ffd0eb48c32b56e41ba582460dddfb"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/260lt1uDNahshVE/"
+    },
+    {
+      "id": "japan-selection-371",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla axio",
+      "year": 2021,
+      "mileage_km": 42000,
+      "body": "NKE165",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "12244",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов NKE165. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-371-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-371-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1550000,
+      "media_sha256": [
+        "98422aefa6f990360d1cbb8a40ccf9995d3625e79faefe09e3907cd2ea4eebe0",
+        "d5e2901eddbdb62348401881d5192d3c33f0b72970093f58a0b4bc9af90d0f3d"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-axio/4VJT6x7rCUWyz6y/"
+    },
+    {
+      "id": "japan-selection-412",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Jimny",
+      "year": 2020,
+      "mileage_km": 56000,
+      "body": "JB64W",
+      "grade": "3.5",
+      "auction": "JU Hokkaido",
+      "lot": "1022",
+      "auction_date": "2026-11-06",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов JB64W. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-412-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-412-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1188000,
+      "media_sha256": [
+        "c3e3c1ef3878a8242a66fe580dc0ee1b3e99e4c5913bab3af404e112037371fc",
+        "ee0f0ee98c09539e649cf3fe1ad55cb69027974f874b543c96c089ea4f6d0ada"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/sCrnpG0IVkVgpR/"
+    },
+    {
+      "id": "japan-selection-432",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Spacia",
+      "year": 2025,
+      "mileage_km": 19000,
+      "body": "MK54S",
+      "grade": "R",
+      "auction": "TAA Yokohama",
+      "lot": "3037",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов MK54S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-432-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-432-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 878000,
+      "media_sha256": [
+        "c5fa5fb4f414243f0ef39d7ec74a25cd6f57ae7f9b51efd119f3edfd4b8a6585",
+        "9406183ab5736f1a4bfb6c519793039c7a845403ca7248f9573bdf504c3abd05"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/spacia/YRExE5r5ORsYIm/"
+    },
+    {
+      "id": "japan-selection-187",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Solio",
+      "year": 2015,
+      "mileage_km": 88000,
+      "body": "MA36S",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "119",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов MA36S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-187-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-187-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 213000,
+      "media_sha256": [
+        "118c9d289836f875e1e23c4fd492433d8d13a51726b92d46636311b612f9f245",
+        "6b4988c4eb3380ff389bc0335f1fd241044be21d67f4f9b6eeaff5ab7804d247"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/solio/2oYX5qrl4OhvlF/"
+    },
+    {
+      "id": "japan-selection-198",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Note",
+      "year": 2018,
+      "mileage_km": 82000,
+      "body": "HE12",
+      "grade": "4",
+      "auction": "NISSAN Osaka",
+      "lot": "3002",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов HE12. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-198-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-198-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 413000,
+      "media_sha256": [
+        "a0f4ab35b9f8e2674ea8a91b8ba44c472838cf20fba96eb537992defecbf95f9",
+        "4b243e953e8483c2a2d0f9bc4ad5cd7c55f6fb898cab8ff15b0c4531abb24ff3"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/note/cTq7fYhlmDRuoND/"
+    },
+    {
+      "id": "japan-selection-219",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Dayz",
+      "year": 2016,
+      "mileage_km": 111000,
+      "body": "B21W",
+      "grade": "4",
+      "auction": "JU Tokyo",
+      "lot": "1172",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов B21W. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-219-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-219-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 138000,
+      "media_sha256": [
+        "7b9c897f57f9d037936805584511fbd48049ed463cacfb081bbe2306d13e07fb",
+        "a992385f5066d33706895527ab039cfd885b9d635434eda226c7e0c0a2edba1f"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/dayz/hYGmU4QvBe9LpR/"
+    },
+    {
+      "id": "japan-selection-63",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Sienta",
+      "year": 2011,
+      "mileage_km": 109000,
+      "body": "NCP81G",
+      "grade": "3.5",
+      "auction": "TAA Yokohama",
+      "lot": "18313",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов NCP81G. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-63-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-63-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 183000,
+      "media_sha256": [
+        "b66fc54735e6083a3a405df8158a899be43d32fe9aaeab9d01e54b5857d39fe6",
+        "b597f0659d23d11d42d3cba90e4906ea83f09cf5d0c75468525b359fe8095248"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/6v2vDN3gEZaiH38/"
+    },
+    {
+      "id": "japan-selection-74",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Passo",
+      "year": 2012,
+      "mileage_km": 24000,
+      "body": "KGC30",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "2102",
+      "auction_date": "2026-11-09",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов KGC30. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-74-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-74-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 128000,
+      "media_sha256": [
+        "b4bc04dfdbd396739c5158ab56fb48f92bce1548a288c200270138f860f006a5",
+        "52dcfd39bd6c3f91188e1f4ec468dabb7474c2b9a97309c72e374e4889e1da0a"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/passo/yjSM3LbauUUznd/"
+    },
+    {
+      "id": "japan-selection-444",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Hustler",
+      "year": 2019,
+      "mileage_km": 37000,
+      "body": "MR41S",
+      "grade": "4.5",
+      "auction": "JU Gifu",
+      "lot": "262",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов MR41S. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-444-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-444-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 760000,
+      "media_sha256": [
+        "7c5179ccff23b0f944a50dd94ff02517e47885264b8adadd2b4c902f6d615a76",
+        "6b0a44489d0d88f9c00363d41da3f0cf6fdbe83133ac5c2f8eb58530b36b99f6"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/44Qjq9gIbuTOaQ/"
+    },
+    {
+      "id": "japan-selection-136",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Vitz",
+      "year": 2011,
+      "mileage_km": 92000,
+      "body": "NSP135",
+      "grade": "3",
+      "auction": "TAA Yokohama",
+      "lot": "18224",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов NSP135. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-136-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-136-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 203000,
+      "media_sha256": [
+        "6c26c411ef9981717492c2db5b9f59b54407ec6b700801be767e7fbcd32a66ea",
+        "372ca57c445f40a4c4276dc0fa11e33ac62c94f501af48ebe1b2957c1a6535e5"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/6tTh4uW7re46QbC/"
+    },
+    {
+      "id": "japan-selection-284",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Vezel",
+      "year": 2019,
+      "mileage_km": 24000,
+      "body": "RU1",
+      "grade": "4",
+      "auction": "JU Gifu",
+      "lot": "8077",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов RU1. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-284-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-284-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1875000,
+      "media_sha256": [
+        "3749fbb688210b1c8598735561c046517afd78b81cb8183d7b66a4e8a1ce4772",
+        "554b9e231f229b6f5a6ea4e1fe31079de4f8c2eac4418caa4b09b6b85a41f1ab"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/vezel/3hwR855dmuCFbm3/"
+    },
+    {
+      "id": "japan-selection-348",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Yaris",
+      "year": 2020,
+      "mileage_km": 61000,
+      "body": "KSP210",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "14016",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов KSP210. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-348-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-348-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 751000,
+      "media_sha256": [
+        "a3cfc3196b8478afcddadb9b01758155d7847c5d0e0e4cc0e493c46f2a5646f1",
+        "ff2019d756459d6229b9996c329cb6b8ce7bbcedd0dd2d2fd0c337d70bf0bcf7"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/yaris/5BsOiE07VkldxXf/"
+    },
+    {
+      "id": "japan-selection-361",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla sport",
+      "year": 2020,
+      "mileage_km": 88000,
+      "body": "ZWE213H",
+      "grade": "4.5",
+      "auction": "TAA Kyushu",
+      "lot": "201",
+      "auction_date": "2026-11-03",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов ZWE213H. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-361-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-361-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1505000,
+      "media_sha256": [
+        "f2c5782f389cfba39328d08497db823500273587844b4adbc556757d6f8ee375",
+        "47c62a48a8b094aa64f23aa5079a7fc3c5efa691217d037f1f434ee2e20aa139"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-sport/4qX7XGHg0ljZ1f/"
+    },
+    {
+      "id": "japan-selection-254",
+      "country": "japan",
+      "make": "Mazda",
+      "model": "Cx-3",
+      "year": 2018,
+      "mileage_km": 69000,
+      "body": "DKEFW",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "12149",
+      "auction_date": "2026-11-07",
+      "description": "Пример для подбора аналогичного автомобиля из Японии. Кузов DKEFW. Пробег и оценка приведены по данным аукционной записи.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-selection-254-photo.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-selection-254-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 866000,
+      "media_sha256": [
+        "06451d0333365c2d4da23924fb414c112ea7272f0bb842f5a0b2b8a7041dcabf",
+        "9e20724687cd3b7261789d0f11f988ef2810e03496508d1763cf0ef1b4bb3850"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-3/4UxzEJyk1L6JmM1/"
+    }
+  ]
+}
