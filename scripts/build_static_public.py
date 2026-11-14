@@ -90,7 +90,9 @@ def copy_public_files() -> list[str]:
             relative = src.relative_to(ROOT)
             if relative.as_posix() in QUARANTINED_OUTDOOR_MEDIA:
                 continue
-            if folder == 'assets' and (relative.parts[:2] == ('assets','demo') or (relative.parts[:2] == ('assets','visual') and src.name != 'fallback-vehicle.svg')):
+            # User-selected Thursday showroom ARTWORK: one explicitly allowed advertising visual,
+            # never a real auction photo and never an image for a customer lot card.
+            if folder == 'assets' and (relative.parts[:2] == ('assets','demo') or (relative.parts[:2] == ('assets','visual') and relative.as_posix() not in {'assets/visual/fallback-vehicle.svg', 'assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp'})):
                 continue
             dst = TARGET / relative
             dst.parent.mkdir(parents=True, exist_ok=True)

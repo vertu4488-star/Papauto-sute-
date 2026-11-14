@@ -141,3 +141,6 @@ body.pa-thursday-home .pa-real-lot h3{
 body.pa-thursday-home .pa-thursday-feature-head h2{font-weight:330!important}
 body.pa-thursday-home .pa-thursday-card h3{font-weight:540!important}
 body.pa-thursday-home .brand-name{font-weight:500!important}
+
+/* User-approved Thursday hero artwork is illustrative only; keep auction cards unchanged. */
+body.pa-thursday-home .pa-thursday-visual img{object-fit:cover!important;object-position:center!important;max-height:none!important}
