@@ -36,9 +36,20 @@ class AuctionOnlyImages(unittest.TestCase):
             self.assertTrue(
                 relative.startswith("assets/auction/home/")
                 or relative.startswith("assets/auction/approved/")
-                or relative.startswith("assets/premium-auctions/"),
+                or relative.startswith("assets/premium-auctions/")
+                or relative == "assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp",
                 f"NON-AUCTION IMAGE BLOCKED: {relative}"
             )
+
+    def test_thursday_artwork_only_in_homepage_hero_not_auction_lots(self):
+        """One explicitly user-approved marketing illustration, never sold as auction media."""
+        art = "assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp"
+        self.assertTrue((ROOT / art).is_file())
+        home = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertEqual(home.count('src="/' + art + '"'), 1)
+        self.assertIn("рекламная иллюстрация, не аукционный лот", home)
+        for name in ("gallery.html", "premium-japan-korea.html", "models-100.html"):
+            self.assertNotIn("/" + art, (ROOT / name).read_text(encoding="utf-8"))
 
     def test_public_site_code_has_no_street_photo_asset_links(self):
         sources=list(ROOT.glob("*.html"))+list(ROOT.glob("*.js"))+list(ROOT.glob("*.css"))
