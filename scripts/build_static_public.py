@@ -315,7 +315,7 @@ def copy_public_files() -> list[str]:
                 raise RuntimeError("PAPAUTO_WARM: interior theme CSS was not copied")
             html = re.sub(
                 r"</head>",
-                '<link rel="stylesheet" href="/papauto-warm-interior.css?v=20261114-warm-v1"></head>',
+                '<link rel="stylesheet" href="/papauto-warm-interior.css?v=20261114-warm-v2"></head>',
                 html, count=1, flags=re.I,
             )
             def add_interior_skin(match):
