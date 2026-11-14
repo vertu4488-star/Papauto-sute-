@@ -119,3 +119,25 @@ body.pa-thursday-home .pa-real-lot a.pa-real-cta{background:#526f8d;border-radiu
  body.pa-thursday-home .hero.wrap.pa-thursday-hero .hero-actions a{font-size:10px!important;padding:9px 12px!important}
  body.pa-thursday-home .pa-thursday-image{aspect-ratio:2.15/1}
 }
+
+/* Force the approved Manrope face after old premium-ui.css (global !important)
+ * and the old dark Lexus/Bodoni stylesheet. This site used to keep Bodoni on
+ * the root headline, which masked the restored Thursday typography. */
+body.pa-thursday-home .hero.wrap.pa-thursday-hero h1,
+body.pa-thursday-home .hero.wrap.pa-thursday-hero h1 em{
+  font-family:"PapAutoManrope","Helvetica Neue",Arial,sans-serif!important;
+  font-weight:300!important;
+  font-synthesis:weight!important;
+  text-shadow:none!important;
+}
+body.pa-thursday-home .brand-name,
+body.pa-thursday-home .pa-thursday-feature-head h2,
+body.pa-thursday-home .pa-thursday-feature-head h2 em,
+body.pa-thursday-home .pa-thursday-card h3,
+body.pa-thursday-home .pa-real-head h2,
+body.pa-thursday-home .pa-real-lot h3{
+  font-family:"PapAutoManrope","Helvetica Neue",Arial,sans-serif!important;
+}
+body.pa-thursday-home .pa-thursday-feature-head h2{font-weight:330!important}
+body.pa-thursday-home .pa-thursday-card h3{font-weight:540!important}
+body.pa-thursday-home .brand-name{font-weight:500!important}
