@@ -144,3 +144,290 @@ body.pa-thursday-home .brand-name{font-weight:500!important}
 
 /* User-approved Thursday hero artwork is illustrative only; keep auction cards unchanged. */
 body.pa-thursday-home .pa-thursday-visual img{object-fit:cover!important;object-position:center!important;max-height:none!important}
+
+
+/* PAPAUTO APPROVED WARM DIRECTIONS DESIGN — 2026-11-14
+ * Scoped to the existing home-page tab system. No auction images are touched.
+ * The three original SVG backgrounds are decorative location illustrations,
+ * never photographs of actual vehicles or auction evidence.
+ */
+body.pa-thursday-home{
+  --pa-warm-page:#faf6f1;
+  --pa-warm-card:#fffcf8;
+  --pa-warm-line:#e6d8ca;
+  --pa-warm-ink:#2b2726;
+  --pa-warm-blue:#4c7090;
+  --bg:#faf6f1;
+  --line:#e6d8ca;
+  background:radial-gradient(ellipse 85% 570px at 86% 8%,#efe1d3 0%,transparent 73%),linear-gradient(180deg,#fcf9f5 0%,#f8efe6 48%,#fcf9f6 100%)!important;
+  background-attachment:fixed!important;
+  color:var(--pa-warm-ink);
+}
+html:has(body.pa-thursday-home){background:#faf6f1!important}
+body.pa-thursday-home .site-tabs{
+  background:rgba(255,249,243,.91)!important;
+  border-color:#eaded1!important;
+}
+body.pa-thursday-home .site-tabs a{
+  color:#685e56!important;
+  background:#fffaf5!important;
+  border:1px solid #e7d7c7!important;
+  border-radius:999px!important;
+  font-family:"PapAutoManrope","Helvetica Neue",sans-serif!important;
+  font-weight:430!important;
+}
+body.pa-thursday-home .site-tabs a.is-active{
+  color:#fff!important;
+  background:#4f7190!important;
+  border-color:#4f7190!important;
+}
+body.pa-thursday-home .mobile-bottom-nav{
+  background:rgba(255,250,245,.97)!important;
+  border-top:1px solid #e9dcd0!important;
+}
+body.pa-thursday-home .mobile-bottom-nav a{
+  color:#665c55!important;
+  font-family:"PapAutoManrope","Helvetica Neue",sans-serif!important;
+  font-weight:420!important;
+}
+body.pa-thursday-home .mobile-bottom-nav a.is-active{
+  color:#355c80!important;
+  background:#eee4d955!important;
+  font-weight:650!important;
+}
+body.pa-thursday-home #directions{
+  isolation:isolate;
+  position:relative;
+  padding-top:clamp(38px,5vw,72px)!important;
+  padding-bottom:clamp(36px,5vw,72px)!important;
+  background:transparent!important;
+}
+body.pa-thursday-home #directions .section-title-row{
+  display:block!important;
+  max-width:910px;
+  margin-bottom:clamp(26px,3vw,44px)!important;
+}
+body.pa-thursday-home #directions .section-title-row .eyebrow{
+  color:#957a64!important;
+  font-family:"PapAutoManrope",sans-serif!important;
+  font-size:clamp(10px,.85vw,13px)!important;
+  font-weight:570!important;
+  letter-spacing:.18em!important;
+}
+body.pa-thursday-home #directions .section-title-row h2{
+  font-family:"PapAutoManrope","Helvetica Neue",Arial,sans-serif!important;
+  color:#302b29!important;
+  font-weight:260!important;
+  font-synthesis:weight!important;
+  font-size:clamp(38px,4.5vw,64px)!important;
+  letter-spacing:-.062em!important;
+  line-height:1.1!important;
+  margin:19px 0 17px!important;
+  text-shadow:none!important;
+}
+body.pa-thursday-home #directions .section-title-row h2 em{
+  display:inline-block!important;
+  font-family:"PapAutoManrope","Helvetica Neue",Arial,sans-serif!important;
+  color:var(--pa-warm-blue)!important;
+  font-style:italic!important;
+  font-weight:270!important;
+  font-synthesis:weight!important;
+  letter-spacing:-.057em!important;
+}
+body.pa-thursday-home #directions .section-title-row>p{
+  max-width:690px!important;
+  margin:0!important;
+  font-family:"PapAutoManrope","Helvetica Neue",sans-serif!important;
+  color:#665c57!important;
+  font-size:clamp(13px,1.25vw,17px)!important;
+  font-weight:390!important;
+  line-height:1.8!important;
+}
+body.pa-thursday-home #directions>.direction-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:clamp(12px,1.6vw,22px)!important;
+}
+body.pa-thursday-home #directions .direction-card{
+  position:relative;
+  z-index:0;
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  min-height:330px;
+  padding:clamp(20px,2.4vw,28px)!important;
+  overflow:hidden;
+  border:1px solid var(--pa-warm-line)!important;
+  border-radius:22px!important;
+  background:linear-gradient(155deg,#fffcf9,#f9f0e8)!important;
+  box-shadow:0 15px 32px rgba(105,77,56,.065)!important;
+  color:#35302e!important;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+body.pa-thursday-home #directions .direction-card:hover{
+  transform:translateY(-3px);
+  border-color:#c8b09b!important;
+  box-shadow:0 18px 42px rgba(105,77,56,.11)!important;
+}
+body.pa-thursday-home #directions .direction-card::before{
+  content:"";
+  position:absolute;
+  right:0;
+  top:0;
+  width:84%;
+  height:59%;
+  pointer-events:none;
+  opacity:.67;
+  z-index:-1;
+  background-position:right top;
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+body.pa-thursday-home #directions .direction-card.japan::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20520%20280%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22m%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%2386a4bd%22%2F%3E%3Cstop%20offset%3D%22.65%22%20stop-color%3D%22%23c9d7dd%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f7eee6%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22g%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23e7d1c2%22%20stop-opacity%3D%22.12%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23e8d8c9%22%20stop-opacity%3D%22.75%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M82%20225L251%2033l167%20192Z%22%20fill%3D%22url(%23m)%22%2F%3E%3Cpath%20d%3D%22M251%2033l-54%2066%2028-16%2018%2019%2022-21%2029%2018Z%22%20fill%3D%22%23fff9f2%22%20opacity%3D%22.94%22%2F%3E%3Cpath%20d%3D%22M35%20226Q250%20196%20501%20232v48H35Z%22%20fill%3D%22url(%23g)%22%2F%3E%3Cpath%20d%3D%22M337-4c42%2016%2059%2041%2088%2063s53%2019%2095%2044%22%20stroke%3D%22%239e7d71%22%20stroke-width%3D%224%22%20fill%3D%22none%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M403%2046l-34%206m54%209%206%2035m27-20%2022-17m-95-37-13-30%22%20stroke%3D%22%239e7d71%22%20stroke-width%3D%222.5%22%20opacity%3D%22.52%22%2F%3E%3Cg%20fill%3D%22%23e6b5ad%22%20opacity%3D%22.76%22%3E%3Ccircle%20cx%3D%22372%22%20cy%3D%2248%22%20r%3D%2210%22%2F%3E%3Ccircle%20cx%3D%22392%22%20cy%3D%2239%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%22405%22%20cy%3D%2256%22%20r%3D%2210%22%2F%3E%3Ccircle%20cx%3D%22428%22%20cy%3D%2288%22%20r%3D%229%22%2F%3E%3Ccircle%20cx%3D%22458%22%20cy%3D%2278%22%20r%3D%2211%22%2F%3E%3Ccircle%20cx%3D%22487%22%20cy%3D%2285%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%22471%22%20cy%3D%22111%22%20r%3D%229%22%2F%3E%3Ccircle%20cx%3D%22439%22%20cy%3D%2257%22%20r%3D%227%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23fff3ed%22%20opacity%3D%22.78%22%3E%3Ccircle%20cx%3D%22370%22%20cy%3D%2246%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22407%22%20cy%3D%2253%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22460%22%20cy%3D%2276%22%20r%3D%224%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}
+body.pa-thursday-home #directions .direction-card.korea::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20520%20280%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22c%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%2390aac0%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23c7c8cd%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M0%20225Q115%20177%20223%20216T520%20192V280H0Z%22%20fill%3D%22%23d6d7d3%22%20opacity%3D%22.54%22%2F%3E%3Cg%20fill%3D%22url(%23c)%22%20opacity%3D%22.75%22%3E%3Cpath%20d%3D%22M48%20203h31v-55h23v55h20v-73h34v73h23v-46h32v46h15v-68h43v68h20v-38h31v38h21v-61h40v61h24v-42h29v42h37v77H48Z%22%2F%3E%3Cpath%20d%3D%22M80%20205v-31h9v31m47%200v-46h11v46m91%200v-32h10v32m130%200v-45h12v45%22%20fill%3D%22%23d7e0e4%22%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D%22%2369839b%22%20fill%3D%22%23aebfcb%22%20opacity%3D%22.9%22%3E%3Cpath%20d%3D%22M278%20205V95%22%20stroke-width%3D%229%22%2F%3E%3Cpath%20d%3D%22M272%2095h12l8-15h-29Z%22%20fill%3D%22%238b9eae%22%2F%3E%3Cpath%20d%3D%22M275%2067v-40m-16%2065h39%22%20fill%3D%22none%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M265%20107h26l5%209h-37Z%22%2F%3E%3Cellipse%20cx%3D%22278%22%20cy%3D%2278%22%20rx%3D%2222%22%20ry%3D%226%22%20fill%3D%22%23b5bcc3%22%20stroke-width%3D%222%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M10%20226Q230%20208%20515%20225%22%20fill%3D%22none%22%20stroke%3D%22%23f4e5d5%22%20stroke-width%3D%227%22%20opacity%3D%22.7%22%2F%3E%3C%2Fsvg%3E")}
+body.pa-thursday-home #directions .direction-card.china::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20520%20280%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22sh%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237d9eb8%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23c6d3d7%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M0%20223Q252%20205%20520%20221V280H0Z%22%20fill%3D%22%23d4d4d1%22%20opacity%3D%22.45%22%2F%3E%3Cg%20fill%3D%22url(%23sh)%22%20opacity%3D%22.76%22%3E%3Cpath%20d%3D%22M35%20221v-79h37v79h17v-54h28v54h18v-96h29v96h16v-64h34v64h12v-42h28v42h20v-89h31v89h21v-112h34v112h15v-73h35v73h30v59H35Z%22%2F%3E%3Cpath%20d%3D%22M325%20221V50l22-22%2020%2022v171Z%22%20opacity%3D%22.86%22%2F%3E%3Cpath%20d%3D%22M332%2087h26v10h-26zm0%2029h26v10h-26zm0%2029h26v10h-26z%22%20fill%3D%22%23f7eee6%22%20opacity%3D%22.5%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23879aaf%22%20stroke%3D%22%23879aaf%22%3E%3Cpath%20d%3D%22M258%20221V45%22%20stroke-width%3D%225%22%2F%3E%3Cpath%20d%3D%22M257%2030V9%22%20stroke-width%3D%223%22%2F%3E%3Cellipse%20cx%3D%22258%22%20cy%3D%2268%22%20rx%3D%2228%22%20ry%3D%2212%22%2F%3E%3Cellipse%20cx%3D%22258%22%20cy%3D%22117%22%20rx%3D%2218%22%20ry%3D%228%22%2F%3E%3Cpath%20d%3D%22M245%2079h26v36h-26Z%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M20%20235Q270%20206%20520%20235%22%20fill%3D%22none%22%20stroke%3D%22%23f5e9dd%22%20stroke-width%3D%228%22%20opacity%3D%22.8%22%2F%3E%3C%2Fsvg%3E")}
+body.pa-thursday-home #directions .direction-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  width:auto;height:auto;right:0;top:0;
+  border-radius:0;
+  background:linear-gradient(90deg,rgba(255,252,248,.67) 0%,rgba(255,252,248,.15) 95%);
+  pointer-events:none;
+  z-index:-1;
+}
+body.pa-thursday-home #directions .direction-card .country-symbol{display:none!important}
+body.pa-thursday-home #directions .direction-code{
+  font-family:"PapAutoManrope",sans-serif!important;
+  color:#8d7a6c!important;
+  font-size:11px!important;
+  font-weight:480!important;
+  letter-spacing:.17em!important;
+}
+body.pa-thursday-home #directions .direction-card h3{
+  position:relative;
+  margin:35px 0 10px!important;
+  color:#322c2b!important;
+  font-family:"PapAutoManrope","Helvetica Neue",sans-serif!important;
+  font-size:clamp(21px,2vw,29px)!important;
+  font-weight:450!important;
+  letter-spacing:-.045em!important;
+  line-height:1.17!important;
+}
+body.pa-thursday-home #directions .direction-card p{
+  position:relative;
+  margin:0 0 18px!important;
+  flex:1;
+  min-height:0!important;
+  max-width:360px!important;
+  color:#5b5653!important;
+  font-family:"PapAutoManrope","Helvetica Neue",sans-serif!important;
+  font-size:clamp(12px,1vw,15px)!important;
+  line-height:1.72!important;
+  font-weight:380!important;
+}
+body.pa-thursday-home #directions .direction-card .card-link{
+  position:relative;
+  display:flex;
+  width:100%;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:auto!important;
+  padding-top:17px!important;
+  border-top:1px solid #e4d5c7!important;
+  color:#315d80!important;
+  font-family:"PapAutoManrope",sans-serif!important;
+  font-size:clamp(12px,1.1vw,15px)!important;
+  font-weight:630!important;
+}
+body.pa-thursday-home #directions .direction-card .card-link b{color:#315d80!important}
+body.pa-thursday-home .section:not(#directions){background-color:transparent}
+body.pa-thursday-home .process-grid article,
+body.pa-thursday-home .market-source-card,
+body.pa-thursday-home .popular-model-card,
+body.pa-thursday-home .budget-start{
+  background:#fffcf8!important;
+  border-color:#e6d8ca!important;
+}
+body.pa-thursday-home .section-title-row h2{
+  font-family:"PapAutoManrope","Helvetica Neue",sans-serif!important;
+  font-weight:330!important;
+}
+body.pa-thursday-home .section-title-row h2 em{
+  font-family:"PapAutoManrope","Helvetica Neue",sans-serif!important;
+  font-weight:310!important;
+}
+@media(max-width:760px){
+  body.pa-thursday-home{
+    background:linear-gradient(165deg,#fdf9f5 0%,#f7eadf 55%,#fcf8f4 100%)!important;
+    background-attachment:scroll!important;
+  }
+  body.pa-thursday-home #directions{
+    width:calc(100% - 30px)!important;
+    padding:28px 0 46px!important;
+  }
+  body.pa-thursday-home #directions .section-title-row{
+    max-width:100%;
+    margin-bottom:24px!important;
+  }
+  body.pa-thursday-home #directions .section-title-row h2{
+    font-size:clamp(32px,7.1vw,46px)!important;
+    letter-spacing:-.058em!important;
+    line-height:1.13!important;
+    margin:14px 0!important;
+  }
+  body.pa-thursday-home #directions .section-title-row h2 em{
+    font-size:inherit!important;
+    font-style:italic!important;
+    letter-spacing:-.062em!important;
+  }
+  body.pa-thursday-home #directions .section-title-row>p{
+    font-size:12.5px!important;
+    line-height:1.65!important;
+  }
+  body.pa-thursday-home #directions>.direction-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+  }
+  body.pa-thursday-home #directions .direction-card{
+    min-height:340px!important;
+    padding:15px!important;
+    border-radius:17px!important;
+  }
+  body.pa-thursday-home #directions .direction-card::before{
+    width:100%;
+    height:38%;
+    opacity:.48;
+  }
+  body.pa-thursday-home #directions .direction-card h3{
+    font-size:clamp(17px,4.25vw,21px)!important;
+    font-weight:460!important;
+    letter-spacing:-.047em!important;
+    margin:43px 0 10px!important;
+  }
+  body.pa-thursday-home #directions .direction-card p{
+    font-size:11.5px!important;
+    line-height:1.53!important;
+  }
+  body.pa-thursday-home #directions .direction-card .card-link{
+    font-size:11.5px!important;
+    padding-top:13px!important;
+    gap:6px;
+  }
+  body.pa-thursday-home #directions .direction-card.china{
+    grid-column:1/-1;
+    min-height:210px!important;
+  }
+  body.pa-thursday-home #directions .direction-card.china::before{
+    width:60%;
+    height:90%;
+  }
+  body.pa-thursday-home #directions .direction-card.china h3{margin:25px 0 7px!important}
+  body.pa-thursday-home #directions .direction-card.china p{max-width:75%!important}
+}
+@media(max-width:360px){
+  body.pa-thursday-home #directions>.direction-grid{grid-template-columns:1fr!important}
+  body.pa-thursday-home #directions .direction-card,
+  body.pa-thursday-home #directions .direction-card.china{grid-column:auto;min-height:230px!important}
+  body.pa-thursday-home #directions .direction-card h3{margin-top:24px!important}
+}
