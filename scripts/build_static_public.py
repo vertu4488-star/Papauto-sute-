@@ -306,12 +306,13 @@ def copy_public_files() -> list[str]:
         # Keep all interior pages in the same approved warm PapAuto visual system.
         # Inject a small presentation layer AFTER legacy page styles, without
         # rewriting source HTML or modifying any auction media / lead form JS.
-        if page.name != "index.html":
+        # Search-engine verification HTML is often a plain token without a
+        # document head/body. Leave those verification files completely intact.
+        if (page.name != "index.html" and "</head>" in html.lower()
+                and re.search(r"<body\\b", html, flags=re.I)):
             warm_stylesheet = "papauto-warm-interior.css"
             if not (TARGET / warm_stylesheet).is_file():
                 raise RuntimeError("PAPAUTO_WARM: interior theme CSS was not copied")
-            if "</head>" not in html.lower():
-                raise RuntimeError("PAPAUTO_WARM: interior page has no head: " + page.name)
             html = re.sub(
                 r"</head>",
                 '<link rel="stylesheet" href="/papauto-warm-interior.css?v=20261114-warm-v1"></head>',
