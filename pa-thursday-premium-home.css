@@ -1,0 +1,121 @@
+/* PapAuto approved Thursday 2026-11-12 premium visual language on the REAL homepage.
+ * Original Manrope fonts, beige / blue editorial grid and signed-off proportions.
+ * Do not reintroduce withdrawn showroom/street media: hero and cards use existing exact auction lot media.
+ * Keep the existing live auction cards, original site tabs, scripts and lead forms functional. */
+@font-face{font-family:"PapAutoManrope";src:url("/assets/fonts/manrope-cyrillic-variable.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:swap;unicode-range:U+0400-052F,U+1C80-1C8F,U+20BD,U+2116,U+2DE0-2DFF,U+A640-A69F}
+@font-face{font-family:"PapAutoManrope";src:url("/assets/fonts/manrope-latin-variable.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215}
+body.pa-thursday-home{--pa-paper:#fcfaf7;--pa-ink:#272930;--pa-quiet:#717078;--pa-line:#e9ded3;--pa-navy:#4c6887;background:radial-gradient(ellipse 75% 490px at 95% 0,#efe6dc 0,transparent 74%),linear-gradient(#fcfaf8,#f8f5f1 980px,#fbfaf8 1680px);color:var(--pa-ink);font-family:"PapAutoManrope","Helvetica Neue",Arial,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:400;line-height:1.52;-webkit-font-smoothing:antialiased}
+body.pa-thursday-home .site-header{position:relative;z-index:50;width:min(1390px,calc(100% - 34px));height:auto;min-height:72px;margin:0 auto;padding:14px 6px;border-bottom:1px solid #e9ded6;background:#fffdfbbf;backdrop-filter:blur(14px);box-shadow:none}
+body.pa-thursday-home .brand-mark{display:none}
+body.pa-thursday-home .brand-name{font-family:"PapAutoManrope",sans-serif;font-size:22px;letter-spacing:.21em;font-weight:500;color:#24262c}
+body.pa-thursday-home .brand-dot{color:#a48c75}
+body.pa-thursday-home .brand-name small{font-size:8px;letter-spacing:.13em;color:#928579;font-weight:350}
+body.pa-thursday-home .main-nav{gap:clamp(8px,1.7vw,23px)}
+body.pa-thursday-home .main-nav a{font-family:"PapAutoManrope",sans-serif;font-weight:430;color:#514f51;font-size:11px;letter-spacing:.005em}
+body.pa-thursday-home .main-nav a:hover{color:#426687}
+body.pa-thursday-home .header-cta{border-radius:999px;padding:11px 17px;background:linear-gradient(110deg,#b09c8b,#897765);color:#fff;font-weight:550;box-shadow:none;white-space:nowrap}
+body.pa-thursday-home[data-site-view="home"]>.site-tabs{display:none}
+body.pa-thursday-home .site-tabs{background:#fffcf8}
+body.pa-thursday-home .site-tabs a{border-radius:999px;background:#fff9f3;border-color:#e5dacf;color:#685d55}
+body.pa-thursday-home .site-tabs a.is-active{background:#526d8b;color:#fff}
+body.pa-thursday-home .hero.wrap.pa-thursday-hero{display:grid!important;grid-template-columns:minmax(0,53%) minmax(0,47%)!important;align-items:center!important;gap:0!important;position:relative!important;isolation:isolate!important;overflow:hidden!important;width:min(1390px,calc(100% - 40px))!important;max-width:1390px!important;min-height:420px!important;margin:23px auto 0!important;padding:0!important;border:1px solid #e8ded4!important;border-radius:24px!important;background:linear-gradient(107deg,#faf7f3,#f4eee8 55%,#ece2d8)!important;color:#222a31!important;box-shadow:0 17px 50px #59433210!important}
+body.pa-thursday-home .hero.wrap.pa-thursday-hero:before{content:none!important}
+body.pa-thursday-home .hero.wrap.pa-thursday-hero .pa-lexus-art,body.pa-thursday-home .hero.wrap.pa-thursday-hero .pa-lexus-glow{display:none!important}
+body.pa-thursday-home .hero.wrap.pa-thursday-hero .hero-copy.pa-lexus-content{display:block!important;width:auto!important;max-width:none!important;min-width:0;align-self:center!important;position:relative!important;z-index:2!important;margin:0!important;padding:clamp(25px,4vw,58px) 16px clamp(25px,4vw,58px) clamp(25px,4.2vw,60px)!important;text-align:left!important;background:none!important}
+body.pa-thursday-home .hero.wrap.pa-thursday-hero .eyebrow{color:#99816e!important;font-family:"PapAutoManrope",sans-serif;font-size:10px!important;font-weight:550!important;line-height:1.35;letter-spacing:.19em!important;display:block!important;margin:0 0 16px!important}
+body.pa-thursday-home .hero.wrap.pa-thursday-hero h1{display:block!important;font-family:"PapAutoManrope",sans-serif;font-weight:290!important;font-size:clamp(31px,4.1vw,60px)!important;line-height:1.09!important;letter-spacing:-.055em!important;color:#26272b!important;max-width:720px!important;margin:0 0 18px!important}
+body.pa-thursday-home .hero.wrap.pa-thursday-hero h1 em{display:inline!important;color:#5a7590!important;font-weight:300!important;font-style:italic!important}
+body.pa-thursday-home .hero.wrap.pa-thursday-hero .hero-lead{display:block!important;color:#55545b!important;max-width:560px!important;font-size:clamp(13px,1.12vw,16px)!important;line-height:1.7!important;margin:0 0 20px!important}
+body.pa-thursday-home .hero.wrap.pa-thursday-hero .hero-actions{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:10px!important;margin:0!important}
+body.pa-thursday-home .hero.wrap.pa-thursday-hero .hero-actions a{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:auto!important;min-height:43px!important;padding:12px 20px!important;border-radius:999px!important;font-size:12px!important;line-height:1.2!important;font-family:"PapAutoManrope",sans-serif;font-weight:450!important}
+body.pa-thursday-home .hero.wrap.pa-thursday-hero .hero-actions .button-primary{background:linear-gradient(110deg,#5b7895,#3d5b7c)!important;border:1px solid #59738d!important;color:#fff!important}
+body.pa-thursday-home .hero.wrap.pa-thursday-hero .hero-actions .button-secondary{background:#fffcf9!important;border:1px solid #cbbcac!important;color:#534d4a!important}
+body.pa-thursday-home .hero.wrap.pa-thursday-hero .pa-lexus-note{display:block!important;color:#8e8379!important;font-size:10px!important;line-height:1.6!important;margin:14px 0 0!important}
+body.pa-thursday-home .hero.wrap.pa-thursday-hero .pa-thursday-visual{position:relative;z-index:1;overflow:hidden;align-self:stretch;min-height:350px;margin:20px 20px 20px 0;border-radius:17px;background:linear-gradient(135deg,#d3dce4,#f0ece7);display:flex;align-items:center;justify-content:center}
+body.pa-thursday-home .pa-thursday-visual:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#f6f0e93e,transparent 35%),linear-gradient(0deg,#333e4a35,transparent 42%)}
+body.pa-thursday-home .pa-thursday-visual img{width:100%;height:100%;object-fit:contain;display:block;max-height:410px}
+body.pa-thursday-home .pa-thursday-visual small{position:absolute;bottom:12px;right:13px;z-index:2;background:#34475eaf;color:#fff;padding:5px 8px;border-radius:5px;font-size:9px;letter-spacing:.06em}
+body.pa-thursday-home .pa-thursday-statbar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid #e9e1d9;background:#fffdfaeb;border-radius:16px;margin:14px 0 14px;padding:9px}
+body.pa-thursday-home .pa-thursday-statbar>div{display:flex;align-items:center;justify-content:center;gap:12px;min-width:0;padding:12px 8px;border-right:1px solid #e9e1d9}
+body.pa-thursday-home .pa-thursday-statbar>div:last-child{border-right:0}
+body.pa-thursday-home .pa-thursday-statbar i{font-style:normal;color:#ad9784;font-size:20px;font-weight:350}
+body.pa-thursday-home .pa-thursday-statbar strong{font-family:"PapAutoManrope",sans-serif;font-size:clamp(25px,3vw,41px);color:#887264;font-weight:300;letter-spacing:-.05em;line-height:1}
+body.pa-thursday-home .pa-thursday-statbar small{font-size:11px;color:#625e5e;line-height:1.35;max-width:135px}
+body.pa-thursday-home .pa-thursday-markets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:10px 0 31px}
+body.pa-thursday-home .pa-thursday-market{min-width:0;background:linear-gradient(125deg,#fffdfa,#f3ece5);border:1px solid #e7ded4;border-radius:14px;padding:17px 20px;display:flex;flex-direction:column;justify-content:center}
+body.pa-thursday-home .pa-thursday-market:last-child{background:linear-gradient(120deg,#fffdfa,#eaf1f6)}
+body.pa-thursday-home .pa-thursday-market strong{font-size:15px;font-weight:550;color:#343337;line-height:1.35}
+body.pa-thursday-home .pa-thursday-market small{font-size:12px;color:#817b77;line-height:1.62;margin-top:5px}
+body.pa-thursday-home .pa-thursday-feature{margin:8px 0 38px}
+body.pa-thursday-home .pa-thursday-feature-head{display:flex;align-items:end;justify-content:space-between;gap:15px;flex-wrap:wrap;margin:0 0 15px}
+body.pa-thursday-home .pa-thursday-feature-head h2{font-family:"PapAutoManrope",sans-serif;font-size:clamp(25px,3.2vw,39px);line-height:1.17;font-weight:320;letter-spacing:-.047em;color:#2a292d;max-width:820px;margin:6px 0 0}
+body.pa-thursday-home .pa-thursday-feature-head h2 em{font-style:italic;color:#727078;font-weight:300}
+body.pa-thursday-home .pa-thursday-feature-head .eyebrow{font-size:10px;letter-spacing:.15em;color:#93816f;margin:0}
+body.pa-thursday-home .pa-thursday-feature-head>a{font-size:12px;border-radius:999px;border:1px solid #d9c9ba;padding:9px 15px;color:#5d6171;white-space:nowrap}
+body.pa-thursday-home .pa-thursday-filters{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-bottom:13px}
+body.pa-thursday-home .pa-thursday-filters a{min-height:35px;display:inline-flex;align-items:center;padding:8px 16px;font-size:11px;color:#645b58;background:#fffcfa;border:1px solid #e6dbd0;border-radius:999px}
+body.pa-thursday-home .pa-thursday-filters a:first-child{background:#506d8c;border-color:#506d8c;color:#fff}
+body.pa-thursday-home .pa-thursday-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
+body.pa-thursday-home .pa-thursday-card{background:#fffefb;border:1px solid #e9e1d9;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:0 8px 26px #4431260b}
+body.pa-thursday-home .pa-thursday-image{display:grid;grid-template-columns:3fr 1fr;gap:3px;background:#ebe7e3;aspect-ratio:1.75/1}
+body.pa-thursday-home .pa-thursday-image>img{width:100%;height:100%;min-width:0;object-fit:contain;display:block;background:#eff0ef}
+body.pa-thursday-home .pa-thursday-image>img:last-child{background:white}
+body.pa-thursday-home .pa-thursday-card-body{padding:12px;display:flex;flex-direction:column;flex:1}
+body.pa-thursday-home .pa-thursday-card small{font-size:10px;color:#857875}
+body.pa-thursday-home .pa-thursday-card h3{font-family:"PapAutoManrope",sans-serif;font-size:16px;font-weight:530;line-height:1.25;margin:4px 0 7px;color:#35353a}
+body.pa-thursday-home .pa-thursday-card p{font-size:11px;line-height:1.6;color:#746e6b;margin:0 0 10px}
+body.pa-thursday-home .pa-thursday-card a{display:inline-flex;border:1px solid #dbcdbf;border-radius:999px;padding:8px 12px;font-size:11px;color:#5a6772;align-items:center;justify-content:center;align-self:flex-start;margin-top:auto}
+body.pa-thursday-home .pa-thursday-notice{font-size:11px;color:#817d7d;line-height:1.7;margin:12px 0 0}
+body.pa-thursday-home .pa-real-head h2{font-family:"PapAutoManrope",sans-serif;font-weight:350;color:#282b30}
+body.pa-thursday-home .pa-real-head>a,body.pa-thursday-home .pa-real-lot>a{border-radius:999px}
+body.pa-thursday-home .pa-real-lot{background:#fffefc;border-color:#ebe3dc;box-shadow:0 9px 24px #473b300b}
+body.pa-thursday-home .pa-real-lot h3{font-family:"PapAutoManrope",sans-serif;font-weight:550;color:#34383d}
+body.pa-thursday-home .pa-real-grade{background:#f6f1ec;border-color:#e9ddcf;color:#826a55}
+body.pa-thursday-home .pa-real-status{background:#fffdf9;border-color:#eae2da;color:#796f6a}
+body.pa-thursday-home .pa-real-lot a.pa-real-cta{background:#526f8d;border-radius:999px;font-weight:500}
+@media(max-width:1120px){
+ body.pa-thursday-home .main-nav{gap:9px}
+ body.pa-thursday-home .main-nav>a:nth-child(n+7){display:none}
+ body.pa-thursday-home .pa-thursday-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+ body.pa-thursday-home .site-header{width:100%;padding:11px 16px;min-height:58px;height:62px;background:#fffaf5f0}
+ body.pa-thursday-home .brand-name{font-size:17px}
+ body.pa-thursday-home .brand-name small{display:none}
+ body.pa-thursday-home .menu-toggle{display:block;color:#615b54;background:#eee3d7;border:1px solid #e0d1c1;border-radius:11px;min-height:38px;min-width:40px;font-size:21px}
+ body.pa-thursday-home .main-nav{position:absolute;top:62px;left:12px;right:12px;display:none;z-index:60;background:#fffdfb;border:1px solid #e5d9cc;box-shadow:0 17px 28px #42312d2b;border-radius:12px;padding:10px;max-height:72vh;overflow-y:auto}
+ body.pa-thursday-home .main-nav.open{display:flex}
+ body.pa-thursday-home .main-nav>a:nth-child(n+7){display:block}
+ body.pa-thursday-home .main-nav a{color:#38373d;font-size:12px;width:100%;padding:7px 11px}
+ body.pa-thursday-home .header-cta{display:none}
+ body.pa-thursday-home .hero.wrap.pa-thursday-hero{display:flex!important;flex-direction:column!important;align-items:stretch!important;width:calc(100% - 22px)!important;margin:14px auto 0!important;min-height:0!important;border-radius:16px!important}
+ body.pa-thursday-home .hero.wrap.pa-thursday-hero .hero-copy.pa-lexus-content{display:block!important;width:100%!important;padding:24px 20px 0!important}
+ body.pa-thursday-home .hero.wrap.pa-thursday-hero .eyebrow{font-size:9px!important;margin:0 0 12px!important}
+ body.pa-thursday-home .hero.wrap.pa-thursday-hero h1{font-size:clamp(31px,7.5vw,42px)!important;line-height:1.1!important;margin:0 0 12px!important}
+ body.pa-thursday-home .hero.wrap.pa-thursday-hero .hero-lead{font-size:12px!important;line-height:1.6!important;margin:0 0 14px!important}
+ body.pa-thursday-home .hero.wrap.pa-thursday-hero .hero-actions{display:flex!important;gap:8px!important}
+ body.pa-thursday-home .hero.wrap.pa-thursday-hero .hero-actions a{min-height:39px!important;padding:9px 14px!important;font-size:11px!important}
+ body.pa-thursday-home .hero.wrap.pa-thursday-hero .pa-lexus-note{font-size:9px!important;line-height:1.4!important;margin:10px 0 0!important}
+ body.pa-thursday-home .hero.wrap.pa-thursday-hero .pa-thursday-visual{width:calc(100% - 22px);margin:13px 11px 11px;min-height:0;aspect-ratio:1.75/1;border-radius:12px}
+ body.pa-thursday-home .pa-thursday-visual img{object-fit:contain;max-height:none;height:100%}
+ body.pa-thursday-home .pa-thursday-statbar{grid-template-columns:repeat(2,minmax(0,1fr));padding:5px}
+ body.pa-thursday-home .pa-thursday-statbar>div{justify-content:flex-start;padding:13px;border-bottom:1px solid #e9e0d9}
+ body.pa-thursday-home .pa-thursday-statbar>div:nth-child(even){border-right:0}
+ body.pa-thursday-home .pa-thursday-statbar>div:nth-child(n+3){border-bottom:0}
+ body.pa-thursday-home .pa-thursday-statbar strong{font-size:28px}
+ body.pa-thursday-home .pa-thursday-statbar small{font-size:10px}
+ body.pa-thursday-home .pa-thursday-markets{grid-template-columns:1fr;gap:9px;margin-bottom:25px}
+ body.pa-thursday-home .pa-thursday-market{padding:14px}
+ body.pa-thursday-home .pa-thursday-feature-head{align-items:flex-start}
+ body.pa-thursday-home .pa-thursday-grid{grid-template-columns:1fr;gap:9px}
+ body.pa-thursday-home .pa-thursday-image{aspect-ratio:2.4/1}
+ body.pa-thursday-home .pa-thursday-image img{object-fit:contain}
+ body.pa-thursday-home .pa-thursday-feature-head h2{font-size:28px}
+ body.pa-thursday-home .pa-auction-real-section{padding-top:10px}
+}
+@media(max-width:430px){
+ body.pa-thursday-home .hero.wrap.pa-thursday-hero .hero-copy.pa-lexus-content{padding:19px 16px 0!important}
+ body.pa-thursday-home .hero.wrap.pa-thursday-hero h1{font-size:clamp(29px,7.2vw,36px)!important}
+ body.pa-thursday-home .hero.wrap.pa-thursday-hero .hero-actions a{font-size:10px!important;padding:9px 12px!important}
+ body.pa-thursday-home .pa-thursday-image{aspect-ratio:2.15/1}
+}
