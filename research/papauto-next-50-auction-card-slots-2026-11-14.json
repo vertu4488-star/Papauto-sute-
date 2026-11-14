@@ -113,7 +113,7 @@
           "blocked": false
         }
       ],
-      "stage": "source_search_needed",
+      "stage": "source_lead_found_needs_full_photo_sheet_rights_review",
       "auction_house": null,
       "auction_date": null,
       "lot_number": null,
@@ -165,7 +165,7 @@
           "blocked": false
         }
       ],
-      "stage": "source_search_needed",
+      "stage": "source_lead_found_needs_full_photo_sheet_rights_review",
       "auction_house": null,
       "auction_date": null,
       "lot_number": null,
@@ -203,7 +203,7 @@
           "blocked": false
         }
       ],
-      "stage": "source_search_needed",
+      "stage": "source_lead_found_needs_full_photo_sheet_rights_review",
       "auction_house": null,
       "auction_date": null,
       "lot_number": null,
@@ -241,7 +241,7 @@
           "blocked": true
         }
       ],
-      "stage": "source_search_needed",
+      "stage": "only_rejected_leads_found",
       "auction_house": null,
       "auction_date": null,
       "lot_number": null,
@@ -346,7 +346,7 @@
           "blocked": false
         }
       ],
-      "stage": "source_search_needed",
+      "stage": "source_lead_found_needs_full_photo_sheet_rights_review",
       "auction_house": null,
       "auction_date": null,
       "lot_number": null,
@@ -384,7 +384,7 @@
           "blocked": false
         }
       ],
-      "stage": "source_search_needed",
+      "stage": "source_lead_found_needs_full_photo_sheet_rights_review",
       "auction_house": null,
       "auction_date": null,
       "lot_number": null,
@@ -422,7 +422,7 @@
           "blocked": false
         }
       ],
-      "stage": "source_search_needed",
+      "stage": "source_lead_found_needs_full_photo_sheet_rights_review",
       "auction_house": null,
       "auction_date": null,
       "lot_number": null,
@@ -452,7 +452,7 @@
           "blocked": false
         }
       ],
-      "stage": "source_search_needed",
+      "stage": "source_lead_found_needs_full_photo_sheet_rights_review",
       "auction_house": null,
       "auction_date": null,
       "lot_number": null,
@@ -520,7 +520,7 @@
           "blocked": false
         }
       ],
-      "stage": "source_search_needed",
+      "stage": "source_lead_found_needs_full_photo_sheet_rights_review",
       "auction_house": null,
       "auction_date": null,
       "lot_number": null,
@@ -795,7 +795,7 @@
           "blocked": false
         }
       ],
-      "stage": "source_search_needed",
+      "stage": "source_lead_found_needs_full_photo_sheet_rights_review",
       "auction_house": null,
       "auction_date": null,
       "lot_number": null,
@@ -840,7 +840,7 @@
           "blocked": false
         }
       ],
-      "stage": "source_search_needed",
+      "stage": "source_lead_found_needs_full_photo_sheet_rights_review",
       "auction_house": null,
       "auction_date": null,
       "lot_number": null,
@@ -1726,5 +1726,13 @@
       "commercial_rights_evidence": null,
       "publishable": false
     }
-  ]
+  ],
+  "summary_counts": {
+    "source_leads_by_model_year_target": 10,
+    "only_rejected_leads": 1,
+    "source_search_needed": 39,
+    "verified_complete_lots": 0,
+    "approved_rights": 0,
+    "new_cards_live": 0
+  }
 }
