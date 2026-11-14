@@ -318,16 +318,14 @@ def copy_public_files() -> list[str]:
                 html, count=1, flags=re.I,
             )
             def add_interior_skin(match):
-                attrs = match.group(1)
-                old_class = re.search(r'\\bclass\\s*=\\s*(["\\\'])(.*?)\\1', attrs, flags=re.I | re.S)
-                if old_class:
-                    current = old_class.group(2)
-                    if "papauto-warm-interior" not in current.split():
-                        attrs = attrs[:old_class.start(2)] + current + " papauto-warm-interior" + attrs[old_class.end(2):]
-                else:
-                    attrs += ' class="papauto-warm-interior"'
-                return "<body" + attrs + ">"
-            html, body_matches = re.subn(r"<body\\b([^>]*)>", add_interior_skin, html, count=1, flags=re.I)
+                tag = match.group(0)
+                # Respect existing body classes and do not alter other attributes.
+                if 'class="' in tag:
+                    return tag.replace('class="', 'class="papauto-warm-interior ', 1)
+                if "class='" in tag:
+                    return tag.replace("class='", "class='papauto-warm-interior ", 1)
+                return tag[:-1] + ' class="papauto-warm-interior">'
+            html, body_matches = re.subn("<body([^>]*)>", add_interior_skin, html, count=1, flags=re.I)
             if body_matches != 1 or html.count("papauto-warm-interior.css") != 1:
                 raise RuntimeError("PAPAUTO_WARM: missing or duplicate interior theme on " + page.name)
         page.write_text(html, encoding="utf-8")
