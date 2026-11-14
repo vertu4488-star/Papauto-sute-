@@ -309,7 +309,7 @@ def copy_public_files() -> list[str]:
         # Search-engine verification HTML is often a plain token without a
         # document head/body. Leave those verification files completely intact.
         if (page.name != "index.html" and "</head>" in html.lower()
-                and re.search(r"<body\\b", html, flags=re.I)):
+                and re.search(r"<body\b", html, flags=re.I)):
             warm_stylesheet = "papauto-warm-interior.css"
             if not (TARGET / warm_stylesheet).is_file():
                 raise RuntimeError("PAPAUTO_WARM: interior theme CSS was not copied")
