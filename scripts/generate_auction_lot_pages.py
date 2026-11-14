@@ -127,7 +127,7 @@ def render_lot(lot: dict, asset_root: Path) -> str:
 <meta name="theme-color" content="#122942">
 <title>{safe(lot["model"])} {safe(lot["year"])} — аукционный лот №{safe(lot["lot_number"])} | PAPAUTO</title>
 <meta name="description" content="Фотографии и полный аукционный лист {safe(lot["model"])} {safe(lot["year"])} года, пробег и оценка.">
-<link rel="stylesheet" href="/lot-detail.css?v=2">
+<link rel="stylesheet" href="/lot-detail-photo-first.css">
 <link rel="icon" href="/assets/favicon.svg">
 </head><body>
 <header class="lot-header"><a class="lot-brand" href="/">PAPAUTO<span>.</span></a>
