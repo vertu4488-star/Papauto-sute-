@@ -10,7 +10,19 @@ async function prepare(page){
   await page.locator('.sd-question[data-name="make"] .sd-dropdown').click();
   await page.locator('.sv-popup__container').getByText("Toyota",{exact:true}).filter({visible:true}).first().click({timeout:9000});
   await page.locator('.sd-question[data-name="model"] .sd-dropdown').click();
-  await page.locator('.sv-popup__container').getByText("Corolla",{exact:true}).filter({visible:true}).first().click({timeout:9000});
+  const corolla=page.locator('.sv-popup__container').getByText("Corolla",{exact:true}).filter({visible:true}).first();
+  await corolla.waitFor({state:"visible",timeout:8000});
+  const diag=await corolla.evaluate(el=>{
+    const rect=el.getBoundingClientRect();
+    const hit=document.elementFromPoint(rect.x+rect.width/2,rect.y+rect.height/2);
+    const details=node=>node?{tag:node.tagName,cls:String(node.className).slice(0,180),
+      rect:node.getBoundingClientRect().toJSON(),z:getComputedStyle(node).zIndex,
+      pointer:getComputedStyle(node).pointerEvents,position:getComputedStyle(node).position}:null;
+    const ancestor=[];for(let n=el;n&&ancestor.length<8;n=n.parentElement)ancestor.push(details(n));
+    return {choice:details(el),hit:details(hit),ancestors:ancestor};
+  });
+  console.log("PAPAUTO_PC_POPUP_POINTER="+JSON.stringify(diag));
+  await corolla.click({timeout:4500});
   const next=page.getByRole("button",{name:/Далее|Продолжить|Next/i}).filter({visible:true}).last();
   await next.click({timeout:9000});
   const phone=page.locator('.sd-question[data-name="phone"] input[type="tel"]');
