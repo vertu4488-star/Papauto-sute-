@@ -20,7 +20,8 @@ const pages=[
    await page.route(/^https:\/\/(?:mc\.yandex\.ru|www\.googletagmanager\.com|www\.google-analytics\.com)\//,
      route=>route.fulfill({status:200,contentType:'application/javascript',body:''}));
    for(const entry of pages){
-    await page.goto(BASE+entry.url,{waitUntil:'domcontentloaded',timeout:30000});
+    await page.goto(BASE+entry.url,{waitUntil:'load',timeout:45000});
+    await page.evaluate(()=>document.fonts.ready);
     const state=await page.evaluate((selectors)=>{
       const blue=[],sample={};
       for(const selector of selectors){
@@ -48,7 +49,8 @@ const pages=[
      if(width===1440)await page.screenshot({path:'warm-gallery-desktop.png',fullPage:false});
      const detail=await page.locator('.gallery-card a.gallery-full').first().getAttribute('href');
      assert(detail&&detail.startsWith('/lots/'),'Lot detail link unavailable');
-     await page.goto(BASE+detail,{waitUntil:'domcontentloaded',timeout:30000});
+     await page.goto(BASE+detail,{waitUntil:'load',timeout:45000});
+     await page.evaluate(()=>document.fonts.ready);
      const detailState=await page.evaluate(()=>{
       const blue=[];
       for(const sel of ['body','.lot-header','.lot-information','.lot-price','.lot-photo','.lot-apply','.lot-description']){
