@@ -4,6 +4,10 @@ on:
     branches: [main]
     paths:
       - "premium-japan-korea.html"
+      - "*.css"
+      - "*.html"
+      - "scripts/qa_warm_site_browser.cjs"
+      - "tests/test_site_warm_theme.py"
       - "data/approved-auction-lots.json"
       - "assets/auction/approved/**"
       - "scripts/import_auction_photos.py"
@@ -55,6 +59,7 @@ jobs:
         run: |
           python -m http.server 8765 -d render-public > /tmp/papauto-premium-http.log 2>&1 &
           node scripts/qa_gallery_browser.cjs
+          node scripts/qa_warm_site_browser.cjs
           node scripts/qa_all_auction_lot_pages.cjs
           node scripts/qa_premium_light_browser.cjs
       - name: Save actual page screenshots
@@ -70,4 +75,8 @@ jobs:
             premium-mobile-photo-preview.png
             gallery-desktop.png
             gallery-mobile.png
+            warm-gallery-mobile.png
+            warm-gallery-desktop.png
+            warm-lot-mobile.png
+            warm-lot-desktop.png
           if-no-files-found: ignore
