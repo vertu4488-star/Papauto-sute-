@@ -8,9 +8,9 @@ async function prepare(page){
   await page.goto(URL,{waitUntil:"load",timeout:45000});
   await page.locator('.sd-question[data-name="make"] .sd-dropdown').waitFor({state:"visible",timeout:15000});
   await page.locator('.sd-question[data-name="make"] .sd-dropdown').click();
-  await page.locator('.sv-popup:visible').getByText("Toyota",{exact:true}).first().click({timeout:9000});
+  await page.locator('.sv-popup__container').getByText("Toyota",{exact:true}).filter({visible:true}).first().click({timeout:9000});
   await page.locator('.sd-question[data-name="model"] .sd-dropdown').click();
-  await page.locator('.sv-popup:visible').getByText("Corolla",{exact:true}).first().click({timeout:9000});
+  await page.locator('.sv-popup__container').getByText("Corolla",{exact:true}).filter({visible:true}).first().click({timeout:9000});
   const next=page.getByRole("button",{name:/Далее|Продолжить|Next/i}).filter({visible:true}).last();
   await next.click({timeout:9000});
   const phone=page.locator('.sd-question[data-name="phone"] input[type="tel"]');
