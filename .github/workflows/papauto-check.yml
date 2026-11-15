@@ -82,6 +82,7 @@ jobs:
         run: |
           node --check metrika.js
           node tests/test_analytics.cjs
+          node tests/test_qa_analytics_stub.cjs
           node --check gallery.js
           node --check premium-import-estimate.js
           node --check app.js

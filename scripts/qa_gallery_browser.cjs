@@ -1,12 +1,14 @@
 /* Browser QA for PapAuto gallery. Read-only: local HTTP and no lead submissions. */
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
+const {stubAnalytics}=require('./qa_analytics_stub.cjs');
 const BASE='http://127.0.0.1:8765/gallery.html';
 (async()=>{
  const browser=await chromium.launch({headless:true});
  const findings=[];
  for(const width of [1440,390,320]){
   const page=await browser.newPage({viewport:{width,height:width===1440?900:780},deviceScaleFactor:1,isMobile:width<500,hasTouch:width<500});
+  await stubAnalytics(page);
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   page.on('console',m=>{if(m.type()==='error')errors.push('console: '+m.text());});
   page.on('requestfailed',r=>{if(/127\.0\.0\.1:8765/.test(r.url()))errors.push('local request: '+r.url()+' '+r.failure()?.errorText);});
@@ -66,6 +68,7 @@ const BASE='http://127.0.0.1:8765/gallery.html';
   const detailedLink=await card.locator('a.gallery-full').getAttribute('href');
   assert(detailedLink&&detailedLink.startsWith('/lots/'),'Expected internal detailed lot page');
   const detailPage=await browser.newPage({viewport:{width,height:width===1440?900:780},isMobile:width<500});
+  await stubAnalytics(detailPage);
   const detailErrors=[];
   detailPage.on('pageerror',e=>detailErrors.push(e.message));
   await detailPage.goto('http://127.0.0.1:8765'+detailedLink,{waitUntil:'load',timeout:30000});
