@@ -20,8 +20,8 @@ async function prepare(page){
     const details=node=>node?{tag:node.tagName,cls:String(node.className).slice(0,180),
       rect:node.getBoundingClientRect().toJSON(),z:getComputedStyle(node).zIndex,
       pointer:getComputedStyle(node).pointerEvents,position:getComputedStyle(node).position}:null;
-    const ancestor=[];for(let n=el;n&&ancestor.length<8;n=n.parentElement)ancestor.push(details(n));
-    return {choice:details(el),hit:details(hit),ancestors:ancestor};
+    const ancestor=[];for(let n=el;n&&ancestor.length<22;n=n.parentElement)ancestor.push(details(n));
+    return {choice:details(el),hit:details(hit),popup:details(el.closest('.sv-popup')),page:details(document.querySelector('.sd-page')),ancestors:ancestor};
   });
   console.log("PAPAUTO_PC_POPUP_POINTER="+JSON.stringify(diag));
   await corolla.click({timeout:4500});
