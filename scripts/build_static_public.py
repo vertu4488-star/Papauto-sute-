@@ -485,7 +485,7 @@ def copy_public_files() -> list[str]:
                     if 'class="' in tag:
                         return tag.replace('class="', 'class="papauto-warm-interior ', 1)
                     if "class='" in tag:
-                        return tag.replace("class='", "class='papauto-warm-interior ', 1)
+                        return tag.replace("class='", "class='papauto-warm-interior ", 1)
                     return tag[:-1] + ' class="papauto-warm-interior">'
                 contents = re.sub(r"<body\b[^>]*>", add_skin, contents, count=1, flags=re.I)
         if contents.count("papauto-warm-interior.css") != 1:
