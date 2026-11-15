@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / "render-public"
 ROOT_SUFFIXES = {".html", ".css", ".js", ".xml", ".webmanifest"}
 # Only explicitly allowed domain-verification text files may be published; others remain tombstoned.
+# Catalog publishing is locked to the owner-reviewed photo+sheet baseline by verify_publication_approval.py.
 PUBLIC_TEXT_FILES = {"robots.txt", "ads.txt", "security.txt", "d260ebec4a8764da2a8a41fc9d6791a8.txt", "ae47dec4705c4a088f3dd56a3fdeb764.txt"}
 # Some former Render builds published the whole repository. Explicit tombstones
 # replace old assets that otherwise remain fetchable at their old URLs.
