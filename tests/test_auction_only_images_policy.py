@@ -37,13 +37,13 @@ class AuctionOnlyImages(unittest.TestCase):
                 relative.startswith("assets/auction/home/")
                 or relative.startswith("assets/auction/approved/")
                 or relative.startswith("assets/premium-auctions/")
-                or relative == "assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp",
+                or relative in {"assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp", "assets/visual/papauto-approved-bmw-hero-20261115.webp"},
                 f"NON-AUCTION IMAGE BLOCKED: {relative}"
             )
 
     def test_thursday_artwork_only_in_homepage_hero_not_auction_lots(self):
         """One explicitly user-approved marketing illustration, never sold as auction media."""
-        art = "assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp"
+        art = "assets/visual/papauto-approved-bmw-hero-20261115.webp"
         self.assertTrue((ROOT / art).is_file())
         home = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertEqual(home.count('src="/' + art + '"'), 1)
