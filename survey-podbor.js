@@ -248,13 +248,19 @@
       budget:d.budget?Number(d.budget):null,
       request,consent:Array.isArray(d.consent)&&d.consent.includes('agree'),website:''
     };
-    const endpoint=location.hostname==='ru-preview.papauto.ru'
+    // Use the same PapAuto origin in production: Cloudflare forwards ONLY
+    // /api/leads to our existing FastAPI+Neon service. This avoids a second
+    // hostname, Russian-ISP cross-origin failures and preflight dependencies.
+    const endpoint=location.hostname==='papauto.ru'||location.hostname==='ru-preview.papauto.ru'
       ? location.origin : String(window.PAPAUTO_CONFIG?.apiBaseUrl||'https://api.papauto.ru').replace(/\/$/,'');
+    const controller=new AbortController();
+    const requestTimeout=setTimeout(()=>controller.abort(),25000);
     try{
       const response=await fetch(endpoint+'/api/leads',{
         method:'POST',
         headers:{'Content-Type':'application/json','Accept':'application/json'},
-        credentials:'omit',body:JSON.stringify(payload)
+        credentials:'omit',cache:'no-store',signal:controller.signal,
+        body:JSON.stringify(payload)
       });
       let data={};try{data=await response.json()}catch{}
       if(data.ok===true && data.stored===true && response.ok){
@@ -262,15 +268,25 @@
         msg.textContent=savedNotification?'Заявка доставлена менеджеру.':'Заявка сохранена. Доставка уведомления проверяется.';
         options.allow=true;
       }else{
-        state='unknown';
+        const detail=typeof data.detail==='string'?data.detail.slice(0,180):'';
+        const safelyRejected=[400,413,415,422,429].includes(response.status);
+        // These statuses are rejected before database insertion; other statuses
+        // are ambiguous and must NOT be retried without checking Telegram.
+        state=safelyRejected?'ready':'unknown';
         options.allow=false;
-        options.message='Статус заявки не подтверждён. Проверьте Telegram перед повторной отправкой.';
-        msg.textContent='Ошибка '+response.status+'. Заявка могла сохраниться. Не отправляйте повторно до проверки.';
+        options.message=safelyRejected
+          ?(detail||'Проверьте номер телефона и обязательные поля.')
+          :'Статус заявки не подтверждён. Проверьте Telegram перед повторной отправкой.';
+        msg.textContent=safelyRejected
+          ?'Заявка не отправлена (код '+response.status+'). '+(detail||'Проверьте заполнение полей.')
+          :'Ошибка '+response.status+'. Заявка могла сохраниться. Не отправляйте повторно до проверки.';
       }
     }catch{
       state='unknown';options.allow=false;
       options.message='Не удалось получить подтверждение сервера. Не отправляйте заявку повторно.';
-      msg.textContent='Сбой сети. Статус заявки неизвестен, проверьте Telegram.';
+      msg.textContent='Соединение прервалось. Статус заявки неизвестен; проверьте Telegram или свяжитесь с менеджером.';
+    }finally{
+      clearTimeout(requestTimeout);
     }
   });
   survey.onComplete.add(()=>{
