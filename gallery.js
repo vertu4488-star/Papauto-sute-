@@ -21,7 +21,7 @@
  // Cyrillic entry on a Russian iPhone must find the Latin auction model name.
  // Examples: "Хо" -> "ho", "Хонда" -> "honda", "Тойота" -> "toyota".
  const translit=Object.freeze({а:"a",б:"b",в:"v",г:"g",д:"d",е:"e",ё:"yo",ж:"zh",з:"z",и:"i",й:"y",к:"k",л:"l",м:"m",н:"n",о:"o",п:"p",р:"r",с:"s",т:"t",у:"u",ф:"f",х:"h",ц:"ts",ч:"ch",ш:"sh",щ:"shch",ъ:"",ы:"y",ь:"",э:"e",ю:"yu",я:"ya"});
- const searchKey=s=>[...normal(s)].map(ch=>translit[ch]??ch).join("").replace(/\\s+/g," ").trim();
+ const searchKey=s=>[...normal(s)].map(ch=>translit[ch]??ch).join("").replace(/\s+/g," ").trim();
  const localizedBrand=Object.freeze({Honda:"хонда",Toyota:"тойота",Nissan:"ниссан",Suzuki:"сузуки",Daihatsu:"дайхатсу",Mazda:"мазда",Subaru:"субару",BMW:"бмв",Mercedes:"мерседес",Geely:"джили",Changan:"чанган",BYD:"бид"});
  const validImg=s=>typeof s==="string"&&mediaPath.test(s)?s:null;
  const img=(src,alt,eager=false)=>{
@@ -225,7 +225,10 @@
    if(event.key==="Tab"){hideSuggestions();return;}
    if(suggestions.hidden)return;
    if(event.key==="ArrowDown"||event.key==="ArrowUp"){
-     event.preventDefault();moveSuggestion(activeSuggestion+(event.key==="ArrowDown"?1:-1));
+     event.preventDefault();
+     moveSuggestion(activeSuggestion<0
+       ?(event.key==="ArrowDown"?0:suggestionModels.length-1)
+       :activeSuggestion+(event.key==="ArrowDown"?1:-1));
    }else if(event.key==="Enter"&&suggestionModels.length){
      event.preventDefault();chooseSuggestion(suggestionModels[activeSuggestion<0?0:activeSuggestion]);
    }
