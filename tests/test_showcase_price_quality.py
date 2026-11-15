@@ -41,7 +41,12 @@ class ShowcasePriceQuality(unittest.TestCase):
         self.assertTrue((ROOT/"assets/visual/papauto-approved-bmw-hero-20261115.webp").is_file())
         self.assertNotIn('href="/assets/visual/papauto-approved-bmw-hero-20261115.webp"',html)
         self.assertNotIn("На фото Kia K5",html)
-        self.assertIn('src="/assets/papauto-red-brand.svg"',html)
+        # The approved wordmark is inline SVG with outlined letters so older
+        # browsers do not depend on installed fonts or external image fetching.
+        self.assertIn('<a class="brand pa-approved-brand"',html)
+        self.assertIn('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 112"',html)
+        self.assertIn('fill="#171313"',html)
+        self.assertNotIn('src="/assets/papauto-red-brand.svg"',html)
         self.assertNotIn("PAPAUTO · PREMIUM SELECTION · ИЛЛЮСТРАЦИЯ",html)
         self.assertIn("/assets/auction/home/toyota-corolla-sport-2023-20038-photo-1.jpg",hero_css)
         self.assertTrue((ROOT/"assets/auction/home/toyota-corolla-sport-2023-20038-photo-1.jpg").is_file())
