@@ -217,12 +217,36 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
                 used_hashes[sha] = rec["id"]
     additional = [prepare_approved(target, rec) for rec in approved]
     if owner_path is not None:
-        selection = json.loads(owner_path.read_text(encoding="utf-8"))["lots"]
-        if len(selection) != 100 or len(base) + len(additional) + len(selection) > MAX_LOTS:
-            raise RuntimeError("PAPAUTO_POLICY: unexpected owner selection count")
+        # The owner approved the exact 100-card PDF on Nov 15: 97 selected source
+        # records plus three existing historic lots. Reject ALL other source
+        # records (even if they have photo files) before serving them.
+        receipt = json.loads(
+            (ROOT / "research/owner-approved-100-release-2026-11-15.json")
+            .read_text(encoding="utf-8")
+        )
+        source_rows = json.loads(owner_path.read_text(encoding="utf-8"))["lots"]
+        approved_new = receipt["approved_new_owner_selected_ids"]
+        approved_old = receipt["approved_existing_public_ids"]
+        denied = receipt["excluded_unreviewed_selected_ids"]
+        if (len(source_rows) != 100 or len(approved_new) != 97
+                or len(approved_old) != 3 or len(denied) != 3
+                or receipt.get("approved_count") != 100
+                or len({*approved_new, *approved_old, *denied}) != 103
+                or len(base) + len(additional) + len(approved_new) > MAX_LOTS
+                or not set(approved_old).issubset({r["id"] for r in base})):
+            raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: reviewed PDF lot IDs mismatch")
+        source_by_id = {r["id"]: r for r in source_rows}
+        if (len(source_by_id) != 100
+                or set(source_by_id) != set(approved_new) | set(denied)
+                or any(str(source_by_id[id_].get("grade", "")).strip() not in {"", "—", "*"}
+                       for id_ in denied)
+                or any(str(source_by_id[id_].get("grade", "")).strip() in {"", "—", "*"}
+                       for id_ in approved_new)):
+            raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: selected records changed")
+        selection = [source_by_id[id_] for id_ in approved_new]
         media_hashes = [digest for row in selection for digest in row["media_sha256"]]
-        if len(set(media_hashes)) != 200 or len(media_hashes) != 200:
-            raise RuntimeError("PAPAUTO_POLICY: repeated owner-selected media")
+        if len(set(media_hashes)) != 194 or len(media_hashes) != 194:
+            raise RuntimeError("PAPAUTO_POLICY: repeated reviewed photo/auction sheet")
         additional.extend(prepare_approved(target, row, owner_selected=True) for row in selection)
     seen_lot_keys = {
         (r["market"], r["auction"], str(r["auction_date"]), str(r["lot_number"]))
