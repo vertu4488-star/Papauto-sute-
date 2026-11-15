@@ -360,8 +360,10 @@ def copy_public_files() -> list[str]:
                   or re.fullmatch(r"/assets/premium-auctions/[a-z0-9-]+[.]webp",url)
                   or re.fullmatch(r"/assets/auction/approved/[a-z0-9-]+[.](?:jpg|jpeg|png|webp)",url))
                  and (ROOT / url.lstrip("/")).is_file()
-                 or url in {"/assets/papauto-logo.svg","/assets/visual/fallback-vehicle.svg",
-                            "/assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp"}):
+                 or url in {"/assets/papauto-logo.svg", "/assets/papauto-red-brand.svg",
+                            "/assets/visual/fallback-vehicle.svg",
+                            "/assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp",
+                            "/assets/visual/papauto-approved-bmw-hero-20261115.webp"}):
                 return tag
             return ""
         html = re.sub(r"<img\b[^>]*>", approved_img, html, flags=re.I | re.S)
