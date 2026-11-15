@@ -14,20 +14,20 @@ try{
   const links=await nav.locator('a').evaluateAll(nodes=>nodes.map(a=>({name:a.textContent.trim(),href:a.getAttribute('href')})));
   const names=links.map(x=>x.name);
   assert.equal(links.length,7,'Exactly 7 intentional menu items');
-  assert.deepEqual(names,["Каталог авто","Марки и модели","Статистика торгов",
-   "Япония · Корея · Китай","Расчёт стоимости","Как заказать","Личный кабинет"]);
+  assert.deepEqual(names,["Главная","Каталог","Направления",
+   "Аукционы","Расчёт","Личный кабинет","Обсудить подбор"]);
   const old=await page.locator('.main-nav').innerText();
   assert(!/100 моделей под заказ|Модели для Новосибирска/.test(old),'Outdated menu language remains');
   assert.equal(await page.locator('.header-cta').getAttribute('href'),'/podbor.html');
   if(isMobile){
     await page.locator('.menu-toggle').click();
     await nav.waitFor({state:'visible'});
-    for(const name of ['Каталог авто','Марки и модели','Статистика торгов']){
+    for(const name of ['Главная','Каталог','Направления','Аукционы','Расчёт']){
       assert(await nav.getByRole('link',{name,exact:true}).isVisible(),name+' mobile menu item hidden');
     }
   }else{
-    assert(await nav.getByRole('link',{name:'Каталог авто',exact:true}).isVisible(),'Desktop catalog hidden');
-    assert(await nav.getByRole('link',{name:'Марки и модели',exact:true}).isVisible(),'Desktop model guide hidden');
+    assert(await nav.getByRole('link',{name:'Каталог',exact:true}).isVisible(),'Desktop catalog hidden');
+    assert(await nav.getByRole('link',{name:'Направления',exact:true}).isVisible(),'Desktop model guide hidden');
   }
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
   assert(overflow<=3,'Horizontal overflow on home '+width+'px: '+overflow);
