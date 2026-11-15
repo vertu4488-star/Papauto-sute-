@@ -1,0 +1,38 @@
+name: PapAuto clear catalog navigation review
+on:
+  push:
+    branches: [design/clear-client-menu-20261115]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build exact current public site with approved car photos
+        run: python scripts/build_static_public.py
+      - name: Install browser
+        run: |
+          npm install --no-save playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Check true menu destinations and mobile navigation
+        run: |
+          python -m http.server 8765 -d render-public >/tmp/papauto-nav-test.log 2>&1 &
+          node scripts/qa_clear_menu_browser.cjs
+      - name: Review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: papauto-navigation-pc-mobile
+          path: |
+            navigation-1440.png
+            navigation-390.png
+          if-no-files-found: ignore
