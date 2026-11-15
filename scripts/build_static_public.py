@@ -143,6 +143,25 @@ def copy_public_files() -> list[str]:
     if len(premium_lots) != 12 or any(
             lot.get("inspection_kind") != "Аукционный лист" for lot in premium_lots):
         raise RuntimeError("PAPAUTO_POLICY: premium page must use 12 true-sheet examples")
+    # Customer policy: NEVER publish text-only vehicle cards as auction lots.
+    # Every visible premium listing must carry the matched photo, mileage and sheet.
+    for page_name in ("premium-japan-korea.html", "premium-mobile-photo-demo.html"):
+        html = (ROOT / page_name).read_text(encoding="utf-8")
+        if any(token in html for token in (
+            'data-selection-grid', 'premium-expanded-catalog.js',
+            'id="market-catalog"', 'selection-model-entry',
+        )):
+            raise RuntimeError("PAPAUTO_POLICY: text-only vehicle cards in " + page_name)
+        cards = re.findall(r'<article class="real-card"[^>]*>[\s\S]*?</article>', html)
+        if len(cards) != 12:
+            raise RuntimeError("PAPAUTO_POLICY: missing approved premium auction cards in " + page_name)
+        for card in cards:
+            if not all(token in card for token in (
+                'real-img-main', 'real-img-sheet', '<span>Пробег</span>', 'real-trim',
+            )):
+                raise RuntimeError("PAPAUTO_POLICY: auction photo/mileage/sheet missing in " + page_name)
+            if '/assets/demo/' in card or '/assets/visual/' in card:
+                raise RuntimeError("PAPAUTO_POLICY: street image in auction card")
     for page_name in ("gallery.html", "premium-japan-korea.html",
                       "premium-mobile-photo-demo.html"):
         page_text = (ROOT / page_name).read_text(encoding="utf-8")
