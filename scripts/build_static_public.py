@@ -139,7 +139,7 @@ def copy_public_files() -> list[str]:
                 continue
             # User-selected Thursday showroom ARTWORK: one explicitly allowed advertising visual,
             # never a real auction photo and never an image for a customer lot card.
-            if folder == 'assets' and (relative.parts[:2] == ('assets','demo') or (relative.parts[:2] == ('assets','visual') and relative.as_posix() not in {'assets/visual/fallback-vehicle.svg', 'assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp'})):
+            if folder == 'assets' and (relative.parts[:2] == ('assets','demo') or (relative.parts[:2] == ('assets','visual') and relative.as_posix() not in {'assets/visual/fallback-vehicle.svg', 'assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp', 'assets/visual/papauto-approved-bmw-hero-20261115.webp'})):
                 continue
             dst = TARGET / relative
             dst.parent.mkdir(parents=True, exist_ok=True)
@@ -369,7 +369,7 @@ def copy_public_files() -> list[str]:
         # Keep the specifically approved Thursday marketing illustration in HTML,
         # not only in copied files. Reject a broken deployment if it disappears.
         if page.name == "index.html":
-            hero_asset = "assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp"
+            hero_asset = "assets/visual/papauto-approved-bmw-hero-20261115.webp"
             if (not (TARGET / hero_asset).is_file()
                     or f'<img src="/{hero_asset}"' not in html):
                 raise RuntimeError("PAPAUTO_HERO: approved BMW artwork stripped from public homepage")
