@@ -108,7 +108,35 @@ async function stubAnalytics(page){
     (await page.evaluate(()=>JSON.parse(document.querySelector('#gallery-bootstrap').textContent).lots.filter(l=>l.market==='japan').length))),
     'Country filter must show only matching auction lots');
   await page.locator('#gallery-market-filter').selectOption('all');
-  await page.locator('#gallery-search').fill('Toyota');
+  // A Russian-speaking iPhone customer expects Honda models after "Ho", "Хо"
+  // or "Хонда" without typing the entire model name.
+  const searchBox=page.locator('#gallery-search');
+  for(const term of ['Ho','Хо','Хонда']){
+    await searchBox.fill(term);
+    const list=page.locator('#gallery-suggestions:not([hidden])');
+    await list.waitFor({state:'visible',timeout:4000});
+    const texts=await list.locator('.gallery-suggestion-name').allTextContents();
+    assert(texts.some(t=>t.includes('Honda Freed')),term+' must suggest Honda Freed');
+    assert(texts.some(t=>t.includes('Honda Fit')),term+' must suggest Honda Fit');
+    assert((await page.locator('#gallery-count').innerText()).match(/Найдено [1-9]/),
+      'Live model filter must show matching auction lots for '+term);
+  }
+  await page.locator('.gallery-suggestion').filter({hasText:'Honda Freed'}).first().click();
+  assert.equal(await searchBox.inputValue(),'Honda Freed','Tap must populate selected model');
+  assert.equal(await page.locator('#gallery-suggestions').isHidden(),true,'Options close on selection');
+  assert((await page.locator('.gallery-card-body h3').allTextContents()).every(s=>s.includes('Honda Freed')),
+    'Selecting Honda Freed must exclude other models');
+  await searchBox.fill('Ho');
+  await searchBox.press('ArrowDown');
+  await searchBox.press('Enter');
+  assert((await searchBox.inputValue()).startsWith('Honda '),'Keyboard must select a Honda model');
+  if(width<500){
+    const fontSize=await searchBox.evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
+    assert(fontSize>=16,'iPhone browser zoom prevention requires 16px input: '+fontSize);
+  }
+  await searchBox.fill('');
+  assert.equal(await page.locator('#gallery-suggestions').isHidden(),true,'No stale suggestions after clear');
+  await searchBox.fill('Toyota');
   const hits=await page.locator('.gallery-card').count();
   assert(hits>0&&hits<=12,'Toyota search must return real filtered cars');
   for(const model of await page.locator('.gallery-card-body h3').allTextContents())assert(model.includes('Toyota'),'Wrong car in Toyota search');
