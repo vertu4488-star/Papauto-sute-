@@ -1,0 +1,35 @@
+name: Verify PapAuto same-origin lead relay (no customer data)
+on:
+  push:
+    branches: [probe/papauto-lead-worker-20261115]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Test Cloudflare-to-Render relay with invalid JSON only
+        run: |
+          python - <<'PY'
+          import urllib.request, urllib.error, json, time
+          url='https://papauto.ru/api/leads'
+          def call(method,body=None,headers=None):
+              r=urllib.request.Request(url,method=method,data=body,headers=headers or {})
+              t=time.monotonic()
+              try:
+                  with urllib.request.urlopen(r,timeout=20) as resp:
+                      return resp.status,resp.read(500).decode("utf-8","replace"),time.monotonic()-t
+              except urllib.error.HTTPError as e:
+                  return e.code,e.read(500).decode("utf-8","replace"),time.monotonic()-t
+          get=call('GET')
+          post=call('POST',body=b'{}',headers={'Content-Type':'application/json','Accept':'application/json'})
+          print('LEAD_RELAY_GET',get)
+          print('LEAD_RELAY_INVALID_POST',post)
+          assert get[0]==405, 'Expected intentional 405 for GET'
+          assert post[0]==422, 'Expected FastAPI 422 forwarded without storing anything'
+          data=json.loads(post[1])
+          assert any(x.get('loc')==['body','contact'] for x in data['detail'])
+          print('PAPAUTO_RELAY_CONFIRMED no fake lead persisted, no CORS, 422 from FastAPI')
+          PY
