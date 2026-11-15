@@ -1,0 +1,83 @@
+name: Moscow public HTTP test — PapAuto and New iPhone Service
+on:
+  push:
+    branches: [probe/russian-ip-http-20261115]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  russian-ip-http:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Probe sites from Russian Check-Host nodes and overseas controls
+        shell: bash
+        run: |
+          python - <<'PY'
+          import urllib.request,urllib.error,urllib.parse,json,time,datetime,sys
+          from pathlib import Path
+
+          out=Path("russian-ip-site-check-2026-11-15.json")
+          base="https://check-host.net/"
+          hosts={
+            "papauto_home":"https://papauto.ru/",
+            "papauto_auction_catalog":"https://papauto.ru/gallery.html",
+            "new_iphone_service_home":"https://xn----8sbco1afeiieo2a4o.xn--p1ai/",
+            "new_iphone_service_iphone_repairs":"https://xn----8sbco1afeiieo2a4o.xn--p1ai/remont-iphone/",
+          }
+          nodes=["ru1.node.check-host.net","ru2.node.check-host.net","kz1.node.check-host.net","de1.node.check-host.net"]
+          def read_json(url):
+            req=urllib.request.Request(url,headers={"Accept":"application/json","User-Agent":"Mozilla/5.0 (compatible; PapAutoAvailabilityAudit/1.0)"})
+            with urllib.request.urlopen(req,timeout=18) as res:
+              return json.loads(res.read().decode("utf-8"))
+          report={"date_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                  "method":"check-host.net distributed HTTP GET, nodes ru1 + ru2 Moscow and KZ/DE controls",
+                  "sites":{},"nodes_checked":nodes,"errors":[]}
+          try:
+            locations=read_json(base+"nodes/hosts")
+            report["nodes"]={key:locations.get("nodes",{}).get(key) for key in nodes}
+            for key in nodes[:2]:
+              details=report["nodes"].get(key)
+              if not details or details.get("location",[])[0]!="ru":
+                raise RuntimeError("Russian checking node not confirmed: "+key)
+          except Exception as e:
+            report["errors"].append("node discovery: "+repr(e))
+          for label,site in hosts.items():
+            try:
+              params=urllib.parse.urlencode([("host",site)]+[("node",n) for n in nodes])
+              started=read_json(base+"check-http?"+params)
+              check_id=started.get("request_id")
+              if not check_id or started.get("ok") != 1:
+                report["sites"][label]={"url":site,"error":"No check id: "+repr(started)[:400]}
+                continue
+              result={}
+              for attempt in range(16):
+                time.sleep(2)
+                result=read_json(base+"check-result/"+urllib.parse.quote(str(check_id)))
+                if all(result.get(n) is not None for n in nodes):
+                  break
+              checks={}
+              for n in nodes:
+                a=result.get(n)
+                x=a[0] if isinstance(a,list) and a else None
+                checks[n]={"raw":x,"received":x is not None}
+                if isinstance(x,list) and len(x)>3:
+                  checks[n].update({"success":x[0],"duration_sec":x[1],"message":x[2],"http_code":x[3],"server_ip":x[4] if len(x)>4 else None})
+              report["sites"][label]={"url":site,"request_id":check_id,
+                                       "check_report":started.get("permanent_link"),
+                                       "checks":checks,"node_metadata":started.get("nodes")}
+              print(label,json.dumps({"report":started.get("permanent_link"),"results":checks},ensure_ascii=False))
+            except Exception as e:
+              report["sites"][label]={"url":site,"error":repr(e)}
+              report["errors"].append(label+": "+repr(e))
+              print("PROBE_ERROR",label,repr(e))
+          out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          print("RUSSIAN_SITE_CHECK_REPORT="+out.read_text(encoding="utf-8"))
+          PY
+      - name: Archive independent Russian-IP result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: russian-ip-site-check
+          path: russian-ip-site-check-2026-11-15.json
+          if-no-files-found: warn
