@@ -6,6 +6,8 @@ const URL="https://papauto.ru/podbor.html";
 const POST="https://papauto.ru/api/leads";
 async function prepare(page){
   await page.goto(URL,{waitUntil:"load",timeout:45000});
+  // Candidate fix: SurveyJS dropdown can render below sd-page stacking context.
+  await page.addStyleTag({content:"body .sv-popup.sv-dropdown-popup{z-index:120000!important;}" });
   await page.locator('.sd-question[data-name="make"] .sd-dropdown').waitFor({state:"visible",timeout:15000});
   await page.locator('.sd-question[data-name="make"] .sd-dropdown').click();
   await page.locator('.sv-popup__container').getByText("Toyota",{exact:true}).filter({visible:true}).first().click({timeout:9000});
