@@ -461,13 +461,15 @@ def copy_public_files() -> list[str]:
             raise RuntimeError("Retired route was reintroduced: " + retired)
         (TARGET / retired).write_text(retirement_html, encoding="utf-8")
 
-    # A number of exact-lot pages are generated AFTER the initial page loop.
-    # Apply the same final warm presentation layer to ALL finished HTML output,
-    # including /lots/*, retired old routes and any generated future pages.
-    # Never touch auction photo bytes, original sheets or business data.
+    # Some auction detail pages are generated AFTER the initial HTML copy.
+    # Revisit every final HTML page so every lot, catalog page and retired page
+    # gets the same warm visual layer. Preserve all photo and auction sheet bytes.
     for rendered in sorted(TARGET.rglob("*.html")):
         contents = rendered.read_text(encoding="utf-8")
-        if "</head>" not in contents.lower() or not re.search(r"<body\\b", contents, flags=re.I):
+        if "</head>" not in contents.lower():
+            continue
+        body_match = re.search(r"<body\b[^>]*>", contents, flags=re.I)
+        if body_match is None:
             continue
         contents = _warm_inline_css(contents)
         if "papauto-warm-interior.css" not in contents:
@@ -476,9 +478,7 @@ def copy_public_files() -> list[str]:
                 '<link rel="stylesheet" href="/papauto-warm-interior.css?v=20261115-all-site-v4"></head>',
                 contents, count=1, flags=re.I,
             )
-        if rendered.name != "index.html" and not re.search(
-                r"<body[^>]*class=['\\\"][^'\\\"]*papauto-warm-interior",
-                contents, flags=re.I):
+        if rendered.name != "index.html" and "papauto-warm-interior" not in body_match.group(0):
             def set_warm_body(match):
                 tag = match.group(0)
                 if 'class="' in tag:
@@ -486,9 +486,9 @@ def copy_public_files() -> list[str]:
                 if "class='" in tag:
                     return tag.replace("class='", "class='papauto-warm-interior ", 1)
                 return tag[:-1] + ' class="papauto-warm-interior">'
-            contents = re.sub(r"<body[^>]*>", set_warm_body, contents, count=1, flags=re.I)
+            contents = re.sub(r"<body\b[^>]*>", set_warm_body, contents, count=1, flags=re.I)
         if contents.count("papauto-warm-interior.css") != 1:
-            raise RuntimeError("PAPAUTO_WARM: final page has missing/duplicate stylesheet " + str(rendered))
+            raise RuntimeError("PAPAUTO_WARM: final page has missing or duplicate CSS " + str(rendered))
         rendered.write_text(contents, encoding="utf-8")
 
     required = {"index.html", "catalog.html", "styles.css", "app.js",
