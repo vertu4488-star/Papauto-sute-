@@ -47,6 +47,7 @@ jobs:
           npm install --no-save playwright@1.57.0
           npx playwright install --with-deps chromium
       - name: Build and test desktop form with safe mocked POST
+        continue-on-error: true
         run: |
           python scripts/build_static_public.py
           python - <<'PY'
@@ -61,6 +62,36 @@ jobs:
           PY
           python -m http.server 8765 -d render-public >/tmp/papauto-diagnostic-server.log 2>&1 &
           node scripts/qa_surveyjs_desktop_generated.cjs
+      - name: Diagnose desktop model dropdown and save screenshot
+        if: always()
+        run: |
+          python -m http.server 8765 -d render-public >/tmp/papauto-diagnostic-late.log 2>&1 &
+          node <<'NODE'
+          const {chromium}=require('playwright');
+          (async()=>{
+            const browser=await chromium.launch({headless:true});
+            const page=await browser.newPage({viewport:{width:1440,height:900}});
+            const errs=[];
+            page.on('pageerror',e=>errs.push(e.message));
+            await page.goto('http://127.0.0.1:8765/podbor.html',{waitUntil:'load'});
+            const make=page.locator('.sd-question[data-name="make"] .sd-dropdown');
+            await make.click();
+            await page.getByText('Toyota',{exact:true}).filter({visible:true}).last().click();
+            const model=page.locator('.sd-question[data-name="model"] .sd-dropdown');
+            await model.click();
+            await page.waitForTimeout(300);
+            const state=await page.evaluate(()=>{
+              const name=document.querySelector('.sd-question[data-name="model"]');
+              const opts=[...document.querySelectorAll('*')].filter(e=>e.textContent?.trim()==='Corolla'&&e.children.length===0);
+              const state=(e)=>e?{tag:e.tagName,outer:e.outerHTML.slice(0,1300),rect:e.getBoundingClientRect().toJSON(),display:getComputedStyle(e).display,visibility:getComputedStyle(e).visibility,overflow:getComputedStyle(e).overflow}:null;
+              return {model:state(name),options:opts.slice(0,5).map(state),
+                openPopups:[...document.querySelectorAll('.sv-popup,.sd-popup,.sv-dropdown-popup')].slice(0,5).map(state)};
+            });
+            await page.screenshot({path:'pc-model-dropdown.png',fullPage:true});
+            console.log('PAPAUTO_DESKTOP_MODEL_DROPDOWN='+JSON.stringify({state,errs}));
+            await browser.close();
+          })().catch(e=>{console.error(e);process.exitCode=1})
+          NODE
       - name: Browser CORS test against live domain using invalid payload
         run: |
           node <<'NODE'
@@ -84,3 +115,10 @@ jobs:
             if(result.error||result.status!==422)process.exitCode=1;
           })().catch(e=>{console.error(e);process.exitCode=1})
           NODE
+      - name: Archive desktop model screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pc-model-dropdown-diagnostic
+          path: pc-model-dropdown.png
+          if-no-files-found: ignore
