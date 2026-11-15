@@ -47,6 +47,9 @@ QUARANTINED_OUTDOOR_MEDIA = {
 
 
 def copy_public_files() -> list[str]:
+    from verify_publication_approval import verify_frozen_inputs, verify_published_output
+    # Block unapproved new/edited lot data, photos and sheets BEFORE any build output.
+    verify_frozen_inputs()
     # Build gate: refuse publication when customer navigation leaves PAPAUTO.
     subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests",
@@ -413,6 +416,9 @@ def copy_public_files() -> list[str]:
     missing = required.difference(copied)
     if missing:
         raise RuntimeError("Public site build missing files: " + ", ".join(sorted(missing)))
+
+    # Final gate inspects the full published HTML/data/image bytes, not a preview.
+    verify_published_output(TARGET)
 
     print(f"Prepared {len(copied)} public files and {len(tombstones)} safe tombstones in {TARGET.name}/")
     return copied
