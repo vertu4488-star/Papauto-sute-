@@ -1,0 +1,39 @@
+name: PapAuto offline auction review (not production)
+on:
+  push:
+    branches:
+      - review/offline-auction-photos-20261115
+    paths:
+      - scripts/generate_offline_auction_preview.py
+      - .github/workflows/offline-auction-review.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Create offline review with embedded images
+        run: python scripts/generate_offline_auction_preview.py
+      - name: Verify every image is embedded and nothing requests a website
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          page=Path('review-output/papauto_100_offline_auction_cards.html').read_text()
+          assert page.count('src="data:image/jpeg;base64,') == 200
+          assert page.count('<article class="vehicle"') == 100
+          assert 'http://' not in page and 'https://' not in page
+          print('Verified: 100 full cards; 200 embedded JPEGs; zero remote resources.')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: papauto-offline-owner-review-100
+          path: review-output/papauto_100_offline_auction_cards.html
+          if-no-files-found: error
+          compression-level: 0
