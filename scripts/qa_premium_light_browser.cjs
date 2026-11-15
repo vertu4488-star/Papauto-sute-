@@ -39,37 +39,26 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
         mobileMenuVisible:getComputedStyle(document.querySelector('.mobile-nav')).display!=='none'
       };
     });
-    // The expanded 135-model reference directory is separate from the 14 verified Japan auction lots.
-    await page.locator('[data-selection-grid] .selection-model-entry').first().waitFor({state:'visible',timeout:20000});
-    const expanded=await page.evaluate(()=>({
-      css:[...document.styleSheets].some(s=>s.href?.includes('premium-expanded-catalog.css')),
-      all:document.querySelector('[data-selection-count]')?.textContent,
-      count:document.querySelectorAll('[data-selection-grid] .selection-model-entry').length,
-      chinaTab:!!document.querySelector('[data-selection-filter="china"]'),
-      photo:document.querySelector('[data-selection-grid] img')?.getAttribute('src')
-    }));
-    assert(expanded.css,'Expanded catalogue CSS missing at '+viewport.width);
-    assert(expanded.chinaTab,'China market tab not present');
-    assert(expanded.all.includes('из 135'),'Expected 135 models in catalogue, got '+expanded.all);
-    assert.equal(expanded.count,12,'Expected 12 text-only model rows');
-    assert(!expanded.photo,'Model references must NOT publish street photos');
-    await page.locator('[data-selection-filter="china"]').click();
-    assert((await page.locator('[data-selection-count]').textContent()).includes('из 45'),'China should offer 45 reference models');
-    assert((await page.locator('[data-selection-grid] .selection-model-entry').first().innerText()).includes('Geely'),'China starts with priority Geely model');
-    await page.locator('[data-selection-more]').click();
-    assert.equal(await page.locator('[data-selection-grid] .selection-model-entry').count(),24,'Show more should append twelve');
-    await page.locator('[data-selection-filter="korea"]').click();
-    assert((await page.locator('[data-selection-count]').textContent()).includes('из 45'),'Korea should offer 45 reference models');
-    await page.locator('[data-selection-filter="japan"]').click();
-    assert((await page.locator('[data-selection-count]').textContent()).includes('из 45'),'Japan should offer 45 reference models');
-    await page.locator('[data-selection-filter="all"]').click();
+    // No auction-like listing may exist without a photo, mileage and its own auction sheet.
+    assert.equal(await page.locator('#market-catalog, [data-selection-grid], .selection-model-entry').count(),0,
+      'Text-only model cards must never appear in the public premium catalog');
+    assert.equal((await page.locator('#verified-lots-title').innerText()).trim(),'Аукционная статистика авто');
+    const publishedCards=await page.locator('.real-card').evaluateAll(cards=>cards.map(card=>({
+      photo:!!card.querySelector('.real-img-main img[src]'),
+      sheet:!!card.querySelector('.real-img-sheet img[src]'),
+      mileage:!![...card.querySelectorAll('.real-specs span')].find(el=>el.textContent.trim()==='Пробег'),
+      description:!!card.querySelector('.real-content h3') && !!card.querySelector('.real-trim'),
+      outdoor:!!card.querySelector('img[src*="/assets/demo/"],img[src*="/assets/visual/"]')
+    })));
+    assert(publishedCards.length>0,'No auction photo cards published');
+    assert(publishedCards.every(card=>card.photo && card.sheet && card.mileage && card.description && !card.outdoor),
+      'An auction card is missing its photo, description, mileage or original auction sheet');
     assert(state.linkedCSS,'Light premium CSS missing at '+viewport.width);
     assert(state.manropeActivated,'Self-hosted Manrope Cyrillic font not active at '+viewport.width);
     assert.equal(state.realCards,11);
     assert.equal(state.countryCounts.japan,11);
     assert.equal(state.countryCounts.korea,0);
     assert.equal(state.models,0);
-    assert.equal(await page.locator('[data-selection-grid] img').count(),0,'Non-auction model gallery has returned');
     assert(state.heroImageLoaded,'Hero photo missing');
     assert(state.firstPhotoLoaded,'Auction photo missing');
     assert(state.auctionOnly,'Non-auction model photograph was displayed');
@@ -100,14 +89,13 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
     results.push({viewport,state,errors,failed});
     await page.close();
   }
-  // Deep link from China country page must preselect its 45 card examples.
-  const cnLink=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
-  await cnLink.goto(BASE+'?market=china#market-catalog',{waitUntil:'load',timeout:45000});
-  await cnLink.locator('.selection-model-entry').first().waitFor({state:'visible',timeout:20000});
-  assert((await cnLink.locator('[data-selection-count]').textContent()).includes('из 45'),'China deep-link should contain 45 models');
-  assert.equal(await cnLink.locator('[data-selection-filter=china]').getAttribute('aria-pressed'),'true','China tab should activate via URL');
-  await cnLink.close();
-  // Isolated noindex mobile experiment: original image and auction gallery
+  // Links lead to the actual photo-and-sheet gallery, not a text-only directory.
+  const photoGalleryLink=await browser.newPage();
+  await photoGalleryLink.goto(BASE,{waitUntil:'load',timeout:45000});
+  assert.equal(await photoGalleryLink.locator('a[href="/gallery.html"]').count()>0,true,
+    'Premium page must link to the approved photo gallery');
+  await photoGalleryLink.close();
+    // Isolated noindex mobile experiment: original image and auction gallery
   // must survive the strict public build and never depend on third-party media.
   const preview=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});
   const previewFailures=[];
@@ -115,10 +103,8 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
   preview.on('response',r=>{if(r.status()>=400)previewFailures.push('HTTP '+r.status()+' '+r.url())});
   await preview.goto('http://127.0.0.1:8765/premium-mobile-photo-demo.html',{waitUntil:'load',timeout:45000});
   await preview.locator('.real-card').first().waitFor({state:'visible'});
-  await preview.locator('[data-selection-grid] .selection-model-entry').first().waitFor({state:'visible',timeout:20000});
-  assert((await preview.locator('[data-selection-count]').textContent()).includes('из 135'),'Preview should have 135 models');
-  await preview.locator('[data-selection-filter="china"]').click();
-  assert((await preview.locator('[data-selection-count]').textContent()).includes('из 45'),'China should be selectable in mobile preview');
+  assert.equal(await preview.locator('#market-catalog, [data-selection-grid], .selection-model-entry').count(),0,
+    'Mobile preview must never display text-only model cards');
   const previewState=await preview.evaluate(()=>{
     const image=document.querySelector('.hero-visual img');
     const main=document.querySelector('.real-card .real-img-main img');
