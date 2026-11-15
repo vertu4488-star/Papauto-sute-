@@ -2,7 +2,7 @@ name: PapAuto premium Lexus mobile and desktop QA
 on:
   push:
     branches: [main]
-    paths:
+    paths: &visual_paths
       - "premium-japan-korea.html"
       - "data/approved-auction-lots.json"
       - "assets/auction/approved/**"
@@ -12,6 +12,11 @@ on:
       - "gallery.html"
       - "gallery.js"
       - "scripts/qa_gallery_browser.cjs"
+      - "scripts/qa_analytics_stub.cjs"
+      - "tests/test_qa_analytics_stub.cjs"
+      - "*.html"
+      - "*.css"
+      - "metrika.js"
       - "scripts/qa_all_auction_lot_pages.cjs"
       - "scripts/generate_auction_lot_pages.py"
       - "tests/test_gallery_lot_pages.py"
@@ -30,6 +35,9 @@ on:
       - "premium-lexus-light.css"
       - "scripts/qa_premium_light_browser.cjs"
       - ".github/workflows/premium-light-qa.yml"
+  pull_request:
+    branches: [main]
+    paths: *visual_paths
   workflow_dispatch:
 permissions:
   contents: read

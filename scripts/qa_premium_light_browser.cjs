@@ -1,12 +1,14 @@
 /* Browser QA for the light premium page. All requests are local; no form submission. */
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
+const {stubAnalytics}=require('./qa_analytics_stub.cjs');
 const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
 (async()=>{
   const browser=await chromium.launch({headless:true});
   const results=[];
   for(const viewport of [{width:1440,height:900},{width:390,height:844},{width:320,height:720}]){
     const page=await browser.newPage({viewport,deviceScaleFactor:1,isMobile:viewport.width<=390,hasTouch:viewport.width<=390});
+    await stubAnalytics(page);
     const errors=[],failed=[];
     page.on('pageerror',e=>errors.push(e.message));
     page.on('response',r=>{if(r.status()>=400)failed.push(r.status()+' '+r.url())});
@@ -102,6 +104,7 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
   }
   // Deep link from China country page must preselect its 45 card examples.
   const cnLink=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+  await stubAnalytics(cnLink);
   await cnLink.goto(BASE+'?market=china#market-catalog',{waitUntil:'load',timeout:45000});
   await cnLink.locator('.selection-model-entry').first().waitFor({state:'visible',timeout:20000});
   assert((await cnLink.locator('[data-selection-count]').textContent()).includes('из 45'),'China deep-link should contain 45 models');
@@ -110,6 +113,7 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
   // Isolated noindex mobile experiment: original image and auction gallery
   // must survive the strict public build and never depend on third-party media.
   const preview=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});
+  await stubAnalytics(preview);
   const previewFailures=[];
   preview.on('pageerror',e=>previewFailures.push('JS: '+e.message));
   preview.on('response',r=>{if(r.status()>=400)previewFailures.push('HTTP '+r.status()+' '+r.url())});
@@ -150,6 +154,7 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
   // Read-only cost calculator QA: prove 12 sold lots, arithmetic and currency labels.
   // All fields are local inputs; no network POST is sent to PapAuto API.
   const cost=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+  await stubAnalytics(cost);
   await cost.goto(BASE,{waitUntil:'load',timeout:45000});
   await cost.waitForFunction(()=>document.querySelector('#picLot')?.options.length===12,{timeout:30000});
   assert.equal(await cost.locator('#pic-total').count(),0,'Unexpected duplicate older calculator');

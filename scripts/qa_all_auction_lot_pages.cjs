@@ -1,6 +1,7 @@
 /* Deep read-only QA: every auction detail page, original local media, and mobile rendering. */
 const {chromium,request}=require('playwright');
 const assert=require('node:assert/strict');
+const {stubAnalytics}=require('./qa_analytics_stub.cjs');
 const BASE='http://127.0.0.1:8765';
 (async()=>{
   const client=await request.newContext({baseURL:BASE,timeout:30000});
@@ -62,6 +63,7 @@ const BASE='http://127.0.0.1:8765';
         viewport:{width,height:width===1440?900:780},
         isMobile:width<500,hasTouch:width<500
       });
+      await stubAnalytics(page);
       const failures=[];
       page.on('pageerror',error=>failures.push(error.message));
       for(const lot of samples){
