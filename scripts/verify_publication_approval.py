@@ -1,0 +1,148 @@
+"""PapAuto release contract: fail closed on unreviewed lots and off-site card links.
+
+The immutable baseline corresponds to the last owner-reviewed auction set.
+To change it, first present COMPLETE photo + exact auction sheet + description +
+mileage to the owner, receive explicit approval, and only then update this
+manifest in a separate reviewed change. Never treat a source URL, stock image,
+rendered/AI image, or damage diagram as evidence of an auction lot.
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+import re
+from pathlib import Path
+from urllib.parse import urlsplit
+
+ROOT = Path(__file__).resolve().parents[1]
+# Immutable Git blob IDs of the existing auction records (NOT an approval for
+# any additional record). A new/edited record must not deploy automatically.
+FROZEN_SOURCE_BLOBS = {
+    "research/owner-selected-japan-lots-2026-11-14.json": "f1113388a52405826c10a34d5b0f9e1f3236c7b6",
+    "research/home-8-exact-lot-photo-sheet-references-2026-11-12.json": "c9dcb8545a9ec1b12249d7be8f5fe95009737c96",
+    "data/gallery-lots.json": "32ba94fcda05cbff413083065a45c91e7341bfae",
+    "data/approved-auction-lots.json": "75c851dbca8ca52b21aeb5cac737599a546bb788",
+    "data/premium-real-auction-lots.json": "94e6457eaee345f8bcf39f9bfcc602c75fafb56d",
+}
+# Whole-card fingerprints, not only image filenames: protect the exact photo,
+# its matching auction sheet, mileage, auction data and visible description.
+FROZEN_PREMIUM_CARD_FNV64 = (
+    "a919fb16d0428ae4", "cf29d0c5c697ee01", "9b522e21d2abb1dc",
+    "335ed22be3287e33", "c3cc3770b670d512", "44eaea108a07d572",
+    "51cb1dff35a98916", "bdd3cc10b2992b06", "5e5d7adc020a5bf8",
+    "d20c60b553a6f0de", "56f2513f6141a0f8", "c4bc734e596b3236",
+)
+CARD_RE = re.compile(r'<article\\b[^>]*class="[^"]*\\b(?:gallery-card|real-card)\\b[^"]*"[^>]*>[\\s\\S]*?</article>', re.I)
+PREMIUM_RE = re.compile(r'<article class="real-card"[^>]*>[\\s\\S]*?</article>')
+VALID_IMAGE = re.compile(r'^/assets/(?:auction/(?:home|approved)|premium-auctions)/[a-zA-Z0-9._-]+\\.(?:jpg|jpeg|png|webp)$', re.I)
+BAD_ASSET_TERMS = re.compile(r'/(?:demo|visual|stock|street|illustration|anime|generated|ai-generated)/', re.I)
+
+
+def _git_blob_id(data: bytes) -> str:
+    return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\\0" + data).hexdigest()
+
+
+def _fnv_utf16(text: str) -> str:
+    value = 0xcbf29ce484222325
+    data = text.encode("utf-16-le")
+    for offset in range(0, len(data), 2):
+        codepoint_unit = data[offset] | (data[offset + 1] << 8)
+        value = ((value ^ codepoint_unit) * 0x100000001b3) & 0xffffffffffffffff
+    return f"{value:016x}"
+
+
+def verify_frozen_inputs() -> None:
+    """No new or modified car/photo/sheet/description without owner's review."""
+    for relative, expected in FROZEN_SOURCE_BLOBS.items():
+        path = ROOT / relative
+        if not path.is_file() or _git_blob_id(path.read_bytes()) != expected:
+            raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: source changed: " + relative)
+    for name in ("premium-japan-korea.html", "premium-mobile-photo-demo.html"):
+        path = ROOT / name
+        cards = PREMIUM_RE.findall(path.read_text(encoding="utf-8"))
+        if tuple(map(_fnv_utf16, cards)) != FROZEN_PREMIUM_CARD_FNV64:
+            raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: auction card altered: " + name)
+
+
+def _validate_card_links(card: str, page: str) -> None:
+    for address in re.findall(r'<a\\b[^>]*\\bhref=["\\\']([^"\\\']+)["\\\']', card, re.I):
+        parsed = urlsplit(address.strip())
+        # Auction cards may open ONLY self-hosted photos, sheets, internal
+        # details, and the PapAuto lead form. Never send visitors to a seller.
+        if address.startswith("//") or parsed.scheme or parsed.netloc:
+            raise RuntimeError("PAPAUTO_NO_EXTERNAL_LINKS: " + page)
+        if not address.startswith(("/", "#")):
+            raise RuntimeError("PAPAUTO_NO_EXTERNAL_LINKS: invalid relative URL: " + page)
+    for src in re.findall(r'<img\\b[^>]*\\bsrc=["\\\']([^"\\\']+)["\\\']', card, re.I):
+        if not VALID_IMAGE.fullmatch(src) or BAD_ASSET_TERMS.search(src):
+            raise RuntimeError("PAPAUTO_AUCTION_ONLY: invalid card image: " + page)
+
+
+def _valid_media(target: Path, asset: str) -> None:
+    if not isinstance(asset, str) or not VALID_IMAGE.fullmatch(asset) or BAD_ASSET_TERMS.search(asset):
+        raise RuntimeError("PAPAUTO_AUCTION_ONLY: non-auction image path")
+    file = target / asset.lstrip("/")
+    if not file.is_file() or file.is_symlink() or file.stat().st_size < 500:
+        raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: image file missing " + asset)
+    header = file.read_bytes()[:12]
+    if not (header.startswith(b"\\xff\\xd8\\xff")
+            or header.startswith(b"\\x89PNG\\r\\n\\x1a\\n")
+            or (header[:4] == b"RIFF" and header[8:12] == b"WEBP")):
+        raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: invalid image bytes " + asset)
+
+
+def verify_published_output(target: Path) -> None:
+    """Check every actually published gallery lot; not just the JS preview."""
+    gallery = json.loads((target / "data/gallery-lots.json").read_text(encoding="utf-8"))
+    rows = gallery.get("lots")
+    if not isinstance(rows, list) or not rows or gallery.get("lot_count") != len(rows):
+        raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: invalid gallery registry")
+    ids = set()
+    for row in rows:
+        ident = row.get("id")
+        if not ident or ident in ids:
+            raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: duplicate/missing lot ID")
+        ids.add(ident)
+        if not isinstance(row.get("description"), str) or len(row["description"].strip()) < 30:
+            raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: missing description: " + ident)
+        if type(row.get("mileage_km")) is not int or row["mileage_km"] < 0:
+            raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: missing mileage: " + ident)
+        if not row.get("year") or not row.get("auction") or not row.get("lot_number"):
+            raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: missing auction details: " + ident)
+        if row.get("inspection_kind") != "Аукционный лист":
+            raise RuntimeError("PAPAUTO_AUCTION_ONLY: diagram is not auction sheet: " + ident)
+        photos = row.get("photos") or []
+        sheet = row.get("inspection_image")
+        if not isinstance(photos, list) or not photos or not sheet:
+            raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: photo and sheet mandatory: " + ident)
+        for asset in photos + [sheet]:
+            _valid_media(target, asset)
+        # Source links, competitor URLs and "visit original listing" are
+        # private research data only and must not appear in public JSON.
+        if any(k in row for k in ("source_url", "source_listing", "listing_url", "photo_url", "sheet_url")):
+            raise RuntimeError("PAPAUTO_NO_EXTERNAL_LINKS: source leaked: " + ident)
+    gallery_html = (target / "gallery.html").read_text(encoding="utf-8")
+    cards = CARD_RE.findall(gallery_html)
+    cards = [c for c in cards if "gallery-card" in c.split(">", 1)[0]]
+    if len(cards) != len(rows):
+        raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: gallery HTML card count mismatch")
+    for card in cards:
+        _validate_card_links(card, "gallery.html")
+        if not all(x in card for x in ("gallery-card-photo", "gallery-thumb", "gallery-description", "Пробег", "Аукционный лист")):
+            raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: incomplete gallery card")
+    for page in ("premium-japan-korea.html", "premium-mobile-photo-demo.html"):
+        html = (target / page).read_text(encoding="utf-8")
+        if "data-selection-grid" in html or 'id="market-catalog"' in html:
+            raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: text-only catalog resurfaced")
+        premium_cards = PREMIUM_RE.findall(html)
+        if len(premium_cards) != 11:
+            raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: unexpected premium card count")
+        for card in premium_cards:
+            _validate_card_links(card, page)
+            if not all(x in card for x in ("real-img-main", "real-img-sheet", "real-trim", "<span>Пробег</span>")):
+                raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: incomplete premium auction card")
+    print("PAPAUTO_RELEASE_CONTRACT_OK: frozen approved lots, self-hosted media, no outbound auction links")
+
+
+if __name__ == "__main__":
+    verify_frozen_inputs()
