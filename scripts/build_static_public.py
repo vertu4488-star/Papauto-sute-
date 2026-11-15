@@ -68,7 +68,7 @@ def _warm_color_code(value: str) -> str:
 
 
 def _warm_inline_css(html: str) -> str:
-    # Inline styles in older HTML files used a separate blue palette.
+    # Correct legacy blue literals only in UI styles, not auction content.
     pattern = re.compile(r"#[a-fA-F0-9]{3,8}\b")
     def recolor(css: str) -> str:
         return pattern.sub(lambda match: _warm_color_code(match.group(0)), css)
@@ -77,13 +77,13 @@ def _warm_inline_css(html: str) -> str:
         lambda match: recolor(match.group(0)), html, flags=re.I,
     )
     html = re.sub(
-        r"\bstyle=(['\\"])(.*?)\1",
+        r"""\bstyle=(['"])(.*?)\1""",
         lambda match: "style=" + match.group(1) + recolor(match.group(2)) + match.group(1),
         html, flags=re.I | re.S,
     )
     html = re.sub(
-        r"<meta\b[^>]*\bname=['\\"]theme-color['\\"][^>]*>",
-        lambda match: re.sub(r"\bcontent=['\\"][^'\\"]+['\\"]",
+        r"""<meta\b[^>]*\bname=['"]theme-color['"][^>]*>""",
+        lambda match: re.sub(r"""\bcontent=['"][^'"]+['"]""",
                              'content="#f8f1e8"', match.group(0), count=1, flags=re.I),
         html, flags=re.I,
     )
