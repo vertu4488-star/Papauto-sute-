@@ -215,6 +215,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
  .bottom-nav a{font-size:11px}
 }
 @media(max-width:380px){
+ .stats{grid-template-columns:repeat(2,minmax(0,1fr));padding:4px}
+ .stats>div{min-width:0;gap:3px;padding:7px 4px;flex-wrap:wrap;justify-content:center;align-content:center;text-align:center}
+ .stats strong{font-size:24px}
+ .stats .stat-symbol{font-size:15px}
+ .stats small{flex:1 1 100%;max-width:100%;font-size:9.5px;overflow-wrap:anywhere}
  .hero-copy{padding:21px 17px 0}
  .hero h1{font-size:30px}
  .hero-actions a{font-size:10px}
