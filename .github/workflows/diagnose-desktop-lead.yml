@@ -54,6 +54,8 @@ jobs:
           target=Path('scripts/qa_surveyjs_desktop_generated.cjs')
           text=Path('scripts/qa_surveyjs_browser.cjs').read_text()
           text=text.replace('width:390,height:844},isMobile:true,hasTouch:true','width:1440,height:900},isMobile:false,hasTouch:false')
+          text=text.replace("getByText('Corolla',{exact:true}).last()", "getByText('Corolla',{exact:true}).filter({visible:true}).last()")
+          text=text.replace("getByText('Toyota',{exact:true}).last()", "getByText('Toyota',{exact:true}).filter({visible:true}).last()")
           assert 'width:1440,height:900' in text
           target.write_text(text)
           PY
