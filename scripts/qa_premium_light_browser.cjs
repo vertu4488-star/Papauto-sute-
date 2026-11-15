@@ -159,4 +159,4 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
   await cost.close();
   console.log('PAPAUTO_PREMIUM_VISUAL_QA='+JSON.stringify(results));
   await browser.close();
-})().catch(e=>{console.error('PREMIUM_LIGHT_QA_FAILED',e.stack||e);process.exitCode=1});
+})().catch(e=>{console.error('PREMIUM_LIGHT_QA_FAILED',e.stack||e);process.exit(1)});
