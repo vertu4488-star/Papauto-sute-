@@ -63,7 +63,8 @@
    const modelBrand=model.split(" ")[0];
    if(brand.value!=="all"&&brand.value!==modelBrand)brand.value="all";
    search.value=model;hideSuggestions();resetPage();
-   search.focus({preventScroll:true});
+   // Do not refocus here: Safari would reopen suggestions and the keyboard
+   // immediately after a customer taps a choice.
  }
  function updateSuggestions(){
    const term=searchKey(search.value);
