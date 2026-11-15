@@ -1,0 +1,84 @@
+name: PapAuto PC lead submit and CORS diagnostics (no real lead)
+on:
+  push:
+    branches: [diagnostics/desktop-lead-submit-20261115]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: HTTP TLS CORS and harmless invalid-lead check
+        run: |
+          python - <<'PY'
+          import json,urllib.request,urllib.error,time
+          urls=["https://api.papauto.ru","https://papauto-leads.onrender.com"]
+          def call(url,method,body=None,headers=None):
+              t=time.monotonic()
+              h={"User-Agent":"PapAuto-Diagnostics/1.0","Accept":"application/json"}
+              h.update(headers or {})
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(url,method=method,data=body,headers=h),timeout=18) as res:
+                      return {"code":res.status,"sec":round(time.monotonic()-t,2),"cors":res.headers.get("Access-Control-Allow-Origin"),"methods":res.headers.get("Access-Control-Allow-Methods"),"text":res.read(450).decode("utf-8","replace")}
+              except urllib.error.HTTPError as e:
+                  return {"code":e.code,"sec":round(time.monotonic()-t,2),"cors":e.headers.get("Access-Control-Allow-Origin"),"text":e.read(400).decode("utf-8","replace")}
+              except Exception as e:
+                  return {"code":"ERR","sec":round(time.monotonic()-t,2),"reason":type(e).__name__+":"+str(e)[:140]}
+          for host in urls:
+              data={
+                "ready":call(host+"/ready","GET"),
+                "cors_preflight":call(host+"/api/leads","OPTIONS",headers={"Origin":"https://papauto.ru","Access-Control-Request-Method":"POST","Access-Control-Request-Headers":"content-type"}),
+                "invalid_post":call(host+"/api/leads","POST",body=b"{}",headers={"Origin":"https://papauto.ru","Content-Type":"application/json"}),
+              }
+              print("PAPAUTO_API_DIAGNOSTIC "+json.dumps({"host":host,**data},ensure_ascii=False))
+              assert data["invalid_post"]["code"]!=200,"Invalid lead must NOT be accepted"
+          PY
+      - name: Install Chromium for actual desktop test
+        run: |
+          npm install --no-save playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Build and test desktop form with safe mocked POST
+        run: |
+          python scripts/build_static_public.py
+          python - <<'PY'
+          from pathlib import Path
+          target=Path('scripts/qa_surveyjs_desktop_generated.cjs')
+          text=Path('scripts/qa_surveyjs_browser.cjs').read_text()
+          text=text.replace('width:390,height:844},isMobile:true,hasTouch:true','width:1440,height:900},isMobile:false,hasTouch:false')
+          assert 'width:1440,height:900' in text
+          target.write_text(text)
+          PY
+          python -m http.server 8765 -d render-public >/tmp/papauto-diagnostic-server.log 2>&1 &
+          node scripts/qa_surveyjs_desktop_generated.cjs
+      - name: Browser CORS test against live domain using invalid payload
+        run: |
+          node <<'NODE'
+          const {chromium}=require('playwright');
+          (async()=>{
+            const browser=await chromium.launch({headless:true});
+            const page=await browser.newPage({viewport:{width:1440,height:900}});
+            const errors=[];page.on('pageerror',e=>errors.push(e.message));
+            const base='https://papauto.ru/podbor.html';
+            await page.goto(base,{waitUntil:'domcontentloaded',timeout:40000});
+            const result=await page.evaluate(async()=>{
+              try{
+                const res=await fetch('https://api.papauto.ru/api/leads',{
+                  method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+                  credentials:'omit',body:'{}'});
+                return {status:res.status,ok:res.ok,text:(await res.text()).slice(0,400)}
+              }catch(e){return {error:e.name+': '+e.message}}
+            });
+            console.log('PAPAUTO_DESKTOP_BROWSER_CORS='+JSON.stringify({result,pageErrors:errors}));
+            await browser.close();
+            if(result.error||result.status!==422)process.exitCode=1;
+          })().catch(e=>{console.error(e);process.exitCode=1})
+          NODE
