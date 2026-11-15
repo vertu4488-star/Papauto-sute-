@@ -1,0 +1,22 @@
+name: PC application real-site regression (mock-only submissions)
+on:
+  push:
+    branches: [qa/pc-lead-real-page-regression-20261115]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Run production PC form through safe mocked POST with four outcomes
+        run: node scripts/qa_pc_lead_live_flow.cjs
