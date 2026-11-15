@@ -121,7 +121,13 @@ class AuctionOnlyImages(unittest.TestCase):
                 self.assertEqual((export / rel).read_bytes(), TOMBSTONE)
             pub_html=(export / "gallery.html").read_text(encoding="utf-8")
             pub=json.loads((export / "data/gallery-lots.json").read_text(encoding="utf-8"))
-            self.assertEqual(pub["lot_count"], 135)
+            # 100 owner-approved PDF cards include three already-published lots.
+            # Exclude three ungraded source rows and preserve the 35 verified baseline.
+            self.assertEqual(pub["lot_count"], 132)
+            receipt=json.loads((ROOT / "research/owner-approved-100-release-2026-11-15.json").read_text(encoding="utf-8"))
+            approved=set(receipt["approved_new_owner_selected_ids"]+receipt["approved_existing_public_ids"])
+            self.assertEqual(len(approved),100)
+            self.assertTrue(approved.issubset({lot["id"] for lot in pub["lots"]}))
             for rel in QUARANTINED_OUTDOOR_MEDIA:
                 self.assertNotIn("/" + rel, pub_html)
                 self.assertFalse(any("/" + rel in json.dumps(lot) for lot in pub["lots"]))
