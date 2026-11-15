@@ -19,6 +19,26 @@
     return;
   }
   const sortRU = values => [...new Set(values)].sort((a,b)=>a.localeCompare(b,'ru'));
+  // Accept ordinary Russian mobile formats (+7, 8, or ten digits) without
+  // forcing visitors to type punctuation; never alter an international + code.
+  const normalizePhone = raw => {
+    const value=String(raw||'').trim();
+    const digits=value.replace(/\D/g,'');
+    if(digits.length===11 && /^[78]/.test(digits))return '+7'+digits.slice(1);
+    if(digits.length===10 && !value.startsWith('+'))return '+7'+digits;
+    if(value.startsWith('+'))return '+'+digits;
+    return digits;
+  };
+  const leadValidationError = detail => {
+    if(typeof detail==='string' && detail.trim())return detail.slice(0,180);
+    const fieldNames={contact:'Номер телефона',name:'Имя',country:'Страна',city:'Город получения',budget:'Бюджет',request:'Данные автомобиля',consent:'Согласие на обработку данных'};
+    if(Array.isArray(detail)){
+      const item=detail.find(entry=>entry && Array.isArray(entry.loc) && entry.loc[0]==='body');
+      const key=item?.loc?.[item.loc.length-1];
+      if(typeof key==='string' && fieldNames[key])return 'Проверьте поле «'+fieldNames[key]+'» и отправьте заявку ещё раз.';
+    }
+    return 'Не удалось проверить заявку. Убедитесь, что номер и обязательные поля заполнены правильно.';
+  };
   const getRows = market => Array.isArray(catalog[market]) ? catalog[market] : [];
   const getMakes = market => sortRU(getRows(market).map(row=>row[0]));
   const getModels = (market,make) => sortRU(getRows(market).filter(row=>row[0]===make).map(row=>row[1]));
@@ -227,10 +247,37 @@
   let state='ready',savedNotification=false;
   survey.onCompleting.add(async (_, options)=>{
     if(state!=='ready'){options.allow=false;options.message='Заявка уже отправляется или её статус проверяется. Пожалуйста, не отправляйте повторно.';return}
+    const d=survey.data;
+    // A tap on Send may precede iOS input blur. Read the visible text field as
+    // well as the SurveyJS state to avoid losing the last typed digit.
+    const visiblePhone=mount.querySelector('input[type="tel"]');
+    const contact=normalizePhone(visiblePhone?.value || survey.getValue('phone') || d.phone || '');
+    const digitCount=contact.replace(/\D/g,'').length;
+    if(digitCount<10 || digitCount>15){
+      options.allow=false;
+      options.message='Введите полный номер телефона (10–15 цифр). Например, +7 900 123-45-67.';
+      msg.textContent=options.message;
+      state='ready';
+      return;
+    }
+    if(!Array.isArray(d.consent) || !d.consent.includes('agree')){
+      options.allow=false;
+      options.message='Подтвердите согласие на обработку данных.';
+      msg.textContent=options.message;
+      state='ready';
+      return;
+    }
+    if(!d.market || !d.make || !d.model || !d.year || !String(d.city||'').trim()){
+      options.allow=false;
+      options.message='Проверьте марку, модель, год выпуска и город получения на первом шаге.';
+      msg.textContent=options.message;
+      state='ready';
+      return;
+    }
+    // Keep SurveyJS and the API payload in sync even when the digit pad was used.
+    survey.setValue('phone',contact);
     state='pending';
     msg.textContent='Передаём заявку менеджеру…';
-    const d=survey.data;
-    const contact=String(d.phone||'').trim();
     const request=[
       'Подбор автомобиля через PapAuto (SurveyJS)',
       'Марка: '+d.make,
@@ -268,17 +315,17 @@
         msg.textContent=savedNotification?'Заявка доставлена менеджеру.':'Заявка сохранена. Доставка уведомления проверяется.';
         options.allow=true;
       }else{
-        const detail=typeof data.detail==='string'?data.detail.slice(0,180):'';
+        const detail=leadValidationError(data.detail);
         const safelyRejected=[400,413,415,422,429].includes(response.status);
         // These statuses are rejected before database insertion; other statuses
         // are ambiguous and must NOT be retried without checking Telegram.
         state=safelyRejected?'ready':'unknown';
         options.allow=false;
         options.message=safelyRejected
-          ?(detail||'Проверьте номер телефона и обязательные поля.')
+          ?detail
           :'Статус заявки не подтверждён. Проверьте Telegram перед повторной отправкой.';
         msg.textContent=safelyRejected
-          ?'Заявка не отправлена (код '+response.status+'). '+(detail||'Проверьте заполнение полей.')
+          ?'Заявка не отправлена (код '+response.status+'). '+detail
           :'Ошибка '+response.status+'. Заявка могла сохраниться. Не отправляйте повторно до проверки.';
       }
     }catch{
