@@ -20,10 +20,10 @@ jobs:
           out=Path("russian-ip-site-check-2026-11-15.json")
           base="https://check-host.net/"
           hosts={
-            "papauto_home":"https://papauto.ru/",
-            "papauto_auction_catalog":"https://papauto.ru/gallery.html",
-            "new_iphone_service_home":"https://xn----8sbco1afeiieo2a4o.xn--p1ai/",
-            "new_iphone_service_iphone_repairs":"https://xn----8sbco1afeiieo2a4o.xn--p1ai/remont-iphone/",
+            "papauto_gallery_styles":"https://papauto.ru/gallery.css",
+            "papauto_lot_detail":"https://papauto.ru/lots/bmw-x1-u11-2025.html",
+            "new_iphone_15_model":"https://xn----8sbco1afeiieo2a4o.xn--p1ai/iphone/models/15/",
+            "new_iphone_prices":"https://xn----8sbco1afeiieo2a4o.xn--p1ai/prices/",
           }
           nodes=["ru1.node.check-host.net","ru2.node.check-host.net","kz1.node.check-host.net","de1.node.check-host.net"]
           def read_json(url):
