@@ -188,6 +188,11 @@ def copy_public_files() -> list[str]:
     # Include the fixed owner-selected set alongside the licensed import registry.
     from compile_auction_gallery import OWNER_SELECTION, compile_published_gallery
     gallery_result = compile_published_gallery(TARGET, owner_path=OWNER_SELECTION)
+    # User explicitly approved the 100-card PDF on 2026-11-15: 97 newly
+    # selected auction lots and 3 already in our existing 35-lot public set.
+    # Fail closed if any unexpected/unreviewed extra lot sneaks into release.
+    if gallery_result["count"] != 132 or gallery_result["new"] != 97:
+        raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: wrong 100-card owner-reviewed release")
     # Final release guard: a test-only fix must never be the sole protection.
     # Quarantined source lot IDs may survive in GitHub for provenance but
     # must not be exposed in buyer-facing HTML, JSON, or full-detail pages.
