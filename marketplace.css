@@ -1,52 +1,52 @@
 /* PAPAUTO marketplace redesign — catalog-first information architecture */
-:root{--bg:#0b1016;--panel:#111b25;--panel2:#172431;--line:rgba(220,232,242,.13);--accent:#c5d5e2;--wrap:1280px}
-body{background:#0a1017;color:#edf3f8}
+:root{--bg:#4c3929;--panel:#4c3929;--panel2:#5c432d;--line:rgba(238,231,224,.13);--accent:#e0d3c7;--wrap:1280px}
+body{background:#4c3929;color:#f6f2ef}
 .wrap{width:min(var(--wrap),calc(100% - 56px))}
 .site-header{width:min(1400px,calc(100% - 56px));height:76px;border-bottom-color:var(--line)}
-.brand-mark{border-radius:10px;background:#d8e3eb;color:#101820;transform:none}
+.brand-mark{border-radius:10px;background:#eae1d9;color:#4c3929;transform:none}
 .brand-name{letter-spacing:.015em}
 .main-nav{gap:20px;font-size:12px}
-.header-cta{border-radius:9px;background:#d8e3eb;color:#101820;border:0;padding:12px 17px}
-.marketplace-nav{position:sticky;top:0;z-index:80;background:rgba(10,16,23,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.header-cta{border-radius:9px;background:#eae1d9;color:#4c3929;border:0;padding:12px 17px}
+.marketplace-nav{position:sticky;top:0;z-index:80;background:rgba(76,57,41,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 .marketplace-nav-inner{width:min(1400px,calc(100% - 56px));margin:auto;display:flex;align-items:center;gap:10px;min-height:56px;overflow-x:auto;scrollbar-width:none}
-.marketplace-nav a{white-space:nowrap;color:#b8c5d0;font-size:12px;font-weight:650;padding:9px 13px;border-radius:7px}
-.marketplace-nav a:hover,.marketplace-nav a.marketplace-nav-strong{background:#d8e3eb;color:#101820}
+.marketplace-nav a{white-space:nowrap;color:#d5c3b3;font-size:12px;font-weight:650;padding:9px 13px;border-radius:7px}
+.marketplace-nav a:hover,.marketplace-nav a.marketplace-nav-strong{background:#eae1d9;color:#4c3929}
 .hero{min-height:390px;padding-top:36px;padding-bottom:28px;grid-template-columns:1.05fr .95fr;gap:44px}
 .hero h1{font-size:clamp(38px,4.1vw,56px);max-width:650px;margin:16px 0}
 .hero-lead{font-size:15px;max-width:570px}
 .hero-visual{min-height:315px;border-radius:16px}
 .proof-strip{margin-top:8px;margin-bottom:24px}
 .marketplace-intro{padding:24px 0}
-.budget-start{padding:20px 22px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(110deg,#14212d,#0e1720);margin-bottom:46px}
+.budget-start{padding:20px 22px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(110deg,#4c3929,#4c3929);margin-bottom:46px}
 .section{padding-top:52px;padding-bottom:52px}
 .section-title-row{align-items:end;margin-bottom:24px}
 .section-title-row h2,.section h2{font-size:clamp(30px,3.3vw,44px);letter-spacing:-.045em}
-#catalog{padding:30px 28px 34px;border:1px solid var(--line);border-radius:16px;background:#101a24;box-shadow:0 18px 55px #0003}
+#catalog{padding:30px 28px 34px;border:1px solid var(--line);border-radius:16px;background:#4c3929;box-shadow:0 18px 55px #0003}
 #catalog .section-title-row{display:grid;grid-template-columns:1fr .7fr}
 #catalog .calc-form{display:grid;grid-template-columns:1fr;gap:18px}
 #catalog .form-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-#catalog label,.auction-search-panel label{font-size:11px;color:#aebdca;gap:7px}
-#catalog input,#catalog select,#catalog textarea{background:#0a131c;border:1px solid #344453;border-radius:8px;min-height:44px;color:#f1f5f8;padding:10px 12px}
+#catalog label,.auction-search-panel label{font-size:11px;color:#cfbba9;gap:7px}
+#catalog input,#catalog select,#catalog textarea{background:#4c3929;border:1px solid #5a422d;border-radius:8px;min-height:44px;color:#f7f4f2;padding:10px 12px}
 #catalog .button{justify-self:start;border-radius:8px}
 #showcase .showcase-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.showcase-card,.market-source-card,.popular-model-card,.direction-card{border:1px solid var(--line);border-radius:14px;background:#111b25;overflow:hidden}
+.showcase-card,.market-source-card,.popular-model-card,.direction-card{border:1px solid var(--line);border-radius:14px;background:#4c3929;overflow:hidden}
 .showcase-image{height:220px}
 .showcase-body{padding:20px}
 .showcase-body h3{font-size:20px}
-.auction-example-note,.fine-print{color:#9aaab8}
+.auction-example-note,.fine-print{color:#bfa893}
 .section[id="directions"] .direction-grid,.market-source-grid{gap:14px}
 .market-source-card{padding:22px}
 .market-source-card h3{font-size:19px}
-#auction-statistics .uss-overview,#auction-statistics .china-market-overview,#auction-statistics .auction-search-panel{border-radius:14px;border:1px solid var(--line);background:#111b25}
+#auction-statistics .uss-overview,#auction-statistics .china-market-overview,#auction-statistics .auction-search-panel{border-radius:14px;border:1px solid var(--line);background:#4c3929}
 #auction-statistics .auction-search-panel{padding:20px}
-#auction-statistics input,#auction-statistics select{background:#0a131c;border:1px solid #344453;color:#f1f5f8;border-radius:8px;min-height:42px;padding:9px}
+#auction-statistics input,#auction-statistics select{background:#4c3929;border:1px solid #5a422d;color:#f7f4f2;border-radius:8px;min-height:42px;padding:9px}
 #calculator .calc-form,#assistant .assistant-panel{border:1px solid var(--line);border-radius:16px}
 #popular-models .showcase-card{border-radius:13px}
 #process .process-step,#checklist .checklist-item{border-color:var(--line)}
-.final-cta{border-radius:16px;background:linear-gradient(115deg,#182633,#101820);padding:40px}
+.final-cta{border-radius:16px;background:linear-gradient(115deg,#5c432d,#4c3929);padding:40px}
 button,.button{transition:transform .18s ease,border-color .18s ease,background .18s ease}
 button:hover,.button:hover{transform:translateY(-1px)}
-:focus-visible{outline:2px solid #d8e3eb;outline-offset:3px}
+:focus-visible{outline:2px solid #eae1d9;outline-offset:3px}
 @media(max-width:900px){#catalog .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#showcase .showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{gap:24px}.main-nav{gap:12px}}
 @media(max-width:760px){
  .wrap{width:calc(100% - 32px)}
@@ -72,161 +72,161 @@ button:hover,.button:hover{transform:translateY(-1px)}
 
 /* Saved vehicles and side-by-side comparison */
 .vehicle-card-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.vehicle-card-actions button,.vehicle-tools-panel button{border:1px solid #526171;background:#17232e;color:#eaf0f5;border-radius:10px;padding:9px 12px;font:inherit;font-size:12px;font-weight:600;cursor:pointer}
-.vehicle-card-actions button:hover,.vehicle-tools-panel button:hover{border-color:#9fb4c5;background:#20313f}
-.vehicle-card-actions .vehicle-save-button[aria-pressed="true"]{border-color:#aab4bd;color:#e3e8ed}
+.vehicle-card-actions button,.vehicle-tools-panel button{border:1px solid #835f40;background:#4c3929;color:#f4efeb;border-radius:10px;padding:9px 12px;font:inherit;font-size:12px;font-weight:600;cursor:pointer}
+.vehicle-card-actions button:hover,.vehicle-tools-panel button:hover{border-color:#c5b19f;background:#5c432d}
+.vehicle-card-actions .vehicle-save-button[aria-pressed="true"]{border-color:#c9b29e;color:#eee8e2}
 .vehicle-card-actions .vehicle-compare-button[aria-pressed="true"]{border-color:#9fc6b1;color:#c7f3dc}
-.vehicle-tools-panel{margin:22px 0;padding:20px;border:1px solid #ffffff24;border-radius:18px;background:linear-gradient(145deg,#172532,#0e1720)}
+.vehicle-tools-panel{margin:22px 0;padding:20px;border:1px solid #ffffff24;border-radius:18px;background:linear-gradient(145deg,#5c432d,#4c3929)}
 .vehicle-tools-heading h3{margin:0 0 6px;font:750 20px Manrope,sans-serif}
-.vehicle-tools-heading p,.vehicle-saved-list p,.vehicle-compare-list p{color:#a7b5c1;font-size:12px;line-height:1.6}
+.vehicle-tools-heading p,.vehicle-saved-list p,.vehicle-compare-list p{color:#c9b39f;font-size:12px;line-height:1.6}
 .vehicle-saved-list,.vehicle-compare-list{margin-top:16px}
 .vehicle-saved-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-top:1px solid #ffffff18}
 .vehicle-saved-item strong{display:block;font-size:13px}
-.vehicle-saved-item small{display:block;color:#9eacb9;font-size:11px;margin-top:4px}
+.vehicle-saved-item small{display:block;color:#c0aa97;font-size:11px;margin-top:4px}
 .vehicle-compare-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:12px}
 .vehicle-compare-table th,.vehicle-compare-table td{padding:10px;text-align:left;border-bottom:1px solid #ffffff20;vertical-align:top}
-.vehicle-compare-table th{color:#aebdca;font-weight:600}
+.vehicle-compare-table th{color:#cfbba9;font-weight:600}
 .vehicle-compare-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 @media(max-width:600px){.vehicle-tools-panel{padding:14px}.vehicle-saved-item{align-items:flex-start}.vehicle-compare-table{display:block;overflow-x:auto;white-space:nowrap}}
 
 
 /* Natural-language vehicle finder inspired by modern import marketplaces */
 .smart-search-section{padding-top:24px}
-.smart-search-panel{border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,#142330,#0d151e);padding:24px;box-shadow:0 18px 55px #0003}
+.smart-search-panel{border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,#4c3929,#4c3929);padding:24px;box-shadow:0 18px 55px #0003}
 .smart-search-controls{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:15px}
-.smart-search-panel label{display:grid;gap:7px;color:#b8c7d3;font-size:12px}
-.smart-search-panel input,.smart-search-panel select,.smart-search-panel textarea{width:100%;background:#09121b;border:1px solid #354655;border-radius:9px;color:#f2f6f9;padding:12px;font:inherit;min-height:44px}
+.smart-search-panel label{display:grid;gap:7px;color:#d6c4b5;font-size:12px}
+.smart-search-panel input,.smart-search-panel select,.smart-search-panel textarea{width:100%;background:#4c3929;border:1px solid #5c432e;border-radius:9px;color:#f8f5f3;padding:12px;font:inherit;min-height:44px}
 .smart-search-prompt-label{margin-bottom:7px}
 .smart-search-panel textarea{resize:vertical;min-height:94px;line-height:1.55}
 .smart-search-submit-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:14px}
-.smart-search-status{color:#a8b7c4;font-size:12px;line-height:1.5}
+.smart-search-status{color:#cab5a2;font-size:12px;line-height:1.5}
 .smart-search-results{margin-top:20px;border-top:1px solid var(--line);padding-top:18px}
-.smart-search-interpretation{padding:13px 15px;background:#0b151e;border:1px solid var(--line);border-radius:10px;margin-bottom:14px;color:#d9e3eb;font-size:13px;line-height:1.6}
+.smart-search-interpretation{padding:13px 15px;background:#4c3929;border:1px solid var(--line);border-radius:10px;margin-bottom:14px;color:#eae1da;font-size:13px;line-height:1.6}
 .smart-search-result-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.smart-search-card{min-width:0;border:1px solid var(--line);border-radius:12px;background:#101b25;padding:14px}
-.smart-search-card h3{font-size:16px;margin:0 0 8px;color:#f1f5f8}
-.smart-search-card p{font-size:12px;line-height:1.55;color:#aebdca;margin:5px 0}
-.smart-search-card img{width:100%;height:170px;object-fit:cover;border-radius:8px;margin-bottom:10px;background:#0a1118}
-.smart-search-card a{display:inline-block;margin-top:8px;color:#e0eaf2;font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
-.smart-search-badge{display:inline-block;border:1px solid #526575;border-radius:99px;padding:4px 8px;color:#c9d7e2;font-size:10px;margin-bottom:8px}
-.smart-search-warning{margin:12px 0 0;padding:12px;border-left:3px solid #8a98a6;background:#1a1b1a;color:#c3cbd2;font-size:12px;line-height:1.55}
+.smart-search-card{min-width:0;border:1px solid var(--line);border-radius:12px;background:#4c3929;padding:14px}
+.smart-search-card h3{font-size:16px;margin:0 0 8px;color:#f7f4f2}
+.smart-search-card p{font-size:12px;line-height:1.55;color:#cfbba9;margin:5px 0}
+.smart-search-card img{width:100%;height:170px;object-fit:cover;border-radius:8px;margin-bottom:10px;background:#4c3929}
+.smart-search-card a{display:inline-block;margin-top:8px;color:#efe9e3;font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.smart-search-badge{display:inline-block;border:1px solid #856142;border-radius:99px;padding:4px 8px;color:#e1d5ca;font-size:10px;margin-bottom:8px}
+.smart-search-warning{margin:12px 0 0;padding:12px;border-left:3px solid #b2967e;background:#1a1b1a;color:#d9cabc;font-size:12px;line-height:1.55}
 @media(max-width:700px){.smart-search-panel{padding:16px}.smart-search-controls,.smart-search-result-grid{grid-template-columns:1fr}.smart-search-submit-row{align-items:stretch}.smart-search-submit-row .button{width:100%}.smart-search-card img{height:190px}}
 
 
 /* Interactive delivery route map */
-.route-planner-panel{border:1px solid var(--line);border-radius:16px;background:#101a24;padding:20px}
+.route-planner-panel{border:1px solid var(--line);border-radius:16px;background:#4c3929;padding:20px}
 .route-planner-controls{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
-.route-planner-controls label{display:grid;gap:7px;color:#aebdca;font-size:12px}
-.route-planner-controls select{min-height:44px;background:#09121b;border:1px solid #354655;border-radius:8px;color:#f2f6f9;padding:10px}
+.route-planner-controls label{display:grid;gap:7px;color:#cfbba9;font-size:12px}
+.route-planner-controls select{min-height:44px;background:#4c3929;border:1px solid #5c432e;border-radius:8px;color:#f8f5f3;padding:10px}
 .route-map-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);gap:18px}
-.route-map{min-height:440px;border-radius:12px;overflow:hidden;background:#14212d;border:1px solid var(--line)}
+.route-map{min-height:440px;border-radius:12px;overflow:hidden;background:#4c3929;border:1px solid var(--line)}
 .route-summary{padding:8px 4px}
-.route-summary-kicker{font-size:10px;letter-spacing:.13em;color:#9cabb8;font-weight:800}
-.route-summary h3{font-size:20px;line-height:1.3;margin:10px 0 18px;color:#f0f4f7}
-.route-leg{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px;color:#aebdca}
-.route-leg strong{color:#e8eef3;text-align:right}
-.route-map-note{font-size:11px;line-height:1.55;color:#9cabb8;margin:14px 0}
-.route-stages{padding-left:20px;margin:16px 0;color:#c3d0da;font-size:11px;line-height:1.8}
-.route-stages li::marker{color:#d8e3eb}
+.route-summary-kicker{font-size:10px;letter-spacing:.13em;color:#bfa995;font-weight:800}
+.route-summary h3{font-size:20px;line-height:1.3;margin:10px 0 18px;color:#f7f3f0}
+.route-leg{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px;color:#cfbba9}
+.route-leg strong{color:#f2ede9;text-align:right}
+.route-map-note{font-size:11px;line-height:1.55;color:#bfa995;margin:14px 0}
+.route-stages{padding-left:20px;margin:16px 0;color:#dccec1;font-size:11px;line-height:1.8}
+.route-stages li::marker{color:#eae1d9}
 .leaflet-container{font-family:inherit;font-size:12px;line-height:1.4}
 @media(max-width:850px){.route-map-layout{grid-template-columns:1fr}.route-map{min-height:340px}}
 @media(max-width:600px){.route-planner-panel{padding:12px}.route-planner-controls{grid-template-columns:1fr}.route-map{min-height:300px}.route-summary h3{font-size:18px}}
 
 
 /* Japanese auction archive lookup by chassis number */
-.japan-chassis-panel{margin-top:22px;padding:20px;border:1px solid var(--line);border-radius:14px;background:#0d1721}
-.japan-chassis-heading h3{margin:6px 0;font-size:19px;color:#eef4f8}
-.japan-chassis-heading p{max-width:760px;color:#aebdca;font-size:12px;line-height:1.55}
+.japan-chassis-panel{margin-top:22px;padding:20px;border:1px solid var(--line);border-radius:14px;background:#4c3929}
+.japan-chassis-heading h3{margin:6px 0;font-size:19px;color:#f6f3f0}
+.japan-chassis-heading p{max-width:760px;color:#cfbba9;font-size:12px;line-height:1.55}
 .japan-chassis-controls{margin-top:14px}
-.japan-chassis-controls label{display:block;margin-bottom:7px;color:#c0ccd6;font-size:12px}
+.japan-chassis-controls label{display:block;margin-bottom:7px;color:#dacabc;font-size:12px}
 .japan-chassis-row{display:flex;gap:10px;align-items:center}
-.japan-chassis-row input{flex:1;min-width:0;min-height:44px;background:#09121b;border:1px solid #354655;border-radius:8px;color:#f2f6f9;padding:10px 12px;font:inherit;text-transform:uppercase}
+.japan-chassis-row input{flex:1;min-width:0;min-height:44px;background:#4c3929;border:1px solid #5c432e;border-radius:8px;color:#f8f5f3;padding:10px 12px;font:inherit;text-transform:uppercase}
 .japan-chassis-results{margin-top:16px;display:grid;gap:10px}
-.japan-chassis-card{padding:14px;border:1px solid var(--line);border-radius:10px;background:#111e29}
+.japan-chassis-card{padding:14px;border:1px solid var(--line);border-radius:10px;background:#4c3929}
 .japan-chassis-card h4{margin:0 0 8px;font-size:15px}
 .japan-chassis-meta{display:flex;flex-wrap:wrap;gap:7px}
-.japan-chassis-meta span{padding:5px 8px;border:1px solid #344655;border-radius:7px;color:#c8d4de;font-size:11px}
-.japan-chassis-note{margin-top:12px;color:#aebdca;font-size:11px;line-height:1.55}
-.japan-chassis-test{display:inline-block;margin-bottom:8px;padding:4px 8px;border:1px solid #8a98a6;border-radius:20px;color:#c3cbd2;font-size:10px}
+.japan-chassis-meta span{padding:5px 8px;border:1px solid #5c432d;border-radius:7px;color:#dfd2c7;font-size:11px}
+.japan-chassis-note{margin-top:12px;color:#cfbba9;font-size:11px;line-height:1.55}
+.japan-chassis-test{display:inline-block;margin-bottom:8px;padding:4px 8px;border:1px solid #b2967e;border-radius:20px;color:#d9cabc;font-size:10px}
 @media(max-width:650px){.japan-chassis-panel{padding:14px}.japan-chassis-row{align-items:stretch;flex-direction:column}.japan-chassis-row .button{width:100%}}
 
 /* Free archive search links */
-.japan-chassis-source-link{display:block;width:fit-content;margin:8px 0;padding:9px 12px;border:1px solid var(--line);border-radius:8px;color:#dce7ef;text-decoration:none;font-size:12px;background:#111e29}
-.japan-chassis-source-link:hover{border-color:#8aa7bf;color:#fff}
+.japan-chassis-source-link{display:block;width:fit-content;margin:8px 0;padding:9px 12px;border:1px solid var(--line);border-radius:8px;color:#ede5de;text-decoration:none;font-size:12px;background:#4c3929}
+.japan-chassis-source-link:hover{border-color:#bba38e;color:#fff}
 
 /* Saved and shareable vehicle searches */
-.saved-search-panel{margin:14px 0 20px;padding:16px;border:1px solid var(--line);border-radius:12px;background:rgba(17,27,37,.72)}
+.saved-search-panel{margin:14px 0 20px;padding:16px;border:1px solid var(--line);border-radius:12px;background:rgba(76,57,41,.72)}
 .saved-search-actions{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}
 .saved-search-actions .button{font-size:12px;padding:10px 13px}
-.saved-search-heading{font-size:12px;font-weight:750;letter-spacing:.04em;text-transform:uppercase;color:#c5d5e2;margin-bottom:9px}
+.saved-search-heading{font-size:12px;font-weight:750;letter-spacing:.04em;text-transform:uppercase;color:#e0d3c7;margin-bottom:9px}
 .saved-search-list{display:flex;flex-wrap:wrap;gap:8px}
-.saved-search-item{display:flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#111b25}
-.saved-search-load,.saved-search-delete{border:0;background:transparent;color:#edf3f8;padding:9px 11px;font:inherit;cursor:pointer}
-.saved-search-load{font-size:12px}.saved-search-load:hover,.saved-search-delete:hover{background:#263747}
-.saved-search-delete{font-size:17px;color:#b8c5d0}
-.saved-search-note,.saved-search-empty{display:block;margin:10px 0 0;color:#9cabb8;font-size:11px;line-height:1.5}
+.saved-search-item{display:flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#4c3929}
+.saved-search-load,.saved-search-delete{border:0;background:transparent;color:#f6f2ef;padding:9px 11px;font:inherit;cursor:pointer}
+.saved-search-load{font-size:12px}.saved-search-load:hover,.saved-search-delete:hover{background:#5c432d}
+.saved-search-delete{font-size:17px;color:#d5c3b3}
+.saved-search-note,.saved-search-empty{display:block;margin:10px 0 0;color:#bfa995;font-size:11px;line-height:1.5}
 @media(max-width:640px){.saved-search-actions{display:grid;grid-template-columns:1fr}.saved-search-actions .button{width:100%}.saved-search-item{max-width:100%}.saved-search-load{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
 
 /* Advanced filters for the small, verified Japan/RAV4 sample only. */
-.auction-sample-filter-panel{grid-column:1/-1;padding:16px;border:1px solid var(--line);border-radius:12px;background:#0d1721;margin:4px 0 10px}
+.auction-sample-filter-panel{grid-column:1/-1;padding:16px;border:1px solid var(--line);border-radius:12px;background:#4c3929;margin:4px 0 10px}
 .auction-sample-filter-panel .form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
 .auction-sample-filter-panel input{width:100%;min-width:0}
-.auction-unsold-toggle{display:flex!important;flex-direction:row!important;align-items:center;gap:9px!important;margin-top:12px;color:#d4dee6!important}
+.auction-unsold-toggle{display:flex!important;flex-direction:row!important;align-items:center;gap:9px!important;margin-top:12px;color:#e7dcd3!important}
 .auction-unsold-toggle input{width:auto;min-height:0}
 @media(max-width:760px){.auction-sample-filter-panel .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* PAPAUTO cloud customer cabinet */
-.account-auth-panel,.account-data-section{margin:18px 0;padding:18px;border:1px solid var(--line);border-radius:13px;background:#101b25}
+.account-auth-panel,.account-data-section{margin:18px 0;padding:18px;border:1px solid var(--line);border-radius:13px;background:#4c3929}
 .account-auth-tabs,.account-user-row,.account-notifications-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .account-auth-tabs{justify-content:flex-start;margin-bottom:14px}
-.account-auth-tabs .is-active{border-color:#c5d5e2;background:#d8e3eb;color:#101820}
+.account-auth-tabs .is-active{border-color:#e0d3c7;background:#eae1d9;color:#4c3929}
 .account-auth-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.account-auth-form label{display:grid;gap:7px;color:#b9c6d0;font-size:12px}
-.account-auth-form input{width:100%;min-height:44px;padding:10px 12px;border:1px solid #344453;border-radius:8px;background:#0a131c;color:#f1f5f8}
+.account-auth-form label{display:grid;gap:7px;color:#d5c3b4;font-size:12px}
+.account-auth-form input{width:100%;min-height:44px;padding:10px 12px;border:1px solid #5a422d;border-radius:8px;background:#4c3929;color:#f7f4f2}
 .account-auth-form button{align-self:end;justify-self:start}
 .account-user-row{padding:14px 0;border-bottom:1px solid var(--line)}
-.account-user-row p,.account-data-section p{color:#a7b5c1;font-size:12px;line-height:1.6}
+.account-user-row p,.account-data-section p{color:#c9b39f;font-size:12px;line-height:1.6}
 .account-data-section h3{margin:0 0 12px;font-size:17px}
-.account-order-card,.account-notification{margin:10px 0;padding:14px;border:1px solid var(--line);border-radius:10px;background:#0c151e}
-.account-order-card>strong,.account-notification>strong{display:block;color:#edf3f8}
-.account-order-card p,.account-notification p{margin:7px 0;color:#aab8c4;font-size:12px;line-height:1.6}
-.account-order-status{display:inline-block;margin-top:8px;padding:5px 9px;border-radius:6px;background:#1b2b39;color:#d7e5ef;font-size:11px}
-.account-order-timeline{margin:12px 0 0;padding-left:19px;border-left:1px solid #536779}
-.account-order-timeline li{padding:0 0 12px 5px;color:#c9d5df}
+.account-order-card,.account-notification{margin:10px 0;padding:14px;border:1px solid var(--line);border-radius:10px;background:#4c3929}
+.account-order-card>strong,.account-notification>strong{display:block;color:#f6f2ef}
+.account-order-card p,.account-notification p{margin:7px 0;color:#cbb6a3;font-size:12px;line-height:1.6}
+.account-order-status{display:inline-block;margin-top:8px;padding:5px 9px;border-radius:6px;background:#5c432d;color:#ebe2db;font-size:11px}
+.account-order-timeline{margin:12px 0 0;padding-left:19px;border-left:1px solid #896443}
+.account-order-timeline li{padding:0 0 12px 5px;color:#e0d3c8}
 .account-order-timeline li strong,.account-order-timeline li small{display:block}
-.account-order-timeline li small,.account-notification small{color:#8fa0ae;font-size:11px;line-height:1.5}
+.account-order-timeline li small,.account-notification small{color:#b79d86;font-size:11px;line-height:1.5}
 .account-notification.is-read{opacity:.68}
-.account-notification-read{margin:8px 8px 0 0;border:1px solid #526171;border-radius:7px;background:#17232e;color:#dce6ed;padding:7px 10px;font-size:11px;cursor:pointer}
-.account-notification a{display:inline-block;margin:8px 0 0;color:#dce6ed;font-size:12px}
+.account-notification-read{margin:8px 8px 0 0;border:1px solid #835f40;border-radius:7px;background:#4c3929;color:#ece4dd;padding:7px 10px;font-size:11px;cursor:pointer}
+.account-notification a{display:inline-block;margin:8px 0 0;color:#ece4dd;font-size:12px}
 @media(max-width:650px){.account-auth-form{grid-template-columns:1fr}.account-auth-form button{width:100%}.account-auth-panel,.account-data-section{padding:13px}}
 
 /* Interactive auction sheet decoder */
-.auction-decoder-panel{margin:26px 0 8px;padding:22px;border:1px solid var(--line);border-radius:14px;background:#101b25}
+.auction-decoder-panel{margin:26px 0 8px;padding:22px;border:1px solid var(--line);border-radius:14px;background:#4c3929}
 .auction-decoder-panel h3{margin:8px 0;font-size:22px}
 .auction-decoder-panel form{display:grid;gap:13px}
 .auction-decoder-panel .form-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.auction-decoder-panel label{display:grid;gap:7px;color:#b9c6d0;font-size:12px}
-.auction-decoder-panel input,.auction-decoder-panel select,.auction-decoder-panel textarea{width:100%;min-width:0;padding:10px 12px;border:1px solid #344453;border-radius:8px;background:#0a131c;color:#f1f5f8}
+.auction-decoder-panel label{display:grid;gap:7px;color:#d5c3b4;font-size:12px}
+.auction-decoder-panel input,.auction-decoder-panel select,.auction-decoder-panel textarea{width:100%;min-width:0;padding:10px 12px;border:1px solid #5a422d;border-radius:8px;background:#4c3929;color:#f7f4f2}
 .decoder-code-chips{display:flex;flex-wrap:wrap;gap:7px}
-.decoder-code-chips button{padding:7px 10px;border:1px solid #526171;border-radius:7px;background:#17232e;color:#eaf0f5;cursor:pointer}
+.decoder-code-chips button{padding:7px 10px;border:1px solid #835f40;border-radius:7px;background:#4c3929;color:#f4efeb;cursor:pointer}
 .auction-decoder-result{margin-top:18px}
-.decoder-result-item,.decoder-risk-summary{margin:10px 0;padding:13px;border:1px solid var(--line);border-radius:9px;background:#0c151e}
-.decoder-result-item p,.decoder-risk-summary p,.decoder-disclaimer{color:#aab8c4;font-size:12px;line-height:1.65}
+.decoder-result-item,.decoder-risk-summary{margin:10px 0;padding:13px;border:1px solid var(--line);border-radius:9px;background:#4c3929}
+.decoder-result-item p,.decoder-risk-summary p,.decoder-disclaimer{color:#cbb6a3;font-size:12px;line-height:1.65}
 .decoder-code-row{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;padding:9px 0;border-top:1px solid var(--line);font-size:12px}
-.decoder-code-row em{font-style:normal;font-size:10px;color:#c7d4de}
-.decoder-risk-high{color:#aeb8c2!important}.decoder-risk-medium{color:#8a98a6!important}.decoder-risk-low{color:#a9c8b7!important}.decoder-risk-unknown{color:#c4b4e2!important}
-.decoder-high-attention{display:block;color:#aeb8c2;margin:8px 0}
-.decoder-checklist,.decoder-risk-summary ul{padding-left:20px;color:#c5d1db;font-size:12px;line-height:1.8}
-.decoder-source-note{color:#9eb0bf;font-size:11px}
+.decoder-code-row em{font-style:normal;font-size:10px;color:#dfd2c6}
+.decoder-risk-high{color:#ccb7a4!important}.decoder-risk-medium{color:#b2967e!important}.decoder-risk-low{color:#a9c8b7!important}.decoder-risk-unknown{color:#dacabc!important}
+.decoder-high-attention{display:block;color:#ccb7a4;margin:8px 0}
+.decoder-checklist,.decoder-risk-summary ul{padding-left:20px;color:#ddcfc3;font-size:12px;line-height:1.8}
+.decoder-source-note{color:#c3ad9a;font-size:11px}
 @media(max-width:760px){.auction-decoder-panel{padding:14px}.auction-decoder-panel .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.decoder-code-row{grid-template-columns:42px 1fr}.decoder-code-row em{grid-column:2}}
 @media(max-width:420px){.auction-decoder-panel .form-grid{grid-template-columns:1fr}}
 
 .account-notifications-heading>div{display:flex;gap:8px;flex-wrap:wrap}.account-notifications-heading .button{font-size:11px;padding:8px 10px}
 @media(max-width:650px){.account-notifications-heading>div{width:100%}.account-notifications-heading .button{flex:1}}
 
-.account-cloud-notice{margin:18px 0;padding:16px;border:1px solid #aab4bd;border-radius:12px;background:#f1f4f6;color:#526170}.account-cloud-notice strong{display:block;margin-bottom:8px}.account-cloud-notice p{margin:0;color:#687681;font-size:12px;line-height:1.7}
+.account-cloud-notice{margin:18px 0;padding:16px;border:1px solid #c9b29e;border-radius:12px;background:#f1f4f6;color:#825f40}.account-cloud-notice strong{display:block;margin-bottom:8px}.account-cloud-notice p{margin:0;color:#927357;font-size:12px;line-height:1.7}
 
-.decoder-image-upload{display:grid;gap:9px;margin:8px 0 16px;padding:14px;border:1px dashed #536575;border-radius:10px;background:#0c151e}.decoder-image-upload input{max-width:100%}.decoder-image-status{font-size:11px;color:#aab8c4}.decoder-image-upload img{display:block;max-width:100%;max-height:520px;object-fit:contain;object-position:left top;border-radius:8px;background:#080d12}
+.decoder-image-upload{display:grid;gap:9px;margin:8px 0 16px;padding:14px;border:1px dashed #866242;border-radius:10px;background:#4c3929}.decoder-image-upload input{max-width:100%}.decoder-image-status{font-size:11px;color:#cbb6a3}.decoder-image-upload img{display:block;max-width:100%;max-height:520px;object-fit:contain;object-position:left top;border-radius:8px;background:#4c3929}
 
 
 /* Off-screen honeypot field: available to bots, invisible to real visitors. */
@@ -238,134 +238,134 @@ button:hover,.button:hover{transform:translateY(-1px)}
   color-scheme:light;
   --bg:#f3f5f7;
   --panel:#ffffff;
-  --panel2:#edf1f4;
-  --line:#dce2e8;
-  --accent:#243f57;
-  --blue:#315b7d;
-  --text:#17212b;
-  --muted:#65717d;
+  --panel2:#f5f0ec;
+  --line:#eae1da;
+  --accent:#523c29;
+  --blue:#755539;
+  --text:#4c3929;
+  --muted:#976e4b;
   --wrap:1280px;
 }
 html{background:#f3f5f7;color-scheme:light}
-body{background:#f3f5f7!important;color:#17212b!important}
+body{background:#f3f5f7!important;color:#4c3929!important}
 a{color:inherit}
-.site-header{background:#fff;border-bottom:1px solid #dce2e8}
-.brand-mark{background:#1c2935!important;color:#fff!important;border-radius:7px}
-.brand-name{color:#17212b}
-.brand-dot{color:#315b7d!important}
-.brand-name small{color:#71808d}
-.main-nav{color:#4d5965}
-.main-nav a:hover,.footer-links a:hover{color:#315b7d}
-.header-cta{background:#1c2935!important;color:#fff!important;border:1px solid #1c2935!important;border-radius:7px}
-.header-cta span,.button span{color:#d7e1e9!important}
-.marketplace-nav{background:rgba(255,255,255,.96)!important;border-bottom:1px solid #dce2e8}
-.marketplace-nav a{color:#53606c!important;border-radius:6px}
-.marketplace-nav a:hover,.marketplace-nav a.marketplace-nav-strong{background:#1c2935!important;color:#fff!important}
-.eyebrow{color:#53677a!important}
-.live-dot{background:#315b7d!important;box-shadow:0 0 0 5px #315b7d18!important}
-.hero h1,.section h2,.final-cta h2,.assistant-copy h2,.checklist-panel h2{color:#17212b}
-.hero h1 em,.section h2 em,.final-cta h2 em,.assistant-copy h2 em,.checklist-panel h2 em{color:#315b7d!important}
-.hero-lead,.section-title-row>p,.assistant-copy>p,.checklist-panel>div>p{color:#5f6b77!important}
-.hero-visual{background:#dfe5ea!important;border:1px solid #d4dce3!important;border-radius:12px!important}
-.hero-photo-shade{background:linear-gradient(0deg,rgba(10,18,26,.72),rgba(10,18,26,.03) 75%)!important}
-.visual-label{color:#e5ebf0}
+.site-header{background:#fff;border-bottom:1px solid #eae1da}
+.brand-mark{background:#5c432d!important;color:#fff!important;border-radius:7px}
+.brand-name{color:#4c3929}
+.brand-dot{color:#755539!important}
+.brand-name small{color:#9f7d5f}
+.main-nav{color:#77573b}
+.main-nav a:hover,.footer-links a:hover{color:#755539}
+.header-cta{background:#5c432d!important;color:#fff!important;border:1px solid #5c432d!important;border-radius:7px}
+.header-cta span,.button span{color:#e9dfd7!important}
+.marketplace-nav{background:rgba(255,255,255,.96)!important;border-bottom:1px solid #eae1da}
+.marketplace-nav a{color:#805d3f!important;border-radius:6px}
+.marketplace-nav a:hover,.marketplace-nav a.marketplace-nav-strong{background:#5c432d!important;color:#fff!important}
+.eyebrow{color:#896444!important}
+.live-dot{background:#755539!important;box-shadow:0 0 0 5px #75553918!important}
+.hero h1,.section h2,.final-cta h2,.assistant-copy h2,.checklist-panel h2{color:#4c3929}
+.hero h1 em,.section h2 em,.final-cta h2 em,.assistant-copy h2 em,.checklist-panel h2 em{color:#755539!important}
+.hero-lead,.section-title-row>p,.assistant-copy>p,.checklist-panel>div>p{color:#8f6947!important}
+.hero-visual{background:#ece4dd!important;border:1px solid #e5dbd2!important;border-radius:12px!important}
+.hero-photo-shade{background:linear-gradient(0deg,rgba(76,57,41,.72),rgba(76,57,41,.03) 75%)!important}
+.visual-label{color:#f0eae5}
 .visual-label b{color:#fff!important}
-.floating-note{background:rgba(20,31,42,.94)!important;border:1px solid rgba(255,255,255,.18)}
+.floating-note{background:rgba(76,57,41,.94)!important;border:1px solid rgba(255,255,255,.18)}
 .note-icon{background:#ffffff18!important;color:#fff!important}
 .proof-strip,.budget-start,.marketplace-intro,.marketplace-country-links a,
 #catalog,.showcase-card,.benchmark-card,.direction-card,.process-grid article,
 .checklist-panel,.account-panel,.faq-list details,.country-callout,.final-cta{
-  background:#fff!important;border-color:#dce2e8!important;box-shadow:0 3px 14px rgba(20,35,50,.035)
+  background:#fff!important;border-color:#eae1da!important;box-shadow:0 3px 14px rgba(76,57,41,.035)
 }
 .proof-strip{border-radius:10px}
-.proof-strip>div{border-color:#e3e8ed!important}
+.proof-strip>div{border-color:#eee8e2!important}
 .proof-strip b,.marketplace-intro h2,.budget-start h2,.section h2,.showcase-card h3,
-.direction-card h3,.process-grid h3,.faq-list summary,.account-data-section h3{color:#1b2732!important}
+.direction-card h3,.process-grid h3,.faq-list summary,.account-data-section h3{color:#5c432d!important}
 .proof-strip span,.budget-start p,.direction-card p,.process-grid p,.faq-list details p,
-.showcase-body p,.country-callout p{color:#65717d!important}
+.showcase-body p,.country-callout p{color:#976e4b!important}
 .budget-start{background:#fff!important;border-radius:10px}
-.budget-shortcuts button,.budget-market-shortcuts button{background:#f5f7f9!important;border:1px solid #d8e0e7!important;color:#263747!important;border-radius:7px}
-.budget-shortcuts button:hover,.budget-market-shortcuts button:hover{background:#e8eef3!important;border-color:#9aabba!important}
-.marketplace-country-links a{border:1px solid #dce2e8!important;border-radius:8px}
-.marketplace-country-links a>span{background:#1c2935!important;color:#fff!important;border-radius:5px}
-.marketplace-country-links b{color:#1b2732!important}
-.marketplace-country-links small{color:#6b7782!important}
+.budget-shortcuts button,.budget-market-shortcuts button{background:#f5f7f9!important;border:1px solid #e8dfd7!important;color:#5c432d!important;border-radius:7px}
+.budget-shortcuts button:hover,.budget-market-shortcuts button:hover{background:#f2ede9!important;border-color:#bfa995!important}
+.marketplace-country-links a{border:1px solid #eae1da!important;border-radius:8px}
+.marketplace-country-links a>span{background:#5c432d!important;color:#fff!important;border-radius:5px}
+.marketplace-country-links b{color:#5c432d!important}
+.marketplace-country-links small{color:#947559!important}
 .button{border-radius:7px!important;box-shadow:none!important}
-.button-primary{background:#1c2935!important;color:#fff!important;border:1px solid #1c2935!important}
-.button-primary:hover{background:#2d4357!important}
-.button-secondary{background:#fff!important;border:1px solid #bfc9d2!important;color:#263747!important}
-.button-secondary:hover{background:#edf1f4!important}
+.button-primary{background:#5c432d!important;color:#fff!important;border:1px solid #5c432d!important}
+.button-primary:hover{background:#58412c!important}
+.button-secondary{background:#fff!important;border:1px solid #d8c7b9!important;color:#5c432d!important}
+.button-secondary:hover{background:#f5f0ec!important}
 .calc-form,.calc-result,.assistant-panel,.vehicle-tools-panel,.auction-decoder-panel,
 .japan-chassis-panel,.tks-panel,.account-auth-panel,.account-data-section,
 .account-cloud-notice,.route-planner-panel,.auction-sample-filter-panel{
-  background:#fff!important;color:#1b2732!important;border:1px solid #dce2e8!important;border-radius:10px!important
+  background:#fff!important;color:#5c432d!important;border:1px solid #eae1da!important;border-radius:10px!important
 }
-.calc-form label,.assistant-form label,.auction-decoder-panel label,.japan-chassis-controls label{color:#44515e!important}
+.calc-form label,.assistant-form label,.auction-decoder-panel label,.japan-chassis-controls label{color:#6d4f35!important}
 .calc-form input,.calc-form select,.assistant-form input,.assistant-form textarea,
 .assistant-form select,.request-output textarea,#catalog input,#catalog select,#catalog textarea,
 #auction-statistics input,#auction-statistics select,.smart-search-panel input,
 .smart-search-panel select,.smart-search-panel textarea,.route-planner-controls select,
 .japan-chassis-row input,.auction-decoder-panel input,.auction-decoder-panel select,
 .auction-decoder-panel textarea,.account-auth-form input{
-  background:#fff!important;color:#1b2732!important;border:1px solid #cbd4dc!important;border-radius:7px!important
+  background:#fff!important;color:#5c432d!important;border:1px solid #e0d3c7!important;border-radius:7px!important
 }
-.calc-form input::placeholder,.assistant-form input::placeholder,.assistant-form textarea::placeholder{color:#8b96a0!important}
+.calc-form input::placeholder,.assistant-form input::placeholder,.assistant-form textarea::placeholder{color:#b0947b!important}
 .calc-result{background:#f5f7f9!important}
-.result-top,.result-label,.result-lines>div,.result-note{color:#65717d!important}
-.result-total,.result-lines b{color:#1c2935!important}
-.result-icon{background:#e7edf2!important;color:#315b7d!important}
-.result-lines,.result-lines>div{border-color:#dce2e8!important}
+.result-top,.result-label,.result-lines>div,.result-note{color:#976e4b!important}
+.result-total,.result-lines b{color:#5c432d!important}
+.result-icon{background:#f2ece7!important;color:#755539!important}
+.result-lines,.result-lines>div{border-color:#eae1da!important}
 .assistant-panel{background:#fff!important}
 .assistant-disclaimer,.smart-search-warning,.account-cloud-notice{
-  border-left:3px solid #8a9bab!important;background:#f1f4f6!important;color:#526170!important
+  border-left:3px solid #b49981!important;background:#f1f4f6!important;color:#825f40!important
 }
-.assistant-disclaimer{border-left-color:#8a9bab!important}
-.process-grid article>span,.checklist-panel li span,.faq-list summary::after{color:#315b7d!important}
+.assistant-disclaimer{border-left-color:#b49981!important}
+.process-grid article>span,.checklist-panel li span,.faq-list summary::after{color:#755539!important}
 .checklist-panel{background:#fff!important}
-.checklist-panel li{color:#465360!important;border-color:#e2e7ec!important}
-.faq-list{border-color:#dce2e8!important}
-.faq-list details{border-bottom:1px solid #dce2e8!important}
-.final-cta{background:#e9eef2!important;border:1px solid #d7e0e7!important}
-.final-cta p{color:#5f6b77!important}
-.site-footer{background:#fff;border-top:1px solid #dce2e8}
-.footer-links,.footer-note,.footer-bottom{color:#65717d!important}
-.social-block{border-color:#dce2e8!important}
-.social-block>strong,.social-links a,.telegram-channel-link{color:#44515e!important}
-.tks-result,.vehicle-results{background:#f5f7f9!important;color:#344453!important;border-color:#dce2e8!important}
+.checklist-panel li{color:#6f5137!important;border-color:#eee7e0!important}
+.faq-list{border-color:#eae1da!important}
+.faq-list details{border-bottom:1px solid #eae1da!important}
+.final-cta{background:#f2ede9!important;border:1px solid #e8ded6!important}
+.final-cta p{color:#8f6947!important}
+.site-footer{background:#fff;border-top:1px solid #eae1da}
+.footer-links,.footer-note,.footer-bottom{color:#976e4b!important}
+.social-block{border-color:#eae1da!important}
+.social-block>strong,.social-links a,.telegram-channel-link{color:#6d4f35!important}
+.tks-result,.vehicle-results{background:#f5f7f9!important;color:#5a422d!important;border-color:#eae1da!important}
 .market-source-card,.smart-search-card,.japan-chassis-card,.account-order-card,
 .account-notification,.auction-stats-card,.auction-stats-results,.vehicle-saved-item,
 .vehicle-compare-table,.saved-search-item,.route-map,.route-summary{
-  background:#fff!important;color:#263747!important;border-color:#dce2e8!important
+  background:#fff!important;color:#5c432d!important;border-color:#eae1da!important
 }
-.smart-search-card h3,.route-summary h3,.account-order-card>strong,.account-notification>strong{color:#1b2732!important}
+.smart-search-card h3,.route-summary h3,.account-order-card>strong,.account-notification>strong{color:#5c432d!important}
 .smart-search-card p,.route-map-note,.route-leg,.route-summary-kicker,
-.account-order-card p,.account-notification p,.account-data-section p{color:#65717d!important}
+.account-order-card p,.account-notification p,.account-data-section p{color:#976e4b!important}
 .smart-search-badge,.japan-chassis-meta span,.account-order-status,.saved-search-item{
-  background:#f1f4f6!important;color:#435260!important;border-color:#d4dde5!important
+  background:#f1f4f6!important;color:#6d5036!important;border-color:#e6dcd3!important
 }
-.smart-search-warning,.japan-chassis-test,.account-cloud-notice{border-color:#cbd4dc!important;color:#526170!important}
+.smart-search-warning,.japan-chassis-test,.account-cloud-notice{border-color:#e0d3c7!important;color:#825f40!important}
 .decoder-risk-high,.decoder-high-attention{color:#a33b36!important}
-.decoder-risk-medium{color:#8a98a6!important}
+.decoder-risk-medium{color:#b2967e!important}
 .decoder-risk-low{color:#32644a!important}
-.decoder-risk-unknown{color:#5f5680!important}
-.auction-stat-metric,.benchmark-card strong,.result-total{color:#1c2935!important}
+.decoder-risk-unknown{color:#8f6947!important}
+.auction-stat-metric,.benchmark-card strong,.result-total{color:#5c432d!important}
 .mobile-dashboard a,.mobile-dashboard a:first-child{
-  background:#fff!important;border:1px solid #dce2e8!important;border-radius:9px!important;
-  box-shadow:0 2px 8px rgba(20,35,50,.04)!important;color:#1b2732!important
+  background:#fff!important;border:1px solid #eae1da!important;border-radius:9px!important;
+  box-shadow:0 2px 8px rgba(76,57,41,.04)!important;color:#5c432d!important
 }
-.mobile-dashboard a strong{color:#1b2732!important}
-.mobile-dashboard a span{color:#65717d!important}
-.mobile-dashboard a::after{color:#315b7d!important}
-.mobile-bottom-nav{background:rgba(255,255,255,.97)!important;border-top:1px solid #dce2e8!important}
+.mobile-dashboard a strong{color:#5c432d!important}
+.mobile-dashboard a span{color:#976e4b!important}
+.mobile-dashboard a::after{color:#755539!important}
+.mobile-bottom-nav{background:rgba(255,255,255,.97)!important;border-top:1px solid #eae1da!important}
 .mobile-bottom-nav a,.mobile-bottom-nav a.primary,.mobile-bottom-nav a:active,
-.mobile-bottom-nav a:focus-visible{color:#526170!important}
-.mobile-bottom-nav a.primary{font-weight:800!important;color:#1c2935!important}
-.menu-toggle{background:#fff!important;color:#1c2935!important;border:1px solid #cbd4dc!important}
-.main-nav.open{background:#fff!important;border-color:#dce2e8!important;box-shadow:0 12px 28px rgba(20,35,50,.12)}
-.main-nav.open a{color:#263747!important;border-color:#e7ebef!important}
-:focus-visible{outline:2px solid #315b7d!important}
+.mobile-bottom-nav a:focus-visible{color:#825f40!important}
+.mobile-bottom-nav a.primary{font-weight:800!important;color:#5c432d!important}
+.menu-toggle{background:#fff!important;color:#5c432d!important;border:1px solid #e0d3c7!important}
+.main-nav.open{background:#fff!important;border-color:#eae1da!important;box-shadow:0 12px 28px rgba(76,57,41,.12)}
+.main-nav.open a{color:#5c432d!important;border-color:#f1ebe5!important}
+:focus-visible{outline:2px solid #755539!important}
 @media(max-width:760px){
- .site-header{background:rgba(255,255,255,.97)!important;border-bottom-color:#dce2e8!important}
+ .site-header{background:rgba(255,255,255,.97)!important;border-bottom-color:#eae1da!important}
  .marketplace-nav-inner{background:transparent}
  .mobile-dashboard{gap:8px}
  .mobile-dashboard a{min-height:88px}
@@ -400,10 +400,10 @@ h1,h2,h3,h4,.brand-name,.main-nav,.marketplace-nav a,.button{
 .ai-assistant-mark{
   width:58px;height:58px;flex:0 0 58px;
   display:inline-flex;align-items:center;justify-content:center;gap:2px;
-  border:1px solid rgba(180,199,216,.28);
+  border:1px solid rgba(214,197,182,.28);
   border-radius:19px;
   background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.035));
-  color:#eaf2f8;
+  color:#f5f1ed;
   box-shadow:0 8px 26px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.12);
   font-size:10px;font-weight:650;letter-spacing:.08em;
 }
@@ -413,26 +413,26 @@ h1,h2,h3,h4,.brand-name,.main-nav,.marketplace-nav a,.button{
 
 
 /* Final neutral palette override: no orange/gold accent remains. */
-:root{--accent:#66727d!important;--blue:#53606c!important}
+:root{--accent:#986f4b!important;--blue:#805d3f!important}
 .hero-photo-caption .hero-photo-kicker,.hero-photo-visual .top-label b,
-.hero-photo-caption small,.final-cta .eyebrow,.final-cta h2 em{color:#c5cdd4!important}
-.hero-photo-visual .note-icon,.hero-photo-visual .note-arrow{color:#c5cdd4!important;background:#ffffff20!important}
-.marketplace-country-links a:hover,.direction-card:hover{border-color:#aab4bd!important}
+.hero-photo-caption small,.final-cta .eyebrow,.final-cta h2 em{color:#dbccbe!important}
+.hero-photo-visual .note-icon,.hero-photo-visual .note-arrow{color:#dbccbe!important;background:#ffffff20!important}
+.marketplace-country-links a:hover,.direction-card:hover{border-color:#c9b29e!important}
 .calc-form input:focus,.calc-form select:focus,.assistant-form input:focus,
 .assistant-form select:focus,.assistant-form textarea:focus,
 #vehicleSearchForm input:focus,#vehicleSearchForm select:focus,
 #catalog input:focus,#catalog select:focus,#catalog textarea:focus,
 #auction-statistics input:focus,#auction-statistics select:focus{
- border-color:#89949e!important;box-shadow:0 0 0 3px rgba(102,114,125,.13)!important
+ border-color:#ae9279!important;box-shadow:0 0 0 3px rgba(152,111,75,.13)!important
 }
 .ai-assistant-mark{
- background:radial-gradient(circle at 28% 22%,rgba(110,190,255,.23),transparent 48%),linear-gradient(145deg,#f1f6fb,#e4ebf4)!important;
- border:1px solid #c9d6e4!important;color:#456f9f!important;
- box-shadow:0 8px 22px rgba(54,93,139,.13),inset 0 1px 0 #fff!important;
+ background:radial-gradient(circle at 28% 22%,rgba(203,181,162,.23),transparent 48%),linear-gradient(145deg,#f9f6f3,#f1ece7)!important;
+ border:1px solid #e2d6cb!important;color:#996f4b!important;
+ box-shadow:0 8px 22px rgba(129,94,64,.13),inset 0 1px 0 #fff!important;
 }
 .ai-assistant-mark svg{stroke:url(#papautoAiGradient)!important;stroke-width:1.8!important}
 .ai-assistant-mark>span{
- background:linear-gradient(110deg,#3478c8 0%,#7556bd 55%,#278f9a 100%);
+ background:linear-gradient(110deg,#9e7c5f 0%,#a7886c 55%,#815e40 100%);
  -webkit-background-clip:text;background-clip:text;color:transparent!important;
  font-weight:800!important;letter-spacing:.04em!important
 }

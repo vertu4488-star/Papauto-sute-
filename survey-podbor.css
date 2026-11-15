@@ -2,21 +2,21 @@
  * This stylesheet only configures visual branding; validation, navigation,
  * question rendering and mobile controls are implemented by SurveyJS.
  */
-:root{color-scheme:light;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#f3f6fa;color:#1e293b}
+:root{color-scheme:light;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#f9f6f4;color:#5c432d}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;min-height:100vh;background:#f3f6fa}
-.pa-header{height:70px;background:#fff;border-bottom:1px solid #e4eaf1;display:flex;justify-content:space-between;align-items:center;padding:0 max(20px,calc((100vw - 910px)/2))}
-.pa-brand{text-decoration:none;color:#19283d;font-size:22px;font-weight:850;letter-spacing:-.04em;display:flex;gap:11px;align-items:center}
-.pa-brand span{background:#192b44;color:#fff;width:40px;height:40px;display:grid;place-items:center;border-radius:11px}
-.pa-back{color:#20588e;text-decoration:none;font-size:14px;font-weight:600}
+body{margin:0;min-height:100vh;background:#f9f6f4}
+.pa-header{height:70px;background:#fff;border-bottom:1px solid #f0eae5;display:flex;justify-content:space-between;align-items:center;padding:0 max(20px,calc((100vw - 910px)/2))}
+.pa-brand{text-decoration:none;color:#5c432d;font-size:22px;font-weight:850;letter-spacing:-.04em;display:flex;gap:11px;align-items:center}
+.pa-brand span{background:#5c432d;color:#fff;width:40px;height:40px;display:grid;place-items:center;border-radius:11px}
+.pa-back{color:#755539;text-decoration:none;font-size:14px;font-weight:600}
 .pa-main{width:min(100% - 28px,900px);margin:23px auto 36px}
 .pa-intro{padding:0 12px 12px}
-.pa-intro h1{font-size:clamp(25px,4vw,37px);letter-spacing:-.05em;margin:0 0 9px;color:#1a2b43}
-.pa-intro p{font-size:14px;color:#65758b;line-height:1.55;margin:0}
-.pa-card{background:#fff;border:1px solid #dfe6ef;box-shadow:0 12px 42px rgba(17,38,70,.065);border-radius:22px;overflow:hidden;padding:0}
+.pa-intro h1{font-size:clamp(25px,4vw,37px);letter-spacing:-.05em;margin:0 0 9px;color:#5c432d}
+.pa-intro p{font-size:14px;color:#96765a;line-height:1.55;margin:0}
+.pa-card{background:#fff;border:1px solid #eee7e0;box-shadow:0 12px 42px rgba(92,67,45,.065);border-radius:22px;overflow:hidden;padding:0}
 #surveyContainer{min-height:370px}
-#surveyContainer .sd-root-modern{--sjs-primary-backcolor:#1760a8;--sjs-primary-forecolor:#fff;--sjs-general-backcolor:#fff;--sjs-general-forecolor:#172c43;--sjs-border-default:#d7e1ef;--sjs-corner-radius:11px;margin:0 auto!important;background:#fff!important}
+#surveyContainer .sd-root-modern{--sjs-primary-backcolor:#805d3f;--sjs-primary-forecolor:#fff;--sjs-general-backcolor:#fff;--sjs-general-forecolor:#5c432d;--sjs-border-default:#ebe2db;--sjs-corner-radius:11px;margin:0 auto!important;background:#fff!important}
 #surveyContainer .sd-container-modern{max-width:none!important}
 #surveyContainer .sd-body{padding:0!important}
 #surveyContainer .sd-page{padding:4px 10px 18px!important}
@@ -24,15 +24,15 @@ body{margin:0;min-height:100vh;background:#f3f6fa}
 #surveyContainer input,#surveyContainer select,#surveyContainer textarea{font-size:16px!important;min-height:44px}
 #surveyContainer .sd-btn{min-height:48px;border-radius:11px;font-weight:700}
 #surveyContainer .sd-description{font-size:14px;line-height:1.5}
-.pa-status{font-size:13px;color:#365e80;min-height:18px;margin:10px 20px 15px;line-height:1.6}
-.pa-footer{text-align:center;color:#708097;font-size:12px;padding:8px 15px 25px}
-.pa-footer a{color:#4e7194}
-.pa-dialog{width:min(90vw,460px);border:0;border-radius:23px;padding:29px 25px;text-align:center;box-shadow:0 20px 70px #0e203652;color:#1d3047}
-.pa-dialog::backdrop{background:#0d192ab3}
+.pa-status{font-size:13px;color:#7a593c;min-height:18px;margin:10px 20px 15px;line-height:1.6}
+.pa-footer{text-align:center;color:#a28165;font-size:12px;padding:8px 15px 25px}
+.pa-footer a{color:#976e4b}
+.pa-dialog{width:min(90vw,460px);border:0;border-radius:23px;padding:29px 25px;text-align:center;box-shadow:0 20px 70px #4c392952;color:#5c432d}
+.pa-dialog::backdrop{background:#4c3929b3}
 .pa-dialog h2{font-size:25px;letter-spacing:-.04em;margin:12px 0}
-.pa-dialog p{font-size:15px;line-height:1.55;color:#5b6d81;margin:0 0 19px}
+.pa-dialog p{font-size:15px;line-height:1.55;color:#936c49;margin:0 0 19px}
 .pa-dialog .pa-check{width:63px;height:63px;border-radius:50%;background:#ddf7e7;color:#168148;margin:auto;display:grid;place-items:center;font-size:34px;font-weight:800}
-.pa-dialog button{border:none;border-radius:11px;min-height:50px;width:100%;font-weight:700;font-size:16px;color:#fff;background:#1760a8;cursor:pointer}
+.pa-dialog button{border:none;border-radius:11px;min-height:50px;width:100%;font-weight:700;font-size:16px;color:#fff;background:#805d3f;cursor:pointer}
 @media(max-width:650px){
  .pa-header{height:64px;padding:0 16px}
  .pa-brand{font-size:19px}.pa-brand span{width:35px;height:35px;font-size:17px}
@@ -47,12 +47,12 @@ body{margin:0;min-height:100vh;background:#f3f6fa}
  .pa-footer{padding-top:6px}
 }
 /* Dedicated dialpad is always touchable even if iOS hides its native keyboard. */
-.pa-phonepad{margin:15px auto 2px;max-width:350px;padding:14px;border-radius:16px;border:1px solid #d3e0f0;background:#f5f9fe}
-.pa-phonepad-title{margin:0 0 12px;text-align:center;color:#355575;font-size:14px;font-weight:650}
+.pa-phonepad{margin:15px auto 2px;max-width:350px;padding:14px;border-radius:16px;border:1px solid #eae1d9;background:#faf9f7}
+.pa-phonepad-title{margin:0 0 12px;text-align:center;color:#725338;font-size:14px;font-weight:650}
 .pa-phonepad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-.pa-phonepad-key{border:1px solid #c4d5e8;background:#fff;min-height:52px;border-radius:12px;color:#203d59;font:700 24px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;touch-action:manipulation;-webkit-tap-highlight-color:transparent;cursor:pointer}
-.pa-phonepad-key:focus-visible{outline:3px solid #b2cff2;outline-offset:2px}
-.pa-phonepad-key:active{background:#dfeeff;transform:scale(.97)}
+.pa-phonepad-key{border:1px solid #e1d5cb;background:#fff;min-height:52px;border-radius:12px;color:#5c432d;font:700 24px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;touch-action:manipulation;-webkit-tap-highlight-color:transparent;cursor:pointer}
+.pa-phonepad-key:focus-visible{outline:3px solid #dfd1c5;outline-offset:2px}
+.pa-phonepad-key:active{background:#f3efeb;transform:scale(.97)}
 .pa-phonepad-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
-.pa-phonepad-actions button{padding:10px 8px;min-height:44px;background:#fff;color:#1b538e;border:1px solid #bdd0e5;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;touch-action:manipulation}
+.pa-phonepad-actions button{padding:10px 8px;min-height:44px;background:#fff;color:#715338;border:1px solid #ded0c4;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;touch-action:manipulation}
 @media(max-width:650px){.pa-phonepad{max-width:none;margin:11px 0 3px;padding:12px}.pa-phonepad-key{min-height:51px}}

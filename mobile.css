@@ -23,7 +23,7 @@
     margin: 0;
     padding: 9px var(--mobile-gutter);
     gap: 10px;
-    background: rgba(9, 15, 22, .94);
+    background: rgba(76,57,41, .94);
     border-bottom: 1px solid rgba(255,255,255,.09);
     backdrop-filter: blur(18px);
   }
@@ -43,8 +43,8 @@
     padding: 7px 11px;
     border: 1px solid rgba(255,255,255,.16);
     border-radius: 10px;
-    background: #111c27;
-    color: #f4f7fa;
+    background: #4c3929;
+    color: #f9f7f5;
   }
   .main-nav {
     position: absolute;
@@ -58,7 +58,7 @@
     padding: 9px;
     border: 1px solid rgba(255,255,255,.13);
     border-radius: 15px;
-    background: #111a24;
+    background: #4c3929;
     box-shadow: 0 18px 45px rgba(0,0,0,.42);
   }
   .main-nav.open { display: flex; }
@@ -91,7 +91,7 @@
   .hero-lead {
     max-width: 570px;
     margin: 0;
-    color: #aab8c5;
+    color: #ccb6a3;
     font-size: 13px;
     line-height: 1.52;
   }
@@ -132,10 +132,10 @@
     gap: 8px;
     padding: 13px;
     overflow: hidden;
-    border: 1px solid rgba(139,213,255,.19);
+    border: 1px solid rgba(213,196,181,.19);
     border-radius: 15px;
-    background: linear-gradient(145deg, #182a38 0%, #101a25 100%);
-    color: #f4f7fa;
+    background: linear-gradient(145deg, #5c432d 0%, #4c3929 100%);
+    color: #f9f7f5;
     text-decoration: none;
     box-shadow: 0 8px 20px rgba(0,0,0,.12);
     -webkit-tap-highlight-color: transparent;
@@ -145,13 +145,13 @@
     position: absolute;
     top: 10px;
     right: 12px;
-    color: #a9bdcc;
+    color: #ceb9a7;
     font-size: 15px;
     font-weight: 700;
   }
   .mobile-dashboard a:first-child {
-    border-color: rgba(169,189,204,.48);
-    background: linear-gradient(145deg, #26313b 0%, #151e27 100%);
+    border-color: rgba(206,185,167,.48);
+    background: linear-gradient(145deg, #5c432d 0%, #4c3929 100%);
   }
   .mobile-dashboard a strong {
     max-width: 88%;
@@ -160,7 +160,7 @@
     font-weight: 750;
   }
   .mobile-dashboard a span {
-    color: #a5b5c3;
+    color: #c9b39f;
     font-size: 10px;
     line-height: 1.35;
   }
@@ -181,7 +181,7 @@
   }
   .section-title-row > p {
     margin: 9px 0 0;
-    color: #9eacb9;
+    color: #c0aa97;
     font-size: 12px;
     line-height: 1.5;
   }
@@ -288,8 +288,8 @@
     grid-template-columns: repeat(4, minmax(0,1fr));
     gap: 2px;
     padding: 7px 7px calc(7px + env(safe-area-inset-bottom));
-    border-top: 1px solid rgba(139,213,255,.18);
-    background: rgba(8,14,21,.96);
+    border-top: 1px solid rgba(213,196,181,.18);
+    background: rgba(76,57,41,.96);
     backdrop-filter: blur(18px);
   }
   .mobile-bottom-nav a {
@@ -300,16 +300,16 @@
     align-items: center;
     justify-content: center;
     gap: 3px;
-    color: #aebdca;
+    color: #cfbba9;
     text-decoration: none;
     font-size: 9px;
     line-height: 1.1;
     -webkit-tap-highlight-color: transparent;
   }
   .mobile-bottom-nav a span { font-size: 17px; line-height: 1; }
-  .mobile-bottom-nav a.primary { color: #a9bdcc; font-weight: 750; }
+  .mobile-bottom-nav a.primary { color: #ceb9a7; font-weight: 750; }
   .mobile-bottom-nav a:active,
-  .mobile-bottom-nav a:focus-visible { color: #a9bdcc; }
+  .mobile-bottom-nav a:focus-visible { color: #ceb9a7; }
   [id] { scroll-margin-top: 76px; }
 }
 
@@ -345,9 +345,9 @@
   .calc-form label,.assistant-form label,.auction-stats-section label{font-size:11px}
   .calc-form input,.calc-form select,.assistant-form input,.assistant-form select,.assistant-form textarea,.auction-stats-section input,.auction-stats-section select{min-height:43px;font-size:16px;padding:10px 11px}
   .form-grid{gap:9px}
-  .mobile-bottom-nav{padding:6px 6px calc(6px + env(safe-area-inset-bottom));background:rgba(10,16,23,.96);border-top-color:rgba(169,189,204,.18)}
+  .mobile-bottom-nav{padding:6px 6px calc(6px + env(safe-area-inset-bottom));background:rgba(76,57,41,.96);border-top-color:rgba(206,185,167,.18)}
   .mobile-bottom-nav a{font-size:8px;min-height:45px}
   .mobile-bottom-nav a span{font-size:15px}
-  .mobile-bottom-nav a.primary,.mobile-bottom-nav a:active,.mobile-bottom-nav a:focus-visible{color:#a9bdcc}
+  .mobile-bottom-nav a.primary,.mobile-bottom-nav a:active,.mobile-bottom-nav a:focus-visible{color:#ceb9a7}
   [id]{scroll-margin-top:68px}
 }
