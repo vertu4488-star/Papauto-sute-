@@ -49,7 +49,11 @@ try{
    const response=await page.goto(root+url,{waitUntil:'load',timeout:45000});
    assert.equal(response.status(),200,'Broken menu destination '+url);
    if(url.startsWith('/gallery.html')){
-     assert(await page.locator('.gallery-card').count()>100,'Gallery should contain real verified cars');
+     await page.locator('.gallery-card').first().waitFor({state:'visible',timeout:15000});
+     const registry=await page.evaluate(async()=>await (await fetch('/data/gallery-lots.json')).json());
+     assert.equal(registry.lot_count,132,'Gallery must offer all 132 validated cars even if paginated');
+     const card=page.locator('.gallery-card').first();
+     assert(await card.locator('img').count()>0,'Card must include actual auction photo and sheet');
    }else if(url.includes('models-100')){
      assert((await page.locator('h1').innerText()).includes('Марки и модели'),'Model guide must be honest');
    }else{
