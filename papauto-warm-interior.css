@@ -6,9 +6,9 @@
 :root:has(body.papauto-warm-interior){background:#faf6f1!important;color-scheme:light}
 body.papauto-warm-interior{
   --bg:#faf6f1;--panel:#fffcf8;--panel2:#f6eee5;--text:#302b28;
-  --muted:#6d625b;--line:#e6d8ca;--accent:#4c7090;--blue:#4c7090;
+  --muted:#6d625b;--line:#e6d8ca;--accent:#936c49;--blue:#936c49;
   --gal-paper:#faf6f1;--gal-ink:#302b28;--gal-muted:#6d625b;
-  --gal-line:#e6d8ca;--gal-blue:#4c7090;--gal-navy:#405f7f;
+  --gal-line:#e6d8ca;--gal-blue:#936c49;--gal-navy:#805d3f;
   min-height:100vh;
   background:radial-gradient(ellipse 80% 470px at 87% 1%,#f0e3d7 0,transparent 75%),linear-gradient(#fcfaf7,#f8f1e9 58%,#fcfaf7)!important;
   color:#302b28!important;
@@ -19,7 +19,7 @@ body.papauto-warm-interior a:focus-visible,
 body.papauto-warm-interior button:focus-visible,
 body.papauto-warm-interior input:focus-visible,
 body.papauto-warm-interior select:focus-visible{
-  outline:3px solid #9db6cb!important;outline-offset:3px;
+  outline:3px solid #c9b39f!important;outline-offset:3px;
 }
 /* Brand bars and footers: same milk-and-sand palette as the approved home. */
 body.papauto-warm-interior .site-header,
@@ -61,7 +61,7 @@ body.papauto-warm-interior :is(.section-title-row,.country-callout,.gallery-sect
 }
 body.papauto-warm-interior :is(.country-hero,.section-title-row,.catalog-intro,.gallery-hero,.lead,.hero,.pa-intro) h1 em,
 body.papauto-warm-interior :is(.section-title-row,.gallery-hero) h2 em{
-  color:#4c7090!important;
+  color:#936c49!important;
   font-style:italic!important;
   font-weight:300!important;
 }
@@ -106,7 +106,7 @@ body.papauto-warm-interior :is(.direction-card,.country-steps article,.process-g
 body.papauto-warm-interior :is(.faq-list details,.priority-block) p{
   color:#655b53!important;
 }
-body.papauto-warm-interior .card-link{color:#446988!important;border-color:#e6d8ca!important}
+body.papauto-warm-interior .card-link{color:#896443!important;border-color:#e6d8ca!important}
 body.papauto-warm-interior .section-title-row>p{color:#655c55!important}
 body.papauto-warm-interior .final-cta,
 body.papauto-warm-interior .checklist-panel{
@@ -118,7 +118,7 @@ body.papauto-warm-interior .final-cta :is(h2,p),
 body.papauto-warm-interior .checklist-panel :is(h2,p){color:#443b35!important}
 body.papauto-warm-interior .button-primary,
 body.papauto-warm-interior .header-cta{
-  background:#4c7090!important;color:#fff!important;border:1px solid #4c7090!important;
+  background:#936c49!important;color:#fff!important;border:1px solid #936c49!important;
   border-radius:999px!important;font-weight:530!important;
 }
 body.papauto-warm-interior .button-primary span{color:#fff!important}
@@ -152,29 +152,29 @@ body.papauto-warm-interior .lead{
   color:#302b28!important;background:linear-gradient(113deg,#f8eee4,#ece0d5)!important;
   border:1px solid #e0d1c2!important;box-shadow:none!important;
 }
-body.papauto-warm-interior .lead :is(.numbers strong,.eyebrow){color:#4e6984!important}
+body.papauto-warm-interior .lead :is(.numbers strong,.eyebrow){color:#8d6745!important}
 body.papauto-warm-interior .lead .numbers span{color:#706258!important}
 body.papauto-warm-interior .chip{background:#f2e6d9!important;color:#6e5b4a!important}
-body.papauto-warm-interior .unit .foot a{color:#446988!important;border-color:#d8c8b7!important}
-body.papauto-warm-interior .unit .foot .cta{background:#4c7090!important;color:#fff!important;border-color:#4c7090!important}
+body.papauto-warm-interior .unit .foot a{color:#896443!important;border-color:#d8c8b7!important}
+body.papauto-warm-interior .unit .foot .cta{background:#936c49!important;color:#fff!important;border-color:#936c49!important}
 /* True auction-gallery data must remain unchanged: style only shells, never images. */
 body.papauto-warm-interior .gallery-hero{
   background:linear-gradient(115deg,#f8eee3,#efe0d2)!important;
   color:#302b28!important;border-bottom:1px solid #e4d5c7!important;
 }
 body.papauto-warm-interior .gallery-hero :is(h1,strong){color:#302b28!important}
-body.papauto-warm-interior .gallery-hero h1 em{color:#4c7090!important}
+body.papauto-warm-interior .gallery-hero h1 em{color:#936c49!important}
 body.papauto-warm-interior .gallery-hero-facts{
   background:#fffbf6bd!important;border-color:#d9c8b9!important;color:#302b28!important;
 }
 body.papauto-warm-interior .gallery-hero-facts :is(span,p){color:#706057!important}
 body.papauto-warm-interior .gallery-main-cta,
-body.papauto-warm-interior .gallery-nav-cta{background:#4c7090!important;color:#fff!important}
+body.papauto-warm-interior .gallery-nav-cta{background:#936c49!important;color:#fff!important}
 body.papauto-warm-interior .gallery-secondary-cta{
   background:#fffcf8!important;color:#554a40!important;border-color:#d4c1ae!important;
 }
 body.papauto-warm-interior .gallery-tab:not(.is-active){background:#f7ece2!important;color:#66574b!important;border-color:#e6d8ca!important}
-body.papauto-warm-interior .gallery-tab.is-active{background:#4c7090!important;border-color:#4c7090!important;color:#fff!important}
+body.papauto-warm-interior .gallery-tab.is-active{background:#936c49!important;border-color:#936c49!important;color:#fff!important}
 body.papauto-warm-interior .pa-real-lot{background:#fffcf8!important;border-color:#e6d8ca!important}
 body.papauto-warm-interior .pa-real-status{background:#f9f0e7!important;border-color:#e6d8ca!important}
 /* Dedicated SurveyJS request flow: visual colors only, keep interactions untouched. */
@@ -191,7 +191,7 @@ body.papauto-warm-interior .pa-card{
   box-shadow:0 14px 40px rgba(89,62,43,.07)!important;
 }
 body.papauto-warm-interior #surveyContainer .sd-root-modern{
-  --sjs-primary-backcolor:#4c7090!important;
+  --sjs-primary-backcolor:#936c49!important;
   --sjs-general-backcolor:#fffcf8!important;
   --sjs-general-forecolor:#302b28!important;
   --sjs-border-default:#e6d8ca!important;
@@ -236,7 +236,7 @@ body.papauto-warm-interior .country-hero h1 em,
 body.papauto-warm-interior .section-title-row h1 em{
   font-style:italic!important;
   font-weight:250!important;
-  color:#4c7090!important;
+  color:#936c49!important;
 }
 body.papauto-warm-interior .country-callout h2{
   font-family:"PapAutoManrope","Helvetica Neue",Arial,sans-serif!important;
@@ -266,7 +266,7 @@ body.papauto-warm-interior .hero :is(h1,h2){
   font-weight:280!important;
 }
 body.papauto-warm-interior .hero h1 :is(span,em){
-  color:#4c7090!important;
+  color:#936c49!important;
   font-weight:290!important;
 }
 body.papauto-warm-interior .hero :is(p,.lead,.hero-lead){
@@ -287,3 +287,50 @@ body.papauto-warm-interior .hero :is(.figs>span,.figures>div,.stats>div){
 body.papauto-warm-interior .hero .eyebrow{
   color:#937761!important;
 }
+
+/* PAPAUTO 2026-11-15 unified warm design on ALL interior pages.
+   Never recolor actual auction photo or original auction sheet pixels. */
+body.papauto-warm-interior{
+ --accent:#68422f;--blue:#68422f;--navy:#503426;--pa-navy:#68422f;
+ --gal-navy:#68422f;--gal-blue:#68422f;--gal-paper:#faf5ee;
+ --gal-ink:#352a24;--gal-muted:#79685a;--gal-line:#e4d3c1;
+ --sjs-primary-backcolor:#68422f;--sjs-general-backcolor:#fffaf4;
+ color-scheme:light;
+}
+body.papauto-warm-interior :is(.gallery-content,.gallery-main,.lot-main,.pa-main,.catalog-page){background:transparent!important}
+body.papauto-warm-interior :is(.gallery-header,.lot-header,.pa-header,.site-header){background:#fffaf3!important;border-color:#e8d7c5!important;color:#382b22!important}
+body.papauto-warm-interior :is(.gallery-card,.lot-information,.lot-sheet,.lot-photo,.gallery-controls,.pa-card,.gallery-notice,.gallery-next,.gallery-hero-facts,.gallery-tab:not(.is-active)){
+ border-color:#e1ceba!important;background:#fffcf8!important;color:#392d25!important;
+ box-shadow:0 8px 22px rgba(82,52,30,.065)!important;
+}
+body.papauto-warm-interior :is(.gallery-card-photo,.gallery-thumbnails,.gallery-thumb,.lot-photo a,.lot-sheet img,.gallery-viewer-media img){background:#f0e4d8!important}
+body.papauto-warm-interior :is(.gallery-card-head,.gallery-card-footer,.gallery-list-head,.gallery-card-body,.lot-fact,.gallery-fact){border-color:#e8d8c8!important}
+body.papauto-warm-interior :is(.gallery-card-head,.gallery-card-footer){background:#fff9f2!important}
+body.papauto-warm-interior :is(.gallery-market,.gallery-section-title .gallery-eyebrow,.lot-label,.lot-back,.gallery-link,.gallery-card-footer a,.gallery-variant,.gallery-logo span){color:#76513a!important}
+body.papauto-warm-interior :is(.gallery-card-body h3,.gallery-fact strong,.gallery-section-title h2,.lot-heading h1,.lot-layout h2,.lot-fact strong,.gallery-price strong){color:#352820!important}
+body.papauto-warm-interior :is(.gallery-description,.gallery-count,.gallery-list-sub,.gallery-variant,.lot-description,.lot-help,.lot-sheet p,.lot-status,.lot-fact span,.gallery-fact span,.gallery-notice,.lot-caution,.lot-price p,.gallery-viewer-caption){color:#75665a!important}
+body.papauto-warm-interior :is(.gallery-grade,.gallery-photo-indicator,.lot-price,.lot-caution){background:#f8e6d0!important;color:#68452f!important;border-color:#e0c19f!important}
+body.papauto-warm-interior :is(.gallery-main-cta,.gallery-nav-cta,.gallery-tab.is-active,.gallery-apply,.gallery-next a,.lot-apply,.lot-apply-wide,.button-primary,.header-cta){background:#68422f!important;color:#fffaf5!important;border-color:#68422f!important}
+body.papauto-warm-interior :is(.gallery-full,.gallery-detail,.gallery-more,.gallery-secondary-cta,.button-secondary){background:#f8eadb!important;color:#63422f!important;border-color:#dbc0a5!important}
+body.papauto-warm-interior :is(.gallery-fact,.lot-fact){border-bottom-color:#eadccd!important}
+body.papauto-warm-interior :is(.gallery-controls input,.gallery-controls select,.pa-card input,.pa-card select,.lot-information input,.lot-information select){
+ background:#fffefb!important;color:#30271f!important;border-color:#ddc4aa!important;
+}
+body.papauto-warm-interior :is(.gallery-search,.gallery-search:focus,input:focus-visible,select:focus-visible){outline-color:#b9906a!important}
+body.papauto-warm-interior .gallery-viewer{background:#3a271e!important;color:#fff8ef!important}
+body.papauto-warm-interior .gallery-viewer::backdrop{background:rgba(39,24,16,.85)}
+body.papauto-warm-interior .gallery-viewer :is(button,.gallery-viewer-thumbs button){background:#6c4b35!important;color:#fffaf5!important;border-color:#886349!important}
+body.papauto-warm-interior .gallery-viewer #gallery-viewer-caption{color:#f0dec9!important}
+body.papauto-warm-interior .gallery-suggestions{background:#fffaf4!important;border-color:#dec7ad!important}
+body.papauto-warm-interior .gallery-suggestion:hover,
+body.papauto-warm-interior .gallery-suggestion[aria-selected="true"]{background:#efdecc!important}
+body.papauto-warm-interior #surveyContainer :is(.sd-btn,.sd-btn--action,.sd-action-bar-item){--sjs-primary-backcolor:#68422f!important}
+body.papauto-warm-interior :is(.gallery-section-title,.gallery-list-head,.gallery-footer,.lot-footer){color:#66584d!important}
+body.papauto-warm-interior :is(.gallery-hero,.lot-heading,.pa-intro){color:#382c24!important}
+/* The approved warm homepage retains its layout; only its accents change. */
+body.pa-thursday-home{
+ --pa-paper:#fcf8f3;--pa-ink:#302922;--pa-quiet:#746559;--pa-line:#e6d7c5;--pa-navy:#65412e;
+ --accent:#68422f;--blue:#68422f;--gal-blue:#68422f;--gal-navy:#68422f;color-scheme:light;
+}
+body.pa-thursday-home :is(.button-primary,.header-cta,.gallery-tab.is-active){background:#68422f!important;border-color:#68422f!important;color:#fffaf6!important}
+body.pa-thursday-home :is(input,select,textarea){accent-color:#68422f}
