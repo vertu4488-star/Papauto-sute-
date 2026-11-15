@@ -7,9 +7,14 @@ const BASE='http://127.0.0.1:8765/gallery.html';
  const findings=[];
  for(const width of [1440,390,320]){
   const page=await browser.newPage({viewport:{width,height:width===1440?900:780},deviceScaleFactor:1,isMobile:width<500,hasTouch:width<500});
-  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  const errors=[],failedRequests=[];
+  page.on('pageerror',e=>errors.push(e.message));
   page.on('console',m=>{if(m.type()==='error')errors.push('console: '+m.text());});
-  page.on('requestfailed',r=>{if(/127\.0\.0\.1:8765/.test(r.url()))errors.push('local request: '+r.url()+' '+r.failure()?.errorText);});
+  page.on('requestfailed',r=>{
+    const detail={url:r.url(),reason:r.failure()?.errorText||'unknown'};
+    failedRequests.push(detail);
+    if(r.url().startsWith('http://127.0.0.1:8765/'))errors.push('local request: '+detail.url+' '+detail.reason);
+  });
   await page.goto(BASE,{waitUntil:'load',timeout:45000});
   try{
     await page.waitForFunction(()=>{const n=JSON.parse(document.querySelector('#gallery-bootstrap')?.textContent||'{}').lots?.length;return n&&document.querySelector('#gallery-count')?.textContent.includes('Найдено '+n);},{timeout:8000});
@@ -111,7 +116,7 @@ const BASE='http://127.0.0.1:8765/gallery.html';
   assert.equal(await page.locator('#gallery-more').isHidden(),true,'No more button after last page');
   const overflowAfter=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
   assert(overflowAfter<=2,'Expanded gallery overflows viewport');
-  assert.equal(errors.length,0,'Page errors: '+JSON.stringify(errors));
+  assert.equal(errors.length,0,'Page errors: '+JSON.stringify({errors,failedRequests}));
   if(width===390||width===1440){
    await page.locator('#gallery-grid').scrollIntoViewIfNeeded();
    await page.screenshot({path:width===390?'gallery-mobile.png':'gallery-desktop.png',fullPage:false});
