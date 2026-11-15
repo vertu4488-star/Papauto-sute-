@@ -47,6 +47,49 @@ QUARANTINED_OUTDOOR_MEDIA = {
 }
 
 
+# Only UI CSS declarations get recolored; never alter real auction images,
+# embedded data, auction records, listing IDs or hyperlinks.
+def _warm_color_code(value: str) -> str:
+    import colorsys
+    h = value.lstrip("#")
+    if len(h) not in (3, 4, 6, 8):
+        return value
+    if len(h) <= 4:
+        h = "".join(char * 2 for char in h)
+    red, green, blue = (int(h[pos:pos+2], 16) for pos in (0, 2, 4))
+    if not (blue > red + 5 and blue >= green - 12):
+        return value
+    light = (max(red, green, blue) + min(red, green, blue)) / 510
+    sat = .30 if light < .14 else (.34 if light < .45 else (.25 if light < .7 else .28))
+    light = min(.975, .23 if light < .14 else (.27 if light < .24 else light))
+    red, green, blue = colorsys.hls_to_rgb(28 / 360, light, sat)
+    rgb = "".join(f"{round(channel*255):02x}" for channel in (red, green, blue))
+    return "#" + rgb + (h[6:] if len(h) == 8 else "")
+
+
+def _warm_inline_css(html: str) -> str:
+    # Inline styles in older HTML files used a separate blue palette.
+    pattern = re.compile(r"#[a-fA-F0-9]{3,8}\\b")
+    def recolor(css: str) -> str:
+        return pattern.sub(lambda match: _warm_color_code(match.group(0)), css)
+    html = re.sub(
+        r"<style\\b[^>]*>[\\s\\S]*?</style>",
+        lambda match: recolor(match.group(0)), html, flags=re.I,
+    )
+    html = re.sub(
+        r"\\bstyle=(['\\\"])(.*?)\\1",
+        lambda match: "style=" + match.group(1) + recolor(match.group(2)) + match.group(1),
+        html, flags=re.I | re.S,
+    )
+    html = re.sub(
+        r"<meta\\b[^>]*\\bname=['\\\"]theme-color['\\\"][^>]*>",
+        lambda match: re.sub(r"\\bcontent=['\\\"][^'\\\"]+['\\\"]",
+                             'content="#f8f1e8"', match.group(0), count=1, flags=re.I),
+        html, flags=re.I,
+    )
+    return html
+
+
 def copy_public_files() -> list[str]:
     from verify_publication_approval import verify_frozen_inputs, verify_published_output
     # Block unapproved new/edited lot data, photos and sheets BEFORE any build output.
@@ -330,32 +373,31 @@ def copy_public_files() -> list[str]:
             if (not (TARGET / hero_asset).is_file()
                     or f'<img src="/{hero_asset}"' not in html):
                 raise RuntimeError("PAPAUTO_HERO: approved BMW artwork stripped from public homepage")
-        # Keep all interior pages in the same approved warm PapAuto visual system.
-        # Inject a small presentation layer AFTER legacy page styles, without
-        # rewriting source HTML or modifying any auction media / lead form JS.
-        # Search-engine verification HTML is often a plain token without a
-        # document head/body. Leave those verification files completely intact.
-        if (page.name != "index.html" and "</head>" in html.lower()
-                and re.search(r"<body\b", html, flags=re.I)):
+        # Every customer-facing page receives the same final warm stylesheet.
+        # Leave search engine verification HTML (no head/body) untouched.
+        if "</head>" in html.lower() and re.search(r"<body\\b", html, flags=re.I):
+            html = _warm_inline_css(html)
             warm_stylesheet = "papauto-warm-interior.css"
             if not (TARGET / warm_stylesheet).is_file():
-                raise RuntimeError("PAPAUTO_WARM: interior theme CSS was not copied")
+                raise RuntimeError("PAPAUTO_WARM: site theme CSS missing")
             html = re.sub(
                 r"</head>",
-                '<link rel="stylesheet" href="/papauto-warm-interior.css?v=20261114-warm-v3"></head>',
+                '<link rel="stylesheet" href="/papauto-warm-interior.css?v=20261115-all-site-v4"></head>',
                 html, count=1, flags=re.I,
             )
-            def add_interior_skin(match):
-                tag = match.group(0)
-                # Respect existing body classes and do not alter other attributes.
-                if 'class="' in tag:
-                    return tag.replace('class="', 'class="papauto-warm-interior ', 1)
-                if "class='" in tag:
-                    return tag.replace("class='", "class='papauto-warm-interior ", 1)
-                return tag[:-1] + ' class="papauto-warm-interior">'
-            html, body_matches = re.subn("<body([^>]*)>", add_interior_skin, html, count=1, flags=re.I)
-            if body_matches != 1 or html.count("papauto-warm-interior.css") != 1:
-                raise RuntimeError("PAPAUTO_WARM: missing or duplicate interior theme on " + page.name)
+            if page.name != "index.html":
+                def add_skin(match):
+                    tag = match.group(0)
+                    if 'class="' in tag:
+                        return tag.replace('class="', 'class="papauto-warm-interior ', 1)
+                    if "class='" in tag:
+                        return tag.replace("class='", "class='papauto-warm-interior ", 1)
+                    return tag[:-1] + ' class="papauto-warm-interior">'
+                html, count = re.subn("<body([^>]*)>", add_skin, html, count=1, flags=re.I)
+                if count != 1:
+                    raise RuntimeError("PAPAUTO_WARM: body not tagged " + page.name)
+            if html.count("papauto-warm-interior.css") != 1:
+                raise RuntimeError("PAPAUTO_WARM: stylesheet missing/duplicated " + page.name)
         page.write_text(html, encoding="utf-8")
         if re.search(r"<img[^>]+src\s*=\s*[\"']https?://", html, flags=re.I):
             raise RuntimeError("External vehicle photograph found: " + page.name)
