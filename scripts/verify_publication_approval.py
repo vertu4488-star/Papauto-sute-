@@ -32,14 +32,14 @@ FROZEN_PREMIUM_CARD_FNV64 = (
     "51cb1dff35a98916", "bdd3cc10b2992b06", "5e5d7adc020a5bf8",
     "d20c60b553a6f0de", "56f2513f6141a0f8", "c4bc734e596b3236",
 )
-CARD_RE = re.compile(r'<article\\b[^>]*class="[^"]*\\b(?:gallery-card|real-card)\\b[^"]*"[^>]*>[\\s\\S]*?</article>', re.I)
-PREMIUM_RE = re.compile(r'<article class="real-card"[^>]*>[\\s\\S]*?</article>')
-VALID_IMAGE = re.compile(r'^/assets/(?:auction/(?:home|approved)|premium-auctions)/[a-zA-Z0-9._-]+\\.(?:jpg|jpeg|png|webp)$', re.I)
+CARD_RE = re.compile(r'<article\b[^>]*class="[^"]*\b(?:gallery-card|real-card)\b[^"]*"[^>]*>[\s\S]*?</article>', re.I)
+PREMIUM_RE = re.compile(r'<article class="real-card"[^>]*>[\s\S]*?</article>')
+VALID_IMAGE = re.compile(r'^/assets/(?:auction/(?:home|approved)|premium-auctions)/[a-zA-Z0-9._-]+\.(?:jpg|jpeg|png|webp)$', re.I)
 BAD_ASSET_TERMS = re.compile(r'/(?:demo|visual|stock|street|illustration|anime|generated|ai-generated)/', re.I)
 
 
 def _git_blob_id(data: bytes) -> str:
-    return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\\0" + data).hexdigest()
+    return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
 
 
 def _fnv_utf16(text: str) -> str:
@@ -65,7 +65,7 @@ def verify_frozen_inputs() -> None:
 
 
 def _validate_card_links(card: str, page: str) -> None:
-    for address in re.findall(r'<a\\b[^>]*\\bhref=["\\\']([^"\\\']+)["\\\']', card, re.I):
+    for address in re.findall(r'<a\b[^>]*\bhref=["\\']([^"\\']+)["\\']', card, re.I):
         parsed = urlsplit(address.strip())
         # Auction cards may open ONLY self-hosted photos, sheets, internal
         # details, and the PapAuto lead form. Never send visitors to a seller.
@@ -73,7 +73,7 @@ def _validate_card_links(card: str, page: str) -> None:
             raise RuntimeError("PAPAUTO_NO_EXTERNAL_LINKS: " + page)
         if not address.startswith(("/", "#")):
             raise RuntimeError("PAPAUTO_NO_EXTERNAL_LINKS: invalid relative URL: " + page)
-    for src in re.findall(r'<img\\b[^>]*\\bsrc=["\\\']([^"\\\']+)["\\\']', card, re.I):
+    for src in re.findall(r'<img\b[^>]*\bsrc=["\\']([^"\\']+)["\\']', card, re.I):
         if not VALID_IMAGE.fullmatch(src) or BAD_ASSET_TERMS.search(src):
             raise RuntimeError("PAPAUTO_AUCTION_ONLY: invalid card image: " + page)
 
@@ -85,8 +85,8 @@ def _valid_media(target: Path, asset: str) -> None:
     if not file.is_file() or file.is_symlink() or file.stat().st_size < 500:
         raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: image file missing " + asset)
     header = file.read_bytes()[:12]
-    if not (header.startswith(b"\\xff\\xd8\\xff")
-            or header.startswith(b"\\x89PNG\\r\\n\\x1a\\n")
+    if not (header.startswith(b"\xff\xd8\xff")
+            or header.startswith(b"\x89PNG\r\n\x1a\n")
             or (header[:4] == b"RIFF" and header[8:12] == b"WEBP")):
         raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: invalid image bytes " + asset)
 
