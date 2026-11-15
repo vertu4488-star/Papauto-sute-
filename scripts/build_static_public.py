@@ -69,21 +69,21 @@ def _warm_color_code(value: str) -> str:
 
 def _warm_inline_css(html: str) -> str:
     # Inline styles in older HTML files used a separate blue palette.
-    pattern = re.compile(r"#[a-fA-F0-9]{3,8}\\b")
+    pattern = re.compile(r"#[a-fA-F0-9]{3,8}\b")
     def recolor(css: str) -> str:
         return pattern.sub(lambda match: _warm_color_code(match.group(0)), css)
     html = re.sub(
-        r"<style\\b[^>]*>[\\s\\S]*?</style>",
+        r"<style\b[^>]*>[\s\S]*?</style>",
         lambda match: recolor(match.group(0)), html, flags=re.I,
     )
     html = re.sub(
-        r"\\bstyle=(['\\\"])(.*?)\\1",
+        r"\bstyle=(['\\"])(.*?)\1",
         lambda match: "style=" + match.group(1) + recolor(match.group(2)) + match.group(1),
         html, flags=re.I | re.S,
     )
     html = re.sub(
-        r"<meta\\b[^>]*\\bname=['\\\"]theme-color['\\\"][^>]*>",
-        lambda match: re.sub(r"\\bcontent=['\\\"][^'\\\"]+['\\\"]",
+        r"<meta\b[^>]*\bname=['\\"]theme-color['\\"][^>]*>",
+        lambda match: re.sub(r"\bcontent=['\\"][^'\\"]+['\\"]",
                              'content="#f8f1e8"', match.group(0), count=1, flags=re.I),
         html, flags=re.I,
     )
@@ -375,7 +375,7 @@ def copy_public_files() -> list[str]:
                 raise RuntimeError("PAPAUTO_HERO: approved BMW artwork stripped from public homepage")
         # Every customer-facing page receives the same final warm stylesheet.
         # Leave search engine verification HTML (no head/body) untouched.
-        if "</head>" in html.lower() and re.search(r"<body\\b", html, flags=re.I):
+        if "</head>" in html.lower() and re.search(r"<body\b", html, flags=re.I):
             html = _warm_inline_css(html)
             warm_stylesheet = "papauto-warm-interior.css"
             if not (TARGET / warm_stylesheet).is_file():
