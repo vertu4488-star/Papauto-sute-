@@ -23,6 +23,7 @@ FROZEN_SOURCE_BLOBS = {
     "data/gallery-lots.json": "32ba94fcda05cbff413083065a45c91e7341bfae",
     "data/approved-auction-lots.json": "75c851dbca8ca52b21aeb5cac737599a546bb788",
     "data/premium-real-auction-lots.json": "94e6457eaee345f8bcf39f9bfcc602c75fafb56d",
+    "research/owner-approved-100-release-2026-11-15.json": "07541d6e76c6161d23b250aa3a053014b7cd7917",
 }
 # Whole-card fingerprints, not only image filenames: protect the exact photo,
 # its matching auction sheet, mileage, auction data and visible description.
@@ -97,6 +98,18 @@ def verify_published_output(target: Path) -> None:
     rows = gallery.get("lots")
     if not isinstance(rows, list) or not rows or gallery.get("lot_count") != len(rows):
         raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: invalid gallery registry")
+    # Exactly 97 new + 3 already-published lots approved in the owner's
+    # 100-page PDF review; the original 35 historic lots remain visible.
+    receipt = json.loads(
+        (ROOT / "research/owner-approved-100-release-2026-11-15.json")
+        .read_text(encoding="utf-8")
+    )
+    approved_new = set(receipt["approved_new_owner_selected_ids"])
+    approved_old = set(receipt["approved_existing_public_ids"])
+    if (len(rows) != 132 or len(approved_new) != 97 or len(approved_old) != 3
+            or not (approved_new | approved_old).issubset({r["id"] for r in rows})
+            or {r["id"] for r in rows if r["origin"] == "owner_selection"} != approved_new):
+        raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: public lot set does not match owner-reviewed PDF")
     ids = set()
     for row in rows:
         ident = row.get("id")
