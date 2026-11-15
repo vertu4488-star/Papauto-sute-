@@ -65,7 +65,7 @@ def verify_frozen_inputs() -> None:
 
 
 def _validate_card_links(card: str, page: str) -> None:
-    for address in re.findall(r'<a\b[^>]*\bhref=["\\']([^"\\']+)["\\']', card, re.I):
+    for address in re.findall(r"""<a\b[^>]*\bhref=["']([^"']+)["']""", card, re.I):
         parsed = urlsplit(address.strip())
         # Auction cards may open ONLY self-hosted photos, sheets, internal
         # details, and the PapAuto lead form. Never send visitors to a seller.
@@ -73,7 +73,7 @@ def _validate_card_links(card: str, page: str) -> None:
             raise RuntimeError("PAPAUTO_NO_EXTERNAL_LINKS: " + page)
         if not address.startswith(("/", "#")):
             raise RuntimeError("PAPAUTO_NO_EXTERNAL_LINKS: invalid relative URL: " + page)
-    for src in re.findall(r'<img\b[^>]*\bsrc=["\\']([^"\\']+)["\\']', card, re.I):
+    for src in re.findall(r"""<img\b[^>]*\bsrc=["']([^"']+)["']""", card, re.I):
         if not VALID_IMAGE.fullmatch(src) or BAD_ASSET_TERMS.search(src):
             raise RuntimeError("PAPAUTO_AUCTION_ONLY: invalid card image: " + page)
 
