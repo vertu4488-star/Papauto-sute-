@@ -1,0 +1,106 @@
+name: PapAuto full-site warm design acceptance
+on:
+  push:
+    branches: [design/unified-warm-all-pages-20261115]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build fully audited public site with approved auction media
+        run: |
+          python -m py_compile scripts/build_static_public.py
+          python scripts/build_static_public.py
+          python - <<'PY'
+          from pathlib import Path
+          root=Path("render-public")
+          pages=list(root.rglob("*.html"))
+          live=[p for p in pages if "</head>" in p.read_text(encoding="utf8").lower() and "<body" in p.read_text(encoding="utf8").lower()]
+          assert len(live)>30, len(live)
+          for page in live:
+              text=page.read_text(encoding="utf8")
+              assert text.count('papauto-warm-interior.css')==1, str(page)
+              if page.name!="index.html":
+                  assert "papauto-warm-interior" in text, str(page)
+          print("PAPAUTO_WARM_PAGES_OK",len(live))
+          PY
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Browser-check actual warm colors, cards, layout and images
+        run: |
+          python -m http.server 8765 -d render-public >/tmp/papauto-warm-local.log 2>&1 &
+          node scripts/qa_gallery_browser.cjs
+          node scripts/qa_all_auction_lot_pages.cjs
+          node scripts/qa_premium_light_browser.cjs
+          node <<'NODE'
+          const {chromium,request}=require('playwright');
+          const assert=require('node:assert/strict');
+          (async()=>{
+            const browser=await chromium.launch({headless:true});
+            const req=await request.newContext({baseURL:'http://127.0.0.1:8765'});
+            const registry=await (await req.get('/data/gallery-lots.json')).json();
+            assert.equal(registry.lot_count,132);
+            const list=[
+              {url:'/',label:'homepage',color:'.site-header'},
+              {url:'/gallery.html',label:'gallery',color:'.gallery-card'},
+              {url:'/premium-japan-korea.html',label:'premium',color:'.real-card'},
+              {url:'/catalog.html',label:'catalog',color:'body'},
+              {url:'/podbor.html',label:'application',color:'body'},
+              {url:'/lots/'+registry.lots[0].id+'.html',label:'exact-lot',color:'.lot-information'}
+            ];
+            const rgb=s=>{const m=s.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);return m?[+m[1],+m[2],+m[3]]:null};
+            for(const width of [390,320,1440]){
+              const page=await browser.newPage({viewport:{width,height:width===1440?900:780},isMobile:width<500,hasTouch:width<500});
+              await page.route(/^https:\/\/(?:mc\.yandex\.ru|www\.googletagmanager\.com|www\.google-analytics\.com)\//,
+                route=>route.fulfill({status:200,body:''}));
+              for(const def of list){
+                await page.goto('http://127.0.0.1:8765'+def.url,{waitUntil:'load',timeout:30000});
+                const colors=await page.evaluate(sel=>{
+                  const node=document.querySelector(sel);
+                  if(!node) return null;
+                  const style=getComputedStyle(node);
+                  return {bg:style.backgroundColor,color:style.color,
+                    body:document.body.className,
+                    overflow:document.documentElement.scrollWidth-window.innerWidth,
+                    themeSheets:[...document.styleSheets].some(x=>x.href?.includes('papauto-warm-interior.css'))};
+                },def.color);
+                assert(colors,def.label+' missing '+def.color);
+                assert(colors.themeSheets,def.label+' warm theme not applied');
+                assert(colors.overflow<=3,def.label+' horizontal overflow '+colors.overflow+'px at '+width);
+                if(def.label!=='homepage')assert(colors.body.includes('papauto-warm-interior'),def.label+' untagged');
+                let v=rgb(colors.bg);
+                if(v&&v[3]!==0&&v[2]>v[0]+6&&v[2]>=v[1]-12)throw new Error('Cold background '+def.label+' '+colors.bg);
+                console.log('PAPAUTO_WARM_PAGE',width,def.label,JSON.stringify(colors));
+              }
+              if(width===390){
+                await page.goto('http://127.0.0.1:8765/gallery.html',{waitUntil:'load'});
+                await page.screenshot({path:'warm-gallery-390.png',fullPage:false});
+                await page.goto('http://127.0.0.1:8765/lots/'+registry.lots[0].id+'.html',{waitUntil:'load'});
+                await page.screenshot({path:'warm-lot-390.png',fullPage:false});
+              }
+              await page.close();
+            }
+            await req.dispose();await browser.close();
+          })().catch(err=>{console.error(err);process.exitCode=1});
+          NODE
+      - name: Save warm gallery and lot mobile screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: papauto-warm-full-site-mobile
+          path: |
+            warm-gallery-390.png
+            warm-lot-390.png
+          if-no-files-found: ignore
