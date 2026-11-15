@@ -18,6 +18,11 @@
  const mediaPath=/^\/assets\/(?:auction\/home|premium-auctions|auction\/approved)\/[a-z0-9-]+\.(?:jpg|jpeg|png|webp)$/;
  const rub=n=>new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(n);
  const normal=s=>String(s||"").toLocaleLowerCase("ru");
+ // Cyrillic entry on a Russian iPhone must find the Latin auction model name.
+ // Examples: "Хо" -> "ho", "Хонда" -> "honda", "Тойота" -> "toyota".
+ const translit=Object.freeze({а:"a",б:"b",в:"v",г:"g",д:"d",е:"e",ё:"yo",ж:"zh",з:"z",и:"i",й:"y",к:"k",л:"l",м:"m",н:"n",о:"o",п:"p",р:"r",с:"s",т:"t",у:"u",ф:"f",х:"h",ц:"ts",ч:"ch",ш:"sh",щ:"shch",ъ:"",ы:"y",ь:"",э:"e",ю:"yu",я:"ya"});
+ const searchKey=s=>[...normal(s)].map(ch=>translit[ch]??ch).join("").replace(/\\s+/g," ").trim();
+ const localizedBrand=Object.freeze({Honda:"хонда",Toyota:"тойота",Nissan:"ниссан",Suzuki:"сузуки",Daihatsu:"дайхатсу",Mazda:"мазда",Subaru:"субару",BMW:"бмв",Mercedes:"мерседес",Geely:"джили",Changan:"чанган",BYD:"бид"});
  const validImg=s=>typeof s==="string"&&mediaPath.test(s)?s:null;
  const img=(src,alt,eager=false)=>{
    const i=d.createElement("img");i.src=src;i.alt=alt;i.decoding="async";i.loading=eager?"eager":"lazy";
@@ -30,6 +35,66 @@
  const MAX=12;
  let all=[],filtered=[],shown=MAX,category="all",view={items:[],index:0,lot:null},previousFocus=null;
  const brandName=lot=>lot.model.split(" ")[0];
+ const indexedText=lot=>searchKey(lot.model+" "+lot.year+" "+lot.auction+" "+lot.lot_number+" "+(localizedBrand[brandName(lot)]||""));
+ // Autocomplete is populated ONLY by existing, photo-and-sheet verified lots.
+ // Never suggest a model that is merely present in the text-only reference.
+ const suggestions=element("div","gallery-suggestions");
+ suggestions.id="gallery-suggestions";suggestions.setAttribute("role","listbox");
+ suggestions.setAttribute("aria-label","Модели автомобилей");suggestions.hidden=true;
+ const searchHost=search.closest(".gallery-field");searchHost.classList.add("gallery-autocomplete-field");
+ search.insertAdjacentElement("afterend",suggestions);
+ search.setAttribute("role","combobox");search.setAttribute("aria-autocomplete","list");
+ search.setAttribute("aria-controls","gallery-suggestions");search.setAttribute("aria-expanded","false");
+ let suggestionModels=[],activeSuggestion=-1;
+ function hideSuggestions(){
+   suggestions.hidden=true;search.setAttribute("aria-expanded","false");
+   search.removeAttribute("aria-activedescendant");activeSuggestion=-1;
+ }
+ function moveSuggestion(index){
+   activeSuggestion=(index+suggestionModels.length)%suggestionModels.length;
+   for(const [i,button] of [...suggestions.children].entries()){
+     const current=i===activeSuggestion;
+     button.setAttribute("aria-selected",String(current));
+     if(current){search.setAttribute("aria-activedescendant",button.id);button.scrollIntoView({block:"nearest"});}
+   }
+ }
+ function chooseSuggestion(model){
+   // Selecting a model overrides an unrelated brand drop-down.
+   const modelBrand=model.split(" ")[0];
+   if(brand.value!=="all"&&brand.value!==modelBrand)brand.value="all";
+   search.value=model;hideSuggestions();resetPage();
+   search.focus({preventScroll:true});
+ }
+ function updateSuggestions(){
+   const term=searchKey(search.value);
+   if(!term){hideSuggestions();return;}
+   const market=marketFilter.value||"all",mark=brand.value||"all";
+   const counts=new Map();
+   for(const lot of all){
+     if((category!=="all"&&category!==lot.category)||
+        (market!=="all"&&market!==lot.market)||
+        (mark!=="all"&&mark!==brandName(lot)))continue;
+     if(!searchKey(lot.model+" "+(localizedBrand[brandName(lot)]||"")).includes(term))continue;
+     counts.set(lot.model,(counts.get(lot.model)||0)+1);
+   }
+   suggestionModels=[...counts.keys()].sort((a,b)=>{
+     const aStart=searchKey(a).startsWith(term),bStart=searchKey(b).startsWith(term);
+     return Number(bStart)-Number(aStart)||a.localeCompare(b,"ru");
+   }).slice(0,8);
+   suggestions.replaceChildren();
+   if(!suggestionModels.length){hideSuggestions();return;}
+   for(const [i,model] of suggestionModels.entries()){
+     const button=element("button","gallery-suggestion");button.type="button";
+     button.id="gallery-suggestion-"+i;button.setAttribute("role","option");
+     button.setAttribute("aria-selected","false");
+     const name=element("span","gallery-suggestion-name",model);
+     const total=element("span","gallery-suggestion-count",counts.get(model)+" лот.");
+     button.append(name,total);button.addEventListener("click",()=>chooseSuggestion(model));
+     suggestions.append(button);
+   }
+   activeSuggestion=-1;suggestions.hidden=false;search.setAttribute("aria-expanded","true");
+   search.removeAttribute("aria-activedescendant");
+ }
  const priceValue=lot=>Number(lot.price_amount??lot.price_jpy??0);
  const countryOf=lot=>({
     japan:{flag:"🇯🇵",name:"ЯПОНИЯ"},
@@ -105,14 +170,14 @@
    return item;
  }
  function draw(){
-   const term=normal((search.value||"").trim());
+   const term=searchKey(search.value);
    const mark=brand.value||"all";
    const region=marketFilter.value||"all";
    const activeCategory=["all","premium","popular"].includes(category)?category:"all";
    filtered=all.filter(lot=>(activeCategory==="all"||lot.category===activeCategory)&&
       (region==="all"||lot.market===region)&&
       (mark==="all"||brandName(lot)===mark)&&
-      (!term||normal(lot.model+" "+lot.year+" "+lot.auction+" "+lot.lot_number).includes(term)));
+      (!term||indexedText(lot).includes(term)));
    // Browser form-state restoration must never hide the complete gallery on first load.
    // When the UI says "Все", no search/brand constraints are permitted.
    if(activeCategory==="all"&&region==="all"&&mark==="all"&&!term&&filtered.length!==all.length)filtered=all.slice();
@@ -151,11 +216,26 @@
  tabs.forEach(tab=>tab.addEventListener("click",()=>{
    category=tab.dataset.galleryCategory;
    tabs.forEach(t=>{const selected=t===tab;t.classList.toggle("is-active",selected);t.setAttribute("aria-pressed",String(selected));});
-   updateMarkets();updateBrands();resetPage();
+   updateMarkets();updateBrands();resetPage();hideSuggestions();
  }));
- search.addEventListener("input",resetPage);
- marketFilter.addEventListener("change",()=>{updateBrands();resetPage();});
- brand.addEventListener("change",resetPage);sort.addEventListener("change",resetPage);
+ search.addEventListener("input",()=>{resetPage();updateSuggestions();});
+ search.addEventListener("focus",()=>{if(search.value.trim())updateSuggestions();});
+ search.addEventListener("keydown",event=>{
+   if(event.key==="Escape"){hideSuggestions();return;}
+   if(event.key==="Tab"){hideSuggestions();return;}
+   if(suggestions.hidden)return;
+   if(event.key==="ArrowDown"||event.key==="ArrowUp"){
+     event.preventDefault();moveSuggestion(activeSuggestion+(event.key==="ArrowDown"?1:-1));
+   }else if(event.key==="Enter"&&suggestionModels.length){
+     event.preventDefault();chooseSuggestion(suggestionModels[activeSuggestion<0?0:activeSuggestion]);
+   }
+ });
+ d.addEventListener("pointerdown",event=>{
+   if(!searchHost.contains(event.target))hideSuggestions();
+ });
+ marketFilter.addEventListener("change",()=>{updateBrands();resetPage();hideSuggestions();});
+ brand.addEventListener("change",()=>{resetPage();hideSuggestions();});
+ sort.addEventListener("change",resetPage);
  more.addEventListener("click",()=>{shown+=MAX;draw();});
  function viewAt(index){
    if(!view.items.length)return;
