@@ -122,7 +122,7 @@ def copy_public_files() -> list[str]:
     copied = []
 
     for src in sorted(ROOT.iterdir()):
-        if src.is_file() and not src.is_symlink() and (src.suffix.lower() in ROOT_SUFFIXES or src.name in PUBLIC_TEXT_FILES):
+        if src.is_file() and not src.is_symlink() and (src.suffix.lower() in ROOT_SUFFIXES or src.name in PUBLIC_TEXT_FILES or src.name == "favicon.svg"):
             dst = TARGET / src.name
             shutil.copy2(src, dst)
             copied.append(dst.relative_to(TARGET).as_posix())
