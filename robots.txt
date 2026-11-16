@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://papauto.ru/sitemap.xml
+Sitemap: https://papauto.ru/sitemap-lots.xml
