@@ -465,7 +465,13 @@ def copy_public_files() -> list[str]:
 
     # Publish search entry points requested by the owner for the published catalogue on 2026-11-16.
     from publish_lot_search import publish
-    publish(TARGET)
+    published_lot_count = publish(TARGET)
+    lot_sitemap = TARGET / "sitemap-lots.xml"
+    if published_lot_count != 132 or not lot_sitemap.is_file():
+        raise RuntimeError("PAPAUTO_SEO: the approved lot sitemap is missing or incomplete")
+    lot_sitemap_tree = __import__("xml.etree.ElementTree", fromlist=["ElementTree"]).parse(lot_sitemap)
+    if len(lot_sitemap_tree.findall("{http://www.sitemaps.org/schemas/sitemap/0.9}url")) != published_lot_count + 1:
+        raise RuntimeError("PAPAUTO_SEO: sitemap does not match published approved lot pages")
 
     # The gallery compiler generates /lots/*.html after the initial page loop.
     # Reconcile every finished HTML page with the global warm skin, including
