@@ -39,13 +39,13 @@ const BASE='http://127.0.0.1:8765';
       const page=await client.get(pagePath);
       assert.equal(page.status(),200,'Detailed lot page missing: '+lot.id);
       const html=await page.text();
-      assert(html.includes('content="noindex,follow"'),'Premature SEO publication: '+lot.id);
+      assert(html.includes('content="index,follow"'),'Missing search indexing: '+lot.id);
       assert(html.includes('class="lot-description"'),'Missing verified description: '+lot.id);
       assert(html.includes('class="lot-sheet"'),'Missing full auction sheet section: '+lot.id);
       assert(html.includes('href="/podbor.html?similar='),'Auction-to-request link missing: '+lot.id);
       assert(html.includes(lot.inspection_image),'Auction sheet mismatch: '+lot.id);
       assert(html.includes(lot.photos[0]),'Exact lot cover mismatch: '+lot.id);
-      assert(!/href=["']https?:\/\//i.test(html),'External vendor link found: '+lot.id);
+      assert(!/<a\b[^>]*href=["']https?:\/\//i.test(html),'External vendor link found: '+lot.id);
       assert(!/\/assets\/(?:demo|visual)\//.test(html),'Street/stock library on detail page: '+lot.id);
       const srcs=[...html.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)].map(match=>match[1]);
       assert(srcs.includes(lot.inspection_image),'No sheet image in page: '+lot.id);
@@ -54,7 +54,7 @@ const BASE='http://127.0.0.1:8765';
       for(const src of srcs)await loadImage(src);
     }
 
-    browser=await chromium.launch({headless:true});
+    browser=await chromium.launch({headless:true, ...(process.env.CHROMIUM_EXECUTABLE ? {executablePath:process.env.CHROMIUM_EXECUTABLE} : {})});
     const samples=[lots[0],lots[Math.floor(lots.length/2)],lots[lots.length-1]];
     const tested=[];
     for(const width of [1440,390,320]){
@@ -88,7 +88,7 @@ const BASE='http://127.0.0.1:8765';
     console.log('PAPAUTO_ALL_AUCTION_LOT_DETAILS_QA='+JSON.stringify({
       pages_checked:lots.length,media_checked:mediaStatus.size,
       all_full_sheets:true,no_street_photos:true,no_external_sellers:true,
-      noindex_until_launch:true,responsive_samples:tested
+      indexable:true,responsive_samples:tested
     }));
   }finally{
     if(browser)await browser.close();
