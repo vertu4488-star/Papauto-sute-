@@ -463,7 +463,7 @@ def copy_public_files() -> list[str]:
             raise RuntimeError("Retired route was reintroduced: " + retired)
         (TARGET / retired).write_text(retirement_html, encoding="utf-8")
 
-    # Owner requested search entry points for the published catalogue on 2026-11-16.
+    # Publish search entry points requested by the owner for the published catalogue on 2026-11-16.
     from publish_lot_search import publish
     publish(TARGET)
 

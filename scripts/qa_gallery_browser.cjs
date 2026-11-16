@@ -82,8 +82,8 @@ async function stubAnalytics(page){
   const detailErrors=[];
   detailPage.on('pageerror',e=>detailErrors.push(e.message));
   await detailPage.goto('http://127.0.0.1:8765'+detailedLink,{waitUntil:'load',timeout:30000});
-  assert(await detailPage.locator('meta[name="robots"][content="noindex,follow"]').count(),
-    'Detail pages must remain non-indexed until site is fully ready');
+  assert(await detailPage.locator('meta[name="robots"][content="index,follow"]').count(),
+    'Published detail pages must permit indexing');
   assert(await detailPage.locator('.lot-photo img').count()>0,'Missing exact-lot photo');
   assert.equal(await detailPage.locator('.lot-sheet img').count(),1,'Full auction sheet required');
   assert((await detailPage.locator('.lot-description').innerText()).length>=100,
