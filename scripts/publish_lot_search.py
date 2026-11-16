@@ -42,6 +42,14 @@ def publish(target: Path):
         if url not in existing:
             ET.SubElement(ET.SubElement(root, '{'+ns+'}url'), '{'+ns+'}loc').text = url
     tree.write(sitemap, encoding='utf-8', xml_declaration=True)
+    # A dedicated sitemap makes the already approved auction detail URLs
+    # independently discoverable and trackable in Search Console.
+    # It is derived solely from the published, owner-reviewed registry.
+    lot_map_root = ET.Element('{'+ns+'}urlset')
+    for url in urls:
+        ET.SubElement(ET.SubElement(lot_map_root, '{'+ns+'}url'), '{'+ns+'}loc').text = url
+    ET.ElementTree(lot_map_root).write(
+        target / 'sitemap-lots.xml', encoding='utf-8', xml_declaration=True)
     for name in ['catalog.html', 'auction-lots.html', 'gallery.html']:
         file = target / name
         page = file.read_text()
