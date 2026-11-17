@@ -14,6 +14,31 @@
   // Text-only model reference; auction photos are not guessed from model names.
   const photoDetail = Object.create(null);
   const lower = value => String(value||"").normalize("NFKC").toLocaleLowerCase("ru").trim();
+  // Include genuine Russian make names in the catalog search index, without
+  // changing the canonical Latin make/model values used by the lead form.
+  const makeAliases = {
+    honda:["хонда"],toyota:["тойота"],nissan:["ниссан"],mazda:["мазда"],
+    subaru:["субару"],mitsubishi:["мицубиси","митсубиси"],
+    suzuki:["сузуки"],daihatsu:["дайхатсу"],lexus:["лексус"],
+    hyundai:["хендай","хёндэ"],kia:["киа"],bmw:["бмв"],
+    audi:["ауди"],mercedes:["мерседес"],volkswagen:["фольксваген"],
+    geely:["джили"],chery:["чери"],haval:["хавал"],changan:["чанган"]
+  };
+  const modelAliases = {
+    fit:["фит"],freed:["фрид"],"freed spike":["фрид спайк"],
+    corolla:["королла"],"corolla fielder":["королла филдер"],
+    note:["ноут"],"cx-5":["сх5","сх-5"],prius:["приус"],aqua:["аква"],
+    vezel:["везел"],jolion:["джолион"],monjaro:["монжаро"],
+    "song plus":["сонг плюс"],jimny:["джимни"]
+  };
+  const searchText = r => {
+    const brand = lower(r.brand), model = lower(r.model);
+    return [brand,model,lower(r.engine),...(makeAliases[brand]||[]),
+      ...(modelAliases[model]||[]),
+      ...((makeAliases[brand]||[]).flatMap(alias=>
+        [alias+" "+model,...(modelAliases[model]||[]).map(m=>alias+" "+m)]))
+    ].join(" ");
+  };
   const keyOf = r => [r.market,lower(r.brand),lower(r.model)].join("|");
   const types = r => PapAutoMetadata.modelTypes(r.market,r.brand,r.model,r.engine);
   const label = (tag,value,css) => {
@@ -44,7 +69,7 @@
     const matched=rows.filter(r=>
       (!country.value||country.value===r.market) &&
       (!selectedMake||selectedMake===lower(r.brand)) &&
-      (!q||lower(r.brand+" "+r.model+" "+r.engine).includes(q)) &&
+      (!q||searchText(r).includes(q)) &&
       (!power.value||types(r).includes(power.value))
     );
     // All model cards sorted by name, not legacy stock photograph availability.
