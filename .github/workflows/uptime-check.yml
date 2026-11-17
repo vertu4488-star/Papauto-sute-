@@ -25,6 +25,37 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Assert WWW redirects permanently to canonical non-WWW domains
+        run: |
+          python - <<'PY'
+          import urllib.error
+          import urllib.request
+
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, req, fp, code, msg, headers, newurl):
+                  return None
+
+          opener = urllib.request.build_opener(NoRedirect)
+          domains = [
+              ("www.papauto.ru", "papauto.ru"),
+              ("www.xn----8sbco1afeiieo2a4o.xn--p1ai", "xn----8sbco1afeiieo2a4o.xn--p1ai"),
+          ]
+          for source, target in domains:
+              suffix = "/seo-redirect-check?source=monitor"
+              request = urllib.request.Request("https://" + source + suffix,
+                  headers={"User-Agent": "NewIphoneService-SEORedirectCheck/1.0"})
+              try:
+                  with opener.open(request, timeout=20) as response:
+                      raise AssertionError(f"{source}: expected HTTP 301, got {response.status}")
+              except urllib.error.HTTPError as error:
+                  actual = error.headers.get("Location", "")
+                  expected = "https://" + target + suffix
+                  if error.code != 301 or actual != expected:
+                      raise AssertionError(
+                          f"{source}: expected HTTP 301 to {expected}; got {error.code} to {actual}"
+                      ) from None
+                  print(f"OK: {source} redirects HTTP 301 to {expected}")
+          PY
       - name: Verify user-facing services and real database readiness
         run: |
           python - <<'PY'
