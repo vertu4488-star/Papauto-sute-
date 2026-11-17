@@ -50,6 +50,18 @@
     });
   }
   window.PAPAUTO_CATALOG = catalog;
+
+  // Russian labels are searchable in the make datalist. The stored/posted value
+  // remains the canonical brand used by the public catalog and API.
+  const aliases = {
+    Honda:["Хонда"],Toyota:["Тойота"],Nissan:["Ниссан"],Mazda:["Мазда"],
+    Subaru:["Субару"],Mitsubishi:["Мицубиси","Митсубиси"],
+    Suzuki:["Сузуки"],Daihatsu:["Дайхатсу"],Lexus:["Лексус"],
+    Hyundai:["Хендай","Хёндэ"],Kia:["Киа"],BMW:["БМВ"],
+    Audi:["Ауди"],Mercedes:["Мерседес"],Volkswagen:["Фольксваген"],
+    Geely:["Джили"],Chery:["Чери"],Haval:["Хавал"],Changan:["Чанган"]
+  };
+  const norm = v => String(v||"").normalize("NFKC").trim().toLocaleLowerCase("ru");
   const country = document.getElementById("vehicleCountry");
   const make = document.getElementById("vehicleMake");
   const model = document.getElementById("vehicleModel");
@@ -58,15 +70,51 @@
   const modelList = document.createElement("datalist"); modelList.id = "papautoModels";
   document.body.append(makeList, modelList);
   make.setAttribute("list", makeList.id); model.setAttribute("list", modelList.id);
+  const makesForCountry = () => [...new Set((catalog[country.value] || []).map(r => r[0]))];
+  const resolveMake = (text, allowPrefix) => {
+    const query = norm(text);
+    if (!query) return null;
+    const names = makesForCountry();
+    const entries = name => [name, ...(aliases[name] || [])];
+    const exact = names.filter(name => entries(name).some(v => norm(v) === query));
+    if (exact.length === 1) return exact[0];
+    if (!allowPrefix || query.length < 2) return null;
+    const prefix = names.filter(name => entries(name).some(v => norm(v).startsWith(query)));
+    return prefix.length === 1 ? prefix[0] : null;
+  };
   const render = () => {
     const rows = catalog[country.value] || [];
-    const makes = [...new Set(rows.map(row => row[0]))].sort((a,b)=>a.localeCompare(b,"ru"));
-    makeList.replaceChildren(...makes.map(name => { const o=document.createElement("option");o.value=name;return o; }));
-    const chosenMake = make.value.trim().toLocaleLowerCase("ru");
-    const models = rows.filter(row => !chosenMake || row[0].toLocaleLowerCase("ru") === chosenMake);
-    modelList.replaceChildren(...models.map(row => { const o=document.createElement("option");o.value=row[1];o.label=row[0]+" · "+row[2];return o; }));
+    const options = [];
+    for (const name of makesForCountry().sort((a,b) => a.localeCompare(b,"ru"))) {
+      for (const value of [name, ...(aliases[name] || [])]) {
+        const option = document.createElement("option");
+        option.value = value;
+        option.label = value === name ? (aliases[name] || []).join(", ") : name;
+        options.push(option);
+      }
+    }
+    makeList.replaceChildren(...options);
+    const input = make.value.trim();
+    const chosen = resolveMake(input, true);
+    const models = rows.filter(row => !input || (chosen && row[0] === chosen) || norm(row[0]) === norm(input));
+    modelList.replaceChildren(...models.map(row => {
+      const option = document.createElement("option");
+      option.value = row[1]; option.label = row[0] + " · " + row[2]; return option;
+    }));
+  };
+  const canonicalize = () => {
+    const canonical = resolveMake(make.value, true);
+    if (canonical) make.value = canonical;
+    render();
   };
   country.addEventListener("change", () => { make.value=""; model.value=""; render(); });
-  make.addEventListener("input", render);
+  make.addEventListener("input", () => {
+    const exact = resolveMake(make.value, false);
+    if (exact) make.value = exact;
+    render();
+  });
+  make.addEventListener("change", canonicalize);
+  make.addEventListener("blur", canonicalize);
+  if (make.form) make.form.addEventListener("submit", canonicalize, true);
   render();
 })();
