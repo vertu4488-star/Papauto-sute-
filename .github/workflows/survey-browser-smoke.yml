@@ -1,6 +1,8 @@
 name: SurveyJS browser smoke test
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '17 2 * * *'
   push:
     paths:
       - 'survey-podbor.js'
