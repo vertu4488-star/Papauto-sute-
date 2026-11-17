@@ -89,6 +89,8 @@ jobs:
           node --check marketplace-interactions.js
           node --check saved-searches.js
           node --check smart-search.js
+          node --check vehicle-catalogue.js
+          node tests/test_vehicle_make_aliases.cjs
           node --check japan-chassis-search.js
           node --check route-planner.js
           node --check voice-assistant.js
