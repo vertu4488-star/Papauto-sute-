@@ -62,7 +62,7 @@
     <a href="/gallery.html">Каталог</a>
     <a href="/?view=directions" data-site-tab="directions">Направления</a>
     <a href="/?view=auctions" data-site-tab="auctions">Аукционы</a>
-    <a href="/premium-japan-korea.html#import-estimate">Расчёт</a>
+    <a href="/?view=calculator" data-site-tab="calculator">Расчёт</a>
     <a class="pa-menu-extra" href="/?view=account" data-site-tab="account">Личный кабинет</a>
     <a class="pa-menu-extra" href="/podbor.html">Обсудить подбор</a>
   </nav>
@@ -572,6 +572,17 @@
       <p>Выберите страну покупки — конвертер автоматически предложит нужную валюту и пересчитает стоимость по официальным курсам Банка России.</p>
     </div>
     <div class="currency-card">
+      <div class="currency-market-heading">
+        <h3>Курсы валют для покупки автомобиля</h3>
+        <span id="currencyRateDate" aria-live="polite">Загружаем данные Банка России…</span>
+      </div>
+      <div class="currency-market-rates" aria-label="Справочные курсы валют к рублю">
+        <div class="currency-market-rate"><span>1 USD · доллар</span><strong id="currencyRateUsd">—</strong></div>
+        <div class="currency-market-rate"><span>100 JPY · иены</span><strong id="currencyRateJpy">—</strong></div>
+        <div class="currency-market-rate"><span>1 000 KRW · воны</span><strong id="currencyRateKrw">—</strong></div>
+        <div class="currency-market-rate"><span>1 CNY · юань</span><strong id="currencyRateCny">—</strong></div>
+      </div>
+      <div class="currency-converter-intro">Пересчёт цены автомобиля</div>
       <label for="currencyCountry">Страна покупки
         <select id="currencyCountry">
           <option value="south-korea" selected>Южная Корея · воны (₩)</option>
@@ -737,7 +748,7 @@
 
 <script src="/site-config.js?v=20261109api"></script>
 <script src="/site-tabs.js?v=20261114-account-isolation" defer></script>\n<script src="/account.js" defer></script>
-<script src="/app.js" defer></script>
+<script src="/app.js?v=20261117-currency-rates" defer></script>
 <script src="/marketplace-interactions.js" defer></script>
 <script src="/saved-searches.js" defer></script>
 <script src="/smart-search.js" defer></script>

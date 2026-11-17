@@ -35,6 +35,16 @@ if(currencyCountry&&currencyAmount&&currencyRubResult&&currencyUsdResult&&curren
       const needed=["rub_per_1000_krw","rub_per_jpy","rub_per_cny","rub_per_usd","usd_per_1000_krw","usd_per_jpy","usd_per_cny"];
       if(!needed.every(k=>Number.isFinite(Number(rates[k]))&&Number(rates[k])>0))throw new Error("Некорректный курс");
       currencyRates=rates;
+      const quoteFmt=new Intl.NumberFormat("ru-RU",{minimumFractionDigits:2,maximumFractionDigits:2});
+      const quotes=[
+        ["currencyRateUsd",Number(rates.rub_per_usd)],
+        ["currencyRateJpy",Number(rates.rub_per_jpy)*100],
+        ["currencyRateKrw",Number(rates.rub_per_1000_krw)],
+        ["currencyRateCny",Number(rates.rub_per_cny)]
+      ];
+      quotes.forEach(([id,value])=>{const element=$(id);if(element)element.textContent=quoteFmt.format(value)+" ₽"});
+      const rateDate=$("currencyRateDate");
+      if(rateDate)rateDate.textContent=(rates.fallback?"Архивный ориентир":"Курс Банка России")+" · "+(rates.date||"дата не указана")+(rates.fallback?" · не текущий курс":"");
       const date=rates.date?(" на "+rates.date):"";
       currencyRateNote.textContent="Источник: "+(rates.source||"Банк России")+date+". Курсы справочные, не курс продажи банка."+(rates.fallback?" Используется последний сохранённый ориентир, так как источник временно недоступен.":"");
       updateCurrencyMode(false);
@@ -42,6 +52,8 @@ if(currencyCountry&&currencyAmount&&currencyRubResult&&currencyUsdResult&&curren
       currencyRubResult.textContent="Курс недоступен";
       currencyUsdResult.textContent="Курс недоступен";
       currencyRateNote.textContent="Не удалось загрузить курс Банка России. Обновите страницу позже; конвертер не использует выдуманный текущий курс.";
+      const rateDate=$("currencyRateDate");
+      if(rateDate)rateDate.textContent="Курсы временно недоступны";
     }
   })();
 }
