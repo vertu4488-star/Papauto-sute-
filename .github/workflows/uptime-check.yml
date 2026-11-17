@@ -72,6 +72,7 @@ jobs:
               ("New iPhone Service website", "https://new-iphone-repair-site.onrender.com/", None),
               ("New iPhone Service public domain", "https://xn----8sbco1afeiieo2a4o.xn--p1ai/", None),
               ("New iPhone Service Telegram application", "https://new-iphone-service.onrender.com/health", ("status", "healthy")),
+              ("New iPhone Service CRM login domain", "https://crm.xn----8sbco1afeiieo2a4o.xn--p1ai/", None),
               ("New iPhone Service CRM and Neon", "https://new-iphone-crm-api-staging.onrender.com/ready", ("status", "ready")),
           ]
 
