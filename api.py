@@ -293,9 +293,9 @@ def _accepted_without_telegram(db_url: str, lead_id: str, reason: str, message: 
 def _survey_contact_is_phone(contact: str) -> bool:
     """Standalone SurveyJS form promises a phone number, never a Telegram username."""
     value = contact.strip()
-    if not re.fullmatch(r"\\+?[0-9 ()-]{10,25}", value):
+    if not re.fullmatch(r"\+?[0-9 ()-]{10,25}", value):
         return False
-    digits = re.sub(r"\\D", "", value)
+    digits = re.sub(r"\D", "", value)
     return 10 <= len(digits) <= 15
 
 
