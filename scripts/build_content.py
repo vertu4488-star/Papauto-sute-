@@ -37,6 +37,27 @@ def build():
         if re.search(r'<meta[^>]+content="[^"]*noindex',text): continue
         m=re.search(r'<link rel="canonical" href="([^"]+)"',text)
         if m and m[1].startswith(BASE+'/'): urls.append(m[1])
-    (ROOT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'  <url><loc>{e(url)}</loc></url>\n' for url in sorted(set(urls)))+'</urlset>\n')
+    # Keep dates only for pages that were genuinely updated; do not rewrite the
+    # whole site as "modified today" at each build. Preserve explicit dates
+    # from the committed sitemap so the generator remains reproducible.
+    previous_modified={}
+    sitemap_path=ROOT/'sitemap.xml'
+    if sitemap_path.is_file():
+        for node in ET.parse(sitemap_path).iter('{http://www.sitemaps.org/schemas/sitemap/0.9}url'):
+            loc=node.findtext('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')
+            date=node.findtext('{http://www.sitemaps.org/schemas/sitemap/0.9}lastmod')
+            if loc and date and re.fullmatch(r'\d{4}-\d{2}-\d{2}',date):
+                previous_modified[loc]=date
+    sitemap_items=''.join(
+        f'  <url><loc>{e(url)}</loc>'+(
+            f'<lastmod>{previous_modified[url]}</lastmod>' if url in previous_modified else ''
+        )+'</url>\n'
+        for url in sorted(set(urls))
+    )
+    sitemap_path.write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        +sitemap_items+'</urlset>\n'
+    )
     print(f'Built {len(pages)} pages; sitemap contains {len(set(urls))} URLs')
 if __name__=='__main__': build()
