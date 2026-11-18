@@ -469,9 +469,16 @@ def copy_public_files() -> list[str]:
     lot_sitemap = TARGET / "sitemap-lots.xml"
     if published_lot_count != 132 or not lot_sitemap.is_file():
         raise RuntimeError("PAPAUTO_SEO: the approved lot sitemap is missing or incomplete")
-    lot_sitemap_tree = __import__("xml.etree.ElementTree", fromlist=["ElementTree"]).parse(lot_sitemap)
-    if len(lot_sitemap_tree.findall("{http://www.sitemaps.org/schemas/sitemap/0.9}url")) != published_lot_count + 1:
-        raise RuntimeError("PAPAUTO_SEO: sitemap does not match published approved lot pages")
+    import xml.etree.ElementTree as ET
+    lot_sitemap_tree = ET.parse(lot_sitemap)
+    ns = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+    lot_urls = [node.text for node in lot_sitemap_tree.findall(f"{ns}url/{ns}loc")]
+    if len(lot_urls) != published_lot_count or len(set(lot_urls)) != published_lot_count:
+        raise RuntimeError("PAPAUTO_SEO: dedicated lot sitemap does not match approved pages")
+    core_tree = ET.parse(TARGET / "sitemap.xml")
+    core_urls = {node.text for node in core_tree.findall(f"{ns}url/{ns}loc")}
+    if set(lot_urls) & core_urls or "https://papauto.ru/auction-lot-index.html" not in core_urls:
+        raise RuntimeError("PAPAUTO_SEO: duplicate lot URLs or missing auction index in main sitemap")
 
     # The gallery compiler generates /lots/*.html after the initial page loop.
     # Reconcile every finished HTML page with the global warm skin, including
