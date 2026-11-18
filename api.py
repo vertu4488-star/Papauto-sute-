@@ -3,6 +3,7 @@ import base64
 import logging
 import html
 import asyncio
+import re
 import psycopg
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
@@ -289,6 +290,15 @@ def _accepted_without_telegram(db_url: str, lead_id: str, reason: str, message: 
     )
 
 
+def _survey_contact_is_phone(contact: str) -> bool:
+    """Standalone SurveyJS form promises a phone number, never a Telegram username."""
+    value = contact.strip()
+    if not re.fullmatch(r"\\+?[0-9 ()-]{10,25}", value):
+        return False
+    digits = re.sub(r"\\D", "", value)
+    return 10 <= len(digits) <= 15
+
+
 @app.post("/api/leads")
 async def create_lead(lead: Lead):
     """Send a lead through the configured Telegram bot; no paid database is required."""
@@ -298,6 +308,16 @@ async def create_lead(lead: Lead):
     # Honeypot: reject automated form submissions without forwarding them to Telegram.
     if lead.website.strip():
         raise HTTPException(status_code=400, detail="Не удалось обработать заявку. Проверьте заполнение формы.")
+
+    # Defense in depth: the standalone SurveyJS form promises a call/Telegram
+    # by phone number. Reject usernames and short numbers before any DB write.
+    # Older contact forms may legitimately accept a Telegram handle.
+    if (lead.request.startswith("Подбор автомобиля через PapAuto (SurveyJS)")
+            and not _survey_contact_is_phone(lead.contact)):
+        raise HTTPException(
+            status_code=422,
+            detail="Укажите полный номер телефона (10–15 цифр), не ник Telegram.",
+        )
 
     db_url = os.getenv("DATABASE_URL", "").strip()
     if not db_url:
