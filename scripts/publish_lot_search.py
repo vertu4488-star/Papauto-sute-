@@ -31,16 +31,22 @@ def publish(target: Path):
     index = '''<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><title>132 аукционных лота из Японии — фото и аукционные листы | PapAuto</title><meta name="description" content="Каталог архивных аукционных примеров: модели, год, пробег, оценки и оригинальные листы. Подбор аналогичного авто с доставкой в Новосибирск."><link rel="canonical" href="https://papauto.ru/auction-lot-index.html"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/lot-detail-photo-first.css"><script defer src="/metrika.js"></script><style>.lot-main li{padding:16px 0;border-bottom:1px solid #ccc;overflow-wrap:anywhere}.lot-main ul{padding-left:22px}.lot-main a{line-height:1.6}</style></head><body><header class="lot-header"><a class="lot-brand" href="/">PAPAUTO.</a><nav><a href="/gallery.html">Фото-галерея</a><a href="/catalog.html">Каталог моделей</a></nav></header><main class="lot-main"><h1>Аукционные лоты из Японии</h1><p>132 опубликованных примера с отдельными страницами, фотографиями и полными аукционными листами.</p><p>Это архивные примеры, а не автомобили в наличии. Цена завершённых торгов, если подтверждена, указана в карточке отдельно от доставки и оформления. Актуальность и стоимость похожего автомобиля проверяем перед заказом.</p><p><a href="/podbor.html">Подобрать автомобиль</a> · <a href="/avto-iz-yaponii-novosibirsk.html">Доставка в Новосибирск</a></p><ul>'''
     index += '\n'.join(row for _, row in sorted(rows)) + '</ul></main></body></html>'
     (target / 'auction-lot-index.html').write_text(index)
-    urls.append('https://papauto.ru/auction-lot-index.html')
+    # Keep the main sitemap focused on canonical service, model and regional pages.
+    # Auction detail pages have their own dedicated sitemap, advertised in robots.txt.
     sitemap = target / 'sitemap.xml'
     tree = ET.parse(sitemap)
     ns = 'http://www.sitemaps.org/schemas/sitemap/0.9'
     ET.register_namespace('', ns)
     root = tree.getroot()
-    existing = {e.text for e in root.findall('{'+ns+'}url/{'+ns+'}loc')}
-    for url in urls:
-        if url not in existing:
-            ET.SubElement(ET.SubElement(root, '{'+ns+'}url'), '{'+ns+'}loc').text = url
+    lot_prefix = 'https://papauto.ru/lots/'
+    # Idempotent: strip lots that an earlier release appended to the main map.
+    for item in list(root.findall('{'+ns+'}url')):
+        loc = item.findtext('{'+ns+'}loc', default='')
+        if loc.startswith(lot_prefix):
+            root.remove(item)
+    index_url = 'https://papauto.ru/auction-lot-index.html'
+    if not any(item.findtext('{'+ns+'}loc') == index_url for item in root.findall('{'+ns+'}url')):
+        ET.SubElement(ET.SubElement(root, '{'+ns+'}url'), '{'+ns+'}loc').text = index_url
     tree.write(sitemap, encoding='utf-8', xml_declaration=True)
     # A dedicated sitemap makes the already approved auction detail URLs
     # independently discoverable and trackable in Search Console.
