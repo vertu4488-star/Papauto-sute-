@@ -81,8 +81,8 @@ jobs:
               name, url, required_field = target
               last_error = "unknown"
               # Render free instances can return transient 503 while cold-starting.
-              # Keep real 5xx failures visible; allow enough time to recover.
-              for attempt in range(1, 9):
+              # Keep real 5xx failures visible; allow up to ten attempts for Render cold starts.
+              for attempt in range(1, 11):
                   try:
                       request = urllib.request.Request(url, headers={
                           "User-Agent": "NewIphoneService-UptimeMonitor/1.0",
@@ -101,7 +101,7 @@ jobs:
                       return name, True, f"HTTP {status} (attempt {attempt})"
                   except (urllib.error.URLError, TimeoutError, ValueError, RuntimeError) as exc:
                       last_error = f"{type(exc).__name__}: {str(exc)[:220]}"
-                      if attempt < 8:
+                      if attempt < 10:
                           time.sleep(15)
               return name, False, last_error
 
@@ -110,5 +110,5 @@ jobs:
           for name, okay, message in results:
               print(f"{'OK' if okay else 'FAIL'}: {name}: {message}")
           if any(not okay for _, okay, _ in results):
-              raise SystemExit("At least one service failed health checks after eight attempts")
+              raise SystemExit("At least one service failed health checks after ten attempts")
           PY
