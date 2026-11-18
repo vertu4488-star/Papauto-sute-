@@ -37,3 +37,27 @@ a:focus-visible,button:focus-visible{outline:3px solid #d6c5b6;outline-offset:3p
 .model-card .model-request{display:inline-block;color:#856142;font-size:13px;font-weight:670;text-decoration:none;margin-top:15px}
 .model-card .model-request:focus-visible{outline:3px solid #d8c8ba;outline-offset:3px}
 @media(max-width:760px){.catalog-filters select#powerFilter{grid-column:1/-1}}
+
+/* PAPAUTO WARM CATALOG UNIFICATION — 2026-11-18 */
+body{background:#faf6f1!important;color:#302b28}
+.catalog-page{background:#faf6f1!important;color:#302b28;font-weight:400}
+.catalog-intro h1{font-weight:560;letter-spacing:-.045em;color:#302b28}
+.catalog-intro h1 em{color:#936c49}
+.catalog-intro p,.priority-block p{color:#6d625b}
+.catalog-page .back-link[style]{color:#936c49!important}
+.catalog-page a:not(.model-request):hover{color:#805d3f}
+.catalog-page>nav[aria-label="Популярные модели"] a{background:#f6eee5;border-color:#e6d8ca}
+.catalog-filters{background:#f6eee5;border-color:#e6d8ca}
+.catalog-filters input,.catalog-filters select{background:#fffcf8;color:#302b28;border-color:#dfd0c1}
+.catalog-count{color:#755d4b}
+.model-card{background:#fffcf8;border-color:#e6d8ca;box-shadow:0 5px 18px rgba(80,55,35,.04)}
+.model-card h2{font-weight:560;color:#302b28}
+.model-card .country,.model-card .make,.model-card .market{color:#82654f}
+.model-card .engine{background:#f2e8dc;color:#75563b}
+.model-photo{background:linear-gradient(135deg,#f1e7dc,#e8dbcd)}
+.catalog-disclaimer,.priority-block{background:#f6eee5;border-color:#e6d8ca;color:#6d625b}
+.catalog-disclaimer b{color:#302b28}
+.priority-card{background:#fffcf8;border-color:#e6d8ca;color:#302b28}
+.priority-card img{background:#eadfd3}
+.priority-card strong{font-weight:560}
+.priority-card small{color:#6d625b}
