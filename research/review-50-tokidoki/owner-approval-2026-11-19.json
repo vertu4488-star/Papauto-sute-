@@ -1,0 +1,1451 @@
+{
+  "approval_date": "2026-11-19",
+  "approval_scope": "Owner explicitly approved publication of all 50 exact cards after seeing first Toyota Sienta card; owner reported PDF could not open. No claim of individual owner review of all pages.",
+  "approved_by": "PapAuto site owner, in chat",
+  "reviewed_artifact": "PapAuto_50_lotov_s_foto_i_listami.pdf",
+  "reviewed_pdf_sha256": "7c4c0c775dbcf3f4ca6f8f967282d66e6692f147b02d4ce74b67bcdb614746a6",
+  "approved_count": 50,
+  "public_release_status": "blocked_pending_required_documentary_commercial_and_self_host_permissions",
+  "rights_confirmed": false,
+  "existing_catalog_lot_number_overlap": 0,
+  "scope_note": "Owner consent to publication recorded; separate media rights and existing fail-closed policy are not modified. Source galleries are research references, not approved exact photo file choices.",
+  "lots": [
+    {
+      "page": 1,
+      "model": "Toyota Sienta",
+      "year": "2021",
+      "lot": "5812",
+      "auction_date": "10.10.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/sienta/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/",
+      "reported_price": "1 125 000 JPY",
+      "spec": {
+        "Пробег:": "34000",
+        "Оценка:": "4.5",
+        "Кузов:": "NSP170G",
+        "Комплектация:": "X",
+        "Объем:": "1496 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "109 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241153.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241154.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241155.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241156.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241157.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241158.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241159.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241160.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241161.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241162.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241163.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241164.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241165.avif"
+      ]
+    },
+    {
+      "page": 2,
+      "model": "Honda Vezel",
+      "year": "2019",
+      "lot": "30146",
+      "auction_date": "23.09.2026",
+      "source_listing": "https://tokidoki.su/stat/honda/vezel/e9511323-9947-556c-80fc-b9644b9cb214/",
+      "reported_price": "1 620 000 JPY",
+      "spec": {
+        "Пробег:": "18000",
+        "Оценка:": "4.5",
+        "Кузов:": "RU1",
+        "Комплектация:": "X\\* HONDA SENSING",
+        "Объем:": "1496 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "131 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/09/20/e9511323-9947-556c-80fc-b9644b9cb214/32610121.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/20/e9511323-9947-556c-80fc-b9644b9cb214/32610122.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/20/e9511323-9947-556c-80fc-b9644b9cb214/32610123.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/20/e9511323-9947-556c-80fc-b9644b9cb214/32610124.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/20/e9511323-9947-556c-80fc-b9644b9cb214/32610125.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/20/e9511323-9947-556c-80fc-b9644b9cb214/32610126.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/20/e9511323-9947-556c-80fc-b9644b9cb214/32610127.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/20/e9511323-9947-556c-80fc-b9644b9cb214/32610128.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/20/e9511323-9947-556c-80fc-b9644b9cb214/32610129.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/20/e9511323-9947-556c-80fc-b9644b9cb214/32610130.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/20/e9511323-9947-556c-80fc-b9644b9cb214/32610131.avif"
+      ]
+    },
+    {
+      "page": 3,
+      "model": "Toyota Harrier",
+      "year": "2020",
+      "lot": "30469",
+      "auction_date": "29.09.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/harrier/74b3b6ab-86b5-522e-b159-04b565ad8005/",
+      "reported_price": "1 805 000 JPY",
+      "spec": {
+        "Пробег:": "48000",
+        "Оценка:": "4.5",
+        "Кузов:": "ZSU60W",
+        "Комплектация:": "ELEGANCE",
+        "Объем:": "1986 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "151 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979568.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979569.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979570.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979571.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979572.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979573.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979575.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979577.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979579.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979580.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979581.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979582.avif"
+      ]
+    },
+    {
+      "page": 4,
+      "model": "Toyota Raize",
+      "year": "2021",
+      "lot": "36384",
+      "auction_date": "23.09.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/raize/d558d860-1959-5b47-83ba-70817670cba6/",
+      "reported_price": "1 200 000 JPY",
+      "spec": {
+        "Пробег:": "29000",
+        "Оценка:": "5",
+        "Кузов:": "A200A",
+        "Комплектация:": "X S",
+        "Объем:": "996 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "98 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824898.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824899.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824900.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824901.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824902.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824903.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824904.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824905.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824906.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824907.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824908.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824909.avif"
+      ]
+    },
+    {
+      "page": 5,
+      "model": "Suzuki Jimny",
+      "year": "2021",
+      "lot": "3039",
+      "auction_date": "01.10.2026",
+      "source_listing": "https://tokidoki.su/stat/suzuki/jimny/791cf5d3-9d30-5d78-8970-008784c12423/",
+      "reported_price": "1 250 000 JPY",
+      "spec": {
+        "Пробег:": "33000",
+        "Оценка:": "4.5",
+        "Кузов:": "JB64W",
+        "Комплектация:": "XG 4WD",
+        "Объем:": "658 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Механика",
+        "Мощность:": "64 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/09/30/791cf5d3-9d30-5d78-8970-008784c12423/34440962.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/30/791cf5d3-9d30-5d78-8970-008784c12423/34440963.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/30/791cf5d3-9d30-5d78-8970-008784c12423/34440964.avif"
+      ]
+    },
+    {
+      "page": 6,
+      "model": "Toyota Roomy",
+      "year": "2021",
+      "lot": "2011",
+      "auction_date": "29.10.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/roomy/d1ef7ba3-aa2f-5212-a0d9-ef1eb81c254c/",
+      "reported_price": "710 000 JPY",
+      "spec": {
+        "Пробег:": "27000",
+        "Оценка:": "4.5",
+        "Кузов:": "M900A",
+        "Комплектация:": "X",
+        "Объем:": "996 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "69 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/26/d1ef7ba3-aa2f-5212-a0d9-ef1eb81c254c/38947994.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/d1ef7ba3-aa2f-5212-a0d9-ef1eb81c254c/38947995.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/d1ef7ba3-aa2f-5212-a0d9-ef1eb81c254c/38947996.avif"
+      ]
+    },
+    {
+      "page": 7,
+      "model": "Toyota Yaris",
+      "year": "2021",
+      "lot": "3032",
+      "auction_date": "23.10.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/yaris/f5a6885b-9898-5d1c-82aa-d113c68d9015/",
+      "reported_price": "757 000 JPY",
+      "spec": {
+        "Пробег:": "36000",
+        "Оценка:": "4.5",
+        "Кузов:": "KSP210",
+        "Комплектация:": "X",
+        "Объем:": "996 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "69 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/20/f5a6885b-9898-5d1c-82aa-d113c68d9015/37992333.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/20/f5a6885b-9898-5d1c-82aa-d113c68d9015/37992334.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/20/f5a6885b-9898-5d1c-82aa-d113c68d9015/37992335.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/20/f5a6885b-9898-5d1c-82aa-d113c68d9015/37992336.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/20/f5a6885b-9898-5d1c-82aa-d113c68d9015/37992337.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/20/f5a6885b-9898-5d1c-82aa-d113c68d9015/37992338.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/20/f5a6885b-9898-5d1c-82aa-d113c68d9015/37992339.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/20/f5a6885b-9898-5d1c-82aa-d113c68d9015/37992340.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/20/f5a6885b-9898-5d1c-82aa-d113c68d9015/37992341.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/20/f5a6885b-9898-5d1c-82aa-d113c68d9015/37992342.avif"
+      ]
+    },
+    {
+      "page": 8,
+      "model": "Toyota Yaris Cross",
+      "year": "2021",
+      "lot": "2008",
+      "auction_date": "20.10.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/yaris-cross/1825e59d-511b-5391-9c12-c446cdee6ce3/",
+      "reported_price": "1 456 000 JPY",
+      "spec": {
+        "Пробег:": "29000",
+        "Оценка:": "4.5",
+        "Кузов:": "MXPB10",
+        "Комплектация:": "G",
+        "Объем:": "1490 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "120 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/16/1825e59d-511b-5391-9c12-c446cdee6ce3/37318081.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/1825e59d-511b-5391-9c12-c446cdee6ce3/37318082.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/1825e59d-511b-5391-9c12-c446cdee6ce3/37318083.avif"
+      ]
+    },
+    {
+      "page": 9,
+      "model": "Daihatsu Move Canbus",
+      "year": "2021",
+      "lot": "4011",
+      "auction_date": "29.10.2026",
+      "source_listing": "https://tokidoki.su/stat/daihatsu/move-canbus/0deb1389-c4ed-5cc4-a24b-4a6fc2065d05/",
+      "reported_price": "850 000 JPY",
+      "spec": {
+        "Пробег:": "24000",
+        "Оценка:": "5",
+        "Кузов:": "LA800S",
+        "Комплектация:": "GMEIK UP VS SA III",
+        "Объем:": "658 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "52 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/27/0deb1389-c4ed-5cc4-a24b-4a6fc2065d05/39328777.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/0deb1389-c4ed-5cc4-a24b-4a6fc2065d05/39328778.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/0deb1389-c4ed-5cc4-a24b-4a6fc2065d05/39328779.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/0deb1389-c4ed-5cc4-a24b-4a6fc2065d05/39328780.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/0deb1389-c4ed-5cc4-a24b-4a6fc2065d05/39328781.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/0deb1389-c4ed-5cc4-a24b-4a6fc2065d05/39328782.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/0deb1389-c4ed-5cc4-a24b-4a6fc2065d05/39328783.avif"
+      ]
+    },
+    {
+      "page": 10,
+      "model": "Toyota Corolla",
+      "year": "2019",
+      "lot": "30360",
+      "auction_date": "13.10.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/corolla/ced3ff03-9558-5f5d-856b-8d8fe9c059c1/",
+      "reported_price": "1 187 000 JPY",
+      "spec": {
+        "Пробег:": "36000",
+        "Оценка:": "4.5",
+        "Кузов:": "NRE210H",
+        "Комплектация:": "G",
+        "Объем:": "1196 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Механика",
+        "Мощность:": "116 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/16/ced3ff03-9558-5f5d-856b-8d8fe9c059c1/36829582.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/ced3ff03-9558-5f5d-856b-8d8fe9c059c1/36829584.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/ced3ff03-9558-5f5d-856b-8d8fe9c059c1/36829586.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/ced3ff03-9558-5f5d-856b-8d8fe9c059c1/36829587.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/ced3ff03-9558-5f5d-856b-8d8fe9c059c1/36829588.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/ced3ff03-9558-5f5d-856b-8d8fe9c059c1/36829589.avif"
+      ]
+    },
+    {
+      "page": 11,
+      "model": "Honda Fit",
+      "year": "2021",
+      "lot": "30161",
+      "auction_date": "04.11.2026",
+      "source_listing": "https://tokidoki.su/stat/honda/fit/e2fe2097-8d61-54d6-b923-7f24e27b8432/",
+      "reported_price": "915 000 JPY",
+      "spec": {
+        "Пробег:": "28000",
+        "Оценка:": "4.5",
+        "Кузов:": "GR1",
+        "Комплектация:": "BASIC",
+        "Объем:": "1317 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "98 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/01/e2fe2097-8d61-54d6-b923-7f24e27b8432/40401982.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/e2fe2097-8d61-54d6-b923-7f24e27b8432/40401983.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/e2fe2097-8d61-54d6-b923-7f24e27b8432/40401984.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/e2fe2097-8d61-54d6-b923-7f24e27b8432/40401985.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/e2fe2097-8d61-54d6-b923-7f24e27b8432/40401986.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/e2fe2097-8d61-54d6-b923-7f24e27b8432/40401987.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/e2fe2097-8d61-54d6-b923-7f24e27b8432/40401988.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/e2fe2097-8d61-54d6-b923-7f24e27b8432/40401989.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/e2fe2097-8d61-54d6-b923-7f24e27b8432/40401990.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/e2fe2097-8d61-54d6-b923-7f24e27b8432/40401991.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/e2fe2097-8d61-54d6-b923-7f24e27b8432/40401992.avif"
+      ]
+    },
+    {
+      "page": 12,
+      "model": "Mazda CX-5",
+      "year": "2024",
+      "lot": "60216",
+      "auction_date": "14.10.2026",
+      "source_listing": "https://tokidoki.su/stat/mazda/cx-5/37c4326d-2205-5c22-a12e-50659d9130cd/",
+      "reported_price": "2 155 000 JPY",
+      "spec": {
+        "Пробег:": "22000",
+        "Оценка:": "4.5",
+        "Кузов:": "KFEP",
+        "Комплектация:": "20S SMART EDITION",
+        "Объем:": "1997 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Автомат",
+        "Мощность:": "156 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/16/37c4326d-2205-5c22-a12e-50659d9130cd/36298418.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/37c4326d-2205-5c22-a12e-50659d9130cd/36298419.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/37c4326d-2205-5c22-a12e-50659d9130cd/36298420.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/37c4326d-2205-5c22-a12e-50659d9130cd/36298421.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/37c4326d-2205-5c22-a12e-50659d9130cd/36298422.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/37c4326d-2205-5c22-a12e-50659d9130cd/36298423.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/37c4326d-2205-5c22-a12e-50659d9130cd/36298425.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/37c4326d-2205-5c22-a12e-50659d9130cd/36298427.avif"
+      ]
+    },
+    {
+      "page": 13,
+      "model": "Daihatsu Mira e:S",
+      "year": "2021",
+      "lot": "3080",
+      "auction_date": "22.09.2026",
+      "source_listing": "https://tokidoki.su/stat/daihatsu/mira-e-s/69506ac7-fd70-5212-b49a-6fd7aef7044c/",
+      "reported_price": "342 000 JPY",
+      "spec": {
+        "Пробег:": "42000",
+        "Оценка:": "4.5",
+        "Кузов:": "LA350S",
+        "Объем:": "658 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "49 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/09/19/69506ac7-fd70-5212-b49a-6fd7aef7044c/32572594.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/19/69506ac7-fd70-5212-b49a-6fd7aef7044c/32572595.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/19/69506ac7-fd70-5212-b49a-6fd7aef7044c/32572596.avif"
+      ]
+    },
+    {
+      "page": 14,
+      "model": "Toyota C-HR",
+      "year": "2019",
+      "lot": "2140",
+      "auction_date": "29.09.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/c-hr/2e99d99e-adef-5242-97e4-c0799196a584/",
+      "reported_price": "1 474 000 JPY",
+      "spec": {
+        "Пробег:": "26000",
+        "Оценка:": "4.5",
+        "Кузов:": "NGX10",
+        "Комплектация:": "S-T LED PACKAGE",
+        "Объем:": "1196 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "116 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/09/26/2e99d99e-adef-5242-97e4-c0799196a584/33769734.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/26/2e99d99e-adef-5242-97e4-c0799196a584/33769735.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/26/2e99d99e-adef-5242-97e4-c0799196a584/33769736.avif"
+      ]
+    },
+    {
+      "page": 15,
+      "model": "Honda N-WGN",
+      "year": "2019",
+      "lot": "6242",
+      "auction_date": "09.10.2026",
+      "source_listing": "https://tokidoki.su/stat/honda/n-wgn/bc79594b-f448-5831-a298-316be0f86517/",
+      "reported_price": "459 000 JPY",
+      "spec": {
+        "Пробег:": "32000",
+        "Оценка:": "4.5",
+        "Кузов:": "JH1",
+        "Комплектация:": "G",
+        "Объем:": "658 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "58 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881561.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881562.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881563.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881564.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881565.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881566.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881567.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881568.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881569.avif"
+      ]
+    },
+    {
+      "page": 16,
+      "model": "Suzuki Solio",
+      "year": "2021",
+      "lot": "73005",
+      "auction_date": "22.10.2026",
+      "source_listing": "https://tokidoki.su/stat/suzuki/solio/30dc9558-310d-5e41-896b-e819ad4bd17e/",
+      "reported_price": "994 000 JPY",
+      "spec": {
+        "Пробег:": "38000",
+        "Оценка:": "4.5",
+        "Кузов:": "MA36S",
+        "Комплектация:": "HYBRID MX",
+        "Объем:": "1242 см3",
+        "Двигатель:": "Мягкий гибрид",
+        "КПП:": "Вариатор",
+        "Мощность:": "94 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/19/30dc9558-310d-5e41-896b-e819ad4bd17e/37775236.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/30dc9558-310d-5e41-896b-e819ad4bd17e/37775237.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/30dc9558-310d-5e41-896b-e819ad4bd17e/37775238.avif"
+      ]
+    },
+    {
+      "page": 17,
+      "model": "Daihatsu Move",
+      "year": "2021",
+      "lot": "3250",
+      "auction_date": "03.11.2026",
+      "source_listing": "https://tokidoki.su/stat/daihatsu/move/14bf5d57-082c-534b-86d1-8ab01e2e4b16/",
+      "reported_price": "494 000 JPY",
+      "spec": {
+        "Пробег:": "43000",
+        "Оценка:": "4.5",
+        "Кузов:": "LA150S",
+        "Комплектация:": "L",
+        "Объем:": "658 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "52 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/30/14bf5d57-082c-534b-86d1-8ab01e2e4b16/40176012.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/30/14bf5d57-082c-534b-86d1-8ab01e2e4b16/40176013.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/30/14bf5d57-082c-534b-86d1-8ab01e2e4b16/40176014.avif"
+      ]
+    },
+    {
+      "page": 18,
+      "model": "Daihatsu Taft",
+      "year": "2021",
+      "lot": "89",
+      "auction_date": "04.11.2026",
+      "source_listing": "https://tokidoki.su/stat/daihatsu/taft/754c7506-0d4d-5a28-b186-7a6a528bdc5a/",
+      "reported_price": "844 000 JPY",
+      "spec": {
+        "Пробег:": "25000",
+        "Оценка:": "5",
+        "Кузов:": "LA900S",
+        "Комплектация:": "G",
+        "Объем:": "658 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "52 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508756.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508757.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508758.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508759.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508760.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508761.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508762.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508763.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508764.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508765.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508766.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508767.avif"
+      ]
+    },
+    {
+      "page": 19,
+      "model": "Suzuki Jimny Sierra",
+      "year": "2022",
+      "lot": "36463",
+      "auction_date": "11.11.2026",
+      "source_listing": "https://tokidoki.su/stat/suzuki/jimny-sierra/ca5485d8-8adf-5c8c-9f6c-fee47f186065/",
+      "reported_price": "1 685 000 JPY",
+      "spec": {
+        "Пробег:": "43000",
+        "Оценка:": "4.5",
+        "Кузов:": "JB74W",
+        "Комплектация:": "JC 4WD",
+        "Объем:": "1460 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Автомат",
+        "Мощность:": "102 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/0.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/3.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/4.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/5.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/6.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/7.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/8.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/9.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/10.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/11.avif"
+      ]
+    },
+    {
+      "page": 20,
+      "model": "Toyota Passo",
+      "year": "2021",
+      "lot": "2033",
+      "auction_date": "20.10.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/passo/879f75b7-54b7-582f-b77b-25f968251508/",
+      "reported_price": "503 000 JPY",
+      "spec": {
+        "Пробег:": "49000",
+        "Оценка:": "4.5",
+        "Кузов:": "M700A",
+        "Комплектация:": "X L PACKAGE S",
+        "Объем:": "996 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "69 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/16/879f75b7-54b7-582f-b77b-25f968251508/37509663.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/879f75b7-54b7-582f-b77b-25f968251508/37509664.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/879f75b7-54b7-582f-b77b-25f968251508/37509665.avif"
+      ]
+    },
+    {
+      "page": 21,
+      "model": "Suzuki Swift",
+      "year": "2021",
+      "lot": "2176",
+      "auction_date": "10.11.2026",
+      "source_listing": "https://tokidoki.su/stat/suzuki/swift/5064bc06-3b95-52be-8436-1d674fc68de2/",
+      "reported_price": "823 000 JPY",
+      "spec": {
+        "Пробег:": "30000",
+        "Оценка:": "4.5",
+        "Кузов:": "ZC83S",
+        "Комплектация:": "XG",
+        "Объем:": "1242 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Механика",
+        "Мощность:": "91 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/0.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/3.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/4.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/5.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/6.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/7.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/8.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/9.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/10.avif"
+      ]
+    },
+    {
+      "page": 22,
+      "model": "Toyota Corolla Fielder",
+      "year": "2021",
+      "lot": "3346",
+      "auction_date": "27.10.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/corolla-fielder/6015c38f-d4d9-56c3-a466-20341155810f/",
+      "reported_price": "1 176 000 JPY",
+      "spec": {
+        "Пробег:": "33000",
+        "Оценка:": "5",
+        "Кузов:": "NRE161G",
+        "Комплектация:": "EX",
+        "Объем:": "1496 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "109 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656026.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656027.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656028.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656029.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656030.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656031.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656032.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656033.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656034.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656035.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656036.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656037.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656038.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656039.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656040.avif"
+      ]
+    },
+    {
+      "page": 23,
+      "model": "Subaru Impreza",
+      "year": "2021",
+      "lot": "2328",
+      "auction_date": "11.11.2026",
+      "source_listing": "https://tokidoki.su/stat/subaru/impreza/9c492a34-3009-519c-931a-f25274da3941/",
+      "reported_price": "772 000 JPY",
+      "spec": {
+        "Пробег:": "10000",
+        "Оценка:": "4.5",
+        "Кузов:": "GT2",
+        "Комплектация:": "1.6I-L EYESIGHT",
+        "Объем:": "1599 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "115 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/07/9c492a34-3009-519c-931a-f25274da3941/0.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/9c492a34-3009-519c-931a-f25274da3941/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/9c492a34-3009-519c-931a-f25274da3941/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/9c492a34-3009-519c-931a-f25274da3941/3.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/9c492a34-3009-519c-931a-f25274da3941/4.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/9c492a34-3009-519c-931a-f25274da3941/5.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/9c492a34-3009-519c-931a-f25274da3941/6.avif"
+      ]
+    },
+    {
+      "page": 24,
+      "model": "Toyota Vitz",
+      "year": "2019",
+      "lot": "2163",
+      "auction_date": "05.11.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/vitz/116175db-6b63-52f2-a7d4-8e8d0cfd4211/",
+      "reported_price": "572 000 JPY",
+      "spec": {
+        "Пробег:": "34000",
+        "Оценка:": "4.5",
+        "Кузов:": "KSP130",
+        "Комплектация:": "F обзор комплектаций",
+        "Объем:": "996 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "69 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/03/116175db-6b63-52f2-a7d4-8e8d0cfd4211/40851781.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/03/116175db-6b63-52f2-a7d4-8e8d0cfd4211/40851782.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/03/116175db-6b63-52f2-a7d4-8e8d0cfd4211/40851783.avif"
+      ]
+    },
+    {
+      "page": 25,
+      "model": "Volkswagen Golf",
+      "year": "2021",
+      "lot": "60531",
+      "auction_date": "30.09.2026",
+      "source_listing": "https://tokidoki.su/stat/volkswagen/golf/ce956024-4fe7-5248-9eb5-ecc661fc927f/",
+      "reported_price": "1 110 000 JPY",
+      "spec": {
+        "Пробег:": "46000",
+        "Оценка:": "4.5",
+        "Кузов:": "CDDLAV",
+        "Комплектация:": "ETSI ACTIVE",
+        "Объем:": "999 см3",
+        "Двигатель:": "Мягкий гибрид",
+        "КПП:": "Робот",
+        "Мощность:": "123 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/09/29/ce956024-4fe7-5248-9eb5-ecc661fc927f/34269902.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/29/ce956024-4fe7-5248-9eb5-ecc661fc927f/34269903.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/29/ce956024-4fe7-5248-9eb5-ecc661fc927f/34269904.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/29/ce956024-4fe7-5248-9eb5-ecc661fc927f/34269905.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/29/ce956024-4fe7-5248-9eb5-ecc661fc927f/34269906.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/29/ce956024-4fe7-5248-9eb5-ecc661fc927f/34269907.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/29/ce956024-4fe7-5248-9eb5-ecc661fc927f/34269908.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/29/ce956024-4fe7-5248-9eb5-ecc661fc927f/34269909.avif"
+      ]
+    },
+    {
+      "page": 26,
+      "model": "Mercedes-Benz C-Class",
+      "year": "2020",
+      "lot": "395",
+      "auction_date": "24.10.2026",
+      "source_listing": "https://tokidoki.su/stat/mercedes-benz/c-class/5c6eb6f5-9339-5a61-94e0-aee2d6903535/",
+      "reported_price": "2 130 000 JPY",
+      "spec": {
+        "Пробег:": "44000",
+        "Оценка:": "4.5",
+        "Кузов:": "205076C",
+        "Комплектация:": "C 180 AV AMG LINE RADAR SEFTIP BASIC P",
+        "Объем:": "1497 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Автомат",
+        "Мощность:": "156 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/21/5c6eb6f5-9339-5a61-94e0-aee2d6903535/38300360.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/21/5c6eb6f5-9339-5a61-94e0-aee2d6903535/38300361.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/21/5c6eb6f5-9339-5a61-94e0-aee2d6903535/38300362.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/21/5c6eb6f5-9339-5a61-94e0-aee2d6903535/38300363.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/21/5c6eb6f5-9339-5a61-94e0-aee2d6903535/38300364.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/21/5c6eb6f5-9339-5a61-94e0-aee2d6903535/38300365.avif"
+      ]
+    },
+    {
+      "page": 27,
+      "model": "Honda Shuttle",
+      "year": "2021",
+      "lot": "82030",
+      "auction_date": "12.11.2026",
+      "source_listing": "https://tokidoki.su/stat/honda/shuttle/4de1487d-ce99-5e68-9019-c527aa0dc2c9/",
+      "reported_price": "1 511 000 JPY",
+      "spec": {
+        "Пробег:": "6000",
+        "Оценка:": "4.5",
+        "Кузов:": "GK8",
+        "Комплектация:": "G HONDA SENSING",
+        "Объем:": "1496 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "129 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/10/4de1487d-ce99-5e68-9019-c527aa0dc2c9/0.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/4de1487d-ce99-5e68-9019-c527aa0dc2c9/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/4de1487d-ce99-5e68-9019-c527aa0dc2c9/2.avif"
+      ]
+    },
+    {
+      "page": 28,
+      "model": "Mazda Mazda3",
+      "year": "2021",
+      "lot": "7187",
+      "auction_date": "26.09.2026",
+      "source_listing": "https://tokidoki.su/stat/mazda/mazda3/673d1147-e6e5-5cff-a8f4-f3a244f0f910/",
+      "reported_price": "1 285 000 JPY",
+      "spec": {
+        "Пробег:": "43000",
+        "Оценка:": "4.5",
+        "Кузов:": "BP5P",
+        "Комплектация:": "15C",
+        "Объем:": "1496 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Автомат",
+        "Мощность:": "111 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312653.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312654.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312655.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312656.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312657.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312658.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312659.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312660.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312661.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312662.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312663.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312664.avif"
+      ]
+    },
+    {
+      "page": 29,
+      "model": "Subaru XV",
+      "year": "2019",
+      "lot": "2071",
+      "auction_date": "23.10.2026",
+      "source_listing": "https://tokidoki.su/stat/subaru/xv/0318bb9e-3e58-5119-a166-ea7ed47856c0/",
+      "reported_price": "1 434 000 JPY",
+      "spec": {
+        "Пробег:": "29000",
+        "Оценка:": "4.5",
+        "Кузов:": "GT3",
+        "Комплектация:": "4WD 1.6I EYESIGHT",
+        "Объем:": "1599 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "115 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/22/0318bb9e-3e58-5119-a166-ea7ed47856c0/38626467.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/22/0318bb9e-3e58-5119-a166-ea7ed47856c0/38626468.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/22/0318bb9e-3e58-5119-a166-ea7ed47856c0/38626469.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/22/0318bb9e-3e58-5119-a166-ea7ed47856c0/38626470.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/22/0318bb9e-3e58-5119-a166-ea7ed47856c0/38626471.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/22/0318bb9e-3e58-5119-a166-ea7ed47856c0/38626472.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/22/0318bb9e-3e58-5119-a166-ea7ed47856c0/38626473.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/22/0318bb9e-3e58-5119-a166-ea7ed47856c0/38626474.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/22/0318bb9e-3e58-5119-a166-ea7ed47856c0/38626475.avif"
+      ]
+    },
+    {
+      "page": 30,
+      "model": "Mazda CX-30",
+      "year": "2021",
+      "lot": "36035",
+      "auction_date": "18.11.2026",
+      "source_listing": "https://tokidoki.su/stat/mazda/cx-30/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/",
+      "reported_price": "1 570 000 JPY",
+      "spec": {
+        "Пробег:": "47000",
+        "Оценка:": "4.5",
+        "Кузов:": "DM8P",
+        "Комплектация:": "XD PRO ACTIVE TOURING SELECTION",
+        "Объем:": "1756 см3",
+        "Двигатель:": "Дизель",
+        "КПП:": "Автомат",
+        "Мощность:": "130 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/0.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/3.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/4.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/5.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/6.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/7.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/8.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/9.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/10.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/11.avif"
+      ]
+    },
+    {
+      "page": 31,
+      "model": "Mazda CX-3",
+      "year": "2021",
+      "lot": "2451",
+      "auction_date": "10.11.2026",
+      "source_listing": "https://tokidoki.su/stat/mazda/cx-3/bef25b34-895c-5db1-9fc9-e4de3157cba8/",
+      "reported_price": "1 180 000 JPY",
+      "spec": {
+        "Пробег:": "41000",
+        "Оценка:": "4.5",
+        "Кузов:": "DKLFW",
+        "Комплектация:": "15S",
+        "Объем:": "1496 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Автомат",
+        "Мощность:": "111 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/06/bef25b34-895c-5db1-9fc9-e4de3157cba8/0.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/06/bef25b34-895c-5db1-9fc9-e4de3157cba8/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/06/bef25b34-895c-5db1-9fc9-e4de3157cba8/2.avif"
+      ]
+    },
+    {
+      "page": 32,
+      "model": "Toyota Corolla Axio",
+      "year": "2021",
+      "lot": "72041",
+      "auction_date": "22.10.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/corolla-axio/52562f34-f1d0-5d4f-a877-6ad3e17510fb/",
+      "reported_price": "933 000 JPY",
+      "spec": {
+        "Пробег:": "41000",
+        "Оценка:": "4.5",
+        "Кузов:": "NZE164",
+        "Комплектация:": "EX 4WD",
+        "Объем:": "1496 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "103 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/21/52562f34-f1d0-5d4f-a877-6ad3e17510fb/38309040.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/21/52562f34-f1d0-5d4f-a877-6ad3e17510fb/38309041.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/21/52562f34-f1d0-5d4f-a877-6ad3e17510fb/38309042.avif"
+      ]
+    },
+    {
+      "page": 33,
+      "model": "Daihatsu Rocky",
+      "year": "2021",
+      "lot": "5797",
+      "auction_date": "03.10.2026",
+      "source_listing": "https://tokidoki.su/stat/daihatsu/rocky/05622e78-c179-54a4-bdd9-28c51637a20a/",
+      "reported_price": "1 165 000 JPY",
+      "spec": {
+        "Пробег:": "31000",
+        "Оценка:": "4.5",
+        "Кузов:": "A200S",
+        "Комплектация:": "X",
+        "Объем:": "996 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "98 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518393.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518394.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518395.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518396.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518397.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518398.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518399.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518400.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518401.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518402.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518403.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518404.avif"
+      ]
+    },
+    {
+      "page": 34,
+      "model": "BMW 1-Series",
+      "year": "2019",
+      "lot": "60268",
+      "auction_date": "23.09.2026",
+      "source_listing": "https://tokidoki.su/stat/bmw/1-series/018eb2a7-b7ab-5194-a448-76f73e7395af/",
+      "reported_price": "940 000 JPY",
+      "spec": {
+        "Пробег:": "34000",
+        "Оценка:": "4.5",
+        "Кузов:": "1R15",
+        "Комплектация:": "118i",
+        "Объем:": "1498 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Автомат",
+        "Мощность:": "136 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/09/21/018eb2a7-b7ab-5194-a448-76f73e7395af/32814612.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/018eb2a7-b7ab-5194-a448-76f73e7395af/32814614.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/018eb2a7-b7ab-5194-a448-76f73e7395af/32814615.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/018eb2a7-b7ab-5194-a448-76f73e7395af/32814616.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/018eb2a7-b7ab-5194-a448-76f73e7395af/32814617.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/018eb2a7-b7ab-5194-a448-76f73e7395af/32814618.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/018eb2a7-b7ab-5194-a448-76f73e7395af/32814619.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/018eb2a7-b7ab-5194-a448-76f73e7395af/32814620.avif"
+      ]
+    },
+    {
+      "page": 35,
+      "model": "Mitsubishi Eclipse Cross",
+      "year": "2021",
+      "lot": "75210",
+      "auction_date": "22.10.2026",
+      "source_listing": "https://tokidoki.su/stat/mitsubishi/eclipse-cross/f88d777c-f2fe-5073-8bca-72a8e5961fa8/",
+      "reported_price": "1 985 000 JPY",
+      "spec": {
+        "Пробег:": "31000",
+        "Оценка:": "4.5",
+        "Кузов:": "GK1W",
+        "Комплектация:": "G PLUS PACKAGE",
+        "Объем:": "1499 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "150 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/19/f88d777c-f2fe-5073-8bca-72a8e5961fa8/37914810.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/f88d777c-f2fe-5073-8bca-72a8e5961fa8/37914811.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/f88d777c-f2fe-5073-8bca-72a8e5961fa8/37914812.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/f88d777c-f2fe-5073-8bca-72a8e5961fa8/37914813.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/f88d777c-f2fe-5073-8bca-72a8e5961fa8/37914814.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/f88d777c-f2fe-5073-8bca-72a8e5961fa8/37914815.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/f88d777c-f2fe-5073-8bca-72a8e5961fa8/37914816.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/f88d777c-f2fe-5073-8bca-72a8e5961fa8/37914817.avif"
+      ]
+    },
+    {
+      "page": 36,
+      "model": "Mercedes-Benz A-Class",
+      "year": "2021",
+      "lot": "38037",
+      "auction_date": "18.11.2026",
+      "source_listing": "https://tokidoki.su/stat/mercedes-benz/a-class/01e2ddf9-47a8-57fc-b909-94dda7b4a179/",
+      "reported_price": "1 395 000 JPY",
+      "spec": {
+        "Пробег:": "34000",
+        "Оценка:": "4.5",
+        "Кузов:": "177084",
+        "Комплектация:": "A180",
+        "Объем:": "1332 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Робот",
+        "Мощность:": "136 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/0.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/3.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/4.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/5.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/6.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/7.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/8.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/9.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/10.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/11.avif"
+      ]
+    },
+    {
+      "page": 37,
+      "model": "Mazda Axela",
+      "year": "2019",
+      "lot": "60196",
+      "auction_date": "18.11.2026",
+      "source_listing": "https://tokidoki.su/stat/mazda/axela/12169ad2-b97f-5a62-8dfa-b9415628ac44/",
+      "reported_price": "1 050 000 JPY",
+      "spec": {
+        "Пробег:": "19000",
+        "Оценка:": "4.5",
+        "Кузов:": "BM5FS",
+        "Комплектация:": "15S",
+        "Объем:": "1496 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Автомат",
+        "Мощность:": "111 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/14/12169ad2-b97f-5a62-8dfa-b9415628ac44/0.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/12169ad2-b97f-5a62-8dfa-b9415628ac44/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/12169ad2-b97f-5a62-8dfa-b9415628ac44/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/12169ad2-b97f-5a62-8dfa-b9415628ac44/3.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/12169ad2-b97f-5a62-8dfa-b9415628ac44/4.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/12169ad2-b97f-5a62-8dfa-b9415628ac44/5.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/12169ad2-b97f-5a62-8dfa-b9415628ac44/6.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/12169ad2-b97f-5a62-8dfa-b9415628ac44/7.avif"
+      ]
+    },
+    {
+      "page": 38,
+      "model": "BMW X1",
+      "year": "2019",
+      "lot": "38259",
+      "auction_date": "29.09.2026",
+      "source_listing": "https://tokidoki.su/stat/bmw/x1/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/",
+      "reported_price": "1 384 000 JPY",
+      "spec": {
+        "Пробег:": "33000",
+        "Оценка:": "5",
+        "Кузов:": "JG15",
+        "Комплектация:": "sDrive 18i",
+        "Объем:": "1498 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Робот",
+        "Мощность:": "140 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953372.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953373.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953374.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953375.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953376.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953378.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953379.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953381.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953383.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953384.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953385.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953386.avif"
+      ]
+    },
+    {
+      "page": 39,
+      "model": "Mazda Roadster",
+      "year": "2021",
+      "lot": "2041",
+      "auction_date": "05.11.2026",
+      "source_listing": "https://tokidoki.su/stat/mazda/roadster/2b9f0818-82c0-5331-b9b4-f101e1f5b599/",
+      "reported_price": "1 989 000 JPY",
+      "spec": {
+        "Пробег:": "23000",
+        "Оценка:": "5",
+        "Кузов:": "ND5RC",
+        "Комплектация:": "S SPECIAL PACKAGE",
+        "Объем:": "1496 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Механика",
+        "Мощность:": "132 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/03/2b9f0818-82c0-5331-b9b4-f101e1f5b599/40674199.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/03/2b9f0818-82c0-5331-b9b4-f101e1f5b599/40674200.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/03/2b9f0818-82c0-5331-b9b4-f101e1f5b599/40674201.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/03/2b9f0818-82c0-5331-b9b4-f101e1f5b599/40674202.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/03/2b9f0818-82c0-5331-b9b4-f101e1f5b599/40674203.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/03/2b9f0818-82c0-5331-b9b4-f101e1f5b599/40674204.avif"
+      ]
+    },
+    {
+      "page": 40,
+      "model": "Volkswagen T-Cross",
+      "year": "2021",
+      "lot": "38116",
+      "auction_date": "27.10.2026",
+      "source_listing": "https://tokidoki.su/stat/volkswagen/t-cross/2cf206b8-5b74-537d-8720-ad113a921334/",
+      "reported_price": "1 113 000 JPY",
+      "spec": {
+        "Пробег:": "47000",
+        "Оценка:": "5",
+        "Кузов:": "C1DKR",
+        "Комплектация:": "TSI ACTIVE",
+        "Объем:": "999 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Робот",
+        "Мощность:": "116 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971311.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971312.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971313.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971314.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971315.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971316.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971317.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971318.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971319.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971320.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971321.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971322.avif"
+      ]
+    },
+    {
+      "page": 41,
+      "model": "Suzuki Ignis",
+      "year": "2021",
+      "lot": "30130",
+      "auction_date": "04.11.2026",
+      "source_listing": "https://tokidoki.su/stat/suzuki/ignis/c79dc778-bdb6-51a6-985d-39a8a419530a/",
+      "reported_price": "1 060 000 JPY",
+      "spec": {
+        "Пробег:": "39000",
+        "Оценка:": "4.5",
+        "Кузов:": "FF21S",
+        "Комплектация:": "4WD HYBRID MZ",
+        "Объем:": "1242 см3",
+        "Двигатель:": "Мягкий гибрид",
+        "КПП:": "Вариатор",
+        "Мощность:": "94 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/01/c79dc778-bdb6-51a6-985d-39a8a419530a/40411818.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/c79dc778-bdb6-51a6-985d-39a8a419530a/40411819.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/c79dc778-bdb6-51a6-985d-39a8a419530a/40411820.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/c79dc778-bdb6-51a6-985d-39a8a419530a/40411821.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/c79dc778-bdb6-51a6-985d-39a8a419530a/40411822.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/c79dc778-bdb6-51a6-985d-39a8a419530a/40411823.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/c79dc778-bdb6-51a6-985d-39a8a419530a/40411824.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/c79dc778-bdb6-51a6-985d-39a8a419530a/40411825.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/c79dc778-bdb6-51a6-985d-39a8a419530a/40411826.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/c79dc778-bdb6-51a6-985d-39a8a419530a/40411827.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/c79dc778-bdb6-51a6-985d-39a8a419530a/40411828.avif"
+      ]
+    },
+    {
+      "page": 42,
+      "model": "Volkswagen T-Roc",
+      "year": "2021",
+      "lot": "4350",
+      "auction_date": "02.10.2026",
+      "source_listing": "https://tokidoki.su/stat/volkswagen/t-roc/55b2b1b8-7801-5e5b-9ba4-04d68668e519/",
+      "reported_price": "1 392 000 JPY",
+      "spec": {
+        "Пробег:": "41000",
+        "Оценка:": "4.5",
+        "Кузов:": "A1DPC",
+        "Комплектация:": "TSI STYLE DESIGN PACK",
+        "Объем:": "1497 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Робот",
+        "Мощность:": "150 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/09/30/55b2b1b8-7801-5e5b-9ba4-04d68668e519/34282998.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/30/55b2b1b8-7801-5e5b-9ba4-04d68668e519/34282999.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/30/55b2b1b8-7801-5e5b-9ba4-04d68668e519/34283000.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/30/55b2b1b8-7801-5e5b-9ba4-04d68668e519/34283001.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/30/55b2b1b8-7801-5e5b-9ba4-04d68668e519/34283002.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/30/55b2b1b8-7801-5e5b-9ba4-04d68668e519/34283003.avif"
+      ]
+    },
+    {
+      "page": 43,
+      "model": "Toyota Prius",
+      "year": "2021",
+      "lot": "2037",
+      "auction_date": "29.10.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/prius/de0753b9-d8b3-514f-9ff4-7c06a7619ec4/",
+      "reported_price": "1 310 000 JPY",
+      "spec": {
+        "Пробег:": "47000",
+        "Оценка:": "4.5",
+        "Кузов:": "ZVW51",
+        "Комплектация:": "S",
+        "Объем:": "1797 см3",
+        "Двигатель:": "Параллельный гибрид",
+        "КПП:": "Вариатор",
+        "Мощность:": "148 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/30/de0753b9-d8b3-514f-9ff4-7c06a7619ec4/40086307.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/30/de0753b9-d8b3-514f-9ff4-7c06a7619ec4/40086308.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/30/de0753b9-d8b3-514f-9ff4-7c06a7619ec4/40086309.avif"
+      ]
+    },
+    {
+      "page": 44,
+      "model": "MINI Hatch",
+      "year": "2021",
+      "lot": "38081",
+      "auction_date": "10.11.2026",
+      "source_listing": "https://tokidoki.su/stat/mini/hatch/b9ffbe2a-5e01-5446-8bb7-224c1d3919da/",
+      "reported_price": "1 175 000 JPY",
+      "spec": {
+        "Пробег:": "30000",
+        "Оценка:": "4.5",
+        "Кузов:": "XR15MW",
+        "Комплектация:": "VI KTO REAR",
+        "Объем:": "1498 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Робот",
+        "Мощность:": "102 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/29/b9ffbe2a-5e01-5446-8bb7-224c1d3919da/39924118.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/29/b9ffbe2a-5e01-5446-8bb7-224c1d3919da/39924119.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/29/b9ffbe2a-5e01-5446-8bb7-224c1d3919da/39924120.avif"
+      ]
+    },
+    {
+      "page": 45,
+      "model": "Nissan March",
+      "year": "2021",
+      "lot": "36418",
+      "auction_date": "23.09.2026",
+      "source_listing": "https://tokidoki.su/stat/nissan/march/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/",
+      "reported_price": "385 000 JPY",
+      "spec": {
+        "Пробег:": "40000",
+        "Оценка:": "4.5",
+        "Кузов:": "K13",
+        "Комплектация:": "S",
+        "Объем:": "1198 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "79 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936382.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936383.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936384.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936385.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936386.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936387.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936388.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936389.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936390.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936391.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936392.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936393.avif"
+      ]
+    },
+    {
+      "page": 46,
+      "model": "Toyota Porte",
+      "year": "2021",
+      "lot": "40004",
+      "auction_date": "10.11.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/porte/34e47956-dffe-5888-93d1-0cab82e6425d/",
+      "reported_price": "951 000 JPY",
+      "spec": {
+        "Пробег:": "29000",
+        "Оценка:": "4.5",
+        "Кузов:": "NSP141",
+        "Комплектация:": "F",
+        "Объем:": "1496 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Вариатор",
+        "Мощность:": "109 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/0.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/3.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/4.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/5.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/6.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/7.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/8.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/9.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/10.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/11.avif"
+      ]
+    },
+    {
+      "page": 47,
+      "model": "Mitsubishi Delica D:2",
+      "year": "2021",
+      "lot": "2419",
+      "auction_date": "17.11.2026",
+      "source_listing": "https://tokidoki.su/stat/mitsubishi/delica-d-2/1fa1d7f9-a356-5863-a406-0d4e4a8ec434/",
+      "reported_price": "1 134 000 JPY",
+      "spec": {
+        "Пробег:": "45000",
+        "Оценка:": "4.5",
+        "Кузов:": "MB37S",
+        "Комплектация:": "HYBRID MX",
+        "Объем:": "1242 см3",
+        "Двигатель:": "Мягкий гибрид",
+        "КПП:": "Вариатор",
+        "Мощность:": "94 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/14/1fa1d7f9-a356-5863-a406-0d4e4a8ec434/0.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/1fa1d7f9-a356-5863-a406-0d4e4a8ec434/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/1fa1d7f9-a356-5863-a406-0d4e4a8ec434/2.avif"
+      ]
+    },
+    {
+      "page": 48,
+      "model": "Lexus CT200h",
+      "year": "2021",
+      "lot": "36215",
+      "auction_date": "30.09.2026",
+      "source_listing": "https://tokidoki.su/stat/lexus/ct200h/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/",
+      "reported_price": "2 395 000 JPY",
+      "spec": {
+        "Пробег:": "12000",
+        "Оценка:": "4.5",
+        "Кузов:": "ZWA10",
+        "Комплектация:": "CT200H VERSION C",
+        "Объем:": "1797 см3",
+        "Двигатель:": "Параллельный гибрид",
+        "КПП:": "Вариатор",
+        "Мощность:": "124 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902813.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902815.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902817.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902819.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902821.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902822.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902825.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902827.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902829.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902831.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902832.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902833.avif"
+      ]
+    },
+    {
+      "page": 49,
+      "model": "Toyota Prius PHV",
+      "year": "2023",
+      "lot": "70044",
+      "auction_date": "17.11.2026",
+      "source_listing": "https://tokidoki.su/stat/toyota/prius-phv/c3460ff2-cad6-5f49-a6a1-f8da7ef86621/",
+      "reported_price": "619 000 JPY",
+      "spec": {
+        "Пробег:": "8000",
+        "Оценка:": "4.5",
+        "Кузов:": "MXWH61",
+        "Комплектация:": "Z",
+        "Объем:": "1986 см3",
+        "Двигатель:": "Параллельный гибрид",
+        "КПП:": "Вариатор",
+        "Мощность:": "242 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/11/14/c3460ff2-cad6-5f49-a6a1-f8da7ef86621/0.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/c3460ff2-cad6-5f49-a6a1-f8da7ef86621/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/c3460ff2-cad6-5f49-a6a1-f8da7ef86621/2.avif"
+      ]
+    },
+    {
+      "page": 50,
+      "model": "Audi A3",
+      "year": "2019",
+      "lot": "1101",
+      "auction_date": "30.10.2026",
+      "source_listing": "https://tokidoki.su/stat/audi/a3/fa84b309-a65d-51a2-8027-6fd257213f1c/",
+      "reported_price": "1 049 000 JPY",
+      "spec": {
+        "Пробег:": "42000",
+        "Оценка:": "4.5",
+        "Кузов:": "8VCXS",
+        "Комплектация:": "SPORTBACK 30TFSI",
+        "Объем:": "1394 см3",
+        "Двигатель:": "Бензин",
+        "КПП:": "Робот",
+        "Мощность:": "122 л.с."
+      },
+      "source_gallery": [
+        "https://japan.storage.yandexcloud.net/2026/10/27/fa84b309-a65d-51a2-8027-6fd257213f1c/39497599.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/fa84b309-a65d-51a2-8027-6fd257213f1c/39497600.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/fa84b309-a65d-51a2-8027-6fd257213f1c/39497601.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/fa84b309-a65d-51a2-8027-6fd257213f1c/39497602.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/fa84b309-a65d-51a2-8027-6fd257213f1c/39497603.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/fa84b309-a65d-51a2-8027-6fd257213f1c/39497604.avif"
+      ]
+    }
+  ]
+}
