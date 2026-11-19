@@ -45,7 +45,7 @@ jobs:
               except Exception: pass
           candidates=[]
           for p in sorted(pathlib.Path('research/review-50-tokidoki').glob('part-*.json')):
-              if p.stem >= 'part-04': candidates.extend(json.loads(p.read_text()))
+              if p.stem >= 'part-08': candidates.extend(json.loads(p.read_text()))
           def lot(row):
               try:
                   if row['num'] in existing: return None
@@ -74,7 +74,7 @@ jobs:
           pdfmetrics.registerFont(TTFont('D','/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'))
           pdfmetrics.registerFont(TTFont('DB','/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'))
           W,H=595,842
-          c=canvas.Canvas(str(OUT/'PapAuto_next_review.pdf'),pagesize=(W,H))
+          c=canvas.Canvas(str(OUT/'PapAuto_reserve_review.pdf'),pagesize=(W,H))
           def txt(x,y,s,size=12,bold=False,color='#302d28'):
               c.setFillColor(HexColor(color));c.setFont('DB' if bold else 'D',size);c.drawString(x,y,str(s))
           def image(im,x,y,w,h):
@@ -104,6 +104,6 @@ jobs:
           python /tmp/auction_review.py
       - uses: actions/upload-artifact@v4
         with:
-          name: papauto-auction-review-next-48
+          name: papauto-auction-review-reserve
           path: review-output/
           retention-days: 7
