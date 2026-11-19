@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-19",
+  "source": "Guolianpai",
+  "archive": {
+    "url": "https://www.guolianpai.com/catalo-result.html?agency=34&id=2c9385719633c8b601965c4001c20e9d",
+    "result_count_displayed": 68,
+    "price_header": "成交价/最高应价 (transaction price / highest bid)",
+    "catalogue_count_displayed": 77,
+    "catalogue_url": "https://www.guolianpai.com/catalogue.html?id=2c9385719633c8b601965c4001c20e9d&agency=34"
+  },
+  "sample_checks": [
+    {
+      "lot": 3,
+      "model": "VW Passat 1.8",
+      "registration": "2015-12-25",
+      "km": 99568,
+      "displayed_result_cny": 31000,
+      "photo_id": "303481",
+      "url": "https://www.guolianpai.com/productdetail.html?id=2c9385719680d3cf0196ece5a0dc1ffd&agency=34",
+      "full_report_available": false,
+      "indoor_confirmed": false
+    },
+    {
+      "lot": 7,
+      "model": "Cadillac XTS 2.0",
+      "registration": "2016-05-09",
+      "km": 58683,
+      "displayed_result_cny": 33000,
+      "photo_id": "303589",
+      "url": "https://www.guolianpai.com/productdetail.html?id=2c9385719680d3cf0196ece3f1491ff4&agency=34",
+      "full_report_available": false,
+      "indoor_confirmed": false
+    },
+    {
+      "model": "Nissan Teana 2.5",
+      "result": "unsold 2018-04-17",
+      "url": "https://www.guolianpai.com/detail.html?id=8a99ab2062b95aab0162d185b5650232",
+      "exclude": true
+    },
+    {
+      "model": "Honda Odyssey 2.4",
+      "result": "reference price 160000 CNY (not final)",
+      "url": "https://www.guolianpai.com/productdetail.html?agency=35&id=2c93857179fa84d4017a378df38308cd",
+      "exclude": true
+    }
+  ],
+  "other_sources": [
+    {
+      "name": "Suning",
+      "url": "https://car.suning.com/salecarindex.htm",
+      "finding": "Historical sale examples but no verified matching full reports or exact auction lot identifiers."
+    },
+    {
+      "name": "ChinaCarAPI",
+      "url": "https://chinacarapi.com/zh",
+      "finding": "API requires key; data includes listings and removal events, not necessarily verified sales. No purchase or trial signup made."
+    }
+  ],
+  "publication_ready": 0,
+  "public_changes": false
+}
