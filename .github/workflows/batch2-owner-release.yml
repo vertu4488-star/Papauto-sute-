@@ -1,0 +1,73 @@
+name: Release exact owner-approved second 50-card batch
+on:
+  push:
+    branches: [review/japan-next-50-20261119]
+    paths: ['.github/workflows/batch2-owner-release.yml']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt requests pillow pillow-avif-plugin
+      - name: Verify exact approved original media and source data
+        run: python scripts/prepare_batch2_owner_review.py
+      - name: Run publication and regression tests
+        run: |
+          python scripts/build_static_public.py
+          python -m unittest discover -s tests -v
+          node --check gallery.js
+          node tests/test_survey_all_gallery_lots.cjs
+      - run: npm install --no-save playwright@1.57.0 && npx playwright install chromium
+      - name: Mobile gallery and complete new lot checks
+        run: |
+          python -m http.server 8765 -d render-public >/tmp/papauto-232.log 2>&1 &
+          node <<'NODE'
+          const {chromium}=require('playwright');
+          const assert=require('node:assert/strict');
+          const fs=require('node:fs');
+          (async()=>{
+            const root='http://127.0.0.1:8765';
+            const data=JSON.parse(fs.readFileSync('render-public/data/gallery-lots.json'));
+            const fresh=data.lots.filter(x=>x.id.startsWith('japan-archive-20261119-b2-'));
+            assert.equal(data.lots.length,232);assert.equal(fresh.length,50);
+            const browser=await chromium.launch({headless:true});
+            try {
+              const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+              await page.goto(root+'/gallery.html',{waitUntil:'domcontentloaded'});
+              await page.waitForTimeout(1000);
+              assert((await page.locator('#gallery-count').innerText()).includes('232'));
+              for(let i=0;i<21 && await page.locator('#gallery-more').isVisible();i++) await page.locator('#gallery-more').click();
+              assert.equal(await page.locator('.gallery-card').count(),232);
+              const card=page.locator('#gallery-lot-'+fresh[0].id);
+              await card.scrollIntoViewIfNeeded();
+              assert(await card.locator('img').first().evaluate(async im=>{await im.decode();return im.naturalWidth>100}));
+              for(const r of fresh){
+                assert.equal(r.photos.length,2);assert.equal(r.status,'reference_only');assert.equal(r.rights_confirmed,false);
+                const detail=await page.request.get(root+'/lots/'+r.id+'.html');
+                assert.equal(detail.status(),200);
+                const html=await detail.text();assert(html.includes('Статистика продаж'));assert(!html.includes('для ознакомления'));
+                for(const a of [...r.photos,r.inspection_image]){
+                  const res=await page.request.get(root+a);
+                  assert.equal(res.status(),200);assert((await res.body()).length>500);
+                }
+              }
+              await page.goto(root+'/lots/'+fresh[0].id+'.html',{waitUntil:'load'});
+              for(const im of await page.locator('.lot-photos img, .lot-sheet img').all()) assert(await im.evaluate(async x=>{await x.decode();return x.naturalWidth>100}));
+              assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+2));
+              console.log('PASS: 232 cards, second 50 detail pages and 150 local images');
+            }finally{await browser.close()}
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+      - name: Commit tested release only in review branch
+        run: |
+          git config user.name "papauto-release-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add AGENTS.md docs/AUCTION_ONLY_GALLERY.md scripts/compile_auction_gallery.py scripts/build_static_public.py scripts/verify_publication_approval.py scripts/publish_lot_search.py tests/test_auction_only_images_policy.py tests/test_site_warm_theme.py research/owner-approved-50-archive-batch2-2026-11-19.json assets/auction/approved/japan-archive-20261119-b2-*.jpg
+          git commit -m "Prepare second exact 50 owner-reviewed sales statistics cards after full validation"
+          git push origin HEAD:review/japan-next-50-20261119
