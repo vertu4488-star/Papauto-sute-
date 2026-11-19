@@ -51,7 +51,7 @@ def prepare(x):
     cc=int(re.search(r'\d+',spec['Объем:'])[0]);assert cc<=2000
     amount=int(re.sub(r'\D','',x['reported_price']))
     trim=spec.get('Комплектация:','').replace('\\*','*')
-    desc=f"{x['model']} {x['year']} года, кузов {spec['Кузов:']}, комплектация {trim}, двигатель {cc} см³ ({spec.get('Двигатель:','—')}), КПП {spec.get('КПП:','—')}. Пробег {km:,} км, оценка {spec['Оценка:']}, аукцион {f['auction']}, {x['auction_date']}, лот №{lot}. Архивный пример для ознакомления: автомобиль не в наличии и не предлагается к продаже. Историческая цена в Японии по данным архива ТокиДоки, без доставки и оформления.".replace(',', ' ',1) if False else f"{x['model']} {x['year']} года, кузов {spec['Кузов:']}, комплектация {trim}, двигатель {cc} см³ ({spec.get('Двигатель:','—')}), КПП {spec.get('КПП:','—')}. Пробег {km} км, оценка {spec['Оценка:']}, аукцион {f['auction']}, {x['auction_date']}, лот №{lot}. Архивный пример для ознакомления, не автомобиль в наличии и не предложение о продаже. Историческая цена в Японии по данным архива ТокиДоки, без доставки и оформления."
+    desc=f"{x['model']} {x['year']} года, кузов {spec['Кузов:']}, комплектация {trim}, двигатель {cc} см³ ({spec.get('Двигатель:','—')}), КПП {spec.get('КПП:','—')}. Пробег {km} км, оценка {spec['Оценка:']}, аукцион {f['auction']}, {x['auction_date']}, лот №{lot}. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления."
     record=dict(id=ident,country='japan',make=make,model=model,year=int(x['year']),mileage_km=km,body=spec['Кузов:'],grade=spec['Оценка:'],auction=f['auction'],lot=lot,auction_date=datetime.strptime(x['auction_date'],'%d.%m.%Y').date().isoformat(),description=desc,photo_context='original_auction_lot',sheet_type='original_auction_sheet',photos=['/assets/auction/approved/'+t[0] for t in media[:2]],auction_sheet='/assets/auction/approved/'+media[2][0],sale_status='reference_only',reported_price=amount,media_sha256=[t[2] for t in media],source_listing=x['source_listing'],source_media=[x['source_gallery'][i] for i in [1,2,0]],trim=trim,engine_cc=cc,power_hp=int(re.search(r'\d+',spec['Мощность:'])[0]) if re.search(r'\d+',spec.get('Мощность:','')) else None,rights_confirmed=False,reviewed_pdf_page=x['page'])
     return record,media
 
@@ -91,7 +91,7 @@ patch='''        # Exact second owner-authorized archival release; no general im
         for rec in archived:
             card = prepare_approved(target, rec, owner_selected=True)
             card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
-                        sale_label="Архивный пример, не в наличии", rights_confirmed=False)
+                        sale_label="Статистика продаж", rights_confirmed=False)
             additional.append(card)
 '''
 replace('scripts/compile_auction_gallery.py','        additional.extend(prepare_approved(target, row, owner_selected=True) for row in selection)\n','        additional.extend(prepare_approved(target, row, owner_selected=True) for row in selection)\n'+patch)
