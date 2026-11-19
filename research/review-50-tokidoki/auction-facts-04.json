@@ -1,0 +1,74 @@
+[
+  {
+    "lot": "60196",
+    "auction": "BAYAUC",
+    "source": "https://tokidoki.su/stat/mazda/axela/12169ad2-b97f-5a62-8dfa-b9415628ac44/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "38259",
+    "auction": "CAA Tokyo",
+    "source": "https://tokidoki.su/stat/bmw/x1/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "2041",
+    "auction": "JU Fukushima",
+    "source": "https://tokidoki.su/stat/mazda/roadster/2b9f0818-82c0-5331-b9b4-f101e1f5b599/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "38116",
+    "auction": "CAA Tokyo",
+    "source": "https://tokidoki.su/stat/volkswagen/t-cross/2cf206b8-5b74-537d-8720-ad113a921334/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "30130",
+    "auction": "MIRIVE Saitama",
+    "source": "https://tokidoki.su/stat/suzuki/ignis/c79dc778-bdb6-51a6-985d-39a8a419530a/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "4350",
+    "auction": "LAA Okayama",
+    "source": "https://tokidoki.su/stat/volkswagen/t-roc/55b2b1b8-7801-5e5b-9ba4-04d68668e519/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "2037",
+    "auction": "TAA Touhoku",
+    "source": "https://tokidoki.su/stat/toyota/prius/de0753b9-d8b3-514f-9ff4-7c06a7619ec4/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "38081",
+    "auction": "Ippatsu Stock",
+    "source": "https://tokidoki.su/stat/mini/hatch/b9ffbe2a-5e01-5446-8bb7-224c1d3919da/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "36418",
+    "auction": "CAA Chubu",
+    "source": "https://tokidoki.su/stat/nissan/march/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "40004",
+    "auction": "CAA Tokyo",
+    "source": "https://tokidoki.su/stat/toyota/porte/34e47956-dffe-5888-93d1-0cab82e6425d/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "2419",
+    "auction": "TAA Kinki",
+    "source": "https://tokidoki.su/stat/mitsubishi/delica-d-2/1fa1d7f9-a356-5863-a406-0d4e4a8ec434/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "36215",
+    "auction": "CAA Chubu",
+    "source": "https://tokidoki.su/stat/lexus/ct200h/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/",
+    "status": "archive_sold_displayed"
+  }
+]
