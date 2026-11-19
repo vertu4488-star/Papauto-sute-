@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-19",
+  "sources": [
+    {
+      "name": "AutoStreets",
+      "url": "https://autostreets.com/auction",
+      "finding": "Public auction hall lists current/future vehicles and assessment-report process, no exact completed historical photos+report+result set established.",
+      "international_url": "https://global.autostreets.com/",
+      "international_public_content": "empty retrieved page"
+    },
+    {
+      "name": "Doukepai",
+      "url": "https://www.fywzpm.cn/store/detail/index/id/625669",
+      "lot": "625669",
+      "model": "Volkswagen Lamando 2022",
+      "closing_time": "2026-11-16 12:47:06",
+      "current_bid_cny": 53140,
+      "source_condition": "accident vehicle; inspection attachment is QR-based; report scope explicitly limited to major accident, fire, water",
+      "eligible": false
+    },
+    {
+      "name": "GLOAR DATA",
+      "url": "https://gloar-data.com/en/catalog?listingStatus=archived",
+      "finding": "Public archive filter still returns Encar Korea only; no Chinese exact-lot package verified."
+    }
+  ],
+  "new_verified_complete": 0,
+  "publication_ready": 0,
+  "published": 0,
+  "notes": "Strict visual requirement retained. No substitute photos or incomplete reports."
+}
