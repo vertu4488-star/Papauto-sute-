@@ -44,53 +44,32 @@ jobs:
                       existing.add(str(x.get('lot',x.get('lot_number',''))))
               except Exception: pass
           candidates=[]
-          for p in ['/stat/','/stat/hatchback/','/stat/wagon/','/stat/?badge=sedan']:
+          for p in sorted(pathlib.Path('research/review-50-tokidoki').glob('part-*.json')):
+              candidates.extend(json.loads(p.read_text()))
+          def lot(row):
               try:
-                  soup=BeautifulSoup(get(root+p),'html.parser')
-                  for a in soup.select('a[href]'):
-                      path=urllib.parse.urlparse(a['href']).path
-                      if pat.fullmatch(path) and path not in candidates: candidates.append(path)
-              except Exception as e: print('index error',p,str(e))
-          print('candidate count',len(candidates))
-          def lot(path):
-              try:
-                  soup=BeautifulSoup(get(root+path),'html.parser')
-                  title=soup.h1.get_text(' ',strip=True)
-                  m=re.search(r'(.+?) (\d{4}) года - лот (\d+) от (\d\d\.\d\d\.\d{4})',title)
-                  if not m: return None
-                  model,year,num,date=m.groups()
-                  if num in existing: return None
-                  d={dt.get_text(' ',strip=True):dt.find_next_sibling('dd').get_text(' ',strip=True) for dt in soup.select('dt') if dt.find_next_sibling('dd')}
-                  if d.get('Статус продажи')!='Продан' or not d.get('Цена в Японии'): return None
-                  spec={}
-                  for li in soup.select('li[class*="__specsItem"]'):
-                      t=li.find('span')
-                      if t:
-                          k=t.get_text(strip=True)
-                          spec[k]=li.get_text(' ',strip=True)[len(k):].strip()
-                  vol=re.sub(r'[^0-9]','',spec.get('Объем:','').split('см')[0])
+                  if row['num'] in existing: return None
+                  vol=re.sub(r'[^0-9]','',row['spec'].get('Объем:','').split('см')[0])
                   if not vol or int(vol)>2000: return None
-                  if not all(spec.get(k) for k in ['Пробег:','Оценка:','Кузов:','Комплектация:']): return None
-                  urls=list(dict.fromkeys(i['src'] for i in soup.select('button[data-index] img[src]') if 'https://japan.storage.yandexcloud.net/' in i['src'] and path.split('/')[-2] in i['src']))
-                  if len(urls)<3: return None
+                  if len(row['urls'])<3: return None
                   pics=[]
-                  for u in urls[:3]:
+                  for u in row['urls'][:3]:
                       raw=get(u)
                       im=Image.open(io.BytesIO(raw)).convert('RGB')
                       if min(im.size)<180: return None
                       pics.append(im)
                   if len({hashlib.sha256(i.tobytes()).hexdigest() for i in pics})<3: return None
-                  return dict(model=model,year=year,num=num,date=date,price=d['Цена в Японии'],spec=spec,source=root+path,images=pics,urls=urls[:3])
+                  row['images']=pics
+                  return row
               except Exception as e:
-                  print('skip',path,str(e)[:180]);return None
+                  print('skip',row['model'],str(e)[:180]);return None
           chosen=[]; models=set()
-          for start in range(0,len(candidates),12):
-              with concurrent.futures.ThreadPoolExecutor(max_workers=5) as pool:
-                  for x in pool.map(lot,candidates[start:start+12]):
-                      if x and x['model'].lower() not in models:
-                          chosen.append(x);models.add(x['model'].lower())
-                          if len(chosen)>=50: break
-              if len(chosen)>=50: break
+          print('direct image candidate count',len(candidates))
+          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+              for x in pool.map(lot,candidates):
+                  if x and x['model'].lower() not in models:
+                      chosen.append(x);models.add(x['model'].lower())
+                      if len(chosen)>=50: break
           print('downloaded complete candidate sets',len(chosen))
           pdfmetrics.registerFont(TTFont('D','/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'))
           pdfmetrics.registerFont(TTFont('DB','/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'))
