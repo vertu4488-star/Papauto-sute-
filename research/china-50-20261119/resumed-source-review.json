@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-19",
+  "purpose": "Resume China 50 batch; candidate discovery only, not public catalog",
+  "sources": [
+    {
+      "name": "Guazi",
+      "url": "https://en.guazi.com/",
+      "finding": "Recently sold auction price and reports require registration and verification; public sealed-bid listing returned zero in retrieved snapshot."
+    },
+    {
+      "name": "Orche",
+      "url": "https://orche.cloud/en/markets/cn",
+      "finding": "Two historical China entries, both embassy cars from 2011/2016; not adequate for batch."
+    },
+    {
+      "name": "ChinaCarAPI",
+      "url": "https://chinacarapi.com/",
+      "finding": "Paid marketplace data; asking prices and removed listings are not confirmed auction results."
+    },
+    {
+      "name": "Niro360",
+      "url": "https://niro360.ru/statistic/?KUZOV_TYPE=SUV",
+      "finding": "974 entries in retrieved catalog with indicative ruble prices, photos and vehicle specifications; original auction reports, actual transaction prices and indoor images not verified.",
+      "candidates": [
+        {
+          "id": "57305144",
+          "model": "Haval Chitu",
+          "year": 2021,
+          "mileage_km": 68000,
+          "engine_cc": 1499,
+          "url": "https://niro360.ru/statistic/haval/chitu/7rqoiwibbencia/",
+          "review": "Not ready: source labels car non-passable; report and indoor image not verified."
+        },
+        {
+          "id": "57305601",
+          "model": "Volkswagen Lamando",
+          "year": 2022,
+          "mileage_km": 32000,
+          "engine_cc": 1395,
+          "url": "https://niro360.ru/statistic/volkswagen/lamando/7rqt3wrnlmnw97/",
+          "review": "Not ready: original report and indoor image not verified."
+        },
+        {
+          "id": "57306043",
+          "model": "Mazda CX-4",
+          "year": 2021,
+          "mileage_km": 9800,
+          "engine_cc": 1998,
+          "url": "https://niro360.ru/statistic/mazda/cx-4/7rr7a4naawukyf/",
+          "review": "Not ready: original report and indoor image not verified."
+        }
+      ]
+    },
+    {
+      "name": "VLADAUTO",
+      "url": "https://vladauto.pro/auctions/china",
+      "finding": "Catalog contains vendor prices and apparent year inconsistencies; original inspection reports not verified."
+    }
+  ],
+  "new_candidates_reviewed": 3,
+  "publication_ready": 0,
+  "published": 0
+}
