@@ -1,0 +1,1960 @@
+{
+  "approval_date": "2026-11-19",
+  "approved_count": 50,
+  "reviewed_pdf_sha256": "7c4c0c775dbcf3f4ca6f8f967282d66e6692f147b02d4ce74b67bcdb614746a6",
+  "owner_authorized_archival_reference_only": true,
+  "rights_confirmed": false,
+  "rights_note": "Owner authorization is not third-party rights-holder consent. No ordinary import rule changed.",
+  "lots": [
+    {
+      "id": "japan-archive-20261119-01",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Sienta",
+      "year": 2021,
+      "mileage_km": 34000,
+      "body": "NSP170G",
+      "grade": "4.5",
+      "auction": "JU Gifu",
+      "lot": "5812",
+      "auction_date": "2026-10-10",
+      "description": "Toyota Sienta 2021 года, кузов NSP170G, комплектация X, двигатель 1496 см³ (Бензин), КПП Вариатор. Пробег 34000 км, оценка 4.5, аукцион JU Gifu, 10.10.2026, лот №5812. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-01-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-01-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-01-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1125000,
+      "media_sha256": [
+        "f53ddbfec37f878192ed8dc828561ba619a3de76713935f12f2fce6355f2d74f",
+        "e667eaf60301b196e5cf4e6a67f675b607ced9a3fcbaed2a6f2c1969c8865cfd",
+        "3eac939156517fade3e0ffd67c473a3d65e6a474a1d96c04222778154a889f26"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/sienta/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241154.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241155.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/37241153.avif"
+      ],
+      "trim": "X",
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 1
+    },
+    {
+      "id": "japan-archive-20261119-02",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Vezel",
+      "year": 2019,
+      "mileage_km": 18000,
+      "body": "RU1",
+      "grade": "4.5",
+      "auction": "MIRIVE Saitama",
+      "lot": "30146",
+      "auction_date": "2026-09-23",
+      "description": "Honda Vezel 2019 года, кузов RU1, комплектация X* HONDA SENSING, двигатель 1496 см³ (Бензин), КПП Вариатор. Пробег 18000 км, оценка 4.5, аукцион MIRIVE Saitama, 23.09.2026, лот №30146. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-02-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-02-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-02-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1620000,
+      "media_sha256": [
+        "20f1399ddfc79b636c1ed3051e1f8d8f91687fedcf2f39df5ceac7b954f32417",
+        "ae6b1068e211eb0aee5ecdcba6b21da3dc2d64d2ec00408881db1f845d9e572d",
+        "ed4ee328cd58835a055ba699175927697e81b7ed42efa92df973e555e71823b3"
+      ],
+      "source_listing": "https://tokidoki.su/stat/honda/vezel/e9511323-9947-556c-80fc-b9644b9cb214/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/09/20/e9511323-9947-556c-80fc-b9644b9cb214/32610122.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/20/e9511323-9947-556c-80fc-b9644b9cb214/32610123.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/20/e9511323-9947-556c-80fc-b9644b9cb214/32610121.avif"
+      ],
+      "trim": "X* HONDA SENSING",
+      "engine_cc": 1496,
+      "power_hp": 131,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 2
+    },
+    {
+      "id": "japan-archive-20261119-03",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Harrier",
+      "year": 2020,
+      "mileage_km": 48000,
+      "body": "ZSU60W",
+      "grade": "4.5",
+      "auction": "CAA Tokyo",
+      "lot": "30469",
+      "auction_date": "2026-09-29",
+      "description": "Toyota Harrier 2020 года, кузов ZSU60W, комплектация ELEGANCE, двигатель 1986 см³ (Бензин), КПП Вариатор. Пробег 48000 км, оценка 4.5, аукцион CAA Tokyo, 29.09.2026, лот №30469. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-03-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-03-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-03-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1805000,
+      "media_sha256": [
+        "761720238d210551bdc62ada05996b5f6491668781c178ce020fee79a00053a5",
+        "978c439db17588fb24d29998b95aec2178aa8eaee471c4daf881c9b4cdb2f863",
+        "cd903f210c7af19d4b7ede078268636c9478a8394e08dd8dd967e90e58949a5e"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/harrier/74b3b6ab-86b5-522e-b159-04b565ad8005/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979569.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979570.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/74b3b6ab-86b5-522e-b159-04b565ad8005/33979568.avif"
+      ],
+      "trim": "ELEGANCE",
+      "engine_cc": 1986,
+      "power_hp": 151,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 3
+    },
+    {
+      "id": "japan-archive-20261119-04",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Raize",
+      "year": 2021,
+      "mileage_km": 29000,
+      "body": "A200A",
+      "grade": "5",
+      "auction": "CAA Chubu",
+      "lot": "36384",
+      "auction_date": "2026-09-23",
+      "description": "Toyota Raize 2021 года, кузов A200A, комплектация X S, двигатель 996 см³ (Бензин), КПП Вариатор. Пробег 29000 км, оценка 5, аукцион CAA Chubu, 23.09.2026, лот №36384. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-04-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-04-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-04-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1200000,
+      "media_sha256": [
+        "2531b98340935c763621c9765f15f8f535d9b5a3695ad1e37860c4f8b87c2eeb",
+        "bd4dd1302d0dece37098f9029e150cc62e76ffba85b2742b3d446e5c338be55e",
+        "0a9d819e549b02022c0d2ddf8a9e6d067dc1779967d58cad8cfa585203587aa8"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/raize/d558d860-1959-5b47-83ba-70817670cba6/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824899.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824900.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/d558d860-1959-5b47-83ba-70817670cba6/32824898.avif"
+      ],
+      "trim": "X S",
+      "engine_cc": 996,
+      "power_hp": 98,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 4
+    },
+    {
+      "id": "japan-archive-20261119-05",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Jimny",
+      "year": 2021,
+      "mileage_km": 33000,
+      "body": "JB64W",
+      "grade": "4.5",
+      "auction": "TAA Chubu",
+      "lot": "3039",
+      "auction_date": "2026-10-01",
+      "description": "Suzuki Jimny 2021 года, кузов JB64W, комплектация XG 4WD, двигатель 658 см³ (Бензин), КПП Механика. Пробег 33000 км, оценка 4.5, аукцион TAA Chubu, 01.10.2026, лот №3039. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-05-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-05-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-05-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1250000,
+      "media_sha256": [
+        "b3b8ee729ecc595f37a8702982c299c45b1a4ea64d6ba7778b00457cbe487b13",
+        "241ce3b91a10aa9937942a3ec71d030205a9b154f053682e613ef98a0cf7caa9",
+        "e26c5b98a7f23115201ab382fd9c8ef28552764f4dba4f65475a92bfcb5d3f36"
+      ],
+      "source_listing": "https://tokidoki.su/stat/suzuki/jimny/791cf5d3-9d30-5d78-8970-008784c12423/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/09/30/791cf5d3-9d30-5d78-8970-008784c12423/34440963.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/30/791cf5d3-9d30-5d78-8970-008784c12423/34440964.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/30/791cf5d3-9d30-5d78-8970-008784c12423/34440962.avif"
+      ],
+      "trim": "XG 4WD",
+      "engine_cc": 658,
+      "power_hp": 64,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 5
+    },
+    {
+      "id": "japan-archive-20261119-06",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Roomy",
+      "year": 2021,
+      "mileage_km": 27000,
+      "body": "M900A",
+      "grade": "4.5",
+      "auction": "TAA Chubu",
+      "lot": "2011",
+      "auction_date": "2026-10-29",
+      "description": "Toyota Roomy 2021 года, кузов M900A, комплектация X, двигатель 996 см³ (Бензин), КПП Вариатор. Пробег 27000 км, оценка 4.5, аукцион TAA Chubu, 29.10.2026, лот №2011. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-06-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-06-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-06-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 710000,
+      "media_sha256": [
+        "02fc7afcc3c127b000f6d9b59f5b5304a97b68c03de0f3943b11f258ec0e1063",
+        "99d31cf93734bb11eaef02bc5c433fc87bc5c8f6a2d04a5e9a61c941872bc669",
+        "3266009183a7f976e60db3862d5e2810eb853f5340f714433f2bfffa9e55fb12"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/roomy/d1ef7ba3-aa2f-5212-a0d9-ef1eb81c254c/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/26/d1ef7ba3-aa2f-5212-a0d9-ef1eb81c254c/38947995.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/d1ef7ba3-aa2f-5212-a0d9-ef1eb81c254c/38947996.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/d1ef7ba3-aa2f-5212-a0d9-ef1eb81c254c/38947994.avif"
+      ],
+      "trim": "X",
+      "engine_cc": 996,
+      "power_hp": 69,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 6
+    },
+    {
+      "id": "japan-archive-20261119-07",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Yaris",
+      "year": 2021,
+      "mileage_km": 36000,
+      "body": "KSP210",
+      "grade": "4.5",
+      "auction": "JU Niigata",
+      "lot": "3032",
+      "auction_date": "2026-10-23",
+      "description": "Toyota Yaris 2021 года, кузов KSP210, комплектация X, двигатель 996 см³ (Бензин), КПП Вариатор. Пробег 36000 км, оценка 4.5, аукцион JU Niigata, 23.10.2026, лот №3032. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-07-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-07-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-07-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 757000,
+      "media_sha256": [
+        "c949c4566b9522b15fd958eb56ed37831ec1d5746ffc6147f7b2d6cb514f20f7",
+        "328bc9d35f818b26feb324dbb570eb49ee39eb9a1ca4a43cb84e71b8751664ac",
+        "5853542b331a8fc01fbe5d169ab288c75e69178d39710386f913266d97644389"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/yaris/f5a6885b-9898-5d1c-82aa-d113c68d9015/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/20/f5a6885b-9898-5d1c-82aa-d113c68d9015/37992334.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/20/f5a6885b-9898-5d1c-82aa-d113c68d9015/37992335.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/20/f5a6885b-9898-5d1c-82aa-d113c68d9015/37992333.avif"
+      ],
+      "trim": "X",
+      "engine_cc": 996,
+      "power_hp": 69,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 7
+    },
+    {
+      "id": "japan-archive-20261119-08",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Yaris Cross",
+      "year": 2021,
+      "mileage_km": 29000,
+      "body": "MXPB10",
+      "grade": "4.5",
+      "auction": "TAA Hiroshima",
+      "lot": "2008",
+      "auction_date": "2026-10-20",
+      "description": "Toyota Yaris Cross 2021 года, кузов MXPB10, комплектация G, двигатель 1490 см³ (Бензин), КПП Вариатор. Пробег 29000 км, оценка 4.5, аукцион TAA Hiroshima, 20.10.2026, лот №2008. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-08-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-08-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-08-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1456000,
+      "media_sha256": [
+        "1d670e3e072d84976da692b19a9e0341619f0a528ae7ec6ec267a290e67b0dc7",
+        "3a80907299015bf5dac704cf3d412be183d0eae38830ca760c9a1207f3c14d9c",
+        "fd91ae82f8a026a25ee753f96695829342ba6e1fa02671452b00c487974ee2b6"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/yaris-cross/1825e59d-511b-5391-9c12-c446cdee6ce3/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/16/1825e59d-511b-5391-9c12-c446cdee6ce3/37318082.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/1825e59d-511b-5391-9c12-c446cdee6ce3/37318083.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/1825e59d-511b-5391-9c12-c446cdee6ce3/37318081.avif"
+      ],
+      "trim": "G",
+      "engine_cc": 1490,
+      "power_hp": 120,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 8
+    },
+    {
+      "id": "japan-archive-20261119-09",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Move Canbus",
+      "year": 2021,
+      "mileage_km": 24000,
+      "body": "LA800S",
+      "grade": "5",
+      "auction": "JU Toyama",
+      "lot": "4011",
+      "auction_date": "2026-10-29",
+      "description": "Daihatsu Move Canbus 2021 года, кузов LA800S, комплектация GMEIK UP VS SA III, двигатель 658 см³ (Бензин), КПП Вариатор. Пробег 24000 км, оценка 5, аукцион JU Toyama, 29.10.2026, лот №4011. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-09-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-09-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-09-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 850000,
+      "media_sha256": [
+        "704de02b2f0a678d4256c55060ab769a0598a6378d4e1d334a27862f700e2cb5",
+        "1db54f6f770aba3afec2411a372808e513bb3b56b1160d4837c4def4e7aaa060",
+        "5665e0f4629bcfcccc8a6d7816608a01731eb878e4eef539c84c37657486d9fe"
+      ],
+      "source_listing": "https://tokidoki.su/stat/daihatsu/move-canbus/0deb1389-c4ed-5cc4-a24b-4a6fc2065d05/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/27/0deb1389-c4ed-5cc4-a24b-4a6fc2065d05/39328778.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/0deb1389-c4ed-5cc4-a24b-4a6fc2065d05/39328779.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/0deb1389-c4ed-5cc4-a24b-4a6fc2065d05/39328777.avif"
+      ],
+      "trim": "GMEIK UP VS SA III",
+      "engine_cc": 658,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 9
+    },
+    {
+      "id": "japan-archive-20261119-10",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla",
+      "year": 2019,
+      "mileage_km": 36000,
+      "body": "NRE210H",
+      "grade": "4.5",
+      "auction": "CAA Gifu",
+      "lot": "30360",
+      "auction_date": "2026-10-13",
+      "description": "Toyota Corolla 2019 года, кузов NRE210H, комплектация G, двигатель 1196 см³ (Бензин), КПП Механика. Пробег 36000 км, оценка 4.5, аукцион CAA Gifu, 13.10.2026, лот №30360. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-10-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-10-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-10-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1187000,
+      "media_sha256": [
+        "f8b62605fe252cf93bc684fe62c35416c664a1bc75287afdc8800f21fa427491",
+        "c5fdf58d89f446d0cc9faac60e0783ef77c8036c3e5f27718f5ef8dc2037d660",
+        "bbb05b1cf63ae1b5bb657657bc6b3738ccfea8df980daeff96289577da1058f4"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/corolla/ced3ff03-9558-5f5d-856b-8d8fe9c059c1/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/16/ced3ff03-9558-5f5d-856b-8d8fe9c059c1/36829584.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/ced3ff03-9558-5f5d-856b-8d8fe9c059c1/36829586.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/ced3ff03-9558-5f5d-856b-8d8fe9c059c1/36829582.avif"
+      ],
+      "trim": "G",
+      "engine_cc": 1196,
+      "power_hp": 116,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 10
+    },
+    {
+      "id": "japan-archive-20261119-11",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Fit",
+      "year": 2021,
+      "mileage_km": 28000,
+      "body": "GR1",
+      "grade": "4.5",
+      "auction": "MIRIVE Saitama",
+      "lot": "30161",
+      "auction_date": "2026-11-04",
+      "description": "Honda Fit 2021 года, кузов GR1, комплектация BASIC, двигатель 1317 см³ (Бензин), КПП Вариатор. Пробег 28000 км, оценка 4.5, аукцион MIRIVE Saitama, 04.11.2026, лот №30161. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-11-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-11-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-11-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 915000,
+      "media_sha256": [
+        "47a9f1303c0ecbe401229df569a23e5d9cbc4c6d929638283ec0ac3c185323c6",
+        "dd0ef9c576d605f9e47ecf322a395d5cfc72cc2d64a48bac408d44f1c864e06a",
+        "8e6d78b2d8a3bd571fe3797462247b5205b24c229035b929209194f0d2e8040c"
+      ],
+      "source_listing": "https://tokidoki.su/stat/honda/fit/e2fe2097-8d61-54d6-b923-7f24e27b8432/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/01/e2fe2097-8d61-54d6-b923-7f24e27b8432/40401983.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/e2fe2097-8d61-54d6-b923-7f24e27b8432/40401984.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/e2fe2097-8d61-54d6-b923-7f24e27b8432/40401982.avif"
+      ],
+      "trim": "BASIC",
+      "engine_cc": 1317,
+      "power_hp": 98,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 11
+    },
+    {
+      "id": "japan-archive-20261119-12",
+      "country": "japan",
+      "make": "Mazda",
+      "model": "CX-5",
+      "year": 2024,
+      "mileage_km": 22000,
+      "body": "KFEP",
+      "grade": "4.5",
+      "auction": "BAYAUC",
+      "lot": "60216",
+      "auction_date": "2026-10-14",
+      "description": "Mazda CX-5 2024 года, кузов KFEP, комплектация 20S SMART EDITION, двигатель 1997 см³ (Бензин), КПП Автомат. Пробег 22000 км, оценка 4.5, аукцион BAYAUC, 14.10.2026, лот №60216. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-12-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-12-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-12-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 2155000,
+      "media_sha256": [
+        "60dd8e5bfd0140eed1d53dafcea4ea5047a70f71915b36b8114f267fe433c0ee",
+        "68a858acac82dfbe731333f28963a0281737c1949f0ded803b8504b5b0959bf5",
+        "0041cf76047ed1386990e593ae5364639ecb205c04e5a9d614f58d05d8a7f4ea"
+      ],
+      "source_listing": "https://tokidoki.su/stat/mazda/cx-5/37c4326d-2205-5c22-a12e-50659d9130cd/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/16/37c4326d-2205-5c22-a12e-50659d9130cd/36298419.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/37c4326d-2205-5c22-a12e-50659d9130cd/36298420.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/37c4326d-2205-5c22-a12e-50659d9130cd/36298418.avif"
+      ],
+      "trim": "20S SMART EDITION",
+      "engine_cc": 1997,
+      "power_hp": 156,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 12
+    },
+    {
+      "id": "japan-archive-20261119-13",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Mira e:S",
+      "year": 2021,
+      "mileage_km": 42000,
+      "body": "LA350S",
+      "grade": "4.5",
+      "auction": "TAA Hiroshima",
+      "lot": "3080",
+      "auction_date": "2026-09-22",
+      "description": "Daihatsu Mira e:S 2021 года, кузов LA350S, комплектация , двигатель 658 см³ (Бензин), КПП Вариатор. Пробег 42000 км, оценка 4.5, аукцион TAA Hiroshima, 22.09.2026, лот №3080. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-13-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-13-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-13-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 342000,
+      "media_sha256": [
+        "7d590d2aadf1c187e58cb2a97e22973a504f4d2416ccd858d8f45cff98490d45",
+        "46a025b63510c894a4532dc662d515974bef1b3141fefa50dfdc6ed670eec13d",
+        "05093c75df86544a50568e95c76d53b92c01c490411e047e61ff2cafa3931886"
+      ],
+      "source_listing": "https://tokidoki.su/stat/daihatsu/mira-e-s/69506ac7-fd70-5212-b49a-6fd7aef7044c/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/09/19/69506ac7-fd70-5212-b49a-6fd7aef7044c/32572595.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/19/69506ac7-fd70-5212-b49a-6fd7aef7044c/32572596.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/19/69506ac7-fd70-5212-b49a-6fd7aef7044c/32572594.avif"
+      ],
+      "trim": "",
+      "engine_cc": 658,
+      "power_hp": 49,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 13
+    },
+    {
+      "id": "japan-archive-20261119-14",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "C-HR",
+      "year": 2019,
+      "mileage_km": 26000,
+      "body": "NGX10",
+      "grade": "4.5",
+      "auction": "TAA Hiroshima",
+      "lot": "2140",
+      "auction_date": "2026-09-29",
+      "description": "Toyota C-HR 2019 года, кузов NGX10, комплектация S-T LED PACKAGE, двигатель 1196 см³ (Бензин), КПП Вариатор. Пробег 26000 км, оценка 4.5, аукцион TAA Hiroshima, 29.09.2026, лот №2140. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-14-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-14-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-14-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1474000,
+      "media_sha256": [
+        "71d5c759c672434b80ad746d581fe6654572b69a866d0aa5f87ce6a4403d4a62",
+        "9c4f242f1d22b084571af6d74cb54fe79a74d627882269668553bb50009b41d3",
+        "479e92b3deb657399bb9b0fec9f2cdd48b1ae30c766b1abdaf8398f1d6a2fbb3"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/c-hr/2e99d99e-adef-5242-97e4-c0799196a584/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/09/26/2e99d99e-adef-5242-97e4-c0799196a584/33769735.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/26/2e99d99e-adef-5242-97e4-c0799196a584/33769736.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/26/2e99d99e-adef-5242-97e4-c0799196a584/33769734.avif"
+      ],
+      "trim": "S-T LED PACKAGE",
+      "engine_cc": 1196,
+      "power_hp": 116,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 14
+    },
+    {
+      "id": "japan-archive-20261119-15",
+      "country": "japan",
+      "make": "Honda",
+      "model": "N-WGN",
+      "year": 2019,
+      "mileage_km": 32000,
+      "body": "JH1",
+      "grade": "4.5",
+      "auction": "JU Miyagi",
+      "lot": "6242",
+      "auction_date": "2026-10-09",
+      "description": "Honda N-WGN 2019 года, кузов JH1, комплектация G, двигатель 658 см³ (Бензин), КПП Вариатор. Пробег 32000 км, оценка 4.5, аукцион JU Miyagi, 09.10.2026, лот №6242. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-15-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-15-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-15-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 459000,
+      "media_sha256": [
+        "19b9e8c0799f2965ec8133121e09beee7feaad1df3575d2d0938751deb70d2f5",
+        "f3cc11ac55e819f0fc85dd0858b816fb5179ac5b3fe6be9a1891487cc7b6d9f9",
+        "19437a57fbb437ef2c74eb50c8aca8a3e9b9a2f6c219a236b30110f7c956677e"
+      ],
+      "source_listing": "https://tokidoki.su/stat/honda/n-wgn/bc79594b-f448-5831-a298-316be0f86517/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881562.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881563.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881561.avif"
+      ],
+      "trim": "G",
+      "engine_cc": 658,
+      "power_hp": 58,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 15
+    },
+    {
+      "id": "japan-archive-20261119-16",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Solio",
+      "year": 2021,
+      "mileage_km": 38000,
+      "body": "MA36S",
+      "grade": "4.5",
+      "auction": "TAA Chubu",
+      "lot": "73005",
+      "auction_date": "2026-10-22",
+      "description": "Suzuki Solio 2021 года, кузов MA36S, комплектация HYBRID MX, двигатель 1242 см³ (Мягкий гибрид), КПП Вариатор. Пробег 38000 км, оценка 4.5, аукцион TAA Chubu, 22.10.2026, лот №73005. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-16-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-16-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-16-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 994000,
+      "media_sha256": [
+        "326eafbbe952829bce78af872f9c8af038eb83d3025a8c69c093fada31905c1d",
+        "e4d1e3f7bd4dcef51c694851d889e3ff7641fafc16de7addf647c28858c4be43",
+        "9751aa71284c55bb93a6fc779cbf6974079b75e5e89740cbbbf3b460da278512"
+      ],
+      "source_listing": "https://tokidoki.su/stat/suzuki/solio/30dc9558-310d-5e41-896b-e819ad4bd17e/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/19/30dc9558-310d-5e41-896b-e819ad4bd17e/37775237.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/30dc9558-310d-5e41-896b-e819ad4bd17e/37775238.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/30dc9558-310d-5e41-896b-e819ad4bd17e/37775236.avif"
+      ],
+      "trim": "HYBRID MX",
+      "engine_cc": 1242,
+      "power_hp": 94,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 16
+    },
+    {
+      "id": "japan-archive-20261119-17",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Move",
+      "year": 2021,
+      "mileage_km": 43000,
+      "body": "LA150S",
+      "grade": "4.5",
+      "auction": "TAA Kinki",
+      "lot": "3250",
+      "auction_date": "2026-11-03",
+      "description": "Daihatsu Move 2021 года, кузов LA150S, комплектация L, двигатель 658 см³ (Бензин), КПП Вариатор. Пробег 43000 км, оценка 4.5, аукцион TAA Kinki, 03.11.2026, лот №3250. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-17-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-17-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-17-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 494000,
+      "media_sha256": [
+        "2eb83976cdb455c395915d8697c38fb5ac4aec8554a12b3171f40e76d74cedae",
+        "73f29954bf86146691692ff4674878f722eb0472b485aa4a68198aeba509ca14",
+        "05136fe6c3a1dcd533732ddf12a36f31b0b0b945f10843123c64304708d2b1f9"
+      ],
+      "source_listing": "https://tokidoki.su/stat/daihatsu/move/14bf5d57-082c-534b-86d1-8ab01e2e4b16/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/30/14bf5d57-082c-534b-86d1-8ab01e2e4b16/40176013.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/30/14bf5d57-082c-534b-86d1-8ab01e2e4b16/40176014.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/30/14bf5d57-082c-534b-86d1-8ab01e2e4b16/40176012.avif"
+      ],
+      "trim": "L",
+      "engine_cc": 658,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 17
+    },
+    {
+      "id": "japan-archive-20261119-18",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Taft",
+      "year": 2021,
+      "mileage_km": 25000,
+      "body": "LA900S",
+      "grade": "5",
+      "auction": "CAA Chubu",
+      "lot": "89",
+      "auction_date": "2026-11-04",
+      "description": "Daihatsu Taft 2021 года, кузов LA900S, комплектация G, двигатель 658 см³ (Бензин), КПП Вариатор. Пробег 25000 км, оценка 5, аукцион CAA Chubu, 04.11.2026, лот №89. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-18-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-18-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-18-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 844000,
+      "media_sha256": [
+        "1f7b44c339e907d243908f54da21437879133cc15d90fb700ed577900631476d",
+        "46a1a25760ed17c9541900952d4cb4296ec739cee573f3e8d7f2d3070a699df1",
+        "b587265ddab707fec87459b056584ae57b07f04fb57c0220d7851e1baf24fea6"
+      ],
+      "source_listing": "https://tokidoki.su/stat/daihatsu/taft/754c7506-0d4d-5a28-b186-7a6a528bdc5a/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508757.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508758.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508756.avif"
+      ],
+      "trim": "G",
+      "engine_cc": 658,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 18
+    },
+    {
+      "id": "japan-archive-20261119-19",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Jimny Sierra",
+      "year": 2022,
+      "mileage_km": 43000,
+      "body": "JB74W",
+      "grade": "4.5",
+      "auction": "CAA Chubu",
+      "lot": "36463",
+      "auction_date": "2026-11-11",
+      "description": "Suzuki Jimny Sierra 2022 года, кузов JB74W, комплектация JC 4WD, двигатель 1460 см³ (Бензин), КПП Автомат. Пробег 43000 км, оценка 4.5, аукцион CAA Chubu, 11.11.2026, лот №36463. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-19-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-19-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-19-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1685000,
+      "media_sha256": [
+        "884ec150fb7444c0fa2cd0a3154fe1101c01eafd63ddd04062f1d814589b33e7",
+        "5714f994aa7e8bd27d27183b4c0cb6ce73c754f0126378a94d21099ea6c4ec1a",
+        "ff4286a9a9d284ec764fe609303bb98cf307a058643f20d57d0390a135dd8ea5"
+      ],
+      "source_listing": "https://tokidoki.su/stat/suzuki/jimny-sierra/ca5485d8-8adf-5c8c-9f6c-fee47f186065/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/0.avif"
+      ],
+      "trim": "JC 4WD",
+      "engine_cc": 1460,
+      "power_hp": 102,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 19
+    },
+    {
+      "id": "japan-archive-20261119-20",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Passo",
+      "year": 2021,
+      "mileage_km": 49000,
+      "body": "M700A",
+      "grade": "4.5",
+      "auction": "TAA Shikoku",
+      "lot": "2033",
+      "auction_date": "2026-10-20",
+      "description": "Toyota Passo 2021 года, кузов M700A, комплектация X L PACKAGE S, двигатель 996 см³ (Бензин), КПП Вариатор. Пробег 49000 км, оценка 4.5, аукцион TAA Shikoku, 20.10.2026, лот №2033. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-20-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-20-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-20-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 503000,
+      "media_sha256": [
+        "37abc84b7bf84131546cde05780401e4b0a6f6e064f24dcd6dbbe1404197fd3e",
+        "155a4db9ec83ae5c5cac82b6b075c5a98a7d7af0caa70e890db3c6187849edd5",
+        "44a589ae6f811b15125dc4fe227150ce8185316ae7197dddbce65a9c57ff879a"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/passo/879f75b7-54b7-582f-b77b-25f968251508/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/16/879f75b7-54b7-582f-b77b-25f968251508/37509664.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/879f75b7-54b7-582f-b77b-25f968251508/37509665.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/16/879f75b7-54b7-582f-b77b-25f968251508/37509663.avif"
+      ],
+      "trim": "X L PACKAGE S",
+      "engine_cc": 996,
+      "power_hp": 69,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 20
+    },
+    {
+      "id": "japan-archive-20261119-21",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Swift",
+      "year": 2021,
+      "mileage_km": 30000,
+      "body": "ZC83S",
+      "grade": "4.5",
+      "auction": "JU Saitama",
+      "lot": "2176",
+      "auction_date": "2026-11-10",
+      "description": "Suzuki Swift 2021 года, кузов ZC83S, комплектация XG, двигатель 1242 см³ (Бензин), КПП Механика. Пробег 30000 км, оценка 4.5, аукцион JU Saitama, 10.11.2026, лот №2176. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-21-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-21-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-21-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 823000,
+      "media_sha256": [
+        "756cb84a84b1b99eaed7a6dfd53de6aca0fbc89cf9b4a3ba852cd1210851f156",
+        "28ea12d1ff952febafe78f6420ca4b2aa5eb244c3337c71cd90e778ab36c76bf",
+        "83db5542702b5cd57a6040645508d540bed40bf948ba9d2c1482db2c9beca163"
+      ],
+      "source_listing": "https://tokidoki.su/stat/suzuki/swift/5064bc06-3b95-52be-8436-1d674fc68de2/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/0.avif"
+      ],
+      "trim": "XG",
+      "engine_cc": 1242,
+      "power_hp": 91,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 21
+    },
+    {
+      "id": "japan-archive-20261119-22",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla Fielder",
+      "year": 2021,
+      "mileage_km": 33000,
+      "body": "NRE161G",
+      "grade": "5",
+      "auction": "CAA Touhoku",
+      "lot": "3346",
+      "auction_date": "2026-10-27",
+      "description": "Toyota Corolla Fielder 2021 года, кузов NRE161G, комплектация EX, двигатель 1496 см³ (Бензин), КПП Вариатор. Пробег 33000 км, оценка 5, аукцион CAA Touhoku, 27.10.2026, лот №3346. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-22-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-22-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-22-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1176000,
+      "media_sha256": [
+        "e2e641ab7b2902dd258588b8ef4077834be965caeea77cc2ad480678263fd5f0",
+        "7bf533b15b92ada4b62e6c889da341455cc2c5e6bead33924b2497bded92be20",
+        "736711cf24a5c2313c33a0d255e0e466e4edb01b8614d15a31909c98955787aa"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/corolla-fielder/6015c38f-d4d9-56c3-a466-20341155810f/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656027.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656028.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/28/6015c38f-d4d9-56c3-a466-20341155810f/39656026.avif"
+      ],
+      "trim": "EX",
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 22
+    },
+    {
+      "id": "japan-archive-20261119-23",
+      "country": "japan",
+      "make": "Subaru",
+      "model": "Impreza",
+      "year": 2021,
+      "mileage_km": 10000,
+      "body": "GT2",
+      "grade": "4.5",
+      "auction": "IAA Osaka",
+      "lot": "2328",
+      "auction_date": "2026-11-11",
+      "description": "Subaru Impreza 2021 года, кузов GT2, комплектация 1.6I-L EYESIGHT, двигатель 1599 см³ (Бензин), КПП Вариатор. Пробег 10000 км, оценка 4.5, аукцион IAA Osaka, 11.11.2026, лот №2328. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-23-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-23-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-23-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 772000,
+      "media_sha256": [
+        "e8910b97609fa7461f392563ca8e0fb00cd76bf6dcb7c84ee091893733c58e53",
+        "2178830b6b4d580fccd3205ea3d555bc3c3739babb4825facf405d8e36f75f91",
+        "cfae213fec909f7aae5472219f68d6e1e354086507e13949ca59610a08090360"
+      ],
+      "source_listing": "https://tokidoki.su/stat/subaru/impreza/9c492a34-3009-519c-931a-f25274da3941/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/07/9c492a34-3009-519c-931a-f25274da3941/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/9c492a34-3009-519c-931a-f25274da3941/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/9c492a34-3009-519c-931a-f25274da3941/0.avif"
+      ],
+      "trim": "1.6I-L EYESIGHT",
+      "engine_cc": 1599,
+      "power_hp": 115,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 23
+    },
+    {
+      "id": "japan-archive-20261119-24",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Vitz",
+      "year": 2019,
+      "mileage_km": 34000,
+      "body": "KSP130",
+      "grade": "4.5",
+      "auction": "TAA Chubu",
+      "lot": "2163",
+      "auction_date": "2026-11-05",
+      "description": "Toyota Vitz 2019 года, кузов KSP130, комплектация F обзор комплектаций, двигатель 996 см³ (Бензин), КПП Вариатор. Пробег 34000 км, оценка 4.5, аукцион TAA Chubu, 05.11.2026, лот №2163. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-24-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-24-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-24-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 572000,
+      "media_sha256": [
+        "6c13dcb0949dd2183803a85decb19d83dfaaddd11f4806ce9da7a1c213ab402e",
+        "3ff40a245c2267794849deb0a236da458f555f7916ce5a1e2b30f7f611f73868",
+        "ef2468b70496386fa44b015b42520ace2d209345d80ddfe0919a6ca543ca9020"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/vitz/116175db-6b63-52f2-a7d4-8e8d0cfd4211/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/03/116175db-6b63-52f2-a7d4-8e8d0cfd4211/40851782.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/03/116175db-6b63-52f2-a7d4-8e8d0cfd4211/40851783.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/03/116175db-6b63-52f2-a7d4-8e8d0cfd4211/40851781.avif"
+      ],
+      "trim": "F обзор комплектаций",
+      "engine_cc": 996,
+      "power_hp": 69,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 24
+    },
+    {
+      "id": "japan-archive-20261119-25",
+      "country": "japan",
+      "make": "Volkswagen",
+      "model": "Golf",
+      "year": 2021,
+      "mileage_km": 46000,
+      "body": "CDDLAV",
+      "grade": "4.5",
+      "auction": "BAYAUC",
+      "lot": "60531",
+      "auction_date": "2026-09-30",
+      "description": "Volkswagen Golf 2021 года, кузов CDDLAV, комплектация ETSI ACTIVE, двигатель 999 см³ (Мягкий гибрид), КПП Робот. Пробег 46000 км, оценка 4.5, аукцион BAYAUC, 30.09.2026, лот №60531. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-25-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-25-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-25-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1110000,
+      "media_sha256": [
+        "b75461ee0724917875f25bd851ba9a93364fce50c57d39a72b15fcedd0660a03",
+        "6231afa5742777b9e57d5171c6db9efe46410b7c0405f974c70437d6486d71ef",
+        "a4793b7d64fcc46dae412301b5e8808fe6eb314e026948ab19b63db1095df82b"
+      ],
+      "source_listing": "https://tokidoki.su/stat/volkswagen/golf/ce956024-4fe7-5248-9eb5-ecc661fc927f/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/09/29/ce956024-4fe7-5248-9eb5-ecc661fc927f/34269903.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/29/ce956024-4fe7-5248-9eb5-ecc661fc927f/34269904.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/29/ce956024-4fe7-5248-9eb5-ecc661fc927f/34269902.avif"
+      ],
+      "trim": "ETSI ACTIVE",
+      "engine_cc": 999,
+      "power_hp": 123,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 25
+    },
+    {
+      "id": "japan-archive-20261119-26",
+      "country": "japan",
+      "make": "Mercedes-Benz",
+      "model": "C-Class",
+      "year": 2020,
+      "mileage_km": 44000,
+      "body": "205076C",
+      "grade": "4.5",
+      "auction": "ZIP Tokyo",
+      "lot": "395",
+      "auction_date": "2026-10-24",
+      "description": "Mercedes-Benz C-Class 2020 года, кузов 205076C, комплектация C 180 AV AMG LINE RADAR SEFTIP BASIC P, двигатель 1497 см³ (Бензин), КПП Автомат. Пробег 44000 км, оценка 4.5, аукцион ZIP Tokyo, 24.10.2026, лот №395. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-26-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-26-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-26-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 2130000,
+      "media_sha256": [
+        "2c7283b2eb5961cdb3f9c749e550a5ab78efbb401fd0f4a7c39f8b5227d68d8b",
+        "960b038d0ebb5c3038d8d38bfa7bb9fdd939ab26b8bdb01f001bbbd6e050da57",
+        "8897370e751df8e1ee6f2ea3b79471379b3097af69b459430c46863ef666b1bf"
+      ],
+      "source_listing": "https://tokidoki.su/stat/mercedes-benz/c-class/5c6eb6f5-9339-5a61-94e0-aee2d6903535/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/21/5c6eb6f5-9339-5a61-94e0-aee2d6903535/38300361.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/21/5c6eb6f5-9339-5a61-94e0-aee2d6903535/38300362.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/21/5c6eb6f5-9339-5a61-94e0-aee2d6903535/38300360.avif"
+      ],
+      "trim": "C 180 AV AMG LINE RADAR SEFTIP BASIC P",
+      "engine_cc": 1497,
+      "power_hp": 156,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 26
+    },
+    {
+      "id": "japan-archive-20261119-27",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Shuttle",
+      "year": 2021,
+      "mileage_km": 6000,
+      "body": "GK8",
+      "grade": "4.5",
+      "auction": "TAA Chubu",
+      "lot": "82030",
+      "auction_date": "2026-11-12",
+      "description": "Honda Shuttle 2021 года, кузов GK8, комплектация G HONDA SENSING, двигатель 1496 см³ (Бензин), КПП Вариатор. Пробег 6000 км, оценка 4.5, аукцион TAA Chubu, 12.11.2026, лот №82030. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-27-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-27-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-27-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1511000,
+      "media_sha256": [
+        "32c65e987fc6ea429c03092f594a200e483c7e28b2b8c55f2b0bdb080f0e360d",
+        "dd0fa71cd874732c8f1f62cd24b3ac3746334c6aa368cf84eb231eed91b37b60",
+        "11f91d595e824308e2d9e52fdfc7cbf9f8a1e724a44fe0579aec2da7f4effbb5"
+      ],
+      "source_listing": "https://tokidoki.su/stat/honda/shuttle/4de1487d-ce99-5e68-9019-c527aa0dc2c9/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/10/4de1487d-ce99-5e68-9019-c527aa0dc2c9/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/4de1487d-ce99-5e68-9019-c527aa0dc2c9/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/10/4de1487d-ce99-5e68-9019-c527aa0dc2c9/0.avif"
+      ],
+      "trim": "G HONDA SENSING",
+      "engine_cc": 1496,
+      "power_hp": 129,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 27
+    },
+    {
+      "id": "japan-archive-20261119-28",
+      "country": "japan",
+      "make": "Mazda",
+      "model": "Mazda3",
+      "year": 2021,
+      "mileage_km": 43000,
+      "body": "BP5P",
+      "grade": "4.5",
+      "auction": "JU Gifu",
+      "lot": "7187",
+      "auction_date": "2026-09-26",
+      "description": "Mazda Mazda3 2021 года, кузов BP5P, комплектация 15C, двигатель 1496 см³ (Бензин), КПП Автомат. Пробег 43000 км, оценка 4.5, аукцион JU Gifu, 26.09.2026, лот №7187. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-28-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-28-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-28-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1285000,
+      "media_sha256": [
+        "668c7c5b5413b3c078490f64593b89e7365c195188470cc362a680170a0ef2b3",
+        "49c81a712abb41a7e367fdac62046a71ef79547b09afb707e7cc665e7fe1db7e",
+        "e9931f578d383a04cb9f5f63747aa25507bf487439e890d058d7b37f482646a7"
+      ],
+      "source_listing": "https://tokidoki.su/stat/mazda/mazda3/673d1147-e6e5-5cff-a8f4-f3a244f0f910/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312654.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312655.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/24/673d1147-e6e5-5cff-a8f4-f3a244f0f910/33312653.avif"
+      ],
+      "trim": "15C",
+      "engine_cc": 1496,
+      "power_hp": 111,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 28
+    },
+    {
+      "id": "japan-archive-20261119-29",
+      "country": "japan",
+      "make": "Subaru",
+      "model": "XV",
+      "year": 2019,
+      "mileage_km": 29000,
+      "body": "GT3",
+      "grade": "4.5",
+      "auction": "JU Miyagi",
+      "lot": "2071",
+      "auction_date": "2026-10-23",
+      "description": "Subaru XV 2019 года, кузов GT3, комплектация 4WD 1.6I EYESIGHT, двигатель 1599 см³ (Бензин), КПП Вариатор. Пробег 29000 км, оценка 4.5, аукцион JU Miyagi, 23.10.2026, лот №2071. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-29-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-29-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-29-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1434000,
+      "media_sha256": [
+        "61a688299a46ba28025e7ee65ae83d11618cc0852efab2ed3de8094cb2a14549",
+        "8670348616ac2aaf64109edc6c3b25cff9034b48358e91bb736be21d1d44a7f1",
+        "4236862df14dba83b4955609eef2d50e7e076c1a12b33119549243d012933640"
+      ],
+      "source_listing": "https://tokidoki.su/stat/subaru/xv/0318bb9e-3e58-5119-a166-ea7ed47856c0/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/22/0318bb9e-3e58-5119-a166-ea7ed47856c0/38626468.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/22/0318bb9e-3e58-5119-a166-ea7ed47856c0/38626469.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/22/0318bb9e-3e58-5119-a166-ea7ed47856c0/38626467.avif"
+      ],
+      "trim": "4WD 1.6I EYESIGHT",
+      "engine_cc": 1599,
+      "power_hp": 115,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 29
+    },
+    {
+      "id": "japan-archive-20261119-30",
+      "country": "japan",
+      "make": "Mazda",
+      "model": "CX-30",
+      "year": 2021,
+      "mileage_km": 47000,
+      "body": "DM8P",
+      "grade": "4.5",
+      "auction": "CAA Chubu",
+      "lot": "36035",
+      "auction_date": "2026-11-18",
+      "description": "Mazda CX-30 2021 года, кузов DM8P, комплектация XD PRO ACTIVE TOURING SELECTION, двигатель 1756 см³ (Дизель), КПП Автомат. Пробег 47000 км, оценка 4.5, аукцион CAA Chubu, 18.11.2026, лот №36035. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-30-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-30-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-30-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1570000,
+      "media_sha256": [
+        "d45798d0cc8752fbd405e74f01eb40e2b241e2b598f8edfa6f4a8e7016acbc2c",
+        "30815fce9c8b86f00b1556b6f8a7cc504b4f8936e9c4f955f2bb242cd56241ba",
+        "f062bad2191d119b5ea15092177476e387f3182fd92fa1a9793d93bf8384474b"
+      ],
+      "source_listing": "https://tokidoki.su/stat/mazda/cx-30/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/0.avif"
+      ],
+      "trim": "XD PRO ACTIVE TOURING SELECTION",
+      "engine_cc": 1756,
+      "power_hp": 130,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 30
+    },
+    {
+      "id": "japan-archive-20261119-31",
+      "country": "japan",
+      "make": "Mazda",
+      "model": "CX-3",
+      "year": 2021,
+      "mileage_km": 41000,
+      "body": "DKLFW",
+      "grade": "4.5",
+      "auction": "TAA Kinki",
+      "lot": "2451",
+      "auction_date": "2026-11-10",
+      "description": "Mazda CX-3 2021 года, кузов DKLFW, комплектация 15S, двигатель 1496 см³ (Бензин), КПП Автомат. Пробег 41000 км, оценка 4.5, аукцион TAA Kinki, 10.11.2026, лот №2451. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-31-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-31-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-31-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1180000,
+      "media_sha256": [
+        "ea2589e021d372e6e0e5011612e7ad1875c49efc1143ba348dd4b418b34c1483",
+        "31f7d0fb7b5404283678ac1d08eff7861e9f68758e4692f299f8774c0994b7fd",
+        "fbb289678182ccbd329c5ccd50bcbd61d29baeb225cc65a3525387e6de0a9c79"
+      ],
+      "source_listing": "https://tokidoki.su/stat/mazda/cx-3/bef25b34-895c-5db1-9fc9-e4de3157cba8/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/06/bef25b34-895c-5db1-9fc9-e4de3157cba8/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/06/bef25b34-895c-5db1-9fc9-e4de3157cba8/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/06/bef25b34-895c-5db1-9fc9-e4de3157cba8/0.avif"
+      ],
+      "trim": "15S",
+      "engine_cc": 1496,
+      "power_hp": 111,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 31
+    },
+    {
+      "id": "japan-archive-20261119-32",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla Axio",
+      "year": 2021,
+      "mileage_km": 41000,
+      "body": "NZE164",
+      "grade": "4.5",
+      "auction": "TAA Kantou",
+      "lot": "72041",
+      "auction_date": "2026-10-22",
+      "description": "Toyota Corolla Axio 2021 года, кузов NZE164, комплектация EX 4WD, двигатель 1496 см³ (Бензин), КПП Вариатор. Пробег 41000 км, оценка 4.5, аукцион TAA Kantou, 22.10.2026, лот №72041. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-32-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-32-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-32-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 933000,
+      "media_sha256": [
+        "1c3bc93a916cbf742d003ef212acea35f86b614c63903557e2d4466f6ae35eb8",
+        "6c74adfe6b60e9b2dd38f28557546f97a87786e086a93ff46d2e6e64ccab24b9",
+        "e371429fd610d729f6d5f0b380726ec9fbc2e7a923fb67f41a89e5722e48bc27"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/corolla-axio/52562f34-f1d0-5d4f-a877-6ad3e17510fb/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/21/52562f34-f1d0-5d4f-a877-6ad3e17510fb/38309041.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/21/52562f34-f1d0-5d4f-a877-6ad3e17510fb/38309042.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/21/52562f34-f1d0-5d4f-a877-6ad3e17510fb/38309040.avif"
+      ],
+      "trim": "EX 4WD",
+      "engine_cc": 1496,
+      "power_hp": 103,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 32
+    },
+    {
+      "id": "japan-archive-20261119-33",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Rocky",
+      "year": 2021,
+      "mileage_km": 31000,
+      "body": "A200S",
+      "grade": "4.5",
+      "auction": "JU Gifu",
+      "lot": "5797",
+      "auction_date": "2026-10-03",
+      "description": "Daihatsu Rocky 2021 года, кузов A200S, комплектация X, двигатель 996 см³ (Бензин), КПП Вариатор. Пробег 31000 км, оценка 4.5, аукцион JU Gifu, 03.10.2026, лот №5797. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-33-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-33-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-33-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1165000,
+      "media_sha256": [
+        "9adc66c4e7acb353d16d4cce4c3f36d6002c60486923536c051d1071211b553e",
+        "bc2771942f23c258064765735db39172577d9be2946a3ab6b1c649f03fb788c7",
+        "5c77d7759900c14a3c904011042bb6767ff9f6084ca218b49180b6dc1171e92d"
+      ],
+      "source_listing": "https://tokidoki.su/stat/daihatsu/rocky/05622e78-c179-54a4-bdd9-28c51637a20a/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518394.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518395.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/01/05622e78-c179-54a4-bdd9-28c51637a20a/34518393.avif"
+      ],
+      "trim": "X",
+      "engine_cc": 996,
+      "power_hp": 98,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 33
+    },
+    {
+      "id": "japan-archive-20261119-34",
+      "country": "japan",
+      "make": "BMW",
+      "model": "1-Series",
+      "year": 2019,
+      "mileage_km": 34000,
+      "body": "1R15",
+      "grade": "4.5",
+      "auction": "BAYAUC",
+      "lot": "60268",
+      "auction_date": "2026-09-23",
+      "description": "BMW 1-Series 2019 года, кузов 1R15, комплектация 118i, двигатель 1498 см³ (Бензин), КПП Автомат. Пробег 34000 км, оценка 4.5, аукцион BAYAUC, 23.09.2026, лот №60268. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-34-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-34-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-34-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 940000,
+      "media_sha256": [
+        "d10c04156c6ef51eb6bda51c2c2b3dbc4bc7200bfae4450d247c7ab41ec2c1b1",
+        "a64da201bb8b8858f227eaff8c3f4c32b4c67a033c3ac305e010476f8fad81e3",
+        "165002adff44c03127d81ce24a2dba188174788613d3db4c9f6af298bd6a6a43"
+      ],
+      "source_listing": "https://tokidoki.su/stat/bmw/1-series/018eb2a7-b7ab-5194-a448-76f73e7395af/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/09/21/018eb2a7-b7ab-5194-a448-76f73e7395af/32814614.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/018eb2a7-b7ab-5194-a448-76f73e7395af/32814615.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/21/018eb2a7-b7ab-5194-a448-76f73e7395af/32814612.avif"
+      ],
+      "trim": "118i",
+      "engine_cc": 1498,
+      "power_hp": 136,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 34
+    },
+    {
+      "id": "japan-archive-20261119-35",
+      "country": "japan",
+      "make": "Mitsubishi",
+      "model": "Eclipse Cross",
+      "year": 2021,
+      "mileage_km": 31000,
+      "body": "GK1W",
+      "grade": "4.5",
+      "auction": "MIRIVE Osaka",
+      "lot": "75210",
+      "auction_date": "2026-10-22",
+      "description": "Mitsubishi Eclipse Cross 2021 года, кузов GK1W, комплектация G PLUS PACKAGE, двигатель 1499 см³ (Бензин), КПП Вариатор. Пробег 31000 км, оценка 4.5, аукцион MIRIVE Osaka, 22.10.2026, лот №75210. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-35-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-35-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-35-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1985000,
+      "media_sha256": [
+        "02d3c3e2cebc39662d22a1c5f4a9261ef6c74c1624ed236f1c29c8d6e9585a1b",
+        "5c1e5c8609b9a52b27d389c99bf3e96028ed61145471afd01b42125f79019926",
+        "90fb6ae7828918ce15adbe098321c7f880d34db1b9a9405a3aa66299462b5fe3"
+      ],
+      "source_listing": "https://tokidoki.su/stat/mitsubishi/eclipse-cross/f88d777c-f2fe-5073-8bca-72a8e5961fa8/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/19/f88d777c-f2fe-5073-8bca-72a8e5961fa8/37914811.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/f88d777c-f2fe-5073-8bca-72a8e5961fa8/37914812.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/19/f88d777c-f2fe-5073-8bca-72a8e5961fa8/37914810.avif"
+      ],
+      "trim": "G PLUS PACKAGE",
+      "engine_cc": 1499,
+      "power_hp": 150,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 35
+    },
+    {
+      "id": "japan-archive-20261119-36",
+      "country": "japan",
+      "make": "Mercedes-Benz",
+      "model": "A-Class",
+      "year": 2021,
+      "mileage_km": 34000,
+      "body": "177084",
+      "grade": "4.5",
+      "auction": "CAA Chubu",
+      "lot": "38037",
+      "auction_date": "2026-11-18",
+      "description": "Mercedes-Benz A-Class 2021 года, кузов 177084, комплектация A180, двигатель 1332 см³ (Бензин), КПП Робот. Пробег 34000 км, оценка 4.5, аукцион CAA Chubu, 18.11.2026, лот №38037. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-36-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-36-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-36-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1395000,
+      "media_sha256": [
+        "50b7e132659934578084e0e6a6cc655d0ed1d51745509b189cbe1833911dd503",
+        "34e5ed028d441912ef6dc58f049d9709dd9e97335af1ca223a2605c7e46ee7be",
+        "6a4b5efe6ca39e47c00aa9e8f3e2bbc9ba8e1b63ae97f168b12a2a288a51d442"
+      ],
+      "source_listing": "https://tokidoki.su/stat/mercedes-benz/a-class/01e2ddf9-47a8-57fc-b909-94dda7b4a179/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/15/01e2ddf9-47a8-57fc-b909-94dda7b4a179/0.avif"
+      ],
+      "trim": "A180",
+      "engine_cc": 1332,
+      "power_hp": 136,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 36
+    },
+    {
+      "id": "japan-archive-20261119-37",
+      "country": "japan",
+      "make": "Mazda",
+      "model": "Axela",
+      "year": 2019,
+      "mileage_km": 19000,
+      "body": "BM5FS",
+      "grade": "4.5",
+      "auction": "BAYAUC",
+      "lot": "60196",
+      "auction_date": "2026-11-18",
+      "description": "Mazda Axela 2019 года, кузов BM5FS, комплектация 15S, двигатель 1496 см³ (Бензин), КПП Автомат. Пробег 19000 км, оценка 4.5, аукцион BAYAUC, 18.11.2026, лот №60196. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-37-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-37-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-37-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1050000,
+      "media_sha256": [
+        "bf0629820645db5e979ea78b78a2a691675b02495454656fe6e07c80b23ec775",
+        "5e83e4e6ff1d8b1908b4e0bbb9ec0ec0b6244ae6fffe33c5f19e22ed218c8348",
+        "02d5fc872778a8ed740347c3da1328c66d3744dfe173e3ca866db3a46aae7ddf"
+      ],
+      "source_listing": "https://tokidoki.su/stat/mazda/axela/12169ad2-b97f-5a62-8dfa-b9415628ac44/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/14/12169ad2-b97f-5a62-8dfa-b9415628ac44/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/12169ad2-b97f-5a62-8dfa-b9415628ac44/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/12169ad2-b97f-5a62-8dfa-b9415628ac44/0.avif"
+      ],
+      "trim": "15S",
+      "engine_cc": 1496,
+      "power_hp": 111,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 37
+    },
+    {
+      "id": "japan-archive-20261119-38",
+      "country": "japan",
+      "make": "BMW",
+      "model": "X1",
+      "year": 2019,
+      "mileage_km": 33000,
+      "body": "JG15",
+      "grade": "5",
+      "auction": "CAA Tokyo",
+      "lot": "38259",
+      "auction_date": "2026-09-29",
+      "description": "BMW X1 2019 года, кузов JG15, комплектация sDrive 18i, двигатель 1498 см³ (Бензин), КПП Робот. Пробег 33000 км, оценка 5, аукцион CAA Tokyo, 29.09.2026, лот №38259. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-38-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-38-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-38-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1384000,
+      "media_sha256": [
+        "935f71a4453c3f2daa3e6704f58f3e45e4caeb312c9ea721df29de623ee5150d",
+        "efead0e5e39b2b40623132aa99f9ddcbcd16e15863926c83f39bed08b4346292",
+        "8129da9f5649f461148ef7b4f63d90a87928f84c59bee1f395bd9b1695c48703"
+      ],
+      "source_listing": "https://tokidoki.su/stat/bmw/x1/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953373.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953374.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/28/f1f6a99d-76fb-5b6f-9a2c-02fcd647ebf7/33953372.avif"
+      ],
+      "trim": "sDrive 18i",
+      "engine_cc": 1498,
+      "power_hp": 140,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 38
+    },
+    {
+      "id": "japan-archive-20261119-39",
+      "country": "japan",
+      "make": "Mazda",
+      "model": "Roadster",
+      "year": 2021,
+      "mileage_km": 23000,
+      "body": "ND5RC",
+      "grade": "5",
+      "auction": "JU Fukushima",
+      "lot": "2041",
+      "auction_date": "2026-11-05",
+      "description": "Mazda Roadster 2021 года, кузов ND5RC, комплектация S SPECIAL PACKAGE, двигатель 1496 см³ (Бензин), КПП Механика. Пробег 23000 км, оценка 5, аукцион JU Fukushima, 05.11.2026, лот №2041. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-39-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-39-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-39-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1989000,
+      "media_sha256": [
+        "d2ce16ba6bf6bffe4a24a0a544307c5a828fd5d1d19ae5cff7d7aa3eb1ccff95",
+        "756732d94986ee06a26fed63f5416d0fead71d3fceb9cbe37a20d1a6df21d638",
+        "fb7403746966888dbf916c5aeadf70998dc990a27505a5cf7b4799cacac7d9c7"
+      ],
+      "source_listing": "https://tokidoki.su/stat/mazda/roadster/2b9f0818-82c0-5331-b9b4-f101e1f5b599/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/03/2b9f0818-82c0-5331-b9b4-f101e1f5b599/40674200.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/03/2b9f0818-82c0-5331-b9b4-f101e1f5b599/40674201.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/03/2b9f0818-82c0-5331-b9b4-f101e1f5b599/40674199.avif"
+      ],
+      "trim": "S SPECIAL PACKAGE",
+      "engine_cc": 1496,
+      "power_hp": 132,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 39
+    },
+    {
+      "id": "japan-archive-20261119-40",
+      "country": "japan",
+      "make": "Volkswagen",
+      "model": "T-Cross",
+      "year": 2021,
+      "mileage_km": 47000,
+      "body": "C1DKR",
+      "grade": "5",
+      "auction": "CAA Tokyo",
+      "lot": "38116",
+      "auction_date": "2026-10-27",
+      "description": "Volkswagen T-Cross 2021 года, кузов C1DKR, комплектация TSI ACTIVE, двигатель 999 см³ (Бензин), КПП Робот. Пробег 47000 км, оценка 5, аукцион CAA Tokyo, 27.10.2026, лот №38116. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-40-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-40-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-40-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1113000,
+      "media_sha256": [
+        "181d85d8bb5150d7c7c83626211b2d2ee386f1b546fd6f71738e991f8cdd643a",
+        "390047066c29242e087df80f1971b46769d85314f23bce0b864794183c6fcf53",
+        "13109aa54ebc0c775b7a3e22200bf408468a389b3b2c3ff42ba2685f249d0efd"
+      ],
+      "source_listing": "https://tokidoki.su/stat/volkswagen/t-cross/2cf206b8-5b74-537d-8720-ad113a921334/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971312.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971313.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/26/2cf206b8-5b74-537d-8720-ad113a921334/38971311.avif"
+      ],
+      "trim": "TSI ACTIVE",
+      "engine_cc": 999,
+      "power_hp": 116,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 40
+    },
+    {
+      "id": "japan-archive-20261119-41",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Ignis",
+      "year": 2021,
+      "mileage_km": 39000,
+      "body": "FF21S",
+      "grade": "4.5",
+      "auction": "MIRIVE Saitama",
+      "lot": "30130",
+      "auction_date": "2026-11-04",
+      "description": "Suzuki Ignis 2021 года, кузов FF21S, комплектация 4WD HYBRID MZ, двигатель 1242 см³ (Мягкий гибрид), КПП Вариатор. Пробег 39000 км, оценка 4.5, аукцион MIRIVE Saitama, 04.11.2026, лот №30130. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-41-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-41-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-41-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1060000,
+      "media_sha256": [
+        "725bb6f5eaf10977e17f8469ff15f639ece076f7de93dcf00135120c7c4253f1",
+        "12c4e1606abac3cd6ce0cd0d48e0ad772b89bc432dd991b028be2251e2bf0d99",
+        "6824c313f4ebbce6d40e1fb0e6acca6d08d7cbb478f29868876a28157b902854"
+      ],
+      "source_listing": "https://tokidoki.su/stat/suzuki/ignis/c79dc778-bdb6-51a6-985d-39a8a419530a/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/01/c79dc778-bdb6-51a6-985d-39a8a419530a/40411819.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/c79dc778-bdb6-51a6-985d-39a8a419530a/40411820.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/01/c79dc778-bdb6-51a6-985d-39a8a419530a/40411818.avif"
+      ],
+      "trim": "4WD HYBRID MZ",
+      "engine_cc": 1242,
+      "power_hp": 94,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 41
+    },
+    {
+      "id": "japan-archive-20261119-42",
+      "country": "japan",
+      "make": "Volkswagen",
+      "model": "T-Roc",
+      "year": 2021,
+      "mileage_km": 41000,
+      "body": "A1DPC",
+      "grade": "4.5",
+      "auction": "LAA Okayama",
+      "lot": "4350",
+      "auction_date": "2026-10-02",
+      "description": "Volkswagen T-Roc 2021 года, кузов A1DPC, комплектация TSI STYLE DESIGN PACK, двигатель 1497 см³ (Бензин), КПП Робот. Пробег 41000 км, оценка 4.5, аукцион LAA Okayama, 02.10.2026, лот №4350. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-42-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-42-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-42-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1392000,
+      "media_sha256": [
+        "904df4a2e9997d17523f8439c93e1e2d03c3a850c58d906c3cdbdde812e01aa8",
+        "8571ac3236fcb1a51b7533cb1669b3df6301c1a2d47639299e56897fbbf98f51",
+        "9e3856adbf70c38c0b3a24e6406d45374a8a02f2d5eb621179614016cc3672af"
+      ],
+      "source_listing": "https://tokidoki.su/stat/volkswagen/t-roc/55b2b1b8-7801-5e5b-9ba4-04d68668e519/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/09/30/55b2b1b8-7801-5e5b-9ba4-04d68668e519/34282999.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/30/55b2b1b8-7801-5e5b-9ba4-04d68668e519/34283000.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/30/55b2b1b8-7801-5e5b-9ba4-04d68668e519/34282998.avif"
+      ],
+      "trim": "TSI STYLE DESIGN PACK",
+      "engine_cc": 1497,
+      "power_hp": 150,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 42
+    },
+    {
+      "id": "japan-archive-20261119-43",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Prius",
+      "year": 2021,
+      "mileage_km": 47000,
+      "body": "ZVW51",
+      "grade": "4.5",
+      "auction": "TAA Touhoku",
+      "lot": "2037",
+      "auction_date": "2026-10-29",
+      "description": "Toyota Prius 2021 года, кузов ZVW51, комплектация S, двигатель 1797 см³ (Параллельный гибрид), КПП Вариатор. Пробег 47000 км, оценка 4.5, аукцион TAA Touhoku, 29.10.2026, лот №2037. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-43-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-43-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-43-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1310000,
+      "media_sha256": [
+        "e4c525fa0b51f8d94f15e59253ce431dfc7e8afafe2e1d879e5506a0234d5a5c",
+        "605b13caceac3416218a114de1560dcba0fe9ed99f41ac4377d25486461e547a",
+        "95700f612878b2c0efbbc905f012e452b73bd4d754a6138d754f3d512adeadb8"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/prius/de0753b9-d8b3-514f-9ff4-7c06a7619ec4/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/30/de0753b9-d8b3-514f-9ff4-7c06a7619ec4/40086308.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/30/de0753b9-d8b3-514f-9ff4-7c06a7619ec4/40086309.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/30/de0753b9-d8b3-514f-9ff4-7c06a7619ec4/40086307.avif"
+      ],
+      "trim": "S",
+      "engine_cc": 1797,
+      "power_hp": 148,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 43
+    },
+    {
+      "id": "japan-archive-20261119-44",
+      "country": "japan",
+      "make": "MINI",
+      "model": "Hatch",
+      "year": 2021,
+      "mileage_km": 30000,
+      "body": "XR15MW",
+      "grade": "4.5",
+      "auction": "Ippatsu Stock",
+      "lot": "38081",
+      "auction_date": "2026-11-10",
+      "description": "MINI Hatch 2021 года, кузов XR15MW, комплектация VI KTO REAR, двигатель 1498 см³ (Бензин), КПП Робот. Пробег 30000 км, оценка 4.5, аукцион Ippatsu Stock, 10.11.2026, лот №38081. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-44-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-44-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-44-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1175000,
+      "media_sha256": [
+        "d3b80e74eb797d6cfe2a3a745ccf89c9f2601e433b346719d83e6c3f137408e2",
+        "45e52cbc0153ca2e16c272fa5b56c47e1de7e82119656354be9af962157eb39d",
+        "24e6fd94e75936abbeffa253d6de4bb341dd5c1784c1dee5a96db5a4a0297d48"
+      ],
+      "source_listing": "https://tokidoki.su/stat/mini/hatch/b9ffbe2a-5e01-5446-8bb7-224c1d3919da/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/29/b9ffbe2a-5e01-5446-8bb7-224c1d3919da/39924119.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/29/b9ffbe2a-5e01-5446-8bb7-224c1d3919da/39924120.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/29/b9ffbe2a-5e01-5446-8bb7-224c1d3919da/39924118.avif"
+      ],
+      "trim": "VI KTO REAR",
+      "engine_cc": 1498,
+      "power_hp": 102,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 44
+    },
+    {
+      "id": "japan-archive-20261119-45",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "March",
+      "year": 2021,
+      "mileage_km": 40000,
+      "body": "K13",
+      "grade": "4.5",
+      "auction": "CAA Chubu",
+      "lot": "36418",
+      "auction_date": "2026-09-23",
+      "description": "Nissan March 2021 года, кузов K13, комплектация S, двигатель 1198 см³ (Бензин), КПП Вариатор. Пробег 40000 км, оценка 4.5, аукцион CAA Chubu, 23.09.2026, лот №36418. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-45-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-45-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-45-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 385000,
+      "media_sha256": [
+        "e5b8bf6cfb0bfb9aa06da8a8aacefdf0c85d5f1ad7699771a4cf8dcfe8ce6221",
+        "54965afb0f5207ba002212ed1d42b7f5dff398e7f349ac63b20ab3dcecc74fb6",
+        "7be1b09fc8121b4df75fa8af539cbf3779738b7e4ae52ecd1a5fb3948d8df921"
+      ],
+      "source_listing": "https://tokidoki.su/stat/nissan/march/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936383.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936384.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/22/5ae69914-ad6a-59f8-b5fe-f3804595e5fb/32936382.avif"
+      ],
+      "trim": "S",
+      "engine_cc": 1198,
+      "power_hp": 79,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 45
+    },
+    {
+      "id": "japan-archive-20261119-46",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Porte",
+      "year": 2021,
+      "mileage_km": 29000,
+      "body": "NSP141",
+      "grade": "4.5",
+      "auction": "CAA Tokyo",
+      "lot": "40004",
+      "auction_date": "2026-11-10",
+      "description": "Toyota Porte 2021 года, кузов NSP141, комплектация F, двигатель 1496 см³ (Бензин), КПП Вариатор. Пробег 29000 км, оценка 4.5, аукцион CAA Tokyo, 10.11.2026, лот №40004. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-46-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-46-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-46-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 951000,
+      "media_sha256": [
+        "6771fde4e26e89f2ebe4547fa92764610187e5309f61a7dce83d6e7fddc0c8bb",
+        "c0fde3f131c2e788e7eda0465f69250403ae961bb0521096dc2ba98904db2fbe",
+        "9ce45fc2e69e7b217132926aa1318ae575584bd20ba1f3bccb4b951f4d9cd52e"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/porte/34e47956-dffe-5888-93d1-0cab82e6425d/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/07/34e47956-dffe-5888-93d1-0cab82e6425d/0.avif"
+      ],
+      "trim": "F",
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 46
+    },
+    {
+      "id": "japan-archive-20261119-47",
+      "country": "japan",
+      "make": "Mitsubishi",
+      "model": "Delica D:2",
+      "year": 2021,
+      "mileage_km": 45000,
+      "body": "MB37S",
+      "grade": "4.5",
+      "auction": "TAA Kinki",
+      "lot": "2419",
+      "auction_date": "2026-11-17",
+      "description": "Mitsubishi Delica D:2 2021 года, кузов MB37S, комплектация HYBRID MX, двигатель 1242 см³ (Мягкий гибрид), КПП Вариатор. Пробег 45000 км, оценка 4.5, аукцион TAA Kinki, 17.11.2026, лот №2419. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-47-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-47-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-47-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1134000,
+      "media_sha256": [
+        "aa868de0b290aa3cffe93a0883eb7c3aba3f7d64c4babb165b34b87885ab4212",
+        "b54f4511d089f19211e62217d01087875aa7aa2b2f9277afaff50f66af01a468",
+        "b91b70e3d3c89c2efc9d2246beae157b2d636d931d0abddecf86556a53ace277"
+      ],
+      "source_listing": "https://tokidoki.su/stat/mitsubishi/delica-d-2/1fa1d7f9-a356-5863-a406-0d4e4a8ec434/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/14/1fa1d7f9-a356-5863-a406-0d4e4a8ec434/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/1fa1d7f9-a356-5863-a406-0d4e4a8ec434/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/1fa1d7f9-a356-5863-a406-0d4e4a8ec434/0.avif"
+      ],
+      "trim": "HYBRID MX",
+      "engine_cc": 1242,
+      "power_hp": 94,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 47
+    },
+    {
+      "id": "japan-archive-20261119-48",
+      "country": "japan",
+      "make": "Lexus",
+      "model": "CT200h",
+      "year": 2021,
+      "mileage_km": 12000,
+      "body": "ZWA10",
+      "grade": "4.5",
+      "auction": "CAA Chubu",
+      "lot": "36215",
+      "auction_date": "2026-09-30",
+      "description": "Lexus CT200h 2021 года, кузов ZWA10, комплектация CT200H VERSION C, двигатель 1797 см³ (Параллельный гибрид), КПП Вариатор. Пробег 12000 км, оценка 4.5, аукцион CAA Chubu, 30.09.2026, лот №36215. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-48-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-48-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-48-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 2395000,
+      "media_sha256": [
+        "4697130bc0fae6c2e0370e84bb61858af7dbeeced25712e4f98724cb612f4a6c",
+        "6eecd157518aedadfcecfff7d2ddc285d161016f9b1be255134eed794f9bf2d1",
+        "f67db39ec1fa85bd384250c55f214b49fd70c8fde183adcfd6fd3635c66415c4"
+      ],
+      "source_listing": "https://tokidoki.su/stat/lexus/ct200h/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902815.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902817.avif",
+        "https://japan.storage.yandexcloud.net/2026/09/27/c5fc3733-bf07-5bcd-a509-aa055ba3fb4c/33902813.avif"
+      ],
+      "trim": "CT200H VERSION C",
+      "engine_cc": 1797,
+      "power_hp": 124,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 48
+    },
+    {
+      "id": "japan-archive-20261119-49",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Prius PHV",
+      "year": 2023,
+      "mileage_km": 8000,
+      "body": "MXWH61",
+      "grade": "4.5",
+      "auction": "TAA Shikoku",
+      "lot": "70044",
+      "auction_date": "2026-11-17",
+      "description": "Toyota Prius PHV 2023 года, кузов MXWH61, комплектация Z, двигатель 1986 см³ (Параллельный гибрид), КПП Вариатор. Пробег 8000 км, оценка 4.5, аукцион TAA Shikoku, 17.11.2026, лот №70044. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-49-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-49-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-49-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 619000,
+      "media_sha256": [
+        "5ab2e3a46af997339b93b1606fdace0b87afdc182c7e67515abd701a343f58d0",
+        "83bc4bca4f565b574a704cbddd30be2a9724fc2099152a081d3d4d7cda166832",
+        "822b78e1770dfebb9b23893020fe930af14a9625eac2e5a2ffb793ef5e49c092"
+      ],
+      "source_listing": "https://tokidoki.su/stat/toyota/prius-phv/c3460ff2-cad6-5f49-a6a1-f8da7ef86621/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/11/14/c3460ff2-cad6-5f49-a6a1-f8da7ef86621/1.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/c3460ff2-cad6-5f49-a6a1-f8da7ef86621/2.avif",
+        "https://japan.storage.yandexcloud.net/2026/11/14/c3460ff2-cad6-5f49-a6a1-f8da7ef86621/0.avif"
+      ],
+      "trim": "Z",
+      "engine_cc": 1986,
+      "power_hp": 242,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 49
+    },
+    {
+      "id": "japan-archive-20261119-50",
+      "country": "japan",
+      "make": "Audi",
+      "model": "A3",
+      "year": 2019,
+      "mileage_km": 42000,
+      "body": "8VCXS",
+      "grade": "4.5",
+      "auction": "LAA Okayama",
+      "lot": "1101",
+      "auction_date": "2026-10-30",
+      "description": "Audi A3 2019 года, кузов 8VCXS, комплектация SPORTBACK 30TFSI, двигатель 1394 см³ (Бензин), КПП Робот. Пробег 42000 км, оценка 4.5, аукцион LAA Okayama, 30.10.2026, лот №1101. Статистика продаж на аукционах Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-archive-20261119-50-front.jpg",
+        "/assets/auction/approved/japan-archive-20261119-50-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-archive-20261119-50-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1049000,
+      "media_sha256": [
+        "79478dcedd70ff4c44c06af889db0a5ee60a05cd55ef459041ef2389dd3fe060",
+        "672e0640a93326a4568d264c318610591965799b020eb45379e58fed35b08c3b",
+        "f89873e9271075371a64501371e21637a0a212fc3b216c56933cecae74703568"
+      ],
+      "source_listing": "https://tokidoki.su/stat/audi/a3/fa84b309-a65d-51a2-8027-6fd257213f1c/",
+      "source_media": [
+        "https://japan.storage.yandexcloud.net/2026/10/27/fa84b309-a65d-51a2-8027-6fd257213f1c/39497600.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/fa84b309-a65d-51a2-8027-6fd257213f1c/39497601.avif",
+        "https://japan.storage.yandexcloud.net/2026/10/27/fa84b309-a65d-51a2-8027-6fd257213f1c/39497599.avif"
+      ],
+      "trim": "SPORTBACK 30TFSI",
+      "engine_cc": 1394,
+      "power_hp": 122,
+      "rights_confirmed": false,
+      "reviewed_pdf_page": 50
+    }
+  ]
+}

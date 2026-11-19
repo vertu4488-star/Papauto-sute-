@@ -71,7 +71,7 @@ class PapautoWarmPalette(unittest.TestCase):
             self.skipTest("Build output not yet generated")
         import json
         lots=json.loads((PUBLIC/"data/gallery-lots.json").read_text(encoding="utf8"))
-        self.assertEqual(lots["lot_count"],132)
+        self.assertEqual(lots["lot_count"],182)
         for lot in lots["lots"]:
             self.assertTrue(lot["photos"])
             self.assertTrue(lot["inspection_image"].startswith("/assets/"))

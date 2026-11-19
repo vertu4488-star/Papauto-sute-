@@ -248,6 +248,23 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
         if len(set(media_hashes)) != 194 or len(media_hashes) != 194:
             raise RuntimeError("PAPAUTO_POLICY: repeated reviewed photo/auction sheet")
         additional.extend(prepare_approved(target, row, owner_selected=True) for row in selection)
+        # Exact second owner-authorized archival release; no general import permission.
+        archive = json.loads((ROOT / "research/owner-approved-50-archive-2026-11-19.json").read_text(encoding="utf-8"))
+        archived = archive["lots"]
+        if (archive.get("approved_count") != 50 or archive.get("rights_confirmed") is not False
+                or archive.get("owner_authorized_archival_reference_only") is not True
+                or archive.get("reviewed_pdf_sha256") != "7c4c0c775dbcf3f4ca6f8f967282d66e6692f147b02d4ce74b67bcdb614746a6"
+                or [r["id"] for r in archived] != [f"japan-archive-20261119-{i:02d}" for i in range(1,51)]
+                or any(len(r["photos"]) != 2 or r.get("rights_confirmed") is not False for r in archived)):
+            raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: 50-card archive receipt mismatch")
+        hashes = [h for r in archived for h in r["media_sha256"]]
+        if len(hashes) != 150 or len(set(hashes + media_hashes)) != 344:
+            raise RuntimeError("PAPAUTO_POLICY: duplicate reviewed media")
+        for rec in archived:
+            card = prepare_approved(target, rec, owner_selected=True)
+            card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
+                        sale_label="Статистика продаж", rights_confirmed=False)
+            additional.append(card)
     seen_lot_keys = {
         (r["market"], r["auction"], str(r["auction_date"]), str(r["lot_number"]))
         for r in base

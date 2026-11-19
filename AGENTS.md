@@ -9,3 +9,5 @@ New media requires image-by-image exact-lot provenance, the matching full auctio
 Read scripts/import_auction_photos.py, tests/test_auction_only_images_policy.py and tests/test_auction_media_policy.py. Run project CI and mobile browser tests before deployment.
 
 The owner expressly directed publication of the 100 lots in research/owner-selected-japan-lots-2026-11-14.json on 2026-11-14. Only that batch is published on the basis of that instruction. Do not describe the batch as licensed. The ordinary import requirements apply to subsequent additions.
+
+Owner instruction 2026-11-19: exactly the 50 reviewed Japan archival reference records in research/owner-approved-50-archive-2026-11-19.json were authorized explicitly under the owner’s responsibility. This is not a third-party license; rights_confirmed stays false. No general exception, no street or unrelated photos, no missing sheets, no external card links, and no available-for-sale claims. Ordinary importer rights requirements remain in force for any other batch.
