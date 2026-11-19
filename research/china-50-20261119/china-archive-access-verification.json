@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-19",
+  "status": "blocked_source_access",
+  "target": 50,
+  "publication_ready": 0,
+  "published": 0,
+  "source_checks": [
+    {
+      "name": "Guazi Global",
+      "url": "https://en.guazi.com/",
+      "evidence": [
+        {
+          "id": "8haucmws4r",
+          "url": "https://en.guazi.com/products/honda-city-2015-15l-white-120600km-at-5-seats-8haucmws4r.html",
+          "finding": "Item No, mileage and inspection summary accessible; Members Only View Full Report; Members Only Recently Sold Auction Prices; Auction Ended."
+        },
+        {
+          "id": "648shsjwnm",
+          "url": "https://en.guazi.com/products/changan-oshan-x5-2021-16l-gray-53900km-at-5-seats-648shsjwnm.html",
+          "finding": "Same membership restriction on full report and sold prices."
+        },
+        {
+          "id": "bpfte2tuel",
+          "url": "https://en.guazi.com/products/byd-yuan-pro-2021-00l-white-109100km-at-5-seats-bpfte2tuel.html",
+          "finding": "Auction Ended; sold prices members only; similar vehicles are different cars, do not substitute photos."
+        }
+      ],
+      "next": "Authorized existing member access required; verify actual media and original report before selection."
+    },
+    {
+      "name": "Chexiang Pai",
+      "url": "https://pai.chexiang.com/auction/",
+      "finding": "Buyer login and signed merchant agreement required to view detailed vehicle data."
+    },
+    {
+      "name": "Autostreets",
+      "url": "https://www.autostreets.com/auction",
+      "finding": "Open schedule and current bids, not matched completed sale records."
+    },
+    {
+      "name": "Suning",
+      "url": "https://car.suning.com/salecarindex.htm",
+      "finding": "Historical price summaries without matched complete auction reports."
+    },
+    {
+      "name": "Jinpaiwang",
+      "url": "https://www.jinpaiwang.com.cn/",
+      "finding": "Examples are salvage/damaged stock or disposal; not suitable public matched indoor inspection sets."
+    },
+    {
+      "name": "AuctionsAPI",
+      "url": "https://auctionsapi.com/guazi-api",
+      "finding": "Demo key by request; no verified supplied archive access. No request sent."
+    },
+    {
+      "name": "ChinaCarAPI",
+      "url": "https://chinacarapi.com/",
+      "finding": "Paid trial auto-renews, offers marketplace listings, not confirmed auction sold results. Not purchased."
+    }
+  ],
+  "constraints": "No rejected photos, no substitutes, no unverified full reports or prices. No external contact or payment in this turn."
+}
