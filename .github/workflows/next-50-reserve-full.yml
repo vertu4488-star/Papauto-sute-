@@ -1,0 +1,45 @@
+name: Download full-size reserve for 50-card review
+on:
+  push:
+    branches: [review/japan-next-50-20261119]
+    paths: ['.github/workflows/next-50-reserve-full.yml']
+permissions:
+  contents: read
+jobs:
+  reserve:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests pillow pillow-avif-plugin
+      - run: |
+          cat > /tmp/full.py <<'PY'
+          import json,hashlib,io,pathlib,requests
+          from concurrent.futures import ThreadPoolExecutor
+          from PIL import Image
+          import pillow_avif
+          root=pathlib.Path('research/next-50-20261119')
+          out=pathlib.Path('full-resolution-reserve');out.mkdir(exist_ok=True)
+          wanted={'220','3263','435','3312','36138','25927','25730','47','314'}
+          rows=[x for p in sorted(root.glob('part-*.json')) for x in json.loads(p.read_text()) if x['num'] in wanted and not x.get('conflicting_sale_status')]
+          def load(x):
+              ident=x['source'].strip('/').split('/')[-1]; manifests=[]
+              for i,u in enumerate(x['urls'][:3]):
+                  res=requests.get(u,timeout=25);res.raise_for_status()
+                  im=Image.open(io.BytesIO(res.content)).convert('RGB')
+                  im.save(out/f'{ident}-{i}.jpg',quality=96,subsampling=0)
+                  manifests.append({'raw_sha256':hashlib.sha256(res.content).hexdigest(),'pixel_sha256':hashlib.sha256(im.tobytes()).hexdigest(),'size':im.size})
+              return dict(source=x['source'],num=x['num'],media=manifests)
+          with ThreadPoolExecutor(max_workers=5) as pool: records=list(pool.map(load,rows))
+          (out/'manifest.json').write_text(json.dumps(records,indent=2))
+          print('Downloaded full-resolution reserve lots',len(records))
+          
+          PY
+          python /tmp/full.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: next-50-reserve-full
+          path: full-resolution-reserve/
+          retention-days: 7
