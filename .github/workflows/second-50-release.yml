@@ -1,0 +1,86 @@
+name: Test second 50 owner-approved auction statistics cards
+on:
+  push:
+    branches: [review/japan-next-50-20261119]
+    paths: ['.github/workflows/second-50-release.yml']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt pillow pillow-avif-plugin requests
+      - name: Prepare exact reviewed bytes and release contract
+        run: python scripts/prepare_second_50_reviewed_archive.py
+      - name: Full static build and regressions
+        run: |
+          python scripts/build_content.py
+          git diff --exit-code -- "*.html" sitemap.xml
+          python scripts/build_static_public.py
+          python -m unittest discover -s tests -v
+          node --check gallery.js
+          node tests/test_survey_all_gallery_lots.cjs
+      - name: Install Chromium for mobile validation
+        run: npm install --no-save playwright@1.57.0 && npx playwright install chromium
+      - name: Verify mobile gallery, all 50 detail pages, 150 exact media assets and sitemap
+        run: |
+          python -m http.server 8765 -d render-public >/tmp/second50.log 2>&1 &
+          node <<'NODE'
+          const {chromium}=require('playwright');
+          const assert=require('node:assert/strict');
+          const fs=require('node:fs');
+          const crypto=require('node:crypto');
+          (async()=>{
+            const root='http://127.0.0.1:8765';
+            const data=JSON.parse(fs.readFileSync('render-public/data/gallery-lots.json'));
+            const fresh=data.lots.filter(x=>x.id.startsWith('japan-archive-b2-20261119-'));
+            const prev=data.lots.filter(x=>x.id.startsWith('japan-archive-20261119-'));
+            const review=JSON.parse(fs.readFileSync('research/owner-approved-second-50-archive-2026-11-19.json'));
+            const sitemap=fs.readFileSync('render-public/sitemap-lots.xml','utf8');
+            assert.equal(data.lots.length,232);assert.equal(fresh.length,50);assert.equal(prev.length,50);
+            const browser=await chromium.launch({headless:true});
+            try {
+              const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+              await page.goto(root+'/gallery.html',{waitUntil:'domcontentloaded'});
+              await page.waitForTimeout(1000);
+              assert((await page.locator('#gallery-count').innerText()).includes('232'));
+              for(let i=0;i<22 && await page.locator('#gallery-more').isVisible();i++) await page.locator('#gallery-more').click();
+              assert.equal(await page.locator('.gallery-card').count(),232);
+              const card=page.locator('#gallery-lot-'+fresh[0].id);
+              assert.equal(await card.count(),1);
+              await card.scrollIntoViewIfNeeded();
+              assert(await card.locator('img').first().evaluate(async im=>{await im.decode();return im.naturalWidth>100}));
+              for(const [i,r] of fresh.entries()){
+                assert.equal(r.id,review.lots[i].id);
+                assert.equal(r.photos.length,2);
+                assert.equal(r.status,'reference_only');assert.equal(r.rights_confirmed,false);
+                assert(sitemap.includes('/lots/'+r.id+'.html'));
+                const detail=await page.request.get(root+'/lots/'+r.id+'.html');
+                assert.equal(detail.status(),200);
+                const html=await detail.text();
+                assert(html.includes('Статистика продаж'));assert(!html.includes('для ознакомления'));
+                for(const [j,a] of [...r.photos,r.inspection_image].entries()){
+                  const res=await page.request.get(root+a);assert.equal(res.status(),200);
+                  const bytes=await res.body();
+                  assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),review.lots[i].media_sha256[j]);
+                }
+              }
+              await page.goto(root+'/lots/'+fresh[0].id+'.html',{waitUntil:'load'});
+              for(const im of await page.locator('.lot-photos img, .lot-sheet img').all()) assert(await im.evaluate(async x=>{await x.decode();return x.naturalWidth>100}));
+              assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+2));
+              console.log('PASS: 232 gallery cards, 50 newly approved pages, 150 verified JPEGs');
+            }finally{await browser.close()}
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+      - name: Commit only tested production assets to review branch
+        run: |
+          git config user.name "papauto-release-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add AGENTS.md docs/AUCTION_ONLY_GALLERY.md scripts/compile_auction_gallery.py scripts/build_static_public.py scripts/verify_publication_approval.py scripts/publish_lot_search.py tests/test_auction_only_images_policy.py tests/test_site_warm_theme.py research/owner-approved-second-50-archive-2026-11-19.json assets/auction/approved/japan-archive-b2-20261119-*.jpg
+          git commit -m "Prepare exact second 50 reviewed auction statistics lots, 232 total"
+          git push origin HEAD:review/japan-next-50-20261119
