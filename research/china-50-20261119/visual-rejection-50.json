@@ -1,0 +1,363 @@
+{
+  "date": "2026-11-19",
+  "review_artifact_id": 14541350594,
+  "reason": "Owner explicitly rejects street/random images. Visual review of all 50 source preview pages and every included angle. Do not publish any of these cards. Indoor does not establish auction venue; independently verified original complete inspection and accurate auction price status still required. No replacements from other cars, no digitally substituted backgrounds.",
+  "visual_counts": {
+    "outdoor": 21,
+    "blurred_background": 11,
+    "indoor_unverified": 18,
+    "eligible": 0
+  },
+  "rows": [
+    {
+      "review_page": 1,
+      "id": "YXP-8994614",
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 2,
+      "id": "YXP-8979974",
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 3,
+      "id": "YXP-8980112",
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 4,
+      "id": "YXP-8990164",
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 5,
+      "id": "YXP-8990108",
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 6,
+      "id": "YXP-8974466",
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 7,
+      "id": "YXP-8979963",
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 8,
+      "id": "YXP-8994597",
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 9,
+      "id": "YXP-8974576",
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 10,
+      "id": "YXP-8950013",
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 11,
+      "id": "YXP-8953407",
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 12,
+      "id": "PLC-24278319",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 13,
+      "id": "PLC-23065452",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 14,
+      "id": "PLC-24002173",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 15,
+      "id": "PLC-24426592",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 16,
+      "id": "PLC-35042345",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 17,
+      "id": "PLC-356591571",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 18,
+      "id": "PLC-24258579",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 19,
+      "id": "PLC-24264555",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 20,
+      "id": "PLC-24290305",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 21,
+      "id": "PLC-35024367",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 22,
+      "id": "PLC-356375534",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 23,
+      "id": "PLC-23136964",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 24,
+      "id": "PLC-357186604",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 25,
+      "id": "PLC-35112269",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 26,
+      "id": "PLC-35077078",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 27,
+      "id": "PLC-23994516",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 28,
+      "id": "PLC-24472888",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 29,
+      "id": "PLC-24013428",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 30,
+      "id": "PLC-24216995",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 31,
+      "id": "PLC-356412538",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 32,
+      "id": "PLC-24130960",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 33,
+      "id": "PLC-23071906",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 34,
+      "id": "PLC-24180744",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 35,
+      "id": "PLC-24240958",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 36,
+      "id": "PLC-356442802",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 37,
+      "id": "PLC-23726167",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 38,
+      "id": "PLC-24240998",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 39,
+      "id": "PLC-24508690",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 40,
+      "id": "PLC-23396985",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 41,
+      "id": "PLC-19319135",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 42,
+      "id": "PLC-24343325",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 43,
+      "id": "PLC-23204961",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 44,
+      "id": "PLC-23388303",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 45,
+      "id": "PLC-23982901",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 46,
+      "id": "PLC-24254324",
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 47,
+      "id": "PLC-252717E0",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 48,
+      "id": "PLC-24266780",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 49,
+      "id": "PLC-35091352",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    },
+    {
+      "review_page": 50,
+      "id": "PLC-24301412",
+      "visual_status": "rejected_outdoor_or_parking",
+      "publication_ready": false,
+      "may_reuse_photo": false
+    }
+  ]
+}
