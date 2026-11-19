@@ -1,0 +1,74 @@
+[
+  {
+    "lot": "5812",
+    "auction": "JU Gifu",
+    "source": "https://tokidoki.su/stat/toyota/sienta/d492f8da-8204-5e5e-bcc5-8948f9ab72fe/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "30146",
+    "auction": "MIRIVE Saitama",
+    "source": "https://tokidoki.su/stat/honda/vezel/e9511323-9947-556c-80fc-b9644b9cb214/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "30469",
+    "auction": "CAA Tokyo",
+    "source": "https://tokidoki.su/stat/toyota/harrier/74b3b6ab-86b5-522e-b159-04b565ad8005/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "36384",
+    "auction": "CAA Chubu",
+    "source": "https://tokidoki.su/stat/toyota/raize/d558d860-1959-5b47-83ba-70817670cba6/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "3039",
+    "auction": "TAA Chubu",
+    "source": "https://tokidoki.su/stat/suzuki/jimny/791cf5d3-9d30-5d78-8970-008784c12423/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "2011",
+    "auction": "TAA Chubu",
+    "source": "https://tokidoki.su/stat/toyota/roomy/d1ef7ba3-aa2f-5212-a0d9-ef1eb81c254c/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "3032",
+    "auction": "JU Niigata",
+    "source": "https://tokidoki.su/stat/toyota/yaris/f5a6885b-9898-5d1c-82aa-d113c68d9015/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "2008",
+    "auction": "TAA Hiroshima",
+    "source": "https://tokidoki.su/stat/toyota/yaris-cross/1825e59d-511b-5391-9c12-c446cdee6ce3/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "4011",
+    "auction": "JU Toyama",
+    "source": "https://tokidoki.su/stat/daihatsu/move-canbus/0deb1389-c4ed-5cc4-a24b-4a6fc2065d05/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "30360",
+    "auction": "CAA Gifu",
+    "source": "https://tokidoki.su/stat/toyota/corolla/ced3ff03-9558-5f5d-856b-8d8fe9c059c1/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "30161",
+    "auction": "MIRIVE Saitama",
+    "source": "https://tokidoki.su/stat/honda/fit/e2fe2097-8d61-54d6-b923-7f24e27b8432/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "60216",
+    "auction": "BAYAUC",
+    "source": "https://tokidoki.su/stat/mazda/cx-5/37c4326d-2205-5c22-a12e-50659d9130cd/",
+    "status": "archive_sold_displayed"
+  }
+]
