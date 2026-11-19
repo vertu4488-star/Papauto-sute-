@@ -1,0 +1,63 @@
+name: China candidate photograph screen
+on:
+  push:
+    branches: [review/china-50-20261119]
+    paths: ['.github/workflows/china-photo-screen.yml']
+permissions:
+  contents: read
+jobs:
+  screen:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests pillow
+      - run: |
+          python - <<'PY'
+          import json,io,hashlib
+          from concurrent.futures import ThreadPoolExecutor
+          from pathlib import Path
+          from urllib.parse import urlsplit,parse_qs
+          from PIL import Image,ImageDraw,ImageFont
+          import requests
+          base=Path('research/china-50-20261119')
+          rows=json.loads((base/'yxp-print-report-verification-01.json').read_text())
+          out=Path('china-review-screen');out.mkdir()
+          def fetch(x):
+              u=x['main_photo']
+              try:
+                  assert urlsplit(u).hostname=='imerimotors.ge'
+                  orig=parse_qs(urlsplit(u).query)['url'][0]
+                  assert urlsplit(orig).hostname=='img.youxinpai.cn'
+                  res=requests.get(orig,timeout=15)
+                  if not res.ok: res=requests.get(u,timeout=15)
+                  res.raise_for_status()
+                  im=Image.open(io.BytesIO(res.content)).convert('RGB')
+                  assert min(im.size)>=180
+                  sha=hashlib.sha256(res.content).hexdigest()
+                  im.thumbnail((365,255))
+                  return x,im,sha,None
+              except Exception as e:return x,None,None,str(e)[:200]
+          with ThreadPoolExecutor(max_workers=6) as p: a=list(p.map(fetch,rows))
+          f=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',15)
+          canvas=Image.new('RGB',(1200,((len(a)+2)//3)*305),'#f7f4ed')
+          d=ImageDraw.Draw(canvas)
+          record=[]
+          for i,(x,im,sha,err) in enumerate(a):
+              col=i%3*400;y=i//3*305
+              d.text((col+10,y+6),x['lot']+' '+x['model'][:25],font=f,fill='#292723')
+              if im:canvas.paste(im,(col+(400-im.width)//2,y+30))
+              else:d.text((col+10,y+55),'Original image unavailable',font=f,fill='#962f27')
+              record.append(dict(lot=x['lot'],download_ok=bool(im),sha256=sha,error=err))
+          canvas.save(out/'china-contact.jpg',quality=92)
+          (out/'manifest.json').write_text(json.dumps(record,indent=2))
+          print('Original full vehicle images fetched:',sum(x['download_ok'] for x in record),'of',len(record))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: china-review-screen
+          path: china-review-screen/
+          retention-days: 7
