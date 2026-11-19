@@ -1,0 +1,122 @@
+name: Prepare next PapAuto auction preview
+on:
+  push:
+    branches: [review/japan-next-50-20261119]
+    paths: ['.github/workflows/next-50-private-preview.yml']
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests pillow pillow-avif-plugin reportlab
+      - name: Download exact original files, reject duplicates and invalid records
+        run: |
+          cat >/tmp/next.py <<'PY'
+          import requests, pathlib, json, re, io, hashlib, datetime, concurrent.futures
+          from PIL import Image
+          import pillow_avif
+          from reportlab.pdfgen import canvas
+          from reportlab.lib.utils import ImageReader
+          from reportlab.pdfbase import pdfmetrics
+          from reportlab.pdfbase.ttfonts import TTFont
+          from reportlab.lib.colors import HexColor
+          from urllib.parse import urlsplit
+          root=pathlib.Path('.')
+          out=root/'next-preview';out.mkdir(exist_ok=True)
+          prior=[]
+          for p in ['research/owner-approved-50-archive-2026-11-19.json','research/owner-selected-japan-lots-2026-11-14.json','data/gallery-lots.json']:
+              prior.extend(json.loads((root/p).read_text())['lots'])
+          def key(a,d,n):return (str(a).strip().lower(),str(d),str(n))
+          oldkeys={key(x.get('auction'),x.get('auction_date'),x.get('lot',x.get('lot_number'))) for x in prior}
+          oldnum={str(x.get('lot',x.get('lot_number'))) for x in prior}
+          oldsources={x.get('source_listing') for x in prior}
+          # Perceptual image duplication test, independent of JPEG recompression.
+          def dhash(im):
+              px=list(im.convert('L').resize((9,8),Image.Resampling.LANCZOS).getdata())
+              n=0
+              for y in range(8):
+                  for x in range(8):n=(n<<1)|int(px[y*9+x+1]>px[y*9+x])
+              return n
+          oldhash=[]
+          for lot in prior:
+              for p in lot.get('photos',[]):
+                  try:oldhash.append(dhash(Image.open(p.lstrip('/'))))
+                  except Exception:pass
+          rows=[x for p in sorted((root/'research/next-50-20261119').glob('part-*.json')) for x in json.loads(p.read_text())]
+          eligible=[]
+          for x in rows:
+              try:
+                  d=datetime.datetime.strptime(x['date'],'%d.%m.%Y').date().isoformat()
+                  x['iso_date']=d
+                  grade=float(x['spec']['Оценка:'])
+                  if x['conflicting_sale_status'] or grade<3.5 or not 2018<=int(x['year'])<=2026:continue
+                  if re.search(r'stock|oneprice|kyouyuu|kyoyu|kyoyuzaiko',x['auction'],re.I):continue
+                  if x['source'] in oldsources or x['num'] in oldnum or key(x['auction'],d,x['num']) in oldkeys:continue
+                  if not 0<int(re.sub(r'\D','',x['spec']['Пробег:']))<250000:continue
+                  eligible.append(x)
+              except Exception:continue
+          print('source records',len(rows),'eligible before media',len(eligible))
+          def pull(x):
+              try:
+                  pics=[]
+                  for u in x['urls'][:3]:
+                      assert urlsplit(u).hostname=='japan.storage.yandexcloud.net'
+                      assert x['source'].rstrip('/').split('/')[-1] in u
+                      b=requests.get(u,timeout=20);b.raise_for_status()
+                      im=Image.open(io.BytesIO(b.content)).convert('RGB')
+                      assert min(im.size)>=180
+                      pics.append(im)
+                  hashes=[dhash(i) for i in pics]
+                  if len(set(hashes))!=3:return None
+                  if any((h^old).bit_count()<=3 for h in hashes[1:] for old in oldhash):return None
+                  return x,pics,hashes
+              except Exception as e:
+                  print('media skipped',x['num'],str(e)[:100]);return None
+          selected=[]; seenkeys=set(); seenphotos=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+              for result in pool.map(pull,eligible):
+                  if not result:continue
+                  x,pics,hashes=result;k=key(x['auction'],x['iso_date'],x['num'])
+                  if k in seenkeys or any((h^old).bit_count()<=3 for h in hashes[1:] for old in seenphotos):continue
+                  seenkeys.add(k);seenphotos+=hashes[1:];selected.append(result)
+          print('COMPLETE NEW CANDIDATE SETS',len(selected))
+          pdfmetrics.registerFont(TTFont('D','/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'))
+          pdfmetrics.registerFont(TTFont('DB','/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'))
+          c=canvas.Canvas(str(out/'PapAuto_next_candidates.pdf'),pagesize=(595,842))
+          def txt(x,y,t,z=11,bold=False):
+              c.setFillColor(HexColor('#302d28'));c.setFont('DB' if bold else 'D',z);c.drawString(x,y,str(t))
+          def put(im,x,y,w,h):
+              k=min(w/im.width,h/im.height);ww,hh=im.width*k,im.height*k
+              buf=io.BytesIO();im.save(buf,format='JPEG',quality=90);buf.seek(0)
+              c.drawImage(ImageReader(buf),x+(w-ww)/2,y+(h-hh)/2,ww,hh)
+          manifest=[]
+          for n,(a,pics,hashes) in enumerate(selected,1):
+              c.setFillColor(HexColor('#f7f3eb'));c.rect(0,0,595,842,fill=1,stroke=0)
+              txt(30,808,'PAPAUTO  /  СТАТИСТИКА ПРОДАЖ',10,True)
+              txt(30,775,f"{n:02d}. {a['model']} {a['year']}",20,True)
+              txt(30,749,f"Цена по источнику: {a['price']}",15,True)
+              txt(30,728,f"{a['auction']} · {a['date']} · лот {a['num']}",10)
+              for j,k in enumerate(['Пробег:','Оценка:','Кузов:','Комплектация:','Объем:','Двигатель:','КПП:','Мощность:']):
+                  txt(30+(j//4)*270,708-(j%4)*15,(k+' '+a['spec'].get(k,'—'))[:48],10)
+              put(pics[1],30,445,260,188);put(pics[2],305,445,260,188)
+              txt(30,425,'Документ из галереи — требуется сверка',10,True)
+              put(pics[0],30,45,535,369)
+              txt(30,25,'Кандидат: проверка соответствия листа и места съёмки обязательна.',8)
+              c.showPage()
+              manifest.append(dict(a,page=n,visual_hashes=[f'{h:016x}' for h in hashes]))
+          if not selected:txt(30,780,'Нет подходящих комплектов');c.showPage()
+          c.save()
+          (out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
+          PY
+          python /tmp/next.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: papauto-next-50-candidate-preview
+          path: next-preview/
+          retention-days: 7
