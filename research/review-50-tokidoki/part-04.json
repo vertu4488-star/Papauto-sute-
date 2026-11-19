@@ -1,0 +1,328 @@
+[
+  {
+    "model": "Toyota Corolla Cross",
+    "year": "2021",
+    "num": "35801",
+    "date": "18.11.2026",
+    "price": "2 120 000 JPY",
+    "spec": {
+      "Пробег:": "19000",
+      "Оценка:": "5",
+      "Кузов:": "ZSG10",
+      "Комплектация:": "G",
+      "Объем:": "1797 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "140 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/11/2c122ec3-3ab8-5d9f-af1e-cc0eb2223f15/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/11/2c122ec3-3ab8-5d9f-af1e-cc0eb2223f15/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/11/2c122ec3-3ab8-5d9f-af1e-cc0eb2223f15/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/corolla-cross/2c122ec3-3ab8-5d9f-af1e-cc0eb2223f15/"
+  },
+  {
+    "model": "Toyota C-HR",
+    "year": "2019",
+    "num": "2140",
+    "date": "29.09.2026",
+    "price": "1 474 000 JPY",
+    "spec": {
+      "Пробег:": "26000",
+      "Оценка:": "4.5",
+      "Кузов:": "NGX10",
+      "Комплектация:": "S-T LED PACKAGE",
+      "Объем:": "1196 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "116 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/09/26/2e99d99e-adef-5242-97e4-c0799196a584/33769734.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/26/2e99d99e-adef-5242-97e4-c0799196a584/33769735.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/26/2e99d99e-adef-5242-97e4-c0799196a584/33769736.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/c-hr/2e99d99e-adef-5242-97e4-c0799196a584/"
+  },
+  {
+    "model": "Toyota Probox",
+    "year": "2021",
+    "num": "5707",
+    "date": "04.11.2026",
+    "price": "708 000 JPY",
+    "spec": {
+      "Пробег:": "46000",
+      "Оценка:": "4.5",
+      "Кузов:": "NSP160V",
+      "Комплектация:": "2WD",
+      "Объем:": "1329 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "95 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/30/30f9d5ff-312f-50ef-ba53-d97e6d15a0f1/40142826.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/30/30f9d5ff-312f-50ef-ba53-d97e6d15a0f1/40142828.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/30/30f9d5ff-312f-50ef-ba53-d97e6d15a0f1/40142830.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/30/30f9d5ff-312f-50ef-ba53-d97e6d15a0f1/40142832.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/30/30f9d5ff-312f-50ef-ba53-d97e6d15a0f1/40142835.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/30/30f9d5ff-312f-50ef-ba53-d97e6d15a0f1/40142837.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/30/30f9d5ff-312f-50ef-ba53-d97e6d15a0f1/40142839.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/30/30f9d5ff-312f-50ef-ba53-d97e6d15a0f1/40142841.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/30/30f9d5ff-312f-50ef-ba53-d97e6d15a0f1/40142852.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/30/30f9d5ff-312f-50ef-ba53-d97e6d15a0f1/40142853.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/30/30f9d5ff-312f-50ef-ba53-d97e6d15a0f1/40142855.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/30/30f9d5ff-312f-50ef-ba53-d97e6d15a0f1/40142856.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/probox/30f9d5ff-312f-50ef-ba53-d97e6d15a0f1/"
+  },
+  {
+    "model": "Honda N-WGN",
+    "year": "2019",
+    "num": "6242",
+    "date": "09.10.2026",
+    "price": "459 000 JPY",
+    "spec": {
+      "Пробег:": "32000",
+      "Оценка:": "4.5",
+      "Кузов:": "JH1",
+      "Комплектация:": "G",
+      "Объем:": "658 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "58 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881561.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881562.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881563.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881564.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881565.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881566.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881567.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881568.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/14/bc79594b-f448-5831-a298-316be0f86517/35881569.avif"
+    ],
+    "source": "https://tokidoki.su/stat/honda/n-wgn/bc79594b-f448-5831-a298-316be0f86517/"
+  },
+  {
+    "model": "Subaru Forester",
+    "year": "2021",
+    "num": "81709",
+    "date": "27.10.2026",
+    "price": "1 680 000 JPY",
+    "spec": {
+      "Пробег:": "39000",
+      "Оценка:": "4.5",
+      "Кузов:": "SKE",
+      "Комплектация:": "TOURING",
+      "Объем:": "1995 см3",
+      "Двигатель:": "Параллельный гибрид",
+      "КПП:": "Вариатор",
+      "Мощность:": "159 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/16/cd9828f9-e95d-5cb5-87fa-82621992b166/35725796.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/cd9828f9-e95d-5cb5-87fa-82621992b166/35725797.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/cd9828f9-e95d-5cb5-87fa-82621992b166/35725798.avif"
+    ],
+    "source": "https://tokidoki.su/stat/subaru/forester/cd9828f9-e95d-5cb5-87fa-82621992b166/"
+  },
+  {
+    "model": "Mitsubishi Delica D:5",
+    "year": "2021",
+    "num": "20094",
+    "date": "18.11.2026",
+    "price": "3 043 000 JPY",
+    "spec": {
+      "Пробег:": "44000",
+      "Оценка:": "4.5",
+      "Кузов:": "CV1W",
+      "Комплектация:": "G POWER PACK -JI",
+      "Объем:": "2267 см3",
+      "Двигатель:": "Дизель",
+      "КПП:": "Автомат",
+      "Мощность:": "145 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/16/05d5b128-1a28-5d1a-a071-c86791b3a15f/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/05d5b128-1a28-5d1a-a071-c86791b3a15f/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/05d5b128-1a28-5d1a-a071-c86791b3a15f/2.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/05d5b128-1a28-5d1a-a071-c86791b3a15f/3.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/05d5b128-1a28-5d1a-a071-c86791b3a15f/4.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/05d5b128-1a28-5d1a-a071-c86791b3a15f/5.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/05d5b128-1a28-5d1a-a071-c86791b3a15f/6.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/05d5b128-1a28-5d1a-a071-c86791b3a15f/7.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/05d5b128-1a28-5d1a-a071-c86791b3a15f/8.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/05d5b128-1a28-5d1a-a071-c86791b3a15f/9.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/05d5b128-1a28-5d1a-a071-c86791b3a15f/10.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/05d5b128-1a28-5d1a-a071-c86791b3a15f/11.avif"
+    ],
+    "source": "https://tokidoki.su/stat/mitsubishi/delica-d-5/05d5b128-1a28-5d1a-a071-c86791b3a15f/"
+  },
+  {
+    "model": "Suzuki Solio",
+    "year": "2021",
+    "num": "73005",
+    "date": "22.10.2026",
+    "price": "994 000 JPY",
+    "spec": {
+      "Пробег:": "38000",
+      "Оценка:": "4.5",
+      "Кузов:": "MA36S",
+      "Комплектация:": "HYBRID MX",
+      "Объем:": "1242 см3",
+      "Двигатель:": "Мягкий гибрид",
+      "КПП:": "Вариатор",
+      "Мощность:": "94 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/19/30dc9558-310d-5e41-896b-e819ad4bd17e/37775236.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/30dc9558-310d-5e41-896b-e819ad4bd17e/37775237.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/30dc9558-310d-5e41-896b-e819ad4bd17e/37775238.avif"
+    ],
+    "source": "https://tokidoki.su/stat/suzuki/solio/30dc9558-310d-5e41-896b-e819ad4bd17e/"
+  },
+  {
+    "model": "Daihatsu Move",
+    "year": "2021",
+    "num": "3250",
+    "date": "03.11.2026",
+    "price": "494 000 JPY",
+    "spec": {
+      "Пробег:": "43000",
+      "Оценка:": "4.5",
+      "Кузов:": "LA150S",
+      "Комплектация:": "L",
+      "Объем:": "658 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "52 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/30/14bf5d57-082c-534b-86d1-8ab01e2e4b16/40176012.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/30/14bf5d57-082c-534b-86d1-8ab01e2e4b16/40176013.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/30/14bf5d57-082c-534b-86d1-8ab01e2e4b16/40176014.avif"
+    ],
+    "source": "https://tokidoki.su/stat/daihatsu/move/14bf5d57-082c-534b-86d1-8ab01e2e4b16/"
+  },
+  {
+    "model": "Daihatsu Taft",
+    "year": "2021",
+    "num": "89",
+    "date": "04.11.2026",
+    "price": "844 000 JPY",
+    "spec": {
+      "Пробег:": "25000",
+      "Оценка:": "5",
+      "Кузов:": "LA900S",
+      "Комплектация:": "G",
+      "Объем:": "658 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "52 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508756.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508757.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508758.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508759.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508760.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508761.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508762.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508763.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508764.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508765.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508766.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/754c7506-0d4d-5a28-b186-7a6a528bdc5a/40508767.avif"
+    ],
+    "source": "https://tokidoki.su/stat/daihatsu/taft/754c7506-0d4d-5a28-b186-7a6a528bdc5a/"
+  },
+  {
+    "model": "Suzuki Jimny Sierra",
+    "year": "2022",
+    "num": "36463",
+    "date": "11.11.2026",
+    "price": "1 685 000 JPY",
+    "spec": {
+      "Пробег:": "43000",
+      "Оценка:": "4.5",
+      "Кузов:": "JB74W",
+      "Комплектация:": "JC 4WD",
+      "Объем:": "1460 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Автомат",
+      "Мощность:": "102 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/2.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/3.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/4.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/5.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/6.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/7.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/8.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/9.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/10.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/ca5485d8-8adf-5c8c-9f6c-fee47f186065/11.avif"
+    ],
+    "source": "https://tokidoki.su/stat/suzuki/jimny-sierra/ca5485d8-8adf-5c8c-9f6c-fee47f186065/"
+  },
+  {
+    "model": "Toyota Passo",
+    "year": "2021",
+    "num": "2033",
+    "date": "20.10.2026",
+    "price": "503 000 JPY",
+    "spec": {
+      "Пробег:": "49000",
+      "Оценка:": "4.5",
+      "Кузов:": "M700A",
+      "Комплектация:": "X L PACKAGE S",
+      "Объем:": "996 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "69 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/16/879f75b7-54b7-582f-b77b-25f968251508/37509663.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/879f75b7-54b7-582f-b77b-25f968251508/37509664.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/879f75b7-54b7-582f-b77b-25f968251508/37509665.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/passo/879f75b7-54b7-582f-b77b-25f968251508/"
+  },
+  {
+    "model": "Suzuki Swift",
+    "year": "2021",
+    "num": "2176",
+    "date": "10.11.2026",
+    "price": "823 000 JPY",
+    "spec": {
+      "Пробег:": "30000",
+      "Оценка:": "4.5",
+      "Кузов:": "ZC83S",
+      "Комплектация:": "XG",
+      "Объем:": "1242 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Механика",
+      "Мощность:": "91 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/2.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/3.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/4.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/5.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/6.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/7.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/8.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/9.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/5064bc06-3b95-52be-8436-1d674fc68de2/10.avif"
+    ],
+    "source": "https://tokidoki.su/stat/suzuki/swift/5064bc06-3b95-52be-8436-1d674fc68de2/"
+  }
+]
