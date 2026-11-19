@@ -1,0 +1,184 @@
+[
+  {
+    "model": "Toyota RAV4",
+    "year": "2019",
+    "num": "5660",
+    "date": "19.11.2026",
+    "price": "2 250 000 JPY",
+    "spec": {
+      "Пробег:": "54000",
+      "Оценка:": "4.5",
+      "Кузов:": "MXAA54",
+      "Комплектация:": "4WD G Z PACKAGE",
+      "Объем:": "1986 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "171 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/09/182f97a6-832f-59b5-adcf-28523d2e5bce/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/182f97a6-832f-59b5-adcf-28523d2e5bce/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/182f97a6-832f-59b5-adcf-28523d2e5bce/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/rav4/182f97a6-832f-59b5-adcf-28523d2e5bce/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Suzuki Hustler",
+    "year": "2017",
+    "num": "71",
+    "date": "19.11.2026",
+    "price": "860 000 JPY",
+    "spec": {
+      "Пробег:": "31000",
+      "Оценка:": "4.5",
+      "Кузов:": "MR41S",
+      "Комплектация:": "J STYLE II",
+      "Объем:": "658 см3",
+      "Двигатель:": "Мягкий гибрид",
+      "КПП:": "Вариатор",
+      "Мощность:": "54 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/08/988f0c29-3d32-5f32-8a97-ba389d79b391/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/988f0c29-3d32-5f32-8a97-ba389d79b391/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/988f0c29-3d32-5f32-8a97-ba389d79b391/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/suzuki/hustler/988f0c29-3d32-5f32-8a97-ba389d79b391/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Nissan X-Trail",
+    "year": "2018",
+    "num": "3529",
+    "date": "19.11.2026",
+    "price": "1 660 000 JPY",
+    "spec": {
+      "Пробег:": "20000",
+      "Оценка:": "4.5",
+      "Кузов:": "NT32",
+      "Комплектация:": "4WD MODE PREMIUM",
+      "Объем:": "1997 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "147 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/10/28098098-34bd-5f92-be17-5ce1f9c9fda9/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/28098098-34bd-5f92-be17-5ce1f9c9fda9/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/28098098-34bd-5f92-be17-5ce1f9c9fda9/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/nissan/x-trail/28098098-34bd-5f92-be17-5ce1f9c9fda9/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Suzuki Escudo",
+    "year": "2020",
+    "num": "25548",
+    "date": "18.11.2026",
+    "price": "1 760 000 JPY",
+    "spec": {
+      "Пробег:": "151000",
+      "Оценка:": "3.5",
+      "Кузов:": "YEA1S",
+      "Комплектация:": "1.4 TURBO",
+      "Объем:": "1371 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Автомат",
+      "Мощность:": "136 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/05/058d823f-51e1-56ce-b892-a60d1c598658/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/05/058d823f-51e1-56ce-b892-a60d1c598658/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/05/058d823f-51e1-56ce-b892-a60d1c598658/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/suzuki/escudo/058d823f-51e1-56ce-b892-a60d1c598658/",
+    "auction": "CAA Kyouyuu",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Honda N-BOX",
+    "year": "2017",
+    "num": "8187",
+    "date": "19.11.2026",
+    "price": "468 000 JPY",
+    "spec": {
+      "Пробег:": "96000",
+      "Оценка:": "4",
+      "Кузов:": "JF3",
+      "Комплектация:": "G EX TURBO HONDA SENSING",
+      "Объем:": "658 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "58 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/08/f73d7abd-afb0-5868-9a03-8fbeb6d96416/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/f73d7abd-afb0-5868-9a03-8fbeb6d96416/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/f73d7abd-afb0-5868-9a03-8fbeb6d96416/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/honda/n-box/f73d7abd-afb0-5868-9a03-8fbeb6d96416/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Nissan X-Trail",
+    "year": "2015",
+    "num": "8413",
+    "date": "19.11.2026",
+    "price": "430 000 JPY",
+    "spec": {
+      "Пробег:": "77000",
+      "Оценка:": "3",
+      "Кузов:": "HNT32",
+      "Комплектация:": "4WD 20X HV BLACK X TREMER X EBP",
+      "Объем:": "1997 см3",
+      "Двигатель:": "Параллельный гибрид",
+      "КПП:": "Вариатор",
+      "Мощность:": "182 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/10/927c99a9-81ab-5efa-9d41-77c8e243ad23/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/927c99a9-81ab-5efa-9d41-77c8e243ad23/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/927c99a9-81ab-5efa-9d41-77c8e243ad23/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/nissan/x-trail/927c99a9-81ab-5efa-9d41-77c8e243ad23/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Suzuki Escudo",
+    "year": "2019",
+    "num": "28721",
+    "date": "18.11.2026",
+    "price": "1 780 000 JPY",
+    "spec": {
+      "Пробег:": "138000",
+      "Оценка:": "4",
+      "Кузов:": "YEA1S",
+      "Комплектация:": "1.4 TURBO 4WD",
+      "Объем:": "1371 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Автомат",
+      "Мощность:": "136 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/11/b339151b-dac7-59f6-97bf-ab2dd97512e0/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/11/b339151b-dac7-59f6-97bf-ab2dd97512e0/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/11/b339151b-dac7-59f6-97bf-ab2dd97512e0/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/suzuki/escudo/b339151b-dac7-59f6-97bf-ab2dd97512e0/",
+    "auction": "CAA Kyouyuu",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  }
+]
