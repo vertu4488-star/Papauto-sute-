@@ -1,0 +1,301 @@
+[
+  {
+    "model": "Toyota Allion",
+    "year": "2021",
+    "num": "90075",
+    "date": "29.09.2026",
+    "price": "1 405 000 JPY",
+    "spec": {
+      "Пробег:": "43000",
+      "Оценка:": "5",
+      "Кузов:": "ZRT260",
+      "Комплектация:": "A18",
+      "Объем:": "1797 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "143 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/09/26/85749980-da0e-50a0-b3bb-9039d862e808/33672385.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/26/85749980-da0e-50a0-b3bb-9039d862e808/33672386.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/26/85749980-da0e-50a0-b3bb-9039d862e808/33672387.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/26/85749980-da0e-50a0-b3bb-9039d862e808/33672388.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/26/85749980-da0e-50a0-b3bb-9039d862e808/33672389.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/26/85749980-da0e-50a0-b3bb-9039d862e808/33672390.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/26/85749980-da0e-50a0-b3bb-9039d862e808/33672391.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/26/85749980-da0e-50a0-b3bb-9039d862e808/33672392.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/26/85749980-da0e-50a0-b3bb-9039d862e808/33672393.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/26/85749980-da0e-50a0-b3bb-9039d862e808/33672394.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/26/85749980-da0e-50a0-b3bb-9039d862e808/33672395.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/26/85749980-da0e-50a0-b3bb-9039d862e808/33672396.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/allion/85749980-da0e-50a0-b3bb-9039d862e808/",
+    "auction": "CAA Tokyo",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Regius",
+    "year": "2025",
+    "num": "5022",
+    "date": "21.10.2026",
+    "price": "2 616 000 JPY",
+    "spec": {
+      "Пробег:": "1000",
+      "Оценка:": "5",
+      "Кузов:": "TRH200V",
+      "Комплектация:": "GL PACKAGE",
+      "Объем:": "1998 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Автомат",
+      "Мощность:": "136 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/20/ce5cf37f-8362-52ef-9897-ff2ca234c78b/38178785.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/20/ce5cf37f-8362-52ef-9897-ff2ca234c78b/38178786.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/20/ce5cf37f-8362-52ef-9897-ff2ca234c78b/38178787.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/regius/ce5cf37f-8362-52ef-9897-ff2ca234c78b/",
+    "auction": "Isuzu Tokyo",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Volkswagen Beetle",
+    "year": "2019",
+    "num": "33922",
+    "date": "11.11.2026",
+    "price": "1 720 000 JPY",
+    "spec": {
+      "Пробег:": "46000",
+      "Оценка:": "4.5",
+      "Кузов:": "16CBZ",
+      "Комплектация:": "ZA\\* BEETLE DESIGN MEISTER",
+      "Объем:": "1197 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Робот",
+      "Мощность:": "105 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/01/297a6bf4-5cb0-5682-a232-6037e2f33458/40487676.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/297a6bf4-5cb0-5682-a232-6037e2f33458/40487677.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/297a6bf4-5cb0-5682-a232-6037e2f33458/40487678.avif"
+    ],
+    "source": "https://tokidoki.su/stat/volkswagen/beetle/297a6bf4-5cb0-5682-a232-6037e2f33458/",
+    "auction": "Guliver Oneprice",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Probox",
+    "year": "2021",
+    "num": "62007",
+    "date": "14.11.2026",
+    "price": "816 000 JPY",
+    "spec": {
+      "Пробег:": "27000",
+      "Оценка:": "4.5",
+      "Кузов:": "NSP160V",
+      "Комплектация:": "DX COMFORT",
+      "Объем:": "1329 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "95 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/10/885dbdb2-8053-5280-9218-5e5a11072f15/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/885dbdb2-8053-5280-9218-5e5a11072f15/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/885dbdb2-8053-5280-9218-5e5a11072f15/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/probox/885dbdb2-8053-5280-9218-5e5a11072f15/",
+    "auction": "TAA Hyogo",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Honda Insight",
+    "year": "2020",
+    "num": "85939",
+    "date": "16.10.2026",
+    "price": "1 180 000 JPY",
+    "spec": {
+      "Пробег:": "46000",
+      "Оценка:": "4.5",
+      "Кузов:": "ZE4",
+      "Комплектация:": "LX",
+      "Объем:": "1496 см3",
+      "Двигатель:": "Параллельный гибрид",
+      "КПП:": "Вариатор",
+      "Мощность:": "174 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/09/30/2d77462e-6ea0-5a90-ad65-e2347ef10b06/34448530.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/30/2d77462e-6ea0-5a90-ad65-e2347ef10b06/34448531.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/30/2d77462e-6ea0-5a90-ad65-e2347ef10b06/34448532.avif"
+    ],
+    "source": "https://tokidoki.su/stat/honda/insight/2d77462e-6ea0-5a90-ad65-e2347ef10b06/",
+    "auction": "Kyouyuu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Town Ace",
+    "year": "2019",
+    "num": "16784",
+    "date": "24.09.2026",
+    "price": "1 400 000 JPY",
+    "spec": {
+      "Пробег:": "29000",
+      "Оценка:": "4.5",
+      "Кузов:": "S402M",
+      "Комплектация:": "GL",
+      "Объем:": "1495 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Автомат",
+      "Мощность:": "97 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/09/17/dcabd114-8f5d-53a1-a9eb-eaeca4358f1e/32058211.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/17/dcabd114-8f5d-53a1-a9eb-eaeca4358f1e/32058212.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/17/dcabd114-8f5d-53a1-a9eb-eaeca4358f1e/32058213.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/town-ace/dcabd114-8f5d-53a1-a9eb-eaeca4358f1e/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Corolla Fielder",
+    "year": "2021",
+    "num": "33359",
+    "date": "28.10.2026",
+    "price": "1 180 000 JPY",
+    "spec": {
+      "Пробег:": "43000",
+      "Оценка:": "4.5",
+      "Кузов:": "NRE161G",
+      "Комплектация:": "EX",
+      "Объем:": "1496 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "109 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/26/1d0eb463-708b-5636-aa05-6017a440dd2e/39221931.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/1d0eb463-708b-5636-aa05-6017a440dd2e/39221932.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/1d0eb463-708b-5636-aa05-6017a440dd2e/39221933.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/1d0eb463-708b-5636-aa05-6017a440dd2e/39221934.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/1d0eb463-708b-5636-aa05-6017a440dd2e/39221935.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/1d0eb463-708b-5636-aa05-6017a440dd2e/39221936.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/1d0eb463-708b-5636-aa05-6017a440dd2e/39221937.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/1d0eb463-708b-5636-aa05-6017a440dd2e/39221938.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/1d0eb463-708b-5636-aa05-6017a440dd2e/39221939.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/1d0eb463-708b-5636-aa05-6017a440dd2e/39221940.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/1d0eb463-708b-5636-aa05-6017a440dd2e/39221941.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/1d0eb463-708b-5636-aa05-6017a440dd2e/39221942.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/corolla-fielder/1d0eb463-708b-5636-aa05-6017a440dd2e/",
+    "auction": "CAA Chubu",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Audi A3",
+    "year": "2021",
+    "num": "38016",
+    "date": "11.11.2026",
+    "price": "1 415 000 JPY",
+    "spec": {
+      "Пробег:": "24000",
+      "Оценка:": "4.5",
+      "Кузов:": "GYDLA",
+      "Комплектация:": "SPORT B30TFSI ADVANCE",
+      "Объем:": "999 см3",
+      "Двигатель:": "Мягкий гибрид",
+      "КПП:": "Робот",
+      "Мощность:": "110 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/08/bf54f219-7d75-583b-8867-bd3d4df5b87c/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/bf54f219-7d75-583b-8867-bd3d4df5b87c/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/bf54f219-7d75-583b-8867-bd3d4df5b87c/2.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/bf54f219-7d75-583b-8867-bd3d4df5b87c/3.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/bf54f219-7d75-583b-8867-bd3d4df5b87c/4.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/bf54f219-7d75-583b-8867-bd3d4df5b87c/5.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/bf54f219-7d75-583b-8867-bd3d4df5b87c/6.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/bf54f219-7d75-583b-8867-bd3d4df5b87c/7.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/bf54f219-7d75-583b-8867-bd3d4df5b87c/8.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/bf54f219-7d75-583b-8867-bd3d4df5b87c/9.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/bf54f219-7d75-583b-8867-bd3d4df5b87c/10.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/bf54f219-7d75-583b-8867-bd3d4df5b87c/11.avif"
+    ],
+    "source": "https://tokidoki.su/stat/audi/a3/bf54f219-7d75-583b-8867-bd3d4df5b87c/",
+    "auction": "CAA Chubu",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Nissan Note",
+    "year": "2024",
+    "num": "4204",
+    "date": "30.10.2026",
+    "price": "1 361 000 JPY",
+    "spec": {
+      "Пробег:": "7000",
+      "Оценка:": "6",
+      "Кузов:": "E13",
+      "Комплектация:": "X",
+      "Объем:": "1198 см3",
+      "Двигатель:": "Последовательный гибрид",
+      "КПП:": "Редуктор",
+      "Мощность:": "116 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/28/169ee160-122b-58a2-943f-592a28e71cd4/39754910.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/28/169ee160-122b-58a2-943f-592a28e71cd4/39754911.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/28/169ee160-122b-58a2-943f-592a28e71cd4/39754912.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/28/169ee160-122b-58a2-943f-592a28e71cd4/39754913.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/28/169ee160-122b-58a2-943f-592a28e71cd4/39754914.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/28/169ee160-122b-58a2-943f-592a28e71cd4/39754915.avif"
+    ],
+    "source": "https://tokidoki.su/stat/nissan/note/169ee160-122b-58a2-943f-592a28e71cd4/",
+    "auction": "NAA Tokyo",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Volkswagen Golf",
+    "year": "2021",
+    "num": "38030",
+    "date": "21.10.2026",
+    "price": "1 210 000 JPY",
+    "spec": {
+      "Пробег:": "49000",
+      "Оценка:": "4.5",
+      "Кузов:": "CDDLAV",
+      "Комплектация:": "ETSI ACTIVE",
+      "Объем:": "999 см3",
+      "Двигатель:": "Мягкий гибрид",
+      "КПП:": "Робот",
+      "Мощность:": "123 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/19/9ec00409-e743-57f5-adbf-250230574e2d/37928994.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/9ec00409-e743-57f5-adbf-250230574e2d/37928995.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/9ec00409-e743-57f5-adbf-250230574e2d/37928996.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/9ec00409-e743-57f5-adbf-250230574e2d/37928997.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/9ec00409-e743-57f5-adbf-250230574e2d/37928998.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/9ec00409-e743-57f5-adbf-250230574e2d/37928999.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/9ec00409-e743-57f5-adbf-250230574e2d/37929000.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/9ec00409-e743-57f5-adbf-250230574e2d/37929001.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/9ec00409-e743-57f5-adbf-250230574e2d/37929002.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/9ec00409-e743-57f5-adbf-250230574e2d/37929003.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/9ec00409-e743-57f5-adbf-250230574e2d/37929004.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/9ec00409-e743-57f5-adbf-250230574e2d/37929005.avif"
+    ],
+    "source": "https://tokidoki.su/stat/volkswagen/golf/9ec00409-e743-57f5-adbf-250230574e2d/",
+    "auction": "CAA Chubu",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  }
+]
