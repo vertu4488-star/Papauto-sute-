@@ -1,0 +1,150 @@
+name: China private candidate review 50
+on:
+  push:
+    branches: [review/china-50-20261119]
+    paths: ['.github/workflows/china-50-preview.yml']
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests pillow reportlab
+      - run: |
+          cat > /tmp/china_preview.py <<'PY'
+          import io, json, re, hashlib
+          from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor
+          from urllib.parse import urlsplit, parse_qs
+          from PIL import Image, ImageDraw, ImageFont
+          from reportlab.pdfgen import canvas
+          from reportlab.lib.utils import ImageReader
+          from reportlab.pdfbase import pdfmetrics
+          from reportlab.pdfbase.ttfonts import TTFont
+          import requests
+          root=Path('research/china-50-20261119')
+          out=Path('china-preview-50');out.mkdir(exist_ok=True)
+          y=json.loads((root/'yxp-print-report-verification-01.json').read_text())
+          p=[x for f in sorted(root.glob('plc-screen-*.json')) for x in json.loads(f.read_text())]
+          rows=[]
+          for x in y:
+              if not x.get('matching_report') or not x.get('main_photo'):continue
+              if x['lot']=='YXP-8971614':continue # visible decorative wrap and structural damage
+              rows.append(dict(id=x['lot'],model=x['model'],mileage=x.get('mileage'),grade=x.get('grade'),price=x.get('china_bid_displayed_usd'),currency='USD',price_label='Ставка по источнику, не итог торгов',photo_urls=[x['main_photo']],report='Электронный отчёт Imeri Motors; оригинал YXP не подтверждён',source=x['source'],report_source=x['report_source'],status='Торги завершены; продажа не подтверждена',kind='yxp',report_markdown=x['report_markdown']))
+          for x in p:
+              if not x.get('photo_urls') or not x.get('status'):continue
+              rows.append(dict(id='PLC-'+x['aggregator_id'],model=x['model']+' '+str(x['year']),mileage=x.get('mileage'),grade=None,price=x.get('displayed_price'),currency=x.get('currency'),price_label='Цена предложения, не итог торгов',photo_urls=x['photo_urls'][:2],report='Полный документ осмотра не подтверждён',source=x['source'],status='Sold Out в архиве; цена сделки неизвестна',kind='plc'))
+          def download(url):
+              host=urlsplit(url).hostname
+              if host=='imerimotors.ge':
+                  orig=parse_qs(urlsplit(url).query).get('url',[''])[0]
+                  assert urlsplit(orig).hostname=='img.youxinpai.cn'
+                  try:
+                      res=requests.get(orig,timeout=12);res.raise_for_status()
+                  except Exception:
+                      res=requests.get(url,timeout=12);res.raise_for_status()
+              else:
+                  assert host=='img.plc.auction'
+                  res=requests.get(url,timeout=12);res.raise_for_status()
+              im=Image.open(io.BytesIO(res.content)).convert('RGB')
+              assert min(im.size)>=160
+              return im,hashlib.sha256(res.content).hexdigest()
+          def get(row):
+              try:
+                  first=download(row['photo_urls'][0])
+              except Exception as e:
+                  print('skip',row['id'],str(e)[:100],flush=True);return None
+              pics=[first]
+              for u in row['photo_urls'][1:]:
+                  try:
+                      x=download(u)
+                      if x[1]!=first[1]:pics.append(x)
+                  except Exception:pass
+              return row,pics
+          with ThreadPoolExecutor(max_workers=10) as pool: fetched=list(pool.map(get,rows))
+          # keep all report-backed candidates first, then diversify model names
+          picked=[]; reserve=[]; seen=set(); models=set()
+          for item in fetched:
+              if item is None:continue
+              x,ims=item
+              if x['id'] in seen:continue
+              seen.add(x['id'])
+              if x['kind']=='plc':
+                  key=re.sub(r'\s+\d{4}$','',x['model']).casefold()
+                  if key in models:reserve.append(item);continue
+                  models.add(key)
+              picked.append(item)
+          picked=(picked+reserve)[:50]
+          print('Photo-backed candidates selected:',len(picked),flush=True)
+          font='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+          bold='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+          pdfmetrics.registerFont(TTFont('D',font));pdfmetrics.registerFont(TTFont('DB',bold))
+          W,H=595,842
+          pdf=canvas.Canvas(str(out/'PapAuto_China_candidates.pdf'),pagesize=(W,H))
+          pdf.setTitle('PapAuto — Китай, предварительная подборка')
+          from reportlab.lib.colors import HexColor
+          def txt(x,y,s,size=12,b=False,col='#292723'):
+              pdf.setFillColor(HexColor(col));pdf.setFont('DB' if b else 'D',size);pdf.drawString(x,y,str(s))
+          def fit(s,maxw,sz,face='D'):
+              return s if pdfmetrics.stringWidth(s,face,sz)<=maxw else fit(s[:-4]+'…',maxw,sz,face)
+          def place(im,x,y,w,h):
+              scale=min(w/im.width,h/im.height);iw=im.width*scale;ih=im.height*scale
+              pdf.drawImage(ImageReader(im),x+(w-iw)/2,y+(h-ih)/2,iw,ih)
+          manifest=[]
+          for i,(x,pics) in enumerate(picked,1):
+              pdf.setFillColor(HexColor('#f6f3ed'));pdf.rect(0,0,W,H,fill=1,stroke=0)
+              txt(30,H-34,'PAPAUTO  /  КИТАЙ • ПРЕДВАРИТЕЛЬНАЯ ПРОВЕРКА',10,True)
+              txt(30,H-58,f'{i:02d} / {len(picked)}  •  {x["id"]}',12,True)
+              title=x['model']
+              sz=20 if len(title)<45 else 15
+              txt(30,H-87,fit(title,535,sz,'DB'),sz,True)
+              if len(pics)==2:
+                  place(pics[0][0],30,455,535,275);place(pics[1][0],30,255,535,190)
+              else:place(pics[0][0],30,295,535,435)
+              txt(30,233,'Пробег: '+(str(x['mileage']).strip().replace(',',' ')+' км' if x.get('mileage') else 'не указан'),12,True)
+              txt(30,212,'Оценка: '+(x.get('grade') or 'не подтверждена'),12)
+              txt(30,188,'Цена источника: '+((x['price']+' '+(x['currency'] or '')) if x.get('price') else 'не раскрыта'),16,True)
+              txt(30,168,x['price_label'],11)
+              txt(30,143,fit(x['status'],535,11),11)
+              txt(30,121,fit(x['report'],535,11),11)
+              txt(30,93,'Происхождение и место съёмки требуют визуальной проверки.',10)
+              txt(30,72,'ПРЕДВАРИТЕЛЬНО — НЕ К ПУБЛИКАЦИИ',12,True,'#9c392c')
+              txt(30,48,'Не подтверждено наличие права на повторное размещение.',9)
+              pdf.showPage()
+              manifest.append({**x,'index':i,'photo_sha256':[h for im,h in pics],'publication_ready':False})
+          pdf.save()
+          f=ImageFont.truetype(font,22);fb=ImageFont.truetype(bold,25);small=ImageFont.truetype(font,18)
+          for start in range(0,len(picked),10):
+              subset=picked[start:start+10]
+              block=Image.new('RGB',(1220,80+len(subset)*232),'#f6f3ed');d=ImageDraw.Draw(block)
+              d.text((24,18),f'PAPAUTO • КИТАЙ | КАНДИДАТЫ {start+1:02d}–{start+len(subset):02d}',font=fb,fill='#292723')
+              for j,(x,pics) in enumerate(subset):
+                  y=80+j*232
+                  d.line((24,y,1196,y),fill='#c9c1b5',width=1)
+                  im=pics[0][0].copy();im.thumbnail((395,210))
+                  block.paste(im,(24+(395-im.width)//2,y+10+(210-im.height)//2))
+                  xx=445
+                  title=f'{start+j+1:02d}. {x["model"]}'
+                  while d.textlength(title,font=fb)>740:title=title[:-4]+'…'
+                  d.text((xx,y+13),title,font=fb,fill='#292723')
+                  d.text((xx,y+52),f'{x["id"]} • пробег '+(str(x.get('mileage') or '—').strip()+' км'),font=f,fill='#292723')
+                  d.text((xx,y+84),'Цена источника: '+str(x.get('price') or '—')+' '+str(x.get('currency') or ''),font=f,fill='#292723')
+                  d.text((xx,y+115),x['price_label'],font=small,fill='#564b40')
+                  d.text((xx,y+144),'Отчёт посредника найден' if x['kind']=='yxp' else 'Полный документ не подтверждён',font=small,fill='#564b40')
+                  d.text((xx,y+177),'Не к публикации: проверка фото и результата торгов',font=small,fill='#9c392c')
+              block.save(out/f'China_{start+1:02d}-{start+len(subset):02d}.jpg',quality=92)
+          (out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
+          print('REVIEW ONLY',len(manifest),'with photos; YXP reports',sum(x['kind']=='yxp' for x in manifest),flush=True)
+          
+          PY
+          python /tmp/china_preview.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: china-50-preview
+          path: china-preview-50/
+          retention-days: 7
