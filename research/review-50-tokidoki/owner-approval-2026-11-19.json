@@ -5,7 +5,7 @@
   "reviewed_artifact": "PapAuto_50_lotov_s_foto_i_listami.pdf",
   "reviewed_pdf_sha256": "7c4c0c775dbcf3f4ca6f8f967282d66e6692f147b02d4ce74b67bcdb614746a6",
   "approved_count": 50,
-  "public_release_status": "blocked_pending_required_documentary_commercial_and_self_host_permissions",
+  "public_release_status": "owner_approved_only_for_reviewed_archive_batch; third_party_rights_not_confirmed",
   "rights_confirmed": false,
   "existing_catalog_lot_number_overlap": 0,
   "scope_note": "Owner consent to publication recorded; separate media rights and existing fail-closed policy are not modified. Source galleries are research references, not approved exact photo file choices.",
@@ -1447,5 +1447,7 @@
         "https://japan.storage.yandexcloud.net/2026/10/27/fa84b309-a65d-51a2-8027-6fd257213f1c/39497604.avif"
       ]
     }
-  ]
+  ],
+  "owner_instruction": "2026-11-19: Owner expressly authorized precisely these 50 archival examples under own responsibility; not inventory or an offer to sell those cars. This does not attest to permission from any auction house or other rights holder.",
+  "no_other_media_exception": true
 }
