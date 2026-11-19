@@ -1,0 +1,222 @@
+[
+  {
+    "model": "BMW 5-Series",
+    "year": "2019",
+    "num": "553",
+    "date": "07.11.2026",
+    "price": "1 720 000 JPY",
+    "spec": {
+      "Пробег:": "43000",
+      "Оценка:": "4.5",
+      "Кузов:": "JA20",
+      "Комплектация:": "523 I BLACK OUT",
+      "Объем:": "1998 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Автомат",
+      "Мощность:": "184 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/08/ae8d9db5-74d0-5e66-99d4-d10f885a0152/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/ae8d9db5-74d0-5e66-99d4-d10f885a0152/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/ae8d9db5-74d0-5e66-99d4-d10f885a0152/2.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/ae8d9db5-74d0-5e66-99d4-d10f885a0152/3.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/ae8d9db5-74d0-5e66-99d4-d10f885a0152/4.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/ae8d9db5-74d0-5e66-99d4-d10f885a0152/5.avif"
+    ],
+    "source": "https://tokidoki.su/stat/bmw/5-series/ae8d9db5-74d0-5e66-99d4-d10f885a0152/",
+    "auction": "ZIP Tokyo",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Honda Fit",
+    "year": "2021",
+    "num": "2351",
+    "date": "06.10.2026",
+    "price": "920 000 JPY",
+    "spec": {
+      "Пробег:": "28000",
+      "Оценка:": "4.5",
+      "Кузов:": "GR1",
+      "Комплектация:": "BASIC",
+      "Объем:": "1317 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "98 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/02/785aec53-2364-5c7f-b2fd-642612a70f94/34700339.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/02/785aec53-2364-5c7f-b2fd-642612a70f94/34700340.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/02/785aec53-2364-5c7f-b2fd-642612a70f94/34700341.avif"
+    ],
+    "source": "https://tokidoki.su/stat/honda/fit/785aec53-2364-5c7f-b2fd-642612a70f94/",
+    "auction": "TAA Kinki",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Mercedes-Benz CLA-Class",
+    "year": "2022",
+    "num": "29353",
+    "date": "11.11.2026",
+    "price": "2 120 000 JPY",
+    "spec": {
+      "Пробег:": "35000",
+      "Оценка:": "4.5",
+      "Кузов:": "118684M",
+      "Комплектация:": "CLA180S BREAK",
+      "Объем:": "1332 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Робот",
+      "Мощность:": "136 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/01/d5c86c97-3355-57f5-96d8-c2ea2d49391c/40523502.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/d5c86c97-3355-57f5-96d8-c2ea2d49391c/40523503.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/01/d5c86c97-3355-57f5-96d8-c2ea2d49391c/40523504.avif"
+    ],
+    "source": "https://tokidoki.su/stat/mercedes-benz/cla-class/d5c86c97-3355-57f5-96d8-c2ea2d49391c/",
+    "auction": "Guliver Oneprice",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Suzuki Solio",
+    "year": "2021",
+    "num": "172",
+    "date": "05.11.2026",
+    "price": "1 003 000 JPY",
+    "spec": {
+      "Пробег:": "38000",
+      "Оценка:": "4.5",
+      "Кузов:": "MA36S",
+      "Комплектация:": "HYBRID MX",
+      "Объем:": "1242 см3",
+      "Двигатель:": "Мягкий гибрид",
+      "КПП:": "Вариатор",
+      "Мощность:": "94 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/03/8d697784-8ba5-5b25-aa14-807ca33722e9/40826960.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/03/8d697784-8ba5-5b25-aa14-807ca33722e9/40826961.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/03/8d697784-8ba5-5b25-aa14-807ca33722e9/40826962.avif"
+    ],
+    "source": "https://tokidoki.su/stat/suzuki/solio/8d697784-8ba5-5b25-aa14-807ca33722e9/",
+    "auction": "TAA Kantou",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Volkswagen Passat",
+    "year": "2021",
+    "num": "25539",
+    "date": "14.10.2026",
+    "price": "2 820 000 JPY",
+    "spec": {
+      "Пробег:": "37000",
+      "Оценка:": "4.5",
+      "Кузов:": "3CDPC",
+      "Комплектация:": "PASSAT VARIANT TSI ELEGANCE ADVANCE",
+      "Объем:": "1497 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Робот",
+      "Мощность:": "150 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/05/34ef67a3-0dd6-54c1-93bf-be070367a124/35156852.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/05/34ef67a3-0dd6-54c1-93bf-be070367a124/35156853.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/05/34ef67a3-0dd6-54c1-93bf-be070367a124/35156854.avif"
+    ],
+    "source": "https://tokidoki.su/stat/volkswagen/passat/34ef67a3-0dd6-54c1-93bf-be070367a124/",
+    "auction": "Guliver Oneprice",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Corolla",
+    "year": "2021",
+    "num": "2159",
+    "date": "29.09.2026",
+    "price": "1 121 000 JPY",
+    "spec": {
+      "Пробег:": "31000",
+      "Оценка:": "4.5",
+      "Кузов:": "ZRE212",
+      "Комплектация:": "G-X",
+      "Объем:": "1797 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "140 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/09/25/4dfa14cb-a3e3-5fd3-bbf5-3dd44f4dd48e/33456579.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/25/4dfa14cb-a3e3-5fd3-bbf5-3dd44f4dd48e/33456580.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/25/4dfa14cb-a3e3-5fd3-bbf5-3dd44f4dd48e/33456581.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/corolla/4dfa14cb-a3e3-5fd3-bbf5-3dd44f4dd48e/",
+    "auction": "TAA Kinki",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Nissan Serena",
+    "year": "2019",
+    "num": "15717",
+    "date": "08.10.2026",
+    "price": "1 499 000 JPY",
+    "spec": {
+      "Пробег:": "49000",
+      "Оценка:": "4.5",
+      "Кузов:": "HC27",
+      "Комплектация:": "e-POWER XV",
+      "Объем:": "1198 см3",
+      "Двигатель:": "Последовательный гибрид",
+      "КПП:": "Редуктор",
+      "Мощность:": "136 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/09/29/190fd5bc-e7c3-5f6c-8453-8fb74a4b587d/34207498.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/29/190fd5bc-e7c3-5f6c-8453-8fb74a4b587d/34207499.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/29/190fd5bc-e7c3-5f6c-8453-8fb74a4b587d/34207500.avif"
+    ],
+    "source": "https://tokidoki.su/stat/nissan/serena/190fd5bc-e7c3-5f6c-8453-8fb74a4b587d/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Passo",
+    "year": "2021",
+    "num": "10106",
+    "date": "23.09.2026",
+    "price": "520 000 JPY",
+    "spec": {
+      "Пробег:": "25000",
+      "Оценка:": "4.5",
+      "Кузов:": "M700A",
+      "Комплектация:": "X",
+      "Объем:": "996 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "69 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/09/20/86aa1906-18f1-55a1-93fd-b7aaa4da164c/32717435.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/86aa1906-18f1-55a1-93fd-b7aaa4da164c/32717436.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/86aa1906-18f1-55a1-93fd-b7aaa4da164c/32717437.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/86aa1906-18f1-55a1-93fd-b7aaa4da164c/32717438.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/86aa1906-18f1-55a1-93fd-b7aaa4da164c/32717439.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/86aa1906-18f1-55a1-93fd-b7aaa4da164c/32717440.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/86aa1906-18f1-55a1-93fd-b7aaa4da164c/32717441.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/86aa1906-18f1-55a1-93fd-b7aaa4da164c/32717442.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/86aa1906-18f1-55a1-93fd-b7aaa4da164c/32717443.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/86aa1906-18f1-55a1-93fd-b7aaa4da164c/32717444.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/86aa1906-18f1-55a1-93fd-b7aaa4da164c/32717445.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/86aa1906-18f1-55a1-93fd-b7aaa4da164c/32717446.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/passo/86aa1906-18f1-55a1-93fd-b7aaa4da164c/",
+    "auction": "CAA Chubu",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  }
+]
