@@ -1,0 +1,74 @@
+[
+  {
+    "lot": "60531",
+    "auction": "BAYAUC",
+    "source": "https://tokidoki.su/stat/volkswagen/golf/ce956024-4fe7-5248-9eb5-ecc661fc927f/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "395",
+    "auction": "ZIP Tokyo",
+    "source": "https://tokidoki.su/stat/mercedes-benz/c-class/5c6eb6f5-9339-5a61-94e0-aee2d6903535/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "82030",
+    "auction": "TAA Chubu",
+    "source": "https://tokidoki.su/stat/honda/shuttle/4de1487d-ce99-5e68-9019-c527aa0dc2c9/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "7187",
+    "auction": "JU Gifu",
+    "source": "https://tokidoki.su/stat/mazda/mazda3/673d1147-e6e5-5cff-a8f4-f3a244f0f910/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "2071",
+    "auction": "JU Miyagi",
+    "source": "https://tokidoki.su/stat/subaru/xv/0318bb9e-3e58-5119-a166-ea7ed47856c0/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "36035",
+    "auction": "CAA Chubu",
+    "source": "https://tokidoki.su/stat/mazda/cx-30/b568aa8a-b2a5-594c-a2ae-4fec3cd478a3/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "2451",
+    "auction": "TAA Kinki",
+    "source": "https://tokidoki.su/stat/mazda/cx-3/bef25b34-895c-5db1-9fc9-e4de3157cba8/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "72041",
+    "auction": "TAA Kantou",
+    "source": "https://tokidoki.su/stat/toyota/corolla-axio/52562f34-f1d0-5d4f-a877-6ad3e17510fb/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "5797",
+    "auction": "JU Gifu",
+    "source": "https://tokidoki.su/stat/daihatsu/rocky/05622e78-c179-54a4-bdd9-28c51637a20a/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "60268",
+    "auction": "BAYAUC",
+    "source": "https://tokidoki.su/stat/bmw/1-series/018eb2a7-b7ab-5194-a448-76f73e7395af/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "75210",
+    "auction": "MIRIVE Osaka",
+    "source": "https://tokidoki.su/stat/mitsubishi/eclipse-cross/f88d777c-f2fe-5073-8bca-72a8e5961fa8/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "38037",
+    "auction": "CAA Chubu",
+    "source": "https://tokidoki.su/stat/mercedes-benz/a-class/01e2ddf9-47a8-57fc-b909-94dda7b4a179/",
+    "status": "archive_sold_displayed"
+  }
+]
