@@ -40,6 +40,6 @@ jobs:
           PY
           git config user.name "papauto-release-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add AGENTS.md docs/AUCTION_ONLY_GALLERY.md scripts/compile_auction_gallery.py scripts/build_static_public.py scripts/verify_publication_approval.py scripts/publish_lot_search.py tests/test_auction_only_images_policy.py research/owner-approved-50-archive-2026-11-19.json assets/auction/approved/japan-archive-20261119-*.jpg
+          git add AGENTS.md docs/AUCTION_ONLY_GALLERY.md scripts/compile_auction_gallery.py scripts/build_static_public.py scripts/verify_publication_approval.py scripts/publish_lot_search.py tests/test_auction_only_images_policy.py tests/test_site_warm_theme.py research/owner-approved-50-archive-2026-11-19.json assets/auction/approved/japan-archive-20261119-*.jpg
           git commit -m "Prepare exact 50 owner-authorized reference lots with complete media and tests"
           git push origin HEAD:review/tokidoki-50-lots-20261119
