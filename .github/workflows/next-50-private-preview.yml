@@ -48,7 +48,7 @@ jobs:
               for p in lot.get('photos',[]):
                   try:oldhash.append(dhash(Image.open(p.lstrip('/'))))
                   except Exception:pass
-          rows=[x for p in sorted((root/'research/next-50-20261119').glob('part-*.json')) for x in json.loads(p.read_text())]
+          rows=[x for p in sorted((root/'research/next-50-20261119').glob('part-*.json')) if p.stem >= 'part-18' for x in json.loads(p.read_text())]
           eligible=[]
           for x in rows:
               try:
@@ -88,7 +88,7 @@ jobs:
           print('COMPLETE NEW CANDIDATE SETS',len(selected))
           pdfmetrics.registerFont(TTFont('D','/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'))
           pdfmetrics.registerFont(TTFont('DB','/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'))
-          c=canvas.Canvas(str(out/'PapAuto_next_candidates.pdf'),pagesize=(595,842))
+          c=canvas.Canvas(str(out/'PapAuto_batch2_reserve.pdf'),pagesize=(595,842))
           def txt(x,y,t,z=11,bold=False):
               c.setFillColor(HexColor('#302d28'));c.setFont('DB' if bold else 'D',z);c.drawString(x,y,str(t))
           def put(im,x,y,w,h):
@@ -117,6 +117,6 @@ jobs:
           python /tmp/next.py
       - uses: actions/upload-artifact@v4
         with:
-          name: papauto-next-50-candidate-preview
+          name: papauto-next-50-reserve-preview
           path: next-preview/
           retention-days: 7
