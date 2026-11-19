@@ -45,7 +45,7 @@ jobs:
               except Exception: pass
           candidates=[]
           for p in sorted(pathlib.Path('research/review-50-tokidoki').glob('part-*.json')):
-              candidates.extend(json.loads(p.read_text()))
+              if p.stem >= 'part-04': candidates.extend(json.loads(p.read_text()))
           def lot(row):
               try:
                   if row['num'] in existing: return None
@@ -69,17 +69,17 @@ jobs:
               for x in pool.map(lot,candidates):
                   if x and x['model'].lower() not in models:
                       chosen.append(x);models.add(x['model'].lower())
-                      if len(chosen)>=50: break
+                      if len(chosen)>=70: break
           print('downloaded complete candidate sets',len(chosen))
           pdfmetrics.registerFont(TTFont('D','/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'))
           pdfmetrics.registerFont(TTFont('DB','/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'))
           W,H=595,842
-          c=canvas.Canvas(str(OUT/'PapAuto_50_review.pdf'),pagesize=(W,H))
+          c=canvas.Canvas(str(OUT/'PapAuto_next_review.pdf'),pagesize=(W,H))
           def txt(x,y,s,size=12,bold=False,color='#302d28'):
               c.setFillColor(HexColor(color));c.setFont('DB' if bold else 'D',size);c.drawString(x,y,str(s))
           def image(im,x,y,w,h):
               scale=min(w/im.width,h/im.height);ww=im.width*scale;hh=im.height*scale
-              c.drawImage(ImageReader(im),x+(w-ww)/2,y+(h-hh)/2,ww,hh)
+              buf=io.BytesIO();im.save(buf,format='JPEG',quality=87);buf.seek(0);c.drawImage(ImageReader(buf),x+(w-ww)/2,y+(h-hh)/2,ww,hh)
           manifest=[]
           for i,a in enumerate(chosen,1):
               c.setFillColor(HexColor('#f7f3eb'));c.rect(0,0,W,H,fill=1,stroke=0)
@@ -104,6 +104,6 @@ jobs:
           python /tmp/auction_review.py
       - uses: actions/upload-artifact@v4
         with:
-          name: papauto-auction-review-50
+          name: papauto-auction-review-next-48
           path: review-output/
           retention-days: 7
