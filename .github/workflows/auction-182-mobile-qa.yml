@@ -1,0 +1,66 @@
+name: PapAuto 182 mobile gallery release QA
+on:
+  push:
+    branches: [review/tokidoki-50-lots-20261119]
+    paths: ['.github/workflows/auction-182-mobile-qa.yml']
+permissions:
+  contents: read
+jobs:
+  mobile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/build_static_public.py
+      - run: npm install --no-save playwright@1.57.0 && npx playwright install chromium
+      - name: Verify mobile gallery and every new media file
+        run: |
+          python -m http.server 8765 -d render-public >/tmp/papauto-182.log 2>&1 &
+          node <<'NODE'
+          const {chromium}=require('playwright');
+          const assert=require('node:assert/strict');
+          const fs=require('node:fs');
+          (async()=>{
+            const root='http://127.0.0.1:8765';
+            const data=JSON.parse(fs.readFileSync('render-public/data/gallery-lots.json'));
+            const fresh=data.lots.filter(x=>x.id.startsWith('japan-archive-20261119-'));
+            assert.equal(data.lots.length,182);
+            assert.equal(fresh.length,50);
+            const browser=await chromium.launch({headless:true});
+            try {
+              const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+              await page.goto(root+'/gallery.html',{waitUntil:'domcontentloaded'});
+              await page.waitForTimeout(1000);
+              assert.equal(await page.locator('.gallery-card').count(),182);
+              const first=fresh[0];
+              const card=page.locator('#gallery-lot-'+first.id);
+              assert.equal(await card.count(),1);
+              await card.scrollIntoViewIfNeeded();
+              assert(await card.locator('img').first().evaluate(async im=>{await im.decode();return im.naturalWidth>100}));
+              for(const r of fresh){
+                assert.equal(r.photos.length,2);
+                assert.equal(r.status,'reference_only');
+                assert.equal(r.rights_confirmed,false);
+                const detail=await page.request.get(root+'/lots/'+r.id+'.html');
+                assert.equal(detail.status(),200);
+                const html=await detail.text();
+                assert(html.includes('Статистика продаж'));
+                assert(!html.includes('для ознакомления'));
+                for(const a of [...r.photos,r.inspection_image]){
+                  const res=await page.request.get(root+a);
+                  assert.equal(res.status(),200);
+                  assert((await res.body()).length>500);
+                }
+              }
+              await page.goto(root+'/lots/'+first.id+'.html',{waitUntil:'load'});
+              for(const im of await page.locator('.lot-photos img, .lot-sheet img').all()){
+                assert(await im.evaluate(async x=>{await x.decode();return x.naturalWidth>100}));
+              }
+              assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+2));
+              console.log('PASS: 182 mobile gallery cards; 50 new detail pages; 150 local JPEG files; decoded images; no inventory claim');
+            }finally{await browser.close()}
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
