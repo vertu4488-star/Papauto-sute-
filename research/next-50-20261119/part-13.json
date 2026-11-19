@@ -1,0 +1,170 @@
+[
+  {
+    "model": "Mercedes-Benz A-Class",
+    "year": "2021",
+    "num": "32830",
+    "date": "11.11.2026",
+    "price": "1 550 000 JPY",
+    "spec": {
+      "Пробег:": "32000",
+      "Оценка:": "4.5",
+      "Кузов:": "177084",
+      "Комплектация:": "A180 STYLE",
+      "Объем:": "1332 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Робот",
+      "Мощность:": "136 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/31/47d3a93b-9a5d-5f2c-8d0e-526798edaa01/40241756.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/31/47d3a93b-9a5d-5f2c-8d0e-526798edaa01/40241757.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/31/47d3a93b-9a5d-5f2c-8d0e-526798edaa01/40241758.avif"
+    ],
+    "source": "https://tokidoki.su/stat/mercedes-benz/a-class/47d3a93b-9a5d-5f2c-8d0e-526798edaa01/",
+    "auction": "Guliver Oneprice",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Honda Freed+",
+    "year": "2021",
+    "num": "33282",
+    "date": "28.10.2026",
+    "price": "1 490 000 JPY",
+    "spec": {
+      "Пробег:": "44000",
+      "Оценка:": "4.5",
+      "Кузов:": "GB5",
+      "Комплектация:": "G HONDA SENSING",
+      "Объем:": "1496 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "129 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/26/4d70127f-ea30-5fec-ad9f-cd54fafc7969/38987813.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/4d70127f-ea30-5fec-ad9f-cd54fafc7969/38987814.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/4d70127f-ea30-5fec-ad9f-cd54fafc7969/38987815.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/4d70127f-ea30-5fec-ad9f-cd54fafc7969/38987816.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/4d70127f-ea30-5fec-ad9f-cd54fafc7969/38987817.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/4d70127f-ea30-5fec-ad9f-cd54fafc7969/38987818.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/4d70127f-ea30-5fec-ad9f-cd54fafc7969/38987819.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/4d70127f-ea30-5fec-ad9f-cd54fafc7969/38987820.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/4d70127f-ea30-5fec-ad9f-cd54fafc7969/38987821.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/4d70127f-ea30-5fec-ad9f-cd54fafc7969/38987822.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/4d70127f-ea30-5fec-ad9f-cd54fafc7969/38987823.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/26/4d70127f-ea30-5fec-ad9f-cd54fafc7969/38987824.avif"
+    ],
+    "source": "https://tokidoki.su/stat/honda/freed-plus/4d70127f-ea30-5fec-ad9f-cd54fafc7969/",
+    "auction": "CAA Chubu",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Mazda Axela",
+    "year": "2019",
+    "num": "2116",
+    "date": "08.10.2026",
+    "price": "1 107 000 JPY",
+    "spec": {
+      "Пробег:": "35000",
+      "Оценка:": "4.5",
+      "Кузов:": "BM5FS",
+      "Комплектация:": "15S PRO ACTIVE",
+      "Объем:": "1496 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Автомат",
+      "Мощность:": "111 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/06/b23c3606-8f04-5b53-bc35-388644d7b9d6/35428661.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/06/b23c3606-8f04-5b53-bc35-388644d7b9d6/35428662.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/06/b23c3606-8f04-5b53-bc35-388644d7b9d6/35428663.avif"
+    ],
+    "source": "https://tokidoki.su/stat/mazda/axela/b23c3606-8f04-5b53-bc35-388644d7b9d6/",
+    "auction": "TAA Chubu",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Esquire",
+    "year": "2021",
+    "num": "88719",
+    "date": "20.09.2026",
+    "price": "2 400 000 JPY",
+    "spec": {
+      "Пробег:": "38000",
+      "Оценка:": "4.5",
+      "Кузов:": "ZRR85G",
+      "Комплектация:": "Gi",
+      "Объем:": "1986 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "152 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/08/26/0a194f9b-fed1-5734-82dd-5bfe1ff60b04/27770465.avif",
+      "https://japan.storage.yandexcloud.net/2026/08/26/0a194f9b-fed1-5734-82dd-5bfe1ff60b04/27770466.avif",
+      "https://japan.storage.yandexcloud.net/2026/08/26/0a194f9b-fed1-5734-82dd-5bfe1ff60b04/27770467.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/esquire/0a194f9b-fed1-5734-82dd-5bfe1ff60b04/",
+    "auction": "Kyouyuu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Volkswagen Polo",
+    "year": "2021",
+    "num": "715",
+    "date": "12.11.2026",
+    "price": "995 000 JPY",
+    "spec": {
+      "Пробег:": "28000",
+      "Оценка:": "4.5",
+      "Кузов:": "AWDKL",
+      "Комплектация:": "POLO TSI COMFORT L",
+      "Объем:": "999 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Робот",
+      "Мощность:": "95 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/11/f8d37365-6020-56e2-8842-07c4f1393eb6/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/11/f8d37365-6020-56e2-8842-07c4f1393eb6/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/11/f8d37365-6020-56e2-8842-07c4f1393eb6/2.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/11/f8d37365-6020-56e2-8842-07c4f1393eb6/3.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/11/f8d37365-6020-56e2-8842-07c4f1393eb6/4.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/11/f8d37365-6020-56e2-8842-07c4f1393eb6/5.avif"
+    ],
+    "source": "https://tokidoki.su/stat/volkswagen/polo/f8d37365-6020-56e2-8842-07c4f1393eb6/",
+    "auction": "ZIP Osaka",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Probox",
+    "year": "2012",
+    "num": "83715",
+    "date": "19.11.2026",
+    "price": "400 000 JPY",
+    "spec": {
+      "Пробег:": "94000",
+      "Оценка:": "3",
+      "Кузов:": "NCP50V",
+      "Комплектация:": "DX",
+      "Объем:": "1298 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Автомат",
+      "Мощность:": "87 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/28/c58a80aa-55c0-5262-ba30-dac4233fe59d/39767384.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/28/c58a80aa-55c0-5262-ba30-dac4233fe59d/39767385.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/28/c58a80aa-55c0-5262-ba30-dac4233fe59d/39767386.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/probox/c58a80aa-55c0-5262-ba30-dac4233fe59d/",
+    "auction": "Kyouyuu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  }
+]
