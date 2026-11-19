@@ -1,0 +1,1441 @@
+{
+  "date": "2026-11-19",
+  "status": "non-production draft; not approved for publication",
+  "country": "china",
+  "count": 50,
+  "publication_ready": 0,
+  "notes": "Prior visual rejections retained. No rejected photographs embedded. Source prices are not confirmed auction results. Missing specifications not fabricated. Lot IDs and external URLs only in internal JSON, not rendered cards.",
+  "cards": [
+    {
+      "card_number": 1,
+      "country": "china",
+      "model": "2024 BYD Han 2024 EV Glory 610KM4WDGod's Eyes Wisdom",
+      "year": 2024,
+      "mileage_km": 43107,
+      "fuel": "Electric",
+      "transmission": "Automatic",
+      "horsepower": "245 HP",
+      "source_price_usd": 11568,
+      "price_type": "displayed_bid",
+      "confirmed_sale_price": null,
+      "grade": "80AA",
+      "inspection_summary": [
+        {
+          "module": "Exterior",
+          "summary": "10 Minor Flaws"
+        },
+        {
+          "module": "Structural frame",
+          "summary": "✓ Passed Items (49)"
+        },
+        {
+          "module": "Interior",
+          "summary": "1 Minor Flaws"
+        },
+        {
+          "module": "Water and fire damage inspection",
+          "summary": "✓ Passed Items (15)"
+        },
+        {
+          "module": "Start-up inspection",
+          "summary": "✓ Passed Items (4)"
+        }
+      ],
+      "inspection_status": "third_party_report_not_authenticated",
+      "source_reference": {
+        "page": "https://imerimotors.ge/en/auction/122093403/byd-han-2024-ev-glory-610km4wdgod-s-eyes-wisdom",
+        "report": "https://imerimotors.ge/en/auction-report/122093403?print=1",
+        "original_id": "YXP-8994614"
+      },
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 2,
+      "country": "china",
+      "model": "2015 Dongfeng Fengxing Jingyi S50 2014 1.6 AT Exclusive",
+      "year": 2015,
+      "mileage_km": 83731,
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "horsepower": "109 HP",
+      "source_price_usd": 645,
+      "price_type": "displayed_bid",
+      "confirmed_sale_price": null,
+      "grade": "70BC",
+      "inspection_summary": [
+        {
+          "module": "Exterior",
+          "summary": "9 Major Flaws8 Minor Flaws"
+        },
+        {
+          "module": "Structural frame",
+          "summary": "3 Major Flaws2 Minor Flaws"
+        },
+        {
+          "module": "Interior",
+          "summary": "3 Major Flaws7 Minor Flaws"
+        },
+        {
+          "module": "Water and fire damage inspection",
+          "summary": "✓ Passed Items (15)"
+        },
+        {
+          "module": "Start-up inspection",
+          "summary": "2 Major Flaws"
+        }
+      ],
+      "inspection_status": "third_party_report_not_authenticated",
+      "source_reference": {
+        "page": "https://imerimotors.ge/en/auction/105991774/dongfeng-fengxing-jingyi-s50-2014-1-6-at-exclusive",
+        "report": "https://imerimotors.ge/en/auction-report/105991774?print=1",
+        "original_id": "YXP-8979974"
+      },
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 3,
+      "country": "china",
+      "model": "2019 Dongfeng Fengxing Jingyi X6 2017 1.5T AT PowerSeriesExclusive",
+      "year": 2019,
+      "mileage_km": 61645,
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "horsepower": "136 HP",
+      "source_price_usd": 1786,
+      "price_type": "displayed_bid",
+      "confirmed_sale_price": null,
+      "grade": "75BB",
+      "inspection_summary": [
+        {
+          "module": "Exterior",
+          "summary": "5 Major Flaws17 Minor Flaws"
+        },
+        {
+          "module": "Structural frame",
+          "summary": "3 Major Flaws4 Minor Flaws"
+        },
+        {
+          "module": "Interior",
+          "summary": "19 Minor Flaws"
+        },
+        {
+          "module": "Water and fire damage inspection",
+          "summary": "1 Major Flaws1 Minor Flaws"
+        },
+        {
+          "module": "Start-up inspection",
+          "summary": "1 Minor Flaws"
+        }
+      ],
+      "inspection_status": "third_party_report_not_authenticated",
+      "source_reference": {
+        "page": "https://imerimotors.ge/en/auction/106167153/dongfeng-fengxing-jingyi-x6-2017-1-5t-at-powerseriesexclusive",
+        "report": "https://imerimotors.ge/en/auction-report/106167153?print=1",
+        "original_id": "YXP-8980112"
+      },
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 4,
+      "country": "china",
+      "model": "2023 BYD e2 2023 Luxury",
+      "year": 2023,
+      "mileage_km": 68525,
+      "fuel": "Electric",
+      "transmission": "Automatic",
+      "horsepower": "96 HP",
+      "source_price_usd": 4208,
+      "price_type": "displayed_bid",
+      "confirmed_sale_price": null,
+      "grade": "75BB",
+      "inspection_summary": [
+        {
+          "module": "Exterior",
+          "summary": "5 Major Flaws23 Minor Flaws"
+        },
+        {
+          "module": "Structural frame",
+          "summary": "1 Major Flaws4 Minor Flaws"
+        },
+        {
+          "module": "Interior",
+          "summary": "22 Minor Flaws"
+        },
+        {
+          "module": "Water and fire damage inspection",
+          "summary": "✓ Passed Items (15)"
+        },
+        {
+          "module": "Start-up inspection",
+          "summary": "2 Minor Flaws"
+        }
+      ],
+      "inspection_status": "third_party_report_not_authenticated",
+      "source_reference": {
+        "page": "https://imerimotors.ge/en/auction/117581872/byd-e2-2023-luxury",
+        "report": "https://imerimotors.ge/en/auction-report/117581872?print=1",
+        "original_id": "YXP-8990164"
+      },
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 5,
+      "country": "china",
+      "model": "2022 BYD Song Plus New Energy 2021 EV Flagship",
+      "year": 2022,
+      "mileage_km": 121799,
+      "fuel": "Electric",
+      "transmission": "Automatic",
+      "horsepower": "184 HP",
+      "source_price_usd": 8800,
+      "price_type": "displayed_bid",
+      "confirmed_sale_price": null,
+      "grade": "80BB",
+      "inspection_summary": [
+        {
+          "module": "Exterior",
+          "summary": "1 Major Flaws6 Minor Flaws"
+        },
+        {
+          "module": "Structural frame",
+          "summary": "1 Major Flaws"
+        },
+        {
+          "module": "Interior",
+          "summary": "3 Major Flaws3 Minor Flaws"
+        },
+        {
+          "module": "Water and fire damage inspection",
+          "summary": "✓ Passed Items (15)"
+        },
+        {
+          "module": "Start-up inspection",
+          "summary": "1 Minor Flaws"
+        }
+      ],
+      "inspection_status": "third_party_report_not_authenticated",
+      "source_reference": {
+        "page": "https://imerimotors.ge/en/auction/117551581/byd-song-plus-new-energy-2021-ev-flagship",
+        "report": "https://imerimotors.ge/en/auction-report/117551581?print=1",
+        "original_id": "YXP-8990108"
+      },
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 6,
+      "country": "china",
+      "model": "2018 Volkswagen Santana 2018 1.5 MT Fashion",
+      "year": 2018,
+      "mileage_km": 100506,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "horsepower": "111 HP",
+      "source_price_usd": 2400,
+      "price_type": "displayed_bid",
+      "confirmed_sale_price": null,
+      "grade": "75CB",
+      "inspection_summary": [
+        {
+          "module": "Exterior",
+          "summary": "3 Major Flaws15 Minor Flaws"
+        },
+        {
+          "module": "Structural frame",
+          "summary": "1 Major Flaws"
+        },
+        {
+          "module": "Interior",
+          "summary": "18 Minor Flaws"
+        },
+        {
+          "module": "Water and fire damage inspection",
+          "summary": "✓ Passed Items (15)"
+        },
+        {
+          "module": "Start-up inspection",
+          "summary": "1 Minor Flaws"
+        }
+      ],
+      "inspection_status": "third_party_report_not_authenticated",
+      "source_reference": {
+        "page": "https://imerimotors.ge/en/auction/97707903/volkswagen-santana-2018-1-5-mt-fashion",
+        "report": "https://imerimotors.ge/en/auction-report/97707903?print=1",
+        "original_id": "YXP-8974466"
+      },
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 7,
+      "country": "china",
+      "model": "2018 Haval H2 2018 1.5T AT Create and enjoyEditionRed LabelFashion",
+      "year": 2018,
+      "mileage_km": 84728,
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "horsepower": "143 HP",
+      "source_price_usd": 2327,
+      "price_type": "displayed_bid",
+      "confirmed_sale_price": null,
+      "grade": "80BC",
+      "inspection_summary": [
+        {
+          "module": "Exterior",
+          "summary": "1 Major Flaws9 Minor Flaws"
+        },
+        {
+          "module": "Structural frame",
+          "summary": "1 Minor Flaws"
+        },
+        {
+          "module": "Interior",
+          "summary": "1 Major Flaws24 Minor Flaws"
+        },
+        {
+          "module": "Water and fire damage inspection",
+          "summary": "1 Major Flaws3 Minor Flaws"
+        },
+        {
+          "module": "Start-up inspection",
+          "summary": "✓ Passed Items (4)"
+        }
+      ],
+      "inspection_status": "third_party_report_not_authenticated",
+      "source_reference": {
+        "page": "https://imerimotors.ge/en/auction/105968674/haval-h2-2018-1-5t-at-create-and-enjoyeditionred-labelfashion",
+        "report": "https://imerimotors.ge/en/auction-report/105968674?print=1",
+        "original_id": "YXP-8979963"
+      },
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 8,
+      "country": "china",
+      "model": "2021 BYD Qin Plus 2021 EV AT 500KM Luxury",
+      "year": 2021,
+      "mileage_km": 148211,
+      "fuel": "Electric",
+      "transmission": "Automatic",
+      "horsepower": "136 HP",
+      "source_price_usd": 4357,
+      "price_type": "displayed_bid",
+      "confirmed_sale_price": null,
+      "grade": "70BC",
+      "inspection_summary": [
+        {
+          "module": "Exterior",
+          "summary": "8 Major Flaws6 Minor Flaws"
+        },
+        {
+          "module": "Structural frame",
+          "summary": "1 Major Flaws1 Minor Flaws"
+        },
+        {
+          "module": "Interior",
+          "summary": "2 Major Flaws10 Minor Flaws"
+        },
+        {
+          "module": "Water and fire damage inspection",
+          "summary": "✓ Passed Items (15)"
+        },
+        {
+          "module": "Start-up inspection",
+          "summary": "✓ Passed Items (5)"
+        }
+      ],
+      "inspection_status": "third_party_report_not_authenticated",
+      "source_reference": {
+        "page": "https://imerimotors.ge/en/auction/122062871/byd-qin-plus-2021-ev-at-500km-luxury",
+        "report": "https://imerimotors.ge/en/auction-report/122062871?print=1",
+        "original_id": "YXP-8994597"
+      },
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 9,
+      "country": "china",
+      "model": "2023 Jetour Traveler 2023 2.0T AT 4WDtime travelPRO",
+      "year": 2023,
+      "mileage_km": 23231,
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "horsepower": "245 HP",
+      "source_price_usd": 14718,
+      "price_type": "displayed_bid",
+      "confirmed_sale_price": null,
+      "grade": "75BA",
+      "inspection_summary": [
+        {
+          "module": "Exterior",
+          "summary": "3 Major Flaws4 Minor Flaws"
+        },
+        {
+          "module": "Structural frame",
+          "summary": "2 Minor Flaws"
+        },
+        {
+          "module": "Interior",
+          "summary": "7 Minor Flaws"
+        },
+        {
+          "module": "Water and fire damage inspection",
+          "summary": "✓ Passed Items (15)"
+        },
+        {
+          "module": "Start-up inspection",
+          "summary": "1 Minor Flaws"
+        }
+      ],
+      "inspection_status": "third_party_report_not_authenticated",
+      "source_reference": {
+        "page": "https://imerimotors.ge/en/auction/97850728/jetour-traveler-2023-2-0t-at-4wdtime-travelpro",
+        "report": "https://imerimotors.ge/en/auction-report/97850728?print=1",
+        "original_id": "YXP-8974576"
+      },
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 10,
+      "country": "china",
+      "model": "2021 Honda Fit Hatchback 2021 1.5 AT Chao XiangEdition",
+      "year": 2021,
+      "mileage_km": 46497,
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "horsepower": "131 HP",
+      "source_price_usd": 5800,
+      "price_type": "displayed_bid",
+      "confirmed_sale_price": null,
+      "grade": "70BB",
+      "inspection_summary": [
+        {
+          "module": "Exterior",
+          "summary": "6 Major Flaws13 Minor Flaws"
+        },
+        {
+          "module": "Structural frame",
+          "summary": "2 Major Flaws1 Minor Flaws"
+        },
+        {
+          "module": "Interior",
+          "summary": "11 Minor Flaws"
+        },
+        {
+          "module": "Water and fire damage inspection",
+          "summary": "✓ Passed Items (15)"
+        },
+        {
+          "module": "Start-up inspection",
+          "summary": "3 Minor Flaws"
+        }
+      ],
+      "inspection_status": "third_party_report_not_authenticated",
+      "source_reference": {
+        "page": "https://imerimotors.ge/en/auction/65041184/honda-fit-hatchback-2021-1-5-at-chao-xiangedition",
+        "report": "https://imerimotors.ge/en/auction-report/65041184?print=1",
+        "original_id": "YXP-8950013"
+      },
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 11,
+      "country": "china",
+      "model": "2022 BYD Song Plus New Energy 2021 EV Flagship",
+      "year": 2022,
+      "mileage_km": 76902,
+      "fuel": "Electric",
+      "transmission": "Automatic",
+      "horsepower": "184 HP",
+      "source_price_usd": 8600,
+      "price_type": "displayed_bid",
+      "confirmed_sale_price": null,
+      "grade": "70BC",
+      "inspection_summary": [
+        {
+          "module": "Exterior",
+          "summary": "9 Major Flaws11 Minor Flaws"
+        },
+        {
+          "module": "Structural frame",
+          "summary": "2 Minor Flaws"
+        },
+        {
+          "module": "Interior",
+          "summary": "3 Major Flaws21 Minor Flaws"
+        },
+        {
+          "module": "Water and fire damage inspection",
+          "summary": "1 Major Flaws1 Minor Flaws"
+        },
+        {
+          "module": "Start-up inspection",
+          "summary": "✓ Passed Items (6)"
+        }
+      ],
+      "inspection_status": "third_party_report_not_authenticated",
+      "source_reference": {
+        "page": "https://imerimotors.ge/en/auction/69527301/byd-song-plus-new-energy-2021-ev-flagship",
+        "report": "https://imerimotors.ge/en/auction-report/69527301?print=1",
+        "original_id": "YXP-8953407"
+      },
+      "visual_status": "rejected_blurred_unverifiable_background",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 12,
+      "country": "china",
+      "model": "Changan UNI-V",
+      "year": 2024,
+      "mileage_km": 14000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 13870,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/changan-uni-v-2024-54-24278319",
+        "report": null,
+        "original_id": "PLC-24278319"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 13,
+      "country": "china",
+      "model": "Haval H6",
+      "year": 2024,
+      "mileage_km": 8600,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 14452,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/haval-h6-2024-54-23065452",
+        "report": null,
+        "original_id": "PLC-23065452"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 14,
+      "country": "china",
+      "model": "Geely Star L",
+      "year": 2024,
+      "mileage_km": 18000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 17484,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-star-l-2024-54-24002173",
+        "report": null,
+        "original_id": "PLC-24002173"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 15,
+      "country": "china",
+      "model": "Geely Emgrand",
+      "year": 2026,
+      "mileage_km": 4000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 12458,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-emgrand-2026-54-24426592",
+        "report": null,
+        "original_id": "PLC-24426592"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 16,
+      "country": "china",
+      "model": "BYD Qin L DM",
+      "year": 2026,
+      "mileage_km": 21600,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 11004,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/byd-qin-l-dm-2026-54-35042345",
+        "report": null,
+        "original_id": "PLC-35042345"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 17,
+      "country": "china",
+      "model": "BYD Han DM",
+      "year": 2020,
+      "mileage_km": 49000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 11369,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/byd-han-dm-2020-54-356591571",
+        "report": null,
+        "original_id": "PLC-356591571"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 18,
+      "country": "china",
+      "model": "BYD Song PLUS EV",
+      "year": 2021,
+      "mileage_km": 69900,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 14342,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/byd-song-plus-ev-2021-54-24258579",
+        "report": null,
+        "original_id": "PLC-24258579"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 19,
+      "country": "china",
+      "model": "Chery Tiggo 3x",
+      "year": 2021,
+      "mileage_km": 37800,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 4116,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/chery-tiggo-3x-2021-54-24264555",
+        "report": null,
+        "original_id": "PLC-24264555"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 20,
+      "country": "china",
+      "model": "Li Auto Ideal L7",
+      "year": 2023,
+      "mileage_km": 35000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 34017,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/li-auto-ideal-l7-2023-54-24290305",
+        "report": null,
+        "original_id": "PLC-24290305"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 21,
+      "country": "china",
+      "model": "Zeekr X",
+      "year": 2025,
+      "mileage_km": 7100,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 18485,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/zeekr-2025-54-35024367",
+        "report": null,
+        "original_id": "PLC-35024367"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 22,
+      "country": "china",
+      "model": "Changan UNI-T",
+      "year": 2023,
+      "mileage_km": 7500,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 11671,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/changan-uni-t-2023-54-356375534",
+        "report": null,
+        "original_id": "PLC-356375534"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 23,
+      "country": "china",
+      "model": "Changan CS35 PLUS",
+      "year": 2019,
+      "mileage_km": 53400,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 4783,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/changan-cs35-plus-2019-54-23136964",
+        "report": null,
+        "original_id": "PLC-23136964"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 24,
+      "country": "china",
+      "model": "Geely Xingyuan",
+      "year": 2025,
+      "mileage_km": 39000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 10988,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-xingyuan-2025-54-357186604",
+        "report": null,
+        "original_id": "PLC-357186604"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 25,
+      "country": "china",
+      "model": "Geely L",
+      "year": 2024,
+      "mileage_km": 8000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 15610,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-2024-54-35112269",
+        "report": null,
+        "original_id": "PLC-35112269"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 26,
+      "country": "china",
+      "model": "Geely Rui Rui",
+      "year": 2024,
+      "mileage_km": 5000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 9408,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-rui-rui-2024-54-35077078",
+        "report": null,
+        "original_id": "PLC-35077078"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 27,
+      "country": "china",
+      "model": "Geely Galaxy L6",
+      "year": 2023,
+      "mileage_km": 37000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 12004,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-galaxy-l6-2023-54-23994516",
+        "report": null,
+        "original_id": "PLC-23994516"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 28,
+      "country": "china",
+      "model": "Geely Xingrui",
+      "year": 2025,
+      "mileage_km": 7000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 12870,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-xingrui-2025-54-24472888",
+        "report": null,
+        "original_id": "PLC-24472888"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 29,
+      "country": "china",
+      "model": "Geely Galaxy M9",
+      "year": 2025,
+      "mileage_km": 9900,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 31584,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-galaxy-m9-2025-54-24013428",
+        "report": null,
+        "original_id": "PLC-24013428"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 30,
+      "country": "china",
+      "model": "Geely GL",
+      "year": 2020,
+      "mileage_km": 60000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 5512,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-gl-2020-54-24216995",
+        "report": null,
+        "original_id": "PLC-24216995"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 31,
+      "country": "china",
+      "model": "Geely Galaxy E5",
+      "year": 2026,
+      "mileage_km": 11000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 16872,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-galaxy-e5-2026-54-356412538",
+        "report": null,
+        "original_id": "PLC-356412538"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 32,
+      "country": "china",
+      "model": "Changan A07",
+      "year": 2024,
+      "mileage_km": 22000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 17700,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/changan-a07-2024-54-24130960",
+        "report": null,
+        "original_id": "PLC-24130960"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 33,
+      "country": "china",
+      "model": "Changan CS75 PLUS",
+      "year": 2024,
+      "mileage_km": 30000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 13917,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/changan-cs75-plus-2024-54-23071906",
+        "report": null,
+        "original_id": "PLC-23071906"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 34,
+      "country": "china",
+      "model": "BYD EV",
+      "year": 2022,
+      "mileage_km": 73000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 19224,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/byd-ev-2022-54-24180744",
+        "report": null,
+        "original_id": "PLC-24180744"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 35,
+      "country": "china",
+      "model": "BYD L EV",
+      "year": 2025,
+      "mileage_km": 18000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 24498,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/byd-l-ev-2025-54-24240958",
+        "report": null,
+        "original_id": "PLC-24240958"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 36,
+      "country": "china",
+      "model": "Geely Geometry E",
+      "year": 2024,
+      "mileage_km": 16000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 8866,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-geometry-e-2024-54-356442802",
+        "report": null,
+        "original_id": "PLC-356442802"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 37,
+      "country": "china",
+      "model": "Zeekr 001",
+      "year": 2023,
+      "mileage_km": 112000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 23159,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/zeekr-001-2023-54-23726167",
+        "report": null,
+        "original_id": "PLC-23726167"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 38,
+      "country": "china",
+      "model": "BYD Yuan PLUS",
+      "year": 2025,
+      "mileage_km": 17000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 16081,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/byd-yuan-plus-2025-54-24240998",
+        "report": null,
+        "original_id": "PLC-24240998"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 39,
+      "country": "china",
+      "model": "Li Auto L8",
+      "year": 2025,
+      "mileage_km": 7000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 41462,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/li-auto-l8-2025-54-24508690",
+        "report": null,
+        "original_id": "PLC-24508690"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 40,
+      "country": "china",
+      "model": "Li Auto L9",
+      "year": 2025,
+      "mileage_km": 5500,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 52367,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/li-auto-l9-2025-54-23396985",
+        "report": null,
+        "original_id": "PLC-23396985"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 41,
+      "country": "china",
+      "model": "BYD MAX",
+      "year": 2017,
+      "mileage_km": 109000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 3808,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/byd-max-2017-54-19319135",
+        "report": null,
+        "original_id": "PLC-19319135"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 42,
+      "country": "china",
+      "model": "Zeekr 007",
+      "year": 2025,
+      "mileage_km": 14000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 23540,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/zeekr-007-2025-54-24343325",
+        "report": null,
+        "original_id": "PLC-24343325"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 43,
+      "country": "china",
+      "model": "Zeekr 009",
+      "year": 2023,
+      "mileage_km": 31000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 47057,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/zeekr-009-2023-54-23204961",
+        "report": null,
+        "original_id": "PLC-23204961"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 44,
+      "country": "china",
+      "model": "Chery Tiggo",
+      "year": 2025,
+      "mileage_km": 12400,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 12171,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/chery-tiggo-2025-54-23388303",
+        "report": null,
+        "original_id": "PLC-23388303"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 45,
+      "country": "china",
+      "model": "Changan Yida",
+      "year": 2023,
+      "mileage_km": 27200,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 9358,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/changan-yida-2023-54-23982901",
+        "report": null,
+        "original_id": "PLC-23982901"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 46,
+      "country": "china",
+      "model": "Leapmotor C11",
+      "year": 2026,
+      "mileage_km": 4000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 20871,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/leapmotor-c11-2026-54-24254324",
+        "report": null,
+        "original_id": "PLC-24254324"
+      },
+      "visual_status": "hold_indoor_but_auction_venue_unverified_or_dealer",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 47,
+      "country": "china",
+      "model": "Geely Xingyuan",
+      "year": 2026,
+      "mileage_km": null,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 10963,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-xingyuan-2026-56-252717e0",
+        "report": null,
+        "original_id": "PLC-252717E0"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 48,
+      "country": "china",
+      "model": "Geely Emgrand",
+      "year": 2025,
+      "mileage_km": 14000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 8563,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-emgrand-2025-54-24266780",
+        "report": null,
+        "original_id": "PLC-24266780"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 49,
+      "country": "china",
+      "model": "Geely Star L",
+      "year": 2024,
+      "mileage_km": 18000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 16196,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-star-l-2024-54-35091352",
+        "report": null,
+        "original_id": "PLC-35091352"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    },
+    {
+      "card_number": 50,
+      "country": "china",
+      "model": "Geely Xingyuan",
+      "year": 2025,
+      "mileage_km": 25000,
+      "fuel": null,
+      "transmission": null,
+      "horsepower": null,
+      "source_price_usd": 8525,
+      "price_type": "listing_buy_now",
+      "confirmed_sale_price": null,
+      "grade": null,
+      "inspection_summary": [],
+      "inspection_status": "not_verified",
+      "source_reference": {
+        "page": "https://plc.auction/auction/lot/geely-xingyuan-2025-54-24301412",
+        "report": null,
+        "original_id": "PLC-24301412"
+      },
+      "visual_status": "rejected_outdoor_or_parking",
+      "images": [],
+      "publication_ready": false
+    }
+  ]
+}
