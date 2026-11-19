@@ -1,0 +1,80 @@
+[
+  {
+    "model": "Toyota Corolla Axio",
+    "year": "2021",
+    "num": "5917",
+    "date": "19.11.2026",
+    "price": "1 080 000 JPY",
+    "spec": {
+      "Пробег:": "52000",
+      "Оценка:": "4",
+      "Кузов:": "NZE164",
+      "Комплектация:": "4WD EX",
+      "Объем:": "1496 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "103 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/08/7a099584-dbfc-57f9-9ad5-8d262537330f/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/7a099584-dbfc-57f9-9ad5-8d262537330f/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/7a099584-dbfc-57f9-9ad5-8d262537330f/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/corolla-axio/7a099584-dbfc-57f9-9ad5-8d262537330f/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Honda Shuttle",
+    "year": "2015",
+    "num": "8373",
+    "date": "19.11.2026",
+    "price": "500 000 JPY",
+    "spec": {
+      "Пробег:": "89000",
+      "Оценка:": "3.5",
+      "Кузов:": "GK8",
+      "Комплектация:": "G",
+      "Объем:": "1496 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "132 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/08/9758c5ad-9df8-5594-8ec9-d7d8c488bd47/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/9758c5ad-9df8-5594-8ec9-d7d8c488bd47/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/9758c5ad-9df8-5594-8ec9-d7d8c488bd47/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/honda/shuttle/9758c5ad-9df8-5594-8ec9-d7d8c488bd47/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Probox",
+    "year": "2021",
+    "num": "8575",
+    "date": "19.11.2026",
+    "price": "888 000 JPY",
+    "spec": {
+      "Пробег:": "74000",
+      "Оценка:": "3.5",
+      "Кузов:": "NCP165V",
+      "Комплектация:": "4WD DX COMFORT",
+      "Объем:": "1496 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "103 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/08/91a4413a-69b1-53bc-b906-a15e363611b0/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/91a4413a-69b1-53bc-b906-a15e363611b0/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/91a4413a-69b1-53bc-b906-a15e363611b0/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/probox/91a4413a-69b1-53bc-b906-a15e363611b0/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  }
+]
