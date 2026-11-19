@@ -1,0 +1,53 @@
+name: Strict Yuantong source sample review
+on:
+  push:
+    branches: [review/china-50-20261119]
+    paths: ['.github/workflows/yuantong-strict-sample.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests pillow
+      - run: |
+          python - <<'PY'
+          import io,json,hashlib
+          from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor
+          from PIL import Image,ImageDraw,ImageFont
+          import requests
+          data=json.loads(Path('research/china-50-20261119/yuantong-source-screen-01.json').read_text())
+          rows=[r for r in data if r['report'] and r['ended']]
+          def get(u):
+              try:
+                  assert u.startswith('https://p-yuantong-auction.oss-cn-hangzhou.aliyuncs.com/cars/')
+                  v=requests.get(u,timeout=10);v.raise_for_status()
+                  im=Image.open(io.BytesIO(v.content)).convert('RGB');im.thumbnail((290,200))
+                  return im,hashlib.sha256(v.content).hexdigest()
+              except Exception as e:return None,str(e)[:200]
+          tasks=[(r['id'],i,u) for r in rows for i,u in enumerate(r['gallery'][:4])]
+          with ThreadPoolExecutor(max_workers=8) as p: results=list(p.map(lambda t:get(t[2]),tasks))
+          out=Path('yuantong-review');out.mkdir(exist_ok=True)
+          f=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',19)
+          canvas=Image.new('RGB',(1240,len(rows)*240),'#f7f4ed');d=ImageDraw.Draw(canvas);manifest=[]
+          for (lot,i,u),(im,digest) in zip(tasks,results):
+              n=next(j for j,r in enumerate(rows) if r['id']==lot)
+              x=i*310;y=n*240
+              d.text((x+8,y+5),f'Lot {lot} / photo {i+1}',font=f,fill='#292723')
+              if im:canvas.paste(im,(x+(310-im.width)//2,y+30))
+              manifest.append(dict(id=lot,position=i+1,downloaded=bool(im),value=digest,url=u))
+          canvas.save(out/'sample.jpg',quality=92)
+          (out/'manifest.json').write_text(json.dumps(manifest,indent=2))
+          print('Images retrieved:',sum(x['downloaded'] for x in manifest),'/',len(manifest))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: yuantong-strict-sample
+          path: yuantong-review/
+          retention-days: 7
