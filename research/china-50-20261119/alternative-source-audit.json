@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-19",
+  "target": 50,
+  "previous_preview_rejected": true,
+  "criteria": {
+    "original_indoor_auction_photos": true,
+    "matching_full_report": true,
+    "accurate_price_status": true,
+    "no_street_parking_dealer_unverified_background": true,
+    "no_reuse_of_rejected_photos": true
+  },
+  "source_audit": [
+    {
+      "source": "Yingchepai",
+      "url": "https://www.yingchewang.com.cn/",
+      "finding": "Public schedule and offline auction lists; model, mileage and starting bid visible. Exact detail requests for VW Tharu and Zeekr 009 redirected to buyer login requiring account/password/verification. No verified photos or reports or sale outcomes.",
+      "examples": [
+        "https://www.yingchewang.com.cn/auctionDetail?carAuctionId=2a656ca349bc47459a4e27c41f060815&carBaseId=388f37f0d24f4921a71238d0e3e3abdf",
+        "https://www.yingchewang.com.cn/auctionDetail?carAuctionId=fb089dd3a0cf44818347553921f3cb94&carBaseId=89d6cf8bf7c84f9db8bd49b165de8912"
+      ],
+      "status": "authenticated access needed"
+    },
+    {
+      "source": "Yoliang",
+      "url": "https://e.yoliang.com/used-cars",
+      "examples": [
+        "https://e.yoliang.com/vehicles/688256",
+        "https://e.yoliang.com/vehicles/688507"
+      ],
+      "finding": "BMW X1 and Audi A4L have vehicle codes, mileage, grade and starting bid; both report pages explicitly state failed to fetch report. Not confirmed sales.",
+      "status": "hold"
+    },
+    {
+      "source": "VLADAUTO",
+      "url": "https://vladauto.pro/auctions/china",
+      "finding": "Public catalogue contains seller prices, not actual sale outcomes; inspected representative entries have no verified full report, no confirmed photo provenance.",
+      "status": "hold"
+    },
+    {
+      "source": "Orche",
+      "url": "https://orche.cloud/en/markets/cn",
+      "finding": "Only two China lots in archive, Ford Explorer 2011 and Toyota RAV4 2016, Beijing US Embassy. No matched full inspection/closed hall verification.",
+      "status": "hold"
+    },
+    {
+      "source": "GLOAR",
+      "url": "https://gloar-data.com/ru/catalog?listingStatus=archived",
+      "finding": "Public page opens Korean Encar data in snapshot despite archive query; no China exact-lot verification.",
+      "status": "hold"
+    },
+    {
+      "source": "TTPAI",
+      "url": "https://www.ttpai.cn/",
+      "finding": "Reports used by bidders in dealer app and auction hall under dealer agreement; public summaries not full matched media. Model transaction page timed out.",
+      "status": "hold"
+    },
+    {
+      "source": "Cheyipai",
+      "url": "https://www.cheyipai.com/",
+      "finding": "No readable public lot data in retrieved page; no original source reports verified.",
+      "status": "hold"
+    }
+  ],
+  "verified_complete_lots": 0,
+  "published": 0,
+  "notes": "No new payments or contacts. Do not weaken exact-lot visual or document requirements. Use existing authorized dealer access or exported archive only when available; do not circumvent login."
+}
