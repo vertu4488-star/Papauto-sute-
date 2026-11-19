@@ -1,0 +1,243 @@
+[
+  {
+    "model": "Volkswagen Passat",
+    "year": "2022",
+    "num": "38076",
+    "date": "23.09.2026",
+    "price": "2 395 000 JPY",
+    "spec": {
+      "Пробег:": "46000",
+      "Оценка:": "4.5",
+      "Кузов:": "3CDPC",
+      "Комплектация:": "TSI ELEGANCE",
+      "Объем:": "1497 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Робот",
+      "Мощность:": "150 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/09/20/f8431d4d-8cf8-5a8c-9076-3ceb70dbfa17/32616249.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/f8431d4d-8cf8-5a8c-9076-3ceb70dbfa17/32616250.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/f8431d4d-8cf8-5a8c-9076-3ceb70dbfa17/32616251.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/f8431d4d-8cf8-5a8c-9076-3ceb70dbfa17/32616252.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/f8431d4d-8cf8-5a8c-9076-3ceb70dbfa17/32616253.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/f8431d4d-8cf8-5a8c-9076-3ceb70dbfa17/32616254.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/f8431d4d-8cf8-5a8c-9076-3ceb70dbfa17/32616255.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/f8431d4d-8cf8-5a8c-9076-3ceb70dbfa17/32616256.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/f8431d4d-8cf8-5a8c-9076-3ceb70dbfa17/32616257.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/f8431d4d-8cf8-5a8c-9076-3ceb70dbfa17/32616258.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/f8431d4d-8cf8-5a8c-9076-3ceb70dbfa17/32616259.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/f8431d4d-8cf8-5a8c-9076-3ceb70dbfa17/32616260.avif"
+    ],
+    "source": "https://tokidoki.su/stat/volkswagen/passat/f8431d4d-8cf8-5a8c-9076-3ceb70dbfa17/",
+    "auction": "CAA Chubu",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Mazda Mazda2",
+    "year": "2021",
+    "num": "25151",
+    "date": "05.10.2026",
+    "price": "790 000 JPY",
+    "spec": {
+      "Пробег:": "44000",
+      "Оценка:": "4.5",
+      "Кузов:": "DJLFS",
+      "Комплектация:": "15C",
+      "Объем:": "1496 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Автомат",
+      "Мощность:": "110 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/03/3fca14c5-37b5-5d0e-8209-c9e93e39b703/34920118.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/03/3fca14c5-37b5-5d0e-8209-c9e93e39b703/34920119.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/03/3fca14c5-37b5-5d0e-8209-c9e93e39b703/34920120.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/03/3fca14c5-37b5-5d0e-8209-c9e93e39b703/34920121.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/03/3fca14c5-37b5-5d0e-8209-c9e93e39b703/34920122.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/03/3fca14c5-37b5-5d0e-8209-c9e93e39b703/34920123.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/03/3fca14c5-37b5-5d0e-8209-c9e93e39b703/34920124.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/03/3fca14c5-37b5-5d0e-8209-c9e93e39b703/34920125.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/03/3fca14c5-37b5-5d0e-8209-c9e93e39b703/34920126.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/03/3fca14c5-37b5-5d0e-8209-c9e93e39b703/34920127.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/03/3fca14c5-37b5-5d0e-8209-c9e93e39b703/34920128.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/03/3fca14c5-37b5-5d0e-8209-c9e93e39b703/34920129.avif"
+    ],
+    "source": "https://tokidoki.su/stat/mazda/mazda2/3fca14c5-37b5-5d0e-8209-c9e93e39b703/",
+    "auction": "AUCNET",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": true
+  },
+  {
+    "model": "Audi A4",
+    "year": "2020",
+    "num": "70140",
+    "date": "14.10.2026",
+    "price": "2 097 000 JPY",
+    "spec": {
+      "Пробег:": "24000",
+      "Оценка:": "4.5",
+      "Кузов:": "8WCVN",
+      "Комплектация:": "AVANTE 35TFSI MEISTER SHUTO.K",
+      "Объем:": "1394 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Робот",
+      "Мощность:": "150 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/16/f8a4fbc8-47b5-5cf8-8a04-d040f045a904/36296466.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/f8a4fbc8-47b5-5cf8-8a04-d040f045a904/36296467.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/f8a4fbc8-47b5-5cf8-8a04-d040f045a904/36296468.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/f8a4fbc8-47b5-5cf8-8a04-d040f045a904/36296469.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/f8a4fbc8-47b5-5cf8-8a04-d040f045a904/36296470.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/f8a4fbc8-47b5-5cf8-8a04-d040f045a904/36296471.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/f8a4fbc8-47b5-5cf8-8a04-d040f045a904/36296472.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/f8a4fbc8-47b5-5cf8-8a04-d040f045a904/36296473.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/f8a4fbc8-47b5-5cf8-8a04-d040f045a904/36296474.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/f8a4fbc8-47b5-5cf8-8a04-d040f045a904/36296475.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/f8a4fbc8-47b5-5cf8-8a04-d040f045a904/36296476.avif"
+    ],
+    "source": "https://tokidoki.su/stat/audi/a4/f8a4fbc8-47b5-5cf8-8a04-d040f045a904/",
+    "auction": "MIRIVE Saitama",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Premio",
+    "year": "2019",
+    "num": "33283",
+    "date": "14.10.2026",
+    "price": "1 825 000 JPY",
+    "spec": {
+      "Пробег:": "35000",
+      "Оценка:": "4.5",
+      "Кузов:": "NZT260",
+      "Комплектация:": "1.5F L PACKAGE",
+      "Объем:": "1496 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "109 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/16/d669f85f-97be-5fb8-8e8e-a50d824a9480/36185112.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/d669f85f-97be-5fb8-8e8e-a50d824a9480/36185113.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/d669f85f-97be-5fb8-8e8e-a50d824a9480/36185114.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/d669f85f-97be-5fb8-8e8e-a50d824a9480/36185115.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/d669f85f-97be-5fb8-8e8e-a50d824a9480/36185116.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/d669f85f-97be-5fb8-8e8e-a50d824a9480/36185117.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/premio/d669f85f-97be-5fb8-8e8e-a50d824a9480/",
+    "auction": "CAA Chubu",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Honda Odyssey",
+    "year": "2021",
+    "num": "25927",
+    "date": "30.09.2026",
+    "price": "3 080 000 JPY",
+    "spec": {
+      "Пробег:": "31000",
+      "Оценка:": "4.5",
+      "Кузов:": "RC4",
+      "Комплектация:": "E:HEV ABSOLUTE \\*EX",
+      "Объем:": "1993 см3",
+      "Двигатель:": "Параллельный гибрид",
+      "КПП:": "Вариатор",
+      "Мощность:": "234 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/09/20/d76951c6-f217-5e81-a098-7c0df73c1583/32727118.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/d76951c6-f217-5e81-a098-7c0df73c1583/32727120.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/20/d76951c6-f217-5e81-a098-7c0df73c1583/32727122.avif"
+    ],
+    "source": "https://tokidoki.su/stat/honda/odyssey/d76951c6-f217-5e81-a098-7c0df73c1583/",
+    "auction": "CAA Kyouyuu",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "BMW 1-Series",
+    "year": "2020",
+    "num": "70112",
+    "date": "21.10.2026",
+    "price": "1 159 000 JPY",
+    "spec": {
+      "Пробег:": "37000",
+      "Оценка:": "4.5",
+      "Кузов:": "7K15",
+      "Комплектация:": "118i",
+      "Объем:": "1499 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Робот",
+      "Мощность:": "140 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/19/1e8d0506-d202-5502-8c47-2f9345d4bed7/37881836.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/1e8d0506-d202-5502-8c47-2f9345d4bed7/37881837.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/1e8d0506-d202-5502-8c47-2f9345d4bed7/37881838.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/1e8d0506-d202-5502-8c47-2f9345d4bed7/37881839.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/1e8d0506-d202-5502-8c47-2f9345d4bed7/37881840.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/1e8d0506-d202-5502-8c47-2f9345d4bed7/37881841.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/1e8d0506-d202-5502-8c47-2f9345d4bed7/37881842.avif"
+    ],
+    "source": "https://tokidoki.su/stat/bmw/1-series/1e8d0506-d202-5502-8c47-2f9345d4bed7/",
+    "auction": "MIRIVE Saitama",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "BMW 5-Series",
+    "year": "2020",
+    "num": "3741",
+    "date": "06.10.2026",
+    "price": "2 760 000 JPY",
+    "spec": {
+      "Пробег:": "39000",
+      "Оценка:": "4.5",
+      "Кузов:": "JP20",
+      "Комплектация:": "523D XDRIVE TOURING M SPIRIT 4WD",
+      "Объем:": "1995 см3",
+      "Двигатель:": "Дизель",
+      "КПП:": "Автомат",
+      "Мощность:": "190 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/09/29/da133bb0-7d8c-58df-9ade-528283ccfb6b/34204248.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/29/da133bb0-7d8c-58df-9ade-528283ccfb6b/34204250.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/29/da133bb0-7d8c-58df-9ade-528283ccfb6b/34204252.avif"
+    ],
+    "source": "https://tokidoki.su/stat/bmw/5-series/da133bb0-7d8c-58df-9ade-528283ccfb6b/",
+    "auction": "LAP Kyoyuzaiko",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Daihatsu Thor",
+    "year": "2021",
+    "num": "27361",
+    "date": "16.11.2026",
+    "price": "900 000 JPY",
+    "spec": {
+      "Пробег:": "38000",
+      "Оценка:": "4.5",
+      "Кузов:": "M900S",
+      "Комплектация:": "X",
+      "Объем:": "996 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "69 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/08/e2363229-1131-5ca1-a2c5-5f9487b18913/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/e2363229-1131-5ca1-a2c5-5f9487b18913/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/e2363229-1131-5ca1-a2c5-5f9487b18913/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/daihatsu/thor/e2363229-1131-5ca1-a2c5-5f9487b18913/",
+    "auction": "JU Kyouyuu",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  }
+]
