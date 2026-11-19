@@ -1,0 +1,74 @@
+[
+  {
+    "lot": "3080",
+    "auction": "TAA Hiroshima",
+    "source": "https://tokidoki.su/stat/daihatsu/mira-e-s/69506ac7-fd70-5212-b49a-6fd7aef7044c/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "2140",
+    "auction": "TAA Hiroshima",
+    "source": "https://tokidoki.su/stat/toyota/c-hr/2e99d99e-adef-5242-97e4-c0799196a584/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "6242",
+    "auction": "JU Miyagi",
+    "source": "https://tokidoki.su/stat/honda/n-wgn/bc79594b-f448-5831-a298-316be0f86517/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "73005",
+    "auction": "TAA Chubu",
+    "source": "https://tokidoki.su/stat/suzuki/solio/30dc9558-310d-5e41-896b-e819ad4bd17e/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "3250",
+    "auction": "TAA Kinki",
+    "source": "https://tokidoki.su/stat/daihatsu/move/14bf5d57-082c-534b-86d1-8ab01e2e4b16/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "89",
+    "auction": "CAA Chubu",
+    "source": "https://tokidoki.su/stat/daihatsu/taft/754c7506-0d4d-5a28-b186-7a6a528bdc5a/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "36463",
+    "auction": "CAA Chubu",
+    "source": "https://tokidoki.su/stat/suzuki/jimny-sierra/ca5485d8-8adf-5c8c-9f6c-fee47f186065/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "2033",
+    "auction": "TAA Shikoku",
+    "source": "https://tokidoki.su/stat/toyota/passo/879f75b7-54b7-582f-b77b-25f968251508/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "2176",
+    "auction": "JU Saitama",
+    "source": "https://tokidoki.su/stat/suzuki/swift/5064bc06-3b95-52be-8436-1d674fc68de2/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "3346",
+    "auction": "CAA Touhoku",
+    "source": "https://tokidoki.su/stat/toyota/corolla-fielder/6015c38f-d4d9-56c3-a466-20341155810f/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "2328",
+    "auction": "IAA Osaka",
+    "source": "https://tokidoki.su/stat/subaru/impreza/9c492a34-3009-519c-931a-f25274da3941/",
+    "status": "archive_sold_displayed"
+  },
+  {
+    "lot": "2163",
+    "auction": "TAA Chubu",
+    "source": "https://tokidoki.su/stat/toyota/vitz/116175db-6b63-52f2-a7d4-8e8d0cfd4211/",
+    "status": "archive_sold_displayed"
+  }
+]
