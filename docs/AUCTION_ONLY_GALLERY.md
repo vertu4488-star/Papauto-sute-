@@ -17,3 +17,5 @@
 **Текущая база (13.11.2026):** 37 ранее опубликованных исторических лотов; права повторной публикации архивных сторонних фотографий у части из них не подтверждены — не выдавать их за лицензированные. Внутренний резерв research/auction-500-candidate-queue-2026-11-13.json: 250 ссылок из 146 кандидатных лотов. Готовых новых лотов по строгому стандарту: 0. Не изменять число 37 на 500 до появления 500 полных карточек.
 
 **Контроль качества:** CI обязан отклонять не-аукционные пути и импорт без подлинного листа, подтверждённого лота и прав. Новые фото не загружать автоматически только по URL.
+
+Owner instruction 2026-11-19: exactly the 50 reviewed Japan archival reference records in research/owner-approved-50-archive-2026-11-19.json were authorized explicitly under the owner’s responsibility. This is not a third-party license; rights_confirmed stays false. No general exception, no street or unrelated photos, no missing sheets, no external card links, and no available-for-sale claims. Ordinary importer rights requirements remain in force for any other batch.

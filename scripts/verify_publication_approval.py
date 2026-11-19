@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # Immutable Git blob IDs of the existing auction records (NOT an approval for
 # any additional record). A new/edited record must not deploy automatically.
 FROZEN_SOURCE_BLOBS = {
+    "research/owner-approved-50-archive-2026-11-19.json": "2d8962666cbc6750b5e3188b833d2a274ba4ea95",
     "research/owner-selected-japan-lots-2026-11-14.json": "f1113388a52405826c10a34d5b0f9e1f3236c7b6",
     "research/home-8-exact-lot-photo-sheet-references-2026-11-12.json": "c9dcb8545a9ec1b12249d7be8f5fe95009737c96",
     "data/gallery-lots.json": "32ba94fcda05cbff413083065a45c91e7341bfae",
@@ -106,9 +107,11 @@ def verify_published_output(target: Path) -> None:
     )
     approved_new = set(receipt["approved_new_owner_selected_ids"])
     approved_old = set(receipt["approved_existing_public_ids"])
-    if (len(rows) != 132 or len(approved_new) != 97 or len(approved_old) != 3
-            or not (approved_new | approved_old).issubset({r["id"] for r in rows})
-            or {r["id"] for r in rows if r["origin"] == "owner_selection"} != approved_new):
+    archive = json.loads((ROOT / "research/owner-approved-50-archive-2026-11-19.json").read_text(encoding="utf-8"))
+    approved_archive = {r["id"] for r in archive["lots"]}
+    if (len(rows) != 182 or len(approved_archive) != 50 or len(approved_new) != 97 or len(approved_old) != 3
+            or not (approved_new | approved_old | approved_archive).issubset({r["id"] for r in rows})
+            or {r["id"] for r in rows if r["origin"] == "owner_selection"} != (approved_new | approved_archive)):
         raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: public lot set does not match owner-reviewed PDF")
     ids = set()
     for row in rows:
@@ -122,6 +125,8 @@ def verify_published_output(target: Path) -> None:
             raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: missing mileage: " + ident)
         if not row.get("year") or not row.get("auction") or not row.get("lot_number"):
             raise RuntimeError("PAPAUTO_PHOTO_REQUIRED: missing auction details: " + ident)
+        if ident in approved_archive and (row.get("rights_confirmed") is not False or row.get("status") != "reference_only" or len(row.get("photos",[]))!=2 or "Автомобиль не в наличии" not in row.get("description","")):
+            raise RuntimeError("PAPAUTO_POLICY: archive reference misrepresented: " + ident)
         if row.get("inspection_kind") != "Аукционный лист":
             raise RuntimeError("PAPAUTO_AUCTION_ONLY: diagram is not auction sheet: " + ident)
         photos = row.get("photos") or []
