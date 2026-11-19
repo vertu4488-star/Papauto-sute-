@@ -123,7 +123,11 @@ class AuctionOnlyImages(unittest.TestCase):
             pub=json.loads((export / "data/gallery-lots.json").read_text(encoding="utf-8"))
             # 100 owner-approved PDF cards include three already-published lots.
             # Exclude three ungraded source rows and preserve the 35 verified baseline.
-            self.assertEqual(pub["lot_count"], 182)
+            self.assertEqual(pub["lot_count"], 232)
+            archived2=json.loads((ROOT / "research/owner-approved-second-50-archive-2026-11-19.json").read_text(encoding="utf-8"))["lots"]
+            ids2={r["id"] for r in archived2}
+            self.assertEqual(len(ids2),50)
+            self.assertEqual(sum(lot["id"] in ids2 and lot["rights_confirmed"] is False and lot["status"]=="reference_only" and len(lot["photos"])==2 for lot in pub["lots"]),50)
             archived=json.loads((ROOT / "research/owner-approved-50-archive-2026-11-19.json").read_text(encoding="utf-8"))["lots"]
             archived_ids={r["id"] for r in archived}
             self.assertEqual(len(archived_ids),50)

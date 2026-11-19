@@ -265,6 +265,24 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
             card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
                         sale_label="Статистика продаж", rights_confirmed=False)
             additional.append(card)
+        # Second exact 50-card owner-reviewed release, separate from prior batch.
+        archive2 = json.loads((ROOT / "research/owner-approved-second-50-archive-2026-11-19.json").read_text(encoding="utf-8"))
+        archived2 = archive2["lots"]
+        if (archive2.get("approved_count") != 50 or archive2.get("rights_confirmed") is not False
+                or archive2.get("owner_authorized_archival_reference_only") is not True
+                or archive2.get("reviewed_pdf_sha256") != "8f9f0e37d605e5f4faced72994f4c9e246c02d886b213a379dfcd3acd18ac9bc"
+                or archive2.get("raw_media_aggregate_sha256") != "53d5b85abd81282fb0e37e169617da7a08eb7562a5f77d35ab127e073432065b"
+                or [r["id"] for r in archived2] != [f"japan-archive-b2-20261119-{i:02d}" for i in range(1,51)]
+                or any(len(r["photos"]) != 2 or r.get("rights_confirmed") is not False for r in archived2)):
+            raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: second archive review mismatch")
+        hashes2 = [h for r in archived2 for h in r["media_sha256"]]
+        if len(hashes2) != 150 or len(set(hashes2 + hashes + media_hashes)) != 494:
+            raise RuntimeError("PAPAUTO_POLICY: duplicate second batch media")
+        for rec in archived2:
+            card = prepare_approved(target, rec, owner_selected=True)
+            card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
+                        sale_label="Статистика продаж", rights_confirmed=False)
+            additional.append(card)
     seen_lot_keys = {
         (r["market"], r["auction"], str(r["auction_date"]), str(r["lot_number"]))
         for r in base

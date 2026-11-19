@@ -19,3 +19,5 @@
 **Контроль качества:** CI обязан отклонять не-аукционные пути и импорт без подлинного листа, подтверждённого лота и прав. Новые фото не загружать автоматически только по URL.
 
 Owner instruction 2026-11-19: exactly the 50 reviewed Japan archival reference records in research/owner-approved-50-archive-2026-11-19.json were authorized explicitly under the owner’s responsibility. This is not a third-party license; rights_confirmed stays false. No general exception, no street or unrelated photos, no missing sheets, no external card links, and no available-for-sale claims. Ordinary importer rights requirements remain in force for any other batch.
+
+Owner instruction 2026-11-19, second batch: exactly the 50 cards in research/owner-approved-second-50-archive-2026-11-19.json approved after PDF/JPG presentation. No general release exception and no third-party license assertion. Keep all original photo, sheet and no-street-photo safeguards.
