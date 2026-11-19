@@ -1,0 +1,270 @@
+[
+  {
+    "model": "Nissan NV200",
+    "year": "2021",
+    "num": "25730",
+    "date": "28.10.2026",
+    "price": "1 875 000 JPY",
+    "spec": {
+      "Пробег:": "28000",
+      "Оценка:": "4.5",
+      "Кузов:": "M20",
+      "Комплектация:": "16X-2R",
+      "Объем:": "1598 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Автомат",
+      "Мощность:": "109 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/16/f69114c2-5fed-5264-9e63-e09ee473c737/37501529.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/f69114c2-5fed-5264-9e63-e09ee473c737/37501530.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/f69114c2-5fed-5264-9e63-e09ee473c737/37501531.avif"
+    ],
+    "source": "https://tokidoki.su/stat/nissan/nv200/f69114c2-5fed-5264-9e63-e09ee473c737/",
+    "auction": "CAA Kyouyuu",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Prius",
+    "year": "2021",
+    "num": "8476",
+    "date": "19.11.2026",
+    "price": "1 417 000 JPY",
+    "spec": {
+      "Пробег:": "46000",
+      "Оценка:": "4.5",
+      "Кузов:": "ZVW51",
+      "Комплектация:": "S",
+      "Объем:": "1797 см3",
+      "Двигатель:": "Параллельный гибрид",
+      "КПП:": "Вариатор",
+      "Мощность:": "148 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/08/ec1ae860-436d-5c89-9021-e40b9e7e776f/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/ec1ae860-436d-5c89-9021-e40b9e7e776f/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/ec1ae860-436d-5c89-9021-e40b9e7e776f/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/prius/ec1ae860-436d-5c89-9021-e40b9e7e776f/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Probox",
+    "year": "2013",
+    "num": "30014",
+    "date": "19.11.2026",
+    "price": "300 000 JPY",
+    "spec": {
+      "Пробег:": "329000",
+      "Оценка:": "3",
+      "Кузов:": "NCP59G",
+      "Комплектация:": "F EXTRA PKG",
+      "Объем:": "1496 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Автомат",
+      "Мощность:": "105 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/08/27659856-e1f0-5d2b-88d7-0ad6fea3bf3e/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/27659856-e1f0-5d2b-88d7-0ad6fea3bf3e/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/27659856-e1f0-5d2b-88d7-0ad6fea3bf3e/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/probox/27659856-e1f0-5d2b-88d7-0ad6fea3bf3e/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Honda Civic",
+    "year": "2020",
+    "num": "13358",
+    "date": "11.11.2026",
+    "price": "1 700 000 JPY",
+    "spec": {
+      "Пробег:": "27000",
+      "Оценка:": "4.5",
+      "Кузов:": "FC1",
+      "Комплектация:": "SEDAN HONDA SENSING",
+      "Объем:": "1496 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "173 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/31/44ec7096-717a-5287-b188-cd2d105effcf/40328793.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/31/44ec7096-717a-5287-b188-cd2d105effcf/40328794.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/31/44ec7096-717a-5287-b188-cd2d105effcf/40328795.avif"
+    ],
+    "source": "https://tokidoki.su/stat/honda/civic/44ec7096-717a-5287-b188-cd2d105effcf/",
+    "auction": "Quick Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Regius",
+    "year": "2019",
+    "num": "95289",
+    "date": "01.11.2026",
+    "price": "2 699 000 JPY",
+    "spec": {
+      "Пробег:": "31000",
+      "Оценка:": "4.5",
+      "Кузов:": "TRH200V",
+      "Комплектация:": "SUPER GL DARK PRIME 2. MODELLISTA",
+      "Объем:": "1998 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Автомат",
+      "Мощность:": "136 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/25/633da51d-e2e4-53c2-b402-f692fc72d5ad/38920213.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/25/633da51d-e2e4-53c2-b402-f692fc72d5ad/38920214.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/25/633da51d-e2e4-53c2-b402-f692fc72d5ad/38920215.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/regius/633da51d-e2e4-53c2-b402-f692fc72d5ad/",
+    "auction": "Kyouyuu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Aqua",
+    "year": "2021",
+    "num": "88325",
+    "date": "07.10.2026",
+    "price": "946 000 JPY",
+    "spec": {
+      "Пробег:": "49000",
+      "Оценка:": "5",
+      "Кузов:": "NHP10",
+      "Комплектация:": "L SAFETY SENS",
+      "Объем:": "1496 см3",
+      "Двигатель:": "Параллельный гибрид",
+      "КПП:": "Вариатор",
+      "Мощность:": "87 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/09/25/a8a5b0fa-2ab6-5041-939a-b9bfa156284a/33644619.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/25/a8a5b0fa-2ab6-5041-939a-b9bfa156284a/33644620.avif",
+      "https://japan.storage.yandexcloud.net/2026/09/25/a8a5b0fa-2ab6-5041-939a-b9bfa156284a/33644621.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/aqua/a8a5b0fa-2ab6-5041-939a-b9bfa156284a/",
+    "auction": "Quick Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Nissan AD",
+    "year": "2021",
+    "num": "2222",
+    "date": "19.11.2026",
+    "price": "690 000 JPY",
+    "spec": {
+      "Пробег:": "22000",
+      "Оценка:": "4.5",
+      "Кузов:": "VY12",
+      "Комплектация:": "VEEMA-JENSI- BRAKE",
+      "Объем:": "1498 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "110 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/09/583d9310-4d85-5931-bb4b-c494acaee2f5/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/583d9310-4d85-5931-bb4b-c494acaee2f5/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/583d9310-4d85-5931-bb4b-c494acaee2f5/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/nissan/ad/583d9310-4d85-5931-bb4b-c494acaee2f5/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota Allion",
+    "year": "2019",
+    "num": "30058",
+    "date": "13.10.2026",
+    "price": "1 745 000 JPY",
+    "spec": {
+      "Пробег:": "36000",
+      "Оценка:": "4.5",
+      "Кузов:": "NZT260",
+      "Комплектация:": "A15 G PACKAGE",
+      "Объем:": "1496 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "109 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/16/c641ad01-e8bb-5c69-a0c0-9b7e610e43e6/36776139.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/c641ad01-e8bb-5c69-a0c0-9b7e610e43e6/36776149.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/c641ad01-e8bb-5c69-a0c0-9b7e610e43e6/36776151.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/c641ad01-e8bb-5c69-a0c0-9b7e610e43e6/36776153.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/c641ad01-e8bb-5c69-a0c0-9b7e610e43e6/36776154.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/16/c641ad01-e8bb-5c69-a0c0-9b7e610e43e6/36776155.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/allion/c641ad01-e8bb-5c69-a0c0-9b7e610e43e6/",
+    "auction": "CAA Gifu",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Nissan AD",
+    "year": "2021",
+    "num": "4034",
+    "date": "19.11.2026",
+    "price": "710 000 JPY",
+    "spec": {
+      "Пробег:": "19000",
+      "Оценка:": "4",
+      "Кузов:": "VY12",
+      "Комплектация:": "VEEMA-JENSI- BRAKE",
+      "Объем:": "1498 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "110 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/07/8d20fed9-0b9a-5e2f-bbfd-71d9d6cfd1ce/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/07/8d20fed9-0b9a-5e2f-bbfd-71d9d6cfd1ce/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/07/8d20fed9-0b9a-5e2f-bbfd-71d9d6cfd1ce/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/nissan/ad/8d20fed9-0b9a-5e2f-bbfd-71d9d6cfd1ce/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Honda Insight",
+    "year": "2023",
+    "num": "30140",
+    "date": "22.10.2026",
+    "price": "1 652 000 JPY",
+    "spec": {
+      "Пробег:": "39000",
+      "Оценка:": "4.5",
+      "Кузов:": "ZE4",
+      "Комплектация:": "LX",
+      "Объем:": "1496 см3",
+      "Двигатель:": "Параллельный гибрид",
+      "КПП:": "Вариатор",
+      "Мощность:": "174 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/19/6230a9f8-4873-5bcb-94c6-12ed5a32df16/37968063.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/6230a9f8-4873-5bcb-94c6-12ed5a32df16/37968064.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/6230a9f8-4873-5bcb-94c6-12ed5a32df16/37968065.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/6230a9f8-4873-5bcb-94c6-12ed5a32df16/37968066.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/6230a9f8-4873-5bcb-94c6-12ed5a32df16/37968067.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/6230a9f8-4873-5bcb-94c6-12ed5a32df16/37968068.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/6230a9f8-4873-5bcb-94c6-12ed5a32df16/37968069.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/19/6230a9f8-4873-5bcb-94c6-12ed5a32df16/37968070.avif"
+    ],
+    "source": "https://tokidoki.su/stat/honda/insight/6230a9f8-4873-5bcb-94c6-12ed5a32df16/",
+    "auction": "MIRIVE Osaka",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": true
+  }
+]
