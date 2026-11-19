@@ -34,6 +34,8 @@ jobs:
               const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
               await page.goto(root+'/gallery.html',{waitUntil:'domcontentloaded'});
               await page.waitForTimeout(1000);
+              assert((await page.locator('#gallery-count').innerText()).includes('182'));
+              for(let i=0;i<20 && await page.locator('#gallery-more').isVisible();i++) await page.locator('#gallery-more').click();
               assert.equal(await page.locator('.gallery-card').count(),182);
               const first=fresh[0];
               const card=page.locator('#gallery-lot-'+first.id);
