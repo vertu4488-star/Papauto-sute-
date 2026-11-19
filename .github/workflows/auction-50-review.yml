@@ -1,109 +1,45 @@
-name: PapAuto private-to-review auction PDF
+name: Validate exact 50 archival lots before release
 on:
   push:
     branches: [review/tokidoki-50-lots-20261119]
     paths: ['.github/workflows/auction-50-review.yml']
 permissions:
-  contents: read
+  contents: write
 jobs:
-  preview:
+  prepare:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - run: pip install requests beautifulsoup4 pillow pillow-avif-plugin reportlab
-      - name: Fetch public lot originals and render offline review
-        shell: bash
+          python-version: '3.11'
+      - run: pip install -r requirements.txt pillow pillow-avif-plugin requests
+      - name: Prepare fixed archive release and verify each media set
+        run: python scripts/prepare_owner_review_50_archive.py
+      - name: Test publication and static pages
         run: |
-          cat > /tmp/auction_review.py <<'PY'
-          import requests, re, io, json, pathlib, hashlib, concurrent.futures, urllib.parse
-          from bs4 import BeautifulSoup
-          from PIL import Image
-          import pillow_avif
-          from reportlab.pdfgen import canvas
-          from reportlab.lib.utils import ImageReader
-          from reportlab.pdfbase import pdfmetrics
-          from reportlab.pdfbase.ttfonts import TTFont
-          from reportlab.lib.colors import HexColor
-          OUT=pathlib.Path('review-output'); OUT.mkdir(exist_ok=True)
-          def get(url):
-              x=requests.get(url,timeout=18)
-              x.raise_for_status()
-              return x.content
-          root='https://tokidoki.su'
-          pat=re.compile(r'^/stat/[^/]+/[^/]+/[0-9a-f-]{36}/$')
-          existing=set()
-          for name in ['research/owner-selected-japan-lots-2026-11-14.json','data/gallery-lots.json','data/premium-real-auction-lots.json']:
-              try:
-                  d=json.loads(pathlib.Path(name).read_text())
-                  rows=d if isinstance(d,list) else d.get('lots',[])
-                  for x in rows:
-                      existing.add(str(x.get('lot',x.get('lot_number',''))))
-              except Exception: pass
-          candidates=[]
-          for p in sorted(pathlib.Path('research/review-50-tokidoki').glob('part-*.json')):
-              if p.stem >= 'part-08': candidates.extend(json.loads(p.read_text()))
-          def lot(row):
-              try:
-                  if row['num'] in existing: return None
-                  vol=re.sub(r'[^0-9]','',row['spec'].get('Объем:','').split('см')[0])
-                  if not vol or int(vol)>2000: return None
-                  if len(row['urls'])<3: return None
-                  pics=[]
-                  for u in row['urls'][:3]:
-                      raw=get(u)
-                      im=Image.open(io.BytesIO(raw)).convert('RGB')
-                      if min(im.size)<180: return None
-                      pics.append(im)
-                  if len({hashlib.sha256(i.tobytes()).hexdigest() for i in pics})<3: return None
-                  row['images']=pics
-                  return row
-              except Exception as e:
-                  print('skip',row['model'],str(e)[:180]);return None
-          chosen=[]; models=set()
-          print('direct image candidate count',len(candidates))
-          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
-              for x in pool.map(lot,candidates):
-                  if x and x['model'].lower() not in models:
-                      chosen.append(x);models.add(x['model'].lower())
-                      if len(chosen)>=70: break
-          print('downloaded complete candidate sets',len(chosen))
-          pdfmetrics.registerFont(TTFont('D','/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'))
-          pdfmetrics.registerFont(TTFont('DB','/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'))
-          W,H=595,842
-          c=canvas.Canvas(str(OUT/'PapAuto_reserve_review.pdf'),pagesize=(W,H))
-          def txt(x,y,s,size=12,bold=False,color='#302d28'):
-              c.setFillColor(HexColor(color));c.setFont('DB' if bold else 'D',size);c.drawString(x,y,str(s))
-          def image(im,x,y,w,h):
-              scale=min(w/im.width,h/im.height);ww=im.width*scale;hh=im.height*scale
-              buf=io.BytesIO();im.save(buf,format='JPEG',quality=87);buf.seek(0);c.drawImage(ImageReader(buf),x+(w-ww)/2,y+(h-hh)/2,ww,hh)
-          manifest=[]
-          for i,a in enumerate(chosen,1):
-              c.setFillColor(HexColor('#f7f3eb'));c.rect(0,0,W,H,fill=1,stroke=0)
-              txt(30,H-32,'PAPAUTO  /  ПРЕДВАРИТЕЛЬНЫЙ ОТБОР',10,True)
-              txt(30,H-66,f"{i:02d}. {a['model']} {a['year']}",22,True)
-              txt(30,H-91,f"Цена в Японии: {a['price']}",15,True)
-              txt(30,H-113,f"Торги: {a['date']}  •  лот {a['num']}",10)
-              for j,k in enumerate(['Пробег:','Оценка:','Кузов:','Комплектация:','Объем:','Двигатель:','КПП:','Мощность:']):
-                  txt(30+(j//4)*270,H-133-(j%4)*15,(k+' '+a['spec'].get(k,'—'))[:48],10)
-              txt(30,639,'Оригиналы из галереи: позиция 2 и 3',10,True)
-              image(a['images'][1],30,445,260,188);image(a['images'][2],305,445,260,188)
-              txt(30,426,'Позиция 1: документ / проверка соответствия',10,True)
-              image(a['images'][0],30,49,535,368)
-              txt(30,25,'На согласование. Место съёмки и лист требуют визуальной проверки.',9)
-              c.showPage()
-              manifest.append({k:v for k,v in a.items() if k!='images'})
-          if not chosen:
-              txt(30,780,'Не получено ни одного комплекта изображений.',14,True);c.showPage()
-          c.save()
-          (OUT/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
+          python scripts/build_static_public.py
+          python -m unittest discover -s tests -v
+          node --check gallery.js
+          node tests/test_survey_all_gallery_lots.cjs
+      - name: Verify exact output and commit screened supplier archive only
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('render-public')
+          rows=json.loads((p/'data/gallery-lots.json').read_text())['lots']
+          new=[x for x in rows if x['id'].startswith('japan-archive-20261119-')]
+          assert len(rows)==182 and len(new)==50
+          for r in new:
+              assert len(r['photos'])==2 and r['rights_confirmed'] is False and r['status']=='reference_only'
+              for u in r['photos']+[r['inspection_image']]:
+                  assert (p/u.lstrip('/')).is_file()
+          print('VERIFIED: 182 records, 50 new archive examples, 150 local media')
           PY
-          python /tmp/auction_review.py
-      - uses: actions/upload-artifact@v4
-        with:
-          name: papauto-auction-review-reserve
-          path: review-output/
-          retention-days: 7
+          git config user.name "papauto-release-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add AGENTS.md docs/AUCTION_ONLY_GALLERY.md scripts/compile_auction_gallery.py scripts/build_static_public.py scripts/verify_publication_approval.py scripts/publish_lot_search.py tests/test_auction_only_images_policy.py research/owner-approved-50-archive-2026-11-19.json assets/auction/approved/japan-archive-20261119-*.jpg
+          git commit -m "Prepare exact 50 owner-authorized reference lots with complete media and tests"
+          git push origin HEAD:review/tokidoki-50-lots-20261119
