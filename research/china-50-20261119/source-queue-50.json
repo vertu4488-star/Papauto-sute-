@@ -1,0 +1,408 @@
+{
+  "date": "2026-11-19",
+  "country": "china",
+  "target": 50,
+  "source_candidates": 50,
+  "detail_checked": 12,
+  "publication_ready": 0,
+  "approved_for_publication": false,
+  "notes": "These are sourcing leads, NOT verified completed sales or confirmed original auction documents. PLC public samples all show Buy It Now Price, not winning bid; original full inspection and indoor photos must be checked. Do not publish. No contact, extra payments, or rights assertion.",
+  "sources": [
+    {
+      "name": "YouXinPai",
+      "url": "https://youxinpai.cn/",
+      "finding": "Official recently sold ticker displays models and time but not individual lot link, final price or report in public homepage."
+    },
+    {
+      "name": "Imeri Motors / YXP",
+      "url": "https://imerimotors.ge/en/auction/52576805/byd-sea-lion-07-ev-2025-5504wdsmart-drive",
+      "finding": "Ended YXP-8938939, detailed electronic condition sections visible, but actual sale result and winning price not established."
+    },
+    {
+      "name": "TTPAI",
+      "url": "https://www.ttpai.cn/shenzhen/price/biyadi-songplusxinnengyuan",
+      "finding": "Public historical transactions and averages, not complete original lot records."
+    },
+    {
+      "name": "AutoStreets",
+      "url": "https://autostreets.com/auction",
+      "finding": "Current/upcoming lots; past results not verified."
+    }
+  ],
+  "candidates": [
+    {
+      "source": "https://plc.auction/auction/lot/changan-uni-v-2024-54-24278319",
+      "aggregator_id": "24278319",
+      "model": "Changan UNI-V",
+      "year": 2024,
+      "review": "detail_checked",
+      "price_type": "Buy It Now Price",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/haval-h6-2024-54-23065452",
+      "aggregator_id": "23065452",
+      "model": "Haval H6",
+      "year": 2024,
+      "review": "detail_checked",
+      "price_type": "Buy It Now Price",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-star-l-2024-54-24002173",
+      "aggregator_id": "24002173",
+      "model": "Geely Star L",
+      "year": 2024,
+      "review": "detail_checked",
+      "price_type": "Buy It Now Price",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-emgrand-2026-54-24426592",
+      "aggregator_id": "24426592",
+      "model": "Geely Emgrand",
+      "year": 2026,
+      "review": "detail_checked",
+      "price_type": "Buy It Now Price",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/byd-qin-l-dm-2026-54-35042345",
+      "aggregator_id": "35042345",
+      "model": "BYD Qin L DM",
+      "year": 2026,
+      "review": "detail_checked",
+      "price_type": "Buy It Now Price",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/byd-han-dm-2020-54-356591571",
+      "aggregator_id": "356591571",
+      "model": "BYD Han DM",
+      "year": 2020,
+      "review": "detail_checked",
+      "price_type": "Buy It Now Price",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/byd-song-plus-ev-2021-54-24258579",
+      "aggregator_id": "24258579",
+      "model": "BYD Song PLUS EV",
+      "year": 2021,
+      "review": "detail_checked",
+      "price_type": "Buy It Now Price",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/chery-tiggo-3x-2021-54-24264555",
+      "aggregator_id": "24264555",
+      "model": "Chery Tiggo 3x",
+      "year": 2021,
+      "review": "detail_checked",
+      "price_type": "Buy It Now Price",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/li-auto-ideal-l7-2023-54-24290305",
+      "aggregator_id": "24290305",
+      "model": "Li Auto Ideal L7",
+      "year": 2023,
+      "review": "detail_checked",
+      "price_type": "Buy It Now Price",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/zeekr-2025-54-35024367",
+      "aggregator_id": "35024367",
+      "model": "Zeekr X",
+      "year": 2025,
+      "review": "detail_checked",
+      "price_type": "Buy It Now Price",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/changan-uni-t-2023-54-356375534",
+      "aggregator_id": "356375534",
+      "model": "Changan UNI-T",
+      "year": 2023,
+      "review": "detail_checked",
+      "price_type": "Buy It Now Price",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/changan-cs35-plus-2019-54-23136964",
+      "aggregator_id": "23136964",
+      "model": "Changan CS35 PLUS",
+      "year": 2019,
+      "review": "detail_checked",
+      "price_type": "Buy It Now Price",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-xingyuan-2025-54-357186604",
+      "aggregator_id": "357186604",
+      "model_slug": "geely-xingyuan",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-xingyuan-2026-56-252717e0",
+      "aggregator_id": "252717e0",
+      "model_slug": "geely-xingyuan",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-2024-54-35112269",
+      "aggregator_id": "35112269",
+      "model_slug": "geely",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-rui-rui-2024-54-35077078",
+      "aggregator_id": "35077078",
+      "model_slug": "geely-rui-rui",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-galaxy-l6-2023-54-23994516",
+      "aggregator_id": "23994516",
+      "model_slug": "geely-galaxy-l6",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-xingrui-2025-54-24472888",
+      "aggregator_id": "24472888",
+      "model_slug": "geely-xingrui",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-emgrand-2025-54-24266780",
+      "aggregator_id": "24266780",
+      "model_slug": "geely-emgrand",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-galaxy-m9-2025-54-24013428",
+      "aggregator_id": "24013428",
+      "model_slug": "geely-galaxy-m9",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-star-l-2024-54-35091352",
+      "aggregator_id": "35091352",
+      "model_slug": "geely-star-l",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-gl-2020-54-24216995",
+      "aggregator_id": "24216995",
+      "model_slug": "geely-gl",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-galaxy-e5-2026-54-356412538",
+      "aggregator_id": "356412538",
+      "model_slug": "geely-galaxy-e5",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-xingyuan-2025-54-24301412",
+      "aggregator_id": "24301412",
+      "model_slug": "geely-xingyuan",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/changan-uni-v-2022-54-24298456",
+      "aggregator_id": "24298456",
+      "model_slug": "changan-uni-v",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/haval-h6-2020-54-23601118",
+      "aggregator_id": "23601118",
+      "model_slug": "haval-h6",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/changan-a07-2024-54-24130960",
+      "aggregator_id": "24130960",
+      "model_slug": "changan-a07",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/changan-cs75-plus-2024-54-23071906",
+      "aggregator_id": "23071906",
+      "model_slug": "changan-cs75-plus",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/byd-ev-2022-54-24180744",
+      "aggregator_id": "24180744",
+      "model_slug": "byd-ev",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/byd-l-ev-2025-54-24240958",
+      "aggregator_id": "24240958",
+      "model_slug": "byd-l-ev",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/geely-geometry-e-2024-54-356442802",
+      "aggregator_id": "356442802",
+      "model_slug": "geely-geometry-e",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/zeekr-001-2023-54-23726167",
+      "aggregator_id": "23726167",
+      "model_slug": "zeekr-001",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/byd-yuan-plus-2025-54-24240998",
+      "aggregator_id": "24240998",
+      "model_slug": "byd-yuan-plus",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/li-auto-l8-2025-54-24508690",
+      "aggregator_id": "24508690",
+      "model_slug": "li-auto-l8",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/li-auto-l8-2025-54-23247423",
+      "aggregator_id": "23247423",
+      "model_slug": "li-auto-l8",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/byd-qin-l-dm-2025-54-23621066",
+      "aggregator_id": "23621066",
+      "model_slug": "byd-qin-l-dm",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/li-auto-l9-2025-54-23396985",
+      "aggregator_id": "23396985",
+      "model_slug": "li-auto-l9",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/byd-max-2017-54-19319135",
+      "aggregator_id": "19319135",
+      "model_slug": "byd-max",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/zeekr-007-2025-54-24343325",
+      "aggregator_id": "24343325",
+      "model_slug": "zeekr-007",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/zeekr-009-2023-54-23204961",
+      "aggregator_id": "23204961",
+      "model_slug": "zeekr-009",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/li-auto-l9-2024-54-24223188",
+      "aggregator_id": "24223188",
+      "model_slug": "li-auto-l9",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/chery-tiggo-3x-2024-54-35029068",
+      "aggregator_id": "35029068",
+      "model_slug": "chery-tiggo-3x",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/chery-tiggo-2025-54-23388303",
+      "aggregator_id": "23388303",
+      "model_slug": "chery-tiggo",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/changan-uni-v-2025-54-24242564",
+      "aggregator_id": "24242564",
+      "model_slug": "changan-uni-v",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/changan-yida-2023-54-23982901",
+      "aggregator_id": "23982901",
+      "model_slug": "changan-yida",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/changan-cs75-plus-2024-54-356814600",
+      "aggregator_id": "356814600",
+      "model_slug": "changan-cs75-plus",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/changan-uni-v-2025-54-24256570",
+      "aggregator_id": "24256570",
+      "model_slug": "changan-uni-v",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/changan-uni-v-2022-54-35082399",
+      "aggregator_id": "35082399",
+      "model_slug": "changan-uni-v",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/li-auto-l8-2025-54-24212581",
+      "aggregator_id": "24212581",
+      "model_slug": "li-auto-l8",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    },
+    {
+      "source": "https://plc.auction/auction/lot/leapmotor-c11-2026-54-24254324",
+      "aggregator_id": "24254324",
+      "model_slug": "leapmotor-c11",
+      "review": "search_index_evidence_only",
+      "eligible": false
+    }
+  ]
+}
