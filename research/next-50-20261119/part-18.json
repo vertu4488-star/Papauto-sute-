@@ -1,0 +1,192 @@
+[
+  {
+    "model": "Suzuki Hustler",
+    "year": "2016",
+    "num": "8084",
+    "date": "19.11.2026",
+    "price": "230 000 JPY",
+    "spec": {
+      "Пробег:": "133000",
+      "Оценка:": "4",
+      "Кузов:": "MR41S",
+      "Комплектация:": "G",
+      "Объем:": "658 см3",
+      "Двигатель:": "Мягкий гибрид",
+      "КПП:": "Вариатор",
+      "Мощность:": "54 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/08/4a40b142-7064-52b5-ab13-74dc632af170/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/4a40b142-7064-52b5-ab13-74dc632af170/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/08/4a40b142-7064-52b5-ab13-74dc632af170/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/suzuki/hustler/4a40b142-7064-52b5-ab13-74dc632af170/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Nissan X-Trail",
+    "year": "2012",
+    "num": "6048",
+    "date": "19.11.2026",
+    "price": "245 000 JPY",
+    "spec": {
+      "Пробег:": "135000",
+      "Оценка:": "3",
+      "Кузов:": "NT31",
+      "Комплектация:": "4WD 20S",
+      "Объем:": "1997 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "137 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/10/0e1b42ea-f2fe-5c78-9081-16f5a50f864b/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/0e1b42ea-f2fe-5c78-9081-16f5a50f864b/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/10/0e1b42ea-f2fe-5c78-9081-16f5a50f864b/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/nissan/x-trail/0e1b42ea-f2fe-5c78-9081-16f5a50f864b/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Suzuki Escudo",
+    "year": "2022",
+    "num": "5197",
+    "date": "19.11.2026",
+    "price": "1 880 000 JPY",
+    "spec": {
+      "Пробег:": "39000",
+      "Оценка:": "4.5",
+      "Кузов:": "YEH1S",
+      "Комплектация:": "4WD",
+      "Объем:": "1460 см3",
+      "Двигатель:": "Параллельный гибрид",
+      "КПП:": "Робот",
+      "Мощность:": "134 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/09/e859b7b7-aee8-5542-812d-322bf504a610/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/e859b7b7-aee8-5542-812d-322bf504a610/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/e859b7b7-aee8-5542-812d-322bf504a610/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/suzuki/escudo/e859b7b7-aee8-5542-812d-322bf504a610/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Toyota RAV4",
+    "year": "2021",
+    "num": "5669",
+    "date": "19.11.2026",
+    "price": "1 950 000 JPY",
+    "spec": {
+      "Пробег:": "52000",
+      "Оценка:": "4",
+      "Кузов:": "MXAA52",
+      "Комплектация:": "X",
+      "Объем:": "1986 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "171 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/09/aa132709-75ad-5e9a-ad63-b7f220062185/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/aa132709-75ad-5e9a-ad63-b7f220062185/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/09/aa132709-75ad-5e9a-ad63-b7f220062185/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/toyota/rav4/aa132709-75ad-5e9a-ad63-b7f220062185/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Suzuki Hustler",
+    "year": "2017",
+    "num": "84",
+    "date": "19.11.2026",
+    "price": "350 000 JPY",
+    "spec": {
+      "Пробег:": "91000",
+      "Оценка:": "4",
+      "Кузов:": "MR31S",
+      "Комплектация:": "A",
+      "Объем:": "658 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Механика",
+      "Мощность:": "52 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/12/dc56db91-6c40-5012-a828-74f535776bab/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/12/dc56db91-6c40-5012-a828-74f535776bab/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/12/dc56db91-6c40-5012-a828-74f535776bab/2.avif"
+    ],
+    "source": "https://tokidoki.su/stat/suzuki/hustler/dc56db91-6c40-5012-a828-74f535776bab/",
+    "auction": "Ippatsu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Nissan X-Trail",
+    "year": "2014",
+    "num": "80580",
+    "date": "19.11.2026",
+    "price": "380 000 JPY",
+    "spec": {
+      "Пробег:": "128000",
+      "Оценка:": "3",
+      "Кузов:": "NT32",
+      "Комплектация:": "20X",
+      "Объем:": "1997 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Вариатор",
+      "Мощность:": "147 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/10/21/5cc910e1-bb58-53ef-bf91-00cc890d0d32/38430106.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/21/5cc910e1-bb58-53ef-bf91-00cc890d0d32/38430107.avif",
+      "https://japan.storage.yandexcloud.net/2026/10/21/5cc910e1-bb58-53ef-bf91-00cc890d0d32/38430108.avif"
+    ],
+    "source": "https://tokidoki.su/stat/nissan/x-trail/5cc910e1-bb58-53ef-bf91-00cc890d0d32/",
+    "auction": "Kyouyuu Stock",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  },
+  {
+    "model": "Suzuki Escudo",
+    "year": "2017",
+    "num": "10181",
+    "date": "18.11.2026",
+    "price": "657 000 JPY",
+    "spec": {
+      "Пробег:": "250000",
+      "Оценка:": "3.5",
+      "Кузов:": "YEA1S",
+      "Комплектация:": "1.4 TURBO",
+      "Объем:": "1371 см3",
+      "Двигатель:": "Бензин",
+      "КПП:": "Автомат",
+      "Мощность:": "136 л.с."
+    },
+    "urls": [
+      "https://japan.storage.yandexcloud.net/2026/11/16/bcd78ecb-c145-5639-953f-aef6838ffbee/0.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/bcd78ecb-c145-5639-953f-aef6838ffbee/1.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/bcd78ecb-c145-5639-953f-aef6838ffbee/2.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/bcd78ecb-c145-5639-953f-aef6838ffbee/3.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/bcd78ecb-c145-5639-953f-aef6838ffbee/4.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/bcd78ecb-c145-5639-953f-aef6838ffbee/5.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/bcd78ecb-c145-5639-953f-aef6838ffbee/6.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/bcd78ecb-c145-5639-953f-aef6838ffbee/7.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/bcd78ecb-c145-5639-953f-aef6838ffbee/8.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/bcd78ecb-c145-5639-953f-aef6838ffbee/9.avif",
+      "https://japan.storage.yandexcloud.net/2026/11/16/bcd78ecb-c145-5639-953f-aef6838ffbee/10.avif"
+    ],
+    "source": "https://tokidoki.su/stat/suzuki/escudo/bcd78ecb-c145-5639-953f-aef6838ffbee/",
+    "auction": "MIRIVE Saitama",
+    "source_status": "archive displays sold",
+    "conflicting_sale_status": false
+  }
+]
