@@ -1,0 +1,19 @@
+name: Japan ATP sixth paginated sourcing review
+on:
+  push:
+    branches: ['review/japan-atp-next30-b6-20261120']
+    paths: ['.github/workflows/japan-atp-b6-pages-review.yml']
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install requests beautifulsoup4 pillow
+      - run: python scripts/research_japan_atp_b6_pages.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: japan-atp-b6-pages-review
+          path: atp-review/
