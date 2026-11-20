@@ -1,0 +1,19 @@
+name: Japan ATP fourth indexed sourcing review
+on:
+  push:
+    branches: ['review/japan-atp-next30-b4-20261120']
+    paths: ['.github/workflows/japan-atp-b4-review.yml']
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install requests beautifulsoup4 pillow
+      - run: python scripts/research_japan_atp_b4.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: japan-atp-b4-review
+          path: atp-review/
