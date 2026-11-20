@@ -56,7 +56,9 @@ jobs:
           def photo(soup,needle):
               for tag in soup.find_all(['img','a']):
                   alt=' '.join(str(tag.get(k,'')) for k in ('alt','title','aria-label'))
-                  if needle not in alt.casefold():continue
+                  if needle not in alt.casefold():
+                      caption=tag.find_parent(['figure','div','a'])
+                      if not caption or needle not in caption.get_text(' ',strip=True).casefold():continue
                   parent=tag.find_parent('a',href=True)
                   for u in [parent.get('href') if parent else '',tag.get('href'),tag.get('data-src'),tag.get('src')]:
                       if not u:continue
@@ -75,20 +77,23 @@ jobs:
                   soup=BeautifulSoup(get(url).text,'html.parser')
                   texts=' '.join(soup.stripped_strings)
                   if re.search(r'inspection report (?:is )?not available|no inspection report available',texts,re.I):return None
-                  if 'Report Photos' not in texts or 'Damage Photos' not in texts:return None
+                  if 'Vehicle and procedure photos from the inspection report' not in texts:return None
                   title=soup.find('h1').get_text(' ',strip=True)
                   data={k:field(soup,k) for k in ('Make','Model','Registered','Odometer','Engine type','Fuel type','Exterior color','Condition rating','Report date','Major accident','Flood damage','Fire damage','Transfer eligibility')}
-                  if not all(data[k] for k in ('Registered','Odometer','Condition rating','Report date','Make','Engine type','Fuel type')):return None
+                  if not all(data[k] for k in ('Registered','Odometer','Condition rating','Report date','Make','Engine type','Fuel type')):
+                      print('fields missing',ident,[k for k,v in data.items() if not v],flush=True);return None
                   if data['Condition rating'] in {'-','—'} or not re.fullmatch(r'\d{4}-\d{2}-\d{2}',data['Report date']):return None
                   if data['Fuel type'].casefold()!='electric':
                       m=re.search(r'\d+(?:\.\d+)?',data['Engine type'])
                       if not m or not 0<float(m.group())<=2.0:return None
                   bid=re.search(r'Starting bid\s*CN\s*¥\s*([\d,]+)',texts)
                   mil=re.search(r'([\d,]+)\s*km',data['Odometer'])
-                  if not bid or not mil:return None
-                  front=photo(soup,'left front 45')
+                  if not bid or not mil:
+                      print('price or mileage missing',ident,flush=True);return None
+                  front=photo(soup,'left front 45') or photo(soup,'main vehicle photo')
                   rear=photo(soup,'right rear 45')
-                  if not front or not rear or front==rear:return None
+                  if not front or not rear or front==rear:
+                      print('photos missing',ident,bool(front),bool(rear),flush=True);return None
                   fi,fh=download(front);ri,rh=download(rear)
                   if fh==rh:return None
                   row={'id':ident,'source':url,'title':title,'fields':data,'mileage_km':int(mil.group(1).replace(',','')),'starting_bid_cny':int(bid.group(1).replace(',','')),'photo_urls':[front,rear],'sha256':[fh,rh],'status':'technical media check passed; visual review required','price_kind':'starting bid, not sale price'}
@@ -101,6 +106,12 @@ jobs:
           with cf.ThreadPoolExecutor(max_workers=4) as pool:
               ids=list(dict.fromkeys(i for group in pool.map(listing,range(1,36)) for i in group if i not in existing))
               print('Unique additional vehicle pages:',len(ids),flush=True)
+              control=inspect('688369')
+              print('Known report positive control:',bool(control),flush=True)
+              if not control:
+                  soup=BeautifulSoup(get(base+'/vehicles/688369').text,'html.parser')
+                  print('Control text:', ' '.join(soup.stripped_strings)[:2500],flush=True)
+                  print('Control image attributes:',[(t.get('alt'),t.get('src')) for t in soup.find_all('img')[:20]],flush=True)
               results=[]; hashes=set()
               for start in range(0,len(ids),20):
                   for result in pool.map(inspect,ids[start:start+20]):
