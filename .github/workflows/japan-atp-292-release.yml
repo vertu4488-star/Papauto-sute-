@@ -54,3 +54,5 @@ jobs:
           git add AGENTS.md docs/AUCTION_ONLY_GALLERY.md scripts/compile_auction_gallery.py scripts/build_static_public.py scripts/verify_publication_approval.py scripts/publish_lot_search.py tests/test_auction_only_images_policy.py tests/test_site_warm_theme.py research/owner-approved-japan-atp-second-30-archive-2026-11-20.json assets/auction/approved/japan-atp-b2-20261120-*.jpg sitemap.xml
           git commit -m "Append thirty exact reviewed ATP Japan auction archive examples"
           git push origin HEAD:release/japan-atp-292-20261120
+
+# Validate exact source identifiers.
