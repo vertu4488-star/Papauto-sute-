@@ -1,0 +1,408 @@
+{
+  "date": "2026-11-20",
+  "reviewed_count": 37,
+  "eligible_for_publication": 0,
+  "summary": {
+    "source_report_unavailable": 30,
+    "photo_quality_rejected": 2,
+    "intermediary_inspection_only": 5
+  },
+  "records": [
+    {
+      "id": "688542",
+      "model": "Buick Envision 2018",
+      "mileage_km": 122000,
+      "grade": "60C",
+      "starting_bid_cny": 23000,
+      "source": "https://e.yoliang.com/vehicles/688542",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688616",
+      "model": "Mazda 3 Axela 2016",
+      "mileage_km": 102000,
+      "grade": "50C",
+      "starting_bid_cny": 20000,
+      "source": "https://e.yoliang.com/vehicles/688616",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688202",
+      "model": "Ford Fiesta 2013",
+      "mileage_km": 129000,
+      "grade": "60C",
+      "starting_bid_cny": 4000,
+      "source": "https://e.yoliang.com/vehicles/688202",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688298",
+      "model": "GAC Trumpchi GS4 2017",
+      "mileage_km": 100000,
+      "grade": "50C",
+      "starting_bid_cny": 4000,
+      "source": "https://e.yoliang.com/vehicles/688298",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688219",
+      "model": "Ford Focus 2015",
+      "mileage_km": 115800,
+      "grade": "80A",
+      "starting_bid_cny": 12500,
+      "source": "https://e.yoliang.com/vehicles/688219",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688200",
+      "model": "Honda Lingpai 2019",
+      "mileage_km": 145000,
+      "grade": "60C",
+      "starting_bid_cny": 20000,
+      "source": "https://e.yoliang.com/vehicles/688200",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688540",
+      "model": "Volkswagen Tiguan L 2017",
+      "mileage_km": 118900,
+      "grade": "80C",
+      "starting_bid_cny": 31000,
+      "source": "https://e.yoliang.com/vehicles/688540",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688413",
+      "model": "Nissan Qashqai 2012 2.0",
+      "mileage_km": 100400,
+      "grade": "80B",
+      "starting_bid_cny": 13000,
+      "source": "https://e.yoliang.com/vehicles/688413",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688412",
+      "model": "Nissan X-Trail 2014",
+      "mileage_km": 185000,
+      "grade": "60B",
+      "starting_bid_cny": 22000,
+      "source": "https://e.yoliang.com/vehicles/688412",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688511",
+      "model": "Toyota Avalon 2019",
+      "mileage_km": 167000,
+      "grade": "60B",
+      "starting_bid_cny": 45000,
+      "source": "https://e.yoliang.com/vehicles/688511",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688410",
+      "model": "Kia K2 2015",
+      "mileage_km": 91000,
+      "grade": "80B",
+      "starting_bid_cny": 6000,
+      "source": "https://e.yoliang.com/vehicles/688410",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688254",
+      "model": "Peugeot 3008 2015",
+      "mileage_km": 79000,
+      "grade": "60B",
+      "starting_bid_cny": 7000,
+      "source": "https://e.yoliang.com/vehicles/688254",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688464",
+      "model": "Toyota Highlander 2015",
+      "mileage_km": 153000,
+      "grade": "80B",
+      "starting_bid_cny": 58000,
+      "source": "https://e.yoliang.com/vehicles/688464",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688256",
+      "model": "BMW X1 2025 sDrive",
+      "mileage_km": 3000,
+      "grade": "60B",
+      "starting_bid_cny": 130000,
+      "source": "https://e.yoliang.com/vehicles/688256",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688633",
+      "model": "Buick Envision 2016",
+      "mileage_km": 133100,
+      "grade": "60A",
+      "starting_bid_cny": 20000,
+      "source": "https://e.yoliang.com/vehicles/688633",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688246",
+      "model": "Haima S5 2016",
+      "mileage_km": 123000,
+      "grade": "60B",
+      "starting_bid_cny": 3000,
+      "source": "https://e.yoliang.com/vehicles/688246",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688214",
+      "model": "Honda CR-V Hybrid e+ 2021",
+      "mileage_km": 60500,
+      "grade": "60B",
+      "starting_bid_cny": 75000,
+      "source": "https://e.yoliang.com/vehicles/688214",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688234",
+      "model": "Chery Tiggo 3 2014",
+      "mileage_km": 137300,
+      "grade": "80B",
+      "starting_bid_cny": 9000,
+      "source": "https://e.yoliang.com/vehicles/688234",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688300",
+      "model": "Zotye T600 2015",
+      "mileage_km": 69000,
+      "grade": "60B",
+      "starting_bid_cny": 1000,
+      "source": "https://e.yoliang.com/vehicles/688300",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688341",
+      "model": "BMW 320i 2014 Sport",
+      "mileage_km": 76000,
+      "grade": "80B",
+      "starting_bid_cny": 30500,
+      "source": "https://e.yoliang.com/vehicles/688341",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688247",
+      "model": "Nissan Qashqai 2012 1.6",
+      "mileage_km": 212000,
+      "grade": "50B",
+      "starting_bid_cny": 3000,
+      "source": "https://e.yoliang.com/vehicles/688247",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688405",
+      "model": "Hyundai ix35 2010",
+      "mileage_km": 140900,
+      "grade": "80B",
+      "starting_bid_cny": 3000,
+      "source": "https://e.yoliang.com/vehicles/688405",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688591",
+      "model": "Aeolus A60 2014",
+      "mileage_km": 198000,
+      "grade": "50C",
+      "starting_bid_cny": 1000,
+      "source": "https://e.yoliang.com/vehicles/688591",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688455",
+      "model": "BMW 320i 2014 Fashion",
+      "mileage_km": 89800,
+      "grade": "80B",
+      "starting_bid_cny": 30000,
+      "source": "https://e.yoliang.com/vehicles/688455",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688347",
+      "model": "BMW X1 2025 xDrive",
+      "mileage_km": 7000,
+      "grade": "95A",
+      "starting_bid_cny": 135000,
+      "source": "https://e.yoliang.com/vehicles/688347",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688291",
+      "model": "Buick Excelle GT 2010",
+      "mileage_km": 109200,
+      "grade": "60B",
+      "starting_bid_cny": 2000,
+      "source": "https://e.yoliang.com/vehicles/688291",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688600",
+      "model": "Ford Focus 2018",
+      "mileage_km": 116000,
+      "grade": "60B",
+      "starting_bid_cny": 15000,
+      "source": "https://e.yoliang.com/vehicles/688600",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688622",
+      "model": "Chevrolet Lova 2009",
+      "mileage_km": 140000,
+      "grade": "60D",
+      "starting_bid_cny": 1000,
+      "source": "https://e.yoliang.com/vehicles/688622",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688507",
+      "model": "Audi A4L 2023",
+      "mileage_km": 77000,
+      "grade": "60B",
+      "starting_bid_cny": 115000,
+      "source": "https://e.yoliang.com/vehicles/688507",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688604",
+      "model": "Lexus ES200 2025",
+      "mileage_km": 15000,
+      "grade": "95A",
+      "starting_bid_cny": 125000,
+      "source": "https://e.yoliang.com/vehicles/688604",
+      "report_status": "Source explicitly states inspection report is not available; only main image indexed",
+      "decision": "reject"
+    },
+    {
+      "id": "688393",
+      "model": "Roewe RX5 2018",
+      "mileage_km": 124800,
+      "grade": "50B",
+      "starting_bid_cny": 7500,
+      "source": "https://e.yoliang.com/vehicles/688393",
+      "report_status": "Original electronic report present; 3 exterior and 2 interior damage findings",
+      "decision": "reject: front photo is phone screenshot with visible UI, not clean original photo",
+      "rear_photo": "https://file.yoliang.com/d11a805d-8a6c-4780-909d-26af8b54918b/2026-11-19/1795076476642.png?x-oss-process=style/pai_small"
+    },
+    {
+      "id": "688370",
+      "model": "Chevrolet Sail 3 2015",
+      "mileage_km": 69400,
+      "grade": "30D",
+      "starting_bid_cny": 3000,
+      "source": "https://e.yoliang.com/vehicles/688370",
+      "report_status": "Original report present; major accident detected, 24 exterior and 5 interior findings",
+      "decision": "reject: unblurred outdoor parking photos"
+    },
+    {
+      "id": "123175853",
+      "lot": "YXP-8995544",
+      "model": "Volkswagen Golf 2020 1.4T",
+      "mileage_km": 76038,
+      "grade": "70BB",
+      "source": "https://imerimotors.ge/en/auction/123175853/volkswagen-golf-2020-1-4t-at-belovededition280tsicomfort",
+      "front_photo": "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v3f04b98df72e24a56868a83b63f300b2f.jpg%3Fformat%3Dwebp&w=1100",
+      "front_visual_verified": true,
+      "rear_photo": "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v35d1ed078f8204401811b843d4c57540d.jpg%3Fw%3D2000%26format%3Dwebp&w=240",
+      "rear_visual_verified": true,
+      "findings": "6 major and 15 minor exterior findings; body repair and rear bulkhead rust",
+      "report_status": "Detailed translated inspection findings on intermediary site; primary original report not established",
+      "decision": "hold; not approved for publication"
+    },
+    {
+      "id": "123175481",
+      "lot": "YXP-8995545",
+      "model": "BYD Han 2022 1.5T DM-i",
+      "mileage_km": 56214,
+      "grade": "55BB",
+      "source": "https://imerimotors.ge/en/auction/123175481/byd-han-2022-1-5t-at-dm-i-121km-exclusive",
+      "front_photo": "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v3772e6aeb9a704556b471c06a7fcd15b0.jpg%3Fformat%3Dwebp&w=1100",
+      "front_visual_verified": true,
+      "rear_photo": "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v350a6d4c9622e4c7b862ff955654646ce.jpg%3Fw%3D2000%26format%3Dwebp&w=240",
+      "rear_visual_verified": true,
+      "findings": "10 major and 18 minor exterior findings; multiple panel replacements",
+      "report_status": "Detailed translated inspection findings on intermediary site; primary original report not established",
+      "decision": "hold; not approved for publication"
+    },
+    {
+      "id": "123148551",
+      "lot": "YXP-8995480",
+      "model": "Jetour X70 2020 1.5T",
+      "mileage_km": 97192,
+      "grade": "75CC",
+      "source": "https://imerimotors.ge/en/auction/123148551/jetour-x70-2020-1-5t-mt-yuexingedition5seat",
+      "front_photo": "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v387bc5cd05b63405ca92116a237ecff14.jpg%3Fformat%3Dwebp&w=1100",
+      "front_visual_verified": true,
+      "rear_photo": "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v3767ff3d0726841179915e3c9fef913ef.jpg%3Fw%3D2000%26format%3Dwebp&w=240",
+      "rear_visual_verified": true,
+      "findings": "18 major and 9 minor exterior findings; repaired panels and replaced lamps",
+      "report_status": "Detailed translated inspection findings on intermediary site; primary original report not established",
+      "decision": "hold; not approved for publication"
+    },
+    {
+      "id": "123013303",
+      "lot": "YXP-8995315",
+      "model": "BMW 118i 2019 1.5T",
+      "mileage_km": 103394,
+      "grade": "60BB",
+      "source": "https://imerimotors.ge/en/auction/123013303/bmw-1-series-2019-1-5t-at-118i-msport-pkg",
+      "front_photo": "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v3eb64730fb2ec4ad58db733982b13ad61.jpg%3Fformat%3Dwebp&w=1100",
+      "front_visual_verified": true,
+      "rear_photo": "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v373abbe8343b14edfa474e14aa5beb21d.jpg%3Fw%3D2000%26format%3Dwebp&w=240",
+      "rear_visual_verified": false,
+      "findings": "9 major and 18 minor exterior findings; repaired doors and replaced headlamp",
+      "report_status": "Detailed translated inspection findings on intermediary site; primary original report not established",
+      "decision": "hold; not approved for publication"
+    },
+    {
+      "id": "126310729",
+      "lot": "YXP-8998336",
+      "model": "Lexus NX 200, registered 2021, model version 2018",
+      "mileage_km": 13840,
+      "grade": "80AB",
+      "source": "https://imerimotors.ge/en/auction/126310729/lexus-nx-2018-2-0-at-200feng-xingeditionfwd-china-vi-imported",
+      "front_photo": "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v338c9eeee4f8046aaa55488eb0bb85f6a.jpg%3Fformat%3Dwebp&w=1100",
+      "front_visual_verified": true,
+      "rear_photo": "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v33c7844429c48402cbbbb3ac54dca7f18.jpg%3Fw%3D2000%26format%3Dwebp&w=240",
+      "rear_visual_verified": false,
+      "findings": "7 major and 7 minor exterior findings; warning lights, white exhaust smoke, replaced doors",
+      "report_status": "Detailed translated inspection findings on intermediary site; primary original report not established",
+      "decision": "hold; not approved for publication"
+    }
+  ]
+}
