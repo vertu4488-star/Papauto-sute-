@@ -283,6 +283,23 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
             card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
                         sale_label="Статистика продаж", rights_confirmed=False)
             additional.append(card)
+        # Exact ATP thirty-card owner-reviewed reference release.
+        archive3 = json.loads((ROOT / "research/owner-approved-japan-atp-30-archive-2026-11-20.json").read_text(encoding="utf-8"))
+        archived3 = archive3["lots"]
+        if (archive3.get("approved_count") != 30 or archive3.get("rights_confirmed") is not False
+                or archive3.get("owner_authorized_archival_reference_only") is not True
+                or archive3.get("reviewed_pdf_sha256") != "e1969418135a27745c996be11f5a95b5b5564441c61c7c906d1b1d56d354adc2"
+                or [r["id"] for r in archived3] != [f"japan-atp-20261120-{i:02d}" for i in range(1,31)]
+                or any(len(r["photos"]) != 2 or r.get("rights_confirmed") is not False for r in archived3)):
+            raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: ATP archive review mismatch")
+        hashes3 = [h for r in archived3 for h in r["media_sha256"]]
+        if len(hashes3) != 90 or len(set(hashes3 + hashes2 + hashes + media_hashes)) != 584 or hashlib.sha256("".join(hashes3).encode()).hexdigest() != "4c1d0949833b3ae47dc42276101f550de7403d1803a04c931106a09cae769286":
+            raise RuntimeError("PAPAUTO_POLICY: ATP reviewed media mismatch")
+        for rec in archived3:
+            card = prepare_approved(target, rec, owner_selected=True)
+            card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
+                        sale_label="Статистика продаж", rights_confirmed=False)
+            additional.append(card)
     seen_lot_keys = {
         (r["market"], r["auction"], str(r["auction_date"]), str(r["lot_number"]))
         for r in base
