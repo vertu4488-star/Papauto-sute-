@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-20",
+  "status": "partial_review_not_authorized",
+  "source": "ATP Auto only",
+  "baseline_gallery": 292,
+  "count": 14,
+  "media_count": 42,
+  "reviewed_pdf": "PapAuto_Japan_14_ATP_batch3_review.pdf",
+  "reviewed_pdf_sha256": "00d3adce756601b491ae955ae82a374cdc1bf9cdc04b64a80699a18bbf0025c9",
+  "reviewed_metadata_manifest_sha256": "92d1fcdafcee2348a3a265955a804dcab444b8471e6349018c830e9ed654cf5d",
+  "archive_media_aggregate_sha256": "e69902ab5849b60a345eac0298b542a7ea3f1496e3b8721fa6e4b54a77d5cd9a",
+  "raw_media_aggregate_sha256": "e3baf73df9cd907bddb187ddf52c6898b88b20de744987ed1162a84ef338b68f",
+  "archives": [
+    {
+      "artifact_id": 14632716546,
+      "source_run_id": 44744614205,
+      "archive_sha256": "e8d774fe2d2f7c71221646c7047238ccb7e17f001bfc342681c2c12fec9d9b03",
+      "manifest_sha256": "490dd1a1dfa4b012bafc6340ed1356ba81de82cb11c2abe98780348f9b52c559",
+      "selected_indices": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    }
+  ],
+  "rights_confirmed": false,
+  "publication_approved": false,
+  "note": "Partial third review, indoor photos and full sheets visually screened; no authorization to publish. Additional search run 44745177897."
+}
