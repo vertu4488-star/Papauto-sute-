@@ -1,0 +1,99 @@
+name: China 96-family sourcing review
+on:
+  push:
+    branches: ['research/china-bulk-review-20261120']
+    paths: ['.github/workflows/china-watchlist-sourcing.yml']
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          sparse-checkout: research/china-util-model-watchlist.json
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4 pillow
+      - run: |
+          python - <<'PY'
+          import requests,json,re,io,hashlib,concurrent.futures as cf
+          from pathlib import Path
+          from urllib.parse import urljoin,urlparse
+          from bs4 import BeautifulSoup
+          from PIL import Image,ImageDraw
+          ref=json.loads(Path('research/china-util-model-watchlist.json').read_text())
+          base='https://www.xchehang.com/inventory.html'
+          out=Path('watchlist-review');out.mkdir()
+          headers={'User-Agent':'Mozilla/5.0'}
+          def canon(s):return re.sub(r'[^a-z0-9]+','',s.lower())
+          aliases={'Jolion / Chulian':['Jolion','Chulian','First Love'],'Coolray / Binyue':['Coolray','Binyue'],'3 Axela':['Mazda3 Axela','3 Axela'],'6 Atenza':['Mazda6 Atenza','6 Atenza'],'ix25 / Creta':['ix25','Creta'],'KX3 / Seltos':['KX3','Seltos'],'Stonic / Yipao':['Stonic','Yipao'],'A3 / A3L':['A3','A3L'],'X1 sDrive20Li':['X1 sDrive20Li'],'H6 II':['H6 II','H6 2nd Generation']}
+          def match(name,c):
+              name=re.sub(r'^20\d\d\s+','',name)
+              # Match the whole family, not prefixes such as Tiggo 7 vs Tiggo 7 Plus.
+              n=canon(name)
+              return any(n==canon(c['make']+' '+m) for m in aliases.get(c['model'],c['model'].split(' / ')))
+          def engines(c):
+              return {(float(a),b or 'L') for a,b in re.findall(r'(\d\.\d)\s*([TtLl]?)',c['engine_hint'])}
+          def rank(r):
+              y=int(r['title'][:4])
+              return (y in (2022,2023),y,-r['mileage_km'])
+          response=requests.get(base,headers=headers,timeout=30);response.raise_for_status()
+          soup=BeautifulSoup(response.text,'html.parser')
+          index={i:[] for i in range(len(ref['candidates']))};seen=set()
+          for h in soup.find_all(['h3','h4']):
+              name=h.get_text(' ',strip=True)
+              if not re.match(r'^20(?:1[7-9]|2[0-6]) ',name):continue
+              matched=[i for i,c in enumerate(ref['candidates']) if match(name,c)]
+              if len(matched)!=1:continue
+              i=matched[0];c=ref['candidates'][i]
+              for p in h.parents:
+                  if p.name in ('html','body'):break
+                  t=p.get_text(' ',strip=True);im=p.find('img')
+                  if not im or not re.search(r'\b[\d,]+\s*km\b',t) or not re.search(r'FOB\s*USD\s*[\d,]+',t):continue
+                  if len(t)>1100 or len(p.find_all(['h3','h4']))>1:break
+                  mil=re.search(r'([\d,]+)\s*km\b',t);price=re.search(r'FOB\s*USD\s*([\d,]+)',t)
+                  src=urljoin(base,im.get('data-src') or im.get('src',''))
+                  if urlparse(src).hostname not in ('www.xchehang.com','xchehang.com') or '/cars/' not in src or src in seen:break
+                  fuel=re.search(r'Fuel\s+(.+?)\s+Color',t);engine=re.search(r'\b(\d\.\d)\s*([LT])\b',t)
+                  if not fuel or fuel.group(1)!='Petrol' or not engine or (float(engine.group(1)),engine.group(2)) not in engines(c):break
+                  seen.add(src);index[i].append(dict(family_index=i,family=c['make']+' '+c['model'],brand_group=c['brand_group'],title=name,engine=engine.group(0),source=base,mileage_km=int(mil.group(1).replace(',','')),fob_usd=int(price.group(1).replace(',','')),photo_url=src,documented_power_kw=None,inspection_report=None,status='exporter source candidate only; exact trim/power and report and visual quality unconfirmed'))
+                  break
+          leads=[r for i,rs in index.items() for r in sorted(rs,key=rank,reverse=True)[:3]]
+          print('Model families matched to engine hints:',sum(bool(v) for v in index.values()),'of',len(index),'photo leads:',len(leads),flush=True)
+          def fetch(r):
+              try:
+                  z=requests.get(r['photo_url'],headers=headers,timeout=15);z.raise_for_status()
+                  im=Image.open(io.BytesIO(z.content));im.load()
+                  if min(im.size)<300:return None
+                  return r,im.convert('RGB'),hashlib.sha256(z.content).hexdigest()
+              except Exception:return None
+          verified=[];hashes=set()
+          with cf.ThreadPoolExecutor(max_workers=6) as p:
+              for x in p.map(fetch,leads):
+                  if not x:continue
+                  r,im,sha=x
+                  if sha in hashes:continue
+                  hashes.add(sha);r['id']=str(len(verified)+1).zfill(3);r['sha256']=sha
+                  im.thumbnail((1000,800));im.save(out/(r['id']+'.jpg'),quality=89);verified.append(r)
+          covered={r['family_index'] for r in verified}
+          coverage=[dict(family=c['make']+' '+c['model'],brand_group=c['brand_group'],source_photo_leads=sum(r['family_index']==i for r in verified),qualified_lots=0,status='needs power document, report and visual review' if i in covered else 'more sourcing required') for i,c in enumerate(ref['candidates'])]
+          (out/'manifest.json').write_text(json.dumps(dict(count=len(verified),families_with_photo_leads=len(covered),families_total=len(index),qualified_lots=0,records=verified,coverage=coverage),ensure_ascii=False,indent=2))
+          for off in range(0,len(verified),24):
+              group=verified[off:off+24];sheet=Image.new('RGB',(1080,((len(group)+3)//4)*220),'white');d=ImageDraw.Draw(sheet)
+              for k,r in enumerate(group):
+                  x=k%4*270;y=k//4*220;d.text((x+4,y+3),r['id']+' '+r['title'][:32],fill='black')
+                  im=Image.open(out/(r['id']+'.jpg'));im.thumbnail((264,195));sheet.paste(im,(x+3,y+20))
+              sheet.save(out/f'contact-{off//24+1:02}.jpg',quality=88)
+          print('Source photograph sets:',len(verified),'families:',len(covered),'Qualified auction lots: 0 (source lacks documents)',flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: China-watchlist-sourcing-review
+          path: watchlist-review/
+          retention-days: 14
