@@ -1,0 +1,19 @@
+name: Japan ATP exact auction media review
+on:
+  push:
+    branches: ['review/japan-next-30-20261120']
+    paths: ['.github/workflows/japan-atp-media-review.yml']
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install requests beautifulsoup4 pillow
+      - run: python scripts/research_japan_atp.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: japan-atp-review
+          path: atp-review/
