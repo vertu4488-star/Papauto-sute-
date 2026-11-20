@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # Immutable Git blob IDs of the existing auction records (NOT an approval for
 # any additional record). A new/edited record must not deploy automatically.
 FROZEN_SOURCE_BLOBS = {
+    "research/owner-approved-japan-atp-second-30-archive-2026-11-20.json": "cc35b52137d100c2215eb185c074b88b0cc9a993",
     "research/owner-approved-japan-atp-30-archive-2026-11-20.json": "e7fbb9e17470cf7a19634a54b0acd4d03259c8fa",
     "research/owner-approved-second-50-archive-2026-11-19.json": "8494df726f5f8d89d9b8b8a1226025e89e88d2aa",
     "research/owner-approved-50-archive-2026-11-19.json": "2d8962666cbc6750b5e3188b833d2a274ba4ea95",
@@ -112,8 +113,9 @@ def verify_published_output(target: Path) -> None:
     archive = json.loads((ROOT / "research/owner-approved-50-archive-2026-11-19.json").read_text(encoding="utf-8"))
     archive2 = json.loads((ROOT / "research/owner-approved-second-50-archive-2026-11-19.json").read_text(encoding="utf-8"))
     archive3 = json.loads((ROOT / "research/owner-approved-japan-atp-30-archive-2026-11-20.json").read_text(encoding="utf-8"))
-    approved_archive = {r["id"] for r in archive["lots"] + archive2["lots"] + archive3["lots"]}
-    if (len(rows) != 262 or len(approved_archive) != 130 or len(approved_new) != 97 or len(approved_old) != 3
+    archive4 = json.loads((ROOT / "research/owner-approved-japan-atp-second-30-archive-2026-11-20.json").read_text(encoding="utf-8"))
+    approved_archive = {r["id"] for r in archive["lots"] + archive2["lots"] + archive3["lots"] + archive4["lots"]}
+    if (len(rows) != 292 or len(approved_archive) != 160 or len(approved_new) != 97 or len(approved_old) != 3
             or not (approved_new | approved_old | approved_archive).issubset({r["id"] for r in rows})
             or {r["id"] for r in rows if r["origin"] == "owner_selection"} != (approved_new | approved_archive)):
         raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: public lot set does not match owner-reviewed PDF")
