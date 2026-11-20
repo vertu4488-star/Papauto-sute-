@@ -31,3 +31,5 @@ Ninth approved batch: research/owner-approved-china-supplier-goldenlane9-2026-11
 Tenth approved batch: research/owner-approved-china-supplier-next30-2026-11-20.json; 19 GoldenLane and 11 EZ Auto Global (38 GoldenLane, 50 EZ, 259 overall). Exact archive IDs, supplier URLs, prices and local photo SHA-256 preserved.
 
 Eleventh approved batch: research/owner-approved-china-supplier-batch11-2026-11-20.json; 28 Xin Che Hang and 2 China Used Car (196 Xin Che Hang, 4 China Used Car, 38 GoldenLane, 50 EZ, 1 other, 289 overall). Exact archive IDs, supplier URLs, prices and local photo SHA-256 preserved.
+
+Twelfth approved batch: research/owner-approved-china-supplier-batch12-2026-11-20.json; 30 Xin Che Hang (226 Xin Che Hang, 4 China Used Car, 38 GoldenLane, 50 EZ, 1 other, 319 overall). Exact archive IDs, supplier URLs, prices and local photo SHA-256 preserved.
