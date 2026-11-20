@@ -1,0 +1,19 @@
+name: Japan fresh model archive discovery
+on:
+  push:
+    branches: ['review/japan-next-30-20261120']
+    paths: ['.github/workflows/japan-fresh-discovery.yml']
+permissions:
+  contents: read
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install requests beautifulsoup4
+      - run: python scripts/research_japan_fresh.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: japan-fresh-discovery
+          path: japan-fresh/
