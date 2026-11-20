@@ -1,0 +1,136 @@
+name: China auction batch evidence
+on:
+  push:
+    branches: ['research/china-bulk-review-20261120']
+    paths: ['.github/workflows/china-bulk-review.yml']
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4 pillow
+      - name: Collect public exact-lot photos and report fields
+        shell: bash
+        run: |
+          python - <<'PY'
+          import concurrent.futures as cf, hashlib, io, json, re, time, html
+          from pathlib import Path
+          from urllib.parse import urljoin, urlparse
+          import requests
+          from bs4 import BeautifulSoup
+          from PIL import Image, ImageOps, ImageDraw
+          root = Path('china-review')
+          root.mkdir()
+          base = 'https://e.yoliang.com'
+          existing = {'688524','688587','687752','687800','688369','688641','688463','688295','688611','688496','688221','688601','688477','687885','688640','688393','688370','688420'}
+          headers = {'User-Agent':'PapAuto catalogue verification/1.0 (public vehicle information)'}
+          def get(url):
+              if urlparse(url).scheme != 'https' or urlparse(url).hostname not in {'e.yoliang.com','file.yoliang.com'}:
+                  raise ValueError('unexpected host')
+              response = requests.get(url,headers=headers,timeout=(8,18))
+              response.raise_for_status()
+              if urlparse(response.url).hostname not in {'e.yoliang.com','file.yoliang.com'}:
+                  raise ValueError('unexpected redirect')
+              return response
+          def listing(n):
+              try:
+                  soup=BeautifulSoup(get(base+'/used-cars?page='+str(n)).text,'html.parser')
+                  return [m.group(1) for a in soup.select('a[href]') if (m:=re.fullmatch(r'/vehicles/(\d+)',urlparse(urljoin(base,a['href'])).path))]
+              except Exception as e:
+                  print('listing',n,str(e),flush=True)
+                  return []
+          def field(soup,key):
+              for dt in soup.find_all('dt'):
+                  if dt.get_text(' ',strip=True).casefold()==key.casefold():
+                      dd=dt.find_next_sibling('dd')
+                      if dd:return dd.get_text(' ',strip=True)
+              lines=[s.strip() for s in soup.stripped_strings]
+              for i,s in enumerate(lines[:-1]):
+                  if s.casefold()==key.casefold():return lines[i+1]
+              return ''
+          def photo(soup,needle):
+              for tag in soup.find_all(['img','a']):
+                  alt=' '.join(str(tag.get(k,'')) for k in ('alt','title','aria-label'))
+                  if needle not in alt.casefold():continue
+                  parent=tag.find_parent('a',href=True)
+                  for u in [parent.get('href') if parent else '',tag.get('href'),tag.get('data-src'),tag.get('src')]:
+                      if not u:continue
+                      u=urljoin(base,u)
+                      if urlparse(u).hostname=='file.yoliang.com':return u
+              return ''
+          def download(u):
+              r=get(u)
+              if len(r.content)<2048 or len(r.content)>15000000:raise ValueError('image size')
+              im=Image.open(io.BytesIO(r.content));im.load()
+              if min(im.size)<160:raise ValueError('image dimensions')
+              return im.convert('RGB'),hashlib.sha256(r.content).hexdigest()
+          def inspect(ident):
+              url=base+'/vehicles/'+ident
+              try:
+                  soup=BeautifulSoup(get(url).text,'html.parser')
+                  texts=' '.join(soup.stripped_strings)
+                  if re.search(r'inspection report (?:is )?not available|no inspection report available',texts,re.I):return None
+                  if 'Report Photos' not in texts or 'Damage Photos' not in texts:return None
+                  title=soup.find('h1').get_text(' ',strip=True)
+                  data={k:field(soup,k) for k in ('Make','Model','Registered','Odometer','Engine type','Fuel type','Exterior color','Condition rating','Report date','Major accident','Flood damage','Fire damage','Transfer eligibility')}
+                  if not all(data[k] for k in ('Registered','Odometer','Condition rating','Report date','Make','Engine type','Fuel type')):return None
+                  if data['Condition rating'] in {'-','—'} or not re.fullmatch(r'\d{4}-\d{2}-\d{2}',data['Report date']):return None
+                  if data['Fuel type'].casefold()!='electric':
+                      m=re.search(r'\d+(?:\.\d+)?',data['Engine type'])
+                      if not m or not 0<float(m.group())<=2.0:return None
+                  bid=re.search(r'Starting bid\s*CN\s*¥\s*([\d,]+)',texts)
+                  mil=re.search(r'([\d,]+)\s*km',data['Odometer'])
+                  if not bid or not mil:return None
+                  front=photo(soup,'left front 45')
+                  rear=photo(soup,'right rear 45')
+                  if not front or not rear or front==rear:return None
+                  fi,fh=download(front);ri,rh=download(rear)
+                  if fh==rh:return None
+                  row={'id':ident,'source':url,'title':title,'fields':data,'mileage_km':int(mil.group(1).replace(',','')),'starting_bid_cny':int(bid.group(1).replace(',','')),'photo_urls':[front,rear],'sha256':[fh,rh],'status':'technical media check passed; visual review required','price_kind':'starting bid, not sale price'}
+                  damage=soup.find(string=lambda s:s and s.strip()=='Damage Photos')
+                  row['damage_report_excerpt']=' '.join(re.findall(r'(?:General damage|Major damage):\s*\d+',texts))
+                  return row,fi,ri
+              except Exception as e:
+                  print('skip',ident,str(e),flush=True)
+                  return None
+          with cf.ThreadPoolExecutor(max_workers=4) as pool:
+              ids=list(dict.fromkeys(i for group in pool.map(listing,range(1,36)) for i in group if i not in existing))
+              print('Unique additional vehicle pages:',len(ids),flush=True)
+              results=[]; hashes=set()
+              for start in range(0,len(ids),20):
+                  for result in pool.map(inspect,ids[start:start+20]):
+                      if not result:continue
+                      row,fi,ri=result
+                      if any(h in hashes for h in row['sha256']):continue
+                      hashes.update(row['sha256'])
+                      results.append(row)
+                      for label,im in [('front',fi),('rear',ri)]:
+                          im.thumbnail((1000,750))
+                          im.save(root/(row['id']+'-'+label+'.jpg'),quality=87)
+                  if len(results)>=60:break
+          (root/'manifest.json').write_text(json.dumps({'count':len(results),'technical_candidates':results},ensure_ascii=False,indent=2))
+          for offset in range(0,len(results),12):
+              batch=results[offset:offset+12]
+              sheet=Image.new('RGB',(960,len(batch)*208),'white')
+              draw=ImageDraw.Draw(sheet)
+              for i,row in enumerate(batch):
+                  y=i*208
+                  for side,label in enumerate(('front','rear')):
+                      im=Image.open(root/(row['id']+'-'+label+'.jpg'))
+                      im.thumbnail((475,176))
+                      sheet.paste(im,(side*480,y+24))
+                  draw.text((8,y+4),row['id']+' '+row['title'][:95],fill='black')
+              sheet.save(root/f'contact-{offset//12+1:02}.jpg',quality=88)
+          print('Technical candidates with both photographs and electronic report:',len(results))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: china-auction-review
+          path: china-review/
+          retention-days: 7
