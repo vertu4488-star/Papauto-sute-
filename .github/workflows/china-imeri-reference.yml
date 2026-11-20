@@ -1,0 +1,114 @@
+name: China reference media batch
+on:
+  push:
+    branches: ['research/china-bulk-review-20261120']
+    paths: ['.github/workflows/china-imeri-reference.yml']
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4 pillow
+      - name: Collect actual auction photo pairs and inspection facts
+        shell: bash
+        run: |
+          python - <<'PY'
+          import concurrent.futures as cf, hashlib, io, json, re, collections
+          from pathlib import Path
+          from urllib.parse import urljoin,urlparse,parse_qs
+          import requests
+          from bs4 import BeautifulSoup
+          from PIL import Image,ImageDraw,ImageOps
+          base='https://imerimotors.ge'
+          out=Path('china-reference')
+          out.mkdir()
+          permitted={'imerimotors.ge','img.youxinpai.cn'}
+          def get(u):
+              if urlparse(u).scheme!='https' or urlparse(u).hostname not in permitted: raise ValueError('host')
+              r=requests.get(u,timeout=(8,22),headers={'User-Agent':'Mozilla/5.0 PapAuto reference research'})
+              r.raise_for_status()
+              if urlparse(r.url).hostname not in permitted: raise ValueError('redirect')
+              return r
+          def listing(n):
+              try:
+                  s=BeautifulSoup(get(base+'/en/auctions?tab=buyitnow&page='+str(n)).text,'html.parser')
+                  return [urljoin(base,a['href']) for a in s.select('a[href]') if re.search(r'/en/auction/\d+/',a['href'])]
+              except Exception as e:
+                  print('listing error',n,str(e),flush=True);return []
+          def image_url(s,alt):
+              for t in s.find_all('img'):
+                  if str(t.get('alt','')).strip().casefold()!=alt.casefold():continue
+                  for key in ('data-src','src'):
+                      u=urljoin(base,t.get(key,''))
+                      if 'img.youxinpai.cn' not in u and 'img.youxinpai.cn' not in str(parse_qs(urlparse(u).query)):continue
+                      return re.sub(r'([?&])w=\d+',r'\g<1>w=1100',u)
+              return ''
+          def image(u):
+              r=get(u)
+              if not 2048<=len(r.content)<=15000000:raise ValueError('size')
+              im=Image.open(io.BytesIO(r.content));im.load()
+              if min(im.size)<160:raise ValueError('dimension')
+              return im.convert('RGB'),hashlib.sha256(r.content).hexdigest()
+          def inspect(url):
+              try:
+                  s=BeautifulSoup(get(url).text,'html.parser')
+                  t=' '.join(s.stripped_strings)
+                  title=s.find('h1').get_text(' ',strip=True)
+                  lot=re.search(r'Lot ID:\s*(YXP-\d+)',t)
+                  meta=re.search(r'(\d{4}-\d{2})\s+([\d,]+)\s*km\s+(Petrol|Diesel|Hybrid|Electric|Plug-in Hybrid|EV)\s+(Automatic|Manual)',t,re.I)
+                  grade=re.search(r'Grade\s*([0-9]{2,3}[A-D]{2})\b',t) or re.search(r'\b([0-9]{2,3}[A-D]{2})\s+Grade\b',t)
+                  price=re.search(r'(?:Starting Bid \(China\)|Buy Now Price \(China\)|Buy Now Price|Current Bid|Post-Auction Price|Fixed Price)\s*\$\s*([\d,]+)',t,re.I)
+                  if not price:price=re.search(r'Vehicle Price \(Auction\)\s*\$\s*([1-9][\d,]*)',t)
+                  if not (lot and meta and grade and price):return ('missing fields',title)
+                  if not 'Inspection Findings' in t or not 'Passed Items' in t:return ('missing inspection',title)
+                  if not (re.search(r'\b[12]\.[0-9](?:L|T|\b)',title,re.I) or meta.group(3).casefold() in ('electric','ev')):return ('engine unverified',title)
+                  if re.search(r'\b(?:2\.[1-9]|[3-9]\.[0-9])(?:L|T|\b)',title,re.I):return ('engine limit',title)
+                  front=image_url(s,'Front left 45°');rear=image_url(s,'Right rear 45°')
+                  if not front or not rear or front==rear:return ('missing image',title)
+                  fi,fh=image(front);ri,rh=image(rear)
+                  if fh==rh:return ('duplicate image',title)
+                  ident=re.search(r'/auction/(\d+)/',url).group(1)
+                  ins=t.split('Inspection Findings',1)[1].split('Similar Auction Lots',1)[0]
+                  parts=re.findall(r'(\d+)\s+Major Flaws|(\d+)\s+Minor Flaws|(\d+)\s+Passed Items',ins)
+                  if not parts:return ('empty inspection',title)
+                  row={'id':ident,'lot':lot.group(1),'title':title,'registered_month':meta.group(1),'mileage_km':int(meta.group(2).replace(',','')),'fuel':meta.group(3),'transmission':meta.group(4),'grade':grade.group(1),'observed_price_usd':int(price.group(1).replace(',','')),'price_type':'observed auction offer, not verified sold price','source_url':url,'photo_urls':[front,rear],'source_media_sha256':[fh,rh],'inspection_facts':{'major_counts_by_section':[int(a) for a,b,c in parts if a],'minor_counts_by_section':[int(b) for a,b,c in parts if b],'passed_counts_by_section':[int(c) for a,b,c in parts if c]},'report_type':'inspection findings as displayed by intermediary, not primary original sheet','visual_review_required':True}
+                  return row,fi,ri
+              except Exception as e:return ('error',str(e)[:180])
+          errors=collections.Counter()
+          hashes=set();lots=set();rows=[]
+          with cf.ThreadPoolExecutor(max_workers=5) as pool:
+              urls=list(dict.fromkeys(u for group in pool.map(listing,range(1,21)) for u in group))
+              print('Discovered',len(urls),flush=True)
+              for off in range(0,len(urls),20):
+                  for x in pool.map(inspect,urls[off:off+20]):
+                      if len(x)==2:
+                          errors[x[0]]+=1
+                          if errors[x[0]]<=2:print(x,flush=True)
+                          continue
+                      row,fi,ri=x
+                      if row['lot'] in lots or any(h in hashes for h in row['source_media_sha256']):continue
+                      lots.add(row['lot']);hashes.update(row['source_media_sha256']);rows.append(row)
+                      for side,im in [('front',fi),('rear',ri)]:
+                          im.thumbnail((1000,750));im.save(out/(row['id']+'-'+side+'.jpg'),quality=88)
+                  if len(rows)>=60:break
+          (out/'manifest.json').write_text(json.dumps({'count':len(rows),'records':rows,'rejected':dict(errors)},ensure_ascii=False,indent=2))
+          for offset in range(0,len(rows),10):
+              group=rows[offset:offset+10];sheet=Image.new('RGB',(1000,len(group)*230),'white');draw=ImageDraw.Draw(sheet)
+              for i,row in enumerate(group):
+                  y=i*230;draw.text((8,y+3),row['id']+' '+row['title'][:100],fill='black')
+                  for j,side in enumerate(('front','rear')):
+                      im=Image.open(out/(row['id']+'-'+side+'.jpg'));im.thumbnail((490,200));sheet.paste(im,(j*500,y+23))
+              sheet.save(out/f'contact-{offset//10+1:02}.jpg',quality=86)
+          print('Photo pairs and reported inspection facts',len(rows),dict(errors),flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: china-reference-media
+          path: china-reference/
+          retention-days: 7
