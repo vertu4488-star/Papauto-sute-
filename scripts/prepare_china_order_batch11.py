@@ -32,7 +32,7 @@ for i,ref in enumerate(rows,260):
         price_label='Цена FOB по данным поставщика'
         assert r.get('documented_power_kw') is None
         name=html.unescape(r['title']).strip()
-        origin=r['brand_group']
+        origin=r.get('brand_group') or brands[name.split()[1].casefold()]
     else:
         assert r['source'].startswith('https://chinausedcar.net/model/')
         assert r['source'] not in sources
@@ -82,6 +82,6 @@ assert p.read_text().count('class="cn-example"')==289
 p=P('china.html');s=p.read_text();assert '259 автомобилей с фотографиями' in s;p.write_text(s.replace('259 автомобилей с фотографиями','289 автомобилей с фотографиями'))
 P('research/owner-approved-china-supplier-batch11-2026-11-20.json').write_text(json.dumps({'owner_approval':'2026-11-20: expressly approved all exact thirty cards in PapAuto_China_30_batch11.pdf','third_party_license_verified':False,'auction_lots':False,'records':receipt},ensure_ascii=False,indent=2)+'\n')
 for f in ('AGENTS.md','docs/AUCTION_ONLY_GALLERY.md'):
-    p=P(f);p.write_text(p.read_text().rstrip()+'\n\nOwner instruction 2026-11-20: exact 30 supplier examples shown in PapAuto_30_China_review.pdf expressly approved for china-order.html. Only fixed eleventh-batch digests permitted, 28 Xin Che Hang and 2 China Used Car. No license assertion, no auction claims, no verified power or reduced-fee claims. Auction safeguards unchanged.\n')
+    p=P(f);p.write_text(p.read_text().rstrip()+'\n\nOwner instruction 2026-11-20: exact 30 supplier examples shown in PapAuto_China_30_batch11.pdf expressly approved for china-order.html. Only fixed eleventh-batch digests permitted, 28 Xin Che Hang and 2 China Used Car. No license assertion, no auction claims, no verified power or reduced-fee claims. Auction safeguards unchanged.\n')
 p=P('research/CHINA_SUPPLIER_SOURCE_REGISTER.md');p.write_text(p.read_text().rstrip()+'\n\nEleventh approved batch: research/owner-approved-china-supplier-batch11-2026-11-20.json; 28 Xin Che Hang and 2 China Used Car (196 Xin Che Hang, 4 China Used Car, 38 GoldenLane, 50 EZ, 1 other, 289 overall). Exact archive IDs, supplier URLs, prices and local photo SHA-256 preserved.\n')
 print('289 cards assembled; all thirty exact approved images preserved byte-for-byte.')
