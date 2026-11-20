@@ -1,0 +1,218 @@
+{
+  "artifact_run_id": 44692952021,
+  "artifact_id": 14609442433,
+  "count": 30,
+  "status": "private owner preview, not published, source rights and documented power unconfirmed",
+  "records": [
+    {
+      "id": "124",
+      "photo_sha256": "95a14821eddbcf739f27f24a212ad6e58c4a0b890c8d6a50deb6281d6b6c466e",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "177",
+      "photo_sha256": "e36d4e7e3d7510b94d8540504f2d88e7e0098c02fa7c932f654f461b8a8a15b0",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "134",
+      "photo_sha256": "95328985caacf48b0575c789cb6283951332e14acefc926352103d59f676c4e9",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "056",
+      "photo_sha256": "bf1cf1c5728ebd40dafb0e63a63884b5b82b61ca0a4777c3601814e5458ffe95",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "116",
+      "photo_sha256": "fc6fee34fbe19babc2481987670a5f662da516888bf1e4c7fbe107a516643078",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "072",
+      "photo_sha256": "f3558e0bcce84be5d4e14e79b8567676fbad8975aab8a1bdb70d1590da119cdc",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "101",
+      "photo_sha256": "2b53dcbc1369c989df66c8e749546990ad82beb66958c7ba2c57e8ff65f5375a",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "054",
+      "photo_sha256": "a848911a77c79a497f266992d5f389fc33d5384d0f70e143d2d4e904beff766e",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "044",
+      "photo_sha256": "c5461ca653ecd0e1952a4db04e540dc6eeae47acb549319097fdf62b528a6f70",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "019",
+      "photo_sha256": "48e726429e4c77fef0c648ac03c2fe5b5b5647162ae76cb7f968fa2204cd7122",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "005",
+      "photo_sha256": "d322a85532a59a3b3fc9b6b8eceaa331d02578ef82fe0df29505d1308ee33b8c",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "015",
+      "photo_sha256": "dccdec908ccd94f6074fb67353e5b0b1b99b3d0f69ccac452bb5475121a3cd9e",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "113",
+      "photo_sha256": "ec8d10326e2c8168789a6d5f4f493686af8292588bce29c04c128d007eafe6b6",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "060",
+      "photo_sha256": "58b432501a7102924cbc44a97a79b4e69d899037f92ab2d1187c8931b9e63996",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "011",
+      "photo_sha256": "535446a3e2e9ff9da3cd550a1d7aad93d267db6b3f4ab4ca043a5616af927d19",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "137",
+      "photo_sha256": "f618313bd175044dc8ca9ec2b3826b931c2e68c3061aba715745a465936a32c1",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "026",
+      "photo_sha256": "44b09ce706dd49d68311ec7e86473c0f41d609f9672cff3b226655c9e78b30eb",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "066",
+      "photo_sha256": "b27e2ec2bb7862562582a7253faed6eb57c5d215d6f6378442313bff2af5dec6",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "023",
+      "photo_sha256": "ec5a4ecab55717adc540d432ad989df3ffd074c5bcedfe7372bcc54cc1e05de4",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "080",
+      "photo_sha256": "2b0337288f0ce9db8a38f80832ca5e632cdec38c0797d7519b1129a5fe1d731f",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "209",
+      "photo_sha256": "02301942ee6e82915460ee5780fd2843e4ce9fe7b65732ca19e67682214a581d",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "039",
+      "photo_sha256": "b9a0c67369f7189782718b1fea6cb7ad69017f65e56c490d4f29a402c72d5829",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "048",
+      "photo_sha256": "f7efb03c29b9d8096c8b776fee3317c7fcf69724cc4b07e56f28a45af4546d68",
+      "brand_group": "japan",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "074",
+      "photo_sha256": "d2cbb1d944b6fbaba8cbb5fac846107a6e395180898d1474d507f56b1c7f0d9f",
+      "brand_group": "japan",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "109",
+      "photo_sha256": "6a8b57d71f008777d1a83ccabf4272296e60e6ba9cece3eb49100e67f731b6cc",
+      "brand_group": "japan",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "145",
+      "photo_sha256": "2026b3716760ca169750b29b23c248f2a61f7e6002272807be1b87c9722f7c4c",
+      "brand_group": "japan",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "293",
+      "photo_sha256": "1c2d93ec0f716f0ae909800e817b869f11c3dec069ae3d074103687938b7fd2b",
+      "brand_group": "korea",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "296",
+      "photo_sha256": "193ae9532e47e3fcac513d80d7cd50207ae2857e213505f9388733d8a3f15f52",
+      "brand_group": "japan",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "082",
+      "photo_sha256": "7cd396e9f96cac78d008a1765cfc44d27d61121fd3b25d9e1d537424884a17fd",
+      "brand_group": "korea",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "046",
+      "photo_sha256": "4b343f5e8d8aa25b129f0b5fa613a83061ad3cd04f791f8d8173fdd9dc2c71b9",
+      "brand_group": "usa",
+      "publication_approved": false,
+      "rights_confirmed": false
+    }
+  ]
+}
