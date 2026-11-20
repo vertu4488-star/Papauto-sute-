@@ -31,10 +31,13 @@ class AuctionOnlyImages(unittest.TestCase):
     def test_all_vehicle_images_live_only_in_auction_dirs(self):
         photos = [p for p in (ROOT / "assets").rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_SUFFIXES]
         self.assertGreaterEqual(len(photos), 80)
+        from scripts.verify_china_order_release import verify
+        approved_supplier_photos = verify(ROOT)
         for p in photos:
             relative=p.relative_to(ROOT).as_posix()
             self.assertTrue(
-                relative.startswith("assets/auction/home/")
+                relative in approved_supplier_photos
+                or relative.startswith("assets/auction/home/")
                 or relative.startswith("assets/auction/approved/")
                 or relative.startswith("assets/premium-auctions/")
                 or relative in {"assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp", "assets/visual/papauto-approved-bmw-hero-20261115.webp"},

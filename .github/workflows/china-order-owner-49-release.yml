@@ -1,0 +1,51 @@
+name: China supplier 49 owner release
+on:
+  push:
+    branches: ['release/china-order-49-20261120']
+    paths: ['.github/workflows/china-order-owner-49-release.yml']
+permissions:
+  actions: read
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: China-watchlist-sourcing-review
+          run-id: 44681638054
+          github-token: ${{ github.token }}
+          path: /tmp/china-approved
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build and verify exact owner-reviewed supplier batch
+        run: |
+          python scripts/prepare_china_order_release.py /tmp/china-approved
+          python scripts/build_content.py
+          python scripts/build_static_public.py
+          python -m unittest discover -s tests -p test_auction_only_images_policy.py
+          python - <<'PY'
+          from pathlib import Path
+          from scripts.verify_china_order_release import verify
+          verify(Path('render-public'))
+          print('49 exact supplier image files and public HTML verified.')
+          PY
+      - name: Browser smoke check mobile and desktop
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install chromium
+          python -m http.server 8765 --directory render-public >/tmp/china-server.log 2>&1 &
+          node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{const b=await chromium.launch({headless:true});for(const width of [390,1440]){const p=await b.newPage({viewport:{width,height:844}});await p.goto('http://localhost:8765/china-order.html');if(await p.locator('.cn-example').count()!==49)throw Error('wrong count');await p.locator('.cn-example img').first().evaluate(i=>i.decode());await p.selectOption('#cn-origin','korea');if(await p.locator('.cn-example:visible').count()!==2)throw Error('filter');await p.selectOption('#cn-origin','all');await p.fill('#cn-search','Haval M6');if(await p.locator('.cn-example:visible').count()!==2)throw Error('search');if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2))throw Error('overflow');await p.close()}await b.close();console.log('Mobile and desktop checks passed')})().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Commit scoped owner-approved release
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/china-order china-order.html research/owner-approved-china-supplier-49-2026-11-20.json scripts/build_static_public.py tests/test_auction_only_images_policy.py china.html catalog.html AGENTS.md docs/AUCTION_ONLY_GALLERY.md sitemap.xml
+          git commit -m "Add exact 49 owner-approved China supplier examples separately from auction gallery"
+          git push origin HEAD:release/china-order-49-20261120
