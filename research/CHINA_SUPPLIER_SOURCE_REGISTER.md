@@ -37,3 +37,5 @@ Twelfth approved batch: research/owner-approved-china-supplier-batch12-2026-11-2
 Thirteenth approved batch: research/owner-approved-china-supplier-batch13-2026-11-20.json; 30 Xin Che Hang (256 Xin Che Hang, 4 China Used Car, 38 GoldenLane, 50 EZ, 1 other, 349 overall). Exact archive IDs, supplier URLs, prices and local photo SHA-256 preserved.
 
 Fourteenth approved batch: research/owner-approved-china-supplier-batch14-2026-11-20.json; 30 Xin Che Hang (286 Xin Che Hang, 4 China Used Car, 38 GoldenLane, 50 EZ, 1 other, 379 overall). Exact archive IDs, supplier URLs, prices and local photo SHA-256 preserved.
+
+Fifteenth approved batch: research/owner-approved-china-supplier-batch15-2026-11-20.json; 30 Xin Che Hang (316 Xin Che Hang, 4 China Used Car, 38 GoldenLane, 50 EZ, 1 other, 409 overall). Exact archive IDs, supplier URLs, prices and local photo SHA-256 preserved.
