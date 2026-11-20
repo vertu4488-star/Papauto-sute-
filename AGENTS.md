@@ -30,3 +30,5 @@ Owner instruction 2026-11-20: the exact separate preview of 30 additional Chines
 Owner instruction 2026-11-20: exact 30 additional power-listed supplier examples approved for china-order.html. Only the fixed sixth batch digests are allowed alongside previous 169. Supplier-listed <=160 PS is not document-verified power or a reduced-fee guarantee. Starting prices are NOT FOB. Auction safeguards unchanged; no license asserted.
 
 Owner instruction 2026-11-20: exact 11 additional power-listed supplier examples approved for china-order.html. Only the fixed seventh batch digests are allowed alongside previous 199. Supplier-listed <=160 PS is not document-verified power or a reduced-fee guarantee. Starting prices are NOT FOB. Auction safeguards unchanged; no license asserted.
+
+Owner instruction 2026-11-20: exact 10 additional power-listed supplier examples approved for china-order.html. Only the fixed eighth batch digests are allowed alongside previous 210. Supplier-listed <=160 PS is not document-verified power or a reduced-fee guarantee. Starting prices are NOT FOB. Auction safeguards unchanged; no license asserted.
