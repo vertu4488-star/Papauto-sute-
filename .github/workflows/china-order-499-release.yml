@@ -18,7 +18,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: China-next-30-sourcing
-          run-id: 44992952021
+          run-id: 44692952021
           github-token: ${{ github.token }}
           path: /tmp/china499/14609442433
       - name: Assemble exact approved archive images and validate
