@@ -1,0 +1,51 @@
+name: China 109-card owner-approved release
+on:
+  push:
+    branches: ['release/china-order-109-20261120']
+    paths: ['.github/workflows/china-order-109-release.yml']
+permissions:
+  actions: read
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: China-next-30-sourcing
+          run-id: 44692952021
+          github-token: ${{ github.token }}
+          path: /tmp/china-approved-30
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify and assemble exact 30 new cards
+        run: |
+          python scripts/prepare_china_order_third30.py /tmp/china-approved-30
+          python scripts/build_content.py
+          python scripts/build_static_public.py
+          python -m unittest discover -s tests -p test_auction_only_images_policy.py
+          python - <<'PY'
+          from pathlib import Path
+          from scripts.verify_china_order_release import verify
+          assert len(verify(Path('render-public')))==109
+          print('All 109 public photos verified.')
+          PY
+      - name: Browser checks
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install chromium
+          python -m http.server 8765 --directory render-public >/tmp/china-server.log 2>&1 &
+          node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{const b=await chromium.launch({headless:true});for(const width of [390,1440]){const p=await b.newPage({viewport:{width,height:844}});await p.goto('http://localhost:8765/china-order.html');if(await p.locator('.cn-example').count()!==109)throw Error('card count');await p.fill('#cn-search','BMW X3');if(await p.locator('.cn-example:visible').count()!==1)throw Error('new search');await p.locator('.cn-example:visible img').evaluate(i=>i.decode());await p.fill('#cn-search','');await p.selectOption('#cn-origin','korea');if(await p.locator('.cn-example:visible').count()!==4)throw Error('Korea filter');await p.selectOption('#cn-origin','usa');if(await p.locator('.cn-example:visible').count()!==4)throw Error('USA filter');if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2))throw Error('overflow');await p.close()}await b.close();console.log('109 cards, search, origin filters, mobile and desktop passed')})().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Commit tested expansion
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/china-order/owner-20261120-third30 china-order.html china.html research/owner-approved-china-supplier-third30-2026-11-20.json AGENTS.md docs/AUCTION_ONLY_GALLERY.md sitemap.xml
+          git commit -m "Append exact 30 owner-approved new China model references"
+          git push origin HEAD:release/china-order-109-20261120
