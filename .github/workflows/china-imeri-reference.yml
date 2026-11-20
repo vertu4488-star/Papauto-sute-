@@ -34,12 +34,13 @@ jobs:
               r.raise_for_status()
               if urlparse(r.url).hostname not in permitted: raise ValueError('redirect')
               return r
-          def listing(n):
+          def listing(item):
+              tab,n=item
               try:
-                  s=BeautifulSoup(get(base+'/en/auctions?tab=buyitnow&page='+str(n)).text,'html.parser')
+                  s=BeautifulSoup(get(base+'/en/auctions?tab='+tab+'&page='+str(n)).text,'html.parser')
                   return [urljoin(base,a['href']) for a in s.select('a[href]') if re.search(r'/en/auction/\d+/',a['href'])]
               except Exception as e:
-                  print('listing error',n,str(e),flush=True);return []
+                  print('listing error',tab,n,str(e),flush=True);return []
           def image_url(s,alt):
               for t in s.find_all('img'):
                   if str(t.get('alt','')).strip().casefold()!=alt.casefold():continue
@@ -82,7 +83,7 @@ jobs:
           errors=collections.Counter()
           hashes=set();lots=set();rows=[]
           with cf.ThreadPoolExecutor(max_workers=5) as pool:
-              urls=list(dict.fromkeys(u for group in pool.map(listing,range(1,21)) for u in group))
+              urls=list(dict.fromkeys(u for group in pool.map(listing,[(tab,n) for tab in ('extended','auction','buyitnow','preview') for n in range(1,16)]) for u in group))
               print('Discovered',len(urls),flush=True)
               for off in range(0,len(urls),20):
                   for x in pool.map(inspect,urls[off:off+20]):
@@ -91,11 +92,12 @@ jobs:
                           if errors[x[0]]<=2:print(x,flush=True)
                           continue
                       row,fi,ri=x
+                      if len(rows)>=50:break
                       if row['lot'] in lots or any(h in hashes for h in row['source_media_sha256']):continue
                       lots.add(row['lot']);hashes.update(row['source_media_sha256']);rows.append(row)
                       for side,im in [('front',fi),('rear',ri)]:
                           im.thumbnail((1000,750));im.save(out/(row['id']+'-'+side+'.jpg'),quality=88)
-                  if len(rows)>=60:break
+                  if len(rows)>=50:break
           (out/'manifest.json').write_text(json.dumps({'count':len(rows),'records':rows,'rejected':dict(errors)},ensure_ascii=False,indent=2))
           for offset in range(0,len(rows),10):
               group=rows[offset:offset+10];sheet=Image.new('RGB',(1000,len(group)*230),'white');draw=ImageDraw.Draw(sheet)
