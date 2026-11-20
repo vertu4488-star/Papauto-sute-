@@ -1,0 +1,104 @@
+name: China next 19 power-declared source review
+on:
+  push:
+    branches: ['research/china-bulk-review-20261120']
+    paths: ['.github/workflows/china-160hp-new-sources19.yml']
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - run: pip install requests beautifulsoup4 pillow
+      - run: |
+          python - <<'PY'
+          import requests,re,json,io,hashlib,concurrent.futures as cf
+          from pathlib import Path
+          from urllib.parse import urljoin
+          from bs4 import BeautifulSoup
+          from PIL import Image,ImageDraw
+          out=Path('review');out.mkdir()
+          headers={'User-Agent':'Mozilla/5.0'}
+          def get(u):
+              try:
+                  r=requests.get(u,headers=headers,timeout=12);r.raise_for_status();return BeautifulSoup(r.text,'html.parser')
+              except Exception:return None
+          base='https://horgos-auto.com/en/'
+          pages=[base]+[base+'?page='+str(i) for i in range(2,10)]
+          leads=[];seen=set()
+          for s in cf.ThreadPoolExecutor(max_workers=8).map(get,pages):
+              if not s:continue
+              for a in s.select('a[href*="/product/"]'):
+                  name=a.get_text(' ',strip=True)
+                  if len(name)<8 or name=='View details':continue
+                  url=urljoin(base,a['href'])
+                  if url in seen:continue
+                  for p in a.parents:
+                      t=p.get_text(' ',strip=True)
+                      m=re.search(r'(20\d\d)\s*·\s*(\d\.\d)\s*L\s*·\s*(\d+)\s*hp',t)
+                      mil=re.search(r'Mileage:\s*([\d\s,]+)\s*km',t);price=re.search(r'\$\s*([\d.]+)\s*Price in China',t)
+                      if not all([m,mil,price]):continue
+                      if len(t)>1000:break
+                      if float(m[2])>2 or not 60<=int(m[3])<=160:break
+                      if int(m[1])<2019:break
+                      seen.add(url)
+                      urls=[]
+                      for im in p.find_all('img'):
+                          u=im.get('data-src') or im.get('src') or ''
+                          if u and not u.startswith('data:'):urls.append(urljoin(base,u))
+                      leads.append(dict(title=name,year=int(m[1]),engine=m[2]+' L',power_ps_listed=int(m[3]),mileage_km=int(re.sub(r'\D','',mil[1])),price_usd=int(re.sub(r'\D','',price[1])),price_type='supplier price in China; terms unconfirmed',source=url,photo_urls=list(dict.fromkeys(urls))[:6],rights_confirmed=False,documented_power_kw=None))
+                      break
+          print('Horgos leads',len(leads),str(leads[:1])[:1200],flush=True)
+          au='https://autossey.cn'
+          urls=set()
+          for s in cf.ThreadPoolExecutor(max_workers=5).map(get,[au,au+'/vehicles',au+'/vehicles?condition=used',au+'/sitemap.xml']):
+              if s:
+                  urls.update(urljoin(au,a['href']) for a in s.select('a[href*="/vehicles/"]') if 'used' in a['href'])
+                  urls.update(x.get_text(strip=True) for x in s.find_all('loc') if '/vehicles/' in x.get_text() and 'used' in x.get_text())
+          print('Autossey links',len(urls),flush=True)
+          def parse(u):
+              s=get(u)
+              if not s:return
+              t=s.get_text(' ',strip=True)
+              h=s.find('h1')
+              if not h:return
+              m=re.search(r'Year\s+(20\d\d)\s+Mileage\s+([\d,]+)\s*km\s+Power\s+(\d+)\s*hp\s+Engine displacement\s+([\d,]+)\s*ml\s+Fuel Type\s+Petrol',t,re.I)
+              price=re.search(r'Export Price \(FOB\)\s+From\s*\$([\d,]+)',t)
+              if not m or not price or not 60<=int(m[3])<=160 or int(m[4].replace(',',''))>2000:return
+              imgs=[]
+              for im in s.find_all('img'):
+                  src=im.get('data-src') or im.get('src') or ''
+                  if src and ('vehicle' in src.lower() or 'car' in src.lower() or 'inventory' in src.lower()) and not src.startswith('data:'):imgs.append(urljoin(u,src))
+              return dict(title=h.get_text(' ',strip=True),year=int(m[1]),engine=str(int(m[4].replace(',',''))/1000)+' L',power_ps_listed=int(m[3]),mileage_km=int(m[2].replace(',','')),price_usd=int(price[1].replace(',','')),price_type='supplier starting FOB',source=u,photo_urls=list(dict.fromkeys(imgs))[:6],rights_confirmed=False,documented_power_kw=None)
+          for r in cf.ThreadPoolExecutor(max_workers=12).map(parse,sorted(urls)[:150]):
+              if r:leads.append(r)
+          def photos(r):
+              for u in r['photo_urls']:
+                  try:
+                      x=requests.get(u,headers=headers,timeout=8);x.raise_for_status()
+                      im=Image.open(io.BytesIO(x.content));im.load()
+                      if min(im.size)<300:continue
+                      im.thumbnail((1200,900));return r,u,im.convert('RGB')
+                  except Exception:continue
+          rec=[];hashes=set()
+          for a in cf.ThreadPoolExecutor(max_workers=16).map(photos,leads[:280]):
+              if not a:continue
+              r,u,im=a
+              f=io.BytesIO();im.save(f,format='JPEG',quality=92);b=f.getvalue();h=hashlib.sha256(b).hexdigest()
+              if h in hashes:continue
+              hashes.add(h);r['id']=str(len(rec)+1).zfill(3);r['photo_sha256']=h;r['photo_url']=u;(out/(r['id']+'.jpg')).write_bytes(b);rec.append(r)
+          (out/'manifest.json').write_text(json.dumps({'records':rec},ensure_ascii=False,indent=2))
+          for off in range(0,len(rec),25):
+              g=rec[off:off+25];s=Image.new('RGB',(1250,((len(g)+4)//5)*200),'white');d=ImageDraw.Draw(s)
+              for j,r in enumerate(g):
+                  x=j%5*250;y=j//5*200;d.text((x+3,y+3),r['id']+' '+r['title'][:27],fill='black');im=Image.open(out/(r['id']+'.jpg'));im.thumbnail((244,175));s.paste(im,(x+2,y+20))
+              s.save(out/f'contact-{off//25+1:02}.jpg',quality=88)
+          print('photo records',len(rec),flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: china-power19-new-source-review
+          path: review/
+          retention-days: 14
