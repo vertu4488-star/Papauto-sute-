@@ -209,10 +209,13 @@ EIGHTH_HASHES = {
     "010": "4c65d82c98d27c983beacd367aeeea827863cf235ac0ffcc2d05f5453c1ca356",
 }
 
+NINTH_PREFIX = 'assets/china-order/owner-20261120-goldenlane9/'
+NINTH_HASHES = {'001': '5fc3ce76d0c03b72ccb93a30b69ef6f8938eee5c058db84304df0f1fe725f3e5', '002': '24ff376223b6199ba14f16bb0bfd25fef2ce34f5e0bb2871dc8340170bab4774', '003': 'b19aed4bda81508a3cd9c6e92414bb43719bd9e288b9f02df7f519c156967369', '004': 'a46027aa6eb86bcc84028c1d118a6b70587ad8a19c54c6f381287d7c377c0e68', '005': '963dbb4786c107ca7dfc82797886b9aeb18b63c8bc6fe9080c858146a114244b', '006': '8a1bf94e679bacb2b8c14a70a1e486d58066118027244b8eea727a71177d1bf0', '007': '511124b6e73cd6c38b65f91fba6e3ef88c37d16577b25c691fe49d8950d06b07', '008': 'c8ce41800d791f663d4d13f7767bf988d3c1e938039b771db212e7108684442a', '009': '141755eb86cebdaacda862e47c69717c12ab71ca82d52c86ccd20165c60c434e'}
+
 def verify(root=ROOT):
     root = Path(root)
     media = root / PREFIX
-    expected = {PREFIX + ident + ".jpg" for ident in IDS} | {EXTRA_PREFIX + ident + ".jpg" for ident in EXTRA_HASHES} | {THIRD_PREFIX + ident + ".jpg" for ident in THIRD_HASHES} | {FOURTH_PREFIX + ident + ".jpg" for ident in FOURTH_HASHES} | {FIFTH_PREFIX + ident + ".jpg" for ident in FIFTH_HASHES} | {SIXTH_PREFIX + ident + ".jpg" for ident in SIXTH_HASHES} | {SEVENTH_PREFIX + ident + ".jpg" for ident in SEVENTH_HASHES} | {EIGHTH_PREFIX + ident + ".jpg" for ident in EIGHTH_HASHES}
+    expected = {PREFIX + ident + ".jpg" for ident in IDS} | {EXTRA_PREFIX + ident + ".jpg" for ident in EXTRA_HASHES} | {THIRD_PREFIX + ident + ".jpg" for ident in THIRD_HASHES} | {FOURTH_PREFIX + ident + ".jpg" for ident in FOURTH_HASHES} | {FIFTH_PREFIX + ident + ".jpg" for ident in FIFTH_HASHES} | {SIXTH_PREFIX + ident + ".jpg" for ident in SIXTH_HASHES} | {SEVENTH_PREFIX + ident + ".jpg" for ident in SEVENTH_HASHES} | {EIGHTH_PREFIX + ident + ".jpg" for ident in EIGHTH_HASHES} | {NINTH_PREFIX + ident + ".jpg" for ident in NINTH_HASHES}
     found = {p.relative_to(root).as_posix() for p in (root / "assets/china-order").rglob("*") if p.is_file() or p.is_symlink()}
     if found != expected:
         raise RuntimeError("CHINA_ORDER: unexpected or missing image")
@@ -260,8 +263,13 @@ def verify(root=ROOT):
         b = p.read_bytes()
         if p.is_symlink() or len(b)<500 or not b.startswith(b"\xff\xd8\xff") or hashlib.sha256(b).hexdigest()!=digest:
             raise RuntimeError("CHINA_ORDER: approved ten photo mismatch " + ident)
+    for ident, digest in NINTH_HASHES.items():
+        p = root / NINTH_PREFIX / (ident + ".jpg")
+        b = p.read_bytes()
+        if p.is_symlink() or len(b)<500 or not b.startswith(b"\xff\xd8\xff") or hashlib.sha256(b).hexdigest()!=digest:
+            raise RuntimeError("CHINA_ORDER: approved nine photo mismatch " + ident)
     html = (root/PAGE).read_text(encoding="utf-8")
-    if re.findall(r'<img\b[^>]*\bsrc="([^"]+)"',html) != ["/"+PREFIX+i+".jpg" for i in IDS] + ["/"+EXTRA_PREFIX+i+".jpg" for i in EXTRA_HASHES] + ["/"+THIRD_PREFIX+i+".jpg" for i in THIRD_HASHES] + ["/"+FOURTH_PREFIX+i+".jpg" for i in FOURTH_HASHES] + ["/"+FIFTH_PREFIX+i+".jpg" for i in FIFTH_HASHES] + ["/"+SIXTH_PREFIX+i+".jpg" for i in SIXTH_HASHES] + ["/"+SEVENTH_PREFIX+i+".jpg" for i in SEVENTH_HASHES] + ["/"+EIGHTH_PREFIX+i+".jpg" for i in EIGHTH_HASHES]:
+    if re.findall(r'<img\b[^>]*\bsrc="([^"]+)"',html) != ["/"+PREFIX+i+".jpg" for i in IDS] + ["/"+EXTRA_PREFIX+i+".jpg" for i in EXTRA_HASHES] + ["/"+THIRD_PREFIX+i+".jpg" for i in THIRD_HASHES] + ["/"+FOURTH_PREFIX+i+".jpg" for i in FOURTH_HASHES] + ["/"+FIFTH_PREFIX+i+".jpg" for i in FIFTH_HASHES] + ["/"+SIXTH_PREFIX+i+".jpg" for i in SIXTH_HASHES] + ["/"+SEVENTH_PREFIX+i+".jpg" for i in SEVENTH_HASHES] + ["/"+EIGHTH_PREFIX+i+".jpg" for i in EIGHTH_HASHES] + ["/"+NINTH_PREFIX+i+".jpg" for i in NINTH_HASHES]:
         raise RuntimeError("CHINA_ORDER: photo identity mismatch")
     for p in root.glob("*.html"):
         if p.name != PAGE and "/assets/china-order/" in p.read_text(encoding="utf-8"):
