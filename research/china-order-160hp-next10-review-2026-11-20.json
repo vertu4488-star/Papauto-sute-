@@ -1,0 +1,97 @@
+{
+  "count": 10,
+  "target": 19,
+  "price_type": "supplier starting route price CNY, not FOB",
+  "records": [
+    {
+      "id": "002",
+      "photo_sha256": "5161aa35b564caeed7b99193c492a33253e959a376e5ca92b995f6f8fd893fca",
+      "power_ps_listed": 150,
+      "artifact_run_id": 44703549078,
+      "artifact_id": 14613827343,
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "003",
+      "photo_sha256": "5e3f1a44958e0f4630d760ebf220ba1e9fd607f5fa90280830e335e1d1c0c501",
+      "power_ps_listed": 150,
+      "artifact_run_id": 44703549078,
+      "artifact_id": 14613827343,
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "005",
+      "photo_sha256": "4b71dc87f27c067ab11d07035536c54fde54bc01cedc0c35d439fbdeb0049ca8",
+      "power_ps_listed": 150,
+      "artifact_run_id": 44703549078,
+      "artifact_id": 14613827343,
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "009",
+      "photo_sha256": "118b1cb83a8724c5d102f35281491755fd4993d9fb4a8883f471c3091ff05f46",
+      "power_ps_listed": 150,
+      "artifact_run_id": 44703549078,
+      "artifact_id": 14613827343,
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "010",
+      "photo_sha256": "7dd24c1387888482f2a40605435a683ba76373c2a12a2423d5079f1d3ecac04f",
+      "power_ps_listed": 150,
+      "artifact_run_id": 44703549078,
+      "artifact_id": 14613827343,
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "011",
+      "photo_sha256": "c05abf2d8fd690602fb2739a048f18a50b9010eedbb0cc62f886fc53a6f83238",
+      "power_ps_listed": 150,
+      "artifact_run_id": 44703549078,
+      "artifact_id": 14613827343,
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "003",
+      "photo_sha256": "aae0afa3f4f013c51e745d4841b59e685801995e78769469d02e654398f2e032",
+      "power_ps_listed": 131,
+      "artifact_run_id": 44703760612,
+      "artifact_id": 14614495422,
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "001",
+      "photo_sha256": "5e68dddc592971c30946a89d815f23c634f38fb4bddf479e0d94543a97461277",
+      "power_ps_listed": 100,
+      "artifact_run_id": 44703941117,
+      "artifact_id": 14613198955,
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "005",
+      "photo_sha256": "009564e4789528e84c0ede61f9947debaefee252115024a62be004ce2810c363",
+      "power_ps_listed": 122,
+      "artifact_run_id": 44703941117,
+      "artifact_id": 14613198955,
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "013",
+      "photo_sha256": "4c65d82c98d27c983beacd367aeeea827863cf235ac0ffcc2d05f5453c1ca356",
+      "power_ps_listed": 113,
+      "artifact_run_id": 44703941117,
+      "artifact_id": 14613198955,
+      "publication_approved": false,
+      "rights_confirmed": false
+    }
+  ]
+}
