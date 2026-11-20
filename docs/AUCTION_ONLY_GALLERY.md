@@ -39,3 +39,5 @@ Owner instruction 2026-11-20: exact 11 additional power-listed supplier examples
 Owner instruction 2026-11-20: exact 10 additional power-listed supplier examples approved for china-order.html. Only the fixed eighth batch digests are allowed alongside previous 210. Supplier-listed <=160 PS is not document-verified power or a reduced-fee guarantee. Starting prices are NOT FOB. Auction safeguards unchanged; no license asserted.
 
 Owner instruction 2026-11-20: exact nine GoldenLane source-linked supplier examples approved for china-order.html. Only fixed ninth-batch digests permitted after validation; no license assertion, no auction claims, no verified power or reduced-fee claims. Auction safeguards unchanged.
+
+Owner instruction 2026-11-20: exact 30 supplier examples shown in PapAuto_30_China_review.pdf expressly approved for china-order.html. Only fixed tenth-batch digests permitted, 19 GoldenLane and 11 EZ Auto Global. No license assertion, no auction claims, no verified power or reduced-fee claims. Auction safeguards unchanged.
