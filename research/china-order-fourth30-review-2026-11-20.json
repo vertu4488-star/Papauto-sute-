@@ -1,0 +1,218 @@
+{
+  "artifact_run_id": 44692952021,
+  "artifact_id": 14609442433,
+  "count": 30,
+  "status": "private review; not licensed or approved for publication",
+  "records": [
+    {
+      "id": "298",
+      "photo_sha256": "42d9e55fcebcef563236c94e910006062bfc626a6d9140da47c37b147bee0405",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "237",
+      "photo_sha256": "de28f3ee3bc51d8a60966ec63da85061d6dfd428daa586208010c0e65138642a",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "202",
+      "photo_sha256": "697b651b52a8bd099b711065ffc8497dae705abde60f68581ae0244fed7d7b1f",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "238",
+      "photo_sha256": "4c27171798d161ce30f304011ce9b36e62ea07e13026436664bbb0b3c8fef6fb",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "239",
+      "photo_sha256": "2882b672e0fb293f9377d37aeb07fbdac169b55d2b4c930e84b2c51c204b22fe",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "236",
+      "photo_sha256": "a516f43795f870bf6494e2ffea9a256f531cd223eb00034ec6bfb3391b5d6d1a",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "178",
+      "photo_sha256": "9c2e4774fe83c4c0a19e696392dee3f6be8d70bccf6b04bc2387bb9240626f8f",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "295",
+      "photo_sha256": "781a8b9850e203dcd1d2cfa28538521ff1f376a999e47543cc2b082776901ece",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "243",
+      "photo_sha256": "fd0166d6c056013721037c6519fa2830766411a30638eb986dc49a2d4417e101",
+      "brand_group": "china",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "294",
+      "photo_sha256": "4b25a71e942845e0c6fec4ee180f3149583b5f3155a238a71b678d2c37140676",
+      "brand_group": "japan",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "093",
+      "photo_sha256": "911476803f35a715543321e3735768af8d02f37b9e8fc55d1093e384f6f44177",
+      "brand_group": "japan",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "208",
+      "photo_sha256": "2863a07186025138de824d7f764db5ccc77461c4c8e7b0ddef3dd39fb9d0883e",
+      "brand_group": "korea",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "165",
+      "photo_sha256": "2bfadb07e14b0450c01c9e7c077f40961a277f46ff2ba2ed5f11b76a72ee4e9c",
+      "brand_group": "korea",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "205",
+      "photo_sha256": "0f64f85db25105b93fb37962df61fa0d36943eed5911e72afdb40eaf3ad31734",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "085",
+      "photo_sha256": "ed6ebe11393fab53b9047e8dc4fbd4e2e74762ed335e038938ed2e4629fe5934",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "189",
+      "photo_sha256": "88d55502500013fcae1a2c67e78317fc5e901673ec191ac02e6866f04dcceb71",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "226",
+      "photo_sha256": "f7930d2a8fa691dfe052a62d3b5882da95c66414ff66bf36b4fc895ffef4bdeb",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "231",
+      "photo_sha256": "23a397a7a671abae137d402720801eb8d0ed0152fd369bbf1a15d7eba599648d",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "174",
+      "photo_sha256": "8f323f63ae9a621e6ae4fd516ba175901e92e7f058169b4d2897c3b0a0e455ff",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "184",
+      "photo_sha256": "4c54abfc9d6856eb36733fd7f9974d93cddd51fd2bf4510c5ce534efed904422",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "198",
+      "photo_sha256": "4762e527dea61d123cb013332fbb64c9dbc4d51e514c1e422dc84c50c7b69cc1",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "030",
+      "photo_sha256": "7a62eee15081682bc39a19d92f85a00e96c7e88be5fbb8397089878ed5197d68",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "163",
+      "photo_sha256": "f8258ddbacac66ee8e736c75393061d0aff80e18c20a6d56271c75ba2f7e540f",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "214",
+      "photo_sha256": "c148af6ff7ef9e1d176d9d94c0d8a7e703625e568c0fa31ccb23f1e31fd8cf81",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "129",
+      "photo_sha256": "c533af0676f3fb591f2c5ecb8817379a53081d880954ccf4e527076661b1b6bd",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "218",
+      "photo_sha256": "22755956c554510d6db50fb88f4bd43606b5245a417ba098375495330b84bc38",
+      "brand_group": "europe",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "180",
+      "photo_sha256": "b503472bc42ef1093ff670f86b1c1ab72437e4fdab4966d6f5334e1781601b7b",
+      "brand_group": "usa",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "104",
+      "photo_sha256": "86b28274fce0bac77ae01ebee68841dbc9aa82f370e5efda16468a2f3c701816",
+      "brand_group": "usa",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "249",
+      "photo_sha256": "be222eeac8b743d288b4bc517c1683717a678597af3e0ba381c6ee5748aaa508",
+      "brand_group": "usa",
+      "publication_approved": false,
+      "rights_confirmed": false
+    },
+    {
+      "id": "007",
+      "photo_sha256": "3fc72520ec035986a649c564301bef0dc497c18f77e15f88bcdfaf68cc2fa8ac",
+      "brand_group": "usa",
+      "publication_approved": false,
+      "rights_confirmed": false
+    }
+  ]
+}
