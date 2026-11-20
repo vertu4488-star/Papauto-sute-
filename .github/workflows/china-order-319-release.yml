@@ -1,0 +1,53 @@
+name: China 319-card owner-approved release
+on:
+  push:
+    branches: ['release/china-order-319-20261120']
+    paths: ['.github/workflows/china-order-319-release.yml']
+permissions:
+  actions: read
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: China-next-30-sourcing
+          run-id: 44692952021
+          github-token: ${{ github.token }}
+          path: /tmp/china319/14609442433
+      - name: Assemble exact approved archive images and validate
+        run: |
+          python scripts/prepare_china_order_batch12.py
+          python scripts/build_content.py
+          python scripts/build_static_public.py
+          python -m unittest discover -s tests -p 'test_auction*policy.py'
+          python - <<'PY'
+          from pathlib import Path
+          from scripts.verify_china_order_release import verify
+          assert len(verify(Path('render-public')))==319
+          PY
+      - name: Mobile and desktop checks
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install chromium
+          python -m http.server 8765 --directory render-public >/tmp/china-server.log 2>&1 &
+          node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{const b=await chromium.launch({headless:true});for(const width of [390,1440]){const p=await b.newPage({viewport:{width,height:844}});await p.goto('http://localhost:8765/china-order.html');if(await p.locator('.cn-example').count()!==319)throw Error('card count');if(await p.locator('.cn-example[data-power]').count()!==92)throw Error('power count');if(await p.locator('.cn-example:has(img[src*="owner-20261120-batch12/"]):not([data-power])').count()!==30)throw Error('unknown power labels');const powers=await p.locator('.cn-example[data-power]').evaluateAll(es=>es.map(e=>Number(e.dataset.power)));if(powers.some(x=>x<=0||x>160))throw Error('power range');const images=p.locator('img[src*="owner-20261120-batch12/"]');if(await images.count()!==30)throw Error('new photos count');for(const im of await images.all()){await im.evaluate(async e=>{e.loading='eager';await e.decode();if(e.naturalWidth<300)throw Error('image invalid')})}await p.fill('#cn-search','Nissan Sylphy');if(await p.locator('.cn-example:visible').count()<1)throw Error('search');await p.fill('#cn-search','');await p.selectOption('#cn-origin','korea');if(await p.locator('.cn-example:visible:not([data-origin="korea"])').count()!==0)throw Error('filter');await p.selectOption('#cn-origin','all');if(await p.locator('.cn-example:visible').count()!==319)throw Error('reset');if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2))throw Error('overflow');await p.close()}await b.close();console.log('319 cards with thirty decoded new photos passed mobile and desktop')})().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Commit verified release files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/china-order/owner-20261120-batch12 china-order.html china.html research/owner-approved-china-supplier-batch12-2026-11-20.json research/CHINA_SUPPLIER_SOURCE_REGISTER.md scripts/verify_china_order_release.py AGENTS.md docs/AUCTION_ONLY_GALLERY.md sitemap.xml
+          git commit -m "Append thirty approved China supplier cards with exact local photos"
+          git push origin HEAD:release/china-order-319-20261120
+
+
+# Revalidate after expanding brand origin classification.
