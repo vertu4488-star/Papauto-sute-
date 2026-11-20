@@ -50,3 +50,5 @@ jobs:
           git push origin HEAD:release/china-order-349-20261120
 
 
+
+# Retry after extending supplier brand classification.
