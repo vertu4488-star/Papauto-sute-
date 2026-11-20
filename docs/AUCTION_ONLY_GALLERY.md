@@ -49,3 +49,5 @@ Owner instruction 2026-11-20: exact 30 supplier examples shown in PapAuto_China_
 Owner instruction 2026-11-20: exact 30 supplier examples shown in PapAuto_China_30_batch13.pdf expressly approved for china-order.html. Only fixed thirteenth-batch digests permitted, 30 Xin Che Hang. No license assertion, no auction claims, no verified power or reduced-fee claims. Auction safeguards unchanged.
 
 Owner instruction 2026-11-20: exact 30 supplier examples shown in PapAuto_China_30_batch14.pdf expressly approved for china-order.html. Only fixed fourteenth-batch digests permitted, 30 Xin Che Hang. No license assertion, no auction claims, no verified power or reduced-fee claims. Auction safeguards unchanged.
+
+Owner instruction 2026-11-20: exact 30 supplier examples shown in PapAuto_China_30_batch15.pdf expressly approved for china-order.html. Only fixed fifteenth-batch digests permitted, 30 Xin Che Hang. No license assertion, no auction claims, no verified power or reduced-fee claims. Auction safeguards unchanged.
