@@ -1,0 +1,81 @@
+name: China clear-background reference review
+on:
+  push:
+    branches: ['research/china-bulk-review-20261120']
+    paths: ['.github/workflows/china-clear-background-review.yml']
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4 pillow
+      - run: |
+          python - <<'PY'
+          import requests, json, re, io, hashlib, concurrent.futures as cf
+          from urllib.parse import urljoin,urlparse
+          from pathlib import Path
+          from bs4 import BeautifulSoup
+          from PIL import Image,ImageDraw
+          base='https://www.xchehang.com/inventory.html'
+          out=Path('clear-review');out.mkdir()
+          headers={'User-Agent':'Mozilla/5.0'}
+          r=requests.get(base,headers=headers,timeout=25);r.raise_for_status()
+          s=BeautifulSoup(r.text,'html.parser')
+          rows=[]; seen=set()
+          for h in s.find_all(['h3','h4']):
+              name=h.get_text(' ',strip=True)
+              if not re.match(r'^20(?:1[7-9]|2[0-6]) ',name):continue
+              for p in h.parents:
+                  if p.name in ('html','body'):break
+                  t=p.get_text(' ',strip=True)
+                  im=p.find('img')
+                  if not im or not re.search(r'\b[\d,]+\s*km\b',t) or not re.search(r'FOB\s*USD\s*[\d,]+',t):continue
+                  if len(t)>1100 or len(p.find_all(['h3','h4']))>1:break
+                  mil=re.search(r'([\d,]+)\s*km\b',t);price=re.search(r'FOB\s*USD\s*([\d,]+)',t)
+                  src=urljoin(base,im.get('data-src') or im.get('src',''))
+                  if urlparse(src).hostname not in ('www.xchehang.com','xchehang.com') or '/cars/' not in src:break
+                  if src in seen:break
+                  fuel=re.search(r'Fuel\s+(.+?)\s+Color',t)
+                  engine=re.search(r'\b(\d\.\d)\s*([LT])\b',t)
+                  if engine and float(engine.group(1))>2:break
+                  if not engine and (not fuel or fuel.group(1)!='BEV'):break
+                  seen.add(src)
+                  rows.append({'source':base,'title':name,'mileage_km':int(mil.group(1).replace(',','')),'fob_usd':int(price.group(1).replace(',','')),'fuel':fuel.group(1) if fuel else None,'engine':engine.group(0) if engine else None,'photo_url':src,'status':'exporter listing; full report not publicly supplied; not auction evidence'})
+                  break
+          print('Eligible source cards',len(rows),flush=True)
+          def fetch(row):
+              try:
+                  z=requests.get(row['photo_url'],headers=headers,timeout=12);z.raise_for_status()
+                  im=Image.open(io.BytesIO(z.content));im.load()
+                  if min(im.size)<300:return None
+                  row['sha256']=hashlib.sha256(z.content).hexdigest();return row, im.convert('RGB')
+              except Exception:return None
+          result=[];hs=set()
+          with cf.ThreadPoolExecutor(max_workers=6) as pool:
+              for x in pool.map(fetch,rows[:160]):
+                  if not x:continue
+                  row,im=x
+                  if row['sha256'] in hs:continue
+                  hs.add(row['sha256']);row['id']=str(len(result)+1).zfill(3)
+                  im.thumbnail((1000,800));im.save(out/(row['id']+'.jpg'),quality=90);result.append(row)
+          (out/'manifest.json').write_text(json.dumps({'count':len(result),'records':result},ensure_ascii=False,indent=2))
+          for off in range(0,len(result),24):
+              group=result[off:off+24];sheet=Image.new('RGB',(1080,((len(group)+3)//4)*210),'white');d=ImageDraw.Draw(sheet)
+              for i,row in enumerate(group):
+                  x=i%4*270;y=i//4*210
+                  d.text((x+4,y+2),row['id']+' '+row['title'][:33],fill='black')
+                  im=Image.open(out/(row['id']+'.jpg'));im.thumbnail((264,185));sheet.paste(im,(x+3,y+20))
+              sheet.save(out/f'contact-{off//24+1:02}.jpg',quality=88)
+          print('Downloaded unique source photos',len(result),flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: China-clear-background-review
+          path: clear-review/
+          retention-days: 7
