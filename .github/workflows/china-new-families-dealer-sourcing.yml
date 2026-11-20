@@ -1,0 +1,139 @@
+name: China additional dealer studio search
+on:
+  push:
+    branches: ['research/china-bulk-review-20261120']
+    paths: ['.github/workflows/china-new-families-dealer-sourcing.yml']
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          sparse-checkout: |
+            research/china-util-model-watchlist.json
+            research/owner-approved-china-supplier-49-2026-11-20.json
+            research/owner-approved-china-supplier-30-2026-11-20.json
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4 pillow
+      - run: |
+          python - <<'PY'
+          import requests, re, json, io, hashlib, concurrent.futures as cf
+          from pathlib import Path
+          from urllib.parse import urljoin
+          from bs4 import BeautifulSoup
+          from PIL import Image,ImageDraw
+          root=Path('multi-review');root.mkdir()
+          watch=json.loads(Path('research/china-util-model-watchlist.json').read_text())['candidates']
+          old=json.loads(Path('research/owner-approved-china-supplier-49-2026-11-20.json').read_text())['records']
+          old+=json.loads(Path('research/owner-approved-china-supplier-30-2026-11-20.json').read_text())['records']
+          norm=lambda s:re.sub(r'[^a-z0-9]','',s.lower())
+          aliases={'Jolion / Chulian':['jolion','chulian','first love'],'Coolray / Binyue':['coolray','binyue'],'3 Axela':['Mazda3 Axela','3 Axela'],'6 Atenza':['Mazda6 Atenza','6 Atenza'],'ix25 / Creta':['ix25','creta'],'KX3 / Seltos':['kx3','seltos'],'Stonic / Yipao':['stonic','yipao'],'A3 / A3L':['a3','a3l']}
+          covered={norm(re.sub(r'^20\d\d\s+','',r['title'])) for r in old}
+          skip={'Haval H6 II','BMW 320Li','BMW X1 sDrive20Li','Mercedes-Benz A180L','MINI Cooper'}
+          targets=[(r,[norm(r['make']+a) for a in aliases.get(r['model'],r['model'].split(' / '))]) for r in watch if r['make']+' '+r['model'] not in skip]
+          targets=[(r,a) for r,a in targets if not any(x in covered for x in a)]
+          targets.sort(key=lambda x:max(map(len,x[1])),reverse=True)
+          brands=sorted(set(r['make'] for r,_ in targets))
+          headers={'User-Agent':'Mozilla/5.0'}
+          def get(url):
+              try:
+                  r=requests.get(url,headers=headers,timeout=15);r.raise_for_status();return BeautifulSoup(r.text,'html.parser')
+              except Exception:return None
+          def identify(t):
+              n=norm(t)
+              # match brand and model with intervening year or repeated brand removed
+              n=re.sub(r'20\d\d','',n)
+              return next((r for r,a in targets if any(x in n for x in a)),None)
+          # First source: cards with unit stock id and published power/specs.
+          def brandlinks(brand):
+              u='https://chinausedcar.net/brand/'+brand.lower().replace(' ','-')
+              s=get(u)
+              return [(urljoin(u,a['href']),a.get_text(' ',strip=True)) for a in s.select('a[href*="/model/"]')] if s else []
+          links=[]
+          with cf.ThreadPoolExecutor(max_workers=12) as pool:
+              for l in pool.map(brandlinks,brands):links+=l
+          # Xin Rong brand directories: detailed unit listings with mileage and engine.
+          s=get('https://www.djyxrauto.com/cars/index/from/2.html')
+          pages=[]
+          if s:
+              for a in s.select('a[href*="brand_id/"]'):
+                  if a.get_text(' ',strip=True).lower() in {b.lower() for b in brands}:
+                      u=urljoin('https://www.djyxrauto.com',a['href'])
+                      pages.append(u)
+          def xr_links(u):
+              s=get(u)
+              return [(urljoin(u,a['href']),a.get_text(' ',strip=True)) for a in s.select('a[href*="/cars/info/id/"]')] if s else []
+          with cf.ThreadPoolExecutor(max_workers=6) as pool:
+              for l in pool.map(xr_links,list(dict.fromkeys(pages))[:30]):links+=l
+          queue={};count={}
+          for url,t in links:
+              r=identify(t)
+              if not r or url in queue:continue
+              family=r['make']+' '+r['model']
+              if count.get(family,0)>=12:continue
+              if not re.search(r'\b20(?:1[7-9]|2[0-6])\b',t):continue
+              count[family]=count.get(family,0)+1;queue[url]=(r,t)
+          print('Family candidates',len(count),'detail URLs',len(queue),flush=True)
+          def details(item):
+              url,(r,t)=item;s=get(url)
+              if not s:return None
+              txt=s.get_text(' ',strip=True)
+              if 'chinausedcar.net' in url:
+                  h=s.find('h1')
+                  title=h.get_text(' ',strip=True) if h else t
+                  m=re.search(r'Mileage\s+([\d,]+)\s*km',txt,re.I);price=re.search(r'FOB Price\s+US\s*\$([\d,]+)',txt,re.I)
+                  eng=re.search(r'Engine\s+([^|]{1,90}?)\s+Max Power\s+([\d.]+)',txt,re.I)
+                  year=re.search(r'First Registered\s+(20\d\d)',txt)
+                  im=s.select_one('img[src*="/img/listings/"]')
+                  if not all([m,price,eng,year,im]):return None
+                  engine=eng.group(1);power=float(eng.group(2));photo=urljoin(url,im['src'])
+                  if power<=0:return None
+              else:
+                  title=t
+                  m=re.search(r'Mlg\(km\)\s*([\d,]+)',txt);price=re.search(r'\$\s*([\d,]+)',txt)
+                  year=re.search(r'Reg.Year:\s*(20\d\d)',txt)
+                  eng=re.search(r'Engine\s+(\d\.\d.{0,40}?)\s+Transmission',txt)
+                  im=next((i for i in s.find_all('img') if '/uploads/image/' in (i.get('src') or '') and i.get('alt') and 'used' in i['alt'].lower()),None)
+                  if not all([m,price,eng,year,im]):return None
+                  engine=eng.group(1);hp=re.search(r'(\d+)\s*HP',engine,re.I)
+                  if not hp:return None
+                  power=None;photo=urljoin(url,im['src'])
+              disp=re.search(r'(\d\.\d)',engine)
+              if not disp or float(disp.group(1))>2:return None
+              try:
+                  resp=requests.get(photo,headers=headers,timeout=13);resp.raise_for_status()
+                  im=Image.open(io.BytesIO(resp.content));im.load()
+                  if min(im.size)<300:return None
+                  return dict(family=r['make']+' '+r['model'],brand_group=r['brand_group'],title=title,year=int(year.group(1)),engine=engine,mileage_km=int(m.group(1).replace(',','')),price_usd=int(price.group(1).replace(',','')),power_kw_listed=power,source=url,photo_url=photo,rights_confirmed=False,documented_power_kw=None,inspection_report=None,sha256=hashlib.sha256(resp.content).hexdigest()),im.convert('RGB')
+              except Exception:return None
+          records=[];hs=set()
+          with cf.ThreadPoolExecutor(max_workers=6) as pool:
+              for result in pool.map(details,list(queue.items())[:220]):
+                  if not result:continue
+                  r,im=result
+                  if r['sha256'] in hs:continue
+                  hs.add(r['sha256']);r['id']=str(len(records)+1).zfill(3)
+                  im.thumbnail((1000,800));im.save(root/(r['id']+'.jpg'),quality=90);records.append(r)
+          (root/'manifest.json').write_text(json.dumps({'records':records,'count':len(records)},ensure_ascii=False,indent=2))
+          for i in range(0,len(records),24):
+              g=records[i:i+24];s=Image.new('RGB',(1080,((len(g)+3)//4)*210),'white');d=ImageDraw.Draw(s)
+              for j,r in enumerate(g):
+                  x=j%4*270;y=j//4*210
+                  d.text((x+3,y+3),r['id']+' '+r['family'][:35],fill='black')
+                  im=Image.open(root/(r['id']+'.jpg'));im.thumbnail((265,185));s.paste(im,(x+3,y+20))
+              s.save(root/f'contact-{i//24+1:02}.jpg',quality=88)
+          print('Downloaded',len(records),'records,',len({r['family'] for r in records}),'families',flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: China-new-families-dealer
+          path: multi-review/
+          retention-days: 14
