@@ -18,6 +18,7 @@ prefix='assets/china-order/owner-20261120-batch12/'
 P(prefix).mkdir(parents=True,exist_ok=False)
 groups={'china':'Китайские марки','japan':'Японские марки','usa':'Американские марки','europe':'Европейские марки','korea':'Корейские марки'}
 brands={'mazda':'japan','toyota':'japan','nissan':'japan','honda':'japan','mitsubishi':'japan','suzuki':'japan','subaru':'japan','kia':'korea','hyundai':'korea','volkswagen':'europe','vw':'europe','jetta':'europe','skoda':'europe','škoda':'europe','audi':'europe','bmw':'europe','mercedes':'europe','mercedes-benz':'europe','mini':'europe','volvo':'europe','peugeot':'europe','citroen':'europe','mg':'china','geely':'china','chery':'china','haval':'china','harvard':'china','changan':'china','gac':'china','jetour':'china','dongfeng':'china','roewe':'china','wuling':'china','byd':'china','chevrolet':'usa','ford':'usa','buick':'usa'}
+brands.update({'jaguar':'europe','land':'europe','land-rover':'europe','range':'europe','porsche':'europe','alfa':'europe','opel':'europe','renault':'europe','cadillac':'usa','lincoln':'usa','jeep':'usa','tesla':'usa','lexus':'japan','infiniti':'japan','acura':'japan','genesis':'korea','baic':'china','bestune':'china','hongqi':'china','maxus':'china','faw':'china','saic':'china','lynk':'china','exeed':'china','chery':'china','foton':'china','jac':'china','great':'china','leapmotor':'china','nio':'china','xpeng':'china','zeekr':'china','smart':'europe'})
 cards=[];receipt=[];new={};counts={'Xin Che Hang':0}
 for i,ref in enumerate(rows,290):
     folder=P('/tmp/china319')/str(ref['artifact_id'])
