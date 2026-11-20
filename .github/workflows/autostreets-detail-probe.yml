@@ -1,0 +1,63 @@
+name: Autostreets detail probe
+on:
+  push:
+    branches: ['research/china-bulk-review-20261120']
+    paths: ['.github/workflows/autostreets-detail-probe.yml']
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install playwright
+      - run: playwright install chromium
+      - run: |
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          import json
+          from pathlib import Path
+          out=Path('probe');out.mkdir()
+          with sync_playwright() as p:
+              b=p.chromium.launch(headless=True,args=['--no-sandbox'])
+              c=b.new_context()
+              page=c.new_page()
+              def attach(pg):
+                  def capture(r):
+                      try:
+                          if r.request.resource_type in ('xhr','fetch'):
+                              print('RESPONSE',r.status,r.url,flush=True)
+                              if 'json' in r.headers.get('content-type',''):
+                                  d=r.json()
+                                  if '/api/gb/car/queryVehicleInfo' not in r.url:
+                                      print('DATA',str(d)[:2500],flush=True)
+                                  else:
+                                      print('LIST',str(d.get('data',{}).get('dataList',[{}])[0])[:400],flush=True)
+                      except Exception:pass
+                  pg.on('response',capture)
+              attach(page);c.on('page',attach)
+              for k,path in enumerate(['/en/used-cars','/en/auction']):
+                  try:
+                      page.goto('https://global.autostreets.com'+path,wait_until='domcontentloaded',timeout=20000)
+                      button=page.get_by_text('View details',exact=True).first
+                      button.wait_for(timeout=20000)
+                      print('BUTTON',button.evaluate('(e)=>e.parentElement.outerHTML')[:2500],flush=True)
+                      button.click(timeout=6000)
+                      page.wait_for_timeout(6000)
+                      for j,pg in enumerate(c.pages):
+                          print('PAGE',pg.url,pg.locator('body').inner_text()[:2800],flush=True)
+                          print('IMAGES',pg.locator('img').evaluate_all("(a)=>a.map(x=>x.currentSrc||x.src)")[:20],flush=True)
+                          (out/f'detail-{k}-{j}.html').write_text(pg.content())
+                      for pg in c.pages[1:]:pg.close()
+                  except Exception as e:print('PROBE ERROR',str(e),flush=True)
+              b.close()
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: autostreets-detail-probe
+          path: probe/
+          retention-days: 7
