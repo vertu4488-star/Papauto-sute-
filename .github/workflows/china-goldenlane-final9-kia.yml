@@ -1,0 +1,90 @@
+name: GoldenLane compact economical cars photo review
+on:
+  push:
+    branches: ['research/china-bulk-review-20261120']
+    paths: ['.github/workflows/china-goldenlane-final9-kia.yml']
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - run: pip install requests beautifulsoup4 pillow
+      - run: |
+          python - <<'PY'
+          import requests,re,json,io,hashlib,concurrent.futures as cf
+          from pathlib import Path
+          from urllib.parse import urljoin
+          from bs4 import BeautifulSoup
+          from PIL import Image,ImageDraw
+          base='https://goldenlaneauto.com'
+          headers={'User-Agent':'Mozilla/5.0'}
+          out=Path('review');out.mkdir()
+          def get(u):
+              try:
+                  r=requests.get(u,headers=headers,timeout=12);r.raise_for_status();return BeautifulSoup(r.text,'html.parser')
+              except Exception:return None
+          pages=[]
+          urls=set(base+'/used-cars/'+n+'/' for n in ['kia-yipao-67022','kia-yipao-87442','kia-yipao-82698','kia-yipao-75605','kia-yipao-76350','kia-yipao-67037','kia-yipao-84501','kia-yipao-70087','kia-yipao-75996','kia-yipao-76355','chery-arrizo-5-65641'])
+          with cf.ThreadPoolExecutor(max_workers=8) as p:
+              for s in p.map(get,pages):
+                  if not s:continue
+                  for a in s.select('a[href*="/used-cars/"]'):
+                      u=urljoin(base,a['href']).split('?')[0]
+                      if not re.search(r'-\d{4,}/?$',u):continue
+                      for par in a.parents:
+                          t=par.get_text(' ',strip=True)
+                          m=re.search(r'(\d\.\d)\s*[TL]\s*(\d+)\s*(?:hp|ps)',t,re.I)
+                          if len(t)>1500:break
+                          if m and re.search(r'\d[\d,]*\s*km',t):
+                              if float(m[1])<=2 and 60<=int(m[2])<=160 and re.search(r'202[1-5]',t):urls.add(u)
+                              break
+          print('detail candidates',len(urls),flush=True)
+          def detail(u):
+              s=get(u)
+              if not s:return
+              t=s.get_text(' ',strip=True)
+              h=s.find('h1')
+              if not h:return
+              name=h.get_text(' ',strip=True)
+              m=re.search(r'Engine\s+(\d\.\d\s*[TL]\s*\d+\s*(?:HP|PS)\s*[^ ]*)\s+Displacement\s+([\d.]+)\s*L\s+Max power\s+([\d.]+)\s*kW',t,re.I)
+              y=re.search(r'Manufacture date\s+(20\d\d)-',t);mil=re.search(r'Mileage\s+([\d,]+)\s*km',t)
+              pr=re.search(r'From\s*¥\s*([\d,]+)\s*CNY',t)
+              brand=re.search(r'Brand\s+(.+?)\s+Series\s+',t)
+              if not all([m,y,mil,pr,brand]) or float(m[2])>2 or float(m[3])>117.68 or int(y[1])<2021:return
+              hp=int(re.search(r'(\d+)\s*(?:HP|PS)',m[1],re.I).group(1))
+              if hp>160:return
+              if not re.search(r'Energy / Gearbox\s+Gasoline',t):return
+              imgs=[]
+              for im in s.find_all('img'):
+                  src=im.get('data-src') or im.get('src') or ''
+                  if src and (im.get('alt','')==name or (name[:15] in im.get('alt',''))):imgs.append(urljoin(u,src))
+              if not imgs:return
+              try:
+                  x=requests.get(imgs[0],headers=headers,timeout=8);x.raise_for_status();im=Image.open(io.BytesIO(x.content));im.load()
+                  if min(im.size)<300:return
+                  im.thumbnail((1200,900))
+                  return dict(title=brand[1]+' '+name,year=int(y[1]),engine=m[1],power_ps_listed=hp,power_kw_listed=float(m[3]),mileage_km=int(mil[1].replace(',','')),price_cny=int(pr[1].replace(',','')),price_type='supplier starting route price, not FOB',source=u,photo_url=imgs[0],rights_confirmed=False,documented_power_kw=None),im.convert('RGB')
+              except Exception:return
+          rec=[];hashes=set()
+          with cf.ThreadPoolExecutor(max_workers=12) as p:
+              for a in p.map(detail,sorted(urls)[:180]):
+                  if not a:continue
+                  r,im=a;f=io.BytesIO();im.save(f,format='JPEG',quality=92);b=f.getvalue();h=hashlib.sha256(b).hexdigest()
+                  if h in hashes:continue
+                  hashes.add(h);r['id']=str(len(rec)+1).zfill(3);r['photo_sha256']=h;(out/(r['id']+'.jpg')).write_bytes(b);rec.append(r)
+          (out/'manifest.json').write_text(json.dumps({'records':rec},ensure_ascii=False,indent=2))
+          for off in range(0,len(rec),25):
+              g=rec[off:off+25];s=Image.new('RGB',(1250,((len(g)+4)//5)*200),'white');d=ImageDraw.Draw(s)
+              for j,r in enumerate(g):
+                  x=j%5*250;y=j//5*200;d.text((x+3,y+3),r['id']+' '+r['title'][:27],fill='black');im=Image.open(out/(r['id']+'.jpg'));im.thumbnail((244,175));s.paste(im,(x+2,y+20))
+              s.save(out/f'contact-{off//25+1:02}.jpg',quality=88)
+          print('photo records',len(rec),flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: goldenlane-final9-kia-review
+          path: review/
+          retention-days: 14
