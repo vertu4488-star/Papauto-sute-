@@ -1,0 +1,118 @@
+name: Autostreets verified gallery export
+on:
+  push:
+    branches: ['research/china-bulk-review-20261120']
+    paths: ['.github/workflows/autostreets-gallery-export.yml']
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install playwright pillow requests
+      - run: playwright install chromium
+      - run: |
+          python - <<'PY'
+          import asyncio,json,re,io,hashlib,html,base64
+          from pathlib import Path
+          from PIL import Image
+          from playwright.async_api import async_playwright
+          out=Path('export');out.mkdir()
+          base='https://global.autostreets.com'
+          records={};rows=[];seen=set()
+          def key(r):return str(r['category'])+'-'+str(r['avId'])
+          async def main():
+              async with async_playwright() as p:
+                  b=await p.chromium.launch(headless=True,args=['--no-sandbox'])
+                  c=await b.new_context()
+                  page=await c.new_page()
+                  for route in ('auction','used-cars'):
+                      async with page.expect_response(lambda x:'/api/gb/car/queryVehicleInfo' in x.url and x.status==200,timeout=25000) as resp:
+                          await page.goto(base+'/en/'+route,wait_until='domcontentloaded',timeout=25000)
+                      for n in range(65):
+                          d=(await (await resp.value).json()).get('data',{})
+                          rs=d.get('dataList',[])
+                          if not rs:break
+                          old=len(records)
+                          for r in rs:records[key(r)]=r
+                          if len(records)==old:break
+                          btn=page.locator('.el-pagination .btn-next').first
+                          if not await btn.count() or not await btn.is_enabled():break
+                          try:
+                              async with page.expect_response(lambda x:'/api/gb/car/queryVehicleInfo' in x.url and x.status==200,timeout=8000) as resp:
+                                  await btn.click(timeout=4000)
+                          except Exception:break
+                      print(route,len(records),flush=True)
+                  await page.close()
+                  eligible=[r for r in records.values() if r.get('starCondition') and r.get('firstPhotoUrl') and 2017<=int(r.get('modelYear') or 0)<=2026 and (r.get('oilType')=='Electric' or 0<float(r.get('sweptVolume') or 0)<=2)]
+                  print('eligible',len(eligible),flush=True)
+                  q=asyncio.Queue()
+                  for r in eligible: q.put_nowait(r)
+                  async def worker():
+                      pg=await c.new_page()
+                      while not q.empty() and len(rows)<100:
+                          try:r=q.get_nowait()
+                          except asyncio.QueueEmpty:break
+                          ident=key(r)
+                          try:
+                              route='auction' if r['category']==1 else 'used-cars'
+                              u=base+'/en/'+route+'/vehicle/'+str(r['avId'])
+                              async with pg.expect_response(lambda x:'/api/gb/car/detail' in x.url and x.status==200,timeout=12000) as res:
+                                  await pg.goto(u,wait_until='domcontentloaded',timeout=15000)
+                              info=(await (await res.value).json()).get('data',{}).get('info',{})
+                              await pg.get_by_text('Odometer',exact=False).first.wait_for(timeout=6000)
+                              t=await pg.locator('body').inner_text()
+                              if 'Vehicle not inspected' in t or str(r['vehicleCode']) not in t:continue
+                              sections={k:v for k,v in info.items() if isinstance(v,dict) and isinstance(v.get('itemInfoList'),list)}
+                              if len(sections)<3:continue
+                              imgs=await pg.locator('img').evaluate_all("(a)=>a.map(x=>x.currentSrc||x.src)")
+                              def norm(u):return re.sub(r'\*\d+\*\d+(?=\.jpg)','',u)
+                              urls=list(dict.fromkeys(norm(x) for x in imgs if x.startswith('https://images.autostreets.com/group1/')))
+                              if not any(r['firstPhotoUrl'] in x for x in urls):continue
+                              images=[];hashes=[];sources=[]
+                              for x in urls[:5]:
+                                  try:
+                                      v=x.replace('.jpg','*800*600.jpg')
+                                      res=await c.request.get(v,timeout=8000)
+                                      if not res.ok:continue
+                                      raw=await res.body();im=Image.open(io.BytesIO(raw));im.load()
+                                      h=hashlib.sha256(raw).hexdigest()
+                                      if min(im.size)<250 or h in hashes:continue
+                                      images.append(im.convert('RGB'));hashes.append(h);sources.append(v)
+                                      if len(images)==3:break
+                                  except Exception:continue
+                              if len(images)<2 or any(h in seen for h in hashes) or len(rows)>=100:continue
+                              field={k:r.get(k) for k in ('vehicleName','modelYear','displayMileageDesc','oilType','sweptVolumeDesc','transmissionType','bodyColor','currentCity','showPrice','unitStr','starCondition','starFacade','starInterior','starSkeleton','starElectric')}
+                              price=str(field['showPrice'] or '')
+                              field['public_price']=price if re.fullmatch(r'[\d,]+(?:\.\d+)?',price) and float(price.replace(',',''))>0 and route!='auction' else None
+                              seen.update(hashes)
+                              for i,im in enumerate(images):im.save(out/(ident+'-'+str(i+1)+'.jpg'),quality=89)
+                              rows.append(dict(id=ident,fields=field,inspection=sections,source=u,photo_urls=sources,hashes=hashes))
+                              (out/'manifest.json').write_text(json.dumps(rows,ensure_ascii=False))
+                              print('saved',len(rows),ident,flush=True)
+                          except Exception as e:print('skip',ident,str(e)[:110],flush=True)
+                      await pg.close()
+                  await asyncio.gather(*(worker() for _ in range(5)))
+                  await b.close()
+          asyncio.run(main())
+          (out/'manifest.json').write_text(json.dumps(rows,ensure_ascii=False))
+          cards=[]
+          for r in rows:
+              f=r['fields'];e=lambda v:html.escape(str(v or '—'))
+              pictures=''.join('<img src="data:image/jpeg;base64,'+base64.b64encode(p.read_bytes()).decode()+'">' for p in sorted(out.glob(r['id']+'-*.jpg')))
+              report=''.join('<h4>'+e(k)+'</h4><ul>'+''.join('<li>'+e(i.get('itemName'))+(': повреждение' if i.get('isDamage') else ': без замечаний')+'</li>' for i in v.get('itemInfoList',[]))+'</ul>' for k,v in r['inspection'].items())
+              price= e(f['public_price'])+' '+e(f['unitStr']) if f['public_price'] else 'Цена не раскрыта площадкой'
+              cards.append('<article>'+pictures+'<h2>'+e(f['vehicleName'])+'</h2><p>'+e(f['displayMileageDesc'])+' · '+e(f['sweptVolumeDesc'])+' · '+e(f['oilType'])+' · '+e(f['transmissionType'])+'</p><p>Оценка: '+e(f['starCondition'])+'/5 · '+price+'</p><details><summary>Электронный осмотр</summary>'+report+'</details></article>')
+          (out/'PapAuto-Autostreets.html').write_text('<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PapAuto — Autostreets</title><style>body{background:#f6f3ef;color:#272620;font:16px system-ui;margin:24px}article{background:white;padding:16px;border-radius:12px;margin-bottom:20px}img{width:32%;vertical-align:top;margin-right:1%;border-radius:6px}h2{font-size:20px}</style><h1>Autostreets · '+str(len(rows))+' автомобилей</h1><p>Предварительный просмотр. Фото и осмотры требуют визуального согласования.</p>'+''.join(cards))
+          print('TOTAL',len(rows),flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: autostreets-gallery
+          path: export/
+          retention-days: 7
