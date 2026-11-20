@@ -1,0 +1,142 @@
+name: Autostreets 100 vehicle review
+on:
+  push:
+    branches: ['research/china-bulk-review-20261120']
+    paths: ['.github/workflows/china-autostreets-review.yml']
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install playwright requests pillow beautifulsoup4
+      - run: playwright install chromium
+      - name: Collect public vehicle records and actual images
+        run: |
+          python - <<'PY'
+          import json,re,io,hashlib,concurrent.futures as cf,collections
+          from pathlib import Path
+          from urllib.parse import urljoin,urlparse
+          from playwright.sync_api import sync_playwright
+          from PIL import Image,ImageDraw
+          from bs4 import BeautifulSoup
+          import requests
+          root=Path('autostreets-review');root.mkdir()
+          base='https://global.autostreets.com'
+          urls=set()
+          api=[]
+          def capture(resp):
+              try:
+                  if resp.request.resource_type in ('xhr','fetch') and 'json' in resp.headers.get('content-type',''):
+                      data=resp.json()
+                      if len(api)<20:api.append({'url':resp.url,'sample':str(data)[:1800]})
+                      def walk(x):
+                          if isinstance(x,dict):
+                              for k,v in x.items():
+                                  if k.lower() in ('vehicleid','carid','vehicle_id') and str(v).isdigit():urls.add(base+'/en/used-cars/vehicle/'+str(v))
+                                  walk(v)
+                          elif isinstance(x,list):
+                              for y in x:walk(y)
+                      walk(data)
+              except Exception:pass
+          with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True,args=['--no-sandbox'])
+              page=browser.new_page()
+              page.on('response',capture)
+              for path in ('/en/auction','/en/used-cars'):
+                  try:
+                      page.goto(base+path,wait_until='domcontentloaded',timeout=35000)
+                      page.wait_for_timeout(1800)
+                      for idx in range(22):
+                          hrefs=page.locator('a[href]').evaluate_all("(a)=>a.map(x=>x.href)")
+                          for u in hrefs:
+                              if re.search(r'/en/(?:used-cars/vehicle|auction/(?:vehicle|detail))/\d+',u):urls.add(u.split('?')[0])
+                          if idx==0:
+                              (root/('listing-'+path.split('/')[-1]+'.txt')).write_text(page.locator('body').inner_text()[:20000])
+                          nexts=page.locator('button[aria-label*="next" i], [title*="next" i], .el-pagination .btn-next, .ant-pagination-next button, button:has-text("Next")')
+                          if not nexts.count():break
+                          n=nexts.first
+                          if not n.is_enabled():break
+                          before=page.locator('body').inner_text()[:2000]
+                          n.click(timeout=3000);page.wait_for_timeout(900)
+                          if before==page.locator('body').inner_text()[:2000]:break
+                  except Exception as e:print('listing',path,str(e)[:250],flush=True)
+              print('URLs',len(urls),flush=True)
+              (root/'discovery.json').write_text(json.dumps({'urls':sorted(urls),'api':api},ensure_ascii=False))
+              browser.close()
+          def fetch(u):
+              r=requests.get(u,timeout=(8,20),headers={'User-Agent':'Mozilla/5.0'})
+              r.raise_for_status();return r
+          def scan(u):
+              try:
+                  s=BeautifulSoup(fetch(u).text,'html.parser')
+                  title=s.find('h1')
+                  if not title:return None
+                  title=title.get_text(' ',strip=True)
+                  t=' '.join(s.stripped_strings)
+                  lot=re.search(r'No\.\s*(\d+)',t)
+                  mileage=re.search(r'Odometer\s*[：:]\s*([\d,]+)\s*KM',t,re.I)
+                  if not lot or not mileage:return None
+                  if re.search(r'Vehicle not inspected',t,re.I):return None
+                  if not re.search(r'\b[12]\.[0-9](?:T|L|\b)|\b(?:EV|Electric)\b',title,re.I):return None
+                  if re.search(r'\b(?:2\.[1-9]|[3-9]\.[0-9])(?:T|L|\b)',title):return None
+                  photos=[]
+                  for tag in s.select('img'):
+                      src=tag.get('data-src') or tag.get('src','')
+                      if not src or src.startswith('data:'):continue
+                      alt=tag.get('alt','')
+                      if re.search(r'logo|icon|avatar|banner|flag',src+' '+alt,re.I):continue
+                      url=urljoin(u,src)
+                      if urlparse(url).scheme!='https' or url in photos:continue
+                      photos.append(url)
+                  imgs=[]; hashes=[]
+                  for url in photos[:30]:
+                      try:
+                          r=fetch(url)
+                          im=Image.open(io.BytesIO(r.content));im.load()
+                          if min(im.size)<300 or im.width/im.height<1.15:continue
+                          h=hashlib.sha256(r.content).hexdigest()
+                          if h in hashes:continue
+                          imgs.append(im.convert('RGB'));hashes.append(h)
+                          if len(imgs)==4:break
+                      except Exception:continue
+                  if len(imgs)<2:return None
+                  desc=s.find(string=re.compile(r'^\s*General Description\s*$'))
+                  if not desc:return None
+                  section=desc.parent.parent.get_text(' ',strip=True)
+                  if len(section)<30:return None
+                  return {'id':lot.group(1),'title':title,'mileage_km':int(mileage.group(1).replace(',','')),'source':u,'description_source':section[:2500],'source_text':t[:16000],'sha256':hashes,'photo_count':len(imgs),'status':'visual and inspection document review required'},imgs
+              except Exception:return None
+          rows=[];seen=set();hashes=set()
+          with cf.ThreadPoolExecutor(max_workers=5) as pool:
+              ordered=sorted(urls)
+              for offset in range(0,len(ordered),20):
+                  for x in pool.map(scan,ordered[offset:offset+20]):
+                      if not x:continue
+                      row,images=x
+                      if row['id'] in seen or any(h in hashes for h in row['sha256']):continue
+                      seen.add(row['id']);hashes.update(row['sha256']);rows.append(row)
+                      for i,im in enumerate(images):
+                          im.thumbnail((1280,960));im.save(root/(row['id']+'-'+str(i+1)+'.jpg'),quality=90)
+                      if len(rows)==100:break
+                  if len(rows)==100:break
+          (root/'manifest.json').write_text(json.dumps({'count':len(rows),'records':rows},ensure_ascii=False,indent=2))
+          print('Acquired image sets with descriptions:',len(rows),flush=True)
+          for off in range(0,len(rows),10):
+              group=rows[off:off+10];sheet=Image.new('RGB',(1000,len(group)*220),'white');d=ImageDraw.Draw(sheet)
+              for i,row in enumerate(group):
+                  y=i*220;d.text((5,y+3),row['id']+' '+row['title'][:90],fill='black')
+                  for j in range(2):
+                      im=Image.open(root/(row['id']+'-'+str(j+1)+'.jpg'));im.thumbnail((490,190));sheet.paste(im,(500*j,y+23))
+              sheet.save(root/f'contact-{off//10+1:02}.jpg')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: autostreets-review
+          path: autostreets-review/
+          retention-days: 7
