@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-20",
+  "count": 1,
+  "records": [
+    {
+      "id": "yoliang-688477",
+      "source_vehicle_code": "688477",
+      "market": "china",
+      "make": "Toyota",
+      "model": "Corolla EX",
+      "year": 2013,
+      "registered": "2013-11-26",
+      "mileage_km": 83000,
+      "grade": "80B",
+      "starting_bid_cny": 8000,
+      "price_status": "starting_bid_not_sale_price",
+      "engine": "1.6L",
+      "fuel": "gasoline",
+      "report_date": "2026-11-19",
+      "report_url": "https://e.yoliang.com/vehicles/688477",
+      "report_type": "source_electronic_inspection_report",
+      "photos": [
+        "https://file.yoliang.com/d11a805d-8a6c-4780-909d-26af8b54918b/2026-11-19/1795080811375.png?x-oss-process=style/pai_small",
+        "https://file.yoliang.com/d11a805d-8a6c-4780-909d-26af8b54918b/2026-11-19/1795080817441.png?x-oss-process=style/pai_small"
+      ],
+      "photo_review": "Both front and rear photos opened and visually inspected; silver vehicle, blurred background, Yoliang plate.",
+      "inspection_summary_ru": "8 внешних замечаний, 1 замечание по салону. По отчёту крупной аварии, затопления, пожара не обнаружено.",
+      "local_media_verified": false,
+      "public_release": false
+    }
+  ],
+  "note": "Source report and two image files accessed; links only, not local copies. Other candidates with missing reports or unverified backgrounds excluded."
+}
