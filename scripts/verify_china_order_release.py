@@ -78,10 +78,44 @@ THIRD_HASHES = {
     "046": "4b343f5e8d8aa25b129f0b5fa613a83061ad3cd04f791f8d8173fdd9dc2c71b9",
 }
 
+FOURTH_PREFIX = "assets/china-order/owner-20261120-fourth30/"
+FOURTH_HASHES = {
+    "298": "42d9e55fcebcef563236c94e910006062bfc626a6d9140da47c37b147bee0405",
+    "237": "de28f3ee3bc51d8a60966ec63da85061d6dfd428daa586208010c0e65138642a",
+    "202": "697b651b52a8bd099b711065ffc8497dae705abde60f68581ae0244fed7d7b1f",
+    "238": "4c27171798d161ce30f304011ce9b36e62ea07e13026436664bbb0b3c8fef6fb",
+    "239": "2882b672e0fb293f9377d37aeb07fbdac169b55d2b4c930e84b2c51c204b22fe",
+    "236": "a516f43795f870bf6494e2ffea9a256f531cd223eb00034ec6bfb3391b5d6d1a",
+    "178": "9c2e4774fe83c4c0a19e696392dee3f6be8d70bccf6b04bc2387bb9240626f8f",
+    "295": "781a8b9850e203dcd1d2cfa28538521ff1f376a999e47543cc2b082776901ece",
+    "243": "fd0166d6c056013721037c6519fa2830766411a30638eb986dc49a2d4417e101",
+    "294": "4b25a71e942845e0c6fec4ee180f3149583b5f3155a238a71b678d2c37140676",
+    "093": "911476803f35a715543321e3735768af8d02f37b9e8fc55d1093e384f6f44177",
+    "208": "2863a07186025138de824d7f764db5ccc77461c4c8e7b0ddef3dd39fb9d0883e",
+    "165": "2bfadb07e14b0450c01c9e7c077f40961a277f46ff2ba2ed5f11b76a72ee4e9c",
+    "205": "0f64f85db25105b93fb37962df61fa0d36943eed5911e72afdb40eaf3ad31734",
+    "085": "ed6ebe11393fab53b9047e8dc4fbd4e2e74762ed335e038938ed2e4629fe5934",
+    "189": "88d55502500013fcae1a2c67e78317fc5e901673ec191ac02e6866f04dcceb71",
+    "226": "f7930d2a8fa691dfe052a62d3b5882da95c66414ff66bf36b4fc895ffef4bdeb",
+    "231": "23a397a7a671abae137d402720801eb8d0ed0152fd369bbf1a15d7eba599648d",
+    "174": "8f323f63ae9a621e6ae4fd516ba175901e92e7f058169b4d2897c3b0a0e455ff",
+    "184": "4c54abfc9d6856eb36733fd7f9974d93cddd51fd2bf4510c5ce534efed904422",
+    "198": "4762e527dea61d123cb013332fbb64c9dbc4d51e514c1e422dc84c50c7b69cc1",
+    "030": "7a62eee15081682bc39a19d92f85a00e96c7e88be5fbb8397089878ed5197d68",
+    "163": "f8258ddbacac66ee8e736c75393061d0aff80e18c20a6d56271c75ba2f7e540f",
+    "214": "c148af6ff7ef9e1d176d9d94c0d8a7e703625e568c0fa31ccb23f1e31fd8cf81",
+    "129": "c533af0676f3fb591f2c5ecb8817379a53081d880954ccf4e527076661b1b6bd",
+    "218": "22755956c554510d6db50fb88f4bd43606b5245a417ba098375495330b84bc38",
+    "180": "b503472bc42ef1093ff670f86b1c1ab72437e4fdab4966d6f5334e1781601b7b",
+    "104": "86b28274fce0bac77ae01ebee68841dbc9aa82f370e5efda16468a2f3c701816",
+    "249": "be222eeac8b743d288b4bc517c1683717a678597af3e0ba381c6ee5748aaa508",
+    "007": "3fc72520ec035986a649c564301bef0dc497c18f77e15f88bcdfaf68cc2fa8ac",
+}
+
 def verify(root=ROOT):
     root = Path(root)
     media = root / PREFIX
-    expected = {PREFIX + ident + ".jpg" for ident in IDS} | {EXTRA_PREFIX + ident + ".jpg" for ident in EXTRA_HASHES} | {THIRD_PREFIX + ident + ".jpg" for ident in THIRD_HASHES}
+    expected = {PREFIX + ident + ".jpg" for ident in IDS} | {EXTRA_PREFIX + ident + ".jpg" for ident in EXTRA_HASHES} | {THIRD_PREFIX + ident + ".jpg" for ident in THIRD_HASHES} | {FOURTH_PREFIX + ident + ".jpg" for ident in FOURTH_HASHES}
     found = {p.relative_to(root).as_posix() for p in (root / "assets/china-order").rglob("*") if p.is_file() or p.is_symlink()}
     if found != expected:
         raise RuntimeError("CHINA_ORDER: unexpected or missing image")
@@ -104,8 +138,13 @@ def verify(root=ROOT):
         b = p.read_bytes()
         if p.is_symlink() or len(b)<500 or not b.startswith(b"\xff\xd8\xff") or hashlib.sha256(b).hexdigest()!=digest:
             raise RuntimeError("CHINA_ORDER: third batch photo mismatch " + ident)
+    for ident, digest in FOURTH_HASHES.items():
+        p = root / FOURTH_PREFIX / (ident + ".jpg")
+        b = p.read_bytes()
+        if p.is_symlink() or len(b)<500 or not b.startswith(b"\xff\xd8\xff") or hashlib.sha256(b).hexdigest()!=digest:
+            raise RuntimeError("CHINA_ORDER: fourth batch photo mismatch " + ident)
     html = (root/PAGE).read_text(encoding="utf-8")
-    if re.findall(r'<img\b[^>]*\bsrc="([^"]+)"',html) != ["/"+PREFIX+i+".jpg" for i in IDS] + ["/"+EXTRA_PREFIX+i+".jpg" for i in EXTRA_HASHES] + ["/"+THIRD_PREFIX+i+".jpg" for i in THIRD_HASHES]:
+    if re.findall(r'<img\b[^>]*\bsrc="([^"]+)"',html) != ["/"+PREFIX+i+".jpg" for i in IDS] + ["/"+EXTRA_PREFIX+i+".jpg" for i in EXTRA_HASHES] + ["/"+THIRD_PREFIX+i+".jpg" for i in THIRD_HASHES] + ["/"+FOURTH_PREFIX+i+".jpg" for i in FOURTH_HASHES]:
         raise RuntimeError("CHINA_ORDER: photo identity mismatch")
     for p in root.glob("*.html"):
         if p.name != PAGE and "/assets/china-order/" in p.read_text(encoding="utf-8"):
