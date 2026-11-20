@@ -1,0 +1,80 @@
+name: China exact listed power photo sourcing
+on:
+  push:
+    branches: ['research/china-bulk-review-20261120']
+    paths: ['.github/workflows/china-160hp-ez-probe.yml']
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: pip install requests beautifulsoup4 pillow
+      - run: |
+          python - <<'PY'
+          import requests,re,json,io,hashlib,concurrent.futures as cf
+          from pathlib import Path
+          from urllib.parse import urljoin
+          from bs4 import BeautifulSoup
+          from PIL import Image,ImageDraw
+          base='https://ezautoglobal.com/en/cars'
+          headers={'User-Agent':'Mozilla/5.0'}
+          response=requests.get(base,headers=headers,timeout=25);response.raise_for_status()
+          soup=BeautifulSoup(response.text,'html.parser')
+          out=Path('review');out.mkdir()
+          leads=[];seen=set()
+          for h in soup.find_all(['h2','h3','h4']):
+              title=h.get_text(' ',strip=True)
+              for p in h.parents:
+                  if p.name in ['html','body']:break
+                  t=p.get_text(' ',strip=True)
+                  y=re.search(r'Production Year:\s*(20\d\d)',t);m=re.search(r'Mileage:\s*([\d\s,]+)\s*km',t);e=re.search(r'Engine:\s*(\d\.\d\s*[LT][^:]{0,15}?)\s*Power:\s*(\d+)',t)
+                  price=re.search(r'From\s*\$\s*([\d\s,]+)',t)
+                  if not all([y,m,e,price]):continue
+                  if len(t)>1200 or len(p.find_all(['h2','h3','h4']))>1:break
+                  hp=int(e.group(2))
+                  if not 60<=hp<=160 or float(e.group(1)[:3])>2:break
+                  imgs=[]
+                  for im in p.find_all('img'):
+                      u=im.get('data-src') or im.get('src') or ''
+                      if u.startswith('data:'):continue
+                      if u:imgs.append(urljoin(base,u))
+                  if not imgs:continue
+                  if imgs[0] in seen:break
+                  seen.add(imgs[0]);leads.append(dict(title=title,year=int(y.group(1)),engine=e.group(1),power_ps_listed=hp,mileage_km=int(re.sub(r'\D','',m.group(1))),price_usd=int(re.sub(r'\D','',price.group(1))),source=base,photo_urls=list(dict.fromkeys(imgs))[:5],price_type='supplier starting price; trade terms unspecified',rights_confirmed=False,documented_power_kw=None))
+                  break
+          print('leads',len(leads),flush=True)
+          print('sample',str(leads[:2])[:2000],flush=True)
+          if not leads:
+              (out/'debug.txt').write_text(str(soup.find('h3').parent.parent)[:18000] if soup.find('h3') else response.text[:18000])
+          def get(r):
+              for u in r['photo_urls']:
+                  try:
+                      q=requests.get(u,headers=headers,timeout=12);q.raise_for_status()
+                      im=Image.open(io.BytesIO(q.content));im.load()
+                      if min(im.size)<300:continue
+                      im.thumbnail((1200,900));return r,u,im.convert('RGB')
+                  except Exception:continue
+          records=[]
+          with cf.ThreadPoolExecutor(max_workers=10) as pool:
+              for result in pool.map(get,leads):
+                  if not result:continue
+                  r,u,im=result;r['id']=str(len(records)+1).zfill(3);r['photo_url']=u
+                  f=out/(r['id']+'.jpg');im.save(f,quality=92);r['photo_sha256']=hashlib.sha256(f.read_bytes()).hexdigest();records.append(r)
+          (out/'manifest.json').write_text(json.dumps({'records':records},ensure_ascii=False,indent=2))
+          for off in range(0,len(records),24):
+              g=records[off:off+24];s=Image.new('RGB',(1080,((len(g)+3)//4)*220),'white');d=ImageDraw.Draw(s)
+              for j,r in enumerate(g):
+                  x=j%4*270;y=j//4*220
+                  d.text((x+3,y+3),r['id']+' '+r['title'][:27]+' '+str(r['power_ps_listed']),fill='black')
+                  im=Image.open(out/(r['id']+'.jpg'));im.thumbnail((266,195));s.paste(im,(x+2,y+20))
+              s.save(out/f'contact-{off//24+1:02}.jpg')
+          print('downloaded photo pairs',len(records),flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: china-160hp-ez-review
+          path: review/
+          retention-days: 14
