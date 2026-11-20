@@ -1,0 +1,80 @@
+name: China additional 160hp dealer gallery review
+on:
+  push:
+    branches: ['research/china-bulk-review-20261120']
+    paths: ['.github/workflows/china-160hp-more-photos.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: china-160hp-ez-review
+          run-id: 44699371077
+          github-token: ${{ github.token }}
+          path: /tmp/ez
+      - run: pip install requests beautifulsoup4 pillow
+      - run: |
+          python - <<'PY'
+          import requests,re,json,io,hashlib,concurrent.futures as cf
+          from pathlib import Path
+          from urllib.parse import urljoin
+          from bs4 import BeautifulSoup
+          from PIL import Image,ImageDraw
+          out=Path('review');out.mkdir()
+          source=json.loads(Path('/tmp/ez/manifest.json').read_text())['records']
+          used=set('001 002 009 010 012 021 028 041 043 045 047 048 054 061 064 065 076 005 011 027 044 046 057 058 059 066 067 072 062 060'.split())
+          headers={'User-Agent':'Mozilla/5.0'}
+          source=[r for r in source if r['id'] not in used]
+          def get(r):
+              m=re.search(r'/media/thumb/(v-[^/]+)/',r['photo_url'])
+              if not m:return []
+              unit=m.group(1);url='https://ezautoglobal.com/en/car-detail-'+unit
+              try:
+                  q=requests.get(url,headers=headers,timeout=12);q.raise_for_status()
+                  s=BeautifulSoup(q.text,'html.parser')
+                  urls=[]
+                  for im in s.find_all('img'):
+                      u=im.get('data-src') or im.get('src') or ''
+                      if unit in u:urls.append(urljoin(url,u))
+                  for a in s.select('a[href]'):
+                      u=a['href']
+                      if unit in u and re.search(r'\.(?:webp|jpg|jpeg|png)(?:$|\?)',u,re.I):urls.append(urljoin(url,u))
+                  for u in re.findall(r'["\x27]([^"\x27\s<>]*'+re.escape(unit)+r'/[^"\x27\s<>]+\.(?:webp|jpg|jpeg|png))["\x27]',q.text,re.I):
+                      urls.append(urljoin(url,u))
+                  urls=list(dict.fromkeys(urls))
+                  res=[]
+                  for u in urls[:12]:
+                      try:
+                          x=requests.get(u,headers=headers,timeout=8);x.raise_for_status()
+                          im=Image.open(io.BytesIO(x.content));im.load()
+                          if min(im.size)<300:continue
+                          im.thumbnail((1200,900));res.append((dict(r,photo_url=u,source=url,original_id=r['id'],unit_id=unit),im.convert('RGB')))
+                      except Exception:continue
+                  return res
+              except Exception:return []
+          rec=[];hashes=set()
+          with cf.ThreadPoolExecutor(max_workers=12) as pool:
+              for result in pool.map(get,source):
+                  for r,im in result:
+                      f=io.BytesIO();im.save(f,format='JPEG',quality=92);b=f.getvalue();h=hashlib.sha256(b).hexdigest()
+                      if h in hashes:continue
+                      hashes.add(h);r['id']=str(len(rec)+1).zfill(3);r['photo_sha256']=h;(out/(r['id']+'.jpg')).write_bytes(b);rec.append(r)
+          (out/'manifest.json').write_text(json.dumps({'records':rec},ensure_ascii=False,indent=2))
+          for n in range(0,len(rec),30):
+              g=rec[n:n+30];s=Image.new('RGB',(1200,((len(g)+4)//5)*180),'white');d=ImageDraw.Draw(s)
+              for j,r in enumerate(g):
+                  x=j%5*240;y=j//5*180;d.text((x+3,y+3),r['id']+' / '+r['original_id']+' '+r['title'][:20],fill='black');im=Image.open(out/(r['id']+'.jpg'));im.thumbnail((234,157));s.paste(im,(x+3,y+20))
+              s.save(out/f'contact-{n//30+1:02}.jpg',quality=88)
+          print('Photos:',len(rec),'units:',len({r['unit_id'] for r in rec}),flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: china-160hp-gallery-review
+          path: review/
+          retention-days: 14
