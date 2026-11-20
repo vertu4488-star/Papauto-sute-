@@ -1,0 +1,78 @@
+name: China new exporter used unit photo research
+on:
+  push:
+    branches: ['research/china-bulk-review-20261120']
+    paths: ['.github/workflows/china-bymotorcar-sourcing.yml']
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          sparse-checkout: |
+            research/owner-approved-china-supplier-49-2026-11-20.json
+            research/owner-approved-china-supplier-30-2026-11-20.json
+          sparse-checkout-cone-mode: false
+      - run: pip install requests beautifulsoup4 pillow
+      - run: |
+          python - <<'PY'
+          import requests,re,json,io,hashlib,concurrent.futures as cf
+          from bs4 import BeautifulSoup
+          from pathlib import Path
+          from urllib.parse import urljoin
+          from PIL import Image,ImageDraw
+          base='https://bymotorcar.com'
+          out=Path('new-exporter-review');out.mkdir()
+          def fetch(u):
+              try:
+                  r=requests.get(u,timeout=12,headers={'User-Agent':'Mozilla/5.0'});r.raise_for_status();return BeautifulSoup(r.text,'html.parser')
+              except Exception:return None
+          urls=set()
+          lists=[base+'/products/']+[base+'/products/?paged='+str(i) for i in range(2,12)]+[base+'/products/page/'+str(i)+'/' for i in range(2,9)]
+          with cf.ThreadPoolExecutor(max_workers=8) as p:
+              for s in p.map(fetch,lists):
+                  if s:
+                      urls.update(urljoin(base,a['href']) for a in s.select('a[href*="/product/used-"]'))
+          print('distinct used details',len(urls),flush=True)
+          def detail(url):
+              s=fetch(url)
+              if not s:return
+              t=s.get_text(' ',strip=True)
+              h=s.find('h1')
+              if not h:return
+              name=h.get_text(' ',strip=True)
+              if not re.search(r'Used\s+20\d\d',name,re.I):return
+              mil=re.search(r'Cond\.\s*/\s*Mileage\s+Used\s*\|\s*([\d,]+)\s*km',t,re.I)
+              eng=re.search(r'Powertrain\s+(\d\.\d\s*[LT])',t,re.I)
+              price=re.search(r'\$([\d,]+)\s*FOB\.',t)
+              if not all([mil,eng,price]) or float(eng.group(1)[:3])>2:return
+              imgs=[i for i in s.find_all('img') if 'Front View' in (i.get('alt') or '') and 'Used' in (i.get('alt') or '')]
+              if not imgs:return
+              u=urljoin(url,imgs[0].get('data-src') or imgs[0].get('src',''))
+              try:
+                  r=requests.get(u,timeout=12);r.raise_for_status();im=Image.open(io.BytesIO(r.content));im.load()
+                  if min(im.size)<400:return
+                  return dict(title=re.sub(r'^Used\s+','',name),engine=eng.group(1),mileage_km=int(mil.group(1).replace(',','')),fob_usd=int(price.group(1).replace(',','')),source=url,photo_url=u,status='supplier reference; not auction evidence',rights_confirmed=False,documented_power_kw=None),im.convert('RGB')
+              except Exception:return
+          records=[]
+          with cf.ThreadPoolExecutor(max_workers=8) as p:
+              for result in p.map(detail,sorted(urls)[:160]):
+                  if not result:continue
+                  row,im=result;row['id']=str(len(records)+1).zfill(3);im.thumbnail((1000,800));f=out/(row['id']+'.jpg');im.save(f,quality=90);row['photo_sha256']=hashlib.sha256(f.read_bytes()).hexdigest();records.append(row)
+          (out/'manifest.json').write_text(json.dumps({'records':records},ensure_ascii=False,indent=2))
+          for off in range(0,len(records),24):
+              group=records[off:off+24];sheet=Image.new('RGB',(1080,((len(group)+3)//4)*220),'white');d=ImageDraw.Draw(sheet)
+              for k,r in enumerate(group):
+                  x=k%4*270;y=k//4*220;d.text((x+4,y+3),r['id']+' '+r['title'][:32],fill='black');im=Image.open(out/(r['id']+'.jpg'));im.thumbnail((264,195));sheet.paste(im,(x+3,y+20))
+              sheet.save(out/f'contact-{off//24+1:02}.jpg',quality=88)
+          print('photo/detail pairs',len(records),flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: china-new-exporter-review
+          path: new-exporter-review/
+          retention-days: 14
