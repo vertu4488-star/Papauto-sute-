@@ -8,7 +8,7 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 12
     steps:
       - uses: actions/setup-python@v5
         with:
@@ -56,7 +56,7 @@ jobs:
                       page.wait_for_timeout(4500)
                       try:page.wait_for_selector('text=View details',timeout=25000)
                       except Exception:pass
-                      for idx in range(22):
+                      for idx in range(70):
                           hrefs=page.locator('a[href]').evaluate_all("(a)=>a.map(x=>x.href)")
                           observed_links.update(hrefs)
                           for u in hrefs:
@@ -68,7 +68,7 @@ jobs:
                           n=nexts.first
                           if not n.is_enabled():break
                           before=page.locator('body').inner_text()[:2000]
-                          n.click(timeout=3000);page.wait_for_timeout(900)
+                          n.click(timeout=3000);page.wait_for_timeout(650)
                           if before==page.locator('body').inner_text()[:2000]:break
                   except Exception as e:print('listing',path,str(e)[:250],flush=True)
               print('URLs',len(urls),flush=True)
@@ -81,48 +81,76 @@ jobs:
               eligible.sort(key=lambda x: (int(x[1].get('modelYear') or 0),-float(x[1].get('displayMileage') or 0)),reverse=True)
               print('Eligible inspected vehicles',len(eligible),flush=True)
               results=[]; hashes=set(); errors=collections.Counter()
-              def examine(page,ident,r):
-                  page.goto(base+'/en/used-cars/vehicle/'+ident,wait_until='domcontentloaded',timeout=20000)
-                  page.wait_for_selector('text=General Description',timeout=12000)
-                  t=page.locator('body').inner_text()
-                  if 'Vehicle not inspected' in t or r['vehicleCode'] not in t:return None
-                  # All gallery images share the same provider storage path namespace.
-                  imgs=page.locator('img').evaluate_all("(a)=>a.map(x=>({src:x.currentSrc||x.src, alt:x.alt, w:x.naturalWidth,h:x.naturalHeight}))")
-                  first=r['firstPhotoUrl']
-                  match=next((x['src'] for x in imgs if first in x['src']),None)
-                  if not match:return None
-                  prefix=match.split('group1/')[0]
-                  photo_urls=list(dict.fromkeys(x['src'] for x in imgs if x['src'].startswith(prefix+'group1/') and x['w']>=250 and x['h']>=180))
-                  if match in photo_urls:photo_urls.remove(match)
-                  photo_urls.insert(0,match)
-                  pictures=[]; hs=[]
-                  for u in photo_urls[:12]:
-                      try:
-                          response=page.request.get(u,timeout=10000)
-                          if not response.ok:continue
-                          raw=response.body(); im=Image.open(io.BytesIO(raw));im.load()
-                          h=hashlib.sha256(raw).hexdigest()
-                          if min(im.size)<250 or h in hs or h in hashes:continue
-                          pictures.append(im.convert('RGB'));hs.append(h)
-                          if len(pictures)>=3:break
-                      except Exception:continue
-                  if len(pictures)<2:return None
-                  safe={k:r.get(k) for k in ('vehicleName','modelYear','displayMileageDesc','oilType','sweptVolumeDesc','transmissionType','bodyColor','currentCity','showPrice','unitStr','starCondition','starFacade','starInterior','starSkeleton','starElectric')}
-                  desc=t.split('General Description',1)[-1].split('Basic Configuration',1)[0].strip()
-                  if not desc:return None
-                  return dict(id=ident,fields=safe,description=desc[:3000],source=page.url,sha256=hs,photo_urls=photo_urls[:3]),pictures
-              for ident,r in eligible[:220]:
+              def examine(ident,r):
                   try:
-                      item=examine(page,ident,r)
-                      if not item:errors['data or gallery']+=1;continue
-                      row,pics=item; hashes.update(row['sha256']);results.append(row)
-                      for i,im in enumerate(pics):
-                          im.thumbnail((1200,900));im.save(root/(ident+'-'+str(i+1)+'.jpg'),quality=88)
-                      if len(results)%10==0: print('Collected',len(results),flush=True)
+                      with sync_playwright() as q:
+                          b=q.chromium.launch(headless=True,args=['--no-sandbox'])
+                          pg=b.new_page()
+                          detail={}
+                          def capture_detail(resp):
+                              if resp.url==base+'/api/gb/car/detail' and resp.ok:
+                                  try:detail.update(resp.json().get('data') or {})
+                                  except Exception:pass
+                          pg.on('response',capture_detail)
+                          route='auction' if int(r.get('category') or r.get('useType') or 1)==1 else 'used-cars'
+                          u=base+'/en/'+route+'/vehicle/'+ident
+                          pg.goto(u,wait_until='domcontentloaded',timeout=16000)
+                          pg.wait_for_selector('text=Condition Details',timeout=6500)
+                          t=pg.locator('body').inner_text()
+                          if 'Vehicle not inspected' in t or str(r['vehicleCode']) not in t:return 'uninspected or mismatched'
+                          pics=pg.locator('img').evaluate_all("(a)=>a.map(x=>x.getAttribute('src')||'')")
+                          first=r['firstPhotoUrl'].rsplit('.',1)[0]
+                          pics=[x for x in pics if x.startswith('https://images.autostreets.com/group1/')]
+                          if not any(first in x for x in pics):return 'first photo mismatch'
+                          # Use actual gallery URLs; the 210*210 thumbnails precede damage photos.
+                          gallery=[x for x in pics if '*210*210.' in x]
+                          urls=list(dict.fromkeys(x.replace('*210*210.','*800*600.') for x in gallery))
+                          if len(urls)<2:return 'gallery missing'
+                          pictures=[];hs=[];selected=[]
+                          for url in urls[:4]:
+                              try:
+                                  resp=requests.get(url,timeout=(5,12))
+                                  resp.raise_for_status(); raw=resp.content
+                                  im=Image.open(io.BytesIO(raw));im.load()
+                                  h=hashlib.sha256(raw).hexdigest()
+                                  if min(im.size)<300 or h in hs:continue
+                                  pictures.append(im.convert('RGB'));hs.append(h);selected.append(url)
+                                  if len(pictures)>=3:break
+                              except Exception:continue
+                          if len(pictures)<2:return 'photo download'
+                          info=detail.get('info') or {}
+                          sections={}
+                          for k,v in info.items():
+                              if isinstance(v,dict) and isinstance(v.get('itemInfoList'),list):
+                                  sections[k]={kk:vv for kk,vv in v.items() if kk!='itemInfoList'}
+                                  sections[k]['itemInfoList']=[{kk:vv for kk,vv in z.items() if kk in ('itemName','isDamage','categoryName','damageDescription','damageType','photoUrlList','damageInfoList','description','damageItemList')} for z in v['itemInfoList'] if isinstance(z,dict)]
+                          if len(sections)<3:return 'inspection data incomplete'
+                          safe={k:r.get(k) for k in ('vehicleName','modelYear','displayMileageDesc','oilType','sweptVolumeDesc','transmissionType','bodyColor','currentCity','showPrice','unitStr','starCondition','starFacade','starInterior','starSkeleton','starElectric','vehicleCategory','brand','brandSeries','manufacturer','driveModel','category')}
+                          desc=t.split('Condition Details',1)[1].split('Basic Configuration',1)[0].strip()
+                          if not desc:return 'report blank'
+                          return dict(id=ident,fields=safe,description=desc,inspection=sections,features=info.get('featureItemList',[]),source=u,sha256=hs,photo_urls=selected,price_type='public listing price as displayed, not verified sold price',visual_review_required=True),pictures
+                  except Exception as e:return type(e).__name__+': '+str(e)[:120]
+              browser.close()
+              import time
+              # Each worker uses its own Playwright instance; no sharing browser objects across threads.
+              with cf.ThreadPoolExecutor(max_workers=5) as pool:
+                  for offset in range(0,len(eligible),10):
+                      tasks=[pool.submit(examine,i,r) for i,r in eligible[offset:offset+10]]
+                      for task in tasks:
+                          item=task.result()
+                          if isinstance(item,str):
+                              errors[item]+=1
+                              if sum(errors.values())<=8:print('Rejected',item,flush=True)
+                              continue
+                          row,pics=item
+                          if any(h in hashes for h in row['sha256']):continue
+                          if len(results)>=100:continue
+                          hashes.update(row['sha256']);results.append(row)
+                          for i,im in enumerate(pics):
+                              im.thumbnail((1200,900));im.save(root/(row['id']+'-'+str(i+1)+'.jpg'),quality=88)
+                          if len(results)%10==0:print('Collected',len(results),flush=True)
+                      (root/'manifest.json').write_text(json.dumps({'count':len(results),'records':results,'errors':dict(errors)},ensure_ascii=False,indent=2))
                       if len(results)>=100:break
-                  except Exception as e:
-                      errors[type(e).__name__]+=1
-                      if sum(errors.values())<=3: print('Detail diagnostic',ident,str(e)[:180],flush=True)
               (root/'manifest.json').write_text(json.dumps({'count':len(results),'records':results,'errors':dict(errors)},ensure_ascii=False,indent=2))
               print('Exact gallery and description count',len(results),dict(errors),flush=True)
               for off in range(0,len(results),10):
@@ -132,7 +160,6 @@ jobs:
                       for k in range(2):
                           im=Image.open(root/(row['id']+'-'+str(k+1)+'.jpg'));im.thumbnail((490,195));sheet.paste(im,(k*500,y+25))
                   sheet.save(root/f'contact-{off//10+1:02}.jpg',quality=88)
-              browser.close()
           PY
       - uses: actions/upload-artifact@v4
         if: always()
