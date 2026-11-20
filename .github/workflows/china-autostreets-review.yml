@@ -27,13 +27,16 @@ jobs:
           import requests
           root=Path('autostreets-review');root.mkdir()
           base='https://global.autostreets.com'
-          urls=set()
+          urls=set(); records={}; observed_links=set()
           api=[]
           def capture(resp):
               try:
                   if resp.request.resource_type in ('xhr','fetch') and 'json' in resp.headers.get('content-type',''):
                       data=resp.json()
-                      if len(api)<20:api.append({'url':resp.url,'sample':str(data)[:1800]})
+                      if 'queryVehicleInfo' in resp.url:
+                          for rec in (data.get('data') or {}).get('dataList',[]):
+                              if rec.get('vehicleId'):records[str(rec['vehicleId'])]=rec
+                      if len(api)<150:api.append({'url':resp.url,'sample':str(data)[:1800]})
                       def walk(x):
                           if isinstance(x,dict):
                               for k,v in x.items():
@@ -53,6 +56,7 @@ jobs:
                       page.wait_for_timeout(1800)
                       for idx in range(22):
                           hrefs=page.locator('a[href]').evaluate_all("(a)=>a.map(x=>x.href)")
+                          observed_links.update(hrefs)
                           for u in hrefs:
                               if re.search(r'/en/(?:used-cars/vehicle|auction/(?:vehicle|detail))/\d+',u):urls.add(u.split('?')[0])
                           if idx==0:
@@ -67,6 +71,17 @@ jobs:
                   except Exception as e:print('listing',path,str(e)[:250],flush=True)
               print('URLs',len(urls),flush=True)
               (root/'discovery.json').write_text(json.dumps({'urls':sorted(urls),'api':api},ensure_ascii=False))
+              print('Observed links',sorted(observed_links)[:35],flush=True)
+              (root/'records.json').write_text(json.dumps([{k:v for k,v in rec.items() if k not in ('vinCode',)} for rec in records.values()],ensure_ascii=False))
+              for ident in list(records)[:3]:
+                  try:
+                      page.goto(base+'/en/used-cars/vehicle/'+ident,wait_until='domcontentloaded',timeout=20000)
+                      page.wait_for_timeout(2500)
+                      (root/('detail-'+ident+'.txt')).write_text(page.locator('body').inner_text())
+                      (root/('detail-'+ident+'.html')).write_text(page.content())
+                      print('Detail',ident,page.url,page.locator('body').inner_text()[:1800],flush=True)
+                  except Exception as e:print('Detail error',str(e),flush=True)
+              (root/'discovery.json').write_text(json.dumps({'urls':sorted(urls),'observed_links':sorted(observed_links),'api':api},ensure_ascii=False))
               browser.close()
           def fetch(u):
               r=requests.get(u,timeout=(8,20),headers={'User-Agent':'Mozilla/5.0'})
@@ -113,7 +128,7 @@ jobs:
               except Exception:return None
           rows=[];seen=set();hashes=set()
           with cf.ThreadPoolExecutor(max_workers=5) as pool:
-              ordered=sorted(urls)
+              ordered=[]
               for offset in range(0,len(ordered),20):
                   for x in pool.map(scan,ordered[offset:offset+20]):
                       if not x:continue
