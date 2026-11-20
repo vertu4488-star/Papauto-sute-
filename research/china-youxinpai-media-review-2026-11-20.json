@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-20",
+  "owner_visual_instruction": "Blurred background is acceptable for genuine exact-lot auction photographs. Owner requested publication.",
+  "publication_status": "research_only",
+  "full_original_sheet_status": "unverified",
+  "records": [
+    {
+      "id": "123221387",
+      "lot": "YXP-8996798",
+      "model": "Volkswagen Bora",
+      "year": 2021,
+      "mileage_km": 68730,
+      "grade": "75BB",
+      "source": "https://imerimotors.ge/en/auction/123221387/volkswagen-bora-sedan-2021-1-5-at-comfortsmart-connect",
+      "photos": [
+        "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v37280d610d8e54d8fa17e2177c3d80e1e.jpg%3Fformat%3Dwebp&w=1100",
+        "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v39e623fdcb0574e31b80d86b9e562a43d.jpg%3Fw%3D2000%26format%3Dwebp&w=240"
+      ],
+      "inspection_summary_ru": "Деформация задней левой двери, следы влаги в салоне, запотевание масла, отсутствует запасное колесо.",
+      "media_visually_reviewed": true,
+      "source_inspection_text_verified": true,
+      "original_full_sheet_verified": false
+    },
+    {
+      "id": "123220688",
+      "lot": "YXP-8996794",
+      "model": "GAC GS4",
+      "year": 2017,
+      "mileage_km": 103307,
+      "grade": "70CA",
+      "source": "https://imerimotors.ge/en/auction/123220688/gac-trumpchi-trumpchi-gs4-2017-1-5t-at-235tluxurysmart-connectfwd",
+      "photos": [
+        "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v3d85a118ae8ee408690748c0e96d83b07.jpg%3Fformat%3Dwebp&w=1100",
+        "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v3b53283cf974349e694006c1c5ab6eae2.jpg%3Fw%3D2000%26format%3Dwebp&w=240"
+      ],
+      "inspection_summary_ru": "Кузовные ремонты и замены элементов, ремонт порогов, неисправность складывания зеркала.",
+      "media_visually_reviewed": true,
+      "source_inspection_text_verified": true,
+      "original_full_sheet_verified": false
+    },
+    {
+      "id": "123176617",
+      "lot": "YXP-8995565",
+      "model": "Volkswagen Tiguan L PHEV",
+      "year": 2021,
+      "mileage_km": 102448,
+      "grade": "85BB",
+      "source": "https://imerimotors.ge/en/auction/123176617/volkswagen-tiguan-l-new-energy-2021-1-4t-at-430phev-phevpremium",
+      "photos": [
+        "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v367c1b60eefb24129afc94a1e5adaff44.jpg%3Fformat%3Dwebp&w=1100",
+        "https://imerimotors.ge/image_proxy.php?url=https%3A%2F%2Fimg.youxinpai.cn%2Fpaipic%2Fn_v34bd01d8cb6c14b1a8ab6b2799d3ea424.jpg%3Fw%3D2000%26format%3Dwebp&w=240"
+      ],
+      "inspection_summary_ru": "Ремонт задней двери, замена заднего бампера, коррозия переднего усилителя, неисправность бесключевого доступа.",
+      "media_visually_reviewed": true,
+      "source_inspection_text_verified": true,
+      "original_full_sheet_verified": false
+    }
+  ]
+}
