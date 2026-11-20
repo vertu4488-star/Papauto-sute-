@@ -29,3 +29,5 @@ Standing model queue: research/china-util-model-watchlist.json. Deduplicate agai
 Ninth approved batch: research/owner-approved-china-supplier-goldenlane9-2026-11-20.json; 9 GoldenLane source records (19 total GoldenLane, 229 overall), exact local file and original photo SHA-256 retained. Public years use manufacture year when model year differs.
 
 Tenth approved batch: research/owner-approved-china-supplier-next30-2026-11-20.json; 19 GoldenLane and 11 EZ Auto Global (38 GoldenLane, 50 EZ, 259 overall). Exact archive IDs, supplier URLs, prices and local photo SHA-256 preserved.
+
+Eleventh approved batch: research/owner-approved-china-supplier-batch11-2026-11-20.json; 28 Xin Che Hang and 2 China Used Car (196 Xin Che Hang, 4 China Used Car, 38 GoldenLane, 50 EZ, 1 other, 289 overall). Exact archive IDs, supplier URLs, prices and local photo SHA-256 preserved.
