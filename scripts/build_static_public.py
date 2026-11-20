@@ -94,6 +94,8 @@ def copy_public_files() -> list[str]:
     from verify_publication_approval import verify_frozen_inputs, verify_published_output
     # Block unapproved new/edited lot data, photos and sheets BEFORE any build output.
     verify_frozen_inputs()
+    from verify_china_order_release import verify as verify_china_order
+    china_order_photos = verify_china_order(ROOT)
     # Build gate: refuse publication when customer navigation leaves PAPAUTO.
     subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests",
@@ -352,6 +354,8 @@ def copy_public_files() -> list[str]:
             tag = match.group(0)
             src = re.search(r"""src\s*=\s*["']([^"']+)["']""", tag, re.I)
             url = src.group(1) if src else ""
+            if page.name == "china-order.html" and url.lstrip("/") in china_order_photos:
+                return tag
             # Do not allow even a direct <img> on a legacy page to resurrect
             # visually rejected street/dealer photos of Audi Q2/Q3.
             if url.lstrip("/") in QUARANTINED_OUTDOOR_MEDIA:
