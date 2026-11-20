@@ -1,0 +1,78 @@
+{
+  "artifact_run_id": 44684242071,
+  "artifact_id": 14606000481,
+  "market": "china",
+  "status": "private review only",
+  "records": [
+    {
+      "id": "002",
+      "target_family": "Haval H6 II",
+      "title": "2020 Haval H6",
+      "engine": "1.5T",
+      "mileage_km": 79000,
+      "fob_usd": 8390,
+      "photo_sha256": "95a14821eddbcf739f27f24a212ad6e58c4a0b890c8d6a50deb6281d6b6c466e",
+      "exact_trim_confirmed": false,
+      "documented_power_kw": null,
+      "inspection_report": null,
+      "rights_confirmed": false,
+      "publication_approved": false
+    },
+    {
+      "id": "013",
+      "target_family": "BMW 320Li",
+      "title": "2020 BMW 3 Series",
+      "engine": "2.0T",
+      "mileage_km": 42000,
+      "fob_usd": 22775,
+      "photo_sha256": "dccdec908ccd94f6074fb67353e5b0b1b99b3d0f69ccac452bb5475121a3cd9e",
+      "exact_trim_confirmed": false,
+      "documented_power_kw": null,
+      "inspection_report": null,
+      "rights_confirmed": false,
+      "publication_approved": false
+    },
+    {
+      "id": "017",
+      "target_family": "BMW X1 sDrive20Li",
+      "title": "2019 BMW X1",
+      "engine": "1.5T",
+      "mileage_km": 77000,
+      "fob_usd": 12373,
+      "photo_sha256": "c5461ca653ecd0e1952a4db04e540dc6eeae47acb549319097fdf62b528a6f70",
+      "exact_trim_confirmed": false,
+      "documented_power_kw": null,
+      "inspection_report": null,
+      "rights_confirmed": false,
+      "publication_approved": false
+    },
+    {
+      "id": "019",
+      "target_family": "Mercedes-Benz A180L",
+      "title": "2023 Mercedes-Benz A-Class",
+      "engine": "1.3T",
+      "mileage_km": 53000,
+      "fob_usd": 19655,
+      "photo_sha256": "58b432501a7102924cbc44a97a79b4e69d899037f92ab2d1187c8931b9e63996",
+      "exact_trim_confirmed": false,
+      "documented_power_kw": null,
+      "inspection_report": null,
+      "rights_confirmed": false,
+      "publication_approved": false
+    },
+    {
+      "id": "025",
+      "target_family": "MINI Cooper",
+      "title": "2018 MINI MINI",
+      "engine": "1.5T",
+      "mileage_km": 37000,
+      "fob_usd": 13859,
+      "photo_sha256": "ec8d10326e2c8168789a6d5f4f493686af8292588bce29c04c128d007eafe6b6",
+      "exact_trim_confirmed": false,
+      "documented_power_kw": null,
+      "inspection_report": null,
+      "rights_confirmed": false,
+      "publication_approved": false
+    }
+  ]
+}
