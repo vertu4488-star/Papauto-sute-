@@ -63,3 +63,5 @@ Owner instruction 2026-11-20: exactly the 30 ATP archival examples from PapAuto_
 Owner instruction 2026-11-20: exactly the 30 ATP archival examples from PapAuto_Japan_30_ATP_batch2_review.pdf authorized after review, receipt research/owner-approved-japan-atp-second-30-archive-2026-11-20.json. Only exact ninety frozen media digests; no third-party license assertion, no current stock claims, ordinary auction protections unchanged.
 
 Owner instruction 2026-11-20: exactly the 30 ATP archival examples from PapAuto_Japan_30_ATP_batch3_review.pdf authorized after review, receipt research/owner-approved-japan-atp-third-30-archive-2026-11-20.json. Only exact ninety frozen media digests; no third-party license assertion, no current stock claims, ordinary auction protections unchanged.
+
+Owner instruction 2026-11-20: exactly the 30 ATP archival examples from PapAuto_Japan_30_ATP_batch4_cards.zip authorized after review, receipt research/owner-approved-japan-atp-fourth-30-archive-2026-11-20.json. Only exact ninety frozen media digests; no third-party license assertion, no current stock claims, ordinary auction protections unchanged.
