@@ -49,3 +49,5 @@ jobs:
           git commit -m "Append thirty approved China supplier cards with exact local photos"
           git push origin HEAD:release/china-order-319-20261120
 
+
+# Revalidate after expanding brand origin classification.
