@@ -1,0 +1,126 @@
+name: Japan next 30 exact auction media sourcing
+on:
+  push:
+    branches: [review/japan-next-30-20261120]
+    paths: ['.github/workflows/japan-next-30-media-review.yml']
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests pillow pillow-avif-plugin beautifulsoup4
+      - run: |
+          git fetch --depth=1 origin review/japan-next-50-20261119
+          git checkout FETCH_HEAD -- research/next-50-20261119
+      - run: |
+          cat > /tmp/next_review.py <<'PY'
+          from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor
+          from collections import Counter
+          from datetime import datetime
+          import hashlib,io,json,re
+          import requests
+          import pillow_avif
+          from PIL import Image,ImageDraw,ImageFont
+          root=Path.cwd()
+          out=root/'next-review-output'
+          out.mkdir(exist_ok=True)
+          old=[]
+          for name in ['research/owner-selected-japan-lots-2026-11-14.json','research/owner-approved-50-archive-2026-11-19.json','data/gallery-lots.json','research/owner-approved-second-50-archive-2026-11-19.json']:
+              old.extend(json.loads((root/name).read_text())['lots'])
+          def norm(s):return re.sub(r'[^a-z0-9]+','',str(s).lower())
+          def date(s):
+              s=str(s)
+              try:return datetime.strptime(s,'%d.%m.%Y').date().isoformat()
+              except ValueError:return s[:10]
+          def key(x):return (norm(x.get('auction')),date(x.get('auction_date',x.get('date',''))),str(x.get('lot',x.get('lot_number',x.get('num','')))).lstrip('0'))
+          keys={key(x) for x in old}
+          old_urls={x.get('source_listing') for x in old}
+          def dhash(im):
+              px=list(im.convert('L').resize((9,8),Image.Resampling.LANCZOS).getdata())
+              n=0
+              for y in range(8):
+                  for x in range(8): n=(n<<1)|int(px[y*9+x+1]>px[y*9+x])
+              return n
+          existing=[]
+          for x in old:
+              for p in x.get('photos',[])+[x.get('auction_sheet',x.get('inspection_image',''))]:
+                  try:
+                      if p.startswith('/assets/'):
+                          im=Image.open(root/p.lstrip('/')).convert('RGB')
+                          existing.append((hashlib.sha256(im.tobytes()).hexdigest(),dhash(im)))
+                  except Exception:pass
+          candidates=[]; seen=set(keys)
+          for p in sorted((root/'research/next-50-20261119').glob('part-*.json')):
+              for x in json.loads(p.read_text()):
+                  if x.get('conflicting_sale_status') or x.get('source') in old_urls or key(x) in seen:continue
+                  if any(s in x['auction'].lower() for s in ['stock','oneprice','one price','quick','ippatsu']):continue
+                  sp=x['spec']
+                  if not re.fullmatch(r'[3456](?:\.[05])?|[RSАA]',str(sp.get('Оценка:',''))):continue
+                  if not sp.get('Кузов:') or not sp.get('Пробег:') or len(x['urls'])<3:continue
+                  if not 2018<=int(x['year'])<=2026 or not 0<int(re.sub(r'\D','',sp.get('Мощность:','0')) or 0)<=160 or not 0<int(re.sub(r'\D','',sp.get('Объем:','0')) or 0)<=2000:continue
+                  seen.add(key(x));candidates.append(x)
+          print('Eligible source records',len(candidates),flush=True)
+          def fetch(x):
+              try:
+                  imgs=[];hs=[];pxs=[];raw_hashes=[]
+                  for url in x['urls'][:3]:
+                      assert url.startswith('https://japan.storage.yandexcloud.net/') and x['source'].split('/')[-2] in url
+                      res=requests.get(url,timeout=20);res.raise_for_status()
+                      im=Image.open(io.BytesIO(res.content)).convert('RGB')
+                      if min(im.size)<180:return None
+                      h=hashlib.sha256(im.tobytes()).hexdigest()
+                      if h in hs or any(h==e[0] for e in existing):return None
+                      imgs.append(im);hs.append(h);pxs.append(dhash(im));raw_hashes.append(hashlib.sha256(res.content).hexdigest())
+                  # A repeated near-identical full car view against published photos
+                  # is held for review, not treated as a new lot.
+                  if any((n^e[1]).bit_count()<=2 for n in pxs[1:] for e in existing):return None
+                  return x,imgs,hs,raw_hashes
+              except Exception as e:
+                  print('skip',x.get('num'),str(e)[:120]);return None
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              result=list(pool.map(fetch,candidates))
+          good=[];used=set()
+          for item in result:
+              if item is None:continue
+              x,imgs,hs,raw_hashes=item
+              if used.intersection(hs):continue
+              used.update(hs);good.append(item)
+          # Prefer variety, then reserve alternative distinct vehicles.
+          counts=Counter()
+          ordered=[]
+          for item in good:
+              x=item[0];counts[x['model']]+=1;ordered.append((counts[x['model']],len(ordered),item))
+          good=[item for _,_,item in sorted(ordered)]
+          print('Media sets downloaded',len(good),flush=True)
+          font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',17)
+          small=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',14)
+          manifest=[]
+          for start in range(0,len(good),12):
+              subset=good[start:start+12]
+              sheet=Image.new('RGB',(1200, len(subset)*170),'#f6f3ed');d=ImageDraw.Draw(sheet)
+              for j,(x,imgs,hs,raw_hashes) in enumerate(subset,start):
+                  y=(j-start)*170
+                  d.text((8,y+4),f"{j+1:02d} {x['model']} {x['year']} — {x['num']} · {x['auction']} · {x['spec']['Оценка:']}",font=font,fill='#292723')
+                  for k,idx in enumerate([1,2,0]):
+                      imgs[idx].save(out/f'{j+1:03d}-{idx}.jpg',quality=95)
+                      im=imgs[idx].copy();im.thumbnail((390,140))
+                      sheet.paste(im,(k*400+(400-im.width)//2,y+26+(140-im.height)//2))
+                  manifest.append(dict(index=j+1,**x,raw_sha256=raw_hashes,pixel_sha256=hs))
+              sheet.save(out/f'contact-{start//12+1:02d}.jpg',quality=90)
+          (out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
+          print('review manifest:',len(manifest),'complete image sets')
+          
+          PY
+          python /tmp/next_review.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: japan-next-30-media-review
+          path: next-review-output/
+          retention-days: 7
