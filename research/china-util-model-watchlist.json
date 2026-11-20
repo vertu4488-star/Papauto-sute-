@@ -1,0 +1,1085 @@
+{
+  "as_of": "2026-11-20",
+  "purpose": "Permanent model-family search reference; not verified specifications, stock, confirmed eligibility or photo lots",
+  "market": "china",
+  "max_displacement_cc": 2000,
+  "ice_power_limit_kw": 117.68,
+  "preferred_years": [
+    2022,
+    2023
+  ],
+  "requirements": [
+    "Exact China-market trim/year/engine code and documentary kW",
+    "Check actual date of production, export restrictions and personal import conditions",
+    "Original exact-lot photos, no random images, no blurred background for new search, no watermarks; original matching inspection document",
+    "No public vehicle lot without complete verified media and existing release checks",
+    "One or more verified lots per candidate family; no invented price, grade, or power"
+  ],
+  "groups": [
+    {
+      "id": "china",
+      "label": "Китайские марки",
+      "count": 35
+    },
+    {
+      "id": "japan",
+      "label": "Японские марки",
+      "count": 23
+    },
+    {
+      "id": "korea",
+      "label": "Корейские марки",
+      "count": 9
+    },
+    {
+      "id": "europe",
+      "label": "Европейские марки и Jetta",
+      "count": 29
+    }
+  ],
+  "candidates": [
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Haval",
+      "model": "Jolion / Chulian",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Haval",
+      "model": "M6",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Haval",
+      "model": "Chitu",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Haval",
+      "model": "H6 II",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Haval",
+      "model": "H2",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Haval",
+      "model": "H4",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Chery",
+      "model": "Tiggo 3x",
+      "engine_hint": "1.5",
+      "power_ps_hint": "116",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Chery",
+      "model": "Tiggo 5x",
+      "engine_hint": "1.5",
+      "power_ps_hint": "116",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Chery",
+      "model": "Tiggo 7",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "156",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Chery",
+      "model": "Tiggo 7 Plus",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "156",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Chery",
+      "model": "Tiggo 8",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "156",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Chery",
+      "model": "Arrizo 5",
+      "engine_hint": "1.5",
+      "power_ps_hint": "116",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Chery",
+      "model": "Arrizo 5 Plus",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "156",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Geely",
+      "model": "Emgrand",
+      "engine_hint": "1.5",
+      "power_ps_hint": "114–127",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Geely",
+      "model": "Emgrand L",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "141",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Geely",
+      "model": "Emgrand S",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "141",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Geely",
+      "model": "Coolray / Binyue",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "141",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Geely",
+      "model": "Binrui",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "141",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Geely",
+      "model": "Vision X3",
+      "engine_hint": "1.5",
+      "power_ps_hint": "109",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Geely",
+      "model": "Vision X6 Pro",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "141",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Changan",
+      "model": "CS15",
+      "engine_hint": "1.5",
+      "power_ps_hint": "107",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Changan",
+      "model": "CS35",
+      "engine_hint": "1.6",
+      "power_ps_hint": "125",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Changan",
+      "model": "CS35 Plus",
+      "engine_hint": "1.6 / 1.4T",
+      "power_ps_hint": "128–158",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Changan",
+      "model": "Eado Plus",
+      "engine_hint": "1.6",
+      "power_ps_hint": "128",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Jetour",
+      "model": "X70",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "156",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Jetour",
+      "model": "X70 Plus",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "156",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Jetour",
+      "model": "X90",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "156",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Jetour",
+      "model": "X90 Plus",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "156",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Jetour",
+      "model": "Dashing",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "156",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "MG",
+      "model": "ZS",
+      "engine_hint": "1.5",
+      "power_ps_hint": "120",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Livan",
+      "model": "X6 Pro",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "147",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Dongfeng",
+      "model": "Aeolus Yixuan",
+      "engine_hint": "1.5",
+      "power_ps_hint": "125",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Dongfeng",
+      "model": "Fengon 500",
+      "engine_hint": "1.5 / 1.5T",
+      "power_ps_hint": "116–150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Dongfeng",
+      "model": "Fengon S560",
+      "engine_hint": "2.0 / 1.5T",
+      "power_ps_hint": "143–150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "china",
+      "make": "Wuling",
+      "model": "Xingchi",
+      "engine_hint": "1.5 / 1.5T",
+      "power_ps_hint": "99–147",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Toyota",
+      "model": "Corolla",
+      "engine_hint": "1.2T / 1.5",
+      "power_ps_hint": "116–121",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Toyota",
+      "model": "Levin",
+      "engine_hint": "1.2T / 1.5",
+      "power_ps_hint": "116–121",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Toyota",
+      "model": "Yaris L",
+      "engine_hint": "1.5",
+      "power_ps_hint": "112",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Toyota",
+      "model": "Vios",
+      "engine_hint": "1.5",
+      "power_ps_hint": "112",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Honda",
+      "model": "Fit",
+      "engine_hint": "1.5",
+      "power_ps_hint": "124–131",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Honda",
+      "model": "Life",
+      "engine_hint": "1.5",
+      "power_ps_hint": "124–131",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Honda",
+      "model": "XR-V",
+      "engine_hint": "1.5",
+      "power_ps_hint": "124–131",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Honda",
+      "model": "Vezel",
+      "engine_hint": "1.5",
+      "power_ps_hint": "124–131",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Honda",
+      "model": "Civic",
+      "engine_hint": "1.0T / 1.5T",
+      "power_ps_hint": "125–129",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Honda",
+      "model": "Crider",
+      "engine_hint": "1.0T",
+      "power_ps_hint": "122",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Honda",
+      "model": "Envix",
+      "engine_hint": "1.0T",
+      "power_ps_hint": "122",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Mazda",
+      "model": "3 Axela",
+      "engine_hint": "1.5 / 2.0",
+      "power_ps_hint": "117–158",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Mazda",
+      "model": "6 Atenza",
+      "engine_hint": "2.0",
+      "power_ps_hint": "158",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Mazda",
+      "model": "CX-4",
+      "engine_hint": "2.0",
+      "power_ps_hint": "158",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Mazda",
+      "model": "CX-5",
+      "engine_hint": "2.0",
+      "power_ps_hint": "155",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Mazda",
+      "model": "CX-30",
+      "engine_hint": "2.0",
+      "power_ps_hint": "158",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Mazda",
+      "model": "CX-50",
+      "engine_hint": "2.0",
+      "power_ps_hint": "155",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Nissan",
+      "model": "Sylphy",
+      "engine_hint": "1.6",
+      "power_ps_hint": "135",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Nissan",
+      "model": "Tiida",
+      "engine_hint": "1.6",
+      "power_ps_hint": "122",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Nissan",
+      "model": "Kicks",
+      "engine_hint": "1.5",
+      "power_ps_hint": "122–124",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Nissan",
+      "model": "Qashqai",
+      "engine_hint": "2.0",
+      "power_ps_hint": "151",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Nissan",
+      "model": "X-Trail",
+      "engine_hint": "2.0",
+      "power_ps_hint": "151–154",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "japan",
+      "make": "Nissan",
+      "model": "Teana",
+      "engine_hint": "2.0",
+      "power_ps_hint": "156",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "korea",
+      "make": "Hyundai",
+      "model": "Elantra",
+      "engine_hint": "1.5",
+      "power_ps_hint": "115",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "korea",
+      "make": "Hyundai",
+      "model": "ix25 / Creta",
+      "engine_hint": "1.5",
+      "power_ps_hint": "115",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "korea",
+      "make": "Hyundai",
+      "model": "ix35",
+      "engine_hint": "2.0 / 1.4T",
+      "power_ps_hint": "140–160",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "korea",
+      "make": "Hyundai",
+      "model": "Verna",
+      "engine_hint": "1.4",
+      "power_ps_hint": "100",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "korea",
+      "make": "Hyundai",
+      "model": "Lafesta",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "140",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "korea",
+      "make": "Kia",
+      "model": "K2",
+      "engine_hint": "1.4",
+      "power_ps_hint": "100",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "korea",
+      "make": "Kia",
+      "model": "K3",
+      "engine_hint": "1.5",
+      "power_ps_hint": "115",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "korea",
+      "make": "Kia",
+      "model": "KX3 / Seltos",
+      "engine_hint": "1.5",
+      "power_ps_hint": "115",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "korea",
+      "make": "Kia",
+      "model": "Stonic / Yipao",
+      "engine_hint": "1.4",
+      "power_ps_hint": "100",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Volkswagen",
+      "model": "Polo",
+      "engine_hint": "1.5",
+      "power_ps_hint": "113",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Volkswagen",
+      "model": "Golf",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Volkswagen",
+      "model": "Bora",
+      "engine_hint": "1.4T / 1.5",
+      "power_ps_hint": "113–150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Volkswagen",
+      "model": "Lavida",
+      "engine_hint": "1.4T / 1.5",
+      "power_ps_hint": "113–150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Volkswagen",
+      "model": "Lamando",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Volkswagen",
+      "model": "Sagitar",
+      "engine_hint": "1.2T / 1.4T",
+      "power_ps_hint": "116–150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Volkswagen",
+      "model": "Passat",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Volkswagen",
+      "model": "Magotan",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Volkswagen",
+      "model": "T-Roc",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Volkswagen",
+      "model": "T-Cross",
+      "engine_hint": "1.5 / 1.4T",
+      "power_ps_hint": "113–150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Volkswagen",
+      "model": "Tharu",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Volkswagen",
+      "model": "Tiguan L",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Volkswagen",
+      "model": "Tayron",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Volkswagen",
+      "model": "Touran L",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Jetta",
+      "model": "VA3",
+      "engine_hint": "1.5",
+      "power_ps_hint": "112",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Jetta",
+      "model": "VS5",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Jetta",
+      "model": "VS7",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Skoda",
+      "model": "Octavia",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Skoda",
+      "model": "Superb",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Skoda",
+      "model": "Karoq",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Skoda",
+      "model": "Kamiq",
+      "engine_hint": "1.5",
+      "power_ps_hint": "112",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Audi",
+      "model": "A3 / A3L",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Audi",
+      "model": "Q2L",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Audi",
+      "model": "Q3",
+      "engine_hint": "1.4T",
+      "power_ps_hint": "150",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "BMW",
+      "model": "118i",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "136",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "BMW",
+      "model": "320Li",
+      "engine_hint": "2.0T",
+      "power_ps_hint": "156",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "BMW",
+      "model": "X1 sDrive20Li",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "140–156",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "Mercedes-Benz",
+      "model": "A180L",
+      "engine_hint": "1.3T",
+      "power_ps_hint": "136",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "brand_group": "europe",
+      "make": "MINI",
+      "model": "Cooper",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "136",
+      "eligibility": "unverified_candidate",
+      "lot_status": "search_required"
+    }
+  ],
+  "ordinary_tariff_candidates": [
+    {
+      "market": "china",
+      "make": "Chery",
+      "model": "Arrizo 8",
+      "engine_hint": "1.6T / 2.0T",
+      "power_ps_hint": "197–254",
+      "eligibility": "ordinary_tariff_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "make": "Geely",
+      "model": "Monjaro",
+      "engine_hint": "2.0T",
+      "power_ps_hint": "238",
+      "eligibility": "ordinary_tariff_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "make": "Geely",
+      "model": "Tugella",
+      "engine_hint": "2.0T",
+      "power_ps_hint": "238",
+      "eligibility": "ordinary_tariff_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "make": "Tank",
+      "model": "300",
+      "engine_hint": "2.0T",
+      "power_ps_hint": "227",
+      "eligibility": "ordinary_tariff_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "make": "Changan",
+      "model": "UNI-T",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "188",
+      "eligibility": "ordinary_tariff_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "make": "Changan",
+      "model": "CS55 Plus",
+      "engine_hint": "1.5T",
+      "power_ps_hint": "180–188",
+      "eligibility": "ordinary_tariff_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "make": "Toyota",
+      "model": "RAV4",
+      "engine_hint": "2.0",
+      "power_ps_hint": "171",
+      "eligibility": "ordinary_tariff_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "make": "Toyota",
+      "model": "Wildlander",
+      "engine_hint": "2.0",
+      "power_ps_hint": "171",
+      "eligibility": "ordinary_tariff_candidate",
+      "lot_status": "search_required"
+    },
+    {
+      "market": "china",
+      "make": "Toyota",
+      "model": "Highlander",
+      "engine_hint": "2.0T / 2.5",
+      "power_ps_hint": "220–248",
+      "eligibility": "ordinary_tariff_candidate",
+      "lot_status": "search_required"
+    }
+  ]
+}
