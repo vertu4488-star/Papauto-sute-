@@ -54,3 +54,5 @@ jobs:
           git add assets/china-order/owner-20261120-batch11 china-order.html china.html research/owner-approved-china-supplier-batch11-2026-11-20.json research/CHINA_SUPPLIER_SOURCE_REGISTER.md scripts/verify_china_order_release.py AGENTS.md docs/AUCTION_ONLY_GALLERY.md sitemap.xml
           git commit -m "Append thirty approved China supplier cards with exact local photos"
           git push origin HEAD:release/china-order-289-20261120
+
+# Retry after normalizing missing supplier brand group metadata.
