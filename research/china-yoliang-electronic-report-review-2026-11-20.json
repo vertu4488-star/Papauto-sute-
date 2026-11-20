@@ -1,0 +1,133 @@
+{
+  "date": "2026-11-20",
+  "owner_approved_format": "Original electronic auction inspection report acceptable in lieu of Japanese-style sheet; exact-lot blurred-background photos accepted.",
+  "count": 4,
+  "excluded": [
+    {
+      "id": "688420",
+      "reason": "Unblurred outdoor parking lot images"
+    }
+  ],
+  "records": [
+    {
+      "id": "yoliang-688524",
+      "market": "china",
+      "source_vehicle_code": "688524",
+      "make": "Mercedes-Benz",
+      "model": "Vito",
+      "year": 2024,
+      "registered": "2024-08-28",
+      "mileage_km": 14200,
+      "grade": "95A",
+      "starting_bid_cny": 165000,
+      "price_status": "starting_bid_not_sale_price",
+      "engine": "2.0T",
+      "report_date": "2026-11-19",
+      "report_url": "https://e.yoliang.com/vehicles/688524",
+      "report_type": "source_electronic_inspection_report",
+      "photos": [
+        "https://file.yoliang.com/d11a805d-8a6c-4780-909d-26af8b54918b/2026-10-19/1792381067377.png?x-oss-process=style/pai_middle",
+        "https://file.yoliang.com/d11a805d-8a6c-4780-909d-26af8b54918b/2026-10-19/1792381093531.png?x-oss-process=style/pai_small"
+      ],
+      "photo_review": "front and rear viewed, blurred background, exact report matching",
+      "major_accident": false,
+      "flood_damage": false,
+      "fire_damage": false,
+      "inspection_summary_ru": "4 внешних замечания, серьёзных повреждений по отчёту не выявлено",
+      "transfer_eligibility": "out_of_town",
+      "export_eligibility": "not_verified",
+      "local_media_verified": false,
+      "public_release": false
+    },
+    {
+      "id": "yoliang-688587",
+      "market": "china",
+      "source_vehicle_code": "688587",
+      "make": "Mercedes-Benz",
+      "model": "C 200 Coupe",
+      "year": 2018,
+      "registered": "2018-08-06",
+      "mileage_km": 59000,
+      "grade": "80B",
+      "starting_bid_cny": 90000,
+      "price_status": "starting_bid_not_sale_price",
+      "engine": "2.0T",
+      "report_date": "2026-11-19",
+      "report_url": "https://e.yoliang.com/vehicles/688587",
+      "report_type": "source_electronic_inspection_report",
+      "photos": [
+        "https://file.yoliang.com/d11a805d-8a6c-4780-909d-26af8b54918b/2026-10-23/1792735012287.png?x-oss-process=style/pai_middle",
+        "https://file.yoliang.com/d11a805d-8a6c-4780-909d-26af8b54918b/2026-10-23/1792735024452.png?x-oss-process=style/pai_small"
+      ],
+      "photo_review": "front and rear viewed, blurred background, exact report matching",
+      "major_accident": false,
+      "flood_damage": false,
+      "fire_damage": false,
+      "inspection_summary_ru": "7 внешних и 3 салонных замечания. Серьёзных повреждений, следов пожара и затопления по отчёту не выявлено.",
+      "transfer_eligibility": "out_of_town",
+      "export_eligibility": "not_verified",
+      "local_media_verified": false,
+      "public_release": false
+    },
+    {
+      "id": "yoliang-687752",
+      "market": "china",
+      "source_vehicle_code": "687752",
+      "make": "Mercedes-Benz",
+      "model": "A 200 L",
+      "year": 2023,
+      "registered": "2024-03-15",
+      "mileage_km": 13600,
+      "grade": "95A",
+      "starting_bid_cny": 95000,
+      "price_status": "starting_bid_not_sale_price",
+      "engine": "1.3T",
+      "report_date": "2026-11-18",
+      "report_url": "https://e.yoliang.com/vehicles/687752",
+      "report_type": "source_electronic_inspection_report",
+      "photos": [
+        "https://file.yoliang.com/d11a805d-8a6c-4780-909d-26af8b54918b/2026-10-23/1792729034622.png?x-oss-process=style/pai_middle",
+        "https://file.yoliang.com/d11a805d-8a6c-4780-909d-26af8b54918b/2026-10-23/1792729043386.png?x-oss-process=style/pai_small"
+      ],
+      "photo_review": "front and rear viewed, blurred background, exact report matching",
+      "major_accident": false,
+      "flood_damage": false,
+      "fire_damage": false,
+      "inspection_summary_ru": "30 внешних и 2 салонных замечания; серьёзных повреждений, следов пожара и затопления по отчёту не выявлено.",
+      "transfer_eligibility": "local_only",
+      "export_eligibility": "not_verified",
+      "local_media_verified": false,
+      "public_release": false
+    },
+    {
+      "id": "yoliang-687800",
+      "market": "china",
+      "source_vehicle_code": "687800",
+      "make": "Buick",
+      "model": "Envision",
+      "year": 2020,
+      "registered": "2020-04-13",
+      "mileage_km": 133900,
+      "grade": "60C",
+      "starting_bid_cny": 32000,
+      "price_status": "starting_bid_not_sale_price",
+      "engine": "1.5T",
+      "report_date": "2026-11-13",
+      "report_url": "https://e.yoliang.com/vehicles/687800",
+      "report_type": "source_electronic_inspection_report",
+      "photos": [
+        "https://file.yoliang.com/d11a805d-8a6c-4780-909d-26af8b54918b/2026-11-13/1794552939255.png?x-oss-process=style/pai_middle",
+        "https://file.yoliang.com/d11a805d-8a6c-4780-909d-26af8b54918b/2026-11-13/1794553005305.png?x-oss-process=style/pai_small"
+      ],
+      "photo_review": "front and rear viewed, blurred background, exact report matching",
+      "major_accident": false,
+      "flood_damage": false,
+      "fire_damage": false,
+      "inspection_summary_ru": "27 внешних и 5 салонных замечаний; крупная авария, пожар и затопление по отчёту не выявлены.",
+      "transfer_eligibility": "local_only",
+      "export_eligibility": "not_verified",
+      "local_media_verified": false,
+      "public_release": false
+    }
+  ]
+}
