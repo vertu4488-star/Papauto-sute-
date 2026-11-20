@@ -1,0 +1,89 @@
+import requests,bs4,re,json,hashlib,io,concurrent.futures
+from pathlib import Path
+from urllib.parse import urljoin,urlparse
+from PIL import Image,ImageDraw,ImageFont
+from collections import Counter
+BASE='https://atp-auto.ru'
+ROOT=Path('.')
+out=Path('atp-review');out.mkdir(exist_ok=True)
+old=[]
+for path in ['research/owner-selected-japan-lots-2026-11-14.json','research/owner-approved-50-archive-2026-11-19.json','research/owner-approved-second-50-archive-2026-11-19.json','data/gallery-lots.json','research/owner-approved-japan-atp-30-archive-2026-11-20.json','research/owner-approved-japan-atp-second-30-archive-2026-11-20.json']:
+ old.extend(json.loads(Path(path).read_text())['lots'])
+def norm(s):return re.sub(r'[^a-z0-9]','',str(s).lower())
+oldkeys={(norm(x.get('auction')),str(x.get('auction_date',''))[:10],str(x.get('lot',x.get('lot_number',''))).lstrip('0')) for x in old}
+oldurls={str(x.get('source_listing','')).rstrip('/') for x in old}
+oldhash={h for x in old for h in x.get('media_sha256',[])}
+def dhash(im):
+ p=list(im.convert('L').resize((9,8),Image.Resampling.LANCZOS).getdata())
+ return sum(int(p[y*9+x+1]>p[y*9+x])<<(63-y*8-x) for y in range(8) for x in range(8))
+oldvisual=[]
+for x in old:
+ for p in x.get('photos',[]):
+  try:oldvisual.append(dhash(Image.open(p.lstrip('/'))))
+  except:pass
+def get(u):
+ r=requests.get(u,timeout=18,headers={'User-Agent':'Mozilla/5.0'});r.raise_for_status();return r
+urls=[u for u in ["https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/47fy8CQ0Qvo1z/","https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/5fz92cFzctuzT/","https://atp-auto.ru/avto-iz-yaponii/toyota/yaris/5BxleZjvAdnGnmD/","https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/aHmLGenrGdhTj/","https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/iitZePUHJvJIH/","https://atp-auto.ru/avto-iz-yaponii/toyota/yaris/3a7JOYaZ7s2Xhq/","https://atp-auto.ru/avto-iz-yaponii/toyota/yaris/ad7WKPMAmaUyZ/","https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/514eBFZUxihZufo/","https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-axio/4XuDFJ8ZsdTIsUN/","https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/8uxWscbFfMPTG/","https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/4W8f9AIswOo0O/","https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/9oJBT5IDRtNMm/","https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/cvK7xZro1ouCY/","https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/5IvJCiOt8lrjMn/","https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/gAABZWPMK1Q72/","https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/3mROJwWW4HAYj/","https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/2FKqVWIam6jBeE/","https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/2JPhroFyKOVWHH/","https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/3IZZ4a3sEvYOIR/","https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/3FPkd9XBeo4r9u/","https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/2UHxsBdWu8fxhL/","https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/f3AZ0VPFyhRx/","https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/3a7JOYaZ1dAU61/","https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/69Z90pBuDB3M6n/","https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/2JPhroFyKOVWHD/","https://atp-auto.ru/avto-iz-yaponii/honda/fit/4V4if8J7CYmZaDG/","https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/6mzXaUNt5t0Hab/","https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/xK6l09r096pQES/","https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/4Urel4wahUPSBBe/","https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/4UD1MK0BcCJTa53/","https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/5l9MozeeDUE6qQ/","https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/hyjd66odj9679Yq/","https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/xF7iYfBdKK7xj1/","https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/yamNwHWztIvRen/","https://atp-auto.ru/avto-iz-yaponii/honda/fit/577qwlu3JZYTllO/","https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/6i41PKoObqGRKN/","https://atp-auto.ru/avto-iz-yaponii/honda/fit/39imu7pVgmhOpV/","https://atp-auto.ru/avto-iz-yaponii/honda/fit/fVwR2LBdgHsTQ/","https://atp-auto.ru/avto-iz-yaponii/honda/freed/4ZAeAi8Lw1POA2M/"] if u.rstrip('/') not in oldurls]
+print('new detail URLs',len(urls),flush=True)
+def detail(u):
+ try:
+  soup=bs4.BeautifulSoup(get(u).text,'html.parser')
+  h=soup.find('h1').get_text(' ',strip=True)
+  year=int(re.search(r'\b(20\d\d)\b',h).group(1))
+  if not 2017<=year<=2025:return None
+  lines=list(soup.stripped_strings)
+  def field(k):
+   for i,t in enumerate(lines[:-1]):
+    if t.strip().rstrip(':')==k:return lines[i+1].strip()
+   return ''
+  def num(v):return int(re.sub(r'\D','',v) or 0)
+  hp=num(field('Мощность'));cc=num(field('Объем'));km=num(field('Пробег'))
+  grade=field('Оценка');lot=field('Номер лота');auction=field('Аукцион');date=field('Дата аукциона');price=field('Цена продажи в Японии')
+  if not (0<hp<=160 and 0<cc<=2000 and km>0 and re.fullmatch(r'[3456](?:\.[05])?',grade) and float(grade)>=3.5 and re.fullmatch(r'\d{4}-\d{2}-\d{2}',date) and lot.isdigit() and auction and num(price)>0 and field('Статус').lower()=='sold'):return None
+  if (norm(auction),date,lot.lstrip('0')) in oldkeys or not re.search(r'^(TAA|CAA|JU|KCAA|USS|HAA|LAA|JAA|MIRIVE|NAA|ZIP|ARAI)\b',auction,re.I):return None
+  photos=[]; sheets=[]
+  for im in soup.select('img[alt]'):
+   alt=im.get('alt','').lower()
+   if 'фото с аукциона японии' not in alt:continue
+   a=im.find_parent('a',href=True)
+   src=(a.get('href') if a else '') or im.get('data-src') or im.get('src')
+   if not src:continue
+   src=urljoin(u,src)
+   if urlparse(src).hostname!='7.tru.ru':continue
+   if 'аукционный лист' in alt:sheets.append(src)
+   else:photos.append(src)
+  photos=list(dict.fromkeys(photos));sheets=list(dict.fromkeys(sheets))
+  if len(photos)<2 or len(sheets)!=1:return None
+  media=[]; hashes=[]; visuals=[]
+  for src in [photos[0],photos[1] if len(photos)>1 else None,sheets[0]]:
+   if src is None:continue
+   b=get(src).content;im=Image.open(io.BytesIO(b)).convert('RGB')
+   if min(im.size)<180:return None
+   sha=hashlib.sha256(b).hexdigest()
+   if sha in oldhash or sha in hashes:return None
+   visuals.append(dhash(im));hashes.append(sha);media.append((src,b,im))
+  if any((visuals[0]^p).bit_count()<=2 for p in oldvisual):return None
+  return dict(source=u,title=h,year=year,auction=auction,lot=lot,date=date,grade=grade,km=km,hp=hp,cc=cc,body=field('Кузов'),trim=field('Комплектация'),price_jpy=num(price),media_urls=[x[0] for x in media],raw_sha256=hashes),media,visuals
+ except Exception as e:print('skip',u,str(e)[:100]);return None
+seen=set(oldkeys);hashes=set(oldhash);visuals=[]; rows=[]
+# Bounded first pass, balanced across models.
+with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
+ for result in pool.map(detail,urls[:750]):
+  if not result:continue
+  r,imgs,v=result;k=(norm(r['auction']),r['date'],r['lot'].lstrip('0'))
+  if k in seen or hashes.intersection(r['raw_sha256']) or any((v[0]^p).bit_count()<=2 for p in visuals):continue
+  seen.add(k);hashes.update(r['raw_sha256']);visuals.append(v[0])
+  n=len(rows)+1;r['index']=n;files=[]
+  for j,(u,b,im) in enumerate(imgs):
+   name=f'{n:03d}-{j}.jpg';im.save(out/name,quality=95);files.append(name)
+  r['files']=files;rows.append(r)
+print('complete unique sets',len(rows),flush=True)
+(out/'manifest.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',17)
+for a in range(0,len(rows),10):
+ rr=rows[a:a+10]; sheet=Image.new('RGB',(1200,200*len(rr)), '#f7f3eb');d=ImageDraw.Draw(sheet)
+ for i,r in enumerate(rr):
+  y=i*200;d.text((10,y+3),f"{r['index']:03d} {r['title']} | {r['auction']} | {r['lot']} | {r['grade']}",font=font,fill='#202020')
+  for j,name in enumerate(r['files']):
+   im=Image.open(out/name);im.thumbnail((390,170));sheet.paste(im,(j*400+(400-im.width)//2,y+25))
+ sheet.save(out/f'contact-{a//10:02d}.jpg',quality=90)
