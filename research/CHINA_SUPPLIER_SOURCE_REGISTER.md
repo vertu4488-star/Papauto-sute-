@@ -1,0 +1,27 @@
+# PapAuto — permanent China supplier source register
+
+Updated 2026-11-20. Baseline: 220 approved supplier examples, commit 06f5d490873058b19815cfec8570ca404be4fd7e. Public section /china-order.html, separate from auction gallery.
+
+## Verified historical source usage (220 records)
+
+- www.xchehang.com: 168 records; example source https://www.xchehang.com/assets/img/cars/lgwef4a54nf352189_1185.jpg
+- bymotorcar.com: 1 records; example source https://bymotorcar.com/product/used-cadillac-ct6-2022-20664/
+- ezautoglobal.com: 39 records; example source https://ezautoglobal.com/en/cars
+- chinausedcar.net: 2 records; example source https://chinausedcar.net/model/audi-2022-q2l-1-4-tfsi-35-tfsi-ambition-dynamic-565wiz
+- goldenlaneauto.com: 10 records; example source https://goldenlaneauto.com/used-cars/volkswagen-golf-61731/
+
+Preferred intake for next 9: https://goldenlaneauto.com/used-cars/ (latest ten); https://ezautoglobal.com/en/cars; https://www.xchehang.com/inventory.html. Additional previously used supplier domains are listed above. Exact source URL and photo URL must remain internal, not customer-facing external links.
+
+## Reproducibility
+
+Prior provenance manifests:
+- research/owner-approved-china-supplier-49-2026-11-20.json
+- research/owner-approved-china-supplier-30-2026-11-20.json
+- research/owner-approved-china-supplier-third30-2026-11-20.json
+- research/owner-approved-china-supplier-fourth30-2026-11-20.json
+- research/owner-approved-china-supplier-fifth30-2026-11-20.json
+- research/owner-approved-china-supplier-160hp30-2026-11-20.json
+- research/owner-approved-china-supplier-160hp11-2026-11-20.json
+- research/owner-approved-china-supplier-160hp10-2026-11-20.json
+
+Standing model queue: research/china-util-model-watchlist.json. Deduplicate against all historical manifests by source URL, image SHA-256 and stock identity; prioritize new model families, gasoline <=2.0 L and supplier-listed <=160 PS, preferably 2022–2023. Check exact vehicle image, no unrelated/street/parking imagery; record model, year, engine, power, mileage, price currency and terms, photo URL, full source URL, capture date, original inspection report where available and rights status. Do not claim documented power, reduced-fee eligibility, stock status, or auction origin without proof. New supplier photos require exact batch owner review and existing release gates; ordinary auction rules and rights requirements are unchanged. See AGENTS.md and docs/AUCTION_ONLY_GALLERY.md. Next target after approval: 229 examples. No general publication exception.
