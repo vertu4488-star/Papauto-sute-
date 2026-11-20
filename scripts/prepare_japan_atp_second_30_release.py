@@ -7,7 +7,7 @@ def sha(b):return hashlib.sha256(b).hexdigest()
 def read(p):return json.loads(Path(p).read_text())
 f=read('research/japan-atp-second-30-review-2026-11-20.json')
 assert f['reviewed_pdf_sha256']=='ef50db28dc98dd71734361b1bc67ab6b6d642414e449be755b2142c2ef43cad8'
-spec=[(14630780231,44739826293,'55e03b1641a0c61181d8a5603b7106063f368c5f47e4789e55dd9a2f121b6dd4',[10,11,12,16,20,23,31,35,36,38,45,49]),(14632071077,44742077840,'8c1606fb28675d76ad76a5e24f63d2498fd59634fe978e4fadc5365fedb2fb20',[1,3,4,5,6,8,10,11,14,16,17,22,23,24,25,26,28,29])]
+spec=[(14630780231,44739823293,'55e03b1641a0c61181d8a5603b7106063f368c5f47e4789e55dd9a2f121b6dd4',[10,11,12,16,20,23,31,35,36,38,45,49]),(14632071077,44742077840,'8c1606fb28675d76ad76a5e24f63d2498fd59634fe978e4fadc5365fedb2fb20',[1,3,4,5,6,8,10,11,14,16,17,22,23,24,25,26,28,29])]
 rows=[]
 for ref,(aid,rid,digest,ids) in zip(f['archives'],spec):
  assert (ref['artifact_id'],ref['source_run_id'],ref['manifest_sha256'],ref['selected_indices'])==(aid,rid,digest,ids)
