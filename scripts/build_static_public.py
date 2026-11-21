@@ -236,7 +236,7 @@ def copy_public_files() -> list[str]:
     # User explicitly approved the 100-card PDF on 2026-11-15: 97 newly
     # selected auction lots and 3 already in our existing 35-lot public set.
     # Fail closed if any unexpected/unreviewed extra lot sneaks into release.
-    if gallery_result["count"] != 459 or gallery_result["new"] != 424:
+    if gallery_result["count"] != 489 or gallery_result["new"] != 454:
         raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: wrong 100-card owner-reviewed release")
     # Final release guard: a test-only fix must never be the sole protection.
     # Quarantined source lot IDs may survive in GitHub for provenance but
@@ -471,7 +471,7 @@ def copy_public_files() -> list[str]:
     from publish_lot_search import publish
     published_lot_count = publish(TARGET)
     lot_sitemap = TARGET / "sitemap-lots.xml"
-    if published_lot_count != 459 or not lot_sitemap.is_file():
+    if published_lot_count != 489 or not lot_sitemap.is_file():
         raise RuntimeError("PAPAUTO_SEO: the approved lot sitemap is missing or incomplete")
     import xml.etree.ElementTree as ET
     lot_sitemap_tree = ET.parse(lot_sitemap)
