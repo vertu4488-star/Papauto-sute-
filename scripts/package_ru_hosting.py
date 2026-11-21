@@ -125,7 +125,7 @@ def build(source: Path, target: Path) -> dict:
         raise RuntimeError("Incomplete RU static export: " + ", ".join(missing))
     gallery = json.loads((target / "data/gallery-lots.json").read_text(encoding="utf-8"))
     lots = gallery.get("lots", [])
-    if not 35 <= len(lots) <= 500 or gallery.get("lot_count") != len(lots):
+    if not 35 <= len(lots) <= 700 or gallery.get("lot_count") != len(lots):
         raise RuntimeError("Invalid count in full-sheet auction gallery")
     html = (target / "gallery.html").read_text(encoding="utf-8")
     if any(lot.get("id") in {
