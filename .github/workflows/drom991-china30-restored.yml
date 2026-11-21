@@ -2,7 +2,7 @@ name: PapAuto China 30 restored historical sourcing
 on:
   push:
     branches: ['research/drom991-japan-china-30x30-20261121']
-    paths: ['.github/workflows/china-next-30-sourcing.yml']
+    paths: ['.github/workflows/drom991-china30-restored.yml']
 permissions:
   contents: read
 jobs:
