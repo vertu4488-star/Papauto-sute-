@@ -1,0 +1,205 @@
+{
+  "date": "2026-11-21",
+  "summary": "After 17 verified Japan archive photo+full-sheet reference lots from Drom 991 sample",
+  "reported_drom_total": 991,
+  "drom_individually_inspected": 40,
+  "prior_gallery_lots": 412,
+  "new_gallery_lots": 17,
+  "expected_gallery_lots": 429,
+  "china_market_supplier_examples_unchanged": 499,
+  "exact_model_year_sample_coverage_before": 9,
+  "exact_model_year_sample_coverage_after": 18,
+  "remaining_sample_gaps": 22,
+  "added_nine_model_year_keys": [
+    "honda freed spike|2012",
+    "toyota voxy|2018",
+    "suzuki hustler|2014",
+    "toyota noah|2019",
+    "nissan sylphy|2019",
+    "toyota sienta|2016",
+    "toyota ractis|2013",
+    "nissan dayz|2018",
+    "toyota vitz|2018"
+  ],
+  "sample_remaining": [
+    {
+      "model": "Nissan NV200",
+      "year": 2017,
+      "drom_position": 1,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Lexus LX570",
+      "year": 2019,
+      "drom_position": 4,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Mazda CX-5",
+      "year": 2014,
+      "drom_position": 7,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Toyota Camry",
+      "year": 2015,
+      "drom_position": 8,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Toyota C-HR",
+      "year": 2018,
+      "drom_position": 9,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Subaru Levorg",
+      "year": 2021,
+      "drom_position": 10,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Lexus LX570",
+      "year": 2017,
+      "drom_position": 12,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Toyota Allion",
+      "year": 2009,
+      "drom_position": 14,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Toyota Succeed",
+      "year": 2019,
+      "drom_position": 17,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Volkswagen Tayron",
+      "year": 2022,
+      "drom_position": 18,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "BMW X3",
+      "year": 2020,
+      "drom_position": 19,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "RAM 1500",
+      "year": 2023,
+      "drom_position": 20,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Honda Freed",
+      "year": 2019,
+      "drom_position": 22,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Jaguar F-Pace",
+      "year": 2019,
+      "drom_position": 26,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Toyota Tank",
+      "year": 2016,
+      "drom_position": 27,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Mercedes-Benz GLE",
+      "year": 2019,
+      "drom_position": 28,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Toyota Noah",
+      "year": 2018,
+      "drom_position": 29,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "BMW X3",
+      "year": 2025,
+      "drom_position": 31,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Lexus RX300",
+      "year": 2025,
+      "drom_position": 34,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Mazda CX-8",
+      "year": 2019,
+      "drom_position": 37,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Nissan X-Trail",
+      "year": 2018,
+      "drom_position": 38,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    },
+    {
+      "model": "Mazda CX-8",
+      "year": 2017,
+      "drom_position": 40,
+      "existing_before": 0,
+      "added_lots": [],
+      "covered_after": false
+    }
+  ],
+  "restrictions": "This is NOT a census of all 991 Drom vehicles. Model-year match does not indicate the same Drom vehicle. China supplier media without genuine full auction sheets are not presented as auction lots.",
+  "review_pdf": "PapAuto_Drom991_17_auction_cards_review.pdf",
+  "github_pr": 58
+}
