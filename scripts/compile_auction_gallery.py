@@ -517,6 +517,25 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
             card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
                         sale_label="Статистика продаж", rights_confirmed=False)
             additional.append(card)
+        # Exact owner-approved 30 Japanese archive records: 609 -> 639.
+        archive16 = json.loads((ROOT / "research/owner-approved-japan-next30-639-2026-11-21.json").read_text(encoding="utf-8"))
+        archived16 = archive16["lots"]
+        if (archive16.get("approved_count") != 30 or archive16.get("rights_confirmed") is not False
+                or archive16.get("owner_authorized_archival_reference_only") is not True
+                or archive16.get("reviewed_pdf_sha256") != "2d814fb54e9acced643bcba53b61094bee4256eb4576c6dedd590c9ca65ddc76"
+                or archive16.get("reviewed_jpg_zip_sha256") != "fa60be07638523672d19c41eb68f16fd91e3fcd1488870544b8c3b1337d20c47"
+                or [r["id"] for r in archived16] != [f"japan-next30-639-20261121-{i:02d}" for i in range(1,31)]
+                or any(len(r["photos"]) != 2 or r.get("rights_confirmed") is not False for r in archived16)):
+            raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: 639 immutable PDF/ZIP or source mismatch")
+        hashes16 = [h for r in archived16 for h in r["media_sha256"]]
+        if (len(hashes16) != 90 or len(set(hashes16 + hashes15 + hashes14 + hashes13 + hashes12 + hashes11 + hashes10 + hashes9 + hashes8 + hashes7 + hashes6 + hashes5 + hashes4 + hashes3 + hashes2 + hashes + media_hashes)) != 1715
+                or hashlib.sha256("".join(hashes16).encode()).hexdigest() != "fedd01f9183b25bddbd40414f9766ee273021e05b29ccb93a01b11b1fedac458"):
+            raise RuntimeError("PAPAUTO_POLICY: 639 image/sheet originals tampered or reused")
+        for rec in archived16:
+            card = prepare_approved(target, rec, owner_selected=True)
+            card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
+                        sale_label="Статистика продаж", rights_confirmed=False)
+            additional.append(card)
     seen_lot_keys = {
         (r["market"], r["auction"], str(r["auction_date"]), str(r["lot_number"]))
         for r in base
