@@ -57,7 +57,10 @@
     market+"|"+lower(name).replace(/[^a-z0-9а-яё]/g, "");
   const photoAllowed = path =>
     typeof path==="string" &&
-    /^\\/assets\\/(?:auction\\/(?:home|approved)|premium-auctions)\\/[a-z0-9/_.-]+\\.(?:jpg|jpeg|png|webp)$/i.test(path);
+    ["/assets/auction/home/","/assets/auction/approved/","/assets/premium-auctions/"]
+      .some(prefix=>path.startsWith(prefix)) &&
+    [".jpg",".jpeg",".png",".webp"].some(suffix=>path.toLowerCase().endsWith(suffix)) &&
+    !path.includes("..") && !path.includes("?");
   const pageSize = 120;
   let limit = pageSize;
 
