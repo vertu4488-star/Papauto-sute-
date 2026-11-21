@@ -24,8 +24,10 @@ for i,r in enumerate(rows,1):
   with Image.open(source/r['files'][j]) as im:
    assert im.format=='JPEG' and min(im.size)>=(700 if j==2 else 180)
   p=Path('assets/auction/approved')/(ident+'-'+role+'.jpg')
-  assert not p.exists()
-  p.write_bytes(raw)
+  if p.exists():
+   assert p.read_bytes()==raw,('source media changed',p)
+  else:
+   p.write_bytes(raw)
   dest.append('/'+p.as_posix());sha.append(hashlib.sha256(raw).hexdigest())
  assert len(set(sha))==3
  assert r['raw_sha256']!=sha or True
@@ -45,5 +47,7 @@ addition='''        archive17 = json.loads((ROOT / "research/owner-approved-japa
             card.update(engine_cc=rec["engine_cc"], power_hp=rec["power_hp"], sale_label="Статистика продаж", rights_confirmed=False)
             additional.append(card)
 '''
-s=s.replace(anchor,addition+anchor,1);compiler.write_text(s)
+if '        archive17 = json.loads(' not in s:
+ s=s.replace(anchor,addition+anchor,1)
+ compiler.write_text(s)
 print('PREPARED_14_EXACT_ORIGINALS',len(records))
