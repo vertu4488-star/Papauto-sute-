@@ -402,6 +402,25 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
             card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
                         sale_label="Статистика продаж", rights_confirmed=False)
             additional.append(card)
+        # Exact 30 Japan lots approved from PDF and byte-identical ZIP review.
+        archive10 = json.loads((ROOT / "research/owner-approved-japan-next30-2026-11-21.json").read_text(encoding="utf-8"))
+        archived10 = archive10["lots"]
+        if (archive10.get("approved_count") != 30 or archive10.get("rights_confirmed") is not False
+                or archive10.get("owner_authorized_archival_reference_only") is not True
+                or archive10.get("reviewed_pdf_sha256") != "10ada138484429afc4de3fa1d850426a8d03b3821cc3f9abe97f8d4f99f2de7e"
+                or archive10.get("reviewed_jpg_zip_sha256") != "626fe77598b0d6038fc416bcc2cc355874c03b759ce4b92f38b0912402a18473"
+                or [r["id"] for r in archived10] != [f"japan-next30-drom991-20261121-{i:02d}" for i in range(1,31)]
+                or any(len(r["photos"]) != 2 or r.get("rights_confirmed") is not False for r in archived10)):
+            raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: next30 owner-approved PDF mismatch")
+        hashes10 = [h for r in archived10 for h in r["media_sha256"]]
+        if (len(hashes10) != 90 or len(set(hashes10 + hashes9 + hashes8 + hashes7 + hashes6 + hashes5 + hashes4 + hashes3 + hashes2 + hashes + media_hashes)) != 1175
+                or hashlib.sha256("".join(hashes10).encode()).hexdigest() != "a9159cfaba8efb822fd1d0705443833b076736876c015a58c5ae945e452523f4"):
+            raise RuntimeError("PAPAUTO_POLICY: next30 original photos/sheets mismatch or duplicates")
+        for rec in archived10:
+            card = prepare_approved(target, rec, owner_selected=True)
+            card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
+                        sale_label="Статистика продаж", rights_confirmed=False)
+            additional.append(card)
     seen_lot_keys = {
         (r["market"], r["auction"], str(r["auction_date"]), str(r["lot_number"]))
         for r in base

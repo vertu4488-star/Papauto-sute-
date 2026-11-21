@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # Immutable Git blob IDs of the existing auction records (NOT an approval for
 # any additional record). A new/edited record must not deploy automatically.
 FROZEN_SOURCE_BLOBS = {
+    "research/owner-approved-japan-next30-2026-11-21.json": "b85dc9c3635cba392150abcdc163dd936333301f",
     "research/owner-approved-japan-drom991-gap-17-archive-2026-11-21.json": "4cc6a29f5253ade79bcb9dc3b617d672fd0171b4",
     "research/owner-approved-japan-atp-sixth-30-archive-2026-11-21.json": "514b0527cc5bce969492180e9d6f935e7c63eda6",
     "research/owner-approved-japan-atp-fifth-30-archive-2026-11-20.json": "cc921c777e5c1d623015aa073a2628c66218f96c",
@@ -124,8 +125,9 @@ def verify_published_output(target: Path) -> None:
     archive7 = json.loads((ROOT / "research/owner-approved-japan-atp-fifth-30-archive-2026-11-20.json").read_text(encoding="utf-8"))
     archive8 = json.loads((ROOT / "research/owner-approved-japan-atp-sixth-30-archive-2026-11-21.json").read_text(encoding="utf-8"))
     archive9 = json.loads((ROOT / "research/owner-approved-japan-drom991-gap-17-archive-2026-11-21.json").read_text(encoding="utf-8"))
-    approved_archive = {r["id"] for r in archive["lots"] + archive2["lots"] + archive3["lots"] + archive4["lots"] + archive5["lots"] + archive6["lots"] + archive7["lots"] + archive8["lots"] + archive9["lots"]}
-    if (len(rows) != 429 or len(approved_archive) != 297 or len(approved_new) != 97 or len(approved_old) != 3
+    archive10 = json.loads((ROOT / "research/owner-approved-japan-next30-2026-11-21.json").read_text(encoding="utf-8"))
+    approved_archive = {r["id"] for r in archive["lots"] + archive2["lots"] + archive3["lots"] + archive4["lots"] + archive5["lots"] + archive6["lots"] + archive7["lots"] + archive8["lots"] + archive9["lots"] + archive10["lots"]}
+    if (len(rows) != 459 or len(approved_archive) != 327 or len(approved_new) != 97 or len(approved_old) != 3
             or not (approved_new | approved_old | approved_archive).issubset({r["id"] for r in rows})
             or {r["id"] for r in rows if r["origin"] == "owner_selection"} != (approved_new | approved_archive)):
         raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: public lot set does not match owner-reviewed PDF")
