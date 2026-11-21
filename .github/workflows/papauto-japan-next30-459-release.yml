@@ -1,0 +1,83 @@
+name: Publish owner-approved Japan next30 cards 459 gallery
+on:
+  push:
+    branches: ['review/drom991-next30-japan-20261121']
+    paths: ['.github/workflows/papauto-japan-next30-459-release.yml']
+permissions:
+  actions: read
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: drom991-japan-wave2-original-photo-sheet-review
+          run-id: 44862917647
+          github-token: ${{ github.token }}
+          path: /tmp/papauto-next30-original/14690508245
+      - uses: actions/download-artifact@v4
+        with:
+          name: drom991-next30-japan-exact-lot-photos-and-sheets
+          run-id: 44864961085
+          github-token: ${{ github.token }}
+          path: /tmp/papauto-next30-original/14691820564
+      - uses: actions/download-artifact@v4
+        with:
+          name: japan-atp-b6-pages-review
+          run-id: 44758942918
+          github-token: ${{ github.token }}
+          path: /tmp/papauto-next30-original/14641252098
+      - run: pip install -r requirements.txt pillow
+      - name: Release only exact PDF-approved 30, 90 original JPEGs, and 30 real sheets
+        run: python scripts/prepare_papauto_japan_next30_459_release.py
+      - name: Build and run full site policy tests
+        run: |
+          python scripts/verify_publication_approval.py
+          python scripts/build_content.py
+          python scripts/build_static_public.py
+          python -m unittest discover -s tests -v
+          node --check gallery.js
+          node tests/test_survey_all_gallery_lots.cjs
+      - name: Verify gallery HTML and all 90 media in desktop and mobile browsers
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install chromium
+          python -m http.server 8765 --directory render-public >/tmp/atp-server.log 2>&1 &
+          node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{
+            const browser=await chromium.launch({headless:true});
+            for(const width of [390,1440]){
+              const page=await browser.newPage({viewport:{width,height:844}});
+              await page.goto('http://localhost:8765/gallery.html');
+              const records=await page.evaluate(async()=>await (await fetch('/data/gallery-lots.json')).json());
+              if(records.lots.length!==459)throw Error('459 count required: '+records.lots.length);
+              const batch=records.lots.filter(x=>x.id.startsWith('japan-next30-drom991-20261121-'));
+              if(batch.length!==30)throw Error('30 owner-approved cards required: '+batch.length);
+              for(const row of batch){
+                if(row.rights_confirmed!==false||row.status!=='reference_only'||row.photos.length!==2)throw Error('invalid archived status');
+                for(const url of [...row.photos,row.inspection_image]){
+                  await page.evaluate(async u=>{const i=new Image();i.src=u;await i.decode();if(Math.min(i.naturalWidth,i.naturalHeight)<180)throw Error('invalid photo '+u)},url);
+                }
+              }
+              if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2))throw Error('horizontal overflow');
+              await page.close();
+            }
+            await browser.close();console.log('PAPAUTO_459: all 30 unique lot cards, 60 images and 30 sheets decode at mobile+desktop.');
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Commit verified exact owner-approved release to review branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add AGENTS.md docs/AUCTION_ONLY_GALLERY.md scripts/compile_auction_gallery.py scripts/build_static_public.py scripts/verify_publication_approval.py scripts/publish_lot_search.py tests/test_auction_only_images_policy.py tests/test_site_warm_theme.py research/owner-approved-japan-next30-2026-11-21.json assets/auction/approved/japan-next30-drom991-20261121-*.jpg sitemap.xml
+          git commit -m "Publish exactly thirty owner-approved Japanese auction reference photo-sheet cards"
+          git push origin HEAD:review/drom991-next30-japan-20261121
+
+# Retry exact approved release after fixing selection-field compatibility.

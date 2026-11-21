@@ -1,0 +1,24 @@
+name: PapAuto next 30 Japan authentic auction lots review
+on:
+  push:
+    branches: ['review/drom991-next30-japan-20261121']
+    paths: ['.github/workflows/drom991-next30-japan-review.yml']
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4 pillow
+      - name: Research distinct real Japan auction lot photo sheet sets, prioritize missing Drom model years
+        run: python scripts/research_drom991_next30_japan_v2_20261121.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: drom991-next30-japan-exact-lot-photos-and-sheets
+          path: japan-next30-review/
+          retention-days: 50
