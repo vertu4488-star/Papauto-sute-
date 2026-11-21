@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "PapAuto",
   "created_at": "2026-11-21",
-  "status": "WAITING_FOR_OWNER_APPROVAL",
+  "status": "OWNER_APPROVED_STAGING_PENDING_PRIOR_BATCH",
   "published": false,
   "last_confirmed_main_auction_gallery": 489,
   "previous_pending_review_batch": "PapAuto_Japan_Another30_519_2026-11-21.pdf",
@@ -264,5 +264,17 @@
     "external_competitor_links_in_public_cards": false,
     "third_party_media_commercial_rights_verified": false
   },
-  "release_instruction": "Review-only; do not publish this batch until exact PDF/media ZIP accepted by owner. Do not represent archival media as commercially licensed. Publish 519 review first or rebase release deterministically."
+  "release_instruction": "Review-only; do not publish this batch until exact PDF/media ZIP accepted by owner. Do not represent archival media as commercially licensed. Publish 519 review first or rebase release deterministically.",
+  "owner_approval": {
+    "approved": true,
+    "received_at_date": "2026-11-21",
+    "exact_review_pdf": "PapAuto_Japan_Another30_549_2026-11-21.pdf",
+    "exact_review_pdf_sha256": "7f1209ab57d0fa02acea28fdb33bb82d91f3c1a7027dcefb563da057265aa024",
+    "exact_media_zip_sha256": "405bb0643dc4baf67f67ff92f0e51a67e62d5b77b1e391005dbccf8e9ac33242",
+    "approval_text": "Утверждаю новую партию из 30 японских карточек PapAuto_Japan_Another30_549_2026-11-21.pdf с оригинальными изображениями и аукционными листами. Опубликуй эту партию после предыдущей, проверь дубли, изображения и Render Live.",
+    "permission_scope": "This exact 30-card historical archive release after preceding 519 batch, not blanket third-party image license",
+    "note": "Previous 489 to 519 batch was not separately approved, so no live site change until previous batch is released."
+  },
+  "release_blocker": "Previous 30-card 489->519 batch unapproved and unpublished; user specifically instructed sequential release.",
+  "image_sha256_aggregate": "14335eb0d5d9ec636a49ee0d9001f595bebf32ef18b060ebcce69a45e9e3589f"
 }
