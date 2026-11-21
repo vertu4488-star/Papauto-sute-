@@ -1,0 +1,62 @@
+name: Stage approved PapAuto 60 exact images
+on:
+  push:
+    branches: ['release/approved-japan-china-60-20261121']
+    paths: ['.github/workflows/stage-approved-60.yml']
+permissions:
+  actions: read
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: China-next-30-sourcing
+          run-id: 44909447816
+          github-token: ${{ github.token }}
+          path: /tmp/china
+      - uses: actions/download-artifact@v4
+        with:
+          name: drom991-japan-30-photo-sheet-review
+          run-id: 44908535833
+          github-token: ${{ github.token }}
+          path: /tmp/japan
+      - name: Stage exactly 60 owner-reviewed records and images
+        run: |
+          python - <<'PY'
+          import json,shutil,re,hashlib
+          from pathlib import Path
+          ch=json.loads(Path('/tmp/china/manifest.json').read_text())['records'][:30]
+          jp=json.loads(Path('/tmp/japan/manifest.json').read_text())[:30]
+          assert len(ch)==len(jp)==30
+          assert len({x['photo_url'] for x in ch})==30
+          assert len({(x['auction'],x['lot'],x['date']) for x in jp})==30
+          for i,x in enumerate(ch,1):
+              src=Path('/tmp/china')/f"{i:03}.jpg"
+              assert src.exists() and src.stat().st_size>1000
+              dst=Path('assets/china-order/owner-20261121-batch19')/f"{i:03}.jpg"
+              dst.parent.mkdir(parents=True,exist_ok=True)
+              shutil.copyfile(src,dst)
+              x['local_photo']='/'+dst.as_posix()
+              x['local_sha256']=hashlib.sha256(dst.read_bytes()).hexdigest()
+          for i,x in enumerate(jp,1):
+              for k,f in enumerate(x['files']):
+                  src=Path('/tmp/japan')/f
+                  assert src.exists() and src.stat().st_size>1000
+                  dst=Path('assets/auction/approved/owner-20261121-30')/f"{i:03}-{k}.jpg"
+                  dst.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(src,dst)
+              x['local_files']=[f"/assets/auction/approved/owner-20261121-30/{i:03}-{k}.jpg" for k in range(3)]
+          Path('research/approved-china-30-staged-20261121.json').write_text(json.dumps(ch,ensure_ascii=False,indent=2))
+          Path('research/approved-japan-30-staged-20261121.json').write_text(json.dumps(jp,ensure_ascii=False,indent=2))
+          print('STAGED 30 China photos + 90 Japan photos/sheets; NOT YET PUBLISHED')
+          PY
+      - name: Commit staged media to release branch
+        run: |
+          git config user.name "PapAuto Release Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/china-order/owner-20261121-batch19 assets/auction/approved/owner-20261121-30 research/approved-*-30-staged-20261121.json
+          git commit -m "Stage approved exact China and Japan 30+30 media for publication"
+          git push
