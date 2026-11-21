@@ -61,14 +61,14 @@ jobs:
           needle='    for p in root.glob("*.html"):'
           assert s.count(needle)==1
           insert='''    from pathlib import Path as _P
-    import json as _json
-    batch = _json.loads((root/"research/approved-china-30-staged-20261121.json").read_text())
-    assert len(batch)==30
-    for row in batch:
-        img=root/row["local_photo"].lstrip("/")
-        assert img.is_file() and hashlib.sha256(img.read_bytes()).hexdigest()==row["local_sha256"]
-    assert html.count('class="cn-example"')==529
-'''
+              import json as _json
+              batch = _json.loads((root/"research/approved-china-30-staged-20261121.json").read_text())
+              assert len(batch)==30
+              for row in batch:
+                  img=root/row["local_photo"].lstrip("/")
+                  assert img.is_file() and hashlib.sha256(img.read_bytes()).hexdigest()==row["local_sha256"]
+              assert html.count('class="cn-example"')==529
+          '''
           s=s.replace(needle,insert+needle)
           s=s.replace(' + ["/"+EIGHTEENTH_PREFIX+i+".jpg" for i in EIGHTEENTH_HASHES]:',' + ["/"+EIGHTEENTH_PREFIX+i+".jpg" for i in EIGHTEENTH_HASHES] + [row["local_photo"] for row in batch]:')
           p.write_text(s)
