@@ -34,6 +34,19 @@ on:
       - "premium-lexus-light.css"
       - "scripts/qa_premium_light_browser.cjs"
       - ".github/workflows/premium-light-qa.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "catalog.html"
+      - "catalog-open-data.js"
+      - "popular-import-2l.html"
+      - "popular-import-2l.js"
+      - "popular-import-2l.css"
+      - "japan-compact-models.html"
+      - "korea-popular-models.html"
+      - "curated-models.css"
+      - "scripts/qa_no_blank_photo_cards.cjs"
+      - ".github/workflows/premium-light-qa.yml"
   workflow_dispatch:
 permissions:
   contents: read
@@ -62,6 +75,7 @@ jobs:
           node scripts/qa_warm_site_browser.cjs
           node scripts/qa_all_auction_lot_pages.cjs
           node scripts/qa_premium_light_browser.cjs
+          node scripts/qa_no_blank_photo_cards.cjs
       - name: Save actual page screenshots
         if: always()
         uses: actions/upload-artifact@v4
