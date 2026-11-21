@@ -2,7 +2,7 @@
   "schema_version": 1,
   "created_at": "2026-11-21",
   "project": "PapAuto",
-  "status": "OWNER_REVIEW_REQUIRED",
+  "status": "OWNER_APPROVED_RELEASE_519",
   "public_site_published": false,
   "previous_catalog_count": 489,
   "target_after_owner_approval": 519,
@@ -200,5 +200,14 @@
     "max_source_hp": 160,
     "no_duplicates": true
   },
-  "release_gate": "Not published. Release only after owner reviews exact numbered PDF and source media."
+  "release_gate": "Not published. Release only after owner reviews exact numbered PDF and source media.",
+  "owner_approval": {
+    "approved": true,
+    "date": "2026-11-21",
+    "exact_review_pdf": "PapAuto_Japan_Another30_519_2026-11-21.pdf",
+    "exact_pdf_sha256": "718076fc478c085c2df5b2197c498618ea8dc8cc59bf90dea3efd773409f3a5b",
+    "exact_media_zip_sha256": "61c618dbb89ed51866a9ed9618c6f7bed769a0fb2e2b0d2de8a3072c13ee8292",
+    "exact_manifest_sha256": "c79856a191f906983a713a20467f93f45231b01ed8ff0c6c8642c4fd84cdbfc3",
+    "approval_text": "Утверждаю предыдущую партию PapAuto_Japan_Another30_519_2026-11-21.pdf. Разрешаю опубликовать сначала её, затем уже утверждённую партию PapAuto_Japan_Another30_549_2026-11-21.pdf."
+  }
 }
