@@ -30,3 +30,5 @@ jobs:
           git add scripts/compile_auction_gallery.py research/owner-approved-japan-drom991-20-2026-11-21.json assets/auction/approved/japan-drom991-20-20261121-*.jpg
           git commit -m "Prepare 20 exact Japanese auction cards with original photos and sheets"
           git push origin HEAD:release/drom991-20-approved-20261121
+
+# Retry with corrected source title parser.
