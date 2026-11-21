@@ -23,3 +23,5 @@ jobs:
           name: drom991-gap-photo-sheet-review
           path: drom-gap-review/
           retention-days: 60
+
+# Owner-requested source review rerun: 2026-11-21, target 100 complete Japan cards.
