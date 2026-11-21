@@ -72,7 +72,7 @@ jobs:
           s=s.replace(needle,insert+needle)
           expected_needle='    found = {p.relative_to(root).as_posix()'
           assert s.count(expected_needle)==1
-          s=s.replace(expected_needle,'    expected |= {row["local_photo"].lstrip("/") for row in _json.loads((root/"research/approved-china-30-staged-20261121.json").read_text())}\n'+expected_needle)
+          s=s.replace(expected_needle,'    expected |= {row["local_photo"].lstrip("/") for row in json.loads((root/"research/approved-china-30-staged-20261121.json").read_text())}\n'+expected_needle)
           s=s.replace(' + ["/"+EIGHTEENTH_PREFIX+i+".jpg" for i in EIGHTEENTH_HASHES]:',' + ["/"+EIGHTEENTH_PREFIX+i+".jpg" for i in EIGHTEENTH_HASHES] + [row["local_photo"] for row in batch]:')
           p.write_text(s)
           PY
