@@ -1,0 +1,33 @@
+name: PapAuto Drom991 audit and Japan 30 sourcing
+on:
+  push:
+    branches: ['research/drom991-japan-china-30x30-20261121']
+    paths: ['.github/workflows/drom991-30x30-review.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python scripts/audit_drom991_30x30.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: drom991-model-year-mileage-coverage
+          path: drom991-30x30-review/
+  japan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4 pillow
+      - run: python scripts/research_drom991_next30_japan_v2_20261121.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: drom991-japan-30-photo-sheet-review
+          path: drom991-japan-new30-review/
+          retention-days: 60
