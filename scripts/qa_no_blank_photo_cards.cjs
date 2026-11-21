@@ -46,10 +46,10 @@ const base=process.env.PAPAUTO_QA_URL||"http://127.0.0.1:8765";
         }
         const data=await (await fetch("/data/gallery-lots.json")).json();
         const byId=new Map(data.lots.map(lot=>[lot.id,lot]));
-        const simple=value=>String(value||"").toLowerCase().replace(/[\\s-]/g,"");
+        const simple=value=>String(value||"").toLowerCase().replace(/[\s-]/g,"");
         const identityErrors=cards.filter(card=>{
           const href=card.querySelector(".verified-auction-photo a")?.getAttribute("href")||"";
-          const id=decodeURIComponent(href.replace(/^\\/lots\\//,"").replace(/\\.html$/,""));
+          const id=decodeURIComponent(href.replace(/^\/lots\//,"").replace(/\.html$/,""));
           const lot=byId.get(id);
           return !lot||simple(lot.model)!==simple(card.querySelector("h2")?.textContent)||
             lot.photos?.[0]!==card.querySelector(".verified-auction-photo img")?.getAttribute("src")||
@@ -75,10 +75,10 @@ const base=process.env.PAPAUTO_QA_URL||"http://127.0.0.1:8765";
           const cards=[...document.querySelectorAll("article.unit")];
           const data=await (await fetch("/data/gallery-lots.json")).json();
           const byId=new Map(data.lots.map(lot=>[lot.id,lot]));
-          const simple=value=>String(value||"").toLowerCase().replace(/[\\s-]/g,"");
+          const simple=value=>String(value||"").toLowerCase().replace(/[\s-]/g,"");
           const identityErrors=cards.filter(card=>{
             const href=card.querySelector(".media a")?.getAttribute("href")||"";
-            const id=decodeURIComponent(href.replace(/^\\/lots\\//,"").replace(/\\.html$/,""));
+            const id=decodeURIComponent(href.replace(/^\/lots\//,"").replace(/\.html$/,""));
             const lot=byId.get(id);
             const imgs=[...card.querySelectorAll(".media img")];
             return !lot||simple(lot.model)!==simple(card.querySelector("h2")?.textContent)||
