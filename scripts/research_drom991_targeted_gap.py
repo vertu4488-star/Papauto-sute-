@@ -5,7 +5,7 @@ from PIL import Image,ImageDraw,ImageFont
 from collections import Counter
 BASE='https://atp-auto.ru'
 ROOT=Path('.')
-out=Path('drom-replace12-review');out.mkdir(exist_ok=True)
+out=Path('japan-next20-review');out.mkdir(exist_ok=True)
 old=[]
 for path in ['research/owner-selected-japan-lots-2026-11-14.json','research/owner-approved-50-archive-2026-11-19.json','research/owner-approved-second-50-archive-2026-11-19.json','data/gallery-lots.json','research/owner-approved-japan-atp-30-archive-2026-11-20.json','research/owner-approved-japan-atp-second-30-archive-2026-11-20.json','research/owner-approved-japan-atp-third-30-archive-2026-11-20.json','research/owner-approved-japan-atp-fourth-30-archive-2026-11-20.json','research/owner-approved-japan-atp-fifth-30-archive-2026-11-20.json','research/owner-approved-japan-atp-sixth-30-archive-2026-11-21.json','research/owner-approved-japan-drom991-gap-17-archive-2026-11-21.json','research/owner-approved-japan-next30-2026-11-21.json','research/owner-approved-japan-followup30-2026-11-21.json','research/owner-approved-japan-next30-519-2026-11-21.json','research/owner-approved-japan-next30-549-2026-11-21.json','research/owner-approved-japan-next30-579-2026-11-21.json','research/owner-approved-japan-next30-609-2026-11-21.json','research/owner-approved-japan-next30-639-2026-11-21.json']:
  old.extend(json.loads(Path(path).read_text())['lots'])
@@ -86,7 +86,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
   r,imgs,v=result;k=(norm(r['auction']),r['date'],r['lot'].lstrip('0'))
   if k in seen or hashes.intersection(r['raw_sha256']) or any((v[0]^p).bit_count()<=2 for p in visuals):continue
   seen.add(k);hashes.update(r['raw_sha256']);visuals.append(v[0])
-  if len(rows)>=12:break
+  if len(rows)>=20:break
   n=len(rows)+1;r['index']=n;files=[]
   for j,(u,b,im) in enumerate(imgs):
    name=f'{n:03d}-{j}.jpg';im.save(out/name,quality=95);files.append(name)
