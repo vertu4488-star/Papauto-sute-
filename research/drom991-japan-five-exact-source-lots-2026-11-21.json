@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-11-21",
+  "purpose": "PapAuto Drom gaps exact source lots; research only, do not expose publicly until source photos and sheets imported and verified",
+  "lots": [
+    {
+      "make": "Toyota",
+      "model": "C-HR",
+      "year": 2018,
+      "lot": "213",
+      "auction": "JU Okinawa",
+      "date": "2026-11-13",
+      "mileage_km": 88000,
+      "grade": "3.5",
+      "price_jpy": 1118000,
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/c-hr/3AQi3g8H4PYR1P/",
+      "source_page_has_auction_photos_and_sheet": true,
+      "local_media_imported": false,
+      "publication_status": "research_review"
+    },
+    {
+      "make": "Toyota",
+      "model": "C-HR",
+      "year": 2018,
+      "lot": "89",
+      "auction": "TAA Tohoku",
+      "date": "2026-10-15",
+      "mileage_km": 86000,
+      "grade": "4",
+      "price_jpy": 1025000,
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/c-hr/PDC1w9A288yC8/",
+      "source_page_has_auction_photos_and_sheet": true,
+      "local_media_imported": false,
+      "publication_status": "research_review"
+    },
+    {
+      "make": "Toyota",
+      "model": "C-HR",
+      "year": 2018,
+      "lot": "1049",
+      "auction": "LAA Okayama",
+      "date": "2026-10-23",
+      "mileage_km": 112000,
+      "grade": "4",
+      "price_jpy": 1266000,
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/c-hr/sRotWkFvxDPM4d/",
+      "source_page_has_auction_photos_and_sheet": true,
+      "local_media_imported": false,
+      "publication_status": "research_review"
+    },
+    {
+      "make": "Toyota",
+      "model": "C-HR",
+      "year": 2018,
+      "lot": "292",
+      "auction": "TAA Hiroshima",
+      "date": "2026-10-20",
+      "mileage_km": 127000,
+      "grade": "4",
+      "price_jpy": 1147000,
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/c-hr/fXGQeIVyFZOhp/",
+      "source_page_has_auction_photos_and_sheet": true,
+      "local_media_imported": false,
+      "publication_status": "research_review"
+    },
+    {
+      "make": "Nissan",
+      "model": "X-Trail",
+      "year": 2018,
+      "lot": "65",
+      "auction": "NAA Osaka",
+      "date": null,
+      "mileage_km": 220000,
+      "grade": "3.5",
+      "price_jpy": 293000,
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/x-trail/C3MZ1WBK3gBkA/",
+      "source_page_has_auction_photos_and_sheet": true,
+      "local_media_imported": false,
+      "publication_status": "research_review"
+    }
+  ]
+}
