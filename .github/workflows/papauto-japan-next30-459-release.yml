@@ -79,3 +79,5 @@ jobs:
           git add AGENTS.md docs/AUCTION_ONLY_GALLERY.md scripts/compile_auction_gallery.py scripts/build_static_public.py scripts/verify_publication_approval.py scripts/publish_lot_search.py tests/test_auction_only_images_policy.py tests/test_site_warm_theme.py research/owner-approved-japan-next30-2026-11-21.json assets/auction/approved/japan-next30-drom991-20261121-*.jpg sitemap.xml
           git commit -m "Publish exactly thirty owner-approved Japanese auction reference photo-sheet cards"
           git push origin HEAD:review/drom991-next30-japan-20261121
+
+# Retry exact approved release after fixing selection-field compatibility.
