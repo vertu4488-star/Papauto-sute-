@@ -1,0 +1,52 @@
+name: Japan ATP 412-card approved release
+on:
+  push:
+    branches: ['release/japan-atp-412-20261121']
+    paths: ['.github/workflows/japan-atp-412-release.yml']
+permissions:
+  actions: read
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: japan-atp-b6-pages-review
+          run-id: 44758942918
+          github-token: ${{ github.token }}
+          path: /tmp/atp-verified/14641252098
+      - run: pip install -r requirements.txt pillow
+      - name: Assemble exact reviewed media
+        run: python scripts/prepare_japan_atp_sixth_30_release.py
+      - name: Build and test all publication gates
+        run: |
+          python scripts/verify_publication_approval.py
+          python scripts/build_content.py
+          python scripts/build_static_public.py
+          python -m unittest discover -s tests -v
+          node --check gallery.js
+          node tests/test_survey_all_gallery_lots.cjs
+      - name: Test browser photos, sheets and gallery
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install chromium
+          python -m http.server 8765 --directory render-public >/tmp/atp-server.log 2>&1 &
+          node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{const b=await chromium.launch({headless:true});for(const width of [390,1440]){let p=await b.newPage({viewport:{width,height:844}});await p.goto('http://localhost:8765/gallery.html');let rows=await p.evaluate(async()=>await (await fetch('/data/gallery-lots.json')).json());if(rows.lots.length!==412)throw Error('count');let added=rows.lots.filter(x=>x.id.startsWith('japan-atp-b6-20261121-'));if(added.length!==30)throw Error('approved count');for(const row of added){if(row.rights_confirmed!==false||row.status!=='reference_only'||row.photos.length!==2)throw Error('bad reference');for(const url of [...row.photos,row.inspection_image]){await p.evaluate(async u=>{let im=new Image();im.src=u;await im.decode();if(Math.min(im.naturalWidth,im.naturalHeight)<180)throw Error('image broken')},url)}}if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2))throw Error('overflow');await p.close()}await b.close();console.log('412 gallery lots; 90 exact ATP images decoded on desktop and mobile')})().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Commit reviewed release
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add AGENTS.md docs/AUCTION_ONLY_GALLERY.md scripts/compile_auction_gallery.py scripts/build_static_public.py scripts/verify_publication_approval.py scripts/publish_lot_search.py tests/test_auction_only_images_policy.py tests/test_site_warm_theme.py research/owner-approved-japan-atp-sixth-30-archive-2026-11-21.json assets/auction/approved/japan-atp-b6-20261121-*.jpg sitemap.xml
+          git commit -m "Append thirty exact reviewed ATP Japan auction archive examples"
+          git push origin HEAD:release/japan-atp-412-20261121
+
+# Validate exact source identifiers.
