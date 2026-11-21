@@ -11,7 +11,7 @@ for i,r in enumerate(rows,1):
  key=(re.sub('[^a-z0-9]','',r['auction'].lower()),r['date'],str(r['lot']).lstrip('0'))
  assert key not in keys,('duplicate',key)
  keys.add(key)
- title=re.fullmatch(r'(.+?) (20\\d\\d) года',r['title'])
+ title=re.fullmatch(r'(.+?) (20\d\d) года',r['title'])
  assert title and int(title[2])==r['year']
  make,model=title[1].split(' ',1)
  ident=f'japan-drom991-20-20261121-{i:02d}'
@@ -29,7 +29,7 @@ for i,r in enumerate(rows,1):
  desc=f"{make} {model}, {r['year']} года, кузов {r['body']}, комплектация {r['trim']}. Двигатель {r['cc']} см³, мощность {r['hp']} л.с. Пробег {r['km']} км, оценка {r['grade']}, аукцион {r['auction']}, дата {r['date']}, лот №{r['lot']}. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона без доставки и таможенных платежей."
  records.append(dict(id=ident,country='japan',make=make,model=model,year=r['year'],mileage_km=r['km'],body=r['body'],grade=r['grade'],auction=r['auction'],lot=str(r['lot']),auction_date=r['date'],description=desc,photo_context='original_auction_lot',sheet_type='original_auction_sheet',photos=dest[:2],auction_sheet=dest[2],sale_status='reference_only',reported_price=r['price_jpy'],media_sha256=sha,source_listing=r['source'],source_media=r['media_urls'],rights_confirmed=False,engine_cc=r['cc'],power_hp=r['hp']))
 manifest=Path('research/owner-approved-japan-drom991-20-2026-11-21.json')
-manifest.write_text(json.dumps(dict(approved_count=20,rights_confirmed=False,owner_authorized_archival_reference_only=True,lots=records),ensure_ascii=False,indent=2)+'\\n')
+manifest.write_text(json.dumps(dict(approved_count=20,rights_confirmed=False,owner_authorized_archival_reference_only=True,lots=records),ensure_ascii=False,indent=2)+'\n')
 compiler=Path('scripts/compile_auction_gallery.py')
 s=compiler.read_text()
 anchor='    seen_lot_keys = {'
