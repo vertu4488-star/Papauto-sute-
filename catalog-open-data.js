@@ -50,7 +50,7 @@
     return e;
   };
   const photoKey = (market, name) =>
-    market+"|"+lower(name).replace(/[^a-z0-9а-яё]/g, "");
+    market+"|"+lower(name).replace(/[^a-z0-9а-яё+]/g, "");
   const photoAllowed = path =>
     typeof path==="string" &&
     ["/assets/auction/home/","/assets/auction/approved/","/assets/premium-auctions/"]
