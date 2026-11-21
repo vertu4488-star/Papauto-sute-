@@ -141,7 +141,7 @@ def verify_published_output(target: Path) -> None:
     archive17 = json.loads((ROOT / "research/owner-approved-japan-drom991-14-2026-11-21.json").read_text(encoding="utf-8"))
     archive17 = json.loads((ROOT / "research/owner-approved-japan-drom991-14-2026-11-21.json").read_text(encoding="utf-8"))
     approved_archive = {r["id"] for r in archive["lots"] + archive2["lots"] + archive3["lots"] + archive4["lots"] + archive5["lots"] + archive6["lots"] + archive7["lots"] + archive8["lots"] + archive9["lots"] + archive10["lots"] + archive11["lots"] + archive12["lots"] + archive13["lots"] + archive14["lots"] + archive15["lots"] + archive16["lots"] + archive17["lots"]}
-    if (len(rows) != 653 or len(approved_archive) != 521 or len(approved_new) != 97 or len(approved_old) != 3
+    if (len(rows) != 641 or len(approved_archive) != 509 or len(approved_new) != 97 or len(approved_old) != 3
             or not (approved_new | approved_old | approved_archive).issubset({r["id"] for r in rows})
             or {r["id"] for r in rows if r["origin"] == "owner_selection"} != (approved_new | approved_archive)):
         raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: public lot set does not match owner-reviewed PDF")
