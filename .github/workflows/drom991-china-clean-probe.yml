@@ -1,0 +1,20 @@
+name: Review GoldenLane unit photos for Drom China gaps
+on:
+  push:
+    branches: ['review/drom991-china-clean-images-20261121']
+    paths: ['.github/workflows/drom991-china-clean-probe.yml']
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install requests beautifulsoup4 pillow
+      - run: python scripts/research_drom991_china_goldenlane_probe.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: drom991-china-goldenlane-unit-photo-probe
+          path: china-goldenlane-probe/
+          retention-days: 10
