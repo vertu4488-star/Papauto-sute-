@@ -1,4 +1,4 @@
-name: Validate approved 14 Japan auction cards
+name: Validate 2 unique Japan auction cards
 on:
   push:
     branches: ['release/drom991-20-approved-20261121']
