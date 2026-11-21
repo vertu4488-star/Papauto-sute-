@@ -112,6 +112,7 @@ blob=Path(path).read_bytes()
 blobsha=hashlib.sha1(b"blob "+str(len(blob)).encode()+b"\0"+blob).hexdigest()
 
 replace_all("scripts/compile_auction_gallery.py","MAX_LOTS = 500","MAX_LOTS = 700")
+sub("scripts/generate_auction_lot_pages.py","35 <= len(lots) <= 500","35 <= len(lots) <= 700")
 insertion='''        # Owner-approved Japanese batch 489 -> 519, exact 30 reviewed in PDF.
         archive12 = json.loads((ROOT / "research/owner-approved-japan-next30-519-2026-11-21.json").read_text(encoding="utf-8"))
         archived12 = archive12["lots"]
