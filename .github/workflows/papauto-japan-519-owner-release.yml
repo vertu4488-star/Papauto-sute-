@@ -73,6 +73,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add AGENTS.md docs/AUCTION_ONLY_GALLERY.md scripts/generate_auction_lot_pages.py scripts/compile_auction_gallery.py scripts/build_static_public.py scripts/verify_publication_approval.py scripts/publish_lot_search.py tests/test_auction_only_images_policy.py tests/test_site_warm_theme.py research/owner-approved-japan-next30-519-2026-11-21.json assets/auction/approved/japan-next30-519-20261121-*.jpg sitemap.xml
+          git add AGENTS.md docs/AUCTION_ONLY_GALLERY.md scripts/generate_auction_lot_pages.py scripts/compile_auction_gallery.py scripts/build_static_public.py scripts/verify_publication_approval.py scripts/publish_lot_search.py tests/test_auction_500_pipeline.py tests/test_auction_only_images_policy.py tests/test_site_warm_theme.py research/owner-approved-japan-next30-519-2026-11-21.json assets/auction/approved/japan-next30-519-20261121-*.jpg sitemap.xml
           git commit -m "PapAuto: publish 30 owner-approved original Japan archive lots (519)"
           git push origin HEAD:review/japan-next30-519-20261121
