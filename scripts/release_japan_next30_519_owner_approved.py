@@ -112,6 +112,10 @@ blob=Path(path).read_bytes()
 blobsha=hashlib.sha1(b"blob "+str(len(blob)).encode()+b"\0"+blob).hexdigest()
 
 replace_all("scripts/compile_auction_gallery.py","MAX_LOTS = 500","MAX_LOTS = 700")
+sub("scripts/compile_auction_gallery.py","gallery limit of 500","gallery limit of 700")
+sub("tests/test_auction_500_pipeline.py", "def test_500_hard_limit(self):", "def test_700_hard_limit(self):")
+sub("tests/test_auction_500_pipeline.py", '"lots": [pub] * 464', '"lots": [pub] * 664')
+sub("tests/test_auction_500_pipeline.py", 'with self.assertRaisesRegex(RuntimeError, "500"):', 'with self.assertRaisesRegex(RuntimeError, "700"):')
 sub("scripts/generate_auction_lot_pages.py","35 <= len(lots) <= 500","35 <= len(lots) <= 700")
 insertion='''        # Owner-approved Japanese batch 489 -> 519, exact 30 reviewed in PDF.
         archive12 = json.loads((ROOT / "research/owner-approved-japan-next30-519-2026-11-21.json").read_text(encoding="utf-8"))
