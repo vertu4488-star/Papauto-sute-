@@ -16,7 +16,7 @@ APPROVED = ROOT / "data" / "approved-auction-lots.json"
 LEDGER = ROOT / "research" / "auction-photo-rights-ledger.json"
 OWNER_SELECTION = ROOT / "research" / "owner-selected-japan-lots-2026-11-14.json"
 BASELINE = 37
-MAX_LOTS = 500
+MAX_LOTS = 700
 # Source/provenance keeps all 37 entries, but two outdoor-only records are
 # never allowed in the customer-facing release (including static fallback).
 QUARANTINED_OUTDOOR_LOTS = frozenset({
@@ -189,7 +189,7 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
         lot["photos"] = available
     approved = json.loads(approved_path.read_text(encoding="utf-8")).get("lots", [])
     if not isinstance(approved, list) or len(approved) + BASELINE > MAX_LOTS:
-        raise RuntimeError("PAPAUTO_POLICY: approved count exceeds gallery limit of 500")
+        raise RuntimeError("PAPAUTO_POLICY: approved count exceeds gallery limit of 700")
     # The private rights ledger is mandatory when adding licensed lots.
     # Do not accept directly edited/public-only records that bypassed the importer.
     if approved:
@@ -437,6 +437,25 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
                 or hashlib.sha256("".join(hashes11).encode()).hexdigest() != "be9ffa7575b7e8cf707c952e95098f8b51880d59c169a28418ed91172660dc64"):
             raise RuntimeError("PAPAUTO_POLICY: thirty additional original JPEGs/damage sheets duplicate or tampered")
         for rec in archived11:
+            card = prepare_approved(target, rec, owner_selected=True)
+            card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
+                        sale_label="Статистика продаж", rights_confirmed=False)
+            additional.append(card)
+        # Owner-approved Japanese batch 489 -> 519, exact 30 reviewed in PDF.
+        archive12 = json.loads((ROOT / "research/owner-approved-japan-next30-519-2026-11-21.json").read_text(encoding="utf-8"))
+        archived12 = archive12["lots"]
+        if (archive12.get("approved_count") != 30 or archive12.get("rights_confirmed") is not False
+                or archive12.get("owner_authorized_archival_reference_only") is not True
+                or archive12.get("reviewed_pdf_sha256") != "718076fc478c085c2df5b2197c498618ea8dc8cc59bf90dea3efd773409f3a5b"
+                or archive12.get("reviewed_jpg_zip_sha256") != "61c618dbb89ed51866a9ed9618c6f7bed769a0fb2e2b0d2de8a3072c13ee8292"
+                or [r["id"] for r in archived12] != [f"japan-next30-519-20261121-{i:02d}" for i in range(1,31)]
+                or any(len(r["photos"]) != 2 or r.get("rights_confirmed") is not False for r in archived12)):
+            raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: 519 reviewed PDF/media mismatch")
+        hashes12 = [h for r in archived12 for h in r["media_sha256"]]
+        if (len(hashes12) != 90 or len(set(hashes12 + hashes11 + hashes10 + hashes9 + hashes8 + hashes7 + hashes6 + hashes5 + hashes4 + hashes3 + hashes2 + hashes + media_hashes)) != 1355
+                or hashlib.sha256("".join(hashes12).encode()).hexdigest() != "78d1cfa459e5f0eb0385ffcecaaff4ba8e694f0034a790730258d89015d141b9"):
+            raise RuntimeError("PAPAUTO_POLICY: 519 photo / sheet media not exact reviewed originals")
+        for rec in archived12:
             card = prepare_approved(target, rec, owner_selected=True)
             card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
                         sale_label="Статистика продаж", rights_confirmed=False)

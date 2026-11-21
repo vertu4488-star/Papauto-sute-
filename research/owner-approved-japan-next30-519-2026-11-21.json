@@ -1,0 +1,1363 @@
+{
+  "approved_count": 30,
+  "approval_date": "2026-11-21",
+  "rights_confirmed": false,
+  "owner_authorized_archival_reference_only": true,
+  "reviewed_pdf_sha256": "718076fc478c085c2df5b2197c498618ea8dc8cc59bf90dea3efd773409f3a5b",
+  "reviewed_jpg_zip_sha256": "61c618dbb89ed51866a9ed9618c6f7bed769a0fb2e2b0d2de8a3072c13ee8292",
+  "reviewed_full_manifest_sha256": "c79856a191f906983a713a20467f93f45231b01ed8ff0c6c8642c4fd84cdbfc3",
+  "jpg_aggregate_sha256": "78d1cfa459e5f0eb0385ffcecaaff4ba8e694f0034a790730258d89015d141b9",
+  "lots": [
+    {
+      "id": "japan-next30-519-20261121-01",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Taft",
+      "year": 2023,
+      "mileage_km": 34000,
+      "body": "LA900S",
+      "grade": "5",
+      "auction": "CAA Chubu",
+      "lot": "18",
+      "auction_date": "2026-11-18",
+      "description": "Daihatsu Taft, 2023 года, кузов LA900S, комплектация: G Turbo. Двигатель 660 см³, мощность 52 л.с. по данным источника. Пробег по статистике источника (округлённый): 34000 км, оценка 5, аукцион CAA Chubu, дата 2026-11-18, лот №18. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-01-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-01-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-01-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1290000,
+      "media_sha256": [
+        "c790c4716ef21fdf4898061e9e30878340d1c86780c1c1dbe304a09d8911939c",
+        "069f748053f80719781ec8b28ca3dd34850684276751fa17588f543f08c22a6f",
+        "a2965908305edad010a181ddeba550926f0e447c4c7e5db39b11322388f115cb"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/taft/Lsp8vR3oT1zy/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3euLVc5yhrKbhtCmyxenjCLvhk6QP7cFRU6NWuIXr8rnq3",
+        "https://7.tru.ru/imgs/3euLVc5yhrKbhtCmyxenjCLvhk6QP7cFRU6OJEl6ZJnrWP",
+        "https://7.tru.ru/imgs/3euLVc5yhrKcKjrLKcjqriBsR6W3nmdritqZI40mAULD33"
+      ],
+      "raw_sha256": [
+        "fd148380b9658f5d03db46070d69b47b09834188fe28f1400d2527fd5d33f1c0",
+        "7a1478d4c2690526a17ff90ceef24aa162f9370eb24112a0c72137ad63303530",
+        "1438fc1e703bfdcd3cd3ce05fb48b8a45bfa405c521253e65eb194d47f9bcbb4"
+      ],
+      "trim": "G Turbo",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "artifact_record_index": 42,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-02",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Taft",
+      "year": 2025,
+      "mileage_km": 5000,
+      "body": "LA900S",
+      "grade": "5",
+      "auction": "JU Gifu",
+      "lot": "77",
+      "auction_date": "2026-11-14",
+      "description": "Daihatsu Taft, 2025 года, кузов LA900S, комплектация: G Dark \u0006. Двигатель 660 см³, мощность 52 л.с. по данным источника. Пробег по статистике источника (округлённый): 5000 км, оценка 5, аукцион JU Gifu, дата 2026-11-14, лот №77. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-02-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-02-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-02-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1341000,
+      "media_sha256": [
+        "855409010808b82af4c7bbbd412deee955a523d351fc7f95aa52451c79ce19a2",
+        "11f4c6e41e3b45b186c4f2e29e8c24f7931a00365c54e438b76e4588554b653c",
+        "99159df2324a8f7559564257f1a8924cccdf8a053a777e4a58c63d46308b8f30"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/taft/IQcuLxBMe2h5t/",
+      "source_media": [
+        "https://7.tru.ru/imgs/pPDJ5xzj4wt1yZKfxzilMMHql0Vs5pnbXDcUh78a3z4OKsEKoDh",
+        "https://7.tru.ru/imgs/pPDJ5xzj4wt1yZKfxzilMMHql0Vs5pnbXDcUh78aeso3OPPNuz9",
+        "https://7.tru.ru/imgs/pPDJ5xzj4wthwrMe3gzmdaCxMDm2X86uRWSMgwOYaiJogl7BSsC"
+      ],
+      "raw_sha256": [
+        "52ff1cbab3c842e20eb8917fd76d67e7d448e720e0a11633ddb3edeb832e2447",
+        "1486486470c4694888d6aac3118cc59f78b3aa8c14a864069ea9208f213db180",
+        "d88e4c6b6c26f1d53e7123c3654098ff42436a5f64eebe7fe342e6c1aca29fdc"
+      ],
+      "trim": "G Dark \u0006",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "artifact_record_index": 94,
+      "artifact_id": 14641252098
+    },
+    {
+      "id": "japan-next30-519-20261121-03",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Fit",
+      "year": 2016,
+      "mileage_km": 110000,
+      "body": "GK4",
+      "grade": "4",
+      "auction": "TAA Hiroshima",
+      "lot": "215",
+      "auction_date": "2026-11-17",
+      "description": "Honda Fit, 2016 года, кузов GK4, комплектация: 13G F Pack. Двигатель 1300 см³, мощность 100 л.с. по данным источника. Пробег по статистике источника (округлённый): 110000 км, оценка 4, аукцион TAA Hiroshima, дата 2026-11-17, лот №215. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-03-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-03-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-03-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 450000,
+      "media_sha256": [
+        "ed0084a7878b6d858a827ed68926a92c1ca58001abfb83a967dce26360adbf25",
+        "2d4651fd482aa51c285b3701c3beef5c794ea1dea871066b6a144f25a8e0ff3d",
+        "5d416fa6a8b3bce39eed36ca50c457a29b92a0f532537df2219c4d9f8c87150c"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/fit/crq995MGt7YTi/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnHM7pIIixtjwiBNKXipzN5QiQRqc",
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnHM7pIIixtjwiBNKXjcJpdoUMVWZ",
+        "https://7.tru.ru/imgs/3emLNY7NAuNFyUUI31sKTMfGi5nERMjnekiub9du17b83c"
+      ],
+      "raw_sha256": [
+        "854b2189662c3e577c52a0682507aee8db6b045812c5544f086485cf1a2ed6f8",
+        "f8f7d27b272865e1ae47123e77cb67af3307188b635af51dcc053e10e594baa0",
+        "1b3e046d0697a4bc6dbcf69e7daf72cba1c8ea38de1893f77cb4993d7422cfb0"
+      ],
+      "trim": "13G F Pack",
+      "engine_cc": 1300,
+      "power_hp": 100,
+      "rights_confirmed": false,
+      "artifact_record_index": 64,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-04",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Dayz",
+      "year": 2014,
+      "mileage_km": 31000,
+      "body": "B21W",
+      "grade": "3.5",
+      "auction": "CAA Tokyo",
+      "lot": "337",
+      "auction_date": "2026-11-17",
+      "description": "Nissan Dayz, 2014 года, кузов B21W, комплектация: J. Двигатель 660 см³, мощность 49 л.с. по данным источника. Пробег по статистике источника (округлённый): 31000 км, оценка 3.5, аукцион CAA Tokyo, дата 2026-11-17, лот №337. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-04-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-04-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-04-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 193000,
+      "media_sha256": [
+        "ac42d5283593062c1bd70c6639847debb9e572e39cd0133a9041836490acbd13",
+        "7651e2e56c43dacf75517403d6ad539a074fc4cc6bf7fa2bb78f73af0dc53921",
+        "9a1e6489be28fec617940a3e8f7b2f36516ff745e749eddff30a1f20063a0021"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/dayz/jj0CiAqIz6JI6/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnXQfsNoFq7lipdIJPJRFyiHSvDSR",
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnXQfsNoFq7lipdIJPKEPargurIpE",
+        "https://7.tru.ru/imgs/3emLNY7NAuNFyUUI31t1XViKYrghTypZ0jaVDdYHRFPTuR"
+      ],
+      "raw_sha256": [
+        "d52084a75f552f735afa7a655836856ee512d7df65d605670e4d10d56df46714",
+        "c7a49119b51532fbb1d7a7ffc00c0205ee72c488a3e1d75a65ccbc5a39d804e9",
+        "2ef290ac9c91f8bc3097ca2b1110c118b2c2a02d1811e6271789c7878fd50045"
+      ],
+      "trim": "J",
+      "engine_cc": 660,
+      "power_hp": 49,
+      "rights_confirmed": false,
+      "artifact_record_index": 75,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-05",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Dayz",
+      "year": 2015,
+      "mileage_km": 52000,
+      "body": "B21W",
+      "grade": "4",
+      "auction": "MIRIVE Saitama",
+      "lot": "81",
+      "auction_date": "2026-11-18",
+      "description": "Nissan Dayz, 2015 года, кузов B21W, комплектация: Highway St. Двигатель 660 см³, мощность 49 л.с. по данным источника. Пробег по статистике источника (округлённый): 52000 км, оценка 4, аукцион MIRIVE Saitama, дата 2026-11-18, лот №81. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-05-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-05-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-05-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 273000,
+      "media_sha256": [
+        "8e9a900dce7ec48cee3b8a7ac1f0eb035338d843e242522127141bc5a8c1a4b9",
+        "fdae2b594d46c44e2deb0f513d01bc077699a4aedf1ea2d6a6e730f7ea83aea0",
+        "f166152ad6697adfde0cd4cd77b0c028074a22533a3a2f8417d8a1cf85e7668e"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/dayz/M1RkMCtEQvM0G/",
+      "source_media": [
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXsEQrp3A7bdi4k3MKjk1XFlSaLTMgcAnwq9tHrIW3",
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXsEQrp3A7bdi4k3MKjk1XFlSaLTMgcAnwqbhksHH4",
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXtXJ4I1aOpyoF7jcR8M5k0qcLnr8oldfwkuhWVYzV"
+      ],
+      "raw_sha256": [
+        "df9efad8493ddcf651c708637d2fba392567e729a005b61dd6a6e21800f14f3f",
+        "67c1c8771211c55d605c767c3e112f4f885860d3529e22c013d6e50625e7cb7b",
+        "5fb84ce2c03d3f0b3ae8119bbf263b914c2b4eedb1ff8553aeb954eabc8a6a47"
+      ],
+      "trim": "Highway St",
+      "engine_cc": 660,
+      "power_hp": 49,
+      "rights_confirmed": false,
+      "artifact_record_index": 35,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-06",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Dayz",
+      "year": 2022,
+      "mileage_km": 22000,
+      "body": "B43W",
+      "grade": "4.5",
+      "auction": "MIRIVE Saitama",
+      "lot": "11",
+      "auction_date": "2026-11-18",
+      "description": "Nissan Dayz, 2022 года, кузов B43W, комплектация: X. Двигатель 660 см³, мощность 52 л.с. по данным источника. Пробег по статистике источника (округлённый): 22000 км, оценка 4.5, аукцион MIRIVE Saitama, дата 2026-11-18, лот №11. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-06-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-06-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-06-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 818000,
+      "media_sha256": [
+        "076e69bad8c7f28bbc8fd3faada667e9a9c8ac5fc460f2d5b7e77604b1356f22",
+        "b33d319a12e345d32a0c89c3dcb26d7abdaa87109e45382490fef529946a4cac",
+        "f594c4fc19c38c897aa7a8af668f14df6481904311b7203b85d7048a55065696"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/dayz/7MiqyBhbbtPwR/",
+      "source_media": [
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXsEQrp3A7bdi4k3MKjk1XFlSaLTMgcAnmI7tx7QXN",
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXsEQrp3A7bdi4k3MKjk1XFlSaLTMgcAnmI0ha8PIO",
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXtXJ4I1aOpyoF7jcR8M5k0qcLnr8oldfmCshMB7BG"
+      ],
+      "raw_sha256": [
+        "6827f3077cd9ad5c143d399d336763e95bb3c36dfe33b92d4e688130b7386a02",
+        "a09e49310abeb639eb694679986310cd33717f969d59f9d09b85a4bbba7a69b9",
+        "e7fafeb455bf5a490ae6a341bb4e478b8262a8599a133dbd1c750e70c46fce18"
+      ],
+      "trim": "X",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "artifact_record_index": 37,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-07",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Freed",
+      "year": 2018,
+      "mileage_km": 87000,
+      "body": "GB5",
+      "grade": "3.5",
+      "auction": "TAA Hiroshima",
+      "lot": "93",
+      "auction_date": "2026-11-17",
+      "description": "Honda Freed, 2018 года, кузов GB5, комплектация: G Honda Se. Двигатель 1500 см³, мощность 129 л.с. по данным источника. Пробег по статистике источника (округлённый): 87000 км, оценка 3.5, аукцион TAA Hiroshima, дата 2026-11-17, лот №93. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-07-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-07-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-07-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 848000,
+      "media_sha256": [
+        "550d28748fbb43930ad182d3374b55356b27f15bb8f6fe0407b0cc9a1ae2c331",
+        "3026b6e941abe8035bb5f3ef1690f3b313073e62f5cccc7345dc53a197118973",
+        "192ba64d0b6f46656bec927aedf0a42fb60f911a832cf6d275063e75eda3cd93"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/freed/5dp9OflcbhBc5/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnHM7pIIixtjwiDPK2nlhwpii3Yo9",
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnHM7pIIixtjwiDPK2o9r9xQTZ3UV",
+        "https://7.tru.ru/imgs/3emLNY7NAuNFyUUI31sKTMfGi5nERMjpgjmz7PWOs6ne19"
+      ],
+      "raw_sha256": [
+        "131e1e78a17d93257c4853a103e4b7fb91df6db8aeb1ea187c4699b5667dafbc",
+        "48a15628d03b423411397530b099bff6922a139a0b4294800f3c1a1b3848b5ec",
+        "7023e7f988899ed6da0d651f702e709cfcd1c6809c7e4e6f61700b8af5fb00f2"
+      ],
+      "trim": "G Honda Se",
+      "engine_cc": 1500,
+      "power_hp": 129,
+      "rights_confirmed": false,
+      "artifact_record_index": 23,
+      "artifact_id": 14641252098
+    },
+    {
+      "id": "japan-next30-519-20261121-08",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Hustler",
+      "year": 2017,
+      "mileage_km": 61000,
+      "body": "MR41S",
+      "grade": "4.5",
+      "auction": "CAA Tokyo",
+      "lot": "361",
+      "auction_date": "2026-11-17",
+      "description": "Suzuki Hustler, 2017 года, кузов MR41S, комплектация: F Limited. Двигатель 660 см³, мощность 52 л.с. по данным источника. Пробег по статистике источника (округлённый): 61000 км, оценка 4.5, аукцион CAA Tokyo, дата 2026-11-17, лот №361. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-08-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-08-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-08-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 563000,
+      "media_sha256": [
+        "954f6c7248148b030b8c3018e5196356eb37783c1c1c9350ca153b781c4bbf16",
+        "1c44e707865f9fd84a042b60407e5b9c01f3ab14462ccce1efe340599f908cad",
+        "9f85a2d6fb9249ba711315dba0b7bb6e4fed0f38538a48f37d30c5f2bd348982"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/kstccag82R8fI/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnXQfsNoFq7lipenuWwS7bMGWSUev",
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnXQfsNoFq7lipenuWxFfNVfyOYLi",
+        "https://7.tru.ru/imgs/3emLNY7NAuNFyUUI31t1XViKYrghTypZO5hIDECbQKd0Qv"
+      ],
+      "raw_sha256": [
+        "d2533751955fe323c25cb0a1c121b523e279375229b927a230ede99764e9d9ea",
+        "ecbf3a4811f0e9a39c73a9d5938376c71f00b9c0bb5fed160215a885865f2e44",
+        "0bbb93b3f0b5b91f0da741b7e9ae927a1187a0cd8dd6d0f58d52afb85c73fc46"
+      ],
+      "trim": "F Limited",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "artifact_record_index": 66,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-09",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Jimny",
+      "year": 2014,
+      "mileage_km": 73000,
+      "body": "JB23W",
+      "grade": "4",
+      "auction": "CAA Tokyo",
+      "lot": "154",
+      "auction_date": "2026-11-17",
+      "description": "Suzuki Jimny, 2014 года, кузов JB23W, комплектация: Cross Adve. Двигатель 660 см³, мощность 64 л.с. по данным источника. Пробег по статистике источника (округлённый): 73000 км, оценка 4, аукцион CAA Tokyo, дата 2026-11-17, лот №154. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-09-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-09-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-09-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 945000,
+      "media_sha256": [
+        "f565eaeb8f74b3cdd243e8a7525d88268c20f514c34022dbf3af351741d859f2",
+        "633e68760a50386767eae9041bba7b09e453a622db46bbec94e1f61323044eeb",
+        "aa50f443da1f58f3d8105fbd2d26f38f315ffa935ecab780c890c26b7a4ee510"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/9kpDta4X3T7Zg/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnXQfsNoFq7lipeb00vaKKI3Dxdk2",
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnXQfsNoFq7lipeb00vXUmQBfthQO",
+        "https://7.tru.ru/imgs/3emLNY7NAuNFyUUI31t1XViKYrghTypZBIuGWjb8cqRsW2"
+      ],
+      "raw_sha256": [
+        "7d7f3082cb726c7832acd9977114eb7cdcfd1ff4b224428bcbf9d2ef505283dd",
+        "0a10ca9d9c71f0245e8adee36675921979e95aef4c5f84027d1b4c74b023a59f",
+        "2f3116a207bf2d0f2e4bb8d1a0346ec7de923449d04fc0c9d0212369d6a341cd"
+      ],
+      "trim": "Cross Adve",
+      "engine_cc": 660,
+      "power_hp": 64,
+      "rights_confirmed": false,
+      "artifact_record_index": 73,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-10",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Jimny",
+      "year": 2019,
+      "mileage_km": 58000,
+      "body": "JB64W",
+      "grade": "4.5",
+      "auction": "CAA Tokyo",
+      "lot": "216",
+      "auction_date": "2026-11-17",
+      "description": "Suzuki Jimny, 2019 года, кузов JB64W, комплектация: XC 4WD. Двигатель 660 см³, мощность 64 л.с. по данным источника. Пробег по статистике источника (округлённый): 58000 км, оценка 4.5, аукцион CAA Tokyo, дата 2026-11-17, лот №216. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-10-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-10-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-10-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1429000,
+      "media_sha256": [
+        "bbb760648d086e44aea5350d76351940888c6b351e63e5ed9da37a89ef7bb230",
+        "0605dfd012ba120c4b2c2b833dc3bc5ec1dedc1edf507aee947e1d8189d60477",
+        "c6ffe8bcee026575f71cce148e2e6cdfabd64c773a7b20bcda0aa3b7685f460a"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/ctA8l383B70dr/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnXQfsNoFq7lipdbocmG3K7J1AhRw",
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnXQfsNoFq7lipdbocntcmfhCwmoj",
+        "https://7.tru.ru/imgs/3emLNY7NAuNFyUUI31t1XViKYrghTypYBXxyrBavSNUxtw"
+      ],
+      "raw_sha256": [
+        "9474ecc93fc0e5c41e16c025f12981d14dbe2bf0692db3c6c1e9040f0f5d77e7",
+        "aefbb8bd5c30955d6e0d775bdc92b57187dbc7ac2a412c6b41e07b0bdc251ce8",
+        "c47c094dcc80642bc4e1710b8839ce378898fe4f86b95ba946f65b16bed7af0b"
+      ],
+      "trim": "XC 4WD",
+      "engine_cc": 660,
+      "power_hp": 64,
+      "rights_confirmed": false,
+      "artifact_record_index": 71,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-11",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Jimny",
+      "year": 2025,
+      "mileage_km": 24000,
+      "body": "JB64W",
+      "grade": "5",
+      "auction": "CAA Tokyo",
+      "lot": "213",
+      "auction_date": "2026-11-17",
+      "description": "Suzuki Jimny, 2025 года, кузов JB64W, комплектация: XC Turbo 4. Двигатель 660 см³, мощность 64 л.с. по данным источника. Пробег по статистике источника (округлённый): 24000 км, оценка 5, аукцион CAA Tokyo, дата 2026-11-17, лот №213. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-11-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-11-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-11-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1699000,
+      "media_sha256": [
+        "8d2d193ed03308a31ffce11f9b3d953bea8daab2bd09c2554ca26091a84966a9",
+        "ec686fa2d93b62f5d78a016bdfe25395354a4fa46ab3e88b606c1b5f17248df9",
+        "afb5eae6e211a95a51b5ecde63224374a3d481375d62b774a48023abac6a23fc"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/cn70Ia91nd85K/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnXQfsNoFq7lipd8GsELDM0DsmTPy",
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnXQfsNoFq7lipd8GsFyNoic5iYml",
+        "https://7.tru.ru/imgs/3emLNY7NAuNFyUUI31t1XViKYrghTypYyfNQxccyNfH0ry"
+      ],
+      "raw_sha256": [
+        "45694ec78d4c15bbd6b8b62e8c73e1a6bf7d4a8a0c85993729d822807f61b9fa",
+        "34a1d6ec78d547c6027426232b8470caf259ab31dd930204033da8dfda38cea5",
+        "7e38fb84f84f1deade9f93fbbf2981fbd4bed2240660b0c2711d8914579f79cd"
+      ],
+      "trim": "XC Turbo 4",
+      "engine_cc": 660,
+      "power_hp": 64,
+      "rights_confirmed": false,
+      "artifact_record_index": 72,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-12",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Solio",
+      "year": 2017,
+      "mileage_km": 47000,
+      "body": "MA36S",
+      "grade": "4.5",
+      "auction": "JU Gifu",
+      "lot": "7235",
+      "auction_date": "2026-11-14",
+      "description": "Suzuki Solio, 2017 года, кузов MA36S, комплектация: Hybrid MV. Двигатель 1200 см³, мощность 91 л.с. по данным источника. Пробег по статистике источника (округлённый): 47000 км, оценка 4.5, аукцион JU Gifu, дата 2026-11-14, лот №7235. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-12-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-12-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-12-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 840000,
+      "media_sha256": [
+        "5325daa71ce47034a082dc19a3a050b00c6a14b70ca8d08e8ed13a9c698f3094",
+        "6bbb88cdfac2db68d2fde2f412c73deb54251eef016ebe3647e872fded26682e",
+        "a6bee2d513622e3821084a60dd40a97a212529a9570f6f5d2e5fe30f5b9caf86"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/solio/2Rce5ExI0roJe8G/",
+      "source_media": [
+        "https://7.tru.ru/imgs/pPDJ5xzj4wt1yZKfxzilMMHql0Vs5pnbXDcUg2pTibJoEAhIGti",
+        "https://7.tru.ru/imgs/pPDJ5xzj4wt1yZKfxzilMMHql0Vs5pnbXDcUg2pTu64CIXsLMp0",
+        "https://7.tru.ru/imgs/pPDJ5xzj4wthwrMe3gzmdaCxMDm2X86uRWSMfs8HpVoYasJAaiD"
+      ],
+      "raw_sha256": [
+        "b5ccc4623bf6c24e526d4b74184bfb7291871d7932bbca4084fd3d7f015124c3",
+        "fabf585c10f0eeff8ec467891467619d68bc59f2591b74913c78aff65666f31f",
+        "7ad6cc96f6c3585c6ff1436ae3316363e7dffc21db4057f7cab0edf4dc013853"
+      ],
+      "trim": "Hybrid MV",
+      "engine_cc": 1200,
+      "power_hp": 91,
+      "rights_confirmed": false,
+      "artifact_record_index": 83,
+      "artifact_id": 14641252098
+    },
+    {
+      "id": "japan-next30-519-20261121-13",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Solio",
+      "year": 2020,
+      "mileage_km": 59000,
+      "body": "MA26S",
+      "grade": "4",
+      "auction": "JU Tochigi",
+      "lot": "13",
+      "auction_date": "2026-11-13",
+      "description": "Suzuki Solio, 2020 года, кузов MA26S, комплектация: не указана. Двигатель 1200 см³, мощность 91 л.с. по данным источника. Пробег по статистике источника (округлённый): 59000 км, оценка 4, аукцион JU Tochigi, дата 2026-11-13, лот №13. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-13-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-13-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-13-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 571000,
+      "media_sha256": [
+        "d4f231480142a4d2ee98c64b0650801c5345765345cb14d0a7dfc775fec1482e",
+        "fb826f0b38298fdad9979c188200368e5d2892d790b5b5c2dfa8080152fab651",
+        "501b935743460984683a21ed75908f0a13e0677b95c4a884e0f354095d528647"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/solio/8Gu6ZtNxvlIvq/",
+      "source_media": [
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXsEQrp3A7bdi4j6hSt49VDGTXuRsdEGgcbPi3ui8p",
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXsEQrp3A7bdi4j6hSt49VDGTXuRsdES0wpTFdxo4g",
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXtXJ4I1aOpyoF6lHZhvci8Ley7oNlNhxSRQfyKqmm"
+      ],
+      "raw_sha256": [
+        "9c41a71df802f55ee810a5f80a46345c9417dfa23922737c77c56453289d23a0",
+        "f51446404333a6289c83e9ebe12b1210487db9cb3a22fa82bff99821a2aadf80",
+        "bcd4e10c9de3dbf2c58a5ac9308f814089503c3ade1b47cec7effdfcddb7fb69"
+      ],
+      "trim": "не указана",
+      "engine_cc": 1200,
+      "power_hp": 91,
+      "rights_confirmed": false,
+      "artifact_record_index": 235,
+      "artifact_id": 14641252098
+    },
+    {
+      "id": "japan-next30-519-20261121-14",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Spacia",
+      "year": 2024,
+      "mileage_km": 26000,
+      "body": "MK94S",
+      "grade": "4.5",
+      "auction": "CAA Chubu",
+      "lot": "42",
+      "auction_date": "2026-11-18",
+      "description": "Suzuki Spacia, 2024 года, кузов MK94S, комплектация: Hybrid XS. Двигатель 660 см³, мощность 49 л.с. по данным источника. Пробег по статистике источника (округлённый): 26000 км, оценка 4.5, аукцион CAA Chubu, дата 2026-11-18, лот №42. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-14-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-14-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-14-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1480000,
+      "media_sha256": [
+        "0ddd8e512e3bbc9c025fd8c4233548d1b5bcf19eb91ab2397dc7e050a8ddaa45",
+        "16e01da572467f1b0cb9330437b2e64694eacccf9aea15dec198fee2f63708ad",
+        "2367435eff1593d8bab5f6e697b38d819e44676784aa818f28f591735b6da3be"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/spacia/2ULZ26GqREo8b/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlohFS5T2lqP8Sy8zdQDcVB0ihCUbB",
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlohFS5T2lqP8Sy8zdQE16dhQTyYIo",
+        "https://7.tru.ru/imgs/3emLNY7NAuNFyUUI31tkNxUQB8h1G9ySZNbOYu2ys5X0NB"
+      ],
+      "raw_sha256": [
+        "0acbe682f701530b26fd75b4d6eb0b64fc718c690f7500c5b4958a3ddbc5ba05",
+        "2907da6ed03ff762d172be6337a7faa060674f0d515b9061895795a193866d4b",
+        "8f3b0ced96ee5070a3126d77e6137cd12a697c0b17b7af7cd62d583243919c23"
+      ],
+      "trim": "Hybrid XS",
+      "engine_cc": 660,
+      "power_hp": 49,
+      "rights_confirmed": false,
+      "artifact_record_index": 70,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-15",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Swift",
+      "year": 2019,
+      "mileage_km": 63000,
+      "body": "ZC53S",
+      "grade": "4",
+      "auction": "TAA Hyogo",
+      "lot": "416",
+      "auction_date": "2026-11-14",
+      "description": "Suzuki Swift, 2019 года, кузов ZC53S, комплектация: Hybrid RS. Двигатель 1200 см³, мощность 91 л.с. по данным источника. Пробег по статистике источника (округлённый): 63000 км, оценка 4, аукцион TAA Hyogo, дата 2026-11-14, лот №416. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-15-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-15-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-15-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 864000,
+      "media_sha256": [
+        "161ff36afd5203dc667cba9c301f67275ce4fc432e276e50223e214b1d1b8b64",
+        "ee4bcc0348255b84cd00a89fd21299f39885f29d7a8d2085a4dc686d4a386fa3",
+        "b16b2b856d1bf9432dc08b62f7c7c504a18beedaadf47d0a2c5973c8a0b98d7c"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/swift/66mntG6mEcikcQ/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtZgVrRGoGUQzLnE8Z0jKPzMIb5kVz",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtZgVrRGoGUQzLnE8Z0kxZbVgN1psm",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq73VxdLaTIRgL8xAHoAWeUuIsRyuf4"
+      ],
+      "raw_sha256": [
+        "b250a64c049f3492739d783668bedeb5b152b4284c1b732362e228ab85b066d6",
+        "be82b6486633edc1358566acdf63e500af5906c18e90af9a314931007560ee88",
+        "fd28ca2a064c94530771f2ee0642515b227592f1e829ae49b0dedb1e451b5345"
+      ],
+      "trim": "Hybrid RS",
+      "engine_cc": 1200,
+      "power_hp": 91,
+      "rights_confirmed": false,
+      "artifact_record_index": 80,
+      "artifact_id": 14641252098
+    },
+    {
+      "id": "japan-next30-519-20261121-16",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Passo",
+      "year": 2016,
+      "mileage_km": 25000,
+      "body": "M700A",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "3041",
+      "auction_date": "2026-11-16",
+      "description": "Toyota Passo, 2016 года, кузов M700A, комплектация: X L Packag. Двигатель 1000 см³, мощность 69 л.с. по данным источника. Пробег по статистике источника (округлённый): 25000 км, оценка 3.5, аукцион JU Tokyo, дата 2026-11-16, лот №3041. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-16-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-16-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-16-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 122000,
+      "media_sha256": [
+        "3289b089d3a2c89bcbb55c96814018fc61ccf66461ed2803166c173c7fcb6838",
+        "88492b120dac5c5091a4b9ad182e130b63d62793d8aa78381395d0069cb7386d",
+        "b822895732f3a0046336620579704b09ebf96c49f8e1e6c702c3b71885dba562"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/passo/YUPcu6vX06jUrU/",
+      "source_media": [
+        "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6Zo78oBcMcKRvZ3mWRX",
+        "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6Zo78oBcY766Amdq3NO",
+        "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqajYHEJJlnurxwWyD67U"
+      ],
+      "raw_sha256": [
+        "ccd3a7a770d63397d91fb064e83dfa0689a9e001c74c59f98bbd785e248be896",
+        "04eb0159e77153ef26227927112cedb5d3c89b4876fa1b4beab12e39d6787186",
+        "62b16d0a0835b5ff28696ffc385f9918ff05bf055d6a51a732e9a3249b8a769c"
+      ],
+      "trim": "X L Packag",
+      "engine_cc": 1000,
+      "power_hp": 69,
+      "rights_confirmed": false,
+      "artifact_record_index": 52,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-17",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Raize",
+      "year": 2025,
+      "mileage_km": 13000,
+      "body": "A202A",
+      "grade": "4.5",
+      "auction": "TAA Yokohama",
+      "lot": "12546",
+      "auction_date": "2026-11-14",
+      "description": "Toyota Raize, 2025 года, кузов A202A, комплектация: Z. Двигатель 1200 см³, мощность 82 л.с. по данным источника. Пробег по статистике источника (округлённый): 13000 км, оценка 4.5, аукцион TAA Yokohama, дата 2026-11-14, лот №12546. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-17-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-17-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-17-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 2030000,
+      "media_sha256": [
+        "45c1a251aa300d5ae54de14d5c67e2a2804b512ee40b66aea4f11c8e84a6c9ce",
+        "9a634f866fc6efba1d96f4f0e7bfa73b50697a4e472f5f8bfa0651b6c1af7930",
+        "349d88fd0e65fc3335daaf83644ad34f1db72df660ea96aab4c9761c3111960b"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/raize/4ZswZ7WhZHFqn2Y/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVWfZ6JV9UZ4jHwZQdg2FrMMi1y0s",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVWfZ6JV9UZ4jHwZQdgOP4VkTWCGf",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq6ZARKZeqaRpeFRtzfESvKmIwYuHsW"
+      ],
+      "raw_sha256": [
+        "9008d6f3dd9b49560ad1c4a1d33c6509388bfb9ee7cbbc826909af0bebc30336",
+        "088e0deca6a29d8e12152e7b6a2d935e09f35fbf82c0e17ef75401bb02a3840c",
+        "54fa2813da8bf8e56a5d23ef72d62d25cd9cca1988a80a5013f055887a9bdbf4"
+      ],
+      "trim": "Z",
+      "engine_cc": 1200,
+      "power_hp": 82,
+      "rights_confirmed": false,
+      "artifact_record_index": 50,
+      "artifact_id": 14641252098
+    },
+    {
+      "id": "japan-next30-519-20261121-18",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Roomy",
+      "year": 2023,
+      "mileage_km": 31000,
+      "body": "M900A",
+      "grade": "4.5",
+      "auction": "TAA Yokohama",
+      "lot": "12070",
+      "auction_date": "2026-11-14",
+      "description": "Toyota Roomy, 2023 года, кузов M900A, комплектация: Custom G. Двигатель 1000 см³, мощность 69 л.с. по данным источника. Пробег по статистике источника (округлённый): 31000 км, оценка 4.5, аукцион TAA Yokohama, дата 2026-11-14, лот №12070. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-18-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-18-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-18-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1334000,
+      "media_sha256": [
+        "dc7bd83de1037ac2bc9c1f2d5164e912a3b46cd4e42e55bf5ee78253d027f86a",
+        "132781d5370903e9cd4eb6fefdeb8face4221de4681efad78b6796cc6f4fa91c",
+        "ee5ad9b493823c3570c6925d53221d6e7140f39a6d68f957479538e3f8207d59"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/roomy/56WUxPqO0JB8cAK/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVWfZ6JV9UZ4jHxQX85JrQbWnG7Ct",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVWfZ6JV9UZ4jHxQX86wBskuZCb0g",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq6ZARKZeqaRpeFRuqmyHdwL8H5afVX"
+      ],
+      "raw_sha256": [
+        "d95390119be8e4c4e3fcbe049ff373a8e9621090abe36a0ee63fc753f1a58208",
+        "60e56b334a9bf4cd858e01752145614e3f6e37b2e48435d9e8104e0ff04ab22a",
+        "ac3e64b8c1ad4c13cbce627f1105d3b332b4d41282b4c5839e34940bf47d696e"
+      ],
+      "trim": "Custom G",
+      "engine_cc": 1000,
+      "power_hp": 69,
+      "rights_confirmed": false,
+      "artifact_record_index": 221,
+      "artifact_id": 14641252098
+    },
+    {
+      "id": "japan-next30-519-20261121-19",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Sienta",
+      "year": 2022,
+      "mileage_km": 83000,
+      "body": "MXPC10G",
+      "grade": "3.5",
+      "auction": "TAA Hiroshima",
+      "lot": "248",
+      "auction_date": "2026-11-17",
+      "description": "Toyota Sienta, 2022 года, кузов MXPC10G, комплектация: G. Двигатель 1500 см³, мощность 120 л.с. по данным источника. Пробег по статистике источника (округлённый): 83000 км, оценка 3.5, аукцион TAA Hiroshima, дата 2026-11-17, лот №248. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-19-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-19-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-19-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1365000,
+      "media_sha256": [
+        "13184987c7c0172f18acfa75c3c37baf14152acf8e0bb597db4a5b36b264c7bd",
+        "0c1ab6e76642f921914cc581466bb821600900e1bcacb010e74043bab5c7b77a",
+        "6ec09a42bd12f242d64cdf1b3edbf3631c69782a30162af0f901eee36fe88f2a"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/dUbAUgzbBxsR1/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnHM7pIIixtjwiCDDhd0dkq72ShRK",
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnHM7pIIixtjwiCDDhdWmWyEDOmox",
+        "https://7.tru.ru/imgs/3emLNY7NAuNFyUUI31sKTMfGi5nERMjo5cCoULKPfPcxtK"
+      ],
+      "raw_sha256": [
+        "f9f522460a4d1065231c4cc0465301a8e8ed72d4f656e53efa4d8550465aaf75",
+        "c86efab972c52f0069889598c6a5fcc689271e83967abe1e00fe29bd25bc2697",
+        "0dab236cbeae56f5e3778d15f0a59ead8718ba201cacb40a31a998e9e94557ae"
+      ],
+      "trim": "G",
+      "engine_cc": 1500,
+      "power_hp": 120,
+      "rights_confirmed": false,
+      "artifact_record_index": 57,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-20",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Yaris cross",
+      "year": 2025,
+      "mileage_km": 2000,
+      "body": "MXPB10",
+      "grade": "4.5",
+      "auction": "TAA Yokohama",
+      "lot": "12510",
+      "auction_date": "2026-11-14",
+      "description": "Toyota Yaris cross, 2025 года, кузов MXPB10, комплектация: Z. Двигатель 1500 см³, мощность 120 л.с. по данным источника. Пробег по статистике источника (округлённый): 2000 км, оценка 4.5, аукцион TAA Yokohama, дата 2026-11-14, лот №12510. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-20-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-20-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-20-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 2151000,
+      "media_sha256": [
+        "11ba6a368d6fe8d3f40612d04dd0a6868859b382c9f963c97acade1289f3af77",
+        "d78f652421165767169ed86d759152c9b47ad3bb3c0d968fe849130624e15abb",
+        "32a195b9e6e88d531774dd3958d212919c7a460a023c1bec54b70d3a315c8174"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/yaris-cross/4ZcFGUQTGB2Nt78/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVWfZ6JV9UZ4jHwiBWF5YakJw0H8a",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVWfZ6JV9UZ4jHwiBWFS8Mti96LDX",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq6ZARKZeqaRpeFRsS2ohz46gucDQqE"
+      ],
+      "raw_sha256": [
+        "3603820cf8250536d1b461cc3ddbe5da8763a5f3b82aa5a518213f8d721ff915",
+        "3a581439e2e66220c8709b6bf96984397611c67cb9b6f63531651d59cc7d7b4c",
+        "4ad02455fd2c24b4aae31d690fd5f86ee8aefec945e066569e515af9045af678"
+      ],
+      "trim": "Z",
+      "engine_cc": 1500,
+      "power_hp": 120,
+      "rights_confirmed": false,
+      "artifact_record_index": 57,
+      "artifact_id": 14641252098
+    },
+    {
+      "id": "japan-next30-519-20261121-21",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla fielder",
+      "year": 2015,
+      "mileage_km": 64000,
+      "body": "NRE161G",
+      "grade": "4",
+      "auction": "TAA Kyushu",
+      "lot": "251",
+      "auction_date": "2026-11-17",
+      "description": "Toyota Corolla fielder, 2015 года, кузов NRE161G, комплектация: 1.5X. Двигатель 1500 см³, мощность 109 л.с. по данным источника. Пробег по статистике источника (округлённый): 64000 км, оценка 4, аукцион TAA Kyushu, дата 2026-11-17, лот №251. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-21-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-21-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-21-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 857000,
+      "media_sha256": [
+        "3ec042b540239e371d4a057283149f2e645afd1842fbc1637755a6c8244e1871",
+        "7c46d1e887416158868bb5da3abab705557c423be6b22ea76caad230d0f27a18",
+        "2fd47e6305d3044e209fa47bc8fe5efb9f4c762b7bcd1f8a10cbb7aa19f2d626"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/3XuZK77YnAiAQg/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtYuUY1sUyZRiUfSUFfx1aIPiImpR7",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtYuUY1sUyZRiUfSUFfxNkkXRkiunT",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq730wJTXpAWhugpPu5H0ufDL4oQzaA"
+      ],
+      "raw_sha256": [
+        "bbcd18e88bcb6e381f61fed0c547e2febd1214b21974ecf4ee87900631a80a74",
+        "673eb6fd988b47b9c13552ec2ce7fbcf6e9ef207f902ee7b8d8510f04e0a775d",
+        "b57e5e72de7be9fc53fa6d9c63503ec8b1576c36e4661065f42cbf28fb52cff8"
+      ],
+      "trim": "1.5X",
+      "engine_cc": 1500,
+      "power_hp": 109,
+      "rights_confirmed": false,
+      "artifact_record_index": 59,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-22",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Spacia",
+      "year": 2019,
+      "mileage_km": 10000,
+      "body": "MK53S",
+      "grade": "4",
+      "auction": "JU Saitama",
+      "lot": "56",
+      "auction_date": "2026-11-17",
+      "description": "Suzuki Spacia, 2019 года, кузов MK53S, комплектация: не указана. Двигатель 660 см³, мощность 52 л.с. по данным источника. Пробег по статистике источника (округлённый): 10000 км, оценка 4, аукцион JU Saitama, дата 2026-11-17, лот №56. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-22-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-22-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-22-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 791000,
+      "media_sha256": [
+        "7ae5a6943719de6ebc2ab4d71328ec463b905775ab62ccbee6f4a6b1adb575e8",
+        "6079b0b1c14d456da19a7003831e0eeb0cac88bf3e46d857a90194339b85271d",
+        "d9fb9c57c16577ff3f5af4c7717bcab32be919d41da806154019bf831090e2e8"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/spacia/wBEYpFqmF6nWy/",
+      "source_media": [
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXsEQrp3A7bdi4hNXo1GEdBb330YycFYaC8ooBUeM2",
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXsEQrp3A7bdi4hNXo1GEdBb330YycGa4WlsLMXkHS",
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXtXJ4I1aOpyoF55nuP9HA6fmCLvTkOzsiNpm9an1Y"
+      ],
+      "raw_sha256": [
+        "57e901bd487fe9c79541fef8c07e4a765038a2097b058ec83d3bafbb4cfce023",
+        "dc3a1160c9a5401a4a2af7abb9d229426e1fef47164327f65f06ecf6186a01b5",
+        "8e1607abefc01164cb35640d56cebf5664ae349f6d03aa7f612dbcc4901826e0"
+      ],
+      "trim": "не указана",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "artifact_record_index": 34,
+      "artifact_id": 14641252098
+    },
+    {
+      "id": "japan-next30-519-20261121-23",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla touring",
+      "year": 2023,
+      "mileage_km": 41000,
+      "body": "ZWE215W",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "12348",
+      "auction_date": "2026-11-14",
+      "description": "Toyota Corolla touring, 2023 года, кузов ZWE215W, комплектация: Hybrid X 4. Двигатель 1800 см³, мощность 98 л.с. по данным источника. Пробег по статистике источника (округлённый): 41000 км, оценка 4, аукцион TAA Yokohama, дата 2026-11-14, лот №12348. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-23-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-23-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-23-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1490000,
+      "media_sha256": [
+        "8ba8245650b84572aea72dee38b72735abdd1b79f6a999cb05d0bdb79bb25a41",
+        "43649bc8b3366dcb46c9ce0352bad263b3a47c7a8c2492f8afa37b586ba31865",
+        "4b0ef5f24db42521a68266d26941e611e5d854543fae6daba28fb2bae4331afa"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-touring/4X1hmQ7wDtx17Sa/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVWfZ6JV9UZ4jHx3jn4XVSwubwpmQ",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVWfZ6JV9UZ4jHx3jn5L6uF3NstTD",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq6ZARKZeqaRpeFRtBIOGs1NseS1yGk"
+      ],
+      "raw_sha256": [
+        "73612ed2d3261d7357e0591da41d85cf2b11ad6d1cd90fa25feb07a33da6f44c",
+        "402c4efe2d022c3cf3447efcaee59240763370aac6e8a0bea5f31360b36c2614",
+        "5a8e1d76e0a2a18bb49f2d92230f4f9054f1864590c47f03454f796c98f2cfbb"
+      ],
+      "trim": "Hybrid X 4",
+      "engine_cc": 1800,
+      "power_hp": 98,
+      "rights_confirmed": false,
+      "artifact_record_index": 20,
+      "artifact_id": 14641252098
+    },
+    {
+      "id": "japan-next30-519-20261121-24",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Yaris cross",
+      "year": 2023,
+      "mileage_km": 7000,
+      "body": "MXPJ10",
+      "grade": "5",
+      "auction": "TAA Yokohama",
+      "lot": "12054",
+      "auction_date": "2026-11-14",
+      "description": "Toyota Yaris cross, 2023 года, кузов MXPJ10, комплектация: Hybrid Z. Двигатель 1500 см³, мощность 91 л.с. по данным источника. Пробег по статистике источника (округлённый): 7000 км, оценка 5, аукцион TAA Yokohama, дата 2026-11-14, лот №12054. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-24-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-24-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-24-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 2153000,
+      "media_sha256": [
+        "f589b935b9bec46c868222e47f594f4af586641154d463a2ae45cc8182db66cf",
+        "cfe2b4e6e14b48f45c208d9f62f9377f5a7ede120ced655df475181a88dd772b",
+        "9746975314dd0eab8d104637c29670fd334a481b9c7910a10b7b142dbac20dda"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/yaris-cross/56Ipx9uJE6S2KtU/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVWfZ6JV9UZ4jHxdqAbH0wGZa3DC0",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVWfZ6JV9UZ4jHxdqAcuj9PxLYI9W",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq6ZARKZeqaRpeFRtMQ2OberCJQwMVD"
+      ],
+      "raw_sha256": [
+        "1585ff777bab76098622ae64d239b4b2073fba476a88f41ac0fa188b7d868f12",
+        "f39a157fc0bb218737a7169f069877c6d39f1896dfa125bdaef8380fec990e4a",
+        "a9c1f6ac38029a20b70114b12e8fa11dcf89691ea47a38e39e056ddf75116e7e"
+      ],
+      "trim": "Hybrid Z",
+      "engine_cc": 1500,
+      "power_hp": 91,
+      "rights_confirmed": false,
+      "artifact_record_index": 208,
+      "artifact_id": 14641252098
+    },
+    {
+      "id": "japan-next30-519-20261121-25",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Aqua",
+      "year": 2021,
+      "mileage_km": 121000,
+      "body": "MXPK11",
+      "grade": "4",
+      "auction": "TAA Kinki",
+      "lot": "387",
+      "auction_date": "2026-11-17",
+      "description": "Toyota Aqua, 2021 года, кузов MXPK11, комплектация: X. Двигатель 1500 см³, мощность 91 л.с. по данным источника. Пробег по статистике источника (округлённый): 121000 км, оценка 4, аукцион TAA Kinki, дата 2026-11-17, лот №387. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-25-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-25-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-25-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 665000,
+      "media_sha256": [
+        "673d0e5a11b91e306f8a8723ebd6d415ad27725c59e16b7a777943100546a525",
+        "0b72edb6a34403bba02be0eb832d204635f877464122cfbd920a8e6fc5b7f31d",
+        "e04a9043de9f0fae481f1f4e9418f85f4a68a5faa9137b376f883c7e291c87d5"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/aqua/5wt9fudT6L6J7K/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYu24zWVbTZ5ZU1V669bugny7xLcVGT",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYu24zWVbTZ5ZU1V669bv4xaf7n01dG",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq75IbIOGp22q6n62ExD7Kst3irH61n"
+      ],
+      "raw_sha256": [
+        "2f1c0ca9f9c197c5305de9753aca71bc246cb4a784902a0edac81a7df15285f5",
+        "6ab50fe952b49fbcef341b1330b35f7451695535bb81c0c698d6378f5cccfdfe",
+        "cf3a8b28965195199dbc1a08fffdd4fd0309df2c4b4294849b455e994be8b753"
+      ],
+      "trim": "X",
+      "engine_cc": 1500,
+      "power_hp": 91,
+      "rights_confirmed": false,
+      "artifact_record_index": 58,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-26",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Tank",
+      "year": 2019,
+      "mileage_km": 32000,
+      "body": "M900A",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "12413",
+      "auction_date": "2026-11-14",
+      "description": "Toyota Tank, 2019 года, кузов M900A, комплектация: Custom G-T. Двигатель 1000 см³, мощность 69 л.с. по данным источника. Пробег по статистике источника (округлённый): 32000 км, оценка 4, аукцион TAA Yokohama, дата 2026-11-14, лот №12413. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-26-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-26-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-26-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 887000,
+      "media_sha256": [
+        "f12fd938e4e48b0b08f86718ab9fc8d4d4e0d8c1b009f8c2b8edede75024d21f",
+        "9bfa5b75790a9b296d48f8faa3540c7e3e10670ce00b28397b57130a257c65c0",
+        "54e1dbd24984aa17f2201df9a834a79426c237550bb34daf8cabf9d60d90f7fb"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/tank/4XUV97HuSzwOtuv/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVWfZ6JV9UZ4jHw0XTli2NPlF1fYh",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVWfZ6JV9UZ4jHw0XTm6bpXUgWkv5",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq6ZARKZeqaRpeFRsJnkXM7IL7luphL"
+      ],
+      "raw_sha256": [
+        "0d567630885e8f0caf37a067628e19319804c70439e4da7dbcd3e5e691060e53",
+        "3ef0d0f10068c5d9133f4cb75491b40f8e0b64fa3f8a0d270c35f74b6c9d0464",
+        "1f3f7df273e10e5af56e992528589cfcaf6fc7c9815f509a38b89afa0e9fb84f"
+      ],
+      "trim": "Custom G-T",
+      "engine_cc": 1000,
+      "power_hp": 69,
+      "rights_confirmed": false,
+      "artifact_record_index": 48,
+      "artifact_id": 14691820564
+    },
+    {
+      "id": "japan-next30-519-20261121-27",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Raize",
+      "year": 2024,
+      "mileage_km": 10000,
+      "body": "A202A",
+      "grade": "4.5",
+      "auction": "JU Gifu",
+      "lot": "8097",
+      "auction_date": "2026-11-14",
+      "description": "Toyota Raize, 2024 года, кузов A202A, комплектация: Hybrid Z. Двигатель 1200 см³, мощность 82 л.с. по данным источника. Пробег по статистике источника (округлённый): 10000 км, оценка 4.5, аукцион JU Gifu, дата 2026-11-14, лот №8097. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-27-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-27-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-27-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1760000,
+      "media_sha256": [
+        "984cea072a5f561cc2fc88cd85fe89379d00eb88e2dd3fff2953db6c348068cb",
+        "5c8fca7e08f2d309ea28ec6858d60b90c320f9fcd0b2fbda4e9d507332316859",
+        "38e2672aa6e2f730cb7c7edaa5c046a4c944941fa21aef6e0a52cb45ea4b515b"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/raize/3hIDyKHEhcwFJOR/",
+      "source_media": [
+        "https://7.tru.ru/imgs/pPDJ5xzj4wt1yZKfxzilMMHql0Vs5pnbXDcUhCedvMvqkFiqyrj",
+        "https://7.tru.ru/imgs/pPDJ5xzj4wt1yZKfxzilMMHql0Vs5pnbXDcUhCedHFPEp3ttEna",
+        "https://7.tru.ru/imgs/pPDJ5xzj4wthwrMe3gzmdaCxMDm2X86uRWSMh3W2DwaZQxKi3gE"
+      ],
+      "raw_sha256": [
+        "1c830d5a9ec852592f52c649a12eb4cb7955998b96821b8cec18d447f109f653",
+        "c58f34da7c2626cf774bfb3efdc66f455bcabe2555870fbaa25e7c739d33e369",
+        "2a9c80c8b474b1be241f629606447f4bdbce7fad34104c2a21bd8b57b0dbdd77"
+      ],
+      "trim": "Hybrid Z",
+      "engine_cc": 1200,
+      "power_hp": 82,
+      "rights_confirmed": false,
+      "artifact_record_index": 96,
+      "artifact_id": 14641252098
+    },
+    {
+      "id": "japan-next30-519-20261121-28",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Corolla fielder",
+      "year": 2023,
+      "mileage_km": 49000,
+      "body": "NKE165G",
+      "grade": "4.5",
+      "auction": "JU Gifu",
+      "lot": "7093",
+      "auction_date": "2026-11-14",
+      "description": "Toyota Corolla fielder, 2023 года, кузов NKE165G, комплектация: Hybrid EX. Двигатель 1500 см³, мощность 74 л.с. по данным источника. Пробег по статистике источника (округлённый): 49000 км, оценка 4.5, аукцион JU Gifu, дата 2026-11-14, лот №7093. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-28-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-28-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-28-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1505000,
+      "media_sha256": [
+        "a06e5553bfe8b872ba6fd4c722ec6838fc552ef938293603ffb88530dedb6be7",
+        "ce34b8e4decd29d3bcc64ddaa49f112d2fa2d8a9eafe071854b0154b0e678980",
+        "e4f9f32f38445fb9899e85a635a44fdc4531a8c1d07855f21d4a0e559136b959"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/32DirO6HVptwPNm/",
+      "source_media": [
+        "https://7.tru.ru/imgs/pPDJ5xzj4wt1yZKfxzilMMHql0Vs5pnbXDcUhxhTTTWKog0I7uQ",
+        "https://7.tru.ru/imgs/pPDJ5xzj4wt1yZKfxzilMMHql0Vs5pnbXDcUhxhU6NgYsDkLcqH",
+        "https://7.tru.ru/imgs/pPDJ5xzj4wthwrMe3gzmdaCxMDm2X86uRWSMgXZI2DCjU9BzAkb"
+      ],
+      "raw_sha256": [
+        "ebf91b829a905547234afe4ee2dad6ece115b33b47289174f4854cfecaafc75f",
+        "d03d870757e668ed864047177dfc5d0530f07af5592e96978a044bae62339fdb",
+        "9571e1cecca47edde53d0858646a0f78d5399bee6a1d17ff0fbb35df2dda2471"
+      ],
+      "trim": "Hybrid EX",
+      "engine_cc": 1500,
+      "power_hp": 74,
+      "rights_confirmed": false,
+      "artifact_record_index": 226,
+      "artifact_id": 14641252098
+    },
+    {
+      "id": "japan-next30-519-20261121-29",
+      "country": "japan",
+      "make": "Daihatsu",
+      "model": "Tanto",
+      "year": 2021,
+      "mileage_km": 36000,
+      "body": "LA650S",
+      "grade": "3.5",
+      "auction": "JU Tokyo",
+      "lot": "1638",
+      "auction_date": "2026-11-16",
+      "description": "Daihatsu Tanto, 2021 года, кузов LA650S, комплектация: X. Двигатель 660 см³, мощность 52 л.с. по данным источника. Пробег по статистике источника (округлённый): 36000 км, оценка 3.5, аукцион JU Tokyo, дата 2026-11-16, лот №1638. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-29-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-29-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-29-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 615000,
+      "media_sha256": [
+        "00b4faac60436ce3ec5b6f96247949cb65cf47e87ccd77dae0bd5e3c0bc67344",
+        "76c33afbd72ebea5fd701f39b16c85e6008c739a4b620191d397b46a9b7e5106",
+        "79d15ed19a40bfd3c1271e2c931b6deab172a68db7a2bbca8276c7ccd516d64b"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/tanto/nOJynLe197uCcC/",
+      "source_media": [
+        "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6Zo78hbJmnTJ9wQuaJ0",
+        "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6Zo78hbJyhdXcU2xgF1",
+        "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqajYHECjRXFAp0umKiY7"
+      ],
+      "raw_sha256": [
+        "7c66aa2ecde205d40ee5a97cc52cdfc270183734330e351259e856f4939d654a",
+        "fa286a64057e595324194b0e104ea272a4ad51c7b02d3e20c814ead91aa12d77",
+        "a0656b06ceb0e7ad92c697a6d8d54a11739dfe9ee453696c121e2957779aa9cd"
+      ],
+      "trim": "X",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "artifact_record_index": 241,
+      "artifact_id": 14641252098
+    },
+    {
+      "id": "japan-next30-519-20261121-30",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Note",
+      "year": 2021,
+      "mileage_km": 105000,
+      "body": "E13",
+      "grade": "3.5",
+      "auction": "TAA Shikoku",
+      "lot": "15",
+      "auction_date": "2026-11-17",
+      "description": "Nissan Note, 2021 года, кузов E13, комплектация: S. Двигатель 1200 см³, мощность 82 л.с. по данным источника. Пробег по статистике источника (округлённый): 105000 км, оценка 3.5, аукцион TAA Shikoku, дата 2026-11-17, лот №15. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-next30-519-20261121-30-front.jpg",
+        "/assets/auction/approved/japan-next30-519-20261121-30-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-next30-519-20261121-30-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 592000,
+      "media_sha256": [
+        "1ae38d011083a18504f8437af84ecf2ea6fd503dee1efcd8aa9f40f0b28bde39",
+        "6b608d3098676b55fe71bdb0daa5fc74738627520a691cf8f4d66c8cdb2994eb",
+        "e068ad72f626e1af91ffa02a0bb8fbc10b3f2779cd5bc1a0d4664f87691fc1a1"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/note/9AFLqmjzEvqL9/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVppo9AtJS9vCrvru6yq7WjvQNQHO",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVppo9AtJS9vCrvru6zdgys5sJVeB",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq6Z52a35YLOyGYBs1TxaUbRfgxi12i"
+      ],
+      "raw_sha256": [
+        "134e3864ccae7d15afdba34e0b72d35b85d0ce928d0546d483ab77f4c7e3614b",
+        "78b228e89c5338797dbbaf4c6ba99d9cfb789141afa3a0f249ed5cfbaec760ff",
+        "0d0f529f971eb81f8959fc814b92d724a4df21bdb6cb84bf4f3c4f05171d1606"
+      ],
+      "trim": "S",
+      "engine_cc": 1200,
+      "power_hp": 82,
+      "rights_confirmed": false,
+      "artifact_record_index": 194,
+      "artifact_id": 14641252098
+    }
+  ],
+  "note": "Exactly 30 owner-approved source-linked archival photo/full-sheet records; no commercial image rights asserted."
+}
