@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "created_date": "2026-11-21",
+  "project": "PapAuto",
+  "market": "Japan",
+  "status": "OWNER_APPROVED_FOR_EXACT_639_RELEASE",
+  "published": false,
+  "owner_approval": {
+    "approved": true,
+    "approval_date": "2026-11-21",
+    "source": "explicit owner confirmation in conversation",
+    "approval_text": "Давай опубликуем сейчас.",
+    "scope": "Only PapAuto_Japan_Another30_639_2026-11-21.pdf exact 30 historical original auction lots; preserve all 90 original JPEGs, archive reference only; third-party commercial media reuse rights independently unverified",
+    "pdf_sha256": "2d814fb54e9acced643bcba53b61094bee4256eb4576c6dedd590c9ca65ddc76",
+    "media_zip_sha256": "fa60be07638523672d19c41eb68f16fd91e3fcd1488870544b8c3b1337d20c47",
+    "full_review_json_sha256": "72c556bd4a87df47926925be695777945fad8a56d9c031d7e0db1dfb8886de63"
+  },
+  "main_source_sha_at_review": "c872cd507918799c9dfe398da018a3dd5ab5206c",
+  "main_gallery_count_at_review": 609,
+  "target_after_owner_approval": 639,
+  "number_of_lots": 30,
+  "original_lot_photos": 60,
+  "complete_auction_sheets": 30,
+  "distinct_model_families": 15,
+  "original_media_aggregate_sha256": "fedd01f9183b25bddbd40414f9766ee273021e05b29ccb93a01b11b1fedac458",
+  "source_archives": {
+    "b6": {
+      "artifact_id": 14641252098,
+      "run_id": 44758942918,
+      "manifest_sha256": "fe2fb3d5f95195e9fd084dc72a5ad4f349dd9f100195bf1e5c5d13bfb1c58838"
+    },
+    "w3": {
+      "artifact_id": 14691820564,
+      "run_id": 44864961085,
+      "manifest_sha256": "9bd14bac931dbacfb3fc2578cf52816ce9fd5a2b6c666d04eff9ec42c01ebdc2"
+    }
+  },
+  "files": {
+    "review_pdf": {
+      "filename": "PapAuto_Japan_Another30_639_2026-11-21.pdf",
+      "sha256": "2d814fb54e9acced643bcba53b61094bee4256eb4576c6dedd590c9ca65ddc76"
+    },
+    "original_media_zip": {
+      "filename": "PapAuto_Japan_Another30_639_2026-11-21_media.zip",
+      "sha256": "fa60be07638523672d19c41eb68f16fd91e3fcd1488870544b8c3b1337d20c47"
+    },
+    "full_review_json": {
+      "filename": "PapAuto_Japan_Another30_639_2026-11-21_review-selection.json",
+      "sha256": "72c556bd4a87df47926925be695777945fad8a56d9c031d7e0db1dfb8886de63"
+    }
+  },
+  "selection": [
+    {
+      "ordinal": 1,
+      "source_archive": "w3",
+      "source_index": 74,
+      "title": "Nissan Dayz 2015",
+      "lot_key": "caatokyo|2026-11-17|358"
+    },
+    {
+      "ordinal": 2,
+      "source_archive": "b6",
+      "source_index": 40,
+      "title": "Nissan Dayz 2019",
+      "lot_key": "caatokyo|2026-11-17|25"
+    },
+    {
+      "ordinal": 3,
+      "source_archive": "b6",
+      "source_index": 38,
+      "title": "Nissan Dayz 2021",
+      "lot_key": "caatokyo|2026-11-17|40"
+    },
+    {
+      "ordinal": 4,
+      "source_archive": "b6",
+      "source_index": 47,
+      "title": "Daihatsu Taft 2020",
+      "lot_key": "junara|2026-11-14|3014"
+    },
+    {
+      "ordinal": 5,
+      "source_archive": "b6",
+      "source_index": 46,
+      "title": "Daihatsu Taft 2021",
+      "lot_key": "junara|2026-11-14|3023"
+    },
+    {
+      "ordinal": 6,
+      "source_archive": "b6",
+      "source_index": 87,
+      "title": "Suzuki Jimny 2020",
+      "lot_key": "juhokkaido|2026-11-13|1037"
+    },
+    {
+      "ordinal": 7,
+      "source_archive": "b6",
+      "source_index": 188,
+      "title": "Suzuki Jimny 2021",
+      "lot_key": "caachubu|2026-11-11|109"
+    },
+    {
+      "ordinal": 8,
+      "source_archive": "b6",
+      "source_index": 181,
+      "title": "Suzuki Swift 2017",
+      "lot_key": "taachubu|2026-11-12|320"
+    },
+    {
+      "ordinal": 9,
+      "source_archive": "b6",
+      "source_index": 141,
+      "title": "Suzuki Solio 2017",
+      "lot_key": "taayokohama|2026-11-14|189"
+    },
+    {
+      "ordinal": 10,
+      "source_archive": "b6",
+      "source_index": 140,
+      "title": "Suzuki Solio 2020",
+      "lot_key": "taahyogo|2026-11-14|225"
+    },
+    {
+      "ordinal": 11,
+      "source_archive": "b6",
+      "source_index": 142,
+      "title": "Suzuki Spacia 2019",
+      "lot_key": "jutokyo|2026-11-16|1119"
+    },
+    {
+      "ordinal": 12,
+      "source_archive": "b6",
+      "source_index": 133,
+      "title": "Suzuki Hustler 2018",
+      "lot_key": "taahyogo|2026-11-14|3258"
+    },
+    {
+      "ordinal": 13,
+      "source_archive": "b6",
+      "source_index": 183,
+      "title": "Suzuki Hustler 2021",
+      "lot_key": "laaokayama|2026-11-13|1171"
+    },
+    {
+      "ordinal": 14,
+      "source_archive": "b6",
+      "source_index": 205,
+      "title": "Toyota Raize 2020",
+      "lot_key": "taahyogo|2026-11-14|85"
+    },
+    {
+      "ordinal": 15,
+      "source_archive": "b6",
+      "source_index": 97,
+      "title": "Toyota Raize 2022",
+      "lot_key": "taahyogo|2026-11-14|2198"
+    },
+    {
+      "ordinal": 16,
+      "source_archive": "b6",
+      "source_index": 4,
+      "title": "Toyota Yaris cross 2020",
+      "lot_key": "jutokyo|2026-11-16|219"
+    },
+    {
+      "ordinal": 17,
+      "source_archive": "b6",
+      "source_index": 158,
+      "title": "Toyota Yaris cross 2021",
+      "lot_key": "taayokohama|2026-11-14|12138"
+    },
+    {
+      "ordinal": 18,
+      "source_archive": "b6",
+      "source_index": 211,
+      "title": "Toyota Yaris cross 2024",
+      "lot_key": "jugifu|2026-11-14|8285"
+    },
+    {
+      "ordinal": 19,
+      "source_archive": "b6",
+      "source_index": 109,
+      "title": "Toyota Yaris 2020",
+      "lot_key": "taakinki|2026-11-17|47"
+    },
+    {
+      "ordinal": 20,
+      "source_archive": "b6",
+      "source_index": 8,
+      "title": "Toyota Yaris 2022",
+      "lot_key": "taakinki|2026-11-17|127"
+    },
+    {
+      "ordinal": 21,
+      "source_archive": "b6",
+      "source_index": 7,
+      "title": "Toyota Yaris 2023",
+      "lot_key": "taahiroshima|2026-11-17|133"
+    },
+    {
+      "ordinal": 22,
+      "source_archive": "b6",
+      "source_index": 9,
+      "title": "Toyota Roomy 2021",
+      "lot_key": "taakinki|2026-11-17|26"
+    },
+    {
+      "ordinal": 23,
+      "source_archive": "b6",
+      "source_index": 62,
+      "title": "Toyota Roomy 2018",
+      "lot_key": "taayokohama|2026-11-14|14010"
+    },
+    {
+      "ordinal": 24,
+      "source_archive": "b6",
+      "source_index": 121,
+      "title": "Toyota Corolla fielder 2017",
+      "lot_key": "jutokyo|2026-11-16|8322"
+    },
+    {
+      "ordinal": 25,
+      "source_archive": "b6",
+      "source_index": 225,
+      "title": "Toyota Corolla fielder 2021",
+      "lot_key": "taayokohama|2026-11-14|12030"
+    },
+    {
+      "ordinal": 26,
+      "source_archive": "b6",
+      "source_index": 127,
+      "title": "Toyota Corolla touring 2020",
+      "lot_key": "taahyogo|2026-11-14|187"
+    },
+    {
+      "ordinal": 27,
+      "source_archive": "b6",
+      "source_index": 175,
+      "title": "Toyota Corolla touring 2023",
+      "lot_key": "taahyogo|2026-11-14|171"
+    },
+    {
+      "ordinal": 28,
+      "source_archive": "b6",
+      "source_index": 167,
+      "title": "Toyota Aqua 2022",
+      "lot_key": "taakinki|2026-11-17|93"
+    },
+    {
+      "ordinal": 29,
+      "source_archive": "b6",
+      "source_index": 165,
+      "title": "Toyota Aqua 2023",
+      "lot_key": "taahiroshima|2026-11-17|96"
+    },
+    {
+      "ordinal": 30,
+      "source_archive": "w3",
+      "source_index": 56,
+      "title": "Toyota Sienta 2018",
+      "lot_key": "taahiroshima|2026-11-17|284"
+    }
+  ],
+  "checks": {
+    "duplicate_auction_keys_vs_577_prior_approved": 0,
+    "duplicate_keys_vs_base_gallery_37": 0,
+    "duplicate_original_sha256_vs_source_archive_624_prior_image_files": 0,
+    "unique_source_listing_urls": 30,
+    "unique_selected_media_sha256": 90,
+    "photos_match_exact_source_lot": true,
+    "only_full_auction_sheet_included": true,
+    "diagram_only_rejected": true,
+    "no_photo_placeholder_rejected": true,
+    "no_ambiguous_street_or_parking_images": true,
+    "rights_confirmed": false
+  },
+  "release_gate": "Do not merge or deploy before explicit owner approval of this exact review PDF and manual rights check. Original source media are available in named GitHub Actions artifacts and owner-review ZIP; review branch has only the source selection and hashes.",
+  "owner_review_required": false
+}
