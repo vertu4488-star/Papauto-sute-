@@ -43,10 +43,26 @@ def built_auction_detail_pages():
     """Known exact-lot URLs are materialized by the static site builder.
     No arbitrary /lots/ path is implicitly trusted.
     """
-    gallery=json.loads((ROOT/"data/gallery-lots.json").read_text(encoding="utf-8"))
     if not (ROOT/"scripts/generate_auction_lot_pages.py").is_file():
         raise RuntimeError("Auction detail page generator missing")
-    return {ROOT/"lots"/(lot["id"]+".html") for lot in gallery["lots"]}
+    gallery_path = ROOT / "render-public" / "data" / "gallery-lots.json"
+    if not gallery_path.is_file():
+        gallery_path = ROOT / "data" / "gallery-lots.json"
+    gallery = json.loads(gallery_path.read_text(encoding="utf-8"))
+    approved_pages = set()
+    for lot in gallery["lots"]:
+        lot_id = lot["id"]
+        if (not lot_id or any(c not in "abcdefghijklmnopqrstuvwxyz0123456789-" for c in lot_id)
+                or not lot.get("photos") or not lot.get("inspection_image")
+                or not lot.get("description")):
+            raise RuntimeError("Incomplete approved auction detail page: " + str(lot_id))
+        detail = Path("lots") / (lot_id + ".html")
+        # The build must have emitted the exact detail page when using its
+        # complete published registry, not merely advertised the URL.
+        if gallery_path.parent.parent.name == "render-public" and not (ROOT / "render-public" / detail).is_file():
+            raise RuntimeError("Auction lot page not generated: " + str(detail))
+        approved_pages.add(ROOT / detail)
+    return approved_pages
 
 BUILT_LOT_PAGES = built_auction_detail_pages()
 
