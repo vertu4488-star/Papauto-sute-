@@ -243,6 +243,7 @@ def verify(root=ROOT):
     root = Path(root)
     media = root / PREFIX
     expected = {PREFIX + ident + ".jpg" for ident in IDS} | {EXTRA_PREFIX + ident + ".jpg" for ident in EXTRA_HASHES} | {THIRD_PREFIX + ident + ".jpg" for ident in THIRD_HASHES} | {FOURTH_PREFIX + ident + ".jpg" for ident in FOURTH_HASHES} | {FIFTH_PREFIX + ident + ".jpg" for ident in FIFTH_HASHES} | {SIXTH_PREFIX + ident + ".jpg" for ident in SIXTH_HASHES} | {SEVENTH_PREFIX + ident + ".jpg" for ident in SEVENTH_HASHES} | {EIGHTH_PREFIX + ident + ".jpg" for ident in EIGHTH_HASHES} | {NINTH_PREFIX + ident + ".jpg" for ident in NINTH_HASHES} | {TENTH_PREFIX + ident + ".jpg" for ident in TENTH_HASHES} | {ELEVENTH_PREFIX + ident + ".jpg" for ident in ELEVENTH_HASHES} | {TWELFTH_PREFIX + ident + ".jpg" for ident in TWELFTH_HASHES} | {THIRTEENTH_PREFIX + ident + ".jpg" for ident in THIRTEENTH_HASHES} | {FOURTEENTH_PREFIX + ident + ".jpg" for ident in FOURTEENTH_HASHES} | {FIFTEENTH_PREFIX + ident + ".jpg" for ident in FIFTEENTH_HASHES} | {SIXTEENTH_PREFIX + ident + ".jpg" for ident in SIXTEENTH_HASHES} | {SEVENTEENTH_PREFIX + ident + ".jpg" for ident in SEVENTEENTH_HASHES} | {EIGHTEENTH_PREFIX + ident + ".jpg" for ident in EIGHTEENTH_HASHES}
+    expected |= {row["local_photo"].lstrip("/") for row in json.loads((root/"research/approved-china-30-staged-20261121.json").read_text())}
     found = {p.relative_to(root).as_posix() for p in (root / "assets/china-order").rglob("*") if p.is_file() or p.is_symlink()}
     if found != expected:
         raise RuntimeError("CHINA_ORDER: unexpected or missing image")
@@ -341,8 +342,16 @@ def verify(root=ROOT):
         if p.is_symlink() or len(b)<500 or not b.startswith(b"\xff\xd8\xff") or hashlib.sha256(b).hexdigest()!=digest:
             raise RuntimeError("CHINA_ORDER: approved thirty photo mismatch " + ident)
     html = (root/PAGE).read_text(encoding="utf-8")
-    if re.findall(r'<img\b[^>]*\bsrc="([^"]+)"',html) != ["/"+PREFIX+i+".jpg" for i in IDS] + ["/"+EXTRA_PREFIX+i+".jpg" for i in EXTRA_HASHES] + ["/"+THIRD_PREFIX+i+".jpg" for i in THIRD_HASHES] + ["/"+FOURTH_PREFIX+i+".jpg" for i in FOURTH_HASHES] + ["/"+FIFTH_PREFIX+i+".jpg" for i in FIFTH_HASHES] + ["/"+SIXTH_PREFIX+i+".jpg" for i in SIXTH_HASHES] + ["/"+SEVENTH_PREFIX+i+".jpg" for i in SEVENTH_HASHES] + ["/"+EIGHTH_PREFIX+i+".jpg" for i in EIGHTH_HASHES] + ["/"+NINTH_PREFIX+i+".jpg" for i in NINTH_HASHES] + ["/"+TENTH_PREFIX+i+".jpg" for i in TENTH_HASHES] + ["/"+ELEVENTH_PREFIX+i+".jpg" for i in ELEVENTH_HASHES] + ["/"+TWELFTH_PREFIX+i+".jpg" for i in TWELFTH_HASHES] + ["/"+THIRTEENTH_PREFIX+i+".jpg" for i in THIRTEENTH_HASHES] + ["/"+FOURTEENTH_PREFIX+i+".jpg" for i in FOURTEENTH_HASHES] + ["/"+FIFTEENTH_PREFIX+i+".jpg" for i in FIFTEENTH_HASHES] + ["/"+SIXTEENTH_PREFIX+i+".jpg" for i in SIXTEENTH_HASHES] + ["/"+SEVENTEENTH_PREFIX+i+".jpg" for i in SEVENTEENTH_HASHES] + ["/"+EIGHTEENTH_PREFIX+i+".jpg" for i in EIGHTEENTH_HASHES]:
+    if re.findall(r'<img\b[^>]*\bsrc="([^"]+)"',html) != ["/"+PREFIX+i+".jpg" for i in IDS] + ["/"+EXTRA_PREFIX+i+".jpg" for i in EXTRA_HASHES] + ["/"+THIRD_PREFIX+i+".jpg" for i in THIRD_HASHES] + ["/"+FOURTH_PREFIX+i+".jpg" for i in FOURTH_HASHES] + ["/"+FIFTH_PREFIX+i+".jpg" for i in FIFTH_HASHES] + ["/"+SIXTH_PREFIX+i+".jpg" for i in SIXTH_HASHES] + ["/"+SEVENTH_PREFIX+i+".jpg" for i in SEVENTH_HASHES] + ["/"+EIGHTH_PREFIX+i+".jpg" for i in EIGHTH_HASHES] + ["/"+NINTH_PREFIX+i+".jpg" for i in NINTH_HASHES] + ["/"+TENTH_PREFIX+i+".jpg" for i in TENTH_HASHES] + ["/"+ELEVENTH_PREFIX+i+".jpg" for i in ELEVENTH_HASHES] + ["/"+TWELFTH_PREFIX+i+".jpg" for i in TWELFTH_HASHES] + ["/"+THIRTEENTH_PREFIX+i+".jpg" for i in THIRTEENTH_HASHES] + ["/"+FOURTEENTH_PREFIX+i+".jpg" for i in FOURTEENTH_HASHES] + ["/"+FIFTEENTH_PREFIX+i+".jpg" for i in FIFTEENTH_HASHES] + ["/"+SIXTEENTH_PREFIX+i+".jpg" for i in SIXTEENTH_HASHES] + ["/"+SEVENTEENTH_PREFIX+i+".jpg" for i in SEVENTEENTH_HASHES] + ["/"+EIGHTEENTH_PREFIX+i+".jpg" for i in EIGHTEENTH_HASHES] + [row["local_photo"] for row in json.loads((root/"research/approved-china-30-staged-20261121.json").read_text())]:
         raise RuntimeError("CHINA_ORDER: photo identity mismatch")
+    from pathlib import Path as _P
+    import json as _json
+    batch = _json.loads((root/"research/approved-china-30-staged-20261121.json").read_text())
+    assert len(batch)==30
+    for row in batch:
+        img=root/row["local_photo"].lstrip("/")
+        assert img.is_file() and hashlib.sha256(img.read_bytes()).hexdigest()==row["local_sha256"]
+    assert html.count('class="cn-example"')==529
     for p in root.glob("*.html"):
         if p.name != PAGE and "/assets/china-order/" in p.read_text(encoding="utf-8"):
             raise RuntimeError("CHINA_ORDER: supplier photo outside dedicated section")
