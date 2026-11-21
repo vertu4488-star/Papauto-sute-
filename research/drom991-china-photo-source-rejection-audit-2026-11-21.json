@@ -1,0 +1,204 @@
+{
+  "date": "2026-11-21",
+  "project": "PapAuto",
+  "purpose": "Prevent accidentally publishing visually unsuitable or inaccurately labeled China supplier photos while filling Drom model-year coverage.",
+  "source_research_run_id": 44860470855,
+  "source_archive_artifact_id": 14689950055,
+  "source_archive_sha256": "e269f417f6e75695c183b1fcc27596541b94aa0b50528d30f1615d45390ba408",
+  "screened": 18,
+  "approved_for_publication": 0,
+  "source_inventory": "https://www.xchehang.com/inventory.html",
+  "publication_rule": "No outdoor, parking, showroom/dealer, random, stock, branded studio, or model illustration photos. Exact source photo+correct model-year and honest documents are mandatory; never invent inspection/auction data or infer fuel.",
+  "records": [
+    {
+      "review_index": 1,
+      "model": "BYD Song Pro",
+      "year": 2022,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "branded indoor dealer backdrop",
+      "source_fuel_or_powertrain_claim_requires_recheck": false,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 2,
+      "model": "BYD Qin PLUS",
+      "year": 2025,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "outdoor parking lot",
+      "source_fuel_or_powertrain_claim_requires_recheck": false,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 3,
+      "model": "BYD Song Pro",
+      "year": 2024,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "outdoor street display",
+      "source_fuel_or_powertrain_claim_requires_recheck": false,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 4,
+      "model": "BYD Song L",
+      "year": 2024,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "outdoor industrial lot",
+      "source_fuel_or_powertrain_claim_requires_recheck": false,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 5,
+      "model": "BYD Song Pro",
+      "year": 2025,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "retail showroom, visible customers/signage",
+      "source_fuel_or_powertrain_claim_requires_recheck": false,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 6,
+      "model": "BYD Song PLUS",
+      "year": 2024,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "retail showroom / signage",
+      "source_fuel_or_powertrain_claim_requires_recheck": false,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 7,
+      "model": "BYD Yuan PLUS",
+      "year": 2023,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "dealer showroom, other units and signs",
+      "source_fuel_or_powertrain_claim_requires_recheck": true,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 8,
+      "model": "BYD Dolphin",
+      "year": 2022,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "dealer showroom, other units",
+      "source_fuel_or_powertrain_claim_requires_recheck": true,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 9,
+      "model": "Geely Galaxy L6",
+      "year": 2025,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "dealer showroom, other units",
+      "source_fuel_or_powertrain_claim_requires_recheck": false,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 10,
+      "model": "BYD Yuan PLUS",
+      "year": 2024,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "dealer showroom, other units",
+      "source_fuel_or_powertrain_claim_requires_recheck": true,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 11,
+      "model": "BYD Qin L",
+      "year": 2025,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "dealer showroom and promotional signage",
+      "source_fuel_or_powertrain_claim_requires_recheck": false,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 12,
+      "model": "BYD Song PLUS",
+      "year": 2022,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "indoor dealership display and other units",
+      "source_fuel_or_powertrain_claim_requires_recheck": false,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 13,
+      "model": "BYD Dolphin",
+      "year": 2024,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "indoor dealership display",
+      "source_fuel_or_powertrain_claim_requires_recheck": true,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 14,
+      "model": "BYD Seagull",
+      "year": 2024,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "indoor dealership display",
+      "source_fuel_or_powertrain_claim_requires_recheck": true,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 15,
+      "model": "BYD Song PLUS",
+      "year": 2023,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "outdoor street-side photo",
+      "source_fuel_or_powertrain_claim_requires_recheck": false,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 16,
+      "model": "BYD Destroyer 05",
+      "year": 2024,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "branded CARtech sales studio",
+      "source_fuel_or_powertrain_claim_requires_recheck": false,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 17,
+      "model": "BYD Qin PLUS",
+      "year": 2023,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "branded CARtech sales studio",
+      "source_fuel_or_powertrain_claim_requires_recheck": false,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    },
+    {
+      "review_index": 18,
+      "model": "BYD Qin PLUS",
+      "year": 2024,
+      "verdict": "REJECT_PUBLIC_PHOTO",
+      "reason": "branded CARtech sales studio",
+      "source_fuel_or_powertrain_claim_requires_recheck": false,
+      "full_original_inspection_report_verified": false,
+      "third_party_publication_rights_verified": false
+    }
+  ],
+  "second_supplier_visual_check": {
+    "source": "https://goldenlaneauto.com",
+    "source_run_id": 44862725965,
+    "source_artifact_id": 14690058518,
+    "individual_probe_images": 24,
+    "verdict": "REJECT_RANDOM_OUTDOOR_OR_RETAIL_MEDIA",
+    "note": "Probed BYD Yuan PLUS 2023 and Song MAX listing images plus BYD catalog. Mostly outdoor, dealer showroom and license-frame branding; no verified independently licensable original auction sheets. Also source BYD Yuan PLUS listed as EREV, conflicting with EV model identity; do not copy powertrain uncritically."
+  },
+  "remaining_action": "Continue researching full, model-exact auction or verified inspection-backed sources with acceptable neutral/auction image setting. Keep candidates internal until exact photo approved.",
+  "production_change": false
+}
