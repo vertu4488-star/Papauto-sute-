@@ -1,0 +1,280 @@
+{
+  "schema_version": 1,
+  "project": "PapAuto",
+  "created_at": "2026-11-21",
+  "status": "OWNER_APPROVED_STAGING_PENDING_PRIOR_BATCH",
+  "published": false,
+  "last_confirmed_main_auction_gallery": 489,
+  "previous_pending_review_batch": "PapAuto_Japan_Another30_519_2026-11-21.pdf",
+  "potential_total_if_both_pending_releases_approved": 549,
+  "total": 30,
+  "photos": 60,
+  "full_matching_sheets": 30,
+  "source_archives": {
+    "wave3": {
+      "run_id": 44864961085,
+      "artifact_id": 14691820564,
+      "manifest_sha256": "9bd14bac931dbacfb3fc2578cf52816ce9fd5a2b6c666d04eff9ec42c01ebdc2"
+    },
+    "b6": {
+      "run_id": 44758942918,
+      "artifact_id": 14641252098,
+      "manifest_sha256": "fe2fb3d5f95195e9fd084dc72a5ad4f349dd9f100195bf1e5c5d13bfb1c58838"
+    }
+  },
+  "files": {
+    "review_pdf": {
+      "name": "PapAuto_Japan_Another30_549_2026-11-21.pdf",
+      "sha256": "7f1209ab57d0fa02acea28fdb33bb82d91f3c1a7027dcefb563da057265aa024"
+    },
+    "original_media_zip": {
+      "name": "PapAuto_Japan_Another30_549_2026-11-21_media.zip",
+      "sha256": "405bb0643dc4baf67f67ff92f0e51a67e62d5b77b1e391005dbccf8e9ac33242"
+    },
+    "full_json": {
+      "name": "PapAuto_Japan_Another30_549_2026-11-21_review-selection.json",
+      "sha256": "ce57eae5efc12860b259ad93bc3de15c137a91e6f2367340fb23da16e1f2f18e"
+    }
+  },
+  "selection": [
+    {
+      "ordinal": 1,
+      "src": "b6",
+      "index": 243,
+      "name": "Daihatsu Taft 2023",
+      "lot_key": "taayokohama|2026-11-07|3105"
+    },
+    {
+      "ordinal": 2,
+      "src": "b6",
+      "index": 92,
+      "name": "Daihatsu Tanto 2021",
+      "lot_key": "caatohoku|2026-11-17|28"
+    },
+    {
+      "ordinal": 3,
+      "src": "wave3",
+      "index": 63,
+      "name": "Honda Fit 2016",
+      "lot_key": "taakyushu|2026-11-17|303"
+    },
+    {
+      "ordinal": 4,
+      "src": "wave3",
+      "index": 68,
+      "name": "Suzuki Hustler 2017",
+      "lot_key": "caatokyo|2026-11-17|284"
+    },
+    {
+      "ordinal": 5,
+      "src": "wave3",
+      "index": 25,
+      "name": "Honda Vezel 2016",
+      "lot_key": "taakyushu|2026-11-17|271"
+    },
+    {
+      "ordinal": 6,
+      "src": "b6",
+      "index": 145,
+      "name": "Mazda Demio 2017",
+      "lot_key": "laaokayama|2026-11-13|1016"
+    },
+    {
+      "ordinal": 7,
+      "src": "b6",
+      "index": 197,
+      "name": "Nissan Dayz 2024",
+      "lot_key": "jugifu|2026-11-14|248"
+    },
+    {
+      "ordinal": 8,
+      "src": "b6",
+      "index": 195,
+      "name": "Nissan Note 2018",
+      "lot_key": "taashikoku|2026-11-17|3"
+    },
+    {
+      "ordinal": 9,
+      "src": "b6",
+      "index": 82,
+      "name": "Suzuki Hustler 2023",
+      "lot_key": "junara|2026-11-14|7025"
+    },
+    {
+      "ordinal": 10,
+      "src": "b6",
+      "index": 190,
+      "name": "Suzuki Jimny 2021",
+      "lot_key": "caachubu|2026-11-11|90"
+    },
+    {
+      "ordinal": 11,
+      "src": "b6",
+      "index": 184,
+      "name": "Suzuki Solio 2017",
+      "lot_key": "jumiyagi|2026-11-13|520"
+    },
+    {
+      "ordinal": 12,
+      "src": "b6",
+      "index": 85,
+      "name": "Suzuki Spacia 2022",
+      "lot_key": "jutokyo|2026-11-16|1639"
+    },
+    {
+      "ordinal": 13,
+      "src": "b6",
+      "index": 77,
+      "name": "Suzuki Swift 2017",
+      "lot_key": "jugifu|2026-11-14|5643"
+    },
+    {
+      "ordinal": 14,
+      "src": "wave3",
+      "index": 55,
+      "name": "Toyota Allion 2016",
+      "lot_key": "taakanto|2026-11-12|15"
+    },
+    {
+      "ordinal": 15,
+      "src": "b6",
+      "index": 65,
+      "name": "Toyota Aqua 2022",
+      "lot_key": "taakinki|2026-11-17|129"
+    },
+    {
+      "ordinal": 16,
+      "src": "b6",
+      "index": 123,
+      "name": "Toyota Corolla Fielder 2017",
+      "lot_key": "jutokyo|2026-11-16|8221"
+    },
+    {
+      "ordinal": 17,
+      "src": "b6",
+      "index": 228,
+      "name": "Toyota Corolla Touring 2021",
+      "lot_key": "laaokayama|2026-11-13|1306"
+    },
+    {
+      "ordinal": 18,
+      "src": "wave3",
+      "index": 45,
+      "name": "Toyota Noah 2017",
+      "lot_key": "taahiroshima|2026-11-17|156"
+    },
+    {
+      "ordinal": 19,
+      "src": "wave3",
+      "index": 7,
+      "name": "Toyota Passo 2018",
+      "lot_key": "taashikoku|2026-11-17|107"
+    },
+    {
+      "ordinal": 20,
+      "src": "b6",
+      "index": 52,
+      "name": "Toyota Raize 2023",
+      "lot_key": "taayokohama|2026-11-14|12077"
+    },
+    {
+      "ordinal": 21,
+      "src": "b6",
+      "index": 220,
+      "name": "Toyota Roomy 2021",
+      "lot_key": "taayokohama|2026-11-14|12116"
+    },
+    {
+      "ordinal": 22,
+      "src": "b6",
+      "index": 223,
+      "name": "Toyota Sienta 2021",
+      "lot_key": "taayokohama|2026-11-14|12589"
+    },
+    {
+      "ordinal": 23,
+      "src": "wave3",
+      "index": 2,
+      "name": "Toyota Tank 2018",
+      "lot_key": "taahiroshima|2026-11-17|286"
+    },
+    {
+      "ordinal": 24,
+      "src": "wave3",
+      "index": 54,
+      "name": "Toyota Voxy 2017",
+      "lot_key": "taahiroshima|2026-11-17|304"
+    },
+    {
+      "ordinal": 25,
+      "src": "b6",
+      "index": 108,
+      "name": "Toyota Yaris 2022",
+      "lot_key": "taashikoku|2026-11-17|62"
+    },
+    {
+      "ordinal": 26,
+      "src": "b6",
+      "index": 104,
+      "name": "Toyota Yaris Cross 2023",
+      "lot_key": "taayokohama|2026-11-14|12433"
+    },
+    {
+      "ordinal": 27,
+      "src": "b6",
+      "index": 157,
+      "name": "Toyota Yaris Cross 2025",
+      "lot_key": "taayokohama|2026-11-14|12169"
+    },
+    {
+      "ordinal": 28,
+      "src": "b6",
+      "index": 237,
+      "name": "Suzuki Jimny 2023",
+      "lot_key": "caatokyo|2026-11-10|102"
+    },
+    {
+      "ordinal": 29,
+      "src": "b6",
+      "index": 204,
+      "name": "Daihatsu Taft 2022",
+      "lot_key": "taahyogo|2026-11-07|3157"
+    },
+    {
+      "ordinal": 30,
+      "src": "b6",
+      "index": 217,
+      "name": "Toyota Roomy 2023",
+      "lot_key": "taayokohama|2026-11-14|12148"
+    }
+  ],
+  "comparison": {
+    "archive_approved_rows_checked": 457,
+    "previous_pending_rows_checked": 30,
+    "lot_key_collisions": 0,
+    "archive_row_reuse": 0
+  },
+  "rules": {
+    "no_street_or_placeholder_photos": true,
+    "matching_full_sheet": true,
+    "source_mileage_and_auction_grade": true,
+    "max_engine_cc": 2000,
+    "max_power_hp": 160,
+    "archival_reference_only": true,
+    "external_competitor_links_in_public_cards": false,
+    "third_party_media_commercial_rights_verified": false
+  },
+  "release_instruction": "Review-only; do not publish this batch until exact PDF/media ZIP accepted by owner. Do not represent archival media as commercially licensed. Publish 519 review first or rebase release deterministically.",
+  "owner_approval": {
+    "approved": true,
+    "received_at_date": "2026-11-21",
+    "exact_review_pdf": "PapAuto_Japan_Another30_549_2026-11-21.pdf",
+    "exact_review_pdf_sha256": "7f1209ab57d0fa02acea28fdb33bb82d91f3c1a7027dcefb563da057265aa024",
+    "exact_media_zip_sha256": "405bb0643dc4baf67f67ff92f0e51a67e62d5b77b1e391005dbccf8e9ac33242",
+    "approval_text": "Утверждаю новую партию из 30 японских карточек PapAuto_Japan_Another30_549_2026-11-21.pdf с оригинальными изображениями и аукционными листами. Опубликуй эту партию после предыдущей, проверь дубли, изображения и Render Live.",
+    "permission_scope": "This exact 30-card historical archive release after preceding 519 batch, not blanket third-party image license",
+    "note": "Previous 489 to 519 batch was not separately approved, so no live site change until previous batch is released."
+  },
+  "release_blocker": "Previous 30-card 489->519 batch unapproved and unpublished; user specifically instructed sequential release.",
+  "image_sha256_aggregate": "14335eb0d5d9ec636a49ee0d9001f595bebf32ef18b060ebcce69a45e9e3589f"
+}
