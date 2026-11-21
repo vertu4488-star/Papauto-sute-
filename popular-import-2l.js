@@ -17,7 +17,10 @@
   let selected="all";
   const key=(market,model)=>market+"|"+String(model||"").toLowerCase().normalize("NFKC").replace(/[^a-z0-9а-яё]/g,"");
   const allowed=url=>typeof url==="string"&&
-    /^\\/assets\\/(?:auction\\/(?:home|approved)|premium-auctions)\\/[a-z0-9/_.-]+\\.(?:jpg|jpeg|png|webp)$/i.test(url);
+    ["/assets/auction/home/","/assets/auction/approved/","/assets/premium-auctions/"]
+      .some(prefix=>url.startsWith(prefix)) &&
+    [".jpg",".jpeg",".png",".webp"].some(suffix=>url.toLowerCase().endsWith(suffix)) &&
+    !url.includes("..") && !url.includes("?");
 
   function render(){
     let shown=0;
