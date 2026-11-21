@@ -27,7 +27,7 @@ models="nissan/nv200 toyota/vitz toyota/voxy mazda/cx-5 toyota/c-hr subaru/levor
 TARGET_YEARS={"nissan/nv200":[2017],"toyota/vitz":[2018],"toyota/voxy":[2018],"mazda/cx-5":[2014],"toyota/c-hr":[2018],"subaru/levorg":[2021],"honda/freed-spike":[2012],"toyota/allion":[2009],"toyota/succeed":[2019],"honda/freed":[2019],"suzuki/hustler":[2014],"nissan/sylphy":[2019],"toyota/tank":[2016],"toyota/noah":[2018,2019],"toyota/sienta":[2016],"toyota/ractis":[2013],"mazda/cx-8":[2017,2019],"nissan/x-trail":[2018],"nissan/dayz":[2018]}
 SEEDS=["https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/zjXFjXqAYhU9WG/","https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/7afCsbl2TeFN5k6/","https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/32H0VjdIu8AliOg/","https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/32dHO6D9clPjUEf/","https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/7a1FlEGw7bEIR76/","https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/56OiKYOs7rP32Ie/","https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/646Uj6T34oKVHt/"]
 for r in json.loads(Path('research/papauto-drom991-concrete-auction-lot-photo-sheet-intake-2026-11-13.json').read_text())['records']:
- if r['model'].lower().replace(' ','-') in {x.split('/')[-1] for x in models} and r['year'] in TARGET_YEARS.get(r['model'].lower().replace(' ','/'),[]):SEEDS.append(r['original_source_page_url_research_only'])
+ if any(r['model'].lower()==key.split('/')[0]+' '+key.split('/')[1].replace('-',' ') and r['year'] in years for key,years in TARGET_YEARS.items()):SEEDS.append(r['original_source_page_url_research_only'])
 def discover(args):
  m,p=args
  try:
