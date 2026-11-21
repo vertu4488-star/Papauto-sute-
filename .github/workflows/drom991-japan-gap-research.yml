@@ -1,0 +1,21 @@
+name: PapAuto Drom sample exact Japan model-year sourcing
+on:
+  push:
+    branches: ['review/drom991-exact-year-gaps-20261121']
+    paths: ['.github/workflows/drom991-japan-gap-research.yml']
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install requests beautifulsoup4 pillow
+      - name: Fetch exact Japanese model-year photo and matching auction sheet leads
+        run: python scripts/research_drom991_japan_gap_lots_20261121.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: drom991-japan-gap-lots
+          path: drom-gap-review/
+          retention-days: 30
