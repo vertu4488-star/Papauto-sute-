@@ -23,6 +23,14 @@ jobs:
           path: /tmp/drom20
       - run: pip install -r requirements.txt pillow
       - run: python scripts/release_drom991_20_owner_approved.py
+      - name: Verify complete public build and tests
+        run: |
+          python scripts/verify_publication_approval.py
+          python scripts/build_content.py
+          python scripts/build_static_public.py
+          python -m unittest discover -s tests -v
+          node --check gallery.js
+          node tests/test_survey_all_gallery_lots.cjs
       - name: Commit media and manifest to review branch
         run: |
           git config user.name "github-actions[bot]"
