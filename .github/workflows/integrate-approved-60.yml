@@ -1,0 +1,84 @@
+name: Integrate approved PapAuto 60 catalog cards
+on:
+  push:
+    branches: ['release/approved-japan-china-60-20261121']
+    paths: ['.github/workflows/integrate-approved-60.yml']
+permissions:
+  contents: write
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add approved China cards and Japan archive page
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json,html,urllib.parse,re,hashlib
+          root=Path('.')
+          china=json.loads(Path('research/approved-china-30-staged-20261121.json').read_text())
+          japan=json.loads(Path('research/approved-japan-30-staged-20261121.json').read_text())
+          assert len(china)==len(japan)==30
+          page=Path('china-order.html')
+          s=page.read_text()
+          assert s.count('class="cn-example"')==499
+          cards=[]
+          for i,x in enumerate(china,500):
+              img=x['local_photo']
+              p=Path(img.lstrip('/'))
+              assert p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()==x['local_sha256']
+              title=html.escape(x['title'])
+              engine=html.escape(str(x.get('engine') or 'Уточняется'))
+              km=f"{x['mileage_km']:,}" if isinstance(x.get('mileage_km'),int) else 'Уточняется'
+              price=f"{x['fob_usd']:,}" if isinstance(x.get('fob_usd'),int) else 'Уточняется'
+              href='/podbor.html?similar='+urllib.parse.quote(x['title']+' · КИТАЙ')
+              cards.append(f'<article class="cn-example" data-origin="china" data-search="{title} {engine}"><div class="cn-overline">Предложение поставщика · {i:02} / 529</div><img src="{img}" alt="{title}" loading="lazy" decoding="async" width="1000" height="750"><div class="cn-body"><h2>{title}</h2><dl><div><dt>Двигатель</dt><dd>{engine}</dd></div><div><dt>Пробег по данным поставщика</dt><dd>{km} км</dd></div><div><dt>Цена FOB</dt><dd>{price} USD</dd></div></dl><p>Пример подбора, не аукционный лот. Наличие, мощность, диагностику и итоговую стоимость уточняем перед заказом.</p><a class="button button-primary" href="{href}">Подобрать аналог</a></div></article>')
+          needle='</div><p><a href="/china-util-models.html">'
+          assert s.count(needle)==1
+          s=s.replace(needle,''.join(cards)+needle)
+          s=s.replace('499 примеров','529 примеров').replace('499 автомобилей','529 автомобилей')
+          s=re.sub(r'(· \d{2,3} / )499</div>',r'\g<1>529</div>',s)
+          assert s.count('class="cn-example"')==529
+          page.write_text(s)
+          p=Path('china.html');t=p.read_text();p.write_text(t.replace('499 автомобилей с фотографиями','529 автомобилей с фотографиями'))
+          # Japan records are archive references; preserve existing auction gallery unchanged.
+          parts=['<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>30 японских аукционных лотов — PapAuto</title><link rel="canonical" href="https://papauto.ru/japan-approved-30.html"><link rel="stylesheet" href="/styles.css"><style>main{max-width:1180px;margin:40px auto;padding:20px}.lotgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}.lot{padding:18px;border:1px solid #ddd1c4;border-radius:16px;background:#fff}.lot img{width:100%;object-fit:contain;aspect-ratio:4/3}.thumbs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.lot h2{font-size:22px}</style></head><body><main><nav><a href="/">PapAuto</a> · <a href="/catalog.html">Каталог</a> · <a href="/china-order.html">Китай</a></nav><h1>Япония — 30 аукционных примеров</h1><p>Архивные аукционные данные, не подтверждённое наличие. Состояние, стоимость и доступность уточняются перед заказом.</p><div class="lotgrid">']
+          for x in japan:
+              photos=x['local_files'];assert len(photos)==3
+              for src in photos:assert Path(src.lstrip('/')).is_file()
+              name=html.escape(x['title'])
+              parts.append(f'<article class="lot"><h2>{name}</h2><img src="{photos[0]}" alt="{name}, аукционное фото" loading="lazy"><div class="thumbs"><img src="{photos[1]}" alt="Второе фото {name}" loading="lazy"><img src="{photos[2]}" alt="Аукционный лист {name}" loading="lazy"></div><p>Аукцион: {html.escape(str(x["auction"]))} · Лот: {html.escape(str(x["lot"]))} · Оценка: {html.escape(str(x["grade"]))}</p><p>Год: {x["year"]} · Пробег: {x["km"]:,} км · Объём: {x["cc"]} см³</p><a href="/podbor.html?similar={urllib.parse.quote(x["title"])}">Подобрать аналог</a></article>')
+          parts.append('</div></main></body></html>')
+          Path('japan-approved-30.html').write_text(''.join(parts))
+          print('INTEGRATED: 529 China and 30 Japan archive cards')
+          PY
+      - name: Extend exact China photo gate for approved nineteenth batch
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          p=Path('scripts/verify_china_order_release.py');s=p.read_text()
+          needle='    for p in root.glob("*.html"):'
+          assert s.count(needle)==1
+          insert='''    from pathlib import Path as _P
+    import json as _json
+    batch = _json.loads((root/"research/approved-china-30-staged-20261121.json").read_text())
+    assert len(batch)==30
+    for row in batch:
+        img=root/row["local_photo"].lstrip("/")
+        assert img.is_file() and hashlib.sha256(img.read_bytes()).hexdigest()==row["local_sha256"]
+    assert html.count('class="cn-example"')==529
+'''
+          s=s.replace(needle,insert+needle)
+          s=s.replace(' + ["/"+EIGHTEENTH_PREFIX+i+".jpg" for i in EIGHTEENTH_HASHES]:',' + ["/"+EIGHTEENTH_PREFIX+i+".jpg" for i in EIGHTEENTH_HASHES] + [row["local_photo"] for row in batch]:')
+          p.write_text(s)
+          PY
+      - name: Build and verify
+        run: python scripts/build_static_public.py
+      - name: Commit release changes
+        run: |
+          git config user.name "PapAuto Release Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add china-order.html china.html japan-approved-30.html scripts/verify_china_order_release.py
+          git commit -m "Integrate owner-approved 30 China and 30 Japan cards with exact local images"
+          git push
