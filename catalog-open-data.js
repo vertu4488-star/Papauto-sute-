@@ -155,7 +155,7 @@
   if(more)more.addEventListener("click",()=>{limit+=pageSize;render()});
   fillMakes();
   render();
-  fetch("/data/gallery-lots.json",{cache:"force-cache"})
+  if(typeof fetch==="function")fetch("/data/gallery-lots.json",{cache:"force-cache"})
     .then(response=>{if(!response.ok)throw Error("auction media registry unavailable");return response.json();})
     .then(data=>{
       for(const lot of (data.lots||[])){
