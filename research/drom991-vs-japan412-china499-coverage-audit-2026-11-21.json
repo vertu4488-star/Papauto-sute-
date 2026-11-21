@@ -1,0 +1,3101 @@
+{
+  "date": "2026-11-21",
+  "project": "PapAuto",
+  "source_drom": "research/drom-novosibirsk-991-no-rf-2026-11-13.json",
+  "source_model_matrix": "research/papauto-drom991-model-year-generation-sourcing-matrix-2026-11-13.json",
+  "site_build_head_sha": "bc36b80b9a06f7e11f5002f9af9c4e4f9c507209",
+  "actual_sampled_drom_listings": 40,
+  "drom_result_count_as_of_2026_11_13": 991,
+  "china_order_supplier_reference_cards": 499,
+  "japan_gallery_lots_expected": 412,
+  "japan_coverage_raw_entries_including_reused_records": 417,
+  "method": "Exact text-normalized model + model-year comparison of source manifests; China examples parsed from data-search attributes with limited aliases. Drom 991 was a count, only 40 listings were inspected. Existing source Japan has duplicates and two quarantined examples; count on live gallery is 412. Model year coverage is not identity/provenance of the same Drom vehicle. Missing range years are sourcing hints, not observed Drom years. China origin and market are distinct.",
+  "limitations": [
+    "model aliases and equipment years can produce false gaps; do not assert manufacturing years from ambiguous supplier titles",
+    "uninspected 951 Drom listings are not classified",
+    "photo and document rights are not verified; this is research only, not publication approval",
+    "Japan archive reference pages are not live stock",
+    "China supplier examples are not Japanese-style auction lots and have no verified full auction sheets"
+  ],
+  "drom_first_40_exact_gap_count": 31,
+  "drom_first_40_existing_year_count": 9,
+  "japan_matrix_model_count": 66,
+  "china_matrix_model_count": 45,
+  "china_matrix_model_name_missing_count": 22,
+  "first_40_model_year_comparison": [
+    {
+      "position": 1,
+      "market_origin_unconfirmed": true,
+      "model": "Nissan NV200",
+      "year": 2017,
+      "engine_l": 1.6,
+      "drom_price_rub": 1625000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 2,
+      "market_origin_unconfirmed": true,
+      "model": "Honda Freed",
+      "year": 2020,
+      "engine_l": 1.5,
+      "drom_price_rub": 1490000,
+      "exact_japan_model_year_lot_count": 1,
+      "japan_lot_ids": [
+        "japan-selection-268"
+      ],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_exact_year_exists",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 3,
+      "market_origin_unconfirmed": true,
+      "model": "Toyota Vitz",
+      "year": 2018,
+      "engine_l": 1.3,
+      "drom_price_rub": 1399000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 4,
+      "market_origin_unconfirmed": true,
+      "model": "Lexus LX570",
+      "year": 2019,
+      "engine_l": 5.7,
+      "drom_price_rub": 11290000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 5,
+      "market_origin_unconfirmed": true,
+      "model": "Toyota Voxy",
+      "year": 2018,
+      "engine_l": 1.8,
+      "drom_price_rub": 2665000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 6,
+      "market_origin_unconfirmed": true,
+      "model": "Suzuki Jimny",
+      "year": 2022,
+      "engine_l": 0.7,
+      "drom_price_rub": 1650000,
+      "exact_japan_model_year_lot_count": 1,
+      "japan_lot_ids": [
+        "japan-atp-b6-20261121-18"
+      ],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_exact_year_exists",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 7,
+      "market_origin_unconfirmed": true,
+      "model": "Mazda CX-5",
+      "year": 2014,
+      "engine_l": 2,
+      "drom_price_rub": 1800000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 8,
+      "market_origin_unconfirmed": true,
+      "model": "Toyota Camry",
+      "year": 2015,
+      "engine_l": 2,
+      "drom_price_rub": 1680000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 9,
+      "market_origin_unconfirmed": true,
+      "model": "Toyota C-HR",
+      "year": 2018,
+      "engine_l": 1.2,
+      "drom_price_rub": 2099000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 10,
+      "market_origin_unconfirmed": true,
+      "model": "Subaru Levorg",
+      "year": 2021,
+      "engine_l": 1.8,
+      "drom_price_rub": 2487000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 11,
+      "market_origin_unconfirmed": true,
+      "model": "Honda Freed Spike",
+      "year": 2012,
+      "engine_l": 1.5,
+      "drom_price_rub": 950000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 12,
+      "market_origin_unconfirmed": true,
+      "model": "Lexus LX570",
+      "year": 2017,
+      "engine_l": 5.7,
+      "drom_price_rub": 8190000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 13,
+      "market_origin_unconfirmed": true,
+      "model": "Honda Vezel",
+      "year": 2021,
+      "engine_l": 1.5,
+      "drom_price_rub": 2365000,
+      "exact_japan_model_year_lot_count": 2,
+      "japan_lot_ids": [
+        "japan-atp-20261120-10",
+        "japan-atp-b4-20261120-09"
+      ],
+      "china_supplier_same_name_year_signal": true,
+      "status": "japan_exact_year_exists",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 14,
+      "market_origin_unconfirmed": true,
+      "model": "Toyota Allion",
+      "year": 2009,
+      "engine_l": 1.8,
+      "drom_price_rub": 1440000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 15,
+      "market_origin_unconfirmed": true,
+      "model": "Volkswagen T-Cross",
+      "year": 2021,
+      "engine_l": 1,
+      "drom_price_rub": 1329000,
+      "exact_japan_model_year_lot_count": 1,
+      "japan_lot_ids": [
+        "japan-archive-20261119-40"
+      ],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_exact_year_exists",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 16,
+      "market_origin_unconfirmed": true,
+      "model": "Honda Fit",
+      "year": 2018,
+      "engine_l": 1.3,
+      "drom_price_rub": 1100000,
+      "exact_japan_model_year_lot_count": 2,
+      "japan_lot_ids": [
+        "japan-atp-b3-20261120-29",
+        "japan-atp-b6-20261121-16"
+      ],
+      "china_supplier_same_name_year_signal": true,
+      "status": "japan_exact_year_exists",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 17,
+      "market_origin_unconfirmed": true,
+      "model": "Toyota Succeed",
+      "year": 2019,
+      "engine_l": 1.5,
+      "drom_price_rub": 1210000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 18,
+      "market_origin_unconfirmed": true,
+      "model": "Volkswagen Tayron",
+      "year": 2022,
+      "engine_l": 1.4,
+      "drom_price_rub": 2999000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 19,
+      "market_origin_unconfirmed": true,
+      "model": "BMW X3",
+      "year": 2020,
+      "engine_l": 2,
+      "drom_price_rub": 4105000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 20,
+      "market_origin_unconfirmed": true,
+      "model": "RAM 1500",
+      "year": 2023,
+      "engine_l": 5.7,
+      "drom_price_rub": 8499000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 21,
+      "market_origin_unconfirmed": true,
+      "model": "Toyota Raize",
+      "year": 2023,
+      "engine_l": 1.2,
+      "drom_price_rub": 1560000,
+      "exact_japan_model_year_lot_count": 1,
+      "japan_lot_ids": [
+        "japan-atp-b6-20261121-13"
+      ],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_exact_year_exists",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 22,
+      "market_origin_unconfirmed": true,
+      "model": "Honda Freed",
+      "year": 2019,
+      "engine_l": 1.5,
+      "drom_price_rub": 1900000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 23,
+      "market_origin_unconfirmed": true,
+      "model": "Suzuki Hustler",
+      "year": 2014,
+      "engine_l": 0.7,
+      "drom_price_rub": 775000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 24,
+      "market_origin_unconfirmed": true,
+      "model": "Nissan Sylphy",
+      "year": 2019,
+      "engine_l": 1.8,
+      "drom_price_rub": 1349000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": true,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 25,
+      "market_origin_unconfirmed": true,
+      "model": "Honda Fit",
+      "year": 2014,
+      "engine_l": 1.3,
+      "drom_price_rub": 1175000,
+      "exact_japan_model_year_lot_count": 1,
+      "japan_lot_ids": [
+        "japan-selection-1"
+      ],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_exact_year_exists",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 26,
+      "market_origin_unconfirmed": true,
+      "model": "Jaguar F-Pace",
+      "year": 2019,
+      "engine_l": 2,
+      "drom_price_rub": 3620000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 27,
+      "market_origin_unconfirmed": true,
+      "model": "Toyota Tank",
+      "year": 2016,
+      "engine_l": 1,
+      "drom_price_rub": 1155000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 28,
+      "market_origin_unconfirmed": true,
+      "model": "Mercedes-Benz GLE",
+      "year": 2019,
+      "engine_l": 3,
+      "drom_price_rub": 7750000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 29,
+      "market_origin_unconfirmed": true,
+      "model": "Toyota Noah",
+      "year": 2018,
+      "engine_l": 2,
+      "drom_price_rub": 2500000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 30,
+      "market_origin_unconfirmed": true,
+      "model": "Toyota Noah",
+      "year": 2019,
+      "engine_l": 2,
+      "drom_price_rub": 2670000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 31,
+      "market_origin_unconfirmed": true,
+      "model": "BMW X3",
+      "year": 2025,
+      "engine_l": 2,
+      "drom_price_rub": 6459000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 32,
+      "market_origin_unconfirmed": true,
+      "model": "Toyota Sienta",
+      "year": 2016,
+      "engine_l": 1.5,
+      "drom_price_rub": 1250000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 33,
+      "market_origin_unconfirmed": true,
+      "model": "Nissan Dayz",
+      "year": 2021,
+      "engine_l": 0.7,
+      "drom_price_rub": 750000,
+      "exact_japan_model_year_lot_count": 2,
+      "japan_lot_ids": [
+        "japan-atp-b2-20261120-09",
+        "japan-atp-b6-20261121-09"
+      ],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_exact_year_exists",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 34,
+      "market_origin_unconfirmed": true,
+      "model": "Lexus RX300",
+      "year": 2025,
+      "engine_l": 2,
+      "drom_price_rub": 7150000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 35,
+      "market_origin_unconfirmed": true,
+      "model": "Toyota Ractis",
+      "year": 2013,
+      "engine_l": 1.5,
+      "drom_price_rub": 1050000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 36,
+      "market_origin_unconfirmed": true,
+      "model": "Subaru XV",
+      "year": 2019,
+      "engine_l": 1.6,
+      "drom_price_rub": 2300000,
+      "exact_japan_model_year_lot_count": 2,
+      "japan_lot_ids": [
+        "japan-archive-20261119-29",
+        "japan-atp-b4-20261120-21"
+      ],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_exact_year_exists",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 37,
+      "market_origin_unconfirmed": true,
+      "model": "Mazda CX-8",
+      "year": 2019,
+      "engine_l": 2.2,
+      "drom_price_rub": 3300000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 38,
+      "market_origin_unconfirmed": true,
+      "model": "Nissan X-Trail",
+      "year": 2018,
+      "engine_l": 2,
+      "drom_price_rub": 2520000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 39,
+      "market_origin_unconfirmed": true,
+      "model": "Nissan Dayz",
+      "year": 2018,
+      "engine_l": 0.7,
+      "drom_price_rub": 920000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    },
+    {
+      "position": 40,
+      "market_origin_unconfirmed": true,
+      "model": "Mazda CX-8",
+      "year": 2017,
+      "engine_l": 2.2,
+      "drom_price_rub": 2900000,
+      "exact_japan_model_year_lot_count": 0,
+      "japan_lot_ids": [],
+      "china_supplier_same_name_year_signal": false,
+      "status": "japan_same_model_year_not_found",
+      "source": "Drom first two pages, 13-Nov-2026 (not 991 audited listings)"
+    }
+  ],
+  "japan_source_year_matrix": [
+    {
+      "model": "Honda Freed",
+      "priority": 1,
+      "search_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "published_lot_years": [
+        2008,
+        2018,
+        2020,
+        2021,
+        2022
+      ],
+      "covered_years_in_search_window": [
+        2018,
+        2020,
+        2021,
+        2022
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2019,
+        2023,
+        2024
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2017,
+          "to": 2019,
+          "body_hint": "GB5–GB8",
+          "variant_hint": "дорестайлинг 2-го поколения",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2020,
+          "to": 2023,
+          "body_hint": "GB5–GB8",
+          "variant_hint": "рестайлинг 2-го поколения",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2024,
+          "to": 2026,
+          "body_hint": "GT1–GT8",
+          "variant_hint": "3-е поколение; не смешивать с GB",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Honda Fit",
+      "priority": 1,
+      "search_years": {
+        "from": 2018,
+        "to": 2024
+      },
+      "published_lot_years": [
+        2011,
+        2014,
+        2018,
+        2019,
+        2021,
+        2024
+      ],
+      "covered_years_in_search_window": [
+        2018,
+        2019,
+        2021,
+        2024
+      ],
+      "missing_years_in_search_window": [
+        2020,
+        2022,
+        2023
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2018,
+          "to": 2019,
+          "body_hint": "GK/GP",
+          "variant_hint": "рестайлинг 3-го поколения",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2020,
+          "to": 2024,
+          "body_hint": "GR/GS",
+          "variant_hint": "4-е поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Sienta",
+      "priority": 1,
+      "search_years": {
+        "from": 2016,
+        "to": 2024
+      },
+      "published_lot_years": [
+        2010,
+        2011,
+        2017,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024
+      ],
+      "covered_years_in_search_window": [
+        2017,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024
+      ],
+      "missing_years_in_search_window": [
+        2016,
+        2018,
+        2022
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2016,
+          "to": 2018,
+          "body_hint": "170",
+          "variant_hint": "2-е поколение дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2019,
+          "to": 2021,
+          "body_hint": "170",
+          "variant_hint": "2-е поколение рестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2024,
+          "body_hint": "10",
+          "variant_hint": "3-е поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Corolla",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "covered_years_in_search_window": [
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2022,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Aqua",
+      "priority": 3,
+      "search_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "published_lot_years": [
+        2017,
+        2019,
+        2020,
+        2022,
+        2023
+      ],
+      "covered_years_in_search_window": [
+        2017,
+        2019,
+        2020,
+        2022,
+        2023
+      ],
+      "missing_years_in_search_window": [
+        2018,
+        2021,
+        2024
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2017,
+          "to": 2021,
+          "body_hint": "NHP10",
+          "variant_hint": "первое поколение, поздние версии",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2024,
+          "body_hint": "MXPK1x",
+          "variant_hint": "второе поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Yaris",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "covered_years_in_search_window": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Yaris Cross",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "covered_years_in_search_window": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Honda Vezel",
+      "priority": 2,
+      "search_years": {
+        "from": 2018,
+        "to": 2024
+      },
+      "published_lot_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "covered_years_in_search_window": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "missing_years_in_search_window": [
+        2022,
+        2024
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2018,
+          "to": 2020,
+          "body_hint": "RU1–RU4",
+          "variant_hint": "1-е поколение рестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2021,
+          "to": 2024,
+          "body_hint": "RV3–RV6",
+          "variant_hint": "2-е поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Raize",
+      "priority": 2,
+      "search_years": {
+        "from": 2020,
+        "to": 2026
+      },
+      "published_lot_years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2026
+      ],
+      "covered_years_in_search_window": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2026
+      ],
+      "missing_years_in_search_window": [
+        2025
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Suzuki Jimny",
+      "priority": 2,
+      "search_years": {
+        "from": 2018,
+        "to": 2024
+      },
+      "published_lot_years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "covered_years_in_search_window": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "missing_years_in_search_window": [
+        2018,
+        2019
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Roomy",
+      "priority": 1,
+      "search_years": {
+        "from": 2016,
+        "to": 2025
+      },
+      "published_lot_years": [
+        2017,
+        2021,
+        2022,
+        2024,
+        2025
+      ],
+      "covered_years_in_search_window": [
+        2017,
+        2021,
+        2022,
+        2024,
+        2025
+      ],
+      "missing_years_in_search_window": [
+        2016,
+        2018,
+        2019,
+        2020,
+        2023
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2016,
+          "to": 2020,
+          "body_hint": "M900A/M910A",
+          "variant_hint": "дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2021,
+          "to": 2025,
+          "body_hint": "M900A/M910A",
+          "variant_hint": "рестайлинг 2020+",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Passo",
+      "priority": 1,
+      "search_years": {
+        "from": 2018,
+        "to": 2023
+      },
+      "published_lot_years": [
+        2012,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "covered_years_in_search_window": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "missing_years_in_search_window": [
+        2018
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2018,
+          "to": 2023,
+          "body_hint": "M700A/M710A",
+          "variant_hint": "обновление 2018+; выпуск завершён 2023",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Vitz",
+      "priority": 2,
+      "search_years": {
+        "from": 2016,
+        "to": 2019
+      },
+      "published_lot_years": [
+        2008,
+        2011,
+        2014,
+        2017,
+        2019
+      ],
+      "covered_years_in_search_window": [
+        2017,
+        2019
+      ],
+      "missing_years_in_search_window": [
+        2016,
+        2018
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2016,
+          "to": 2016,
+          "body_hint": "XP130",
+          "variant_hint": "дорестайлинг/предыдущее обновление",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2017,
+          "to": 2019,
+          "body_hint": "XP130",
+          "variant_hint": "поздний рестайлинг",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Nissan Note",
+      "priority": 1,
+      "search_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "published_lot_years": [
+        2012,
+        2017,
+        2018,
+        2021,
+        2024
+      ],
+      "covered_years_in_search_window": [
+        2017,
+        2018,
+        2021,
+        2024
+      ],
+      "missing_years_in_search_window": [
+        2019,
+        2020,
+        2022,
+        2023
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2017,
+          "to": 2020,
+          "body_hint": "E12/HE12",
+          "variant_hint": "рестайлинг 2-го поколения",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2021,
+          "to": 2023,
+          "body_hint": "E13",
+          "variant_hint": "3-е поколение дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2024,
+          "to": 2024,
+          "body_hint": "E13",
+          "variant_hint": "рестайлинг 3-го поколения",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Nissan March",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2022
+      },
+      "published_lot_years": [
+        2019,
+        2021,
+        2022
+      ],
+      "covered_years_in_search_window": [
+        2019,
+        2021,
+        2022
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2020
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Probox",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [
+        2021,
+        2023
+      ],
+      "covered_years_in_search_window": [
+        2021,
+        2023
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2022,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Corolla Fielder",
+      "priority": 1,
+      "search_years": {
+        "from": 2015,
+        "to": 2021
+      },
+      "published_lot_years": [
+        2009,
+        2016,
+        2017,
+        2018,
+        2021,
+        2022,
+        2023
+      ],
+      "covered_years_in_search_window": [
+        2016,
+        2017,
+        2018,
+        2021
+      ],
+      "missing_years_in_search_window": [
+        2015,
+        2019,
+        2020
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2015,
+          "to": 2016,
+          "body_hint": "E160",
+          "variant_hint": "рестайлинг 2015",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2017,
+          "to": 2021,
+          "body_hint": "E160",
+          "variant_hint": "обновление 2017+",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Honda N-BOX",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [
+        2017,
+        2019,
+        2020,
+        2021
+      ],
+      "covered_years_in_search_window": [
+        2017,
+        2019,
+        2020,
+        2021
+      ],
+      "missing_years_in_search_window": [
+        2018,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Suzuki Spacia",
+      "priority": 3,
+      "search_years": {
+        "from": 2018,
+        "to": 2025
+      },
+      "published_lot_years": [
+        2022,
+        2023,
+        2025
+      ],
+      "covered_years_in_search_window": [
+        2022,
+        2023,
+        2025
+      ],
+      "missing_years_in_search_window": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2024
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Suzuki Swift",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [
+        2009,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "covered_years_in_search_window": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Mazda Demio",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [
+        2011,
+        2019
+      ],
+      "covered_years_in_search_window": [
+        2019
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Prius",
+      "priority": 3,
+      "search_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "published_lot_years": [
+        2018,
+        2019,
+        2021,
+        2022
+      ],
+      "covered_years_in_search_window": [
+        2018,
+        2019,
+        2021,
+        2022
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2020,
+        2023,
+        2024
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2017,
+          "to": 2018,
+          "body_hint": "ZVW50",
+          "variant_hint": "4-е поколение дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2019,
+          "to": 2022,
+          "body_hint": "ZVW50",
+          "variant_hint": "4-е поколение рестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2023,
+          "to": 2024,
+          "body_hint": "MXWH/ZVW60",
+          "variant_hint": "5-е поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Tank",
+      "priority": 1,
+      "search_years": {
+        "from": 2016,
+        "to": 2025
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2016,
+          "to": 2020,
+          "body_hint": "M900A/M910A",
+          "variant_hint": "Toyota Tank, только реальный срок модели; не подменять Roomy",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Succeed",
+      "priority": 2,
+      "search_years": {
+        "from": 2015,
+        "to": 2019
+      },
+      "published_lot_years": [
+        2020
+      ],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Corolla Axio",
+      "priority": 3,
+      "search_years": {
+        "from": 2016,
+        "to": 2022
+      },
+      "published_lot_years": [
+        2021
+      ],
+      "covered_years_in_search_window": [
+        2021
+      ],
+      "missing_years_in_search_window": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2022
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota C-HR",
+      "priority": 2,
+      "search_years": {
+        "from": 2016,
+        "to": 2021
+      },
+      "published_lot_years": [
+        2019
+      ],
+      "covered_years_in_search_window": [
+        2019
+      ],
+      "missing_years_in_search_window": [
+        2016,
+        2017,
+        2018,
+        2020,
+        2021
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota bB",
+      "priority": null,
+      "search_years": {
+        "from": 2012,
+        "to": 2016
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Ractis",
+      "priority": null,
+      "search_years": {
+        "from": 2012,
+        "to": 2016
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Pixis Epoch",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Pixis Joy",
+      "priority": null,
+      "search_years": {
+        "from": 2016,
+        "to": 2023
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Pixis Mega",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Honda Jazz",
+      "priority": 1,
+      "search_years": {
+        "from": 2018,
+        "to": 2024
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Honda Shuttle",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [
+        2019,
+        2020,
+        2021
+      ],
+      "covered_years_in_search_window": [
+        2019,
+        2020,
+        2021
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Honda Grace",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [
+        2015,
+        2018
+      ],
+      "covered_years_in_search_window": [
+        2018
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Honda N-WGN",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [
+        2019
+      ],
+      "covered_years_in_search_window": [
+        2019
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Honda N-ONE",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Honda N-VAN",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Honda WR-V",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Nissan Note e-POWER",
+      "priority": 1,
+      "search_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Nissan Micra",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Nissan Juke",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Nissan Qashqai",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Nissan Dayz",
+      "priority": 2,
+      "search_years": {
+        "from": 2018,
+        "to": 2022
+      },
+      "published_lot_years": [
+        2016,
+        2019,
+        2021,
+        2023
+      ],
+      "covered_years_in_search_window": [
+        2019,
+        2021
+      ],
+      "missing_years_in_search_window": [
+        2018,
+        2020,
+        2022
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2018,
+          "to": 2018,
+          "body_hint": "B21W",
+          "variant_hint": "1-е поколение",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2019,
+          "to": 2022,
+          "body_hint": "B4xW",
+          "variant_hint": "2-е поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Nissan Roox",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "published_lot_years": [
+        2021,
+        2022,
+        2024
+      ],
+      "covered_years_in_search_window": [
+        2021,
+        2022,
+        2024
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2023,
+        2025,
+        2026
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Nissan Moco",
+      "priority": null,
+      "search_years": {
+        "from": 2012,
+        "to": 2016
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Honda Freed Spike",
+      "priority": 1,
+      "search_years": {
+        "from": 2011,
+        "to": 2016
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2011,
+          "to": 2016,
+          "body_hint": "GB3/GP3 и родственные",
+          "variant_hint": "отдельная модель Spike; точный рестайлинг по кузову",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Noah",
+      "priority": 1,
+      "search_years": {
+        "from": 2017,
+        "to": 2023
+      },
+      "published_lot_years": [
+        2020
+      ],
+      "covered_years_in_search_window": [
+        2020
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2021,
+        2022,
+        2023
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2017,
+          "to": 2021,
+          "body_hint": "ZRR80/ZWR80",
+          "variant_hint": "80-я серия после рестайлинга",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2023,
+          "body_hint": "ZWR90/MZRA90",
+          "variant_hint": "90-я серия, новое поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Toyota Voxy",
+      "priority": 1,
+      "search_years": {
+        "from": 2017,
+        "to": 2023
+      },
+      "published_lot_years": [
+        2019,
+        2021,
+        2022,
+        2023
+      ],
+      "covered_years_in_search_window": [
+        2019,
+        2021,
+        2022,
+        2023
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2020
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2017,
+          "to": 2021,
+          "body_hint": "ZRR80/ZWR80",
+          "variant_hint": "80-я серия после рестайлинга",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2023,
+          "body_hint": "ZWR90/MZRA90",
+          "variant_hint": "90-я серия, новое поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Subaru Levorg",
+      "priority": 2,
+      "search_years": {
+        "from": 2016,
+        "to": 2023
+      },
+      "published_lot_years": [
+        2023,
+        2024
+      ],
+      "covered_years_in_search_window": [
+        2023
+      ],
+      "missing_years_in_search_window": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2016,
+          "to": 2020,
+          "body_hint": "VM",
+          "variant_hint": "1-е поколение",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2021,
+          "to": 2023,
+          "body_hint": "VN",
+          "variant_hint": "2-е поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Mazda CX-5",
+      "priority": 2,
+      "search_years": {
+        "from": 2014,
+        "to": 2022
+      },
+      "published_lot_years": [
+        2022,
+        2024
+      ],
+      "covered_years_in_search_window": [
+        2022
+      ],
+      "missing_years_in_search_window": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Suzuki Hustler",
+      "priority": 2,
+      "search_years": {
+        "from": 2014,
+        "to": 2023
+      },
+      "published_lot_years": [
+        2016,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "covered_years_in_search_window": [
+        2016,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "missing_years_in_search_window": [
+        2014,
+        2015,
+        2017,
+        2018,
+        2023
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "BMW X3",
+      "priority": 2,
+      "search_years": {
+        "from": 2019,
+        "to": 2025
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2019,
+          "to": 2021,
+          "body_hint": "G01",
+          "variant_hint": "дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2024,
+          "body_hint": "G01",
+          "variant_hint": "рестайлинг LCI",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2025,
+          "to": 2025,
+          "body_hint": "G45",
+          "variant_hint": "новое поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Nissan Sylphy",
+      "priority": 2,
+      "search_years": {
+        "from": 2018,
+        "to": 2022
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Subaru XV",
+      "priority": 2,
+      "search_years": {
+        "from": 2017,
+        "to": 2021
+      },
+      "published_lot_years": [
+        2017,
+        2019
+      ],
+      "covered_years_in_search_window": [
+        2017,
+        2019
+      ],
+      "missing_years_in_search_window": [
+        2018,
+        2020,
+        2021
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Mazda CX-8",
+      "priority": 2,
+      "search_years": {
+        "from": 2017,
+        "to": 2022
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Nissan X-Trail",
+      "priority": 2,
+      "search_years": {
+        "from": 2018,
+        "to": 2022
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Nissan NV200",
+      "priority": 3,
+      "search_years": {
+        "from": 2016,
+        "to": 2020
+      },
+      "published_lot_years": [
+        2021
+      ],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Suzuki Solio",
+      "priority": 3,
+      "search_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "published_lot_years": [
+        2015,
+        2018,
+        2021,
+        2024
+      ],
+      "covered_years_in_search_window": [
+        2018,
+        2021,
+        2024
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2019,
+        2020,
+        2022,
+        2023
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Honda Stepwgn",
+      "priority": 3,
+      "search_years": {
+        "from": 2016,
+        "to": 2025
+      },
+      "published_lot_years": [
+        2025
+      ],
+      "covered_years_in_search_window": [
+        2025
+      ],
+      "missing_years_in_search_window": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "facelift_generation_segments": [
+        {
+          "from": 2016,
+          "to": 2017,
+          "body_hint": "RP1–RP5",
+          "variant_hint": "5-е поколение дорестайлинг",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2018,
+          "to": 2021,
+          "body_hint": "RP1–RP5",
+          "variant_hint": "5-е поколение обновление",
+          "exact_identity_confirmed": false
+        },
+        {
+          "from": 2022,
+          "to": 2025,
+          "body_hint": "RP6–RP8",
+          "variant_hint": "6-е поколение",
+          "exact_identity_confirmed": false
+        }
+      ],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "BMW X1",
+      "priority": null,
+      "search_years": {
+        "from": 2019,
+        "to": 2025
+      },
+      "published_lot_years": [
+        2019
+      ],
+      "covered_years_in_search_window": [
+        2019
+      ],
+      "missing_years_in_search_window": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "BMW 3 Series",
+      "priority": null,
+      "search_years": {
+        "from": 2018,
+        "to": 2025
+      },
+      "published_lot_years": [
+        2021
+      ],
+      "covered_years_in_search_window": [
+        2021
+      ],
+      "missing_years_in_search_window": [
+        2018,
+        2019,
+        2020,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "BMW 5 Series",
+      "priority": null,
+      "search_years": {
+        "from": 2018,
+        "to": 2025
+      },
+      "published_lot_years": [
+        2019
+      ],
+      "covered_years_in_search_window": [
+        2019
+      ],
+      "missing_years_in_search_window": [
+        2018,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Mercedes-Benz C-Class",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2024
+      },
+      "published_lot_years": [
+        2019,
+        2020,
+        2022
+      ],
+      "covered_years_in_search_window": [
+        2019,
+        2020,
+        2022
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2021,
+        2023,
+        2024
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Mercedes-Benz E-Class",
+      "priority": null,
+      "search_years": {
+        "from": 2017,
+        "to": 2025
+      },
+      "published_lot_years": [
+        2020
+      ],
+      "covered_years_in_search_window": [
+        2020
+      ],
+      "missing_years_in_search_window": [
+        2017,
+        2018,
+        2019,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Audi A3",
+      "priority": null,
+      "search_years": {
+        "from": 2018,
+        "to": 2025
+      },
+      "published_lot_years": [
+        2019,
+        2021
+      ],
+      "covered_years_in_search_window": [
+        2019,
+        2021
+      ],
+      "missing_years_in_search_window": [
+        2018,
+        2020,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    },
+    {
+      "model": "Audi Q3",
+      "priority": null,
+      "search_years": {
+        "from": 2018,
+        "to": 2025
+      },
+      "published_lot_years": [],
+      "covered_years_in_search_window": [],
+      "missing_years_in_search_window": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "facelift_generation_segments": [],
+      "year_window_is_inferred_not_each_drom_listing": true
+    }
+  ],
+  "china_supplier_model_year_matrix": [
+    {
+      "model": "Geely Monjaro",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "Geely Coolray / Binyue",
+      "existing_supplier_examples": 1,
+      "existing_years_search_text": [
+        2023
+      ],
+      "year2022_missing": true,
+      "year2023_missing": false,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Geely Binyue 2023 1.5T"
+      ]
+    },
+    {
+      "model": "Geely Atlas / Boyue",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "Geely Emgrand",
+      "existing_supplier_examples": 3,
+      "existing_years_search_text": [
+        2017,
+        2019,
+        2026
+      ],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Geely Emgrand 2026 1.5L",
+        "2017 Geely Emgrand Sedan Million Edition 1.5L CVT Luxury Edition 1.5L"
+      ]
+    },
+    {
+      "model": "Geely Cityray",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "BYD Song Plus",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "BYD Song Pro",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "BYD Dolphin",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "BYD Seagull",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "BYD Yuan Plus / Atto 3",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "BYD Qin Plus",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "Haval Jolion",
+      "existing_supplier_examples": 1,
+      "existing_years_search_text": [
+        2022
+      ],
+      "year2022_missing": false,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Haval Jolion Pro 2022 ed. · 2022 1.5T CVT"
+      ]
+    },
+    {
+      "model": "Haval H6",
+      "existing_supplier_examples": 11,
+      "existing_years_search_text": [
+        2017,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2025
+      ],
+      "year2022_missing": false,
+      "year2023_missing": false,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Haval H6 2020 1.5T",
+        "Haval H6 Series 2023 ed. · 2023 1.5T DCT"
+      ]
+    },
+    {
+      "model": "Changan CS75 Plus",
+      "existing_supplier_examples": 1,
+      "existing_years_search_text": [
+        2022
+      ],
+      "year2022_missing": false,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Changan CS75 PLUS 2022 1.5T"
+      ]
+    },
+    {
+      "model": "Changan CS55 Plus",
+      "existing_supplier_examples": 1,
+      "existing_years_search_text": [
+        2026
+      ],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Changan CS55PLUS 2026 1.5T"
+      ]
+    },
+    {
+      "model": "Changan Eado",
+      "existing_supplier_examples": 2,
+      "existing_years_search_text": [
+        2021,
+        2024
+      ],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Changan Eado 2024 1.4T",
+        "2021 Changan Eado PLUS 1.6L GDI CVT Elite Edition 1.6L"
+      ]
+    },
+    {
+      "model": "Changan CS35 Plus",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "Chery Tiggo 7",
+      "existing_supplier_examples": 2,
+      "existing_years_search_text": [
+        2024
+      ],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Chery · Tiggo 7 2024 1.5T CVT Luxury Edition · 2024 1.5T 156HP L4",
+        "Chery · Tiggo 7 2024 Super Power Edition 1.5T CVT Super Power Luxury · 2024 1.5T 156HP L4"
+      ]
+    },
+    {
+      "model": "Chery Tiggo 4",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "Chery Arrizo 8",
+      "existing_supplier_examples": 1,
+      "existing_years_search_text": [
+        2023
+      ],
+      "year2022_missing": true,
+      "year2023_missing": false,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Chery Arrizo 8 2023 2.0T"
+      ]
+    },
+    {
+      "model": "Toyota Corolla",
+      "existing_supplier_examples": 9,
+      "existing_years_search_text": [
+        2020,
+        2022,
+        2023,
+        2024,
+        2026
+      ],
+      "year2022_missing": false,
+      "year2023_missing": false,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Toyota Corolla 2020 1.2T",
+        "Toyota Corolla 2020 1.2T"
+      ]
+    },
+    {
+      "model": "Volkswagen Lavida",
+      "existing_supplier_examples": 6,
+      "existing_years_search_text": [
+        2017,
+        2021,
+        2022,
+        2025
+      ],
+      "year2022_missing": false,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Volkswagen Lavida 2025 1.5L",
+        "Volkswagen Lavida 2025 1.5L"
+      ]
+    },
+    {
+      "model": "Mazda CX-30",
+      "existing_supplier_examples": 1,
+      "existing_years_search_text": [
+        2022
+      ],
+      "year2022_missing": false,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Mazda CX-30 2022 ed. · 2022 2.0L AT"
+      ]
+    },
+    {
+      "model": "BYD Qin L",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "BYD Destroyer 05",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "BYD Song L",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "BYD Seal 06",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "BYD e2",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "Geely Binrui",
+      "existing_supplier_examples": 1,
+      "existing_years_search_text": [
+        2024
+      ],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "2024 Geely Binrui COOL 1.5T DCT Champion Edition 1.5T"
+      ]
+    },
+    {
+      "model": "Geely Galaxy L6",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "Geely Galaxy E5",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "Chery Tiggo 5x",
+      "existing_supplier_examples": 3,
+      "existing_years_search_text": [
+        2023,
+        2025,
+        2026
+      ],
+      "year2022_missing": true,
+      "year2023_missing": false,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Chery · Tiggo 5x 2025 High Energy Edition 1.5T CVT Luxury Model · 2025 1.5T 156HP L4",
+        "Chery Tiggo 5x 2022 ed. · 2023 1.5T DCT"
+      ]
+    },
+    {
+      "model": "Chery Arrizo 5",
+      "existing_supplier_examples": 1,
+      "existing_years_search_text": [
+        2022
+      ],
+      "year2022_missing": false,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Chery · Arrizo 5 2021 PRO 1.5L CVT Youth Edition · 2022 1.5L 116HP L4"
+      ]
+    },
+    {
+      "model": "Chery Omoda 5",
+      "existing_supplier_examples": 1,
+      "existing_years_search_text": [
+        2022
+      ],
+      "year2022_missing": false,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Chery Omoda 5 2022 ed. · 2022 1.5T CVT"
+      ]
+    },
+    {
+      "model": "Chery Jetour X70",
+      "existing_supplier_examples": 6,
+      "existing_years_search_text": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "year2022_missing": false,
+      "year2023_missing": false,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Jetour X70 2024 1.5T",
+        "Jetour X70 PLUS 2023 1.5T"
+      ]
+    },
+    {
+      "model": "Haval Big Dog / Dargo",
+      "existing_supplier_examples": 7,
+      "existing_years_search_text": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "year2022_missing": false,
+      "year2023_missing": false,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Haval Dargo PLUS 2023 2.0T",
+        "Haval Dargo 2022 ed. · 2022 1.5T DCT"
+      ]
+    },
+    {
+      "model": "Haval M6",
+      "existing_supplier_examples": 2,
+      "existing_years_search_text": [
+        2018,
+        2021
+      ],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Haval M6 2021 1.5T",
+        "Haval M6 2018 1.5T"
+      ]
+    },
+    {
+      "model": "Haval Chitu",
+      "existing_supplier_examples": 1,
+      "existing_years_search_text": [
+        2023
+      ],
+      "year2022_missing": true,
+      "year2023_missing": false,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Haval Chitu 2023 1.5T"
+      ]
+    },
+    {
+      "model": "Haval H4",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "Changan UNI-T",
+      "existing_supplier_examples": 2,
+      "existing_years_search_text": [
+        2022
+      ],
+      "year2022_missing": false,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Changan UNI-T 2022 1.5T",
+        "2022 Changan UNI-T 1.5T Intelligent Navigator Edition 1.5T"
+      ]
+    },
+    {
+      "model": "Changan UNI-V",
+      "existing_supplier_examples": 1,
+      "existing_years_search_text": [
+        2023
+      ],
+      "year2022_missing": true,
+      "year2023_missing": false,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "Changan UNI-V 2023 2.0T"
+      ]
+    },
+    {
+      "model": "Changan Alsvin",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "Changan Lumin",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    },
+    {
+      "model": "GAC GS3",
+      "existing_supplier_examples": 1,
+      "existing_years_search_text": [
+        2022
+      ],
+      "year2022_missing": false,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": [
+        "GAC Trumpchi GS3 2022 1.5T"
+      ]
+    },
+    {
+      "model": "GAC Aion Y",
+      "existing_supplier_examples": 0,
+      "existing_years_search_text": [],
+      "year2022_missing": true,
+      "year2023_missing": true,
+      "model_match_heuristic": true,
+      "first_two_search_text_examples": []
+    }
+  ],
+  "publication_allowed": false
+}
