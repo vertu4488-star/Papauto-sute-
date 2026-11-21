@@ -3,7 +3,7 @@
   "created_date": "2026-11-21",
   "project": "PapAuto",
   "market": "Japan",
-  "status": "OWNER_REVIEW_ONLY",
+  "status": "OWNER_APPROVED_FOR_EXACT_579_RELEASE",
   "published": false,
   "main_source_sha_at_review": "6b3ae77ce65502216b67381198e930b6aba554fb",
   "main_gallery_count_at_review": 549,
@@ -260,5 +260,14 @@
     "no_third_party_links_in_public_gallery": true,
     "rights_confirmed": false
   },
-  "release_gate": "Do not publish to main / Render until user reviews and explicitly approves exact PDF. Images from third-party archives; independent commercial usage rights not verified."
+  "release_gate": "Do not publish to main / Render until user reviews and explicitly approves exact PDF. Images from third-party archives; independent commercial usage rights not verified.",
+  "owner_approval": {
+    "approved": true,
+    "date": "2026-11-21",
+    "scope": "EXACT 30 source records in PapAuto_Japan_Another30_579_2026-11-21.pdf; archived reference display only; commercial license independently unverified",
+    "pdf_sha256": "7646d44301e6a06eca031ce19a7817eea5fdebe9162793319cd998118515547a",
+    "media_zip_sha256": "17630d57b1d090b632b3c40648b54ff2a7ec7407ddbc8a78b60b6b76d4c19b70",
+    "full_review_json_sha256": "9845d02a4c4036c344ec383f9d3cec772f508339da5e993c3609afaee6eb4e9f",
+    "approval_text": "Утверждаю все 30 японских карточек из PapAuto_Japan_Another30_579_2026-11-21.pdf. Опубликуй эту точную партию на PapAuto, проверь отсутствие дублей, все 90 оригинальных изображений, мобильную версию и Render Live."
+  }
 }
