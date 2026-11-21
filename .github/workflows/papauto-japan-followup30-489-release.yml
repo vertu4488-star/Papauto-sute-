@@ -1,0 +1,76 @@
+name: PapAuto owner-directed Japan 489 archive cards release
+on:
+  push:
+    branches: ['release/papauto-japan-489-new30-20261121']
+    paths: ['.github/workflows/papauto-japan-followup30-489-release.yml']
+permissions:
+  actions: read
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: drom991-next30-japan-exact-lot-photos-and-sheets
+          run-id: 44864961085
+          github-token: ${{ github.token }}
+          path: /tmp/papauto-next30-original/14691820564
+      - uses: actions/download-artifact@v4
+        with:
+          name: japan-atp-b6-pages-review
+          run-id: 44758942918
+          github-token: ${{ github.token }}
+          path: /tmp/papauto-next30-original/14641252098
+      - run: pip install -r requirements.txt pillow
+      - name: Assemble exactly 30 genuine source lots with 60 actual photos and 30 full auction sheets
+        run: python scripts/prepare_papauto_japan_followup30_489_release.py
+      - name: Build all site pages and run comprehensive release and policy tests
+        run: |
+          python scripts/verify_publication_approval.py
+          python scripts/build_content.py
+          python scripts/build_static_public.py
+          python -m unittest discover -s tests -v
+          node --check gallery.js
+          node tests/test_survey_all_gallery_lots.cjs
+      - name: Check 489 cards and decode 90 new original images on phone and desktop
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install chromium
+          python -m http.server 8765 --directory render-public >/tmp/atp-489-server.log 2>&1 &
+          node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{
+            const b=await chromium.launch({headless:true});
+            for (const width of [320,390,1440]){
+              const p=await b.newPage({viewport:{width,height:844}});
+              await p.goto('http://localhost:8765/gallery.html');
+              const all=await p.evaluate(async()=>await (await fetch('/data/gallery-lots.json')).json());
+              if(all.lots.length!==489)throw Error('Expected exact gallery 489, got '+all.lots.length);
+              const fresh=all.lots.filter(x=>x.id.startsWith('japan-followup30-20261121-'));
+              if(fresh.length!==30)throw Error('Required 30 distinct new owner-directed cards; found '+fresh.length);
+              for(const row of fresh){
+                if(row.rights_confirmed!==false||row.status!=='reference_only'||row.photos.length!==2)throw Error('Bad archive status');
+                for(const u of [...row.photos,row.inspection_image]){
+                  await p.evaluate(async url=>{let im=new Image();im.src=url;await im.decode();if(Math.min(im.naturalWidth,im.naturalHeight)<180)throw Error('Bad image '+url)},u);
+                }
+              }
+              if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2))throw Error('Horizontal overflow');
+              await p.close();
+            }
+            await b.close();
+            console.log('PAPAUTO_489_BROWSER_APPROVED: 30 new lots; 90 images; 320, 390, and 1440 pixels');
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Commit fully validated additions to release branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add AGENTS.md docs/AUCTION_ONLY_GALLERY.md scripts/compile_auction_gallery.py scripts/build_static_public.py scripts/verify_publication_approval.py scripts/publish_lot_search.py tests/test_auction_only_images_policy.py tests/test_site_warm_theme.py research/owner-approved-japan-followup30-2026-11-21.json assets/auction/approved/japan-followup30-20261121-*.jpg sitemap.xml
+          git commit -m "Append 30 new authentic source-backed Japan auction archive cards (489)"
+          git push origin HEAD:release/papauto-japan-489-new30-20261121
