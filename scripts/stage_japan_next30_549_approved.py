@@ -54,8 +54,7 @@ oldhash={h for row in old for h in row.get("media_sha256",[])}
 oldhash.update(h for row in old for h in row.get("raw_sha256",[]))
 # The previous 519 batch remains a research-only review; check frozen archive row
 # identifiers embedded here to ensure no archived photo or full sheet reuses.
-previous_refs={("wave3",int(x)) for x in (42,64,75,35,37,66,73,71,72,70,55,52,45,7,2,54,48)}
-previous_refs|={("b6",int(x)) for x in (94,22,23,83,235,80,50,221,57,34,20,208,58,96,226,241,194)}
+previous_refs={(a,b) for a,b in [("wave3",42),("b6",94),("wave3",64),("wave3",75),("wave3",35),("wave3",37),("b6",23),("wave3",66),("wave3",73),("wave3",71),("wave3",72),("b6",83),("b6",235),("wave3",70),("b6",80),("wave3",52),("b6",50),("b6",221),("wave3",57),("b6",57),("wave3",59),("b6",34),("b6",20),("b6",208),("wave3",58),("wave3",48),("b6",96),("b6",226),("b6",241),("b6",194)]}
 # Read exact previous pending branch's selection when available locally;
 # do not assume its approval or include its media in public output.
 if PREV.is_file():
