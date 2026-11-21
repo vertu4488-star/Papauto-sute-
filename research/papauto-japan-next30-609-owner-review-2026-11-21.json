@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "project": "PapAuto",
+  "market": "Japan",
+  "created_at": "2026-11-21",
+  "status": "OWNER_REVIEW_PENDING_NOT_PUBLISHED",
+  "base_main_cards": 579,
+  "target_main_cards": 609,
+  "owner_review_required": true,
+  "review_branch": "review/japan-next30-609-20261121",
+  "source_archive": {
+    "workflow_run": 44758942918,
+    "artifact_id": 14641252098,
+    "artifact_name": "japan-atp-b6-pages-review"
+  },
+  "artifacts": {
+    "review_pdf": {
+      "name": "PapAuto_Japan_Another30_609_2026-11-21.pdf",
+      "sha256": "43d7b575189e76ce32d1d52216f8e10aabeed49b3830b0322da18bfa2e7ab574"
+    },
+    "media_zip": {
+      "name": "PapAuto_Japan_Another30_609_2026-11-21_media.zip",
+      "sha256": "6cc9c1f9bb3bfebfca1898e65eb8a51d4bb5d925149bffef261fdb1ba755c8c7"
+    },
+    "full_review_json": {
+      "name": "PapAuto_Japan_Another30_609_2026-11-21_review-selection.json",
+      "sha256": "bf2c9c846e560351f1dc7423a5c21167f2849424dcf65e5152812ac1fbceac86"
+    }
+  },
+  "requirements": {
+    "lots": 30,
+    "images": 90,
+    "photos": 60,
+    "complete_auction_sheets": 30,
+    "distinct_model_families": 14,
+    "strict_auction_key_dedupe": "auction+date+lot vs previously used b6 and wave3 records",
+    "require_full_document": true,
+    "reject_diagram_only": true,
+    "reject_no_photo": true,
+    "on_site_third_party_links": false,
+    "rights_confirmed": false,
+    "archive_reference_only": true
+  },
+  "selection": [
+    {
+      "ordinal": 1,
+      "title": "Daihatsu Taft 2021",
+      "source_archive_index": 244,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 2,
+      "title": "Daihatsu Taft 2023",
+      "source_archive_index": 150,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 3,
+      "title": "Daihatsu Taft 2021",
+      "source_archive_index": 200,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 4,
+      "title": "Mazda Demio 2017",
+      "source_archive_index": 91,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 5,
+      "title": "Nissan Dayz 2018",
+      "source_archive_index": 41,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 6,
+      "title": "Nissan Dayz 2021",
+      "source_archive_index": 143,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 7,
+      "title": "Nissan Dayz 2019",
+      "source_archive_index": 198,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 8,
+      "title": "Nissan Dayz 2024",
+      "source_archive_index": 239,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 9,
+      "title": "Suzuki Hustler 2017",
+      "source_archive_index": 30,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 10,
+      "title": "Suzuki Jimny 2021",
+      "source_archive_index": 236,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 11,
+      "title": "Suzuki Jimny 2021",
+      "source_archive_index": 191,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 12,
+      "title": "Suzuki Solio 2021",
+      "source_archive_index": 137,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 13,
+      "title": "Suzuki Spacia 2019",
+      "source_archive_index": 186,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 14,
+      "title": "Toyota Aqua 2022",
+      "source_archive_index": 166,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 15,
+      "title": "Toyota Corolla Fielder 2017",
+      "source_archive_index": 169,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 16,
+      "title": "Toyota Corolla Fielder 2021",
+      "source_archive_index": 122,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 17,
+      "title": "Toyota Corolla Touring 2020",
+      "source_archive_index": 71,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 18,
+      "title": "Toyota Corolla Touring 2022",
+      "source_archive_index": 177,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 19,
+      "title": "Toyota Corolla Touring 2023",
+      "source_archive_index": 173,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 20,
+      "title": "Toyota Raize 2022",
+      "source_archive_index": 154,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 21,
+      "title": "Toyota Raize 2023",
+      "source_archive_index": 53,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 22,
+      "title": "Toyota Roomy 2019",
+      "source_archive_index": 60,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 23,
+      "title": "Toyota Roomy 2024",
+      "source_archive_index": 113,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 24,
+      "title": "Toyota Roomy 2021",
+      "source_archive_index": 160,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 25,
+      "title": "Toyota Yaris 2021",
+      "source_archive_index": 214,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 26,
+      "title": "Toyota Yaris 2023",
+      "source_archive_index": 110,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 27,
+      "title": "Toyota Yaris Cross 2022",
+      "source_archive_index": 106,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 28,
+      "title": "Toyota Yaris Cross 2023",
+      "source_archive_index": 210,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 29,
+      "title": "Toyota Yaris Cross 2025",
+      "source_archive_index": 156,
+      "source_artifact_id": 14641252098
+    },
+    {
+      "ordinal": 30,
+      "title": "Toyota Yaris Cross 2023",
+      "source_archive_index": 155,
+      "source_artifact_id": 14641252098
+    }
+  ],
+  "release_gate": "Do not merge or deploy until owner approves exact PDF and rights are reviewed. Exact original-source photos and sheets stored in reviewed ZIP, not in GitHub branch yet."
+}
