@@ -1,0 +1,856 @@
+{
+  "approval_date": "2026-11-21",
+  "approved_count": 17,
+  "owner_authorized_archival_reference_only": true,
+  "rights_confirmed": false,
+  "reviewed_jpg_zip_sha256": "cff3e9449482429946d741008dd5056dc8117d6bf241688d1f928dc6cfe74de8",
+  "reviewed_metadata_manifest_sha256": "6f7c1b2d9fdc9231b330f5880038cadd70583be681f0f45b4b032a222d9b5005",
+  "archives": [
+    {
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866,
+      "manifest_sha256": "6f7c1b2d9fdc9231b330f5880038cadd70583be681f0f45b4b032a222d9b5005",
+      "selected_indices": [
+        1,
+        2,
+        4,
+        5,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22
+      ]
+    }
+  ],
+  "raw_media_aggregate_sha256": "4d9d75a7a8cf88a24ef1f8de2ddd7e4cd012f09d75116c3b80efe2df94505a93",
+  "archive_media_aggregate_sha256": "7b3dcbded01e63464131da937f8b41c020ccf8aea56081bff3e413d012c8b75a",
+  "owner_instruction": "Давай тогда подберем карточки и добавим (user message 2026-11-21)",
+  "rights_note": "Owner authorized sourcing and addition. No third-party media license implied; archived examples only; source mileage rounded.",
+  "lots": [
+    {
+      "id": "japan-drom991-gap-20261121-01",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Freed Spike",
+      "year": 2012,
+      "mileage_km": 153000,
+      "source_rounded_mileage_km": 153000,
+      "body": "GB3",
+      "grade": "3.5",
+      "auction": "ARAI Bayside",
+      "lot": "2279",
+      "auction_date": "2026-09-25",
+      "description": "Honda Freed Spike, 2012 года, кузов GB3, комплектация по источнику: G Just Sel. Двигатель 1490 см³, мощность 118 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 153000 км, оценка 3.5, аукцион ARAI Bayside, дата 2026-09-25, лот №2279. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-01-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-01-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-01-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 103000,
+      "media_sha256": [
+        "a6d3958c260a246390f711b3d67ad54c7529e3372afd8f324c266fcdf9d56abe",
+        "bae7ea374bf5444943bc1f94f9ae8cfedec091a8492811f6bb189872d1cbe033",
+        "43aeaef690556d2c83afcae4e36ab3b5f62054bd3c461686bfb4312195dbd15b"
+      ],
+      "raw_sha256": [
+        "3960f29c5b635b3b01bdb9f24e76a3bf71f7b2b674bd9935130f47dbe992bd4f",
+        "52f232aee2bdbb39a8c5a19f86ffe353bae4a4bb67c3c30f48213717075d02e4",
+        "a7656d8cf400e40c7444478a612ff9da3c202b020940df2073392a12bcc549c0"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/zjXFjXqAYhU9WG/",
+      "source_media": [
+        "https://7.tru.ru/imgs/2Y4loDCEWqhKELcO2NEkLK3frGPojAOnhGo181gqfqhcAYIGm6u",
+        "https://7.tru.ru/imgs/2Y4loDCEWqhKELcO2NEkLK3frGPojAOnhGo181gWFepyw0Q8wMX",
+        "https://7.tru.ru/imgs/2Y4loDCEWqhLXDP7Zomz7QE2I7WcLEaRm1YBElp8s0oQUVJojm3"
+      ],
+      "trim": "G Just Sel",
+      "engine_cc": 1490,
+      "power_hp": 118,
+      "rights_confirmed": false,
+      "reviewed_card_number": 1,
+      "artifact_record_index": 1,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-02",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Voxy",
+      "year": 2018,
+      "mileage_km": 49000,
+      "source_rounded_mileage_km": 49000,
+      "body": "ZRR80W",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "12064",
+      "auction_date": "2026-10-10",
+      "description": "Toyota Voxy, 2018 года, кузов ZRR80W, комплектация по источнику: ZS Kiramek. Двигатель 2000 см³, мощность 152 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 49000 км, оценка 4, аукцион TAA Yokohama, дата 2026-10-10, лот №12064. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-02-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-02-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-02-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 2045000,
+      "media_sha256": [
+        "253601f3d4f0cd79eff8dea17974427ebf8a399cbb3dc18f86aff1abc845ad59",
+        "028acf00d6f868480b43ea14755da716ed9a4dd6668a4d32ccaa1572792bde70",
+        "c64fba2b176b04d8f66734141a06216fbfdb81a9199ea1cddd365a79dd625bff"
+      ],
+      "raw_sha256": [
+        "a346aedee88f8607a4127c3f840c856b565d4322f2782387701337fc9077fe11",
+        "102a3af70da99d67f2cd7652ed40654535f7393d3393ce8fd168536c0187a241",
+        "24f0c7842bb5b1ebc7ee1fb0768f01a93d03a4a0662a5f9c68f3850bf2c54c4d"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/56OiKYOs7rP32Ie/",
+      "source_media": [
+        "https://7.tru.ru/imgs/sSnTTXMrCF3Ckls4E5k2A3pDaxUcHZ7bz9M5Zun5uYePXf",
+        "https://7.tru.ru/imgs/sSnTTXMrCF3Ckls4E5k2A3pDaxUcHZ7bz9M6MDZd4AaUu3",
+        "https://7.tru.ru/imgs/sSnTTXMrCF3Vndel6GnGbOj8FzQCTlg99ydHtzi1fEIZgJ"
+      ],
+      "trim": "ZS Kiramek",
+      "engine_cc": 2000,
+      "power_hp": 152,
+      "rights_confirmed": false,
+      "reviewed_card_number": 2,
+      "artifact_record_index": 2,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-03",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Hustler",
+      "year": 2014,
+      "mileage_km": 126000,
+      "source_rounded_mileage_km": 126000,
+      "body": "MR31S",
+      "grade": "4",
+      "auction": "CAA Chubu",
+      "lot": "87",
+      "auction_date": "2026-11-18",
+      "description": "Suzuki Hustler, 2014 года, кузов MR31S, комплектация по источнику: X. Двигатель 660 см³, мощность 52 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 126000 км, оценка 4, аукцион CAA Chubu, дата 2026-11-18, лот №87. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-03-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-03-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-03-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 157000,
+      "media_sha256": [
+        "203cbbd4874e2dda2744c2f915842d4aa956782c1eef8eaa1c8ceb33e6df440e",
+        "9fd2eba3e5114b7fc0d4be7450768f76705ae9ef2addc0d6c9a2261def3eea8a",
+        "7001215839fd98561004114ad957e9046c2d96c58e7b1b7606657983782e6459"
+      ],
+      "raw_sha256": [
+        "db1a9986e3e6da226a9ec5f2f26128afaf7590e6c356d3ec70f2d347e93214ae",
+        "73cf9e92ec200b6e357aa932cac78c4760fc2aa900f76fb617b7807269130f68",
+        "26c44a5145a1de723059155ee872c2d47021b2ac494df50db8eedec1e9371340"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/4TXfVDo88w3Mm/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlohFS5T2lqP8Sy9HCR6uzYfZLJgMZ",
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlohFS5T2lqP8Sy9HCR7hJAoynFljM",
+        "https://7.tru.ru/imgs/3emLNY7NAuNFyUUI31tkNxUQB8h1G9yU9cchg9oF0z4woZ"
+      ],
+      "trim": "X",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "reviewed_card_number": 3,
+      "artifact_record_index": 4,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-04",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Noah",
+      "year": 2019,
+      "mileage_km": 73000,
+      "source_rounded_mileage_km": 73000,
+      "body": "ZWR80W",
+      "grade": "4",
+      "auction": "TAA Hiroshima",
+      "lot": "235",
+      "auction_date": "2026-11-17",
+      "description": "Toyota Noah, 2019 года, кузов ZWR80W, комплектация по источнику: Hybrid Si. Двигатель 1800 см³, мощность 99 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 73000 км, оценка 4, аукцион TAA Hiroshima, дата 2026-11-17, лот №235. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-04-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-04-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-04-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1989000,
+      "media_sha256": [
+        "ddb2c00c95515cbd05ed66282503b797fdd01bc67f337a08ba320fda60066c98",
+        "a544f9406d6c6d33959c6f512879b2ec382005be2af8f73f5fb7a37787bf9dd3",
+        "41ac70ccfddfc784d8264f3c31502d6fe8aded8616d0c131095a855461ef6ef8"
+      ],
+      "raw_sha256": [
+        "a9ef9f5576fc1d668a6cdfaf95f7edd88a56fc3f56c243c5374cb7cc8c59e5b2",
+        "3b8eff2bed7440c5f8659ee6f5fcba97a41f66baf440cefac264144ecf67bedd",
+        "e8ef967732f52e0627c579003fe4d0867cb996b16fd6eae28bf4e370a8f169ac"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/dlBNyXjF5NWLY/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnHM7pIIixtjwiCjS1LD5aFCq4ymA",
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnHM7pIIixtjwiCjS1MqdMOb2ZCTn",
+        "https://7.tru.ru/imgs/3emLNY7NAuNFyUUI31sKTMfGi5nERMjnKrlXoCB5MdnNYA"
+      ],
+      "trim": "Hybrid Si",
+      "engine_cc": 1800,
+      "power_hp": 99,
+      "rights_confirmed": false,
+      "reviewed_card_number": 4,
+      "artifact_record_index": 5,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-05",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Freed Spike",
+      "year": 2012,
+      "mileage_km": 147000,
+      "source_rounded_mileage_km": 147000,
+      "body": "GB3",
+      "grade": "3.5",
+      "auction": "KCAA Yamaguchi",
+      "lot": "1272",
+      "auction_date": "2026-11-13",
+      "description": "Honda Freed Spike, 2012 года, кузов GB3, комплектация по источнику: G L. Двигатель 1500 см³, мощность 118 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 147000 км, оценка 3.5, аукцион KCAA Yamaguchi, дата 2026-11-13, лот №1272. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-05-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-05-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-05-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 80000,
+      "media_sha256": [
+        "33075d06450b13e05d9a65b0ae15cd0d06bafdd9bc390307297b25615b8f203d",
+        "7ce4f689c7c51153bfe11336986ac9fc7550ca7aee42d43634d120144f98a2db",
+        "bbb1f43513730fd1412f88e67f42c51f5d7cd82ac15465493d017583af642e34"
+      ],
+      "raw_sha256": [
+        "0498b62e46eeee4a33aa256f44e4f903c5e9824e466b1e18c6a7fef68f00363e",
+        "27f0a19289e5d8221f23e8abd9c82087c79ae9cca6f7d54c2f15ff3579d853d4",
+        "d4e3f06784ba1354cd402cdee88a4f9c11344e6ee59a6c9578fab444bcf9d702"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/jdggScarLT3G0i/",
+      "source_media": [
+        "https://7.tru.ru/imgs/6pPkrX3oZJO68l1cdWLsUsCDguoa3DqXPExptsmDQKrgyZd1A18G",
+        "https://7.tru.ru/imgs/6pPkrX3oZJO68l1cdWLsUsCDguoa3DqXPExptso5d773jQwhEaBJ",
+        "https://7.tru.ru/imgs/gA5rKm2cpzETdynae4smjhJqjQrNWw3VsVbmEhU0fr0h777v"
+      ],
+      "trim": "G L",
+      "engine_cc": 1500,
+      "power_hp": 118,
+      "rights_confirmed": false,
+      "reviewed_card_number": 5,
+      "artifact_record_index": 8,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-06",
+      "country": "japan",
+      "make": "Suzuki",
+      "model": "Hustler",
+      "year": 2014,
+      "mileage_km": 58000,
+      "source_rounded_mileage_km": 58000,
+      "body": "MR31S",
+      "grade": "4",
+      "auction": "CAA Chubu",
+      "lot": "19",
+      "auction_date": "2026-11-18",
+      "description": "Suzuki Hustler, 2014 года, кузов MR31S, комплектация по источнику: A 4WD. Двигатель 660 см³, мощность 52 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 58000 км, оценка 4, аукцион CAA Chubu, дата 2026-11-18, лот №19. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-06-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-06-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-06-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 536000,
+      "media_sha256": [
+        "05f2d09eed3af8dae3f8fc05cc43716eb28fab04d73c3e52e80d0766889c5757",
+        "3ca761e19fb467fd527fa476db770ae67a35e0bd3ff2a6c1ca379a2fd4f83aaa",
+        "59f10fb9e1c1d445e081e32dca871fe5f8a23403230819381da770e499cf601e"
+      ],
+      "raw_sha256": [
+        "bdb975badf4d0b5c57f3bbee2c93ea0f0d4b68a0aab58d4a21679355bf887a7b",
+        "5cb737b76ea0742f2d9097dc61287fd4db2a87d150b7d8882a560fbdd1300d16",
+        "606b7dcb23bd3323790b7b889c4bb10950ed047ca98fc869a5ec19033d6e2eaa"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/NCoktbnOblX8/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3euLVc5yhrKbhtCmyxenjCLvhk6QP7cFT9FHUD3WsYbaLm",
+        "https://7.tru.ru/imgs/3euLVc5yhrKbhtCmyxenjCLvhk6QP7cFT9FIHMF62A8fi0",
+        "https://7.tru.ru/imgs/3euLVc5yhrKcKjrLKcjqriBsR6W3nmdrjI1TGbtlCLvqnm"
+      ],
+      "trim": "A 4WD",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "reviewed_card_number": 6,
+      "artifact_record_index": 10,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-07",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Sylphy",
+      "year": 2019,
+      "mileage_km": 25000,
+      "source_rounded_mileage_km": 25000,
+      "body": "TB17",
+      "grade": "4",
+      "auction": "NAA Osaka",
+      "lot": "35",
+      "auction_date": "2026-11-12",
+      "description": "Nissan Sylphy, 2019 года, кузов TB17, комплектация по источнику: G. Двигатель 1800 см³, мощность 131 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 25000 км, оценка 4, аукцион NAA Osaka, дата 2026-11-12, лот №35. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-07-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-07-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-07-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 790000,
+      "media_sha256": [
+        "ad15bd6ee90213e09a3028c9cc787354338d03195c9326c4ffd2349bf6ebe264",
+        "538f9e17c50abe32cc70694554f1967846a619b8fa90fb24e16b4ed5095d4639",
+        "2c4ee0d4820e138c9288c92542ee7f3d4cbd3c14326adc333af74454ffbfa3ba"
+      ],
+      "raw_sha256": [
+        "279feaae19010f2110a8d9b58bc9ac9fb64353e32a3de83a4daa281eb2bb8ccf",
+        "941e7f0766ad23370ab32cccf15682531a8ad29dbd0f438dd22b8dc08a8e2c18",
+        "08147e5c88c1117c70b6764bc1ae70b556ee0dcd69fdf56b2077d54eef3acb10"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/sylphy/kn8s4NeGbfLDu/",
+      "source_media": [
+        "https://7.tru.ru/imgs/gA5rKm2cpzEIkDG6GsKhpgsuIKQccMRXMvwsSduoyRTQ9sTz",
+        "https://7.tru.ru/imgs/gA5rKm2cpzEIkDG6GsKhpgsuIKQccMRXMvwsSduoyUkjOEdE",
+        "https://7.tru.ru/imgs/2h67U2H1Xchs6Okrvhp5ntUYt8q17OyWjVfMoeykX0N1QJWl"
+      ],
+      "trim": "G",
+      "engine_cc": 1800,
+      "power_hp": 131,
+      "rights_confirmed": false,
+      "reviewed_card_number": 7,
+      "artifact_record_index": 11,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-08",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Sienta",
+      "year": 2016,
+      "mileage_km": 118000,
+      "source_rounded_mileage_km": 118000,
+      "body": "NSP170G",
+      "grade": "3.5",
+      "auction": "TAA Hiroshima",
+      "lot": "239",
+      "auction_date": "2026-11-17",
+      "description": "Toyota Sienta, 2016 года, кузов NSP170G, комплектация по источнику: G. Двигатель 1500 см³, мощность 109 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 118000 км, оценка 3.5, аукцион TAA Hiroshima, дата 2026-11-17, лот №239. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-08-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-08-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-08-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 346000,
+      "media_sha256": [
+        "440d464d2fe4b7ec901af7e7994ff7384611548680c4e86e4d05ba0aa72f28bf",
+        "cf5ea09eef61134ac10663a2d03d1fd366c94834d54df3b1782aa3689eb40afb",
+        "c7734d857e1a63da38dff1bf2d2f2d205ec85a0f8ba66670602141a7aa57b6a6"
+      ],
+      "raw_sha256": [
+        "596a797d14718f101d09ede19cd4a96127e4844727cba54db9b9d318417c0191",
+        "393e62a18fca86da7641e5aa6745aa1d87dbcebe2ecd78165f14a5c7d67cf6c5",
+        "382aff6870ca542b6fe8d4777604379774ac352badee91628983ccb3e8c9a683"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/dufKoMD3HZkie/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnHM7pIIixtjwiCoOknvBsBJP1JJS",
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnHM7pIIixtjwiCoOkoiL5KiqWOgF",
+        "https://7.tru.ru/imgs/3emLNY7NAuNFyUUI31sKTMfGi5nERMjnPnFzh0T1TCkZlS"
+      ],
+      "trim": "G",
+      "engine_cc": 1500,
+      "power_hp": 109,
+      "rights_confirmed": false,
+      "reviewed_card_number": 8,
+      "artifact_record_index": 12,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-09",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Ractis",
+      "year": 2013,
+      "mileage_km": 66000,
+      "source_rounded_mileage_km": 66000,
+      "body": "NCP120",
+      "grade": "3.5",
+      "auction": "TAA Yokohama",
+      "lot": "18121",
+      "auction_date": "2026-11-14",
+      "description": "Toyota Ractis, 2013 года, кузов NCP120, комплектация по источнику: не уточнена. Двигатель 1500 см³, мощность 109 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 66000 км, оценка 3.5, аукцион TAA Yokohama, дата 2026-11-14, лот №18121. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-09-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-09-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-09-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 221000,
+      "media_sha256": [
+        "1c19b0993cd5ccd388527a70edf64b0b9c75abfcb75920f4a4a61b8fd91e54b8",
+        "eb967505d5920dbec2369e56dd1bba15d53198d8a08f5eccc3bff595e676235c",
+        "758237cf7d157c0b6cede2a1c810b2ce7204bb83769e1802973188f0421830db"
+      ],
+      "raw_sha256": [
+        "2b335fd98c79c7d40707e3ebece7c75e6eee1d41dc745866fa083ca2fe0e5e00",
+        "c64ff54536234277a2dbe853d74f3906672120561064d756769a6e514fde6ac1",
+        "74401321431d5e521719652adca26b0e5fa1217278c018914d4569e09b8193c9"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/ractis/6sDkS2EsH0LuMln/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVWfZ6JV9UZ4jHwnyggXDlPRJL1X1",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVWfZ6JV9UZ4jHwnyghKMXYqlH6tN",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq6ZARKZeqaRpeFRsWXHTrIgLCqfagu"
+      ],
+      "trim": "не уточнена",
+      "engine_cc": 1500,
+      "power_hp": 109,
+      "rights_confirmed": false,
+      "reviewed_card_number": 9,
+      "artifact_record_index": 13,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-10",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Dayz",
+      "year": 2018,
+      "mileage_km": 37000,
+      "source_rounded_mileage_km": 37000,
+      "body": "B21W",
+      "grade": "3.5",
+      "auction": "CAA Tokyo",
+      "lot": "340",
+      "auction_date": "2026-11-17",
+      "description": "Nissan Dayz, 2018 года, кузов B21W, комплектация по источнику: J. Двигатель 660 см³, мощность 49 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 37000 км, оценка 3.5, аукцион CAA Tokyo, дата 2026-11-17, лот №340. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-10-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-10-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-10-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 192000,
+      "media_sha256": [
+        "beaf2a2d777ffea844bd6b15d52a1d02d9742a086497ffc8e768c5838489624e",
+        "3b57615b3ec8662bf7b231e37be8027588583a4d6a817a7e8de4859b7f635377",
+        "10caafe7a1407bff19e7f5527d9ddd28d24e40482a6881c0f3741a6162275722"
+      ],
+      "raw_sha256": [
+        "65e97a7bfd2b457f8cba6ba3f932e878ce23850f01b7801e79f974106a903b20",
+        "9fc8370eb7c1f4d696a9e846cc60a937a458fb449aad2c25b07dffa593110124",
+        "33e34d2f308c5494230f88a25592f14b68a19e94c7452cd11a14eb2878828b0c"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/dayz/jRJpDTGf6PfN8/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnXQfsNoFq7lipe3v7bnOI4bukno2",
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnXQfsNoFq7lipe3v7caYkbK7grUO",
+        "https://7.tru.ru/imgs/3emLNY7NAuNFyUUI31t1XViKYrghTypZt5rn0n9slhED12"
+      ],
+      "trim": "J",
+      "engine_cc": 660,
+      "power_hp": 49,
+      "rights_confirmed": false,
+      "reviewed_card_number": 10,
+      "artifact_record_index": 14,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-11",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Freed Spike",
+      "year": 2012,
+      "mileage_km": 81000,
+      "source_rounded_mileage_km": 81000,
+      "body": "GB3",
+      "grade": "4",
+      "auction": "TAA Tohoku",
+      "lot": "140",
+      "auction_date": "2026-11-12",
+      "description": "Honda Freed Spike, 2012 года, кузов GB3, комплектация по источнику: G Aero. Двигатель 1500 см³, мощность 118 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 81000 км, оценка 4, аукцион TAA Tohoku, дата 2026-11-12, лот №140. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-11-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-11-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-11-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 338000,
+      "media_sha256": [
+        "d320b0c0129c053ee6f9b3601feff6ed435b5a1f7af5bb78615b511be3c4d63c",
+        "bbadce42600212a534c6506eb4e7bd49e63aeea97d0a90ec80c2c73a9802b091",
+        "599ecf2cc1af47447dd5672041a50bbbff0b31bbb187818780ec92349e4076d7"
+      ],
+      "raw_sha256": [
+        "d1edd065161ea6472ea2d0ca9d0ee5bba4bfc600f1a2de251d03380a7d364d29",
+        "4ce918e1224098f97a1e97783a724b298b011b2bb529fd9c92ebd51a0bb9d4a2",
+        "03c05581897d5ce4e4cbf6bdd1a4da5c778ce671d9e0b972c221cb233b89be55"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/2H7Ir72XGZ1xEm/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVCqmtEisUdPPSQlWn1leZ7B1k90U",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVCqmtEisUdPPSQlWn29oBf0CgcGH",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq6Zh39n9NuQE2c3MVlOCPjU3lGOhto"
+      ],
+      "trim": "G Aero",
+      "engine_cc": 1500,
+      "power_hp": 118,
+      "rights_confirmed": false,
+      "reviewed_card_number": 11,
+      "artifact_record_index": 15,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-12",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Sylphy",
+      "year": 2019,
+      "mileage_km": 34000,
+      "source_rounded_mileage_km": 34000,
+      "body": "TB17",
+      "grade": "4",
+      "auction": "TAA Kyushu",
+      "lot": "307",
+      "auction_date": "2026-11-03",
+      "description": "Nissan Sylphy, 2019 года, кузов TB17, комплектация по источнику: S. Двигатель 1800 см³, мощность 131 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 34000 км, оценка 4, аукцион TAA Kyushu, дата 2026-11-03, лот №307. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-12-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-12-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-12-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 511000,
+      "media_sha256": [
+        "51875169538e34bdc9df09650b8df265454b10731cca0b94a46c7782e365125f",
+        "fc4808e76f61654b8416e7ec2d56c3d302380a5b4f63cec5f917ae7eb80f9792",
+        "32c2c3b1c82f69f43586fac19cdf2a9006038080464537ec90a23a2361f2c01d"
+      ],
+      "raw_sha256": [
+        "fbd1332ed549b99b8594a873dcf0a6e92eeb407cd3bb8d1f4a9a356ad88e9f5d",
+        "9e86e36d64b4a27d2c82b965e2a42669c534c5cab1fc31834883ee10d988f5f1",
+        "79aa070baddb80fc0dbd03d5bbd9bbc6a9251ba2bd2a223c6738d6f5a2e7a91c"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/sylphy/5IfzW8ENGxsuFw/",
+      "source_media": [
+        "https://7.tru.ru/imgs/sXpYrKmODJRuuMforw99fo9qd8N0andmLqehWlaXQvP90N",
+        "https://7.tru.ru/imgs/sXpYrKmODJRuuMforw99fo9qd8N0andmLqeiJuN7p8LcGA",
+        "https://7.tru.ru/imgs/sXpYrKmODJRNxE2FT9bMRa2UI0JzlJnjkPFUqq6TBcjhth"
+      ],
+      "trim": "S",
+      "engine_cc": 1800,
+      "power_hp": 131,
+      "rights_confirmed": false,
+      "reviewed_card_number": 12,
+      "artifact_record_index": 16,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-13",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Sienta",
+      "year": 2016,
+      "mileage_km": 140000,
+      "source_rounded_mileage_km": 140000,
+      "body": "NHP170G",
+      "grade": "3.5",
+      "auction": "TAA Hiroshima",
+      "lot": "173",
+      "auction_date": "2026-11-17",
+      "description": "Toyota Sienta, 2016 года, кузов NHP170G, комплектация по источнику: Hybrid G. Двигатель 1500 см³, мощность 74 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 140000 км, оценка 3.5, аукцион TAA Hiroshima, дата 2026-11-17, лот №173. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-13-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-13-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-13-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 347000,
+      "media_sha256": [
+        "3060cc51baccd134499ccb08ac50b09ac5cfdc06da879628bfbe3da5ed8f7c11",
+        "8ec737e15ed0e3174e269b3299ed27db3a50514cd374a6bff0ca4ec36f605642",
+        "4fbffad1c9892edbea3c32d67906dfcfdfedca8434e0eeaf93deba09ca83d6a7"
+      ],
+      "raw_sha256": [
+        "8039013005dc96d711cb83066fa17535b10a0d207f9713bb735ac6c5abe36c5c",
+        "e875db33536c70611e77ed26a07520e2854fef2801df697ae8e1ce4c05fa6875",
+        "ba20dc6982a457cfcdaf63ddbb7320614296b6aed067a895b43ae346a9becf76"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/0crjH6gzwAUxN/",
+      "source_media": [
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnHM7pIIixtjwiDjCXU8MbgW41tP6",
+        "https://7.tru.ru/imgs/3emLNY7NAuNE766iQlnHM7pIIixtjwiDjCXUUVNpuEWylS",
+        "https://7.tru.ru/imgs/3emLNY7NAuNFyUUI31sKTMfGi5nERMjoKcj6TkBG6QkJr6"
+      ],
+      "trim": "Hybrid G",
+      "engine_cc": 1500,
+      "power_hp": 74,
+      "rights_confirmed": false,
+      "reviewed_card_number": 13,
+      "artifact_record_index": 17,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-14",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Ractis",
+      "year": 2013,
+      "mileage_km": 51000,
+      "source_rounded_mileage_km": 51000,
+      "body": "NCP120",
+      "grade": "3.5",
+      "auction": "TAA Hyogo",
+      "lot": "2027",
+      "auction_date": "2026-11-14",
+      "description": "Toyota Ractis, 2013 года, кузов NCP120, комплектация по источнику: X. Двигатель 1500 см³, мощность 109 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 51000 км, оценка 3.5, аукцион TAA Hyogo, дата 2026-11-14, лот №2027. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-14-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-14-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-14-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 250000,
+      "media_sha256": [
+        "bd68dd77ae38448f1ca8bbc60d35843e210876ad761a46f5c0be6fc0aa8a0310",
+        "a5f232bfcf38a41b55f70ca1a0d5ed791eca9688267414fa23d56163be4dc349",
+        "8daabd7f28c0247e26bbe0bddc8f38264372c6e6a0fac1d25ae1379bdab78e0c"
+      ],
+      "raw_sha256": [
+        "1e281b5a6a25672fbaf1270ac1e416014bedc591bb7b4e558c32a79a6c06e3c9",
+        "84682ce66b3144529f59ed256967741665a7c1262a9e57a5e7c6a2500fe97e63",
+        "15bd0f3e1adac1f6ee62f26f62e349a632f6db95199d5836b3ba38c36f391728"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/ractis/IIeAc1xkMm1I2k/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtZgVrRGoGUQzLnEphfXkxDdTBcxCr",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtZgVrRGoGUQzLnEphfY8Hfmsd9C0e",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq73VxdLaTIRgL8xAYGHzOCy0EhGGVV"
+      ],
+      "trim": "X",
+      "engine_cc": 1500,
+      "power_hp": 109,
+      "rights_confirmed": false,
+      "reviewed_card_number": 14,
+      "artifact_record_index": 18,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-15",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Vitz",
+      "year": 2018,
+      "mileage_km": 5000,
+      "source_rounded_mileage_km": 5000,
+      "body": "NHP130",
+      "grade": "4",
+      "auction": "JU Tokyo",
+      "lot": "8020",
+      "auction_date": "2026-11-16",
+      "description": "Toyota Vitz, 2018 года, кузов NHP130, комплектация по источнику: Hybrid F S. Двигатель 1500 см³, мощность 74 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 5000 км, оценка 4, аукцион JU Tokyo, дата 2026-11-16, лот №8020. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-15-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-15-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-15-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 580000,
+      "media_sha256": [
+        "80c1a99206de8c110ab60d6619259a1857662f51e967c59ccae77bde9c979512",
+        "e0fe5a0c43bee98d97c8dd7fa709b2c72ff159fdee052cb1f4e190256d605e71",
+        "a8cdca129b2afb08166307fd1116ab6852a3773698b46780a62a37b4afdd2fc1"
+      ],
+      "raw_sha256": [
+        "b09da9589e520aaf92eb25d95d1d3dbecc58e4af2a5f91f5a694ba736eb1bf38",
+        "3effda226ab02e2dd43d7fbcc7a9314f0a180fca975374dd45ede683a4d2de81",
+        "a596950473a2ec0b1bc9ee076f266ba79cfa8cbbaa0c18cc8271f25455a683e1"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/3h5LhlCWS26IyKS/",
+      "source_media": [
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXsEQrp3A7bdi4i8N1CMgTBNATNBTmbMDtaFDvenFN",
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXsEQrp3A7bdi4i8N1CMgTBNATNBTmbYwNoK1GhtBE",
+        "https://7.tru.ru/imgs/2ZcAQOh2sSXtXJ4I1aOpyoF5od8rekg6RVup0euknV0QGB2uvUK"
+      ],
+      "trim": "Hybrid F S",
+      "engine_cc": 1500,
+      "power_hp": 74,
+      "rights_confirmed": false,
+      "reviewed_card_number": 15,
+      "artifact_record_index": 19,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-16",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Noah",
+      "year": 2019,
+      "mileage_km": 118000,
+      "source_rounded_mileage_km": 118000,
+      "body": "ZRR80G",
+      "grade": "3.5",
+      "auction": "TAA Shikoku",
+      "lot": "37",
+      "auction_date": "2026-11-17",
+      "description": "Toyota Noah, 2019 года, кузов ZRR80G, комплектация по источнику: X. Двигатель 2000 см³, мощность 152 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 118000 км, оценка 3.5, аукцион TAA Shikoku, дата 2026-11-17, лот №37. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-16-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-16-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-16-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 801000,
+      "media_sha256": [
+        "d39cc9cb92665f9a1aa1a6afc79d22c5f27663634309acea1283486f09eed8ba",
+        "209548cca606510f1183cf4c0c61ee3eed3f09dca2b0721c6eb5773364391e9e",
+        "217e88278e9525e4b16d1eb50a030af869bee426ff18f45ef963917d71f39815"
+      ],
+      "raw_sha256": [
+        "a5c8f3233825d7c9e861403fc645e4d2b8266a176f8a6f6b76a0201cfac3b8d7",
+        "ef8cff76078c3e5878c8974fc973093efd64d3b00d023f1017ab48eb7d32572b",
+        "7e87eeb66f8697cef3e8ea4e2c05e34afc094120b5ea11b9438de5265f4f28e1"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/lhj8uFLgacX7C/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVppo9AtJS9vCrw15iPzRXSlFu9kQ",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVppo9AtJS9vCrw15iQn2A1UhqcRD",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq6Z52a35YLOyGYBsztKs4WSO7lYhEk"
+      ],
+      "trim": "X",
+      "engine_cc": 2000,
+      "power_hp": 152,
+      "rights_confirmed": false,
+      "reviewed_card_number": 16,
+      "artifact_record_index": 21,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    },
+    {
+      "id": "japan-drom991-gap-20261121-17",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Sienta",
+      "year": 2016,
+      "mileage_km": 115000,
+      "source_rounded_mileage_km": 115000,
+      "body": "NSP170G",
+      "grade": "4",
+      "auction": "TAA Shikoku",
+      "lot": "95",
+      "auction_date": "2026-11-17",
+      "description": "Toyota Sienta, 2016 года, кузов NSP170G, комплектация по источнику: G. Двигатель 1500 см³, мощность 109 л.с. по данным источника (для гибрида не суммарная мощность системы). Пробег по статистике поставщика (округлённый) 115000 км, оценка 4, аукцион TAA Shikoku, дата 2026-11-17, лот №95. Статистика продаж аукционов Японии. Автомобиль не в наличии и не предложение о продаже. Цена по данным аукциона, без доставки и оформления.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-gap-20261121-17-front.jpg",
+        "/assets/auction/approved/japan-drom991-gap-20261121-17-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-gap-20261121-17-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 713000,
+      "media_sha256": [
+        "fa9d7a2c4a58226d45faf5daa6939dcdd47a24d1e279f4386b45f91c98881c5e",
+        "cbf475281818eef5aeb2e2f57e4f64dd846d1673af319fdee7f39f4f280ecc37",
+        "1fdf07e9d239b8dee58c2cf3ab48f639eb4f1a92f1f1e758e62fe3341e1bdf85"
+      ],
+      "raw_sha256": [
+        "0d6e2f66dbedaf186d966f7fe3db019fe753dbf54845f3a37af937abaf743389",
+        "b40e26f9910e95205f268f989e2f0c632cea45e363f5be389adfb9f657d3a1e9",
+        "9bf6d198d73056c1804e8b92e44d0294ce1d25e96ea125881143346a59f6373f"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/TIsvY6YpgxECm/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVppo9AtJS9vCrxvWjri5sGCjCCtm",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtVppo9AtJS9vCrxvWjs6e5PaVyH10",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq6Z52a35YLOyGYBu6lL4M0nCn17LMQ"
+      ],
+      "trim": "G",
+      "engine_cc": 1500,
+      "power_hp": 109,
+      "rights_confirmed": false,
+      "reviewed_card_number": 17,
+      "artifact_record_index": 22,
+      "artifact_id": 14689434591,
+      "source_run_id": 44860801866
+    }
+  ]
+}

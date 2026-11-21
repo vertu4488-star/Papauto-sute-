@@ -385,6 +385,23 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
             card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
                         sale_label="Статистика продаж", rights_confirmed=False)
             additional.append(card)
+        # Exactly seventeen user-directed genuine Drom-priority Japanese auction archive examples.
+        archive9 = json.loads((ROOT / "research/owner-approved-japan-drom991-gap-17-archive-2026-11-21.json").read_text(encoding="utf-8"))
+        archived9 = archive9["lots"]
+        if (archive9.get("approved_count") != 17 or archive9.get("rights_confirmed") is not False
+                or archive9.get("owner_authorized_archival_reference_only") is not True
+                or archive9.get("reviewed_jpg_zip_sha256") != "cff3e9449482429946d741008dd5056dc8117d6bf241688d1f928dc6cfe74de8"
+                or [r["id"] for r in archived9] != [f"japan-drom991-gap-20261121-{i:02d}" for i in range(1,18)]
+                or any(len(r["photos"]) != 2 or r.get("rights_confirmed") is not False for r in archived9)):
+            raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: exact Drom-priority source photo-sheet archive mismatch")
+        hashes9 = [h for r in archived9 for h in r["media_sha256"]]
+        if len(hashes9) != 51 or len(set(hashes9 + hashes8 + hashes7 + hashes6 + hashes5 + hashes4 + hashes3 + hashes2 + hashes + media_hashes)) != 1085 or hashlib.sha256("".join(hashes9).encode()).hexdigest() != "7b3dcbded01e63464131da937f8b41c020ccf8aea56081bff3e413d012c8b75a":
+            raise RuntimeError("PAPAUTO_POLICY: Drom-priority gallery media mismatch")
+        for rec in archived9:
+            card = prepare_approved(target, rec, owner_selected=True)
+            card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
+                        sale_label="Статистика продаж", rights_confirmed=False)
+            additional.append(card)
     seen_lot_keys = {
         (r["market"], r["auction"], str(r["auction_date"]), str(r["lot_number"]))
         for r in base
