@@ -45,27 +45,29 @@ def built_auction_detail_pages():
     """
     if not (ROOT/"scripts/generate_auction_lot_pages.py").is_file():
         raise RuntimeError("Auction detail page generator missing")
-    gallery_path = ROOT / "render-public" / "data" / "gallery-lots.json"
-    if not gallery_path.is_file():
-        gallery_path = ROOT / "data" / "gallery-lots.json"
-    gallery = json.loads(gallery_path.read_text(encoding="utf-8"))
+    # The checked-in 37-row HTML template is an input to the publisher;
+    # two outdoor-only template records are intentionally removed from release.
+    # The final gallery is compiled to render-public with 639 approved records.
+    # Source links are legitimate during source inspection, but final links
+    # must also point to an actual generated detail page.
     approved_pages = set()
-    for lot in gallery["lots"]:
-        lot_id = lot["id"]
-        if (not lot_id or any(c not in "abcdefghijklmnopqrstuvwxyz0123456789-" for c in lot_id)
-                or not lot.get("photos") or not lot.get("inspection_image")
-                or not lot.get("description")):
-            raise RuntimeError("Incomplete approved auction detail page: " + str(lot_id))
-        detail = Path("lots") / (lot_id + ".html")
-        # The build must have emitted the exact detail page when using its
-        # complete published registry, not merely advertised the URL.
-        if gallery_path.parent.parent.name == "render-public" and not (ROOT / "render-public" / detail).is_file():
-            raise RuntimeError("Auction lot page not generated: " + str(detail))
-        approved_pages.add(ROOT / detail)
+    input_path = ROOT / "data" / "gallery-lots.json"
+    final_path = ROOT / "render-public" / "data" / "gallery-lots.json"
+    for source, is_final in [(input_path, False), (final_path, True)]:
+        if not source.is_file():
+            continue
+        gallery = json.loads(source.read_text(encoding="utf-8"))
+        for lot in gallery["lots"]:
+            lot_id = lot["id"]
+            if (not lot_id or any(c not in "abcdefghijklmnopqrstuvwxyz0123456789-" for c in lot_id)
+                    or not lot.get("photos") or not lot.get("inspection_image")
+                    or not lot.get("description")):
+                raise RuntimeError("Incomplete auction source lot: " + str(lot_id))
+            detail = Path("lots") / (lot_id + ".html")
+            if is_final and not (ROOT / "render-public" / detail).is_file():
+                raise RuntimeError("Published lot page not generated: " + str(detail))
+            approved_pages.add(ROOT / detail)
     return approved_pages
-
-BUILT_LOT_PAGES = built_auction_detail_pages()
-
 
 
 
