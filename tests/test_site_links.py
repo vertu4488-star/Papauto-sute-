@@ -70,6 +70,8 @@ def built_auction_detail_pages():
     return approved_pages
 
 
+BUILT_LOT_PAGES = built_auction_detail_pages()
+
 
 class Links(HTMLParser):
     """Only inspect URL-valued HTML attributes, not JavaScript or text."""
