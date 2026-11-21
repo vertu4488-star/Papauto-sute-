@@ -24,7 +24,12 @@ const base=process.env.PAPAUTO_QA_URL||"http://127.0.0.1:8765";
         for(const c of visual.slice(0,5)){
           const image=c.querySelector("a.model-photo img");
           if(!image||!image.src.startsWith(location.origin+"/assets/"))throw Error("Missing verified model photo");
-          await image.decode();
+          // Lazy images below the fold must be requested before decode checks.
+          image.loading="eager";
+          await Promise.race([
+            image.decode(),
+            new Promise((_,reject)=>setTimeout(()=>reject(Error("Auction cover failed to decode within 8 s")),8000))
+          ]);
         }
         return {visual:visual.length,reference:list.length,images:visual.filter(c=>c.querySelector(".model-photo img")).length,
           oldPlaceholder:document.querySelectorAll(".model-photo span").length};
