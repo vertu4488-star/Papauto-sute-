@@ -1,0 +1,731 @@
+{
+  "created_at": "2026-11-21",
+  "drom_snapshot": {
+    "source": "research/drom-novosibirsk-991-no-rf-2026-11-13.json",
+    "reported_total": 991,
+    "actually_sampled": 40,
+    "is_not_full_991_census": true
+  },
+  "papauto_baseline": {
+    "japan_gallery_published": 412,
+    "china_market_supplier_examples": 499,
+    "quarantined_baseline_ids": [
+      "nissan-note-2021-227",
+      "mercedes-a180-2020"
+    ]
+  },
+  "coverage": {
+    "drom_sample_pairs": 40,
+    "matched_japan_model_year_pairs": 9,
+    "unmatched_japan_model_year_pairs": 31,
+    "after_all_15_approved_added_expected_sample_matches": 18
+  },
+  "sample": [
+    {
+      "model": "Nissan NV200",
+      "year": 2017,
+      "engine_l": 1.6,
+      "drom_position": 1,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Honda Freed",
+      "year": 2020,
+      "engine_l": 1.5,
+      "drom_position": 2,
+      "japan_exact_model_year_present": true,
+      "japan_matching_public_ids": [
+        "japan-selection-268"
+      ]
+    },
+    {
+      "model": "Toyota Vitz",
+      "year": 2018,
+      "engine_l": 1.3,
+      "drom_position": 3,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Lexus LX570",
+      "year": 2019,
+      "engine_l": 5.7,
+      "drom_position": 4,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Toyota Voxy",
+      "year": 2018,
+      "engine_l": 1.8,
+      "drom_position": 5,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Suzuki Jimny",
+      "year": 2022,
+      "engine_l": 0.7,
+      "drom_position": 6,
+      "japan_exact_model_year_present": true,
+      "japan_matching_public_ids": [
+        "japan-atp-b6-20261121-18"
+      ]
+    },
+    {
+      "model": "Mazda CX-5",
+      "year": 2014,
+      "engine_l": 2,
+      "drom_position": 7,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Toyota Camry",
+      "year": 2015,
+      "engine_l": 2,
+      "drom_position": 8,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Toyota C-HR",
+      "year": 2018,
+      "engine_l": 1.2,
+      "drom_position": 9,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Subaru Levorg",
+      "year": 2021,
+      "engine_l": 1.8,
+      "drom_position": 10,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Honda Freed Spike",
+      "year": 2012,
+      "engine_l": 1.5,
+      "drom_position": 11,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Lexus LX570",
+      "year": 2017,
+      "engine_l": 5.7,
+      "drom_position": 12,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Honda Vezel",
+      "year": 2021,
+      "engine_l": 1.5,
+      "drom_position": 13,
+      "japan_exact_model_year_present": true,
+      "japan_matching_public_ids": [
+        "japan-atp-20261120-10",
+        "japan-atp-b4-20261120-09"
+      ]
+    },
+    {
+      "model": "Toyota Allion",
+      "year": 2009,
+      "engine_l": 1.8,
+      "drom_position": 14,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Volkswagen T-Cross",
+      "year": 2021,
+      "engine_l": 1,
+      "drom_position": 15,
+      "japan_exact_model_year_present": true,
+      "japan_matching_public_ids": [
+        "japan-archive-20261119-40"
+      ]
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2018,
+      "engine_l": 1.3,
+      "drom_position": 16,
+      "japan_exact_model_year_present": true,
+      "japan_matching_public_ids": [
+        "japan-atp-b3-20261120-29",
+        "japan-atp-b6-20261121-16"
+      ]
+    },
+    {
+      "model": "Toyota Succeed",
+      "year": 2019,
+      "engine_l": 1.5,
+      "drom_position": 17,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Volkswagen Tayron",
+      "year": 2022,
+      "engine_l": 1.4,
+      "drom_position": 18,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "BMW X3",
+      "year": 2020,
+      "engine_l": 2,
+      "drom_position": 19,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "RAM 1500",
+      "year": 2023,
+      "engine_l": 5.7,
+      "drom_position": 20,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Toyota Raize",
+      "year": 2023,
+      "engine_l": 1.2,
+      "drom_position": 21,
+      "japan_exact_model_year_present": true,
+      "japan_matching_public_ids": [
+        "japan-atp-b6-20261121-13"
+      ]
+    },
+    {
+      "model": "Honda Freed",
+      "year": 2019,
+      "engine_l": 1.5,
+      "drom_position": 22,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Suzuki Hustler",
+      "year": 2014,
+      "engine_l": 0.7,
+      "drom_position": 23,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Nissan Sylphy",
+      "year": 2019,
+      "engine_l": 1.8,
+      "drom_position": 24,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Honda Fit",
+      "year": 2014,
+      "engine_l": 1.3,
+      "drom_position": 25,
+      "japan_exact_model_year_present": true,
+      "japan_matching_public_ids": [
+        "japan-selection-1"
+      ]
+    },
+    {
+      "model": "Jaguar F-Pace",
+      "year": 2019,
+      "engine_l": 2,
+      "drom_position": 26,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Toyota Tank",
+      "year": 2016,
+      "engine_l": 1,
+      "drom_position": 27,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Mercedes-Benz GLE",
+      "year": 2019,
+      "engine_l": 3,
+      "drom_position": 28,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Toyota Noah",
+      "year": 2018,
+      "engine_l": 2,
+      "drom_position": 29,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Toyota Noah",
+      "year": 2019,
+      "engine_l": 2,
+      "drom_position": 30,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "BMW X3",
+      "year": 2025,
+      "engine_l": 2,
+      "drom_position": 31,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Toyota Sienta",
+      "year": 2016,
+      "engine_l": 1.5,
+      "drom_position": 32,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Nissan Dayz",
+      "year": 2021,
+      "engine_l": 0.7,
+      "drom_position": 33,
+      "japan_exact_model_year_present": true,
+      "japan_matching_public_ids": [
+        "japan-atp-b2-20261120-09",
+        "japan-atp-b6-20261121-09"
+      ]
+    },
+    {
+      "model": "Lexus RX300",
+      "year": 2025,
+      "engine_l": 2,
+      "drom_position": 34,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Toyota Ractis",
+      "year": 2013,
+      "engine_l": 1.5,
+      "drom_position": 35,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Subaru XV",
+      "year": 2019,
+      "engine_l": 1.6,
+      "drom_position": 36,
+      "japan_exact_model_year_present": true,
+      "japan_matching_public_ids": [
+        "japan-archive-20261119-29",
+        "japan-atp-b4-20261120-21"
+      ]
+    },
+    {
+      "model": "Mazda CX-8",
+      "year": 2019,
+      "engine_l": 2.2,
+      "drom_position": 37,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Nissan X-Trail",
+      "year": 2018,
+      "engine_l": 2,
+      "drom_position": 38,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Nissan Dayz",
+      "year": 2018,
+      "engine_l": 0.7,
+      "drom_position": 39,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    },
+    {
+      "model": "Mazda CX-8",
+      "year": 2017,
+      "engine_l": 2.2,
+      "drom_position": 40,
+      "japan_exact_model_year_present": false,
+      "japan_matching_public_ids": []
+    }
+  ],
+  "staged": {
+    "japan_exact_photo_and_full_sheet_15": [
+      {
+        "model": "Honda Freed Spike",
+        "year": 2012,
+        "source_artifact_id": 14689434591,
+        "source_record_index": 15,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": true,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      },
+      {
+        "model": "Toyota Voxy",
+        "year": 2018,
+        "source_artifact_id": 14689434591,
+        "source_record_index": 2,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": true,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      },
+      {
+        "model": "Suzuki Hustler",
+        "year": 2014,
+        "source_artifact_id": 14689434591,
+        "source_record_index": 4,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": true,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      },
+      {
+        "model": "Toyota Noah",
+        "year": 2019,
+        "source_artifact_id": 14689434591,
+        "source_record_index": 5,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": true,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      },
+      {
+        "model": "Toyota Ractis",
+        "year": 2013,
+        "source_artifact_id": 14689434591,
+        "source_record_index": 13,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": true,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      },
+      {
+        "model": "Nissan Sylphy",
+        "year": 2019,
+        "source_artifact_id": 14689434591,
+        "source_record_index": 16,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": true,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      },
+      {
+        "model": "Toyota Sienta",
+        "year": 2016,
+        "source_artifact_id": 14689434591,
+        "source_record_index": 12,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": true,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      },
+      {
+        "model": "Nissan Dayz",
+        "year": 2018,
+        "source_artifact_id": 14689434591,
+        "source_record_index": 14,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": true,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      },
+      {
+        "model": "Toyota Vitz",
+        "year": 2018,
+        "source_artifact_id": 14689434591,
+        "source_record_index": 19,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": true,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      },
+      {
+        "model": "Toyota Aqua",
+        "year": 2022,
+        "source_artifact_id": 14689548377,
+        "source_record_index": 5,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": false,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      },
+      {
+        "model": "Toyota Prius",
+        "year": 2023,
+        "source_artifact_id": 14689548377,
+        "source_record_index": 9,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": false,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      },
+      {
+        "model": "Toyota Passo",
+        "year": 2022,
+        "source_artifact_id": 14689548377,
+        "source_record_index": 10,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": false,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      },
+      {
+        "model": "Toyota Passo",
+        "year": 2023,
+        "source_artifact_id": 14689548377,
+        "source_record_index": 11,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": false,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      },
+      {
+        "model": "Toyota Corolla Fielder",
+        "year": 2017,
+        "source_artifact_id": 14689548377,
+        "source_record_index": 14,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": false,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      },
+      {
+        "model": "Nissan Note",
+        "year": 2019,
+        "source_artifact_id": 14689548377,
+        "source_record_index": 17,
+        "source_url_storage": "workflow_research_artifact_only",
+        "photo_count": 2,
+        "original_full_auction_sheet_previewed": true,
+        "indoor_photos_visual_review": true,
+        "in_drom_40_sample": false,
+        "rights_confirmed": false,
+        "individual_owner_approval": false,
+        "publish_state": "private_preview_only"
+      }
+    ],
+    "china_indoor_supplier_photos_10": [
+      {
+        "model": "BYD Song Pro",
+        "year": 2025,
+        "source_artifact_id": 14689950055,
+        "source_record_index": 5,
+        "photo_count": 1,
+        "photo_setting": "indoor_supplier",
+        "auction_sheet": false,
+        "inspection_report": false,
+        "documented_power": false,
+        "source_reported_fuel_not_verified": true,
+        "owner_approval": false,
+        "status": "private_supplier_photo_preview_only"
+      },
+      {
+        "model": "BYD Song PLUS",
+        "year": 2024,
+        "source_artifact_id": 14689950055,
+        "source_record_index": 6,
+        "photo_count": 1,
+        "photo_setting": "indoor_supplier",
+        "auction_sheet": false,
+        "inspection_report": false,
+        "documented_power": false,
+        "source_reported_fuel_not_verified": true,
+        "owner_approval": false,
+        "status": "private_supplier_photo_preview_only"
+      },
+      {
+        "model": "BYD Yuan PLUS",
+        "year": 2023,
+        "source_artifact_id": 14689950055,
+        "source_record_index": 7,
+        "photo_count": 1,
+        "photo_setting": "indoor_supplier",
+        "auction_sheet": false,
+        "inspection_report": false,
+        "documented_power": false,
+        "source_reported_fuel_not_verified": true,
+        "owner_approval": false,
+        "status": "private_supplier_photo_preview_only"
+      },
+      {
+        "model": "BYD Dolphin",
+        "year": 2022,
+        "source_artifact_id": 14689950055,
+        "source_record_index": 8,
+        "photo_count": 1,
+        "photo_setting": "indoor_supplier",
+        "auction_sheet": false,
+        "inspection_report": false,
+        "documented_power": false,
+        "source_reported_fuel_not_verified": true,
+        "owner_approval": false,
+        "status": "private_supplier_photo_preview_only"
+      },
+      {
+        "model": "Geely Galaxy L6",
+        "year": 2025,
+        "source_artifact_id": 14689950055,
+        "source_record_index": 9,
+        "photo_count": 1,
+        "photo_setting": "indoor_supplier",
+        "auction_sheet": false,
+        "inspection_report": false,
+        "documented_power": false,
+        "source_reported_fuel_not_verified": true,
+        "owner_approval": false,
+        "status": "private_supplier_photo_preview_only"
+      },
+      {
+        "model": "BYD Yuan PLUS",
+        "year": 2024,
+        "source_artifact_id": 14689950055,
+        "source_record_index": 10,
+        "photo_count": 1,
+        "photo_setting": "indoor_supplier",
+        "auction_sheet": false,
+        "inspection_report": false,
+        "documented_power": false,
+        "source_reported_fuel_not_verified": true,
+        "owner_approval": false,
+        "status": "private_supplier_photo_preview_only"
+      },
+      {
+        "model": "BYD Qin L",
+        "year": 2025,
+        "source_artifact_id": 14689950055,
+        "source_record_index": 11,
+        "photo_count": 1,
+        "photo_setting": "indoor_supplier",
+        "auction_sheet": false,
+        "inspection_report": false,
+        "documented_power": false,
+        "source_reported_fuel_not_verified": true,
+        "owner_approval": false,
+        "status": "private_supplier_photo_preview_only"
+      },
+      {
+        "model": "BYD Song PLUS",
+        "year": 2022,
+        "source_artifact_id": 14689950055,
+        "source_record_index": 12,
+        "photo_count": 1,
+        "photo_setting": "indoor_supplier",
+        "auction_sheet": false,
+        "inspection_report": false,
+        "documented_power": false,
+        "source_reported_fuel_not_verified": true,
+        "owner_approval": false,
+        "status": "private_supplier_photo_preview_only"
+      },
+      {
+        "model": "BYD Dolphin",
+        "year": 2024,
+        "source_artifact_id": 14689950055,
+        "source_record_index": 13,
+        "photo_count": 1,
+        "photo_setting": "indoor_supplier",
+        "auction_sheet": false,
+        "inspection_report": false,
+        "documented_power": false,
+        "source_reported_fuel_not_verified": true,
+        "owner_approval": false,
+        "status": "private_supplier_photo_preview_only"
+      },
+      {
+        "model": "BYD Seagull",
+        "year": 2024,
+        "source_artifact_id": 14689950055,
+        "source_record_index": 14,
+        "photo_count": 1,
+        "photo_setting": "indoor_supplier",
+        "auction_sheet": false,
+        "inspection_report": false,
+        "documented_power": false,
+        "source_reported_fuel_not_verified": true,
+        "owner_approval": false,
+        "status": "private_supplier_photo_preview_only"
+      }
+    ]
+  },
+  "mandatory_rules": [
+    "Research previews only; no photo without exact corresponding car",
+    "Japan auction full original sheet, not just damage diagram",
+    "No street, open-air parking, unrelated car or stock images",
+    "China supplier references are not auction cards and have no verified inspection report",
+    "Third party reuse rights and current stock not confirmed",
+    "No public card until owner approves exact shown batch; no external links to competitors in customer cards"
+  ]
+}
