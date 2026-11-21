@@ -290,8 +290,8 @@
    const bootstrap=d.getElementById("gallery-bootstrap");
    if(!bootstrap)throw Error("Missing static auction data");
    const data=JSON.parse(bootstrap.textContent);
-   if(!Array.isArray(data.lots)||data.lots.length<35||data.lots.length>500)
-      throw Error("Auction gallery must contain 35-500 exact auction lot records");
+   if(!Array.isArray(data.lots)||data.lots.length<35||data.lots.length>700)
+      throw Error("Auction gallery must contain 35-700 exact auction lot records");
    all=data.lots.filter(l=>
       ["japan","south-korea","china"].includes(l.market)
       &&validImg(l.photos?.[0])&&validImg(l.inspection_image)
