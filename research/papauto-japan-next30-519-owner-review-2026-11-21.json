@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-21",
+  "project": "PapAuto",
+  "status": "OWNER_REVIEW_REQUIRED",
+  "public_site_published": false,
+  "previous_catalog_count": 489,
+  "target_after_owner_approval": 519,
+  "selected_lot_count": 30,
+  "selected_original_photos": 60,
+  "selected_full_auction_sheets": 30,
+  "new_model_year_examples": 20,
+  "duplicates_against_existing_owner_approved_457": 0,
+  "placeholder_rejected": "Nissan Kicks 2021 (no-photo source front image), replaced by verified Honda Freed 2018",
+  "review_pdf": {
+    "filename": "PapAuto_Japan_Another30_519_2026-11-21.pdf",
+    "sha256": "718076fc478c085c2df5b2197c498618ea8dc8cc59bf90dea3efd773409f3a5b"
+  },
+  "review_media_zip": {
+    "filename": "PapAuto_Japan_Another30_519_2026-11-21_media.zip",
+    "sha256": "61c618dbb89ed51866a9ed9618c6f7bed769a0fb2e2b0d2de8a3072c13ee8292"
+  },
+  "review_full_manifest": {
+    "filename": "PapAuto_Japan_Another30_519_2026-11-21_review-selection.json",
+    "sha256": "c79856a191f906983a713a20467f93f45231b01ed8ff0c6c8642c4fd84cdbfc3"
+  },
+  "archive_sources": {
+    "wave3": {
+      "run_id": 44864961085,
+      "artifact_id": 14691820564,
+      "manifest_sha256": "9bd14bac931dbacfb3fc2578cf52816ce9fd5a2b6c666d04eff9ec42c01ebdc2"
+    },
+    "b6": {
+      "run_id": 44758942918,
+      "artifact_id": 14641252098,
+      "manifest_sha256": "fe2fb3d5f95195e9fd084dc72a5ad4f349dd9f100195bf1e5c5d13bfb1c58838"
+    }
+  },
+  "selection": [
+    {
+      "ordinal": 1,
+      "src": "wave3",
+      "index": 42
+    },
+    {
+      "ordinal": 2,
+      "src": "b6",
+      "index": 94
+    },
+    {
+      "ordinal": 3,
+      "src": "wave3",
+      "index": 64
+    },
+    {
+      "ordinal": 4,
+      "src": "wave3",
+      "index": 75
+    },
+    {
+      "ordinal": 5,
+      "src": "wave3",
+      "index": 35
+    },
+    {
+      "ordinal": 6,
+      "src": "wave3",
+      "index": 37
+    },
+    {
+      "ordinal": 7,
+      "src": "b6",
+      "index": 23
+    },
+    {
+      "ordinal": 8,
+      "src": "wave3",
+      "index": 66
+    },
+    {
+      "ordinal": 9,
+      "src": "wave3",
+      "index": 73
+    },
+    {
+      "ordinal": 10,
+      "src": "wave3",
+      "index": 71
+    },
+    {
+      "ordinal": 11,
+      "src": "wave3",
+      "index": 72
+    },
+    {
+      "ordinal": 12,
+      "src": "b6",
+      "index": 83
+    },
+    {
+      "ordinal": 13,
+      "src": "b6",
+      "index": 235
+    },
+    {
+      "ordinal": 14,
+      "src": "wave3",
+      "index": 70
+    },
+    {
+      "ordinal": 15,
+      "src": "b6",
+      "index": 80
+    },
+    {
+      "ordinal": 16,
+      "src": "wave3",
+      "index": 52
+    },
+    {
+      "ordinal": 17,
+      "src": "b6",
+      "index": 50
+    },
+    {
+      "ordinal": 18,
+      "src": "b6",
+      "index": 221
+    },
+    {
+      "ordinal": 19,
+      "src": "wave3",
+      "index": 57
+    },
+    {
+      "ordinal": 20,
+      "src": "b6",
+      "index": 57
+    },
+    {
+      "ordinal": 21,
+      "src": "wave3",
+      "index": 59
+    },
+    {
+      "ordinal": 22,
+      "src": "b6",
+      "index": 34
+    },
+    {
+      "ordinal": 23,
+      "src": "b6",
+      "index": 20
+    },
+    {
+      "ordinal": 24,
+      "src": "b6",
+      "index": 208
+    },
+    {
+      "ordinal": 25,
+      "src": "wave3",
+      "index": 58
+    },
+    {
+      "ordinal": 26,
+      "src": "wave3",
+      "index": 48
+    },
+    {
+      "ordinal": 27,
+      "src": "b6",
+      "index": 96
+    },
+    {
+      "ordinal": 28,
+      "src": "b6",
+      "index": 226
+    },
+    {
+      "ordinal": 29,
+      "src": "b6",
+      "index": 241
+    },
+    {
+      "ordinal": 30,
+      "src": "b6",
+      "index": 194
+    }
+  ],
+  "rules": {
+    "auction_actual_photos": true,
+    "full_exact_lot_sheet": true,
+    "commercial_image_rights_verified": false,
+    "reference_only": true,
+    "external_links_on_public_site": false,
+    "no_unrelated_street_photos": true,
+    "no_missing_photos": true,
+    "maximum_engine_cc": 2000,
+    "max_source_hp": 160,
+    "no_duplicates": true
+  },
+  "release_gate": "Not published. Release only after owner reviews exact numbered PDF and source media."
+}
