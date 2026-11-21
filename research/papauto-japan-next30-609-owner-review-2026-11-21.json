@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "created_date": "2026-11-21",
+  "project": "PapAuto",
+  "market": "Japan",
+  "status": "OWNER_APPROVED_FOR_EXACT_609_RELEASE",
+  "published": false,
+  "main_source_sha_at_review": "e6824e472ec2b76b78308f30edbd638096f0c235",
+  "main_gallery_count_at_review": 579,
+  "target_after_owner_approval": 609,
+  "number_of_lots": 30,
+  "original_lot_photos": 60,
+  "complete_auction_sheets": 30,
+  "distinct_model_families": 14,
+  "original_media_aggregate_sha256": "c7312b26bfdaf738a7a4b004285f0554201490dcce620a7ebdcead5aef1689e4",
+  "source_archives": {
+    "b6": {
+      "artifact_id": 14641252098,
+      "run_id": 44758942918,
+      "manifest_sha256": "fe2fb3d5f95195e9fd084dc72a5ad4f349dd9f100195bf1e5c5d13bfb1c58838"
+    }
+  },
+  "files": {
+    "review_pdf": {
+      "filename": "PapAuto_Japan_Another30_609_2026-11-21.pdf",
+      "sha256": "43d7b575189e76ce32d1d52216f8e10aabeed49b3830b0322da18bfa2e7ab574"
+    },
+    "original_media_zip": {
+      "filename": "PapAuto_Japan_Another30_609_2026-11-21_media.zip",
+      "sha256": "6cc9c1f9bb3bfebfca1898e65eb8a51d4bb5d925149bffef261fdb1ba755c8c7"
+    },
+    "full_review_json": {
+      "filename": "PapAuto_Japan_Another30_609_2026-11-21_review-selection.json",
+      "sha256": "bf2c9c846e560351f1dc7423a5c21167f2849424dcf65e5152812ac1fbceac86"
+    }
+  },
+  "selection": [
+    {
+      "ordinal": 1,
+      "source_archive": "b6",
+      "source_index": 244,
+      "title": "Daihatsu Taft 2021",
+      "lot_key": "jutochigi|2026-11-06|1037"
+    },
+    {
+      "ordinal": 2,
+      "source_archive": "b6",
+      "source_index": 150,
+      "title": "Daihatsu Taft 2023",
+      "lot_key": "caatokyo|2026-11-10|118"
+    },
+    {
+      "ordinal": 3,
+      "source_archive": "b6",
+      "source_index": 200,
+      "title": "Daihatsu Taft 2021",
+      "lot_key": "caatokyo|2026-11-10|29"
+    },
+    {
+      "ordinal": 4,
+      "source_archive": "b6",
+      "source_index": 91,
+      "title": "Mazda Demio 2017",
+      "lot_key": "laaokayama|2026-11-13|1256"
+    },
+    {
+      "ordinal": 5,
+      "source_archive": "b6",
+      "source_index": 41,
+      "title": "Nissan Dayz 2018",
+      "lot_key": "jusaitama|2026-11-17|12"
+    },
+    {
+      "ordinal": 6,
+      "source_archive": "b6",
+      "source_index": 143,
+      "title": "Nissan Dayz 2021",
+      "lot_key": "jugifu|2026-11-14|8014"
+    },
+    {
+      "ordinal": 7,
+      "source_archive": "b6",
+      "source_index": 198,
+      "title": "Nissan Dayz 2019",
+      "lot_key": "jugifu|2026-11-14|148"
+    },
+    {
+      "ordinal": 8,
+      "source_archive": "b6",
+      "source_index": 239,
+      "title": "Nissan Dayz 2024",
+      "lot_key": "juhokkaido|2026-11-13|1125"
+    },
+    {
+      "ordinal": 9,
+      "source_archive": "b6",
+      "source_index": 30,
+      "title": "Suzuki Hustler 2017",
+      "lot_key": "caatokyo|2026-11-17|26"
+    },
+    {
+      "ordinal": 10,
+      "source_archive": "b6",
+      "source_index": 236,
+      "title": "Suzuki Jimny 2021",
+      "lot_key": "caatokyo|2026-11-10|224"
+    },
+    {
+      "ordinal": 11,
+      "source_archive": "b6",
+      "source_index": 191,
+      "title": "Suzuki Jimny 2021",
+      "lot_key": "caachubu|2026-11-11|89"
+    },
+    {
+      "ordinal": 12,
+      "source_archive": "b6",
+      "source_index": 137,
+      "title": "Suzuki Solio 2021",
+      "lot_key": "junara|2026-11-14|3007"
+    },
+    {
+      "ordinal": 13,
+      "source_archive": "b6",
+      "source_index": 186,
+      "title": "Suzuki Spacia 2019",
+      "lot_key": "taayokohama|2026-11-14|3192"
+    },
+    {
+      "ordinal": 14,
+      "source_archive": "b6",
+      "source_index": 166,
+      "title": "Toyota Aqua 2022",
+      "lot_key": "taakinki|2026-11-17|95"
+    },
+    {
+      "ordinal": 15,
+      "source_archive": "b6",
+      "source_index": 169,
+      "title": "Toyota Corolla Fielder 2017",
+      "lot_key": "jutokyo|2026-11-16|207"
+    },
+    {
+      "ordinal": 16,
+      "source_archive": "b6",
+      "source_index": 122,
+      "title": "Toyota Corolla Fielder 2021",
+      "lot_key": "jutokyo|2026-11-16|8290"
+    },
+    {
+      "ordinal": 17,
+      "source_archive": "b6",
+      "source_index": 71,
+      "title": "Toyota Corolla Touring 2020",
+      "lot_key": "taahyogo|2026-11-14|2222"
+    },
+    {
+      "ordinal": 18,
+      "source_archive": "b6",
+      "source_index": 177,
+      "title": "Toyota Corolla Touring 2022",
+      "lot_key": "taahyogo|2026-11-14|156"
+    },
+    {
+      "ordinal": 19,
+      "source_archive": "b6",
+      "source_index": 173,
+      "title": "Toyota Corolla Touring 2023",
+      "lot_key": "taahyogo|2026-11-14|185"
+    },
+    {
+      "ordinal": 20,
+      "source_archive": "b6",
+      "source_index": 154,
+      "title": "Toyota Raize 2022",
+      "lot_key": "taahyogo|2026-11-14|395"
+    },
+    {
+      "ordinal": 21,
+      "source_archive": "b6",
+      "source_index": 53,
+      "title": "Toyota Raize 2023",
+      "lot_key": "jugifu|2026-11-14|8173"
+    },
+    {
+      "ordinal": 22,
+      "source_archive": "b6",
+      "source_index": 60,
+      "title": "Toyota Roomy 2019",
+      "lot_key": "jutokyo|2026-11-16|8107"
+    },
+    {
+      "ordinal": 23,
+      "source_archive": "b6",
+      "source_index": 113,
+      "title": "Toyota Roomy 2024",
+      "lot_key": "taayokohama|2026-11-14|12485"
+    },
+    {
+      "ordinal": 24,
+      "source_archive": "b6",
+      "source_index": 160,
+      "title": "Toyota Roomy 2021",
+      "lot_key": "taayokohama|2026-11-14|12349"
+    },
+    {
+      "ordinal": 25,
+      "source_archive": "b6",
+      "source_index": 214,
+      "title": "Toyota Yaris 2021",
+      "lot_key": "taayokohama|2026-11-14|12633"
+    },
+    {
+      "ordinal": 26,
+      "source_archive": "b6",
+      "source_index": 110,
+      "title": "Toyota Yaris 2023",
+      "lot_key": "taakyushu|2026-11-17|47"
+    },
+    {
+      "ordinal": 27,
+      "source_archive": "b6",
+      "source_index": 106,
+      "title": "Toyota Yaris Cross 2022",
+      "lot_key": "taayokohama|2026-11-14|12286"
+    },
+    {
+      "ordinal": 28,
+      "source_archive": "b6",
+      "source_index": 210,
+      "title": "Toyota Yaris Cross 2023",
+      "lot_key": "taayokohama|2026-11-14|12002"
+    },
+    {
+      "ordinal": 29,
+      "source_archive": "b6",
+      "source_index": 156,
+      "title": "Toyota Yaris Cross 2025",
+      "lot_key": "taayokohama|2026-11-14|12170"
+    },
+    {
+      "ordinal": 30,
+      "source_archive": "b6",
+      "source_index": 155,
+      "title": "Toyota Yaris Cross 2023",
+      "lot_key": "taayokohama|2026-11-14|12224"
+    }
+  ],
+  "checks": {
+    "duplicate_keys_vs_547_prior": 0,
+    "unique_image_sha256": 90,
+    "full_original_sheet_per_lot": true,
+    "no_random_street_photos": true,
+    "no_third_party_links_in_public_gallery": true,
+    "rights_confirmed": false
+  },
+  "owner_approval": {
+    "approved": true,
+    "date": "2026-11-21",
+    "scope": "Exactly 30 source-backed archival Japan lots as reviewed in PapAuto_Japan_Another30_609_2026-11-21.pdf; archival reference only; third-party commercial reuse rights independently unverified",
+    "pdf_sha256": "43d7b575189e76ce32d1d52216f8e10aabeed49b3830b0322da18bfa2e7ab574",
+    "media_zip_sha256": "6cc9c1f9bb3bfebfca1898e65eb8a51d4bb5d925149bffef261fdb1ba755c8c7",
+    "full_review_json_sha256": "bf2c9c846e560351f1dc7423a5c21167f2849424dcf65e5152812ac1fbceac86",
+    "approval_text": "Красавчик. Просто босс. Давай всё это опубликуем"
+  }
+}
