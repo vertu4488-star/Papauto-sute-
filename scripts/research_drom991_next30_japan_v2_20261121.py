@@ -5,9 +5,9 @@ from PIL import Image,ImageDraw,ImageFont
 from collections import Counter
 BASE='https://atp-auto.ru'
 ROOT=Path('.')
-out=Path('japan-next30-review');out.mkdir(exist_ok=True)
+out=Path('drom991-japan-new30-review');out.mkdir(exist_ok=True)
 old=[]
-for path in ['research/owner-selected-japan-lots-2026-11-14.json','research/owner-approved-50-archive-2026-11-19.json','research/owner-approved-second-50-archive-2026-11-19.json','data/gallery-lots.json','research/owner-approved-japan-atp-30-archive-2026-11-20.json','research/owner-approved-japan-atp-second-30-archive-2026-11-20.json','research/owner-approved-japan-atp-third-30-archive-2026-11-20.json','research/owner-approved-japan-atp-fourth-30-archive-2026-11-20.json','research/owner-approved-japan-atp-fifth-30-archive-2026-11-20.json','research/owner-approved-japan-atp-sixth-30-archive-2026-11-21.json','research/owner-approved-japan-drom991-gap-17-archive-2026-11-21.json']:
+for path in ['research/owner-selected-japan-lots-2026-11-14.json','research/owner-approved-50-archive-2026-11-19.json','research/owner-approved-second-50-archive-2026-11-19.json','data/gallery-lots.json','research/owner-approved-japan-atp-30-archive-2026-11-20.json','research/owner-approved-japan-atp-second-30-archive-2026-11-20.json','research/owner-approved-japan-atp-third-30-archive-2026-11-20.json','research/owner-approved-japan-atp-fourth-30-archive-2026-11-20.json','research/owner-approved-japan-atp-fifth-30-archive-2026-11-20.json','research/owner-approved-japan-atp-sixth-30-archive-2026-11-21.json','research/owner-approved-japan-drom991-gap-17-archive-2026-11-21.json','research/owner-approved-japan-drom991-14-2026-11-21.json']:
  old.extend(json.loads(Path(path).read_text())['lots'])
 def norm(s):return re.sub(r'[^a-z0-9]','',str(s).lower())
 oldkeys={(norm(x.get('auction')),str(x.get('auction_date',''))[:10],str(x.get('lot',x.get('lot_number',''))).lstrip('0')) for x in old}
