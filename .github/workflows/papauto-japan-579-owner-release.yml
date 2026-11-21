@@ -52,7 +52,7 @@ jobs:
           rows=data["lots"]
           assert data["lot_count"]==len(rows)==579
           assert len({r["id"] for r in rows})==579
-          assert len(list((public/"lots").glob("*.html")))==579
+          assert all((public/"lots"/(r["id"]+".html")).is_file() for r in rows), "One or more of 579 exact lot pages is missing"
           new=[r for r in rows if r["id"].startswith("japan-next30-579-20261121-")]
           assert len(new)==len(receipt["lots"])==30
           prior=[r for r in rows if r["id"].startswith("japan-next30-549-20261121-")]
