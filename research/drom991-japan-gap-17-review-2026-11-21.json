@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-21",
+  "project": "PapAuto",
+  "source_scope": "Drom Novosibirsk no-RF-mileage 991 historical results; only first 40 individually reviewed. 991 is not a full census",
+  "publication_instruction": "Давай тогда подберем карточки и добавим (user message 2026-11-21)",
+  "source": "Exact original ATP Auto Japan archive photos and matching full source auction sheets from GitHub Actions artifact; NOT Drom photos",
+  "counts": {
+    "new_lots": 17,
+    "new_media": 51,
+    "current_gallery": 412,
+    "target_gallery": 429
+  },
+  "source_artifact": {
+    "artifact_id": 14689434591,
+    "source_run_id": 44860801866,
+    "artifact_name": "drom991-gap-photo-sheet-review",
+    "archive_sha256": "cff3e9449482429946d741008dd5056dc8117d6bf241688d1f928dc6cfe74de8",
+    "manifest_sha256": "6f7c1b2d9fdc9231b330f5880038cadd70583be681f0f45b4b032a222d9b5005"
+  },
+  "selected_indices": [
+    1,
+    2,
+    4,
+    5,
+    8,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    21,
+    22
+  ],
+  "excluded_indices": [
+    3,
+    6,
+    7,
+    9,
+    20,
+    23,
+    24
+  ],
+  "excluded_reasons": "Full sheet absent in indices 3,6,7,20 (damage diagram only); indices 9,23,24 carry conspicuous provider watermark. No replacement photo or synthetic media permitted.",
+  "selected_source_raw_aggregate_sha256": "4d9d75a7a8cf88a24ef1f8de2ddd7e4cd012f09d75116c3b80efe2df94505a93",
+  "selected_jpg_aggregate_sha256": "7b3dcbded01e63464131da937f8b41c020ccf8aea56081bff3e413d012c8b75a",
+  "newly_covered_model_years": [
+    "Honda Freed Spike 2012",
+    "Toyota Voxy 2018",
+    "Suzuki Hustler 2014",
+    "Toyota Noah 2019",
+    "Toyota Ractis 2013",
+    "Nissan Sylphy 2019",
+    "Toyota Sienta 2016",
+    "Nissan Dayz 2018",
+    "Toyota Vitz 2018"
+  ],
+  "reviewed_pdf": "PapAuto_Drom991_17_auction_cards_review.pdf",
+  "rights_confirmed": false,
+  "source_mileage_is_rounded": true,
+  "restrictions": "Archived examples not current stock; auction supplier numbers not final imported quotes; no external supplier URLs in public cards; photos and exact sheets self-hosted under existing archive exception; third-party reuse rights not independently established",
+  "reviewed_against_prior_archive_count": 412
+}
