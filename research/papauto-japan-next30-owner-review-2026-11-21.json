@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-21",
+  "brand": "PapAuto",
+  "subject": "30 genuine photo+sheet Japanese auction card concepts for user review",
+  "status": "WAITING_FOR_OWNER_APPROVAL",
+  "published": false,
+  "owner_instruction": "Подготовить еще 30 японских карточек после анализа Drom 991. Сначала показать для согласования.",
+  "owner_review_pdf_name": "PapAuto_Japan_Next30_Drom991_2026-11-21.pdf",
+  "owner_review_pdf_sha256": "10ada138484429afc4de3fa1d850426a8d03b3821cc3f9abe97f8d4f99f2de7e",
+  "owner_review_image_bundle_name": "PapAuto_Japan_Next30_Drom991_2026-11-21_media.zip",
+  "owner_review_image_bundle_sha256": "626fe77598b0d6038fc416bcc2cc355874c03b759ce4b92f38b0912402a18473",
+  "owner_review_manifest_sha256": "edda0056ec87ced0da1a5d14afaefddf690159a1aa66169749771bf73728ac6c",
+  "owner_review_jpg_aggregate_sha256": "a9159cfaba8efb822fd1d0705443833b076736876c015a58c5ae945e452523f4",
+  "totals": {
+    "cards": 30,
+    "images": 90,
+    "vehicle_photos": 60,
+    "source_auction_documents": 30,
+    "distinct_model_family": 29,
+    "distinct_model_year_pairs": 30,
+    "prior_live_japan_cards": 429
+  },
+  "source_archives": [
+    {
+      "key": "wave2",
+      "run_id": 44862917647,
+      "artifact_id": 14690508245,
+      "manifest_sha256": "a9e371a3ef7902d82cd44b15fe2657359e45a8264baa0522374d127dc195df7d",
+      "selected_indices": [
+        1,
+        6
+      ]
+    },
+    {
+      "key": "wave3",
+      "run_id": 44864961085,
+      "artifact_id": 14691820564,
+      "manifest_sha256": "9bd14bac931dbacfb3fc2578cf52816ce9fd5a2b6c666d04eff9ec42c01ebdc2",
+      "selected_indices": [
+        3,
+        11,
+        8,
+        15,
+        17,
+        18,
+        21,
+        23,
+        26,
+        28,
+        29,
+        31,
+        36,
+        38,
+        40,
+        43,
+        44,
+        61,
+        47,
+        24,
+        50,
+        49
+      ]
+    },
+    {
+      "key": "b6",
+      "run_id": 44758942918,
+      "artifact_id": 14641252098,
+      "manifest_sha256": "fe2fb3d5f95195e9fd084dc72a5ad4f349dd9f100195bf1e5c5d13bfb1c58838",
+      "selected_indices": [
+        55,
+        213,
+        61,
+        98,
+        84,
+        242
+      ]
+    }
+  ],
+  "review_selection": [
+    {
+      "src": "wave2",
+      "index": 1,
+      "ordinal": 1,
+      "name": "Toyota Allion 2009",
+      "corresponds_to_drom_40_sample_exact_gap": true
+    },
+    {
+      "src": "wave2",
+      "index": 6,
+      "ordinal": 2,
+      "name": "Toyota Noah 2018",
+      "corresponds_to_drom_40_sample_exact_gap": true
+    },
+    {
+      "src": "wave3",
+      "index": 3,
+      "ordinal": 3,
+      "name": "Toyota Tank 2018",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 11,
+      "ordinal": 4,
+      "name": "Toyota Voxy 2014",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 8,
+      "ordinal": 5,
+      "name": "Toyota Passo 2018",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 15,
+      "ordinal": 6,
+      "name": "Toyota Sienta 2018",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 17,
+      "ordinal": 7,
+      "name": "Toyota Aqua 2021",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 18,
+      "ordinal": 8,
+      "name": "Toyota Corolla Fielder 2019",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 21,
+      "ordinal": 9,
+      "name": "Toyota Corolla Touring 2020",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 23,
+      "ordinal": 10,
+      "name": "Honda Fit 2020",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 26,
+      "ordinal": 11,
+      "name": "Suzuki Swift 2020",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 28,
+      "ordinal": 12,
+      "name": "Suzuki Hustler 2025",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 29,
+      "ordinal": 13,
+      "name": "Suzuki Spacia 2019",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 31,
+      "ordinal": 14,
+      "name": "Suzuki Jimny 2018",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 36,
+      "ordinal": 15,
+      "name": "Nissan Dayz 2024",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 38,
+      "ordinal": 16,
+      "name": "Mazda Demio 2018",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 40,
+      "ordinal": 17,
+      "name": "Daihatsu Taft 2020",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 43,
+      "ordinal": 18,
+      "name": "Subaru XV 2020",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 44,
+      "ordinal": 19,
+      "name": "Suzuki Wagon R 2018",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 61,
+      "ordinal": 20,
+      "name": "Honda Freed Spike 2015",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 47,
+      "ordinal": 21,
+      "name": "Honda Freed 2017",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 24,
+      "ordinal": 22,
+      "name": "Honda Vezel 2016",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 50,
+      "ordinal": 23,
+      "name": "Toyota Vitz 2015",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "wave3",
+      "index": 49,
+      "ordinal": 24,
+      "name": "Toyota Tank 2017",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "b6",
+      "index": 55,
+      "ordinal": 25,
+      "name": "Toyota Yaris Cross 2023",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "b6",
+      "index": 213,
+      "ordinal": 26,
+      "name": "Toyota Yaris 2022",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "b6",
+      "index": 61,
+      "ordinal": 27,
+      "name": "Toyota Roomy 2020",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "b6",
+      "index": 98,
+      "ordinal": 28,
+      "name": "Toyota Raize 2020",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "b6",
+      "index": 84,
+      "ordinal": 29,
+      "name": "Suzuki Solio 2023",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    },
+    {
+      "src": "b6",
+      "index": 242,
+      "ordinal": 30,
+      "name": "Daihatsu Tanto 2019",
+      "corresponds_to_drom_40_sample_exact_gap": false
+    }
+  ],
+  "constraints": {
+    "max_engine_cc": 2000,
+    "max_source_hp": 160,
+    "source_grade_floor": 3.5,
+    "real_exact_car_images_required": true,
+    "no_random_street_or_stock_photo": true,
+    "source_full_sheet_required": true,
+    "exclude_missing_photos": true,
+    "auction_lot_keys_unique": true,
+    "not_current_inventory": true,
+    "external_supplier_links_on_public_page": false,
+    "third_party_commercial_rights_verified": false,
+    "power_mileage_claim": "Source values are not authoritative import quotes; rounded mileage where source rounds."
+  },
+  "release_instruction": "Only after explicit owner approval of this exact 30-card PDF and original photo+sheet bundle. Preserve hash and all publication checks. Never auto-import unapproved sourced candidates."
+}
