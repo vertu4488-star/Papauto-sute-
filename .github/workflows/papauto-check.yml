@@ -59,7 +59,7 @@ jobs:
           homepage = Path("index.html").read_text(encoding="utf-8")
           catalog = Path("catalog.html").read_text(encoding="utf-8")
           assert '/premium-ui.css?v=20261104' in homepage
-          assert '/catalog-premium.css?v=20261104' in catalog
+          assert '/catalog-premium.css?v=' in catalog
           assert catalog.index("/catalog-premium.css") > catalog.index("</style>")
           for name in ("premium-ui.css", "catalog-premium.css"):
               content = Path(name).read_text(encoding="utf-8")

@@ -27,3 +27,18 @@ main{max-width:1360px;margin:auto;padding:0 20px 70px}.intro{padding:44px 0 26px
 .model-reference .action{grid-column:3;grid-row:1 / 3;margin:0;background:transparent;border-bottom:1px solid #d9c7b7;border-radius:0;font-size:12px;white-space:nowrap;padding:6px 2px;min-height:28px}
 @media(max-width:1100px){.popular-model-directory{grid-template-columns:1fr}}
 @media(max-width:570px){.model-reference .car-info{grid-template-columns:minmax(0,1fr) auto;gap:7px}.model-reference h2{grid-column:1;grid-row:1}.model-reference .engine{grid-column:1;grid-row:2}.model-reference .car-meta{grid-column:1;grid-row:3}.model-reference .disclaimer{grid-column:1 / -1;grid-row:4}.model-reference .action{grid-column:2;grid-row:1 / 4;align-self:center;white-space:normal;max-width:110px}.verified-auction-photo{height:190px}}
+
+
+/* 2026-11-21 — every visible card has a published specific-lot photograph,
+   its original full auction sheet, and a complete description. */
+.car-card{min-width:0;box-shadow:0 5px 18px #5c432d09}
+.car-card .photo.verified-auction-photo{height:200px;min-height:200px;margin:0;background:#f7f0e8}
+.car-card .photo.verified-auction-photo img{object-fit:contain;width:100%;height:100%}
+.car-card .verified-auction-document{height:122px;min-height:122px;background:#f8f3ed;border-bottom:1px solid #e8ddd1;display:flex;align-items:center;justify-content:center}
+.car-card .verified-auction-document a{display:block;height:100%;width:100%;text-align:center}
+.car-card .verified-auction-document img{display:block;max-width:100%;height:100%;object-fit:contain;margin:auto}
+.car-card .verified-lot-description{font-size:12px;line-height:1.55;color:#64513f;overflow-wrap:anywhere;margin:4px 0 11px}
+.car-card .verified-lot-facts{margin:0 0 12px;color:#84664b;font-size:11px;line-height:1.45}
+.car-card .verified-document-link{display:block;color:#725237;font-size:12px;font-weight:650;text-decoration:underline;text-underline-offset:3px;padding:9px 0 12px}
+@media(min-width:761px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:540px){.car-card .photo.verified-auction-photo{height:220px}.car-card .verified-auction-document{height:125px}}

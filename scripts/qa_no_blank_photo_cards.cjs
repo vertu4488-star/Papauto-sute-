@@ -1,5 +1,4 @@
-/* Regression: owner-approved source media is mandatory for all visual car cards.
-   Non-photo model references remain navigable text rows; never blank image tiles. */
+/* PapAuto: never ship a vehicle card without original photograph, full sheet and genuine description. */
 "use strict";
 const assert=require("node:assert/strict");
 const {chromium}=require("playwright");
@@ -10,67 +9,100 @@ const base=process.env.PAPAUTO_QA_URL||"http://127.0.0.1:8765";
   const findings=[];
   try{
     for(const width of [390,1440]){
-      const page=await browser.newPage({viewport:{width,height:860}});
-      page.on("pageerror",error=>{throw error;});
+      const page=await browser.newPage({viewport:{width,height:900}});
+      const errors=[];page.on("pageerror",error=>errors.push(String(error)));
       await page.goto(base+"/catalog.html",{waitUntil:"load"});
-      await page.waitForFunction(()=>{
-        const cards=document.querySelectorAll(".model-card").length;
-        const index=document.querySelectorAll(".catalog-model-row").length;
-        return cards>=4&&cards+index===120;
-      },{timeout:25000});
+      await page.waitForFunction(()=>document.querySelectorAll(".model-card").length>=4,
+        null,{timeout:25000});
       const catalog=await page.evaluate(async()=>{
-        const visual=[...document.querySelectorAll(".model-card")];
-        const list=[...document.querySelectorAll(".catalog-model-row")];
-        for(const c of visual.slice(0,5)){
-          const image=c.querySelector("a.model-photo img");
-          if(!image||!image.src.startsWith(location.origin+"/assets/"))throw Error("Missing verified model photo");
-          // Lazy images below the fold must be requested before decode checks.
-          image.loading="eager";
-          await Promise.race([
-            image.decode(),
-            new Promise((_,reject)=>setTimeout(()=>reject(Error("Auction cover failed to decode within 8 s")),8000))
-          ]);
+        const cards=[...document.querySelectorAll(".model-card")];
+        for(const c of cards.slice(0,4)){
+          for(const img of c.querySelectorAll(".catalog-verified-media img")){
+            img.loading="eager";
+            await Promise.race([img.decode(),new Promise((_,reject)=>setTimeout(()=>
+              reject(Error("Missing source image in model card")),8000))]);
+          }
         }
-        return {visual:visual.length,reference:list.length,images:visual.filter(c=>c.querySelector(".model-photo img")).length,
-          oldPlaceholder:document.querySelectorAll(".model-photo span").length};
+        return {
+          count:cards.length,
+          empty:cards.filter(c=>c.querySelectorAll(".catalog-verified-media img").length!==2 ||
+              (c.querySelector(".catalog-lot-full-description")?.textContent.trim().length||0)<50).length,
+          unverifiedTextRows:document.querySelectorAll(".catalog-model-row,.model-reference").length
+        };
       });
-      assert(catalog.visual>=4,"Catalog should display photo-backed approved auction examples");
-      assert.equal(catalog.visual,catalog.images);
-      assert.equal(catalog.visual+catalog.reference,120);
+      assert(catalog.count>=4);
+      assert.equal(catalog.empty,0,"No card without full original photo+sheet+description");
+      assert.equal(catalog.unverifiedTextRows,0,"Unverified models must not be listed");
       findings.push({width,page:"catalog",...catalog});
       await page.goto(base+"/popular-import-2l.html",{waitUntil:"load"});
-      await page.waitForFunction(()=>document.querySelectorAll(".car-card").length>=4,{timeout:25000});
       const popular=await page.evaluate(async()=>{
-        const visual=[...document.querySelectorAll(".car-card")];
-        const reference=[...document.querySelectorAll(".model-reference")];
-        for(const c of visual.slice(0,5)){
-          const i=c.querySelector(".verified-auction-photo img");
-          if(!i)throw Error("Car visual card has no verified auction photo");
-          await i.decode();
+        const cards=[...document.querySelectorAll(".car-card")];
+        for(const c of cards.slice(0,3)){
+          for(const img of c.querySelectorAll(".verified-auction-photo img,.verified-auction-document img")){
+            img.loading="eager";
+            await Promise.race([img.decode(),new Promise((_,reject)=>setTimeout(()=>
+              reject(Error("Popular model photo/sheet did not load")),8000))]);
+          }
         }
-        return {visual:visual.length,reference:reference.length,
-          allImages:visual.every(c=>!!c.querySelector(".verified-auction-photo img")),
-          blank:document.querySelectorAll(".photo.auction-pending").length};
+        const data=await (await fetch("/data/gallery-lots.json")).json();
+        const byId=new Map(data.lots.map(lot=>[lot.id,lot]));
+        const simple=value=>String(value||"").toLowerCase().replace(/[\s-]/g,"");
+        const identityErrors=cards.filter(card=>{
+          const href=card.querySelector(".verified-auction-photo a")?.getAttribute("href")||"";
+          const id=decodeURIComponent(href.replace(/^\/lots\//,"").replace(/\.html$/,""));
+          const lot=byId.get(id);
+          return !lot||simple(lot.model)!==simple(card.querySelector("h2")?.textContent)||
+            lot.photos?.[0]!==card.querySelector(".verified-auction-photo img")?.getAttribute("src")||
+            lot.inspection_image!==card.querySelector(".verified-auction-document img")?.getAttribute("src")||
+            !lot.description||lot.description.length<50||!lot.grade||lot.mileage_km==null;
+        }).map(card=>card.querySelector("h2")?.textContent);
+        return {
+          count:cards.length,
+          bad:cards.filter(c=>c.querySelectorAll(".verified-auction-photo img,.verified-auction-document img").length!==2 ||
+               (c.querySelector(".verified-lot-description")?.textContent.trim().length||0)<50).length,
+          placeholders:document.querySelectorAll(".photo.auction-pending,.model-reference").length,
+          identityErrors
+        };
       });
-      assert(popular.visual>=4,"Popular-import page should show real auction images");
-      assert.equal(popular.visual+popular.reference,78);
-      assert(popular.allImages);
-      assert.equal(popular.blank,0);
+      assert.equal(popular.count,34,"Exactly 34 exact-model photo+sheet+description verified popular models");
+      assert.equal(popular.bad,0);
+      assert.equal(popular.placeholders,0);
+      assert.deepEqual(popular.identityErrors,[],"Only matching exact-model original auction photographs and sheets");
       findings.push({width,page:"popular",...popular});
-      for(const [name,real,reference] of [["japan-compact-models.html",18,12],["korea-popular-models.html",0,30]]){
-        await page.goto(base+"/"+name,{waitUntil:"load"});
-        const q=await page.evaluate(()=>({
-          visual:document.querySelectorAll("article.unit").length,
-          ref:document.querySelectorAll("article.model-reference").length,
-          emptyVisual:[...document.querySelectorAll("article.unit")].filter(c=>!c.querySelector(".media img")).length
-        }));
-        assert.equal(q.visual,real,name);
-        assert.equal(q.ref,reference,name);
-        assert.equal(q.emptyVisual,0,name);
-        findings.push({width,page:name,...q});
+      for(const [path,expected] of [["japan-compact-models.html",27],["korea-popular-models.html",0]]){
+        await page.goto(base+"/"+path,{waitUntil:"load"});
+        const result=await page.evaluate(async()=>{
+          const cards=[...document.querySelectorAll("article.unit")];
+          const data=await (await fetch("/data/gallery-lots.json")).json();
+          const byId=new Map(data.lots.map(lot=>[lot.id,lot]));
+          const simple=value=>String(value||"").toLowerCase().replace(/[\s-]/g,"");
+          const identityErrors=cards.filter(card=>{
+            const href=card.querySelector(".media a")?.getAttribute("href")||"";
+            const id=decodeURIComponent(href.replace(/^\/lots\//,"").replace(/\.html$/,""));
+            const lot=byId.get(id);
+            const imgs=[...card.querySelectorAll(".media img")];
+            return !lot||simple(lot.model)!==simple(card.querySelector("h2")?.textContent)||
+              lot.photos?.[0]!==imgs[0]?.getAttribute("src")||
+              lot.inspection_image!==imgs[1]?.getAttribute("src")||
+              !lot.description||lot.description.length<50||!lot.grade||lot.mileage_km==null;
+          }).map(card=>card.querySelector("h2")?.textContent);
+          return {
+            count:cards.length,
+            bad:cards.filter(c=>c.querySelectorAll(".media img").length!==2 ||
+              (c.querySelector(".lot-full-desc")?.textContent.trim().length||0)<50).length,
+            reference:document.querySelectorAll("article.model-reference").length,
+            identityErrors
+          };
+        });
+        assert.equal(result.count,expected,path+" count");
+        assert.equal(result.bad,0,path+" no unverifiable card");
+        assert.equal(result.reference,0,path+" no unverified reference rows");
+        assert.deepEqual(result.identityErrors,[],path+" exact model and original media validation");
+        findings.push({width,page:path,...result});
       }
+      assert.deepEqual(errors,[],"No browser script errors");
       await page.close();
     }
   }finally{await browser.close();}
-  console.log("PAPAUTO_PHOTO_ONLY_CARDS_QA_OK",JSON.stringify(findings));
-})().catch(err=>{console.error(err);process.exit(1)});
+  console.log("PAPAUTO_VERIFIED_CARDS_ONLY_QA_OK "+JSON.stringify(findings));
+})().catch(error=>{console.error(error);process.exit(1);});

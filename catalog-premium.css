@@ -61,3 +61,18 @@ body{background:#faf6f1!important;color:#302b28}
 .priority-card img{background:#eadfd3}
 .priority-card strong{font-weight:560}
 .priority-card small{color:#6d625b}
+
+
+/* Verified-lot-only catalog cards: two original media images and full description. */
+.model-card{display:flex;flex-direction:column;gap:9px;padding:14px;overflow:hidden}
+.catalog-verified-media{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,0.8fr);gap:5px;margin:-14px -14px 9px;background:#f7f0e8;min-height:220px}
+.catalog-verified-media a{display:block;min-width:0;min-height:220px;border:0;overflow:hidden;background:#f7f0e8}
+.model-card .catalog-verified-media .model-photo{display:block!important;position:relative;width:100%;height:230px;min-height:230px;margin:0;overflow:hidden;border-radius:0;background:#f7f0e8}
+.model-card .catalog-verified-media img{display:block;width:100%;height:230px;max-height:230px;object-fit:contain;background:#f7f0e8}
+.model-card .catalog-verified-media .model-photo img{opacity:1;transition:none}
+.catalog-sheet-photo img{object-fit:contain!important}
+.model-card .catalog-lot-full-description{color:#65503e;font-size:12px;line-height:1.55;margin:0;overflow-wrap:anywhere}
+.model-card .catalog-lot-facts{color:#87664a;font-size:11px;line-height:1.5;margin:2px 0 4px}
+.model-card .catalog-request-link{margin-top:auto;padding-top:9px;border-top:1px solid #ebdfd3}
+.catalog-grid:empty,.catalog-grid[hidden]{display:none!important}
+@media(max-width:700px){.catalog-verified-media{min-height:195px}.catalog-verified-media a{min-height:195px}.model-card .catalog-verified-media .model-photo,.model-card .catalog-verified-media img{height:205px;min-height:205px}}
