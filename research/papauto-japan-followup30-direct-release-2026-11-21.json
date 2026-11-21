@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "brand": "PapAuto",
+  "created_at": "2026-11-21",
+  "status": "OWNER_DIRECTED_RELEASE",
+  "owner_instruction": "Добавить еще 30 карточек после опубликованной партии из 30. Выполнить публикацию при соблюдении строгих правил точных фото и полных аукционных листов.",
+  "rights_confirmed": false,
+  "published": false,
+  "prior_live_japan_lots": 459,
+  "target_japan_lots": 489,
+  "approved_additional_lots": 30,
+  "media_total": 90,
+  "review_pdf_filename": "PapAuto_Japan_Another30_489_2026-11-21.pdf",
+  "review_pdf_sha256": "01c7362b9575b09db0157b0e66189d8b518fc3037481b25d924d34ca72a9c29a",
+  "review_zip_filename": "PapAuto_Japan_Another30_489_2026-11-21_media.zip",
+  "review_zip_sha256": "218466b04049b91abe543e23c00572ac1f63f6cc6b3c5b3ac8ab441179f35a7e",
+  "raw_sha256_aggregate": "62c19e7a046f49d0f32f969724202bf0133e206a8a133513cad5741e8b919d6c",
+  "jpg_sha256_aggregate": "be9ffa7575b7e8cf707c952e95098f8b51880d59c169a28418ed91172660dc64",
+  "source_archives": [
+    {
+      "key": "wave3",
+      "run_id": 44864961085,
+      "artifact_id": 14691820564,
+      "manifest_sha256": "9bd14bac931dbacfb3fc2578cf52816ce9fd5a2b6c666d04eff9ec42c01ebdc2",
+      "selected_indices": [
+        1,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13,
+        14,
+        16,
+        19,
+        67,
+        27,
+        30,
+        32,
+        53,
+        34,
+        39,
+        41,
+        46,
+        62
+      ]
+    },
+    {
+      "key": "b6",
+      "run_id": 44758942918,
+      "artifact_id": 14641252098,
+      "manifest_sha256": "fe2fb3d5f95195e9fd084dc72a5ad4f349dd9f100195bf1e5c5d13bfb1c58838",
+      "selected_indices": [
+        164,
+        126,
+        201,
+        29,
+        33,
+        146,
+        43,
+        152,
+        101,
+        196
+      ]
+    }
+  ],
+  "selection": [
+    {
+      "src": "wave3",
+      "index": 1,
+      "ordinal": 1,
+      "name": "Toyota Noah 2017"
+    },
+    {
+      "src": "wave3",
+      "index": 5,
+      "ordinal": 2,
+      "name": "Toyota Tank 2019"
+    },
+    {
+      "src": "wave3",
+      "index": 6,
+      "ordinal": 3,
+      "name": "Toyota Vitz 2016"
+    },
+    {
+      "src": "wave3",
+      "index": 9,
+      "ordinal": 4,
+      "name": "Toyota Passo 2017"
+    },
+    {
+      "src": "wave3",
+      "index": 10,
+      "ordinal": 5,
+      "name": "Toyota Voxy 2017"
+    },
+    {
+      "src": "wave3",
+      "index": 12,
+      "ordinal": 6,
+      "name": "Toyota Allion 2016"
+    },
+    {
+      "src": "wave3",
+      "index": 13,
+      "ordinal": 7,
+      "name": "Toyota Yaris 2025"
+    },
+    {
+      "src": "wave3",
+      "index": 14,
+      "ordinal": 8,
+      "name": "Toyota Roomy 2019"
+    },
+    {
+      "src": "wave3",
+      "index": 16,
+      "ordinal": 9,
+      "name": "Toyota Aqua 2014"
+    },
+    {
+      "src": "wave3",
+      "index": 19,
+      "ordinal": 10,
+      "name": "Toyota Corolla fielder 2020"
+    },
+    {
+      "src": "wave3",
+      "index": 67,
+      "ordinal": 11,
+      "name": "Suzuki Hustler 2023"
+    },
+    {
+      "src": "wave3",
+      "index": 27,
+      "ordinal": 12,
+      "name": "Suzuki Hustler 2018"
+    },
+    {
+      "src": "wave3",
+      "index": 30,
+      "ordinal": 13,
+      "name": "Suzuki Spacia 2021"
+    },
+    {
+      "src": "wave3",
+      "index": 32,
+      "ordinal": 14,
+      "name": "Suzuki Jimny 2016"
+    },
+    {
+      "src": "wave3",
+      "index": 53,
+      "ordinal": 15,
+      "name": "Toyota Voxy 2015"
+    },
+    {
+      "src": "wave3",
+      "index": 34,
+      "ordinal": 16,
+      "name": "Nissan Dayz 2017"
+    },
+    {
+      "src": "wave3",
+      "index": 39,
+      "ordinal": 17,
+      "name": "Mazda Demio 2017"
+    },
+    {
+      "src": "wave3",
+      "index": 41,
+      "ordinal": 18,
+      "name": "Daihatsu Taft 2024"
+    },
+    {
+      "src": "wave3",
+      "index": 46,
+      "ordinal": 19,
+      "name": "Honda Freed 2015"
+    },
+    {
+      "src": "wave3",
+      "index": 62,
+      "ordinal": 20,
+      "name": "Honda Fit 2017"
+    },
+    {
+      "src": "b6",
+      "index": 164,
+      "ordinal": 21,
+      "name": "Toyota Sienta 2020"
+    },
+    {
+      "src": "b6",
+      "index": 126,
+      "ordinal": 22,
+      "name": "Toyota Corolla touring 2022"
+    },
+    {
+      "src": "b6",
+      "index": 201,
+      "ordinal": 23,
+      "name": "Daihatsu Taft 2021"
+    },
+    {
+      "src": "b6",
+      "index": 29,
+      "ordinal": 24,
+      "name": "Suzuki Swift 2017"
+    },
+    {
+      "src": "b6",
+      "index": 33,
+      "ordinal": 25,
+      "name": "Suzuki Solio 2021"
+    },
+    {
+      "src": "b6",
+      "index": 146,
+      "ordinal": 26,
+      "name": "Mazda Demio 2019"
+    },
+    {
+      "src": "b6",
+      "index": 43,
+      "ordinal": 27,
+      "name": "Daihatsu Tanto 2017"
+    },
+    {
+      "src": "b6",
+      "index": 152,
+      "ordinal": 28,
+      "name": "Toyota Raize 2023"
+    },
+    {
+      "src": "b6",
+      "index": 101,
+      "ordinal": 29,
+      "name": "Toyota Yaris cross 2024"
+    },
+    {
+      "src": "b6",
+      "index": 196,
+      "ordinal": 30,
+      "name": "Nissan Note 2019"
+    }
+  ],
+  "rules": {
+    "two_exact_photos": true,
+    "one_complete_japanese_auction_sheet": true,
+    "minimum_sheet_side_px": 700,
+    "no_placeholder": true,
+    "no_street_photos": true,
+    "no_duplicates": true,
+    "engine_cc_lte": 2000,
+    "source_power_hp_lte": 160,
+    "reference_only": true,
+    "third_party_commercial_rights_verified": false
+  },
+  "source_note": "All 30 auction keys were compared against 464 prior owner/base archive rows with zero overlaps before staging."
+}
