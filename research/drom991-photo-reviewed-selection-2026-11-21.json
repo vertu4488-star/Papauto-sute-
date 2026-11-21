@@ -1,0 +1,73 @@
+{
+  "project": "PapAuto",
+  "created_at": "2026-11-21",
+  "status": "preview_requires_explicit_owner_approval",
+  "drom_reference": "research/drom-novosibirsk-991-no-rf-2026-11-13.json",
+  "drom_result_count_as_of_2026_11_13": 991,
+  "drom_inspected_listings": 40,
+  "japan": {
+    "source_run_id": 44860230085,
+    "source_artifact_id": 14689548377,
+    "source_zip_sha256": "36a1c307ec1d9e7c82085f4be2f4af017fd61d95c7756772f084164be33d034d",
+    "selected_record_indices": [
+      2,
+      3,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      17
+    ],
+    "selected_count": 11,
+    "media_set": "two original source photos and matching full auction sheet per candidate",
+    "rejected_record_reasons": {
+      "1": "damage diagram only, full sheet missing",
+      "4": "damage diagram only, full sheet missing",
+      "6": "damage diagram only, full sheet missing",
+      "13": "damage diagram only, full sheet missing",
+      "15": "damage diagram only, full sheet missing",
+      "16": "damage diagram only, full sheet missing"
+    },
+    "owner_approved": false,
+    "third_party_rights_verified": false
+  },
+  "china": {
+    "source_run_id": 44860470855,
+    "source_artifact_id": 14689950055,
+    "source_zip_sha256": "e269f417f6e75695c183b1fcc27596541b94aa0b50528d30f1615d45390ba408",
+    "selected_record_indices": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "selected_count": 9,
+    "media_set": "one distinct original source photograph per supplier example",
+    "rejected_record_reasons": {
+      "1": "watermark/branding",
+      "2": "outdoor",
+      "3": "outdoor",
+      "4": "outdoor",
+      "5": "visual model inconsistency",
+      "15": "outdoor",
+      "16": "repeated branded source photo suspected",
+      "17": "repeated branded source photo suspected",
+      "18": "repeated branded source photo suspected"
+    },
+    "fuel_labels_unreliable": true,
+    "exact_original_inspection_report_verified": false,
+    "owner_approved": false,
+    "third_party_rights_verified": false
+  },
+  "catalog_publication_change": false,
+  "notes": "Research selection requires owner exact batch approval. Absolutely no auto publication of photo candidates. Japan source example has data and full sheet but commercial reproduction rights are unverified. China supplier photo data must not be represented as completed auction, verified inspection, or physical stock."
+}
