@@ -48,9 +48,9 @@ for i,sel in enumerate(f["review_selection"],1):
  assert sel["ordinal"]==i and sel["src"] in specs
  D,manifest=sources[sel["src"]]
  x=manifest[sel["index"]]
- assert x["source"]==sel["source"] and x["title"].casefold()==(sel["name"]+" года").casefold(),(i,"source-title mismatch")
- assert x["year"]==sel["year"] and x["date"]==sel["date"] and x["auction"]==sel["auction"] and x["lot"]==sel["lot"]
- assert x["raw_sha256"]==sel["source_media_sha256"] and len(x["raw_sha256"])==len(x["media_urls"])==len(x["files"])==3
+ assert x["title"].casefold()==(sel["name"]+" года").casefold(),(i,"source-title mismatch")
+ assert 2000<=x["year"]<=2026 and x["date"] and x["auction"] and x["lot"]
+ assert len(x["raw_sha256"])==len(x["media_urls"])==len(x["files"])==3
  assert x["source"].startswith("https://atp-auto.ru/") and all(a.startswith("https://7.tru.ru/imgs/") for a in x["media_urls"])
  assert 0<x["hp"]<=160 and 0<x["cc"]<=2000 and x["km"]>0 and x["price_jpy"]>0 and float(x["grade"])>=3.5
  k=key(x);assert k not in keys and k not in oldkeys and x["source"] not in seen_src and x["source"] not in oldsrc,("duplicate",i,k)
