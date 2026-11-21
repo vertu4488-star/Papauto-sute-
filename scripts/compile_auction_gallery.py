@@ -536,7 +536,7 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
             card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
                         sale_label="Статистика продаж", rights_confirmed=False)
             additional.append(card)
-        archive17 = json.loads((ROOT / "research/owner-approved-japan-drom991-20-2026-11-21.json").read_text(encoding="utf-8"))
+        archive17 = json.loads((ROOT / "research/owner-approved-japan-drom991-14-2026-11-21.json").read_text(encoding="utf-8"))
         if archive17.get("approved_count") != 14 or archive17.get("rights_confirmed") is not False:
             raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: Japan 14")
         for rec in archive17["lots"]:
