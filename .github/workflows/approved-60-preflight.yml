@@ -1,0 +1,48 @@
+name: PapAuto approved 60 publication preflight
+on:
+  push:
+    branches: ['release/approved-japan-china-60-20261121']
+    paths: ['.github/workflows/approved-60-preflight.yml']
+permissions:
+  actions: read
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: China-next-30-sourcing
+          run-id: 44909447816
+          github-token: ${{ github.token }}
+          path: /tmp/china
+      - uses: actions/download-artifact@v4
+        with:
+          name: drom991-japan-30-photo-sheet-review
+          run-id: 44908535833
+          github-token: ${{ github.token }}
+          path: /tmp/japan
+      - name: Check exact owner-approved 30+30 and media
+        run: |
+          python - <<'PY'
+          import json,hashlib,re
+          from pathlib import Path
+          china=json.loads(Path('/tmp/china/manifest.json').read_text())['records'][:30]
+          japan=json.loads(Path('/tmp/japan/manifest.json').read_text())[:30]
+          assert len(china)==len(japan)==30
+          assert len({x['sha256'] for x in china})==30
+          assert len({(x['auction'],x['lot'],x['date']) for x in japan})==30
+          for x in china:
+              p=Path('/tmp/china')/(x['id']+'.jpg')
+              assert p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()==x['sha256']
+          for x in japan:
+              assert len(x['files'])==3
+              for f in x['files']:
+                  p=Path('/tmp/japan')/f
+                  assert p.is_file() and p.stat().st_size>1000
+          print('VALIDATED: 30 China supplier images and 30 Japan photo+sheet sets')
+          print('PUBLISH GATE: compare against current live inventory and extend immutable publication verifier before deploy')
+          PY
+      - name: Check existing live static build
+        run: python scripts/build_static_public.py
