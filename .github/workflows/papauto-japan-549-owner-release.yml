@@ -1,0 +1,80 @@
+name: PapAuto owner-approved Japan gallery release 549
+on:
+  push:
+    branches: ['release/papauto-japan-owner-approved-549-20261121']
+    paths: ['.github/workflows/papauto-japan-549-owner-release.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Retrieve exactly approved 30 historical sources from staged 549 branch
+        run: |
+          git fetch --no-tags origin review/japan-next30-549-20261121
+          git checkout origin/review/japan-next30-549-20261121 -- research/japan-549-staged-media/ research/owner-approved-japan-next30-549-staged-2026-11-21.json
+          test "$(find research/japan-549-staged-media -maxdepth 1 -name '*.jpg' | wc -l)" -eq 90
+      - run: python -m pip install -r requirements.txt pillow
+      - name: Freeze and attach exact 30 selected owner-approved lots after 519
+        run: python scripts/release_japan_next30_549_owner_approved.py
+      - name: Validate 549 gallery, images, archive policy and index pages
+        run: |
+          python scripts/verify_publication_approval.py
+          python scripts/build_content.py
+          python scripts/build_static_public.py
+          python -m unittest discover -s tests -v
+          node --check gallery.js
+          node tests/test_survey_all_gallery_lots.cjs
+      - name: Run phone and desktop screenshot/rendering checks across all 60 new cards
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install chromium
+          python -m http.server 8765 --directory render-public >/tmp/papauto-549-server.log 2>&1 &
+          node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{
+            const b=await chromium.launch({headless:true});
+            for(const width of [320,390,1440]){
+              const p=await b.newPage({viewport:{width,height:844}});
+              await p.goto('http://localhost:8765/gallery.html');
+              const all=await p.evaluate(async()=>await(await fetch('/data/gallery-lots.json')).json());
+              if(all.lots.length!==549)throw Error('Wrong gallery length '+all.lots.length);
+              const newLots=all.lots.filter(x=>/^japan-next30-(?:519|549)-20261121-/.test(x.id));
+              if(newLots.length!==60)throw Error('Missing any of the 60 owner-approved new records');
+              const keys=new Set();
+              for(const row of all.lots){
+                const k=[row.market,String(row.auction).replace(/[^a-z0-9]/gi,''),row.auction_date,String(row.lot_number).replace(/^0+/,'')].join('|');
+                if(keys.has(k))throw Error('Duplicate auction key '+k);
+                keys.add(k);
+              }
+              for(const row of newLots){
+                if(row.rights_confirmed!==false || row.status!=='reference_only' || row.photos.length!==2 || !row.inspection_image)throw Error('Incomplete archive source '+row.id);
+                for(const u of [...row.photos,row.inspection_image]){
+                  await p.evaluate(async url=>{const im=new Image();im.src=url;await im.decode();if(Math.min(im.naturalWidth,im.naturalHeight)<180)throw Error('Broken image '+url)},u);
+                }
+              }
+              if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2))throw Error('Horizontal overflow '+width);
+              await p.close();
+            }
+            await b.close();
+            console.log('PAPAUTO_549_BROWSER_QA_OK: 549 unique archive lots; 60 new; 180 exact images; mobile 320,390 + desktop 1440');
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Keep stage-only originals in review branch, commit public owner-approved release assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm --cached -r -q research/japan-549-staged-media research/owner-approved-japan-next30-549-staged-2026-11-21.json
+          rm -rf research/japan-549-staged-media research/owner-approved-japan-next30-549-staged-2026-11-21.json
+          git add AGENTS.md docs/AUCTION_ONLY_GALLERY.md scripts/compile_auction_gallery.py scripts/build_static_public.py scripts/verify_publication_approval.py scripts/publish_lot_search.py tests/test_auction_only_images_policy.py tests/test_site_warm_theme.py research/owner-approved-japan-next30-549-2026-11-21.json assets/auction/approved/japan-next30-549-20261121-*.jpg sitemap.xml
+          git commit -m "PapAuto: publish 30 further exact owner-approved Japan auction cards (549)"
+          git push origin HEAD:release/papauto-japan-owner-approved-549-20261121
