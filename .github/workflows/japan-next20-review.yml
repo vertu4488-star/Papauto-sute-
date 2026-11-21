@@ -1,0 +1,24 @@
+name: Research 20 additional authentic Japan auction lots
+on:
+  push:
+    branches: ['research/japan-next20-20261121']
+    paths: ['.github/workflows/japan-next20-review.yml']
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4 pillow
+      - name: Verify original auction photos, sheets, distinct lot keys and media hashes
+        run: python scripts/research_drom991_targeted_gap.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: japan-next20-verified-photo-sheet-review
+          path: japan-next20-review/
+          retention-days: 60
