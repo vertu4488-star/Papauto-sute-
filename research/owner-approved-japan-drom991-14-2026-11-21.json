@@ -1,0 +1,81 @@
+{
+  "approved_count": 2,
+  "rights_confirmed": false,
+  "owner_authorized_archival_reference_only": true,
+  "lots": [
+    {
+      "id": "japan-drom991-14-20261121-03",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Freed spike",
+      "year": 2012,
+      "mileage_km": 86000,
+      "body": "GB4",
+      "grade": "3.5",
+      "auction": "JU Hokkaido",
+      "lot": "288",
+      "auction_date": "2026-11-13",
+      "description": "Honda Freed spike, 2012 года, кузов GB4, комплектация G Aero 4WD. Двигатель 1496 см³, мощность 118 л.с. Пробег 86000 км, оценка 3.5, аукцион JU Hokkaido, дата 2026-11-13, лот №288. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона без доставки и таможенных платежей.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-14-20261121-03-front.jpg",
+        "/assets/auction/approved/japan-drom991-14-20261121-03-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-14-20261121-03-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 125000,
+      "media_sha256": [
+        "a4ab3e309302d566ac3d52c945964c0265c75176ef8ebb837d3fb9462be401b5",
+        "e0e4ddf8c1ed2d4d6d4814e661f4ee675d59a68fdd21929c45addc3e04ea0211",
+        "7916a568c4af951d2f2b160906fe7c57b3c4ab73840fa2966c9bfbb1614267b1"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/4ilk85ldk4NX3s/",
+      "source_media": [
+        "https://7.tru.ru/imgs/pPDJ5xzj4wt1yZKfxzilMMHqmGvO5Qc868ZVN5zPt6HwW6oWDgu",
+        "https://7.tru.ru/imgs/pPDJ5xzj4wt1yZKfxzilMMHqmGvO5Qc868ZVN5zPEZ2L1szZJcl",
+        "https://7.tru.ru/imgs/pPDJ5xzj4wthwrMe3gzmdaCxO0WnXxUpZrFNMvhDAPn7rXQO86P"
+      ],
+      "rights_confirmed": false,
+      "engine_cc": 1496,
+      "power_hp": 118
+    },
+    {
+      "id": "japan-drom991-14-20261121-14",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Ractis",
+      "year": 2013,
+      "mileage_km": 113000,
+      "body": "NCP125",
+      "grade": "3.5",
+      "auction": "JU Hokkaido",
+      "lot": "203",
+      "auction_date": "2026-11-13",
+      "description": "Toyota Ractis, 2013 года, кузов NCP125, комплектация 4WD ᦏ. Двигатель 1500 см³, мощность 103 л.с. Пробег 113000 км, оценка 3.5, аукцион JU Hokkaido, дата 2026-11-13, лот №203. Автомобиль не в наличии: историческая статистика аукционных продаж Японии. Цена аукциона без доставки и таможенных платежей.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-drom991-14-20261121-14-front.jpg",
+        "/assets/auction/approved/japan-drom991-14-20261121-14-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-drom991-14-20261121-14-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 155000,
+      "media_sha256": [
+        "bb161d2dadd173f56f7ed847aca95da0ee8771d6c65377da487b4e0ff949e7d8",
+        "cad1ff4591276981ef23acd563e2e271f27f2f39d8b0e35ea2c141174a5831f5",
+        "c3e34c1dd18f8d40a0d9ebcbe297be8b928212f5de6036ff665bbd3882872925"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/ractis/4rRiD8zNArA6Nz/",
+      "source_media": [
+        "https://7.tru.ru/imgs/pPDJ5xzj4wt1yZKfxzilMMHqmGvO5Qc868ZVN5zPt6HxL4set5b",
+        "https://7.tru.ru/imgs/pPDJ5xzj4wt1yZKfxzilMMHqmGvO5Qc868ZVN5zPEZ2LPqDhz13",
+        "https://7.tru.ru/imgs/pPDJ5xzj4wthwrMe3gzmdaCxO0WnXxUpZrFNMvhDAPn8gVU6WTw"
+      ],
+      "rights_confirmed": false,
+      "engine_cc": 1500,
+      "power_hp": 103
+    }
+  ]
+}

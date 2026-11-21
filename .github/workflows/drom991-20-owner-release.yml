@@ -1,0 +1,44 @@
+name: Publish owner-approved Drom991 Japan 20
+on:
+  push:
+    branches: ['release/drom991-20-approved-20261121']
+    paths: ['.github/workflows/drom991-20-owner-release.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: drom991-gap-photo-sheet-review
+          run-id: 44902238192
+          github-token: ${{ github.token }}
+          path: /tmp/drom20
+      - run: pip install -r requirements.txt pillow
+      - run: python scripts/release_drom991_20_owner_approved.py
+      - name: Verify complete public build and tests
+        run: |
+          python scripts/verify_publication_approval.py
+          python scripts/build_content.py
+          python scripts/build_static_public.py
+          python -m unittest discover -s tests -v
+          node --check gallery.js
+          node tests/test_survey_all_gallery_lots.cjs
+      - name: Commit media and manifest to review branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/compile_auction_gallery.py research/owner-approved-japan-drom991-14-2026-11-21.json assets/auction/approved/japan-drom991-14-20261121-*.jpg
+          git commit -m "Prepare 14 exact Japanese auction cards with original photos and sheets"
+          git push origin HEAD:release/drom991-20-approved-20261121
+
+# Retry with corrected source title parser.
+
+# Production verification before owner-approved merge.

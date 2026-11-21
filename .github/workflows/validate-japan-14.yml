@@ -1,0 +1,18 @@
+name: Validate 2 unique Japan auction cards
+on:
+  push:
+    branches: ['release/drom991-20-approved-20261121']
+    paths: ['.github/workflows/validate-japan-14.yml']
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt pillow
+      - name: Build full public site and verify all auction cards and duplicate keys
+        run: python scripts/build_static_public.py
