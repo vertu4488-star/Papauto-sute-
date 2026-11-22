@@ -16,6 +16,8 @@ class LotSearchRelease(unittest.TestCase):
         self.assertIn('https://papauto.ru/auction-lot-index.html', main_urls)
         self.assertNotIn('https://papauto.ru/auction-lot-index.html', lot_urls)
         directory = (root / 'auction-lot-index.html').read_text()
+        self.assertIn(f'Количество опубликованных аукционных примеров: {len(lots)}', directory)
+        self.assertIn(f'Все аукционные карточки ({len(lots)})', (root / 'gallery.html').read_text())
         for lot in lots:
             path = '/lots/' + lot['id'] + '.html'
             page = (root / path.lstrip('/')).read_text()
