@@ -32,7 +32,7 @@ def build():
         (ROOT/f'{slug}.html').write_text(html+'\n')
     # Discover public pages, keeping each canonical route exactly once.
     urls=[]
-    for path in sorted(ROOT.glob('*.html')):
+    for path in sorted(list(ROOT.glob('*.html')) + list((ROOT / 'models').glob('*.html'))):
         text=path.read_text()
         if re.search(r'<meta[^>]+content="[^"]*noindex',text): continue
         m=re.search(r'<link rel="canonical" href="([^"]+)"',text)
