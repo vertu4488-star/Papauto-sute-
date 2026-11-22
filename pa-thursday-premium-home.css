@@ -45,6 +45,7 @@ body.pa-thursday-home .pa-thursday-markets{display:grid;grid-template-columns:re
 body.pa-thursday-home .pa-thursday-market{min-width:0;background:linear-gradient(125deg,#fffdfa,#f3ece5);border:1px solid #e7ded4;border-radius:14px;padding:17px 20px;display:flex;flex-direction:column;justify-content:center}
 body.pa-thursday-home .pa-thursday-market:last-child{background:linear-gradient(120deg,#fffdfa,#f4f0ec)}
 body.pa-thursday-home .pa-thursday-market strong{font-size:15px;font-weight:550;color:#343337;line-height:1.35}
+body.pa-thursday-home .pa-thursday-market small a{color:#70513e;text-decoration:underline;text-underline-offset:3px;font-weight:550}
 body.pa-thursday-home .pa-thursday-market small{font-size:12px;color:#817b77;line-height:1.62;margin-top:5px}
 body.pa-thursday-home .pa-thursday-feature{margin:8px 0 38px}
 body.pa-thursday-home .pa-thursday-feature-head{display:flex;align-items:end;justify-content:space-between;gap:15px;flex-wrap:wrap;margin:0 0 15px}
