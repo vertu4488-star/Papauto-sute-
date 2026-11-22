@@ -1,5 +1,7 @@
 """Search release must match the screened catalogue, never quarantined pages."""
+import html
 import json
+import re
 import unittest
 from pathlib import Path
 import xml.etree.ElementTree as ET
@@ -21,6 +23,12 @@ class LotSearchRelease(unittest.TestCase):
         for lot in lots:
             path = '/lots/' + lot['id'] + '.html'
             page = (root / path.lstrip('/')).read_text()
+            title = re.search(r'<title>([^<]+)</title>', page)
+            description = re.search(r'<meta name="description" content="([^"]+)"', page)
+            self.assertIsNotNone(title, path)
+            self.assertIsNotNone(description, path)
+            self.assertLessEqual(len(html.unescape(title.group(1))), 60, path)
+            self.assertLessEqual(len(html.unescape(description.group(1))), 160, path)
             self.assertIn('content="index,follow"', page)
             self.assertIn('rel="canonical" href="https://papauto.ru'+path+'"', page)
             self.assertEqual(lot_urls.count('https://papauto.ru'+path), 1)

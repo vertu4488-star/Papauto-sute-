@@ -119,13 +119,22 @@ def render_lot(lot: dict, asset_root: Path) -> str:
               else "Аукционный пример, факт продажи не подтверждён")
     warning = ("Цена аукционных торгов без доставки, таможни, утильсбора и комиссии."
                if price_amount else "Итоговую цену продажи необходимо подтвердить.")
+    # Keep the verified model, year and lot number while avoiding truncated
+    # search snippets for long premium-equipment names.
+    lot_title = f"{lot['model']} {lot['year']} — лот №{lot['lot_number']} | PAPAUTO"
+    if len(lot_title) > 60:
+        lot_title = f"{lot['model']} {lot['year']} — лот №{lot['lot_number']}"
+    if len(lot_title) > 60:
+        tail = f" {lot['year']} — лот №{lot['lot_number']}"
+        limit = 60 - len(tail) - 1
+        lot_title = lot["model"][:limit].rstrip() + "…" + tail
     return f"""<!doctype html>
 <html lang="ru"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,follow">
 <meta name="theme-color" content="#122942">
-<title>{safe(lot["model"])} {safe(lot["year"])} — аукционный лот №{safe(lot["lot_number"])} | PAPAUTO</title>
+<title>{safe(lot_title)}</title>
 <meta name="description" content="Фотографии и полный аукционный лист {safe(lot["model"])} {safe(lot["year"])} года, пробег и оценка.">
 <link rel="stylesheet" href="/lot-detail-photo-first.css">
 <link rel="icon" href="/assets/favicon.svg">

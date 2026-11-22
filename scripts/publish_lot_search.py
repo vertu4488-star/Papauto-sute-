@@ -16,9 +16,14 @@ def publish(target: Path):
         file = target / path.lstrip('/')
         page = file.read_text()
         page = page.replace('content="noindex,follow"', 'content="index,follow"', 1)
-        description = (f"{lot['model']} {lot['year']}: пробег {lot['mileage_km']} км, "
-                       f"оценка {lot['grade']}, {lot['auction']}, {lot['auction_date']}, лот {lot['lot_number']}. "
-                       'Архивный аукционный пример с фото и листом. Подбор аналога с доставкой в Новосибирск.')
+        description = (f"{lot['model']} {lot['year']}: {lot['mileage_km']} км, "
+                       f"оценка {lot['grade']}, лот №{lot['lot_number']}. "
+                       "Аукционные фото и полный лист. Подбор аналога в Новосибирск.")
+        if len(description) > 160:
+            description = (f"{lot['model']} {lot['year']}: {lot['mileage_km']} км, "
+                           f"лот №{lot['lot_number']}. Фото и аукционный лист. Подбор в Новосибирск.")
+        if len(description) > 160:
+            raise RuntimeError("PAPAUTO_SEO: lot description too long: " + lot["id"])
         import re
         page = re.sub(r'<meta name="description" content="[^"]*">',
                       '<meta name="description" content="' + esc(description) + '">', page)

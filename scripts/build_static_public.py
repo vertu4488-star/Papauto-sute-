@@ -468,6 +468,7 @@ def copy_public_files() -> list[str]:
         (TARGET / retired).write_text(retirement_html, encoding="utf-8")
 
     # Publish search entry points requested by the owner for the published catalogue on 2026-11-16.
+    # The detail-page SEO metadata generated here is length-checked by the lot release test.
     from publish_lot_search import publish
     published_lot_count = publish(TARGET)
     lot_sitemap = TARGET / "sitemap-lots.xml"
