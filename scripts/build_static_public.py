@@ -129,6 +129,16 @@ def copy_public_files() -> list[str]:
             shutil.copy2(src, dst)
             copied.append(dst.relative_to(TARGET).as_posix())
 
+    # Publish only owner-curated model landing pages; never copy arbitrary repository folders.
+    model_root = ROOT / "models"
+    if model_root.is_dir() and not model_root.is_symlink():
+        for src in sorted(model_root.glob("*.html")):
+            if src.is_file() and not src.is_symlink():
+                dst = TARGET / "models" / src.name
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(src, dst)
+                copied.append(dst.relative_to(TARGET).as_posix())
+
     for folder, allowed_suffixes in PUBLIC_FOLDERS.items():
         base = ROOT / folder
         if not base.is_dir() or base.is_symlink():
