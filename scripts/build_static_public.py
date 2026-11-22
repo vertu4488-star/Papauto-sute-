@@ -480,6 +480,14 @@ def copy_public_files() -> list[str]:
     lot_urls = [node.text for node in lot_sitemap_tree.findall(f"{ns}url/{ns}loc")]
     if len(lot_urls) != published_lot_count or len(set(lot_urls)) != published_lot_count:
         raise RuntimeError("PAPAUTO_SEO: dedicated lot sitemap does not match approved pages")
+    # The released lot pages were updated on 2026-11-22. Their sitemap
+    # entries must include valid lastmod dates so crawlers can detect changes.
+    lot_nodes = lot_sitemap_tree.findall(f"{ns}url")
+    lot_dates = [node.findtext(f"{ns}lastmod") for node in lot_nodes]
+    if len(lot_dates) != published_lot_count or any(
+            not date or not re.fullmatch(r"20\d{2}-\d{2}-\d{2}", date)
+            for date in lot_dates):
+        raise RuntimeError("PAPAUTO_SEO: lot sitemap lastmod missing or invalid")
     core_tree = ET.parse(TARGET / "sitemap.xml")
     core_urls = {node.text for node in core_tree.findall(f"{ns}url/{ns}loc")}
     if set(lot_urls) & core_urls or "https://papauto.ru/auction-lot-index.html" not in core_urls:
