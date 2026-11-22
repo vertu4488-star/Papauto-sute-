@@ -17,6 +17,10 @@ class LotSearchRelease(unittest.TestCase):
         lot_urls = [e.text for e in lot_map.iter() if e.tag.endswith('}loc')]
         lot_lastmods = [e.text for e in lot_map.iter() if e.tag.endswith('}lastmod')]
         self.assertEqual(len(lot_lastmods), len(lots))
+        image_ns = '{http://www.google.com/schemas/sitemap-image/1.1}'
+        photo_urls = [e.text for e in lot_map.iter() if e.tag == image_ns + 'loc']
+        self.assertEqual(len(photo_urls), len(lots))
+        self.assertTrue(all(p and p.startswith('https://papauto.ru/assets/') for p in photo_urls))
         self.assertTrue(all(re.fullmatch(r'20\d{2}-\d{2}-\d{2}', d or '') for d in lot_lastmods))
         self.assertEqual(len(lot_urls), len(set(lot_urls)))
         self.assertIn('https://papauto.ru/auction-lot-index.html', main_urls)
