@@ -41,8 +41,8 @@ def publish(target: Path):
             ],
         }
         breadcrumb_json = json.dumps(breadcrumb, ensure_ascii=False).replace("<", "\\u003c")
-        head_markup = (f'<link rel="canonical" href="{url}">\\n'
-                       f'<script type="application/ld+json">{breadcrumb_json}</script>\\n'
+        head_markup = (f'<link rel="canonical" href="{url}">\n'
+                       f'<script type="application/ld+json">{breadcrumb_json}</script>\n'
                        '<script defer src="/metrika.js"></script></head>')
         page = page.replace('</head>', head_markup, 1)
         page = page.replace('<nav>', '<nav><a href="/auction-lot-index.html">Все лоты по моделям</a>', 1)

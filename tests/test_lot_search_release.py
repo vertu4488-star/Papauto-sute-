@@ -17,7 +17,7 @@ class LotSearchRelease(unittest.TestCase):
         lot_urls = [e.text for e in lot_map.iter() if e.tag.endswith('}loc')]
         lot_lastmods = [e.text for e in lot_map.iter() if e.tag.endswith('}lastmod')]
         self.assertEqual(len(lot_lastmods), len(lots))
-        self.assertTrue(all(re.fullmatch(r'20\\d{2}-\\d{2}-\\d{2}', d or '') for d in lot_lastmods))
+        self.assertTrue(all(re.fullmatch(r'20\d{2}-\d{2}-\d{2}', d or '') for d in lot_lastmods))
         self.assertEqual(len(lot_urls), len(set(lot_urls)))
         self.assertIn('https://papauto.ru/auction-lot-index.html', main_urls)
         self.assertNotIn('https://papauto.ru/auction-lot-index.html', lot_urls)
@@ -35,7 +35,7 @@ class LotSearchRelease(unittest.TestCase):
             self.assertLessEqual(len(html.unescape(description.group(1))), 160, path)
             self.assertIn('content="index,follow"', page)
             self.assertIn('rel="canonical" href="https://papauto.ru'+path+'"', page)
-            breadcrumbs = re.findall(r'<script type="application/ld\\+json">([^<]+)</script>', page)
+            breadcrumbs = re.findall(r'<script type="application/ld\+json">([^<]+)</script>', page)
             self.assertTrue(any(json.loads(b).get('@type') == 'BreadcrumbList' for b in breadcrumbs), path)
             self.assertEqual(lot_urls.count('https://papauto.ru'+path), 1)
             self.assertNotIn('https://papauto.ru'+path, main_urls)
