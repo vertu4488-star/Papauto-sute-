@@ -41,7 +41,7 @@ body.pa-thursday-home .pa-thursday-statbar>div:last-child{border-right:0}
 body.pa-thursday-home .pa-thursday-statbar i{font-style:normal;color:#ad9784;font-size:20px;font-weight:350}
 body.pa-thursday-home .pa-thursday-statbar strong{font-family:"PapAutoManrope",sans-serif;font-size:clamp(25px,3vw,41px);color:#887264;font-weight:300;letter-spacing:-.05em;line-height:1}
 body.pa-thursday-home .pa-thursday-statbar small{font-size:11px;color:#625e5e;line-height:1.35;max-width:135px}
-body.pa-thursday-home .pa-thursday-markets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:10px 0 31px}
+body.pa-thursday-home .pa-thursday-markets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:10px 0 31px}
 body.pa-thursday-home .pa-thursday-market{min-width:0;background:linear-gradient(125deg,#fffdfa,#f3ece5);border:1px solid #e7ded4;border-radius:14px;padding:17px 20px;display:flex;flex-direction:column;justify-content:center}
 body.pa-thursday-home .pa-thursday-market:last-child{background:linear-gradient(120deg,#fffdfa,#f4f0ec)}
 body.pa-thursday-home .pa-thursday-market strong{font-size:15px;font-weight:550;color:#343337;line-height:1.35}
