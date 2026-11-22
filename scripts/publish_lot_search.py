@@ -27,7 +27,24 @@ def publish(target: Path):
         import re
         page = re.sub(r'<meta name="description" content="[^"]*">',
                       '<meta name="description" content="' + esc(description) + '">', page)
-        page = page.replace('</head>', f'<link rel="canonical" href="{url}">\n<script defer src="/metrika.js"></script></head>', 1)
+        # Schema.org breadcrumbs name the canonical archive hierarchy for search crawlers.
+        breadcrumb = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "PAPAUTO",
+                 "item": "https://papauto.ru/"},
+                {"@type": "ListItem", "position": 2, "name": "Аукционные лоты Японии",
+                 "item": "https://papauto.ru/auction-lot-index.html"},
+                {"@type": "ListItem", "position": 3,
+                 "name": f"{lot['model']} {lot['year']}", "item": url},
+            ],
+        }
+        breadcrumb_json = json.dumps(breadcrumb, ensure_ascii=False).replace("<", "\\u003c")
+        head_markup = (f'<link rel="canonical" href="{url}">\\n'
+                       f'<script type="application/ld+json">{breadcrumb_json}</script>\\n'
+                       '<script defer src="/metrika.js"></script></head>')
+        page = page.replace('</head>', head_markup, 1)
         page = page.replace('<nav>', '<nav><a href="/auction-lot-index.html">Все лоты по моделям</a>', 1)
         page = page.replace('</aside>', '<h2>Стоимость доставки и оформления</h2><p>Для расчёта аналога отдельно учитываем покупку, доставку до Владивостока, таможенные платежи, утильсбор и перевозку до Новосибирска. Архивная цена не является ценой под ключ.</p><p><a href="/#calculator">Калькулятор стоимости</a> · <a href="/avto-iz-yaponii-novosibirsk.html">Авто из Японии в Новосибирск</a></p></aside>', 1)
         file.write_text(page)
@@ -58,8 +75,13 @@ def publish(target: Path):
     # independently discoverable and trackable in Search Console.
     # It is derived solely from the published, owner-reviewed registry.
     lot_map_root = ET.Element('{'+ns+'}urlset')
+    # All current approved lot pages received substantive SEO metadata updates
+    # on this date. Keep this value stable until those pages change again.
+    lot_metadata_lastmod = "2026-11-22"
     for url in urls:
-        ET.SubElement(ET.SubElement(lot_map_root, '{'+ns+'}url'), '{'+ns+'}loc').text = url
+        item = ET.SubElement(lot_map_root, '{'+ns+'}url')
+        ET.SubElement(item, '{'+ns+'}loc').text = url
+        ET.SubElement(item, '{'+ns+'}lastmod').text = lot_metadata_lastmod
     ET.ElementTree(lot_map_root).write(
         target / 'sitemap-lots.xml', encoding='utf-8', xml_declaration=True)
     for name in ['catalog.html', 'auction-lots.html', 'gallery.html']:
