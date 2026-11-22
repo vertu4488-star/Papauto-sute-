@@ -139,6 +139,12 @@ def copy_public_files() -> list[str]:
                 shutil.copy2(src, dst)
                 copied.append(dst.relative_to(TARGET).as_posix())
 
+    # Fail the deploy rather than silently publish sitemap URLs that return 404.
+    if model_root.is_dir():
+        expected_model_pages = list(model_root.glob("*.html"))
+        if len(expected_model_pages) != 135 or any(not (TARGET / "models" / page.name).is_file() for page in expected_model_pages):
+            raise RuntimeError("PAPAUTO_SEO: expected 135 published model pages")
+
     for folder, allowed_suffixes in PUBLIC_FOLDERS.items():
         base = ROOT / folder
         if not base.is_dir() or base.is_symlink():
