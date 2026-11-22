@@ -484,6 +484,16 @@ def copy_public_files() -> list[str]:
     if set(lot_urls) & core_urls or "https://papauto.ru/auction-lot-index.html" not in core_urls:
         raise RuntimeError("PAPAUTO_SEO: duplicate lot URLs or missing auction index in main sitemap")
 
+    # Keep public archive count synchronized with the approved registry. A previous
+    # page generator could show 639 even when the release contained 641 lots.
+    index_page = (TARGET / "auction-lot-index.html").read_text(encoding="utf-8")
+    if f"Количество опубликованных аукционных примеров: {published_lot_count}." not in index_page:
+        raise RuntimeError("PAPAUTO_SEO: stale auction index count")
+    for page_name in ("catalog.html", "auction-lots.html", "gallery.html"):
+        content = (TARGET / page_name).read_text(encoding="utf-8")
+        if f"Все аукционные карточки ({published_lot_count})" not in content:
+            raise RuntimeError("PAPAUTO_SEO: stale archive navigation count: " + page_name)
+
     # The gallery compiler generates /lots/*.html after the initial page loop.
     # Reconcile every finished HTML page with the global warm skin, including
     # exact auction lot pages and legacy retirement pages. Photo bytes are untouched.
