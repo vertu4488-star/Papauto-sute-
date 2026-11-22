@@ -488,6 +488,17 @@ def copy_public_files() -> list[str]:
             not date or not re.fullmatch(r"20\d{2}-\d{2}-\d{2}", date)
             for date in lot_dates):
         raise RuntimeError("PAPAUTO_SEO: lot sitemap lastmod missing or invalid")
+    # Expose only the approved first vehicle photograph of each published lot.
+    # Google accepts image sitemap extensions, and no unrelated stock photos
+    # should enter the public catalogue or the image sitemap.
+    image_ns = "{http://www.google.com/schemas/sitemap-image/1.1}"
+    image_urls = [node.findtext(f"{image_ns}image/{image_ns}loc")
+                  for node in lot_nodes]
+    if (len(image_urls) != published_lot_count or
+            any(not url or not url.startswith("https://papauto.ru/assets/")
+                or not (TARGET / url.removeprefix("https://papauto.ru/")).is_file()
+                for url in image_urls)):
+        raise RuntimeError("PAPAUTO_SEO: image sitemap missing exact auction photos")
     core_tree = ET.parse(TARGET / "sitemap.xml")
     core_urls = {node.text for node in core_tree.findall(f"{ns}url/{ns}loc")}
     if set(lot_urls) & core_urls or "https://papauto.ru/auction-lot-index.html" not in core_urls:
