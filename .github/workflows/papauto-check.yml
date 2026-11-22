@@ -30,6 +30,25 @@ jobs:
         run: |
           python scripts/build_content.py
           git diff --exit-code -- "*.html" sitemap.xml
+      - name: Verify all 135 SEO model routes and sitemap
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          import re
+          pages = sorted(Path("models").glob("*.html"))
+          assert len(pages) == 135, f"Expected 135 model pages, found {len(pages)}"
+          urls = {x.text for x in ET.parse("sitemap.xml").iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")}
+          for page in pages:
+              url = "https://papauto.ru/models/" + page.name
+              html = page.read_text(encoding="utf-8")
+              assert url in urls, f"Missing sitemap URL: {url}"
+              assert f'rel="canonical" href="{url}"' in html, f"Missing canonical: {page}"
+              assert "<h1>" in html and 'name="description"' in html, f"Incomplete SEO content: {page}"
+              for src in re.findall(r'<img[^>]+src="(/assets/[^"]+)"', html):
+                  assert (Path(src.lstrip("/"))).is_file(), f"Missing photo {src} in {page}"
+          print(f"Verified {len(pages)} dedicated model routes and sitemap entries")
+          PY
       - name: Verify static bundle contains no application source or credentials
         run: |
           python scripts/build_static_public.py
