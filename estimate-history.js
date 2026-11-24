@@ -1,7 +1,7 @@
 /* PAPAUTO — локальная история смет. Данные остаются только в этом браузере. */
 (() => {
   "use strict";
-  const KEY = "papauto_estimate_history_v1";
+  const KEY = "papauto_estimate_history_v2";
   const fields = ["carCost","auctionFee","originDelivery","exportDocs","insurance","shipping","customs","paperwork","localDelivery","fee","otherCosts","marketReferencePrice","bankFee","customsFee","utilFee","brokerFee","warehouseFee","calcCity"];
   const $ = id => document.getElementById(id);
   const form = $("calcForm");
