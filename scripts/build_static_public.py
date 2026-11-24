@@ -536,6 +536,13 @@ def copy_public_files() -> list[str]:
             target_page = target_page / "index.html"
         if not target_page.is_file():
             raise RuntimeError("PAPAUTO_SEO: sitemap points to missing page: " + url)
+    # Every released model landing page must be discoverable through the main sitemap.
+    published_models = {"https://papauto.ru/models/" + page.name
+                        for page in (TARGET / "models").glob("*.html")}
+    sitemap_models = {url for url in core_urls if url.startswith("https://papauto.ru/models/")}
+    if len(published_models) != 135 or published_models != sitemap_models:
+        raise RuntimeError("PAPAUTO_SEO: model pages and sitemap disagree: "
+                           + str(sorted(published_models ^ sitemap_models)))
     if set(lot_urls) & core_urls or "https://papauto.ru/auction-lot-index.html" not in core_urls:
         raise RuntimeError("PAPAUTO_SEO: duplicate lot URLs or missing auction index in main sitemap")
 
