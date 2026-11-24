@@ -11,6 +11,7 @@ import subprocess
 import sys
 import re
 import json
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / "render-public"
@@ -585,6 +586,32 @@ def copy_public_files() -> list[str]:
                 contents = re.sub(r"<body\b[^>]*>", add_skin, contents, count=1, flags=re.I)
         if contents.count("papauto-warm-interior.css") != 1:
             raise RuntimeError("PAPAUTO_WARM: missing/duplicate stylesheet " + str(rendered))
+        # Link only cards already published by the photo/rights gate to the calculator.
+        def estimate_link(key, market):
+            return ('<a class="pa-estimate-card-link" href="/?view=calculator&amp;market='
+                    + quote(market, safe="") + '&amp;vehicle=' + quote(key, safe="")
+                    + '" style="display:inline-block;margin:8px 0;color:inherit;font-weight:500;text-decoration:underline">Рассчитать стоимость →</a>')
+        if rendered.name in {"index.html", "auction-lots.html", "gallery.html"}:
+            def add_lot_estimate(match):
+                article = match.group(0)
+                hit = re.search(r'\bdata-(?:lot-id|lot)="([a-z0-9-]+)"', article)
+                if not hit or hit.group(1) not in public_ids:
+                    return article
+                return article.replace("</article>", estimate_link("lot:" + hit.group(1), "japan") + "</article>", 1)
+            contents = re.sub(r'<article\b[^>]*>[\s\S]*?</article>', add_lot_estimate, contents)
+            if rendered.name == "gallery.html":
+                contents = contents.replace("/gallery.js?v=20261124-perf", "/gallery.js?v=20261124-estimate")
+        elif rendered.name == "china-order.html":
+            def add_china_estimate(match):
+                article = match.group(0)
+                hit = re.search(r'<img\b[^>]*\bsrc="(/assets/china-order/[^"]+)"', article)
+                if not hit or hit.group(1).lstrip("/") not in china_order_photos:
+                    return article
+                return article.replace("</article>", estimate_link("cn:" + hit.group(1), "china") + "</article>", 1)
+            contents = re.sub(r'<article class="cn-example"[^>]*>[\s\S]*?</article>', add_china_estimate, contents)
+        elif rendered.parent == TARGET / "lots" and rendered.stem in public_ids:
+            public_market = next(lot["market"] for lot in published_registry["lots"] if lot["id"] == rendered.stem)
+            contents = re.sub(r"</main>", estimate_link("lot:" + rendered.stem, public_market) + "</main>", contents, count=1, flags=re.I)
         rendered.write_text(contents, encoding="utf-8")
 
     required = {"index.html", "catalog.html", "styles.css", "app.js",
