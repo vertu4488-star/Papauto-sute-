@@ -27,7 +27,7 @@ const window={PAPAUTO_CATALOG:{
   "south-korea":[["Hyundai","Avante","1.6 л"]],
   china:[["Geely","Monjaro","2.0 л"]]
 }};
-const PapAutoMetadata={modelTypes:()=>["petrol"],fuelLabel:()=> "Бензин"};
+
 const sample=(id,model)=>({
   id,model,market:"japan",year:2022,auction:"JU Tokyo",lot_number:"130",
   mileage_km:36000,grade:"4.5",
@@ -40,13 +40,14 @@ const fetch=async()=>({ok:true,json:async()=>({lots:[
 ]})});
 const texts=()=>ids.catalogGrid.children.map(c=>c.children.map(e=>String(e.textContent||"")).join(" "));
 ids.countryFilter.value="japan";
-vm.runInNewContext(fs.readFileSync("catalog-open-data.js","utf8"),{
-  document,window,PapAutoMetadata,console,fetch,Intl
-});
+const context=vm.createContext({document,window,console,fetch,Intl});
+vm.runInContext(fs.readFileSync("vehicle-metadata.js","utf8"),context);
+vm.runInContext(fs.readFileSync("catalog-open-data.js","utf8"),context);
 (async()=>{
   await new Promise(resolve=>setImmediate(resolve));
   assert.equal(ids.catalogGrid.children.length,3,"Only 3 model entries have exact auction photo+sheet+description");
   assert(ids.catalogGrid.children.every(c=>c.children.some(v=>v.className==="catalog-verified-media")));
+  assert(texts().every(text=>text.includes("Документы не проверены")));
   ids.modelQuery.value="Хо";ids.modelQuery.fire("input");
   assert.equal(ids.catalogGrid.children.length,2);
   assert(texts().every(x=>x.includes("Honda")));
