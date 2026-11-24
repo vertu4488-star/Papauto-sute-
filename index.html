@@ -605,7 +605,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
                   <h4 id="paCustomsTitle">Автоматический расчёт таможни</h4>
                   <label>Режим<select id="paCustomsMode"><option value="auto">Физлицо · личный ввоз · оформление в РФ</option><option value="manual">Другой режим / вручную</option></select></label>
                   <label>Тип двигателя<select id="paEngineType"><option value="">Уточнить тип</option><option value="ice">Бензин / дизель (без гибрида)</option><option value="hybrid">Гибрид</option><option value="ev">Электромобиль</option></select></label>
-                  <label>Дата выпуска (если известна)<input id="paBuildDate" type="date"></label>
+                  <details class="pa-cost-details"><summary>Точная дата выпуска (если известна)</summary><label>Дата изготовления<input id="paBuildDate" type="date"></label></details><p class="pa-estimate-small">Если возраст однозначно определяется по году, точная дата не нужна.</p><button id="paResetBuildDate" class="pa-estimate-secondary" type="button" hidden>Определить возраст по году</button>
                   <label>Дата расчёта таможни и утильсбора<input id="paClearDate" type="date" min="2026-01-01" max="2027-12-31"></label>
                   <label>Возраст на дату оформления<select id="paAgeBand"><option value="">Автоматически по дате или году</option><option value="new">Не старше 3 лет</option><option value="mid">Старше 3, до 5 лет</option><option value="old">Старше 5 лет</option></select></label>
                   <label>Стоимость для таможни, ₽ (необязательно)<input id="paCustomsValue" type="number" min="1" max="1000000000" step="any" placeholder="По цене автомобиля как ориентир"></label>
@@ -870,8 +870,8 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 <script defer src="/voice-assistant.js?v=20261103"></script>
 <script src="/auction-sheet-decoder.js" defer></script>
   <script src="/vehicle-catalogue.js" defer></script>
-<script src="/papauto-premium-calculator.js?v=20261125-release" defer></script>
-<script src="/papauto-customs.js?v=20261125-release" defer></script>
+<script src="/papauto-premium-calculator.js?v=20261125-datefix" defer></script>
+<script src="/papauto-customs.js?v=20261125-datefix" defer></script>
 <script src="/papauto-japan-tariffs.js?v=20261125" defer></script>
 <script src="/estimate-history.js?v=20261125-japan" defer></script>
 <script src="/lead-draft-history.js" defer></script>

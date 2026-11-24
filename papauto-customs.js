@@ -15,7 +15,9 @@ const valid=n=>Number.isFinite(n)&&n>0;
 const parseDate=s=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(s||""))return null;const d=new Date(s+"T00:00:00Z");return Number.isFinite(d.getTime())&&d.toISOString().slice(0,10)===s?d:null;};
 function ageAt(build,clear){if(!build||!clear||build>clear)return "";const anniversary=n=>{let d=new Date(build);d.setUTCFullYear(d.getUTCFullYear()+n);if(d.getUTCMonth()!==build.getUTCMonth())d.setUTCDate(0);return d;};return clear<=anniversary(3)?"new":clear<=anniversary(5)?"mid":"old";}
 function ageByYear(y,clear){if(!Number.isInteger(y)||y<1950||!clear)return "";const a=parseDate(y+"-01-01"),b=parseDate(y+"-12-31");if(a>clear)return "";const x=ageAt(a,clear),z=ageAt(b>clear?clear:b,clear);return x===z?x:"";}
-function estimate({cc,hp,age,year,eur,value,eligibility,type}){const result={duty:null,fee:null,util:null,reason:[]};if(type!=="ice"||![2026,2027].includes(year)){result.reason.push("Автоматический расчёт доступен только для обычного ДВС и дат 2026–2027.");return result;}
+function estimate({cc,hp,age,year,eur,value,eligibility,type}){const result={duty:null,fee:null,util:null,reason:[]};if(![2026,2027].includes(year)){result.reason.push("Выберите дату оформления в 2026–2027 годах.");return result;}
+if(type==="hybrid"||type==="ev"){result.reason.push("Для гибрида или электромобиля нужен отдельный подтверждённый расчёт. Не применяем ставки обычного ДВС автоматически.");return result;}
+if(type!=="ice"){result.reason.push("Уточните тип двигателя.");return result;}
 if(valid(value)&&value<=1e9)result.fee=fees.find(r=>value<=r[0])[1];else result.reason.push("Укажите стоимость для таможенного сбора.");
 const hasCC=Number.isInteger(cc)&&cc>0&&cc<=12000;const hasAge=["new","mid","old"].includes(age);
 if(hasCC&&hasAge&&valid(eur)&&eur<=10000){if(age==="new"){if(valid(value)&&value<=1e9){const b=valueBands.find(r=>value/eur<=r[0]);result.duty=Math.round(Math.max(value*b[1],cc*b[2]*eur));}else result.reason.push("Для авто не старше 3 лет нужна стоимость.");}else{const b=dutyBands.find(r=>cc<=r[0]);result.duty=Math.round(cc*b[age==="mid"?1:2]*eur);}}else result.reason.push("Для пошлины нужны точный объём, возраст и курс евро.");
@@ -33,8 +35,10 @@ function refresh(){
  const auto=mode.value==="auto";fields.forEach(id=>$(id).readOnly=auto);
  if(!auto){status.textContent="Ручной режим: введите подтверждённые суммы самостоятельно.";return;}
  const clear=parseDate(val("paClearDate")),build=parseDate(val("paBuildDate")),y=num("paVehicleYear");
+ const known=ageByYear(y,clear);
+ const reset=$("paResetBuildDate");if(reset)reset.hidden=!val("paBuildDate")&&!val("paAgeBand");
  let age=val("paAgeBand");
- if(build){const exact=ageAt(build,clear);if(!exact||(age&&age!==exact)||(Number.isInteger(y)&&build.getUTCFullYear()!==y)){fields.forEach(id=>$(id).value="");status.textContent="Проверьте согласованность года, даты выпуска и возрастной категории.";return;}age=exact;}else {const known=ageByYear(y,clear);if((Number.isInteger(y)&&clear&&y>clear.getUTCFullYear())||(known&&age&&known!==age)){fields.forEach(id=>$(id).value="");status.textContent="Год выпуска не соответствует выбранному возрасту или дате оформления.";return;}if(!age)age=known;}
+ if(build){const exact=ageAt(build,clear);if(!exact||(age&&age!==exact)||(Number.isInteger(y)&&build.getUTCFullYear()!==y)){fields.forEach(id=>$(id).value="");status.textContent="Указанная дата выпуска "+val("paBuildDate")+" не согласуется с годом "+(Number.isInteger(y)?y:"не указан")+" или датой оформления/возрастом. Исправьте дату либо нажмите «Определить возраст по году».";return;}age=exact;}else {if((Number.isInteger(y)&&clear&&y>clear.getUTCFullYear())||(known&&age&&known!==age)){fields.forEach(id=>$(id).value="");status.textContent="Год "+(Number.isInteger(y)?y:"не указан")+" не соответствует выбранному возрасту или дате оформления. Нажмите «Определить возраст по году».";return;}if(!age)age=known;}
  const value=val("paCustomsValue")?num("paCustomsValue"):num("carCost");
  const r=estimate({cc:num("paVehicleEngine"),hp:num("paVehiclePower"),age,year:clear?.getUTCFullYear(),eur:num("paEurRate"),value,eligibility:val("paUtilEligibility"),type:val("paEngineType")});
  fields.forEach((id,i)=>{const n=[r.duty,r.fee,r.util][i];$(id).value=n===null?"":String(n);});
@@ -47,6 +51,8 @@ form.addEventListener("change",e=>{if(e.target===mode||relevant.has(e.target.id)
 form.addEventListener("submit",()=>refresh(),true);
 form.addEventListener("pa:restore-estimate",()=>{if(!mode.value)mode.value="manual";if(!$("paClearDate").value)$("paClearDate").value=localDate();refresh();});
 $("paCustomsRefresh").addEventListener("click",()=>{refresh();invalidate();});
+$("paResetBuildDate")?.addEventListener("click",()=>{$("paBuildDate").value="";$("paAgeBand").value="";refresh();invalidate();});
+$("paVehicleYear")?.addEventListener("input",()=>{const build=parseDate(val("paBuildDate")),y=num("paVehicleYear");if(build&&Number.isInteger(y)&&build.getUTCFullYear()!==y)$("paBuildDate").value="";$("paAgeBand").value="";});
 eur.addEventListener("input",()=>{note.textContent="Курс введён вручную. Для будущей даты это прогноз."});
 async function loadRate(){try{const api=String(window.PAPAUTO_CONFIG?.apiBaseUrl||"").replace(/\/$/,"");if(!api)return;const r=await fetch(api+"/api/exchange-rates",{headers:{Accept:"application/json"}});if(!r.ok)throw Error("rate");const data=await r.json();if(!valid(Number(data.rub_per_eur))||data.fallback)throw Error("rate");if(!eur.value){eur.value=String(data.rub_per_eur);note.textContent="Справочный курс ЦБ на "+(data.date||"неуказанную дату")+". Не прогноз курса на будущую дату.";refresh();invalidate();}}catch{if(!eur.value)note.textContent="Курс евро пока недоступен. Введите справочный курс вручную."}}
 refresh();loadRate();
