@@ -51,7 +51,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar{grid-template-col
 body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar{grid-template-columns:minmax(0,1fr)!important}
 body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:0!important}
 }
-</style><link rel="stylesheet" href="/papauto-premium-calculator.css?v=20261125-release"></head>
+</style><link rel="stylesheet" href="/papauto-premium-calculator.css?v=20261125-japan"></head>
 <body class="pa-thursday-home">
 <a class="skip-link" href="#main">Перейти к содержанию</a>
 <header class="site-header">
@@ -617,6 +617,23 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
                   <p id="paCustomsStatus" role="status" class="pa-estimate-small">Выберите параметры автомобиля.</p>
                   <p class="pa-estimate-small">ЕЭК №107, ПП РФ №1637, №1291 и №1713. <a href="/import-rules.html">Правила ввоза</a>. Ставки 2027 — по действующему графику, возможны изменения.</p>
                 </section>
+                <section id="paJapanTariffs" class="pa-customs-panel" hidden>
+                  <h4>Расходы по Японии и фрахт</h4>
+                  <label>Тариф<select id="paJapanTariffMode"><option value="estimate">Предварительные тарифы PapAuto</option><option value="manual">Ввести фактические расходы вручную</option></select></label>
+                  <div id="paJapanAutoFields">
+                    <label>Расходы по Японии, ¥<input id="paJapanYen" type="number" min="0" step="1" inputmode="numeric" value="110000"></label>
+                    <label>Фрахт Япония → Владивосток, $<input id="paJapanUsd" type="number" min="0" step="any" inputmode="decimal" value="400"></label>
+                    <label>Курс иены, ₽/¥<input id="paJapanYenRate" type="number" min="0.000001" step="any" inputmode="decimal" placeholder="Курс ЦБ"></label>
+                    <label>Курс доллара, ₽/$<input id="paJapanUsdRate" type="number" min="0.000001" step="any" inputmode="decimal" placeholder="Курс ЦБ"></label>
+                    <label>Банковские расходы, ₽<input id="paJapanBank" type="number" min="0" step="1" value="15000"></label>
+                    <label>Брокер, СВХ, СБКТС, ЭПТС и лаборатория (пакет), ₽<input id="paJapanDocs" type="number" min="0" step="1" value="65000"></label>
+                    <label>Доставка до Новосибирска, ₽<input id="paJapanNovosibirsk" type="number" min="0" step="1" value="150000"></label>
+                    <p id="paJapanTariffStatus" class="pa-estimate-small" role="status"></p>
+                    <p class="pa-estimate-small">Ориентиры, не оферта: базовые расходы 110 000 ¥, плюс 5% от части аукционной цены свыше 1 млн ¥; фрахт 400 $. Для цены C&amp;F/CIF или нестандартной логистики выберите ручной режим. Курсы и суммы можно уточнить. Доплаты вне пакета рассчитываются отдельно.</p>
+                  </div>
+                </section>
+                <label for="calcCity">Город получения<select id="calcCity"><option>Новосибирск</option><option>Владивосток</option><option>Красноярск</option><option>Другой город</option></select></label>
+                <details class="pa-cost-details"><summary>Из чего складывается стоимость · подробнее</summary>
                 <div class="pa-estimate-fields"><label for="carCost">Цена автомобиля, ₽<input id="carCost" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" required></label>
             <label for="auctionFee">Комиссия аукциона / дилера<input id="auctionFee" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
             <label for="originDelivery">Доставка по стране покупки<input id="originDelivery" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
@@ -630,12 +647,13 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
             <label for="brokerFee">Таможенный брокер<input id="brokerFee" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано"></label>
             <label for="warehouseFee">СВХ в России и хранение<input id="warehouseFee" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано"></label>
             <label for="paperwork">СБКТС, ЭПТС и лаборатория<input id="paperwork" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
-            <label for="calcCity">Город получения<select id="calcCity"><option>Новосибирск</option><option>Владивосток</option><option>Красноярск</option><option>Другой город</option></select></label>
+            
             <label for="localDelivery">Доставка по России<input id="localDelivery" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано"></label>
             <label for="fee">Фиксированная комиссия PapAuto<input id="fee" type="number" value="50000" readonly aria-readonly="true"></label>
             <label for="otherCosts">Прочие расходы<input id="otherCosts" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
             <label for="marketReferencePrice">Цена аналога в России (необязательно)<input id="marketReferencePrice" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано"></label>
 </div>
+                </details>
                 <button class="pa-estimate-primary" type="submit">Рассчитать смету</button>
               </div>
             </div>
@@ -841,7 +859,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 <script defer src="/site-config.js?v=20261109api"></script>
 <script src="/site-tabs.js?v=20261114-account-isolation" defer></script>
 <script src="/account.js" defer></script>
-<script src="/app.js?v=20261124-premiumcalc" defer></script>
+<script src="/app.js?v=20261125-japan" defer></script>
 <script src="/marketplace-interactions.js" defer></script>
 <script src="/saved-searches.js" defer></script>
 <script src="/smart-search.js" defer></script>
@@ -851,7 +869,8 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
   <script src="/vehicle-catalogue.js" defer></script>
 <script src="/papauto-premium-calculator.js?v=20261125-release" defer></script>
 <script src="/papauto-customs.js?v=20261125-release" defer></script>
-<script src="/estimate-history.js?v=20261125-release" defer></script>
+<script src="/papauto-japan-tariffs.js?v=20261125" defer></script>
+<script src="/estimate-history.js?v=20261125-japan" defer></script>
 <script src="/lead-draft-history.js" defer></script>
 <script src="/similar-car-request.js" defer></script>
 <script defer src="/archive-request.js"></script>
