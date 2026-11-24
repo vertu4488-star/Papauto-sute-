@@ -1,0 +1,54 @@
+name: PapAuto release checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate API and JavaScript syntax
+        run: |
+          python -m py_compile api.py
+          node --check app.js
+          node --check papauto-premium-calculator.js
+          node --check papauto-customs.js
+          node --check estimate-history.js
+          node --check gallery.js
+      - name: Test customs calculation boundaries
+        run: |
+          node <<'JS'
+          const assert = require('node:assert/strict');
+          const { estimate, ageAt, parseDate } = require('./papauto-customs.js');
+          const base = { cc:1496, hp:120, age:'mid', year:2026, eur:100, value:900000, eligibility:'yes', type:'ice' };
+          let result = estimate(base);
+          assert.equal(result.duty,254320);
+          assert.equal(result.fee,4924);
+          assert.equal(result.util,5200);
+          assert.equal(estimate({...base,age:'old'}).duty,478720);
+          assert.equal(estimate({...base,hp:180,age:'new',year:2027}).util,990000);
+          assert.equal(estimate({...base,type:'hybrid'}).duty,null);
+          assert.equal(estimate({...base,eur:NaN}).duty,null);
+          assert.equal(ageAt(parseDate('2023-11-25'),parseDate('2026-11-25')),'new');
+          assert.equal(ageAt(parseDate('2023-11-24'),parseDate('2026-11-25')),'mid');
+          JS
+      - name: Build and enforce approved-publication policy
+        run: python scripts/build_static_public.py
+      - name: Verify published calculator assets
+        run: |
+          test -s render-public/papauto-customs.js
+          test -s render-public/papauto-premium-calculator.js
+          test -s render-public/papauto-premium-calculator.css
+          grep -q 'id="paCustomsMode"' render-public/index.html
