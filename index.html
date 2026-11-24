@@ -566,7 +566,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
           <h2>Прозрачный расчёт стоимости</h2><p>Каждый рубль под контролем</p>
         </header>
         <div class="pa-estimate-main">
-          <form id="calcForm">
+          <form id="calcForm" data-live-estimate="true">
             <label for="calcCountry">Страна покупки</label>
             <select id="calcCountry"><option>Япония</option><option>Южная Корея</option><option>Китай</option></select>
             <div class="pa-estimate-tabs" id="paEstimateTabs" role="group" aria-label="Страна покупки" hidden>
@@ -593,7 +593,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
                   <label>Валюта покупки<select id="paPriceCurrency"><option>JPY</option><option>KRW</option><option>CNY</option><option>USD</option></select></label>
                   <label>Цена в валюте<input id="paForeignPrice" type="number" min="0" step="any" placeholder="Не указано"></label>
                   <label>Курс, ₽ за 1 ед.<input id="paForeignRate" type="number" min="0" step="any" placeholder="Не указано"></label>
-                  <button type="button" id="paApplyFx" class="pa-estimate-secondary">Перенести цену в смету</button>
+                  <p id="paLiveEstimate" class="pa-estimate-small">Цена и итоговая смета обновляются автоматически.</p>
                   <p id="paRateStatus" role="status">Курс банка можно указать вручную.</p>
                 </div>
                 <p class="pa-estimate-small">Исторические лоты и предложения — примеры подбора, не гарантия наличия или итоговой цены.</p>
@@ -613,7 +613,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
                   <p id="paEurNote" class="pa-estimate-small">Курс на будущую дату неизвестен; укажите расчётный курс.</p>
                   <label>Условия утильсбора<select id="paUtilEligibility"><option value="">Уточнить условия</option><option value="yes">Льготный личный ввоз (условия соблюдены)</option><option value="no">Льгота не применяется</option></select></label>
                   <p class="pa-estimate-small">Льгота: личное пользование, до 160 л.с. и до 3 л, соблюдение условий регистрации, владения и периодичности ввоза. Для авто, оформленных в другой стране ЕАЭС, требуется отдельный расчёт.</p>
-                  <button id="paCustomsRefresh" type="button" class="pa-estimate-secondary">Обновить таможенные платежи</button>
+                  
                   <p id="paCustomsStatus" role="status" class="pa-estimate-small">Выберите параметры автомобиля.</p>
                   <p class="pa-estimate-small">ЕЭК №107, ПП РФ №1637, №1291 и №1713. <a href="/import-rules.html">Правила ввоза</a>. Ставки 2027 — по действующему графику, возможны изменения.</p>
                 </section>
@@ -657,13 +657,13 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
             <label for="marketReferencePrice">Цена аналога в России (необязательно)<input id="marketReferencePrice" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано"></label>
 </div>
                 </details>
-                <button class="pa-estimate-primary" type="submit">Рассчитать смету</button>
+                <p class="pa-estimate-small">Итог обновляется при изменении параметров. Неизвестные расходы не включаются в сумму.</p>
               </div>
             </div>
           </form>
           <div class="calc-result pa-estimate-result" aria-live="polite">
-            <h4>Сумма известных расходов</h4><strong id="resultTotal" class="pa-estimate-total">— ₽</strong>
-            <div id="resultLines"></div><p id="portSubtotal"></p><p id="resultNote">Заполните известные суммы. Пустые статьи не учитываются.</p><p id="marketComparison"></p>
+            <h4 id="paResultHeading">Предварительная стоимость</h4><strong id="resultTotal" class="pa-estimate-total">— ₽</strong>
+            <div id="resultLines"></div><p id="portSubtotal"></p><p id="resultNote">Выберите автомобиль или введите цену — смета обновится автоматически.</p><p id="marketComparison"></p>
           </div>
           <div class="pa-estimate-actions">
             <a class="pa-estimate-primary" id="paEstimateOrder" href="/podbor.html">Заказать автомобиль →</a>
@@ -862,7 +862,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 <script defer src="/site-config.js?v=20261109api"></script>
 <script src="/site-tabs.js?v=20261114-account-isolation" defer></script>
 <script src="/account.js" defer></script>
-<script src="/app.js?v=20261125-japan" defer></script>
+<script src="/app.js?v=20261125-live" defer></script>
 <script src="/marketplace-interactions.js" defer></script>
 <script src="/saved-searches.js" defer></script>
 <script src="/smart-search.js" defer></script>
@@ -870,10 +870,10 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 <script defer src="/voice-assistant.js?v=20261103"></script>
 <script src="/auction-sheet-decoder.js" defer></script>
   <script src="/vehicle-catalogue.js" defer></script>
-<script src="/papauto-premium-calculator.js?v=20261125-datefix" defer></script>
-<script src="/papauto-customs.js?v=20261125-datefix" defer></script>
+<script src="/papauto-premium-calculator.js?v=20261125-live" defer></script>
+<script src="/papauto-customs.js?v=20261125-live" defer></script>
 <script src="/papauto-japan-tariffs.js?v=20261125" defer></script>
-<script src="/estimate-history.js?v=20261125-japan" defer></script>
+<script src="/estimate-history.js?v=20261125-live" defer></script>
 <script src="/lead-draft-history.js" defer></script>
 <script src="/similar-car-request.js" defer></script>
 <script defer src="/archive-request.js"></script>

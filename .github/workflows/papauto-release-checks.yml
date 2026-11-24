@@ -67,3 +67,6 @@ jobs:
           test -s render-public/papauto-premium-calculator.js
           test -s render-public/papauto-premium-calculator.css
           grep -q 'id="paCustomsMode"' render-public/index.html
+          grep -q 'id="paLiveEstimate"' render-public/index.html
+          ! grep -q 'id="paApplyFx"' render-public/index.html
+          ! grep -q 'id="paCustomsRefresh"' render-public/index.html

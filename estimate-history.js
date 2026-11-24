@@ -6,6 +6,7 @@
   const $ = id => document.getElementById(id);
   const form = $("calcForm");
   const panel = document.querySelector(".calc-result");
+  const live = !!$("paLiveEstimate");
   if (!form || !panel) return;
 
   const read = () => {
@@ -40,7 +41,7 @@
   const render = () => {
     const items=load();
     list.replaceChildren();
-    if(!items.length){const empty=document.createElement("p");empty.className="estimate-history-empty";empty.textContent="Сохранённых расчётов пока нет. Нажмите «Рассчитать смету».";list.append(empty);return;}
+    if(!items.length){const empty=document.createElement("p");empty.className="estimate-history-empty";empty.textContent="Сохранённых расчётов пока нет. Сохраните готовую смету или скачайте её.";list.append(empty);return;}
     items.forEach(item=>{
       const card=document.createElement("article");card.className="estimate-history-item";
       const info=document.createElement("div");
@@ -58,16 +59,18 @@
       actions.append(restore,remove);card.append(info,actions);list.append(card);
     });
   };
-  form.addEventListener("submit",()=>{
+  const remember = ()=>{
     const result=read();
-    if(!result.lines.length)return;
+    if(!result.lines.length|| (live&&!(Number($("carCost")?.value)>0)))return;
     const items=load().filter(x=>x.total!==result.total || x.country!==result.country || JSON.stringify(x.values)!==JSON.stringify(result.values));
     items.unshift(result);
     if(!save(items)) {
       const note=document.createElement("p");note.className="estimate-history-warning";note.textContent="Браузер запретил локальное сохранение. Скачайте CSV или распечатайте смету.";history.prepend(note);
     }
     render();
-  });
+  };
+  if(!live)form.addEventListener("submit",remember);
+  else {const saveButton=document.createElement("button");saveButton.type="button";saveButton.className="button button-secondary";saveButton.textContent="Сохранить текущую смету";history.querySelector(".estimate-history-head").append(saveButton);saveButton.addEventListener("click",()=>{form.dispatchEvent(new Event("submit",{bubbles:true,cancelable:true}));remember();});for(const id of ["copyEstimate","exportEstimate","printEstimate"])$(id)?.addEventListener("click",remember);}
   history.querySelector("[data-history-export]").addEventListener("click",()=>{
     const blob=new Blob([JSON.stringify(load(),null,2)],{type:"application/json;charset=utf-8"});
     const url=URL.createObjectURL(blob),a=document.createElement("a");
