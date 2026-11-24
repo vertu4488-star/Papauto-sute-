@@ -50,7 +50,7 @@ form.addEventListener("input",e=>{if(relevant.has(e.target.id))refresh();});
 form.addEventListener("change",e=>{if(e.target===mode||relevant.has(e.target.id))refresh();});
 form.addEventListener("submit",()=>refresh(),true);
 form.addEventListener("pa:restore-estimate",()=>{if(!mode.value)mode.value="manual";if(!$("paClearDate").value)$("paClearDate").value=localDate();refresh();});
-$("paCustomsRefresh").addEventListener("click",()=>{refresh();invalidate();});
+
 $("paResetBuildDate")?.addEventListener("click",()=>{$("paBuildDate").value="";$("paAgeBand").value="";refresh();invalidate();});
 $("paVehicleYear")?.addEventListener("input",()=>{const build=parseDate(val("paBuildDate")),y=num("paVehicleYear");if(build&&Number.isInteger(y)&&build.getUTCFullYear()!==y)$("paBuildDate").value="";$("paAgeBand").value="";});
 eur.addEventListener("input",()=>{note.textContent="Курс введён вручную. Для будущей даты это прогноз."});
