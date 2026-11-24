@@ -516,7 +516,26 @@ def copy_public_files() -> list[str]:
                 for url in image_urls)):
         raise RuntimeError("PAPAUTO_SEO: image sitemap missing exact auction photos")
     core_tree = ET.parse(TARGET / "sitemap.xml")
-    core_urls = {node.text for node in core_tree.findall(f"{ns}url/{ns}loc")}
+    core_url_list = [node.text for node in core_tree.findall(f"{ns}url/{ns}loc")]
+    core_urls = set(core_url_list)
+    if len(core_url_list) != len(core_urls):
+        raise RuntimeError("PAPAUTO_SEO: duplicate URLs in main sitemap")
+    from urllib.parse import urlsplit, unquote
+    for url in core_url_list:
+        if not url:
+            raise RuntimeError("PAPAUTO_SEO: empty URL in main sitemap")
+        parts = urlsplit(url)
+        if (parts.scheme != "https" or parts.netloc != "papauto.ru"
+                or parts.query or parts.fragment or not parts.path.startswith("/")):
+            raise RuntimeError("PAPAUTO_SEO: noncanonical sitemap URL: " + url)
+        relative = unquote(parts.path).lstrip("/")
+        if ".." in relative.split("/"):
+            raise RuntimeError("PAPAUTO_SEO: invalid sitemap path: " + url)
+        target_page = TARGET / relative
+        if parts.path.endswith("/"):
+            target_page = target_page / "index.html"
+        if not target_page.is_file():
+            raise RuntimeError("PAPAUTO_SEO: sitemap points to missing page: " + url)
     if set(lot_urls) & core_urls or "https://papauto.ru/auction-lot-index.html" not in core_urls:
         raise RuntimeError("PAPAUTO_SEO: duplicate lot URLs or missing auction index in main sitemap")
 
