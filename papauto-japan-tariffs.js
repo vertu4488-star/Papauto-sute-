@@ -22,7 +22,7 @@ function set(id,n,label,skip=false){const el=$(id);el.value=n===null?"":String(n
 function refresh(){
  const japan=value("calcCountry")==="Япония",auto=japan&&mode.value==="estimate";
  panel.hidden=!japan;$("paJapanAutoFields").hidden=!auto;
- for(const id of keys){const el=$(id);el.readOnly=auto;const label=el.closest("label");if(label)label.classList.toggle("pa-included-cost",auto&&included.includes(id));if(!auto){delete el.dataset.paCostLabel;delete el.dataset.paCostIncluded;}}
+ for(const id of keys){const el=$(id);el.readOnly=auto&&(id!=="localDelivery"||["Новосибирск","Владивосток"].includes(value("calcCity")));const label=el.closest("label");if(label)label.classList.toggle("pa-included-cost",auto&&included.includes(id));if(!auto){delete el.dataset.paCostLabel;delete el.dataset.paCostIncluded;}}
  if(!auto){if(previouslyAuto&&!restoring)keys.forEach(id=>{$(id).value=id==="localDelivery"&&value("calcCity")==="Владивосток"?"0":"";});previouslyAuto=false;return;}
  previouslyAuto=true;
  const jpy=num("paJapanYenRate"),usdRate=num("paJapanUsdRate"),car=num("carCost");
@@ -33,7 +33,7 @@ function refresh(){
  for(const id of included)set(id,0,null,true);
  set("originDelivery",q.origin,q.yen===null?"Расходы по Японии (пакет)":"Расходы по Японии · "+money(q.yen)+" ¥");
  set("shipping",q.shipping,Number.isFinite(p.usd)?"Фрахт · "+money(p.usd)+" $":"Фрахт");
- set("bankFee",q.bank);set("paperwork",q.docs,"Брокер, СВХ, СБКТС, ЭПТС и лаборатория (пакет)");set("localDelivery",q.delivery);
+ set("bankFee",q.bank);set("paperwork",q.docs,"Брокер, СВХ, СБКТС, ЭПТС и лаборатория (пакет)");if(q.delivery!==null)set("localDelivery",q.delivery);else delete $("localDelivery").dataset.paCostLabel;
  // Unknown extra expenses stay blank, not assumed absent.
  status.textContent=[q.yen===null?"Расходы по Японии: после ввода цены автомобиля":money(q.yen)+" ¥"+(q.origin===null?" (нужен курс)":" ≈ "+money(q.origin)+" ₽"),Number.isFinite(p.usd)?"Фрахт: "+money(p.usd)+" $"+(q.shipping===null?" (нужен курс)":" ≈ "+money(q.shipping)+" ₽"):"Уточните фрахт",q.bank===null?"":"Банк: "+money(q.bank)+" ₽",q.docs===null?"":"Оформление: "+money(q.docs)+" ₽",q.delivery===null?"Доставка: уточняется":"Доставка: "+money(q.delivery)+" ₽",rateInfo].filter(Boolean).join(" · ");
 }
