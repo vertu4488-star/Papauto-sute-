@@ -2,7 +2,7 @@
 (() => {
   "use strict";
   const KEY = "papauto_estimate_history_v2";
-  const fields = ["carCost","auctionFee","originDelivery","exportDocs","insurance","shipping","customs","paperwork","localDelivery","fee","otherCosts","marketReferencePrice","bankFee","customsFee","utilFee","brokerFee","warehouseFee","calcCity","paModelSearch","paSelectedLot","paVehicleYear","paVehicleEngine","paVehiclePower","paPriceCurrency","paForeignPrice","paForeignRate","paVehicleTrim","paCustomsMode","paEngineType","paBuildDate","paClearDate","paAgeBand","paCustomsValue","paEurRate","paUtilEligibility"];
+  const fields = ["carCost","auctionFee","originDelivery","exportDocs","insurance","shipping","customs","paperwork","localDelivery","fee","otherCosts","marketReferencePrice","bankFee","customsFee","utilFee","brokerFee","warehouseFee","calcCity","paModelSearch","paSelectedLot","paVehicleYear","paVehicleEngine","paVehiclePower","paPriceCurrency","paForeignPrice","paForeignRate","paVehicleTrim","paCustomsMode","paEngineType","paBuildDate","paClearDate","paAgeBand","paCustomsValue","paEurRate","paUtilEligibility","paJapanTariffMode","paJapanYen","paJapanUsd","paJapanYenRate","paJapanUsdRate","paJapanBank","paJapanDocs","paJapanNovosibirsk"];
   const $ = id => document.getElementById(id);
   const form = $("calcForm");
   const panel = document.querySelector(".calc-result");
