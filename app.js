@@ -9,7 +9,15 @@ if(currencyCountry&&currencyAmount&&currencyRubResult&&currencyUsdResult&&curren
   };
   const fmtMoney=(value,currency)=>new Intl.NumberFormat("ru-RU",{style:"currency",currency,maximumFractionDigits:currency==="USD"?2:0}).format(value);
   const mode=()=>currencyModes[currencyCountry.value]||currencyModes["south-korea"];
+  const transfer=document.createElement("button");
+  transfer.type="button";transfer.className="button button-secondary";transfer.textContent="Перенести цену в смету";transfer.disabled=true;
+  const transferStatus=document.createElement("p");transferStatus.setAttribute("role","status");
+  const carCost=$("carCost"),calcCountry=$("calcCountry");
+  if(carCost&&calcCountry){currencyRubResult.closest(".currency-results")?.after(transfer,transferStatus);}
+  const rubAmount=()=>{const m=mode(),amount=Number(currencyAmount.value);return currencyRates&&currencyAmount.value.trim()!==""&&Number.isFinite(amount)&&amount>0?Math.round(amount*Number(currencyRates[m.perLocal])/m.localScale):NaN;};
+  transfer.addEventListener("click",()=>{const rub=rubAmount();if(!carCost||!calcCountry||!Number.isFinite(rub)||rub<1||rub>1000000000)return;const label={"japan":"Япония","south-korea":"Южная Корея","china":"Китай"}[currencyCountry.value];if(!label||![...calcCountry.options].some(o=>o.value===label))return;calcCountry.value=label;carCost.value=String(rub);carCost.dispatchEvent(new Event("input",{bubbles:true}));transferStatus.textContent="Цена перенесена по "+(currencyRates.fallback?"архивному ориентиру":"справочному курсу")+" на "+(currencyRates.date||"неуказанную дату")+". Уточните фактический курс банка.";carCost.scrollIntoView({block:"center"});carCost.focus({preventScroll:true});});
   const renderCurrency=()=>{
+    const rub=rubAmount();transfer.disabled=!Number.isFinite(rub)||rub<1||rub>1000000000;transferStatus.textContent="";
     const m=mode(),amount=Number(currencyAmount.value);
     if(!currencyRates||!Number.isFinite(amount)||amount<0){currencyRubResult.textContent="—";currencyUsdResult.textContent="—";return}
     currencyRubResult.textContent=fmtMoney(amount*Number(currencyRates[m.perLocal])/m.localScale,"RUB");
