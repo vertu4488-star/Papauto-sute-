@@ -168,7 +168,7 @@
    footer.append(full);
    const details=element("button","gallery-detail","Фото и лист");details.type="button";details.dataset.action="view";
    const apply=element("a","gallery-apply","Подобрать аналог");apply.href="/podbor.html?similar="+encodeURIComponent(lot.model+" "+lot.year+" · "+countryOf(lot).name);
-   footer.append(details,apply);item.append(footer);
+   const estimate=element("a","gallery-apply","Рассчитать стоимость");estimate.href="/?view=calculator&market="+encodeURIComponent(lot.market)+"&vehicle="+encodeURIComponent("lot:"+lot.id);footer.append(details,apply,estimate);item.append(footer);
    return item;
  }
  function draw(){
