@@ -119,12 +119,13 @@
     const facts=label("p",lot.auction+" · лот №"+lot.lot_number+" · "+
       new Intl.NumberFormat("ru-RU").format(lot.mileage_km)+" км · оценка "+lot.grade,
       "catalog-lot-facts");
+    const status=label("p",PapAutoMetadata.documents(lot),"catalog-document-status");
     const doc=label("a","Оригинальное фото и полный аукционный лист →","model-request");
     doc.href=url;
     const request=label("a","Подобрать аналог →","catalog-request-link");
     request.href=requestUrl(r);
     card.append(group,label("small",markets[r.market]||r.market,"country"),title,
-      label("div",r.engine,"engine"),facts,details,doc,request);
+      label("div",r.engine,"engine"),facts,details,status,doc,request);
     return card;
   }
 
