@@ -2,7 +2,7 @@
 (() => {
   "use strict";
   const KEY = "papauto_estimate_history_v1";
-  const fields = ["carCost","auctionFee","originDelivery","exportDocs","insurance","shipping","customs","paperwork","localDelivery","fee","otherCosts","marketReferencePrice"];
+  const fields = ["carCost","auctionFee","originDelivery","exportDocs","insurance","shipping","customs","paperwork","localDelivery","fee","otherCosts","marketReferencePrice","bankFee","customsFee","utilFee","brokerFee","warehouseFee","calcCity"];
   const $ = id => document.getElementById(id);
   const form = $("calcForm");
   const panel = document.querySelector(".calc-result");
@@ -50,8 +50,8 @@
       const actions=document.createElement("div");actions.className="estimate-history-actions";
       const restore=document.createElement("button");restore.type="button";restore.textContent="Открыть";restore.addEventListener("click",()=>{
         if($("calcCountry"))$("calcCountry").value=item.country;
-        fields.forEach(id=>{const el=$(id);if(el&&item.values&&Object.hasOwn(item.values,id))el.value=item.values[id]??"";});
-        form.dispatchEvent(new Event("submit",{bubbles:true,cancelable:true}));
+        fields.forEach(id=>{const el=$(id);if(el&&id!=="fee"){if(item.values&&Object.hasOwn(item.values,id))el.value=item.values[id]??"";else if(id!=="calcCity")el.value="";}});
+        if($("fee"))$("fee").value="50000";form.dispatchEvent(new Event("submit",{bubbles:true,cancelable:true}));
         $("calculator")?.scrollIntoView({behavior:"smooth",block:"start"});
       });
       const remove=document.createElement("button");remove.type="button";remove.textContent="Удалить";remove.addEventListener("click",()=>{save(load().filter(x=>x.id!==item.id));render();});
