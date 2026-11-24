@@ -186,7 +186,7 @@ async def root():
 
 @app.get("/api/exchange-rates")
 async def exchange_rates():
-    """Return official CBR rates for KRW, JPY, CNY and USD in RUB."""
+    """Return official CBR rates for KRW, JPY, CNY, USD and EUR in RUB."""
     url = "https://www.cbr.ru/scripts/XML_daily.asp"
     try:
         async with httpx.AsyncClient(timeout=8.0, follow_redirects=True) as client:
@@ -201,7 +201,7 @@ async def exchange_rates():
                 value = float(item.findtext("Value", "0").replace(",", "."))
             except (TypeError, ValueError):
                 continue
-            if code in {"KRW", "JPY", "CNY", "USD"} and nominal > 0 and value > 0:
+            if code in {"KRW", "JPY", "CNY", "USD", "EUR"} and nominal > 0 and value > 0:
                 rates[code] = value / nominal
         if any(code not in rates for code in ("KRW", "JPY", "CNY", "USD")):
             raise ValueError("CBR response is missing required currencies")
@@ -212,6 +212,7 @@ async def exchange_rates():
             "rub_per_jpy": round(rates["JPY"], 8),
             "rub_per_cny": round(rates["CNY"], 8),
             "rub_per_usd": round(rates["USD"], 6),
+            "rub_per_eur": round(rates["EUR"], 6) if "EUR" in rates else None,
             "usd_per_1000_krw": round(rates["KRW"] * 1000 / rates["USD"], 8),
             "usd_per_jpy": round(rates["JPY"] / rates["USD"], 8),
             "usd_per_cny": round(rates["CNY"] / rates["USD"], 8),
@@ -231,6 +232,7 @@ async def exchange_rates():
             "rub_per_jpy": jpy,
             "rub_per_cny": cny,
             "rub_per_usd": usd,
+            "rub_per_eur": None,
             "usd_per_1000_krw": round(krw1000 / usd, 8),
             "usd_per_jpy": round(jpy / usd, 8),
             "usd_per_cny": round(cny / usd, 8),

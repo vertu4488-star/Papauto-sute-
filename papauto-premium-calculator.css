@@ -44,3 +44,9 @@
 #calculator .pa-estimate-actions a{flex:1 1 100%}
 @media(max-width:720px){#calculator .pa-estimate-layout{grid-template-columns:1fr}#calculator .pa-estimate-shell{border-radius:15px}#calculator .pa-estimate-fields label{grid-template-columns:minmax(0,1fr) minmax(100px,39%)}#calculator .pa-estimate-actions button{flex:1 1 43%;font-size:13px}#calculator .pa-estimate-main{padding:14px}}
 @media print{body:has(.pa-estimate-shell) :is(.site-header,.site-footer,.site-tabs,.mobile-bottom-nav,#currency-converter,#logisticsBenchmarks,.pa-estimate-actions,.estimate-history,.pa-estimate-tabs,#paModelOptions,.pa-estimate-primary,.pa-estimate-secondary){display:none!important}#calculator .pa-estimate-shell{box-shadow:none;border:0}#calculator .pa-estimate-layout{display:none}#calculator .pa-estimate-result{break-inside:avoid}}
+
+#calculator .pa-customs-panel{background:#f6eee3!important;border:1px solid #e4d8c9;border-radius:13px;padding:14px;margin:14px 0 20px;display:grid;gap:10px}
+#calculator .pa-customs-panel h4{font-size:18px;font-weight:500;color:#292823!important;margin:0}
+#calculator .pa-customs-panel p{margin:0}
+#calculator .pa-customs-panel input[type=date]{max-width:100%;min-width:0}
+#calculator #paVehicleTrim{margin-bottom:12px}

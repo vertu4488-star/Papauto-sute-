@@ -16,7 +16,7 @@ const priceKeys=["carCost","auctionFee","originDelivery","exportDocs","insurance
 const notify=el=>el.dispatchEvent(new Event("input",{bubbles:true}));
 function clearQuote(){priceKeys.forEach(id=>{const el=$(id);if(el)el.value=id==="localDelivery"&&$("calcCity")?.value==="Владивосток"?"0":""});notify(car);}
 function cleanCard(){card.hidden=true;photo.replaceChildren();photo.hidden=true;$("paVehicleDetail").hidden=true;}
-function clearVehicle(resetMoney=true){selectionToken++;selected=null;lotKey.value="";cleanCard();["paVehicleYear","paVehicleEngine","paVehiclePower","paForeignPrice","paForeignRate"].forEach(id=>$(id).value="");rateStatus.textContent="Курс банка можно указать вручную.";if(resetMoney)clearQuote();updateOrder();}
+function clearVehicle(resetMoney=true){selectionToken++;selected=null;lotKey.value="";cleanCard();["paVehicleYear","paVehicleEngine","paVehiclePower","paVehicleTrim","paForeignPrice","paForeignRate","paBuildDate","paAgeBand","paEngineType","paCustomsValue","paUtilEligibility"].forEach(id=>{if($(id))$(id).value=""});rateStatus.textContent="Курс банка можно указать вручную.";if(resetMoney)clearQuote();updateOrder();}
 function updateOrder(){const model=search.value.trim(),year=$("paVehicleYear").value;const p=new URLSearchParams();if(model)p.set("similar",[model,year,country.value].filter(Boolean).join(" · "));order.href="/podbor.html"+(p.size?"?"+p.toString():"");}
 function updateTabs(){tabs.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.country===country.value)));}
 function rateFor(c){return ({JPY:Number(rates?.rub_per_jpy),KRW:Number(rates?.rub_per_1000_krw)/1000,CNY:Number(rates?.rub_per_cny),USD:Number(rates?.rub_per_usd)})[c];}
@@ -33,7 +33,7 @@ function showCard(x){
  const detail=$("paVehicleDetail");if(x.detail){detail.href=x.detail;detail.hidden=false;}status.textContent="Выбран конкретный опубликованный пример. Наличие и цена нового автомобиля уточняются.";
 }
 function select(x,{restore=false}={}){
- if(!restore){clearVehicle();search.value=x.name;lotKey.value=x.key;$("paVehicleYear").value=x.year||"";$("paVehicleEngine").value=x.engine||"";$("paVehiclePower").value=x.power||"";currency.value=x.currency||currencies[market()];foreign.value=x.amount>0?String(x.amount):"";}
+ if(!restore){clearVehicle();search.value=x.name;lotKey.value=x.key;$("paVehicleYear").value=x.year||"";$("paVehicleEngine").value=x.engine||"";$("paVehiclePower").value=x.power||"";if($("paVehicleTrim"))$("paVehicleTrim").value=x.trim||"";currency.value=x.currency||currencies[market()];foreign.value=x.amount>0?String(x.amount):"";}
  selected=x;options.replaceChildren();showCard(x);updateOrder();if(!restore){notify(car);if(x.amount>0)suggestRate(true);}
 }
 const fetchJson=async path=>{const r=await fetch(path,{credentials:"same-origin"});if(!r.ok)throw Error(path);return r.json();};
