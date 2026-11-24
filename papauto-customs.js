@@ -34,7 +34,7 @@ function refresh(){
  if(!auto){status.textContent="Ручной режим: введите подтверждённые суммы самостоятельно.";return;}
  const clear=parseDate(val("paClearDate")),build=parseDate(val("paBuildDate")),y=num("paVehicleYear");
  let age=val("paAgeBand");
- if(build){const exact=ageAt(build,clear);if(!exact||(age&&age!==exact)||(Number.isInteger(y)&&build.getUTCFullYear()!==y)){fields.forEach(id=>$(id).value="");status.textContent="Проверьте согласованность года, даты выпуска и возрастной категории.";return;}age=exact;}else if(!age)age=ageByYear(y,clear);
+ if(build){const exact=ageAt(build,clear);if(!exact||(age&&age!==exact)||(Number.isInteger(y)&&build.getUTCFullYear()!==y)){fields.forEach(id=>$(id).value="");status.textContent="Проверьте согласованность года, даты выпуска и возрастной категории.";return;}age=exact;}else {const known=ageByYear(y,clear);if((Number.isInteger(y)&&clear&&y>clear.getUTCFullYear())||(known&&age&&known!==age)){fields.forEach(id=>$(id).value="");status.textContent="Год выпуска не соответствует выбранному возрасту или дате оформления.";return;}if(!age)age=known;}
  const value=val("paCustomsValue")?num("paCustomsValue"):num("carCost");
  const r=estimate({cc:num("paVehicleEngine"),hp:num("paVehiclePower"),age,year:clear?.getUTCFullYear(),eur:num("paEurRate"),value,eligibility:val("paUtilEligibility"),type:val("paEngineType")});
  fields.forEach((id,i)=>{const n=[r.duty,r.fee,r.util][i];$(id).value=n===null?"":String(n);});
