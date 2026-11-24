@@ -14,6 +14,7 @@ if(!form||!panel)return;
 const mode=$("paJapanTariffMode"),status=$("paJapanTariffStatus");
 const keys=["auctionFee","originDelivery","exportDocs","insurance","shipping","bankFee","brokerFee","warehouseFee","paperwork","localDelivery"];
 const included=["auctionFee","exportDocs","insurance","brokerFee","warehouseFee"];
+const rename={originDelivery:["Доставка по стране покупки","Расходы по Японии (пакет), ₽"],shipping:["Международная доставка / фрахт","Фрахт (пересчёт в ₽)"],paperwork:["СБКТС, ЭПТС и лаборатория","Брокер, СВХ, СБКТС, ЭПТС и лаборатория (пакет), ₽"]};
 const relevant=new Set(["calcCountry","calcCity","carCost","paForeignPrice","paForeignRate","paPriceCurrency","paJapanTariffMode","paJapanYen","paJapanUsd","paJapanYenRate","paJapanUsdRate","paJapanBank","paJapanDocs","paJapanNovosibirsk"]);
 const value=id=>$(id)?.value??"",num=id=>value(id)===""?NaN:Number(value(id));
 const money=n=>Number(n).toLocaleString("ru-RU",{maximumFractionDigits:0});
@@ -22,7 +23,7 @@ function set(id,n,label,skip=false){const el=$(id);el.value=n===null?"":String(n
 function refresh(){
  const japan=value("calcCountry")==="Япония",auto=japan&&mode.value==="estimate";
  panel.hidden=!japan;$("paJapanAutoFields").hidden=!auto;
- for(const id of keys){const el=$(id);el.readOnly=auto&&(id!=="localDelivery"||["Новосибирск","Владивосток"].includes(value("calcCity")));const label=el.closest("label");if(label)label.classList.toggle("pa-included-cost",auto&&included.includes(id));if(!auto){delete el.dataset.paCostLabel;delete el.dataset.paCostIncluded;}}
+ for(const id of keys){const el=$(id);el.readOnly=auto&&(id!=="localDelivery"||["Новосибирск","Владивосток"].includes(value("calcCity")));const label=el.closest("label");if(label){label.classList.toggle("pa-included-cost",auto&&included.includes(id));if(rename[id]&&label.firstChild?.nodeType===3)label.firstChild.textContent=rename[id][auto?1:0];}if(!auto){delete el.dataset.paCostLabel;delete el.dataset.paCostIncluded;}}
  if(!auto){if(previouslyAuto&&!restoring)keys.forEach(id=>{$(id).value=id==="localDelivery"&&value("calcCity")==="Владивосток"?"0":"";});previouslyAuto=false;return;}
  previouslyAuto=true;
  const jpy=num("paJapanYenRate"),usdRate=num("paJapanUsdRate"),car=num("carCost");
