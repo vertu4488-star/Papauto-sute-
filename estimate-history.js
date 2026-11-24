@@ -2,7 +2,7 @@
 (() => {
   "use strict";
   const KEY = "papauto_estimate_history_v2";
-  const fields = ["carCost","auctionFee","originDelivery","exportDocs","insurance","shipping","customs","paperwork","localDelivery","fee","otherCosts","marketReferencePrice","bankFee","customsFee","utilFee","brokerFee","warehouseFee","calcCity","paModelSearch","paSelectedLot","paVehicleYear","paVehicleEngine","paVehiclePower","paPriceCurrency","paForeignPrice","paForeignRate","paVehicleTrim","paCustomsMode","paEngineType","paBuildDate","paClearDate","paAgeBand","paCustomsValue","paEurRate","paUtilEligibility","paJapanTariffMode","paJapanYen","paJapanUsd","paJapanYenRate","paJapanUsdRate","paJapanBank","paJapanDocs","paJapanNovosibirsk"];
+  const fields = ["carCost","auctionFee","originDelivery","exportDocs","insurance","shipping","customs","paperwork","localDelivery","fee","otherCosts","marketReferencePrice","bankFee","customsFee","utilFee","brokerFee","warehouseFee","calcCity","paModelSearch","paSelectedLot","paVehicleYear","paVehicleEngine","paVehiclePower","paPriceCurrency","paForeignPrice","paForeignRate","paVehicleTrim","paCustomsMode","paEngineType","paBuildDate","paClearDate","paAgeBand","paCustomsValue","paEurRate","paUtilEligibility","paJapanTariffMode","paJapanYen","paJapanUsd","paJapanYenRate","paJapanUsdRate","paJapanBank","paJapanDocs","paDeliveryOrigin","paDeliveryClass","paDeliveryMode"];
   const $ = id => document.getElementById(id);
   const form = $("calcForm");
   const panel = document.querySelector(".calc-result");
@@ -51,7 +51,7 @@
       const actions=document.createElement("div");actions.className="estimate-history-actions";
       const restore=document.createElement("button");restore.type="button";restore.textContent="Открыть";restore.addEventListener("click",()=>{
         if($("calcCountry"))$("calcCountry").value=item.country;
-        fields.forEach(id=>{const el=$(id);if(el&&id!=="fee"){if(item.values&&Object.hasOwn(item.values,id))el.value=item.values[id]??"";else if(id!=="calcCity")el.value="";}});
+        fields.forEach(id=>{const el=$(id);if(el&&id!=="fee"){if(item.values&&Object.hasOwn(item.values,id))el.value=item.values[id]??"";else if(id!=="calcCity")el.value=id==="paDeliveryMode"?"manual":id==="paDeliveryOrigin"?(item.country==="Япония"?"vlad":"other"):"";}});
         if($("fee"))$("fee").value="50000";if($("paModelSearch"))form.dispatchEvent(new Event("pa:restore-estimate"));form.dispatchEvent(new Event("submit",{bubbles:true,cancelable:true}));
         $("calculator")?.scrollIntoView({behavior:"smooth",block:"start"});
       });

@@ -1,21 +1,21 @@
 /* PapAuto: editable preliminary Japan tariff package. Internal totals remain RUB. */
 (()=>{
 "use strict";
-const defaults={yen:110000,usd:400,bank:15000,docs:65000,delivery:150000};
+const defaults={yen:110000,usd:400,bank:15000,docs:65000};
 function calculate(p){
  const valid=n=>Number.isFinite(n)&&n>=0,positive=n=>valid(n)&&n>0;
  const yen=valid(p.yen)&&positive(p.auctionYen)?Math.round(p.yen+Math.max(0,p.auctionYen-1000000)*.05):null;
- return {yen,origin:yen!==null&&positive(p.jpyRate)?Math.round(yen*p.jpyRate):null,shipping:valid(p.usd)&&positive(p.usdRate)?Math.round(p.usd*p.usdRate):null,bank:valid(p.bank)?Math.round(p.bank):null,docs:valid(p.docs)?Math.round(p.docs):null,delivery:p.city==="Владивосток"?0:p.city==="Новосибирск"&&valid(p.delivery)?Math.round(p.delivery):null};
+ return {yen,origin:yen!==null&&positive(p.jpyRate)?Math.round(yen*p.jpyRate):null,shipping:valid(p.usd)&&positive(p.usdRate)?Math.round(p.usd*p.usdRate):null,bank:valid(p.bank)?Math.round(p.bank):null,docs:valid(p.docs)?Math.round(p.docs):null};
 }
 if(typeof module!=="undefined"&&module.exports)module.exports={calculate,defaults};
 if(typeof document==="undefined")return;
 const $=id=>document.getElementById(id),form=$("calcForm"),panel=$("paJapanTariffs");
 if(!form||!panel)return;
 const mode=$("paJapanTariffMode"),status=$("paJapanTariffStatus");
-const keys=["auctionFee","originDelivery","exportDocs","insurance","shipping","bankFee","brokerFee","warehouseFee","paperwork","localDelivery"];
+const keys=["auctionFee","originDelivery","exportDocs","insurance","shipping","bankFee","brokerFee","warehouseFee","paperwork"];
 const included=["auctionFee","exportDocs","insurance","brokerFee","warehouseFee"];
 const rename={originDelivery:["Доставка по стране покупки","Расходы по Японии (пакет), ₽"],shipping:["Международная доставка / фрахт","Фрахт (пересчёт в ₽)"],paperwork:["СБКТС, ЭПТС и лаборатория","Брокер, СВХ, СБКТС, ЭПТС и лаборатория (пакет), ₽"]};
-const relevant=new Set(["calcCountry","calcCity","carCost","paForeignPrice","paForeignRate","paPriceCurrency","paJapanTariffMode","paJapanYen","paJapanUsd","paJapanYenRate","paJapanUsdRate","paJapanBank","paJapanDocs","paJapanNovosibirsk"]);
+const relevant=new Set(["calcCountry","carCost","paForeignPrice","paForeignRate","paPriceCurrency","paJapanTariffMode","paJapanYen","paJapanUsd","paJapanYenRate","paJapanUsdRate","paJapanBank","paJapanDocs"]);
 const value=id=>$(id)?.value??"",num=id=>value(id)===""?NaN:Number(value(id));
 const money=n=>Number(n).toLocaleString("ru-RU",{maximumFractionDigits:0});
 let previouslyAuto=false,rateInfo="",restoring=false;
@@ -23,20 +23,20 @@ function set(id,n,label,skip=false){const el=$(id);el.value=n===null?"":String(n
 function refresh(){
  const japan=value("calcCountry")==="Япония",auto=japan&&mode.value==="estimate";
  panel.hidden=!japan;$("paJapanAutoFields").hidden=!auto;
- for(const id of keys){const el=$(id);el.readOnly=auto&&(id!=="localDelivery"||["Новосибирск","Владивосток"].includes(value("calcCity")));const label=el.closest("label");if(label){label.classList.toggle("pa-included-cost",auto&&included.includes(id));if(rename[id]&&label.firstChild?.nodeType===3)label.firstChild.textContent=rename[id][auto?1:0];}if(!auto){delete el.dataset.paCostLabel;delete el.dataset.paCostIncluded;}}
- if(!auto){if(previouslyAuto&&!restoring)keys.forEach(id=>{$(id).value=id==="localDelivery"&&value("calcCity")==="Владивосток"?"0":"";});previouslyAuto=false;return;}
+ for(const id of keys){const el=$(id);el.readOnly=auto;const label=el.closest("label");if(label){label.classList.toggle("pa-included-cost",auto&&included.includes(id));if(rename[id]&&label.firstChild?.nodeType===3)label.firstChild.textContent=rename[id][auto?1:0];}if(!auto){delete el.dataset.paCostLabel;delete el.dataset.paCostIncluded;}}
+ if(!auto){if(previouslyAuto&&!restoring)keys.forEach(id=>{$(id).value="";});previouslyAuto=false;return;}
  previouslyAuto=true;
  const jpy=num("paJapanYenRate"),usdRate=num("paJapanUsdRate"),car=num("carCost");
  // Use the price actually transferred to the ruble quote, never a stale untransferred FX field.
  const original=value("paPriceCurrency")==="JPY"&&num("paForeignPrice")>0&&Math.round(num("paForeignPrice")*num("paForeignRate"))===car?num("paForeignPrice"):car>0&&jpy>0?car/jpy:NaN;
- const p={yen:num("paJapanYen"),usd:num("paJapanUsd"),jpyRate:jpy,usdRate,auctionYen:original,bank:num("paJapanBank"),docs:num("paJapanDocs"),delivery:num("paJapanNovosibirsk"),city:value("calcCity")};
+ const p={yen:num("paJapanYen"),usd:num("paJapanUsd"),jpyRate:jpy,usdRate,auctionYen:original,bank:num("paJapanBank"),docs:num("paJapanDocs")};
  const q=calculate(p);
  for(const id of included)set(id,0,null,true);
  set("originDelivery",q.origin,q.yen===null?"Расходы по Японии (пакет)":"Расходы по Японии · "+money(q.yen)+" ¥");
  set("shipping",q.shipping,Number.isFinite(p.usd)?"Фрахт · "+money(p.usd)+" $":"Фрахт");
- set("bankFee",q.bank);set("paperwork",q.docs,"Брокер, СВХ, СБКТС, ЭПТС и лаборатория (пакет)");if(q.delivery!==null)set("localDelivery",q.delivery);else delete $("localDelivery").dataset.paCostLabel;
+ set("bankFee",q.bank);set("paperwork",q.docs,"Брокер, СВХ, СБКТС, ЭПТС и лаборатория (пакет)");
  // Unknown extra expenses stay blank, not assumed absent.
- status.textContent=[q.yen===null?"Расходы по Японии: после ввода цены автомобиля":money(q.yen)+" ¥"+(q.origin===null?" (нужен курс)":" ≈ "+money(q.origin)+" ₽"),Number.isFinite(p.usd)?"Фрахт: "+money(p.usd)+" $"+(q.shipping===null?" (нужен курс)":" ≈ "+money(q.shipping)+" ₽"):"Уточните фрахт",q.bank===null?"":"Банк: "+money(q.bank)+" ₽",q.docs===null?"":"Оформление: "+money(q.docs)+" ₽",q.delivery===null?"Доставка: уточняется":"Доставка: "+money(q.delivery)+" ₽",rateInfo].filter(Boolean).join(" · ");
+ status.textContent=[q.yen===null?"Расходы по Японии: после ввода цены автомобиля":money(q.yen)+" ¥"+(q.origin===null?" (нужен курс)":" ≈ "+money(q.origin)+" ₽"),Number.isFinite(p.usd)?"Фрахт: "+money(p.usd)+" $"+(q.shipping===null?" (нужен курс)":" ≈ "+money(q.shipping)+" ₽"):"Уточните фрахт",q.bank===null?"":"Банк: "+money(q.bank)+" ₽",q.docs===null?"":"Оформление: "+money(q.docs)+" ₽",rateInfo].filter(Boolean).join(" · ");
 }
 form.addEventListener("input",e=>{if(relevant.has(e.target.id))refresh();});
 form.addEventListener("change",e=>{if(relevant.has(e.target.id))refresh();});
