@@ -51,7 +51,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar{grid-template-col
 body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar{grid-template-columns:minmax(0,1fr)!important}
 body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:0!important}
 }
-</style><link rel="stylesheet" href="/papauto-premium-calculator.css?v=20261124a"></head>
+</style><link rel="stylesheet" href="/papauto-premium-calculator.css?v=20261125-customs"></head>
 <body class="pa-thursday-home">
 <a class="skip-link" href="#main">Перейти к содержанию</a>
 <header class="site-header">
@@ -588,6 +588,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
                   <label>Объём, см³<input id="paVehicleEngine" type="number" min="0" max="12000" placeholder="Уточнить"></label>
                   <label>Мощность, л.с.<input id="paVehiclePower" type="number" min="0" max="2000" placeholder="Уточнить"></label>
                 </div>
+                <label>Комплектация<input id="paVehicleTrim" type="text" maxlength="100" placeholder="Укажите точную комплектацию"></label>
                 <div class="pa-estimate-fx">
                   <label>Валюта покупки<select id="paPriceCurrency"><option>JPY</option><option>KRW</option><option>CNY</option><option>USD</option></select></label>
                   <label>Цена в валюте<input id="paForeignPrice" type="number" min="0" step="any" placeholder="Не указано"></label>
@@ -600,6 +601,22 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
               <div class="pa-estimate-costs">
                 <h3>Из чего складывается цена</h3>
                 <p class="pa-estimate-small">Неизвестные расходы оставьте пустыми, отсутствующие обозначьте 0. Не учитывайте одну услугу дважды.</p>
+                <section class="pa-customs-panel" aria-labelledby="paCustomsTitle">
+                  <h4 id="paCustomsTitle">Автоматический расчёт таможни</h4>
+                  <label>Режим<select id="paCustomsMode"><option value="auto">Физлицо · личный ввоз · оформление в РФ</option><option value="manual">Другой режим / вручную</option></select></label>
+                  <label>Тип двигателя<select id="paEngineType"><option value="">Уточнить тип</option><option value="ice">Бензин / дизель (без гибрида)</option><option value="hybrid">Гибрид</option><option value="ev">Электромобиль</option></select></label>
+                  <label>Дата выпуска (если известна)<input id="paBuildDate" type="date"></label>
+                  <label>Дата расчёта таможни и утильсбора<input id="paClearDate" type="date" min="2026-01-01" max="2027-12-31"></label>
+                  <label>Возраст на дату оформления<select id="paAgeBand"><option value="">Автоматически по дате или году</option><option value="new">Не старше 3 лет</option><option value="mid">Старше 3, до 5 лет</option><option value="old">Старше 5 лет</option></select></label>
+                  <label>Стоимость для таможни, ₽ (необязательно)<input id="paCustomsValue" type="number" min="1" max="1000000000" step="any" placeholder="По цене автомобиля как ориентир"></label>
+                  <label>Курс евро ЦБ, ₽/EUR<input id="paEurRate" type="number" min="0.0001" step="any" placeholder="Загрузка курса / вручную"></label>
+                  <p id="paEurNote" class="pa-estimate-small">Курс на будущую дату неизвестен; укажите расчётный курс.</p>
+                  <label>Условия утильсбора<select id="paUtilEligibility"><option value="">Уточнить условия</option><option value="yes">Льготный личный ввоз (условия соблюдены)</option><option value="no">Льгота не применяется</option></select></label>
+                  <p class="pa-estimate-small">Льгота: личное пользование, до 160 л.с. и до 3 л, соблюдение условий регистрации, владения и периодичности ввоза. Для авто, оформленных в другой стране ЕАЭС, требуется отдельный расчёт.</p>
+                  <button id="paCustomsRefresh" type="button" class="pa-estimate-secondary">Обновить таможенные платежи</button>
+                  <p id="paCustomsStatus" role="status" class="pa-estimate-small">Выберите параметры автомобиля.</p>
+                  <p class="pa-estimate-small">ЕЭК №107, ПП РФ №1637, №1291 и №1713. <a href="/import-rules.html">Правила ввоза</a>. Ставки 2027 — по действующему графику, возможны изменения.</p>
+                </section>
                 <div class="pa-estimate-fields"><label for="carCost">Цена автомобиля, ₽<input id="carCost" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" required></label>
             <label for="auctionFee">Комиссия аукциона / дилера<input id="auctionFee" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
             <label for="originDelivery">Доставка по стране покупки<input id="originDelivery" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
@@ -832,8 +849,9 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 <script defer src="/voice-assistant.js?v=20261103"></script>
 <script src="/auction-sheet-decoder.js" defer></script>
   <script src="/vehicle-catalogue.js" defer></script>
-<script src="/papauto-premium-calculator.js?v=20261124a" defer></script>
-<script src="/estimate-history.js?v=20261124-premiumcalc" defer></script>
+<script src="/papauto-premium-calculator.js?v=20261125-customs" defer></script>
+<script src="/papauto-customs.js?v=20261125" defer></script>
+<script src="/estimate-history.js?v=20261125-customs" defer></script>
 <script src="/lead-draft-history.js" defer></script>
 <script src="/similar-car-request.js" defer></script>
 <script defer src="/archive-request.js"></script>
