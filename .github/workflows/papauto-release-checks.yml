@@ -26,6 +26,7 @@ jobs:
           node --check papauto-premium-calculator.js
           node --check papauto-customs.js
           node --check papauto-japan-tariffs.js
+          node --check papauto-delivery-tariffs.js
           node --check estimate-history.js
           node --check gallery.js
       - name: Test customs calculation boundaries
@@ -54,9 +55,25 @@ jobs:
           assert.equal(calculate(p).yen,125000);
           assert.equal(calculate(p).origin,62500);
           assert.equal(calculate(p).shipping,32000);
-          assert.equal(calculate({...p,city:'Владивосток'}).delivery,0);
-          assert.equal(calculate({...p,city:'Красноярск'}).delivery,null);
           assert.equal(calculate({...p,jpyRate:NaN}).origin,null);
+          JS
+      - name: Test regional transport estimates
+        run: |
+          node <<'JS'
+          const assert = require('node:assert/strict');
+          const { classify, quote } = require('./papauto-delivery-tariffs.js');
+          const d = require('./data/papauto-delivery-tariffs-20261125.json');
+          assert.equal(classify('Honda Fit'),'compact');
+          assert.equal(classify('Honda Stepwgn'),'large');
+          assert.equal(classify('Toyota RAV4'),'crossover');
+          assert.equal(classify('Unknown model'),'');
+          assert.equal(quote(d,'Новосибирск','compact','vlad').estimate,120000);
+          assert.equal(quote(d,'Новосибирск','large','vlad').estimate,150000);
+          assert.equal(quote(d,'Владивосток','','vlad').estimate,0);
+          assert.equal(quote(d,'Новосибирск','large','other'),null);
+          assert.ok(quote(d,'Томск','compact','vlad').proxy);
+          assert.equal(quote(d,'Томск','large','vlad').count,1);
+          assert.equal(quote(d,'Другой город','large','vlad'),null);
           JS
       - name: Build and enforce approved-publication policy
         run: python scripts/build_static_public.py
@@ -64,6 +81,9 @@ jobs:
         run: |
           test -s render-public/papauto-customs.js
           test -s render-public/papauto-japan-tariffs.js
+          test -s render-public/papauto-delivery-tariffs.js
+          test -s render-public/data/papauto-delivery-tariffs-20261125.json
+          grep -q 'id="paDeliveryPanel"' render-public/index.html
           test -s render-public/papauto-premium-calculator.js
           test -s render-public/papauto-premium-calculator.css
           grep -q 'id="paCustomsMode"' render-public/index.html
