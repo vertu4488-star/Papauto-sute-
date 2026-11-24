@@ -315,7 +315,9 @@
         msg.textContent=savedNotification?'Заявка доставлена менеджеру.':'Заявка сохранена. Доставка уведомления проверяется.';
         options.allow=true;
       }else{
-        const detail=leadValidationError(data.detail);
+        const detail=response.status===429
+          ? 'Слишком много запросов. Попробуйте позже или свяжитесь с менеджером через Telegram.'
+          : leadValidationError(data.detail);
         const safelyRejected=[400,413,415,422,429].includes(response.status);
         // These statuses are rejected before database insertion; other statuses
         // are ambiguous and must NOT be retried without checking Telegram.
