@@ -1,0 +1,1530 @@
+{
+  "verified_on": "2026-11-25",
+  "origin": "Владивосток / Уссурийск",
+  "method": "Simple unweighted mean of public road carrier/importer indicative tariffs by comparable body class. Midpoints for published ranges, rounded to nearest 5000 RUB. Not a guaranteed quote; no rail; no mixing Yurga with Tomsk. Some sources may use same carriers, no weighting by volume. Single-sample and proxy marked.",
+  "classes": [
+    "compact",
+    "sedan",
+    "crossover",
+    "large"
+  ],
+  "sources": [
+    {
+      "id": "vostok",
+      "name": "Восток Лайн ДВ (CRAVTO)",
+      "url": "https://cravto.ru/dostavka/",
+      "date": "2026-08-06"
+    },
+    {
+      "id": "translog",
+      "name": "TransLogistic",
+      "url": "https://aetranslogistik.ru/"
+    },
+    {
+      "id": "dare",
+      "name": "ДАРЭ",
+      "url": "https://importdare.ru/dostavka"
+    },
+    {
+      "id": "cts",
+      "name": "СТС",
+      "url": "https://ctcavtovoz.ru/ceny",
+      "note": "Тарифы от; страхование груза отдельно; Урал и Москва — лист ожидания"
+    },
+    {
+      "id": "hokaru",
+      "name": "Hokaru",
+      "url": "https://hokaru.com/page/delivery/",
+      "note": "Кейкар/хэтчбек и кроссовер/минивэн — объединённые классы"
+    },
+    {
+      "id": "vladauto",
+      "name": "VLADAUTO",
+      "url": "https://vladauto.pro/autotransport-prices",
+      "note": "Для интервалов взята середина; страховка включена"
+    },
+    {
+      "id": "track",
+      "name": "ПроЭкспедиция",
+      "url": "https://trackdv.ru/minivans",
+      "note": "Отдельный прайс минивэнов, цены от"
+    },
+    {
+      "id": "autoport",
+      "name": "Автопорт",
+      "url": "https://autoport-group.com/avtovoz-vladivostok-tomsk",
+      "note": "Томск, седан/хэтчбек, кроссовер, цены от; минивэн по запросу"
+    },
+    {
+      "id": "onlyjp",
+      "name": "OnlyJPCars",
+      "url": "https://onlyjpcars.ru/services/delivery",
+      "note": "Только легковые и кроссоверы для Томска; внедорожник не приравниваем к минивэну"
+    },
+    {
+      "id": "star",
+      "name": "STARMOTORS",
+      "url": "https://starmotors.biz/informacija-o-dostavke/",
+      "note": "Легковой, легковой+/маленький кроссовер, микроавтобус/кроссовер+; не смешиваем с кейкаром и обычным кроссовером"
+    }
+  ],
+  "table": {
+    "Владивосток": {
+      "compact": {
+        "estimate": 0,
+        "average": 0,
+        "count": 0,
+        "min": 0,
+        "max": 0,
+        "samples": []
+      },
+      "sedan": {
+        "estimate": 0,
+        "average": 0,
+        "count": 0,
+        "min": 0,
+        "max": 0,
+        "samples": []
+      },
+      "crossover": {
+        "estimate": 0,
+        "average": 0,
+        "count": 0,
+        "min": 0,
+        "max": 0,
+        "samples": []
+      },
+      "large": {
+        "estimate": 0,
+        "average": 0,
+        "count": 0,
+        "min": 0,
+        "max": 0,
+        "samples": []
+      }
+    },
+    "Новосибирск": {
+      "compact": {
+        "estimate": 120000,
+        "average": 122000,
+        "count": 6,
+        "min": 100000,
+        "max": 145000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 140000
+          },
+          {
+            "source": "translog",
+            "rub": 120000
+          },
+          {
+            "source": "dare",
+            "rub": 145000
+          },
+          {
+            "source": "cts",
+            "rub": 110000
+          },
+          {
+            "source": "hokaru",
+            "rub": 100000
+          },
+          {
+            "source": "vladauto",
+            "rub": 117000
+          }
+        ]
+      },
+      "sedan": {
+        "estimate": 130000,
+        "average": 132143,
+        "count": 7,
+        "min": 110000,
+        "max": 150000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 145000
+          },
+          {
+            "source": "translog",
+            "rub": 120000
+          },
+          {
+            "source": "dare",
+            "rub": 150000
+          },
+          {
+            "source": "cts",
+            "rub": 120000
+          },
+          {
+            "source": "hokaru",
+            "rub": 110000
+          },
+          {
+            "source": "vladauto",
+            "rub": 130000
+          },
+          {
+            "source": "star",
+            "rub": 150000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 135000,
+        "average": 136667,
+        "count": 6,
+        "min": 120000,
+        "max": 155000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 150000
+          },
+          {
+            "source": "translog",
+            "rub": 125000
+          },
+          {
+            "source": "dare",
+            "rub": 155000
+          },
+          {
+            "source": "cts",
+            "rub": 130000
+          },
+          {
+            "source": "hokaru",
+            "rub": 120000
+          },
+          {
+            "source": "vladauto",
+            "rub": 140000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 150000,
+        "average": 148750,
+        "count": 8,
+        "min": 120000,
+        "max": 170000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 155000
+          },
+          {
+            "source": "translog",
+            "rub": 130000
+          },
+          {
+            "source": "dare",
+            "rub": 160000
+          },
+          {
+            "source": "cts",
+            "rub": 140000
+          },
+          {
+            "source": "hokaru",
+            "rub": 120000
+          },
+          {
+            "source": "vladauto",
+            "rub": 170000
+          },
+          {
+            "source": "track",
+            "rub": 145000
+          },
+          {
+            "source": "star",
+            "rub": 170000
+          }
+        ]
+      }
+    },
+    "Иркутск": {
+      "compact": {
+        "estimate": 100000,
+        "average": 100000,
+        "count": 4,
+        "min": 80000,
+        "max": 130000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 130000
+          },
+          {
+            "source": "translog",
+            "rub": 95000
+          },
+          {
+            "source": "hokaru",
+            "rub": 80000
+          },
+          {
+            "source": "vladauto",
+            "rub": 95000
+          }
+        ]
+      },
+      "sedan": {
+        "estimate": 110000,
+        "average": 111000,
+        "count": 5,
+        "min": 90000,
+        "max": 135000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 135000
+          },
+          {
+            "source": "translog",
+            "rub": 95000
+          },
+          {
+            "source": "hokaru",
+            "rub": 90000
+          },
+          {
+            "source": "vladauto",
+            "rub": 105000
+          },
+          {
+            "source": "star",
+            "rub": 130000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 110000,
+        "average": 110000,
+        "count": 4,
+        "min": 100000,
+        "max": 140000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 140000
+          },
+          {
+            "source": "translog",
+            "rub": 100000
+          },
+          {
+            "source": "hokaru",
+            "rub": 100000
+          },
+          {
+            "source": "vladauto",
+            "rub": 100000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 120000,
+        "average": 121000,
+        "count": 5,
+        "min": 100000,
+        "max": 150000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 145000
+          },
+          {
+            "source": "translog",
+            "rub": 100000
+          },
+          {
+            "source": "hokaru",
+            "rub": 100000
+          },
+          {
+            "source": "vladauto",
+            "rub": 110000
+          },
+          {
+            "source": "star",
+            "rub": 150000
+          }
+        ]
+      }
+    },
+    "Красноярск": {
+      "compact": {
+        "estimate": 120000,
+        "average": 118400,
+        "count": 5,
+        "min": 90000,
+        "max": 145000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 140000
+          },
+          {
+            "source": "translog",
+            "rub": 100000
+          },
+          {
+            "source": "dare",
+            "rub": 145000
+          },
+          {
+            "source": "hokaru",
+            "rub": 90000
+          },
+          {
+            "source": "vladauto",
+            "rub": 117000
+          }
+        ]
+      },
+      "sedan": {
+        "estimate": 120000,
+        "average": 121286,
+        "count": 7,
+        "min": 99000,
+        "max": 150000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 145000
+          },
+          {
+            "source": "translog",
+            "rub": 105000
+          },
+          {
+            "source": "dare",
+            "rub": 150000
+          },
+          {
+            "source": "cts",
+            "rub": 99000
+          },
+          {
+            "source": "hokaru",
+            "rub": 100000
+          },
+          {
+            "source": "vladauto",
+            "rub": 110000
+          },
+          {
+            "source": "star",
+            "rub": 140000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 125000,
+        "average": 125500,
+        "count": 6,
+        "min": 108000,
+        "max": 155000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 150000
+          },
+          {
+            "source": "translog",
+            "rub": 110000
+          },
+          {
+            "source": "dare",
+            "rub": 155000
+          },
+          {
+            "source": "cts",
+            "rub": 108000
+          },
+          {
+            "source": "hokaru",
+            "rub": 110000
+          },
+          {
+            "source": "vladauto",
+            "rub": 120000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 135000,
+        "average": 135625,
+        "count": 8,
+        "min": 110000,
+        "max": 160000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 155000
+          },
+          {
+            "source": "translog",
+            "rub": 110000
+          },
+          {
+            "source": "dare",
+            "rub": 160000
+          },
+          {
+            "source": "cts",
+            "rub": 120000
+          },
+          {
+            "source": "hokaru",
+            "rub": 110000
+          },
+          {
+            "source": "vladauto",
+            "rub": 130000
+          },
+          {
+            "source": "track",
+            "rub": 140000
+          },
+          {
+            "source": "star",
+            "rub": 160000
+          }
+        ]
+      }
+    },
+    "Омск": {
+      "compact": {
+        "estimate": 150000,
+        "average": 151000,
+        "count": 4,
+        "min": 129000,
+        "max": 165000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 165000
+          },
+          {
+            "source": "translog",
+            "rub": 150000
+          },
+          {
+            "source": "dare",
+            "rub": 160000
+          },
+          {
+            "source": "vladauto",
+            "rub": 129000
+          }
+        ]
+      },
+      "sedan": {
+        "estimate": 160000,
+        "average": 162400,
+        "count": 5,
+        "min": 142000,
+        "max": 180000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 170000
+          },
+          {
+            "source": "translog",
+            "rub": 155000
+          },
+          {
+            "source": "dare",
+            "rub": 165000
+          },
+          {
+            "source": "vladauto",
+            "rub": 142000
+          },
+          {
+            "source": "star",
+            "rub": 180000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 160000,
+        "average": 161750,
+        "count": 4,
+        "min": 147000,
+        "max": 175000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 175000
+          },
+          {
+            "source": "translog",
+            "rub": 155000
+          },
+          {
+            "source": "dare",
+            "rub": 170000
+          },
+          {
+            "source": "vladauto",
+            "rub": 147000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 175000,
+        "average": 176167,
+        "count": 6,
+        "min": 155000,
+        "max": 205000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 180000
+          },
+          {
+            "source": "translog",
+            "rub": 160000
+          },
+          {
+            "source": "dare",
+            "rub": 175000
+          },
+          {
+            "source": "vladauto",
+            "rub": 182000
+          },
+          {
+            "source": "track",
+            "rub": 155000
+          },
+          {
+            "source": "star",
+            "rub": 205000
+          }
+        ]
+      }
+    },
+    "Томск": {
+      "sedan": {
+        "estimate": 125000,
+        "average": 126750,
+        "count": 2,
+        "min": 118000,
+        "max": 135500,
+        "samples": [
+          {
+            "source": "autoport",
+            "rub": 135500
+          },
+          {
+            "source": "onlyjp",
+            "rub": 118000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 145000,
+        "average": 143750,
+        "count": 2,
+        "min": 142000,
+        "max": 145500,
+        "samples": [
+          {
+            "source": "autoport",
+            "rub": 145500
+          },
+          {
+            "source": "onlyjp",
+            "rub": 142000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 150000,
+        "average": 150000,
+        "count": 1,
+        "min": 150000,
+        "max": 150000,
+        "samples": [
+          {
+            "source": "track",
+            "rub": 150000
+          }
+        ]
+      },
+      "compact": {
+        "estimate": 125000,
+        "average": 126750,
+        "count": 2,
+        "min": 118000,
+        "max": 135500,
+        "samples": [
+          {
+            "source": "autoport",
+            "rub": 135500
+          },
+          {
+            "source": "onlyjp",
+            "rub": 118000
+          }
+        ],
+        "proxy": "Ориентир по седану/хэтчбеку; отдельный тариф кейкара до Томска не опубликован"
+      }
+    },
+    "Юрга": {
+      "compact": {
+        "estimate": 130000,
+        "average": 130000,
+        "count": 2,
+        "min": 120000,
+        "max": 140000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 140000
+          },
+          {
+            "source": "translog",
+            "rub": 120000
+          }
+        ]
+      },
+      "sedan": {
+        "estimate": 135000,
+        "average": 132500,
+        "count": 2,
+        "min": 120000,
+        "max": 145000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 145000
+          },
+          {
+            "source": "translog",
+            "rub": 120000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 140000,
+        "average": 137500,
+        "count": 2,
+        "min": 125000,
+        "max": 150000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 150000
+          },
+          {
+            "source": "translog",
+            "rub": 125000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 145000,
+        "average": 142500,
+        "count": 2,
+        "min": 130000,
+        "max": 155000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 155000
+          },
+          {
+            "source": "translog",
+            "rub": 130000
+          }
+        ]
+      }
+    },
+    "Кемерово": {
+      "compact": {
+        "estimate": 125000,
+        "average": 124400,
+        "count": 5,
+        "min": 100000,
+        "max": 145000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 140000
+          },
+          {
+            "source": "translog",
+            "rub": 120000
+          },
+          {
+            "source": "dare",
+            "rub": 145000
+          },
+          {
+            "source": "hokaru",
+            "rub": 100000
+          },
+          {
+            "source": "vladauto",
+            "rub": 117000
+          }
+        ]
+      },
+      "sedan": {
+        "estimate": 130000,
+        "average": 131000,
+        "count": 7,
+        "min": 110000,
+        "max": 150000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 145000
+          },
+          {
+            "source": "translog",
+            "rub": 120000
+          },
+          {
+            "source": "dare",
+            "rub": 150000
+          },
+          {
+            "source": "cts",
+            "rub": 112000
+          },
+          {
+            "source": "hokaru",
+            "rub": 110000
+          },
+          {
+            "source": "vladauto",
+            "rub": 130000
+          },
+          {
+            "source": "star",
+            "rub": 150000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 135000,
+        "average": 135333,
+        "count": 6,
+        "min": 120000,
+        "max": 155000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 150000
+          },
+          {
+            "source": "translog",
+            "rub": 125000
+          },
+          {
+            "source": "dare",
+            "rub": 155000
+          },
+          {
+            "source": "cts",
+            "rub": 122000
+          },
+          {
+            "source": "hokaru",
+            "rub": 120000
+          },
+          {
+            "source": "vladauto",
+            "rub": 140000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 150000,
+        "average": 148250,
+        "count": 8,
+        "min": 120000,
+        "max": 170000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 155000
+          },
+          {
+            "source": "translog",
+            "rub": 130000
+          },
+          {
+            "source": "dare",
+            "rub": 160000
+          },
+          {
+            "source": "cts",
+            "rub": 136000
+          },
+          {
+            "source": "hokaru",
+            "rub": 120000
+          },
+          {
+            "source": "vladauto",
+            "rub": 170000
+          },
+          {
+            "source": "track",
+            "rub": 145000
+          },
+          {
+            "source": "star",
+            "rub": 170000
+          }
+        ]
+      }
+    },
+    "Барнаул": {
+      "compact": {
+        "estimate": 175000,
+        "average": 175000,
+        "count": 2,
+        "min": 170000,
+        "max": 180000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 180000
+          },
+          {
+            "source": "dare",
+            "rub": 170000
+          }
+        ]
+      },
+      "sedan": {
+        "estimate": 165000,
+        "average": 164000,
+        "count": 3,
+        "min": 132000,
+        "max": 185000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 185000
+          },
+          {
+            "source": "dare",
+            "rub": 175000
+          },
+          {
+            "source": "cts",
+            "rub": 132000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 170000,
+        "average": 171667,
+        "count": 3,
+        "min": 145000,
+        "max": 190000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 190000
+          },
+          {
+            "source": "dare",
+            "rub": 180000
+          },
+          {
+            "source": "cts",
+            "rub": 145000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 175000,
+        "average": 172500,
+        "count": 4,
+        "min": 148000,
+        "max": 195000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 195000
+          },
+          {
+            "source": "dare",
+            "rub": 185000
+          },
+          {
+            "source": "cts",
+            "rub": 162000
+          },
+          {
+            "source": "track",
+            "rub": 148000
+          }
+        ]
+      }
+    },
+    "Чита": {
+      "compact": {
+        "estimate": 75000,
+        "average": 72500,
+        "count": 2,
+        "min": 70000,
+        "max": 75000,
+        "samples": [
+          {
+            "source": "hokaru",
+            "rub": 70000
+          },
+          {
+            "source": "vladauto",
+            "rub": 75000
+          }
+        ]
+      },
+      "sedan": {
+        "estimate": 95000,
+        "average": 95000,
+        "count": 3,
+        "min": 80000,
+        "max": 120000,
+        "samples": [
+          {
+            "source": "hokaru",
+            "rub": 80000
+          },
+          {
+            "source": "vladauto",
+            "rub": 85000
+          },
+          {
+            "source": "star",
+            "rub": 120000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 95000,
+        "average": 95000,
+        "count": 2,
+        "min": 90000,
+        "max": 100000,
+        "samples": [
+          {
+            "source": "hokaru",
+            "rub": 90000
+          },
+          {
+            "source": "vladauto",
+            "rub": 100000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 110000,
+        "average": 108750,
+        "count": 4,
+        "min": 90000,
+        "max": 140000,
+        "samples": [
+          {
+            "source": "hokaru",
+            "rub": 90000
+          },
+          {
+            "source": "vladauto",
+            "rub": 95000
+          },
+          {
+            "source": "track",
+            "rub": 110000
+          },
+          {
+            "source": "star",
+            "rub": 140000
+          }
+        ]
+      }
+    },
+    "Улан-Удэ": {
+      "compact": {
+        "estimate": 75000,
+        "average": 75000,
+        "count": 1,
+        "min": 75000,
+        "max": 75000,
+        "samples": [
+          {
+            "source": "hokaru",
+            "rub": 75000
+          }
+        ]
+      },
+      "sedan": {
+        "estimate": 105000,
+        "average": 105000,
+        "count": 2,
+        "min": 85000,
+        "max": 125000,
+        "samples": [
+          {
+            "source": "hokaru",
+            "rub": 85000
+          },
+          {
+            "source": "star",
+            "rub": 125000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 95000,
+        "average": 95000,
+        "count": 1,
+        "min": 95000,
+        "max": 95000,
+        "samples": [
+          {
+            "source": "hokaru",
+            "rub": 95000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 120000,
+        "average": 120000,
+        "count": 2,
+        "min": 95000,
+        "max": 145000,
+        "samples": [
+          {
+            "source": "hokaru",
+            "rub": 95000
+          },
+          {
+            "source": "star",
+            "rub": 145000
+          }
+        ]
+      }
+    },
+    "Хабаровск": {
+      "compact": {
+        "estimate": 30000,
+        "average": 30000,
+        "count": 2,
+        "min": 30000,
+        "max": 30000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 30000
+          },
+          {
+            "source": "vladauto",
+            "rub": 30000
+          }
+        ]
+      },
+      "sedan": {
+        "estimate": 30000,
+        "average": 30000,
+        "count": 2,
+        "min": 30000,
+        "max": 30000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 30000
+          },
+          {
+            "source": "vladauto",
+            "rub": 30000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 35000,
+        "average": 33500,
+        "count": 2,
+        "min": 32000,
+        "max": 35000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 32000
+          },
+          {
+            "source": "vladauto",
+            "rub": 35000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 45000,
+        "average": 42500,
+        "count": 2,
+        "min": 40000,
+        "max": 45000,
+        "samples": [
+          {
+            "source": "vostok",
+            "rub": 40000
+          },
+          {
+            "source": "vladauto",
+            "rub": 45000
+          }
+        ]
+      }
+    },
+    "Екатеринбург": {
+      "compact": {
+        "estimate": 160000,
+        "average": 158333,
+        "count": 3,
+        "min": 145000,
+        "max": 170000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 170000
+          },
+          {
+            "source": "cts",
+            "rub": 145000
+          },
+          {
+            "source": "vladauto",
+            "rub": 160000
+          }
+        ]
+      },
+      "sedan": {
+        "estimate": 170000,
+        "average": 170000,
+        "count": 3,
+        "min": 160000,
+        "max": 180000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 170000
+          },
+          {
+            "source": "cts",
+            "rub": 160000
+          },
+          {
+            "source": "vladauto",
+            "rub": 180000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 175000,
+        "average": 176667,
+        "count": 3,
+        "min": 170000,
+        "max": 190000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 170000
+          },
+          {
+            "source": "cts",
+            "rub": 170000
+          },
+          {
+            "source": "vladauto",
+            "rub": 190000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 185000,
+        "average": 182500,
+        "count": 4,
+        "min": 160000,
+        "max": 215000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 175000
+          },
+          {
+            "source": "cts",
+            "rub": 180000
+          },
+          {
+            "source": "vladauto",
+            "rub": 215000
+          },
+          {
+            "source": "track",
+            "rub": 160000
+          }
+        ]
+      }
+    },
+    "Челябинск": {
+      "compact": {
+        "estimate": 155000,
+        "average": 152500,
+        "count": 2,
+        "min": 135000,
+        "max": 170000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 170000
+          },
+          {
+            "source": "vladauto",
+            "rub": 135000
+          }
+        ]
+      },
+      "sedan": {
+        "estimate": 175000,
+        "average": 174167,
+        "count": 3,
+        "min": 152500,
+        "max": 200000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 170000
+          },
+          {
+            "source": "vladauto",
+            "rub": 152500
+          },
+          {
+            "source": "star",
+            "rub": 200000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 165000,
+        "average": 162500,
+        "count": 2,
+        "min": 155000,
+        "max": 170000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 170000
+          },
+          {
+            "source": "vladauto",
+            "rub": 155000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 185000,
+        "average": 183750,
+        "count": 4,
+        "min": 160000,
+        "max": 225000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 175000
+          },
+          {
+            "source": "vladauto",
+            "rub": 175000
+          },
+          {
+            "source": "track",
+            "rub": 160000
+          },
+          {
+            "source": "star",
+            "rub": 225000
+          }
+        ]
+      }
+    },
+    "Москва": {
+      "compact": {
+        "estimate": 180000,
+        "average": 177500,
+        "count": 2,
+        "min": 170000,
+        "max": 185000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 185000
+          },
+          {
+            "source": "vladauto",
+            "rub": 170000
+          }
+        ]
+      },
+      "sedan": {
+        "estimate": 200000,
+        "average": 201667,
+        "count": 3,
+        "min": 190000,
+        "max": 210000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 190000
+          },
+          {
+            "source": "cts",
+            "rub": 210000
+          },
+          {
+            "source": "vladauto",
+            "rub": 205000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 215000,
+        "average": 213333,
+        "count": 3,
+        "min": 195000,
+        "max": 230000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 195000
+          },
+          {
+            "source": "cts",
+            "rub": 230000
+          },
+          {
+            "source": "vladauto",
+            "rub": 215000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 215000,
+        "average": 215000,
+        "count": 4,
+        "min": 175000,
+        "max": 260000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 200000
+          },
+          {
+            "source": "cts",
+            "rub": 260000
+          },
+          {
+            "source": "vladauto",
+            "rub": 225000
+          },
+          {
+            "source": "track",
+            "rub": 175000
+          }
+        ]
+      }
+    },
+    "Санкт-Петербург": {
+      "compact": {
+        "estimate": 200000,
+        "average": 197500,
+        "count": 2,
+        "min": 195000,
+        "max": 200000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 200000
+          },
+          {
+            "source": "vladauto",
+            "rub": 195000
+          }
+        ]
+      },
+      "sedan": {
+        "estimate": 220000,
+        "average": 217500,
+        "count": 2,
+        "min": 205000,
+        "max": 230000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 205000
+          },
+          {
+            "source": "vladauto",
+            "rub": 230000
+          }
+        ]
+      },
+      "crossover": {
+        "estimate": 225000,
+        "average": 222500,
+        "count": 2,
+        "min": 205000,
+        "max": 240000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 205000
+          },
+          {
+            "source": "vladauto",
+            "rub": 240000
+          }
+        ]
+      },
+      "large": {
+        "estimate": 215000,
+        "average": 216667,
+        "count": 3,
+        "min": 190000,
+        "max": 250000,
+        "samples": [
+          {
+            "source": "translog",
+            "rub": 210000
+          },
+          {
+            "source": "vladauto",
+            "rub": 250000
+          },
+          {
+            "source": "track",
+            "rub": 190000
+          }
+        ]
+      }
+    }
+  }
+}
