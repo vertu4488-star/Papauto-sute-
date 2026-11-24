@@ -25,6 +25,7 @@ jobs:
           node --check app.js
           node --check papauto-premium-calculator.js
           node --check papauto-customs.js
+          node --check papauto-japan-tariffs.js
           node --check estimate-history.js
           node --check gallery.js
       - name: Test customs calculation boundaries
@@ -44,11 +45,25 @@ jobs:
           assert.equal(ageAt(parseDate('2023-11-25'),parseDate('2026-11-25')),'new');
           assert.equal(ageAt(parseDate('2023-11-24'),parseDate('2026-11-25')),'mid');
           JS
+      - name: Test Japan FX and tariff boundaries
+        run: |
+          node <<'JS'
+          const assert = require('node:assert/strict');
+          const { calculate, defaults } = require('./papauto-japan-tariffs.js');
+          const p = {...defaults, auctionYen:1300000, jpyRate:.5, usdRate:80, city:'Новосибирск'};
+          assert.equal(calculate(p).yen,125000);
+          assert.equal(calculate(p).origin,62500);
+          assert.equal(calculate(p).shipping,32000);
+          assert.equal(calculate({...p,city:'Владивосток'}).delivery,0);
+          assert.equal(calculate({...p,city:'Красноярск'}).delivery,null);
+          assert.equal(calculate({...p,jpyRate:NaN}).origin,null);
+          JS
       - name: Build and enforce approved-publication policy
         run: python scripts/build_static_public.py
       - name: Verify published calculator assets
         run: |
           test -s render-public/papauto-customs.js
+          test -s render-public/papauto-japan-tariffs.js
           test -s render-public/papauto-premium-calculator.js
           test -s render-public/papauto-premium-calculator.css
           grep -q 'id="paCustomsMode"' render-public/index.html
