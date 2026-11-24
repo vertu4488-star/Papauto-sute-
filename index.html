@@ -566,6 +566,34 @@
         <a class="button button-primary" href="/podbor.html">Открыть подбор автомобиля ↗</a>
         <p><strong>С 1 января 2027 года меняются полные ставки утильсбора.</strong> <a href="/import-rules.html">Даты, условия льготы и правила ввоза →</a></p>
       </div>
+      <div class="card" style="max-width:820px;margin:12px auto 30px;padding:clamp(19px,3vw,32px)">
+        <h3>Калькулятор стоимости под ключ</h3>
+        <p>Укажите известные суммы в рублях. Неизвестные расходы оставьте пустыми; ноль означает подтверждённое отсутствие расхода. Таможенные платежи и утильсбор вводятся по проверенной смете, без платных API.</p>
+        <form id="calcForm">
+          <label for="calcCountry">Страна покупки</label><select id="calcCountry"><option>Япония</option><option>Южная Корея</option><option>Китай</option></select>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;margin:18px 0">
+            <label for="carCost">Цена автомобиля в рублях<input id="carCost" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" required></label>
+            <label for="auctionFee">Комиссия аукциона / дилера<input id="auctionFee" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
+            <label for="originDelivery">Доставка по стране покупки<input id="originDelivery" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
+            <label for="exportDocs">Экспортные документы и порт<input id="exportDocs" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
+            <label for="insurance">Страхование и хранение<input id="insurance" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
+            <label for="shipping">Доставка до России<input id="shipping" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
+            <label for="customs">Таможенные платежи и утильсбор<input id="customs" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
+            <label for="paperwork">Оформление документов<input id="paperwork" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
+            <label for="localDelivery">Доставка до Новосибирска<input id="localDelivery" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
+            <label for="fee">Услуги компании<input id="fee" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
+            <label for="otherCosts">Прочие расходы<input id="otherCosts" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
+            <label for="marketReferencePrice">Цена аналога в России (необязательно)<input id="marketReferencePrice" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано"></label>
+          </div>
+          <button class="button button-primary" type="submit">Рассчитать смету</button>
+        </form>
+        <div class="calc-result" aria-live="polite" style="margin-top:20px">
+          <h4>Сумма известных расходов: <strong id="resultTotal">— ₽</strong></h4>
+          <div id="resultLines"></div><p id="resultNote">Заполните известные суммы. Пустые статьи не учитываются.</p><p id="marketComparison"></p>
+        </div>
+        <button class="button button-secondary" type="button" id="copyEstimate">Скопировать смету</button>
+        <button class="button button-secondary" type="button" id="exportEstimate">Скачать CSV</button>
+      </div>
     </div>
   </section>
 
