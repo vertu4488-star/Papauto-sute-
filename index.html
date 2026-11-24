@@ -51,7 +51,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar{grid-template-col
 body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar{grid-template-columns:minmax(0,1fr)!important}
 body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:0!important}
 }
-</style></head>
+</style><link rel="stylesheet" href="/papauto-premium-calculator.css?v=20261124a"></head>
 <body class="pa-thursday-home">
 <a class="skip-link" href="#main">Перейти к содержанию</a>
 <header class="site-header">
@@ -560,27 +560,51 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 
   <section class="section calculator-section" id="calculator">
     <div class="wrap">
-      <div class="section-title-row">
-        <div><div class="eyebrow">PAPAUTO · ПОДБОР АВТОМОБИЛЯ</div><h2>Подбор машины <em>в два шага</em></h2></div>
-        <p>Выберите марку, модель и год. Затем оставьте контакт для ответа — без бесконечной ленты и длинных анкет.</p>
-      </div>
-      <div class="card" style="max-width:820px;margin:12px auto 30px;padding:clamp(19px,3vw,32px)">
-        <h3 style="margin:0 0 9px">Готовая форма подбора</h3>
-        <p>Япония, Корея, Китай · Бюджет необязателен · Доступно с телефона и компьютера</p>
-        <a class="button button-primary" href="/podbor.html">Открыть подбор автомобиля ↗</a>
-        <p><strong>С 1 января 2027 года меняются полные ставки утильсбора.</strong> <a href="/import-rules.html">Даты, условия льготы и правила ввоза →</a></p>
-      </div>
-      <div class="card" style="max-width:820px;margin:12px auto 30px;padding:clamp(19px,3vw,32px)">
-        <h3>Калькулятор стоимости под ключ</h3>
-        <p>Комиссия PapAuto — 50 000 ₽ для Японии, Кореи и Китая. Укажите подтверждённые расходы в рублях; неизвестные оставьте пустыми, а отсутствующие обозначьте нулём. Курсы, фрахт и таможенные платежи уточняются для конкретного автомобиля. Не включайте один платёж дважды.</p>
-        <form id="calcForm">
-          <label for="calcCountry">Страна покупки</label><select id="calcCountry"><option>Япония</option><option>Южная Корея</option><option>Китай</option></select>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;margin:18px 0">
-            <label for="carCost">Цена автомобиля в рублях<input id="carCost" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" required></label>
+      <div class="pa-estimate-shell">
+        <header class="pa-estimate-head">
+          <div class="pa-estimate-brand">PapAuto</div><p class="pa-estimate-kicker">ЯПОНИЯ · КОРЕЯ · КИТАЙ</p>
+          <h2>Прозрачный расчёт стоимости</h2><p>Каждый рубль под контролем</p>
+        </header>
+        <div class="pa-estimate-main">
+          <form id="calcForm">
+            <label for="calcCountry">Страна покупки</label>
+            <select id="calcCountry"><option>Япония</option><option>Южная Корея</option><option>Китай</option></select>
+            <div class="pa-estimate-tabs" id="paEstimateTabs" role="group" aria-label="Страна покупки" hidden>
+              <button type="button" data-country="Япония" aria-pressed="true">Япония</button><button type="button" data-country="Южная Корея" aria-pressed="false">Корея</button><button type="button" data-country="Китай" aria-pressed="false">Китай</button>
+            </div>
+            <div class="pa-estimate-layout">
+              <div class="pa-estimate-vehicle">
+                <label for="paModelSearch">Марка и модель автомобиля</label>
+                <input id="paModelSearch" type="search" placeholder="Например, Honda Fit или Хонда" autocomplete="off" aria-controls="paModelOptions">
+                <div id="paModelOptions" class="pa-model-options" aria-label="Подходящие автомобили"></div>
+                <p id="paModelStatus" role="status">Выберите модель или введите её название.</p>
+                <div id="paVehicleCard" class="pa-estimate-vehicle-card" hidden>
+                  <div id="paVehiclePhoto" class="pa-vehicle-photo" hidden></div>
+                  <h3 id="paVehicleTitle"></h3><p id="paVehicleFacts"></p><p id="paVehicleSource"></p>
+                  <a id="paVehicleDetail" hidden>Карточка автомобиля ↗</a>
+                </div>
+                <div class="pa-estimate-specs">
+                  <label>Год выпуска<input id="paVehicleYear" type="number" min="1950" max="2027" placeholder="Год"></label>
+                  <label>Объём, см³<input id="paVehicleEngine" type="number" min="0" max="12000" placeholder="Уточнить"></label>
+                  <label>Мощность, л.с.<input id="paVehiclePower" type="number" min="0" max="2000" placeholder="Уточнить"></label>
+                </div>
+                <div class="pa-estimate-fx">
+                  <label>Валюта покупки<select id="paPriceCurrency"><option>JPY</option><option>KRW</option><option>CNY</option><option>USD</option></select></label>
+                  <label>Цена в валюте<input id="paForeignPrice" type="number" min="0" step="any" placeholder="Не указано"></label>
+                  <label>Курс, ₽ за 1 ед.<input id="paForeignRate" type="number" min="0" step="any" placeholder="Не указано"></label>
+                  <button type="button" id="paApplyFx" class="pa-estimate-secondary">Перенести цену в смету</button>
+                  <p id="paRateStatus" role="status">Курс банка можно указать вручную.</p>
+                </div>
+                <p class="pa-estimate-small">Исторические лоты и предложения — примеры подбора, не гарантия наличия или итоговой цены.</p>
+              </div>
+              <div class="pa-estimate-costs">
+                <h3>Из чего складывается цена</h3>
+                <p class="pa-estimate-small">Неизвестные расходы оставьте пустыми, отсутствующие обозначьте 0. Не учитывайте одну услугу дважды.</p>
+                <div class="pa-estimate-fields"><label for="carCost">Цена автомобиля, ₽<input id="carCost" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" required></label>
             <label for="auctionFee">Комиссия аукциона / дилера<input id="auctionFee" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
             <label for="originDelivery">Доставка по стране покупки<input id="originDelivery" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
             <label for="exportDocs">Экспортные документы и порт<input id="exportDocs" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
-            <label for="insurance">Страхование и хранение<input id="insurance" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
+            <label for="insurance">Страхование и хранение за рубежом<input id="insurance" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
             <label for="shipping">Международная доставка / фрахт<input id="shipping" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
             <label for="bankFee">Банковская комиссия и перевод<input id="bankFee" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано"></label>
             <label for="customs">Таможенная пошлина<input id="customs" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано"></label>
@@ -594,15 +618,23 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
             <label for="fee">Фиксированная комиссия PapAuto<input id="fee" type="number" value="50000" readonly aria-readonly="true"></label>
             <label for="otherCosts">Прочие расходы<input id="otherCosts" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
             <label for="marketReferencePrice">Цена аналога в России (необязательно)<input id="marketReferencePrice" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано"></label>
+</div>
+                <button class="pa-estimate-primary" type="submit">Рассчитать смету</button>
+              </div>
+            </div>
+          </form>
+          <div class="calc-result pa-estimate-result" aria-live="polite">
+            <h4>Сумма известных расходов</h4><strong id="resultTotal" class="pa-estimate-total">— ₽</strong>
+            <div id="resultLines"></div><p id="portSubtotal"></p><p id="resultNote">Заполните известные суммы. Пустые статьи не учитываются.</p><p id="marketComparison"></p>
           </div>
-          <button class="button button-primary" type="submit">Рассчитать смету</button>
-        </form>
-        <div class="calc-result" aria-live="polite" style="margin-top:20px">
-          <h4>Сумма известных расходов: <strong id="resultTotal">— ₽</strong></h4>
-          <div id="resultLines"></div><p id="portSubtotal"></p><p id="resultNote">Заполните известные суммы. Пустые статьи не учитываются.</p><p id="marketComparison"></p>
+          <div class="pa-estimate-actions">
+            <a class="pa-estimate-primary" id="paEstimateOrder" href="/podbor.html">Заказать автомобиль →</a>
+            <button class="pa-estimate-secondary" type="button" id="copyEstimate">Скопировать смету</button>
+            <button class="pa-estimate-secondary" type="button" id="exportEstimate">Скачать CSV</button>
+            <button class="pa-estimate-secondary" type="button" id="printEstimate">Печать / PDF</button>
+          </div>
+          <p class="pa-estimate-small">Комиссия PapAuto — 50 000 ₽ для всех направлений. Таможенные платежи и тарифы перевозчиков вводятся по подтверждённой смете. <a href="/import-rules.html">Правила ввоза и ставки утильсбора →</a></p>
         </div>
-        <button class="button button-secondary" type="button" id="copyEstimate">Скопировать смету</button>
-        <button class="button button-secondary" type="button" id="exportEstimate">Скачать CSV</button> <button class="button button-secondary" type="button" id="printEstimate">Печать / PDF</button>
       </div>
     </div>
   </section>
@@ -800,6 +832,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 <script defer src="/voice-assistant.js?v=20261103"></script>
 <script src="/auction-sheet-decoder.js" defer></script>
   <script src="/vehicle-catalogue.js" defer></script>
+<script src="/papauto-premium-calculator.js?v=20261124a" defer></script>
 <script src="/estimate-history.js?v=20261124-transparent" defer></script>
 <script src="/lead-draft-history.js" defer></script>
 <script src="/similar-car-request.js" defer></script>
