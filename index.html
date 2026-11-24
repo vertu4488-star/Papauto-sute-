@@ -630,12 +630,19 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
                     <label>Курс доллара, ₽/$<input id="paJapanUsdRate" type="number" min="0.000001" step="any" inputmode="decimal" placeholder="Курс ЦБ"></label>
                     <label>Банковские расходы, ₽<input id="paJapanBank" type="number" min="0" step="1" value="15000"></label>
                     <label>Брокер, СВХ, СБКТС, ЭПТС и лаборатория (пакет), ₽<input id="paJapanDocs" type="number" min="0" step="1" value="65000"></label>
-                    <label>Доставка до Новосибирска, ₽<input id="paJapanNovosibirsk" type="number" min="0" step="1" value="150000"></label>
+                    
                     </details>
                     <p class="pa-estimate-small">Ориентиры, не оферта: базовые расходы 110 000 ¥, плюс 5% от части аукционной цены свыше 1 млн ¥; фрахт 400 $. Для цены C&amp;F/CIF или нестандартной логистики выберите ручной режим. Курсы и суммы можно уточнить. Доплаты вне пакета рассчитываются отдельно.</p>
                   </div>
                 </section>
-                <label for="calcCity">Город получения<select id="calcCity"><option>Новосибирск</option><option>Владивосток</option><option>Красноярск</option><option>Другой город</option></select></label>
+                <section class="pa-customs-panel" id="paDeliveryPanel"><h4>Доставка автовозом по России</h4>
+<label>Пункт отправления<select id="paDeliveryOrigin"><option value="vlad">Владивосток / Уссурийск</option><option value="other">Другой маршрут / уточнить</option></select></label>
+<label for="calcCity">Город получения<select id="calcCity"><option>Новосибирск</option><option>Владивосток</option><option>Иркутск</option><option>Красноярск</option><option>Омск</option><option>Томск</option><option>Юрга</option><option>Кемерово</option><option>Барнаул</option><option>Чита</option><option>Улан-Удэ</option><option>Хабаровск</option><option>Екатеринбург</option><option>Челябинск</option><option>Москва</option><option>Санкт-Петербург</option><option>Другой город</option></select></label>
+<label>Класс автомобиля<select id="paDeliveryClass"><option value="">Уточнить класс</option><option value="compact">Малолитражка / кейкар (до 4,1 м)</option><option value="sedan">Седан / хэтчбек / универсал</option><option value="crossover">Кроссовер</option><option value="large">Минивэн / крупный внедорожник</option></select></label>
+<label>Тариф<select id="paDeliveryMode"><option value="auto">Средняя цена автовоза</option><option value="manual">Ввести фактическую цену вручную</option></select></label>
+<p id="paDeliveryStatus" class="pa-estimate-small" role="status">Выберите город и класс автомобиля.</p>
+<p class="pa-estimate-small">Ориентиры по открытым прайсам на 25.11.2026. Перевозка исправного автомобиля между терминалами; страховка, негабарит и выдача по адресу уточняются. Не оферта. <a href="/delivery.html">Подробнее о доставке</a>.</p>
+</section>
                 <details class="pa-cost-details"><summary>Из чего складывается стоимость · подробнее</summary>
                 <div class="pa-estimate-fields">
             <label for="auctionFee">Комиссия аукциона / дилера<input id="auctionFee" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
@@ -862,7 +869,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 <script defer src="/site-config.js?v=20261109api"></script>
 <script src="/site-tabs.js?v=20261114-account-isolation" defer></script>
 <script src="/account.js" defer></script>
-<script src="/app.js?v=20261125-live" defer></script>
+<script src="/app.js?v=20261125-delivery" defer></script>
 <script src="/marketplace-interactions.js" defer></script>
 <script src="/saved-searches.js" defer></script>
 <script src="/smart-search.js" defer></script>
@@ -870,10 +877,11 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 <script defer src="/voice-assistant.js?v=20261103"></script>
 <script src="/auction-sheet-decoder.js" defer></script>
   <script src="/vehicle-catalogue.js" defer></script>
-<script src="/papauto-premium-calculator.js?v=20261125-live" defer></script>
+<script src="/papauto-premium-calculator.js?v=20261125-delivery" defer></script>
 <script src="/papauto-customs.js?v=20261125-live" defer></script>
-<script src="/papauto-japan-tariffs.js?v=20261125" defer></script>
-<script src="/estimate-history.js?v=20261125-live" defer></script>
+<script src="/papauto-japan-tariffs.js?v=20261125-delivery" defer></script>
+<script src="/papauto-delivery-tariffs.js?v=20261125" defer></script>
+<script src="/estimate-history.js?v=20261125-delivery" defer></script>
 <script src="/lead-draft-history.js" defer></script>
 <script src="/similar-car-request.js" defer></script>
 <script defer src="/archive-request.js"></script>
