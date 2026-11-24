@@ -56,9 +56,9 @@ $("paApplyFx").addEventListener("click",()=>{if(!rate.value){suggestRate(false).
 currency.addEventListener("change",()=>{selectionToken++;rate.value="";foreign.value="";car.value="";notify(car);suggestRate(false);});
 rate.addEventListener("input",()=>{selectionToken++;rateStatus.textContent="Курс введён вручную. Перенесите цену в смету."});
 foreign.addEventListener("input",()=>{selectionToken++;});
-form.addEventListener("pa:restore-estimate",async()=>{selected=null;cleanCard();updateTabs();updateOrder();await load();const x=rows.find(r=>r.key===lotKey.value&&r.market===market());if(x)select(x,{restore:true});else{status.textContent="Сохранённая смета открыта. Выберите автомобиль, если хотите обновить его данные.";options.replaceChildren();}});
+form.addEventListener("pa:restore-estimate",async()=>{selectionToken++;selected=null;cleanCard();updateTabs();updateOrder();await load();const x=rows.find(r=>r.key===lotKey.value&&r.market===market());if(x)select(x,{restore:true});else{status.textContent="Сохранённая смета открыта. Выберите автомобиль, если хотите обновить его данные.";options.replaceChildren();}});
 /* Existing converter transfers a value by changing the select without emitting change. */
-car.addEventListener("input",()=>{if(tabs.querySelector('[aria-pressed="true"]')?.dataset.country!==country.value){const v=car.value;clearVehicle(false);search.value="";currency.value=currencies[market()];car.value=v;updateTabs();updateOrder();}});
+car.addEventListener("input",()=>{if(tabs.querySelector('[aria-pressed="true"]')?.dataset.country!==country.value){const v=car.value;clearVehicle();search.value="";currency.value=currencies[market()];car.value=v;updateTabs();updateOrder();}});
 const params=new URLSearchParams(location.search),key=params.get("vehicle"),m=params.get("market");if(countryByMarket[m])country.value=countryByMarket[m];currency.value=currencies[market()];updateTabs();
 if(key){load().then(()=>{const x=rows.find(r=>r.key===key);if(x){country.value=countryByMarket[x.market];updateTabs();select(x);}else{status.textContent="Эта карточка больше недоступна. Выберите другой автомобиль.";}});}
 else if(params.get("view")==="calculator"||location.hash==="#calculator")ensureLoad();
