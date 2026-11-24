@@ -2,7 +2,7 @@
 (() => {
   "use strict";
   const KEY = "papauto_estimate_history_v2";
-  const fields = ["carCost","auctionFee","originDelivery","exportDocs","insurance","shipping","customs","paperwork","localDelivery","fee","otherCosts","marketReferencePrice","bankFee","customsFee","utilFee","brokerFee","warehouseFee","calcCity"];
+  const fields = ["carCost","auctionFee","originDelivery","exportDocs","insurance","shipping","customs","paperwork","localDelivery","fee","otherCosts","marketReferencePrice","bankFee","customsFee","utilFee","brokerFee","warehouseFee","calcCity","paModelSearch","paSelectedLot","paVehicleYear","paVehicleEngine","paVehiclePower","paPriceCurrency","paForeignPrice","paForeignRate"];
   const $ = id => document.getElementById(id);
   const form = $("calcForm");
   const panel = document.querySelector(".calc-result");
@@ -44,14 +44,14 @@
     items.forEach(item=>{
       const card=document.createElement("article");card.className="estimate-history-item";
       const info=document.createElement("div");
-      const title=document.createElement("strong");title.textContent=item.country+" · "+(item.total||"—");
+      const title=document.createElement("strong");title.textContent=[item.country,item.values?.paModelSearch,item.total||"—"].filter(Boolean).join(" · ");
       const date=document.createElement("small");date.textContent=new Date(item.createdAt).toLocaleString("ru-RU");
       info.append(title,date);
       const actions=document.createElement("div");actions.className="estimate-history-actions";
       const restore=document.createElement("button");restore.type="button";restore.textContent="Открыть";restore.addEventListener("click",()=>{
         if($("calcCountry"))$("calcCountry").value=item.country;
         fields.forEach(id=>{const el=$(id);if(el&&id!=="fee"){if(item.values&&Object.hasOwn(item.values,id))el.value=item.values[id]??"";else if(id!=="calcCity")el.value="";}});
-        if($("fee"))$("fee").value="50000";form.dispatchEvent(new Event("submit",{bubbles:true,cancelable:true}));
+        if($("fee"))$("fee").value="50000";if($("paModelSearch"))form.dispatchEvent(new Event("pa:restore-estimate"));form.dispatchEvent(new Event("submit",{bubbles:true,cancelable:true}));
         $("calculator")?.scrollIntoView({behavior:"smooth",block:"start"});
       });
       const remove=document.createElement("button");remove.type="button";remove.textContent="Удалить";remove.addEventListener("click",()=>{save(load().filter(x=>x.id!==item.id));render();});
