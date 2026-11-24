@@ -334,3 +334,29 @@ body.pa-thursday-home{
 }
 body.pa-thursday-home :is(.button-primary,.header-cta,.gallery-tab.is-active){background:#68422f!important;border-color:#68422f!important;color:#fffaf6!important}
 body.pa-thursday-home :is(input,select,textarea){accent-color:#68422f}
+
+/* Mobile rendering budget 2026-11-24 */
+@media (max-width: 760px) and (hover: none) {
+  body :is(.site-header,.mobile-bottom-nav,.gallery-header) {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  body :is(.gallery-card,.model-card,.pa-real-lot):hover {
+    transform: none !important;
+  }
+  body :is(.gallery-card,.model-card,.pa-real-lot) {
+    transition: none !important;
+  }
+}
+@media (max-width: 760px) {
+  @supports (content-visibility: auto) and (contain-intrinsic-size: auto 700px) {
+    body :is(.gallery-card,.model-card,.pa-real-lot) {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 700px;
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  body :is(.gallery-card,.model-card,.pa-real-lot) { transition: none !important; }
+}
