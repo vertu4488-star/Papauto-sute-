@@ -186,7 +186,7 @@ async def root():
 
 @app.get("/api/exchange-rates")
 async def exchange_rates():
-    """Return official CBR rates for KRW, JPY, CNY, USD and EUR in RUB."""
+    """Return official CBR rates; EUR is nullable when no verified rate is available."""
     url = "https://www.cbr.ru/scripts/XML_daily.asp"
     try:
         async with httpx.AsyncClient(timeout=8.0, follow_redirects=True) as client:
