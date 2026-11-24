@@ -57,7 +57,8 @@
       .some(prefix=>path.startsWith(prefix)) &&
     [".jpg",".jpeg",".png",".webp"].some(suffix=>path.toLowerCase().endsWith(suffix)) &&
     !path.includes("..") && !path.includes("?");
-  const pageSize = 120;
+  // Limit initial DOM and image work on mobile; the existing More button loads further cards.
+  const pageSize = 24;
   let limit = pageSize;
 
   function fillMakes(){
@@ -78,6 +79,7 @@
 
   const provenLot = lot => !!lot && !invalidLotIds.has(lot.id) &&
     photoAllowed(lot.photos?.[0]) && photoAllowed(lot.inspection_image) &&
+    lot.photos[0]!==lot.inspection_image &&
     typeof lot.description==="string" && lot.description.trim().length>=50 &&
     lot.year && lot.auction && lot.lot_number &&
     lot.mileage_km!=null && lot.grade!=null;
