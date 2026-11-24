@@ -16,7 +16,8 @@
  viewerImage.id="gallery-viewer-image";viewerImage.alt="";
  d.getElementById("gallery-viewer-image-mount").append(viewerImage);
  const mediaPath=/^\/assets\/(?:auction\/home|premium-auctions|auction\/approved)\/[a-z0-9-]+\.(?:jpg|jpeg|png|webp)$/;
- const rub=n=>new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0}).format(n);
+ const rubFormatter=new Intl.NumberFormat("ru-RU",{maximumFractionDigits:0});
+ const rub=n=>rubFormatter.format(n);
  const normal=s=>String(s||"").toLocaleLowerCase("ru");
  // Cyrillic entry on a Russian iPhone must find the Latin auction model name.
  // Examples: "Хо" -> "ho", "Хонда" -> "honda", "Тойота" -> "toyota".
@@ -25,7 +26,7 @@
  const localizedBrand=Object.freeze({Honda:"хонда",Toyota:"тойота",Nissan:"ниссан",Suzuki:"сузуки",Daihatsu:"дайхатсу",Mazda:"мазда",Subaru:"субару",BMW:"бмв",Mercedes:"мерседес",Geely:"джили",Changan:"чанган",BYD:"бид"});
  const validImg=s=>typeof s==="string"&&mediaPath.test(s)?s:null;
  const img=(src,alt,eager=false)=>{
-   const i=d.createElement("img");i.src=src;i.alt=alt;i.decoding="async";i.loading=eager?"eager":"lazy";
+   const i=d.createElement("img");i.alt=alt;i.decoding="async";i.loading=eager?"eager":"lazy";i.src=src;
    return i;
  };
  const element=(tag,cls,content)=>{
@@ -240,7 +241,16 @@
  marketFilter.addEventListener("change",()=>{updateBrands();resetPage();hideSuggestions();});
  brand.addEventListener("change",()=>{resetPage();hideSuggestions();});
  sort.addEventListener("change",resetPage);
- more.addEventListener("click",()=>{shown+=MAX;draw();});
+ more.addEventListener("click",()=>{
+   const start=Math.min(shown,filtered.length);
+   shown+=MAX;
+   const fragment=d.createDocumentFragment();
+   filtered.slice(start,shown).forEach((lot,i)=>fragment.append(card(lot,start+i)));
+   grid.append(fragment);
+   count.textContent="Найдено "+filtered.length+" автомобилей · показано "+Math.min(filtered.length,shown);
+   more.hidden=filtered.length<=shown;
+   more.textContent="Показать ещё "+Math.max(0,Math.min(MAX,filtered.length-shown))+" автомобилей ↓";
+ });
  function viewAt(index){
    if(!view.items.length)return;
    view.index=(index+view.items.length)%view.items.length;
