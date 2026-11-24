@@ -32,11 +32,11 @@
     const input=document.createElement("input");
     input.type="text";input.inputMode="decimal";input.autocomplete="off";
     input.placeholder="Введите значение";input.setAttribute("aria-label",label);
-    wrap.append(input);control.append(wrap);inputs.set(id,input);
+    if(id==="commissionRub"){input.value="50000";input.readOnly=true;input.setAttribute("aria-readonly","true");}wrap.append(input);control.append(wrap);inputs.set(id,input);
     input.addEventListener("input",calculate);
   }
   const result=document.createElement("aside");result.className="pic-result";result.setAttribute("aria-live","polite");
-  const rows=[["car","Автомобиль, ₽"],["japan","Япония и фрахт, ₽"],["duty","Пошлина: EUR / USD / ₽"],["util","Утильсбор, ₽"],["fees","Оформление, комиссия и доставка, ₽"]];
+  const rows=[["car","Автомобиль, ₽"],["japan","Япония и фрахт, ₽"],["duty","Пошлина: EUR / USD / ₽"],["util","Утильсбор, ₽"],["customsFee","Таможенный сбор, ₽"],["docs","Брокер, СБКТС и ЭПТС, ₽"],["bank","Банковская комиссия, ₽"],["warehouse","СВХ и хранение, ₽"],["commission","Комиссия PapAuto, ₽"],["delivery","Автовоз до Новосибирска, ₽"]];
   const outputs=new Map();
   for(const [id,label] of rows){
     const item=document.createElement("p");const name=document.createElement("span");name.textContent=label;
@@ -74,13 +74,13 @@
     outputs.get("japan").textContent=money(japan)+" ₽";
     outputs.get("duty").textContent=money(v.dutyEur)+" EUR · "+(v.eurUsd===null?"— USD":money(v.dutyEur*v.eurUsd)+" USD")+" · "+money(duty)+" ₽";
     outputs.get("util").textContent=money(v.utilRub)+" ₽";
-    outputs.get("fees").textContent=money(fees)+" ₽";
+    for(const [output,id] of [["customsFee","customsRub"],["docs","docsRub"],["bank","bankRub"],["warehouse","warehouseRub"],["commission","commissionRub"],["delivery","truckRub"]])outputs.get(output).textContent=money(v[id])+" ₽";
     totalValue.textContent=money(sum)+" ₽";
     state.textContent="Предварительная смета по введённым данным, не оферта. Не учитывайте один сбор в двух строках.";
   }
   pick.addEventListener("change",()=>{
     const lot=lots.find(l=>l.id===pick.value);
-    inputs.forEach(input=>input.value="");
+    inputs.forEach((input,id)=>input.value=id==="commissionRub"?"50000":"");
     fact.textContent=lot?[lot.model,lot.year,lot.auction,"лот "+lot.lot_number,lot.mileage,
       "продан за "+money(sale(lot))+" ¥"].filter(Boolean).join(" · "):"";
     caution.textContent=lot?.export_restricted
