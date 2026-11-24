@@ -26,7 +26,7 @@ async function suggestRate(auto=false){const token=++selectionToken,cc=currency.
 function showCard(x){
  cleanCard();
  if(!x.photo){status.textContent="Модель выбрана. Подтверждённой фотографии конкретного автомобиля пока нет — рассчитайте смету вручную.";return;}
- card.hidden=false;photo.hidden=false;const img=document.createElement("img");img.alt="Оригинальное фото "+x.name;img.decoding="async";img.addEventListener("error",()=>{photo.hidden=true;photo.replaceChildren();card.hidden=true;status.textContent="Фото этого автомобиля недоступно. Другая фотография не подставляется.";},{once:true});img.src=x.photo;photo.append(img);
+ card.hidden=false;photo.hidden=false;const img=document.createElement("img");img.alt="Оригинальное фото "+x.name;img.decoding="async";img.addEventListener("error",()=>{if(!photo.contains(img))return;photo.hidden=true;photo.replaceChildren();card.hidden=true;status.textContent="Фото этого автомобиля недоступно. Другая фотография не подставляется.";},{once:true});img.src=x.photo;photo.append(img);
  $("paVehicleTitle").textContent=x.name+(x.year?" · "+x.year:"");
  $("paVehicleFacts").textContent=[x.mileage,x.engineText,x.trim,x.grade&&"Оценка "+x.grade].filter(Boolean).join(" · ");
  $("paVehicleSource").textContent=[x.source,x.amount>0?money(x.amount)+" "+x.currency:"Цена требует уточнения",x.restricted?"Прямой экспорт ограничен; возможность ввоза уточняется.":""].filter(Boolean).join(" · ");
@@ -56,7 +56,7 @@ $("paApplyFx").addEventListener("click",()=>{if(!rate.value){suggestRate(false).
 currency.addEventListener("change",()=>{selectionToken++;rate.value="";foreign.value="";car.value="";notify(car);suggestRate(false);});
 rate.addEventListener("input",()=>{selectionToken++;rateStatus.textContent="Курс введён вручную. Перенесите цену в смету."});
 foreign.addEventListener("input",()=>{selectionToken++;});
-form.addEventListener("pa:restore-estimate",async()=>{selectionToken++;selected=null;cleanCard();updateTabs();updateOrder();await load();const x=rows.find(r=>r.key===lotKey.value&&r.market===market());if(x)select(x,{restore:true});else{status.textContent="Сохранённая смета открыта. Выберите автомобиль, если хотите обновить его данные.";options.replaceChildren();}});
+form.addEventListener("pa:restore-estimate",async()=>{selectionToken++;selected=null;cleanCard();updateTabs();if(!currency.value)currency.value=currencies[market()];updateOrder();await load();const x=rows.find(r=>r.key===lotKey.value&&r.market===market());if(x)select(x,{restore:true});else{status.textContent="Сохранённая смета открыта. Выберите автомобиль, если хотите обновить его данные.";options.replaceChildren();}});
 /* Existing converter transfers a value by changing the select without emitting change. */
 car.addEventListener("input",()=>{if(tabs.querySelector('[aria-pressed="true"]')?.dataset.country!==country.value){const v=car.value;updateTabs();clearVehicle();search.value="";currency.value=currencies[market()];car.value=v;updateOrder();}});
 const params=new URLSearchParams(location.search),key=params.get("vehicle"),m=params.get("market");if(countryByMarket[m])country.value=countryByMarket[m];currency.value=currencies[market()];updateTabs();
