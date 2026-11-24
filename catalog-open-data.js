@@ -41,7 +41,8 @@
         [alias+" "+model,...(modelAliases[model]||[]).map(m=>alias+" "+m)]))
     ].join(" ");
   };
-  const keyOf = r => [r.market,lower(r.brand),lower(r.model)].join("|");
+  const searchIndex=new Map(rows.map(r=>[r,searchText(r)]));
+  const numberFormatter=new Intl.NumberFormat("ru-RU");
   const types = r => PapAutoMetadata.modelTypes(r.market,r.brand,r.model,r.engine);
   const label = (tag,value,css) => {
     const e=document.createElement(tag);
@@ -98,6 +99,7 @@
     image.width=450;image.height=337;
     image.addEventListener("load",()=>image.classList.add("loaded"),{once:true});
     const failed=()=>{
+      if(invalidLotIds.has(lot.id))return;
       invalidLotIds.add(lot.id);
       card.remove();
       render();
@@ -119,7 +121,7 @@
     const title=label("h2",r.brand+" "+r.model);
     const details=label("p",lot.description,"catalog-lot-full-description");
     const facts=label("p",lot.auction+" · лот №"+lot.lot_number+" · "+
-      new Intl.NumberFormat("ru-RU").format(lot.mileage_km)+" км · оценка "+lot.grade,
+      numberFormatter.format(lot.mileage_km)+" км · оценка "+lot.grade,
       "catalog-lot-facts");
     const status=label("p",PapAutoMetadata.documents(lot),"catalog-document-status");
     const doc=label("a","Оригинальное фото и полный аукционный лист →","model-request");
@@ -131,6 +133,7 @@
     return card;
   }
 
+  let matchedRows=[];
   function render(){
     const q=lower(search.value),selectedMake=lower(make.value);
     const matched=rows.filter(r=>{
@@ -138,10 +141,11 @@
       return provenLot(lot) &&
         (!country.value||country.value===r.market) &&
         (!selectedMake||selectedMake===lower(r.brand)) &&
-        (!q||searchText(r).includes(q)) &&
+        (!q||searchIndex.get(r).includes(q)) &&
         (!power.value||types(r).includes(power.value));
     });
     matched.sort((a,b)=>a.brand.localeCompare(b.brand,"ru")||a.model.localeCompare(b.model,"ru"));
+    matchedRows=matched;
     grid.replaceChildren();
     for(const r of matched.slice(0,limit)){
       const lot=photoIndex.get(photoKey(r.market,r.brand+" "+r.model));
@@ -156,7 +160,15 @@
   make.addEventListener("change",()=>{limit=pageSize;render()});
   search.addEventListener("input",()=>{limit=pageSize;render()});
   power.addEventListener("change",()=>{limit=pageSize;render()});
-  if(more)more.addEventListener("click",()=>{limit+=pageSize;render()});
+  if(more)more.addEventListener("click",()=>{
+    const start=Math.min(limit,matchedRows.length);
+    limit+=pageSize;
+    for(const r of matchedRows.slice(start,limit)){
+      const lot=photoIndex.get(photoKey(r.market,r.brand+" "+r.model));
+      if(provenLot(lot))grid.append(photoCard(r,lot));
+    }
+    more.hidden=matchedRows.length<=limit;
+  });
   fillMakes();
   render();
   if(typeof fetch==="function")fetch("/data/gallery-lots.json",{cache:"force-cache"})
