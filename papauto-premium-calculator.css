@@ -50,3 +50,9 @@
 #calculator .pa-customs-panel p{margin:0}
 #calculator .pa-customs-panel input[type=date]{max-width:100%;min-width:0}
 #calculator #paVehicleTrim{margin-bottom:12px}
+
+#calculator .pa-cost-details{border:1px solid #ded2c1;border-radius:10px;padding:12px;margin:12px 0;background:#fbf7f0}
+#calculator .pa-cost-details summary{cursor:pointer;font-size:15px;font-weight:500;color:#292823}
+#calculator .pa-cost-details[open] summary{margin-bottom:12px}
+#calculator #paJapanTariffs[hidden],#calculator #paJapanAutoFields[hidden],#calculator .pa-included-cost{display:none!important}
+#calculator #paJapanTariffStatus{line-height:1.65}
