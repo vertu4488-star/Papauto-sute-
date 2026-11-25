@@ -1,0 +1,245 @@
+{
+  "date": "2026-11-25",
+  "issue": 79,
+  "status": "PRIVATE RESEARCH ONLY / HOLD",
+  "scope": "Candidate sources for missing model examples; no new stock or public cards; source data only, not confirmed ownership, sale, legal export, or publication rights.",
+  "prior_coverage": {
+    "pages": 135,
+    "with_examples": 50,
+    "missing": 85
+  },
+  "approved_alias_recovery": {
+    "commit": "b4dced871f91dfcc697605d7205a253fdc31c9db",
+    "source_matches_added": 25,
+    "new_model_pages_expected": 4
+  },
+  "requirements": [
+    "Exact model and market; no sibling substitution",
+    "Original matching photo and full auction sheet for auction cards; visual and provenance verification",
+    "For supplier examples label as such, preserve price terms, no claim of auction sale; confirm actual photo and publication rights",
+    "Owner review of exact new batch; no external links on customer-facing pages",
+    "No purchases or paid reports without authorization"
+  ],
+  "candidates": [
+    {
+      "model_id": "japan-honda-n-one",
+      "source_url_research_only": "https://banzai24.com/en/car/JP/01a1d975-dbf6-7a42-be0b-b63317e1093f",
+      "observed": "Original, auction 16.11.2026; sold indicated in search index; full source page unavailable in this check",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "japan-honda-grace",
+      "source_url_research_only": "https://banzai24.com/en/car/JP/019f270b-aac3-7cd9-a3ab-45a7a754644c",
+      "observed": "LX 4WD; sold indicated in index; full sheet unavailable in this check",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "japan-honda-n-van",
+      "source_url_research_only": "https://banzai24.com/en/car/JP/019eb640-e25a-7e52-863d-8c1cc05c0f7e",
+      "observed": "2025.12, 1,000 km, grade S, Honda AA Nagoya 15.06.2026, reported final 1,129,000 JPY; full photos/report gated by authorization/order",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "japan-honda-wr-v",
+      "source_url_research_only": "https://banzai24.com/en/car/JP/01a1e845-50b8-77bb-a924-a235a025d451",
+      "observed": "Z; sold indicated in index; full page unavailable in this check",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "japan-nissan-juke",
+      "source_url_research_only": "https://banzai24.com/en/car/JP/01a1e279-e938-7054-8f0e-639a31a54639",
+      "observed": "15RX V; sold indicated in index; full page unavailable in this check",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "korea-kia-k5",
+      "source_url_research_only": "https://plc.auction/auction/lot/kia-k5-2023-11-ic5423800",
+      "observed": "2023; aggregator listing, full page unavailable in this check",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "korea-hyundai-sonata",
+      "source_url_research_only": "https://plc.auction/auction/lot/hyundai-sonata-2022-11-ic5434625",
+      "observed": "2022; aggregator listing, full page unavailable in this check",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "korea-kia-seltos",
+      "source_url_research_only": "https://plc.auction/auction/lot/kia-seltos-2023-11-ic5420362",
+      "observed": "2023; aggregator listing, full page unavailable in this check",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "korea-kia-morning-picanto",
+      "source_url_research_only": "https://plc.auction/auction/lot/kia-morning-2022-11-ic5624023",
+      "observed": "2022; aggregator listing, full page unavailable in this check",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "korea-hyundai-avante-elantra",
+      "source_url_research_only": "https://plc.auction/auction/lot/hyundai-avante-2023-kmhll41eepu485092-25-c7cf02e6d26c50b771a850c0e4f4fe38",
+      "observed": "Existing private HOLD record 13.11; mileage and original sheet not confirmed",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "korea-hyundai-tucson",
+      "source_url_research_only": "https://plc.auction/auction/lot/hyundai-tucson-2022-11-ic5435000",
+      "observed": "Existing private HOLD record 13.11; 61,406 km as previously recorded, no confirmed price or sheet",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "korea-kia-sportage",
+      "source_url_research_only": "https://plc.auction/auction/lot/kia-sportage-2022-11-ic5411271",
+      "observed": "Existing private HOLD record 13.11; 94,445 km as previously recorded, no confirmed sale or sheet",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "china-byd-dolphin",
+      "source_url_research_only": "https://www.excars.cn/cars?brandId=11742",
+      "observed": "Supplier ID 2124701390721118208; listing model year 2021, registration 2023-05, 25,000 km, 8,500 USD; price terms not confirmed",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "china-byd-seagull",
+      "source_url_research_only": "https://www.excars.cn/cars?brandId=11742",
+      "observed": "Supplier ID 2124700504724729856; model year 2025, 78,000 km, 8,500 USD; price terms not confirmed",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "china-byd-destroyer-05",
+      "source_url_research_only": "https://www.excars.cn/cars?brandId=11742",
+      "observed": "Supplier ID 2123600943981654016; model year 2024, 46,000 km, 8,000 USD; price terms not confirmed",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "china-byd-song-pro",
+      "source_url_research_only": "https://www.excars.cn/cars?brandId=11742",
+      "observed": "Supplier ID 2122541364489351168; model year 2021, 50,000 km, 7,000 USD; listed 185 hp, not verified by documents",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "china-byd-yuan-plus-atto-3",
+      "source_url_research_only": "https://www.excars.cn/cars?brandId=11742",
+      "observed": "Supplier ID 2122257803777536000; model year 2022, registration 2023-06, 82,000 km, 11,500 USD",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "china-byd-qin-plus",
+      "source_url_research_only": "https://chinausedcar.net/models?brand=Byd",
+      "observed": "Index shows Qin Plus DM-i 2025, 14,000 km, 11,000 USD; unique detail URL and photo require confirmation",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "china-byd-qin-l",
+      "source_url_research_only": "https://chinausedcar.net/models?brand=Byd",
+      "observed": "Index shows Qin L EV 2025, 30,000 km, 10,000 USD; unique detail URL and photo require confirmation",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "china-byd-song-plus",
+      "source_url_research_only": "https://chinausedcar.net/models?brand=Byd",
+      "observed": "Index shows Song Plus DM-i 2023, 12,000 km, 17,000 USD; unique detail URL and photo require confirmation",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "china-byd-seal-06",
+      "source_url_research_only": "https://chinausedcar.net/models?brand=Byd",
+      "observed": "Index shows Seal 06 DM-i 2025, 17,800 km, 14,000 USD; unique detail URL and photo require confirmation",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    },
+    {
+      "model_id": "china-byd-song-l",
+      "source_url_research_only": "https://chinausedcar.net/models?brand=Byd",
+      "observed": "Index shows Song L DM-i 2025, 12,000 km, 16,000 USD; unique detail URL and photo require confirmation",
+      "photo_reviewed": false,
+      "document_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false,
+      "publish_state": "HOLD"
+    }
+  ]
+}
