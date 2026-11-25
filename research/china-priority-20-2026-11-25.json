@@ -1,0 +1,217 @@
+{
+  "as_of": "2026-11-25",
+  "status": "proposed editorial and sourcing priorities, not verified individual import eligibility or new published inventory",
+  "owner_direction": "Focus on popular profitable China-market models, not a quota of 45. Include global brands sourced in China.",
+  "market_evidence": {
+    "used_china_jan_aug_2026": 75000,
+    "used_top": {
+      "Tayron": 5926,
+      "Corolla": 5096,
+      "Audi Q3": 4088,
+      "Audi A3": 3907
+    },
+    "china_share_used_import_oct_2026": 24.2,
+    "sources": [
+      "https://www.autostat.ru/news/63450/",
+      "https://auto.mail.ru/article/131032-import-poderzhannyih-avto-iz-kitaya-v-rossiyu-vyiros-pochti-vdvoe/",
+      "https://www.autostat.ru/news/63271/",
+      "https://telegram.me/s/AvitoLive?before=6946&q=%23%D0%90%D0%B2%D0%B8%D1%82%D0%BE%D0%90%D0%B2%D1%82%D0%BE",
+      "https://www.autostat.ru/news/61686/"
+    ]
+  },
+  "rules": {
+    "max_documented_kw": 117.68,
+    "preferred_cc": 2000,
+    "preferred_age_years": "3–5 at customs date",
+    "personal_use_rates_rub": [
+      3400,
+      5200
+    ],
+    "source": "https://www.consultant.ru/document/cons_doc_LAW_156832/",
+    "note": "Verify all legal conditions, actual build month, power in documents, export legality, total delivered price vs local market; no reduced-fee claims for unverified examples."
+  },
+  "priority": [
+    {
+      "model": "Mazda CX-5",
+      "variant_hint": "2.0, 155 hp",
+      "id": "china-mazda-cx-5",
+      "page_status": "new_page",
+      "demand_level": "high",
+      "why": "AUTOSTAT new imports leader; check exact China trim",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Volkswagen Tayron",
+      "variant_hint": "1.4 TSI 280, 150 hp",
+      "id": "china-volkswagen-tayron",
+      "page_status": "new_page",
+      "demand_level": "high",
+      "why": "5926 used imports Jan-Aug; exclude 118 kW 1.5 and 2.0",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Toyota Corolla",
+      "variant_hint": "1.2T 116 / 1.5 121 hp",
+      "id": "china-toyota-corolla",
+      "page_status": "existing",
+      "demand_level": "high",
+      "why": "5096 used imports Jan-Aug; ICE only",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Audi Q3",
+      "variant_hint": "1.4 TFSI 150 hp",
+      "id": "china-audi-q3",
+      "page_status": "new_page",
+      "demand_level": "high",
+      "why": "4088 used imports Jan-Aug; exact China version",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Audi A3",
+      "variant_hint": "1.4 TFSI 150 hp",
+      "id": "china-audi-a3",
+      "page_status": "new_page",
+      "demand_level": "high",
+      "why": "3907 used imports Jan-Aug; verify actual kW",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Volkswagen Golf",
+      "variant_hint": "1.4 TSI 150 hp",
+      "id": "china-volkswagen-golf",
+      "page_status": "new_page",
+      "demand_level": "high",
+      "why": "top five used imports",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Nissan Qashqai",
+      "variant_hint": "2.0 151 / 1.3T 158 hp",
+      "id": "china-nissan-qashqai",
+      "page_status": "new_page",
+      "demand_level": "high",
+      "why": "China market; distinct from Japan archive",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Volkswagen Tharu",
+      "variant_hint": "1.4 TSI 150 hp",
+      "id": "china-volkswagen-tharu",
+      "page_status": "new_page",
+      "demand_level": "medium",
+      "why": "direct-import demand; avoid 118 kW",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Volkswagen Lavida",
+      "variant_hint": "1.5 NA 113 / 1.4T 150 hp",
+      "id": "china-volkswagen-lavida",
+      "page_status": "existing",
+      "demand_level": "medium",
+      "why": "budget candidate; 1.5T 118 kW excluded",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Mazda CX-30",
+      "variant_hint": "2.0 158 hp",
+      "id": "china-mazda-cx-30",
+      "page_status": "existing",
+      "demand_level": "medium",
+      "why": "China-market candidate verify documents",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Skoda Karoq",
+      "variant_hint": "1.4 TSI 150 hp",
+      "id": "china-skoda-karoq",
+      "page_status": "new_page",
+      "demand_level": "medium",
+      "why": "candidate, not measured top-volume ranking",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Jetta VS5",
+      "variant_hint": "1.4 TSI 150 hp",
+      "id": "china-jetta-vs5",
+      "page_status": "new_page",
+      "demand_level": "medium",
+      "why": "candidate, verify China trim",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Haval Jolion",
+      "variant_hint": "1.5T <=160 hp",
+      "id": "china-haval-jolion",
+      "page_status": "existing",
+      "demand_level": "high",
+      "why": "Avito used demand; China Chulian exact trim verification",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Geely Coolray / Binyue",
+      "variant_hint": "1.4T 141 hp; exact 150 hp variants",
+      "id": "china-geely-coolray-binyue",
+      "page_status": "existing",
+      "demand_level": "high",
+      "why": "Avito demand; exclude 177/181 hp",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Chery Tiggo 7",
+      "variant_hint": "1.5T 147-156 hp",
+      "id": "china-chery-tiggo-7",
+      "page_status": "existing",
+      "demand_level": "high",
+      "why": "Avito demand; no 1.6T assumption",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Chery Tiggo 4 / 5X",
+      "variant_hint": "1.5 NA or 1.5T <=160 hp",
+      "id": "china-chery-tiggo-4",
+      "page_status": "existing_related",
+      "demand_level": "medium",
+      "why": "same family; source name kept; avoid competing pages",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Omoda C5 / 5",
+      "variant_hint": "1.5T 156 hp",
+      "id": "china-chery-omoda-5",
+      "page_status": "existing",
+      "demand_level": "medium",
+      "why": "exact China-market variant only",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Changan CS35 Plus",
+      "variant_hint": "1.4T 158 hp",
+      "id": "china-changan-cs35-plus",
+      "page_status": "existing_missing",
+      "demand_level": "medium",
+      "why": "candidate; verify 116 kW",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Geely Emgrand",
+      "variant_hint": "1.5 NA <=160 hp",
+      "id": "china-geely-emgrand",
+      "page_status": "existing",
+      "demand_level": "medium",
+      "why": "budget candidate; verify price advantage",
+      "individual_eligibility_verified": false
+    },
+    {
+      "model": "Chery Arrizo 5",
+      "variant_hint": "1.5 NA 116 hp",
+      "id": "china-chery-arrizo-5",
+      "page_status": "existing",
+      "demand_level": "medium",
+      "why": "budget candidate; approved example already linked",
+      "individual_eligibility_verified": false
+    }
+  ],
+  "hold": "Stop broad 22-gap photo sourcing as goal. Deprioritize Monjaro, most BYD/Galaxy hybrids/EVs, low-demand models. Hybrid/EV not categorically ineligible; review only if documentary power and demand justify. Keep old URLs, no deletion or redirect until traffic and canonical overlap audit. Reuse approved images only, no new photos without exact review and rights checks.",
+  "limitations": "National import / marketplace demand, not measured Novosibirsk registrations or margins; medium candidates need local price comparisons. This is a proposed 20-model working list, not a statistical top-20."
+}
