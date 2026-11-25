@@ -565,6 +565,7 @@ def copy_public_files() -> list[str]:
         raise RuntimeError("DUALIS_ARCHIVE: order or calculator CTA is not allowed")
     # Rebuild clearly labelled nameplate examples; they never count as new lots.
     # China exact-title recovery reuses the three previously approved supplier cards.
+    # Tiggo 4 Pro / 5X related examples use a separate card attribute and counter.
     if model_coverage['supplier_cards'] != model_coverage['supplier_matches']:
         raise RuntimeError('PAPAUTO_MODEL_STATS: missing inline supplier cards')
 

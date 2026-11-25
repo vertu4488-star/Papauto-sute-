@@ -389,7 +389,14 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
                 card = lot_card(row,target).replace('data-model-lot-id=', 'data-model-related-lot-id=',1)
                 parts += [card]
             parts += ['</div><p><a href="/models/'+esc(family_id)+'.html">Все примеры японского названия модели</a></p>']
-        if not records and ident in RELATED_ONLY and not family_rows:
+        # Chery's own 2021 release identifies Tiggo 5X (Tiggo 4 Pro).
+        # Preserve exact Chinese-market source names and do not count duplicate vehicles.
+        related_supplier = supplier["china-chery-tiggo-5x"][:5] if ident == "china-chery-tiggo-4" and not offers else []
+        if related_supplier:
+            parts += ['<h3>Chery Tiggo 5X — китайская версия семейства Tiggo 4 Pro</h3><p>По информации производителя, Tiggo 5X известен на экспортных рынках как Tiggo 4 Pro. Ниже — реальные примеры китайских 5X; комплектации и характеристики экспортной версии могут отличаться. Это не отдельные лоты Tiggo 4.</p><div class="pa-model-lot-grid">']
+            parts += [supplier_card(row,target,approved_supplier_paths).replace('data-model-supplier-id=', 'data-model-related-supplier-id=',1) for row in related_supplier]
+            parts += ['</div><p><a href="/models/china-chery-tiggo-5x.html">Все примеры китайских Tiggo 5X</a></p>']
+        if not records and ident in RELATED_ONLY and not family_rows and not related_supplier:
             other=RELATED_ONLY[ident]
             if other not in refs:
                 raise RuntimeError("MODEL_STATS unknown related page")
@@ -407,13 +414,14 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
         supplier_ids = re.findall(r'data-model-supplier-id="([^"]+)"', html)
         supplier_photos = re.findall(r'<img\b[^>]*\bsrc="(/assets/china-order/[^"]+)"', html)
         if (supplier_ids != [row["anchor"] for row in offers]
-                or supplier_photos != [row["photo"] for row in offers]
+                or supplier_photos != [row["photo"] for row in offers + related_supplier]
+                or re.findall(r'data-model-related-supplier-id="([^"]+)"', html) != [row["anchor"] for row in related_supplier]
                 or len(set(supplier_ids)) != len(supplier_ids)
                 or any(x not in approved_supplier_paths for x in [p.lstrip("/") for p in supplier_photos])
-                or (offers and item["market"] != "china")):
+                or ((offers or related_supplier) and item["market"] != "china")):
             raise RuntimeError("MODEL_STATS supplier render mismatch "+ident)
         page.write_text(html, encoding="utf-8")
-        report.append({"model_id":ident,"market":item["market"],"auction_matches":len(records),"auction_cards":min(len(records),MAX_CARDS),"supplier_matches":len(offers),"supplier_cards":len(supplier_ids),"related_cards":len(family_rows)})
+        report.append({"model_id":ident,"market":item["market"],"auction_matches":len(records),"auction_cards":min(len(records),MAX_CARDS),"supplier_matches":len(offers),"supplier_cards":len(supplier_ids),"related_cards":len(family_rows)+len(related_supplier)})
     # Reverse navigation: only exact approved assigned lots point to model pages.
     for lot_id, ident in assigned.items():
         p=target/"lots"/(lot_id+".html")
