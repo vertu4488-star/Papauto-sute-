@@ -1,0 +1,25 @@
+name: PapAuto missing Japan model photo and sheet review
+on:
+  push:
+    branches: ['review/japan-model-coverage-20261125']
+    paths: ['.github/workflows/japan-model-gap-review.yml']
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4 pillow
+      - name: Collect exact model candidates for human review only
+        run: python scripts/research_japan_model_gap_20261125.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: japan-model-gap-private-review
+          path: japan-model-gap-review/
+          retention-days: 14

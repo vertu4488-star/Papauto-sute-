@@ -1,0 +1,131 @@
+{
+  "date": "2026-11-25",
+  "scope": "9 exact Japanese-market gaps; 3 nameplate pages handled separately",
+  "status": "HOLD; not publication approval",
+  "candidates": [
+    {
+      "model_id": "japan-toyota-bb",
+      "sources": [
+        "https://atp-auto.ru/avto-iz-yaponii/toyota/bb/5658c0T9bMFa9s/",
+        "https://banzai24.com/en/car/JP/01a1b8b7-4cde-73ad-b1aa-33edeaabfd26"
+      ],
+      "observed": "ATP indexed 2013 lot 33; Banzai indexed sold 13.11.2026 MIRIVE Aichi lot 50008",
+      "photo_reviewed": false,
+      "matching_sheet_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false
+    },
+    {
+      "model_id": "japan-toyota-pixis-epoch",
+      "sources": [
+        "https://banzai24.com/en/car/JP/01a1ed4c-495a-70de-83cd-145a9363138e",
+        "https://nipponlot.ru/rynok/toyota/pixis-epoch/"
+      ],
+      "observed": "Banzai index 2021 25,000 km; sale not confirmed",
+      "photo_reviewed": false,
+      "matching_sheet_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false
+    },
+    {
+      "model_id": "japan-toyota-pixis-joy",
+      "sources": [
+        "https://www.drom.ru/world/japan/toyota/pixis_joy/page9/",
+        "https://carvector.com/stat/toyota/pixis-joy"
+      ],
+      "observed": "Drom archive reports lot 3376 CAA Chubu, 2018 F X, 28,000 km, grade 4, 548,000 JPY; exact sheet and date require verification",
+      "photo_reviewed": false,
+      "matching_sheet_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false
+    },
+    {
+      "model_id": "japan-toyota-pixis-mega",
+      "sources": [
+        "https://banzai24.com/en/car/JP/01a1bf4a-0a0c-714c-80ce-5ae9b87fa04a",
+        "https://nipponlot.ru/rynok/toyota/pixis-mega/"
+      ],
+      "observed": "G SA candidate; exact result not verified",
+      "photo_reviewed": false,
+      "matching_sheet_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false
+    },
+    {
+      "model_id": "japan-honda-n-one",
+      "sources": [
+        "https://banzai24.com/en/car/JP/01a1ef73-7346-7f0d-b97f-0c5554c344c4"
+      ],
+      "observed": "Indexed sold, 24.11.2026 TAA Kinki lot 3039",
+      "photo_reviewed": false,
+      "matching_sheet_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false
+    },
+    {
+      "model_id": "japan-honda-n-van",
+      "sources": [
+        "https://banzai24.com/en/car/JP/01a1777f-be0f-7b3c-bd7b-7ec5f3d5c68b",
+        "https://banzai24.com/en/car/JP/019eb640-e25a-7e52-863d-8c1cc05c0f7e"
+      ],
+      "observed": "Indexed sold, 31.10.2026 TAA Yokohama lot 73002; second source Honda AA Nagoya lot 50039",
+      "photo_reviewed": false,
+      "matching_sheet_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false
+    },
+    {
+      "model_id": "japan-honda-wr-v",
+      "sources": [
+        "https://banzai24.com/en/car/JP/01a194db-4a76-787a-90b8-6a786bc1eb05"
+      ],
+      "observed": "Indexed sold, 02.11.2026 Honda AA Tokyo lot 10208",
+      "photo_reviewed": false,
+      "matching_sheet_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false
+    },
+    {
+      "model_id": "japan-nissan-juke",
+      "sources": [
+        "https://atp-auto.ru/avto-iz-yaponii/nissan/juke/5BtgotRybOE52Tx/",
+        "https://banzai24.com/en/car/JP/01a1f196-f4c1-7566-b466-aead24d3d9fa"
+      ],
+      "observed": "ATP indexed 2016 lot 14017; Banzai indexed sold 24.11.2026 TAA Shikoku lot 9006",
+      "photo_reviewed": false,
+      "matching_sheet_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false
+    },
+    {
+      "model_id": "japan-nissan-moco",
+      "sources": [
+        "https://banzai24.com/en/car/JP/01a1e3f1-46f9-776e-b36d-b30b3c8a7e84"
+      ],
+      "observed": "Indexed TAA Yokohama lot 78006 21.11.2026, sale not verified",
+      "photo_reviewed": false,
+      "matching_sheet_verified": false,
+      "rights_confirmed": false,
+      "owner_batch_approved": false
+    }
+  ],
+  "nameplates": [
+    {
+      "model_id": "japan-honda-jazz",
+      "japan_name": "Honda Fit",
+      "source": "https://global.honda/en/newsroom/news/2010/4101006eng.html"
+    },
+    {
+      "model_id": "japan-nissan-micra",
+      "japan_name": "Nissan March (K13 and corresponding generation only)",
+      "source": "https://global.nissannews.com/en/releases/100302-01-e"
+    },
+    {
+      "model_id": "japan-nissan-qashqai",
+      "japan_name": "Nissan Dualis (J10 only)",
+      "source": "https://global.nissannews.com/ja-JP/releases/nissan-qashqai-marks-20-years-and-more-than-73-million-global-sales",
+      "candidate": "https://banzai24.com/en/car/JP/01a1e355-a1d5-7518-9046-969a17eed820",
+      "note": "Do not present Dualis as Qashqai; 2.0 export restriction requires separate check"
+    }
+  ]
+}
