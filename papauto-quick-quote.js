@@ -31,5 +31,20 @@
   if(Object.values(costs).some(v=>!Number.isFinite(v)||v<0))return pending("Не все стандартные расходы рассчитаны.");
   return {total:Object.values(costs).reduce((a,b)=>a+b,0),costs,reason:"",age,kind};
  }
- return {quote};
+ function typeOf(x){
+  const explicit=String(x.engine_type||x.fuel_type||x.fuel||x.engineType||"").toLowerCase();
+  const raw=[explicit,x.trim,x.name||x.model,x.description].filter(Boolean).join(" ");
+  if(/\b(?:e\s*[:-]?\s*hev|phev|mhev|hev|hybrid|e[ -]?power)\b|гибрид/i.test(raw))return "hybrid";
+  if(/\b(?:bev|electric|ev)\b|электромобил/i.test(raw))return "ev";
+  if(/\b(?:petrol|gasoline|diesel|ice)\b|бензин|дизель/i.test(raw))return "ice";
+  return "";
+ }
+ function fromLot(l){
+  const raw=l.price_amount??l.price_jpy;
+  const exact=String(l.description||"").match(/двигатель\s+(\d{3,4})\s*см³/i);
+  return {market:l.market,currency:l.currency||(l.market==="japan"?"JPY":""),restricted:l.export_restricted,
+   name:l.model,bodyType:l.body_type||l.body_style||"",type:typeOf(l),year:l.year,buildDate:l.build_date||l.manufacture_date,
+   engine:l.engine_cc??(exact?Number(exact[1]):null),power:l.power_hp,amount:typeof raw==="number"?raw:Number(String(raw||"").replace(/[^\d]/g,""))};
+ }
+ return {quote,typeOf,fromLot};
 });

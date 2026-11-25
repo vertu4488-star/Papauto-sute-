@@ -8,6 +8,7 @@ from pathlib import Path
 def publish(target: Path):
     lots = json.loads((target / 'data/gallery-lots.json').read_text())['lots']
     esc = lambda v: html.escape(str(v), quote=True)
+    quote_assets = '<link rel="stylesheet" href="/papauto-card-quote.css?v=20261125"><script defer src="/site-config.js"></script><script defer src="/papauto-customs.js?v=20261125-quickquote"></script><script defer src="/papauto-japan-tariffs.js?v=20261125-quickquote"></script><script defer src="/papauto-delivery-tariffs.js?v=20261125-quickquote"></script><script defer src="/papauto-quick-quote.js?v=20261125-cards"></script><script defer src="/papauto-card-quote.js?v=20261125"></script>'
     rows = []
     urls = []
     images = []
@@ -48,6 +49,10 @@ def publish(target: Path):
         page = page.replace('</head>', head_markup, 1)
         page = page.replace('<nav>', '<nav><a href="/auction-lot-index.html">Все лоты по моделям</a>', 1)
         page = page.replace('</aside>', '<h2>Стоимость доставки и оформления</h2><p>Для расчёта аналога отдельно учитываем покупку, доставку до Владивостока, таможенные платежи, утильсбор и перевозку до Новосибирска. Архивная цена не является ценой под ключ.</p><p><a href="/#calculator">Калькулятор стоимости</a> · <a href="/avto-iz-yaponii-novosibirsk.html">Авто из Японии в Новосибирск</a></p></aside>', 1)
+        quote_block = (f'<section class="pa-card-quote" data-pa-quote-id="{esc(lot["id"])}" aria-label="Предварительная стоимость под ключ">'
+                       '<strong>Стоимость под ключ до Новосибирска</strong><p>Требуется уточнение стоимости.</p></section>')
+        page = page.replace('</head>', quote_assets + '</head>', 1)
+        page = page.replace('</aside>', quote_block + '</aside>', 1) if '</aside>' in page else page.replace('</main>', quote_block + '</main>', 1)
         file.write_text(page)
         urls.append(url)
         photo = lot["photos"][0]
@@ -97,5 +102,7 @@ def publish(target: Path):
         file = target / name
         page = file.read_text()
         page = page.replace('</main>', f'<p style="padding:24px"><a href="/auction-lot-index.html">Все аукционные карточки ({len(lots)}): модели, пробег, оценки и листы →</a></p></main>', 1)
+        if name == 'gallery.html':
+            page = page.replace('</head>', quote_assets + '</head>', 1)
         file.write_text(page)
     return len(lots)
