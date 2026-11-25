@@ -2418,14 +2418,6 @@
       "reference_url": "https://cars-japan.net/engine/mdl0080018.html",
       "basis": "Existing archive record; chassis ZC33S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
     },
-    "japan-selection-420": {
-      "engine_cc": 1371,
-      "power_hp": 140,
-      "engine_type": "ice",
-      "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0080018.html",
-      "basis": "Existing archive record; chassis ZC33S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
-    },
     "japan-selection-249": {
       "engine_cc": 1498,
       "power_hp": 105,
@@ -2522,21 +2514,29 @@
       "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
       "basis": "Existing archive record; chassis DE3FS with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
     },
-    "japan-selection-209": {
-      "engine_cc": 1198,
-      "power_hp": 79,
+    "bmw-x1-2021": {
+      "engine_cc": 1498,
+      "power_hp": 140,
       "engine_type": "ice",
-      "body_type": "малолитражка",
-      "reference_url": "https://www.goo-net.com/catalog/NISSAN/MARCH/",
-      "basis": "Existing archive record; chassis K13 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/yea10200172021.html",
+      "basis": "Existing gallery record; independently checked Japanese-market catalogue matching chassis and power; conditional personal import estimate"
     },
-    "japan-selection-138": {
-      "engine_cc": 1797,
-      "power_hp": 144,
+    "bmw-x2-2019": {
+      "engine_cc": 1498,
+      "power_hp": 140,
       "engine_type": "ice",
-      "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/yea00100072010.html",
-      "basis": "Existing archive record; chassis ZGE20G with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/yea10200182019.html",
+      "basis": "Existing gallery record; independently checked Japanese-market catalogue matching chassis and power; conditional personal import estimate"
+    },
+    "mercedes-a180-2020": {
+      "engine_cc": 1331,
+      "power_hp": 136,
+      "engine_type": "ice",
+      "body_type": "седан",
+      "reference_url": "https://yanase.jp/mercedes-benz/catalog/a_class_sedan/10129321/",
+      "basis": "Existing gallery record; independently checked Japanese-market catalogue matching chassis and power; conditional personal import estimate"
     }
   },
   "quotes": {
@@ -6310,10 +6310,6 @@
         "delivery": 120000
       }
     },
-    "japan-selection-420": {
-      "low": 1076783,
-      "high": 1173958
-    },
     "japan-selection-249": {
       "total": 1115786,
       "costs": {
@@ -6494,34 +6490,38 @@
         "delivery": 120000
       }
     },
-    "japan-selection-209": {
-      "total": 724669,
+    "bmw-x1-2021": {
+      "low": 1656393,
+      "high": 1859162
+    },
+    "bmw-x2-2019": {
+      "total": 1715421,
       "costs": {
-        "car": 32545,
-        "japan": 56825,
+        "car": 898861,
+        "japan": 75938,
         "shipping": 32925,
         "bank": 15000,
         "docs": 65000,
-        "duty": 345943,
-        "customsFee": 1231,
+        "duty": 432573,
+        "customsFee": 4924,
         "util": 5200,
         "commission": 50000,
-        "delivery": 120000
+        "delivery": 135000
       }
     },
-    "japan-selection-138": {
-      "total": 1050678,
+    "mercedes-a180-2020": {
+      "total": 1693116,
       "costs": {
-        "car": 106934,
-        "japan": 56825,
+        "car": 928307,
+        "japan": 77411,
         "shipping": 32925,
         "bank": 15000,
         "docs": 65000,
-        "duty": 567563,
-        "customsFee": 1231,
+        "duty": 384349,
+        "customsFee": 4924,
         "util": 5200,
         "commission": 50000,
-        "delivery": 150000
+        "delivery": 130000
       }
     }
   }
