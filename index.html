@@ -105,6 +105,24 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
     <p class="pa-lexus-note">Без догадок. Первый экран — рекламная иллюстрация, не аукционный лот. Ниже представлены реальные фотографии и аукционные листы.</p>
   </div>
 </section>
+  <section class="budget-start wrap" aria-label="Быстрый подбор автомобиля по бюджету" id="budget-pick">
+    <div class="budget-start-head"><div><div class="eyebrow">БЫСТРЫЙ ПОДБОР</div><h2>Автомобиль под ваш бюджет.</h2></div><p>Выберите бюджет под ключ и направление. Покажем подтверждённые примеры для расчёта до Новосибирска.</p></div>
+    <form id="paBudgetForm" class="calc-form">
+      <div class="form-grid">
+        <label>Бюджет до, ₽<input id="paBudgetAmount" type="number" min="100000" max="2000000000" step="1000" value="1500000" required></label>
+        <label>Направление<select id="paBudgetMarket"><option value="all">Все страны</option><option value="japan">Япония</option><option value="south-korea">Южная Корея</option><option value="china">Китай</option></select></label>
+      </div>
+      <div class="budget-shortcuts" aria-label="Готовые бюджеты">
+        <button type="button" data-pa-budget="1000000" aria-pressed="false"><span>до</span><strong>1 млн ₽</strong></button>
+        <button type="button" data-pa-budget="1500000" aria-pressed="true"><span>до</span><strong>1,5 млн ₽</strong></button>
+        <button type="button" data-pa-budget="2000000" aria-pressed="false"><span>до</span><strong>2 млн ₽</strong></button>
+        <button type="button" data-pa-budget="3000000" aria-pressed="false"><span>до</span><strong>3 млн ₽</strong></button>
+      </div>
+      <div class="hero-actions"><button class="button button-primary" type="submit">Подобрать автомобили →</button><a class="button button-secondary" id="paBudgetOrder" href="/podbor.html?budget=1500000">Запросить подбор</a></div>
+      <p id="paBudgetStatus" class="result-note" role="status">Цены в результатах — стоимость автомобиля за рубежом, не итог под ключ.</p>
+      <div id="paBudgetResults" class="vehicle-results" hidden></div>
+    </form>
+  </section>
 <div class="pa-thursday-markets wrap" aria-label="Особенности автомобильных рынков">
   <div class="pa-thursday-market"><strong>🇯🇵 Из Японии · правый руль</strong><small>Сверяем двигатель, год, комплектацию и экспортные ограничения. Показанные автомобили — исторические примеры торгов. <a href="/auction-lot-index.html">Посмотреть аукционные лоты по моделям</a></small></div>
   <div class="pa-thursday-market"><strong>🇰🇷 Из Южной Кореи · левый руль</strong><small>BMW, Mercedes-Benz и Audi для подбора. Наличие и стоимость до Новосибирска рассчитываются для конкретного автомобиля.</small></div>
@@ -387,24 +405,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
   </section>
 
 
-  <section class="budget-start wrap" aria-label="Быстрый подбор автомобиля по бюджету">
-    <div class="budget-start-head">
-      <div><div class="eyebrow">БЫСТРЫЙ ПОДБОР</div><h2>Начните с бюджета.<br><em>Остальное уточним вместе.</em></h2></div>
-      <p>Выберите ориентир — PAPAUTO SELECT перенесёт бюджет в заявку. Наличие конкретного автомобиля и окончательная стоимость подтверждаются по источнику и условиям сделки.</p>
-    </div>
-    <div class="budget-shortcuts">
-      <button type="button" data-budget-shortcut="1000000"><span>до</span><strong>1 млн ₽</strong><small>Городские авто</small></button>
-      <button type="button" data-budget-shortcut="1500000"><span>до</span><strong>1,5 млн ₽</strong><small>Бюджетный выбор</small></button>
-      <button type="button" data-budget-shortcut="2000000"><span>до</span><strong>2 млн ₽</strong><small>Больше вариантов</small></button>
-      <button type="button" data-budget-shortcut="3000000"><span>до</span><strong>3 млн ₽</strong><small>Седаны и кроссоверы</small></button>
-    </div>
-    <div class="budget-market-shortcuts" aria-label="Выберите направление">
-      <span>Или начните с рынка:</span>
-      <button type="button" data-market-shortcut="japan">Япония</button>
-      <button type="button" data-market-shortcut="south-korea">Южная Корея</button>
-      <button type="button" data-market-shortcut="china">Китай</button>
-    </div>
-  </section>
+
 
   <section class="section wrap" id="quick-selection"><div class="eyebrow">ПОДБОР ЗА МИНУТУ</div><h2>Найдите автомобиль <em>без длинной анкеты</em></h2><p>Выберите страну, марку, модель и год. Цена и дополнительные параметры — по желанию.</p><a class="button button-primary" href="/podbor.html">Начать подбор ↗</a></section>
   <section class="section wrap" id="catalog">
@@ -877,7 +878,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 <script defer src="/voice-assistant.js?v=20261103"></script>
 <script src="/auction-sheet-decoder.js" defer></script>
   <script src="/vehicle-catalogue.js" defer></script>
-<script src="/papauto-premium-calculator.js?v=20261125-delivery" defer></script>
+<script src="/papauto-premium-calculator.js?v=20261125-budget" defer></script>
 <script src="/papauto-customs.js?v=20261125-live" defer></script>
 <script src="/papauto-japan-tariffs.js?v=20261125-delivery" defer></script>
 <script src="/papauto-delivery-tariffs.js?v=20261125" defer></script>

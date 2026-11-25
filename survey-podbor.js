@@ -244,6 +244,12 @@
     survey.setValue('notes','Интересует аналог аукционного лота: '+ref.reference+
       (ref.year?' '+ref.year:'')+'. Уточнить комплектацию, цену и доступность.');
   }
+  // Preserve quick-picker budget and market without submitting a lead.
+  const quickParams=new URL(location.href).searchParams;
+  const quickBudget=Number(quickParams.get('budget'));
+  const quickMarket=quickParams.get('market');
+  if(Number.isSafeInteger(quickBudget)&&quickBudget>=1&&quickBudget<=2000000000)survey.setValue('budget',quickBudget);
+  if(!ref&&markets[quickMarket]){survey.setValue('market',quickMarket);updateMakes(quickMarket);}
   let state='ready',savedNotification=false;
   survey.onCompleting.add(async (_, options)=>{
     if(state!=='ready'){options.allow=false;options.message='Заявка уже отправляется или её статус проверяется. Пожалуйста, не отправляйте повторно.';return}

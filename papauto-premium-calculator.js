@@ -69,5 +69,44 @@ const params=new URLSearchParams(location.search),key=params.get("vehicle"),m=pa
 if(key){load().then(()=>{const x=rows.find(r=>r.key===key);if(x){country.value=countryByMarket[x.market];updateTabs();select(x);}else{status.textContent="Эта карточка больше недоступна. Выберите другой автомобиль.";}});}
 else if(params.get("view")==="calculator"||location.hash==="#calculator")ensureLoad();
 const observer=new MutationObserver(()=>{if(document.body.dataset.siteView==="calculator"&&!loaded)ensureLoad();});observer.observe(document.body,{attributes:true,attributeFilter:["data-site-view"]});
+
+/* Budget discovery uses the same approved catalogue and FX as the calculator.
+   Foreign price + fixed commission is only a lower bound, not a landed quote. */
+const budgetForm=$("paBudgetForm");
+if(budgetForm){
+ const amount=$("paBudgetAmount"), direction=$("paBudgetMarket"), out=$("paBudgetResults"), note=$("paBudgetStatus"), request=$("paBudgetOrder"), submit=budgetForm.querySelector('[type="submit"]');
+ const syncBudget=()=>{const p=new URLSearchParams();if(amount.validity.valid)p.set("budget",amount.value);if(countryByMarket[direction.value])p.set("market",direction.value);request.href="/podbor.html?"+p.toString();budgetForm.querySelectorAll("[data-pa-budget]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.paBudget===amount.value)));};
+ let revision=0;
+ const invalidate=()=>{revision++;out.hidden=true;out.replaceChildren();note.textContent="Нажмите «Подобрать автомобили» для выбранного бюджета.";submit.disabled=false;syncBudget();};
+ budgetForm.querySelectorAll("[data-pa-budget]").forEach(b=>b.addEventListener("click",()=>{amount.value=b.dataset.paBudget;invalidate();}));
+ amount.addEventListener("input",invalidate);direction.addEventListener("change",invalidate);syncBudget();
+ budgetForm.addEventListener("submit",async e=>{
+  e.preventDefault();if(!amount.reportValidity())return;
+  const token=++revision,limit=Number(amount.value),marketFilter=direction.value;
+  submit.disabled=true;out.hidden=true;out.replaceChildren();note.textContent="Проверяем опубликованные примеры и справочный курс…";
+  try{
+   const [items,fx]=await Promise.all([load(),getRates()]);if(token!==revision)return;
+   if(!fx)throw Error("Справочный курс недоступен. Оставьте запрос на подбор — бюджет будет передан.");
+   const candidates=items.filter(x=>x.photo&&x.amount>0&&!x.restricted&&(marketFilter==="all"||x.market===marketFilter)).map(x=>({...x,baseRub:Math.round(x.amount*rateFor(x.currency))})).filter(x=>Number.isFinite(x.baseRub)&&x.baseRub>0&&x.baseRub+50000<limit);
+   candidates.sort((a,b)=>b.baseRub-a.baseRub||b.year-a.year);
+   const seen=new Set(),shown=candidates.filter(x=>{const key=x.market+":"+norm(x.name);if(seen.has(key))return false;seen.add(key);return true;}).slice(0,12);
+   for(const x of shown){
+    const card=document.createElement("article");card.className="vehicle-result-card";
+    const img=document.createElement("img");img.alt=x.name;img.loading="lazy";img.style.cssText="width:100%;max-height:180px;object-fit:contain";img.addEventListener("error",()=>card.remove(),{once:true});img.src=x.photo;
+    const title=document.createElement("h3");title.textContent=x.name+(x.year?" · "+x.year:"");
+    const meta=document.createElement("p");meta.textContent=[countryByMarket[x.market],x.mileage,x.source].filter(Boolean).join(" · ");
+    const price=document.createElement("strong");price.textContent=money(x.baseRub)+" ₽ — цена за рубежом";
+    const disclaimer=document.createElement("p");disclaimer.textContent="Не цена под ключ. Таможня, доставка и остальные расходы не рассчитаны. Наличие и возможность ввоза требуют проверки.";
+    const link=document.createElement("a");link.className="button button-secondary";link.href="/?"+new URLSearchParams({view:"calculator",market:x.market,vehicle:x.key}).toString();link.textContent="Рассчитать стоимость";
+    const lead=document.createElement("a");lead.className="button button-primary";lead.href="/podbor.html?"+new URLSearchParams({budget:String(limit),market:x.market,similar:[x.name,x.year,countryByMarket[x.market]].filter(Boolean).join(" · ")}).toString();lead.textContent="Подобрать аналог";
+    card.append(img,title,meta,price,disclaimer,link,lead);out.append(card);
+   }
+   out.hidden=!shown.length;
+   note.textContent=(shown.length?"Показано "+shown.length+" примеров для предварительной сметы. Цена за рубежом и комиссия ниже бюджета, но попадание в бюджет под ключ НЕ подтверждено.":"Не найдено опубликованных примеров с известной исходной ценой в выбранном диапазоне. Запросите индивидуальный подбор.")+(fx.date?" Курс на "+fx.date+".":" Дата курса не указана.")+(fx.fallback?" Архивный курс.":"")+(partialSources.length?" Часть источников недоступна.":"");
+  }catch(err){if(token===revision)note.textContent=err.message||"Каталог временно недоступен. Запросите подбор.";}
+  finally{if(token===revision)submit.disabled=false;}
+ });
+}
+
 updateOrder();suggestRate(true);
 })();
