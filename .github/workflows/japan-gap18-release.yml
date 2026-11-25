@@ -1,0 +1,80 @@
+name: PapAuto exact 18 ATP archive release verification
+on:
+  push:
+    branches: ['release/japan-18-atp-20261125']
+    paths: ['.github/workflows/japan-gap18-release.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: japan-model-gap-private-review
+          run-id: 45560419820
+          github-token: ${{ github.token }}
+          path: /tmp/japan18
+      - run: pip install -r requirements.txt pillow
+      - run: python scripts/release_japan_gap18_20261125.py
+      - name: Build and enforce existing approval and media checks
+        run: |
+          python scripts/verify_publication_approval.py
+          python scripts/build_content.py
+          python scripts/build_static_public.py
+          python -m unittest discover -s tests -v
+          node --check gallery.js
+          node tests/test_survey_all_gallery_lots.cjs
+      - name: Check 18 exact lots and all 6 new model pages
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          p=Path("render-public")
+          a=json.loads((p/"data/gallery-lots.json").read_text())
+          rows=[r for r in a["lots"] if r["id"].startswith("japan-gap18-20261125-")]
+          assert len(a["lots"])==a["lot_count"]==659
+          assert len(rows)==18
+          for r in rows:
+              assert r["rights_confirmed"] is False and r["status"]=="reference_only" and len(r["photos"])==2
+              assert (p/"lots"/(r["id"]+".html")).is_file()
+          coverage=json.loads((p/"data/model-statistics-coverage.json").read_text())
+          assert coverage["auction_covered"]==39 and coverage["no_exact_examples"]==75
+          for m in ("toyota-bb","toyota-pixis-epoch","toyota-pixis-joy","toyota-pixis-mega","nissan-juke","nissan-moco"):
+              html=(p/"models"/("japan-"+m+".html")).read_text()
+              assert html.count('data-model-lot-id="japan-gap18-20261125-')==3,m
+          print("PAPAUTO_659_LOTS_39_JAPAN_MODELS_OK")
+          PY
+      - name: Browser QA exact model pages and all new images
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install chromium
+          python -m http.server 8765 --directory render-public >/tmp/papauto18-server.log 2>&1 &
+          node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{const browser=await chromium.launch({headless:true});
+          for(const width of [320,390,1440]){const page=await browser.newPage({viewport:{width,height:844}});
+          for(const model of ['toyota-bb','toyota-pixis-epoch','toyota-pixis-joy','toyota-pixis-mega','nissan-juke','nissan-moco']){
+          await page.goto('http://127.0.0.1:8765/models/japan-'+model+'.html');
+          const cards=page.locator('[data-model-lot-id^="japan-gap18-20261125-"]');
+          if(await cards.count()!==3)throw Error(model+' count');
+          await cards.evaluateAll(async rows=>{for(const row of rows){for(const link of [row.querySelector('img').src,...Array.from(row.querySelectorAll('a')).filter(a=>a.textContent==='Аукционный лист').map(a=>a.href)]){let img=new Image();img.src=link;await img.decode();if(!img.naturalWidth)throw Error(link)}}});
+          if(await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth)>2)throw Error(model+' overflow '+width);
+          }
+          const lots=await page.evaluate(async()=>await(await fetch('/data/gallery-lots.json')).json());
+          for(const lot of lots.lots.filter(l=>l.id.startsWith('japan-gap18-20261125-'))){for(const u of [...lot.photos,lot.inspection_image])await page.evaluate(async u=>{const im=new Image();im.src=u;await im.decode()},u)}
+          await page.close()}await browser.close();console.log('PAPAUTO_18_BROWSER_QA_OK')})().catch(e=>{console.error(e);process.exit(1)})
+          JS
+      - name: Save verified batch to release branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add AGENTS.md docs/AUCTION_ONLY_GALLERY.md scripts/compile_auction_gallery.py scripts/build_static_public.py scripts/verify_publication_approval.py tests/test_site_warm_theme.py tests/test_auction_only_images_policy.py research/owner-approved-japan-gap18-2026-11-25.json assets/auction/approved/japan-gap18-20261125-*.jpg
+          git commit -m "PapAuto: exact 18 owner-reviewed ATP archive examples"
+          git push origin HEAD:release/japan-18-atp-20261125
