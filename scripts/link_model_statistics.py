@@ -226,7 +226,7 @@ def supplier_links(target, approved_paths, index):
         ident = match(index, "china", name)
         if ident:
             linked[ident].append((title, anchor))
-        return card.replace('<article class="cn-example"', '<article id="'+anchor+'" class="cn-example"', 1)
+        return card.replace('<article class="cn-example"', '<article class="cn-example" id="'+anchor+'"', 1)
     html = re.sub(r'<article class="cn-example"[^>]*>[\s\S]*?</article>', mark, html)
     if seen != {"/"+p for p in approved_paths}:
         raise RuntimeError("MODEL_STATS supplier source mismatch")
