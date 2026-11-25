@@ -1,6 +1,6 @@
 {
   "as_of": "2026-11-25",
-  "status": "proposed editorial and sourcing priorities, not verified individual import eligibility or new published inventory",
+  "status": "owner approved exact priority list 2026-11-25; target family filters implemented; actual eligibility unverified",
   "owner_direction": "Focus on popular profitable China-market models, not a quota of 45. Include global brands sourced in China.",
   "market_evidence": {
     "used_china_jan_aug_2026": 75000,
@@ -213,5 +213,477 @@
     }
   ],
   "hold": "Stop broad 22-gap photo sourcing as goal. Deprioritize Monjaro, most BYD/Galaxy hybrids/EVs, low-demand models. Hybrid/EV not categorically ineligible; review only if documentary power and demand justify. Keep old URLs, no deletion or redirect until traffic and canonical overlap audit. Reuse approved images only, no new photos without exact review and rights checks.",
-  "limitations": "National import / marketplace demand, not measured Novosibirsk registrations or margins; medium candidates need local price comparisons. This is a proposed 20-model working list, not a statistical top-20."
+  "limitations": "National import / marketplace demand, not measured Novosibirsk registrations or margins; medium candidates need local price comparisons. This is a proposed 20-model working list, not a statistical top-20.",
+  "focus_groups": [
+    {
+      "key": "tayron",
+      "model": "Volkswagen Tayron",
+      "approved_archive_candidates": [
+        {
+          "title": "2019 Volkswagen Tayron Journey Edition 280TSI 2WD Luxury Edition China VI",
+          "engine": "1.4T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch18/027.jpg"
+        }
+      ]
+    },
+    {
+      "key": "corolla",
+      "model": "Toyota Corolla",
+      "approved_archive_candidates": [
+        {
+          "title": "Toyota Corolla 2020",
+          "engine": "1.2T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120/013.jpg"
+        },
+        {
+          "title": "Toyota Corolla 2020",
+          "engine": "1.2T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120/014.jpg"
+        }
+      ]
+    },
+    {
+      "key": "q3",
+      "model": "Audi Q3",
+      "approved_archive_candidates": [
+        {
+          "title": "Audi Q3 2019",
+          "engine": "1.4T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120/068.jpg"
+        },
+        {
+          "title": "Audi Q3 2023 ed. · 2023",
+          "engine": "1.4T DCT",
+          "power": "150",
+          "photo": "/assets/china-order/owner-20261120-160hp30/059.jpg"
+        },
+        {
+          "title": "2020 Audi Q3 35 TFSI Fashion Zhiya Edition",
+          "engine": "1.4T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch13/017.jpg"
+        },
+        {
+          "title": "2017 Audi Q3 30 TFSI Fashion Edition",
+          "engine": "1.4T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch16/030.jpg"
+        },
+        {
+          "title": "2018 Audi Q3 30 Anniversary Model Year 30 TFSI Fashion Edition",
+          "engine": "1.4T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch18/014.jpg"
+        }
+      ]
+    },
+    {
+      "key": "a3",
+      "model": "Audi A3",
+      "approved_archive_candidates": [
+        {
+          "title": "Audi A3 2024",
+          "engine": "1.4T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120/064.jpg"
+        },
+        {
+          "title": "2017 Audi A3 Limousine 35 TFSI Sport Edition",
+          "engine": "1.4T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch11/016.jpg"
+        },
+        {
+          "title": "2020 Audi A3 Limousine 35 TFSI Progressive Edition China V",
+          "engine": "1.4T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch11/023.jpg"
+        },
+        {
+          "title": "2017 Audi A3 Sportback 35 TFSI Progressive Edition",
+          "engine": "1.4T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch18/007.jpg"
+        }
+      ]
+    },
+    {
+      "key": "cx5",
+      "model": "Mazda CX-5",
+      "approved_archive_candidates": [
+        {
+          "title": "Mazda CX-5 2020",
+          "engine": "2.0L",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120/030.jpg"
+        },
+        {
+          "title": "Mazda CX-5 2024 ed. · 2024",
+          "engine": "2.0L AT",
+          "power": "155",
+          "photo": "/assets/china-order/owner-20261120-160hp30/005.jpg"
+        },
+        {
+          "title": "Mazda CX-5 2024 ed. · 2024",
+          "engine": "2.0L AT",
+          "power": "150",
+          "photo": "/assets/china-order/owner-20261120-160hp30/072.jpg"
+        }
+      ]
+    },
+    {
+      "key": "golf",
+      "model": "Volkswagen Golf",
+      "approved_archive_candidates": [
+        {
+          "title": "Volkswagen Golf 2024",
+          "engine": "1.4T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120/049.jpg"
+        },
+        {
+          "title": "Volkswagen Golf 2024",
+          "engine": "1.4T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120/050.jpg"
+        },
+        {
+          "title": "Volkswagen · Golf 2024 280TSI DSG Pro 50 Years Legend Edition · 2024",
+          "engine": "1.4T 150HP L4",
+          "power": "150",
+          "photo": "/assets/china-order/owner-20261120-160hp10/001.jpg"
+        },
+        {
+          "title": "Volkswagen · Golf 2021 280TSI DSG Pro · 2022",
+          "engine": "1.4T 150HP L4",
+          "power": "150",
+          "photo": "/assets/china-order/owner-20261120-160hp10/002.jpg"
+        },
+        {
+          "title": "Volkswagen · Golf 2023 280TSI DSG R-Line Lite · 2022",
+          "engine": "1.4T 150HP L4",
+          "power": "150",
+          "photo": "/assets/china-order/owner-20261120-160hp10/003.jpg"
+        },
+        {
+          "title": "Volkswagen Golf 280TSI DSG R-Line Lite · 2023",
+          "engine": "1.4T",
+          "power": "150",
+          "photo": "/assets/china-order/owner-20261120-goldenlane9/003.jpg"
+        },
+        {
+          "title": "2020 Volkswagen Golf 280TSI DSG Luxury Edition",
+          "engine": "1.4T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch13/018.jpg"
+        },
+        {
+          "title": "2019 Volkswagen Golf 200TSI DSG Comfort Edition China VI",
+          "engine": "1.2T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch14/027.jpg"
+        },
+        {
+          "title": "2019 Volkswagen Golf 200TSI DSG Comfort Edition China VI",
+          "engine": "1.2T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch17/001.jpg"
+        },
+        {
+          "title": "2017 Volkswagen Golf 230TSI Automatic Luxury Million Units Anniversary Edition",
+          "engine": "1.4T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch17/016.jpg"
+        }
+      ]
+    },
+    {
+      "key": "qashqai",
+      "model": "Nissan Qashqai",
+      "approved_archive_candidates": [
+        {
+          "title": "Nissan Qashqai 2023",
+          "engine": "2.0L",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120/037.jpg"
+        },
+        {
+          "title": "Nissan Qashqai 2025",
+          "engine": "2.0L",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120/038.jpg"
+        },
+        {
+          "title": "Nissan Qashqai 2021",
+          "engine": "2.0L",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120/039.jpg"
+        },
+        {
+          "title": "2021 Nissan Qashqai 2.0L CVT Luxury Edition",
+          "engine": "2.0L",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch11/026.jpg"
+        }
+      ]
+    },
+    {
+      "key": "tharu",
+      "model": "Volkswagen Tharu",
+      "approved_archive_candidates": [
+        {
+          "title": "Volkswagen Tharu 2025 ed. · 2024",
+          "engine": "1.5L AT",
+          "power": "110",
+          "photo": "/assets/china-order/owner-20261120-160hp30/010.jpg"
+        },
+        {
+          "title": "Volkswagen Tharu 2022 ed. · 2022",
+          "engine": "1.4T DCT",
+          "power": "149",
+          "photo": "/assets/china-order/owner-20261120-next30/029.jpg"
+        }
+      ]
+    },
+    {
+      "key": "lavida",
+      "model": "Volkswagen Lavida",
+      "approved_archive_candidates": [
+        {
+          "title": "Volkswagen Lavida 2025",
+          "engine": "1.5L",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120/053.jpg"
+        },
+        {
+          "title": "Volkswagen Lavida 2025",
+          "engine": "1.5L",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120/054.jpg"
+        },
+        {
+          "title": "Volkswagen Lavida 2021",
+          "engine": "1.5L",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120/055.jpg"
+        },
+        {
+          "title": "Volkswagen Lavida 2023 ed. · 2022",
+          "engine": "1.4T DCT",
+          "power": "150",
+          "photo": "/assets/china-order/owner-20261120-160hp30/066.jpg"
+        },
+        {
+          "title": "Volkswagen Lavida 280TSI DSG Comfort · 2021",
+          "engine": "1.4T",
+          "power": "150",
+          "photo": "/assets/china-order/owner-20261120-goldenlane9/002.jpg"
+        },
+        {
+          "title": "2017 Volkswagen Lavida 1.6L Manual Fashion Edition",
+          "engine": "1.6L",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch18/028.jpg"
+        }
+      ]
+    },
+    {
+      "key": "cx30",
+      "model": "Mazda CX-30",
+      "approved_archive_candidates": [
+        {
+          "title": "Mazda CX-30 2022 ed. · 2022",
+          "engine": "2.0L AT",
+          "power": "158",
+          "photo": "/assets/china-order/owner-20261120-160hp30/001.jpg"
+        }
+      ]
+    },
+    {
+      "key": "karoq",
+      "model": "Skoda Karoq",
+      "approved_archive_candidates": []
+    },
+    {
+      "key": "vs5",
+      "model": "Jetta VS5",
+      "approved_archive_candidates": [
+        {
+          "title": "Jetta VS5 2022 ed. · 2022",
+          "engine": "1.4T DCT",
+          "power": "149",
+          "photo": "/assets/china-order/owner-20261120-160hp30/047.jpg"
+        }
+      ]
+    },
+    {
+      "key": "jolion",
+      "model": "Haval Jolion",
+      "approved_archive_candidates": []
+    },
+    {
+      "key": "coolray",
+      "model": "Geely Coolray / Binyue",
+      "approved_archive_candidates": []
+    },
+    {
+      "key": "tiggo7",
+      "model": "Chery Tiggo 7",
+      "approved_archive_candidates": [
+        {
+          "title": "Chery · Tiggo 7 2024 1.5T CVT Luxury Edition · 2024",
+          "engine": "1.5T 156HP L4",
+          "power": "156",
+          "photo": "/assets/china-order/owner-20261120-next30/002.jpg"
+        },
+        {
+          "title": "Chery · Tiggo 7 2024 Super Power Edition 1.5T CVT Super Power Luxury · 2024",
+          "engine": "1.5T 156HP L4",
+          "power": "156",
+          "photo": "/assets/china-order/owner-20261120-next30/003.jpg"
+        }
+      ]
+    },
+    {
+      "key": "tiggo4",
+      "model": "Chery Tiggo 4 / 5X",
+      "approved_archive_candidates": [
+        {
+          "title": "Chery · Tiggo 5x 2025 High Energy Edition 1.5T CVT Luxury Model · 2025",
+          "engine": "1.5T 156HP L4",
+          "power": "156",
+          "photo": "/assets/china-order/owner-20261120-next30/017.jpg"
+        },
+        {
+          "title": "Chery Tiggo 5x 2022 ed. · 2023",
+          "engine": "1.5T DCT",
+          "power": "158",
+          "photo": "/assets/china-order/owner-20261120-next30/024.jpg"
+        },
+        {
+          "title": "2026 Chery Tiggo 5x",
+          "engine": "1.5T",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch14/023.jpg"
+        }
+      ]
+    },
+    {
+      "key": "c5",
+      "model": "Omoda C5",
+      "approved_archive_candidates": [
+        {
+          "title": "Chery Omoda 5 2022 ed. · 2022",
+          "engine": "1.5T CVT",
+          "power": "150",
+          "photo": "/assets/china-order/owner-20261120-160hp30/041.jpg"
+        }
+      ]
+    },
+    {
+      "key": "cs35",
+      "model": "Changan CS35 Plus",
+      "approved_archive_candidates": []
+    },
+    {
+      "key": "emgrand",
+      "model": "Geely Emgrand",
+      "approved_archive_candidates": [
+        {
+          "title": "Geely Emgrand 2026",
+          "engine": "1.5L",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120/005.jpg"
+        },
+        {
+          "title": "2017 Geely Emgrand Sedan Million Edition 1.5L CVT Luxury Edition",
+          "engine": "1.5L",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch11/007.jpg"
+        },
+        {
+          "title": "2019 Geely Emgrand Lingjun Edition 1.5L CVT Luxury Edition China VI",
+          "engine": "1.5L",
+          "power": null,
+          "photo": "/assets/china-order/owner-20261120-batch18/008.jpg"
+        }
+      ]
+    },
+    {
+      "key": "arrizo5",
+      "model": "Chery Arrizo 5",
+      "approved_archive_candidates": [
+        {
+          "title": "Chery · Arrizo 5 2021 PRO 1.5L CVT Youth Edition · 2022",
+          "engine": "1.5L 116HP L4",
+          "power": "116",
+          "photo": "/assets/china-order/owner-20261120-next30/005.jpg"
+        }
+      ]
+    }
+  ],
+  "excluded_from_focus": [
+    {
+      "title": "Geely Binyue 2023",
+      "photo": "/assets/china-order/owner-20261120-batch30/081.jpg",
+      "reason": "not target 1.4T"
+    },
+    {
+      "title": "Haval Jolion Pro 2022 ed. · 2022",
+      "photo": "/assets/china-order/owner-20261120-160hp30/076.jpg",
+      "reason": "transmission requires verification"
+    },
+    {
+      "title": "Toyota Corolla 2021 ed. · 2022",
+      "photo": "/assets/china-order/owner-20261120-160hp30/046.jpg",
+      "reason": "1.2T listed power inconsistent, verify"
+    },
+    {
+      "title": "Mazda CX-5 2024 ed. · 2023",
+      "photo": "/assets/china-order/owner-20261120-160hp11/006.jpg",
+      "reason": "CX-5 CVT source conflict"
+    },
+    {
+      "title": "Jetta VS5 2023 ed. · 2023",
+      "photo": "/assets/china-order/owner-20261120-160hp11/039.jpg",
+      "reason": "listed power inconsistent"
+    },
+    {
+      "title": "Mazda CX-5 2022 ed. · 2023",
+      "photo": "/assets/china-order/owner-20261120-160hp11/063.jpg",
+      "reason": "CX-5 CVT source conflict"
+    },
+    {
+      "title": "Mazda CX-5 2024 ed. · 2023",
+      "photo": "/assets/china-order/owner-20261120-next30/023.jpg",
+      "reason": "CX-5 CVT source conflict"
+    },
+    {
+      "title": "Toyota Corolla 2021 ed. · 2023",
+      "photo": "/assets/china-order/owner-20261120-next30/026.jpg",
+      "reason": "1.2T listed power inconsistent, verify"
+    },
+    {
+      "title": "Volkswagen T-Roc 2019 Tharu 1.4 TSI 280 TSI 2WD Ambition",
+      "photo": "/assets/china-order/owner-20261120-batch11/029.jpg",
+      "reason": "mixed model title or 118kW version risk"
+    },
+    {
+      "title": "2023 Volkswagen Tharu",
+      "photo": "/assets/china-order/owner-20261121-batch19/004.jpg",
+      "reason": "mixed model title or 118kW version risk"
+    },
+    {
+      "title": "2022 Geely Binyue PHEV",
+      "photo": "/assets/china-order/owner-20261121-batch19/022.jpg",
+      "reason": "powertrain outside target"
+    }
+  ],
+  "focus_candidate_count": 49,
+  "focus_covered_models": 16,
+  "focus_rule": "Explicit original approved photo path; no extra public media. No guarantee of power/age/eligibility. Keep all existing archive accessible."
 }
