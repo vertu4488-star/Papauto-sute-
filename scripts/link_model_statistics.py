@@ -79,6 +79,33 @@ ALIASES = {
         "KGM Tivoli": "korea-ssangyong-tivoli",
     },
 }
+# Reviewed full titles from the existing owner-approved China catalogue.
+SUPPLIER_TITLE_ALIASES = {
+    "Mazda CX-30 2022 ed. · 2022": "china-mazda-cx-30",
+    "Chery Omoda 5 2022 ed. · 2022": "china-chery-omoda-5",
+    "Haval Jolion Pro 2022 ed. · 2022": "china-haval-jolion",
+    "Toyota Corolla 2021 ed. · 2022": "china-toyota-corolla",
+    "Jetour X70 PLUS 2021 ed. · 2022": "china-chery-jetour-x70",
+    "Volkswagen Lavida 2023 ed. · 2022": "china-volkswagen-lavida",
+    "Haval H6 Series 2023 ed. · 2023": "china-haval-h6",
+    "Haval Dargo 2022 ed. · 2022": "china-haval-big-dog-dargo",
+    "Volkswagen Lavida 280TSI DSG Comfort · 2021": "china-volkswagen-lavida",
+    "Chery Tiggo 5x 2022 ed. · 2023": "china-chery-tiggo-5x",
+    "Toyota Corolla 2021 ed. · 2023": "china-toyota-corolla",
+    "Haval H6 Series 2023 ed. · 2022": "china-haval-h6",
+    "2017 Geely Emgrand Sedan Million Edition 1.5L CVT Luxury Edition": "china-geely-emgrand",
+    "2023 Jetour X70 1.5T DCT Beyond PRO Edition 7-Seater": "china-chery-jetour-x70",
+    "2021 Changan Eado PLUS 1.6L GDI CVT Elite Edition": "china-changan-eado",
+    "2022 Changan UNI-T 1.5T Intelligent Navigator Edition": "china-changan-uni-t",
+    "2021 Haval H6 1.5GDIT Automatic Luxury Edition": "china-haval-h6",
+    "2024 Geely Binrui COOL 1.5T DCT Champion Edition": "china-geely-binrui",
+    "2019 Haval H6 Sport Edition 1.5T Automatic 2WD Elite Edition China VI": "china-haval-h6",
+    "2017 Haval H6 Blue Label Sport Edition 1.5T Automatic 2WD Exclusive Edition": "china-haval-h6",
+    "2019 Geely Emgrand Lingjun Edition 1.5L CVT Luxury Edition China VI": "china-geely-emgrand",
+    "2017 Volkswagen Lavida 1.6L Manual Fashion Edition": "china-volkswagen-lavida",
+    "2022 Geely Binyue PHEV": "china-geely-coolray-binyue"
+}
+
 RELATED_ONLY = {
     "japan-honda-jazz": "japan-honda-fit",
     "japan-nissan-micra": "japan-nissan-march",
@@ -224,7 +251,7 @@ def supplier_links(target, approved_paths, index):
         title = unescape(title.group(1)).strip()
         # Strip a year at either edge, never strip arbitrary model suffixes.
         name = re.sub(r"^\s*(?:19|20)\d{2}\s+|\s+(?:19|20)\d{2}\s*$", "", title).strip()
-        ident = match(index, "china", name)
+        ident = match(index, "china", name) or SUPPLIER_TITLE_ALIASES.get(title)
         if ident:
             if not re.search(r"\b(?:19|20)\d{2}\b", title):
                 raise RuntimeError("MODEL_STATS missing supplier year "+anchor)
@@ -234,7 +261,7 @@ def supplier_links(target, approved_paths, index):
             if (not fields or any(not k or not v for k,v in fields)
                     or not any(k == "Двигатель" for k,v in fields)
                     or not any("Пробег" in k and re.search(r"\d",v) for k,v in fields)
-                    or not any("FOB" in k and re.search(r"\d",v) for k,v in fields)
+                    or not any(("FOB" in k or "цена" in k.casefold()) and re.search(r"\d",v) for k,v in fields)
                     or not descriptions):
                 raise RuntimeError("MODEL_STATS incomplete supplier data "+anchor)
             linked[ident].append({"title":title,"anchor":anchor,"photo":path,
@@ -255,7 +282,12 @@ def supplier_card(row, target, approved_paths):
         raise RuntimeError("MODEL_STATS unapproved supplier card")
     assert_media(target, photo, SUPPLIER)
     facts = "".join("<div><dt>"+esc(k)+"</dt><dd>"+esc(v)+"</dd></div>" for k,v in row["fields"])
-    estimate = "/?view=calculator&market=china&vehicle="+quote("cn:"+photo,safe="")
+    is_fob = any("FOB" in k for k,v in row["fields"])
+    estimate = "/?view=calculator&market=china"
+    if is_fob:
+        estimate += "&vehicle="+quote("cn:"+photo,safe="")
+    price_note = ("FOB — цена по данным источника, не итоговая стоимость в России." if is_fob else
+                  "Цена по данным поставщика; состав и условия цены не подтверждены как FOB. Для расчёта уточните исходную цену.")
     apply = "/podbor.html?similar="+quote(title+" · КИТАЙ",safe="")
     return (
         '<article class="pa-model-lot pa-model-supplier" data-model-supplier-id="'+esc(anchor)+'">'
@@ -263,7 +295,7 @@ def supplier_card(row, target, approved_paths):
         '<div class="pa-model-lot-body"><h3>'+esc(title)+'</h3>'
         '<p class="pa-model-lot-note">Пример подбора из Китая · данные поставщика</p>'
         '<dl>'+facts+'</dl><p>'+esc(row["description"])+'</p>'
-        '<p class="pa-model-lot-note">FOB — цена по данным источника, не итоговая стоимость в России. '
+        '<p class="pa-model-lot-note">'+esc(price_note)+' '
         'Аукционный лист не подтверждён; наличие и документы уточняются до покупки.</p>'
         '<div class="pa-model-lot-actions"><a href="'+esc(estimate)+'">Рассчитать стоимость</a>'
         '<a href="'+esc(apply)+'">Подобрать аналог</a></div></div></article>'
@@ -384,4 +416,5 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
              "models":report}
     (target/"data/model-statistics-coverage.json").write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print("PAPAUTO_MODEL_STATS_OK "+json.dumps({k:v for k,v in summary.items() if k!="models"},ensure_ascii=False))
+    print("PAPAUTO_MODEL_STATS_MISSING "+json.dumps([x["model_id"] for x in report if not x["auction_matches"] and not x["supplier_matches"]],ensure_ascii=False))
     return summary

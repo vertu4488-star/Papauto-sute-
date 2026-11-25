@@ -637,7 +637,7 @@ def copy_public_files() -> list[str]:
             photos = re.findall(r'<img\b[^>]*\bsrc="(/assets/china-order/[^"]+)"', card)
             if (not model_page.stem.startswith("china-") or len(photos) != 1
                     or photos[0].lstrip("/") not in china_order_photos
-                    or not all(x in card for x in ("Двигатель", "Пробег", "FOB", "Рассчитать стоимость", "Подобрать аналог"))
+                    or not all(x in card for x in ("Двигатель", "Пробег", "Рассчитать стоимость", "Подобрать аналог"))
                     or re.search(r'href="https?://', card)):
                 raise RuntimeError("PAPAUTO_MODEL_STATS: invalid supplier card " + model_page.stem)
         supplier_card_count += len(cards)
