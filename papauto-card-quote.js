@@ -15,10 +15,13 @@ function render(block,id){
  const lot=ready?.lots.get(id);
  const snap=ready?.snapshot?.quotes?.[id];
  const verified=ready?.snapshot?.enriched?.[id];
- const q=lot?root.quote(root.fromLot(verified?{...lot,...verified}:lot),ready.fx,ready.tariffs,{clearDate,eligibility:"yes"}):{total:null,reason:"Данные для расчёта недоступны."};
+ const merged=lot?{...lot,...verified}:verified;
+ const input=merged?root.fromLot(merged):null;
  block.replaceChildren(el("span","Под ключ до Новосибирска"));
+ if(!input||input.type!=="ice"||input.fuel!=="gasoline"||input.restricted===true||Number(input.engine)>1900||verified?.price_excluded){block.append(el("strong","Расчёт не предусмотрен"),el("small","Только подтверждённые бензиновые автомобили без гибридной установки, при допустимом экспорте."));return;}
+ const q=lot?root.quote(input,ready.fx,ready.tariffs,{clearDate,eligibility:"yes"}):{total:null,reason:"Данные для расчёта недоступны."};
  if(q.total===null){
-  if(snap){const value=snap.total!=null?"≈ "+fmt(Math.round(snap.total/10000)*10000)+" ₽":"≈ "+fmt(Math.floor(snap.low/10000)*10000)+"–"+fmt(Math.ceil(snap.high/10000)*10000)+" ₽";block.append(el("strong",value),el("small","Архивный ориентир · курс ЦБ на "+ready.snapshot.fx.date+" · личный ввоз при соблюдении условий льготы. Не оферта."));return;}
+  if(snap&&verified?.fuel_type==="gasoline"){const value=snap.total!=null?"≈ "+fmt(Math.round(snap.total/10000)*10000)+" ₽":"≈ "+fmt(Math.floor(snap.low/10000)*10000)+"–"+fmt(Math.ceil(snap.high/10000)*10000)+" ₽";block.append(el("strong",value),el("small","Архивный ориентир · курс ЦБ на "+ready.snapshot.fx.date+" · личный ввоз при соблюдении условий льготы. Не оферта."));return;}
   block.append(el("strong","Стоимость по запросу"),el("small",q.reason));return;}
  const rounded=Math.round(q.total/10000)*10000;
  block.append(el("strong","≈ "+fmt(rounded)+" ₽"),el("small","Ориентир по архивному лоту · личный ввоз при соблюдении условий льготы · курс ЦБ на "+ready.fx.date+". Не оферта."));
