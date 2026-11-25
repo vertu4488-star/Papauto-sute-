@@ -564,6 +564,7 @@ def copy_public_files() -> list[str]:
     if re.search(r'href="[^"]*(?:#calculator|view=calculator|/podbor\\.html)', dualis_archive):
         raise RuntimeError("DUALIS_ARCHIVE: order or calculator CTA is not allowed")
     # Rebuild clearly labelled nameplate examples; they never count as new lots.
+    # China exact-title recovery reuses the three previously approved supplier cards.
     if model_coverage['supplier_cards'] != model_coverage['supplier_matches']:
         raise RuntimeError('PAPAUTO_MODEL_STATS: missing inline supplier cards')
 

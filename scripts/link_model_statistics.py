@@ -81,6 +81,9 @@ ALIASES = {
 }
 # Reviewed full titles from the existing owner-approved China catalogue.
 SUPPLIER_TITLE_ALIASES = {
+    "Chery · Tiggo 7 2024 1.5T CVT Luxury Edition · 2024": "china-chery-tiggo-7",
+    "Chery · Tiggo 7 2024 Super Power Edition 1.5T CVT Super Power Luxury · 2024": "china-chery-tiggo-7",
+    "Chery · Arrizo 5 2021 PRO 1.5L CVT Youth Edition · 2022": "china-chery-arrizo-5",
     "Mazda CX-30 2022 ed. · 2022": "china-mazda-cx-30",
     "Chery Omoda 5 2022 ed. · 2022": "china-chery-omoda-5",
     "Haval Jolion Pro 2022 ed. · 2022": "china-haval-jolion",
