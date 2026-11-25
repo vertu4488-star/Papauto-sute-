@@ -2297,6 +2297,246 @@
       "body_type": "кроссовер",
       "reference_url": "https://cars-japan.net/engine/mdl0080004.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-followup30-20261121-18": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0060052.html",
+      "basis": "Existing archive record; chassis LA900S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-followup30-20261121-19": {
+      "engine_cc": 1496,
+      "power_hp": 118,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://toyota.jp/ucar/catalog/brand-HONDA/car-FREED/",
+      "basis": "Existing archive record; chassis GB3 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-followup30-20261121-20": {
+      "engine_cc": 1317,
+      "power_hp": 100,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0030010.html",
+      "basis": "Existing archive record; chassis GK3 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-followup30-20261121-21": {
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
+      "basis": "Existing archive record; chassis NSP170G with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-followup30-20261121-23": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0060052.html",
+      "basis": "Existing archive record; chassis LA900S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-followup30-20261121-26": {
+      "engine_cc": 1496,
+      "power_hp": 110,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
+      "basis": "Existing archive record; chassis DJLFS with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-followup30-20261121-27": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
+      "basis": "Existing archive record; chassis LA600S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-drom991-14-20261121-03": {
+      "engine_cc": 1496,
+      "power_hp": 118,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://toyota.jp/ucar/catalog/brand-HONDA/car-FREED/",
+      "basis": "Existing archive record; chassis GB4 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-drom991-14-20261121-14": {
+      "engine_cc": 1496,
+      "power_hp": 103,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.goo-net.com/catalog/TOYOTA/RACTIS/",
+      "basis": "Existing archive record; chassis NCP125 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "honda-stepwgn-275": {
+      "engine_cc": 1496,
+      "power_hp": 150,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://www.drom.ru/catalog/honda/stepwgn/529141/",
+      "basis": "Existing archive record; chassis RP7 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "toyota-sienta-321": {
+      "engine_cc": 1490,
+      "power_hp": 120,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
+      "basis": "Existing archive record; chassis MXPC10G with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "toyota-yaris-95": {
+      "engine_cc": 1490,
+      "power_hp": 120,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
+      "basis": "Existing archive record; chassis MXPA10 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "toyota-corolla-axio-120": {
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "engine_type": "ice",
+      "body_type": "седан / универсал",
+      "reference_url": "https://cars-japan.net/engine/mdl0010015.html",
+      "basis": "Existing archive record; chassis NRE161 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "suzuki-wagon-r-175": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.drom.ru/catalog/suzuki/wagon_r/178214/",
+      "basis": "Existing archive record; chassis MH35S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-155": {
+      "engine_cc": 1371,
+      "power_hp": 140,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0080018.html",
+      "basis": "Existing archive record; chassis ZC33S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-420": {
+      "engine_cc": 1371,
+      "power_hp": 140,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0080018.html",
+      "basis": "Existing archive record; chassis ZC33S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-249": {
+      "engine_cc": 1498,
+      "power_hp": 105,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://yude-car.com/rekidai/",
+      "basis": "Existing archive record; chassis DK5FW with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-251": {
+      "engine_cc": 1498,
+      "power_hp": 105,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://yude-car.com/rekidai/",
+      "basis": "Existing archive record; chassis DK5FW with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-250": {
+      "engine_cc": 1756,
+      "power_hp": 116,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://toyota.jp/ucar/catalog/brand-MAZDA/car-CX3/",
+      "basis": "Existing archive record; chassis DK8FW with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-57": {
+      "engine_cc": 1496,
+      "power_hp": 110,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60006788/",
+      "basis": "Existing archive record; chassis NCP81G with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-63": {
+      "engine_cc": 1496,
+      "power_hp": 110,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60006788/",
+      "basis": "Existing archive record; chassis NCP81G with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-24": {
+      "engine_cc": 1496,
+      "power_hp": 150,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://gtyres.ru/en/catalog/honda/stepwgn/specs/",
+      "basis": "Existing archive record; chassis RP1 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-273": {
+      "engine_cc": 1496,
+      "power_hp": 150,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://gtyres.ru/en/catalog/honda/stepwgn/specs/",
+      "basis": "Existing archive record; chassis RP3 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-9": {
+      "engine_cc": 1496,
+      "power_hp": 118,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://toyota.jp/ucar/catalog/brand-HONDA/car-FREED/",
+      "basis": "Existing archive record; chassis GB3 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-157": {
+      "engine_cc": 1242,
+      "power_hp": 90,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/yea00800172007.html",
+      "basis": "Existing archive record; chassis ZC71S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-136": {
+      "engine_cc": 1329,
+      "power_hp": 95,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60017358/",
+      "basis": "Existing archive record; chassis NSP135 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-363": {
+      "engine_cc": 1496,
+      "power_hp": 110,
+      "engine_type": "ice",
+      "body_type": "седан / универсал",
+      "reference_url": "https://acj-car.ru/auction/toyota/corolla%20fielder/jD0rXakYJ4G7KS2/",
+      "basis": "Existing archive record; chassis NZE141G with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-496": {
+      "engine_cc": 1348,
+      "power_hp": 91,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
+      "basis": "Existing archive record; chassis DE3FS with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-209": {
+      "engine_cc": 1198,
+      "power_hp": 79,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.goo-net.com/catalog/NISSAN/MARCH/",
+      "basis": "Existing archive record; chassis K13 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+    },
+    "japan-selection-138": {
+      "engine_cc": 1797,
+      "power_hp": 144,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/yea00100072010.html",
+      "basis": "Existing archive record; chassis ZGE20G with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
     }
   },
   "quotes": {
@@ -5876,6 +6116,412 @@
         "util": 5200,
         "commission": 50000,
         "delivery": 135000
+      }
+    },
+    "japan-followup30-20261121-18": {
+      "total": 1146903,
+      "costs": {
+        "car": 518653,
+        "japan": 56928,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 280073,
+        "customsFee": 4924,
+        "util": 3400,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-followup30-20261121-19": {
+      "total": 1090430,
+      "costs": {
+        "car": 281023,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-followup30-20261121-20": {
+      "total": 1049035,
+      "costs": {
+        "car": 321317,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 380306,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-followup30-20261121-21": {
+      "total": 1279897,
+      "costs": {
+        "car": 468028,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-followup30-20261121-23": {
+      "low": 947263,
+      "high": 1036329
+    },
+    "japan-followup30-20261121-26": {
+      "total": 1195776,
+      "costs": {
+        "car": 416369,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-followup30-20261121-27": {
+      "total": 586304,
+      "costs": {
+        "car": 61990,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-drom991-14-20261121-03": {
+      "total": 872749,
+      "costs": {
+        "car": 64573,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-drom991-14-20261121-14": {
+      "total": 858247,
+      "costs": {
+        "car": 80071,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "honda-stepwgn-275": {
+      "total": 2759659,
+      "costs": {
+        "car": 1567842,
+        "japan": 109387,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 752564,
+        "customsFee": 13541,
+        "util": 3400,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "toyota-sienta-321": {
+      "total": 1728679,
+      "costs": {
+        "car": 862700,
+        "japan": 74130,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 470600,
+        "customsFee": 4924,
+        "util": 3400,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "toyota-yaris-95": {
+      "low": 1087289,
+      "high": 1288975
+    },
+    "toyota-corolla-axio-120": {
+      "low": 1250241,
+      "high": 1452738
+    },
+    "suzuki-wagon-r-175": {
+      "total": 695304,
+      "costs": {
+        "car": 170990,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-selection-155": {
+      "total": 1567669,
+      "costs": {
+        "car": 984098,
+        "japan": 80200,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 210322,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-selection-420": {
+      "low": 1076783,
+      "high": 1173958
+    },
+    "japan-selection-249": {
+      "total": 1115786,
+      "costs": {
+        "car": 320801,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 432573,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-selection-251": {
+      "total": 1257209,
+      "costs": {
+        "car": 459762,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 432573,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-selection-250": {
+      "total": 1178549,
+      "costs": {
+        "car": 419985,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 396152,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-selection-57": {
+      "total": 901162,
+      "costs": {
+        "car": 92986,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-selection-63": {
+      "total": 902711,
+      "costs": {
+        "car": 94535,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-selection-24": {
+      "total": 1183933,
+      "costs": {
+        "car": 374526,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-selection-273": {
+      "total": 1786797,
+      "costs": {
+        "car": 953103,
+        "japan": 78650,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-selection-9": {
+      "total": 870683,
+      "costs": {
+        "car": 62507,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-selection-157": {
+      "total": 745640,
+      "costs": {
+        "car": 40810,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 358649,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-selection-136": {
+      "total": 834819,
+      "costs": {
+        "car": 104867,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 383771,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-selection-363": {
+      "total": 1006890,
+      "costs": {
+        "car": 217483,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-selection-496": {
+      "total": 820159,
+      "costs": {
+        "car": 84720,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 389258,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-selection-209": {
+      "total": 724669,
+      "costs": {
+        "car": 32545,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 345943,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-selection-138": {
+      "total": 1050678,
+      "costs": {
+        "car": 106934,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 567563,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
       }
     }
   }
