@@ -8,7 +8,21 @@ from pathlib import Path
 def publish(target: Path):
     lots = json.loads((target / 'data/gallery-lots.json').read_text())['lots']
     esc = lambda v: html.escape(str(v), quote=True)
-    quote_assets = '<link rel="stylesheet" href="/papauto-card-quote.css?v=20261125"><script defer src="/site-config.js"></script><script defer src="/papauto-customs.js?v=20261125-quickquote"></script><script defer src="/papauto-japan-tariffs.js?v=20261125-quickquote"></script><script defer src="/papauto-delivery-tariffs.js?v=20261125-quickquote"></script><script defer src="/papauto-quick-quote.js?v=20261125-cards"></script><script defer src="/papauto-card-quote.js?v=20261125"></script>'
+    quote_assets = '<link rel="stylesheet" href="/papauto-card-quote.css?v=20261125"><script defer src="/site-config.js"></script><script defer src="/papauto-customs.js?v=20261125-quickquote"></script><script defer src="/papauto-japan-tariffs.js?v=20261125-quickquote"></script><script defer src="/papauto-delivery-tariffs.js?v=20261125-quickquote"></script><script defer src="/papauto-quick-quote.js?v=20261125-cards"></script><script defer src="/papauto-card-quote.js?v=20261125-seo"></script>'
+    snapshot = json.loads((target / 'data/papauto-japan-quote-snapshot-20261125.json').read_text())
+    quote_rows = snapshot['quotes']
+    def indicative_price(lot_id):
+        q = quote_rows.get(lot_id)
+        if not q:
+            return ''
+        def rub(v):
+            return f'{v:,}'.replace(',', ' ')
+        if 'total' in q:
+            amount = '≈ ' + rub(((q['total'] + 5000) // 10000) * 10000) + ' ₽'
+        else:
+            amount = '≈ ' + rub((q['low'] // 10000) * 10000) + '–' + rub(((q['high'] + 9999) // 10000) * 10000) + ' ₽'
+        return ('<strong>' + amount + '</strong><small>Архивный ориентир, курс ЦБ на ' + esc(snapshot['fx']['date']) +
+                ', личный ввоз при соблюдении условий льготы, до Новосибирска. Не оферта.</small>')
     rows = []
     urls = []
     images = []
@@ -50,7 +64,8 @@ def publish(target: Path):
         page = page.replace('<nav>', '<nav><a href="/auction-lot-index.html">Все лоты по моделям</a>', 1)
         page = page.replace('</aside>', '<h2>Стоимость доставки и оформления</h2><p>Для расчёта аналога отдельно учитываем покупку, доставку до Владивостока, таможенные платежи, утильсбор и перевозку до Новосибирска. Архивная цена не является ценой под ключ.</p><p><a href="/#calculator">Калькулятор стоимости</a> · <a href="/avto-iz-yaponii-novosibirsk.html">Авто из Японии в Новосибирск</a></p></aside>', 1)
         quote_block = (f'<section class="pa-card-quote" data-pa-quote-id="{esc(lot["id"])}" aria-label="Предварительная стоимость под ключ">'
-                       '<strong>Стоимость под ключ до Новосибирска</strong><p>Требуется уточнение стоимости.</p></section>')
+                       '<span>Под ключ до Новосибирска</span>' + (indicative_price(lot['id']) or
+                       '<strong>Стоимость по запросу</strong><p>Требуется уточнение стоимости.</p>') + '</section>')
         page = page.replace('</head>', quote_assets + '</head>', 1)
         page = page.replace('</aside>', quote_block + '</aside>', 1) if '</aside>' in page else page.replace('</main>', quote_block + '</main>', 1)
         file.write_text(page)
@@ -89,7 +104,7 @@ def publish(target: Path):
     lot_map_root = ET.Element('{'+ns+'}urlset')
     # All current approved lot pages received substantive SEO metadata updates
     # on this date. Keep this value stable until those pages change again.
-    lot_metadata_lastmod = "2026-11-22"
+    lot_metadata_lastmod = "2026-11-25"
     for url, photo in zip(urls, images):
         item = ET.SubElement(lot_map_root, '{'+ns+'}url')
         ET.SubElement(item, '{'+ns+'}loc').text = url

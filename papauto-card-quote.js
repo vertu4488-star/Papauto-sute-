@@ -13,9 +13,13 @@ function render(block,id){
  if(block.dataset.paRendered==="1")return;
  block.dataset.paRendered="1";
  const lot=ready?.lots.get(id);
- const q=lot?root.quote(root.fromLot(lot),ready.fx,ready.tariffs,{clearDate,eligibility:"yes"}):{total:null,reason:"Данные для расчёта недоступны."};
+ const snap=ready?.snapshot?.quotes?.[id];
+ const verified=ready?.snapshot?.enriched?.[id];
+ const q=lot?root.quote(root.fromLot(verified?{...lot,...verified}:lot),ready.fx,ready.tariffs,{clearDate,eligibility:"yes"}):{total:null,reason:"Данные для расчёта недоступны."};
  block.replaceChildren(el("span","Под ключ до Новосибирска"));
- if(q.total===null){block.append(el("strong","Стоимость по запросу"),el("small",q.reason));return;}
+ if(q.total===null){
+  if(snap){const value=snap.total!=null?"≈ "+fmt(Math.round(snap.total/10000)*10000)+" ₽":"≈ "+fmt(Math.floor(snap.low/10000)*10000)+"–"+fmt(Math.ceil(snap.high/10000)*10000)+" ₽";block.append(el("strong",value),el("small","Архивный ориентир · курс ЦБ на "+ready.snapshot.fx.date+" · личный ввоз при соблюдении условий льготы. Не оферта."));return;}
+  block.append(el("strong","Стоимость по запросу"),el("small",q.reason));return;}
  const rounded=Math.round(q.total/10000)*10000;
  block.append(el("strong","≈ "+fmt(rounded)+" ₽"),el("small","Ориентир по архивному лоту · личный ввоз при соблюдении условий льготы · курс ЦБ на "+ready.fx.date+". Не оферта."));
  const details=el("details",""),summary=el("summary","Состав сметы");details.append(summary);
@@ -31,8 +35,8 @@ function scan(){
  for(const block of document.querySelectorAll("[data-pa-quote-id]"))render(block,block.dataset.paQuoteId);
 }
 const api=String(window.PAPAUTO_CONFIG?.apiBaseUrl||"").replace(/\/$/,"");
-Promise.allSettled([fetchJson("/data/gallery-lots.json"),fetchJson("/data/papauto-delivery-tariffs-20261125.json"),api?fetchJson(api+"/api/exchange-rates"):Promise.reject(Error("FX"))]).then(([lots,tariffs,fx])=>{
- ready={lots:new Map((lots.value?.lots||[]).map(l=>[l.id,l])),tariffs:tariffs.value,fx:fx.value};scan();
+Promise.allSettled([fetchJson("/data/gallery-lots.json"),fetchJson("/data/papauto-delivery-tariffs-20261125.json"),api?fetchJson(api+"/api/exchange-rates"):Promise.reject(Error("FX")),fetchJson("/data/papauto-japan-quote-snapshot-20261125.json")]).then(([lots,tariffs,fx,snapshot])=>{
+ ready={lots:new Map((lots.value?.lots||[]).map(l=>[l.id,l])),tariffs:tariffs.value,fx:fx.value,snapshot:snapshot.value};scan();
  const grid=document.querySelector("#gallery-grid");if(grid)new MutationObserver(scan).observe(grid,{childList:true,subtree:true});
 });
 })();
