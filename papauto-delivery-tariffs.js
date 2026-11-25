@@ -12,6 +12,7 @@ function classify(name,bodyType=""){
 }
 function quote(data,city,kind,origin){if(origin!=="vlad")return null;if(city==="Владивосток")return {estimate:0,count:0,min:0,max:0};if(!Object.hasOwn(labels,kind))return null;const r=data?.table?.[city]?.[kind];return r&&Number.isFinite(r.estimate)&&r.estimate>=0?r:null;}
 if(typeof module!=="undefined"&&module.exports)module.exports={classify,quote,labels};
+if(typeof window!=="undefined")window.PapAutoDeliveryTariffs={classify,quote,labels};
 if(typeof document==="undefined")return;
 const $=id=>document.getElementById(id),form=$("calcForm"),panel=$("paDeliveryPanel");if(!form||!panel)return;
 const city=$("calcCity"),country=$("calcCountry"),origin=$("paDeliveryOrigin"),kind=$("paDeliveryClass"),mode=$("paDeliveryMode"),field=$("localDelivery"),status=$("paDeliveryStatus"),search=$("paModelSearch");

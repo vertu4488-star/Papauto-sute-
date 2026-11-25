@@ -8,6 +8,7 @@ function calculate(p){
  return {yen,origin:yen!==null&&positive(p.jpyRate)?Math.round(yen*p.jpyRate):null,shipping:valid(p.usd)&&positive(p.usdRate)?Math.round(p.usd*p.usdRate):null,bank:valid(p.bank)?Math.round(p.bank):null,docs:valid(p.docs)?Math.round(p.docs):null};
 }
 if(typeof module!=="undefined"&&module.exports)module.exports={calculate,defaults};
+if(typeof window!=="undefined")window.PapAutoJapanTariffs={calculate,defaults};
 if(typeof document==="undefined")return;
 const $=id=>document.getElementById(id),form=$("calcForm"),panel=$("paJapanTariffs");
 if(!form||!panel)return;

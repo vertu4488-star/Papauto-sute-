@@ -1,0 +1,16 @@
+const assert=require("node:assert/strict");
+const {quote}=require("../papauto-quick-quote.js");
+const x={market:"japan",currency:"JPY",restricted:false,type:"ice",engine:1300,power:95,year:2022,name:"Honda Fit",amount:800000};
+const fx={date:"2026-11-25",rub_per_jpy:.5,rub_per_usd:80,rub_per_eur:90};
+const tariffs={table:{"Новосибирск":{compact:{estimate:120000}}}};
+const opts={clearDate:"2026-11-25",eligibility:"yes"};
+const q=quote(x,fx,tariffs,opts);
+assert.equal(q.costs.duty,198900);
+assert.equal(q.costs.util,5200);
+assert.equal(q.costs.delivery,120000);
+assert.equal(q.total,Object.values(q.costs).reduce((a,b)=>a+b,0));
+for(const change of [{type:"hybrid"},{type:"ev"},{type:""},{power:null},{year:2023},{restricted:true},{market:"china"}])assert.equal(quote({...x,...change},fx,tariffs,opts).total,null);
+assert.equal(quote(x,{...fx,fallback:true},tariffs,opts).total,null);
+assert.equal(quote(x,fx,tariffs,{...opts,eligibility:""}).total,null);
+assert.equal(quote(x,fx,null,opts).total,null);
+console.log("Quick quote tests passed");

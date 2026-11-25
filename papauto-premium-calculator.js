@@ -45,7 +45,7 @@ function select(x,{restore=false}={}){
 }
 const fetchJson=async path=>{const r=await fetch(path,{credentials:"same-origin"});if(!r.ok)throw Error(path);return r.json();};
 async function readChina(){const r=await fetch("/china-order.html",{credentials:"same-origin"});if(!r.ok)throw Error("china");const html=await r.text();const doc=new DOMParser().parseFromString(html.replace(/\bsrc\s*=/gi,"data-pa-src="),"text/html");return [...doc.querySelectorAll("article.cn-example")].flatMap(el=>{const img=el.querySelector("img[data-pa-src]"),path=img?.getAttribute("data-pa-src"),title=el.querySelector("h2")?.textContent.trim();if(!title||!validAsset(path)||!path.startsWith("/assets/china-order/"))return [];const get=label=>[...el.querySelectorAll("dl>div")].find(d=>d.querySelector("dt")?.textContent.includes(label))?.querySelector("dd")?.textContent.trim()||"";const y=title.match(/\b(19\d{2}|20\d{2})$/),name=y?title.slice(0,y.index).trim():title;const raw=get("Цена FOB"),amount=/USD/i.test(raw)?Number(raw.replace(/[^\d]/g,"")):0;const source=[...el.querySelectorAll("dt")].find(n=>n.textContent.includes("Цена FOB"))?.textContent||"Цена FOB";const engineText=get("Двигатель");return [{key:"cn:"+path,market:"china",name,year:y?Number(y[1]):null,photo:path,mileage:get("Пробег"),engineText,amount,currency:"USD",source:source+"; расходы до FOB могут быть включены в цену",detail:"/china-order.html"}];});}
-function auctionRows(d){return (d.lots||[]).flatMap(l=>{const p=l.photos?.[0];if(!l.id||!l.model||!countryByMarket[l.market]||!validAsset(p)||!validAsset(l.inspection_image)||l.inspection_kind!=="Аукционный лист")return [];const raw=l.price_amount??l.price_jpy;const amount=typeof raw==="number"?raw:Number(String(raw||"").replace(/[^\d]/g,""));return [{key:"lot:"+l.id,market:l.market,name:l.model,year:l.year,photo:p,mileage:l.mileage_km?money(l.mileage_km)+" км":l.mileage,engine:l.engine_cc,power:l.power_hp,engineType:l.engine_type||l.fuel_type||l.fuel||"",bodyType:l.body_type||l.body_style||"",trim:l.trim,grade:l.grade,amount:Number.isFinite(amount)&&amount>0?amount:0,currency:l.currency||currencies[l.market],source:(l.sale_label||"Аукционный пример")+(l.auction_date?" · "+l.auction_date:""),restricted:l.export_restricted,detail:"/lots/"+encodeURIComponent(l.id)+".html"}];});}
+function auctionRows(d){return (d.lots||[]).flatMap(l=>{const p=l.photos?.[0];if(!l.id||!l.model||!countryByMarket[l.market]||!validAsset(p)||!validAsset(l.inspection_image)||l.inspection_kind!=="Аукционный лист")return [];const raw=l.price_amount??l.price_jpy;const amount=typeof raw==="number"?raw:Number(String(raw||"").replace(/[^\d]/g,""));return [{key:"lot:"+l.id,market:l.market,name:l.model,year:l.year,photo:p,mileage:l.mileage_km?money(l.mileage_km)+" км":l.mileage,engine:l.engine_cc,power:l.power_hp,engineType:l.engine_type||l.fuel_type||l.fuel||"",description:l.description||"",buildDate:l.build_date||l.manufacture_date||"",bodyType:l.body_type||l.body_style||"",trim:l.trim,grade:l.grade,amount:Number.isFinite(amount)&&amount>0?amount:0,currency:l.currency||currencies[l.market],source:(l.sale_label||"Аукционный пример")+(l.auction_date?" · "+l.auction_date:""),restricted:l.export_restricted,detail:"/lots/"+encodeURIComponent(l.id)+".html"}];});}
 function references(d){return (d.items||[]).flatMap(x=>{const m=x.market==="korea"?"south-korea":x.market;if(!countryByMarket[m]||!x.brand||!x.model)return [];return [{key:"ref:"+x.id,market:m,name:x.brand+" "+x.model,engineText:x.engine,engineType:x.engine_type||x.fuel_type||x.fuel||"",bodyType:x.body_type||x.body_style||"",currency:currencies[m]}];});}
 async function load(){if(loading)return loading;status.textContent="Загружаем опубликованные автомобили…";loading=Promise.allSettled([fetchJson("/data/gallery-lots.json").then(auctionRows),readChina(),fetchJson("/data/papauto-expanded-45x3-2026.json").then(references)]).then(results=>{rows=results.flatMap((r,i)=>{if(r.status==="fulfilled")return r.value;partialSources.push(i);return [];});loaded=true;return rows;});return loading;}
 function matches(x,q){const name=norm(x.name+" "+(x.year||""));const terms=q.split(" ").filter(Boolean);return terms.every(t=>name.includes(t));}
@@ -79,7 +79,7 @@ if(budgetForm){
  let revision=0;
  const invalidate=()=>{revision++;out.hidden=true;out.replaceChildren();note.textContent="Нажмите «Подобрать автомобили» для выбранного бюджета.";submit.disabled=false;syncBudget();};
  budgetForm.querySelectorAll("[data-pa-budget]").forEach(b=>b.addEventListener("click",()=>{amount.value=b.dataset.paBudget;invalidate();}));
- amount.addEventListener("input",invalidate);direction.addEventListener("change",invalidate);syncBudget();
+ amount.addEventListener("input",invalidate);direction.addEventListener("change",invalidate);$("paBudgetEligibility")?.addEventListener("change",invalidate);syncBudget();
  budgetForm.addEventListener("submit",async e=>{
   e.preventDefault();if(!amount.reportValidity())return;
   const token=++revision,limit=Number(amount.value),marketFilter=direction.value;
@@ -87,22 +87,44 @@ if(budgetForm){
   try{
    const [items,fx]=await Promise.all([load(),getRates()]);if(token!==revision)return;
    if(!fx)throw Error("Справочный курс недоступен. Оставьте запрос на подбор — бюджет будет передан.");
-   const candidates=items.filter(x=>x.photo&&x.amount>0&&!x.restricted&&(marketFilter==="all"||x.market===marketFilter)).map(x=>({...x,baseRub:Math.round(x.amount*rateFor(x.currency))})).filter(x=>Number.isFinite(x.baseRub)&&x.baseRub>0&&x.baseRub+50000<limit);
-   candidates.sort((a,b)=>b.baseRub-a.baseRub||b.year-a.year);
-   const seen=new Set(),shown=candidates.filter(x=>{const key=x.market+":"+norm(x.name);if(seen.has(key))return false;seen.add(key);return true;}).slice(0,12);
-   for(const x of shown){
-    const card=document.createElement("article");card.className="vehicle-result-card";
-    const img=document.createElement("img");img.alt=x.name;img.loading="lazy";img.style.cssText="width:100%;max-height:180px;object-fit:contain";img.addEventListener("error",()=>card.remove(),{once:true});img.src=x.photo;
-    const title=document.createElement("h3");title.textContent=x.name+(x.year?" · "+x.year:"");
-    const meta=document.createElement("p");meta.textContent=[countryByMarket[x.market],x.mileage,x.source].filter(Boolean).join(" · ");
-    const price=document.createElement("strong");price.textContent=money(x.baseRub)+" ₽ — цена за рубежом";
-    const disclaimer=document.createElement("p");disclaimer.textContent="Не цена под ключ. Таможня, доставка и остальные расходы не рассчитаны. Наличие и возможность ввоза требуют проверки.";
-    const link=document.createElement("a");link.className="button button-secondary";link.href="/?"+new URLSearchParams({view:"calculator",market:x.market,vehicle:x.key}).toString();link.textContent="Рассчитать стоимость";
-    const lead=document.createElement("a");lead.className="button button-primary";lead.href="/podbor.html?"+new URLSearchParams({budget:String(limit),market:x.market,similar:[x.name,x.year,countryByMarket[x.market]].filter(Boolean).join(" · ")}).toString();lead.textContent="Подобрать аналог";
-    card.append(img,title,meta,price,disclaimer,link,lead);out.append(card);
-   }
-   out.hidden=!shown.length;
-   note.textContent=(shown.length?"Показано "+shown.length+" примеров для предварительной сметы. Цена за рубежом и комиссия ниже бюджета, но попадание в бюджет под ключ НЕ подтверждено.":"Не найдено опубликованных примеров с известной исходной ценой в выбранном диапазоне. Запросите индивидуальный подбор.")+(fx.date?" Курс на "+fx.date+".":" Дата курса не указана.")+(fx.fallback?" Архивный курс.":"")+(partialSources.length?" Часть источников недоступна.":"");
+   let tariffData=null;
+   try{tariffData=await fetchJson("/data/papauto-delivery-tariffs-20261125.json");}catch{}
+   if(token!==revision)return;
+   const date=new Date(),clearDate=[date.getFullYear(),String(date.getMonth()+1).padStart(2,"0"),String(date.getDate()).padStart(2,"0")].join("-");
+   const eligibility=$("paBudgetEligibility")?.value||"";
+   const typeOf=x=>{
+    const raw=[x.engineType,x.engineText,x.trim,x.name,x.description].filter(Boolean).join(" ");
+    if(/\b(?:e\s*[:-]?\s*hev|phev|mhev|hev|hybrid|e[ -]?power)\b|гибрид/i.test(raw))return "hybrid";
+    if(/\b(?:bev|electric|ev)\b|электромобил/i.test(raw))return "ev";
+    if(/\b(?:petrol|gasoline|diesel|ice)\b|бензин|дизель/i.test(raw))return "ice";
+    return "";
+   };
+   const candidates=items.filter(x=>x.photo&&x.amount>0&&!x.restricted&&(marketFilter==="all"||x.market===marketFilter)).map(x=>({...x,baseRub:Math.round(x.amount*rateFor(x.currency)),q:window.PapAutoQuickQuote?.quote({...x,type:typeOf(x)},fx,tariffData,{clearDate,eligibility})||{total:null,reason:"Модуль сметы недоступен."}})).filter(x=>Number.isFinite(x.baseRub)&&x.baseRub>0&&x.baseRub+50000<=limit);
+   const fits=candidates.filter(x=>x.q.total!==null&&x.q.total<=limit).sort((a,b)=>b.q.total-a.q.total);
+   const pending=candidates.filter(x=>x.q.total===null).sort((a,b)=>b.year-a.year||a.baseRub-b.baseRub);
+   const distinct=(xs,n)=>{const seen=new Set();return xs.filter(x=>{const key=x.market+":"+norm(x.name);if(seen.has(key))return false;seen.add(key);return true;}).slice(0,n);};
+   const confirmed=distinct(fits,12),unconfirmed=distinct(pending,8);
+   const showGroup=(title,rows,full)=>{
+    if(!rows.length)return;
+    const heading=document.createElement("h3");heading.textContent=title;out.append(heading);
+    for(const x of rows){
+     const card=document.createElement("article");card.className="vehicle-result-card";
+     const img=document.createElement("img");img.alt=x.name;img.loading="lazy";img.style.cssText="width:100%;max-height:180px;object-fit:contain";img.addEventListener("error",()=>card.remove(),{once:true});img.src=x.photo;
+     const name=document.createElement("h3");name.textContent=x.name+(x.year?" · "+x.year:"");
+     const meta=document.createElement("p");meta.textContent=[countryByMarket[x.market],x.mileage,x.source].filter(Boolean).join(" · ");
+     const price=document.createElement("strong");price.textContent=full?money(x.q.total)+" ₽ — предварительно до Новосибирска":money(x.baseRub)+" ₽ — цена за рубежом";
+     const disclaimer=document.createElement("p");disclaimer.textContent=full?"Стандартная смета личного ввоза на дату расчёта; исторический пример, не наличие. Дополнительные расходы и фактический курс уточняются.":x.q.reason+" Попадание в бюджет под ключ не подтверждено.";
+     const link=document.createElement("a");link.className="button button-secondary";link.href="/?"+new URLSearchParams({view:"calculator",market:x.market,vehicle:x.key}).toString();link.textContent="Рассчитать стоимость";
+     const lead=document.createElement("a");lead.className="button button-primary";lead.href="/podbor.html?"+new URLSearchParams({budget:String(limit),market:x.market,similar:[x.name,x.year,countryByMarket[x.market]].filter(Boolean).join(" · ")}).toString();lead.textContent="Подобрать аналог";
+     card.append(img,name,meta,price);
+     if(full){const details=document.createElement("details");const summary=document.createElement("summary");summary.textContent="Состав сметы";details.append(summary);const labels={car:"Автомобиль",japan:"Расходы по Японии",shipping:"Фрахт",bank:"Банк",docs:"Оформление",duty:"Пошлина",customsFee:"Таможенный сбор",util:"Утильсбор",commission:"Комиссия PapAuto",delivery:"Автовоз"};for(const [k,v] of Object.entries(x.q.costs)){const row=document.createElement("p");row.textContent=labels[k]+": "+money(v)+" ₽";details.append(row);}card.append(details);}
+     card.append(disclaimer,link,lead);out.append(card);
+    }
+   };
+   showGroup("В рамках бюджета по предварительной полной смете",confirmed,true);
+   showGroup("Требуют отдельного расчёта — не подтверждены по бюджету",unconfirmed,false);
+   out.hidden=!(confirmed.length||unconfirmed.length);
+   note.textContent="Полная стандартная смета: "+confirmed.length+" вариантов. Отдельный расчёт: "+unconfirmed.length+" примеров. "+(confirmed.length?"":"Подтверждённых по смете вариантов пока нет. ")+(fx.date?"Курс на "+fx.date+".":"Дата курса не указана.")+(fx.fallback?" Архивный курс.":"")+(partialSources.length?" Часть источников недоступна.":"");
   }catch(err){if(token===revision)note.textContent=err.message||"Каталог временно недоступен. Запросите подбор.";}
   finally{if(token===revision)submit.disabled=false;}
  });

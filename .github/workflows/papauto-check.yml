@@ -103,6 +103,8 @@ jobs:
           node tests/test_analytics.cjs
           node --check gallery.js
           node --check premium-import-estimate.js
+          node --check papauto-premium-calculator.js
+          node tests/test_quick_quote.cjs
           node --check app.js
           node --check account.js
           node --check marketplace-interactions.js

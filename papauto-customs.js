@@ -24,6 +24,7 @@ if(hasCC&&hasAge&&valid(eur)&&eur<=10000){if(age==="new"){if(valid(value)&&value
 if(hasCC&&hasAge&&valid(hp)&&hp<=2000){const kw=Math.round(hp*.73549875*100)/100;const band=kwBands.findIndex(n=>kw<=n);if(cc<=3000&&kw<=117.68&&eligibility==="yes")result.util=age==="new"?3400:5200;else if(cc<=2000&&(kw>117.68||eligibility==="no")){const table=cc<=1000?fullSmall:fullMedium;result.util=Math.round(table[band][(year===2027?2:0)+(age==="new"?0:1)]*20000);}else result.reason.push(cc>2000?"Полная ставка для объёма свыше 2 л требует уточнения.":"Подтвердите условия льготного утильсбора.");}else result.reason.push("Для утильсбора нужны точные мощность, объём и возраст.");
 return result;}
 if(typeof module!=="undefined"&&module.exports)module.exports={estimate,ageAt,ageByYear,parseDate};
+if(typeof window!=="undefined")window.PapAutoCustoms={estimate,ageAt,ageByYear,parseDate};
 if(typeof document==="undefined")return;
 const $=id=>document.getElementById(id),form=$("calcForm"),mode=$("paCustomsMode");if(!form||!mode)return;
 const status=$("paCustomsStatus"),eur=$("paEurRate"),note=$("paEurNote"),fields=["customs","customsFee","utilFee"];

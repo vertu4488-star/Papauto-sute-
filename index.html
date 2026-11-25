@@ -118,8 +118,8 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
         <button type="button" data-pa-budget="2000000" aria-pressed="false"><span>до</span><strong>2 млн ₽</strong></button>
         <button type="button" data-pa-budget="3000000" aria-pressed="false"><span>до</span><strong>3 млн ₽</strong></button>
       </div>
-      <div class="hero-actions"><button class="button button-primary" type="submit">Подобрать автомобили →</button><a class="button button-secondary" id="paBudgetOrder" href="/podbor.html?budget=1500000">Запросить подбор</a></div>
-      <p id="paBudgetStatus" class="result-note" role="status">Цены в результатах — стоимость автомобиля за рубежом, не итог под ключ.</p>
+      <label>Условия утильсбора для личного ввоза<select id="paBudgetEligibility"><option value="">Условия не подтверждены</option><option value="yes">Льготный личный ввоз — условия соблюдены</option><option value="no">Льгота не применяется</option></select></label><div class="hero-actions"><button class="button button-primary" type="submit">Подобрать автомобили →</button><a class="button button-secondary" id="paBudgetOrder" href="/podbor.html?budget=1500000">Запросить подбор</a></div>
+      <p id="paBudgetStatus" class="result-note" role="status">Полная предварительная смета до Новосибирска показывается только при достаточных данных. Остальные примеры — отдельно.</p>
       <div id="paBudgetResults" class="vehicle-results" hidden></div>
     </form>
   </section>
@@ -878,10 +878,14 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 <script defer src="/voice-assistant.js?v=20261103"></script>
 <script src="/auction-sheet-decoder.js" defer></script>
   <script src="/vehicle-catalogue.js" defer></script>
-<script src="/papauto-premium-calculator.js?v=20261125-budget" defer></script>
-<script src="/papauto-customs.js?v=20261125-live" defer></script>
-<script src="/papauto-japan-tariffs.js?v=20261125-delivery" defer></script>
-<script src="/papauto-delivery-tariffs.js?v=20261125" defer></script>
+<script src="/papauto-customs.js?v=20261125-quickquote" defer></script>
+<script src="/papauto-japan-tariffs.js?v=20261125-quickquote" defer></script>
+<script src="/papauto-delivery-tariffs.js?v=20261125-quickquote" defer></script>
+<script src="/papauto-quick-quote.js?v=20261125" defer></script>
+<script src="/papauto-premium-calculator.js?v=20261125-quickquote" defer></script>
+
+
+
 <script src="/estimate-history.js?v=20261125-delivery" defer></script>
 <script src="/lead-draft-history.js" defer></script>
 <script src="/similar-car-request.js" defer></script>
