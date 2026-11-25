@@ -1817,6 +1817,246 @@
       "body_type": "минивэн",
       "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-gap18-20261125-07": {
+      "engine_cc": 1297,
+      "power_hp": 92,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60012274/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis QNC20 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-gap18-20261125-10": {
+      "engine_cc": 1297,
+      "power_hp": 92,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60012274/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis QNC20 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-gap18-20261125-18": {
+      "engine_cc": 1297,
+      "power_hp": 92,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60012274/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis QNC20 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-gap18-20261125-15": {
+      "engine_cc": 658,
+      "power_hp": 54,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.drom.ru/catalog/nissan/moco/42095/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis MG22S and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-atp-20261120-07": {
+      "engine_cc": 1496,
+      "power_hp": 110,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.drom.ru/catalog/mazda/demio/222925/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis DJLFS and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-atp-20261120-19": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://kimuracars.com/autocatalog/daihatsu/thor/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis M900S and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-atp-b2-20261120-02": {
+      "engine_cc": 1242,
+      "power_hp": 91,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.drom.ru/catalog/suzuki/baleno/180983/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis WB32S and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-atp-b2-20261120-04": {
+      "engine_cc": 1496,
+      "power_hp": 103,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.drom.ru/catalog/toyota/spade/257381/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis NCP145 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-atp-b2-20261120-07": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://sferacar.ru/statistika/daihatsu/boon/29879340.html",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis M700S and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-atp-b2-20261120-14": {
+      "engine_cc": 1798,
+      "power_hp": 139,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://suvhub.com/models/mitsubishi/rvr",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis GA4W and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-atp-b3-20261120-11": {
+      "engine_cc": 1798,
+      "power_hp": 139,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://suvhub.com/models/mitsubishi/rvr",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis GA4W and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-atp-b2-20261120-19": {
+      "engine_cc": 1242,
+      "power_hp": 91,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.drom.ru/catalog/suzuki/solio/388156/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis MA27S and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-selection-186": {
+      "engine_cc": 1242,
+      "power_hp": 91,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.drom.ru/catalog/suzuki/solio/388156/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis MA27S and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-atp-b3-20261120-29": {
+      "engine_cc": 1317,
+      "power_hp": 100,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0030010.html",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis GK3 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-atp-b3-20261120-30": {
+      "engine_cc": 1496,
+      "power_hp": 132,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0030010.html",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis GK5 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-next30-549-20261121-03": {
+      "engine_cc": 1317,
+      "power_hp": 100,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0030010.html",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis GK3 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-next30-519-20261121-03": {
+      "engine_cc": 1317,
+      "power_hp": 100,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0030010.html",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis GK4 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-atp-b3-20261120-19": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://suvhub.com/models/daihatsu/mira-tocot",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis LA550S and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-next30-549-20261121-08": {
+      "engine_cc": 1198,
+      "power_hp": 79,
+      "engine_type": "ice",
+      "body_type": "седан",
+      "reference_url": "https://www.drom.ru/catalog/nissan/note/212383/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis E12 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-next30-519-20261121-09": {
+      "engine_cc": 658,
+      "power_hp": 64,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.jdmbuysell.com/learn/suzuki/jimny/jb23/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis JB23W and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-next30-579-20261121-21": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://sferacar.ru/statistika/suzuki/hustler/29794254.html",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis MR31S and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-next30-579-20261121-23": {
+      "engine_cc": 1242,
+      "power_hp": 91,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.drom.ru/catalog/suzuki/swift/387997/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis ZD83S and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-next30-609-20261121-28": {
+      "engine_cc": 1490,
+      "power_hp": 120,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://www.drom.ru/catalog/toyota/yaris_cross/435139/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis MXPB15 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-honda7-20261125-03": {
+      "engine_cc": 658,
+      "power_hp": 64,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.goo-net.com/catalog/HONDA/NONE/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis JG1 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-honda7-20261125-05": {
+      "engine_cc": 658,
+      "power_hp": 58,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.goo-net.com/catalog/HONDA/NONE/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis JG1 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-honda7-20261125-08": {
+      "engine_cc": 1496,
+      "power_hp": 118,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://www.drom.ru/catalog/honda/wr-v/482718/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis DG5 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-selection-133": {
+      "engine_cc": 996,
+      "power_hp": 71,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.drom.ru/catalog/toyota/vitz/36279/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis KSP90 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-selection-42": {
+      "engine_cc": 1496,
+      "power_hp": 132,
+      "engine_type": "ice",
+      "body_type": "седан",
+      "reference_url": "https://www.drom.ru/catalog/honda/grace/185884/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis GM6 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-selection-74": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.drom.ru/catalog/toyota/passo/68534/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis KGC30 and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-selection-498": {
+      "engine_cc": 1496,
+      "power_hp": 110,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.drom.ru/catalog/mazda/demio/222925/",
+      "basis": "Existing owner-approved archive record; matching Japanese-market chassis DJLFS and catalogue engine specifications; conditional personal import estimate"
     }
   },
   "quotes": {
@@ -4595,6 +4835,412 @@
         "util": 5200,
         "commission": 50000,
         "delivery": 150000
+      }
+    },
+    "japan-gap18-20261125-07": {
+      "total": 778570,
+      "costs": {
+        "car": 57858,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 374531,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-gap18-20261125-10": {
+      "total": 783219,
+      "costs": {
+        "car": 62507,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 374531,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-gap18-20261125-18": {
+      "total": 789935,
+      "costs": {
+        "car": 69223,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 374531,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-gap18-20261125-15": {
+      "total": 544461,
+      "costs": {
+        "car": 20147,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-20261120-07": {
+      "total": 1076445,
+      "costs": {
+        "car": 297038,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-20261120-19": {
+      "total": 929583,
+      "costs": {
+        "car": 312535,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-b2-20261120-02": {
+      "total": 1066639,
+      "costs": {
+        "car": 360578,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 358649,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-b2-20261120-04": {
+      "total": 1278309,
+      "costs": {
+        "car": 496440,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-b2-20261120-07": {
+      "total": 761495,
+      "costs": {
+        "car": 145678,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-b2-20261120-14": {
+      "total": 1401813,
+      "costs": {
+        "car": 469061,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 567878,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-atp-b3-20261120-11": {
+      "low": 1657558,
+      "high": 1819809
+    },
+    "japan-atp-b2-20261120-19": {
+      "total": 1082865,
+      "costs": {
+        "car": 454597,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 280194,
+        "customsFee": 4924,
+        "util": 3400,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-selection-186": {
+      "total": 964170,
+      "costs": {
+        "car": 338364,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 280194,
+        "customsFee": 2462,
+        "util": 3400,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-b3-20261120-29": {
+      "total": 1233336,
+      "costs": {
+        "car": 503156,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 380306,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-b3-20261120-30": {
+      "total": 1607633,
+      "costs": {
+        "car": 811042,
+        "japan": 71547,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-next30-549-20261121-03": {
+      "total": 900060,
+      "costs": {
+        "car": 173573,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 380306,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-next30-519-20261121-03": {
+      "total": 960182,
+      "costs": {
+        "car": 232464,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 380306,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-b3-20261120-19": {
+      "low": 898187,
+      "high": 1055313
+    },
+    "japan-next30-549-20261121-08": {
+      "total": 874664,
+      "costs": {
+        "car": 172540,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 345943,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-next30-519-20261121-09": {
+      "total": 1016182,
+      "costs": {
+        "car": 488175,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-next30-579-20261121-21": {
+      "total": 860810,
+      "costs": {
+        "car": 335265,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-next30-579-20261121-23": {
+      "low": 961545,
+      "high": 1129662
+    },
+    "japan-next30-609-20261121-28": {
+      "low": 2255559,
+      "high": 2792871
+    },
+    "japan-honda7-20261125-03": {
+      "total": 557376,
+      "costs": {
+        "car": 33062,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-honda7-20261125-05": {
+      "total": 747677,
+      "costs": {
+        "car": 222132,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-honda7-20261125-08": {
+      "total": 1922744,
+      "costs": {
+        "car": 1036274,
+        "japan": 82809,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 497412,
+        "customsFee": 4924,
+        "util": 3400,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-selection-133": {
+      "total": 689172,
+      "costs": {
+        "car": 73355,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-selection-42": {
+      "total": 1076113,
+      "costs": {
+        "car": 286706,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-selection-74": {
+      "total": 681940,
+      "costs": {
+        "car": 66123,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-selection-498": {
+      "total": 1269527,
+      "costs": {
+        "car": 487658,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
       }
     }
   }
