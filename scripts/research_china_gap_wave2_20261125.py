@@ -57,6 +57,7 @@ def discover(u):
 seeds=["https://goldenlaneauto.com/brands/"+b+"/?lang=en&page="+str(p) for b in ["byd","geely","geely-galaxy","changan","haval","chery","aion"] for p in [1,2,3,4]]
 with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
  discovered=list(dict.fromkeys(x for g in pool.map(discover,seeds) for x in g))
+DIRECT=[tuple(x) for x in DIRECT]
 pairs=list(dict.fromkeys(DIRECT+discovered))
 # Keep a reasonable number of detail pages per model. Existing ChinaUsedCar photos already screened;
 # only consider additional original photo URLs in the same verified listing.

@@ -22,7 +22,8 @@ jobs:
           github-token: ${{ github.token }}
           path: /tmp/china-gap-first
       - run: pip install requests beautifulsoup4 pillow
-      - run: python scripts/research_china_gap_wave2_20261125.py
+      - name: Inspect exact detail pages and alternate photos
+        run: python scripts/research_china_gap_wave2_20261125.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
