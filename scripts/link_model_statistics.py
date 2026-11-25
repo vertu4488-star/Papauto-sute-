@@ -109,7 +109,6 @@ SUPPLIER_TITLE_ALIASES = {
 RELATED_ONLY = {
     "japan-honda-jazz": "japan-honda-fit",
     "japan-nissan-micra": "japan-nissan-march",
-    "japan-nissan-qashqai": "japan-nissan-juke",
     "korea-kia-forte": "korea-kia-k3-cerato",
     "korea-hyundai-creta": "korea-hyundai-kona",
     "korea-hyundai-bayon": "korea-hyundai-venue",
@@ -301,6 +300,23 @@ def supplier_card(row, target, approved_paths):
         '<a href="'+esc(apply)+'">Подобрать аналог</a></div></div></article>'
     )
 
+# Official manufacturer nameplate equivalences, not new auction records.
+# Fit/Jazz: Honda newsroom 4070717-eng, 4101006eng.
+# March/Micra: Nissan newsroom 100302-01-e (fourth generation K13).
+def nameplate_examples(ident, grouped):
+    if ident == "japan-honda-jazz":
+        return ("Honda Fit — японское название семейства Jazz",
+                "Показаны реальные японские Fit, не экспортные Jazz. Комплектации, двигатель и рынок сверяются по документам.",
+                "japan-honda-fit",
+                [r for r in grouped["japan-honda-fit"] if r["market"] == "japan"])
+    if ident == "japan-nissan-micra":
+        return ("Nissan March K13 — японский аналог Micra четвёртого поколения",
+                "В карточках сохранено имя March из аукционных документов. Европейские Micra K14 и другие поколения сюда не включены.",
+                "japan-nissan-march",
+                [r for r in grouped["japan-nissan-march"] if r["market"] == "japan" and
+                 re.fullmatch(r"(?:[A-Z0-9]+-)?(?:K13|NK13)", str(r.get("body","")).upper().strip())])
+    return ("","","",[])
+
 def render(target: Path, registry: dict, approved_supplier_paths: set):
     items = json.loads((target / "data/papauto-expanded-45x3-2026.json").read_text(encoding="utf-8"))["items"]
     refs = {x["id"]: x for x in items}
@@ -362,7 +378,15 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
                 parts += ['<details><summary>Ещё '+str(len(offers)-MAX_CARDS)+' примеров поставщиков</summary><div class="pa-model-lot-grid">']
                 parts += [supplier_card(row,target,approved_supplier_paths) for row in offers[MAX_CARDS:]]
                 parts += ['</div></details>']
-        if not records and ident in RELATED_ONLY:
+        family_title, family_note, family_id, family_rows = nameplate_examples(ident, grouped)
+        family_rows = sorted(family_rows, key=lambda x:(str(x.get("auction_date") or ""),x["year"],x["id"]), reverse=True)[:5] if not records else []
+        if family_rows:
+            parts += ['<h3>'+esc(family_title)+'</h3><p>'+esc(family_note)+'</p><div class="pa-model-lot-grid">']
+            for row in family_rows:
+                card = lot_card(row,target).replace('data-model-lot-id=', 'data-model-related-lot-id=',1)
+                parts += [card]
+            parts += ['</div><p><a href="/models/'+esc(family_id)+'.html">Все примеры японского названия модели</a></p>']
+        if not records and ident in RELATED_ONLY and not family_rows:
             other=RELATED_ONLY[ident]
             if other not in refs:
                 raise RuntimeError("MODEL_STATS unknown related page")
@@ -383,7 +407,7 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
                 or (offers and item["market"] != "china")):
             raise RuntimeError("MODEL_STATS supplier render mismatch "+ident)
         page.write_text(html, encoding="utf-8")
-        report.append({"model_id":ident,"market":item["market"],"auction_matches":len(records),"auction_cards":min(len(records),MAX_CARDS),"supplier_matches":len(offers),"supplier_cards":len(supplier_ids)})
+        report.append({"model_id":ident,"market":item["market"],"auction_matches":len(records),"auction_cards":min(len(records),MAX_CARDS),"supplier_matches":len(offers),"supplier_cards":len(supplier_ids),"related_cards":len(family_rows)})
     # Reverse navigation: only exact approved assigned lots point to model pages.
     for lot_id, ident in assigned.items():
         p=target/"lots"/(lot_id+".html")
@@ -413,6 +437,8 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
              "supplier_matches":sum(x["supplier_matches"] for x in report),
              "supplier_cards":sum(x["supplier_cards"] for x in report),
              "no_exact_examples":sum(x["auction_matches"]==0 and x["supplier_matches"]==0 for x in report),
+             "related_only_covered":sum(x["related_cards"]>0 and not x["auction_matches"] and not x["supplier_matches"] for x in report),
+             "no_examples_including_related":sum(not x["auction_matches"] and not x["supplier_matches"] and not x["related_cards"] for x in report),
              "models":report}
     (target/"data/model-statistics-coverage.json").write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print("PAPAUTO_MODEL_STATS_OK "+json.dumps({k:v for k,v in summary.items() if k!="models"},ensure_ascii=False))
