@@ -560,6 +560,9 @@ def copy_public_files() -> list[str]:
     # Attach only already screened public auction examples to all model pages.
     from link_model_statistics import render as link_model_statistics
     model_coverage = link_model_statistics(TARGET, published_registry, china_order_photos)
+    dualis_archive = (TARGET / "models/japan-nissan-qashqai.html").read_text(encoding="utf-8")
+    if re.search(r'href="[^"]*(?:#calculator|view=calculator|/podbor\\.html)', dualis_archive):
+        raise RuntimeError("DUALIS_ARCHIVE: order or calculator CTA is not allowed")
     # Rebuild clearly labelled nameplate examples; they never count as new lots.
     if model_coverage['supplier_cards'] != model_coverage['supplier_matches']:
         raise RuntimeError('PAPAUTO_MODEL_STATS: missing inline supplier cards')

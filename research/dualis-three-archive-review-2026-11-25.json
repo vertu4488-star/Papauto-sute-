@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-25",
+  "status": "awaiting explicit exact-batch owner review; not approved; do not publish media",
+  "source_run": 45562481920,
+  "artifact_id": 14998402638,
+  "review_pdf": "PapAuto_Dualis_3_ATP_review_2026-11-25.pdf",
+  "review_pdf_sha256": "294b1fb33e8f65738bc2360896aab4705521d1ed7514e400f27e414307efb93a",
+  "rights_confirmed": false,
+  "archival_only": true,
+  "direct_export_eligible": false,
+  "lots": [
+    {
+      "index": 1,
+      "year": 2008,
+      "auction": "JU Yamagata",
+      "lot": "2049",
+      "date": "2026-11-21",
+      "grade": "3.5",
+      "body": "KNJ10",
+      "mileage_sheet_km": 116908,
+      "reported_price_jpy": 123000
+    },
+    {
+      "index": 2,
+      "year": 2009,
+      "auction": "JU Hokkaido",
+      "lot": "148",
+      "date": "2026-11-20",
+      "grade": "3.5",
+      "body": "KNJ10",
+      "mileage_sheet_km": 48639,
+      "reported_price_jpy": 231000
+    },
+    {
+      "index": 3,
+      "year": 2012,
+      "auction": "TAA Kanto",
+      "lot": "234",
+      "date": "2026-11-19",
+      "grade": "3.5",
+      "body": "KJ10",
+      "mileage_sheet_km": 88230,
+      "reported_price_jpy": 268000
+    }
+  ]
+}

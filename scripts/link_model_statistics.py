@@ -391,7 +391,10 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
             if other not in refs:
                 raise RuntimeError("MODEL_STATS unknown related page")
             parts += ['<p>Отдельно можно <a href="/models/'+esc(other)+'.html">посмотреть родственную модель</a>; её автомобили не считаются примерами этой страницы.</p>']
-        parts += ['<p><a href="/gallery.html">Вся аукционная статистика</a> · <a href="/podbor.html?similar='+esc(quote(name+" · "+item["market"],safe=""))+'">Запросить подбор этой модели</a></p></section>']
+        if ident == "japan-nissan-qashqai":
+            parts += ['<p>Только архивная справка. Прямой экспорт Dualis 2.0 из Японии в Россию ограничен; заказать или рассчитать поставку этой модели нельзя.</p></section>']
+        else:
+            parts += ['<p><a href="/gallery.html">Вся аукционная статистика</a> · <a href="/podbor.html?similar='+esc(quote(name+" · "+item["market"],safe=""))+'">Запросить подбор этой модели</a></p></section>']
         pattern = r'<section><h2>Фото, пробег и документы</h2>[\s\S]*?</section>'
         html, count = re.subn(pattern,lambda _: "".join(parts),html,count=1)
         if count!=1 or html.count('id="pa-model-statistics"')!=1:
