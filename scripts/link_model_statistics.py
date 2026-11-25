@@ -1,6 +1,7 @@
 """Render model-specific examples from the already screened public registry.
 No new lot, photo, sale evidence, or provider inventory is created here.
-Supplier offers are kept in their dedicated China section, not relabelled as auctions.
+Supplier offers reuse the exact screened China catalogue records on model pages,
+never relabelled as auctions; no files or prices are duplicated in the source data.
 """
 from collections import defaultdict, Counter
 from html import escape, unescape
@@ -199,7 +200,7 @@ STYLE = """<style>
 </style>"""
 
 def supplier_links(target, approved_paths, index):
-    """Link to existing screened supplier cards; no supplier images are copied."""
+    """Read exact approved supplier records; reuse local assets, never copy bytes."""
     page = target / "china-order.html"
     html = page.read_text(encoding="utf-8")
     linked = defaultdict(list)
@@ -225,13 +226,48 @@ def supplier_links(target, approved_paths, index):
         name = re.sub(r"^\s*(?:19|20)\d{2}\s+|\s+(?:19|20)\d{2}\s*$", "", title).strip()
         ident = match(index, "china", name)
         if ident:
-            linked[ident].append((title, anchor))
+            if not re.search(r"\b(?:19|20)\d{2}\b", title):
+                raise RuntimeError("MODEL_STATS missing supplier year "+anchor)
+            fields = [(unescape(k).strip(), unescape(v).strip()) for k,v in
+                      re.findall(r"<dt>([^<]+)</dt>\s*<dd>([^<]+)</dd>", card)]
+            descriptions = re.findall(r"<p>([^<]+)</p>", card)
+            if (not fields or any(not k or not v for k,v in fields)
+                    or not any(k == "Двигатель" for k,v in fields)
+                    or not any("Пробег" in k and re.search(r"\d",v) for k,v in fields)
+                    or not any("FOB" in k and re.search(r"\d",v) for k,v in fields)
+                    or not descriptions):
+                raise RuntimeError("MODEL_STATS incomplete supplier data "+anchor)
+            linked[ident].append({"title":title,"anchor":anchor,"photo":path,
+                                  "fields":fields,"description":" ".join(unescape(x).strip() for x in descriptions)})
         return card.replace('<article class="cn-example"', '<article class="cn-example" id="'+anchor+'"', 1)
     html = re.sub(r'<article class="cn-example"[^>]*>[\s\S]*?</article>', mark, html)
     if seen != {"/"+p for p in approved_paths}:
         raise RuntimeError("MODEL_STATS supplier source mismatch")
     page.write_text(html, encoding="utf-8")
     return linked
+
+def supplier_card(row, target, approved_paths):
+    """Display source fields verbatim; never invent a sale price or auction sheet."""
+    photo = row["photo"]
+    anchor = row["anchor"]
+    title = row["title"]
+    if photo.lstrip("/") not in approved_paths or not SLUG.fullmatch(anchor):
+        raise RuntimeError("MODEL_STATS unapproved supplier card")
+    assert_media(target, photo, SUPPLIER)
+    facts = "".join("<div><dt>"+esc(k)+"</dt><dd>"+esc(v)+"</dd></div>" for k,v in row["fields"])
+    estimate = "/?view=calculator&market=china&vehicle="+quote("cn:"+photo,safe="")
+    apply = "/podbor.html?similar="+quote(title+" · КИТАЙ",safe="")
+    return (
+        '<article class="pa-model-lot pa-model-supplier" data-model-supplier-id="'+esc(anchor)+'">'
+        '<img loading="lazy" decoding="async" src="'+esc(photo)+'" alt="'+esc(title+" — фото поставщика")+'">'
+        '<div class="pa-model-lot-body"><h3>'+esc(title)+'</h3>'
+        '<p class="pa-model-lot-note">Пример подбора из Китая · данные поставщика</p>'
+        '<dl>'+facts+'</dl><p>'+esc(row["description"])+'</p>'
+        '<p class="pa-model-lot-note">FOB — цена по данным источника, не итоговая стоимость в России. '
+        'Аукционный лист не подтверждён; наличие и документы уточняются до покупки.</p>'
+        '<div class="pa-model-lot-actions"><a href="'+esc(estimate)+'">Рассчитать стоимость</a>'
+        '<a href="'+esc(apply)+'">Подобрать аналог</a></div></div></article>'
+    )
 
 def render(target: Path, registry: dict, approved_supplier_paths: set):
     items = json.loads((target / "data/papauto-expanded-45x3-2026.json").read_text(encoding="utf-8"))["items"]
@@ -279,19 +315,20 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
                     lot_card(row,target)
                     parts += ['<li><a href="/lots/'+esc(row["id"])+'.html">'+esc(row["model"])+' · '+esc(row["year"])+' · '+money(row["mileage_km"])+' км · '+esc(row.get("auction_date",""))+'</a></li>']
                 parts += ['</ul></details>']
-        else:
+        elif not supplier[ident]:
             parts += ['<p>В опубликованной базе пока нет подходящего аукционного примера этой модели из выбранной страны с оригинальным фото и полным аукционным листом. Не подставляем фото другой модели или страны.</p>']
         offers = supplier[ident]
         if offers:
-            parts += ['<h3>Примеры поставщиков из Китая ('+str(len(offers))+')</h3><p>Это отдельный каталог подбора, не статистика завершённых торгов. Аукционные листы для этих предложений не подтверждены; фотографии, пробег и цена FOB доступны в соответствующих карточках поставщиков.</p><ul>']
-            for title, anchor in offers[:MAX_CARDS]:
-                parts += ['<li><a href="/china-order.html#'+esc(anchor)+'">'+esc(title)+' — фото и параметры в каталоге поставщика</a></li>']
-            parts += ['</ul>']
+            parts += ['<h3>Автомобили из Китая: примеры подбора ('+str(len(offers))+')</h3>'
+                      '<p>Фото, параметры и цены взяты из нашего утверждённого каталога поставщиков. '
+                      'Это не статистика завершённых торгов; аукционные листы не подтверждены.</p>'
+                      '<div class="pa-model-lot-grid">']
+            parts += [supplier_card(row,target,approved_supplier_paths) for row in offers[:MAX_CARDS]]
+            parts += ['</div>']
             if len(offers)>MAX_CARDS:
-                parts += ['<details><summary>Ещё '+str(len(offers)-MAX_CARDS)+' примеров поставщиков</summary><ul>']
-                for title,anchor in offers[MAX_CARDS:]:
-                    parts += ['<li><a href="/china-order.html#'+esc(anchor)+'">'+esc(title)+'</a></li>']
-                parts += ['</ul></details>']
+                parts += ['<details><summary>Ещё '+str(len(offers)-MAX_CARDS)+' примеров поставщиков</summary><div class="pa-model-lot-grid">']
+                parts += [supplier_card(row,target,approved_supplier_paths) for row in offers[MAX_CARDS:]]
+                parts += ['</div></details>']
         if not records and ident in RELATED_ONLY:
             other=RELATED_ONLY[ident]
             if other not in refs:
@@ -303,8 +340,17 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
         if count!=1 or html.count('id="pa-model-statistics"')!=1:
             raise RuntimeError("MODEL_STATS missing or duplicate photo section "+ident)
         html = html.replace("</head>",STYLE+"</head>",1)
+        # Check generated HTML against the exact source image set and unique IDs.
+        supplier_ids = re.findall(r'data-model-supplier-id="([^"]+)"', html)
+        supplier_photos = re.findall(r'<img\b[^>]*\bsrc="(/assets/china-order/[^"]+)"', html)
+        if (supplier_ids != [row["anchor"] for row in offers]
+                or supplier_photos != [row["photo"] for row in offers]
+                or len(set(supplier_ids)) != len(supplier_ids)
+                or any(x not in approved_supplier_paths for x in [p.lstrip("/") for p in supplier_photos])
+                or (offers and item["market"] != "china")):
+            raise RuntimeError("MODEL_STATS supplier render mismatch "+ident)
         page.write_text(html, encoding="utf-8")
-        report.append({"model_id":ident,"market":item["market"],"auction_matches":len(records),"auction_cards":min(len(records),MAX_CARDS),"supplier_matches":len(offers)})
+        report.append({"model_id":ident,"market":item["market"],"auction_matches":len(records),"auction_cards":min(len(records),MAX_CARDS),"supplier_matches":len(offers),"supplier_cards":len(supplier_ids)})
     # Reverse navigation: only exact approved assigned lots point to model pages.
     for lot_id, ident in assigned.items():
         p=target/"lots"/(lot_id+".html")
@@ -332,6 +378,7 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
              "auction_matches":len(assigned),"auction_cards":sum(x["auction_cards"] for x in report),
              "supplier_covered":sum(x["supplier_matches"]>0 for x in report),
              "supplier_matches":sum(x["supplier_matches"] for x in report),
+             "supplier_cards":sum(x["supplier_cards"] for x in report),
              "no_exact_examples":sum(x["auction_matches"]==0 and x["supplier_matches"]==0 for x in report),
              "models":report}
     (target/"data/model-statistics-coverage.json").write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
