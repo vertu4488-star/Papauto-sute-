@@ -5,6 +5,7 @@ from html import escape
 from xml.etree import ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
 BASE='https://papauto.ru'
+from canonical_model_links import MODEL_REDIRECTS
 def e(value): return escape(str(value),quote=True)
 def link(url):
     if not url.startswith('/') or url.startswith('//'): raise ValueError('Only internal links are allowed')
@@ -33,6 +34,7 @@ def build():
     # Discover public pages, keeping each canonical route exactly once.
     urls=[]
     for path in sorted(list(ROOT.glob('*.html')) + list((ROOT / 'models').glob('*.html'))):
+        if '/' + path.relative_to(ROOT).as_posix() in MODEL_REDIRECTS: continue
         text=path.read_text()
         if re.search(r'<meta[^>]+content="[^"]*noindex',text): continue
         m=re.search(r'<link rel="canonical" href="([^"]+)"',text)

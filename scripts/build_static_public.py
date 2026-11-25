@@ -659,6 +659,10 @@ def copy_public_files() -> list[str]:
         raise RuntimeError("PAPAUTO_MODEL_STATS: inline cards lost after build")
     print(f"PAPAUTO_MODEL_SUPPLIER_CARDS_OK: {supplier_card_count}")
 
+    # Normalize all generated navigation after the final HTML passes.
+    from canonical_model_links import rewrite_public
+    rewrite_public(TARGET)
+
     verify_published_output(TARGET)
 
     print(f"Prepared {len(copied)} public files and {len(tombstones)} safe tombstones in {TARGET.name}/")
