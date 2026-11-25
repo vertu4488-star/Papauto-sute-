@@ -13,8 +13,9 @@ function render(block,id){
  if(block.dataset.paRendered==="1")return;
  block.dataset.paRendered="1";
  const lot=ready?.lots.get(id);
- const snap=ready?.snapshot?.quotes?.[id];
- const verified=ready?.snapshot?.enriched?.[id];
+ const quoteId=id.replace(/(^|-)[a-z]+991(?=-|$)/gi,"$1archive991");
+ const snap=ready?.snapshot?.quotes?.[id]??ready?.snapshot?.quotes?.[quoteId];
+ const verified=ready?.snapshot?.enriched?.[id]??ready?.snapshot?.enriched?.[quoteId];
  const merged=lot?{...lot,...verified}:verified;
  const input=merged?root.fromLot(merged):null;
  block.replaceChildren(el("span","Под ключ до Новосибирска"));
