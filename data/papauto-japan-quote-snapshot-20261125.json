@@ -1337,6 +1337,246 @@
       "body_type": "малолитражка",
       "reference_url": "https://cars-japan.net/engine/mdl0020103.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade"
+    },
+    "japan-next30-639-20261121-10": {
+      "engine_cc": 1242,
+      "power_hp": 91,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0080020.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-next30-639-20261121-14": {
+      "engine_cc": 996,
+      "power_hp": 98,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-next30-639-20261121-15": {
+      "engine_cc": 1196,
+      "power_hp": 87,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-next30-639-20261121-19": {
+      "engine_cc": 1490,
+      "power_hp": 120,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-next30-609-20261121-15": {
+      "engine_cc": 1797,
+      "power_hp": 140,
+      "engine_type": "ice",
+      "body_type": "универсал",
+      "reference_url": "https://cars-japan.net/engine/mdl0010016.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-next30-609-20261121-17": {
+      "engine_cc": 1797,
+      "power_hp": 140,
+      "engine_type": "ice",
+      "body_type": "универсал",
+      "reference_url": "https://cars-japan.net/engine/mdl0010174.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-next30-519-20261121-19": {
+      "engine_cc": 1490,
+      "power_hp": 120,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-gap18-20261125-01": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010168.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-gap18-20261125-02": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010167.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-gap18-20261125-03": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0020023.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-gap18-20261125-04": {
+      "engine_cc": 658,
+      "power_hp": 49,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010163.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-gap18-20261125-05": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010168.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-gap18-20261125-06": {
+      "engine_cc": 1498,
+      "power_hp": 114,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0020035.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-gap18-20261125-08": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010167.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-gap18-20261125-09": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0020023.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-gap18-20261125-11": {
+      "engine_cc": 658,
+      "power_hp": 49,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010163.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-gap18-20261125-12": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010168.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-gap18-20261125-14": {
+      "engine_cc": 1498,
+      "power_hp": 114,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0020035.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-gap18-20261125-16": {
+      "engine_cc": 658,
+      "power_hp": 49,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010163.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-gap18-20261125-17": {
+      "engine_cc": 1498,
+      "power_hp": 114,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0020035.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-atp-b6-20261121-09": {
+      "engine_cc": 659,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0020103.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-atp-b6-20261121-11": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-atp-b6-20261121-13": {
+      "engine_cc": 1196,
+      "power_hp": 87,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-followup30-20261121-07": {
+      "engine_cc": 1490,
+      "power_hp": 120,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-followup30-20261121-16": {
+      "engine_cc": 659,
+      "power_hp": 49,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0020103.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-followup30-20261121-17": {
+      "engine_cc": 1298,
+      "power_hp": 92,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-followup30-20261121-28": {
+      "engine_cc": 1196,
+      "power_hp": 87,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-next30-drom991-20261121-03": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010169.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-next30-drom991-20261121-24": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010169.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-next30-drom991-20261121-30": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
+      "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
     }
   },
   "quotes": {
@@ -3399,6 +3639,368 @@
         "docs": 65000,
         "duty": 178404,
         "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-next30-639-20261121-10": {
+      "total": 861872,
+      "costs": {
+        "car": 157042,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 358649,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-next30-639-20261121-14": {
+      "total": 1364267,
+      "costs": {
+        "car": 719606,
+        "japan": 66976,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-next30-639-20261121-15": {
+      "total": 1323668,
+      "costs": {
+        "car": 762999,
+        "japan": 69145,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 183475,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-next30-639-20261121-19": {
+      "total": 1264696,
+      "costs": {
+        "car": 484559,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 430263,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-next30-609-20261121-15": {
+      "total": 1253524,
+      "costs": {
+        "car": 328549,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 567563,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-next30-609-20261121-17": {
+      "total": 1332046,
+      "costs": {
+        "car": 407071,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 567563,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-next30-519-20261121-19": {
+      "total": 1323019,
+      "costs": {
+        "car": 705141,
+        "japan": 66252,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 228577,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-gap18-20261125-01": {
+      "low": 606238,
+      "high": 695304
+    },
+    "japan-gap18-20261125-02": {
+      "total": 588371,
+      "costs": {
+        "car": 64057,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-gap18-20261125-03": {
+      "total": 544977,
+      "costs": {
+        "car": 20663,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-gap18-20261125-04": {
+      "low": 627935,
+      "high": 717001
+    },
+    "japan-gap18-20261125-05": {
+      "low": 598489,
+      "high": 687555
+    },
+    "japan-gap18-20261125-06": {
+      "total": 947180,
+      "costs": {
+        "car": 153426,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 432573,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-gap18-20261125-08": {
+      "total": 809151,
+      "costs": {
+        "car": 283606,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-gap18-20261125-09": {
+      "total": 758526,
+      "costs": {
+        "car": 232981,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-gap18-20261125-11": {
+      "low": 681858,
+      "high": 770924
+    },
+    "japan-gap18-20261125-12": {
+      "total": 628665,
+      "costs": {
+        "car": 104351,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-gap18-20261125-14": {
+      "total": 874858,
+      "costs": {
+        "car": 81104,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 432573,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-gap18-20261125-16": {
+      "total": 653977,
+      "costs": {
+        "car": 129663,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-gap18-20261125-17": {
+      "total": 889839,
+      "costs": {
+        "car": 96085,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 432573,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-atp-b6-20261121-09": {
+      "low": 726936,
+      "high": 816138
+    },
+    "japan-atp-b6-20261121-11": {
+      "low": 1032550,
+      "high": 1260252
+    },
+    "japan-atp-b6-20261121-13": {
+      "low": 1563959,
+      "high": 1854771
+    },
+    "japan-followup30-20261121-07": {
+      "total": 1267521,
+      "costs": {
+        "car": 580127,
+        "japan": 60002,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 336143,
+        "customsFee": 4924,
+        "util": 3400,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-followup30-20261121-16": {
+      "total": 687310,
+      "costs": {
+        "car": 162725,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178404,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-followup30-20261121-17": {
+      "total": 882693,
+      "costs": {
+        "car": 161692,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 374820,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-followup30-20261121-28": {
+      "low": 1494529,
+      "high": 1753602
+    },
+    "japan-next30-drom991-20261121-03": {
+      "total": 908403,
+      "costs": {
+        "car": 291355,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-next30-drom991-20261121-24": {
+      "total": 968844,
+      "costs": {
+        "car": 351796,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-next30-drom991-20261121-30": {
+      "total": 790038,
+      "costs": {
+        "car": 264493,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 2462,
         "util": 5200,
         "commission": 50000,
         "delivery": 120000
