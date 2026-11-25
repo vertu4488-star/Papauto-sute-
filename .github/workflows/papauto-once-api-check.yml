@@ -1,18 +1,19 @@
 name: PAPAUTO one-time HTTPS and lead delivery diagnostic
 on:
   push:
+    branches: [main]
     paths:
       - '.github/workflows/papauto-once-api-check.yml'
 jobs:
   one_time_probe:
-    if: ${{ github.event.head_commit.message == 'PAPAUTO verify basic group chat after Render Live 20261109' && github.run_attempt == 1 }}
+    if: ${{ github.event.head_commit.message == 'PapAuto one-time production delivery and lead QA 20261125' && github.run_attempt == 1 }}
     runs-on: ubuntu-latest
     timeout-minutes: 6
     steps:
       - name: Check TLS, readiness, CORS and submit a clearly marked synthetic test once
         env:
           API: https://api.papauto.ru
-          ORIGIN: https://vertu4488-star.github.io
+          ORIGIN: https://papauto.ru
         run: |
           python3 - <<'PY'
           import json
@@ -50,12 +51,32 @@ jobs:
               },
           )
           preview_cors = status == 200 and headers.get("access-control-allow-origin") == os.environ["ORIGIN"]
-          print("GITHUB_PAGES_CORS_PREVIEW", "PASS" if preview_cors else "FAIL", "status", status)
+          print("PRODUCTION_CORS", "PASS" if preview_cors else "FAIL", "status", status)
+
+          if not preview_cors:
+              sys.exit("Production CORS failed; no test lead sent.")
+
+          # Verify the real public site and tariff asset, independent of Render's status.
+          for url, marker in [
+              ("https://papauto.ru/", 'id="paDeliveryPanel"'),
+              ("https://papauto.ru/podbor.html", 'surveyContainer'),
+              ("https://papauto.ru/data/papauto-delivery-tariffs-20261125.json", None),
+          ]:
+              with urllib.request.urlopen(url, timeout=25, context=ctx) as response:
+                  content = response.read().decode("utf-8")
+                  assert response.status == 200, (url, response.status)
+              if marker:
+                  assert marker in content, (url, marker)
+              else:
+                  tariffs = json.loads(content)["table"]
+                  assert tariffs["Новосибирск"]["compact"]["estimate"] == 120000
+                  assert tariffs["Новосибирск"]["large"]["estimate"] == 150000
+              print("PUBLIC_SITE_CHECK_PASS", url)
 
           # Explicitly synthetic non-customer entry; avoid using any real contacts or phone numbers.
           test_lead = {
-              "name": "ТЕСТ-7 PAPAUTO — НЕ КЛИЕНТ",
-              "contact": "QA-NO-REPLY-20261109-PRIVATE-GROUP-1925",
+              "name": "ТЕСТ PAPAUTO 25.11 — НЕ КЛИЕНТ",
+              "contact": "QA-NO-REPLY-20261125-DELIVERY-LEADS",
               "country": "Япония",
               "budget": 1,
               "city": "Новосибирск",
@@ -77,5 +98,5 @@ jobs:
               sys.exit("Lead API did not return JSON; see status.")
           if status != 200 or result.get("stored") is not True or result.get("notified") is not True:
               sys.exit("Lead is not yet confirmed saved-and-notified. Do NOT retry automatically: submission may already be stored in Neon.")
-          print("END_TO_END_LEAD=PASS", "BROWSER_PREVIEW_CORS=" + ("PASS" if preview_cors else "FAIL"))
+          print("END_TO_END_LEAD=PASS", "PRODUCTION_CORS=" + ("PASS" if preview_cors else "FAIL"))
           PY
