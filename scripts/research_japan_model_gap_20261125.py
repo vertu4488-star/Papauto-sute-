@@ -5,7 +5,7 @@ from PIL import Image,ImageDraw,ImageFont
 from collections import Counter
 BASE='https://atp-auto.ru'
 ROOT=Path('.')
-out=Path('japan-model-gap-review');out.mkdir(exist_ok=True)
+out=Path('japan-honda-gap-review');out.mkdir(exist_ok=True)
 old=[]
 for path in [Path('data/gallery-lots.json'),Path('data/approved-auction-lots.json'),Path('research/owner-selected-japan-lots-2026-11-14.json'),*Path('research').glob('owner-approved-*archive*.json'),*Path('research').glob('owner-approved-japan-*.json')]:
  if not path.is_file():continue
@@ -26,7 +26,7 @@ for x in old:
   except:pass
 def get(u):
  r=requests.get(u,timeout=18,headers={'User-Agent':'Mozilla/5.0'});r.raise_for_status();return r
-models="toyota/bb toyota/pixis-epoch toyota/pixis-joy toyota/pixis-mega honda/n-one honda/n-van honda/wr-v nissan/juke nissan/moco".split()
+models="honda/n-one honda/n-van honda/wr-v".split()
 PRIORITY_GAPS={("Toyota","Noah",2018),("Toyota","C-HR",2018),("Honda","Freed",2019),("Toyota","Tank",2016),("Nissan","X-Trail",2018),("Nissan","NV200",2017),("Mazda","CX-5",2014),("Subaru","Levorg",2021),("Toyota","Succeed",2019),("Mazda","CX-8",2017),("Mazda","CX-8",2019),("Toyota","Camry",2015)}
 seen_model_year={(str(x.get('make') or '').lower()+' '+str(x.get('model') or '').lower(),int(x.get('year') or 0)) for x in old}
 for x in old:
@@ -38,7 +38,7 @@ def discover(args):
   soup=bs4.BeautifulSoup(get(BASE+'/avto-iz-yaponii/'+m+'/?PAGE='+str(p)).text,'html.parser')
   return list(dict.fromkeys(urljoin(BASE,a['href']).split('?')[0] for a in soup.select('a[href]') if re.search(r'/avto-iz-yaponii/[^/]+/[^/]+/[A-Za-z0-9]{8,}/?$',a['href'])))
  except Exception:return []
-with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool: related=list(pool.map(discover,[(m,p) for p in [1,2,3] for m in models]))
+with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool: related=list(pool.map(discover,[(m,p) for p in [1,2,3,4,5] for m in models]))
 direct=["https://atp-auto.ru/avto-iz-yaponii/toyota/bb/5658c0T9bMFa9s/","https://atp-auto.ru/avto-iz-yaponii/nissan/juke/5BtgotRybOE52Tx/","https://atp-auto.ru/avto-iz-yaponii/nissan/juke/etTBK5MrlTgyQ/","https://atp-auto.ru/avto-iz-yaponii/nissan/juke/2oYX5qrlbP91tY/"]
 urls=list(dict.fromkeys(u for u in direct+[v for group in related for v in group] if u.rstrip('/') not in oldurls and any(urlparse(u).path.startswith('/avto-iz-yaponii/'+m+'/') for m in models)))
 # Round-robin by model, at most 12 detail pages each.
@@ -49,7 +49,10 @@ def detail(u):
  try:
   soup=bs4.BeautifulSoup(get(u).text,'html.parser')
   h=soup.find('h1').get_text(' ',strip=True)
-  year=int(re.search(r'\b(20\d\d)\b',h).group(1))
+  ym=re.search(r'\b(20\d\d)\b',h)
+  if not ym:
+   print('HOLD missing title year',u,repr(h)[:120]);return None
+  year=int(ym.group(1))
   if not 2000<=year<=2026:return None
   lines=list(soup.stripped_strings)
   def field(k):
@@ -57,9 +60,9 @@ def detail(u):
     if t.strip().rstrip(':')==k:return lines[i+1].strip()
    return ''
   def num(v):return int(re.sub(r'\D','',v) or 0)
-  hp=int(float(re.search(r'\d+(?:[.,]\d+)?',field('Мощность')).group().replace(',','.')));cc=num(field('Объем'));km=num(field('Пробег'))
+  hm=re.search(r'\d+(?:[.,]\d+)?',field('Мощность'));hp=int(float(hm.group().replace(',','.'))) if hm else None;cc=num(field('Объем'));km=num(field('Пробег'))
   grade=field('Оценка');lot=field('Номер лота');auction=field('Аукцион');date=field('Дата аукциона');price=field('Цена продажи в Японии')
-  if not (0<hp<=160 and 0<cc<=2000 and km>0 and re.fullmatch(r'[3456](?:\.[05])?',grade) and float(grade)>=3.5 and re.fullmatch(r'\d{4}-\d{2}-\d{2}',date) and lot.isdigit() and auction and num(price)>0 and field('Статус').lower()=='sold'):return None
+  if not ((hp is None or 0<hp<=160) and 0<cc<=1900 and km>0 and re.fullmatch(r'[3456](?:\.[05])?',grade) and float(grade)>=3.5 and re.fullmatch(r'\d{4}-\d{2}-\d{2}',date) and lot.isdigit() and auction and num(price)>0 and field('Статус').lower()=='sold'):return None
   if (norm(auction),date,lot.lstrip('0')) in oldkeys or not re.search(r'^(TAA|CAA|JU|KCAA|USS|HAA|LAA|JAA|MIRIVE|NAA|ZIP|ARAI|Honda)\b',auction,re.I):return None
   photos=[]; sheets=[]
   for im in soup.select('img[alt]'):
@@ -101,7 +104,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
   for j,(u,b,im) in enumerate(imgs):
    name=f'{n:03d}-{j}.jpg';im.save(out/name,quality=95);files.append(name)
   r['files']=files;r.update(publish_state='HOLD',rights_confirmed=False,visual_review_confirmed=False,full_sheet_match_confirmed=False,owner_batch_approved=False);rows.append(r)
-  if len(rows)>=27:break
+  if len(rows)>=9:break
 print('JAPAN_MODEL_GAP_CANDIDATE_SETS',len(rows),flush=True)
 print('JAPAN_MODEL_GAP_COUNTS',dict(model_limits),flush=True)
 (out/'manifest.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))

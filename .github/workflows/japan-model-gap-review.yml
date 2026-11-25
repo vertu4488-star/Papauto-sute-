@@ -1,4 +1,4 @@
-name: PapAuto missing Japan model photo and sheet review
+name: PapAuto missing Honda model photo and sheet review
 on:
   push:
     branches: ['review/japan-model-coverage-20261125']
@@ -20,6 +20,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: japan-model-gap-private-review
-          path: japan-model-gap-review/
+          name: japan-honda-gap-private-review
+          path: japan-honda-gap-review/
           retention-days: 14
