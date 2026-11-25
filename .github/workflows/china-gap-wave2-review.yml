@@ -1,0 +1,31 @@
+name: PapAuto China gap second source and alternate photo screening
+on:
+  push:
+    branches: ['review/china-22-model-gap-20261125']
+    paths: ['.github/workflows/china-gap-wave2-review.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: china-gap22-private-review
+          run-id: 45565118386
+          github-token: ${{ github.token }}
+          path: /tmp/china-gap-first
+      - run: pip install requests beautifulsoup4 pillow
+      - run: python scripts/research_china_gap_wave2_20261125.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: china-gap-wave2-private-review
+          path: china-gap-wave2-review/
+          retention-days: 14
