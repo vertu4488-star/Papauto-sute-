@@ -15,7 +15,7 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
     await page.waitForTimeout(1200);
     await page.evaluate(()=>document.fonts.ready);
     const state=await page.evaluate(()=>{
-      const body=document.body,stat=document.querySelector('.stats'),hero=document.querySelector('.hero');
+      const body=document.body,stat=document.querySelector('.real-filterbar'),hero=document.querySelector('.hero');
       const sheets=[...document.querySelectorAll('.real-img-sheet')].filter(x=>getComputedStyle(x).display!=='none');
       const images=[...document.querySelectorAll('.real-card img')];
       const first=images[0];
@@ -31,7 +31,7 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
           korea:document.querySelectorAll('.real-card[data-real-market=korea]').length
         },
         horizontalOverflow:document.documentElement.scrollWidth-window.innerWidth,
-        statsOverflow:stat.scrollWidth-stat.clientWidth,
+        filterOverflow:stat ? stat.scrollWidth-stat.clientWidth : null,
         heroImageLoaded:(()=>{const i=document.querySelector('.hero-visual img');return !!i?.complete && i.naturalWidth>0})(),
         firstPhotoLoaded:!!first?.complete && first.naturalWidth>0,
         auctionOnly:[...document.images].every(i => !/\/assets\/(demo|visual)\//.test(i.getAttribute('src')||'')),
@@ -55,15 +55,15 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
       'An auction card is missing its photo, description, mileage or original auction sheet');
     assert(state.linkedCSS,'Light premium CSS missing at '+viewport.width);
     assert(state.manropeActivated,'Self-hosted Manrope Cyrillic font not active at '+viewport.width);
-    assert.equal(state.realCards,11);
-    assert.equal(state.countryCounts.japan,11);
+    assert.equal(state.realCards,12);
+    assert.equal(state.countryCounts.japan,12);
     assert.equal(state.countryCounts.korea,0);
     assert.equal(state.models,0);
     assert(state.heroImageLoaded,'Hero photo missing');
     assert(state.firstPhotoLoaded,'Auction photo missing');
     assert(state.auctionOnly,'Non-auction model photograph was displayed');
     assert(state.horizontalOverflow<=2,'Horizontal overflow '+state.horizontalOverflow+'px @'+viewport.width);
-    assert(state.statsOverflow<=2,'Stats overflow '+state.statsOverflow+'px @'+viewport.width);
+    assert(state.filterOverflow!==null && state.filterOverflow<=2,'Auction filter missing or overflowing '+state.filterOverflow+'px @'+viewport.width);
     if(viewport.width<=390){
       assert(state.mobileMenuVisible,'Mobile menu missing');
       assert(state.visibleSheets>0,'Original auction sheet links inaccessible on mobile');
@@ -77,9 +77,9 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
     assert.equal(await page.locator('[data-real-filter=korea]').count(),0,'Do not advertise unverified Korean auction lots');
     assert.equal(await page.locator('.real-card[data-real-market=korea]').count(),0,'Unverified Korean auction cards returned');
     await page.locator('[data-real-filter=japan]').click();
-    assert.equal(await page.locator('.real-card:visible').count(),11,'Japan filter invalid');
+    assert.equal(await page.locator('.real-card:visible').count(),12,'Japan filter invalid');
     await page.locator('[data-real-filter=all]').click();
-    assert.equal(await page.locator('.real-card:visible').count(),11,'All auction filter invalid');
+    assert.equal(await page.locator('.real-card:visible').count(),12,'All auction filter invalid');
     if(viewport.width===390){
       await page.locator('#verified-lots').scrollIntoViewIfNeeded();
       await page.screenshot({path:'premium-light-mobile-catalog.png',fullPage:false});
@@ -125,7 +125,7 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
   assert(previewState.hero,'Preview hero image was stripped by public-build whitelist');
   assert(previewState.mainPhoto,'Preview auction photo was stripped');
   assert(previewState.sheet,'Preview inspection sheet was stripped');
-  assert.equal(previewState.cards,11,'Preview retains only 11 non-outdoor cards');
+  assert.equal(previewState.cards,12,'Preview retains only 12 approved auction cards');
   assert.equal(previewState.objectFit,'contain','Preview main auction photo must be uncropped');
   assert(previewState.pageOverflow<=2,'Preview horizontal scroll '+previewState.pageOverflow+'px');
   assert.equal(previewFailures.length,0,JSON.stringify(previewFailures));
@@ -147,9 +147,12 @@ const BASE='http://127.0.0.1:8765/premium-japan-korea.html';
   const sourceJpy=Number(String(lot.price_jpy).replace(/\D/g,''));
   const inputs=cost.locator('.pic-controls input');
   assert.equal(await inputs.count(),12,'Expected all cost fields');
-  const values=['1','0','100','2','1.5','0','0','0','0','0','0','0'];
-  for(let i=0;i<values.length;i++)await inputs.nth(i).fill(values[i]);
-  const expected=new Intl.NumberFormat('ru-RU',{maximumFractionDigits:0}).format(sourceJpy+200)+' ₽';
+  const values=['1','0','100','2','1.5','0','0','0','0','0','50000','0'];
+  for(let i=0;i<values.length;i++){
+    if(i===10){assert.equal(await inputs.nth(i).inputValue(),'50000','Fixed PapAuto commission');assert.equal(await inputs.nth(i).getAttribute('readonly'),'');}
+    else await inputs.nth(i).fill(values[i]);
+  }
+  const expected=new Intl.NumberFormat('ru-RU',{maximumFractionDigits:0}).format(sourceJpy+200+50000)+' ₽';
   await cost.waitForFunction(expected=>document.querySelector('.pic-total strong')?.textContent===expected,expected,{timeout:10000});
   assert((await cost.locator('.pic-result').innerText()).includes('100 EUR · 150 USD · 200 ₽'),
     'Duty must be shown in EUR, USD and RUB on one line');
