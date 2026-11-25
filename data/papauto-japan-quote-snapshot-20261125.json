@@ -13,7 +13,7 @@
     "usd_per_cny": 0.14961671,
     "fallback": false
   },
-  "method": "Shared quote engine; matching model/chassis/hp and displacement within 50cc; calendar age ranges; conditional personal import",
+  "method": "Shared quote engine; matching model/chassis/hp and displacement within 50cc; calendar age ranges; conditional personal import; gasoline only (owner rule 2026-11-25); diesel, hybrid, EV and unknown fuel excluded from new quotes",
   "enriched": {
     "japan-archive-20261119-01": {
       "engine_cc": 1496,
@@ -2197,10 +2197,12 @@
     "japan-next30-drom991-20261121-16": {
       "engine_cc": 1498,
       "power_hp": 105,
-      "engine_type": "ice",
+      "engine_type": "diesel",
       "body_type": "малолитражка",
       "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
-      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
+      "fuel_type": "diesel",
+      "price_excluded": "Gasoline-only owner rule 2026-11-25"
     },
     "japan-next30-drom991-20261121-17": {
       "engine_cc": 658,
@@ -2429,26 +2431,32 @@
     "japan-selection-249": {
       "engine_cc": 1498,
       "power_hp": 105,
-      "engine_type": "ice",
+      "engine_type": "diesel",
       "body_type": "кроссовер",
       "reference_url": "https://yude-car.com/rekidai/",
-      "basis": "Existing archive record; chassis DK5FW with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+      "basis": "Existing archive record; chassis DK5FW with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
+      "fuel_type": "diesel",
+      "price_excluded": "Gasoline-only owner rule 2026-11-25"
     },
     "japan-selection-251": {
       "engine_cc": 1498,
       "power_hp": 105,
-      "engine_type": "ice",
+      "engine_type": "diesel",
       "body_type": "кроссовер",
       "reference_url": "https://yude-car.com/rekidai/",
-      "basis": "Existing archive record; chassis DK5FW with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+      "basis": "Existing archive record; chassis DK5FW with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
+      "fuel_type": "diesel",
+      "price_excluded": "Gasoline-only owner rule 2026-11-25"
     },
     "japan-selection-250": {
       "engine_cc": 1756,
       "power_hp": 116,
-      "engine_type": "ice",
+      "engine_type": "diesel",
       "body_type": "кроссовер",
       "reference_url": "https://toyota.jp/ucar/catalog/brand-MAZDA/car-CX3/",
-      "basis": "Existing archive record; chassis DK8FW with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase"
+      "basis": "Existing archive record; chassis DK8FW with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
+      "fuel_type": "diesel",
+      "price_excluded": "Gasoline-only owner rule 2026-11-25"
     },
     "japan-selection-57": {
       "engine_cc": 1496,
@@ -6155,21 +6163,6 @@
         "delivery": 135000
       }
     },
-    "japan-next30-drom991-20261121-16": {
-      "total": 960076,
-      "costs": {
-        "car": 181322,
-        "japan": 56825,
-        "shipping": 32925,
-        "bank": 15000,
-        "docs": 65000,
-        "duty": 432573,
-        "customsFee": 1231,
-        "util": 5200,
-        "commission": 50000,
-        "delivery": 120000
-      }
-    },
     "japan-next30-drom991-20261121-17": {
       "total": 1083105,
       "costs": {
@@ -6544,51 +6537,6 @@
         "util": 5200,
         "commission": 50000,
         "delivery": 120000
-      }
-    },
-    "japan-selection-249": {
-      "total": 1115786,
-      "costs": {
-        "car": 320801,
-        "japan": 56825,
-        "shipping": 32925,
-        "bank": 15000,
-        "docs": 65000,
-        "duty": 432573,
-        "customsFee": 2462,
-        "util": 5200,
-        "commission": 50000,
-        "delivery": 135000
-      }
-    },
-    "japan-selection-251": {
-      "total": 1257209,
-      "costs": {
-        "car": 459762,
-        "japan": 56825,
-        "shipping": 32925,
-        "bank": 15000,
-        "docs": 65000,
-        "duty": 432573,
-        "customsFee": 4924,
-        "util": 5200,
-        "commission": 50000,
-        "delivery": 135000
-      }
-    },
-    "japan-selection-250": {
-      "total": 1178549,
-      "costs": {
-        "car": 419985,
-        "japan": 56825,
-        "shipping": 32925,
-        "bank": 15000,
-        "docs": 65000,
-        "duty": 396152,
-        "customsFee": 2462,
-        "util": 5200,
-        "commission": 50000,
-        "delivery": 135000
       }
     },
     "japan-selection-57": {
