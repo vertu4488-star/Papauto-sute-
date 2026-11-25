@@ -226,8 +226,7 @@
       "source_id": "japan-archive-20261119-30",
       "basis": "same model and chassis, explicit auction engine specification",
       "fuel_type": "diesel",
-      "price_excluded": "Owner gasoline-only rule: Mazda CX-30 DM8P XD diesel",
-      "reference_url": "https://www.goo-net.com/car/MAZDA/CX30/3DA-DM8P.html"
+      "price_excluded": "Owner gasoline-only rule: Mazda CX-30 DM8P XD diesel"
     },
     "japan-archive-20261119-31": {
       "engine_cc": 1496,
@@ -1169,7 +1168,6 @@
       "power_hp": 64,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0080004.html",
       "basis": "Japanese model catalog, chassis and grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1216,7 +1214,6 @@
       "power_hp": 98,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.goo-net-exchange.com/catalog/TOYOTA__ROOMY/",
       "basis": "Japanese model catalog, chassis and grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1244,7 +1241,6 @@
       "engine_cc": 996,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010170.html",
       "basis": "Existing owner-approved archive; verified catalogue chassis M900A; conditional personal import estimate; exact grade unknown, all documented variants have same displacement and eligible horsepower tariff; do not infer exact power",
       "power_hp_range": [
         69,
@@ -1268,7 +1264,6 @@
       "power_hp": 64,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0080004.html",
       "basis": "Japanese model catalog, chassis and grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1316,7 +1311,6 @@
       "engine_cc": 996,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010170.html",
       "basis": "Existing owner-approved archive; verified catalogue chassis M900A; conditional personal import estimate; exact grade unknown, all documented variants have same displacement and eligible horsepower tariff; do not infer exact power",
       "power_hp_range": [
         69,
@@ -1350,7 +1344,6 @@
       "power_hp": 64,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0080004.html",
       "basis": "Japanese model catalog, chassis and grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1390,7 +1383,6 @@
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010169.html",
       "basis": "Japanese model catalog, chassis and grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1410,7 +1402,6 @@
       "power_hp": 64,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0080004.html",
       "basis": "Japanese model catalog, chassis and grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1420,7 +1411,6 @@
       "power_hp": 64,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0080004.html",
       "basis": "Japanese model catalog, chassis and grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1449,7 +1439,6 @@
       "power_hp": 98,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.goo-net-exchange.com/catalog/TOYOTA__ROOMY/",
       "basis": "Japanese model catalog, chassis and grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1459,7 +1448,6 @@
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.goo-net-exchange.com/catalog/TOYOTA__ROOMY/",
       "basis": "Japanese model catalog, chassis and grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1469,7 +1457,6 @@
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010169.html",
       "basis": "Japanese model catalog, chassis and grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1479,7 +1466,6 @@
       "power_hp": 87,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0060050.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1489,7 +1475,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1499,7 +1484,6 @@
       "power_hp": 87,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0060050.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1509,7 +1493,6 @@
       "power_hp": 98,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1519,7 +1502,6 @@
       "power_hp": 87,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0060050.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1529,7 +1511,6 @@
       "power_hp": 87,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0060050.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1539,7 +1520,6 @@
       "power_hp": 98,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1549,7 +1529,6 @@
       "power_hp": 98,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1559,7 +1538,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0020103.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1569,7 +1547,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0020103.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1579,7 +1556,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1589,7 +1565,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1599,7 +1574,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1609,7 +1583,6 @@
       "power_hp": 87,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0060050.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1619,7 +1592,6 @@
       "power_hp": 49,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0020103.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1629,7 +1601,6 @@
       "power_hp": 49,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0020103.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1639,7 +1610,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0020103.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1649,7 +1619,6 @@
       "power_hp": 91,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0080020.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1659,7 +1628,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1669,7 +1637,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1679,7 +1646,6 @@
       "power_hp": 92,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1689,7 +1655,6 @@
       "power_hp": 87,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1699,7 +1664,6 @@
       "power_hp": 98,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1709,7 +1673,6 @@
       "power_hp": 91,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0080020.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1719,7 +1682,6 @@
       "power_hp": 92,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1729,7 +1691,6 @@
       "power_hp": 92,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1739,7 +1700,6 @@
       "power_hp": 49,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0020103.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1749,7 +1709,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0020103.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1759,7 +1718,6 @@
       "power_hp": 98,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1769,7 +1727,6 @@
       "power_hp": 49,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0020103.html",
       "basis": "Japanese market catalogue; matching model, chassis and existing horsepower or non-turbo grade",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1779,7 +1736,6 @@
       "power_hp": 91,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0080020.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1789,7 +1745,6 @@
       "power_hp": 98,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1799,7 +1754,6 @@
       "power_hp": 87,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1809,7 +1763,6 @@
       "power_hp": 120,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1819,7 +1772,6 @@
       "power_hp": 140,
       "engine_type": "ice",
       "body_type": "универсал",
-      "reference_url": "https://cars-japan.net/engine/mdl0010016.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1829,7 +1781,6 @@
       "power_hp": 140,
       "engine_type": "ice",
       "body_type": "универсал",
-      "reference_url": "https://cars-japan.net/engine/mdl0010174.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1839,7 +1790,6 @@
       "power_hp": 120,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1849,7 +1799,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010168.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1859,7 +1808,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010167.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1869,7 +1817,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0020023.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1879,7 +1826,6 @@
       "power_hp": 49,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010163.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1889,7 +1835,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010168.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1899,7 +1844,6 @@
       "power_hp": 114,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0020035.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1909,7 +1853,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010167.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1919,7 +1862,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0020023.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1929,7 +1871,6 @@
       "power_hp": 49,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010163.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1939,7 +1880,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010168.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1949,7 +1889,6 @@
       "power_hp": 114,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0020035.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1959,7 +1898,6 @@
       "power_hp": 49,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010163.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1969,7 +1907,6 @@
       "power_hp": 114,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0020035.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1979,7 +1916,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0020103.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1989,7 +1925,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -1999,7 +1934,6 @@
       "power_hp": 87,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2009,7 +1943,6 @@
       "power_hp": 120,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2019,7 +1952,6 @@
       "power_hp": 49,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0020103.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2029,7 +1961,6 @@
       "power_hp": 92,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2039,37 +1970,33 @@
       "power_hp": 87,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-03": {
+    "japan-next30-archive991-20261121-03": {
       "engine_cc": 996,
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010169.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-24": {
+    "japan-next30-archive991-20261121-24": {
       "engine_cc": 996,
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010169.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-30": {
+    "japan-next30-archive991-20261121-30": {
       "engine_cc": 658,
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2079,7 +2006,6 @@
       "power_hp": 120,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2089,7 +2015,6 @@
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2099,7 +2024,6 @@
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2109,7 +2033,6 @@
       "power_hp": 118,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://toyota.jp/ucar/catalog/brand-HONDA/car-VEZEL/202307/10149602/",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2119,7 +2042,6 @@
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2129,7 +2051,6 @@
       "power_hp": 120,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2139,7 +2060,6 @@
       "power_hp": 98,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2149,7 +2069,6 @@
       "power_hp": 64,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.carfactbook.com/research/suzuki-jimny-jb64-vs-jb74-specifications",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2159,7 +2078,6 @@
       "power_hp": 109,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2169,7 +2087,6 @@
       "power_hp": 102,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://www.carfactbook.com/research/suzuki-jimny-jb64-vs-jb74-specifications",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2179,7 +2096,6 @@
       "power_hp": 102,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://www.carfactbook.com/research/suzuki-jimny-jb64-vs-jb74-specifications",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2189,7 +2105,6 @@
       "power_hp": 109,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2199,7 +2114,6 @@
       "power_hp": 109,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2209,7 +2123,6 @@
       "power_hp": 140,
       "engine_type": "ice",
       "body_type": "седан / универсал",
-      "reference_url": "https://cars-japan.net/engine/mdl0010174.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2219,7 +2132,6 @@
       "power_hp": 102,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://www.carfactbook.com/research/suzuki-jimny-jb64-vs-jb74-specifications",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2229,7 +2141,6 @@
       "power_hp": 64,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.carfactbook.com/research/suzuki-jimny-jb64-vs-jb74-specifications",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2239,7 +2150,6 @@
       "power_hp": 109,
       "engine_type": "ice",
       "body_type": "седан / универсал",
-      "reference_url": "https://cars-japan.net/engine/mdl0010016.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2249,7 +2159,6 @@
       "power_hp": 98,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2259,117 +2168,105 @@
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010170.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-drom991-gap-20261121-01": {
+    "japan-archive991-gap-20261121-01": {
       "engine_cc": 1496,
       "power_hp": 118,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://gazoo.com/catalog/maker/HONDA/FREED_SPIKE/201007/",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-drom991-gap-20261121-05": {
+    "japan-archive991-gap-20261121-05": {
       "engine_cc": 1496,
       "power_hp": 118,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://gazoo.com/catalog/maker/HONDA/FREED_SPIKE/201007/",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-drom991-gap-20261121-06": {
+    "japan-archive991-gap-20261121-06": {
       "engine_cc": 658,
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0080059.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-drom991-gap-20261121-07": {
+    "japan-archive991-gap-20261121-07": {
       "engine_cc": 1798,
       "power_hp": 131,
       "engine_type": "ice",
       "body_type": "седан / универсал",
-      "reference_url": "https://cars-japan.net/engine/mdl0020010.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-drom991-gap-20261121-08": {
+    "japan-archive991-gap-20261121-08": {
       "engine_cc": 1496,
       "power_hp": 109,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-drom991-gap-20261121-09": {
+    "japan-archive991-gap-20261121-09": {
       "engine_cc": 1496,
       "power_hp": 109,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60017308/index.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-drom991-gap-20261121-10": {
+    "japan-archive991-gap-20261121-10": {
       "engine_cc": 659,
       "power_hp": 49,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://sferacar.ru/statistika/nissan/dayz/31375984.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-drom991-gap-20261121-11": {
+    "japan-archive991-gap-20261121-11": {
       "engine_cc": 1496,
       "power_hp": 118,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://gazoo.com/catalog/maker/HONDA/FREED_SPIKE/201007/",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-drom991-gap-20261121-12": {
+    "japan-archive991-gap-20261121-12": {
       "engine_cc": 1798,
       "power_hp": 131,
       "engine_type": "ice",
       "body_type": "седан / универсал",
-      "reference_url": "https://cars-japan.net/engine/mdl0020010.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-drom991-gap-20261121-14": {
+    "japan-archive991-gap-20261121-14": {
       "engine_cc": 1496,
       "power_hp": 109,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60017308/index.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-drom991-gap-20261121-17": {
+    "japan-archive991-gap-20261121-17": {
       "engine_cc": 1496,
       "power_hp": 109,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
       "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2379,7 +2276,6 @@
       "power_hp": 92,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60012274/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis QNC20 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2389,7 +2285,6 @@
       "power_hp": 92,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60012274/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis QNC20 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2399,7 +2294,6 @@
       "power_hp": 92,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60012274/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis QNC20 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2409,7 +2303,6 @@
       "power_hp": 54,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.drom.ru/catalog/nissan/moco/42095/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis MG22S and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2419,7 +2312,6 @@
       "power_hp": 110,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.drom.ru/catalog/mazda/demio/222925/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis DJLFS and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2429,7 +2321,6 @@
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://kimuracars.com/autocatalog/daihatsu/thor/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis M900S and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2439,7 +2330,6 @@
       "power_hp": 91,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.drom.ru/catalog/suzuki/baleno/180983/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis WB32S and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2449,7 +2339,6 @@
       "power_hp": 103,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.drom.ru/catalog/toyota/spade/257381/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis NCP145 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2459,7 +2348,6 @@
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://sferacar.ru/statistika/daihatsu/boon/29879340.html",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis M700S and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2469,7 +2357,6 @@
       "power_hp": 139,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://suvhub.com/models/mitsubishi/rvr",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis GA4W and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2479,7 +2366,6 @@
       "power_hp": 139,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://suvhub.com/models/mitsubishi/rvr",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis GA4W and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2489,7 +2375,6 @@
       "power_hp": 91,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.drom.ru/catalog/suzuki/solio/388156/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis MA27S and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2499,7 +2384,6 @@
       "power_hp": 91,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.drom.ru/catalog/suzuki/solio/388156/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis MA27S and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2509,7 +2393,6 @@
       "power_hp": 100,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0030010.html",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis GK3 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2519,7 +2402,6 @@
       "power_hp": 132,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0030010.html",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis GK5 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2529,7 +2411,6 @@
       "power_hp": 100,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0030010.html",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis GK3 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2539,7 +2420,6 @@
       "power_hp": 100,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0030010.html",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis GK4 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2549,7 +2429,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://suvhub.com/models/daihatsu/mira-tocot",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis LA550S and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2559,7 +2438,6 @@
       "power_hp": 79,
       "engine_type": "ice",
       "body_type": "седан",
-      "reference_url": "https://www.drom.ru/catalog/nissan/note/212383/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis E12 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2569,7 +2447,6 @@
       "power_hp": 64,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.jdmbuysell.com/learn/suzuki/jimny/jb23/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis JB23W and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2579,7 +2456,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://sferacar.ru/statistika/suzuki/hustler/29794254.html",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis MR31S and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2589,7 +2465,6 @@
       "power_hp": 91,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.drom.ru/catalog/suzuki/swift/387997/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis ZD83S and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2599,7 +2474,6 @@
       "power_hp": 120,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://www.drom.ru/catalog/toyota/yaris_cross/435139/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis MXPB15 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2609,7 +2483,6 @@
       "power_hp": 64,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.goo-net.com/catalog/HONDA/NONE/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis JG1 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2619,7 +2492,6 @@
       "power_hp": 58,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.goo-net.com/catalog/HONDA/NONE/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis JG1 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2629,7 +2501,6 @@
       "power_hp": 118,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://www.drom.ru/catalog/honda/wr-v/482718/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis DG5 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2639,7 +2510,6 @@
       "power_hp": 71,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.drom.ru/catalog/toyota/vitz/36279/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis KSP90 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2649,7 +2519,6 @@
       "power_hp": 132,
       "engine_type": "ice",
       "body_type": "седан",
-      "reference_url": "https://www.drom.ru/catalog/honda/grace/185884/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis GM6 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2659,7 +2528,6 @@
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.drom.ru/catalog/toyota/passo/68534/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis KGC30 and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2669,7 +2537,6 @@
       "power_hp": 110,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.drom.ru/catalog/mazda/demio/222925/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis DJLFS and catalogue engine specifications; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2679,7 +2546,6 @@
       "power_hp": 120,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010182.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2689,7 +2555,6 @@
       "power_hp": 129,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/mdl0030009.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2699,7 +2564,6 @@
       "power_hp": 110,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2709,7 +2573,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060052.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2719,7 +2582,6 @@
       "power_hp": 100,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0030010.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2729,7 +2591,6 @@
       "power_hp": 64,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0080004.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2739,7 +2600,6 @@
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010170.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2749,7 +2609,6 @@
       "power_hp": 98,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0030010.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2759,7 +2618,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060052.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2769,147 +2627,132 @@
       "power_hp": 103,
       "engine_type": "ice",
       "body_type": "седан / универсал",
-      "reference_url": "https://cars-japan.net/engine/mdl0010016.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-01": {
+    "japan-next30-archive991-20261121-01": {
       "engine_cc": 1797,
       "power_hp": 136,
       "engine_type": "ice",
       "body_type": "седан / универсал",
-      "reference_url": "https://cars-japan.net/engine/n001103515.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-05": {
+    "japan-next30-archive991-20261121-05": {
       "engine_cc": 996,
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010037.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-06": {
+    "japan-next30-archive991-20261121-06": {
       "engine_cc": 1496,
       "power_hp": 109,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-08": {
+    "japan-next30-archive991-20261121-08": {
       "engine_cc": 1496,
       "power_hp": 109,
       "engine_type": "ice",
       "body_type": "седан / универсал",
-      "reference_url": "https://cars-japan.net/engine/mdl0010016.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-11": {
+    "japan-next30-archive991-20261121-11": {
       "engine_cc": 1242,
       "power_hp": 91,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/yea00800172017.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-14": {
+    "japan-next30-archive991-20261121-14": {
       "engine_cc": 658,
       "power_hp": 64,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0080004.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-16": {
+    "japan-next30-archive991-20261121-16": {
       "engine_cc": 1498,
       "power_hp": 105,
       "engine_type": "diesel",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "diesel",
       "price_excluded": "Gasoline-only owner rule 2026-11-25"
     },
-    "japan-next30-drom991-20261121-17": {
+    "japan-next30-archive991-20261121-17": {
       "engine_cc": 658,
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060052.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-20": {
+    "japan-next30-archive991-20261121-20": {
       "engine_cc": 1496,
       "power_hp": 118,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/mdl0030009.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-21": {
+    "japan-next30-archive991-20261121-21": {
       "engine_cc": 1496,
       "power_hp": 129,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/mdl0030009.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-22": {
+    "japan-next30-archive991-20261121-22": {
       "engine_cc": 1496,
       "power_hp": 129,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://www.goo-net-exchange.com/catalog/HONDA__VEZEL/",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-23": {
+    "japan-next30-archive991-20261121-23": {
       "engine_cc": 996,
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010008.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-25": {
+    "japan-next30-archive991-20261121-25": {
       "engine_cc": 1490,
       "power_hp": 120,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010182.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-28": {
+    "japan-next30-archive991-20261121-28": {
       "engine_cc": 996,
       "power_hp": 98,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2919,7 +2762,6 @@
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.goo-net-exchange.com/catalog/TOYOTA__TANK/",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2929,7 +2771,6 @@
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010037.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2939,7 +2780,6 @@
       "power_hp": 109,
       "engine_type": "ice",
       "body_type": "седан / универсал",
-      "reference_url": "https://cars-japan.net/engine/mdl0010002.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2949,7 +2789,6 @@
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010170.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2959,7 +2798,6 @@
       "power_hp": 109,
       "engine_type": "ice",
       "body_type": "седан / универсал",
-      "reference_url": "https://cars-japan.net/engine/mdl0010016.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2969,7 +2807,6 @@
       "power_hp": 64,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/mdl0080004.html",
       "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2979,7 +2816,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060052.html",
       "basis": "Existing archive record; chassis LA900S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2989,7 +2825,6 @@
       "power_hp": 118,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://toyota.jp/ucar/catalog/brand-HONDA/car-FREED/",
       "basis": "Existing archive record; chassis GB3 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -2999,7 +2834,6 @@
       "power_hp": 100,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0030010.html",
       "basis": "Existing archive record; chassis GK3 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3009,7 +2843,6 @@
       "power_hp": 109,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
       "basis": "Existing archive record; chassis NSP170G with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3019,7 +2852,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060052.html",
       "basis": "Existing archive record; chassis LA900S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3029,7 +2861,6 @@
       "power_hp": 110,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
       "basis": "Existing archive record; chassis DJLFS with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3039,27 +2870,24 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
       "basis": "Existing archive record; chassis LA600S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-drom991-14-20261121-03": {
+    "japan-archive991-14-20261121-03": {
       "engine_cc": 1496,
       "power_hp": 118,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://toyota.jp/ucar/catalog/brand-HONDA/car-FREED/",
       "basis": "Existing archive record; chassis GB4 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-drom991-14-20261121-14": {
+    "japan-archive991-14-20261121-14": {
       "engine_cc": 1496,
       "power_hp": 103,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.goo-net.com/catalog/TOYOTA/RACTIS/",
       "basis": "Existing archive record; chassis NCP125 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3069,7 +2897,6 @@
       "power_hp": 150,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://www.drom.ru/catalog/honda/stepwgn/529141/",
       "basis": "Existing archive record; chassis RP7 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3079,7 +2906,6 @@
       "power_hp": 120,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
       "basis": "Existing archive record; chassis MXPC10G with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3089,7 +2915,6 @@
       "power_hp": 120,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
       "basis": "Existing archive record; chassis MXPA10 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3099,7 +2924,6 @@
       "power_hp": 109,
       "engine_type": "ice",
       "body_type": "седан / универсал",
-      "reference_url": "https://cars-japan.net/engine/mdl0010015.html",
       "basis": "Existing archive record; chassis NRE161 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3109,7 +2933,6 @@
       "power_hp": 52,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.drom.ru/catalog/suzuki/wagon_r/178214/",
       "basis": "Existing archive record; chassis MH35S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3119,7 +2942,6 @@
       "power_hp": 140,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0080018.html",
       "basis": "Existing archive record; chassis ZC33S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3129,7 +2951,6 @@
       "power_hp": 105,
       "engine_type": "diesel",
       "body_type": "кроссовер",
-      "reference_url": "https://yude-car.com/rekidai/",
       "basis": "Existing archive record; chassis DK5FW with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "diesel",
       "price_excluded": "Gasoline-only owner rule 2026-11-25"
@@ -3139,7 +2960,6 @@
       "power_hp": 105,
       "engine_type": "diesel",
       "body_type": "кроссовер",
-      "reference_url": "https://yude-car.com/rekidai/",
       "basis": "Existing archive record; chassis DK5FW with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "diesel",
       "price_excluded": "Gasoline-only owner rule 2026-11-25"
@@ -3149,7 +2969,6 @@
       "power_hp": 116,
       "engine_type": "diesel",
       "body_type": "кроссовер",
-      "reference_url": "https://toyota.jp/ucar/catalog/brand-MAZDA/car-CX3/",
       "basis": "Existing archive record; chassis DK8FW with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "diesel",
       "price_excluded": "Gasoline-only owner rule 2026-11-25"
@@ -3159,7 +2978,6 @@
       "power_hp": 110,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60006788/",
       "basis": "Existing archive record; chassis NCP81G with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3169,7 +2987,6 @@
       "power_hp": 110,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60006788/",
       "basis": "Existing archive record; chassis NCP81G with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3179,7 +2996,6 @@
       "power_hp": 150,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://gtyres.ru/en/catalog/honda/stepwgn/specs/",
       "basis": "Existing archive record; chassis RP1 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3189,7 +3005,6 @@
       "power_hp": 150,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://gtyres.ru/en/catalog/honda/stepwgn/specs/",
       "basis": "Existing archive record; chassis RP3 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3199,7 +3014,6 @@
       "power_hp": 118,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://toyota.jp/ucar/catalog/brand-HONDA/car-FREED/",
       "basis": "Existing archive record; chassis GB3 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3209,7 +3023,6 @@
       "power_hp": 90,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/yea00800172007.html",
       "basis": "Existing archive record; chassis ZC71S with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3219,7 +3032,6 @@
       "power_hp": 95,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60017358/",
       "basis": "Existing archive record; chassis NSP135 with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3229,7 +3041,6 @@
       "power_hp": 110,
       "engine_type": "ice",
       "body_type": "седан / универсал",
-      "reference_url": "https://acj-car.ru/auction/toyota/corolla%20fielder/jD0rXakYJ4G7KS2/",
       "basis": "Existing archive record; chassis NZE141G with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3239,7 +3050,6 @@
       "power_hp": 91,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
       "basis": "Existing archive record; chassis DE3FS with catalogue engine specification; indicative personal import, confirm exact grade and eligibility before purchase",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3249,7 +3059,6 @@
       "power_hp": 140,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/yea10200172021.html",
       "basis": "Existing gallery record; independently checked Japanese-market catalogue matching chassis and power; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3259,7 +3068,6 @@
       "power_hp": 140,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://cars-japan.net/engine/yea10200182019.html",
       "basis": "Existing gallery record; independently checked Japanese-market catalogue matching chassis and power; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3269,7 +3077,6 @@
       "power_hp": 136,
       "engine_type": "ice",
       "body_type": "седан",
-      "reference_url": "https://yanase.jp/mercedes-benz/catalog/a_class_sedan/10129321/",
       "basis": "Existing gallery record; independently checked Japanese-market catalogue matching chassis and power; conditional personal import estimate",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3279,7 +3086,6 @@
       "power_hp": 78,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.goo-net.com/catalog/MITSUBISHI/MIRAGE/10122202/",
       "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis A03A; conditional personal import estimate, actual export eligibility to be confirmed",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3289,7 +3095,6 @@
       "power_hp": 129,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://toyota.jp/ucar/catalog/brand-HONDA/car-VEZEL/202010/10133132/",
       "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis RU1; conditional personal import estimate, actual export eligibility to be confirmed",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3299,17 +3104,15 @@
       "power_hp": 129,
       "engine_type": "ice",
       "body_type": "кроссовер",
-      "reference_url": "https://toyota.jp/ucar/catalog/brand-HONDA/car-VEZEL/202010/10133132/",
       "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis RU1; conditional personal import estimate, actual export eligibility to be confirmed",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-next30-drom991-20261121-27": {
+    "japan-next30-archive991-20261121-27": {
       "engine_cc": 996,
       "power_hp": 69,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.goo-net.com/catalog/TOYOTA/ROOMY/",
       "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis M900A; conditional personal import estimate, actual export eligibility to be confirmed",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3319,7 +3122,6 @@
       "power_hp": 144,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/yea00100072012.html",
       "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis ZGE20W; conditional personal import estimate, actual export eligibility to be confirmed",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3329,7 +3131,6 @@
       "power_hp": 133,
       "engine_type": "ice",
       "body_type": "минивэн",
-      "reference_url": "https://cars-japan.net/engine/mdl0010007.html",
       "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis ZGE25G; conditional personal import estimate, actual export eligibility to be confirmed",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3339,7 +3140,6 @@
       "power_hp": 140,
       "engine_type": "ice",
       "body_type": "седан / универсал",
-      "reference_url": "https://cars-japan.net/engine/mdl1020001.html",
       "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis 7K15; conditional personal import estimate, actual export eligibility to be confirmed",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3349,7 +3149,6 @@
       "power_hp": 140,
       "engine_type": "ice",
       "body_type": "седан / универсал",
-      "reference_url": "https://cars-japan.net/engine/yea10200022022.html",
       "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis 7K15; conditional personal import estimate, actual export eligibility to be confirmed",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3359,7 +3158,6 @@
       "power_hp": 156,
       "engine_type": "ice",
       "body_type": "седан / универсал",
-      "reference_url": "https://www.goo-net.com/catalog/MERCEDES_BENZ/CCLASS_STATIONWAGON/10110963/",
       "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis 205240C; conditional personal import estimate, actual export eligibility to be confirmed",
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
@@ -3368,7 +3166,6 @@
       "engine_cc": 658,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
       "basis": "Existing owner-approved archive; verified catalogue chassis LA650S; conditional personal import estimate; exact grade unknown, all documented variants have same displacement and eligible horsepower tariff; do not infer exact power",
       "power_hp_range": [
         52,
@@ -3381,7 +3178,6 @@
       "engine_cc": 658,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
       "basis": "Existing owner-approved archive; verified catalogue chassis LA600S; conditional personal import estimate; exact grade unknown, all documented variants have same displacement and eligible horsepower tariff; do not infer exact power",
       "power_hp_range": [
         52,
@@ -3394,7 +3190,6 @@
       "engine_cc": 658,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
       "basis": "Existing owner-approved archive; verified catalogue chassis LA600S; conditional personal import estimate; exact grade unknown, all documented variants have same displacement and eligible horsepower tariff; do not infer exact power",
       "power_hp_range": [
         52,
@@ -3407,7 +3202,6 @@
       "engine_cc": 658,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/yea00600062013.html",
       "basis": "Existing owner-approved archive; verified catalogue chassis LA100S; conditional personal import estimate; exact grade unknown, all documented variants have same displacement and eligible horsepower tariff; do not infer exact power",
       "power_hp_range": [
         52,
@@ -3420,7 +3214,6 @@
       "engine_cc": 658,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/yea00600062013.html",
       "basis": "Existing owner-approved archive; verified catalogue chassis LA100S; conditional personal import estimate; exact grade unknown, all documented variants have same displacement and eligible horsepower tariff; do not infer exact power",
       "power_hp_range": [
         52,
@@ -3433,7 +3226,6 @@
       "engine_cc": 658,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://suvhub.com/models/honda/n-box",
       "basis": "Existing owner-approved archive; verified catalogue chassis JF4; conditional personal import estimate; exact grade unknown, all documented variants have same displacement and eligible horsepower tariff; do not infer exact power",
       "power_hp_range": [
         58,
@@ -3446,7 +3238,6 @@
       "engine_cc": 658,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://suvhub.com/models/honda/n-box",
       "basis": "Existing owner-approved archive; verified catalogue chassis JF1; conditional personal import estimate; exact grade unknown, all documented variants have same displacement and eligible horsepower tariff; do not infer exact power",
       "power_hp_range": [
         58,
@@ -3459,7 +3250,6 @@
       "engine_cc": 1198,
       "engine_type": "ice",
       "body_type": "хэтчбек",
-      "reference_url": "https://cars-japan.net/engine/mdl0020043.html",
       "basis": "Existing owner-approved archive; verified catalogue chassis E12; conditional personal import estimate; exact grade unknown, all documented variants have same displacement and eligible horsepower tariff; do not infer exact power",
       "power_hp_range": [
         79,
@@ -3472,7 +3262,6 @@
       "engine_cc": 1198,
       "engine_type": "ice",
       "body_type": "хэтчбек",
-      "reference_url": "https://cars-japan.net/engine/mdl0020043.html",
       "basis": "Existing owner-approved archive; verified catalogue chassis E12; conditional personal import estimate; exact grade unknown, all documented variants have same displacement and eligible horsepower tariff; do not infer exact power",
       "power_hp_range": [
         79,
@@ -3485,7 +3274,6 @@
       "engine_cc": 658,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/mdl0080009.html",
       "basis": "Existing owner-approved archive; verified catalogue chassis MH34S; conditional personal import estimate; exact grade unknown, all documented variants have same displacement and eligible horsepower tariff; do not infer exact power",
       "power_hp_range": [
         52,
@@ -3498,7 +3286,6 @@
       "engine_cc": 659,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/yea00201032016.html",
       "basis": "Existing owner-approved archive; verified catalogue chassis B21W; conditional personal import estimate; exact grade unknown, all documented variants have same displacement and eligible horsepower tariff; do not infer exact power",
       "power_hp_range": [
         49,
@@ -3511,7 +3298,6 @@
       "engine_cc": 658,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://car.rakuten.co.jp/maker/honda/n-one/ho59116555982/",
       "basis": "Existing owner-approved archive; verified catalogue chassis JG2; conditional personal import estimate; exact grade unknown, all documented variants have same displacement and eligible horsepower tariff; do not infer exact power",
       "power_hp_range": [
         58,
@@ -3524,17 +3310,15 @@
       "engine_cc": 1329,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60017358/index.html",
       "basis": "Existing owner-approved archive; verified catalogue chassis NSP130; conditional personal import estimate",
       "power_hp": 95,
       "fuel_type": "gasoline",
       "fuel_audit": "2026-11-25: existing auction registry model/chassis/trim review; no identified hybrid/diesel/EV; confirm actual vehicle before order"
     },
-    "japan-drom991-gap-20261121-03": {
+    "japan-archive991-gap-20261121-03": {
       "engine_cc": 658,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://cars-japan.net/engine/yea00800592014.html",
       "basis": "Existing owner-approved archive; verified catalogue chassis MR31S; conditional personal import estimate",
       "power_hp": 52,
       "fuel_type": "gasoline",
@@ -3544,7 +3328,6 @@
       "engine_cc": 659,
       "engine_type": "ice",
       "body_type": "малолитражка",
-      "reference_url": "https://www.goo-net.com/catalog/MITSUBISHI/EK_WAGON/10145077/",
       "basis": "Existing owner-approved archive; verified catalogue chassis B36W; conditional personal import estimate",
       "power_hp": 52,
       "fuel_type": "gasoline",
@@ -5846,7 +5629,7 @@
       "low": 1494529,
       "high": 1753602
     },
-    "japan-next30-drom991-20261121-03": {
+    "japan-next30-archive991-20261121-03": {
       "total": 908403,
       "costs": {
         "car": 291355,
@@ -5861,7 +5644,7 @@
         "delivery": 120000
       }
     },
-    "japan-next30-drom991-20261121-24": {
+    "japan-next30-archive991-20261121-24": {
       "total": 968844,
       "costs": {
         "car": 351796,
@@ -5876,7 +5659,7 @@
         "delivery": 120000
       }
     },
-    "japan-next30-drom991-20261121-30": {
+    "japan-next30-archive991-20261121-30": {
       "total": 790038,
       "costs": {
         "car": 264493,
@@ -6077,7 +5860,7 @@
         "delivery": 120000
       }
     },
-    "japan-drom991-gap-20261121-01": {
+    "japan-archive991-gap-20261121-01": {
       "total": 861384,
       "costs": {
         "car": 53208,
@@ -6092,7 +5875,7 @@
         "delivery": 150000
       }
     },
-    "japan-drom991-gap-20261121-05": {
+    "japan-archive991-gap-20261121-05": {
       "total": 849503,
       "costs": {
         "car": 41327,
@@ -6107,7 +5890,7 @@
         "delivery": 150000
       }
     },
-    "japan-drom991-gap-20261121-06": {
+    "japan-archive991-gap-20261121-06": {
       "total": 802436,
       "costs": {
         "car": 276891,
@@ -6122,7 +5905,7 @@
         "delivery": 120000
       }
     },
-    "japan-drom991-gap-20261121-07": {
+    "japan-archive991-gap-20261121-07": {
       "total": 1333394,
       "costs": {
         "car": 408104,
@@ -6137,7 +5920,7 @@
         "delivery": 130000
       }
     },
-    "japan-drom991-gap-20261121-08": {
+    "japan-archive991-gap-20261121-08": {
       "total": 986915,
       "costs": {
         "car": 178739,
@@ -6152,7 +5935,7 @@
         "delivery": 150000
       }
     },
-    "japan-drom991-gap-20261121-09": {
+    "japan-archive991-gap-20261121-09": {
       "total": 892342,
       "costs": {
         "car": 114166,
@@ -6167,7 +5950,7 @@
         "delivery": 120000
       }
     },
-    "japan-drom991-gap-20261121-10": {
+    "japan-archive991-gap-20261121-10": {
       "total": 623770,
       "costs": {
         "car": 99185,
@@ -6182,7 +5965,7 @@
         "delivery": 120000
       }
     },
-    "japan-drom991-gap-20261121-11": {
+    "japan-archive991-gap-20261121-11": {
       "total": 982782,
       "costs": {
         "car": 174606,
@@ -6197,7 +5980,7 @@
         "delivery": 150000
       }
     },
-    "japan-drom991-gap-20261121-12": {
+    "japan-archive991-gap-20261121-12": {
       "total": 1189266,
       "costs": {
         "car": 263976,
@@ -6212,7 +5995,7 @@
         "delivery": 130000
       }
     },
-    "japan-drom991-gap-20261121-14": {
+    "japan-archive991-gap-20261121-14": {
       "total": 907323,
       "costs": {
         "car": 129147,
@@ -6227,7 +6010,7 @@
         "delivery": 120000
       }
     },
-    "japan-drom991-gap-20261121-17": {
+    "japan-archive991-gap-20261121-17": {
       "total": 1177734,
       "costs": {
         "car": 368327,
@@ -6754,7 +6537,7 @@
         "delivery": 130000
       }
     },
-    "japan-next30-drom991-20261121-01": {
+    "japan-next30-archive991-20261121-01": {
       "total": 1314482,
       "costs": {
         "car": 389507,
@@ -6769,7 +6552,7 @@
         "delivery": 130000
       }
     },
-    "japan-next30-drom991-20261121-05": {
+    "japan-next30-archive991-20261121-05": {
       "total": 784741,
       "costs": {
         "car": 168924,
@@ -6784,7 +6567,7 @@
         "delivery": 120000
       }
     },
-    "japan-next30-drom991-20261121-06": {
+    "japan-next30-archive991-20261121-06": {
       "total": 1066151,
       "costs": {
         "car": 256744,
@@ -6799,7 +6582,7 @@
         "delivery": 150000
       }
     },
-    "japan-next30-drom991-20261121-08": {
+    "japan-next30-archive991-20261121-08": {
       "total": 1163416,
       "costs": {
         "car": 374009,
@@ -6814,7 +6597,7 @@
         "delivery": 130000
       }
     },
-    "japan-next30-drom991-20261121-11": {
+    "japan-next30-archive991-20261121-11": {
       "total": 1067672,
       "costs": {
         "car": 361611,
@@ -6829,7 +6612,7 @@
         "delivery": 120000
       }
     },
-    "japan-next30-drom991-20261121-14": {
+    "japan-next30-archive991-20261121-14": {
       "total": 1177298,
       "costs": {
         "car": 628686,
@@ -6844,7 +6627,7 @@
         "delivery": 135000
       }
     },
-    "japan-next30-drom991-20261121-17": {
+    "japan-next30-archive991-20261121-17": {
       "total": 1083105,
       "costs": {
         "car": 553265,
@@ -6859,7 +6642,7 @@
         "delivery": 120000
       }
     },
-    "japan-next30-drom991-20261121-20": {
+    "japan-next30-archive991-20261121-20": {
       "total": 1225260,
       "costs": {
         "car": 415853,
@@ -6874,7 +6657,7 @@
         "delivery": 150000
       }
     },
-    "japan-next30-drom991-20261121-21": {
+    "japan-next30-archive991-20261121-21": {
       "total": 1147771,
       "costs": {
         "car": 338364,
@@ -6889,7 +6672,7 @@
         "delivery": 150000
       }
     },
-    "japan-next30-drom991-20261121-22": {
+    "japan-next30-archive991-20261121-22": {
       "total": 1464790,
       "costs": {
         "car": 660715,
@@ -6904,7 +6687,7 @@
         "delivery": 135000
       }
     },
-    "japan-next30-drom991-20261121-23": {
+    "japan-next30-archive991-20261121-23": {
       "total": 743414,
       "costs": {
         "car": 127597,
@@ -6919,11 +6702,11 @@
         "delivery": 120000
       }
     },
-    "japan-next30-drom991-20261121-25": {
+    "japan-next30-archive991-20261121-25": {
       "low": 1714289,
       "high": 2008103
     },
-    "japan-next30-drom991-20261121-28": {
+    "japan-next30-archive991-20261121-28": {
       "total": 1407660,
       "costs": {
         "car": 760933,
@@ -7122,7 +6905,7 @@
         "delivery": 120000
       }
     },
-    "japan-drom991-14-20261121-03": {
+    "japan-archive991-14-20261121-03": {
       "total": 872749,
       "costs": {
         "car": 64573,
@@ -7137,7 +6920,7 @@
         "delivery": 150000
       }
     },
-    "japan-drom991-14-20261121-14": {
+    "japan-archive991-14-20261121-14": {
       "total": 858247,
       "costs": {
         "car": 80071,
@@ -7434,7 +7217,7 @@
         "delivery": 135000
       }
     },
-    "japan-next30-drom991-20261121-27": {
+    "japan-next30-archive991-20261121-27": {
       "total": 1115950,
       "costs": {
         "car": 496440,
@@ -7738,7 +7521,7 @@
         "delivery": 120000
       }
     },
-    "japan-drom991-gap-20261121-03": {
+    "japan-archive991-gap-20261121-03": {
       "total": 605418,
       "costs": {
         "car": 81104,
