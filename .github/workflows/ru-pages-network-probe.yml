@@ -2,6 +2,7 @@ name: Russia access test — GitHub Pages
 
 on:
   push:
+    branches: [main]
     paths:
       - '.github/workflows/ru-pages-network-probe.yml'
       - '*.html'
@@ -85,6 +86,9 @@ jobs:
           path: _github_pages_probe
 
   deploy:
+    # The shared github-pages environment publishes only the reviewed main branch.
+    # Manual runs on feature branches may build diagnostics, but must not deploy them.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 8
     needs: build
