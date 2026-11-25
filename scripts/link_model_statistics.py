@@ -303,7 +303,8 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
         html = page.read_text(encoding="utf-8")
         records = sorted(grouped[ident], key=lambda x:(str(x.get("auction_date") or ""),x["year"],x["id"]), reverse=True)
         name = item["brand"]+" "+item["model"]
-        parts = ['<section id="pa-model-statistics" aria-label="Аукционная статистика модели"><h2>Аукционная статистика: '+esc(name)+'</h2>']
+        heading = "Примеры автомобилей" if supplier[ident] and not records else "Аукционная статистика"
+        parts = ['<section id="pa-model-statistics" aria-label="'+esc(heading)+'"><h2>'+esc(heading)+': '+esc(name)+'</h2>']
         if records:
             parts += ['<p>В нашей базе: '+str(len(records))+' документированных аукционных примеров по этой модели и стране. Архивные цены не являются текущими предложениями или стоимостью под ключ. Проверка доступности ввоза обязательна.</p><div class="pa-model-lot-grid">']
             parts += [lot_card(row,target) for row in records[:MAX_CARDS]]

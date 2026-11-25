@@ -559,7 +559,9 @@ def copy_public_files() -> list[str]:
 
     # Attach only already screened public auction examples to all model pages.
     from link_model_statistics import render as link_model_statistics
-    link_model_statistics(TARGET, published_registry, china_order_photos)
+    model_coverage = link_model_statistics(TARGET, published_registry, china_order_photos)
+    if model_coverage['supplier_cards'] != model_coverage['supplier_matches']:
+        raise RuntimeError('PAPAUTO_MODEL_STATS: missing inline supplier cards')
 
     # The gallery compiler generates /lots/*.html after the initial page loop.
     # Reconcile every finished HTML page with the global warm skin, including
@@ -626,6 +628,23 @@ def copy_public_files() -> list[str]:
         raise RuntimeError("Public site build missing files: " + ", ".join(sorted(missing)))
 
     # Final gate inspects the full published HTML/data/image bytes, not a preview.
+    # Re-check inline supplier images after final theme and calculator passes.
+    supplier_card_count = 0
+    for model_page in (TARGET / "models").glob("*.html"):
+        model_html = model_page.read_text(encoding="utf-8")
+        cards = re.findall(r'<article class="pa-model-lot pa-model-supplier"[^>]*>[\s\S]*?</article>', model_html)
+        for card in cards:
+            photos = re.findall(r'<img\b[^>]*\bsrc="(/assets/china-order/[^"]+)"', card)
+            if (not model_page.stem.startswith("china-") or len(photos) != 1
+                    or photos[0].lstrip("/") not in china_order_photos
+                    or not all(x in card for x in ("Двигатель", "Пробег", "FOB", "Рассчитать стоимость", "Подобрать аналог"))
+                    or re.search(r'href="https?://', card)):
+                raise RuntimeError("PAPAUTO_MODEL_STATS: invalid supplier card " + model_page.stem)
+        supplier_card_count += len(cards)
+    if supplier_card_count != model_coverage["supplier_cards"]:
+        raise RuntimeError("PAPAUTO_MODEL_STATS: inline cards lost after build")
+    print(f"PAPAUTO_MODEL_SUPPLIER_CARDS_OK: {supplier_card_count}")
+
     verify_published_output(TARGET)
 
     print(f"Prepared {len(copied)} public files and {len(tombstones)} safe tombstones in {TARGET.name}/")
