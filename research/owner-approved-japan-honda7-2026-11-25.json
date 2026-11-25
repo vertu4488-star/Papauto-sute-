@@ -1,0 +1,328 @@
+{
+  "approved_count": 7,
+  "approval_date": "2026-11-25",
+  "rights_confirmed": false,
+  "owner_authorized_archival_reference_only": true,
+  "reviewed_pdf_sha256": "11b3680fd8e1ac78c97a4c5d6aa0ec26044890c6896ce9d4eed3c603dae6b01a",
+  "reviewed_jpg_zip_sha256": "57ceab5200b48491df0a9785e91fa374e832ba6cc2380995c65154d8195f92b8",
+  "reviewed_full_manifest_sha256": "a76e03a4eb27438465e7fc8217cd665f877c24987994accf0677c48fa2938b16",
+  "jpg_aggregate_sha256": "47cdeed143dbe5398ff3e4eb2fb54ec5429641b8e30660fbd25bee43d4fb6ff8",
+  "lots": [
+    {
+      "id": "japan-honda7-20261125-01",
+      "country": "japan",
+      "make": "Honda",
+      "model": "N van",
+      "year": 2021,
+      "mileage_km": 122000,
+      "body": "JJ1",
+      "grade": "4",
+      "auction": "TAA Hyogo",
+      "lot": "3190",
+      "auction_date": "2026-11-21",
+      "description": "Honda N van, 2021 года, кузов JJ1, комплектация: L. Двигатель 660 см³; мощность в источнике не указана, уточняется по документам. Пробег по статистике источника (округлённый): 122000 км, оценка 4. Аукцион TAA Hyogo, дата 2026-11-21, лот №3190. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-honda7-20261125-01-front.jpg",
+        "/assets/auction/approved/japan-honda7-20261125-01-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-honda7-20261125-01-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 371000,
+      "media_sha256": [
+        "503e4cd3f32d38cf6e498e962ee17236f7ed880524bf7ee43576fafc7d111fa5",
+        "2cef383d2cc8ae87c58cd9263ba1b08f09645be3687642215ab933118fbfc51f",
+        "9df369133d0e18ef08c223f1e32ac31a599bd3079b06193ec9dd7b1961e63a1f"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/n-van/Ol03tVa89pOyy0/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXUsgeNHKpwcE2TX4QKYXQCTMq3EjH",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXUsgeNHKpwcE2TX4QKZL1f3l2YIQu",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzY7S1HcfrsCPo4TDgcBrVxPx7wNDb"
+      ],
+      "raw_sha256": [
+        "70cc0bfad8138f7746d8ea4d6ffc4a14072c55304d38410548a6f233101affdf",
+        "3541133c185249673bdca73b98fd302a4ff8776ccf2c53e0becaccc04942acf4",
+        "6cbfdcd36207fcce524254b226c88c4111c340dc819ae01325c61426b37fe77e"
+      ],
+      "trim": "L",
+      "engine_cc": 660,
+      "power_hp": null,
+      "rights_confirmed": false,
+      "artifact_record_index": 1,
+      "artifact_id": 14997444386
+    },
+    {
+      "id": "japan-honda7-20261125-03",
+      "country": "japan",
+      "make": "Honda",
+      "model": "N one",
+      "year": 2013,
+      "mileage_km": 146000,
+      "body": "JG1",
+      "grade": "3.5",
+      "auction": "TAA Hyogo",
+      "lot": "3258",
+      "auction_date": "2026-11-21",
+      "description": "Honda N one, 2013 года, кузов JG1, комплектация: Tourer - L. Двигатель 660 см³; мощность в источнике не указана, уточняется по документам. Пробег по статистике источника (округлённый): 146000 км, оценка 3.5. Аукцион TAA Hyogo, дата 2026-11-21, лот №3258. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-honda7-20261125-03-front.jpg",
+        "/assets/auction/approved/japan-honda7-20261125-03-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-honda7-20261125-03-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 64000,
+      "media_sha256": [
+        "e75ecd78cbc2296767cc6d0855e234bfb8d3c9633baf2bc437c115940baa5d95",
+        "2aa4021de9cc91687009f25ac11e5f9898ffad55f313866010ca247824748ec3",
+        "5831d7858a52f4a06b6d98b81fbc48cb41bd8d22e438e91d348508e6b4b5d84f"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/n-one/PbfRplJHlna6L7/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXUsgeNHKpwcE2TVZ0ueABkmlo9xtU",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXUsgeNHKpwcE2TVZ0ufnKWuU15C1H",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzY7S1HcfrsCPo4SyyVR5Gfi75CGNo"
+      ],
+      "raw_sha256": [
+        "55a06c91d2697f52dd97caa7bb7cd66bc8164baacaa0bbdf8d7a00ecfd2f891e",
+        "0e7de78356e94c4c63f1892212adb98f51895349dc8a2093ed9a25305b560b96",
+        "5aab07facfc71c3e6ccb4c77f3742a3b6cc9c98fe6ceeea45463b8927088c8c9"
+      ],
+      "trim": "Tourer - L",
+      "engine_cc": 660,
+      "power_hp": null,
+      "rights_confirmed": false,
+      "artifact_record_index": 3,
+      "artifact_id": 14997444386
+    },
+    {
+      "id": "japan-honda7-20261125-04",
+      "country": "japan",
+      "make": "Honda",
+      "model": "N van",
+      "year": 2024,
+      "mileage_km": 8000,
+      "body": "JJ2",
+      "grade": "4.5",
+      "auction": "JU Yamagata",
+      "lot": "9",
+      "auction_date": "2026-11-21",
+      "description": "Honda N van, 2024 года, кузов JJ2, комплектация: 4WD L. Двигатель 660 см³; мощность в источнике не указана, уточняется по документам. Пробег по статистике источника (округлённый): 8000 км, оценка 4.5. Аукцион JU Yamagata, дата 2026-11-21, лот №9. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-honda7-20261125-04-front.jpg",
+        "/assets/auction/approved/japan-honda7-20261125-04-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-honda7-20261125-04-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 1225000,
+      "media_sha256": [
+        "8ff528567145cfe3361583f6d952206b0560a286be9c96767455d5f5fbf1d350",
+        "38702de456bbce6614d5bb5325d0d0ffe98cf9d782db3b78e06e7c4656075c18",
+        "7c3ef0871bbe8496d01d3f6245f01821fa73cde21b2a6fdcb5918543f8d6b3fc"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/n-van/5vPfYoVVNKVyw/",
+      "source_media": [
+        "https://7.tru.ru/imgs/pR9lLmCb9wxDaiX9rBON0tAUuBzaIzxxoxE8z6oFmIDOSWSQEWA",
+        "https://7.tru.ru/imgs/pR9lLmCb9wxDaiX9rBON0tAUuBzaIzxxoxE8z6oFyBY3Xk4TKSr",
+        "https://7.tru.ru/imgs/pR9lLmCb9wxU8KZ7Wj6NzRw2W5ZKBhfQiRjZyw7tusjooPkI9LV"
+      ],
+      "raw_sha256": [
+        "a3b5c876e45f60f8c0ca3285539522c8a140ce904a3015db94fa4eedfcac8871",
+        "8a87f34e936be544752ffea547f767c11b380d78bdc655e0c7fe0a26b2cac934",
+        "2928ec4aecc91cdb39a787c7ba35731288f242cff2a5054d4c21437433cbbc24"
+      ],
+      "trim": "4WD L",
+      "engine_cc": 660,
+      "power_hp": null,
+      "rights_confirmed": false,
+      "artifact_record_index": 4,
+      "artifact_id": 14997444386
+    },
+    {
+      "id": "japan-honda7-20261125-05",
+      "country": "japan",
+      "make": "Honda",
+      "model": "N one",
+      "year": 2013,
+      "mileage_km": 37000,
+      "body": "JG1",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "3096",
+      "auction_date": "2026-11-21",
+      "description": "Honda N one, 2013 года, кузов JG1, комплектация: Premium L. Двигатель 660 см³; мощность в источнике не указана, уточняется по документам. Пробег по статистике источника (округлённый): 37000 км, оценка 4. Аукцион TAA Yokohama, дата 2026-11-21, лот №3096. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-honda7-20261125-05-front.jpg",
+        "/assets/auction/approved/japan-honda7-20261125-05-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-honda7-20261125-05-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 430000,
+      "media_sha256": [
+        "70a7d3137d59ad7d7e22ad2ffa8cd4cb694737e9f69f48f09f0eb80a9dbdb0ab",
+        "d2e303bba10046be15a1e96caf25bfb6e3a74165ff4adc6597ded341c0a0a239",
+        "b451aa0edfb363cf88c266218c7ea523ec9430aebb631d69e09ca80ae9afc91f"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/n-one/ZqxMSgiysgEaat/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdP5AV7zIT5JrmYyV",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdP5AV8mSvdi4j46I",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnLE1mJ4NO1u8R8Sp"
+      ],
+      "raw_sha256": [
+        "938c7d3214181d30ed6aec6b7a9662a23c65e24941fd277dcb7505502d8335d9",
+        "7679ffccc061d0fe78e510b4c60f682b956b282cb0f9786a63820a9e15264fe9",
+        "9bf356edab856d030f5fade7551c751cd14421bcddd046ec90c24ceb006f536e"
+      ],
+      "trim": "Premium L",
+      "engine_cc": 660,
+      "power_hp": null,
+      "rights_confirmed": false,
+      "artifact_record_index": 5,
+      "artifact_id": 14997444386
+    },
+    {
+      "id": "japan-honda7-20261125-06",
+      "country": "japan",
+      "make": "Honda",
+      "model": "N van",
+      "year": 2019,
+      "mileage_km": 168000,
+      "body": "JJ1",
+      "grade": "3.5",
+      "auction": "MIRIVE Aichi",
+      "lot": "48",
+      "auction_date": "2026-11-20",
+      "description": "Honda N van, 2019 года, кузов JJ1, комплектация: ｸ-&. Двигатель 660 см³; мощность в источнике не указана, уточняется по документам. Пробег по статистике источника (округлённый): 168000 км, оценка 3.5. Аукцион MIRIVE Aichi, дата 2026-11-20, лот №48. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-honda7-20261125-06-front.jpg",
+        "/assets/auction/approved/japan-honda7-20261125-06-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-honda7-20261125-06-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 236000,
+      "media_sha256": [
+        "714039cd3642ba1856e95f07978e1e9bbae0aff6b3ddb330def77087c0404a17",
+        "3c0af5d39b00ed9b774d2955940e484d2271ab339d2e52902ae5f055a008eb21",
+        "6ffb7095646037b3f6903efd6a04f01e7ddd947679819185c6acebfb8a2f13b1"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/n-van/rCCNwPuhf1Xsc/",
+      "source_media": [
+        "https://7.tru.ru/imgs/pR9lLmCb9wxDaj5bYm2nIDs2V9R4CvwYnV1CBqUCXeLlo5vXmGV",
+        "https://7.tru.ru/imgs/pR9lLmCb9wxDaj5bYm2nIDs2V9R4CvwYnV1CBqUCXeLlqS9YlrW",
+        "https://7.tru.ru/imgs/pR9lLmCb9wxU8L7at4io02n0mChDvdfhieGuARCr7yK0eNH3XVc"
+      ],
+      "raw_sha256": [
+        "02cb62dae064a59e111800a67cc78ab98a3f6992816dc5fd0c6f8d6a873423f7",
+        "7defc0554d7750ae0d93a98bbf05e1a1544ca7f477d434c5a06a1831306a420a",
+        "d0bd5b9fc8ed5cad2930e75d57e6b4e0a5573360ad927f30f0bb53a52a26fb47"
+      ],
+      "trim": "ｸ-&",
+      "engine_cc": 660,
+      "power_hp": null,
+      "rights_confirmed": false,
+      "artifact_record_index": 6,
+      "artifact_id": 14997444386
+    },
+    {
+      "id": "japan-honda7-20261125-08",
+      "country": "japan",
+      "make": "Honda",
+      "model": "Wr-v",
+      "year": 2025,
+      "mileage_km": 11000,
+      "body": "DG5",
+      "grade": "5",
+      "auction": "KCAA Fukuoka",
+      "lot": "394",
+      "auction_date": "2026-11-12",
+      "description": "Honda Wr-v, 2025 года, кузов DG5, комплектация: Z. Двигатель 1500 см³; мощность в источнике не указана, уточняется по документам. Пробег по статистике источника (округлённый): 11000 км, оценка 5. Аукцион KCAA Fukuoka, дата 2026-11-12, лот №394. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-honda7-20261125-08-front.jpg",
+        "/assets/auction/approved/japan-honda7-20261125-08-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-honda7-20261125-08-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 2006000,
+      "media_sha256": [
+        "0336557ed68657145179206ddbec8fc7b5a2ba5defe5375c45de52e84f9e08b9",
+        "60007f9297a305478a39d947d78550c2a771abfd74860649c0d7c862b09eb5f5",
+        "53b2fc1568090bc32df8e93a9dcdc4056ac374017e3c5857cb735baf8b408f87"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/wr-v/5B15AECyePfzja/",
+      "source_media": [
+        "https://7.tru.ru/imgs/6pPkrX3oZJO68l1cdWLsUsxSyf8SdgUMQyQZtFSZVcsWiaatpMwu",
+        "https://7.tru.ru/imgs/6pPkrX3oZJO68l1cdWLsUsxSyf8SdgUMQyQZtFUqhy8I42tKtX1x",
+        "https://7.tru.ru/imgs/gA5rKm2cpzETdynae4smjhuS7V0n31NSPaW3gyx3juYm93Gu"
+      ],
+      "raw_sha256": [
+        "711985830df633f2f7f374b27a53d3dc7ab91057b6db7188c2727beae2b23503",
+        "5d3751bcb0981cf14338899d9da0f9386744ff94eb5cd59f3cb18a5ef87e6bf4",
+        "b222f7309bdfaa8a87eadfd9bcd57e159658364e808238e8e389c412591d5b27"
+      ],
+      "trim": "Z",
+      "engine_cc": 1500,
+      "power_hp": null,
+      "rights_confirmed": false,
+      "artifact_record_index": 8,
+      "artifact_id": 14997444386
+    },
+    {
+      "id": "japan-honda7-20261125-09",
+      "country": "japan",
+      "make": "Honda",
+      "model": "N one",
+      "year": 2014,
+      "mileage_km": 80000,
+      "body": "JG2",
+      "grade": "3.5",
+      "auction": "JU Hokkaido",
+      "lot": "543",
+      "auction_date": "2026-11-20",
+      "description": "Honda N one, 2014 года, кузов JG2, комплектация: 4WD Premiu. Двигатель 660 см³; мощность в источнике не указана, уточняется по документам. Пробег по статистике источника (округлённый): 80000 км, оценка 3.5. Аукцион JU Hokkaido, дата 2026-11-20, лот №543. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-honda7-20261125-09-front.jpg",
+        "/assets/auction/approved/japan-honda7-20261125-09-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-honda7-20261125-09-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 224000,
+      "media_sha256": [
+        "2934ad0ea903e6fefc327d883b29823cbf387f351d1937a5a890a64511ac584e",
+        "c1f0fa511de3cef88f282ef10e516efdcb548aa3d9d9204fa3996b06efcb0e3f",
+        "cb181bc9a397819208f753ae240a4018ee488178e12975a7450b7f6b1aab7c23"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/n-one/7AfFtCeTgQJgsJ/",
+      "source_media": [
+        "https://7.tru.ru/imgs/pR9lLmCb9wxDaiX9rBON0tATTZuEybPmWcIFRm0U6NCylky3eGM",
+        "https://7.tru.ru/imgs/pR9lLmCb9wxDaiX9rBON0tATTZuEybPmWcIFRm0UhGWMpHJ6kCD",
+        "https://7.tru.ru/imgs/pR9lLmCb9wxU8KZ7Wj6NzRw2lsVeqTxFQwoxQMRIdxi8RcZTIw8"
+      ],
+      "raw_sha256": [
+        "cb094d76bbffa8e859d4dc10adaa0bd738abed7380bfb11e0ec97a074f3de462",
+        "3d4b083c8ae6f50bffeec57fb7e646088115c360e02c21d8003820ae5663ccdf",
+        "e81e648eee4e8dc01225fe7aa4b4bb0595f566503674861ac661aaaffa9c67be"
+      ],
+      "trim": "4WD Premiu",
+      "engine_cc": 660,
+      "power_hp": null,
+      "rights_confirmed": false,
+      "artifact_record_index": 9,
+      "artifact_id": 14997444386
+    }
+  ],
+  "note": "Owner explicitly approved and requested publication of exactly 7 PDF-reviewed archive examples; independent commercial media rights not confirmed. No stock or verified sale claim."
+}

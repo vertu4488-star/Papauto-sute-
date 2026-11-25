@@ -87,3 +87,5 @@ Owner expressly approved on 2026-11-21 exactly 30 full-sheet Japanese historic a
 Owner expressly approved on 2026-11-21 exactly 30 full-sheet Japanese historic auction records in PapAuto_Japan_Another30_639_2026-11-21.pdf. New immutable receipt: research/owner-approved-japan-next30-639-2026-11-21.json. Exactly 90 JPEGs, 30 source auction lots; no street/dealer photos; no external card links, stock claims or third-party rights assertion. This is not blanket permission for any other batch.
 
 Owner approved the exact PDF PapAuto_Japan_18_ATP_review_2026-11-25.pdf and explicitly requested publication. Exact 18 archived source examples / 54 frozen JPEGs only; research/owner-approved-japan-gap18-2026-11-25.json. No commercial license assertion, no live inventory, no general exception for other records.
+
+Owner approved the exact PDF PapAuto_Honda_7_ATP_review_2026-11-25.pdf and explicitly requested publication. Exact 7 archived source examples / 21 frozen JPEGs only; research/owner-approved-japan-honda7-2026-11-25.json. No commercial license assertion, no live inventory, no general exception for other records.

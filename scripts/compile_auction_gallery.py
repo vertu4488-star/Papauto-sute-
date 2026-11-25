@@ -563,6 +563,26 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
             card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
                         sale_label="Цена по данным аукциона", rights_confirmed=False)
             additional.append(card)
+        archive19 = json.loads((ROOT / "research/owner-approved-japan-honda7-2026-11-25.json").read_text(encoding="utf-8"))
+        archived19 = archive19["lots"]
+        if (archive19.get("approved_count") != 7 or archive19.get("rights_confirmed") is not False
+                or archive19.get("owner_authorized_archival_reference_only") is not True
+                or archive19.get("reviewed_pdf_sha256") != "11b3680fd8e1ac78c97a4c5d6aa0ec26044890c6896ce9d4eed3c603dae6b01a"
+                or archive19.get("reviewed_jpg_zip_sha256") != "57ceab5200b48491df0a9785e91fa374e832ba6cc2380995c65154d8195f92b8"
+                or archive19.get("reviewed_full_manifest_sha256") != "a76e03a4eb27438465e7fc8217cd665f877c24987994accf0677c48fa2938b16"
+                or [r["id"] for r in archived19] != [f"japan-honda7-20261125-{i:02d}" for i in (1,3,4,5,6,8,9)]
+                or any(len(r["photos"]) != 2 or r.get("rights_confirmed") is not False for r in archived19)):
+            raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: exact 7 Honda archive receipt mismatch")
+        hashes19 = [h for r in archived19 for h in r["media_sha256"]]
+        prior19 = prior18 + hashes18
+        if (len(hashes19) != 21 or len(set(hashes19)) != 21 or set(hashes19).intersection(prior19)
+                or hashlib.sha256("".join(hashes19).encode()).hexdigest() != "47cdeed143dbe5398ff3e4eb2fb54ec5429641b8e30660fbd25bee43d4fb6ff8"):
+            raise RuntimeError("PAPAUTO_POLICY: 7 Honda image/sheet originals altered or reused")
+        for rec in archived19:
+            card = prepare_approved(target, rec, owner_selected=True)
+            card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
+                        sale_label="Цена по данным аукциона", rights_confirmed=False)
+            additional.append(card)
     seen_lot_keys = {
         (r["market"], r["auction"], str(r["auction_date"]), str(r["lot_number"]))
         for r in base
