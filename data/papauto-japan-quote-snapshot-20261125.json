@@ -1577,6 +1577,246 @@
       "body_type": "малолитражка",
       "reference_url": "https://cars-japan.net/engine/mdl0060010.html",
       "basis": "Owner-approved ATP auction record; Japanese catalogue matching chassis, non-hybrid grade and horsepower"
+    },
+    "japan-atp-b4-20261120-01": {
+      "engine_cc": 1490,
+      "power_hp": 120,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b4-20261120-02": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b4-20261120-04": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b4-20261120-05": {
+      "engine_cc": 1496,
+      "power_hp": 118,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://toyota.jp/ucar/catalog/brand-HONDA/car-VEZEL/202307/10149602/",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b4-20261120-06": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b4-20261120-10": {
+      "engine_cc": 1490,
+      "power_hp": 120,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010181.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b4-20261120-13": {
+      "engine_cc": 996,
+      "power_hp": 98,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b4-20261120-19": {
+      "engine_cc": 658,
+      "power_hp": 64,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.carfactbook.com/research/suzuki-jimny-jb64-vs-jb74-specifications",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b4-20261120-24": {
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b4-20261120-29": {
+      "engine_cc": 1460,
+      "power_hp": 102,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://www.carfactbook.com/research/suzuki-jimny-jb64-vs-jb74-specifications",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b4-20261120-30": {
+      "engine_cc": 1460,
+      "power_hp": 102,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://www.carfactbook.com/research/suzuki-jimny-jb64-vs-jb74-specifications",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b5-20261120-02": {
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b5-20261120-03": {
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b5-20261120-05": {
+      "engine_cc": 1797,
+      "power_hp": 140,
+      "engine_type": "ice",
+      "body_type": "седан / универсал",
+      "reference_url": "https://cars-japan.net/engine/mdl0010174.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b5-20261120-08": {
+      "engine_cc": 1460,
+      "power_hp": 102,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://www.carfactbook.com/research/suzuki-jimny-jb64-vs-jb74-specifications",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b5-20261120-14": {
+      "engine_cc": 658,
+      "power_hp": 64,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.carfactbook.com/research/suzuki-jimny-jb64-vs-jb74-specifications",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b5-20261120-15": {
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "engine_type": "ice",
+      "body_type": "седан / универсал",
+      "reference_url": "https://cars-japan.net/engine/mdl0010016.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b5-20261120-18": {
+      "engine_cc": 996,
+      "power_hp": 98,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-atp-b5-20261120-20": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010170.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-drom991-gap-20261121-01": {
+      "engine_cc": 1496,
+      "power_hp": 118,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://gazoo.com/catalog/maker/HONDA/FREED_SPIKE/201007/",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-drom991-gap-20261121-05": {
+      "engine_cc": 1496,
+      "power_hp": 118,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://gazoo.com/catalog/maker/HONDA/FREED_SPIKE/201007/",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-drom991-gap-20261121-06": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0080059.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-drom991-gap-20261121-07": {
+      "engine_cc": 1798,
+      "power_hp": 131,
+      "engine_type": "ice",
+      "body_type": "седан / универсал",
+      "reference_url": "https://cars-japan.net/engine/mdl0020010.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-drom991-gap-20261121-08": {
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-drom991-gap-20261121-09": {
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60017308/index.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-drom991-gap-20261121-10": {
+      "engine_cc": 659,
+      "power_hp": 49,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://sferacar.ru/statistika/nissan/dayz/31375984.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-drom991-gap-20261121-11": {
+      "engine_cc": 1496,
+      "power_hp": 118,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://gazoo.com/catalog/maker/HONDA/FREED_SPIKE/201007/",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-drom991-gap-20261121-12": {
+      "engine_cc": 1798,
+      "power_hp": 131,
+      "engine_type": "ice",
+      "body_type": "седан / универсал",
+      "reference_url": "https://cars-japan.net/engine/mdl0020010.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-drom991-gap-20261121-14": {
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60017308/index.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
+    },
+    "japan-drom991-gap-20261121-17": {
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
+      "basis": "Existing owner-approved archival auction record, matching Japanese-market chassis and horsepower; indicative conditional personal import"
     }
   },
   "quotes": {
@@ -4004,6 +4244,357 @@
         "util": 5200,
         "commission": 50000,
         "delivery": 120000
+      }
+    },
+    "japan-atp-b4-20261120-01": {
+      "low": 1282172,
+      "high": 1426992
+    },
+    "japan-atp-b4-20261120-02": {
+      "low": 905831,
+      "high": 997958
+    },
+    "japan-atp-b4-20261120-04": {
+      "low": 886201,
+      "high": 974280
+    },
+    "japan-atp-b4-20261120-05": {
+      "low": 2026495,
+      "high": 2457751
+    },
+    "japan-atp-b4-20261120-06": {
+      "low": 1092405,
+      "high": 1281609
+    },
+    "japan-atp-b4-20261120-10": {
+      "total": 1248541,
+      "costs": {
+        "car": 662781,
+        "japan": 64134,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 228577,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-b4-20261120-13": {
+      "low": 1033093,
+      "high": 1167911
+    },
+    "japan-atp-b4-20261120-19": {
+      "total": 1164468,
+      "costs": {
+        "car": 630753,
+        "japan": 62533,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-b4-20261120-24": {
+      "total": 1375646,
+      "costs": {
+        "car": 561530,
+        "japan": 59072,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-atp-b4-20261120-29": {
+      "total": 2143257,
+      "costs": {
+        "car": 1180401,
+        "japan": 90015,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 566592,
+        "customsFee": 4924,
+        "util": 3400,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-atp-b4-20261120-30": {
+      "low": 1618019,
+      "high": 1815644
+    },
+    "japan-atp-b5-20261120-02": {
+      "total": 1524810,
+      "costs": {
+        "car": 703591,
+        "japan": 66175,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-atp-b5-20261120-03": {
+      "total": 1529692,
+      "costs": {
+        "car": 708241,
+        "japan": 66407,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-atp-b5-20261120-05": {
+      "total": 1591561,
+      "costs": {
+        "car": 657099,
+        "japan": 63850,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 567563,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-atp-b5-20261120-08": {
+      "low": 1937983,
+      "high": 2336824
+    },
+    "japan-atp-b5-20261120-14": {
+      "low": 1238127,
+      "high": 1327193
+    },
+    "japan-atp-b5-20261120-15": {
+      "total": 1244399,
+      "costs": {
+        "car": 452530,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-atp-b5-20261120-18": {
+      "total": 1153266,
+      "costs": {
+        "car": 518653,
+        "japan": 56928,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-atp-b5-20261120-20": {
+      "total": 957995,
+      "costs": {
+        "car": 340947,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-drom991-gap-20261121-01": {
+      "total": 861384,
+      "costs": {
+        "car": 53208,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-drom991-gap-20261121-05": {
+      "total": 849503,
+      "costs": {
+        "car": 41327,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-drom991-gap-20261121-06": {
+      "total": 802436,
+      "costs": {
+        "car": 276891,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-drom991-gap-20261121-07": {
+      "total": 1333394,
+      "costs": {
+        "car": 408104,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 567878,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-drom991-gap-20261121-08": {
+      "total": 986915,
+      "costs": {
+        "car": 178739,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-drom991-gap-20261121-09": {
+      "total": 892342,
+      "costs": {
+        "car": 114166,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-drom991-gap-20261121-10": {
+      "total": 623770,
+      "costs": {
+        "car": 99185,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178404,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-drom991-gap-20261121-11": {
+      "total": 982782,
+      "costs": {
+        "car": 174606,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-drom991-gap-20261121-12": {
+      "total": 1189266,
+      "costs": {
+        "car": 263976,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 567878,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-drom991-gap-20261121-14": {
+      "total": 907323,
+      "costs": {
+        "car": 129147,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-drom991-gap-20261121-17": {
+      "total": 1177734,
+      "costs": {
+        "car": 368327,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
       }
     }
   }
