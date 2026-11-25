@@ -10,7 +10,8 @@
   if(x.market!=="japan"||x.currency!=="JPY")return pending("Для этого направления требуется отдельная смета.");
   if(x.restricted!==false)return pending("Возможность экспорта требует проверки.");
   if(!customs||!japan||!delivery)return pending("Модули расчёта недоступны.");
-  if(x.type!=="ice")return pending(x.type==="hybrid"||x.type==="ev"?"Гибрид или электромобиль: отдельный таможенный расчёт.":"Уточните тип двигателя.");
+  if(x.type!=="ice"||x.fuel!=="gasoline")return pending("Расчёт только для подтверждённых бензиновых автомобилей без гибридной установки.");
+  if(Number(x.engine)>1900)return pending("Прямой экспорт из Японии: объём свыше 1 900 см³ не рассчитывается.");
   if(!Number.isInteger(Number(x.engine))||!positive(Number(x.engine))||!positive(Number(x.power)))return pending("Уточните точный объём и мощность.");
   if(!fx||fx.fallback||!fx.date||![fx.rub_per_jpy,fx.rub_per_usd,fx.rub_per_eur].every(v=>positive(Number(v))))return pending("Нет актуальных справочных курсов для полной сметы.");
   const clear=customs.parseDate(options.clearDate);
@@ -39,12 +40,19 @@
   if(/\b(?:petrol|gasoline|diesel|ice)\b|бензин|дизель/i.test(raw))return "ice";
   return "";
  }
+ function fuelOf(l){
+  const raw=[l.fuel_type,l.fuel,l.engine_type,l.engineType,l.trim,l.name||l.model,l.description].filter(Boolean).join(" ");
+  if(typeOf(l)==="hybrid"||typeOf(l)==="ev"||/\b(?:mild[ -]?hybrid|plug[ -]?in|e[ -]?power|e[: -]?hev|phev|mhev|hev|hybrid|bev|electric)\b|гибрид|электромобил/i.test(raw))return "excluded";
+  if(/\bdiesel\b|дизел/i.test(raw))return "diesel";
+  const explicit=[l.fuel_type,l.fuel,l.engine_type,l.engineType].filter(Boolean).join(" ");
+  return /\b(?:petrol|gasoline)\b|бензин/i.test(explicit)?"gasoline":"";
+ }
  function fromLot(l){
   const raw=l.price_amount??l.price_jpy;
   const exact=String(l.description||"").match(/двигатель\s+(\d{3,4})\s*см³/i);
   return {market:l.market,currency:l.currency||(l.market==="japan"?"JPY":""),restricted:l.export_restricted,
-   name:l.model,bodyType:l.body_type||l.body_style||"",type:typeOf(l),year:l.year,buildDate:l.build_date||l.manufacture_date,
+   name:l.model,bodyType:l.body_type||l.body_style||"",type:typeOf(l),fuel:fuelOf(l),year:l.year,buildDate:l.build_date||l.manufacture_date,
    engine:l.engine_cc??(exact?Number(exact[1]):null),power:l.power_hp,amount:typeof raw==="number"?raw:Number(String(raw||"").replace(/[^\d]/g,""))};
  }
- return {quote,typeOf,fromLot};
+ return {quote,typeOf,fuelOf,fromLot};
 });
