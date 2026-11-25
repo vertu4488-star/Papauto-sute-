@@ -1,0 +1,823 @@
+{
+  "approved_count": 18,
+  "approval_date": "2026-11-25",
+  "rights_confirmed": false,
+  "owner_authorized_archival_reference_only": true,
+  "reviewed_pdf_sha256": "3b8b5ed6adb46bf5ac23d52c8a3e08f760f9352df6809d5fc3ee8cc00dbb8154",
+  "reviewed_jpg_zip_sha256": "4984e9ac975f41a7087e5a0bee25b2a137dd7030a4844ffc9532c55c8d6f4533",
+  "reviewed_full_manifest_sha256": "eb9ddd1cd10667393075f289e530d02633a8f101f8f2c0afff2390a11e36bfd9",
+  "jpg_aggregate_sha256": "38400fb152f953d1f1a771ec56cef4a931e420a099c8955716161cdbf1d129ca",
+  "lots": [
+    {
+      "id": "japan-gap18-20261125-01",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Pixis joy",
+      "year": 2021,
+      "mileage_km": 75000,
+      "body": "LA250A",
+      "grade": "3.5",
+      "auction": "TAA Yokohama",
+      "lot": "3129",
+      "auction_date": "2026-11-21",
+      "description": "Toyota Pixis joy, 2021 года, кузов LA250A, комплектация: F X SA3. Двигатель 660 см³, мощность 52 л.с. по данным источника. Пробег по статистике источника (округлённый): 75000 км, оценка 3.5. Аукцион TAA Yokohama, дата 2026-11-21, лот №3129. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-01-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-01-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-01-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 331000,
+      "media_sha256": [
+        "5729f7be978773f53ca16e8a6294660d4d79051cc6d22073d64646eb3e843399",
+        "70223e725587d4d4f2c32adfa6e0f5bad1dbfac27391546027ab50c2d8796db9",
+        "36ed34ee0a8703acb5fcdfb2af4cf4660b28419785672596b6f3b45b6c8c1303"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/pixis-joy/NFsnJYHE2aD0bu/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdNjTXFdTyUwsx9FS",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdNjTXG24b465tdcF",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnJTjphHYtQh02hZm"
+      ],
+      "raw_sha256": [
+        "a552a16386b7732ee9cca62ae7dc71a30bbe1d82ab33686e8374a19b8f80669e",
+        "8154f0478a902056f3fca9f92a33589f385af8e1327518a319efa79e6cf235e6",
+        "fa68066ece5dd964457b3d9d928b262c1b37651abe756da30c1249758cecc839"
+      ],
+      "trim": "F X SA3",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "artifact_record_index": 1,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-02",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Pixis mega",
+      "year": 2016,
+      "mileage_km": 148000,
+      "body": "LA700A",
+      "grade": "3.5",
+      "auction": "TAA Hyogo",
+      "lot": "3017",
+      "auction_date": "2026-11-21",
+      "description": "Toyota Pixis mega, 2016 года, кузов LA700A, комплектация: L. Двигатель 660 см³, мощность 52 л.с. по данным источника. Пробег по статистике источника (округлённый): 148000 км, оценка 3.5. Аукцион TAA Hyogo, дата 2026-11-21, лот №3017. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-02-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-02-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-02-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 124000,
+      "media_sha256": [
+        "fa0063cc490fd7635e8cb0ea665653efccba299f84f71fd3c2fc946d2d4d6675",
+        "2c5f20b60ea17c14b06137d1c665def1431910c4ca412fac5dad0bde4bf0d238",
+        "87f0e59159ea99d0bd49e9a807c6f97f87bfd09acab70e0fe46ace590c6be221"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/pixis-mega/YFS6Xr1ageLp46/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXUsgeNHKpwcE2TUVGNobv78awQi9Q",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXUsgeNHKpwcE2TUVGNoYEIfJ9MmFD",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzY7S1HcfrsCPo4Rv7f1FA23Vdkrsk"
+      ],
+      "raw_sha256": [
+        "f3172d3519778d608b61ea43d00e0a544ff5a234f831540942bf56b8ffa7dd13",
+        "4c65578fca728b6df61ce761f97c6c96e2a88b74b71e577f8e5875c3fab5657e",
+        "09677d3bad40a45a0fd1fb6054996f268eb3b2f039e4fe55f271406f21edb320"
+      ],
+      "trim": "L",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "artifact_record_index": 2,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-03",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Moco",
+      "year": 2012,
+      "mileage_km": 213000,
+      "body": "MG33S",
+      "grade": "3.5",
+      "auction": "TAA Hyogo",
+      "lot": "4204",
+      "auction_date": "2026-11-21",
+      "description": "Nissan Moco, 2012 года, кузов MG33S, комплектация: S. Двигатель 660 см³, мощность 52 л.с. по данным источника. Пробег по статистике источника (округлённый): 213000 км, оценка 3.5. Аукцион TAA Hyogo, дата 2026-11-21, лот №4204. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-03-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-03-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-03-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 40000,
+      "media_sha256": [
+        "cce83a1c8f2a33b09f75a031b9376a76e33878488d2a581d3d94d4c645415357",
+        "77b46c55687f4917bc45f420979664b3f24e222fb4eb13240fa3f814095c9249",
+        "370d603ab647b7ef27677c04bd4f30282ce4d56920fb056be6da13676443f8c8"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/moco/26GqkTOKcZKywpU/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXUsgeNHKpwcE2TXcuOiKOnps1Xm2L",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXUsgeNHKpwcE2TXcuOjxXZy1CTqyy",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzY7S1HcfrsCPo4TLUfVeTilcHrvlf"
+      ],
+      "raw_sha256": [
+        "562cdf6fddbcaccdfab21c0b0a4c129fdd4c851ff8dd99bb0727aee24aa90285",
+        "d603e0f20b84db8747b152e9cc13de9cd139e8fcb454f1f6de9a4887fb7c84e5",
+        "7bf453b320fccf55267d2f2e63f1b2360fc09274337d23adeee36768bc773e48"
+      ],
+      "trim": "S",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "artifact_record_index": 3,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-04",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Pixis epoch",
+      "year": 2021,
+      "mileage_km": 43000,
+      "body": "LA350A",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "3200",
+      "auction_date": "2026-11-21",
+      "description": "Toyota Pixis epoch, 2021 года, кузов LA350A, комплектация: L SA3. Двигатель 660 см³, мощность 49 л.с. по данным источника. Пробег по статистике источника (округлённый): 43000 км, оценка 4. Аукцион TAA Yokohama, дата 2026-11-21, лот №3200. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-04-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-04-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-04-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 373000,
+      "media_sha256": [
+        "caa51f9c02363d4297a5410117fe520adc83ce236f09770ec37a658c006e5821",
+        "4a3c9d11d3dca8b246d173bf36fb2dddfb4009ae3a8388476b23ca5b4fd2211d",
+        "4ee7bcbd6b3b8142f98b15ed77a026f1829d71faaa35e5c16a305ff52c79e080"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/pixis-epoch/PFCaincvWszt1i/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdPpALs4ZvSPG5zwn",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdPpALsR092oi1E4a",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnLZ1d5y5qOAmyIPR"
+      ],
+      "raw_sha256": [
+        "d77bb32cb5e2617410db8d8dbb6b43ab32f6de937676785781e89217dc649afe",
+        "54ac9766ef27b9451506fa9d9fc5b2e9e9f7e1ca8f412954f51c35491ad75945",
+        "a35ac3d03ee5fc5a1eddf6aeee7a6f505e2752b95c3108aa320a2c34f0ae52df"
+      ],
+      "trim": "L SA3",
+      "engine_cc": 660,
+      "power_hp": 49,
+      "rights_confirmed": false,
+      "artifact_record_index": 4,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-05",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Pixis joy",
+      "year": 2021,
+      "mileage_km": 83000,
+      "body": "LA250A",
+      "grade": "3.5",
+      "auction": "TAA Yokohama",
+      "lot": "3116",
+      "auction_date": "2026-11-21",
+      "description": "Toyota Pixis joy, 2021 года, кузов LA250A, комплектация: F X SA3. Двигатель 660 см³, мощность 52 л.с. по данным источника. Пробег по статистике источника (округлённый): 83000 км, оценка 3.5. Аукцион TAA Yokohama, дата 2026-11-21, лот №3116. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-05-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-05-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-05-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 316000,
+      "media_sha256": [
+        "1003fd657e2e145b2d43588992739c8dfb5aed864b00ad554dccff196f57ec47",
+        "6c0fa338970d51bf106de54ec8a95b2baa4d84eacf510cab6f3c586b77cb3f47",
+        "3a4a85c9404995a72614ad6b4eacf659caa7afafbef6a18d270d9c706797bc1a"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/pixis-joy/NycSovFocj6q95/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdN19HdHKpa3QIpaI",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdN19HeuU2iBsEtHv",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnJzy9QbPk6Nxcyuc"
+      ],
+      "raw_sha256": [
+        "6fd1410b5e0465117dba79e50b51477a7d909684052203c2f739efbddcd7eb67",
+        "119fa9d5bfc539c9a1827e2f0c2406350a1fdca6370e0189c604f69f8c47c9fa",
+        "f661dd8fc3390c42205d6095df44f9626bffcce432f583e8dfbc8f740f3f6434"
+      ],
+      "trim": "F X SA3",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "artifact_record_index": 5,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-06",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Juke",
+      "year": 2013,
+      "mileage_km": 71000,
+      "body": "YF15",
+      "grade": "4",
+      "auction": "KCAA Fukuoka",
+      "lot": "25",
+      "auction_date": "2026-10-15",
+      "description": "Nissan Juke, 2013 года, кузов YF15, комплектация: 15RX V. Двигатель 1500 см³, мощность 114 л.с. по данным источника. Пробег по статистике источника (округлённый): 71000 км, оценка 4. Аукцион KCAA Fukuoka, дата 2026-10-15, лот №25. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-06-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-06-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-06-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 297000,
+      "media_sha256": [
+        "f5f625d1039950a990b166ad5d06184ccac76e2c16f5941bb3e36f6c91a190ad",
+        "99b233b88b1a7f6ae74f67806ca950983dd2500228d59962965144defa39911e",
+        "804ca33cb507c671a09f52d2477dbfc978c622c982abec10e22774246be89493"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/juke/etTBK5MrlTgyQ/",
+      "source_media": [
+        "https://7.tru.ru/imgs/6ozE13dZDxKcK3ToaWEfXqzlMjcQcELRd1NMh8b92PiBIXtmeuBV",
+        "https://7.tru.ru/imgs/6ozE13dZDxKcK3ToaWEfXqzlMjcQcELRd1NMh8cyoaXntOMDiF6Y",
+        "https://7.tru.ru/imgs/gweD8CuWDoJNzA09ALb87AMBZwBk9RfV1p16nPhgsyLWtmou"
+      ],
+      "raw_sha256": [
+        "658e17556fec5f8bf00c08d91be08338bcd29145e5b17d57fcfd7b84d36e21ec",
+        "219236f148dad06b5bd646f5a8bcc0edfbf8fb899c0e1e9103aa3bcf7155a5b4",
+        "be91d2f6a2581ed14656fef8f7846650ac5bc70ecd25ee67326a4ce1b4620f97"
+      ],
+      "trim": "15RX V",
+      "engine_cc": 1500,
+      "power_hp": 114,
+      "rights_confirmed": false,
+      "artifact_record_index": 6,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-07",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Bb",
+      "year": 2011,
+      "mileage_km": 97000,
+      "body": "QNC20",
+      "grade": "3.5",
+      "auction": "TAA Hyogo",
+      "lot": "4073",
+      "auction_date": "2026-11-21",
+      "description": "Toyota Bb, 2011 года, кузов QNC20, комплектация: S. Двигатель 1300 см³, мощность 92 л.с. по данным источника. Пробег по статистике источника (округлённый): 97000 км, оценка 3.5. Аукцион TAA Hyogo, дата 2026-11-21, лот №4073. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-07-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-07-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-07-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 112000,
+      "media_sha256": [
+        "b1a5033226c7af33bc03d4f51298a111870306bd27b85a761498a7725d8282ff",
+        "746939832e046a35b9087a0700aa5c325791ebef0eec0f1263f099072737cd89",
+        "1cccb476a6b1aa8a83cee00ca586e66c9ee01662c9bbbbb9d4d3b00520c0a244"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/bb/2fgVNidJ9gza7Wi/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXUsgeNHKpwcE2TWp6EbXskXFdgs0T",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXUsgeNHKpwcE2TWp6EcKBX7dPcwGG",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzY7S1HcfrsCPo4SYv6OrxfTpTKBtn"
+      ],
+      "raw_sha256": [
+        "0e41ff731f6767cedb117449ed0c961fadb8ce02e54f464b3d3f8843aac55f1e",
+        "b28ae42a13f9b290b6887081dd64b435a18ea15520c16d80307714a9e89b89ad",
+        "f7f493e87a3216a44afc54eb2e4fdf29e247a0a58060d9ed60deb8537561a437"
+      ],
+      "trim": "S",
+      "engine_cc": 1300,
+      "power_hp": 92,
+      "rights_confirmed": false,
+      "artifact_record_index": 7,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-08",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Pixis mega",
+      "year": 2019,
+      "mileage_km": 23000,
+      "body": "LA700A",
+      "grade": "3.5",
+      "auction": "MIRIVE Saitama",
+      "lot": "256",
+      "auction_date": "2026-11-18",
+      "description": "Toyota Pixis mega, 2019 года, кузов LA700A, комплектация: L_SA3. Двигатель 660 см³, мощность 52 л.с. по данным источника. Пробег по статистике источника (округлённый): 23000 км, оценка 3.5. Аукцион MIRIVE Saitama, дата 2026-11-18, лот №256. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-08-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-08-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-08-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 549000,
+      "media_sha256": [
+        "9f0acae9b48f6f8f1add7df10aeff1fb3c0785c263c47c797604d19203781d0f",
+        "eb2cb46c4b03419a94d43f64ce0522958157aeb7698c6d803fc5e2c7df1b33c5",
+        "acc6abb548982d0579a4878fe503937115645903bc78c5096fe84180e350278c"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/pixis-mega/3ZLsUGjkffQAcE/",
+      "source_media": [
+        "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllTHv95hveZEgF5oWvneqfFR21aQ6L",
+        "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllTHv95hveZEgF5oWvneqfFTODbOQM",
+        "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXFXVeSJyBtIBfFWhDvRifAcPfF6JE"
+      ],
+      "raw_sha256": [
+        "07f3c74b9034883c17a6bbcb84ea8da2c90b371e1ce40d617e86c18aceccfc15",
+        "4cd25c2343476d6dea9609fe7ccd6b73ab25df209e1ca347202752adc86534de",
+        "fb9edfdb9527eaff6e2fda92fa9ab27bf4db04172e9666bd68e56b8d62dcacde"
+      ],
+      "trim": "L_SA3",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "artifact_record_index": 8,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-09",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Moco",
+      "year": 2014,
+      "mileage_km": 8000,
+      "body": "MG33S",
+      "grade": "5",
+      "auction": "TAA Yokohama",
+      "lot": "3261",
+      "auction_date": "2026-11-21",
+      "description": "Nissan Moco, 2014 года, кузов MG33S, комплектация: S. Двигатель 660 см³, мощность 52 л.с. по данным источника. Пробег по статистике источника (округлённый): 8000 км, оценка 5. Аукцион TAA Yokohama, дата 2026-11-21, лот №3261. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-09-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-09-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-09-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 451000,
+      "media_sha256": [
+        "ed77e2545445d926f5b9c444df0ac42d1e7fad45c9b5bfcfb3795cd40a48bb39",
+        "47306dd756296ae37f6aa44983c788b0a6456d06fa15c42f8e83cd73d330ee3f",
+        "9869acb092c9406bf4df533d7a2ab48296c7f7fae402ea4b72f416a9dc271060"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/moco/PdYqpEni8UW1BD/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdOcfrnTNQQ1N22xH",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdOcfroGXsYzoX75u",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnKLET1nSLLLtvaRb"
+      ],
+      "raw_sha256": [
+        "75828e52af743357b949498d8daca7effffce4fe2c305add1537b5f4bb8aa6fb",
+        "c03ae1aadbe0b9c70cc2d60d870d89f3c031a57be7ab3ada56eabf6a6259b06f",
+        "bc4d42d9e2d709410cadf4325e0660eab65a7012bc0aa64a095db0dc3364b3f8"
+      ],
+      "trim": "S",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "artifact_record_index": 9,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-10",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Bb",
+      "year": 2012,
+      "mileage_km": 23000,
+      "body": "QNC20",
+      "grade": "3.5",
+      "auction": "TAA Hyogo",
+      "lot": "2061",
+      "auction_date": "2026-11-21",
+      "description": "Toyota Bb, 2012 года, кузов QNC20, комплектация: S. Двигатель 1300 см³, мощность 92 л.с. по данным источника. Пробег по статистике источника (округлённый): 23000 км, оценка 3.5. Аукцион TAA Hyogo, дата 2026-11-21, лот №2061. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-10-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-10-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-10-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 121000,
+      "media_sha256": [
+        "4baef1cdda21d4751fb367706c60fc3f59234aa6189b10803b80ac4456033ffd",
+        "5e93c794217c01752fa3df62a9d1e6c4e42809226d058d945a99bc84cb334ca7",
+        "98ca9bfd03ee4a07853508d2cfe08caeab867e6f6a6b3fff5ee59c457c672852"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/bb/J45UyYLzgkWViV/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXUsgeNHKpwcE2TW7yXEpoJbDYEYRH",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXUsgeNHKpwcE2TW7yXFcylkcAB4ou",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzY7S1HcfrsCPo4SFYpgTtE8oF09bb"
+      ],
+      "raw_sha256": [
+        "f719093c07f8bb3ae962dad51769ed36bbc032438631b68946fd350a9f81d502",
+        "bb9a4db0afd04faa8200bda1e2b2c554710c33144b248d55fa10f12122d26d53",
+        "59acbc9bd2fc99963db5f222015eda48e5b919857249d25fef395ad84e31c070"
+      ],
+      "trim": "S",
+      "engine_cc": 1300,
+      "power_hp": 92,
+      "rights_confirmed": false,
+      "artifact_record_index": 10,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-11",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Pixis epoch",
+      "year": 2021,
+      "mileage_km": 12000,
+      "body": "LA350A",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "3113",
+      "auction_date": "2026-11-21",
+      "description": "Toyota Pixis epoch, 2021 года, кузов LA350A, комплектация: L SA3. Двигатель 660 см³, мощность 49 л.с. по данным источника. Пробег по статистике источника (округлённый): 12000 км, оценка 4. Аукцион TAA Yokohama, дата 2026-11-21, лот №3113. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-11-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-11-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-11-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 475000,
+      "media_sha256": [
+        "cb97ed7cd245630748c5e99f000c67f03f92d870f908a200d90d6695512942b6",
+        "421b0c184af5182e32a3244d2b8197cb94311bb029526a36fc804d0434d7eef8",
+        "95278e38937607674658a4862fdc42d0f2a04b078167cd1ab63571949b3a62f3"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/pixis-epoch/NwQATmlAJoxYj4/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdMWqXvNlrcXiv29K",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdMWqXwAv4lvUr6Fx",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnJvQp9hqm9HYZase"
+      ],
+      "raw_sha256": [
+        "4ba16b0d1673675255f0c97269ac824b105b538911f5194e057b299b7bcfe052",
+        "c0fa27df71cea79baee6b934e2c2d22303abb87704ca1db97f13a39a90c1b233",
+        "888d6d4f1e8fed7e528271454ed4e8972cbc98bc5da7405cd1cff68b8bbd0d77"
+      ],
+      "trim": "L SA3",
+      "engine_cc": 660,
+      "power_hp": 49,
+      "rights_confirmed": false,
+      "artifact_record_index": 11,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-12",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Pixis joy",
+      "year": 2017,
+      "mileage_km": 26000,
+      "body": "LA250A",
+      "grade": "3.5",
+      "auction": "TAA Hyogo",
+      "lot": "3002",
+      "auction_date": "2026-11-14",
+      "description": "Toyota Pixis joy, 2017 года, кузов LA250A, комплектация: C G SA2. Двигатель 660 см³, мощность 52 л.с. по данным источника. Пробег по статистике источника (округлённый): 26000 км, оценка 3.5. Аукцион TAA Hyogo, дата 2026-11-14, лот №3002. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-12-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-12-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-12-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 202000,
+      "media_sha256": [
+        "a9a60a203c0c3df961f5f05329ed377b6a6e26bf66b45c95aaadaf9e602f45f9",
+        "f4defbbde60a3266f710e598749c25b0791d120a934bc8f4cdfd49e0adda91dd",
+        "fe757e9117b5f33684afc48e5b1b1d53cda6732f9d2bd07775d9d56c47346fef"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/pixis-joy/ZuCDnIfX1hzur1/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtZgVrRGoGUQzLnGnyAklQVG9y6Bey",
+        "https://7.tru.ru/imgs/t1M2tBqoEspph57WYtZgVrRGoGUQzLnGnyAl01xOHa2FLl",
+        "https://7.tru.ru/imgs/t1M2tBqoEspIjVTeq73VxdLaTIRgL8xCWY2WPVQBTezKy3"
+      ],
+      "raw_sha256": [
+        "1dcc4471045e27ffdb24e02a7c279604a5910ae9aab2c2ad03037dd1145de56e",
+        "45be1d4ecf73648e15732ad20a43edd41f88199338df52cf80a4e01e11ac3dce",
+        "ed591d4097352ed86fb7aaae9f814d99d7bf5f994e2da27947e4c521ab6fd88f"
+      ],
+      "trim": "C G SA2",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "artifact_record_index": 12,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-13",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Pixis mega",
+      "year": 2015,
+      "mileage_km": 129000,
+      "body": "LA710A",
+      "grade": "3.5",
+      "auction": "CAA Tohoku",
+      "lot": "70",
+      "auction_date": "2026-11-17",
+      "description": "Toyota Pixis mega, 2015 года, кузов LA710A, комплектация: G Turbo 4W. Двигатель 660 см³, мощность 52 л.с. по данным источника. Пробег по статистике источника (округлённый): 129000 км, оценка 3.5. Аукцион CAA Tohoku, дата 2026-11-17, лот №70. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-13-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-13-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-13-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 364000,
+      "media_sha256": [
+        "58067dc2c918cc735aae2a37e8fecc6d5110ad11a0cce89fffd02fda04d66d05",
+        "3a33e3aff85ba24160f79e0ab1e6d833d71921eb02869fe0e038e9528e0838d6",
+        "f793114004a7005e38510eafe173af799e689592ac23037c7667c20d2e936b1f"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/pixis-mega/gWSijom71HYX/",
+      "source_media": [
+        "https://7.tru.ru/imgs/aEwiHQOkpYMyJculJtFFg8kCiVIO2h7JrlZfVgfhuHjqp",
+        "https://7.tru.ru/imgs/aEwiHQOkpYMyJculJtFFg8kCiVIO2h7Jrm145SnQ7DnXc",
+        "https://7.tru.ru/imgs/aEwiHQOkpYMFIpYU1WFU0NtY9iOsOcoGInBAcSBVPW39B"
+      ],
+      "raw_sha256": [
+        "d878c37635833dd618be926f4210c7385880bc9488077bf00646c5de627d5e81",
+        "6f4525dba8192d79d9e96dffcf900a33001a2835f64c2c6ef2d43488d6fc97d5",
+        "8e2c55922097193ebde6e9c0802babb8408a19a1a9cc83fd0bafc9b552dd0e9c"
+      ],
+      "trim": "G Turbo 4W",
+      "engine_cc": 660,
+      "power_hp": 52,
+      "rights_confirmed": false,
+      "artifact_record_index": 13,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-14",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Juke",
+      "year": 2013,
+      "mileage_km": 130000,
+      "body": "YF15",
+      "grade": "3.5",
+      "auction": "TAA Yokohama",
+      "lot": "4241",
+      "auction_date": "2026-11-21",
+      "description": "Nissan Juke, 2013 года, кузов YF15, комплектация: 15RX Type. Двигатель 1500 см³, мощность 114 л.с. по данным источника. Пробег по статистике источника (округлённый): 130000 км, оценка 3.5. Аукцион TAA Yokohama, дата 2026-11-21, лот №4241. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-14-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-14-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-14-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 157000,
+      "media_sha256": [
+        "507ba51ac26088e1eb902260fe0894a41d7d8df1351c618ce3e7e31aa2fe9536",
+        "9b878a37dcff0d2f0e9ceb72802a1e3ce9adb790e68b5ceb58d271c140cc79b1",
+        "b19c412694c7e74e80ab4169d92919894e71fc706471400d3f27ee29d56da78a"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/juke/266IIkL8FfQGqoY/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdNG9nUGkRfwpzBau",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdNG9nVtuto62vFHh",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnKfxPxapMbh74KtY"
+      ],
+      "raw_sha256": [
+        "e9594f3445ef3b2698086c8e1cf22790f1625af430823af18b09b1959b70399e",
+        "14797b002f0c58a3586b173f89b77bd28538a30dda1cd410b021a77a88ad1392",
+        "045ea99c7a410d4228ef4006db1fc554bffc23bc8ee98bac99673bdd195dcd96"
+      ],
+      "trim": "15RX Type",
+      "engine_cc": 1500,
+      "power_hp": 114,
+      "rights_confirmed": false,
+      "artifact_record_index": 14,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-15",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Moco",
+      "year": 2009,
+      "mileage_km": 62000,
+      "body": "MG22S",
+      "grade": "3.5",
+      "auction": "JU Yamagata",
+      "lot": "3004",
+      "auction_date": "2026-11-21",
+      "description": "Nissan Moco, 2009 года, кузов MG22S, комплектация: E. Двигатель 660 см³, мощность 54 л.с. по данным источника. Пробег по статистике источника (округлённый): 62000 км, оценка 3.5. Аукцион JU Yamagata, дата 2026-11-21, лот №3004. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-15-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-15-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-15-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 39000,
+      "media_sha256": [
+        "81e13cd567b2b8c7890dc536aab24cf321eb68f1a76facb68b0f9a897cfe5547",
+        "8b531b0ba0292c5175d29e494c4eb9d9a996829aa2e2376ce89130a26c22bb73",
+        "61b04466813e4335b02ec6c8575fa7b6e126c3c36f535562739efebe1af8b68d"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/moco/ZvwP409uz2ql0I/",
+      "source_media": [
+        "https://7.tru.ru/imgs/pR9lLmCb9wxDaiX9rBON0tAUuBzaIzxxoxE8yWKC3VxR3AIHAdf",
+        "https://7.tru.ru/imgs/pR9lLmCb9wxDaiX9rBON0tAUuBzaIzxxoxE8yWKCeOS67XTKG07",
+        "https://7.tru.ru/imgs/pR9lLmCb9wxU8KZ7Wj6NzRw2W5ZKBhfQiRjZynsqaFdqytaz53A"
+      ],
+      "raw_sha256": [
+        "19c0a7c004bcc40989b77f12333e1dde7954d08a5ec24507a40782b980f46ba8",
+        "5fad25ee1c582c20f93cf6dec75f86a7855dcd212d38f6989aad0507bf6bed8d",
+        "9c10986b5ac231c6317f6cdacb9ad895d2de8cc9477662848370889df9a870b1"
+      ],
+      "trim": "E",
+      "engine_cc": 660,
+      "power_hp": 54,
+      "rights_confirmed": false,
+      "artifact_record_index": 15,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-16",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Pixis epoch",
+      "year": 2018,
+      "mileage_km": 62000,
+      "body": "LA350A",
+      "grade": "4",
+      "auction": "TAA Yokohama",
+      "lot": "3031",
+      "auction_date": "2026-11-21",
+      "description": "Toyota Pixis epoch, 2018 года, кузов LA350A, комплектация: B. Двигатель 660 см³, мощность 49 л.с. по данным источника. Пробег по статистике источника (округлённый): 62000 км, оценка 4. Аукцион TAA Yokohama, дата 2026-11-21, лот №3031. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-16-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-16-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-16-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 251000,
+      "media_sha256": [
+        "0174f469bae89b92d27582346d291c18bc9f85242581e05c56c39c832fdb7b4b",
+        "080c9d0002f4550c14a1fa557d39016500dee38ce4171107a4e5c43620e9e411",
+        "76a5e9c400abd8510879d47d8a60ddd1bda77455443fc6108fa59dfffc54e607"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/pixis-epoch/YOVYDLNtT3o65m/",
+      "source_media": [
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdNq5Rb5A9nfQ4V20",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdNq5RbRJKvOrZZxW",
+        "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnJZuiNyF4j1wy5kD"
+      ],
+      "raw_sha256": [
+        "cdb2be381f3524fdd058ca74bbe0749775ac00c4bd1bcee5965aaee0beb9cefa",
+        "c6bedfe725746dd8a714659f88da0146c4b0b201b990eb46aae547287ef8ccb0",
+        "6fd9c62369c9fabc7f23e9eb9418bf37d2a05ca7245197a4118053469fabaf95"
+      ],
+      "trim": "B",
+      "engine_cc": 660,
+      "power_hp": 49,
+      "rights_confirmed": false,
+      "artifact_record_index": 16,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-17",
+      "country": "japan",
+      "make": "Nissan",
+      "model": "Juke",
+      "year": 2014,
+      "mileage_km": 127000,
+      "body": "YF15",
+      "grade": "3.5",
+      "auction": "KCAA Yamaguchi",
+      "lot": "1125",
+      "auction_date": "2026-11-20",
+      "description": "Nissan Juke, 2014 года, кузов YF15, комплектация: 15RS Type. Двигатель 1500 см³, мощность 114 л.с. по данным источника. Пробег по статистике источника (округлённый): 127000 км, оценка 3.5. Аукцион KCAA Yamaguchi, дата 2026-11-20, лот №1125. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-17-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-17-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-17-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 186000,
+      "media_sha256": [
+        "d8e87f1dc515d1e973a84f03d8c4e319d397860ed07ee50f63a59e0214aecf15",
+        "7dd34d715444f701ddcaaee3b9b438357406b845c8787b132ce46c6210dab542",
+        "a3cdde69eaabb27b2c00da8ce1c3124299e7b4f0ee01b5370dbe19f8b2eeb4ff"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/nissan/juke/hwAxbCA1RFv8N5/",
+      "source_media": [
+        "https://7.tru.ru/imgs/6q9KyVK1kMP4da2TJHigEdCgstmV3MYccN0n3oCz5dZT0AgvhbJE",
+        "https://7.tru.ru/imgs/6q9KyVK1kMP4da2TJHigEdCgstmV3MYccN0n3oDZqzEEUrzMlmdH",
+        "https://7.tru.ru/imgs/gB2TU3oLm8oa93VFDnwFBXpulH6jFiVUOepYkolUAA78Sa27"
+      ],
+      "raw_sha256": [
+        "b5b7461ab986290acf014bfb6ca960513cf74950fc713e2b9a770c77248dffd3",
+        "2141a170b1f1ecbceea9d4ee66389e7be6b88392f7900315de127135af14b0ce",
+        "387ccffb5fed9a228dd49c57bc30010e7226769e129623cec0dc0362d754c0a3"
+      ],
+      "trim": "15RS Type",
+      "engine_cc": 1500,
+      "power_hp": 114,
+      "rights_confirmed": false,
+      "artifact_record_index": 17,
+      "artifact_id": 14997159442
+    },
+    {
+      "id": "japan-gap18-20261125-18",
+      "country": "japan",
+      "make": "Toyota",
+      "model": "Bb",
+      "year": 2008,
+      "mileage_km": 147000,
+      "body": "QNC20",
+      "grade": "3.5",
+      "auction": "JU Niigata",
+      "lot": "32",
+      "auction_date": "2026-11-20",
+      "description": "Toyota Bb, 2008 года, кузов QNC20, комплектация: не указана. Двигатель 1300 см³, мощность 92 л.с. по данным источника. Пробег по статистике источника (округлённый): 147000 км, оценка 3.5. Аукцион JU Niigata, дата 2026-11-20, лот №32. Автомобиль не в наличии: исторический пример из японской аукционной статистики. Цена по источнику не включает доставку, таможенные платежи и оформление.",
+      "photo_context": "original_auction_lot",
+      "sheet_type": "original_auction_sheet",
+      "photos": [
+        "/assets/auction/approved/japan-gap18-20261125-18-front.jpg",
+        "/assets/auction/approved/japan-gap18-20261125-18-rear.jpg"
+      ],
+      "auction_sheet": "/assets/auction/approved/japan-gap18-20261125-18-sheet.jpg",
+      "sale_status": "reference_only",
+      "reported_price": 134000,
+      "media_sha256": [
+        "86aac91bf39128cd015e970f542b76349c2f1464a7dfa29c51f5c07cb8b67d0a",
+        "d48acac434f40a2db35d5df0fcad26915d427d6d8085183cadf094665b147afc",
+        "f8002641cf5450e6c4dfa3a23574b3c1c464a319c0eb1cb34f87fb79950ab6fa"
+      ],
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/toyota/bb/j1PWUtrwRedNo/",
+      "source_media": [
+        "https://7.tru.ru/imgs/pR9lLmCb9wxDaiX9rBON0tAU7cbuBEoLaROjP6oQ3p4fqPt8h40",
+        "https://7.tru.ru/imgs/pR9lLmCb9wxDaiX9rBON0tAU7cbuBEoLaROjP6oQeintvcEamZ1",
+        "https://7.tru.ru/imgs/pR9lLmCb9wxU8KZ7Wj6NzRw2xFC5um856bubOw7Ea9IOWHUYKSu"
+      ],
+      "raw_sha256": [
+        "f2066808a19626d9c2f62485de643194c69e8c89b0890816be7b0ea82a1df01d",
+        "88c21fffe384a83ad4f2489ff6f78c08939153848fd475560a8cd4f8ce798d04",
+        "7320ccddc3a8fa1105bb815c400dc6fa61d75154073c02fba50e06709645c8b5"
+      ],
+      "trim": "не указана",
+      "engine_cc": 1300,
+      "power_hp": 92,
+      "rights_confirmed": false,
+      "artifact_record_index": 18,
+      "artifact_id": 14997159442
+    }
+  ],
+  "note": "Owner explicitly approved and requested publication of exactly 18 PDF-reviewed archive examples; independent commercial media rights not confirmed. No stock or verified sale claim."
+}

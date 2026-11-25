@@ -543,6 +543,26 @@ def compile_published_gallery(target: Path, approved_path: Path = APPROVED,
             card = prepare_approved(target, rec, owner_selected=True)
             card.update(engine_cc=rec["engine_cc"], power_hp=rec["power_hp"], sale_label="Статистика продаж", rights_confirmed=False)
             additional.append(card)
+        archive18 = json.loads((ROOT / "research/owner-approved-japan-gap18-2026-11-25.json").read_text(encoding="utf-8"))
+        archived18 = archive18["lots"]
+        if (archive18.get("approved_count") != 18 or archive18.get("rights_confirmed") is not False
+                or archive18.get("owner_authorized_archival_reference_only") is not True
+                or archive18.get("reviewed_pdf_sha256") != "3b8b5ed6adb46bf5ac23d52c8a3e08f760f9352df6809d5fc3ee8cc00dbb8154"
+                or archive18.get("reviewed_jpg_zip_sha256") != "4984e9ac975f41a7087e5a0bee25b2a137dd7030a4844ffc9532c55c8d6f4533"
+                or archive18.get("reviewed_full_manifest_sha256") != "eb9ddd1cd10667393075f289e530d02633a8f101f8f2c0afff2390a11e36bfd9"
+                or [r["id"] for r in archived18] != [f"japan-gap18-20261125-{i:02d}" for i in range(1,19)]
+                or any(len(r["photos"]) != 2 or r.get("rights_confirmed") is not False for r in archived18)):
+            raise RuntimeError("PAPAUTO_APPROVAL_REQUIRED: exact 18 archive receipt mismatch")
+        hashes18 = [h for r in archived18 for h in r["media_sha256"]]
+        prior18 = hashes16 + hashes15 + hashes14 + hashes13 + hashes12 + hashes11 + hashes10 + hashes9 + hashes8 + hashes7 + hashes6 + hashes5 + hashes4 + hashes3 + hashes2 + hashes + media_hashes + [h for r in archive17["lots"] for h in r["media_sha256"]]
+        if (len(hashes18) != 54 or len(set(hashes18)) != 54 or set(hashes18).intersection(prior18)
+                or hashlib.sha256("".join(hashes18).encode()).hexdigest() != "38400fb152f953d1f1a771ec56cef4a931e420a099c8955716161cdbf1d129ca"):
+            raise RuntimeError("PAPAUTO_POLICY: 18 image/sheet originals altered or reused")
+        for rec in archived18:
+            card = prepare_approved(target, rec, owner_selected=True)
+            card.update(trim=rec["trim"], engine_cc=rec["engine_cc"], power_hp=rec["power_hp"],
+                        sale_label="Цена по данным аукциона", rights_confirmed=False)
+            additional.append(card)
     seen_lot_keys = {
         (r["market"], r["auction"], str(r["auction_date"]), str(r["lot_number"]))
         for r in base
