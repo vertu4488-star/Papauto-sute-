@@ -557,6 +557,10 @@ def copy_public_files() -> list[str]:
         if f"Все аукционные карточки ({published_lot_count})" not in content:
             raise RuntimeError("PAPAUTO_SEO: stale archive navigation count: " + page_name)
 
+    # Attach only already screened public auction examples to all model pages.
+    from link_model_statistics import render as link_model_statistics
+    link_model_statistics(TARGET, published_registry, china_order_photos)
+
     # The gallery compiler generates /lots/*.html after the initial page loop.
     # Reconcile every finished HTML page with the global warm skin, including
     # exact auction lot pages and legacy retirement pages. Photo bytes are untouched.
