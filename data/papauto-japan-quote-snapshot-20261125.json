@@ -2537,6 +2537,78 @@
       "body_type": "седан",
       "reference_url": "https://yanase.jp/mercedes-benz/catalog/a_class_sedan/10129321/",
       "basis": "Existing gallery record; independently checked Japanese-market catalogue matching chassis and power; conditional personal import estimate"
+    },
+    "japan-atp-b3-20261120-06": {
+      "engine_cc": 1192,
+      "power_hp": 78,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.goo-net.com/catalog/MITSUBISHI/MIRAGE/10122202/",
+      "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis A03A; conditional personal import estimate, actual export eligibility to be confirmed"
+    },
+    "japan-atp-b5-20261120-10": {
+      "engine_cc": 1496,
+      "power_hp": 129,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://toyota.jp/ucar/catalog/brand-HONDA/car-VEZEL/202010/10133132/",
+      "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis RU1; conditional personal import estimate, actual export eligibility to be confirmed"
+    },
+    "japan-atp-b5-20261120-12": {
+      "engine_cc": 1496,
+      "power_hp": 129,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://toyota.jp/ucar/catalog/brand-HONDA/car-VEZEL/202010/10133132/",
+      "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis RU1; conditional personal import estimate, actual export eligibility to be confirmed"
+    },
+    "japan-next30-drom991-20261121-27": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.goo-net.com/catalog/TOYOTA/ROOMY/",
+      "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis M900A; conditional personal import estimate, actual export eligibility to be confirmed"
+    },
+    "japan-selection-140": {
+      "engine_cc": 1797,
+      "power_hp": 144,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/yea00100072012.html",
+      "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis ZGE20W; conditional personal import estimate, actual export eligibility to be confirmed"
+    },
+    "japan-selection-142": {
+      "engine_cc": 1797,
+      "power_hp": 133,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/mdl0010007.html",
+      "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis ZGE25G; conditional personal import estimate, actual export eligibility to be confirmed"
+    },
+    "bmw-118i-2019": {
+      "engine_cc": 1499,
+      "power_hp": 140,
+      "engine_type": "ice",
+      "body_type": "седан / универсал",
+      "reference_url": "https://cars-japan.net/engine/mdl1020001.html",
+      "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis 7K15; conditional personal import estimate, actual export eligibility to be confirmed"
+    },
+    "bmw-218i-2022": {
+      "engine_cc": 1498,
+      "power_hp": 140,
+      "engine_type": "ice",
+      "body_type": "седан / универсал",
+      "reference_url": "https://cars-japan.net/engine/yea10200022022.html",
+      "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis 7K15; conditional personal import estimate, actual export eligibility to be confirmed"
+    },
+    "mercedes-c180-2018": {
+      "engine_cc": 1595,
+      "power_hp": 156,
+      "engine_type": "ice",
+      "body_type": "седан / универсал",
+      "reference_url": "https://www.goo-net.com/catalog/MERCEDES_BENZ/CCLASS_STATIONWAGON/10110963/",
+      "basis": "Verified catalogue and existing owner-approved archive / published gallery; matching chassis 205240C; conditional personal import estimate, actual export eligibility to be confirmed"
     }
   },
   "quotes": {
@@ -6518,6 +6590,141 @@
         "bank": 15000,
         "docs": 65000,
         "duty": 384349,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-atp-b3-20261120-06": {
+      "total": 783377,
+      "costs": {
+        "car": 92986,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 344210,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-b5-20261120-10": {
+      "total": 1584664,
+      "costs": {
+        "car": 774881,
+        "japan": 69739,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-atp-b5-20261120-12": {
+      "total": 1524455,
+      "costs": {
+        "car": 717539,
+        "japan": 66872,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-next30-drom991-20261121-27": {
+      "total": 1115950,
+      "costs": {
+        "car": 496440,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-selection-140": {
+      "total": 1266292,
+      "costs": {
+        "car": 321317,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 567563,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-selection-142": {
+      "total": 1116801,
+      "costs": {
+        "car": 173057,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 567563,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "bmw-118i-2019": {
+      "total": 1415636,
+      "costs": {
+        "car": 617838,
+        "japan": 61887,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 432862,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "bmw-218i-2022": {
+      "total": 1928507,
+      "costs": {
+        "car": 1291468,
+        "japan": 95569,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 229804,
+        "customsFee": 13541,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "mercedes-c180-2018": {
+      "total": 1898232,
+      "costs": {
+        "car": 1009928,
+        "japan": 81492,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 503763,
         "customsFee": 4924,
         "util": 5200,
         "commission": 50000,
