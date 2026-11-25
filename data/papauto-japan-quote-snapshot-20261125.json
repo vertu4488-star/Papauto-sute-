@@ -2057,6 +2057,246 @@
       "body_type": "малолитражка",
       "reference_url": "https://www.drom.ru/catalog/mazda/demio/222925/",
       "basis": "Existing owner-approved archive record; matching Japanese-market chassis DJLFS and catalogue engine specifications; conditional personal import estimate"
+    },
+    "japan-atp-b6-20261121-02": {
+      "engine_cc": 1490,
+      "power_hp": 120,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0010182.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-atp-b6-20261121-07": {
+      "engine_cc": 1496,
+      "power_hp": 129,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/mdl0030009.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-atp-b6-20261121-10": {
+      "engine_cc": 1496,
+      "power_hp": 110,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-atp-b6-20261121-12": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0060052.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-atp-b6-20261121-16": {
+      "engine_cc": 1317,
+      "power_hp": 100,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0030010.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-atp-b6-20261121-18": {
+      "engine_cc": 658,
+      "power_hp": 64,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0080004.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-atp-b6-20261121-21": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010170.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-atp-b6-20261121-22": {
+      "engine_cc": 1317,
+      "power_hp": 98,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0030010.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-atp-b6-20261121-25": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0060052.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-atp-b6-20261121-27": {
+      "engine_cc": 1496,
+      "power_hp": 103,
+      "engine_type": "ice",
+      "body_type": "седан / универсал",
+      "reference_url": "https://cars-japan.net/engine/mdl0010016.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-next30-drom991-20261121-01": {
+      "engine_cc": 1797,
+      "power_hp": 136,
+      "engine_type": "ice",
+      "body_type": "седан / универсал",
+      "reference_url": "https://cars-japan.net/engine/n001103515.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-next30-drom991-20261121-05": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010037.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-next30-drom991-20261121-06": {
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/mdl0010027.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-next30-drom991-20261121-08": {
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "engine_type": "ice",
+      "body_type": "седан / универсал",
+      "reference_url": "https://cars-japan.net/engine/mdl0010016.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-next30-drom991-20261121-11": {
+      "engine_cc": 1242,
+      "power_hp": 91,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/yea00800172017.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-next30-drom991-20261121-14": {
+      "engine_cc": 658,
+      "power_hp": 64,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0080004.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-next30-drom991-20261121-16": {
+      "engine_cc": 1498,
+      "power_hp": 105,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0050001.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-next30-drom991-20261121-17": {
+      "engine_cc": 658,
+      "power_hp": 52,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0060052.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-next30-drom991-20261121-20": {
+      "engine_cc": 1496,
+      "power_hp": 118,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/mdl0030009.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-next30-drom991-20261121-21": {
+      "engine_cc": 1496,
+      "power_hp": 129,
+      "engine_type": "ice",
+      "body_type": "минивэн",
+      "reference_url": "https://cars-japan.net/engine/mdl0030009.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-next30-drom991-20261121-22": {
+      "engine_cc": 1496,
+      "power_hp": 129,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://www.goo-net-exchange.com/catalog/HONDA__VEZEL/",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-next30-drom991-20261121-23": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010008.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-next30-drom991-20261121-25": {
+      "engine_cc": 1490,
+      "power_hp": 120,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0010182.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-next30-drom991-20261121-28": {
+      "engine_cc": 996,
+      "power_hp": 98,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0010175.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-followup30-20261121-02": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://www.goo-net-exchange.com/catalog/TOYOTA__TANK/",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-followup30-20261121-04": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010037.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-followup30-20261121-06": {
+      "engine_cc": 1498,
+      "power_hp": 109,
+      "engine_type": "ice",
+      "body_type": "седан / универсал",
+      "reference_url": "https://cars-japan.net/engine/mdl0010002.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-followup30-20261121-08": {
+      "engine_cc": 996,
+      "power_hp": 69,
+      "engine_type": "ice",
+      "body_type": "малолитражка",
+      "reference_url": "https://cars-japan.net/engine/mdl0010170.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-followup30-20261121-10": {
+      "engine_cc": 1496,
+      "power_hp": 109,
+      "engine_type": "ice",
+      "body_type": "седан / универсал",
+      "reference_url": "https://cars-japan.net/engine/mdl0010016.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
+    },
+    "japan-followup30-20261121-14": {
+      "engine_cc": 658,
+      "power_hp": 64,
+      "engine_type": "ice",
+      "body_type": "кроссовер",
+      "reference_url": "https://cars-japan.net/engine/mdl0080004.html",
+      "basis": "Existing owner-approved archive lot, matching Japanese chassis and reported horsepower, conditional personal import; catalogue reference"
     }
   },
   "quotes": {
@@ -5241,6 +5481,401 @@
         "util": 5200,
         "commission": 50000,
         "delivery": 120000
+      }
+    },
+    "japan-atp-b6-20261121-02": {
+      "low": 2040220,
+      "high": 2479092
+    },
+    "japan-atp-b6-20261121-07": {
+      "total": 1427717,
+      "costs": {
+        "car": 611122,
+        "japan": 61551,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-atp-b6-20261121-10": {
+      "total": 1153933,
+      "costs": {
+        "car": 374526,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-b6-20261121-12": {
+      "low": 809971,
+      "high": 899037
+    },
+    "japan-atp-b6-20261121-16": {
+      "total": 1097078,
+      "costs": {
+        "car": 369360,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 380306,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-b6-20261121-18": {
+      "total": 1381136,
+      "costs": {
+        "car": 907643,
+        "japan": 76377,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 89067,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-atp-b6-20261121-21": {
+      "total": 1614513,
+      "costs": {
+        "car": 844620,
+        "japan": 73226,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 405418,
+        "customsFee": 4924,
+        "util": 3400,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-atp-b6-20261121-22": {
+      "low": 1016840,
+      "high": 1195108
+    },
+    "japan-atp-b6-20261121-25": {
+      "low": 960952,
+      "high": 1050018
+    },
+    "japan-atp-b6-20261121-27": {
+      "total": 1418566,
+      "costs": {
+        "car": 621454,
+        "japan": 62068,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-next30-drom991-20261121-01": {
+      "total": 1314482,
+      "costs": {
+        "car": 389507,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 567563,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-next30-drom991-20261121-05": {
+      "total": 784741,
+      "costs": {
+        "car": 168924,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-next30-drom991-20261121-06": {
+      "total": 1066151,
+      "costs": {
+        "car": 256744,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-next30-drom991-20261121-08": {
+      "total": 1163416,
+      "costs": {
+        "car": 374009,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-next30-drom991-20261121-11": {
+      "total": 1067672,
+      "costs": {
+        "car": 361611,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 358649,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-next30-drom991-20261121-14": {
+      "total": 1177298,
+      "costs": {
+        "car": 628686,
+        "japan": 62430,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-next30-drom991-20261121-16": {
+      "total": 960076,
+      "costs": {
+        "car": 181322,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 432573,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-next30-drom991-20261121-17": {
+      "total": 1083105,
+      "costs": {
+        "car": 553265,
+        "japan": 58658,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-next30-drom991-20261121-20": {
+      "total": 1225260,
+      "costs": {
+        "car": 415853,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-next30-drom991-20261121-21": {
+      "total": 1147771,
+      "costs": {
+        "car": 338364,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 150000
+      }
+    },
+    "japan-next30-drom991-20261121-22": {
+      "total": 1464790,
+      "costs": {
+        "car": 660715,
+        "japan": 64031,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-next30-drom991-20261121-23": {
+      "total": 743414,
+      "costs": {
+        "car": 127597,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-next30-drom991-20261121-25": {
+      "low": 1714289,
+      "high": 2008103
+    },
+    "japan-next30-drom991-20261121-28": {
+      "total": 1407660,
+      "costs": {
+        "car": 760933,
+        "japan": 69042,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
+      }
+    },
+    "japan-followup30-20261121-02": {
+      "total": 852612,
+      "costs": {
+        "car": 235564,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-followup30-20261121-04": {
+      "total": 760461,
+      "costs": {
+        "car": 144644,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 1231,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-followup30-20261121-06": {
+      "total": 1380632,
+      "costs": {
+        "car": 584776,
+        "japan": 60234,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 432573,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-followup30-20261121-08": {
+      "total": 837631,
+      "costs": {
+        "car": 220583,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 269636,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 120000
+      }
+    },
+    "japan-followup30-20261121-10": {
+      "total": 1362155,
+      "costs": {
+        "car": 567729,
+        "japan": 59382,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 431995,
+        "customsFee": 4924,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 130000
+      }
+    },
+    "japan-followup30-20261121-14": {
+      "total": 896990,
+      "costs": {
+        "car": 356445,
+        "japan": 56825,
+        "shipping": 32925,
+        "bank": 15000,
+        "docs": 65000,
+        "duty": 178133,
+        "customsFee": 2462,
+        "util": 5200,
+        "commission": 50000,
+        "delivery": 135000
       }
     }
   }
