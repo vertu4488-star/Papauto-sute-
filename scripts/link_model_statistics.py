@@ -421,7 +421,7 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
                 or ((offers or related_supplier) and item["market"] != "china")):
             raise RuntimeError("MODEL_STATS supplier render mismatch "+ident)
         page.write_text(html, encoding="utf-8")
-        report.append({"model_id":ident,"market":item["market"],"auction_matches":len(records),"auction_cards":min(len(records),MAX_CARDS),"supplier_matches":len(offers),"supplier_cards":len(supplier_ids),"related_cards":len(family_rows)+len(related_supplier)})
+        report.append({"model_id":ident,"market":item["market"],"auction_matches":len(records),"auction_cards":min(len(records),MAX_CARDS),"supplier_matches":len(offers),"supplier_cards":len(supplier_ids),"related_cards":len(family_rows)+len(related_supplier),"related_supplier_cards":len(related_supplier)})
     # Reverse navigation: only exact approved assigned lots point to model pages.
     for lot_id, ident in assigned.items():
         p=target/"lots"/(lot_id+".html")
@@ -450,6 +450,7 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
              "supplier_covered":sum(x["supplier_matches"]>0 for x in report),
              "supplier_matches":sum(x["supplier_matches"] for x in report),
              "supplier_cards":sum(x["supplier_cards"] for x in report),
+             "related_supplier_cards":sum(x["related_supplier_cards"] for x in report),
              "no_exact_examples":sum(x["auction_matches"]==0 and x["supplier_matches"]==0 for x in report),
              "related_only_covered":sum(x["related_cards"]>0 and not x["auction_matches"] and not x["supplier_matches"] for x in report),
              "no_examples_including_related":sum(not x["auction_matches"] and not x["supplier_matches"] and not x["related_cards"] for x in report),

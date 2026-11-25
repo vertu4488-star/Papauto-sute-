@@ -636,6 +636,7 @@ def copy_public_files() -> list[str]:
     # Final gate inspects the full published HTML/data/image bytes, not a preview.
     # Re-check inline supplier images after final theme and calculator passes.
     supplier_card_count = 0
+    related_supplier_card_count = 0
     for model_page in (TARGET / "models").glob("*.html"):
         model_html = model_page.read_text(encoding="utf-8")
         cards = re.findall(r'<article class="pa-model-lot pa-model-supplier"[^>]*>[\s\S]*?</article>', model_html)
@@ -646,8 +647,15 @@ def copy_public_files() -> list[str]:
                     or not all(x in card for x in ("Двигатель", "Пробег", "Рассчитать стоимость", "Подобрать аналог"))
                     or re.search(r'href="https?://', card)):
                 raise RuntimeError("PAPAUTO_MODEL_STATS: invalid supplier card " + model_page.stem)
-        supplier_card_count += len(cards)
-    if supplier_card_count != model_coverage["supplier_cards"]:
+        for card in cards:
+            if 'data-model-related-supplier-id=' in card:
+                if model_page.stem != 'china-chery-tiggo-4':
+                    raise RuntimeError('MODEL_STATS unexpected related supplier page')
+                related_supplier_card_count += 1
+            else:
+                supplier_card_count += 1
+    if (supplier_card_count != model_coverage["supplier_cards"]
+            or related_supplier_card_count != model_coverage["related_supplier_cards"]):
         raise RuntimeError("PAPAUTO_MODEL_STATS: inline cards lost after build")
     print(f"PAPAUTO_MODEL_SUPPLIER_CARDS_OK: {supplier_card_count}")
 
