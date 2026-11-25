@@ -209,6 +209,17 @@ def copy_public_files() -> list[str]:
     if len(premium_lots) != 12 or any(
             lot.get("inspection_kind") != "Аукционный лист" for lot in premium_lots):
         raise RuntimeError("PAPAUTO_POLICY: premium page must use 12 true-sheet examples")
+    # Keep the frozen source registry for provenance, but publish only screened records.
+    screened_premium = [lot for lot in premium_lots
+                        if lot.get("id") != "mercedes-a180-2020"]
+    if len(screened_premium) != 11:
+        raise RuntimeError("PAPAUTO_POLICY: unexpected screened premium registry")
+    premium_public = dict(premium_source, lots=screened_premium)
+    if "lot_count" in premium_public:
+        premium_public["lot_count"] = len(screened_premium)
+    (TARGET / "data/premium-real-auction-lots.json").write_text(
+        json.dumps(premium_public, ensure_ascii=False), encoding="utf-8")
+
     # Customer policy: NEVER publish text-only vehicle cards as auction lots.
     # Every visible premium listing must carry the matched photo, mileage and sheet.
     for page_name in ("premium-japan-korea.html", "premium-mobile-photo-demo.html"):
@@ -349,7 +360,15 @@ def copy_public_files() -> list[str]:
                 html = html.replace("🇯🇵 Япония · 12", "🇯🇵 Япония · 11")
                 html = html.replace("Показано 12 аукционных автомобилей",
                                     "Показано 11 аукционных автомобилей")
+            if page.name.startswith("premium-"):
+                html = html.replace("из 12 подтверждённых японских аукционных лотов",
+                                    "из 11 подтверждённых японских аукционных лотов")
             if page.name == "index.html":
+                html = html.replace("Все 12 премиальных лотов", "Все 11 премиальных лотов")
+                html = html.replace("Все · 12", "Все · 11").replace("🇯🇵 Япония · 12", "🇯🇵 Япония · 11")
+                html = html.replace("Все 37 автомобилей в галерее",
+                                    f"Все {len(public_ids)} автомобилей в галерее")
+                html = html.replace('href="/models-100.html"', 'href="/models-135.html"')
                 html = html.replace(
                     "Все 25 лотов с фотографиями и статистикой",
                     "Все 24 лота с фотографиями и статистикой",
