@@ -1,0 +1,68 @@
+name: Publish exact owner-approved ATP Japan batch 1
+on:
+  push:
+    branches: ['release/japan-atp30-batch1-20261126']
+    paths: ['.github/workflows/release-atp-japan30-batch1.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: japan75-phase1-preview
+          run-id: 45816762874
+          github-token: ${{ github.token }}
+          path: /tmp/japan30
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/render_atp_japan30_batch1.py /tmp/japan30
+      - run: python scripts/build_content.py
+      - run: python scripts/build_static_public.py
+      - name: Verify exact reviewed cards and mobile and desktop images
+        run: |
+          pip install playwright
+          python -m playwright install chromium --with-deps
+          python -m http.server 8765 --directory render-public >/tmp/japan30-http.log 2>&1 &
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          import json,sys
+          from pathlib import Path
+          sys.path.insert(0,"scripts")
+          from render_atp_japan30_batch1 import load,ident
+          rows=load(Path("."))
+          report=json.loads(Path("render-public/data/model-statistics-coverage.json").read_text())
+          assert report["japan30_batch1_reference_cards"]==30
+          assert len(report["models"])==147
+          for w in (390,1280):
+              with sync_playwright() as p:
+                  browser=p.chromium.launch()
+                  page=browser.new_page(viewport={"width":w,"height":844})
+                  count=0
+                  for model in sorted({ident(r) for r in rows}):
+                      assert page.goto("http://127.0.0.1:8765/models/"+model+".html").ok
+                      cards=page.locator("[data-model-reference-id^='atp-japan30-b1-']")
+                      assert cards.count()==sum(ident(r)==model for r in rows)
+                      count+=cards.count()
+                      for img in cards.locator("img").all():
+                          img.evaluate("(el) => el.decode()")
+                          assert img.evaluate("(el) => el.naturalWidth > 0")
+                  assert count==30
+                  browser.close()
+          PY
+      - name: Commit verified exact approved release
+        run: |
+          git config user.name "PapAuto release"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/seo-reference/atp-japan30-batch1-20261126 research/owner-approved-atp-japan30-batch1-20261126.json sitemap.xml '*.html'
+          git commit -m "Add exact 90 reviewed ATP originals and verified model routes"
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "69db18b2ccdbe70bda59c453c8730aa896c35ca0"
+          git push origin HEAD:main
