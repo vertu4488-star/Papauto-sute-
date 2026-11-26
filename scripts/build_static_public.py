@@ -696,7 +696,7 @@ def copy_public_files() -> list[str]:
     # Keep the approved premium calculator visible and isolated from homepage theming.
     calc_html = (TARGET / "index.html").read_text(encoding="utf-8")
     calc_css = (TARGET / "papauto-premium-calculator.css").read_text(encoding="utf-8")
-    if (calc_html.count('/papauto-premium-calculator.css?v=20261126-lexus-restored') != 1
+    if (calc_html.count('/papauto-premium-calculator.css?v=20261126-lexus-contrast') != 1
             or not all(f'id="{x}"' in calc_html for x in ("calculator","calcForm","paEstimateTabs","paJapanTariffs","paDeliveryPanel","resultLines"))
             or 'body.pa-thursday-home #calculator .pa-estimate-head{background:#292823!important;' not in calc_css
             or 'body.pa-thursday-home #calculator .pa-estimate-result{background:#eee5d5!important;' not in calc_css):

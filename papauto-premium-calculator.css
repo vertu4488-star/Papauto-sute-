@@ -80,3 +80,14 @@ body.pa-thursday-home #calculator .pa-estimate-primary{background:#292823!import
 body.pa-thursday-home #calculator .pa-estimate-result{background:#eee5d5!important;background-image:none!important;color:#292823!important;border-color:#ddcdb7!important}
 body.pa-thursday-home #calculator .pa-estimate-total{color:#292823!important}
 @media print{body.pa-thursday-home[data-site-view="calculator"],body.pa-thursday-home[data-site-view="calculator"] #calculator:not([hidden]){background:#fff!important}body.pa-thursday-home #calculator .pa-estimate-head{background:#fff!important;color:#292823!important}body.pa-thursday-home #calculator .pa-estimate-head :is(h2,p,.pa-estimate-brand){color:#292823!important}}
+
+/* Currency converter: explicit high-contrast warm surfaces on desktop and iOS. */
+body.pa-thursday-home #currency-converter .currency-card{background:#fffaf4!important;background-image:none!important;color:#302820!important;border-color:#ded0c0!important}
+body.pa-thursday-home #currency-converter .currency-card>label,body.pa-thursday-home #currency-converter .currency-converter-intro{color:#594333!important}
+body.pa-thursday-home #currency-converter .currency-card :is(input,select){background:#fffefa!important;background-image:none!important;color:#302820!important;-webkit-text-fill-color:#302820!important;opacity:1!important;caret-color:#302820;border:1px solid #bca995!important}
+body.pa-thursday-home #currency-converter .currency-card input::placeholder{color:#746456!important;-webkit-text-fill-color:#746456!important;opacity:1}
+body.pa-thursday-home #currency-converter :is(.currency-result,.currency-market-rate){background:#f1e7d9!important;background-image:none!important;border:1px solid #d6c5b0!important;color:#302820!important}
+body.pa-thursday-home #currency-converter :is(.currency-result,.currency-market-rate) span{color:#594333!important;-webkit-text-fill-color:#594333!important;opacity:1!important}
+body.pa-thursday-home #currency-converter :is(.currency-result,.currency-market-rate) strong{color:#302820!important;-webkit-text-fill-color:#302820!important;opacity:1!important;font-variant-numeric:tabular-nums}
+body.pa-thursday-home #currency-converter :is(.currency-rate-note,.currency-disclaimer,.currency-market-heading span){color:#594333!important}
+body.pa-thursday-home #currency-converter :is(button,input,select,a):focus-visible{outline:2px solid #805d3f!important;outline-offset:3px}
