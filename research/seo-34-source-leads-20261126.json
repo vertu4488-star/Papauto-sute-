@@ -1,0 +1,264 @@
+{
+  "date": "2026-11-26",
+  "live_baseline": 101,
+  "remaining": 34,
+  "source_leads": [
+    {
+      "model_id": "korea-kia-sportage",
+      "url": "https://www.autowini.com/en/Cars/IC5682672/cars-detail",
+      "note": "2023 Sportage 1.6T",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "korea-kia-sorento",
+      "url": "https://www.autowini.com/en/Cars/IC5568759/cars-detail",
+      "note": "2023 Sorento HEV 1.6",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "korea-audi-a6",
+      "url": "https://www.autowini.com/en/Cars/IC5699372/cars-detail",
+      "note": "2022 Audi A6 40 TDI",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "korea-hyundai-i30",
+      "url": "https://www.autowini.com/en/Cars/IC5610878/cars-detail",
+      "note": "2020 i30 1.6T, 109782 km",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "korea-kia-soul",
+      "url": "https://www.autowini.com/en/Cars/IC5706182/cars-detail",
+      "note": "2012 Soul 1.6",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "korea-kia-forte",
+      "url": "https://www.autowini.com/en/Cars/IC5383468/cars-detail",
+      "note": "2012 Forte Cerato, 118183 km",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "korea-kia-carens",
+      "url": "https://www.autowini.com/en/Cars/IC5634850/cars-detail",
+      "note": "2018 Carens 2.0",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "korea-genesis-g70",
+      "url": "https://www.autowini.com/en/Cars/IC5610900/cars-detail",
+      "note": "2021 G70 2.0T",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "korea-renault-korea-sm3",
+      "url": "https://www.autowini.com/en/Cars/IC5643702/cars-detail",
+      "note": "2014 SM3, 155188 km",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-geely-atlas-boyue",
+      "url": "https://www.excars.cn/cars/detail/usedcar-geely-boyue-357613",
+      "note": "2020 Boyue 1.8T, 54000 km",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-geely-cityray",
+      "url": "https://en.guazi.com/products/geely-auto-emgrand-x7-sport-2023-15l-blue-29800km-at-2wd-5-seats-xa5q9z2a8w.html",
+      "note": "2023 Boyue Cool, 29800 km; source uses Emgrand X7 Sport title; verify identity",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-byd-song-plus",
+      "url": "https://www.autocango.com/sku/usedcar-BYD-Song-Plus-ACU9532851",
+      "note": "2021 Song Plus PHEV",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-byd-song-pro",
+      "url": "https://www.autocango.com/sku/usedcar-BYD-Song-Pro-ACU9462437",
+      "note": "2019 Song Pro 1.5T 160 HP",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-byd-dolphin",
+      "url": "https://en.guazi.com/products/byd-dolphin-2021-00l-34600km-at-2wd-5-seats-bn4l9wct92.html",
+      "note": "2021 model year Dolphin, 34600 km",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-byd-seagull",
+      "url": "https://www.eautoexport.com/cars/byd-seagull-2023-exuy6aa3c37430da",
+      "note": "2023 Seagull Freedom",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-byd-yuan-plus-atto-3",
+      "url": "https://www.autocango.com/sku/usedcar-BYD-Yuan-Plus-ACU9571982",
+      "note": "2023 Yuan Plus",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-byd-qin-plus",
+      "url": "https://www.autocango.com/sku/usedcar-BYD-Qin-Plus-ACU9424349",
+      "note": "2025 Qin Plus PHEV",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-changan-cs35-plus",
+      "url": "https://www.xiaotuauto.com/auto/287978497",
+      "note": "2022 CS35 Plus 1.4T, 27000 km",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-byd-qin-l",
+      "url": "https://en.guazi.com/products/byd-qin-l-2024-15l-gray-49100km-at-2wd-5-seats-xsccw6e67y.html",
+      "note": "2024 Qin L DM-i",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-byd-destroyer-05",
+      "url": "https://www.autocango.com/sku/usedcar-BYD-Destroyer-05-ACU5025898",
+      "note": "2024 Destroyer 05",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-byd-song-l",
+      "url": "https://en.guazi.com/products/byd-song-l-ev-2025-00l-black-27900km-at-2wd-5-seats-ymgcyrkf7l.html",
+      "note": "2025 Song L EV, 27900 km",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-byd-seal-06",
+      "url": "https://en.guazi.com/products/byd-seal-06-new-energy-2024-15l-gray-23500km-at-2wd-5-seats-nteebymm34.html",
+      "note": "2024 Seal 06 DM-i, 23500 km",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-byd-e2",
+      "url": "https://goldenlaneauto.com/used-cars/byd-e2-83167/",
+      "note": "2021 e2, 35900 km; fuel label inconsistent, verify",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-geely-galaxy-l6",
+      "url": "https://www.cargration.com/en/car-detail/geely-galaxy-l6-2023-125km-car-006328/",
+      "note": "2023 Galaxy L6",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-geely-galaxy-e5",
+      "url": "https://en.guazi.com/products/geely-galaxy-e5-2024-00l-gray-36400km-at-2wd-5-seats-63tm2jwvwt.html",
+      "note": "2024 Galaxy E5, 36400 km",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-haval-h4",
+      "url": "https://www.autocango.com/sku/usedcar-Haval-H4-ACU9523258",
+      "note": "2020 Haval H4 150 HP",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-changan-alsvin",
+      "url": "https://sellwellauto.com/usedcar/changan-alsvin-2020-SWA1612564",
+      "note": "2020 Alsvin, 26000 km",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-changan-lumin",
+      "url": "https://www.autocango.com/sku/usedcar-ChangAn-QiYuan-Lumin-ACU9149792",
+      "note": "2024 Lumin",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    },
+    {
+      "model_id": "china-gac-aion-y",
+      "url": "https://www.autocango.com/sku/usedcar-Aion-Y-ACU9445849",
+      "note": "2023 Aion Y",
+      "status": "source_lead_only",
+      "media_reviewed": false,
+      "published": false
+    }
+  ],
+  "unresolved": [
+    {
+      "model_id": "korea-hyundai-creta",
+      "reason": "no exact Korean-market unit found"
+    },
+    {
+      "model_id": "korea-hyundai-i20",
+      "reason": "Korean search categories, no confirmed unit"
+    },
+    {
+      "model_id": "korea-hyundai-bayon",
+      "reason": "European listings not Korean"
+    },
+    {
+      "model_id": "korea-kia-ceed",
+      "reason": "PLC lot 37423961 labelled sedan, model inconsistent",
+      "url": "https://plc.auction/auction/lot/kia-ceed-2021-knag3412bma-12-37423961"
+    },
+    {
+      "model_id": "korea-kia-kx3",
+      "reason": "listing conflicting K5 generation and sedan body",
+      "url": "https://koreacars.bg/en/catalog/kia-kx3-2016-04w1fK"
+    }
+  ],
+  "notes": "Supplier and archive leads, not verified photo packages. Indexed listings can disappear. No external customer links, no claim of auction sale, no publication until image/model match checked."
+}
