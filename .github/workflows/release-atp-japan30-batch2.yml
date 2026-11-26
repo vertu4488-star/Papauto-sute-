@@ -1,0 +1,81 @@
+name: Publish second owner-approved ATP Japan batch
+on:
+  push:
+    branches: ['release/japan-atp30-batch2-20261126']
+    paths: ['.github/workflows/release-atp-japan30-batch2.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: japan75-phase1-preview
+          run-id: 45816762874
+          github-token: ${{ github.token }}
+          path: /tmp/japan30
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install both specifically approved frozen packages
+        run: |
+          python scripts/render_atp_japan30_batch1.py /tmp/japan30
+          python scripts/render_atp_japan30_batch2.py /tmp/japan30
+          python scripts/build_content.py
+          python scripts/build_static_public.py
+      - name: Verify 60 exact reviewed examples across both viewports
+        run: |
+          pip install playwright
+          python -m playwright install chromium --with-deps
+          python -m http.server 8765 --directory render-public >/tmp/japan30b2-http.log 2>&1 &
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          import json,sys
+          from pathlib import Path
+          sys.path.insert(0,"scripts")
+          from render_atp_japan30_batch1 import load as load1,ident
+          from render_atp_japan30_batch2 import load as load2
+          a,b=load1(Path(".")),load2(Path("."))
+          report=json.loads(Path("render-public/data/model-statistics-coverage.json").read_text())
+          assert report["japan30_batch1_reference_cards"]==30
+          assert report["japan30_batch2_reference_cards"]==30
+          assert len(report["models"])==147
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for w in (390,1280):
+                  page=browser.new_page(viewport={"width":w,"height":844})
+                  count=0
+                  for model in sorted({ident(r) for r in a+b}):
+                      assert page.goto("http://127.0.0.1:8765/models/"+model+".html",wait_until="domcontentloaded",timeout=20000).ok
+                      for n,rows in ((1,a),(2,b)):
+                          cards=page.locator("[data-model-reference-id^='atp-japan30-b"+str(n)+"-']")
+                          assert cards.count()==sum(ident(r)==model for r in rows)
+                          count+=cards.count()
+                          imgs=cards.locator("img")
+                          assert imgs.count()==3*cards.count()
+                          imgs.evaluate_all("(els)=>els.forEach(el=>el.loading='eager')")
+                          page.wait_for_function("(selector)=>[...document.querySelectorAll(selector)].every(el=>el.complete&&el.naturalWidth>0)",arg="[data-model-reference-id^='atp-japan30-b"+str(n)+"-'] img",timeout=20000)
+                  assert count==60
+                  page.close()
+              browser.close()
+          print("PAPAUTO_BOTH_APPROVED_BATCHES_BROWSER_OK 60 cards 180 images each viewport")
+          PY
+      - name: Commit verified release without overwriting concurrent main changes
+        run: |
+          git config user.name "PapAuto release"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/seo-reference/atp-japan30-batch1-20261126 assets/seo-reference/atp-japan30-batch2-20261126 research/owner-approved-atp-japan30-batch1-20261126.json research/owner-approved-atp-japan30-batch2-20261126.json sitemap.xml '*.html'
+          git commit -m "Release both approved Japanese ATP batches with 180 exact original files"
+          git fetch origin main
+          if test "$(git rev-parse origin/main)" != "69db18b2ccdbe70bda59c453c8730aa896c35ca0"; then
+            git merge-base --is-ancestor 24f262bcc784eb2717dfc4137f7b556b79f00b16 origin/main
+            git merge --no-edit origin/main
+            python scripts/build_static_public.py
+          fi
+          git push origin HEAD:main
