@@ -69,7 +69,7 @@ def render_home_car_strip(target: Path, registry: dict):
         '<section id="pa-home-cars" aria-labelledby="pa-home-cars-heading">'
         '<div class="pa-home-cars-head"><h2 id="pa-home-cars-heading">Автомобили из Японии</h2>'
         '<a href="/gallery.html">Все автомобили →</a></div>'
-        '<p class="pa-home-cars-note">Архивные примеры · цены по данным аукционов, без ввоза и доставки. Не в наличии.</p>'
+        '<p class="pa-home-cars-note">Статистика продаж</p>'
         '<div class="pa-home-cars-shell">'
         '<button class="pa-home-cars-arrow pa-home-cars-prev" type="button" aria-label="Предыдущие автомобили" aria-controls="pa-home-cars-track" hidden>‹</button>'
         '<div id="pa-home-cars-track" class="pa-home-cars-track" tabindex="0" aria-label="Лента автомобилей, прокручивается влево и вправо">'
