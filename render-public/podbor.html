@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Подбор автомобиля — PapAuto</title>
+<meta name="description" content="Подберите автомобиль из Японии, Кореи или Китая в двух шагах. Марка, модель, год, контакт — без лишней анкеты.">
+<meta name="theme-color" content="#f8f1e8">
+<link rel="canonical" href="https://papauto.ru/podbor.html">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/vendor/surveyjs/survey-core.min.css?v=3.2.4">
+<link rel="stylesheet" href="/survey-podbor.css?v=20261126-success">
+<script>
+window.addEventListener('error',function(e){
+  var box=document.getElementById('surveyStatus');
+  if(box&&box.textContent.indexOf('Загружаем')>=0) box.textContent='Ошибка загрузки формы: '+String(e.message||e.target?.src||'script').slice(0,190);
+},true);
+window.addEventListener('unhandledrejection',function(e){
+  var box=document.getElementById('surveyStatus');
+  if(box&&box.textContent.indexOf('Загружаем')>=0) box.textContent='Ошибка формы: '+String(e.reason?.message||e.reason||'неизвестно').slice(0,190);
+});
+</script>
+<link rel="stylesheet" href="/papauto-warm-interior.css?v=20261115-all-site-v4"></head>
+<body class="papauto-warm-interior">
+<header class="pa-header">
+<a href="/" class="pa-brand" aria-label="PapAuto — на главную"><span>P</span>PAPAUTO.</a>
+<a class="pa-back" href="/">← На главную</a>
+</header>
+<main class="pa-main">
+<div class="pa-intro">
+<h1>Подбор автомобиля</h1>
+<p>Одна понятная заявка без ленты и регистрации. На первом шаге выберите автомобиль, на втором — укажите номер телефона для звонка или Telegram (не ник).</p>
+<p><strong>С 1 января 2027 года меняются полные ставки утильсбора.</strong> <a href="/import-rules.html">Даты, условия льготы и правила ввоза →</a></p>
+</div>
+<div class="pa-card">
+<div id="surveyContainer" aria-label="Форма подбора PapAuto"></div>
+<p id="surveyStatus" class="pa-status" role="status" aria-live="polite">Загружаем форму подбора…</p>
+</div>
+<section class="pa-card pa-podbor-guide" aria-labelledby="podbor-guide-title">
+<h2 id="podbor-guide-title">Что важно для точного подбора автомобиля</h2>
+<p>В заявке укажите желаемую марку и модель, год выпуска, тип двигателя, бюджет и город получения. Если конкретной модели нет в списке, можно описать подходящий кузов и назначение автомобиля. Для машин из Японии уточните предпочтения по правому рулю, для Кореи и Китая — по комплектации и доступности конкретной версии.</p>
+<h2>Как формируется предварительная стоимость</h2>
+<p>Цена автомобиля на аукционе или у поставщика — только часть расходов. Перед покупкой требуется уточнить стоимость выкупа, экспортных документов, перевозки, таможенного оформления, утилизационного сбора и доставки до Новосибирска или другого города. Валюта сделки, курс и маршрут могут изменить итоговую смету. Поэтому архивная цена из каталога не означает цену автомобиля под ключ.</p>
+<h2>Какие документы и фотографии проверяем</h2>
+<p>Для японского аукционного предложения важны лист осмотра, фотографии именно этого лота, пробег, оценка и замечания аукционного инспектора. Для предложений из Кореи и Китая необходимо отдельно запросить документы, идентификаторы автомобиля, доступную историю и сведения о состоянии. Наличие конкретного автомобиля и возможность его вывоза подтверждаются перед заказом.</p>
+<p>Посмотрите <a href="/auction-lot-index.html">японские аукционные примеры</a>, <a href="/china-order.html">предложения из Китая</a> и <a href="/buyer-checklist.html">чек-лист проверки перед покупкой</a>. Если возникли вопросы, отправьте заявку выше — менеджер уточнит параметры для расчёта.</p>
+</section>
+</main>
+<dialog id="surveySuccessDialog" class="pa-dialog" aria-labelledby="surveySuccessTitle">
+<div class="pa-check" aria-hidden="true">✓</div>
+<h2 id="surveySuccessTitle">Заявка принята</h2>
+<p id="surveySuccessText">Спасибо! Мы получили вашу заявку и скоро свяжемся с вами.</p>
+<p id="surveySuccessDetail">Менеджер PapAuto уточнит детали подбора автомобиля и ответит удобным для вас способом связи.</p>
+<p id="surveyDeliveryNote" class="pa-delivery-note" hidden>Заявка сохранена, но доставка уведомления пока не подтверждена. Повторно отправлять её не нужно.</p>
+<button id="surveySuccessClose" type="button">Понятно</button>
+</dialog>
+<footer class="pa-footer">PAPAUTO · Япония, Корея, Китай · <a href="/privacy.html">Политика конфиденциальности</a></footer>
+<script defer src="/survey-diagnostics.js?v=1"></script>
+<script defer src="/site-config.js?v=20261111api"></script>
+<script defer src="/vehicle-catalogue.js?v=20261113premiumjp"></script>
+<!-- Complete SurveyJS form renderer, MIT. Prebuilt packages served from PapAuto. -->
+<script defer src="/vendor/surveyjs/survey.core.min.js?v=3.2.4"></script>
+<script defer src="/vendor/surveyjs/survey.i18n.min.js?v=3.2.4"></script>
+<script defer src="/vendor/surveyjs/survey-js-ui.min.js?v=3.2.4"></script>
+<script defer src="/survey-similar-prefill.js?v=20261113-auction-trims"></script>
+<script defer src="/survey-podbor.js?v=20261126-success"></script>
+</body>
+</html>

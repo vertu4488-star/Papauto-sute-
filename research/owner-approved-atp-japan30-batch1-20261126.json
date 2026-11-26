@@ -1,0 +1,1780 @@
+{
+  "reviewed_pdf": "PapAuto_Japan_ATP_30_batch1_2026-11-26.pdf",
+  "reviewed_pdf_sha256": "14aa4de9c311d2dc6078e4c18604ca6df749a47aba9b64ba5ac3846b8cc19e34",
+  "source_artifact_id": 15115707921,
+  "owner_approval": "Explicit request to publish exactly 30 reviewed PDF cards on 2026-11-26",
+  "rights_confirmed": false,
+  "scope": "Historical model SEO references only, not stock",
+  "lots": [
+    {
+      "model": "Suzuki Jimny Sierra",
+      "title": "Suzuki Jimny sierra 2023 года",
+      "year": 2023,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny-sierra/56HXriMinBzbgxA/",
+      "facts": {
+        "Кузов": "JB74W",
+        "Объем": "1500 cм",
+        "Пробег": "48000 км",
+        "Комплектация": "JC 4WD",
+        "Номер лота": "12053",
+        "Оценка": "4",
+        "Аукцион": "TAA Yokohama",
+        "Дата аукциона": "2026-11-21",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "1 861 000 ¥",
+        "Мощность": "102 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Механическая",
+        "Цвет": "beige two-"
+      },
+      "key": [
+        "taayokohama",
+        "2026-11-21",
+        "12053"
+      ],
+      "new_year": false,
+      "index": 1,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdNYF5sbHtokyMFHf",
+          "width": 640,
+          "height": 480,
+          "sha256": "7018430b9f5c465c253c07d0b356804f8f22c1031e299f0a606dceada4a24222",
+          "ext": "jpg",
+          "file": "001-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdNYF5sYR6wTaIKe3",
+          "width": 640,
+          "height": 480,
+          "sha256": "599fdf2f595d21bbb6407c9dd154ffcb625aea743fa826fc2cc7dc89b82223e0",
+          "ext": "jpg",
+          "file": "001-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnKy5w5FMok6fgP1J",
+          "width": 800,
+          "height": 800,
+          "sha256": "9c9206a7a167bd6fadc295a4e76838ad2808bf5ee0107b1b9f8dd85e4f6a43a7",
+          "ext": "jpg",
+          "file": "001-2-sheet.jpg"
+        }
+      ],
+      "review_number": 1
+    },
+    {
+      "model": "Suzuki Jimny Sierra",
+      "title": "Suzuki Jimny sierra 2015 года",
+      "year": 2015,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny-sierra/7L8VuONgqwPVSV/",
+      "facts": {
+        "Кузов": "JB43W",
+        "Объем": "1300 cм",
+        "Пробег": "84000 км",
+        "Комплектация": "ﾗ&#",
+        "Номер лота": "561",
+        "Оценка": "4",
+        "Аукцион": "TAA Yokohama",
+        "Дата аукциона": "2026-11-21",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "1 098 000 ¥",
+        "Мощность": "88 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "black"
+      },
+      "key": [
+        "taayokohama",
+        "2026-11-21",
+        "561"
+      ],
+      "new_year": true,
+      "index": 5,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdOcfrnTXSIxFiuIP",
+          "width": 640,
+          "height": 480,
+          "sha256": "5a16d58098b6257650c621c70f9a3637fdc2e65f78865d453b695730e3653386",
+          "ext": "jpg",
+          "file": "005-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdOcfroH8uR7hezfC",
+          "width": 640,
+          "height": 480,
+          "sha256": "52f48a25fd6cc6be7fdb9960c0b330ffa8eb37def3c69d0fd12d766c1ad9c4ee",
+          "ext": "jpg",
+          "file": "005-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnKLET1o3NEilME3j",
+          "width": 800,
+          "height": 800,
+          "sha256": "37ab3af0f01a258c5804069ae527ec3f644ac15d0ff5bb2e06b98a8b1af7556e",
+          "ext": "jpg",
+          "file": "005-2-sheet.jpg"
+        }
+      ],
+      "review_number": 2
+    },
+    {
+      "model": "Suzuki Jimny Sierra",
+      "title": "Suzuki Jimny sierra 2024 года",
+      "year": 2024,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny-sierra/2mgo58NJeMtMzS/",
+      "facts": {
+        "Кузов": "JB74W",
+        "Объем": "1500 cм",
+        "Пробег": "21000 км",
+        "Комплектация": "JC 4WD",
+        "Номер лота": "113",
+        "Оценка": "4.5",
+        "Аукцион": "TAA Kanto",
+        "Дата аукциона": "2026-11-19",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "2 463 000 ¥",
+        "Мощность": "102 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "grey"
+      },
+      "key": [
+        "taakanto",
+        "2026-11-19",
+        "113"
+      ],
+      "new_year": true,
+      "index": 67,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXRrqoDQTxx4GQRE8Q6ZnxdMpiuK7v",
+          "width": 640,
+          "height": 480,
+          "sha256": "bf1ab71fd9543fb12c7022429341fccb884c40ef8e9c32eb8a8df58ef8c97d63",
+          "ext": "jpg",
+          "file": "067-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXRrqoDQTxx4GQRE8Q71aGPUXUqODi",
+          "width": 640,
+          "height": 480,
+          "sha256": "17de778792fabef3af550cebb5fe0f4c5471da558d6560d79f7390895c5c7fa0",
+          "ext": "jpg",
+          "file": "067-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzV73axlozttSd2AHfxBRC9I0YYTpZ",
+          "width": 800,
+          "height": 800,
+          "sha256": "664abc22c4436d2d0a33e5cbb5c044e9d6058818d7a645fc06d4527ed93de7ec",
+          "ext": "jpg",
+          "file": "067-2-sheet.jpg"
+        }
+      ],
+      "review_number": 3
+    },
+    {
+      "model": "Daihatsu Thor",
+      "title": "Daihatsu Thor 2018 года",
+      "year": 2018,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/thor/53wQvrYZGZkXcef/",
+      "facts": {
+        "Кузов": "M900S",
+        "Объем": "1000 cм",
+        "Пробег": "25000 км",
+        "Комплектация": "G SA2",
+        "Номер лота": "12700",
+        "Оценка": "3.5",
+        "Аукцион": "TAA Yokohama",
+        "Дата аукциона": "2026-11-21",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "379 000 ¥",
+        "Мощность": "69 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "magenta"
+      },
+      "key": [
+        "taayokohama",
+        "2026-11-21",
+        "12700"
+      ],
+      "new_year": true,
+      "index": 24,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdPpALs2mmpX72nfA",
+          "width": 640,
+          "height": 480,
+          "sha256": "77cb56c35046a60d234aba85000e376957ee1ebdfa76e292964a5c0d93fda81c",
+          "ext": "jpg",
+          "file": "024-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdPpALsOvYyvHXrMn",
+          "width": 640,
+          "height": 480,
+          "sha256": "7cc811fabc8a1de4f6fdf5fda2fa79ca76accb34b29acc4260dd5aa0be09ee87",
+          "ext": "jpg",
+          "file": "024-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnLZ1d5vrhlHMvwz5",
+          "width": 800,
+          "height": 800,
+          "sha256": "09677b5fad1d9085b473133eb7d3d2bd9e0bbafccf76e2e838d4e997e12ba668",
+          "ext": "jpg",
+          "file": "024-2-sheet.jpg"
+        }
+      ],
+      "review_number": 4
+    },
+    {
+      "model": "Daihatsu Thor",
+      "title": "Daihatsu Thor 2025 года",
+      "year": 2025,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/thor/4Zos9BukBiVO2yW/",
+      "facts": {
+        "Кузов": "M900S",
+        "Объем": "1000 cм",
+        "Пробег": "31000 км",
+        "Комплектация": "Custom G T",
+        "Номер лота": "12530",
+        "Оценка": "4",
+        "Аукцион": "TAA Yokohama",
+        "Дата аукциона": "2026-11-21",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "1 387 000 ¥",
+        "Мощность": "69 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "black"
+      },
+      "key": [
+        "taayokohama",
+        "2026-11-21",
+        "12530"
+      ],
+      "new_year": true,
+      "index": 43,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdNBc5iL9OBSSQdtY",
+          "width": 640,
+          "height": 480,
+          "sha256": "e9ba1628b9e007eb5e246aaa97c756037775b8ee5904953f352375e0f8720cd3",
+          "ext": "jpg",
+          "file": "043-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdNBc5jyiqKruMi1L",
+          "width": 640,
+          "height": 480,
+          "sha256": "2643c12f29262e2273e78f6a2340aeee6d5f9d95d3c129e9c9a770037e28657f",
+          "ext": "jpg",
+          "file": "043-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnKaBvVfdJxDzkmNs",
+          "width": 800,
+          "height": 800,
+          "sha256": "67312fd31f738a9a05e7e1c6128153f8c5b4d82e4873ec2a841ba60c4424ba3e",
+          "ext": "jpg",
+          "file": "043-2-sheet.jpg"
+        }
+      ],
+      "review_number": 5
+    },
+    {
+      "model": "Daihatsu Thor",
+      "title": "Daihatsu Thor 2023 года",
+      "year": 2023,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/daihatsu/thor/329W9V5f7IFDmog/",
+      "facts": {
+        "Кузов": "M900S",
+        "Объем": "1000 cм",
+        "Пробег": "46000 км",
+        "Комплектация": "Custom G T",
+        "Номер лота": "7041",
+        "Оценка": "4",
+        "Аукцион": "JU Nara",
+        "Дата аукциона": "2026-11-21",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "1 121 000 ¥",
+        "Мощность": "69 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "blue"
+      },
+      "key": [
+        "junara",
+        "2026-11-21",
+        "7041"
+      ],
+      "new_year": true,
+      "index": 54,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/pR9lLmCb9wxDaiX9rBON0tAUdP8gDOvnsrpzflkRPT1cCZBU5H3",
+          "width": 640,
+          "height": 480,
+          "sha256": "83902f5678370e8eae8abcc73712c5727c98d9c9f383a2c8275856cd80931bbe",
+          "ext": "jpg",
+          "file": "054-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/pR9lLmCb9wxDaiX9rBON0tAUdP8gDOvnsrpzflkS2MkqHmMXaCT",
+          "width": 640,
+          "height": 480,
+          "sha256": "fc951aee54cd781164480c43556315e3360bd076838611967932fc1d77b1715c",
+          "ext": "jpg",
+          "file": "054-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/pR9lLmCb9wxU8KZ7Wj6NzRw2FixQwwdGmL6reM3FXCFM9S4Lywn",
+          "width": 700,
+          "height": 700,
+          "sha256": "f83e26ee24f7d9b67c6b3294407fee92d1ebde5b464997c0ffb9d532da12e291",
+          "ext": "jpg",
+          "file": "054-4-sheet.jpg"
+        }
+      ],
+      "review_number": 6
+    },
+    {
+      "model": "Toyota Wish",
+      "title": "Toyota Wish 2015 года",
+      "year": 2015,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/wish/65sbOfcQqpdVFG/",
+      "facts": {
+        "Кузов": "ZGE25W",
+        "Объем": "1797 cм",
+        "Пробег": "220000 км",
+        "Комплектация": "1.8S",
+        "Номер лота": "414",
+        "Оценка": "3.5",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "272 000 ¥",
+        "Мощность": "130 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "blue"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "414"
+      ],
+      "new_year": false,
+      "index": 41,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXDOxcuVu0toX3wit",
+          "width": 640,
+          "height": 480,
+          "sha256": "76c2ee4be0cebdc8c669cd5463d26858e836585c1d966db8a47dc14161408fcb",
+          "ext": "jpg",
+          "file": "041-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXDOxcGOOnxM96Cek",
+          "width": 640,
+          "height": 480,
+          "sha256": "386a463eb72d1c981c1181b225e4ec7f365921f5463028672f7e0db260d9b772",
+          "ext": "jpg",
+          "file": "041-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqaglzb0Fl7daPumtiExq",
+          "width": 700,
+          "height": 700,
+          "sha256": "ae7cc4c9c5232cf516012c93c9a775390bff66ee6d7b95313e9e4c8c5496c39e",
+          "ext": "jpg",
+          "file": "041-4-sheet.jpg"
+        }
+      ],
+      "review_number": 7
+    },
+    {
+      "model": "Toyota Wish",
+      "title": "Toyota Wish 2017 года",
+      "year": 2017,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/wish/4Uqk0o6hKWebDIC/",
+      "facts": {
+        "Кузов": "ZGE20W",
+        "Объем": "1800 cм",
+        "Пробег": "73000 км",
+        "Комплектация": "1.8S",
+        "Номер лота": "12136",
+        "Оценка": "4",
+        "Аукцион": "TAA Yokohama",
+        "Дата аукциона": "2026-11-21",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "1 469 000 ¥",
+        "Мощность": "143 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "white"
+      },
+      "key": [
+        "taayokohama",
+        "2026-11-21",
+        "12136"
+      ],
+      "new_year": true,
+      "index": 66,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdNwfKGSB7d4RXzaa",
+          "width": 640,
+          "height": 480,
+          "sha256": "09f23fca0907810165965a01ebffbb2ab070c9592ea3863e15c123d890d5fb06",
+          "ext": "jpg",
+          "file": "066-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdNwfKHFKIlCtTDGX",
+          "width": 640,
+          "height": 480,
+          "sha256": "fa0944f037c6cfb8359ddc54a8836836588e994803565297c441224b6d2c1f99",
+          "ext": "jpg",
+          "file": "066-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnK6FcjmG29OyrItE",
+          "width": 800,
+          "height": 800,
+          "sha256": "642ef3ba50ffd63db43726100eec504d537231494f92a2be5b511811f6b65a82",
+          "ext": "jpg",
+          "file": "066-2-sheet.jpg"
+        }
+      ],
+      "review_number": 8
+    },
+    {
+      "model": "Toyota Probox",
+      "title": "Toyota Probox 2018 года",
+      "year": 2018,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/probox/29FKP4YBZEToBBW/",
+      "facts": {
+        "Кузов": "NCP160V",
+        "Объем": "1500 cм",
+        "Пробег": "182000 км",
+        "Комплектация": "GL",
+        "Номер лота": "4520",
+        "Оценка": "3.5",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "518 000 ¥",
+        "Мощность": "",
+        "Привод": "",
+        "КПП": "Автомат",
+        "Цвет": "silver"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "4520"
+      ],
+      "new_year": true,
+      "index": 2,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXEc1cElU4LqAtUaa",
+          "width": 640,
+          "height": 480,
+          "sha256": "7ead4c243ebe366a73b8fbc347b4c719e7e8f6f45438c1ef5d51e371f697e688",
+          "ext": "jpg",
+          "file": "002-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXEc1cQfehPNLx172",
+          "width": 640,
+          "height": 480,
+          "sha256": "288bd4d260f998455a9334ff2b637cdda0aefd31555d0bac65201ca22565dd19",
+          "ext": "jpg",
+          "file": "002-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqaglzbx9lfDAJMo7K3p8",
+          "width": 700,
+          "height": 700,
+          "sha256": "56f0f0e3b508e4464117d49a302dc2d1ea2944c6c7775911b620d4846c8c658c",
+          "ext": "jpg",
+          "file": "002-4-sheet.jpg"
+        }
+      ],
+      "review_number": 9
+    },
+    {
+      "model": "Toyota Probox",
+      "title": "Toyota Probox 2020 года",
+      "year": 2020,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/probox/yKaeqkGB2etgbb/",
+      "facts": {
+        "Кузов": "NCP165V",
+        "Объем": "1500 cм",
+        "Пробег": "71000 км",
+        "Комплектация": "4WD DX Com",
+        "Номер лота": "2218",
+        "Оценка": "3.5",
+        "Аукцион": "JU Gifu",
+        "Дата аукциона": "2026-11-21",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "950 000 ¥",
+        "Мощность": "",
+        "Привод": "",
+        "КПП": "Автомат",
+        "Цвет": "white"
+      },
+      "key": [
+        "jugifu",
+        "2026-11-21",
+        "2218"
+      ],
+      "new_year": true,
+      "index": 58,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/pR9lLmCb9wxDaiX9rBON0tATSsUixL1rOLXNJ2VgzLLjBHr4b1H",
+          "width": 640,
+          "height": 480,
+          "sha256": "fe0cf154addea1cbaa465af5445fdd6d99b2eb7b2f632a6bf53d3689919cdb01",
+          "ext": "jpg",
+          "file": "058-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/pR9lLmCb9wxDaiX9rBON0tATSsUixL1rOLXNJ2VgLF6xG5C7gWy",
+          "width": 640,
+          "height": 480,
+          "sha256": "1d46b7556010719883eb55c32cdbcad7bb77650528cf4d155580cf322c58e51d",
+          "ext": "jpg",
+          "file": "058-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/pR9lLmCb9wxU8KZ7Wj6NzRw2jWkSqsIKJ6DFIsD5HvqT8zSUEQ3",
+          "width": 700,
+          "height": 700,
+          "sha256": "c5b2e06805d391b7d32d8cf5f1006c5688008612391d574af46c170b565b364e",
+          "ext": "jpg",
+          "file": "058-4-sheet.jpg"
+        }
+      ],
+      "review_number": 10
+    },
+    {
+      "model": "Nissan NV200",
+      "title": "Nissan Nv200 2014 года",
+      "year": 2014,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/nissan/nv200/jsab0rI4an2GgjS/",
+      "facts": {
+        "Кузов": "VM20",
+        "Объем": "1600 cм",
+        "Пробег": "190000 км",
+        "Комплектация": "VX",
+        "Номер лота": "5016",
+        "Оценка": "3.5",
+        "Аукцион": "NISSAN Osaka",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "151 000 ¥",
+        "Мощность": "",
+        "Привод": "",
+        "КПП": "Автомат",
+        "Цвет": "grey"
+      },
+      "key": [
+        "nissanosaka",
+        "2026-11-23",
+        "5016"
+      ],
+      "new_year": true,
+      "index": 3,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/3L4V9MY3aNsNQ1cc1t0E4OMDr8E1H9AIzyxgPAvuBYaBqAzav5KXjov9bcj",
+          "width": 640,
+          "height": 480,
+          "sha256": "899427ebda37f2414ec8e757c29fd0f5f83b08ee85c98fca689435817dd2de7c",
+          "ext": "jpg",
+          "file": "003-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/3L4V9MY3aNsNQ1cc1t0E4OMDr8E1H9AIzyxgPAvuSsY4Tqngyl7Fxz59znI",
+          "width": 640,
+          "height": 480,
+          "sha256": "6753581fbeb73f21798bf4afeed240ae1a98befd5dc1e12562b2d5603e30a767",
+          "ext": "jpg",
+          "file": "003-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/3L4V9MY3aNsPEcksYW78IfHf7eUNzh1XdW9La0n1QH75vWtoG1coOgVSInO",
+          "width": 1000,
+          "height": 1000,
+          "sha256": "3ed33a0cab3891bc00ee2291446bd984d5adf4ad3e4aa89f18b341772bec536e",
+          "ext": "jpg",
+          "file": "003-4-sheet.jpg"
+        }
+      ],
+      "review_number": 11
+    },
+    {
+      "model": "Nissan NV200",
+      "title": "Nissan Nv200 2019 года",
+      "year": 2019,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/nissan/nv200/29DulTopFdnabUf/",
+      "facts": {
+        "Кузов": "VM20",
+        "Объем": "1600 cм",
+        "Пробег": "55000 км",
+        "Комплектация": "VX",
+        "Номер лота": "4525",
+        "Оценка": "4",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "795 000 ¥",
+        "Мощность": "",
+        "Привод": "",
+        "КПП": "Автомат",
+        "Цвет": "white"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "4525"
+      ],
+      "new_year": true,
+      "index": 6,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTp4F6xuhptJoErrdM9Hfsgokfg0g5tMAlAYy7biD8",
+          "width": 640,
+          "height": 480,
+          "sha256": "1c35e86fc7a04edcd45d759e078eb69c890d998f54d7b9267fcd324bf4a1e12e",
+          "ext": "jpg",
+          "file": "006-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTp4F6xuhptJoErrdM9Hfsgokfg0g5tYtFP3VheoyY",
+          "width": 640,
+          "height": 480,
+          "sha256": "e1f0206686d0b703082ff44c29ebce33526346288ce3ae29543da46271893929",
+          "ext": "jpg",
+          "file": "006-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTqmxHQrS8I5vgdHDSX0iOKsEPRGBcCnS3gZvCrqS5",
+          "width": 700,
+          "height": 700,
+          "sha256": "4af94d717bcc137303e21627191c13d26f16af1d6665f83852989966bc12bb74",
+          "ext": "jpg",
+          "file": "006-4-sheet.jpg"
+        }
+      ],
+      "review_number": 12
+    },
+    {
+      "model": "Nissan NV200",
+      "title": "Nissan Nv200 2017 года",
+      "year": 2017,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/nissan/nv200/2f8RUBSVPfiR2t2/",
+      "facts": {
+        "Кузов": "VM20",
+        "Объем": "1600 cм",
+        "Пробег": "146000 км",
+        "Комплектация": "DX",
+        "Номер лота": "4059",
+        "Оценка": "3.5",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "492 000 ¥",
+        "Мощность": "",
+        "Привод": "",
+        "КПП": "Автомат",
+        "Цвет": "white"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "4059"
+      ],
+      "new_year": true,
+      "index": 60,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXEWWcXd1QfrqstUz",
+          "width": 640,
+          "height": 480,
+          "sha256": "2106ce91a7ada683e0e19bd30990d93f26033a99af960b343f9eca16b752b03e",
+          "ext": "jpg",
+          "file": "060-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXEWWd07l5jOBvzQq",
+          "width": 640,
+          "height": 480,
+          "sha256": "c5094ce9c9c4f7ecb83210c52b8c9b83f7fad9dc28d3be74b2b332c615ec7253",
+          "ext": "jpg",
+          "file": "060-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqaglzci5lyuHwgoWIC0w",
+          "width": 700,
+          "height": 700,
+          "sha256": "72e936261ff19849e1ae03951a71b99984a32028981325834ad770c5dfe336e5",
+          "ext": "jpg",
+          "file": "060-4-sheet.jpg"
+        }
+      ],
+      "review_number": 13
+    },
+    {
+      "model": "Toyota Corolla Fielder",
+      "title": "Toyota Corolla fielder 2011 года",
+      "year": 2011,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/39HtrqcY6SJD9qz/",
+      "facts": {
+        "Кузов": "ZRE144G",
+        "Объем": "1800 cм",
+        "Пробег": "110000 км",
+        "Комплектация": "4WD 1.8S",
+        "Номер лота": "8358",
+        "Оценка": "3.5",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "237 000 ¥",
+        "Мощность": "125 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "silver"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "8358"
+      ],
+      "new_year": true,
+      "index": 11,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTp4F6xuhptJoErrdM9Hfsgokfga6WNHk5t7AYi4S8",
+          "width": 640,
+          "height": 480,
+          "sha256": "e135cb476e889abcec0100e3faca59f9a9493cec6c39328ad30c3a698b664b65",
+          "ext": "jpg",
+          "file": "011-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTp4F6xuhptJoErrdM9Hfsgokfga6WNTdoHaY0l0NY",
+          "width": 640,
+          "height": 480,
+          "sha256": "f7c4d85b5651dc0d681fe7ba5136370c603d01af0545998bd2d0d5ce5b0ec229",
+          "ext": "jpg",
+          "file": "011-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTqmxHQrS8I5vgdHDSX0iOKsEPRHr5WiBL08yuyc85",
+          "width": 700,
+          "height": 700,
+          "sha256": "ee3187a56ec88dc87d855497d841cf082c79fe4998da6856f534739794e51d52",
+          "ext": "jpg",
+          "file": "011-4-sheet.jpg"
+        }
+      ],
+      "review_number": 14
+    },
+    {
+      "model": "Toyota Corolla Fielder",
+      "title": "Toyota Corolla fielder 2021 года",
+      "year": 2021,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/corolla-fielder/52hOvE9etTF47gF/",
+      "facts": {
+        "Кузов": "NRE161G",
+        "Объем": "1500 cм",
+        "Пробег": "63000 км",
+        "Комплектация": "EX",
+        "Номер лота": "12609",
+        "Оценка": "4",
+        "Аукцион": "TAA Yokohama",
+        "Дата аукциона": "2026-11-21",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "1 262 000 ¥",
+        "Мощность": "109 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "silver"
+      },
+      "key": [
+        "taayokohama",
+        "2026-11-21",
+        "12609"
+      ],
+      "new_year": false,
+      "index": 69,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdPomby4dVOKliIaD",
+          "width": 640,
+          "height": 480,
+          "sha256": "1193fc3a9fd29ddd74e976638f40e6077d76a33f1bdb5fe49ed7bc3bf27763cc",
+          "ext": "jpg",
+          "file": "069-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdPombyQnxXiXeMHq",
+          "width": 640,
+          "height": 480,
+          "sha256": "95346e68bc64d30e89d2623f581c6cc1bf755a3068b123970e06fefbb4b10113",
+          "ext": "jpg",
+          "file": "069-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnLXLDaxiQKv2MRu8",
+          "width": 800,
+          "height": 800,
+          "sha256": "85e36bf30434b9568e8e5739672f598fa5d4b267c0bce5ec518f099c6cb0b55d",
+          "ext": "jpg",
+          "file": "069-2-sheet.jpg"
+        }
+      ],
+      "review_number": 15
+    },
+    {
+      "model": "Toyota Tank",
+      "title": "Toyota Tank 2018 года",
+      "year": 2018,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/tank/30bPKjeqUD7lutg/",
+      "facts": {
+        "Кузов": "M900A",
+        "Объем": "1000 cм",
+        "Пробег": "16000 км",
+        "Комплектация": "G S",
+        "Номер лота": "8300",
+        "Оценка": "4.5",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "805 000 ¥",
+        "Мощность": "69 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "blue"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "8300"
+      ],
+      "new_year": false,
+      "index": 12,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXGgsqxdWUVkco1Ja",
+          "width": 640,
+          "height": 480,
+          "sha256": "15450f11afbc9c55a8dd333a74304868ee0084aa033e5ed23fd9683727954bf2",
+          "ext": "jpg",
+          "file": "012-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXGgsqJ8h9ZHnr7F2",
+          "width": 640,
+          "height": 480,
+          "sha256": "e7cfb8b3475a99ca157498d4dd81a8fda3c89011d317850ebb4db03d1d606474",
+          "ext": "jpg",
+          "file": "012-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqaglzdBAz9vDAWhIE9Y8",
+          "width": 700,
+          "height": 700,
+          "sha256": "f34552a65e82ad54224e8ec67a1e5fb0264a4d1fb84ad63867128df65618c65d",
+          "ext": "jpg",
+          "file": "012-4-sheet.jpg"
+        }
+      ],
+      "review_number": 16
+    },
+    {
+      "model": "Toyota Tank",
+      "title": "Toyota Tank 2017 года",
+      "year": 2017,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/tank/34Lq9W2h4asY19/",
+      "facts": {
+        "Кузов": "M900A",
+        "Объем": "1000 cм",
+        "Пробег": "56000 км",
+        "Комплектация": "Custom G-T",
+        "Номер лота": "188",
+        "Оценка": "4",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "712 000 ¥",
+        "Мощность": "69 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "white"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "188"
+      ],
+      "new_year": false,
+      "index": 55,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXFHSdg5es9I4gwLe",
+          "width": 640,
+          "height": 480,
+          "sha256": "33d71436b23a98b8a1ddd0ee23851ee06147e1ec2c46eaf607143322d841737a",
+          "ext": "jpg",
+          "file": "055-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXFHSdrXyGd6ejCH6",
+          "width": 640,
+          "height": 480,
+          "sha256": "cf1edf7d0ba2f843f907a50179a977c1d7ff4b019c7fe4ed841298b695fd8c80",
+          "ext": "jpg",
+          "file": "055-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqaglzd41lRlV90FzwF1b",
+          "width": 700,
+          "height": 700,
+          "sha256": "468da016f9b2d7b3fa095ed3fc68c42dd9e39f470b38f917451cd40292042988",
+          "ext": "jpg",
+          "file": "055-4-sheet.jpg"
+        }
+      ],
+      "review_number": 17
+    },
+    {
+      "model": "Toyota Vitz",
+      "title": "Toyota Vitz 2009 года",
+      "year": 2009,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/371IOsr9e1S8q0V/",
+      "facts": {
+        "Кузов": "KSP90",
+        "Объем": "1000 cм",
+        "Пробег": "54000 км",
+        "Комплектация": "Fｼ&",
+        "Номер лота": "8134",
+        "Оценка": "3.5",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "115 000 ¥",
+        "Мощность": "71 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "beige"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "8134"
+      ],
+      "new_year": true,
+      "index": 13,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXEkEfY9Vrd5SM5TC",
+          "width": 640,
+          "height": 480,
+          "sha256": "726d57ea5a2cf34fbf735ae8b0821d290ea84a77e679bfa93aa4c50a95fe6214",
+          "ext": "jpg",
+          "file": "013-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXEkEga3fFhs4PaPt",
+          "width": 640,
+          "height": 480,
+          "sha256": "d134166ca9fa2ea7e61879e4c88aaf239bc05c58528384f1f70fcbd14269c0ff",
+          "ext": "jpg",
+          "file": "013-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqaglzbFMozqC8e3p3d9z",
+          "width": 700,
+          "height": 700,
+          "sha256": "8a0059d1f92fa01bafb9f59a9b9aa26603b45a504fd49ebe1a28d44fc23889ea",
+          "ext": "jpg",
+          "file": "013-4-sheet.jpg"
+        }
+      ],
+      "review_number": 18
+    },
+    {
+      "model": "Toyota Vitz",
+      "title": "Toyota Vitz 2018 года",
+      "year": 2018,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/3h1GqQaZtCm7dhG/",
+      "facts": {
+        "Кузов": "NCP131",
+        "Объем": "1500 cм",
+        "Пробег": "38000 км",
+        "Комплектация": "GR SPORT",
+        "Номер лота": "8021",
+        "Оценка": "3.5",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "1 190 000 ¥",
+        "Мощность": "109 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "white"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "8021"
+      ],
+      "new_year": false,
+      "index": 56,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXE1SZwCNf1boN028",
+          "width": 640,
+          "height": 480,
+          "sha256": "638f19da4f8a75c0f65c7352a17f34ab47c70f458ea1770dcd73b1e184bc9ee1",
+          "ext": "jpg",
+          "file": "056-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXE1SZIw8t5yzQeWY",
+          "width": 640,
+          "height": 480,
+          "sha256": "7847c08e884d3ccca4c265c7fed0edfbcef957a58426dc50eb6396f98d8ae8e0",
+          "ext": "jpg",
+          "file": "056-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqaglzbm298UtV29V4hg5",
+          "width": 700,
+          "height": 700,
+          "sha256": "b4a6ecf0207088c843d63560f86130f03dc7f40ffe30e85a079c90b203b0316a",
+          "ext": "jpg",
+          "file": "056-4-sheet.jpg"
+        }
+      ],
+      "review_number": 19
+    },
+    {
+      "model": "Toyota Roomy",
+      "title": "Toyota Roomy 2024 года",
+      "year": 2024,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/roomy/3hdPa2XKbNaEdzv/",
+      "facts": {
+        "Кузов": "M900A",
+        "Объем": "1000 cм",
+        "Пробег": "20000 км",
+        "Комплектация": "X",
+        "Номер лота": "8044",
+        "Оценка": "4.5",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "930 000 ¥",
+        "Мощность": "69 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "Light blue"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "8044"
+      ],
+      "new_year": false,
+      "index": 14,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXEAHMHKGAy45ddZt",
+          "width": 640,
+          "height": 480,
+          "sha256": "3ed0ecbcaf85ed0ab7eed338e788ee7389f7965e37af359d7a83f10dc3ada572",
+          "ext": "jpg",
+          "file": "014-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXEAHMTE1OCqfgjVk",
+          "width": 640,
+          "height": 480,
+          "sha256": "34b32e2b1694b9219da6d99486744b6ac49701ecbf87ba93e0a3946b3e6771c7",
+          "ext": "jpg",
+          "file": "014-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqaglzbVPVj3ngz1Atmeq",
+          "width": 700,
+          "height": 700,
+          "sha256": "7f9a6bf323edc2c4d6a4c095dd3da94a99dd104801a3ef06f3a8f3d968f4c1fb",
+          "ext": "jpg",
+          "file": "014-4-sheet.jpg"
+        }
+      ],
+      "review_number": 20
+    },
+    {
+      "model": "Toyota Roomy",
+      "title": "Toyota Roomy 2021 года",
+      "year": 2021,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/roomy/3hcsSwOqokg7LKu/",
+      "facts": {
+        "Кузов": "M900A",
+        "Объем": "1000 cм",
+        "Пробег": "37000 км",
+        "Комплектация": "Custom G",
+        "Номер лота": "8041",
+        "Оценка": "4",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "1 112 000 ¥",
+        "Мощность": "69 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "Red"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "8041"
+      ],
+      "new_year": false,
+      "index": 28,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXEx13ZQhCAXvZPXv",
+          "width": 640,
+          "height": 480,
+          "sha256": "830b3650a1260a8f47f9ea2da4b49cc928d06917ed3409de8421fb77e4ce9664",
+          "ext": "jpg",
+          "file": "028-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXEx14bJBQFkH3VTm",
+          "width": 640,
+          "height": 480,
+          "sha256": "e477eeba009c89c431f0b862b7d12830d1d92e5a969fe6616bac03fd47bd95f1",
+          "ext": "jpg",
+          "file": "028-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqaglzbS9bB8YiBV3fYcs",
+          "width": 700,
+          "height": 700,
+          "sha256": "023290c3866cb67d81d5935c9f471e74d7a21b7f8b4a3401338591090a79a7ff",
+          "ext": "jpg",
+          "file": "028-4-sheet.jpg"
+        }
+      ],
+      "review_number": 21
+    },
+    {
+      "model": "Nissan Juke",
+      "title": "Nissan Juke 2011 года",
+      "year": 2011,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/nissan/juke/36PosBw9zNgXlDs/",
+      "facts": {
+        "Кузов": "NF15",
+        "Объем": "1600 cм",
+        "Пробег": "134000 км",
+        "Комплектация": "16GT FOUR",
+        "Номер лота": "8115",
+        "Оценка": "3.5",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "183 000 ¥",
+        "Мощность": "190 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "blue"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "8115"
+      ],
+      "new_year": true,
+      "index": 16,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXDPLMoTznBkCjbiy",
+          "width": 640,
+          "height": 480,
+          "sha256": "9e52432eadf492e1a881365d55520bb3a36567336932743fee06a5cd6d150c7f",
+          "ext": "jpg",
+          "file": "016-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXDPLMAMTBFHNmhep",
+          "width": 640,
+          "height": 480,
+          "sha256": "61771689f553bf673b0b75ef1a2c3f234eb33286804fa005bdc675965a77aab6",
+          "ext": "jpg",
+          "file": "016-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqaglzbaTV1bg4Ci9zjxv",
+          "width": 700,
+          "height": 700,
+          "sha256": "2a370bd289b7d35596d65dfd2a67e4e49925aca8b1f9ac32146e33db6bf0aa03",
+          "ext": "jpg",
+          "file": "016-4-sheet.jpg"
+        }
+      ],
+      "review_number": 22
+    },
+    {
+      "model": "Suzuki Swift",
+      "title": "Suzuki Swift 2013 года",
+      "year": 2013,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/suzuki/swift/3h5LhlCWS26IyKJ/",
+      "facts": {
+        "Кузов": "ZC32S",
+        "Объем": "1600 cм",
+        "Пробег": "22000 км",
+        "Комплектация": "Sports \u0006",
+        "Номер лота": "8020",
+        "Оценка": "4",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "567 000 ¥",
+        "Мощность": "",
+        "Привод": "",
+        "КПП": "Автомат",
+        "Цвет": "blue"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "8020"
+      ],
+      "new_year": true,
+      "index": 19,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXEc1cEm19Rs4rj82",
+          "width": 640,
+          "height": 480,
+          "sha256": "8a15b912b74daca320b86693e2c026205cb79c4ab62e19ea7dca9739787e8abd",
+          "ext": "jpg",
+          "file": "019-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXEc1cQfkmVPeup3S",
+          "width": 640,
+          "height": 480,
+          "sha256": "84db19667e1beddc0c56916f7c7c41ac8a4635e4afd2331448fc6a857239bccb",
+          "ext": "jpg",
+          "file": "019-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqaglzbx9lfDGOSpzHrlY",
+          "width": 700,
+          "height": 700,
+          "sha256": "bf3397d258dd98a7450679840be25e865a453135b5374db76fa7fdaac37d99da",
+          "ext": "jpg",
+          "file": "019-4-sheet.jpg"
+        }
+      ],
+      "review_number": 23
+    },
+    {
+      "model": "Suzuki Solio",
+      "title": "Suzuki Solio 2012 года",
+      "year": 2012,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/suzuki/solio/39Q6egPk0avIjj1/",
+      "facts": {
+        "Кузов": "MA15S",
+        "Объем": "1200 cм",
+        "Пробег": "147000 км",
+        "Комплектация": "S",
+        "Номер лота": "8371",
+        "Оценка": "3.5",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "60 000 ¥",
+        "Мощность": "91 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "blue"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "8371"
+      ],
+      "new_year": true,
+      "index": 7,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTp4F6xuhptJoErrdM9HfsgokfgatpNQKCAOa9kbpf",
+          "width": 640,
+          "height": 480,
+          "sha256": "dc286157f2976b63247f90d242496147a31361d79b34c5b88877be7012f4fb56",
+          "ext": "jpg",
+          "file": "007-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTp4F6xuhptJoErrdM9HfsgokfgatpO3DWOSxjnhl7",
+          "width": 640,
+          "height": 480,
+          "sha256": "d46a2a6e729b752c7b369c5e1e6075d95e775c60db55713a48cefe8255d0d4d4",
+          "ext": "jpg",
+          "file": "007-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTqmxHQrS8I5vgdHDSX0iOKsEPRHOxWs3jgP8EAjEc",
+          "width": 700,
+          "height": 700,
+          "sha256": "130b250f09c5b231c532dc55893d24cd3badba924bc0722e36c9f8bd9569e8fb",
+          "ext": "jpg",
+          "file": "007-4-sheet.jpg"
+        }
+      ],
+      "review_number": 24
+    },
+    {
+      "model": "Suzuki Solio",
+      "title": "Suzuki Solio 2014 года",
+      "year": 2014,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/suzuki/solio/30aVyDNynEuEwAA/",
+      "facts": {
+        "Кузов": "MA15S",
+        "Объем": "1200 cм",
+        "Пробег": "86000 км",
+        "Комплектация": "X",
+        "Номер лота": "8308",
+        "Оценка": "3.5",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "144 000 ¥",
+        "Мощность": "91 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "Red"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "8308"
+      ],
+      "new_year": true,
+      "index": 33,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTp4F6xuhptJoErrdM9HfsgokfgboernmNq6xgiNe6",
+          "width": 640,
+          "height": 480,
+          "sha256": "c27bf2df8fbbd0f670058ab796649799789b3d5f9f4f3eaa16a2ab45c5816e19",
+          "ext": "jpg",
+          "file": "033-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTp4F6xuhptJoErrdM9Hfsgokfgboerzg8E0UrlT0W",
+          "width": 640,
+          "height": 480,
+          "sha256": "2055ddc8262d6f7b91f5308847985d8e034e2631274480f12a25c896a9c0076b",
+          "ext": "jpg",
+          "file": "033-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTqmxHQrS8I5vgdHDSX0iOKsEPRIJmzYEu77uMyVt3",
+          "width": 700,
+          "height": 700,
+          "sha256": "b3643124d04b3c4d204fd588c7d95987245f8d2ce80255f27869e364c910ffa5",
+          "ext": "jpg",
+          "file": "033-4-sheet.jpg"
+        }
+      ],
+      "review_number": 25
+    },
+    {
+      "model": "Suzuki Hustler",
+      "title": "Suzuki Hustler 2016 года",
+      "year": 2016,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/309F6tdm4cYq7ST/",
+      "facts": {
+        "Кузов": "MR41S",
+        "Объем": "660 cм",
+        "Пробег": "93000 км",
+        "Комплектация": "4WD X Turb",
+        "Номер лота": "8303",
+        "Оценка": "3.5",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "306 000 ¥",
+        "Мощность": "52 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "Yellow 2"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "8303"
+      ],
+      "new_year": false,
+      "index": 8,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTp4F6xuhptJoErrdM9Hfsgokfgbi4xRw8Oao1BOvt",
+          "width": 640,
+          "height": 480,
+          "sha256": "87459a95da93e820a457d2ad04259b8d18a97ffd689283e29cb28c8cce16ac59",
+          "ext": "jpg",
+          "file": "008-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTp4F6xuhptJoErrdM9Hfsgokfgbi4y4ps3eLbEUrk",
+          "width": 640,
+          "height": 480,
+          "sha256": "3dc0058960c415b1afa2124b053b125acaeb94aa5a3f70e0278a63ba24d683e2",
+          "ext": "jpg",
+          "file": "008-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZqQlfcHazTqmxHQrS8I5vgdHDSX0iOKsEPRIDbGsNOublwRWKq",
+          "width": 700,
+          "height": 700,
+          "sha256": "dc9cfba0cd05256641e6bc4ee508d496f09170641ebe96959f383b2cdc84e6a4",
+          "ext": "jpg",
+          "file": "008-4-sheet.jpg"
+        }
+      ],
+      "review_number": 26
+    },
+    {
+      "model": "Suzuki Hustler",
+      "title": "Suzuki Hustler 2020 года",
+      "year": 2020,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/37iotZohB5J9fR9/",
+      "facts": {
+        "Кузов": "MR41S",
+        "Объем": "660 cм",
+        "Пробег": "87000 км",
+        "Комплектация": "J Turbo",
+        "Номер лота": "8164",
+        "Оценка": "4",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "492 000 ¥",
+        "Мощность": "52 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "Green 2"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "8164"
+      ],
+      "new_year": false,
+      "index": 18,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXF7OQaYa1Bf4A8jc",
+          "width": 640,
+          "height": 480,
+          "sha256": "94df9a09044505c3914c082f4481109d142c38efb1f3f30b79c23f1511babdd6",
+          "ext": "jpg",
+          "file": "018-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXF7OQmRueFCeDdf4",
+          "width": 640,
+          "height": 480,
+          "sha256": "7ad682ca850f7b1efbb76357e8fb54d752b3a489b47be01ddd1f063013db0dff",
+          "ext": "jpg",
+          "file": "018-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqaglzcrWYMfQGCczQfy0",
+          "width": 700,
+          "height": 700,
+          "sha256": "db33a9ee64606e5fc33e1f862c6795582137138e55d4fcba0669dc5bd682c8f2",
+          "ext": "jpg",
+          "file": "018-4-sheet.jpg"
+        }
+      ],
+      "review_number": 27
+    },
+    {
+      "model": "Mazda Mazda3",
+      "title": "Mazda Mazda3 2021 года",
+      "year": 2021,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/mazda/mazda3/4WlWZBjnXYtF993/",
+      "facts": {
+        "Кузов": "BP5P",
+        "Объем": "1500 cм",
+        "Пробег": "18000 км",
+        "Комплектация": "15S Tourin",
+        "Номер лота": "12200",
+        "Оценка": "4.5",
+        "Аукцион": "TAA Yokohama",
+        "Дата аукциона": "2026-11-21",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "1 621 000 ¥",
+        "Мощность": "",
+        "Привод": "",
+        "КПП": "Автомат",
+        "Цвет": "white"
+      },
+      "key": [
+        "taayokohama",
+        "2026-11-21",
+        "12200"
+      ],
+      "new_year": false,
+      "index": 4,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdPpALs2lPl5A83zr",
+          "width": 640,
+          "height": 480,
+          "sha256": "646e4abc75eeba644b39555b545a810c332547e8c17bfda028eb658bff5913e9",
+          "ext": "jpg",
+          "file": "004-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdPpALsOvrtDc487e",
+          "width": 640,
+          "height": 480,
+          "sha256": "d8ad252f084c17f10076b3b9e93d13e1e677c180bd70f94723c30769e2ef8520",
+          "ext": "jpg",
+          "file": "004-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnLZ1d5vqKgPgBbSV",
+          "width": 800,
+          "height": 800,
+          "sha256": "b22fb9206e746b868c06df6381c402fb47096aef5a529d19b6f931599e5b4393",
+          "ext": "jpg",
+          "file": "004-2-sheet.jpg"
+        }
+      ],
+      "review_number": 28
+    },
+    {
+      "model": "Honda Shuttle",
+      "title": "Honda Shuttle 2015 года",
+      "year": 2015,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/honda/shuttle/379Svtl41Olm872/",
+      "facts": {
+        "Кузов": "GK8",
+        "Объем": "1500 cм",
+        "Пробег": "97000 км",
+        "Комплектация": "G",
+        "Номер лота": "8149",
+        "Оценка": "4",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "495 000 ¥",
+        "Мощность": "129 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "white"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "8149"
+      ],
+      "new_year": true,
+      "index": 59,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXEGSGdBleVCc5p6q",
+          "width": 640,
+          "height": 480,
+          "sha256": "f5cdae60595898f09f454f60fb545114ad971c31feecd45023a8e2d201fcd4af",
+          "ext": "jpg",
+          "file": "059-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXEGSGpuFsZZn8v2h",
+          "width": 640,
+          "height": 480,
+          "sha256": "6f721c6b3aeb39c07a38583d2cd6d28b85dc1f6c38e48b2a0f49c97faa63f91d",
+          "ext": "jpg",
+          "file": "059-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqaglzc31OOT2UWzIkxkn",
+          "width": 700,
+          "height": 700,
+          "sha256": "4dda35644d3feb8e84bf8f9f3a4f6d31aa9e5217a9bc46acc2ffdd1b1c9bf8dc",
+          "ext": "jpg",
+          "file": "059-4-sheet.jpg"
+        }
+      ],
+      "review_number": 29
+    },
+    {
+      "model": "Toyota Sienta",
+      "title": "Toyota Sienta 2011 года",
+      "year": 2011,
+      "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/38aLM6p4vJcIcLM/",
+      "facts": {
+        "Кузов": "NCP81G",
+        "Объем": "1500 cм",
+        "Пробег": "53000 км",
+        "Комплектация": "DICE",
+        "Номер лота": "8227",
+        "Оценка": "3.5",
+        "Аукцион": "JU Tokyo",
+        "Дата аукциона": "2026-11-23",
+        "Статус": "Sold",
+        "Цена продажи в Японии": "228 000 ¥",
+        "Мощность": "110 л.с.",
+        "Привод": "Мощность",
+        "КПП": "Автомат",
+        "Цвет": "silver"
+      },
+      "key": [
+        "jutokyo",
+        "2026-11-23",
+        "8227"
+      ],
+      "new_year": false,
+      "index": 70,
+      "media": [
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXE9isWrAjYXhmZc2",
+          "width": 640,
+          "height": 480,
+          "sha256": "6185772db8796d09075e81e3f2064f35c3900a8c8ad64ba795114bcc3a9c7222",
+          "ext": "jpg",
+          "file": "070-0-vehicle.jpg"
+        },
+        {
+          "kind": "vehicle",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqqRfLtgqKPtllRMvonJLaW6VKXE9it9kUy4ksq68S",
+          "width": 640,
+          "height": 480,
+          "sha256": "235b3fa0d45fac2f74d13f806773dd28c55e1436b8792cfff6a1c7c4e89e8581",
+          "ext": "jpg",
+          "file": "070-1-vehicle.jpg"
+        },
+        {
+          "kind": "sheet",
+          "source": "https://7.tru.ru/imgs/2ZjIB2JRjJqsa9nMe2t4OrXE3VvcbOxqaglzbtqBxJgZZUND8qY",
+          "width": 700,
+          "height": 700,
+          "sha256": "e3fe87d45f967e4996b3148a72b794b8b434288c18469ef6a0ceafe3b71779c5",
+          "ext": "jpg",
+          "file": "070-4-sheet.jpg"
+        }
+      ],
+      "review_number": 30
+    }
+  ]
+}
