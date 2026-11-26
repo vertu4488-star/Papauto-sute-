@@ -1,0 +1,31 @@
+/* PapAuto — approved home motion and editorial typography; no external dependencies. */
+body.pa-thursday-home .hero.wrap.pa-thursday-hero.pa-motion-hero{background:#f4ede5!important;color:#322923!important;line-height:1.5!important;overflow:hidden!important;border-radius:24px!important}
+.pa-motion-stage{display:grid;position:relative;isolation:isolate}
+.pa-motion-slide{display:grid;grid-area:1/1;grid-template-columns:minmax(0,43%) minmax(0,57%);align-items:stretch;min-height:clamp(390px,36vw,540px);background:#f4ede5;position:relative}
+.pa-motion-slide[hidden],.pa-motion-controls[hidden]{display:none!important}
+.pa-motion-slide.is-current{animation:pa-motion-enter .65s ease both}
+@keyframes pa-motion-enter{from{opacity:.25;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.pa-motion-copy{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:clamp(24px,4.1vw,64px);min-width:0}
+.pa-motion-kicker{font-size:11px;font-weight:650;letter-spacing:.16em;color:#805c43;margin:0;line-height:1.5}
+body.pa-thursday-home .pa-motion-copy h2{font-family:PapAutoManrope,"Helvetica Neue",Arial,sans-serif;font-weight:360!important;font-size:clamp(34px,4vw,60px)!important;letter-spacing:-.055em!important;line-height:1.08!important;margin:0!important;color:#302523!important;text-wrap:balance}
+.pa-motion-lead{font-size:clamp(15px,1.35vw,18px);line-height:1.65;color:#67584d;margin:0;max-width:35ch}
+.pa-motion-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:5px}
+.pa-motion-actions a{display:inline-flex;align-items:center;gap:12px;justify-content:space-between;border:1px solid #86563c;background:#75442e;color:#fff!important;border-radius:999px;font-size:13px;font-weight:600;line-height:1.35;text-decoration:none;min-height:46px;padding:11px 17px}
+.pa-motion-actions a+a{background:transparent;color:#62412e!important}
+.pa-motion-actions a:hover{filter:brightness(.92)}
+.pa-motion-media{position:relative;display:block;overflow:hidden;min-width:0;margin:0;background:#d7c9ba}
+body.pa-thursday-home .pa-motion-media img{position:absolute;inset:0;width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important;object-position:center;display:block;filter:none}
+.pa-motion-media figcaption{position:absolute;bottom:12px;right:12px;left:auto;max-width:calc(100% - 24px);padding:5px 9px;background:#211c19dc;color:#fff;font-size:10px;line-height:1.45;border-radius:6px}
+.pa-motion-controls{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px clamp(16px,3vw,38px);border-top:1px solid #ded1c4;background:#fbf7f1}
+.pa-motion-dots,.pa-motion-arrows{display:flex;gap:8px;align-items:center}
+.pa-motion-controls button{font:inherit;color:#624632;background:transparent;border:1px solid transparent;border-radius:8px;min-height:44px;cursor:pointer;line-height:1.25;padding:8px 11px;font-size:12px;font-weight:550;white-space:nowrap}
+.pa-motion-controls button span{font-size:10px;opacity:.75;margin-right:4px}
+.pa-motion-controls button[aria-pressed=true]{border-color:#a47d61;background:#eee2d6;color:#422b1c;font-weight:700}
+.pa-motion-arrows button{border-color:#d7c7b8;min-width:44px;font-size:18px;padding:7px}
+.pa-motion-controls button:focus-visible,.pa-motion-actions a:focus-visible{outline:2px solid #75442e;outline-offset:3px}
+body.pa-thursday-home .pa-approved-intro h1{font-size:clamp(35px,4.5vw,66px)!important;font-weight:330!important;line-height:1.12!important;letter-spacing:-.055em!important;max-width:24ch!important;margin-bottom:20px!important}
+body.pa-thursday-home .pa-approved-intro .hero-lead{max-width:70ch!important;font-size:clamp(15px,1.35vw,18px)!important;line-height:1.7!important}
+body.pa-thursday-home :is(.budget-start-head,.pa-thursday-feature-head,.marketplace-intro) h2{font-family:PapAutoManrope,"Helvetica Neue",Arial,sans-serif!important;font-size:clamp(29px,3.5vw,48px)!important;font-weight:370!important;letter-spacing:-.045em!important;line-height:1.15!important;text-wrap:balance}
+body.pa-thursday-home .pa-approved-intro{padding-top:clamp(32px,5vw,72px)!important;padding-bottom:clamp(35px,5vw,72px)!important}
+@media(max-width:760px){body.pa-thursday-home .hero.wrap.pa-thursday-hero.pa-motion-hero{border-radius:16px!important}.pa-motion-slide{grid-template-columns:1fr;min-height:0;grid-template-rows:minmax(300px,auto) auto}.pa-motion-copy{gap:13px;padding:25px 22px}.pa-motion-copy h2{font-size:clamp(31px,8vw,44px)!important}.pa-motion-media{aspect-ratio:16/10;min-height:0}.pa-motion-controls{flex-wrap:wrap;padding:9px 10px;justify-content:space-between;gap:4px}.pa-motion-dots{gap:2px;flex:1 0 100%;justify-content:space-between}.pa-motion-dots button{flex:1;padding:7px 4px;font-size:11px}.pa-motion-arrows{margin-left:auto}.pa-motion-actions a{font-size:12px;padding:10px 13px}.pa-motion-media figcaption{font-size:9px}.pa-motion-lead{font-size:15px}.pa-motion-arrows button{min-height:44px}.pa-motion-controls button span{margin-right:2px}}
+@media(prefers-reduced-motion:reduce){.pa-motion-slide.is-current{animation:none!important}}
