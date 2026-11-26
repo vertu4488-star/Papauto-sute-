@@ -600,6 +600,8 @@ def copy_public_files() -> list[str]:
     render_atp_japan30_batch2(ROOT, TARGET, model_coverage, published_registry)
     from enrich_model_directory import render_directory
     render_directory(TARGET, model_coverage)
+    from seo_novosibirsk_intents import render as render_seo_intents
+    render_seo_intents(TARGET, model_coverage, published_registry)
 
     # Compact top ribbon reuses only the existing screened gallery registry.
     from render_home_car_strip import render_home_car_strip

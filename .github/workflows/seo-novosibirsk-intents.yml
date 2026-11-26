@@ -1,0 +1,57 @@
+name: Verify and release Novosibirsk commercial search intents
+on:
+  push:
+    branches: ['seo/novosibirsk-intents-20261126']
+    paths: ['.github/workflows/seo-novosibirsk-intents.yml']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/build_content.py
+      - run: python scripts/build_static_public.py
+      - name: Verify canonical landing links and all published model pages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re,json,xml.etree.ElementTree as ET
+          t=Path("render-public")
+          root=ET.parse(t/"sitemap.xml")
+          ns="{http://www.sitemaps.org/schemas/sitemap/0.9}"
+          urls={x.text for x in root.iter(ns+"loc")}
+          items=json.loads((t/"data/papauto-expanded-45x3-2026.json").read_text())["items"]
+          assert len(items)==147
+          for i in items:
+              p=t/"models"/(i["id"]+".html")
+              h=p.read_text()
+              assert 'id="pa-seo-intent-links"' in h
+              assert "https://papauto.ru/models/"+i["id"]+".html" in urls
+          for name in ("catalog-avto-iz-yaponii-novosibirsk.html","stoimost-avto-iz-yaponii-novosibirsk.html"):
+              p=t/name
+              h=p.read_text()
+              assert "https://papauto.ru/"+name in urls
+              assert ('<link rel="canonical" href="https://papauto.ru/'+name+'">') in h
+              for href in re.findall(r'href="/([^"#?]+\.html)"',h):
+                  assert (t/href).is_file(),href
+          report=json.loads((t/"data/model-statistics-coverage.json").read_text())
+          assert report["japan30_batch1_reference_cards"]==30 and report["japan30_batch2_reference_cards"]==30
+          assert json.loads((t/"data/gallery-lots.json").read_text())["lot_count"]==666
+          print("SEO_INTENT_RELEASE_OK 147 models, two new pages, 60 archive refs retained, 666 gallery unchanged")
+          PY
+      - name: Commit checked source and publish fast-forward only
+        run: |
+          git config user.name "PapAuto release"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml '*.html'
+          git diff --cached --quiet || git commit -m "Regenerate sitemap for distinct catalog and cost pages"
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "2b829182b3a28d8bfb726af4ca3c55fc26b0b2e6"
+          git push origin HEAD:main
