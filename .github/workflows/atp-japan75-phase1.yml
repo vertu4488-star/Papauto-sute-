@@ -1,0 +1,25 @@
+name: ATP Japan 75 phase 1 preview only
+on:
+  push:
+    branches: ['review/japan-75-batch1-20261126']
+    paths: ['.github/workflows/atp-japan75-phase1.yml']
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/build_static_public.py
+      - run: pip install requests beautifulsoup4 pillow
+      - run: python scripts/research_atp_japan75_phase1.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: japan75-phase1-preview
+          path: japan-batch1-review/
+          retention-days: 7
