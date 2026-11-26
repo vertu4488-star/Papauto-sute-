@@ -24,7 +24,7 @@ function refresh(){
  if(!mode.value)mode.value="manual";
  field.readOnly=mode.value==="auto";
  delete field.dataset.paCostIncluded;
- if(mode.value!=="auto"){delete field.dataset.paCostLabel;status.textContent="Ручной режим: укажите фактическую стоимость перевозки в разделе расходов.";return;}
+ if(mode.value!=="auto"){delete field.dataset.paCostLabel;status.textContent="Ручной режим: укажите фактическую стоимость автовоза в поле выше.";return;}
  const q=quote(data,city.value,kind.value,origin.value);
  field.value=q?String(q.estimate):"";
  field.dataset.paCostLabel="Автовоз · "+city.value+(kind.value&&labels[kind.value]?" · "+labels[kind.value]:"");

@@ -26,11 +26,16 @@ MODEL_REDIRECTS = {
 HREF = re.compile(r"""(\bhref\s*=\s*)(["'])([^"']*)\2""", re.I)
 
 def canonical_href(value, page_path):
+    # Every legacy calculator navigation entry opens the single current calculator.
+    if value == "#import-estimate" and page_path in ("/premium-japan-korea.html", "/premium-mobile-photo-demo.html"):
+        return "/?view=calculator"
     if not value or value.startswith(("#", "?")):
         return value
     resolved = urlsplit(urljoin(BASE + page_path, value))
     if resolved.scheme not in ("http", "https") or resolved.netloc not in ("papauto.ru", "www.papauto.ru"):
         return value
+    if resolved.path == "/premium-japan-korea.html" and resolved.fragment == "import-estimate":
+        return "/?view=calculator"
     destination = MODEL_REDIRECTS.get(resolved.path)
     if not destination:
         return value

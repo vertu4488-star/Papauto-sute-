@@ -56,3 +56,9 @@
 #calculator .pa-cost-details[open] summary{margin-bottom:12px}
 #calculator #paJapanTariffs[hidden],#calculator #paJapanAutoFields[hidden],#calculator .pa-included-cost{display:none!important}
 #calculator #paJapanTariffStatus{line-height:1.65}
+
+/* Make the existing carrier price and full expense list immediately visible. */
+#calculator #paDeliveryPanel #localDelivery{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}
+#calculator #paDeliveryPanel label[for="localDelivery"]{padding-top:8px;border-top:1px solid #dfd2c0}
+#calculator #paDeliveryStatus{font-size:13px!important;color:#514035!important}
+@media(max-width:680px){body.pa-thursday-home .pa-approved-intro .hero-actions a[href="/?view=calculator"]{display:inline-flex!important}}

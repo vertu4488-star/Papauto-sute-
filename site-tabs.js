@@ -51,7 +51,7 @@
     const toggle = document.querySelector('.menu-toggle');
     if (menu) menu.classList.remove('open');
     if (toggle) toggle.setAttribute('aria-expanded', 'false');
-    window.scrollTo({top:0, behavior:'instant'});
+    window.scrollTo(0, 0);
   }
   const params = new URLSearchParams(location.search);
   const initial = valid.has(params.get('view')) ? params.get('view') : (getViewFromHash() || 'home');

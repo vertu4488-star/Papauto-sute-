@@ -51,7 +51,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar{grid-template-col
 body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar{grid-template-columns:minmax(0,1fr)!important}
 body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:0!important}
 }
-</style><link rel="stylesheet" href="/papauto-premium-calculator.css?v=20261125-japan"><link rel="stylesheet" href="/papauto-scroll-reveal.css?v=20261126"><script defer src="/papauto-scroll-reveal.js?v=20261126"></script><link rel="stylesheet" href="/papauto-home-clean.css?v=20261126b"></head>
+</style><link rel="stylesheet" href="/papauto-premium-calculator.css?v=20261126-visible"><link rel="stylesheet" href="/papauto-scroll-reveal.css?v=20261126"><script defer src="/papauto-scroll-reveal.js?v=20261126"></script><link rel="stylesheet" href="/papauto-home-clean.css?v=20261126b"></head>
 <body class="pa-thursday-home">
 <a class="skip-link" href="#main">Перейти к содержанию</a>
 <header class="site-header">
@@ -67,7 +67,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
     <a href="/gallery.html">Каталог</a>
     <a href="/?view=directions" data-site-tab="directions">Направления</a>
     <a href="/?view=auctions" data-site-tab="auctions">Аукционы</a>
-    <a href="/?view=calculator" data-site-tab="calculator">Расчёт</a>
+    <a href="/?view=calculator" data-site-tab="calculator">Калькулятор</a>
     <a class="pa-menu-extra" href="/?view=account" data-site-tab="account">Личный кабинет</a>
     <a class="pa-menu-extra" href="/podbor.html">Обсудить подбор</a>
   </nav>
@@ -79,7 +79,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
   <a href="/models-100.html">Марки и модели</a>
   <a href="/?view=auctions" data-site-tab="auctions">Статистика торгов</a>
   <a href="/?view=directions" data-site-tab="directions">Япония · Корея · Китай</a>
-  <a href="/premium-japan-korea.html#import-estimate">Расчёт стоимости</a>
+  <a href="/?view=calculator">Расчёт стоимости</a>
   <a href="/podbor.html">Подобрать авто</a>
 </nav>
 
@@ -571,10 +571,11 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 <label for="calcCity">Город получения<select id="calcCity"><option>Новосибирск</option><option>Владивосток</option><option>Иркутск</option><option>Красноярск</option><option>Омск</option><option>Томск</option><option>Юрга</option><option>Кемерово</option><option>Барнаул</option><option>Чита</option><option>Улан-Удэ</option><option>Хабаровск</option><option>Екатеринбург</option><option>Челябинск</option><option>Москва</option><option>Санкт-Петербург</option><option>Другой город</option></select></label>
 <label>Класс автомобиля<select id="paDeliveryClass"><option value="">Уточнить класс</option><option value="compact">Малолитражка / кейкар (до 4,1 м)</option><option value="sedan">Седан / хэтчбек / универсал</option><option value="crossover">Кроссовер</option><option value="large">Минивэн / крупный внедорожник</option></select></label>
 <label>Тариф<select id="paDeliveryMode"><option value="auto">Средняя цена автовоза</option><option value="manual">Ввести фактическую цену вручную</option></select></label>
+<label for="localDelivery">Стоимость автовоза, ₽<input id="localDelivery" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Выберите город и класс"></label>
 <p id="paDeliveryStatus" class="pa-estimate-small" role="status">Выберите город и класс автомобиля.</p>
 <p class="pa-estimate-small">Ориентиры по открытым прайсам на 25.11.2026. Перевозка исправного автомобиля между терминалами; страховка, негабарит и выдача по адресу уточняются. Не оферта. <a href="/delivery.html">Подробнее о доставке</a>.</p>
 </section>
-                <details class="pa-cost-details"><summary>Из чего складывается стоимость · подробнее</summary>
+                <details class="pa-cost-details" open><summary>Подробная смета расходов</summary>
                 <div class="pa-estimate-fields">
             <label for="auctionFee">Комиссия аукциона / дилера<input id="auctionFee" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
             <label for="originDelivery">Доставка по стране покупки<input id="originDelivery" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
@@ -589,7 +590,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
             <label for="warehouseFee">СВХ в России и хранение<input id="warehouseFee" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано"></label>
             <label for="paperwork">СБКТС, ЭПТС и лаборатория<input id="paperwork" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
             
-            <label for="localDelivery">Доставка по России<input id="localDelivery" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано"></label>
+            
             <label for="fee">Фиксированная комиссия PapAuto<input id="fee" type="number" value="50000" readonly aria-readonly="true"></label>
             <label for="otherCosts">Прочие расходы<input id="otherCosts" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано" ></label>
             <label for="marketReferencePrice">Цена аналога в России (необязательно)<input id="marketReferencePrice" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="Не указано"></label>
@@ -776,7 +777,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 </main>
 <footer class="site-footer">
   <a class="brand footer-brand" href="/"><span class="brand-mark">P</span><span class="brand-name">PAPAUTO<span class="brand-dot">.</span><small>АВТОМОБИЛИ ПОД ЗАКАЗ</small></span></a>
-  <div class="footer-links"><a href="/japan.html">Авто из Японии</a><a href="/korea.html">Авто из Кореи</a><a href="/china.html">Авто из Китая</a><a href="/delivery.html">Доставка по России</a><a href="/auction-lots.html">Аукционный каталог</a><a href="/import-rules.html">Правила ввоза</a><a href="/premium-japan-korea.html#import-estimate">Расчёт стоимости</a><a href="/catalog.html">Все модели</a><a href="/privacy.html">Политика конфиденциальности</a><a href="/open-source-licenses.html">Лицензии ПО</a></div>
+  <div class="footer-links"><a href="/japan.html">Авто из Японии</a><a href="/korea.html">Авто из Кореи</a><a href="/china.html">Авто из Китая</a><a href="/delivery.html">Доставка по России</a><a href="/auction-lots.html">Аукционный каталог</a><a href="/import-rules.html">Правила ввоза</a><a href="/?view=calculator">Расчёт стоимости</a><a href="/catalog.html">Все модели</a><a href="/privacy.html">Политика конфиденциальности</a><a href="/open-source-licenses.html">Лицензии ПО</a></div>
   
   <p class="footer-note">Предварительные расчёты носят информационный характер и не являются публичной офертой. Данные о стоимости и возможности ввоза уточняются перед сделкой.</p>
   <div class="footer-bottom"><span>© <span id="year"></span> PAPAUTO</span><span>Доставка по регионам России</span></div>
@@ -790,7 +791,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 </nav>
 
 <script defer src="/site-config.js?v=20261109api"></script>
-<script src="/site-tabs.js?v=20261126-cars" defer></script>
+<script src="/site-tabs.js?v=20261126-calc" defer></script>
 <script src="/account.js" defer></script>
 <script src="/app.js?v=20261125-delivery" defer></script>
 <script src="/marketplace-interactions.js" defer></script>
@@ -802,7 +803,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
   <script src="/vehicle-catalogue.js" defer></script>
 <script src="/papauto-customs.js?v=20261125-quickquote" defer></script>
 <script src="/papauto-japan-tariffs.js?v=20261125-quickquote" defer></script>
-<script src="/papauto-delivery-tariffs.js?v=20261125-quickquote" defer></script>
+<script src="/papauto-delivery-tariffs.js?v=20261126-visible-quickquote" defer></script>
 <script src="/papauto-quick-quote.js?v=20261125" defer></script>
 <script src="/papauto-premium-calculator.js?v=20261125-quickquote" defer></script>
 
