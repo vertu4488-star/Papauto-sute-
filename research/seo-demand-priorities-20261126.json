@@ -1,6 +1,6 @@
 {
   "date": "2026-11-26",
-  "owner_decision": "Focus new SEO photo sourcing and content on commercially relevant, demanded models rather than filling arbitrary quotas. Five Korea models excluded from active sourcing by owner. No supplier outreach. Owner narrowed main SEO focus to exactly 5 Japan, 4 Korea, and Haval Jolion (China); other models maintained but secondary. Jolion included based on verified October demand, subject to landed-price competitiveness.",
+  "owner_decision": "Focus new SEO photo sourcing and content on commercially relevant, demanded models rather than filling arbitrary quotas. Five Korea models excluded from active sourcing by owner. No supplier outreach. Owner narrowed main SEO focus to exactly 5 Japan, 4 Korea, and Haval Jolion (China); other models maintained but secondary. Jolion included based on verified October demand, subject to landed-price competitiveness. Expanded Japan focus after owner requested local Drom comparison: 40 curated model search targets, with Japan first. Korea and China P0 remain unchanged.",
   "basis": {
     "period": "2026 Jan-Aug",
     "scope": "Russia nationwide used-car import volumes, not Novosibirsk search volume or resale turnover",
@@ -63,10 +63,33 @@
     "korea-kia-kx3"
   ],
   "priority_existing_japan": [
+    "japan-toyota-corolla",
+    "japan-toyota-corolla-fielder",
+    "japan-toyota-corolla-axio",
+    "japan-toyota-sienta",
+    "japan-toyota-vitz",
+    "japan-toyota-yaris",
+    "japan-toyota-yaris-cross",
+    "japan-toyota-tank",
+    "japan-toyota-roomy",
+    "japan-toyota-aqua",
+    "japan-toyota-raize",
+    "japan-toyota-passo",
+    "japan-toyota-probox",
+    "japan-toyota-c-hr",
     "japan-honda-freed",
     "japan-honda-fit",
-    "japan-toyota-corolla",
-    "japan-suzuki-jimny"
+    "japan-honda-shuttle",
+    "japan-honda-vezel",
+    "japan-honda-n-box",
+    "japan-honda-n-wgn",
+    "japan-nissan-juke",
+    "japan-nissan-note",
+    "japan-nissan-note-e-power",
+    "japan-nissan-dayz",
+    "japan-suzuki-jimny",
+    "japan-suzuki-swift",
+    "japan-mazda-demio"
   ],
   "priority_existing_korea": [
     "korea-kia-k3-cerato",
@@ -77,10 +100,95 @@
   "priority_photo_gaps": [],
   "next_page_candidates": [
     {
+      "model": "Toyota Wish",
+      "market": "japan",
+      "id": "japan-toyota-wish",
+      "priority": "P1",
+      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
+    },
+    {
+      "model": "Toyota Noah",
+      "market": "japan",
+      "id": "japan-toyota-noah",
+      "priority": "P1",
+      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
+    },
+    {
+      "model": "Toyota Voxy",
+      "market": "japan",
+      "id": "japan-toyota-voxy",
+      "priority": "P1",
+      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
+    },
+    {
+      "model": "Honda Freed Spike",
+      "market": "japan",
+      "id": "japan-honda-freed-spike",
+      "priority": "P0",
+      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
+    },
+    {
+      "model": "Honda Freed+",
+      "market": "japan",
+      "id": "japan-honda-freed-plus",
+      "priority": "P1",
+      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
+    },
+    {
       "model": "Honda Stepwgn",
       "market": "japan",
-      "reason": "rank 2 national used import Jan-Aug 2026; verify exact variant and export eligibility",
-      "priority": "P0"
+      "id": "japan-honda-stepwgn",
+      "priority": "P0",
+      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
+    },
+    {
+      "model": "Nissan NV200",
+      "market": "japan",
+      "id": "japan-nissan-nv200",
+      "priority": "P0",
+      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
+    },
+    {
+      "model": "Suzuki Jimny Sierra",
+      "market": "japan",
+      "id": "japan-suzuki-jimny-sierra",
+      "priority": "P1",
+      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
+    },
+    {
+      "model": "Suzuki Solio",
+      "market": "japan",
+      "id": "japan-suzuki-solio",
+      "priority": "P1",
+      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
+    },
+    {
+      "model": "Suzuki Hustler",
+      "market": "japan",
+      "id": "japan-suzuki-hustler",
+      "priority": "P1",
+      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
+    },
+    {
+      "model": "Mazda Mazda3",
+      "market": "japan",
+      "id": "japan-mazda-mazda3",
+      "priority": "P1",
+      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
+    },
+    {
+      "model": "Mazda CX-3",
+      "market": "japan",
+      "id": "japan-mazda-cx-3",
+      "priority": "P1",
+      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
+    },
+    {
+      "model": "Daihatsu Thor",
+      "market": "japan",
+      "id": "japan-daihatsu-thor",
+      "priority": "P1",
+      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
     },
     {
       "model": "Chevrolet Trailblazer",
@@ -109,43 +217,363 @@
   "primary_focus": [
     {
       "market": "japan",
+      "model": "Toyota Corolla",
+      "id": "japan-toyota-corolla",
+      "page_status": "existing",
+      "priority": "P0",
+      "drom_active_order_listing_count": 46,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Corolla Fielder",
+      "id": "japan-toyota-corolla-fielder",
+      "page_status": "existing",
+      "priority": "P0",
+      "drom_active_order_listing_count": 9,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Corolla Axio",
+      "id": "japan-toyota-corolla-axio",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 4,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Sienta",
+      "id": "japan-toyota-sienta",
+      "page_status": "existing",
+      "priority": "P0",
+      "drom_active_order_listing_count": 16,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Vitz",
+      "id": "japan-toyota-vitz",
+      "page_status": "existing",
+      "priority": "P0",
+      "drom_active_order_listing_count": 6,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Yaris",
+      "id": "japan-toyota-yaris",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 17,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Yaris Cross",
+      "id": "japan-toyota-yaris-cross",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 19,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Tank",
+      "id": "japan-toyota-tank",
+      "page_status": "existing",
+      "priority": "P0",
+      "drom_active_order_listing_count": 7,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Roomy",
+      "id": "japan-toyota-roomy",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 10,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Aqua",
+      "id": "japan-toyota-aqua",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 6,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Raize",
+      "id": "japan-toyota-raize",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 22,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Passo",
+      "id": "japan-toyota-passo",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 5,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Probox",
+      "id": "japan-toyota-probox",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 12,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota C-HR",
+      "id": "japan-toyota-c-hr",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 16,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Wish",
+      "id": "japan-toyota-wish",
+      "page_status": "candidate_new_page",
+      "priority": "P1",
+      "drom_active_order_listing_count": 11,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Noah",
+      "id": "japan-toyota-noah",
+      "page_status": "candidate_new_page",
+      "priority": "P1",
+      "drom_active_order_listing_count": 5,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Voxy",
+      "id": "japan-toyota-voxy",
+      "page_status": "candidate_new_page",
+      "priority": "P1",
+      "drom_active_order_listing_count": 8,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
       "model": "Honda Freed",
       "id": "japan-honda-freed",
-      "priority": "P0",
       "page_status": "existing",
-      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+      "priority": "P0",
+      "drom_active_order_listing_count": 34,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Honda Freed Spike",
+      "id": "japan-honda-freed-spike",
+      "page_status": "candidate_new_page",
+      "priority": "P0",
+      "drom_active_order_listing_count": 4,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Honda Freed+",
+      "id": "japan-honda-freed-plus",
+      "page_status": "candidate_new_page",
+      "priority": "P1",
+      "drom_active_order_listing_count": 4,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
     },
     {
       "market": "japan",
       "model": "Honda Stepwgn",
       "id": "japan-honda-stepwgn",
+      "page_status": "candidate_new_page",
       "priority": "P0",
-      "page_status": "missing_create_first",
-      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+      "drom_active_order_listing_count": 37,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
     },
     {
       "market": "japan",
       "model": "Honda Fit",
       "id": "japan-honda-fit",
-      "priority": "P0",
       "page_status": "existing",
-      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+      "priority": "P0",
+      "drom_active_order_listing_count": 36,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
     },
     {
       "market": "japan",
-      "model": "Toyota Corolla",
-      "id": "japan-toyota-corolla",
-      "priority": "P0",
+      "model": "Honda Shuttle",
+      "id": "japan-honda-shuttle",
       "page_status": "existing",
-      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+      "priority": "P1",
+      "drom_active_order_listing_count": 8,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Honda Vezel",
+      "id": "japan-honda-vezel",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 43,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Honda N-BOX",
+      "id": "japan-honda-n-box",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 7,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Honda N-WGN",
+      "id": "japan-honda-n-wgn",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 10,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Nissan NV200",
+      "id": "japan-nissan-nv200",
+      "page_status": "candidate_new_page",
+      "priority": "P0",
+      "drom_active_order_listing_count": null,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Nissan Juke",
+      "id": "japan-nissan-juke",
+      "page_status": "existing",
+      "priority": "P0",
+      "drom_active_order_listing_count": null,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Nissan Note",
+      "id": "japan-nissan-note",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 11,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Nissan Note e-POWER",
+      "id": "japan-nissan-note-e-power",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": null,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Nissan Dayz",
+      "id": "japan-nissan-dayz",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 7,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
     },
     {
       "market": "japan",
       "model": "Suzuki Jimny",
       "id": "japan-suzuki-jimny",
-      "priority": "P0",
       "page_status": "existing",
-      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+      "priority": "P0",
+      "drom_active_order_listing_count": 20,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Suzuki Jimny Sierra",
+      "id": "japan-suzuki-jimny-sierra",
+      "page_status": "candidate_new_page",
+      "priority": "P1",
+      "drom_active_order_listing_count": 9,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Suzuki Swift",
+      "id": "japan-suzuki-swift",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 14,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Suzuki Solio",
+      "id": "japan-suzuki-solio",
+      "page_status": "candidate_new_page",
+      "priority": "P1",
+      "drom_active_order_listing_count": 12,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Suzuki Hustler",
+      "id": "japan-suzuki-hustler",
+      "page_status": "candidate_new_page",
+      "priority": "P1",
+      "drom_active_order_listing_count": 5,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Mazda Demio",
+      "id": "japan-mazda-demio",
+      "page_status": "existing",
+      "priority": "P1",
+      "drom_active_order_listing_count": 4,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Mazda Mazda3",
+      "id": "japan-mazda-mazda3",
+      "page_status": "candidate_new_page",
+      "priority": "P1",
+      "drom_active_order_listing_count": 28,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Mazda CX-3",
+      "id": "japan-mazda-cx-3",
+      "page_status": "candidate_new_page",
+      "priority": "P1",
+      "drom_active_order_listing_count": 20,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+    },
+    {
+      "market": "japan",
+      "model": "Daihatsu Thor",
+      "id": "japan-daihatsu-thor",
+      "page_status": "candidate_new_page",
+      "priority": "P1",
+      "drom_active_order_listing_count": 4,
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
     },
     {
       "market": "korea",
@@ -204,9 +632,11 @@
     "decision": "Include as China P0; compare total delivered Novosibirsk price against Russian local offers before recommending specific imports."
   },
   "execution_order": [
-    "Create dedicated Honda Stepwgn SEO page, verify model-specific export-eligible trim and existing approved archive photos, add sitemap and internal links",
-    "Audit nine existing P0 pages for title/H1, canonical, precise model photos, data and calculator handoff",
-    "Compare Yandex and Google impressions, clicks and ranking for Novosibirsk model search intents",
-    "Prioritize exact low-power trim by documentation; do not promise reduced fees on model name alone"
-  ]
+    "Audit existing Japan model pages against local Drom demand; prioritize owner P0 12 targets",
+    "Create missing pages only where distinct intent justifies them; keep existing 135 URLs and adjust all build count guards intentionally",
+    "Add generations, aliases, exact-model photo examples, internal comparison links and calculator handoff",
+    "Check actual regional impressions in GSC and Yandex Webmaster; measure queries, clicks and leads",
+    "Keep approved Korea and China focus intact"
+  ],
+  "japan_drom_audit": "research/seo-japan-drom-demand-20261126.json"
 }
