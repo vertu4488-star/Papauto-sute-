@@ -46,9 +46,13 @@ def render(root,target,coverage,registry):
         html=page.read_text(encoding="utf-8")
         key=(norm(r["auction"]),str(r["auction_date"]),str(r["lot"]))
         old=existing.get(key)
-        if old and 'data-model-lot-id="'+old["id"]+'"' in html:
-            skips.append(ident);continue
-        if old:raise RuntimeError("ATP9 lot already published but not linked "+ident+" "+old["id"])
+        if old:
+            # The exact lot may already be listed among the additional archive
+            # links beyond the ten inline cards. Reuse rather than duplicate it.
+            if ('data-model-lot-id="'+old["id"]+'"' in html or
+                    'href="/lots/'+old["id"]+'.html"' in html):
+                skips.append(ident);continue
+            raise RuntimeError("ATP9 lot already published but not linked "+ident+" "+old["id"])
         title=escape(r["model"]+" · "+str(r["year"]))
         media="".join('<a href="/'+escape(path_for(target,r,m).relative_to(target).as_posix(),quote=True)+'"><img loading="lazy" decoding="async" src="/'+escape(path_for(target,r,m).relative_to(target).as_posix(),quote=True)+'" alt="'+title+(' — полный аукционный лист' if m["kind"]=="sheet" else ' — фото аукциона')+'"></a>' for m in r["media"])
         facts=[("Пробег по данным источника",r["mileage"]),("Объём двигателя",r["engine"].replace(" cм"," см³")),("Аукцион",r["auction"]),("Дата торгов",r["auction_date"]),("Номер лота",r["lot"]),("Оценка",r["grade"]),("Цена продажи по данным ATP",r["source_price"])]
