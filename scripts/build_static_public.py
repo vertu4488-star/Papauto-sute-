@@ -595,6 +595,10 @@ def copy_public_files() -> list[str]:
     from append_atp_model_references import append_references
     append_references(ROOT, TARGET)
 
+    # Compact top ribbon reuses only the existing screened gallery registry.
+    from render_home_car_strip import render_home_car_strip
+    render_home_car_strip(TARGET, published_registry)
+
     # The gallery compiler generates /lots/*.html after the initial page loop.
     # Reconcile every finished HTML page with the global warm skin, including
     # exact auction lot pages and legacy retirement pages. Photo bytes are untouched.
