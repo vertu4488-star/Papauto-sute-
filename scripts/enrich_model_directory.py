@@ -93,7 +93,7 @@ def render_directory(target: Path, coverage: dict):
     html,count = re.subn(r'<main>[\s\S]*?</main>',lambda _:main,html,count=1)
     if count!=1: raise RuntimeError("MODEL_DIRECTORY main not found")
     html=html.replace("</head>",STYLE+'<script defer src="/model-directory.js?v=20261126"></script></head>',1)
-    if len(re.findall(r'data-pa-directory-entry\b',html))!=135 or len(re.findall(r'<article class="pa-directory-card"',html))!=len(covers):
+    if len(re.findall(r'<(?:article|li)\b[^>]*\bdata-pa-directory-entry(?:\s|>)',html))!=135 or len(re.findall(r'<article class="pa-directory-card"',html))!=len(covers):
         raise RuntimeError("MODEL_DIRECTORY card count mismatch")
     hub.write_text(html,encoding="utf-8")
     # Legacy address stays usable; identical content has one canonical directory.
