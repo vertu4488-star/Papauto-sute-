@@ -1,0 +1,172 @@
+{
+  "date": "2026-11-26",
+  "owner_scope": "exact last 13 models; NV200 interpreted as Nissan NV200, Freed+ separate; Jimny not Sierra",
+  "rows": [
+    {
+      "number": 1,
+      "model": "Toyota Vitz",
+      "brand": "toyota",
+      "slugs": [
+        "vitz"
+      ],
+      "urls": [
+        "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/70YQYjOL40qtcvA/",
+        "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/70ZL0ZfDA93aaog/",
+        "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/AEt5Jdi8x50u/"
+      ]
+    },
+    {
+      "number": 2,
+      "model": "Toyota Noah",
+      "brand": "toyota",
+      "slugs": [
+        "noah"
+      ],
+      "urls": [
+        "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/4ZFdCt1Brob8Tnn/",
+        "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/56syeWplkZeoQy7/",
+        "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/2BduAMjvAauyJc/"
+      ]
+    },
+    {
+      "number": 3,
+      "model": "Toyota Voxy",
+      "brand": "toyota",
+      "slugs": [
+        "voxy"
+      ],
+      "urls": [
+        "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/4WluTLAWHuaOEbJ/",
+        "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/56t1kM8MBtxfkur/",
+        "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/IYxYdOmUniu6Tt/"
+      ]
+    },
+    {
+      "number": 4,
+      "model": "Honda Freed Spike",
+      "brand": "honda",
+      "slugs": [
+        "freed-spike"
+      ],
+      "urls": [
+        "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/01upyFxIWnvQjqM/",
+        "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/9uF2KZ1vJLHlcBH/",
+        "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/7a4Q1uHAXnxmEYk/"
+      ]
+    },
+    {
+      "number": 5,
+      "model": "Honda Freed+",
+      "brand": "honda",
+      "slugs": [
+        "freed%2B",
+        "freed-plus",
+        "freed+"
+      ],
+      "urls": []
+    },
+    {
+      "number": 6,
+      "model": "Honda Stepwgn",
+      "brand": "honda",
+      "slugs": [
+        "step-wagon",
+        "stepwgn"
+      ],
+      "urls": [
+        "https://atp-auto.ru/avto-iz-yaponii/honda/step-wagon/skSjqqq9T4yGQ/",
+        "https://atp-auto.ru/avto-iz-yaponii/honda/step-wagon/7auzyHZxEdtj0ui/",
+        "https://atp-auto.ru/avto-iz-yaponii/honda/step-wagon/0m1SGdqR0OIMvwg/"
+      ]
+    },
+    {
+      "number": 7,
+      "model": "Nissan NV200",
+      "brand": "nissan",
+      "slugs": [
+        "nv200",
+        "nv200-vanette"
+      ],
+      "urls": [
+        "https://atp-auto.ru/avto-iz-yaponii/nissan/nv200/AGvtRCOMhUscF/",
+        "https://atp-auto.ru/avto-iz-yaponii/nissan/nv200/JbGHpB8CTZUq7C/"
+      ]
+    },
+    {
+      "number": 8,
+      "model": "Suzuki Jimny",
+      "brand": "suzuki",
+      "slugs": [
+        "jimny"
+      ],
+      "urls": [
+        "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/8uxWscbFfMPTG/",
+        "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/O42h8fztqYEg89/",
+        "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/YWbtZePJRbeMVf/"
+      ]
+    },
+    {
+      "number": 9,
+      "model": "Toyota Sienta",
+      "brand": "toyota",
+      "slugs": [
+        "sienta"
+      ],
+      "urls": [
+        "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/5ln26ROJjcMu8dU/",
+        "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/579eTGlNNXchh89/",
+        "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/IFY82ql1kPMijA/"
+      ]
+    },
+    {
+      "number": 10,
+      "model": "Suzuki Solio",
+      "brand": "suzuki",
+      "slugs": [
+        "solio"
+      ],
+      "urls": [
+        "https://atp-auto.ru/avto-iz-yaponii/suzuki/solio/4UiCycTOeD4NqIT/"
+      ]
+    },
+    {
+      "number": 11,
+      "model": "Suzuki Hustler",
+      "brand": "suzuki",
+      "slugs": [
+        "hustler"
+      ],
+      "urls": [
+        "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/5IvJCiOt8lrjMn/",
+        "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/sG596pFRFpB4pi/",
+        "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/AGvtRCOLoHJpH/"
+      ]
+    },
+    {
+      "number": 12,
+      "model": "Mazda3",
+      "brand": "mazda",
+      "slugs": [
+        "mazda3",
+        "mazda-3",
+        "mazda3-fastback",
+        "mazda3-sedan",
+        "3"
+      ],
+      "urls": []
+    },
+    {
+      "number": 13,
+      "model": "Mazda CX-3",
+      "brand": "mazda",
+      "slugs": [
+        "cx-3"
+      ],
+      "urls": [
+        "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-3/cA55XU757impv/",
+        "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-3/9rlzlFWqQrx1iL/",
+        "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-3/73viHZyRXZe6k2S/"
+      ]
+    }
+  ]
+}
