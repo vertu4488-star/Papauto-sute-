@@ -1,0 +1,52 @@
+name: Verify seven Novosibirsk commercial intents
+on:
+  push:
+    branches: ['seo/commercial-nsk-seven-intents-20261126']
+    paths: ['.github/workflows/seo-commercial-nsk-seven.yml']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/build_content.py
+      - run: python scripts/build_static_public.py
+      - name: Verify all commercial routes, anchors and archive preservation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json,re,xml.etree.ElementTree as ET
+          t=Path("render-public")
+          mapping=json.loads(Path("research/seo-commercial-nsk-seven-intents-20261126.json").read_text())["query_mapping"]
+          urls={n.text for n in ET.parse(t/"sitemap.xml").iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")}
+          for query,dest in mapping:
+              p,_,frag=dest.partition("#")
+              h=(t/p).read_text()
+              assert "https://papauto.ru/"+p in urls,p
+              assert '<link rel="canonical" href="https://papauto.ru/'+p+'">' in h,p
+              assert not frag or 'id="'+frag+'"' in h,dest
+              assert "noindex" not in re.search(r'<meta name="robots"[^>]+>',h).group(0),p
+              for href in re.findall(r'href="/([^"#?]+\.html)(?:#[^"]*)?"',h):
+                  assert (t/href).is_file(),href
+          report=json.loads((t/"data/model-statistics-coverage.json").read_text())
+          assert len(report["models"])==147
+          assert report["japan30_batch1_reference_cards"]==30 and report["japan30_batch2_reference_cards"]==30
+          assert json.loads((t/"data/gallery-lots.json").read_text())["lot_count"]==666
+          print("SEO_SEVEN_INTENTS_OK 7 clusters, 147 models, 60 archive references, 666 gallery")
+          PY
+      - name: Publish verified source fast-forward only
+        run: |
+          git config user.name "PapAuto release"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml '*.html'
+          git diff --cached --quiet || git commit -m "Rebuild canonical sitemap for commercial SEO changes"
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "429cef0c4b9520708270ec79af13781737df2cb6"
+          git push origin HEAD:main

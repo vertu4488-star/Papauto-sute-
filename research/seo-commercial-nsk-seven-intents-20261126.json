@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-26",
+  "target": "Novosibirsk",
+  "query_mapping": [
+    [
+      "авто под заказ Новосибирск",
+      "avto-pod-zakaz-novosibirsk.html"
+    ],
+    [
+      "авто из Японии под ключ Новосибирск",
+      "stoimost-avto-iz-yaponii-novosibirsk.html"
+    ],
+    [
+      "купить машину из Японии без пробега по РФ",
+      "avto-iz-yaponii-novosibirsk.html#pa-commercial-no-russian-mileage"
+    ],
+    [
+      "японские автомобили каталог и цены",
+      "catalog-avto-iz-yaponii-novosibirsk.html"
+    ],
+    [
+      "привезти машину из Японии в Новосибирск",
+      "avto-iz-yaponii-novosibirsk.html#pa-commercial-japan-delivery"
+    ],
+    [
+      "авто из Кореи под заказ индивидуальный",
+      "avto-iz-korei-novosibirsk.html"
+    ],
+    [
+      "авто из Китая под заказ индивидуальный",
+      "avto-iz-kitaya-novosibirsk.html"
+    ]
+  ],
+  "public_competitor_sources": [
+    "https://jtr54.ru/",
+    "https://novosibirsk.lab-td.ru/zakaz-avto/avtomobil-na-zakaz-iz-yaponii/",
+    "https://sunrise-auto.ru/goroda/novosibirsk/",
+    "https://noharaauto.com/novosibirsk/",
+    "https://dva.pro/dostavka/novosibirsk/"
+  ],
+  "note": "Use existing canonical pages instead of near-duplicate URLs. Search volume and Yandex positions unverified. Do not claim top ten or current stock. Final 15 ATP cards remain pending explicit approval."
+}

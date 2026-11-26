@@ -45,6 +45,7 @@ def render(target,coverage,registry):
         extra='<p>'+anchor(CAT,"Каталог авто из Японии")+" · "+anchor(PRICE,"Стоимость до Новосибирска")+'</p>' if m=="japan" else ""
         add(target/HUB[m],section("Модели авто из "+COUNTRY[m]+" под заказ в Новосибирск",'<p>Выберите модель для сравнения поколений и проверенных примеров. Архив не означает наличие автомобиля.</p>'+model_list(rows)+extra))
     common='<p>'+" · ".join(anchor(HUB[m],"Авто из "+COUNTRY[m]+" в Новосибирск") for m in HUB)+'</p><p>'+anchor(CAT,"Каталог японских автомобилей")+" · "+anchor(PRICE,"Цена авто из Японии под ключ")+" · "+anchor("models-135.html","Все модели")+'</p>'
+    common+='<p>'+anchor(GENERAL,"Авто под заказ в Новосибирске")+' · '+anchor(HUB["japan"]+"#pa-commercial-no-russian-mileage","Машины без пробега по РФ")+' · '+anchor(HUB["japan"]+"#pa-commercial-japan-delivery","Как привезти авто из Японии")+' · '+anchor("podbor.html","Индивидуальный подбор")+'</p>'
     for filename in ["index.html","catalog.html",GENERAL,"japan.html","models-novosibirsk.html"]:
         add(target/filename,section("Автомобили под заказ с доставкой в Новосибирск",common))
     # Preserve existing titles, H1s, canonicals, photo cards and calculators. Add
