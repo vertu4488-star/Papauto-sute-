@@ -588,12 +588,10 @@ def copy_public_files() -> list[str]:
     if model_coverage['supplier_cards'] != model_coverage['supplier_matches']:
         raise RuntimeError('PAPAUTO_MODEL_STATS: missing inline supplier cards')
 
+    from render_atp33_references import render as render_atp33_references
+    render_atp33_references(ROOT, TARGET, model_coverage)
     from enrich_model_directory import render_directory
     render_directory(TARGET, model_coverage)
-
-    # Source-reported research facts only; no unlicensed third-party images.
-    from append_atp_model_references import append_references
-    append_references(ROOT, TARGET)
 
     # Compact top ribbon reuses only the existing screened gallery registry.
     from render_home_car_strip import render_home_car_strip

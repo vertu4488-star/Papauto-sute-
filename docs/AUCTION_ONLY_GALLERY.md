@@ -89,3 +89,6 @@ Owner expressly approved on 2026-11-21 exactly 30 full-sheet Japanese historic a
 Owner approved the exact PDF PapAuto_Japan_18_ATP_review_2026-11-25.pdf and explicitly requested publication. Exact 18 archived source examples / 54 frozen JPEGs only; research/owner-approved-japan-gap18-2026-11-25.json. No commercial license assertion, no live inventory, no general exception for other records.
 
 Owner approved the exact PDF PapAuto_Honda_7_ATP_review_2026-11-25.pdf and explicitly requested publication. Exact 7 archived source examples / 21 frozen JPEGs only; research/owner-approved-japan-honda7-2026-11-25.json. No commercial license assertion, no live inventory, no general exception for other records.
+
+
+Owner release instruction 2026-11-26: exactly the 33 visually reviewed SEO reference cards in PapAuto_ATP_33_SEO_cards_preview.zip (manifest SHA256 6a82e9ffd6d14a42759982180357b69330bff49a5be2245ba159b4668435cc5a) are approved for separate model-page reference display. The original 66 files are pinned by aggregate digest in scripts/render_atp33_references.py. Not new auction inventory, no assertion of sale or license; source attribution remains, no outbound supplier links, no revoked images. All other auction registry safeguards and existing 666 lots remain unchanged. No supplier outreach requested.

@@ -8,7 +8,7 @@ def e(value):
     return escape(str(value), quote=True)
 
 COUNTRY = {"japan": "Япония", "korea": "Южная Корея", "south-korea": "Южная Корея", "china": "Китай"}
-ARTICLE = re.compile(r'<article class="pa-model-lot(?: pa-model-supplier)?"[^>]*>[\s\S]*?</article>')
+ARTICLE = re.compile(r'<article class="pa-model-lot(?: pa-model-supplier| pa-model-atp-reference)?"[^>]*>[\s\S]*?</article>')
 IMAGE = re.compile(r'<img\b[^>]*\bsrc="([^"]+)"[^>]*>')
 STYLE = """<style>
 .pa-directory-controls{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0;align-items:end}
@@ -42,7 +42,7 @@ def cover_from_page(target, html):
     if not path.is_file() or path.stat().st_size < 100 or path.is_symlink():
         raise RuntimeError("MODEL_DIRECTORY missing image " + src)
     name = unescape(re.sub(r'<[^>]+>', '', title.group(1))).strip()
-    kind = ("Родственное семейство — " if 'data-model-related-' in card else "") + ("пример поставщика" if "pa-model-supplier" in card else "архивный аукционный пример")
+    kind = ("Родственное семейство — " if 'data-model-related-' in card else "") + ("справочный пример" if "pa-model-atp-reference" in card else "пример поставщика" if "pa-model-supplier" in card else "архивный аукционный пример")
     return {"src":src,"title":name,"kind":kind,"related":'data-model-related-' in card}
 
 def render_directory(target: Path, coverage: dict):
@@ -56,7 +56,7 @@ def render_directory(target: Path, coverage: dict):
         page = target/"models"/(ident+".html")
         html = page.read_text(encoding="utf-8")
         cover = cover_from_page(target, html)
-        expected = any(report[ident].get(k,0) for k in ("auction_matches","supplier_matches","related_cards"))
+        expected = any(report[ident].get(k,0) for k in ("auction_matches","supplier_matches","related_cards","reference_cards"))
         if bool(cover) != bool(expected):
             raise RuntimeError("MODEL_DIRECTORY coverage mismatch "+ident)
         if cover:
