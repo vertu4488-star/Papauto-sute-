@@ -1089,6 +1089,62 @@
       "model": "Aion Y",
       "engine": "электро",
       "kind": "model_name_reference_only"
+    },
+    {
+      "id": "japan-toyota-noah",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Noah",
+      "engine": "1.8–2.0 л",
+      "kind": "model_name_reference_only"
+    },
+    {
+      "id": "japan-toyota-voxy",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Voxy",
+      "engine": "1.8–2.0 л",
+      "kind": "model_name_reference_only"
+    },
+    {
+      "id": "japan-nissan-nv200",
+      "market": "japan",
+      "brand": "Nissan",
+      "model": "NV200",
+      "engine": "1.6 л",
+      "kind": "model_name_reference_only"
+    },
+    {
+      "id": "japan-suzuki-solio",
+      "market": "japan",
+      "brand": "Suzuki",
+      "model": "Solio",
+      "engine": "1.2 л",
+      "kind": "model_name_reference_only"
+    },
+    {
+      "id": "japan-suzuki-hustler",
+      "market": "japan",
+      "brand": "Suzuki",
+      "model": "Hustler",
+      "engine": "0.66 л",
+      "kind": "model_name_reference_only"
+    },
+    {
+      "id": "japan-mazda-mazda3",
+      "market": "japan",
+      "brand": "Mazda",
+      "model": "Mazda3",
+      "engine": "1.5–2.0 л",
+      "kind": "model_name_reference_only"
+    },
+    {
+      "id": "japan-mazda-cx-3",
+      "market": "japan",
+      "brand": "Mazda",
+      "model": "CX-3",
+      "engine": "1.5–2.0 л",
+      "kind": "model_name_reference_only"
     }
   ]
 }

@@ -323,8 +323,8 @@ def nameplate_examples(ident, grouped):
 def render(target: Path, registry: dict, approved_supplier_paths: set):
     items = json.loads((target / "data/papauto-expanded-45x3-2026.json").read_text(encoding="utf-8"))["items"]
     refs = {x["id"]: x for x in items}
-    if len(items) != 135 or len(refs) != 135:
-        raise RuntimeError("MODEL_STATS expected 135 model references")
+    if len(items) != 142 or len(refs) != 142:
+        raise RuntimeError("MODEL_STATS expected 142 model references")
     if {p.stem for p in (target/"models").glob("*.html")} != set(refs):
         raise RuntimeError("MODEL_STATS reference/page mismatch")
     index = make_index(items)

@@ -87,3 +87,6 @@ Owner approved the exact PDF PapAuto_Honda_7_ATP_review_2026-11-25.pdf and expli
 
 
 Owner release instruction 2026-11-26: exactly the 33 visually reviewed SEO reference cards in PapAuto_ATP_33_SEO_cards_preview.zip (manifest SHA256 6a82e9ffd6d14a42759982180357b69330bff49a5be2245ba159b4668435cc5a) are approved for separate model-page reference display. The original 66 files are pinned by aggregate digest in scripts/render_atp33_references.py. Not new auction inventory, no assertion of sale or license; source attribution remains, no outbound supplier links, no revoked images. All other auction registry safeguards and existing 666 lots remain unchanged. No supplier outreach requested.
+
+
+Owner instruction 2026-11-26: publish only nine individually reviewed ATP Japan reference examples in frozen manifest SHA256 857fb42c8b651403ad44a11e0bcd459caf790a4c20d734e4b82d714d2962630d, numbers 1,2,3,7,8,10,11,12,13, with 27 original files. Keep separate from 666-lot gallery, no license or availability claim; do not publish numbers 4,6,9 (missing full sheet or street photos) or 5 (not found). Exact source/lot/price attribution and duplicate checks required. No supplier outreach.

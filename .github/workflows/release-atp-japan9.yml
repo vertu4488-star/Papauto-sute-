@@ -1,0 +1,62 @@
+name: Release verified ATP Japan nine model references
+on:
+  push:
+    branches: ['release/atp-japan9-20261126']
+    paths: ['.github/workflows/release-atp-japan9.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: atp-japan13-review
+          run-id: 45808640462
+          github-token: ${{ github.token }}
+          path: /tmp/atp-japan9
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/render_atp_japan9.py /tmp/atp-japan9
+      - run: python scripts/build_static_public.py
+      - name: Verify mobile and desktop pages
+        run: |
+          python -m pip install playwright
+          python -m playwright install chromium --with-deps
+          python -m http.server 8765 --directory render-public >/tmp/papauto-j9-http.log 2>&1 &
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          import json
+          from pathlib import Path
+          report=json.loads(Path("render-public/data/model-statistics-coverage.json").read_text())
+          assert len(report["models"])==142
+          assert report["photo_pages"]>=108
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for width in (390,1280):
+                  page=browser.new_page(viewport={"width":width,"height":844})
+                  for ident in ["japan-toyota-vitz","japan-toyota-noah","japan-toyota-voxy","japan-nissan-nv200","japan-suzuki-jimny","japan-suzuki-solio","japan-suzuki-hustler","japan-mazda-mazda3","japan-mazda-cx-3"]:
+                      assert page.goto("http://127.0.0.1:8765/models/"+ident+".html").ok
+                      img=page.locator(".pa-model-cover img")
+                      img.scroll_into_view_if_needed()
+                      page.wait_for_function("document.querySelector('.pa-model-cover img').naturalWidth > 0")
+                  page.goto("http://127.0.0.1:8765/models-135.html")
+                  assert page.locator("[data-pa-directory-entry]").count()==142
+                  assert page.locator(".pa-directory-card").count()==report["photo_pages"]
+              browser.close()
+          PY
+      - name: Commit and publish verified references
+        run: |
+          git config user.name "PapAuto release"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/seo-reference/atp-japan9-20261126 research/atp-japan13-frozen-manifest-20261126.json
+          git commit -m "Add frozen 27 original ATP media files for nine reviewed Japanese model references"
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "ebe3b1582fe2203682389495bcab76cf5f902a1d"
+          git push origin HEAD:main

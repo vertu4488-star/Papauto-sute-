@@ -86,11 +86,11 @@ def render(root,target,coverage):
     coverage["reference_covered"]=33
     coverage["reference_exact_covered"]=32
     coverage["photo_pages"]=sum(any(r.get(k,0) for k in ("auction_matches","supplier_matches","related_cards","reference_cards")) for r in report.values())
-    coverage["no_photo_pages"]=135-coverage["photo_pages"]
-    if coverage["photo_pages"]!=101:
-        raise RuntimeError("ATP33 expected 101 photo-covered pages")
+    coverage["no_photo_pages"]=len(report)-coverage["photo_pages"]
+    if coverage["photo_pages"]<101:
+        raise RuntimeError("ATP33 expected at least 101 photo-covered pages")
     (target/"data/model-statistics-coverage.json").write_text(json.dumps(coverage,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print("PAPAUTO_ATP_SEO_PHOTOS_OK "+json.dumps({"reference_pages":33,"media":66,"photo_pages":101,"remaining":34,"auction_gallery_changes":0}))
+    print("PAPAUTO_ATP_SEO_PHOTOS_OK "+json.dumps({"reference_pages":33,"media":66,"photo_pages":coverage["photo_pages"],"remaining":coverage["no_photo_pages"],"auction_gallery_changes":0}))
 
 if __name__=="__main__":
     install(Path(sys.argv[1]))

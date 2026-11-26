@@ -48,8 +48,8 @@ def cover_from_page(target, html):
 def render_directory(target: Path, coverage: dict):
     items = json.loads((target/"data/papauto-expanded-45x3-2026.json").read_text(encoding="utf-8"))["items"]
     report = {r["model_id"]:r for r in coverage["models"]}
-    if len(items)!=135 or len(report)!=135:
-        raise RuntimeError("MODEL_DIRECTORY expected 135 entries")
+    if len(items)!=142 or len(report)!=142:
+        raise RuntimeError("MODEL_DIRECTORY expected 142 entries")
     covers = {}
     for item in items:
         ident = item["id"]
@@ -86,16 +86,16 @@ def render_directory(target: Path, coverage: dict):
         sections.append('<section class="pa-directory-market" data-market="'+market+'" id="'+market+'"><h2>'+COUNTRY[market]+'</h2><div class="pa-directory-grid">'+"".join(cards)+'</div>'+('<h3>Другие модели — справочник</h3><ul class="pa-directory-list">'+"".join(links)+'</ul>' if links else '')+'</section>')
     hub = target/"models-135.html"
     html = hub.read_text(encoding="utf-8")
-    main = ('<main><h1>135 моделей автомобилей под заказ</h1><p>Япония, Южная Корея и Китай. Выберите модель, чтобы посмотреть характеристики, документы и примеры подбора. Фото показываем только при наличии подтверждённых материалов.</p>'
+    main = ('<main><h1>142 модели автомобилей под заказ</h1><p>Япония, Южная Корея и Китай. Выберите модель, чтобы посмотреть характеристики, документы и примеры подбора. Фото показываем только при наличии подтверждённых материалов.</p>'
             '<nav class="nav"><a href="#japan">Япония</a><a href="#korea">Корея</a><a href="#china">Китай</a><a href="/?view=calculator">Калькулятор</a></nav>'
-            '<div class="pa-directory-controls" hidden><label>Поиск модели<input id="pa-directory-search" type="search" placeholder="Honda Fit, Toyota Prius…"></label><label>Рынок<select id="pa-directory-market"><option value="">Все страны</option><option value="japan">Япония</option><option value="korea">Южная Корея</option><option value="china">Китай</option></select></label></div><p id="pa-directory-count" role="status">135 моделей</p>'
+            '<div class="pa-directory-controls" hidden><label>Поиск модели<input id="pa-directory-search" type="search" placeholder="Honda Fit, Toyota Prius…"></label><label>Рынок<select id="pa-directory-market"><option value="">Все страны</option><option value="japan">Япония</option><option value="korea">Южная Корея</option><option value="china">Китай</option></select></label></div><p id="pa-directory-count" role="status">142 модели</p>'
             +"".join(sections)+'</main>')
     html,count = re.subn(r'<main>[\s\S]*?</main>',lambda _:main,html,count=1)
     if count!=1: raise RuntimeError("MODEL_DIRECTORY main not found")
     html=html.replace("</head>",STYLE+'<script defer src="/model-directory.js?v=20261126"></script></head>',1)
-    if len(re.findall(r'<(?:article|li)\b[^>]*\bdata-pa-directory-entry(?:\s|>)',html))!=135 or len(re.findall(r'<article class="pa-directory-card"',html))!=len(covers):
+    if len(re.findall(r'<(?:article|li)\b[^>]*\bdata-pa-directory-entry(?:\s|>)',html))!=142 or len(re.findall(r'<article class="pa-directory-card"',html))!=len(covers):
         raise RuntimeError("MODEL_DIRECTORY card count mismatch")
     hub.write_text(html,encoding="utf-8")
     # Legacy address stays usable; identical content has one canonical directory.
     (target/"models-100.html").write_text(html,encoding="utf-8")
-    print("PAPAUTO_MODEL_DIRECTORY_OK "+json.dumps({"pages":135,"photo_cards":len(covers),"text_links":135-len(covers),"legacy_alias":True},ensure_ascii=False))
+    print("PAPAUTO_MODEL_DIRECTORY_OK "+json.dumps({"pages":142,"photo_cards":len(covers),"text_links":142-len(covers),"legacy_alias":True},ensure_ascii=False))
