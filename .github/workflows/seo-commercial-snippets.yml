@@ -1,0 +1,58 @@
+name: Verify commercial snippet and offer links
+on:
+  push:
+    branches: ['seo/commercial-snippets-20261126']
+    paths: ['.github/workflows/seo-commercial-snippets.yml']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/build_content.py
+      - run: python scripts/build_static_public.py
+      - name: Verify published commercial offers and canonical pages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re,json,xml.etree.ElementTree as ET
+          t=Path("render-public")
+          urls={n.text for n in ET.parse(t/"sitemap.xml").iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")}
+          pages=["index.html","avto-pod-zakaz-novosibirsk.html","avto-iz-yaponii-novosibirsk.html","catalog-avto-iz-yaponii-novosibirsk.html","stoimost-avto-iz-yaponii-novosibirsk.html","avto-iz-korei-novosibirsk.html","avto-iz-kitaya-novosibirsk.html"]
+          for p in pages:
+              h=(t/p).read_text()
+              u="https://papauto.ru/"+("" if p=="index.html" else p)
+              assert u in urls,p
+              assert '<link rel="canonical" href="'+u+'">' in h,p
+              assert len(re.findall(r'<title>[^<]+</title>',h))==1,p
+              assert len(re.findall(r'<meta name="description"[^>]+>',h))==1,p
+          home=(t/"index.html").read_text()
+          block=re.search(r'<section[^>]+id="pa-order-benefits"[\s\S]*?</section>',home).group()
+          for label in ("Авто под ключ","Без пробега по РФ","Индивидуальный подбор","Доставка в Новосибирск"):
+              assert label in block,label
+          for href in re.findall(r'href="/([^"]+)"',block):
+              p,_,frag=href.partition("#")
+              h=(t/p).read_text()
+              assert not frag or 'id="'+frag+'"' in h,href
+          report=json.loads((t/"data/model-statistics-coverage.json").read_text())
+          assert len(report["models"])==147
+          assert report["japan30_batch1_reference_cards"]==30 and report["japan30_batch2_reference_cards"]==30
+          assert json.loads((t/"data/gallery-lots.json").read_text())["lot_count"]==666
+          print("COMMERCIAL_SNIPPETS_OK 7 pages; 4 offer links; previous gallery preserved")
+          PY
+      - name: Publish only verified source
+        run: |
+          git config user.name "PapAuto release"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml '*.html'
+          git diff --cached --quiet || git commit -m "Refresh canonical sitemap after snippet changes"
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "d64bece185dfb9d09c1cbc40285de4e69f0d8901"
+          git push origin HEAD:main
