@@ -693,6 +693,16 @@ def copy_public_files() -> list[str]:
     from canonical_model_links import rewrite_public
     rewrite_public(TARGET)
 
+    # Keep the approved premium calculator visible and isolated from homepage theming.
+    calc_html = (TARGET / "index.html").read_text(encoding="utf-8")
+    calc_css = (TARGET / "papauto-premium-calculator.css").read_text(encoding="utf-8")
+    if (calc_html.count('/papauto-premium-calculator.css?v=20261126-lexus-restored') != 1
+            or not all(f'id="{x}"' in calc_html for x in ("calculator","calcForm","paEstimateTabs","paJapanTariffs","paDeliveryPanel","resultLines"))
+            or 'body.pa-thursday-home #calculator .pa-estimate-head{background:#292823!important;' not in calc_css
+            or 'body.pa-thursday-home #calculator .pa-estimate-result{background:#eee5d5!important;' not in calc_css):
+        raise RuntimeError("PAPAUTO_PREMIUM_CALCULATOR: approved presentation missing")
+    print("PAPAUTO_PREMIUM_CALCULATOR_OK: graphite #292823, sand #eee5d5, original calculator fields intact")
+
     verify_published_output(TARGET)
 
     print(f"Prepared {len(copied)} public files and {len(tombstones)} safe tombstones in {TARGET.name}/")

@@ -62,3 +62,21 @@
 #calculator #paDeliveryPanel label[for="localDelivery"]{padding-top:8px;border-top:1px solid #dfd2c0}
 #calculator #paDeliveryStatus{font-size:13px!important;color:#514035!important}
 @media(max-width:680px){body.pa-thursday-home .pa-approved-intro .hero-actions a[href="/?view=calculator"]{display:inline-flex!important}}
+
+/* Restore the approved 24 Nov graphite/sand palette on the calculator view.
+   Explicitly scope the palette so homepage cream gradients cannot bleed into it. */
+body.pa-thursday-home[data-site-view="calculator"]{background:#eee5d5!important;background-image:none!important}
+body.pa-thursday-home[data-site-view="calculator"] #calculator:not([hidden]){background:#eee5d5!important;background-image:none!important;border:0!important;padding:clamp(18px,3.5vw,42px) 0!important}
+body.pa-thursday-home #calculator .pa-estimate-shell{background:#fffaf4!important;background-image:none!important;border-color:#dfd2c0!important;color:#292823!important;font-family:PapAutoManrope,"Helvetica Neue",Arial,sans-serif!important}
+body.pa-thursday-home #calculator .pa-estimate-head{background:#292823!important;background-image:none!important;color:#e5d4b6!important;text-align:center!important;border:0!important}
+body.pa-thursday-home #calculator .pa-estimate-head .pa-estimate-brand,body.pa-thursday-home #calculator .pa-estimate-head .pa-estimate-kicker{color:#e5d4b6!important}
+body.pa-thursday-home #calculator .pa-estimate-head h2{color:#fff!important;font-weight:400!important;letter-spacing:-.035em!important;border-top:1px solid #575147!important}
+body.pa-thursday-home #calculator .pa-estimate-head p:last-child{color:#c5b9a5!important}
+body.pa-thursday-home #calculator .pa-estimate-main{background:#fffaf4!important;background-image:none!important}
+body.pa-thursday-home #calculator .pa-estimate-main #calcForm{background:transparent!important;box-shadow:none!important}
+body.pa-thursday-home #calculator .pa-estimate-tabs{background:#eee5d5!important}
+body.pa-thursday-home #calculator .pa-estimate-tabs button[aria-pressed="true"]{background:#292823!important;color:#e5d4b6!important}
+body.pa-thursday-home #calculator .pa-estimate-primary{background:#292823!important;color:#e5d4b6!important;border-color:#292823!important}
+body.pa-thursday-home #calculator .pa-estimate-result{background:#eee5d5!important;background-image:none!important;color:#292823!important;border-color:#ddcdb7!important}
+body.pa-thursday-home #calculator .pa-estimate-total{color:#292823!important}
+@media print{body.pa-thursday-home[data-site-view="calculator"],body.pa-thursday-home[data-site-view="calculator"] #calculator:not([hidden]){background:#fff!important}body.pa-thursday-home #calculator .pa-estimate-head{background:#fff!important;color:#292823!important}body.pa-thursday-home #calculator .pa-estimate-head :is(h2,p,.pa-estimate-brand){color:#292823!important}}
