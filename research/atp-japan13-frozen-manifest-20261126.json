@@ -1,0 +1,584 @@
+[
+  {
+    "number": 1,
+    "model": "Toyota Vitz",
+    "brand": "toyota",
+    "slugs": [
+      "vitz"
+    ],
+    "urls": [
+      "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/70YQYjOL40qtcvA/",
+      "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/70ZL0ZfDA93aaog/",
+      "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/AEt5Jdi8x50u/"
+    ],
+    "status": "ready_for_visual_review",
+    "media": [
+      {
+        "file": "001-0-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "dbdaeae82399805431f0eeeed9d03472beecec9c833b5af376b9cd3a076a5d4f",
+        "source": "https://7.tru.ru/imgs/pO07nIwqYwonXGxmDwLUq6NWNQWBB4JW7us1MxgClhPws87Ne45"
+      },
+      {
+        "file": "001-1-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "d67b4a1b3fd59121381e4196b59ac1a538cba7857f0e404d173e5650458e75d7",
+        "source": "https://7.tru.ru/imgs/pO07nIwqYwonXGxmDwLUq6NWNQWBB4JW7us1MxgCxb0KwuhQjYV"
+      },
+      {
+        "file": "001-2-sheet.jpg",
+        "kind": "sheet",
+        "sha256": "dea50c3ea3112625263cb3f2fdb0b323ecbcb33097cfc4b58e73f659386820c6",
+        "source": "https://7.tru.ru/imgs/pO07nIwqYwoEV9zl9e3UQtJ5fknbtLsf1O8SLXYqt2v6XZyEHSp"
+      }
+    ],
+    "attempts": [],
+    "title": "Toyota Vitz 2019 года",
+    "year": 2019,
+    "mileage": "34000 км",
+    "engine": "1320 cм",
+    "trim": "ｼ&#",
+    "lot": "10034",
+    "grade": "4",
+    "auction": "JU Gifu",
+    "auction_date": "2026-11-07",
+    "sale_status": "Sold",
+    "source_price": "892 000 ¥",
+    "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/vitz/70YQYjOL40qtcvA/"
+  },
+  {
+    "number": 2,
+    "model": "Toyota Noah",
+    "brand": "toyota",
+    "slugs": [
+      "noah"
+    ],
+    "urls": [
+      "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/4ZFdCt1Brob8Tnn/",
+      "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/56syeWplkZeoQy7/",
+      "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/2BduAMjvAauyJc/"
+    ],
+    "status": "ready_for_visual_review",
+    "media": [
+      {
+        "file": "002-0-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "19d86ef471e785f273f3cdf54d5da4a24cd870659e948fb1a9fa22def53e0232",
+        "source": "https://7.tru.ru/imgs/sSnTTXMrCF3Ckls4E5k2A3pDaxUcHZ7bE66GS28VJRhGEo"
+      },
+      {
+        "file": "002-1-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "0ee82781f08bbcf4278b920f9185f1f8197ed0f4e2e7a448f5bc3e0c434dc912",
+        "source": "https://7.tru.ru/imgs/sSnTTXMrCF3Ckls4E5k2A3pDaxUcHZ7bE66HFaK5itdLbb"
+      },
+      {
+        "file": "002-2-sheet.jpg",
+        "kind": "sheet",
+        "sha256": "39ce6fb3065864071cffbdb662d71e3a712253f69338382e332e75ee264d5236",
+        "source": "https://7.tru.ru/imgs/sSnTTXMrCF3Vndel6GnGbOj8FzQCTlg9duxjm73RuxLPXS"
+      }
+    ],
+    "attempts": [],
+    "title": "Toyota Noah 2022 года",
+    "year": 2022,
+    "mileage": "12000 км",
+    "engine": "2000 cм",
+    "trim": "S-Z",
+    "lot": "12568",
+    "grade": "4.5",
+    "auction": "TAA Yokohama",
+    "auction_date": "2026-10-10",
+    "sale_status": "Sold",
+    "source_price": "2 974 000 ¥",
+    "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/noah/4ZFdCt1Brob8Tnn/"
+  },
+  {
+    "number": 3,
+    "model": "Toyota Voxy",
+    "brand": "toyota",
+    "slugs": [
+      "voxy"
+    ],
+    "urls": [
+      "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/4WluTLAWHuaOEbJ/",
+      "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/56t1kM8MBtxfkur/",
+      "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/IYxYdOmUniu6Tt/"
+    ],
+    "status": "ready_for_visual_review",
+    "media": [
+      {
+        "file": "003-0-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "cdb1449edb8757f105a124b747861161916180be22618d5d6bd352ab95875039",
+        "source": "https://7.tru.ru/imgs/sJZMkk9uARFPnCNajEI7U6JwpWTqrTH5VJs3Be9jf5lEJk"
+      },
+      {
+        "file": "003-1-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "b8441277fccf042b0ddfa2a8af25f997efafab8092cddb186215bd9b48a05730",
+        "source": "https://7.tru.ru/imgs/sJZMkk9uARFPnCNajEI7U6JwpWTqrTH5VJs4onKrNGhJg8"
+      },
+      {
+        "file": "003-2-sheet.jpg",
+        "kind": "sheet",
+        "sha256": "56f82e5d60d88ef246b887b357092a52b052090dad5b61854be43bdfc1a27228",
+        "source": "https://7.tru.ru/imgs/sJZMkk9uARG9quzrLgLLvRD1UYPQDfR2v9TF6j4eZKPO3O"
+      }
+    ],
+    "attempts": [],
+    "title": "Toyota Voxy 2024 года",
+    "year": 2024,
+    "mileage": "15000 км",
+    "engine": "2000 cм",
+    "trim": "S-Z",
+    "lot": "12209",
+    "grade": "4.5",
+    "auction": "TAA Yokohama",
+    "auction_date": "2026-09-26",
+    "sale_status": "Sold",
+    "source_price": "2 850 000 ¥",
+    "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/voxy/4WluTLAWHuaOEbJ/"
+  },
+  {
+    "number": 4,
+    "model": "Honda Freed Spike",
+    "brand": "honda",
+    "slugs": [
+      "freed-spike"
+    ],
+    "urls": [
+      "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/01upyFxIWnvQjqM/",
+      "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/9uF2KZ1vJLHlcBH/",
+      "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/7a4Q1uHAXnxmEYk/"
+    ],
+    "status": "ready_for_visual_review",
+    "media": [
+      {
+        "file": "004-0-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "d408c1a01fa744495906291f84abc2ffcfcee217b66174273a343b0aacf14c04",
+        "source": "https://7.tru.ru/imgs/5NUhgTsNvM6RGkhtLWSiBNChRD07DLCth6RxEGS4hIl4zJ4645pQcQCRv"
+      },
+      {
+        "file": "004-1-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "e67df5878c99023ec334f5bc304d2cc1c076523798758c0d879135004b1e51c0",
+        "source": "https://7.tru.ru/imgs/5NUhgTsNvM6RGkhtLWSiBNChRD07DLCth6RxEGS4hIl4zJ4645q2Mw2zY"
+      },
+      {
+        "file": "004-2-sheet.jpg",
+        "kind": "sheet",
+        "sha256": "f55f4aefa462e2d84d97182143f09ea1bc19ad5101ec25667075986c7fc6c288",
+        "source": "https://7.tru.ru/imgs/5NUhgTsNvM6UQD9JkPlYDNGQIFed7G1HCApwPbvlfPXhDxEtegaYr6Dc8"
+      }
+    ],
+    "attempts": [],
+    "title": "Honda Freed spike 2016 года",
+    "year": 2016,
+    "mileage": "126000 км",
+    "engine": "1500 cм",
+    "trim": "G Premium",
+    "lot": "28021",
+    "grade": "4",
+    "auction": "Honda AA Tokyo",
+    "auction_date": "2026-10-19",
+    "sale_status": "Sold",
+    "source_price": "464 000 ¥",
+    "url": "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/01upyFxIWnvQjqM/"
+  },
+  {
+    "number": 5,
+    "model": "Honda Freed+",
+    "brand": "honda",
+    "slugs": [
+      "freed%2B",
+      "freed-plus",
+      "freed+"
+    ],
+    "urls": [],
+    "status": "not_found",
+    "media": [],
+    "attempts": []
+  },
+  {
+    "number": 6,
+    "model": "Honda Stepwgn",
+    "brand": "honda",
+    "slugs": [
+      "step-wagon",
+      "stepwgn"
+    ],
+    "urls": [
+      "https://atp-auto.ru/avto-iz-yaponii/honda/step-wagon/skSjqqq9T4yGQ/",
+      "https://atp-auto.ru/avto-iz-yaponii/honda/step-wagon/7auzyHZxEdtj0ui/",
+      "https://atp-auto.ru/avto-iz-yaponii/honda/step-wagon/0m1SGdqR0OIMvwg/"
+    ],
+    "status": "ready_for_visual_review",
+    "media": [
+      {
+        "file": "006-0-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "266babc7a852486b87cc881332d6d2777055d586e9acc3069493de1df503e267",
+        "source": "https://7.tru.ru/imgs/5NCZ8BIKbd8QvZ7q4wpG6rxqyQUHCTUvVZDYBcc1243QALNGWRYtwlHa0"
+      },
+      {
+        "file": "006-1-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "3fdb5dc0585e399bb315502e32cd8a73d32d9f27a47b9c9bee0ca55c53aad628",
+        "source": "https://7.tru.ru/imgs/5NCZ8BIKbd8QvZ7q4wpG6rxqyQUHCTUvVZDYBcc1243QALNGWRYF726SC"
+      },
+      {
+        "file": "006-2-sheet.jpg",
+        "kind": "sheet",
+        "sha256": "8ec86c897d425e652ef4a57b775ce0f2c49005c5dc06993b9478724733c628ac",
+        "source": "https://7.tru.ru/imgs/5NCZ8BIKbd8TGhXFCoTm8rBZpSZO6OiKhubXLGPhZaF5EAp694JBKAHuL"
+      }
+    ],
+    "attempts": [
+      {
+        "url": "https://atp-auto.ru/avto-iz-yaponii/honda/step-wagon/skSjqqq9T4yGQ/",
+        "error": "missing lot facts"
+      }
+    ],
+    "title": "Honda Step wagon 2023 года",
+    "year": 2023,
+    "mileage": "13000 км",
+    "engine": "2000 cм",
+    "trim": "e:HEV 7sea",
+    "lot": "10089",
+    "grade": "3.5",
+    "auction": "Honda AA Tokyo",
+    "auction_date": "2026-10-12",
+    "sale_status": "Sold",
+    "source_price": "2 625 000 ¥",
+    "url": "https://atp-auto.ru/avto-iz-yaponii/honda/step-wagon/7auzyHZxEdtj0ui/"
+  },
+  {
+    "number": 7,
+    "model": "Nissan NV200",
+    "brand": "nissan",
+    "slugs": [
+      "nv200",
+      "nv200-vanette"
+    ],
+    "urls": [
+      "https://atp-auto.ru/avto-iz-yaponii/nissan/nv200/AGvtRCOMhUscF/",
+      "https://atp-auto.ru/avto-iz-yaponii/nissan/nv200/JbGHpB8CTZUq7C/"
+    ],
+    "status": "ready_for_visual_review",
+    "media": [
+      {
+        "file": "007-0-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "17dac0eb6c11d161ab7e7a95041824bf604bdadf59307496b959e0d43dc64cb3",
+        "source": "https://7.tru.ru/imgs/pJFejfnOJwaw0KUHVpcAk28wBRY7imNS8piwd89JEbvvX2gnAnm"
+      },
+      {
+        "file": "007-1-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "453c7b498ab5807e7c68104690b8879729223d6265e5750e83b49b579256c35f",
+        "source": "https://7.tru.ru/imgs/pJFejfnOJwaw0KUHVpcAk28wBRY7imNS8piwd89JQ5PK2orqGjd"
+      },
+      {
+        "file": "007-2-sheet.jpg",
+        "kind": "sheet",
+        "sha256": "aef4c23cd14b4249fa54ca6ac24f38a8a9b51d490f585933884fbccf06880cc0",
+        "source": "https://7.tru.ru/imgs/pJFejfnOJwaN8cWGq7tAKp3E4loGb5wb2IYocxQxLVb6sTIf5cH"
+      }
+    ],
+    "attempts": [],
+    "title": "Nissan Nv200 2015 года",
+    "year": 2015,
+    "mileage": "234000 км",
+    "engine": "1600 cм",
+    "trim": "DX",
+    "lot": "62",
+    "grade": "RA",
+    "auction": "JU Shizuoka",
+    "auction_date": "2026-10-20",
+    "sale_status": "Sold",
+    "source_price": "92 000 ¥",
+    "url": "https://atp-auto.ru/avto-iz-yaponii/nissan/nv200/AGvtRCOMhUscF/"
+  },
+  {
+    "number": 8,
+    "model": "Suzuki Jimny",
+    "brand": "suzuki",
+    "slugs": [
+      "jimny"
+    ],
+    "urls": [
+      "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/8uxWscbFfMPTG/",
+      "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/O42h8fztqYEg89/",
+      "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/YWbtZePJRbeMVf/"
+    ],
+    "status": "ready_for_visual_review",
+    "media": [
+      {
+        "file": "008-0-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "01c23c048b0f217962f12b6a1b32e9b2493280138cbf829c2b97f3b3bd84dd89",
+        "source": "https://7.tru.ru/imgs/3dILdQi38K5Yb7q1hobvDu2I7M7YEpZ0JKQn1NgibNmCb9"
+      },
+      {
+        "file": "008-1-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "963b24b7394ac5362f4dd3de0de0a8d78a719a0ac3e4d4d040f3983ce6f9a26b",
+        "source": "https://7.tru.ru/imgs/3dILdQi38K5Yb7q1hobvDu2I7M7YEpZ0JKQnNWSqKpiGHV"
+      },
+      {
+        "file": "008-2-sheet.jpg",
+        "kind": "sheet",
+        "sha256": "c045c71d99baf51bac64ed09568657ae075e951490266e47109b1588fec60257",
+        "source": "https://7.tru.ru/imgs/3dILdQi38K5ZDWfpt4gyL0RFGxXacFZVakbyMlGHlAGRN9"
+      }
+    ],
+    "attempts": [],
+    "title": "Suzuki Jimny 2023 года",
+    "year": 2023,
+    "mileage": "25000 км",
+    "engine": "660 cм",
+    "trim": "XC 4WD",
+    "lot": "136",
+    "grade": "5",
+    "auction": "CAA Tokyo",
+    "auction_date": "2026-10-13",
+    "sale_status": "Sold",
+    "source_price": "1 582 000 ¥",
+    "url": "https://atp-auto.ru/avto-iz-yaponii/suzuki/jimny/8uxWscbFfMPTG/"
+  },
+  {
+    "number": 9,
+    "model": "Toyota Sienta",
+    "brand": "toyota",
+    "slugs": [
+      "sienta"
+    ],
+    "urls": [
+      "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/5ln26ROJjcMu8dU/",
+      "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/579eTGlNNXchh89/",
+      "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/IFY82ql1kPMijA/"
+    ],
+    "status": "ready_for_visual_review",
+    "media": [
+      {
+        "file": "009-0-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "7772bb566804a6edf1e4da25859480cff14d6ab576c92163c42201f396f0d481",
+        "source": "https://7.tru.ru/imgs/46oViKzUXj9DEZZR4bm9GAq2iRD6xUZZuR2MlNBDnLf2eKECbidckD"
+      },
+      {
+        "file": "009-1-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "7a753c6581a51dd58e5ccbb65d9a82f462b37c351e20afa78fac379edc27c2d4",
+        "source": "https://7.tru.ru/imgs/46oViKzUXj9DEZZR4bm9GAq2iRD6xUZZuR2MlNBDnLf2eKrnPufsRn"
+      },
+      {
+        "file": "009-2-sheet.jpg",
+        "kind": "sheet",
+        "sha256": "633268591d01c54a95cd3d5f3d4e7a28f478987eaed1a195679128dea24f97de",
+        "source": "https://7.tru.ru/imgs/2LoqcxsyNhDejqTWyG313DL7RKU9InIATKGU2BLPvBhsuJLB78M6DH3h"
+      }
+    ],
+    "attempts": [],
+    "title": "Toyota Sienta 2022 года",
+    "year": 2022,
+    "mileage": "77000 км",
+    "engine": "1500 cм",
+    "trim": "G Safety E",
+    "lot": "13011",
+    "grade": "3.5",
+    "auction": "AUCNET",
+    "auction_date": "2026-10-26",
+    "sale_status": "Sold",
+    "source_price": "1 355 000 ¥",
+    "url": "https://atp-auto.ru/avto-iz-yaponii/toyota/sienta/5ln26ROJjcMu8dU/"
+  },
+  {
+    "number": 10,
+    "model": "Suzuki Solio",
+    "brand": "suzuki",
+    "slugs": [
+      "solio"
+    ],
+    "urls": [
+      "https://atp-auto.ru/avto-iz-yaponii/suzuki/solio/4UiCycTOeD4NqIT/"
+    ],
+    "status": "ready_for_visual_review",
+    "media": [
+      {
+        "file": "010-0-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "6453b2a7c59048afe650a43ca2a24d83e44fc11d838628baede20f00ee7c7ee3",
+        "source": "https://7.tru.ru/imgs/sJZMkk9uARFPnCNajEI7U6JwpWTqrTH3IDaPWkfqKKnrOT"
+      },
+      {
+        "file": "010-1-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "ffb5501cc2193666a8cc3038946c18b2f257507b9369df169ee053a3b5ae2560",
+        "source": "https://7.tru.ru/imgs/sJZMkk9uARFPnCNajEI7U6JwpWTqrTH3IDaQJtRzjmjwlG"
+      },
+      {
+        "file": "010-2-sheet.jpg",
+        "kind": "sheet",
+        "sha256": "427a2815056bb800b297a2bb79b65a2abd934f3b7d3e6e494b00dd8856923ddf",
+        "source": "https://7.tru.ru/imgs/sJZMkk9uARG9quzrLgLLvRD1UYPQDfQZi3CsqpamvqRB9n"
+      }
+    ],
+    "attempts": [],
+    "title": "Suzuki Solio 2016 года",
+    "year": 2016,
+    "mileage": "68000 км",
+    "engine": "1200 cм",
+    "trim": "Hybrid MV",
+    "lot": "12122",
+    "grade": "3.5",
+    "auction": "TAA Yokohama",
+    "auction_date": "2026-09-26",
+    "sale_status": "Sold",
+    "source_price": "510 000 ¥",
+    "url": "https://atp-auto.ru/avto-iz-yaponii/suzuki/solio/4UiCycTOeD4NqIT/"
+  },
+  {
+    "number": 11,
+    "model": "Suzuki Hustler",
+    "brand": "suzuki",
+    "slugs": [
+      "hustler"
+    ],
+    "urls": [
+      "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/5IvJCiOt8lrjMn/",
+      "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/sG596pFRFpB4pi/",
+      "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/AGvtRCOLoHJpH/"
+    ],
+    "status": "ready_for_visual_review",
+    "media": [
+      {
+        "file": "011-0-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "43d2f3350fc09ece200cafce406d7b86a53c32fc9b18bcaeb105ce8be88d3978",
+        "source": "https://7.tru.ru/imgs/3cWKwuvvY3pL5JdE1f0hCAw7bA0wo2bADtiwmhFjFDlwBs"
+      },
+      {
+        "file": "011-1-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "531eea8110cb52ddcc66bf0b6fc7a42716e580419c030a424aba7fbd9c5a940c",
+        "source": "https://7.tru.ru/imgs/3cWKwuvvY3pL5JdE1f0hCAw7bA0wo2bADtix0rhsefhB9f"
+      },
+      {
+        "file": "011-2-sheet.jpg",
+        "kind": "sheet",
+        "sha256": "16581c69beb46f2494b841b4ff1e099fb574026335b42a10d18d041d00f88075",
+        "source": "https://7.tru.ru/imgs/3cWKwuvvY3pMxz44bUekKgm4LlZHWhcm53DI8Q6IPqFMds"
+      }
+    ],
+    "attempts": [],
+    "title": "Suzuki Hustler 2020 года",
+    "year": 2020,
+    "mileage": "27000 км",
+    "engine": "660 cм",
+    "trim": "Hybrid X T",
+    "lot": "3086",
+    "grade": "5",
+    "auction": "CAA Chubu",
+    "auction_date": "2026-09-23",
+    "sale_status": "Sold",
+    "source_price": "1 234 000 ¥",
+    "url": "https://atp-auto.ru/avto-iz-yaponii/suzuki/hustler/5IvJCiOt8lrjMn/"
+  },
+  {
+    "number": 12,
+    "model": "Mazda3",
+    "brand": "mazda",
+    "slugs": [
+      "mazda3",
+      "mazda-3",
+      "mazda3-fastback",
+      "mazda3-sedan",
+      "3"
+    ],
+    "urls": [],
+    "status": "ready_for_visual_review",
+    "media": [
+      {
+        "file": "012-0-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "894322c94b0ebb000c89b432e2005d88e086f83bc432c8a461fa8cfb176f626b",
+        "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdNdJ50kAGUjIO6WQ"
+      },
+      {
+        "file": "012-1-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "e9b00c16c7ef7fe37431274a4bf0246627f85aca0f8fc26f6c928181adf814c7",
+        "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGmFd3JeXR8AM2LgRwl8AdNdJ5a8Kj3SkKatD"
+      },
+      {
+        "file": "012-2-sheet.jpg",
+        "kind": "sheet",
+        "sha256": "96db61793236d701f317ad715ac00ea447e1d21f6660d8ec57583389b007b094",
+        "source": "https://7.tru.ru/imgs/t3s3ZwXbEOGFI5P1GzUMcxVfLTsLiWnJN9vLOFBQ5pifgk"
+      }
+    ],
+    "attempts": [],
+    "title": "Mazda Mazda3 2021 года",
+    "year": 2021,
+    "mileage": "15000 км",
+    "engine": "1500 cм",
+    "trim": "15S Tourin",
+    "lot": "12524",
+    "grade": "4.5",
+    "auction": "TAA Yokohama",
+    "auction_date": "2026-11-21",
+    "sale_status": "Sold",
+    "source_price": "1 616 000 ¥",
+    "url": "https://atp-auto.ru/avto-iz-yaponii/mazda/mazda3/4ZfQlKRYy20IQGv/"
+  },
+  {
+    "number": 13,
+    "model": "Mazda CX-3",
+    "brand": "mazda",
+    "slugs": [
+      "cx-3"
+    ],
+    "urls": [
+      "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-3/cA55XU757impv/",
+      "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-3/9rlzlFWqQrx1iL/",
+      "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-3/73viHZyRXZe6k2S/"
+    ],
+    "status": "ready_for_visual_review",
+    "media": [
+      {
+        "file": "013-0-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "1625e9b6fe1362d5741dd466dc72e738d6e166b7323a185e50c2aaa90259c0db",
+        "source": "https://7.tru.ru/imgs/3dYLsidxvDY3xTu8HLRqQQlRWmyocEi74aP6BVJuqAb2t9"
+      },
+      {
+        "file": "013-1-vehicle.jpg",
+        "kind": "vehicle",
+        "sha256": "ed49689ed675dac97d3fcea6aa56943f2f6090d9201172cff41d5b8ed598416a",
+        "source": "https://7.tru.ru/imgs/3dYLsidxvDY3xTu8HLRqQQlRWmyocEi74aP7p6lCZc86ZV"
+      },
+      {
+        "file": "013-2-sheet.jpg",
+        "kind": "sheet",
+        "sha256": "b420786045441bb9477874fa9b85c7eeec0ee8159dca487ee4ae355a1ab1cf87",
+        "source": "https://7.tru.ru/imgs/3dYLsidxvDY51JjwTqWtYwbPw9ozKUiRtKahnu0TAnvh69"
+      }
+    ],
+    "attempts": [],
+    "title": "Mazda Cx-3 2021 года",
+    "year": 2021,
+    "mileage": "79000 км",
+    "engine": "1500 cм",
+    "trim": "15S Urban",
+    "lot": "219",
+    "grade": "3.5",
+    "auction": "TAA Hiroshima",
+    "auction_date": "2026-10-27",
+    "sale_status": "Sold",
+    "source_price": "1 139 000 ¥",
+    "url": "https://atp-auto.ru/avto-iz-yaponii/mazda/cx-3/cA55XU757impv/"
+  }
+]
