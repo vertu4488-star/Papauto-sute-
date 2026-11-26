@@ -1,0 +1,136 @@
+{
+  "date": "2026-11-26",
+  "scope": "Internal research only; no new public photo cards; no new inventory or claimed sales. Alternative leads for incomplete ATP SEO photo queue.",
+  "baseline": {
+    "seo_pages": 135,
+    "exact_photo_pages": 65,
+    "related_photo_pages": 3,
+    "no_photo_pages": 67,
+    "prepared_pending_rights": 33,
+    "replacement_needed": 34
+  },
+  "candidates": [
+    {
+      "model_id": "korea-hyundai-i30",
+      "provider": "Autowini",
+      "source_url": "https://www.autowini.com/en/Cars/IC5564197/cars-detail",
+      "source_reported_note": "2020 Hyundai i30 PD 1.6 Turbo N Line, source reports 62596 km; domestic retail stock, not an auction",
+      "photo_review": "pending",
+      "rights_confirmed": false,
+      "auction_sheet_confirmed": false,
+      "publication_ready": false
+    },
+    {
+      "model_id": "korea-kia-forte",
+      "provider": "Autowini",
+      "source_url": "https://www.autowini.com/en/Cars/IC5631492/cars-detail",
+      "source_reported_note": "2013 Kia Forte 1.6 GDI Luxury; retail listing, older vehicle; not a current import recommendation",
+      "photo_review": "pending",
+      "rights_confirmed": false,
+      "auction_sheet_confirmed": false,
+      "publication_ready": false
+    },
+    {
+      "model_id": "china-geely-cityray",
+      "provider": "KENTOUR",
+      "source_url": "https://ktautoexport.com/stock/",
+      "source_reported_note": "Stock K26101206, 2024 Geely BoYue Cool (Cityray), 20000 km, source reports 1.5T, FOB 12200 USD",
+      "photo_review": "pending",
+      "rights_confirmed": false,
+      "auction_sheet_confirmed": false,
+      "publication_ready": false
+    },
+    {
+      "model_id": "china-byd-seagull",
+      "provider": "Eautoexport",
+      "source_url": "https://www.eautoexport.com/cars/byd-seagull-2023-exuy6aa3c37430da",
+      "source_reported_note": "2023 BYD Seagull Freedom Edition, retail supplier example",
+      "photo_review": "pending",
+      "rights_confirmed": false,
+      "auction_sheet_confirmed": false,
+      "publication_ready": false
+    },
+    {
+      "model_id": "china-changan-cs35-plus",
+      "provider": "Xiaotuauto",
+      "source_url": "https://www.xiaotuauto.com/auto/287978497",
+      "source_reported_note": "2022 Changan CS35PLUS Blue Whale NE 1.4T DCT Luxury Edition; supplier example",
+      "photo_review": "pending",
+      "rights_confirmed": false,
+      "auction_sheet_confirmed": false,
+      "publication_ready": false
+    },
+    {
+      "model_id": "china-byd-song-l",
+      "provider": "Guazi",
+      "source_url": "https://en.guazi.com/used-cars/byd/song-l-dm-i/2024-160-km-excellence-version-232129/",
+      "source_reported_note": "2024 Song L DM-i 160 km Excellence; retail supplier example",
+      "photo_review": "pending",
+      "rights_confirmed": false,
+      "auction_sheet_confirmed": false,
+      "publication_ready": false
+    },
+    {
+      "model_id": "china-byd-seal-06",
+      "provider": "AutoCango",
+      "source_url": "https://www.autocango.com/sku/usedcar-BYD-Seal-06-ACU9489720",
+      "source_reported_note": "2024 BYD Seal 06, PHEV; archival supplier lead, current availability unknown",
+      "photo_review": "pending",
+      "rights_confirmed": false,
+      "auction_sheet_confirmed": false,
+      "publication_ready": false
+    },
+    {
+      "model_id": "china-geely-galaxy-l6",
+      "provider": "Cargration",
+      "source_url": "https://www.cargration.com/en/car-detail/geely-galaxy-l6-2023-125km-car-006328/",
+      "source_reported_note": "2023 Galaxy L6; source reports 15900 km and FOB 10459 USD; supplier example",
+      "photo_review": "pending",
+      "rights_confirmed": false,
+      "auction_sheet_confirmed": false,
+      "publication_ready": false
+    },
+    {
+      "model_id": "china-geely-galaxy-e5",
+      "provider": "AutoCango",
+      "source_url": "https://www.autocango.com/sku/usedcar-Geely-Galaxy-E5-ACU90499231",
+      "source_reported_note": "2024 Galaxy E5, BEV; archival supplier lead, current availability unknown",
+      "photo_review": "pending",
+      "rights_confirmed": false,
+      "auction_sheet_confirmed": false,
+      "publication_ready": false
+    }
+  ],
+  "provider_options": [
+    {
+      "provider": "KoreaCarsAPI",
+      "url": "https://koreacarsapi.com/ru/auctions",
+      "note": "Six auction feeds; demo key offered. Obtain explicit right to commercial republication and self-hosting; no license inferred."
+    },
+    {
+      "provider": "Guazi",
+      "url": "https://en.guazi.com/topic/gps-supporter/",
+      "note": "Official referral promotion allows marketing materials for corresponding listings. Does not establish independent PapAuto commercial self-hosting and archive rights; ask for explicit permission."
+    },
+    {
+      "provider": "JP Sheet",
+      "url": "https://jpsheet.com/business/",
+      "note": "Business API advertises own-brand display. Confirm exact photo and sheet availability and self-hosting/archive terms."
+    }
+  ],
+  "remaining_no_exact_alternative": [
+    "korea-hyundai-creta",
+    "korea-hyundai-i20",
+    "korea-hyundai-bayon",
+    "korea-kia-ceed",
+    "korea-kia-kx3"
+  ],
+  "release_requirements": [
+    "Exact vehicle and market",
+    "original source photos visually checked, no rejected contexts",
+    "matching full inspection document for auction",
+    "documented written rights for commercial republication and self-hosting",
+    "source and price status accurately distinguished",
+    "no external links on customer pages"
+  ]
+}
