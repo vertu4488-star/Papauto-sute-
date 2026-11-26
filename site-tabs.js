@@ -1,6 +1,6 @@
 (() => {
   const groups = {
-    home: ['.hero', '.pa-thursday-statbar', '.pa-approved-intro', '.pa-thursday-markets', '.pa-thursday-feature', '#pa-vitrine', '.mobile-dashboard', '.proof-strip', '.marketplace-intro', '.budget-start', '#quick-selection'],
+    home: ['.hero', '.pa-thursday-statbar', '.pa-approved-intro', '.pa-thursday-markets', '.pa-thursday-feature', '#pa-vitrine', '.mobile-dashboard', '.proof-strip', '.marketplace-intro', '.budget-start', '#quick-selection', '#process', '#pa-offers'],
     catalog: ['#catalog', '#showcase', '#popular-models', '#smart-search', '#priority-models'],
     directions: ['#directions', '#route-planner', '#regional-delivery'],
     auctions: ['#seo-guides', '#auction-statistics', '#market-sources'],
@@ -16,6 +16,7 @@
   }));
   // Old catalogue and marketing links still use #assistant as the picker anchor.
   knownIds.set('assistant','select');
+  knownIds.set('process','home');
   const valid = new Set(Object.keys(groups));
   const getViewFromHash = () => {
     const id = decodeURIComponent(location.hash.slice(1));

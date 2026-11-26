@@ -51,7 +51,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar{grid-template-col
 body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar{grid-template-columns:minmax(0,1fr)!important}
 body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:0!important}
 }
-</style><link rel="stylesheet" href="/papauto-premium-calculator.css?v=20261125-japan"><link rel="stylesheet" href="/papauto-motion-home.css?v=20261126"><script defer src="/papauto-motion-home.js?v=20261126"></script><link rel="stylesheet" href="/papauto-scroll-reveal.css?v=20261126"><script defer src="/papauto-scroll-reveal.js?v=20261126"></script></head>
+</style><link rel="stylesheet" href="/papauto-premium-calculator.css?v=20261125-japan"><link rel="stylesheet" href="/papauto-motion-home.css?v=20261126"><script defer src="/papauto-motion-home.js?v=20261126"></script><link rel="stylesheet" href="/papauto-scroll-reveal.css?v=20261126"><script defer src="/papauto-scroll-reveal.js?v=20261126"></script><link rel="stylesheet" href="/papauto-journey-offers.css?v=20261126"><script defer src="/papauto-journey-offers.js?v=20261126"></script></head>
 <body class="pa-thursday-home">
 <a class="skip-link" href="#main">Перейти к содержанию</a>
 <header class="site-header">
@@ -106,7 +106,10 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
     <p class="pa-lexus-note">Без догадок. Баннеры показывают архивные примеры и рекламные иллюстрации, а не автомобили в наличии. Ниже представлены реальные фотографии и аукционные листы.</p>
   </div>
 </section>
-  <section class="budget-start wrap" aria-label="Быстрый подбор автомобиля по бюджету" id="budget-pick">
+  <section class="wrap pa-offers" id="pa-offers" aria-labelledby="pa-offers-title" aria-roledescription="карусель"><header class="pa-offers-heading"><p class="pa-editorial-kicker">PAPAUTO / ВЫГОДНЫЕ НАПРАВЛЕНИЯ</p><h2 id="pa-offers-title">Предложения <em>для вашего выбора.</em></h2></header><div class="pa-offers-stage"><article class="pa-offer" data-pa-offer="0"><div class="pa-offer-copy"><p class="pa-editorial-kicker">01 / ЛЬГОТНЫЙ ВВОЗ</p><h3>Автомобиль с выгодным расчётом</h3><p>Подберём варианты с учётом действующих условий льготного утильсбора. Право на льготу проверяется для конкретного покупателя и автомобиля.</p><a href="/podbor.html">Подобрать автомобиль <span aria-hidden="true">↗</span></a></div><div class="pa-offer-art" aria-hidden="true"><span>01</span><small>ПОДБОР</small></div></article>
+<article class="pa-offer" data-pa-offer="1"><div class="pa-offer-copy"><p class="pa-editorial-kicker">02 / ВЫБОР МОДЕЛИ</p><h3>Популярные модели под ваш бюджет</h3><p>Сравните марки, комплектации и направления ввоза. Рассчитайте предварительные расходы до вашего города.</p><a href="/?view=calculator">Рассчитать стоимость <span aria-hidden="true">↗</span></a></div><div class="pa-offer-art" aria-hidden="true"><span>02</span><small>РАСЧЁТ</small></div></article>
+<article class="pa-offer" data-pa-offer="2"><div class="pa-offer-copy"><p class="pa-editorial-kicker">03 / АУКЦИОННЫЕ ПРИМЕРЫ</p><h3>Реальные машины. Реальные документы.</h3><p>Изучите фотографии и аукционные листы завершённых торгов. Подберём актуальный аналог по вашему запросу.</p><a href="/gallery.html">Открыть каталог <span aria-hidden="true">↗</span></a></div><div class="pa-offer-art" aria-hidden="true"><span>03</span><small>КАТАЛОГ</small></div></article></div><div class="pa-offer-controls" hidden><div class="pa-offer-dots" aria-label="Выбор предложения"><button type="button" data-pa-offer-dot="0" aria-label="Предложение 1: ПОДБОР" aria-pressed="true">01</button><button type="button" data-pa-offer-dot="1" aria-label="Предложение 2: РАСЧЁТ" aria-pressed="false">02</button><button type="button" data-pa-offer-dot="2" aria-label="Предложение 3: КАТАЛОГ" aria-pressed="false">03</button></div><div class="pa-offer-arrows"><button type="button" data-pa-offer-prev aria-label="Предыдущее предложение">←</button><button type="button" data-pa-offer-pause aria-label="Приостановить смену предложений" aria-pressed="false">Ⅱ</button><button type="button" data-pa-offer-next aria-label="Следующее предложение">→</button></div></div><p class="pa-offer-note">Предварительные условия подбора, не фиксированные скидки или гарантированное наличие. Итоговая стоимость зависит от автомобиля и правил ввоза.</p></section>
+<section class="budget-start wrap" aria-label="Быстрый подбор автомобиля по бюджету" id="budget-pick">
     <div class="budget-start-head"><div><div class="eyebrow">БЫСТРЫЙ ПОДБОР</div><h2>Автомобиль под ваш бюджет.</h2></div><p>Выберите бюджет под ключ и направление. Покажем подтверждённые примеры для расчёта до Новосибирска.</p></div>
     <form id="paBudgetForm" class="calc-form">
       <div class="form-grid">
@@ -408,7 +411,17 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 
 
 
-  <section class="section wrap" id="quick-selection"><div class="eyebrow">ПОДБОР ЗА МИНУТУ</div><h2>Найдите автомобиль <em>без длинной анкеты</em></h2><p>Выберите страну, марку, модель и год. Цена и дополнительные параметры — по желанию.</p><a class="button button-primary" href="/podbor.html">Начать подбор ↗</a></section>
+  <section class="section wrap pa-journey" id="process" aria-labelledby="pa-journey-title">
+<div class="pa-journey-heading"><p class="pa-editorial-kicker">PAPAUTO / 07 ЭТАПОВ</p><h2 id="pa-journey-title">От аукциона <em>до ваших ключей.</em></h2><p class="pa-journey-motto">Ваш автомобиль. Ваш выбор. Наша работа.</p><p>Организуем покупку автомобиля из Японии, Южной Кореи и Китая с доставкой по всей России.</p></div>
+<ol class="pa-journey-track"><li class="pa-journey-step"><div class="pa-journey-number" aria-hidden="true">01</div><div class="pa-journey-detail"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18M3 12h18M3 19h18M8 2v6m8 1v6m-5 1v6"/></svg><div><h3>Индивидуальный подбор</h3><p>Учитываем ваши пожелания и бюджет. Находим подходящие автомобили.</p></div></div></li>
+<li class="pa-journey-step"><div class="pa-journey-number" aria-hidden="true">02</div><div class="pa-journey-detail"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14l6 6M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14ZM7 10l2 2 4-5"/></svg><div><h3>Проверка автомобиля</h3><p>Изучаем техническое состояние, историю, пробег, документы и аукционный лист при его наличии.</p></div></div></li>
+<li class="pa-journey-step"><div class="pa-journey-number" aria-hidden="true">03</div><div class="pa-journey-detail"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18H5zM8 7h8M8 11h2m4 0h2M8 15h2m4 0h2M8 18h2m4 0h2"/></svg><div><h3>Согласование стоимости</h3><p>Подготавливаем подробный расчёт расходов до вашего города.</p></div></div></li>
+<li class="pa-journey-step"><div class="pa-journey-number" aria-hidden="true">04</div><div class="pa-journey-detail"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l4-5h10l4 5v7H3zM3 13h18M6 18v3m12-3v3M6 15h2m8 0h2"/></svg><div><h3>Выкуп автомобиля</h3><p>Приобретаем согласованный с вами автомобиль и сопровождаем сделку.</p></div></div></li>
+<li class="pa-journey-step"><div class="pa-journey-number" aria-hidden="true">05</div><div class="pa-journey-detail"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15l3 5h12l3-5-9-4zM7 12V7h10v5M10 7V3h4v4M2 22h20"/></svg><div><h3>Международная логистика</h3><p>Организуем транспортировку автомобиля в Россию.</p></div></div></li>
+<li class="pa-journey-step"><div class="pa-journey-number" aria-hidden="true">06</div><div class="pa-journey-detail"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h10l4 4v14H5zM15 3v5h4M8 13l3 3 5-6"/></svg><div><h3>Таможня и оформление</h3><p>Сопровождаем таможенное оформление, получение СБКТС и ЭПТС.</p></div></div></li>
+<li class="pa-journey-step"><div class="pa-journey-number" aria-hidden="true">07</div><div class="pa-journey-detail"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10a5 5 0 1 0-5 5l-6 6v-4l6-6M14 10h.01"/></svg><div><h3>Передача ключей</h3><p>Организуем доставку автомобиля в ваш город с необходимым пакетом документов.</p></div></div></li></ol>
+<div class="pa-journey-end"><div><p class="pa-editorial-kicker">ДОСТАВКА ПО РОССИИ</p><h3>Расстояние — не ограничение.</h3><p>Новосибирск, Владивосток, Москва, Санкт-Петербург, Красноярск, Иркутск и другие города России.</p><p>Конкретные сроки, стоимость и условия оформления уточняются перед сделкой.</p></div><div class="pa-editorial-actions"><a href="/podbor.html">Подобрать автомобиль <span aria-hidden="true">→</span></a><a href="/?view=calculator">Рассчитать стоимость <span aria-hidden="true">↗</span></a></div></div></section>
+<section class="section wrap" id="quick-selection"><div class="eyebrow">ПОДБОР ЗА МИНУТУ</div><h2>Найдите автомобиль <em>без длинной анкеты</em></h2><p>Выберите страну, марку, модель и год. Цена и дополнительные параметры — по желанию.</p><a class="button button-primary" href="/podbor.html">Начать подбор ↗</a></section>
   <section class="section wrap" id="catalog">
     <div class="section-title-row catalog-heading"><div><div class="eyebrow">КАТАЛОГ И ПОИСК</div><div class="catalog-title-line"><h2>Найдите автомобиль<br><em>по своим параметрам.</em></h2></div></div><p>Фильтры как на автомобильной площадке: страна, марка, модель, год, бюджет, пробег и параметры двигателя. Можно заполнить запрос голосом через PAPAUTO SELECT.</p></div>
     
@@ -774,14 +787,6 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
       </div>
       <p id="accountStatus" class="account-status" role="status" aria-live="polite">Локальная история доступна на этом устройстве.</p>
     </div>
-  </section><section class="section wrap" id="process">
-    <div class="section-title-row"><div><div class="eyebrow">ПОНЯТНО ПО ЭТАПАМ</div><h2>От запроса<br><em>до автомобиля.</em></h2></div><p>Конкретные сроки и стоимость зависят от выбранного автомобиля, страны, логистики и оформления. Условия фиксируются до начала работ.</p></div>
-    <div class="process-grid">
-      <article><span>01</span><h3>Обсуждаем задачу</h3><p>Фиксируем бюджет, модели, требования к году, пробегу и состоянию.</p></article>
-      <article><span>02</span><h3>Ищем и проверяем</h3><p>Показываем найденные варианты и доступные подтверждения состояния и документов.</p></article>
-      <article><span>03</span><h3>Согласуем смету</h3><p>Разделяем известные расходы, предварительные оценки и то, что требует уточнения.</p></article>
-      <article><span>04</span><h3>Оформление и доставка</h3><p>После согласования условий сопровождаем процесс через выбранных партнёров.</p></article>
-    </div>
   </section>
 
   <section class="section wrap" id="checklist">
@@ -869,7 +874,7 @@ body.pa-thursday-home .pa-thursday-statbar.pa-approved-statbar>div{border-right:
 </nav>
 
 <script defer src="/site-config.js?v=20261109api"></script>
-<script src="/site-tabs.js?v=20261114-account-isolation" defer></script>
+<script src="/site-tabs.js?v=20261126-journey" defer></script>
 <script src="/account.js" defer></script>
 <script src="/app.js?v=20261125-delivery" defer></script>
 <script src="/marketplace-interactions.js" defer></script>
