@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-26",
+  "owner_decision": "Focus new SEO photo sourcing and content on commercially relevant, demanded models rather than filling arbitrary quotas. Five Korea models excluded from active sourcing by owner. No supplier outreach.",
+  "basis": {
+    "period": "2026 Jan-Aug",
+    "scope": "Russia nationwide used-car import volumes, not Novosibirsk search volume or resale turnover",
+    "sources": [
+      "https://www.alta.ru/external_news/131195/",
+      "https://www.fontanka.ru/2026/09/21/76654133/",
+      "https://www.vedomosti.ru/business/news/2026/09/21/1230553-import-avtomobilei"
+    ],
+    "japan_top": [
+      [
+        "Honda Freed",
+        14657
+      ],
+      [
+        "Honda Stepwgn",
+        12580
+      ],
+      [
+        "Honda Fit",
+        9973
+      ],
+      [
+        "Toyota Corolla",
+        9893
+      ],
+      [
+        "Suzuki Jimny",
+        9082
+      ]
+    ],
+    "korea_top": [
+      [
+        "Kia K3",
+        2318
+      ],
+      [
+        "Kia K5",
+        1900
+      ],
+      [
+        "Hyundai Avante",
+        1500
+      ],
+      [
+        "Hyundai Sonata",
+        1400
+      ],
+      [
+        "Chevrolet Trailblazer",
+        1300
+      ]
+    ],
+    "korea_counts_except_k3": "rounded figures"
+  },
+  "exclude_from_new_seo_sourcing": [
+    "korea-hyundai-creta",
+    "korea-hyundai-i20",
+    "korea-hyundai-bayon",
+    "korea-kia-ceed",
+    "korea-kia-kx3"
+  ],
+  "priority_existing_japan": [
+    "japan-honda-freed",
+    "japan-honda-fit",
+    "japan-toyota-corolla",
+    "japan-suzuki-jimny",
+    "japan-toyota-sienta",
+    "japan-toyota-aqua",
+    "japan-toyota-yaris",
+    "japan-toyota-yaris-cross",
+    "japan-honda-vezel",
+    "japan-nissan-note",
+    "japan-nissan-note-e-power",
+    "japan-toyota-raize",
+    "japan-toyota-corolla-fielder"
+  ],
+  "priority_existing_korea": [
+    "korea-kia-k3-cerato",
+    "korea-kia-k5",
+    "korea-hyundai-avante-elantra",
+    "korea-hyundai-sonata",
+    "korea-kia-sportage",
+    "korea-kia-seltos",
+    "korea-hyundai-tucson",
+    "korea-hyundai-casper",
+    "korea-kia-morning-picanto",
+    "korea-hyundai-venue",
+    "korea-chevrolet-korea-trax"
+  ],
+  "priority_photo_gaps": [
+    "korea-kia-sportage"
+  ],
+  "next_page_candidates": [
+    {
+      "model": "Honda Stepwgn",
+      "market": "japan",
+      "reason": "rank 2 national used import Jan-Aug 2026; verify exact variant and export eligibility"
+    },
+    {
+      "model": "Chevrolet Trailblazer",
+      "market": "korea",
+      "reason": "rank 5 national used import Jan-Aug 2026; distinguish from Trax and verify exact variant and tariff"
+    }
+  ],
+  "secondary_korea_source_leads": [
+    "korea-kia-sorento",
+    "korea-audi-a6",
+    "korea-hyundai-i30",
+    "korea-kia-soul",
+    "korea-kia-forte",
+    "korea-kia-carens",
+    "korea-genesis-g70",
+    "korea-renault-korea-sm3"
+  ],
+  "china": "Leave existing China source leads intact; independently prioritize by demand before importing.",
+  "seo_migration": "Existing URLs and sitemap remain unchanged. Review GSC and Yandex search impressions before retirement or redirect; never redirect unrelated models. No fabricated ranking or keyword volumes. Do not equate import counts with local search demand.",
+  "verified_live_photo_pages": 101,
+  "existing_page_count": 135,
+  "unfilled_photo_pages": 34,
+  "active_remaining_source_leads": 29,
+  "excluded_count": 5
+}

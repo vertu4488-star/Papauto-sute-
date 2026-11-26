@@ -118,13 +118,7 @@
       "note": "Business API advertises own-brand display. Confirm exact photo and sheet availability and self-hosting/archive terms."
     }
   ],
-  "remaining_no_exact_alternative": [
-    "korea-hyundai-creta",
-    "korea-hyundai-i20",
-    "korea-hyundai-bayon",
-    "korea-kia-ceed",
-    "korea-kia-kx3"
-  ],
+  "remaining_no_exact_alternative": [],
   "release_requirements": [
     "Exact vehicle and market",
     "original source photos visually checked, no rejected contexts",
@@ -132,5 +126,13 @@
     "documented written rights for commercial republication and self-hosting",
     "source and price status accurately distinguished",
     "no external links on customer pages"
-  ]
+  ],
+  "excluded_by_owner": [
+    "korea-hyundai-creta",
+    "korea-hyundai-i20",
+    "korea-hyundai-bayon",
+    "korea-kia-ceed",
+    "korea-kia-kx3"
+  ],
+  "notes": "Superseded by research/seo-demand-priorities-20261126.json for active sourcing. Five Korea gaps excluded."
 }
