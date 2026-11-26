@@ -72,7 +72,7 @@
     completeText:'Отправить заявку',
     nextText:'Продолжить',
     prevText:'Назад',
-    completedHtml:'<h2>Заявка принята</h2><p>Результат подтверждён сервером PapAuto.</p>',
+    completedHtml:"<div class=\"pa-completion\"><div class=\"pa-completion-check\" aria-hidden=\"true\">✓</div><span class=\"pa-completion-brand\">PapAuto</span><h2>Заявка принята</h2><p class=\"pa-completion-lead\">Спасибо! Мы получили вашу заявку и скоро свяжемся с вами.</p><p class=\"pa-completion-detail\">Менеджер PapAuto уточнит детали подбора автомобиля и ответит удобным для вас способом связи.</p><div class=\"pa-completion-actions\"><a href=\"/\">На главную</a><a href=\"/gallery.html\">Посмотреть автомобили</a></div></div>",
     clearInvisibleValues:'onComplete',
     // Commit native phone and Telegram input on each keystroke; onBlur can
     // race the final iOS tap and trigger a false required-field error.
@@ -346,10 +346,15 @@
   });
   survey.onComplete.add(()=>{
     if(state!=='done')return;
-    head.textContent=savedNotification?'Ваша заявка отправлена!':'Ваша заявка сохранена!';
-    note.textContent=savedNotification
-      ? 'Заявка сохранена в PapAuto и передана менеджеру через Telegram. Мы свяжемся с вами.'
-      : 'Заявка сохранена, но Telegram пока не подтвердил доставку. Повторно отправлять не нужно.';
+    head.textContent='Заявка принята';
+    note.textContent="Спасибо! Мы получили вашу заявку и скоро свяжемся с вами.";
+    const detail=document.getElementById('surveySuccessDetail');
+    if(detail)detail.textContent="Менеджер PapAuto уточнит детали подбора автомобиля и ответит удобным для вас способом связи.";
+    const deliveryNote=document.getElementById('surveyDeliveryNote');
+    if(deliveryNote)deliveryNote.hidden=savedNotification;
+    // Keep the successful completion as a single clear screen.
+    // Show the additional delivery warning only when notification is unconfirmed.
+    if(savedNotification)return;
     if(typeof dialog?.showModal==='function')dialog.showModal();
     else if(dialog)dialog.setAttribute('open','');
   });

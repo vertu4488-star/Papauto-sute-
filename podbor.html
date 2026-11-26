@@ -9,7 +9,7 @@
 <link rel="canonical" href="https://papauto.ru/podbor.html">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="stylesheet" href="/vendor/surveyjs/survey-core.min.css?v=3.2.4">
-<link rel="stylesheet" href="/survey-podbor.css?v=2">
+<link rel="stylesheet" href="/survey-podbor.css?v=20261126-success">
 <script>
 window.addEventListener('error',function(e){
   var box=document.getElementById('surveyStatus');
@@ -48,8 +48,10 @@ window.addEventListener('unhandledrejection',function(e){
 </main>
 <dialog id="surveySuccessDialog" class="pa-dialog" aria-labelledby="surveySuccessTitle">
 <div class="pa-check" aria-hidden="true">✓</div>
-<h2 id="surveySuccessTitle">Ваша заявка отправлена!</h2>
-<p id="surveySuccessText">Заявка принята менеджером PapAuto.</p>
+<h2 id="surveySuccessTitle">Заявка принята</h2>
+<p id="surveySuccessText">Спасибо! Мы получили вашу заявку и скоро свяжемся с вами.</p>
+<p id="surveySuccessDetail">Менеджер PapAuto уточнит детали подбора автомобиля и ответит удобным для вас способом связи.</p>
+<p id="surveyDeliveryNote" class="pa-delivery-note" hidden>Заявка сохранена, но доставка уведомления пока не подтверждена. Повторно отправлять её не нужно.</p>
 <button id="surveySuccessClose" type="button">Понятно</button>
 </dialog>
 <footer class="pa-footer">PAPAUTO · Япония, Корея, Китай · <a href="/privacy.html">Политика конфиденциальности</a></footer>
@@ -61,6 +63,6 @@ window.addEventListener('unhandledrejection',function(e){
 <script defer src="/vendor/surveyjs/survey.i18n.min.js?v=3.2.4"></script>
 <script defer src="/vendor/surveyjs/survey-js-ui.min.js?v=3.2.4"></script>
 <script defer src="/survey-similar-prefill.js?v=20261113-auction-trims"></script>
-<script defer src="/survey-podbor.js?v=20261115-validate-fix2"></script>
+<script defer src="/survey-podbor.js?v=20261126-success"></script>
 </body>
 </html>
