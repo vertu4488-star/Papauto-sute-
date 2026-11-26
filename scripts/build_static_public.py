@@ -588,6 +588,9 @@ def copy_public_files() -> list[str]:
     if model_coverage['supplier_cards'] != model_coverage['supplier_matches']:
         raise RuntimeError('PAPAUTO_MODEL_STATS: missing inline supplier cards')
 
+    from enrich_model_directory import render_directory
+    render_directory(TARGET, model_coverage)
+
     # The gallery compiler generates /lots/*.html after the initial page loop.
     # Reconcile every finished HTML page with the global warm skin, including
     # exact auction lot pages and legacy retirement pages. Photo bytes are untouched.
