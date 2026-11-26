@@ -592,6 +592,8 @@ def copy_public_files() -> list[str]:
     render_atp33_references(ROOT, TARGET, model_coverage)
     from render_atp_japan9 import render as render_atp_japan9
     render_atp_japan9(ROOT, TARGET, model_coverage, published_registry)
+    from render_atp_honda5 import render as render_atp_honda5
+    render_atp_honda5(ROOT, TARGET, model_coverage, published_registry)
     from enrich_model_directory import render_directory
     render_directory(TARGET, model_coverage)
 

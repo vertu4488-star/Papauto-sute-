@@ -8,7 +8,7 @@
     "artifact_id": 15114283349
   },
   "rights_confirmed": false,
-  "publication_status": "owner_approved_pending_full_registry_deduplication_and_release_gate",
+  "publication_status": "owner_approved_for_archival_model_pages_pending_verified_release",
   "scope": "archive reference only; not live stock; no third-party license assertion",
   "lots": [
     {
@@ -34,7 +34,16 @@
           "kind": "sheet",
           "sha256": "6aeefcb75943819c11d0e369c811c8a496bc019242f74cd19bcf396a5a78d6c5"
         }
-      ]
+      ],
+      "body": "GP3",
+      "mileage": "163 000 км",
+      "trim": "Hybrid Jus",
+      "grade": "3",
+      "source_price": "64 000 ¥",
+      "engine": "1.5 л",
+      "status": "sold",
+      "model_id": "japan-honda-freed-spike",
+      "export_restricted": true
     },
     {
       "model": "Honda Freed Spike",
@@ -59,7 +68,16 @@
           "kind": "sheet",
           "sha256": "3276c1e567ccdcaf94cd0a66d373db1c03f3c9ed8bcb4c0e028915eb0d650031"
         }
-      ]
+      ],
+      "body": "GP3",
+      "mileage": "204 000 км",
+      "trim": "Hybrid Pre",
+      "grade": "3.5",
+      "source_price": "82 000 ¥",
+      "engine": "1.5 л",
+      "status": "sold",
+      "model_id": "japan-honda-freed-spike",
+      "export_restricted": true
     },
     {
       "model": "Honda Freed Spike",
@@ -84,7 +102,16 @@
           "kind": "sheet",
           "sha256": "4cdfb70c610d3a15ed3eb50207c26c3e14ea03d7de4aa74b937ea645d40b1377"
         }
-      ]
+      ],
+      "body": "GP3",
+      "mileage": "80 000 км",
+      "trim": "Hybrid Jus",
+      "grade": "R",
+      "source_price": "192 000 ¥",
+      "engine": "1.5 л",
+      "status": "sold",
+      "model_id": "japan-honda-freed-spike",
+      "export_restricted": true
     },
     {
       "model": "Honda Stepwgn",
@@ -109,7 +136,16 @@
           "kind": "sheet",
           "sha256": "2bcc1ebfe29cbf0a32e5af53caed5ade806f1c7f6b86b7c1356b7773c18827af"
         }
-      ]
+      ],
+      "body": "RP3",
+      "mileage": "38 000 км",
+      "trim": "Spada",
+      "grade": "4.5",
+      "source_price": "1 625 000 ¥",
+      "engine": "1.5 л",
+      "status": "sold",
+      "model_id": "japan-honda-stepwgn",
+      "export_restricted": false
     },
     {
       "model": "Honda Stepwgn",
@@ -134,7 +170,16 @@
           "kind": "sheet",
           "sha256": "e1a086640de123533827cd2778c0356549cc31923a16c058dc1d682525e87306"
         }
-      ]
+      ],
+      "body": "RP3",
+      "mileage": "54 000 км",
+      "trim": "Spada Cool",
+      "grade": "4",
+      "source_price": "1 686 000 ¥",
+      "engine": "1.5 л",
+      "status": "sold",
+      "model_id": "japan-honda-stepwgn",
+      "export_restricted": false
     }
   ],
   "next_review": {

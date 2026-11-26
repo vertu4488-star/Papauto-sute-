@@ -90,3 +90,5 @@ Owner release instruction 2026-11-26: exactly the 33 visually reviewed SEO refer
 
 
 Owner instruction 2026-11-26: publish only nine individually reviewed ATP Japan reference examples in frozen manifest SHA256 857fb42c8b651403ad44a11e0bcd459caf790a4c20d734e4b82d714d2962630d, numbers 1,2,3,7,8,10,11,12,13, with 27 original files. Keep separate from 666-lot gallery, no license or availability claim; do not publish numbers 4,6,9 (missing full sheet or street photos) or 5 (not found). Exact source/lot/price attribution and duplicate checks required. No supplier outreach.
+
+Owner expressly approved on 2026-11-26 the exact five cards shown in PapAuto_Honda_ATP_5_cards_2026-11-26.pdf, and then explicitly requested Render publication. Receipt research/owner-reviewed-honda-atp-5-20261126.json pins 15 original JPEG SHA256 digests and the reviewed PDF digest. Separate historical SEO model references only; no claim of third-party license or available stock; no new gallery lots, no other exceptions, no external supplier links. All other release safeguards unchanged. Hybrid Freed Spike examples are archive only, not a direct import offer.
