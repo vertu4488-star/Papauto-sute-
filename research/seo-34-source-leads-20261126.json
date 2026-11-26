@@ -10,7 +10,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "high"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "korea-kia-sorento",
@@ -19,7 +19,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "secondary_verify_demand"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "korea-audi-a6",
@@ -28,7 +28,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "secondary_verify_demand"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "korea-hyundai-i30",
@@ -37,7 +37,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "secondary_verify_demand"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "korea-kia-soul",
@@ -46,7 +46,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "secondary_verify_demand"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "korea-kia-forte",
@@ -55,7 +55,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "secondary_verify_demand"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "korea-kia-carens",
@@ -64,7 +64,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "secondary_verify_demand"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "korea-genesis-g70",
@@ -73,7 +73,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "secondary_verify_demand"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "korea-renault-korea-sm3",
@@ -82,7 +82,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "secondary_verify_demand"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-geely-atlas-boyue",
@@ -91,7 +91,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-geely-cityray",
@@ -100,7 +100,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-byd-song-plus",
@@ -109,7 +109,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-byd-song-pro",
@@ -118,7 +118,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-byd-dolphin",
@@ -127,7 +127,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-byd-seagull",
@@ -136,7 +136,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-byd-yuan-plus-atto-3",
@@ -145,7 +145,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-byd-qin-plus",
@@ -154,7 +154,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-changan-cs35-plus",
@@ -163,7 +163,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-byd-qin-l",
@@ -172,7 +172,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-byd-destroyer-05",
@@ -181,7 +181,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-byd-song-l",
@@ -190,7 +190,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-byd-seal-06",
@@ -199,7 +199,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-byd-e2",
@@ -208,7 +208,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-geely-galaxy-l6",
@@ -217,7 +217,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-geely-galaxy-e5",
@@ -226,7 +226,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-haval-h4",
@@ -235,7 +235,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-changan-alsvin",
@@ -244,7 +244,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-changan-lumin",
@@ -253,7 +253,7 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     },
     {
       "model_id": "china-gac-aion-y",
@@ -262,11 +262,11 @@
       "status": "source_lead_only",
       "media_reviewed": false,
       "published": false,
-      "priority": "china_demand_review"
+      "priority": "secondary_deferred_under_owner_P0_focus"
     }
   ],
   "unresolved": [],
-  "notes": "Supplier and archive leads, not verified photo packages. Indexed listings can disappear. No external customer links, no claim of auction sale, no publication until image/model match checked. Five models removed from active sourcing 2026-11-26 by owner; see research/seo-demand-priorities-20261126.json. Keep existing URLs until index review.",
+  "notes": "Supplier and archive leads, not verified photo packages. Indexed listings can disappear. No external customer links, no claim of auction sale, no publication until image/model match checked. Five models removed from active sourcing 2026-11-26 by owner; see research/seo-demand-priorities-20261126.json. Keep existing URLs until index review. Owner's new P0 focus supersedes earlier priority assignments. No deletion of published model URLs.",
   "excluded_by_owner": [
     {
       "model_id": "korea-hyundai-creta",
@@ -296,5 +296,6 @@
       "status": "excluded_from_new_photo_sourcing"
     }
   ],
-  "active_remaining": 29
+  "active_remaining": 29,
+  "primary_focus_ref": "research/seo-demand-priorities-20261126.json"
 }

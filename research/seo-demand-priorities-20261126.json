@@ -1,6 +1,6 @@
 {
   "date": "2026-11-26",
-  "owner_decision": "Focus new SEO photo sourcing and content on commercially relevant, demanded models rather than filling arbitrary quotas. Five Korea models excluded from active sourcing by owner. No supplier outreach.",
+  "owner_decision": "Focus new SEO photo sourcing and content on commercially relevant, demanded models rather than filling arbitrary quotas. Five Korea models excluded from active sourcing by owner. No supplier outreach. Owner narrowed main SEO focus to exactly 5 Japan, 4 Korea, and Haval Jolion (China); other models maintained but secondary. Jolion included based on verified October demand, subject to landed-price competitiveness.",
   "basis": {
     "period": "2026 Jan-Aug",
     "scope": "Russia nationwide used-car import volumes, not Novosibirsk search volume or resale turnover",
@@ -66,43 +66,27 @@
     "japan-honda-freed",
     "japan-honda-fit",
     "japan-toyota-corolla",
-    "japan-suzuki-jimny",
-    "japan-toyota-sienta",
-    "japan-toyota-aqua",
-    "japan-toyota-yaris",
-    "japan-toyota-yaris-cross",
-    "japan-honda-vezel",
-    "japan-nissan-note",
-    "japan-nissan-note-e-power",
-    "japan-toyota-raize",
-    "japan-toyota-corolla-fielder"
+    "japan-suzuki-jimny"
   ],
   "priority_existing_korea": [
     "korea-kia-k3-cerato",
     "korea-kia-k5",
     "korea-hyundai-avante-elantra",
-    "korea-hyundai-sonata",
-    "korea-kia-sportage",
-    "korea-kia-seltos",
-    "korea-hyundai-tucson",
-    "korea-hyundai-casper",
-    "korea-kia-morning-picanto",
-    "korea-hyundai-venue",
-    "korea-chevrolet-korea-trax"
+    "korea-hyundai-sonata"
   ],
-  "priority_photo_gaps": [
-    "korea-kia-sportage"
-  ],
+  "priority_photo_gaps": [],
   "next_page_candidates": [
     {
       "model": "Honda Stepwgn",
       "market": "japan",
-      "reason": "rank 2 national used import Jan-Aug 2026; verify exact variant and export eligibility"
+      "reason": "rank 2 national used import Jan-Aug 2026; verify exact variant and export eligibility",
+      "priority": "P0"
     },
     {
       "model": "Chevrolet Trailblazer",
       "market": "korea",
-      "reason": "rank 5 national used import Jan-Aug 2026; distinguish from Trax and verify exact variant and tariff"
+      "reason": "rank 5 national used import Jan-Aug 2026; distinguish from Trax and verify exact variant and tariff",
+      "priority": "deferred"
     }
   ],
   "secondary_korea_source_leads": [
@@ -121,5 +105,108 @@
   "existing_page_count": 135,
   "unfilled_photo_pages": 34,
   "active_remaining_source_leads": 29,
-  "excluded_count": 5
+  "excluded_count": 5,
+  "primary_focus": [
+    {
+      "market": "japan",
+      "model": "Honda Freed",
+      "id": "japan-honda-freed",
+      "priority": "P0",
+      "page_status": "existing",
+      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+    },
+    {
+      "market": "japan",
+      "model": "Honda Stepwgn",
+      "id": "japan-honda-stepwgn",
+      "priority": "P0",
+      "page_status": "missing_create_first",
+      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+    },
+    {
+      "market": "japan",
+      "model": "Honda Fit",
+      "id": "japan-honda-fit",
+      "priority": "P0",
+      "page_status": "existing",
+      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+    },
+    {
+      "market": "japan",
+      "model": "Toyota Corolla",
+      "id": "japan-toyota-corolla",
+      "priority": "P0",
+      "page_status": "existing",
+      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+    },
+    {
+      "market": "japan",
+      "model": "Suzuki Jimny",
+      "id": "japan-suzuki-jimny",
+      "priority": "P0",
+      "page_status": "existing",
+      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+    },
+    {
+      "market": "korea",
+      "model": "Kia K3",
+      "id": "korea-kia-k3-cerato",
+      "priority": "P0",
+      "page_status": "existing",
+      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+    },
+    {
+      "market": "korea",
+      "model": "Kia K5",
+      "id": "korea-kia-k5",
+      "priority": "P0",
+      "page_status": "existing",
+      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+    },
+    {
+      "market": "korea",
+      "model": "Hyundai Avante",
+      "id": "korea-hyundai-avante-elantra",
+      "priority": "P0",
+      "page_status": "existing",
+      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+    },
+    {
+      "market": "korea",
+      "model": "Hyundai Sonata",
+      "id": "korea-hyundai-sonata",
+      "priority": "P0",
+      "page_status": "existing",
+      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+    },
+    {
+      "market": "china",
+      "model": "Haval Jolion",
+      "id": "china-haval-jolion",
+      "priority": "P0",
+      "page_status": "existing",
+      "focus": "Model-specific search intent, original exact-model photo examples, transparent landed cost, verified trim and import eligibility"
+    }
+  ],
+  "priority_existing_china": [
+    "china-haval-jolion"
+  ],
+  "jolion_demand": {
+    "period": "October 2026",
+    "new_sales_russia": 7100,
+    "used_sales_russia": 3074,
+    "used_yoy_pct": 55.3,
+    "scope": "Russian domestic sales and used registrations, not import volume",
+    "sources": [
+      "https://www.autostat.ru/press-releases/63433/",
+      "https://avtostat-info.ru/news/12786"
+    ],
+    "decision": "Include as China P0; compare total delivered Novosibirsk price against Russian local offers before recommending specific imports."
+  },
+  "execution_order": [
+    "Create dedicated Honda Stepwgn SEO page, verify model-specific export-eligible trim and existing approved archive photos, add sitemap and internal links",
+    "Audit nine existing P0 pages for title/H1, canonical, precise model photos, data and calculator handoff",
+    "Compare Yandex and Google impressions, clicks and ranking for Novosibirsk model search intents",
+    "Prioritize exact low-power trim by documentation; do not promise reduced fees on model name alone"
+  ]
 }
