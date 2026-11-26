@@ -92,3 +92,9 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}button{cur
   .gallery-categories::-webkit-scrollbar{display:none}
   .gallery-tab{flex:0 0 auto;min-height:43px}
 }
+
+/* Direct gallery entry: title, filters, cards; no introductory hero. */
+.gallery-container.gallery-content{padding-top:20px}
+.gallery-content .gallery-section-title{margin-bottom:14px;align-items:center;gap:12px}
+.gallery-content .gallery-section-title h1{font-size:clamp(24px,2.5vw,34px);line-height:1.2;letter-spacing:-.035em;font-weight:500;margin:0;color:#352820}
+@media(max-width:680px){.gallery-container.gallery-content{padding-top:12px}.gallery-content .gallery-section-title{margin-bottom:10px;gap:8px;flex-wrap:wrap}.gallery-content .gallery-section-title h1{font-size:24px}}
