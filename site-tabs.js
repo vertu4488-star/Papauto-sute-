@@ -1,12 +1,12 @@
 (() => {
   const groups = {
-    home: ['.hero', '.pa-thursday-statbar', '.pa-approved-intro', '.pa-thursday-markets', '.pa-thursday-feature', '#pa-vitrine', '.mobile-dashboard', '.proof-strip', '.marketplace-intro', '.budget-start', '#quick-selection', '#process', '#pa-offers'],
+    home: ['.hero', '.pa-approved-intro', '#pa-vitrine'],
     catalog: ['#catalog', '#showcase', '#popular-models', '#smart-search', '#priority-models'],
     directions: ['#directions', '#route-planner', '#regional-delivery'],
     auctions: ['#seo-guides', '#auction-statistics', '#market-sources'],
     calculator: ['#calculator', '#currency-converter', '#logisticsBenchmarks'],
     select: [], // PAPAUTO SELECT has moved to /podbor.html; no long account feed.
-    about: ['#process', '#checklist', '#auto-import-russia', '#faq', '#request'],
+    about: ['#checklist', '#auto-import-russia', '#faq', '#request'],
     account: ['#account'] // Account appears only when explicitly opened; never on the market page.
   };
   const all = Object.values(groups).flat();
@@ -16,7 +16,7 @@
   }));
   // Old catalogue and marketing links still use #assistant as the picker anchor.
   knownIds.set('assistant','select');
-  knownIds.set('process','home');
+
   const valid = new Set(Object.keys(groups));
   const getViewFromHash = () => {
     const id = decodeURIComponent(location.hash.slice(1));
