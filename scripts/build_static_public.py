@@ -591,6 +591,10 @@ def copy_public_files() -> list[str]:
     from enrich_model_directory import render_directory
     render_directory(TARGET, model_coverage)
 
+    # Source-reported research facts only; no unlicensed third-party images.
+    from append_atp_model_references import append_references
+    append_references(ROOT, TARGET)
+
     # The gallery compiler generates /lots/*.html after the initial page loop.
     # Reconcile every finished HTML page with the global warm skin, including
     # exact auction lot pages and legacy retirement pages. Photo bytes are untouched.

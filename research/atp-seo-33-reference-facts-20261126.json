@@ -1,0 +1,273 @@
+{
+  "date": "2026-11-26",
+  "source": "ATP Auto; approved private preview manifest",
+  "source_manifest_sha256": "6a82e9ffd6d14a42759982180357b69330bff49a5be2245ba159b4668435cc5a",
+  "scope": "Factual text only, no photo, no offer, no asserted sale or verified mileage",
+  "rights_confirmed": false,
+  "rows": [
+    {
+      "model_id": "korea-hyundai-avante-elantra",
+      "title": "Hyundai Avante CN7",
+      "year": 2021,
+      "mileage_km": 50995,
+      "source_number": "42229195",
+      "note": "Цена в источнике требует дополнительной проверки."
+    },
+    {
+      "model_id": "korea-hyundai-tucson",
+      "title": "Hyundai Tucson NX4",
+      "year": 2023,
+      "mileage_km": 97178,
+      "source_number": "42302863",
+      "note": "Объём и комплектация в источнике расходятся."
+    },
+    {
+      "model_id": "korea-hyundai-sonata",
+      "title": "Hyundai Sonata DN8",
+      "year": 2023,
+      "mileage_km": 57132,
+      "source_number": "42363609",
+      "note": null
+    },
+    {
+      "model_id": "korea-kia-k5",
+      "title": "Kia K5",
+      "year": 2023,
+      "mileage_km": 47288,
+      "source_number": "42245392",
+      "note": null
+    },
+    {
+      "model_id": "korea-kia-carnival",
+      "title": "Kia Carnival",
+      "year": 2023,
+      "mileage_km": 64636,
+      "source_number": "43081988",
+      "note": "Объём двигателя требует сверки."
+    },
+    {
+      "model_id": "korea-kia-seltos",
+      "title": "Kia Seltos",
+      "year": 2023,
+      "mileage_km": 7097,
+      "source_number": "43018218",
+      "note": "Объём и комплектация требуют сверки."
+    },
+    {
+      "model_id": "korea-hyundai-santa-fe",
+      "title": "Hyundai Santa Fe TM",
+      "year": 2019,
+      "mileage_km": 102465,
+      "source_number": "42391290",
+      "note": "Объём и комплектация в источнике расходятся."
+    },
+    {
+      "model_id": "korea-hyundai-palisade",
+      "title": "Hyundai Palisade",
+      "year": 2023,
+      "mileage_km": 91288,
+      "source_number": "42384977",
+      "note": "Характеристики двигателя в источнике противоречивы."
+    },
+    {
+      "model_id": "korea-hyundai-grandeur",
+      "title": "Hyundai Grandeur IG",
+      "year": 2021,
+      "mileage_km": 125832,
+      "source_number": "42229860",
+      "note": "В источнике указан объём свыше 2 л; условия ввоза рассчитываются отдельно."
+    },
+    {
+      "model_id": "korea-hyundai-staria",
+      "title": "Hyundai Staria",
+      "year": 2021,
+      "mileage_km": 14620,
+      "source_number": "42244684",
+      "note": null
+    },
+    {
+      "model_id": "korea-kia-morning-picanto",
+      "title": "Kia Morning",
+      "year": 2016,
+      "mileage_km": 67723,
+      "source_number": "42246821",
+      "note": null
+    },
+    {
+      "model_id": "korea-kia-ray",
+      "title": "Kia Ray",
+      "year": 2019,
+      "mileage_km": 96496,
+      "source_number": "42213577",
+      "note": null
+    },
+    {
+      "model_id": "korea-bmw-3-series",
+      "title": "BMW 3 Series G20",
+      "year": 2025,
+      "mileage_km": 5520,
+      "source_number": "42245977",
+      "note": null
+    },
+    {
+      "model_id": "korea-bmw-5-series",
+      "title": "BMW 5 Series G30",
+      "year": 2018,
+      "mileage_km": 89834,
+      "source_number": "42210953",
+      "note": null
+    },
+    {
+      "model_id": "korea-mercedes-e-class",
+      "title": "Mercedes-Benz E-Class W213",
+      "year": 2019,
+      "mileage_km": 94162,
+      "source_number": "38465560",
+      "note": null
+    },
+    {
+      "model_id": "korea-mercedes-c-class",
+      "title": "Mercedes-Benz C-Class W205",
+      "year": 2019,
+      "mileage_km": 38454,
+      "source_number": "42357696",
+      "note": null
+    },
+    {
+      "model_id": "korea-bmw-x1",
+      "title": "BMW X1 F48",
+      "year": 2020,
+      "mileage_km": 136160,
+      "source_number": "42349670",
+      "note": null
+    },
+    {
+      "model_id": "korea-bmw-x3",
+      "title": "BMW X3 G01",
+      "year": 2022,
+      "mileage_km": 79703,
+      "source_number": "42365717",
+      "note": null
+    },
+    {
+      "model_id": "korea-audi-q3",
+      "title": "Audi Q3",
+      "year": 2014,
+      "mileage_km": 126672,
+      "source_number": "42222390",
+      "note": null
+    },
+    {
+      "model_id": "korea-hyundai-kona",
+      "title": "Hyundai Kona",
+      "year": 2019,
+      "mileage_km": 12553,
+      "source_number": "42356414",
+      "note": null
+    },
+    {
+      "model_id": "korea-hyundai-venue",
+      "title": "Hyundai Venue",
+      "year": 2021,
+      "mileage_km": 33134,
+      "source_number": "42338306",
+      "note": null
+    },
+    {
+      "model_id": "korea-hyundai-casper",
+      "title": "Hyundai Casper",
+      "year": 2022,
+      "mileage_km": 49480,
+      "source_number": "42363022",
+      "note": null
+    },
+    {
+      "model_id": "korea-hyundai-accent",
+      "title": "Hyundai Accent",
+      "year": 2016,
+      "mileage_km": 131468,
+      "source_number": "39652905",
+      "note": null
+    },
+    {
+      "model_id": "korea-kia-k3-cerato",
+      "title": "Kia K3",
+      "year": 2024,
+      "mileage_km": 44566,
+      "source_number": "42356095",
+      "note": null
+    },
+    {
+      "model_id": "korea-kia-niro",
+      "title": "Kia Niro",
+      "year": 2019,
+      "mileage_km": 63009,
+      "source_number": "42225831",
+      "note": null
+    },
+    {
+      "model_id": "korea-kia-stonic",
+      "title": "Kia Stonic",
+      "year": 2018,
+      "mileage_km": 64544,
+      "source_number": "42211779",
+      "note": null
+    },
+    {
+      "model_id": "korea-chevrolet-korea-trax",
+      "title": "Chevrolet Trax",
+      "year": 2026,
+      "mileage_km": 5339,
+      "source_number": "42989767",
+      "note": null
+    },
+    {
+      "model_id": "korea-renault-korea-xm3-arkana",
+      "title": "Samsung XM3",
+      "year": 2022,
+      "mileage_km": 32050,
+      "source_number": "42374452",
+      "note": null
+    },
+    {
+      "model_id": "korea-ssangyong-tivoli",
+      "title": "SsangYong Tivoli",
+      "year": 2016,
+      "mileage_km": 128510,
+      "source_number": "42373652",
+      "note": null
+    },
+    {
+      "model_id": "korea-ssangyong-korando",
+      "title": "SsangYong Korando C",
+      "year": 2014,
+      "mileage_km": 124234,
+      "source_number": "39028073",
+      "note": null
+    },
+    {
+      "model_id": "korea-hyundai-ioniq-6",
+      "title": "Hyundai Ioniq 6",
+      "year": 2022,
+      "mileage_km": 41952,
+      "source_number": "39879205",
+      "note": null
+    },
+    {
+      "model_id": "china-geely-monjaro",
+      "title": "Geely Monjaro",
+      "year": 2021,
+      "mileage_km": 92800,
+      "source_number": "60373083",
+      "note": null
+    },
+    {
+      "model_id": "japan-nissan-qashqai",
+      "title": "Nissan Dualis",
+      "year": 2011,
+      "mileage_km": 50000,
+      "source_number": "8099",
+      "note": "Архивный пример японского названия семейства Qashqai. Прямой экспорт 2,0 л ограничен. Не предложение к покупке."
+    }
+  ]
+}
