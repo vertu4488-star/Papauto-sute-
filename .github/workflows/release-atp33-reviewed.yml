@@ -5,6 +5,9 @@ on:
       - release/seo-atp33-reviewed-20261126
     paths:
       - '.github/workflows/release-atp33-reviewed.yml'
+concurrency:
+  group: papauto-atp33-reviewed
+  cancel-in-progress: true
 permissions:
   contents: write
   actions: read

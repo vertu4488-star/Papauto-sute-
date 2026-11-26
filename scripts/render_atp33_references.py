@@ -28,18 +28,19 @@ def media_paths(root, number, row):
         names.append(f"{number:03d}-2-sheet.jpg")
     return [files/n for n in names]
 
-def verify(root):
+def verify(root, media_root=None):
+    media_root = media_root or root
     paths = []
     lines = []
     for num,row in facts(root):
         if not re.fullmatch(r"[a-z0-9-]+",row["model_id"]):
             raise RuntimeError("ATP33 invalid model ID")
-        for p in media_paths(root,num,row):
+        for p in media_paths(media_root,num,row):
             if not p.is_file() or p.is_symlink() or p.stat().st_size < 500 or p.read_bytes()[:3] != b"\xff\xd8\xff":
                 raise RuntimeError("ATP33 missing or invalid reviewed image "+str(p))
             paths.append(p)
-            lines.append(str(p.relative_to(root/ASSETS))+" "+hashlib.sha256(p.read_bytes()).hexdigest())
-    if len(paths)!=66 or set(paths)!=set((root/ASSETS).rglob("*.jpg")):
+            lines.append(str(p.relative_to(media_root/ASSETS))+" "+hashlib.sha256(p.read_bytes()).hexdigest())
+    if len(paths)!=66 or set(paths)!=set((media_root/ASSETS).rglob("*.jpg")):
         raise RuntimeError("ATP33 unexpected media set")
     if hashlib.sha256(("\n".join(sorted(lines))+"\n").encode()).hexdigest()!=DIGEST:
         raise RuntimeError("ATP33 approved image hashes do not match")
@@ -58,7 +59,7 @@ def install(source):
 
 def render(root,target,coverage):
     verify(root)
-    verify(target)
+    verify(root,target)
     report = {r["model_id"]:r for r in coverage["models"]}
     for num,row in facts(root):
         ident=row["model_id"]
