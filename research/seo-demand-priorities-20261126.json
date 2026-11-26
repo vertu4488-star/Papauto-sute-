@@ -109,30 +109,9 @@
   "priority_photo_gaps": [],
   "next_page_candidates": [
     {
-      "model": "Toyota Wish",
-      "market": "japan",
-      "id": "japan-toyota-wish",
-      "priority": "P1",
-      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
-    },
-    {
       "model": "Honda Freed+",
       "market": "japan",
       "id": "japan-honda-freed-plus",
-      "priority": "P1",
-      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
-    },
-    {
-      "model": "Suzuki Jimny Sierra",
-      "market": "japan",
-      "id": "japan-suzuki-jimny-sierra",
-      "priority": "P1",
-      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
-    },
-    {
-      "model": "Daihatsu Thor",
-      "market": "japan",
-      "id": "japan-daihatsu-thor",
       "priority": "P1",
       "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
     },
@@ -291,10 +270,11 @@
       "market": "japan",
       "model": "Toyota Wish",
       "id": "japan-toyota-wish",
-      "page_status": "candidate_new_page",
+      "page_status": "existing",
       "priority": "P1",
       "drom_active_order_listing_count": 11,
-      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee.",
+      "release_status": "source_page_prepared_pending_live_verification"
     },
     {
       "market": "japan",
@@ -458,10 +438,11 @@
       "market": "japan",
       "model": "Suzuki Jimny Sierra",
       "id": "japan-suzuki-jimny-sierra",
-      "page_status": "candidate_new_page",
+      "page_status": "existing",
       "priority": "P1",
       "drom_active_order_listing_count": 9,
-      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee.",
+      "release_status": "source_page_prepared_pending_live_verification"
     },
     {
       "market": "japan",
@@ -525,10 +506,11 @@
       "market": "japan",
       "model": "Daihatsu Thor",
       "id": "japan-daihatsu-thor",
-      "page_status": "candidate_new_page",
+      "page_status": "existing",
       "priority": "P1",
       "drom_active_order_listing_count": 4,
-      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee.",
+      "release_status": "source_page_prepared_pending_live_verification"
     },
     {
       "market": "korea",
@@ -594,5 +576,5 @@
     "Keep approved Korea and China focus intact"
   ],
   "japan_drom_audit": "research/seo-japan-drom-demand-20261126.json",
-  "source_page_count": 144
+  "source_page_count": 147
 }

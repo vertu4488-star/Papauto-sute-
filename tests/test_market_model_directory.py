@@ -57,9 +57,9 @@ class MarketModelDirectory(unittest.TestCase):
                      "premium-japan-korea.html", "premium-mobile-photo-demo.html"):
             self.assertNotIn("/assets/demo/", (ROOT / file).read_text(encoding="utf-8"), file)
         data = json.loads((ROOT / "data/papauto-expanded-45x3-2026.json").read_text(encoding="utf-8"))
-        self.assertEqual(len(data["items"]), 144)
+        self.assertEqual(len(data["items"]), 147)
         for country in ("japan","korea","china"):
-            self.assertEqual(sum(x["market"] == country for x in data["items"]),54 if country=="japan" else 45)
+            self.assertEqual(sum(x["market"] == country for x in data["items"]),57 if country=="japan" else 45)
         self.assertTrue(all(not any(k in x for k in ("photo", "photo_source", "image", "auction_sheet")) for x in data["items"]))
 
 

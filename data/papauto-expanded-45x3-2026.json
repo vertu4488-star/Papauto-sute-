@@ -1,14 +1,14 @@
 {
   "version": 1,
   "updated": "2026-11-26",
-  "title": "PapAuto: 144 модели по трём рынкам",
+  "title": "PapAuto: 147 модели по трём рынкам",
   "kind": "model_name_reference_only_no_photos",
   "count_by_market": {
-    "japan": 54,
+    "japan": 57,
     "korea": 45,
     "china": 45
   },
-  "note": "Справочник 144 моделей: 54 из Японии, 45 из Южной Кореи и 45 из Китая. Фото, цены и пробег берутся только из проверенных архивных примеров, а не из справочника.",
+  "note": "Справочник 147 моделей: 57 из Японии, 45 из Южной Кореи и 45 из Китая. Фото, цены и пробег берутся только из проверенных архивных примеров, а не из справочника.",
   "items": [
     {
       "id": "japan-honda-freed",
@@ -1160,6 +1160,30 @@
       "brand": "Honda",
       "model": "Stepwgn",
       "engine": "1.5–2.0 л",
+      "kind": "model_name_reference_only"
+    },
+    {
+      "id": "japan-suzuki-jimny-sierra",
+      "market": "japan",
+      "brand": "Suzuki",
+      "model": "Jimny Sierra",
+      "engine": "1.3–1.5 л",
+      "kind": "model_name_reference_only"
+    },
+    {
+      "id": "japan-daihatsu-thor",
+      "market": "japan",
+      "brand": "Daihatsu",
+      "model": "Thor",
+      "engine": "1.0 л",
+      "kind": "model_name_reference_only"
+    },
+    {
+      "id": "japan-toyota-wish",
+      "market": "japan",
+      "brand": "Toyota",
+      "model": "Wish",
+      "engine": "1.8–2.0 л",
       "kind": "model_name_reference_only"
     }
   ]

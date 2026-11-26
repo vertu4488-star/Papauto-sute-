@@ -25,7 +25,7 @@ ALIASES = {
     "japan": {
         "Toyota Corolla Sport": "japan-toyota-corolla",
         "Toyota Corolla Touring": "japan-toyota-corolla",
-        "Suzuki Jimny Sierra": "japan-suzuki-jimny",
+        "Suzuki Jimny Sierra": "japan-suzuki-jimny-sierra",
         "Honda Freed Spike": "japan-honda-freed-spike",
         "Honda Freed+": "japan-honda-freed",
         "Honda Step Wagon": "japan-honda-stepwgn",
@@ -324,8 +324,8 @@ def nameplate_examples(ident, grouped):
 def render(target: Path, registry: dict, approved_supplier_paths: set):
     items = json.loads((target / "data/papauto-expanded-45x3-2026.json").read_text(encoding="utf-8"))["items"]
     refs = {x["id"]: x for x in items}
-    if len(items) != 144 or len(refs) != 144:
-        raise RuntimeError("MODEL_STATS expected 144 model references")
+    if len(items) != 147 or len(refs) != 147:
+        raise RuntimeError("MODEL_STATS expected 147 model references")
     if {p.stem for p in (target/"models").glob("*.html")} != set(refs):
         raise RuntimeError("MODEL_STATS reference/page mismatch")
     index = make_index(items)
