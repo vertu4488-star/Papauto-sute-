@@ -1,0 +1,150 @@
+{
+  "date": "2026-11-26",
+  "owner_review": "Approved all five exact cards in the reviewed PDF; no blanket approval for other lots.",
+  "reviewed_pdf": "PapAuto_Honda_ATP_5_cards_2026-11-26.pdf",
+  "reviewed_pdf_sha256": "f8495bfd09098ead20988813fd91edf629484d188e79cc0e593a12205e2ca82f",
+  "source_artifact": {
+    "run_id": 45813002900,
+    "artifact_id": 15114283349
+  },
+  "rights_confirmed": false,
+  "publication_status": "owner_approved_pending_full_registry_deduplication_and_release_gate",
+  "scope": "archive reference only; not live stock; no third-party license assertion",
+  "lots": [
+    {
+      "model": "Honda Freed Spike",
+      "year": 2012,
+      "auction": "JU Gifu",
+      "auction_date": "2026-10-24",
+      "lot": "10062",
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/7afCsbl2TeFN5k6/",
+      "media": [
+        {
+          "file": "7afCsbl2TeFN5k6-00-vehicle.jpg",
+          "kind": "vehicle",
+          "sha256": "92e4743743879d3497df64e36d14d66719d9f2cfd2c744ea7feaa81a47ddb9d9"
+        },
+        {
+          "file": "7afCsbl2TeFN5k6-01-vehicle.jpg",
+          "kind": "vehicle",
+          "sha256": "6390ff2e5f403a07819d62427058dce7eb5c14a5ff5b8c86a5a31f731efc7f9d"
+        },
+        {
+          "file": "7afCsbl2TeFN5k6-10-sheet.jpg",
+          "kind": "sheet",
+          "sha256": "6aeefcb75943819c11d0e369c811c8a496bc019242f74cd19bcf396a5a78d6c5"
+        }
+      ]
+    },
+    {
+      "model": "Honda Freed Spike",
+      "year": 2016,
+      "auction": "JU Niigata",
+      "auction_date": "2026-10-23",
+      "lot": "324",
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/4VLvGqBlXD6Kvk/",
+      "media": [
+        {
+          "file": "4VLvGqBlXD6Kvk-00-vehicle.jpg",
+          "kind": "vehicle",
+          "sha256": "441f8cfa3998be8b3a3781df4c7662ed6ce881093da44a091a80ef82d8abb7d4"
+        },
+        {
+          "file": "4VLvGqBlXD6Kvk-01-vehicle.jpg",
+          "kind": "vehicle",
+          "sha256": "7972d9ab6dc4681705f3cd88331a12bcd87abf128e573dab563b259273dd43a9"
+        },
+        {
+          "file": "4VLvGqBlXD6Kvk-08-sheet.jpg",
+          "kind": "sheet",
+          "sha256": "3276c1e567ccdcaf94cd0a66d373db1c03f3c9ed8bcb4c0e028915eb0d650031"
+        }
+      ]
+    },
+    {
+      "model": "Honda Freed Spike",
+      "year": 2013,
+      "auction": "JU Tokyo",
+      "auction_date": "2026-10-19",
+      "lot": "8238",
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/freed-spike/38h86LrdezsyXYu/",
+      "media": [
+        {
+          "file": "38h86LrdezsyXYu-00-vehicle.jpg",
+          "kind": "vehicle",
+          "sha256": "9b3fce25045e26c168cae970778474096c1bca099495da36591eab2a95a4c5e5"
+        },
+        {
+          "file": "38h86LrdezsyXYu-01-vehicle.jpg",
+          "kind": "vehicle",
+          "sha256": "2bc4ee876fe48ff482368f5cc9399435d0754d3ab248faff6ba747aeaa9f8540"
+        },
+        {
+          "file": "38h86LrdezsyXYu-10-sheet.jpg",
+          "kind": "sheet",
+          "sha256": "4cdfb70c610d3a15ed3eb50207c26c3e14ea03d7de4aa74b937ea645d40b1377"
+        }
+      ]
+    },
+    {
+      "model": "Honda Stepwgn",
+      "year": 2015,
+      "auction": "TAA Kinki",
+      "auction_date": "2026-10-27",
+      "lot": "163",
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/step-wagon/2PIvhIo2dTA1Q4/",
+      "media": [
+        {
+          "file": "2PIvhIo2dTA1Q4-00-vehicle.jpg",
+          "kind": "vehicle",
+          "sha256": "0a5a2e56fc09715a3c1607a2813b404bf296e2a9876d14aceecce85ce28dfde4"
+        },
+        {
+          "file": "2PIvhIo2dTA1Q4-01-vehicle.jpg",
+          "kind": "vehicle",
+          "sha256": "3d885c50c5ee5719beb3cd51170f655a2aca3e9171efc2639284663804428cf0"
+        },
+        {
+          "file": "2PIvhIo2dTA1Q4-02-sheet.jpg",
+          "kind": "sheet",
+          "sha256": "2bcc1ebfe29cbf0a32e5af53caed5ade806f1c7f6b86b7c1356b7773c18827af"
+        }
+      ]
+    },
+    {
+      "model": "Honda Stepwgn",
+      "year": 2017,
+      "auction": "KCAA Fukuoka",
+      "auction_date": "2026-10-15",
+      "lot": "504",
+      "source_listing": "https://atp-auto.ru/avto-iz-yaponii/honda/step-wagon/8a47neYTNwn5zW/",
+      "media": [
+        {
+          "file": "8a47neYTNwn5zW-00-vehicle.jpg",
+          "kind": "vehicle",
+          "sha256": "832ebdbe7fb73e36cee2494f9c952d52bd2857b56ab361a8b24ca3b6b4d8ff86"
+        },
+        {
+          "file": "8a47neYTNwn5zW-01-vehicle.jpg",
+          "kind": "vehicle",
+          "sha256": "d2bafd560a837df59bc94d75af7d90068cb4b1ed05674669b2f743060bb4991a"
+        },
+        {
+          "file": "8a47neYTNwn5zW-05-sheet.jpg",
+          "kind": "sheet",
+          "sha256": "e1a086640de123533827cd2778c0356549cc31923a16c058dc1d682525e87306"
+        }
+      ]
+    }
+  ],
+  "next_review": {
+    "target_unique_cards": 30,
+    "first_priority": [
+      "Toyota Wish",
+      "Honda Freed+",
+      "Suzuki Jimny Sierra",
+      "Daihatsu Thor"
+    ],
+    "then": "Audit existing exact lots per Drom-priority model and year; fill underrepresented variants with genuine original photographs and complete inspection sheets; do not treat existing lot as new."
+  }
+}
