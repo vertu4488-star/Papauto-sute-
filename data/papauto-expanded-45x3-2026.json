@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "updated": "2026-11-12",
-  "title": "PapAuto: 45 выбираемых моделей для каждого рынка",
+  "updated": "2026-11-26",
+  "title": "PapAuto: 144 модели по трём рынкам",
   "kind": "model_name_reference_only_no_photos",
   "count_by_market": {
-    "japan": 45,
+    "japan": 54,
     "korea": 45,
     "china": 45
   },
-  "note": "Список 135 моделей (по 45 из каждой страны), без фотографий, цен и пробега. Изображения допускаются только для подтверждённых аукционных лотов с документами.",
+  "note": "Справочник 144 моделей: 54 из Японии, 45 из Южной Кореи и 45 из Китая. Фото, цены и пробег берутся только из проверенных архивных примеров, а не из справочника.",
   "items": [
     {
       "id": "japan-honda-freed",
@@ -1143,6 +1143,22 @@
       "market": "japan",
       "brand": "Mazda",
       "model": "CX-3",
+      "engine": "1.5–2.0 л",
+      "kind": "model_name_reference_only"
+    },
+    {
+      "id": "japan-honda-freed-spike",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "Freed Spike",
+      "engine": "1.5 л",
+      "kind": "model_name_reference_only"
+    },
+    {
+      "id": "japan-honda-stepwgn",
+      "market": "japan",
+      "brand": "Honda",
+      "model": "Stepwgn",
       "engine": "1.5–2.0 л",
       "kind": "model_name_reference_only"
     }

@@ -30,14 +30,14 @@ jobs:
         run: |
           python scripts/build_content.py
           git diff --exit-code -- "*.html" sitemap.xml
-      - name: Verify all 135 SEO model routes and sitemap
+      - name: Verify all 144 SEO model routes and sitemap
         run: |
           python - <<'PY'
           from pathlib import Path
           import xml.etree.ElementTree as ET
           import re
           pages = sorted(Path("models").glob("*.html"))
-          assert len(pages) == 135, f"Expected 135 model pages, found {len(pages)}"
+          assert len(pages) == 144, f"Expected 144 model pages, found {len(pages)}"
           urls = {x.text for x in ET.parse("sitemap.xml").iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")}
           for page in pages:
               url = "https://papauto.ru/models/" + page.name

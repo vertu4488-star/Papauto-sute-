@@ -89,7 +89,16 @@
     "japan-nissan-dayz",
     "japan-suzuki-jimny",
     "japan-suzuki-swift",
-    "japan-mazda-demio"
+    "japan-mazda-demio",
+    "japan-toyota-noah",
+    "japan-toyota-voxy",
+    "japan-nissan-nv200",
+    "japan-suzuki-solio",
+    "japan-suzuki-hustler",
+    "japan-mazda-mazda3",
+    "japan-mazda-cx-3",
+    "japan-honda-freed-spike",
+    "japan-honda-stepwgn"
   ],
   "priority_existing_korea": [
     "korea-kia-k3-cerato",
@@ -107,27 +116,6 @@
       "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
     },
     {
-      "model": "Toyota Noah",
-      "market": "japan",
-      "id": "japan-toyota-noah",
-      "priority": "P1",
-      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
-    },
-    {
-      "model": "Toyota Voxy",
-      "market": "japan",
-      "id": "japan-toyota-voxy",
-      "priority": "P1",
-      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
-    },
-    {
-      "model": "Honda Freed Spike",
-      "market": "japan",
-      "id": "japan-honda-freed-spike",
-      "priority": "P0",
-      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
-    },
-    {
       "model": "Honda Freed+",
       "market": "japan",
       "id": "japan-honda-freed-plus",
@@ -135,51 +123,9 @@
       "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
     },
     {
-      "model": "Honda Stepwgn",
-      "market": "japan",
-      "id": "japan-honda-stepwgn",
-      "priority": "P0",
-      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
-    },
-    {
-      "model": "Nissan NV200",
-      "market": "japan",
-      "id": "japan-nissan-nv200",
-      "priority": "P0",
-      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
-    },
-    {
       "model": "Suzuki Jimny Sierra",
       "market": "japan",
       "id": "japan-suzuki-jimny-sierra",
-      "priority": "P1",
-      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
-    },
-    {
-      "model": "Suzuki Solio",
-      "market": "japan",
-      "id": "japan-suzuki-solio",
-      "priority": "P1",
-      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
-    },
-    {
-      "model": "Suzuki Hustler",
-      "market": "japan",
-      "id": "japan-suzuki-hustler",
-      "priority": "P1",
-      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
-    },
-    {
-      "model": "Mazda Mazda3",
-      "market": "japan",
-      "id": "japan-mazda-mazda3",
-      "priority": "P1",
-      "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
-    },
-    {
-      "model": "Mazda CX-3",
-      "market": "japan",
-      "id": "japan-mazda-cx-3",
       "priority": "P1",
       "reason": "Drom local offer and/or user-specified commercial focus; verify exact Japan-market model, export eligibility and differentiated search intent before publication"
     },
@@ -354,19 +300,21 @@
       "market": "japan",
       "model": "Toyota Noah",
       "id": "japan-toyota-noah",
-      "page_status": "candidate_new_page",
+      "page_status": "existing",
       "priority": "P1",
       "drom_active_order_listing_count": 5,
-      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee.",
+      "release_status": "source_page_prepared_pending_live_verification"
     },
     {
       "market": "japan",
       "model": "Toyota Voxy",
       "id": "japan-toyota-voxy",
-      "page_status": "candidate_new_page",
+      "page_status": "existing",
       "priority": "P1",
       "drom_active_order_listing_count": 8,
-      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee.",
+      "release_status": "source_page_prepared_pending_live_verification"
     },
     {
       "market": "japan",
@@ -381,10 +329,11 @@
       "market": "japan",
       "model": "Honda Freed Spike",
       "id": "japan-honda-freed-spike",
-      "page_status": "candidate_new_page",
+      "page_status": "existing",
       "priority": "P0",
       "drom_active_order_listing_count": 4,
-      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee.",
+      "release_status": "source_page_prepared_pending_live_verification"
     },
     {
       "market": "japan",
@@ -399,10 +348,11 @@
       "market": "japan",
       "model": "Honda Stepwgn",
       "id": "japan-honda-stepwgn",
-      "page_status": "candidate_new_page",
+      "page_status": "existing",
       "priority": "P0",
       "drom_active_order_listing_count": 37,
-      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee.",
+      "release_status": "source_page_prepared_pending_live_verification"
     },
     {
       "market": "japan",
@@ -453,10 +403,11 @@
       "market": "japan",
       "model": "Nissan NV200",
       "id": "japan-nissan-nv200",
-      "page_status": "candidate_new_page",
+      "page_status": "existing",
       "priority": "P0",
       "drom_active_order_listing_count": null,
-      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee.",
+      "release_status": "source_page_prepared_pending_live_verification"
     },
     {
       "market": "japan",
@@ -525,19 +476,21 @@
       "market": "japan",
       "model": "Suzuki Solio",
       "id": "japan-suzuki-solio",
-      "page_status": "candidate_new_page",
+      "page_status": "existing",
       "priority": "P1",
       "drom_active_order_listing_count": 12,
-      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee.",
+      "release_status": "source_page_prepared_pending_live_verification"
     },
     {
       "market": "japan",
       "model": "Suzuki Hustler",
       "id": "japan-suzuki-hustler",
-      "page_status": "candidate_new_page",
+      "page_status": "existing",
       "priority": "P1",
       "drom_active_order_listing_count": 5,
-      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee.",
+      "release_status": "source_page_prepared_pending_live_verification"
     },
     {
       "market": "japan",
@@ -552,19 +505,21 @@
       "market": "japan",
       "model": "Mazda Mazda3",
       "id": "japan-mazda-mazda3",
-      "page_status": "candidate_new_page",
+      "page_status": "existing",
       "priority": "P1",
       "drom_active_order_listing_count": 28,
-      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee.",
+      "release_status": "source_page_prepared_pending_live_verification"
     },
     {
       "market": "japan",
       "model": "Mazda CX-3",
       "id": "japan-mazda-cx-3",
-      "page_status": "candidate_new_page",
+      "page_status": "existing",
       "priority": "P1",
       "drom_active_order_listing_count": 20,
-      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee."
+      "focus": "Exact market and generation, model-specific import cost and photos, Novosibirsk search intent; verify trim, export eligibility and utility fee.",
+      "release_status": "source_page_prepared_pending_live_verification"
     },
     {
       "market": "japan",
@@ -638,5 +593,6 @@
     "Check actual regional impressions in GSC and Yandex Webmaster; measure queries, clicks and leads",
     "Keep approved Korea and China focus intact"
   ],
-  "japan_drom_audit": "research/seo-japan-drom-demand-20261126.json"
+  "japan_drom_audit": "research/seo-japan-drom-demand-20261126.json",
+  "source_page_count": 144
 }

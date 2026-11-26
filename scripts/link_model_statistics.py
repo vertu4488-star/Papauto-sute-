@@ -26,8 +26,9 @@ ALIASES = {
         "Toyota Corolla Sport": "japan-toyota-corolla",
         "Toyota Corolla Touring": "japan-toyota-corolla",
         "Suzuki Jimny Sierra": "japan-suzuki-jimny",
-        "Honda Freed Spike": "japan-honda-freed",
+        "Honda Freed Spike": "japan-honda-freed-spike",
         "Honda Freed+": "japan-honda-freed",
+        "Honda Step Wagon": "japan-honda-stepwgn",
         "Mazda Mazda2": "japan-mazda-demio",
         "Toyota Prius PHV": "japan-toyota-prius",
         "Toyota Prius PHEV": "japan-toyota-prius",
@@ -323,11 +324,13 @@ def nameplate_examples(ident, grouped):
 def render(target: Path, registry: dict, approved_supplier_paths: set):
     items = json.loads((target / "data/papauto-expanded-45x3-2026.json").read_text(encoding="utf-8"))["items"]
     refs = {x["id"]: x for x in items}
-    if len(items) != 142 or len(refs) != 142:
-        raise RuntimeError("MODEL_STATS expected 142 model references")
+    if len(items) != 144 or len(refs) != 144:
+        raise RuntimeError("MODEL_STATS expected 144 model references")
     if {p.stem for p in (target/"models").glob("*.html")} != set(refs):
         raise RuntimeError("MODEL_STATS reference/page mismatch")
     index = make_index(items)
+    assert match(index,"japan","Honda Freed Spike") == "japan-honda-freed-spike"
+    assert match(index,"japan","Honda Step Wagon") == "japan-honda-stepwgn"
     assert match(index,"japan","Toyota Yaris Cross") == "japan-toyota-yaris-cross"
     assert match(index,"japan","Toyota Corolla Fielder") == "japan-toyota-corolla-fielder"
     assert match(index,"china","Toyota Corolla") == "china-toyota-corolla"

@@ -143,8 +143,8 @@ def copy_public_files() -> list[str]:
     # Fail the deploy rather than silently publish sitemap URLs that return 404.
     if model_root.is_dir():
         expected_model_pages = list(model_root.glob("*.html"))
-        if len(expected_model_pages) != 142 or any(not (TARGET / "models" / page.name).is_file() for page in expected_model_pages):
-            raise RuntimeError("PAPAUTO_SEO: expected 142 published model pages")
+        if len(expected_model_pages) != 144 or any(not (TARGET / "models" / page.name).is_file() for page in expected_model_pages):
+            raise RuntimeError("PAPAUTO_SEO: expected 144 published model pages")
 
     for folder, allowed_suffixes in PUBLIC_FOLDERS.items():
         base = ROOT / folder
@@ -560,7 +560,7 @@ def copy_public_files() -> list[str]:
     published_models = {"https://papauto.ru/models/" + page.name
                         for page in (TARGET / "models").glob("*.html")}
     sitemap_models = {url for url in core_urls if url.startswith("https://papauto.ru/models/")}
-    if len(published_models) != 142 or published_models != sitemap_models:
+    if len(published_models) != 144 or published_models != sitemap_models:
         raise RuntimeError("PAPAUTO_SEO: model pages and sitemap disagree: "
                            + str(sorted(published_models ^ sitemap_models)))
     if set(lot_urls) & core_urls or "https://papauto.ru/auction-lot-index.html" not in core_urls:
