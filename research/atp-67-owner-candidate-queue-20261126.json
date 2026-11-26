@@ -1,0 +1,543 @@
+{
+  "date": "2026-11-26",
+  "source": "PapAuto_ATP_67_review.pdf",
+  "rows": [
+    {
+      "review_number": 1,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/avante-cn7/6076l6tctb8ICg/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 2,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/tucson-nx4/60Oohwx3kWjoLa/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 3,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/sportage/6iNYrBIioL2flO/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 4,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/sonata-dn8/60FTkgoIOzgiRn/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 5,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/k5/600LESwM6C0kNX/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 6,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/sorento/6iNY4sXjHlpV0n/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 7,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/carnival/6iNNCB4U2jEb8P/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 8,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/seltos/6izJSH1K3GmMGn/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 9,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/santafe-tm/60LZrKpQti8sCG/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 10,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/palisade/60KpNeN8WLuJFA/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 11,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/grandeur-ig/607aJhE8VdI8xn/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 12,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/staria/600DG91JAWLonG/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 13,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/morning/600ZuUxJXRd4JZ/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 14,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/ray/603YzqcdycEB5R/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 15,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/bmw/3-series-g20/600QjHwlkMDP6g/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 16,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/bmw/5-series-g30/605bKqDx1tjk3K/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 17,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/mercedes-benz/e-class-w213/5uTJPNvb703ve2/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 18,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/mercedes-benz/c-class-w205/60EousTBZs7aY1/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 19,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/bmw/x1-f48/60Cz1TcykR8j5f/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 20,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/bmw/x3-g01/60GeaQ4jif0Tpf/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 21,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/audi/a6/60MzIFjFWqWVaa/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 22,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/audi/q3/605WNJTdnHjAqs/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 23,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/kona/60Ec7j0bnauRbF/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 24,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/venue/60Acvnz8euInnL/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 25,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/creta/",
+      "exact_listing": false,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 26,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/i30/60MbNRVR4plsLS/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 27,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/i20/",
+      "exact_listing": false,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 28,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/bayon/",
+      "exact_listing": false,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 29,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/casper/60FVYBaCcVU1fw/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 30,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/accent-new/5BExPAaPlRt88h/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 31,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/k3/60EhlMkjflL3PA/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 32,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/niro/606vhg55mPhzZz/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 33,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/soul/60FJtaAGBLwQ5w/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 34,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/stonic/603Fyhv2AHZN9v/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 35,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/ceed/",
+      "exact_listing": false,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 36,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/forte/",
+      "exact_listing": false,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 37,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/kx3/",
+      "exact_listing": false,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 38,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/kia/carens/6iOfqO2vUtgTwt/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 39,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/genesis/g70/60IZZeUkbQMwKJ/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 40,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/chevrolet/trax/6ctMGwKDHoK5Kq/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 41,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/samsung/xm3/60IbHeJfvQhkZz/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 42,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/samsung/sm3/5D2UEQjwcrS9Db/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 43,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/ssangyong/tivoli/60I3YwXJn7YxaS/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 44,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/ssangyong/korando-c/5DnrE0ilSMCm7O/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 45,
+      "market": "korea",
+      "url": "https://atp-auto.ru/avto-iz-korei/hyundai/ioniq6/5CE95sDBUGqUbt/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 46,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/geely-auto/monjaro/9nZH2B9eqCvX48/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 47,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/geely-auto/boyue/84D7LhnHKX0yvB/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 48,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/geely-auto/cityray/",
+      "exact_listing": false,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 49,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/byd/song-plus/7YziOVNKG2gJvk/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 50,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/byd/song-pro/9mVtMhXq4Hzf0w/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 51,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/byd/dolphin/7CKWjBLENhp74v/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 52,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/byd/seagull/",
+      "exact_listing": false,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 53,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/byd/yuan-plus/7EY15mCybmt1YE/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 54,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/byd/qin-plus/85UAEWVXyU4LjW/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 55,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/changan/cs35-plus/",
+      "exact_listing": false,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 56,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/byd/qin-l/9mT0BkPNrdRNil/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 57,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/byd/destroyer-05/86p2W0t3SqxCCc/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 58,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/byd/song-l/",
+      "exact_listing": false,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 59,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/byd/seal-06/",
+      "exact_listing": false,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 60,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/byd/e2/7IZvJRF4xHViyf/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 61,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/geely-auto/galaxy-l6/",
+      "exact_listing": false,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 62,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/geely-auto/galaxy-e5/",
+      "exact_listing": false,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 63,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/haval/h4/9nF4ex6dN23wxc/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 64,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/changan/alsvin/847qmXzIVjNtXP/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 65,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/changan/lumin/7J3u8twModLfXI/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 66,
+      "market": "china",
+      "url": "https://atp-auto.ru/avto-iz-kitaya/aion/y/7J5oCyO6oqhzsG/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    },
+    {
+      "review_number": 67,
+      "market": "japan",
+      "url": "https://atp-auto.ru/avto-iz-yaponii/nissan/dualis/3hJxKq9wO1rU2rd/",
+      "exact_listing": true,
+      "owner_candidate_approved": true,
+      "publication_ready": false
+    }
+  ],
+  "publication_ready": false
+}
