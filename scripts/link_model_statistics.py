@@ -17,6 +17,7 @@ MARKET = {"japan": "japan", "korea": "korea", "south-korea": "korea", "china": "
 CURRENCY = {"japan": "JPY", "korea": "KRW", "china": "CNY"}
 FORBIDDEN = {"nissan-note-2021-227", "mercedes-a180-2020"}
 MAX_CARDS = 10
+PRIORITY_MODEL_IDS = {"japan-honda-freed", "japan-honda-stepwgn", "japan-toyota-corolla", "japan-honda-fit", "japan-suzuki-jimny", "japan-nissan-note", "korea-kia-k5", "korea-kia-k3-cerato", "korea-hyundai-avante-elantra"}
 
 # Exact aliases only; never match arbitrary substrings (Yaris != Yaris Cross,
 # Corolla != Axio/Fielder, Note != Roox, Song Plus != Song Pro).
@@ -357,15 +358,16 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
         html = page.read_text(encoding="utf-8")
         records = sorted(grouped[ident], key=lambda x:(str(x.get("auction_date") or ""),x["year"],x["id"]), reverse=True)
         name = item["brand"]+" "+item["model"]
+        auction_limit = 15 if ident in PRIORITY_MODEL_IDS else MAX_CARDS
         heading = "Примеры автомобилей" if supplier[ident] and not records else "Аукционная статистика"
         parts = ['<section id="pa-model-statistics" aria-label="'+esc(heading)+'"><h2>'+esc(heading)+': '+esc(name)+'</h2>']
         if records:
             parts += ['<p>В нашей базе: '+str(len(records))+' документированных аукционных примеров по этой модели и стране. Архивные цены не являются текущими предложениями или стоимостью под ключ. Проверка доступности ввоза обязательна.</p><div class="pa-model-lot-grid">']
-            parts += [lot_card(row,target) for row in records[:MAX_CARDS]]
+            parts += [lot_card(row,target) for row in records[:auction_limit]]
             parts += ['</div>']
-            if len(records)>MAX_CARDS:
-                parts += ['<details><summary>Остальные примеры ('+str(len(records)-MAX_CARDS)+')</summary><ul>']
-                for row in records[MAX_CARDS:]:
+            if len(records)>auction_limit:
+                parts += ['<details><summary>Остальные примеры ('+str(len(records)-auction_limit)+')</summary><ul>']
+                for row in records[auction_limit:]:
                     # Validate remaining records as well, even when only linked.
                     lot_card(row,target)
                     parts += ['<li><a href="/lots/'+esc(row["id"])+'.html">'+esc(row["model"])+' · '+esc(row["year"])+' · '+money(row["mileage_km"])+' км · '+esc(row.get("auction_date",""))+'</a></li>']
@@ -424,7 +426,7 @@ def render(target: Path, registry: dict, approved_supplier_paths: set):
                 or ((offers or related_supplier) and item["market"] != "china")):
             raise RuntimeError("MODEL_STATS supplier render mismatch "+ident)
         page.write_text(html, encoding="utf-8")
-        report.append({"model_id":ident,"market":item["market"],"auction_matches":len(records),"auction_cards":min(len(records),MAX_CARDS),"supplier_matches":len(offers),"supplier_cards":len(supplier_ids),"related_cards":len(family_rows)+len(related_supplier),"related_supplier_cards":len(related_supplier)})
+        report.append({"model_id":ident,"market":item["market"],"auction_matches":len(records),"auction_cards":min(len(records),auction_limit),"supplier_matches":len(offers),"supplier_cards":len(supplier_ids),"related_cards":len(family_rows)+len(related_supplier),"related_supplier_cards":len(related_supplier)})
     # Reverse navigation: only exact approved assigned lots point to model pages.
     for lot_id, ident in assigned.items():
         p=target/"lots"/(lot_id+".html")
