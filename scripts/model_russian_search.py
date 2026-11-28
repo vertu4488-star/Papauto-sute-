@@ -26,13 +26,18 @@ def update(path,s):
     # Keep full Russian alias in original introduction; add it when absent.
     heading=re.search(r'<h2\b[^>]*>Сколько стоит[^<]*</h2>',s,re.I)
     if not heading:
-        if path.stem not in ('japan-honda-freed-spike','japan-honda-stepwgn'):raise ValueError('Price section needs review: '+path.name)
         heading=re.search(r'<h2\b[^>]*>(?:Рассчитать|Стоимость|Цена)[^<]*</h2>',s,re.I)
-        if not heading:raise ValueError('No existing calculator heading: '+path.name)
+        if not heading:
+            if path.stem!='japan-nissan-qashqai':raise ValueError('No existing calculator heading: '+path.name)
+            heading=re.search(r'<h2\b[^>]*>Ограничения и исторические цены</h2>',s)
+            if not heading:raise ValueError('No restriction section: '+path.name)
     country=COUNTRY[path.stem.split('-')[0]]
     q=f'Сколько стоит {mixed} {country} с доставкой в Новосибирск?'
     # No promise of availability or export eligibility; existing answers unchanged.
-    new=s[:heading.start()]+f'<h2 {MARK}>{html.escape(q)}</h2>'+s[heading.end():]
+    if path.stem=='japan-nissan-qashqai':
+        new=s[:heading.end()]+f'<p {MARK}>Для {html.escape(mixed)} из Японии сначала проверяем ограничения экспорта; архивные цены не являются предложением поставки.</p>'+s[heading.end():]
+    else:
+        new=s[:heading.start()]+f'<h2 {MARK}>{html.escape(q)}</h2>'+s[heading.end():]
     if not alias:
         new=new.replace('</h1>','</h1><p>Название модели: '+html.escape(ru)+'.</p>',1)
     return new
