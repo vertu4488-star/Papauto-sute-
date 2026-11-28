@@ -91,6 +91,39 @@ def _warm_inline_css(html: str) -> str:
     return html
 
 
+
+def normalize_public_photo_wording(target):
+    """Owner terminology policy. Do not change auction records or photo bytes."""
+    pairs = {'иллюстрация':'условное изображение','иллюстрации':'условные изображения',
+             'иллюстрацию':'условное изображение','иллюстрацией':'условным изображением',
+             'иллюстраций':'условных изображений','иллюстрациям':'условным изображениям',
+             'иллюстрациями':'условными изображениями','иллюстрациях':'условных изображениях',
+             'иллюстрациею':'условным изображением'}
+    pattern = re.compile(r'\b(?:' + '|'.join(pairs) + r')\b', re.I)
+    forbidden = re.compile(r'\bиллюстрац\w*', re.I)
+    def replace(m):
+        old=m.group(0);new=pairs[old.lower()]
+        return new.capitalize() if old[0].isupper() else new
+    changed=[]
+    unresolved=[]
+    for path in sorted(target.rglob('*')):
+        if not path.is_file() or path.suffix.lower() not in {'.html','.js','.json','.css'}:
+            continue
+        old=path.read_text(encoding='utf-8')
+        if path.suffix.lower() in {'.html','.js','.css'}:
+            new=pattern.sub(replace,old)
+            if new!=old:
+                path.write_text(new,encoding='utf-8')
+                changed.append(path.relative_to(target).as_posix())
+        else:
+            new=old  # Published auction data is frozen; never silently change it.
+        if forbidden.search(new):
+            unresolved.append(path.relative_to(target).as_posix())
+    print('PAPAUTO_PUBLIC_WORDING_CHANGED:', len(changed), ', '.join(changed))
+    if unresolved:
+        raise RuntimeError('PAPAUTO_PUBLIC_WORDING: review required for '+', '.join(unresolved))
+
+
 def copy_public_files() -> list[str]:
     from verify_publication_approval import verify_frozen_inputs, verify_published_output
     # Block unapproved new/edited lot data, photos and sheets BEFORE any build output.
@@ -711,6 +744,7 @@ def copy_public_files() -> list[str]:
         raise RuntimeError("PAPAUTO_PREMIUM_CALCULATOR: approved presentation missing")
     print("PAPAUTO_PREMIUM_CALCULATOR_OK: graphite #292823, sand #eee5d5, original calculator fields intact")
 
+    normalize_public_photo_wording(TARGET)
     verify_published_output(TARGET)
 
     print(f"Prepared {len(copied)} public files and {len(tombstones)} safe tombstones in {TARGET.name}/")
