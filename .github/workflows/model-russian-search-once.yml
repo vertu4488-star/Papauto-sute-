@@ -15,6 +15,8 @@ jobs:
           python-version: '3.11'
       - name: Update and validate existing model pages
         run: |
+          git fetch origin main --depth=1
+          git restore --source=FETCH_HEAD -- models
           python scripts/model_russian_search.py
           python scripts/model_russian_search.py --check
           python scripts/build_static_public.py

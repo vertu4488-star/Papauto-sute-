@@ -9,10 +9,13 @@ COUNTRY={'japan':'из Японии','china':'из Китая','korea':'из Ю�
 MARK='data-pa-search-wording="20261128"'
 def update(path,s):
     if MARK in s:return s
-    name=re.search(r'<h1\b[^>]*>(.*?) из (?:Японии|Китая|Южной Кореи)',s,re.S)
-    if not name:raise ValueError('Model heading not found: '+path.name)
-    official=html.unescape(name[1]).strip()
-    alias=re.search(re.escape(name[1])+r'\s*\(([^<>()]*[А-Яа-яЁё][^<>()]*)\)',s)
+    name=re.search(r'<h1\b[^>]*>([^<]+?) из (?:Японии|Китая|Южной Кореи)',s,re.S)
+    if path.stem=='japan-nissan-qashqai':
+        official='Nissan Dualis / Qashqai J10';raw=official
+    else:
+        if not name:raise ValueError('Model heading not found: '+path.name)
+        raw=name[1];official=html.unescape(raw).strip()
+    alias=re.search(re.escape(raw)+r'\s*\(([^<>()]*[А-Яа-яЁё][^<>()]*)\)',s)
     ru=html.unescape(alias[1]).strip() if alias else None
     if path.stem in SPECIAL:official,ru=SPECIAL[path.stem]
     # Source aliases are authoritative; do not invent obscure transliterations.
