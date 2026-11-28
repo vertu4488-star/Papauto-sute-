@@ -124,6 +124,27 @@ def normalize_public_photo_wording(target):
         raise RuntimeError('PAPAUTO_PUBLIC_WORDING: review required for '+', '.join(unresolved))
 
 
+
+# Four owner-approved promotional visuals, strictly for the home service section.
+SERVICE_MEDIA = {"assets/visual/papauto-service-turnkey-20261128.webp":"ef105bf2dbc811899cea552bb212593788ad29257f242cb6c34e8d7f80853fbe","assets/visual/papauto-service-no-russian-mileage-20261128.webp":"c2fa02dd783931dddca73c2b343b44dd75c38b425f3ee951ab166ce9f5f7e8db","assets/visual/papauto-service-selection-20261128.webp":"9957a40a48ad580431fbc1330ae5996ef7c7d5175284b5b4a07d0e37556e4139","assets/visual/papauto-service-delivery-20261128.webp":"12cc783f3291034c62300e1167f976f54301d2f80c98493a5acfc1c464a7f9a6"}
+
+def verify_service_media(target):
+    import hashlib
+    for path, digest in SERVICE_MEDIA.items():
+        if hashlib.sha256((target / path).read_bytes()).hexdigest() != digest:
+            raise RuntimeError("PAPAUTO_SERVICE_MEDIA: unexpected image bytes: " + path)
+    for page in target.rglob("*.html"):
+        s = page.read_text(encoding="utf-8")
+        if page == target / "index.html":
+            block = re.search(r'<section\b[^>]*id="pa-order-benefits"[\s\S]*?</section>', s)
+            if not block:
+                raise RuntimeError("PAPAUTO_SERVICE_MEDIA: service section missing")
+            for path in SERVICE_MEDIA:
+                if block.group(0).count('/' + path) != 1 or s.count('/' + path) != 1:
+                    raise RuntimeError("PAPAUTO_SERVICE_MEDIA: misplaced or missing image: " + path)
+        elif any('/' + path in s for path in SERVICE_MEDIA):
+            raise RuntimeError("PAPAUTO_SERVICE_MEDIA: service image on another page: " + str(page))
+
 def copy_public_files() -> list[str]:
     from verify_publication_approval import verify_frozen_inputs, verify_published_output
     # Block unapproved new/edited lot data, photos and sheets BEFORE any build output.
@@ -191,7 +212,7 @@ def copy_public_files() -> list[str]:
                 continue
             # User-selected Thursday showroom ARTWORK: one explicitly allowed advertising visual,
             # never a real auction photo and never an image for a customer lot card.
-            if folder == 'assets' and (relative.parts[:2] == ('assets','demo') or (relative.parts[:2] == ('assets','visual') and relative.as_posix() not in {'assets/visual/fallback-vehicle.svg', 'assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp', 'assets/visual/papauto-approved-bmw-hero-20261115.webp'})):
+            if folder == 'assets' and (relative.parts[:2] == ('assets','demo') or (relative.parts[:2] == ('assets','visual') and relative.as_posix() not in {'assets/visual/fallback-vehicle.svg', 'assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp', 'assets/visual/papauto-approved-bmw-hero-20261115.webp', *SERVICE_MEDIA})):
                 continue
             dst = TARGET / relative
             dst.parent.mkdir(parents=True, exist_ok=True)
@@ -423,6 +444,8 @@ def copy_public_files() -> list[str]:
             tag = match.group(0)
             src = re.search(r"""src\s*=\s*["']([^"']+)["']""", tag, re.I)
             url = src.group(1) if src else ""
+            if page.name == "index.html" and url.lstrip("/") in SERVICE_MEDIA and 'class="pa-service-photo"' in tag:
+                return tag
             if page.name == "china-order.html" and url.lstrip("/") in china_order_photos:
                 return tag
             # Do not allow even a direct <img> on a legacy page to resurrect
@@ -745,6 +768,7 @@ def copy_public_files() -> list[str]:
     print("PAPAUTO_PREMIUM_CALCULATOR_OK: graphite #292823, sand #eee5d5, original calculator fields intact")
 
     normalize_public_photo_wording(TARGET)
+    verify_service_media(TARGET)
     verify_published_output(TARGET)
 
     print(f"Prepared {len(copied)} public files and {len(tombstones)} safe tombstones in {TARGET.name}/")

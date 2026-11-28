@@ -37,12 +37,27 @@ class AuctionOnlyImages(unittest.TestCase):
             relative=p.relative_to(ROOT).as_posix()
             self.assertTrue(
                 relative in approved_supplier_photos
+                or relative in ["assets/visual/papauto-service-turnkey-20261128.webp","assets/visual/papauto-service-no-russian-mileage-20261128.webp","assets/visual/papauto-service-selection-20261128.webp","assets/visual/papauto-service-delivery-20261128.webp"]
                 or relative.startswith("assets/auction/home/")
                 or relative.startswith("assets/auction/approved/")
                 or relative.startswith("assets/premium-auctions/")
                 or relative in {"assets/visual/papauto-thursday-approved-editorial-artwork-20261112.webp", "assets/visual/papauto-approved-bmw-hero-20261115.webp"},
                 f"NON-AUCTION IMAGE BLOCKED: {relative}"
             )
+
+    def test_service_media_is_owner_approved_and_home_only(self):
+        from scripts.build_static_public import verify_service_media
+        import hashlib
+        from scripts.build_static_public import SERVICE_MEDIA
+        home = (ROOT / 'index.html').read_text(encoding='utf-8')
+        block = re.search(r'<section\b[^>]*id="pa-order-benefits"[\s\S]*?</section>', home).group(0)
+        for path, digest in SERVICE_MEDIA.items():
+            self.assertEqual(hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), digest)
+            self.assertEqual(block.count('/' + path), 1)
+            self.assertEqual(home.count('/' + path), 1)
+        for page in list(ROOT.glob('*.html')) + list((ROOT / 'models').glob('*.html')):
+            if page.name != 'index.html':
+                self.assertFalse(any('/' + p in page.read_text(encoding='utf-8') for p in SERVICE_MEDIA), str(page))
 
     def test_thursday_artwork_only_in_homepage_hero_not_auction_lots(self):
         """One explicitly user-approved marketing illustration, never sold as auction media."""

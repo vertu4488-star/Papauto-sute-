@@ -100,3 +100,6 @@ Owner explicitly approved publication of exactly 30 cards from PapAuto_Japan_ATP
 
 ## Постоянное правило публичных подписей (28.11.2026)
 Запрещено использовать слово «иллюстрация» и его формы в публичных текстах, ALT и карточках. Использовать точные нейтральные подписи, не выдавая условное изображение за фото конкретного автомобиля. Для карточек действует прежний абсолютный запрет на ИИ/стоковые/несоответствующие фотографии, без исключений. Проверка терминологии входит в сборку Render; замороженные данные и подлинные фото не менять.
+
+
+Owner approval 2026-11-28: exactly four generated promotional WebP visuals for the homepage informational service cards (turnkey, no Russian mileage, individual selection, delivery). They are not actual customers, completed orders or auction lot photographs; never use them in galleries, listings, models, auction sheets or sale statistics. Their fixed hashes and scope are checked by the static build. No other change to the auction photo policy.
