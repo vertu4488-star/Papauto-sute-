@@ -1,0 +1,101 @@
+name: Live SEO HTTP audit
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 20 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: live-seo-http-audit
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check public sitemap, HTTP, robots headers and canonical
+        env:
+          SEO_HOST: papauto.ru
+        run: |
+          python - <<'PY'
+          import os, re, time, urllib.request, urllib.error
+          import xml.etree.ElementTree as ET
+          from html.parser import HTMLParser
+          from urllib.parse import urlsplit, urljoin, unquote
+          from concurrent.futures import ThreadPoolExecutor
+          from collections import Counter
+          host=os.environ['SEO_HOST']
+          base='https://'+host
+          ns='{http://www.sitemaps.org/schemas/sitemap/0.9}'
+          def normalized(url):
+              p=urlsplit(url)
+              h=(p.hostname or '').encode('idna').decode().lower()
+              return (p.scheme.lower(),h,unquote(p.path or '/'),p.query)
+          def get(url):
+              for attempt in range(2):
+                  try:
+                      req=urllib.request.Request(url,headers={'User-Agent':'SiteOwnerSEOAudit/1.0'})
+                      with urllib.request.urlopen(req,timeout=20) as r:
+                          return r.status,r.geturl(),r.headers,r.read(4000000)
+                  except urllib.error.HTTPError as e:
+                      if e.code not in (429,500,502,503,504) or attempt: raise
+                  except OSError:
+                      if attempt: raise
+                  time.sleep(3)
+          class Page(HTMLParser):
+              def __init__(self):
+                  super().__init__();self.canonical=[];self.robots=[];self.links=[];self.h1=0;self.titles=[];self.desc=[];self.in_title=False
+              def handle_starttag(self,tag,attrs):
+                  a=dict(attrs)
+                  if tag=='link' and 'canonical' in (a.get('rel') or '').lower().split():self.canonical.append(a.get('href') or '')
+                  if tag=='meta':
+                      name=(a.get('name') or '').lower()
+                      if name in ('robots','googlebot','yandex','yandexbot'):self.robots.append(a.get('content') or '')
+                      if name=='description':self.desc.append(a.get('content') or '')
+                  if tag=='h1':self.h1+=1
+                  if tag=='title':self.in_title=True;self.titles.append('')
+                  if tag=='a' and a.get('href'):self.links.append(a['href'])
+              def handle_endtag(self,tag):
+                  if tag=='title':self.in_title=False
+              def handle_data(self,data):
+                  if self.in_title:self.titles[-1]+=data
+          def blocked(values):
+              return any(re.search(r'\b(noindex|none)\b',v,re.I) for v in values)
+          status,final,headers,body=get(base+'/sitemap.xml')
+          root=ET.fromstring(body)
+          urls=[e.text.strip() for e in root.iter(ns+'loc') if e.text]
+          if not urls or len(set(urls))!=len(urls):raise SystemExit('Empty or duplicate sitemap')
+          if any(normalized(u)[:2]!=('https',host) for u in urls):raise SystemExit('Unexpected sitemap host')
+          def inspect(url):
+              errors=[];warnings=[];links=set();title='';desc=''
+              try:
+                  status,final,headers,body=get(url)
+                  if status!=200:errors.append('HTTP '+str(status))
+                  if normalized(final)!=normalized(url):errors.append('redirect '+final)
+                  xr=headers.get_all('X-Robots-Tag',[])
+                  if blocked(xr):errors.append('X-Robots-Tag '+str(xr))
+                  p=Page();p.feed(body.decode('utf-8',errors='replace'))
+                  if blocked(p.robots):errors.append('meta noindex '+str(p.robots))
+                  if len(p.canonical)!=1 or normalized(urljoin(url,p.canonical[0]))!=normalized(url):errors.append('canonical '+str(p.canonical))
+                  if len(p.titles)!=1 or not p.titles[0].strip():warnings.append('missing or multiple title')
+                  else:title=p.titles[0].strip()
+                  if len(p.desc)!=1 or not p.desc[0].strip():warnings.append('missing or multiple description')
+                  else:desc=p.desc[0].strip()
+                  if p.h1!=1:warnings.append('H1 count '+str(p.h1))
+                  links={normalized(urljoin(url,h))[:3] for h in p.links if urlsplit(urljoin(url,h)).scheme in ('http','https') and normalized(urljoin(url,h))[1]==host}
+              except Exception as e:errors.append(str(e))
+              return url,errors,warnings,links,title,desc
+          with ThreadPoolExecutor(max_workers=4) as pool:results=list(pool.map(inspect,urls))
+          incoming=Counter(k for _,_,_,links,_,_ in results for k in links)
+          titles=Counter(t for _,_,_,_,t,_ in results if t)
+          descriptions=Counter(d for _,_,_,_,_,d in results if d)
+          errors=0
+          for u,es,ws,links,t,d in results:
+              for e in es:print('ERROR',u,e);errors+=1
+              for w in ws:print('WARN',u,w)
+              if u!=base+'/' and not incoming[normalized(u)[:3]]:print('WARN no incoming sitemap-page link',u)
+              if t and titles[t]>1:print('WARN duplicate title',u)
+              if d and descriptions[d]>1:print('WARN duplicate description',u)
+          print('Checked',len(urls),'sitemap URLs; errors:',errors)
+          raise SystemExit(bool(errors))
+          PY
