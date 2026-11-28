@@ -4,6 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 BRANDS={'Honda':'Хонда','Nissan':'Ниссан','Toyota':'Тойота','Suzuki':'Сузуки','Mazda':'Мазда','Daihatsu':'Дайхатсу','Geely':'Джили','Haval':'Хавал','Changan':'Чанган','Chery':'Чери','BYD':'БИД','GAC':'ГАК','Volkswagen':'Фольксваген','Kia':'Киа','Hyundai':'Хендай','Audi':'Ауди','BMW':'БМВ','Chevrolet':'Шевроле','Genesis':'Дженезис','Mercedes-Benz':'Мерседес','Renault':'Рено','SsangYong':'СсангЙонг'}
 SPECIAL={'japan-nissan-note-e-power':('Nissan Note e-POWER','Ниссан Ноут e-POWER'),'china-chery-jetour-x70':('Jetour X70','Джетур X70'),'china-chery-omoda-5':('Omoda 5','Омода 5')}
+ALIASES={"japan-daihatsu-thor":"Дайхатсу Тор","japan-honda-jazz":"Хонда Джаз","japan-mazda-cx-3":"Мазда CX-3","japan-mazda-mazda3":"Мазда 3","japan-nissan-micra":"Ниссан Микра","japan-nissan-nv200":"Ниссан NV200","japan-nissan-qashqai":"Ниссан Кашкай","japan-suzuki-hustler":"Сузуки Хастлер","japan-suzuki-jimny-sierra":"Сузуки Джимни Сиерра","japan-suzuki-solio":"Сузуки Солио","japan-toyota-aqua":"Тойота Аква","japan-toyota-noah":"Тойота Ноах","japan-toyota-prius":"Тойота Приус","japan-toyota-voxy":"Тойота Вокси","japan-toyota-wish":"Тойота Виш","korea-hyundai-bayon":"Хендай Байон","korea-hyundai-creta":"Хендай Крета","korea-hyundai-i20":"Хендай i20","korea-kia-carens":"Киа Каренс","korea-kia-ceed":"Киа Сид","korea-kia-forte":"Киа Форте","korea-kia-kx3":"Киа KX3"}
 COUNTRY={'japan':'из Японии','china':'из Китая','korea':'из Южной Кореи'}
 MARK='data-pa-search-wording="20261128"'
 def update(path,s):
@@ -15,6 +16,7 @@ def update(path,s):
     ru=html.unescape(alias[1]).strip() if alias else None
     if path.stem in SPECIAL:official,ru=SPECIAL[path.stem]
     # Source aliases are authoritative; do not invent obscure transliterations.
+    if not ru:ru=ALIASES.get(path.stem)
     if not ru:raise ValueError('Russian alias needs review: '+path.name)
     brand,_,model=official.partition(' ')
     ru_brand=BRANDS.get(brand,ru.split()[0])
@@ -23,7 +25,10 @@ def update(path,s):
         model=model[6:];mixed=ru_brand+' '+model
     # Keep full Russian alias in original introduction; add it when absent.
     heading=re.search(r'<h2\b[^>]*>Сколько стоит[^<]*</h2>',s,re.I)
-    if not heading:raise ValueError('Price section needs review: '+path.name)
+    if not heading:
+        if path.stem not in ('japan-honda-freed-spike','japan-honda-stepwgn'):raise ValueError('Price section needs review: '+path.name)
+        heading=re.search(r'<h2\b[^>]*>(?:Рассчитать|Стоимость|Цена)[^<]*</h2>',s,re.I)
+        if not heading:raise ValueError('No existing calculator heading: '+path.name)
     country=COUNTRY[path.stem.split('-')[0]]
     q=f'Сколько стоит {mixed} {country} с доставкой в Новосибирск?'
     # No promise of availability or export eligibility; existing answers unchanged.
