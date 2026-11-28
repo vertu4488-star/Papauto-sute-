@@ -47,7 +47,10 @@ def render(target,coverage,registry):
     common='<p>'+" · ".join(anchor(HUB[m],"Авто из "+COUNTRY[m]+" в Новосибирск") for m in HUB)+'</p><p>'+anchor(CAT,"Каталог японских автомобилей")+" · "+anchor(PRICE,"Цена авто из Японии под ключ")+" · "+anchor("models-135.html","Все модели")+'</p>'
     common+='<p>'+anchor(GENERAL,"Авто под заказ в Новосибирске")+' · '+anchor(HUB["japan"]+"#pa-commercial-no-russian-mileage","Машины без пробега по РФ")+' · '+anchor(HUB["japan"]+"#pa-commercial-japan-delivery","Как привезти авто из Японии")+' · '+anchor("podbor.html","Индивидуальный подбор")+'</p>'
     for filename in ["index.html","catalog.html",GENERAL,"japan.html","models-novosibirsk.html"]:
-        add(target/filename,section("Автомобили под заказ с доставкой в Новосибирск",common))
+        route_map = ''
+        if filename == "index.html":
+            route_map = '<figure class="pa-delivery-map" style="margin:18px 0 24px;border-radius:18px;overflow:hidden;background:#111c25"><img src="/assets/visual/papauto-delivery-map-20261128.webp" width="1600" height="800" alt="Схема доставки автомобилей из Владивостока через Хабаровск, Читу, Улан-Удэ, Иркутск и Красноярск в Новосибирск" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption style="padding:10px 16px;font-size:13px;color:#eee;background:#111c25">Схема маршрута доставки. Фактический маршрут согласуем при заказе.</figcaption></figure>'
+        add(target/filename,section("Автомобили под заказ с доставкой в Новосибирск",route_map+common))
     # Preserve existing titles, H1s, canonicals, photo cards and calculators. Add
     # genuinely related model choices and their regional parent, no keyword repetition.
     for r in items:
